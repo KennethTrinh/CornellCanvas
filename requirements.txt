@@ -1,0 +1,3 @@
+canvasapi
+requests
+bs4
