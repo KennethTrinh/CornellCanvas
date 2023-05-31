@@ -1,3 +1,4 @@
 canvasapi
 requests
 bs4
+pandas
