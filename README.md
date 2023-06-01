@@ -33,7 +33,7 @@ You'll be prompted with this message:
 ```
 Evaluate Push
 ```
-Go to your phone and accept the push notification.
+Go to your phone and accept the push notification. Successful authentication will result in this message:
 ```
 Login Successful https://canvas.cornell.edu/?login_success=1
 ```

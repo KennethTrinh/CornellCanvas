@@ -80,6 +80,7 @@ def scrapeHomePage(course):
 def scrapeFile(course, folder, files_downloaded, file_id):
     file = course.get_file(file_id)
     cprint(f'Downloading File: {file.display_name}')
+    # TODO: enable eventually, disabled for testing purposes
     # file.download(os.path.join(folder, sanitize(file.display_name)))
     files_downloaded.add(file_id)
 
