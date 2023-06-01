@@ -11,8 +11,17 @@ from canvasapi.exceptions import Unauthorized, ResourceDoesNotExist, Forbidden
 
 API_KEY = os.environ['CANVAS_TOKEN']
 API_URL = 'https://canvas.cornell.edu'
+LOG = False
 
 sanitize = lambda text: text.replace('/', '-')
+
+def cprint(*args, log=LOG, **kwargs):
+    """
+    Conditional print. Only prints if LOG is True
+    """
+    if log:
+        print(*args, **kwargs)
+
 
 def extract_files(text):
     """
@@ -45,14 +54,9 @@ def writeCoursesToCSV(canvas):
     df.to_csv('courses/courses.csv', index=False)
 
 
-
-
-
-
 def scrapeHomePage(course):
     #Home page
-    r = requests.get('https://canvas.cornell.edu/courses/1402',
-                    headers={'Authorization': 'Bearer ' + API_KEY})
+    r = requests.get('https://canvas.cornell.edu/courses/1402')
     soup = BeautifulSoup(r.text, 'html.parser')
     # get all script tags
     scripts = soup.find_all('script')
@@ -73,24 +77,49 @@ def scrapeHomePage(course):
     file = course.get_file(id)
     file.download(sanitize(file.display_name))
 
-def scrapeHTMLContent(course, folder, files_downloaded, file_ids):
+def scrapeFile(course, folder, files_downloaded, file_id):
+    file = course.get_file(file_id)
+    cprint(f'Downloading File: {file.display_name}')
+    # file.download(os.path.join(folder, sanitize(file.display_name)))
+    files_downloaded.add(file_id)
+
+def scrapeFiles(course, folder, files_downloaded, file_ids):
     """
-    For pages or assignments with html content.
+    For pages or assignments with several fles
     file_ids is a list of ids obtained from extract_files
     """
     for file_id in file_ids:
         if file_id in files_downloaded:
             continue
         try: 
-            file = course.get_file(file_id)
-            files_downloaded.add(file_id)
-            file.download(
-                os.path.join(folder, sanitize(file.display_name))
-            )
-            print(f'Downloaded File: {file.display_name}')
+            scrapeFile(course, folder, files_downloaded, file_id)
         except ResourceDoesNotExist:
             print(f'File {file_id} does not exist')
 
+def scrapePage(course, folder, files_downloaded, page_url):
+    page = course.get_page(page_url)
+    cprint(f'Downloading Page: {page.title}')
+    write(page.body or '', os.path.join(folder, sanitize(page.title) + '.html'))
+    file_ids = extract_files(page.body or '')
+    scrapeFiles(course, folder, files_downloaded, file_ids)
+
+def scrapeAssignment(course, folder, files_downloaded, assignment_id):
+    assignment = course.get_assignment(assignment_id)
+    cprint(f'Downloading Assignment: {assignment.name}')
+    write(assignment.description or '', os.path.join(folder, sanitize(assignment.name) + '.html'))
+    file_ids = extract_files(assignment.description or '')
+    scrapeFiles(course, folder, files_downloaded, file_ids)
+
+def scrapeExternalUrl(folder, external_url):
+    cprint(f'Downloading External URL: {external_url}')
+    with open(os.path.join(folder, sanitize(external_url) + '.txt'), 'w') as f:
+        f.write(external_url)
+    
+
+def scrapeQuiz(course, folder, files_downloaded, quiz_id):
+    quiz = course.get_quiz(quiz_id)
+    cprint(f'Downloading Quiz: {quiz.title}')
+    ## TODO: use s = login() from canvasDuoLogin.py to download quiz
 
 def scrapeModule(course, module, files_downloaded):
     """
@@ -102,42 +131,38 @@ def scrapeModule(course, module, files_downloaded):
     folder = os.path.join('data', course_name, module_name)
     os.makedirs(folder, exist_ok=True)
     print(f'Created directory {folder}')
-    print(f'Module: {module.name} , ID: {module.id}')
+    print(f'******* Module: {module.name} , ID: {module.id} *******')
     for item in module.get_module_items():
+        print(f'Item: {item.title}   ID: {item.id}  Type: {item.type}')
         if item.type == 'File':
-            file = course.get_file(item.content_id)
-            files_downloaded.add(item.content_id)
-            # file.download(os.path.join(folder, sanitize(file.display_name)))
-            print(f'Downloaded File: {file.display_name}')
+            scrapeFile(course, folder, files_downloaded, item.content_id)
         elif item.type == 'Page':
-            page = course.get_page(item.page_url)
-            write(page.body or '', 
-                  os.path.join(folder, sanitize(page.title) + '.html'))
-            file_ids = extract_files(page.body or '')
-            # scrapeHTMLContent(course, folder, files_downloaded, file_ids)
-            print(f'Downloaded Page: {page.title}')
-        elif item.type == 'ExternalUrl':
-            print(f'External URL: {item.external_url}')
+            scrapePage(course, folder, files_downloaded, item.page_url)
         elif item.type == 'Assignment':
-            assignment = course.get_assignment(item.content_id)
-            print(f'Assignment: {assignment.id}')
+            scrapeAssignment(course, folder, files_downloaded, item.content_id)
+        elif item.type == 'ExternalUrl':
+            scrapeExternalUrl(folder, item.external_url)
         elif item.type == 'Quiz':
-            quiz = course.get_quiz(item.content_id)
-            print(f'Quiz: {quiz.id}')
+            scrapeQuiz(course, folder, files_downloaded, item.content_id)
+        elif item.type == 'SubHeader':
+            cprint(f'SubHeader: {item.title}')
         else:
-            print(f'Unknown type: {item.type}')
+            cprint(f'Unknown type: {item.type}')
 
 
-
-
-def scrapeModules(course):
-    files_downloaded = set()
+def scrapeModules(course, files_downloaded):
     modules = list(course.get_modules())
     for module in modules:
         scrapeModule(course, module, files_downloaded)
     
-    return files_downloaded
 
+def scrapeAssignments(course, files_downloaded):
+    assignments = list(course.get_assignments())
+    course_name = sanitize(course.name) if hasattr(course, 'name') else f'MISC_{course.id}'
+    folder = os.path.join('data', course_name, 'assignments')
+    for assignment in assignments:
+        scrapeAssignment(course, folder, files_downloaded, assignment.id)
+        # TODO: test this
     
 
 # ECE 4130 COMBINED-XLIST Introduction to Nuclear Science and Engineering (2021FA) 33592
@@ -159,7 +184,8 @@ def main():
         # course = canvas.get_course(41544) # data driven, no name
         # course = canvas.get_course(340) # chem assignments and quizzes
         course = canvas.get_course(24870) # phys 2214, everything in modules
-        files_downloaded = scrapeModules(course)
+        files_downloaded = set()
+        scrapeModules(course, files_downloaded)
     except Forbidden:
         print('Forbidden')
     
@@ -168,6 +194,8 @@ main()
 # canvas = Canvas(API_URL, API_KEY)
 # course = canvas.get_course(24870) # phys 2214
 # module = course.get_module(128436)
+# item = module.get_module_item(791065)
+
 
 
 # assignments = list(course.get_assignments())
