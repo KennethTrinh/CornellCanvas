@@ -12,7 +12,9 @@ from utils import (sanitize, cprint, extract_files,
                    
 API_KEY = os.environ['CANVAS_TOKEN']
 API_URL = 'https://canvas.cornell.edu'
-
+HEADERS = {
+    'Authorization': f'Bearer {API_KEY}'
+}
 #TODO: switch to True when ready finished
 DUO_LOGIN = True
 
@@ -43,6 +45,16 @@ def getPages(course):
 @ThrowsLambdaError(ResourceDoesNotExist)
 def getQuizzes(course):
     return list(course.get_quizzes())
+
+@ThrowsLambdaError(Forbidden)
+def getDiscussionTopics(course, only_announcements):
+    """
+    passing in only_announcements weirdly enables announcements regardless of True/False
+    """
+    return list(course.get_discussion_topics(
+                only_announcements=only_announcements)) if only_announcements else \
+            list(course.get_discussion_topics())
+
 
 
 
@@ -105,13 +117,6 @@ def scrapePage(course, folder, files_downloaded, page_url):
     file_ids = extract_files(page.body)
     scrapeFiles(course, folder, files_downloaded, file_ids)
 
-def scrapeAssignment(course, folder, files_downloaded, assignment_id):
-    os.makedirs(folder, exist_ok=True)
-    assignment = course.get_assignment(assignment_id)
-    cprint(f'Downloading Assignment: {assignment.name}')
-    write(assignment.description, os.path.join(folder, sanitize(assignment.name) + '.html'))
-    file_ids = extract_files(assignment.description)
-    scrapeFiles(course, folder, files_downloaded, file_ids)
 
 def scrapeExternalUrl(folder, external_url):
     os.makedirs(folder, exist_ok=True)
@@ -148,18 +153,29 @@ def scrapeModule(course, folder, files_downloaded, module):
         else:
             cprint(f'Unknown type: {item.type}')
 
-
 def scrapeModules(course, folder, files_downloaded):
     modules = getModules(course)
-    folder = os.path.join(folder, 'modules')
+    folder = os.path.join(folder, 'Modules')
     for module in modules:
         print(f'******* Module: {module.name} , ID: {module.id} *******')
         scrapeModule(course, folder, files_downloaded, module)
         # TODO: test this
     
+def scrapeAssignment(course, folder, files_downloaded, assignment_id):
+    """
+    Modules may only have the assignment id, not the class instance of the assignment,
+    hence we pass in assignment_id instead of assignment
+    """
+    os.makedirs(folder, exist_ok=True)
+    assignment = course.get_assignment(assignment_id)
+    cprint(f'Downloading Assignment: {assignment.name}')
+    write(assignment.description, os.path.join(folder, sanitize(assignment.name) + '.html'))
+    file_ids = extract_files(assignment.description)
+    scrapeFiles(course, folder, files_downloaded, file_ids)
+
 def scrapeAssignments(course, folder, files_downloaded):
     assignments = getAssignments(course)
-    folder = os.path.join(folder, 'assignments')
+    folder = os.path.join(folder, 'Assignments')
     for assignment in assignments:
         print(f'******* Assignment: {assignment.name} , ID: {assignment.id} *******')
         scrapeAssignment(course, folder, files_downloaded, assignment.id)
@@ -169,19 +185,72 @@ def scrapeRemainingFiles(course, folder, files_downloaded):
     if not files:
         print(f'Files not enabled for course: {course.id}')
         return
-    folder = os.path.join(folder, 'remaining_files')
+    folder = os.path.join(folder, 'Remaining_files')
     file_ids = list(map(lambda f: f.id, files))
     scrapeFiles(course, folder, files_downloaded, file_ids)
     
 def scrapeSyllabus(course, folder, files_downloaded):
     global s
-    r = s.get(f'http://canvas.cornell.edu/courses/{course.id}/assignments/syllabus')
+    r = s.get(f'{API_URL}/courses/{course.id}/assignments/syllabus')
     folder = os.path.join(folder, 'syllabus')
     os.makedirs(folder, exist_ok=True)
-    write(r.text, os.path.join(folder, 'syllabus.html'))
+    write(r.text, os.path.join(folder, 'Syllabus.html'))
     file_ids = extract_files(r.text)
     scrapeFiles(course, folder, files_downloaded, file_ids)
     # TODO: test this
+
+def scrapeDiscussion(folder, discussion):
+    os.makedirs(folder, exist_ok=True)
+    cprint(f'Discussion: {discussion.title}')
+    html = (f'<h1>Title: {discussion.title} </h1>'
+            f'<h2>Date: {discussion.posted_at} </h2>'
+            f'<h2>Author: {discussion.author["display_name"]} id:({discussion.author["id"]}) </h2>'
+            f'{discussion.message}'
+    )
+    replies = list(discussion.get_topic_entries())
+    html += f'<h2>Replies: </h2>' if replies else ''
+    for reply in replies:
+        html += (f'<h4>Date: {reply.created_at} </h4>'
+                 f'<h4>Author: {reply.user["display_name"]} id:({reply.user["id"]}) </h4>'
+                 f'{reply.message}' if reply.message else ''
+        )
+    write(html, os.path.join(folder, sanitize(discussion.title) + '.html'))
+        
+def scrapeDiscussions(course, folder, isAnnouncement):
+    discussions = getDiscussionTopics(course, only_announcements=isAnnouncement)
+    typeOfDiscussion = 'Announcement' if isAnnouncement else 'Discussion'
+    if not discussions:
+        print(f'{typeOfDiscussion} not enabled for course: {course.id}')
+        return
+    folder = os.path.join(folder, typeOfDiscussion + 's')
+    for discussion in discussions:
+        print(f'******* {typeOfDiscussion}: {discussion.title} , ID: {discussion.id} *******')
+        scrapeDiscussion(folder, discussion)
+
+def scrapePage(course, folder, files_downloaded, page_id):
+    """
+    canvasapi doesn't support this call yet
+    """
+    os.makedirs(folder, exist_ok=True)
+    url = f'{API_URL}/api/v1/courses/{course.id}/pages/{page_id}'
+    r = requests.get(url, headers=HEADERS)
+    if 'body' in r.json() and r.json()['body']:
+        body = r.json()['body']
+        write(r.json()['body'], os.path.join(folder, sanitize(r.json()['title']) + '.html'))
+        file_ids = extract_files(r.json()['body'])
+        scrapeFiles(course, folder, files_downloaded, file_ids)
+        
+def scrapePages(course, folder, files_downloaded):
+    pages = getPages(course)
+    if not pages:
+        print(f'Pages not enabled for course: {course.id}')
+        return
+    folder = os.path.join(folder, 'Pages')
+    for page in pages:
+        print(f'******* Page: {page.title} , ID: {page.url} *******')
+        scrapePage(course, folder, files_downloaded, page.page_id)
+
+
 
 # ECE 4130 COMBINED-XLIST Introduction to Nuclear Science and Engineering (2021FA) 33592
 # MAE 2030 Dynamics (Spring 2019):         Prof. Andy Ruina 1402
@@ -195,10 +264,13 @@ def scrapeCourse(canvas, course_id):
     course_name = sanitize(course.name) if hasattr(course, 'name') else f'MISC_{course.id}'
     folder = os.path.join('data', course_name)
 
-    scrapeModules(course, folder, files_downloaded)
+    # scrapeModules(course, folder, files_downloaded)
     # scrapeAssignments(course, folder, files_downloaded)
     # scrapeRemainingFiles(course, folder, files_downloaded)
     # scrapeSyllabus(course, folder, files_downloaded)
+    # scrapeDiscussions(course, folder, isAnnouncement=True)
+    # scrapeDiscussions(course, folder, isAnnouncement=False)
+    # scrapePages(course, folder, files_downloaded)
     # if course.default_view in ('modules', 'syllabus', 'assignments'):
     #   # TODO: scrape the homepage
 
@@ -206,21 +278,31 @@ def scrapeCourse(canvas, course_id):
 
     
     
-courses = pd.read_csv('courses/courses.csv')
 canvas = Canvas(API_URL, API_KEY)
+courses = pd.read_csv('courses/courses.csv')
+# courses = list(canvas.get_courses()) # --> lists all courses you've taken
 scrapeCourse(canvas, 24870)
 
-# course = getCourse(canvas, 14264)
-# s = login() if DUO_LOGIN else requests.Session()
-# scrapeSyllabus(course, 'testing', set())
+# course = getCourse(canvas, 51189)
+# announcements = getDiscussionTopics(course, only_announcements=False)
+# d = announcements[0]
 
+# for a in announcements:
+#     print(f'********* {a.title} *********')
+#     print(a.message)
+# s = login() if DUO_LOGIN else requests.Session()
+# r = s.get(f'{API_URL}/courses/{course.id}/announcements')
+# write(r.text, 'test.html')
+
+    
 
 # course = canvas.get_course(1402) # dynamics, homepage
 # course = canvas.get_course(6607) # data driven, forbidden
 # course = canvas.get_course(41544) # data driven, no name
 # course = canvas.get_course(340) # chem assignments and quizzes
 # course = canvas.get_course(24870) # phys 2214, everything in modules
-# course = getCourse(canvas, 51429) # HD 2930, files enabled
+# course = getCourse(canvas, 51429) # HD 2930, files enabled, discussion topics
+# course = getCourse(canvas, 14264) # HIST 1200 no modules, homepage is syllabus
 
 
 ########## DEBUGGING ##########
@@ -235,7 +317,6 @@ scrapeCourse(canvas, 24870)
 # a = course.get_assignment(197862)
 
 
-# courses = list(canvas.get_courses()) --> lists all courses you've taken
 # for course in courses:
 #     name = course.name if  hasattr(course, 'name') else 'MISC'
 #     print(f'{name} {course.id}')
@@ -267,6 +348,29 @@ scrapeCourse(canvas, 24870)
 # for i, row in courses.iterrows():
 #     course = getCourse(canvas, row['id'])
 #     if not course:
-#         print(f'Course not accessible for course: {row["id"]}')
+#         # print(f'Course not accessible for course: {row["id"]}')
 #         continue
-#     print(f'Course: {course.name} : {course.default_view}')
+#     print(f'Course: {course.name} ({course.id}): {course.default_view}')
+
+
+# for course in courses:
+#     course = getCourse(canvas, course.id)
+#     if not course:
+#         continue
+#     print(f'******* Course: {course.name} , ID: {course.id} *******')
+#     dis = getDiscussionTopics(course, only_announcements=True)
+#     if dis:
+#         for topic in dis:
+#             print(f'Topic: {topic.title}  ID: {topic.id}')
+#             print(f'Entries: {len(list(topic.get_topic_entries()))}')
+
+
+# for i, row in courses.iterrows():
+#     course = getCourse(canvas, row['id'])
+#     if not course:
+#         continue
+#     try:
+#         pages = list(course.get_pages())
+#         print(f'Course: {course.name} ({course.id}): {len(pages)} pages')
+#     except ResourceDoesNotExist:
+#         continue
