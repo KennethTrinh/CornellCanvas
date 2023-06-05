@@ -1,8 +1,9 @@
 import re
 import pandas as pd
 from bs4 import BeautifulSoup
-
-LOG = False
+from canvasapi.exceptions import Unauthorized, ResourceDoesNotExist, Forbidden
+from consts import LOG, FILES_REGEX
+import os
 
 sanitize = lambda text: text.replace('/', '-')
 
@@ -20,8 +21,7 @@ def extract_files(text):
     """
     if not text:
         return set()
-    pattern = r"canvas\.cornell\.edu/courses/\d+/files/(\d+)"
-    text_search = re.findall(pattern, text, re.IGNORECASE)
+    text_search = re.findall(FILES_REGEX, text, re.IGNORECASE)
     groups = set(text_search)
     return groups
 
@@ -31,6 +31,10 @@ def write(text, filename='test.html'):
     """
     if not text:
         return
+    indexOfDot = filename.rfind('.')
+    while os.path.exists(filename):
+        filename = filename[:indexOfDot] + '_' + filename[indexOfDot:]
+
     with open(filename, 'w') as f:
         soup = BeautifulSoup(text, 'html.parser')
         f.write(soup.prettify())
@@ -48,7 +52,6 @@ def writeCoursesToCSV(canvas):
                           ignore_index=True)
         print(f'Finished page {page}')
     df.to_csv('courses/courses.csv', index=False)
-
 
 
 def ThrowsLambdaError(*errors):
@@ -74,3 +77,44 @@ def ThrowsLambdaError(*errors):
                 return
         return wrapper
     return decorator
+
+def getModules(course):
+    """
+    Always works, returns empty list if no modules
+    """
+    return list(course.get_modules())
+
+def getAssignments(course):
+    """
+    Always works, returns empty list if no assignments
+    """
+    return list(course.get_assignments())
+
+@ThrowsLambdaError(Forbidden)
+def getCourse(canvas, course_id):
+    return canvas.get_course(course_id)
+
+@ThrowsLambdaError(Forbidden)
+def getFiles(course):
+    return list(course.get_files())
+
+@ThrowsLambdaError(ResourceDoesNotExist)
+def getPages(course):
+    return list(course.get_pages())
+
+@ThrowsLambdaError(ResourceDoesNotExist)
+def getQuizzes(course):
+    return list(course.get_quizzes())
+
+@ThrowsLambdaError(Forbidden)
+def getDiscussionTopics(course, only_announcements):
+    """
+    passing in only_announcements weirdly enables announcements regardless of True/False
+    """
+    return list(course.get_discussion_topics(
+                only_announcements=only_announcements)) if only_announcements else \
+            list(course.get_discussion_topics())
+
+@ThrowsLambdaError(ResourceDoesNotExist)
+def getReplies(reply):
+    return list(reply.get_replies())

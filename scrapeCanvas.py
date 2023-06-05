@@ -2,86 +2,17 @@ import os
 import requests
 import json
 import pandas as pd
+import csv
 
 from bs4 import BeautifulSoup
 from canvasapi import Canvas
-from canvasapi.exceptions import Unauthorized, ResourceDoesNotExist, Forbidden
-from canvasDuoLogin import login
+from canvasapi.exceptions import ResourceDoesNotExist, Forbidden
 from utils import (sanitize, cprint, extract_files, 
-                   write, ThrowsLambdaError)
-                   
-API_KEY = os.environ['CANVAS_TOKEN']
-API_URL = 'https://canvas.cornell.edu'
-HEADERS = {
-    'Authorization': f'Bearer {API_KEY}'
-}
-#TODO: switch to True when ready finished
-DUO_LOGIN = True
+                   write, ThrowsLambdaError, 
+                   getModules, getAssignments, getCourse,
+                   getFiles, getPages, getQuizzes, getDiscussionTopics, getReplies)
 
-def getModules(course):
-    """
-    Always works, returns empty list if no modules
-    """
-    return list(course.get_modules())
-
-def getAssignments(course):
-    """
-    Always works, returns empty list if no assignments
-    """
-    return list(course.get_assignments())
-
-@ThrowsLambdaError(Forbidden)
-def getCourse(canvas, course_id):
-    return canvas.get_course(course_id)
-
-@ThrowsLambdaError(Forbidden)
-def getFiles(course):
-    return list(course.get_files())
-
-@ThrowsLambdaError(ResourceDoesNotExist)
-def getPages(course):
-    return list(course.get_pages())
-
-@ThrowsLambdaError(ResourceDoesNotExist)
-def getQuizzes(course):
-    return list(course.get_quizzes())
-
-@ThrowsLambdaError(Forbidden)
-def getDiscussionTopics(course, only_announcements):
-    """
-    passing in only_announcements weirdly enables announcements regardless of True/False
-    """
-    return list(course.get_discussion_topics(
-                only_announcements=only_announcements)) if only_announcements else \
-            list(course.get_discussion_topics())
-
-def scrapeHTML(course):
-    """
-    TODO: adapt this for courses such as homepage, quizzes... etc, where 
-    html is not directly accessible through the API.  Thus, this function
-    will have to take in the request session outputted by the login function.
-    """
-    #Home page
-    r = requests.get('https://canvas.cornell.edu/courses/1402')
-    soup = BeautifulSoup(r.text, 'html.parser')
-    # get all script tags
-    scripts = soup.find_all('script')
-    # get the script with ENV = in it
-    script = [s for s in scripts if 'ENV = {' in str(s)][0]
-    # get everything after ENV = and before the BRANDABLE_CSS_HANDLEBARS_INDEX
-    text = script.string.split('ENV = ')[1].split('BRANDABLE_CSS_HANDLEBARS_INDEX')[0]
-    # remove the trailing semicolon
-    text = text[:text.rfind(';')]
-    text = json.loads(text)
-    # print(json.dumps(text, indent=4, sort_keys=True))
-    soup = BeautifulSoup(text['WIKI_PAGE']['body'], 'html.parser')
-    # get all a tags with data-api-endpoint=
-    links = soup.find_all('a', {'data-api-endpoint': True})
-    links = [l for l in links if 'files' in l['data-api-endpoint']]
-    # download all files
-    id = links[0]['data-api-endpoint'].split('/')[-1]
-    file = course.get_file(id)
-    file.download(sanitize(file.display_name))
+from consts import API_KEY, API_URL, HEADERS
 
 @ThrowsLambdaError(ResourceDoesNotExist)
 def scrapeFile(course, folder, files_downloaded, file_id):
@@ -124,9 +55,30 @@ def scrapeExternalUrl(folder, item):
     
 
 def scrapeQuiz(course, folder, files_downloaded, quiz_id):
+    """
+    Appends the folder path and quiz.html_url to a csv file in misc/quizzes.csv
+    We can only see quizzes for ones that we've taken before.
+    Further, the api does not allow us to download the quiz itself, so we
+    must login to canvas and download the quiz.html_url
+    We will handle this later using canvasDuoLogin
+    """
     quiz = course.get_quiz(quiz_id)
-    cprint(f'Downloading Quiz: {quiz.title}')
-    ## TODO: use s = login() from canvasDuoLogin.py to download quiz
+    cprint(f'Preparing Quiz: {quiz.title}')
+    os.makedirs('misc', exist_ok=True)
+    with open('misc/quizzes.csv', 'a') as f:
+        if os.stat('misc/quizzes.csv').st_size == 0:
+            writer = csv.writer(f)
+            writer.writerow(['folder', 'url'])
+        writer = csv.writer(f)
+        writer.writerow([os.path.join(folder, sanitize(quiz.title)), quiz.html_url])
+
+def scrapeQuizzes(course, folder, files_downloaded):
+    quizzes = getQuizzes(course)
+    if not quizzes:
+        return
+    folder = os.path.join(folder, 'Quizzes')
+    for quiz in quizzes:
+        scrapeQuiz(course, folder, files_downloaded, quiz.id)
 
 def scrapeModule(course, folder, files_downloaded, module):
     """
@@ -147,7 +99,8 @@ def scrapeModule(course, folder, files_downloaded, module):
         elif item.type == 'ExternalUrl':
             scrapeExternalUrl(folder, item)
         elif item.type == 'Quiz':
-            scrapeQuiz(course, folder, files_downloaded, item.content_id)
+            # scrapeQuiz(course, folder, files_downloaded, item.content_id)
+            cprint(f'Quiz: {item.title}')
         elif item.type == 'SubHeader':
             cprint(f'SubHeader: {item.title}')
         else:
@@ -198,23 +151,33 @@ def scrapeSyllabus(course, folder, files_downloaded):
         scrapeHTMLContent(course, folder, files_downloaded, 
                         'Syllabus.html', syllabus)
 
+def recursiveReplies(html, replies):
+    """
+    I hate canvas
+    """
+    if not replies:
+        return html
+    for reply in replies:
+        html += (f'<h4>Date: {reply.created_at} </h4>'
+                f"<h4>Author: {reply.user['display_name'] if 'display_name' in reply.user else ''}"
+                f" id:({reply.user['id'] if 'id' in reply.user else ''}) </h4>"
+                f'{reply.message if reply.message else ""}'
+        )
+        html = recursiveReplies(html, getReplies(reply))
+    return html
+
 def scrapeDiscussion(folder, discussion):
     os.makedirs(folder, exist_ok=True)
     cprint(f'Discussion: {discussion.title}')
     html = (f'<h1>Title: {discussion.title} </h1>'
             f'<h2>Date: {discussion.posted_at} </h2>'
-            f'<h2>Author: {discussion.author["display_name"]}' if 'display_name' in discussion.author else ''
-            f'id:({discussion.author["id"]}) </h2>' if 'id' in discussion.author else ''
+            f"<h2>Author: {discussion.author['display_name'] if 'display_name' in discussion.author else ''}"
+            f" id:({discussion.author['id'] if 'id' in discussion.author else ''}) </h2>"
             f'{discussion.message}'
     )
     replies = list(discussion.get_topic_entries())
     html += f'<h2>Replies: </h2>' if replies else ''
-    for reply in replies:
-        html += (f'<h4>Date: {reply.created_at} </h4>'
-                 f'<h4>Author: {reply.user["display_name"]}' if 'display_name' in reply.user else ''
-                  f'id:({reply.user["id"]}) </h4>' if 'id' in reply.user else ''
-                 f'{reply.message}' if reply.message else ''
-        )
+    html = recursiveReplies(html, replies)
     write(html, os.path.join(folder, sanitize(discussion.title) + '.html'))
         
 def scrapeDiscussions(course, folder, isAnnouncement):
@@ -249,16 +212,13 @@ def scrapePages(course, folder, files_downloaded):
         print(f'******* Page: {page.title} , ID: {page.url} *******')
         scrapePage(course, folder, files_downloaded, page.page_id)
 
+@ThrowsLambdaError(ResourceDoesNotExist)
 def scrapeHomePage(course, folder, files_downloaded):
     front_page = course.show_front_page()
     folder = os.path.join(folder, 'Home_page')
     scrapeHTMLContent(course, folder, files_downloaded,
                         'Home_page.html', front_page.body)
 
-
-
-# ECE 4130 COMBINED-XLIST Introduction to Nuclear Science and Engineering (2021FA) 33592
-# MAE 2030 Dynamics (Spring 2019):         Prof. Andy Ruina 1402
 
 def scrapeCourse(canvas, course_id):
     files_downloaded = set()
@@ -269,14 +229,14 @@ def scrapeCourse(canvas, course_id):
     course_name = sanitize(course.name) if hasattr(course, 'name') else f'MISC_{course.id}'
     folder = os.path.join('data', course_name)
 
-    # scrapeModules(course, folder, files_downloaded)
-    # scrapeAssignments(course, folder, files_downloaded)
-    # scrapeRemainingFiles(course, folder, files_downloaded)
-    # scrapeSyllabus(course, folder, files_downloaded)
-    # scrapeDiscussions(course, folder, isAnnouncement=True)
-    # scrapeDiscussions(course, folder, isAnnouncement=False)
-    # scrapePages(course, folder, files_downloaded)
-    # scrapeHomePage(course, folder, files_downloaded)
+    scrapeModules(course, folder, files_downloaded)
+    scrapeAssignments(course, folder, files_downloaded)
+    scrapeRemainingFiles(course, folder, files_downloaded)
+    scrapeSyllabus(course, folder, files_downloaded)
+    scrapeDiscussions(course, folder, isAnnouncement=True)
+    scrapeDiscussions(course, folder, isAnnouncement=False)
+    scrapePages(course, folder, files_downloaded)
+    scrapeHomePage(course, folder, files_downloaded)
 
 
 
@@ -284,17 +244,21 @@ def scrapeCourse(canvas, course_id):
     
     
 canvas = Canvas(API_URL, API_KEY)
-courses = pd.read_csv('courses/courses.csv')
+courses = pd.read_csv('misc/courses.csv')
 # courses = list(canvas.get_courses()) # --> lists all courses you've taken
+scrapeCourse(canvas, 51429)
 scrapeCourse(canvas, 24870)
-# course = getCourse(canvas, 24870)
+# course = getCourse(canvas, 51429)
 # module = course.get_module(128448)
 # items = list(module.get_module_items())
 # item = items[1]
-
-# quizzes = getQuizzes(course)
-# q = quizzes[0]
-# q  = course.get_quiz(47945)
+# discussions = getDiscussionTopics(course, only_announcements=True)
+# d = discussions[0]
+# dis = course.get_discussion_topic(543124)
+# scrapeDiscussion('test', dis)
+# replies = list(dis.get_topic_entries())
+# reply = replies[0]
+# r = list(reply.get_replies())[0]
 
 
 
@@ -319,6 +283,7 @@ scrapeCourse(canvas, 24870)
 # course = getCourse(canvas, 51429) # HD 2930, files enabled, discussion topics
 # course = getCourse(canvas, 14264) # HIST 1200 no modules, homepage is syllabus
 # course = getCourse(canvas, 51189) # PAM 3301, pages enabled
+# course = getCourse(canvas, 23439) # CS 2110, quizzes enabled
 
 
 ########## DEBUGGING ##########
@@ -390,3 +355,18 @@ scrapeCourse(canvas, 24870)
 #         print(f'Course: {course.name} ({course.id}): {len(pages)} pages')
 #     except ResourceDoesNotExist:
 #         continue
+
+
+# for i, row in courses.iterrows():
+#     course = getCourse(canvas, row['id'])
+#     if not course:
+#         continue
+#     quizzes = getQuizzes(course)
+#     if quizzes:
+#         quizzes = getQuizzes(course)
+#         try:
+#             q = quizzes[0]
+#             questions = list(q.get_questions())
+#             print(f'Course: {course.name} ({course.id}): {len(questions)} questions')
+#         except Forbidden:
+#             continue
