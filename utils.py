@@ -1,11 +1,13 @@
+import json
 import re
 import pandas as pd
 from bs4 import BeautifulSoup
 from canvasapi.exceptions import Unauthorized, ResourceDoesNotExist, Forbidden
 from consts import LOG, FILES_REGEX
+from pathvalidate import sanitize_filename
 import os
 
-sanitize = lambda text: text.replace('/', '-')
+sanitize = lambda text: sanitize_filename(text)
 
 def cprint(*args, log=LOG, **kwargs):
     """
@@ -38,6 +40,13 @@ def write(text, filename='test.html', overwrite=False):
         soup = BeautifulSoup(text, 'html.parser')
         f.write(soup.prettify())
 
+def writeJson(jsonDict, filename='test.json'):
+    """
+    dumps json to a file.
+    json is a dict
+    """
+    with open(filename, 'w') as f:
+        json.dump(jsonDict, f, indent=4)
 
 def writeCoursesToCSV(canvas):
     """

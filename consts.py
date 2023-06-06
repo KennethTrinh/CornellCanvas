@@ -6,6 +6,8 @@ HEADERS = {
     'Authorization': f'Bearer {API_KEY}'
 }
 
+ED_URL = 'https://us.edstem.org'
+MAX_PAGES = 100
 LOG = False
 FILES_REGEX = r"canvas\.cornell\.edu/courses/\d+/files/(\d+)"
 USERNAME = os.environ['USERNAME']

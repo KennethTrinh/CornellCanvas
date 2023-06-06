@@ -10,33 +10,6 @@ from canvasapi import Canvas
 from consts import API_KEY, API_URL
 from canvasDuoEdLogin import canvasDuoLogin
 
-def scrapeHTML(course):
-    """
-    TODO: adapt this for courses such as homepage, quizzes... etc, where 
-    html is not directly accessisble through the API.  Thus, this function
-    will have to take in the request session outputted by the login function.
-    """
-    #Home page
-    r = requests.get('https://canvas.cornell.edu/courses/1402')
-    soup = BeautifulSoup(r.text, 'html.parser')
-    # get all script tags
-    scripts = soup.find_all('script')
-    # get the script with ENV = in it
-    script = [s for s in scripts if 'ENV = {' in str(s)][0]
-    # get everything after ENV = and before the BRANDABLE_CSS_HANDLEBARS_INDEX
-    text = script.string.split('ENV = ')[1].split('BRANDABLE_CSS_HANDLEBARS_INDEX')[0]
-    # remove the trailing semicolon
-    text = text[:text.rfind(';')]
-    text = json.loads(text)
-    # print(json.dumps(text, indent=4, sort_keys=True))
-    soup = BeautifulSoup(text['WIKI_PAGE']['body'], 'html.parser')
-    # get all a tags with data-api-endpoint=
-    links = soup.find_all('a', {'data-api-endpoint': True})
-    links = [l for l in links if 'files' in l['data-api-endpoint']]
-    # download all files
-    id = links[0]['data-api-endpoint'].split('/')[-1]
-    file = course.get_file(id)
-    file.download(sanitize(file.display_name))
 
 def scrapeQuiz(course, folder, quizzes_downloaded, session, quiz_id):
     """
@@ -96,6 +69,9 @@ def scrapeAssignmentQuizzes(course, folder, quizzes_downloaded, session):
             scrapeAssignmentQuiz(course, folder, quizzes_downloaded, session, assignment)
 
 def scrapeQuizzesForCourse(canvas, course_id):
+    """
+    TODO: take folder out of here and make param
+    """
     quizzes_downloaded = set()
     course = getCourse(canvas, course_id)
     course_name = sanitize(course.name) if hasattr(course, 'name') else f'MISC_{course.id}'

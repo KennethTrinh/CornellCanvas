@@ -1,16 +1,13 @@
 import os
 import requests
-import json
 import pandas as pd
-import csv
 
-from bs4 import BeautifulSoup
 from canvasapi import Canvas
 from canvasapi.exceptions import ResourceDoesNotExist, Forbidden
 from utils import (sanitize, cprint, extract_files, 
                    write, ThrowsLambdaError, 
                    getModules, getAssignments, getCourse,
-                   getFiles, getPages, getQuizzes, getDiscussionTopics, getReplies)
+                   getFiles, getPages, getDiscussionTopics, getReplies)
 
 from consts import API_KEY, API_URL, HEADERS
 
