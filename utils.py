@@ -25,16 +25,15 @@ def extract_files(text):
     groups = set(text_search)
     return groups
 
-def write(text, filename='test.html'):
+def write(text, filename='test.html', overwrite=False):
     """
     Write the text to a file.
     """
     if not text:
         return
     indexOfDot = filename.rfind('.')
-    while os.path.exists(filename):
+    while os.path.exists(filename) and not overwrite:
         filename = filename[:indexOfDot] + '_' + filename[indexOfDot:]
-
     with open(filename, 'w') as f:
         soup = BeautifulSoup(text, 'html.parser')
         f.write(soup.prettify())

@@ -3,18 +3,17 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
-from canvasDuoLogin import login
 from utils import (sanitize, cprint, extract_files, 
-                   ThrowsLambdaError, getModules, getAssignments, getQuizzes)
+                   write, ThrowsLambdaError, getCourse, 
+                   getModules, getAssignments, getQuizzes)
 from canvasapi import Canvas
-
-API_KEY = os.environ['CANVAS_TOKEN']
-API_URL = 'https://canvas.cornell.edu'
+from consts import API_KEY, API_URL
+from canvasDuoEdLogin import canvasDuoLogin
 
 def scrapeHTML(course):
     """
     TODO: adapt this for courses such as homepage, quizzes... etc, where 
-    html is not directly accessible through the API.  Thus, this function
+    html is not directly accessisble through the API.  Thus, this function
     will have to take in the request session outputted by the login function.
     """
     #Home page
@@ -39,37 +38,75 @@ def scrapeHTML(course):
     file = course.get_file(id)
     file.download(sanitize(file.display_name))
 
-def scrapeQuiz(course, folder, files_downloaded, quiz_id):
+def scrapeQuiz(course, folder, quizzes_downloaded, session, quiz_id):
     """
-    Appends the folder path and quiz.html_url to a csv file in misc/quizzes.csv
-    We can only see quizzes for ones that we've taken before.
-    Further, the api does not allow us to download the quiz itself, so we
-    must login to canvas and download the quiz.html_url
-    We will handle this later using canvasDuoLogin
+    We get the html by using a session with the correct cookies, since the
+    html is not directly accessible through the API.
+    Thus, quiz.html_url has a url like: 
+    https://canvas.cornell.edu/courses/<course-id>/quizzes/<quiz-id>
     """
+    if quiz_id in quizzes_downloaded:
+        print('Quiz {quiz_id} already downloaded')
+        return
+    os.makedirs(folder, exist_ok=True)
     quiz = course.get_quiz(quiz_id)
-    cprint(f'Preparing Quiz: {quiz.title}')
-    os.makedirs('misc', exist_ok=True)
-    with open('misc/quizzes.csv', 'a') as f:
-        if os.stat('misc/quizzes.csv').st_size == 0:
-            writer = csv.writer(f)
-            writer.writerow(['folder', 'url'])
-        writer = csv.writer(f)
-        writer.writerow([os.path.join(folder, sanitize(quiz.title)), quiz.html_url])
+    r = session.get(quiz.html_url)
+    write(r.text, os.path.join(folder, sanitize(quiz.title)) + '.html')
+    quizzes_downloaded.add(quiz_id)
 
-def scrapeQuizzes(course, folder, files_downloaded):
+def scrapeQuizzes(course, folder, quizzes_downloaded, session):
     quizzes = getQuizzes(course)
     if not quizzes:
         return
     folder = os.path.join(folder, 'Quizzes')
     for quiz in quizzes:
-        scrapeQuiz(course, folder, files_downloaded, quiz.id)
+        scrapeQuiz(course, folder, quizzes_downloaded, session, quiz.id)
+
+def scrapeModuleQuiz(course, folder, quizzes_downloaded, session, module):
+    """
+    Course/Module ID will always exist
+    """
+    module_name = sanitize(module.name) if hasattr(module, 'name') else f'MISC_{module.id}'
+    folder = os.path.join(folder, module_name)
+    for item in module.get_module_items():
+        if item.type == 'Quiz':
+            print('Module Quiz: ', item.title)
+            scrapeQuiz(course, folder, quizzes_downloaded, session, item.content_id)
+
+def scrapeModuleQuizzes(course, folder, quizzes_downloaded, session):
+    modules = getModules(course)
+    folder = os.path.join(folder, 'Modules')
+    for module in modules:
+        scrapeModuleQuiz(course, folder, quizzes_downloaded, session, module)
+
+def scrapeAssignmentQuiz(course, folder, quizzes_downloaded, session, assignment):
+    """
+    Modules may only have the assignment id, not the class instance of the assignment,
+    hence we pass in assignment_id instead of assignment
+    """
+    folder = os.path.join(folder, sanitize(assignment.name))
+    scrapeQuiz(course, folder, quizzes_downloaded, session, assignment.quiz_id)
+
+def scrapeAssignmentQuizzes(course, folder, quizzes_downloaded, session):
+    assignments = getAssignments(course)
+    folder = os.path.join(folder, 'Assignments')
+    for assignment in assignments:
+        if assignment.is_quiz_assignment:
+            print('Assignment Quiz: ', assignment.name)
+            scrapeAssignmentQuiz(course, folder, quizzes_downloaded, session, assignment)
+
+def scrapeQuizzesForCourse(canvas, course_id):
+    quizzes_downloaded = set()
+    course = getCourse(canvas, course_id)
+    course_name = sanitize(course.name) if hasattr(course, 'name') else f'MISC_{course.id}'
+    folder = os.path.join('data', course_name)
+    session = canvasDuoLogin()
+    scrapeQuizzes(course, folder, quizzes_downloaded, session)
+    scrapeModuleQuizzes(course, folder, quizzes_downloaded, session)
+    scrapeAssignmentQuizzes(course, folder, quizzes_downloaded, session)
+
 
 
 canvas  = Canvas(API_URL, API_KEY)
 courses = list(canvas.get_courses()) # --> lists all courses you've taken
-
-# >>> a.is_quiz_assignment
-# True
-# >>> a.quiz_id
-# 47945
+scrapeQuizzesForCourse(canvas, 24870)

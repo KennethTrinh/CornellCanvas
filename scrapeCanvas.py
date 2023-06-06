@@ -53,33 +53,6 @@ def scrapeExternalUrl(folder, item):
     with open(os.path.join(folder, sanitize(item.title) + '.txt'), 'w') as f:
         f.write(item.external_url)
     
-
-def scrapeQuiz(course, folder, files_downloaded, quiz_id):
-    """
-    Appends the folder path and quiz.html_url to a csv file in misc/quizzes.csv
-    We can only see quizzes for ones that we've taken before.
-    Further, the api does not allow us to download the quiz itself, so we
-    must login to canvas and download the quiz.html_url
-    We will handle this later using canvasDuoLogin
-    """
-    quiz = course.get_quiz(quiz_id)
-    cprint(f'Preparing Quiz: {quiz.title}')
-    os.makedirs('misc', exist_ok=True)
-    with open('misc/quizzes.csv', 'a') as f:
-        if os.stat('misc/quizzes.csv').st_size == 0:
-            writer = csv.writer(f)
-            writer.writerow(['folder', 'url'])
-        writer = csv.writer(f)
-        writer.writerow([os.path.join(folder, sanitize(quiz.title)), quiz.html_url])
-
-def scrapeQuizzes(course, folder, files_downloaded):
-    quizzes = getQuizzes(course)
-    if not quizzes:
-        return
-    folder = os.path.join(folder, 'Quizzes')
-    for quiz in quizzes:
-        scrapeQuiz(course, folder, files_downloaded, quiz.id)
-
 def scrapeModule(course, folder, files_downloaded, module):
     """
     Course/Module ID will always exist
@@ -99,7 +72,6 @@ def scrapeModule(course, folder, files_downloaded, module):
         elif item.type == 'ExternalUrl':
             scrapeExternalUrl(folder, item)
         elif item.type == 'Quiz':
-            # scrapeQuiz(course, folder, files_downloaded, item.content_id)
             cprint(f'Quiz: {item.title}')
         elif item.type == 'SubHeader':
             cprint(f'SubHeader: {item.title}')

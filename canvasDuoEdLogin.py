@@ -1,20 +1,16 @@
 from bs4 import BeautifulSoup
 import requests
 import os
+from utils import write
+from consts import USERNAME, PASSWORD
 
 # -.css -.js -.woff2 -.ico -font -logo -.svg -.png -.jpg -.gif -analytics? -collect? -googleads
-def write(text, filename='test.html'):
-    """
-    For debugging purposes, write the text to a file
-    """
-    with open(filename, 'w') as f:
-        soup = BeautifulSoup(text, 'html.parser')
-        f.write(soup.prettify())
 
-def login():
+def canvasDuoLogin():
     """
+    Calls Duo API
     After calling this function, press two factor on phone - have to be quick!
-    See Requests.png for a visual of the requests made.
+    See misc/CanvasRequests.png for a visual of the requests made.
 
     Request 1 - Request the ultimate final URL where I wish to grab data and begin my automation. 
     Request 2 - The session handles a redirection to an IDP SAML based url and is expecting my username and password. 
@@ -33,8 +29,8 @@ def login():
     r1 = s.get(url1)
     # r1.url ==  https://shibidp.cit.cornell.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s1
     url2 = r1.url 
-    cred = {'j_username': os.environ['USERNAME'],
-            'j_password': os.environ['PASSWORD'],
+    cred = {'j_username': USERNAME,
+            'j_password': PASSWORD,
             '_eventId_proceed' : 'Login'}
     # r2.url == https://shibidp.cit.cornell.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s2
     r2 = s.post(url2, data = cred)
@@ -61,7 +57,42 @@ def login():
     print('Login Successful', r8.url) 
     return s
 
+
+def EdLogin():
+    """
+    Does not call duo api.
+    See misc/EdRequests.png for the requests made.
+    """
+    s = requests.Session()
+    s.headers.update({'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36'})
+    r1 = s.post('https://us.edstem.org/api/login_type', data={
+        'login': f'{USERNAME}@cornell.edu',
+        'redirect': '/us/courses/7377/discussion/960600'
+    })
+    r2 = s.get(r1.json()['url'])
+    cred = {'j_username': USERNAME,
+            'j_password': PASSWORD,
+            '_eventId_proceed' : 'Login'}
+    r3 = s.post(r2.url, data = cred)
+    soup = BeautifulSoup(r3.text, 'html.parser')
+    action = soup.find('form', {'method': 'post'})['action']
+    RelayState = soup.find('input', {'name': 'RelayState'})['value']
+    SAMLResponse = soup.find('input', {'name': 'SAMLResponse'})['value']
+    r4 = s.post(action, data = {'RelayState': RelayState, 'SAMLResponse': SAMLResponse})
+    logintoken = r4.url.split('logintoken=')[1]
+    r5 = s.post('https://us.edstem.org/api/login_token', json = {'login_token': logintoken})
+    xtoken = r5.json()['token']
+    print('Login Successful', xtoken)
+    return s, xtoken
+
 if __name__ == '__main__':
-    s = login()
+    # test canvas login
+    s = canvasDuoLogin()
     r = s.get('https://canvas.cornell.edu/courses/24870/quizzes/47980')
-    write(r.text, 'test.html')
+    write(r.text, overwrite=True)
+
+    # # test edstem login
+    # s, xtoken = EdLogin()
+    # r = s.get('https://us.edstem.org/api/threads/960600', headers = {'x-token': xtoken}, params = {'view': 1})
+    # r = s.get('https://us.edstem.org/api/courses/7377/threads', headers = {'x-token': xtoken}, params = {'limit': 30, 'sort': 'new'})
+    # write(r.text, overwrite=True)
