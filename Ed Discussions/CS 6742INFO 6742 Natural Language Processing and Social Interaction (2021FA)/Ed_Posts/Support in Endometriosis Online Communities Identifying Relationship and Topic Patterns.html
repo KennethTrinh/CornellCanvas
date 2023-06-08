@@ -1,0 +1,624 @@
+<h1>
+ Title: Support in Endometriosis Online Communities: Identifying Relationship and Topic Patterns
+</h1>
+<h3>
+ Author: Fede Bologna (she/her) (student)
+</h3>
+<h3>
+ Date: 2021-10-20T09:33:09.376542+11:00
+</h3>
+<h3>
+ Category: Project_proposals (A2)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  <bold>
+   Overview
+  </bold>
+ </paragraph>
+ <paragraph>
+  Our project will study online support communities for people with endometriosis and how members of the online community discuss their personal relationships. We will consider how the experience of living with endometriosis is intertwined with interpersonal relationships and the support provided, or not provided, through these relationships. Specifically, we will highlight what role the support community serves in the members’ lives by framing it as another relationship. Our project will highlight the many types of support a person with endometriosis might seek, and how the online support community provides support through shared experiences and affirmation.
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  We will focus on six main entities/roles in relation to a member: (1) family, (2) friends, (3) partners, (4) doctors, (5) therapists, and (6) the endometriosis online support community. We expect that people who post to the endometriosis community will discuss similar subjects in relation to each entity.
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  Hypotheses:
+ </paragraph>
+ <list style="unordered">
+  <list-item>
+   <paragraph>
+    H1: Mentions of different roles external to the online community (e.g. friends, family, doctors) will emphasize types of support that they do not receive.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    H2: Mentions of the online community will emphasize support received through shared experiences.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    H3: Over time, when discussing personal relationships external to the support community, members will discuss disbelief or underappreciation of endometriosis symptoms and pain less often.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    H4: Comparing how a person frames the support from personal relationships to support from the endometriosis community will highlight that a person posts to this community to find shared experiences and affirmation.
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  <bold>
+   Data
+  </bold>
+ </paragraph>
+ <paragraph>
+  Online endometriosis support communities exist on many platforms in many forms. We decided to focus on Reddit because its communities are well-studied and its data is easily accessible. We collect 20,464 posts from the subreddit r/Endo and 10,786 posts from the subreddit r/endometriosis. These were published from January 23rd 2012 to September 30th 2021, and from November 23rd 2014 to September 30th 2021, respectively. After having close-read hundreds of posts, examined a few general statistics of the subreddits and compared their community-specific languages using FightingWords results, we decide to merge the two subreddits given that the two communities share substantial similarities.
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  r/Endo               r/endometriosis
+ </paragraph>
+ <paragraph>
+  Total number of posts                                       20473               10790
+ </paragraph>
+ <paragraph>
+  Median number of tokens per post                135                    132
+ </paragraph>
+ <paragraph>
+  Number of unique tokens                                 38449               26937
+ </paragraph>
+ <paragraph>
+  Median number of comments per post          5                        5
+ </paragraph>
+ <paragraph>
+  Unique authors per subreddit                          9074                  6475
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  <bold>
+   Language Features + Methods
+  </bold>
+ </paragraph>
+ <paragraph>
+  To study relationships and topics in our dataset, we will focus on semantic features. We will begin by creating a dictionary for each of our six entities (doctors, friends, families, partners, therapists, and the reddit community) based on our close reading of r/endo and r/endometriosis posts. Separately, we will also perform topic modeling on the dataset to identify subjects that are often discussed on r/endo and r/endometriosis (combined). The resulting topic model will guide the development of new categories for us to hand label (labels TBD based on topic modeling, but e.g. diagnosis, pain, or shared experiences). At this point, we will train a classifier on this hand-labeled data to find the identified topics in the rest of the dataset.
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  After this point, our analysis will find which subjects are often discussed when someone mentions each of our dictionary-based relationships. We will also consider the structural patterns of a post that discusses personal relationships, as well as how our results change over time. Finally, we will consider responses to a post that discusses personal relationships, to find instances of affirmation and responses to the discussion of personal relationships.
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  <bold>
+   Feasibility Test
+  </bold>
+ </paragraph>
+ <paragraph>
+  To check the feasibility of the project, we employed close reading techniques and FightingWord, and plan to perform topic modeling at the level of the sentence.
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  We close-read posts from the beginning, middle and end of both subreddits’ post distributions. We found that users discuss a variety of topics related to endometriosis - e.g. diagnosis, pain, treatment, care providers -, and frequently talk about the six different entities/roles mentioned above. These preliminary observations are in support of our project’s aim and focus. Moreover, by close-reading the two subreddits and performing FightingWords, we found that r/Endo and r/endometriosis share consistent and relevant similarities, confirming the possibility of combining both subreddits into a single dataset.
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  As previously mentioned, we plan to perform topic modeling on the dataset at the level of the sentence to support the identification of topics in the posts and better inform the development of categories to hand label in the dataset. During this step, we will assess that the topic modeling results are reasonable and that there is enough variation at the sentence level to support our project’s focus.
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  <bold>
+   Team Members
+  </bold>
+  <break>
+  </break>
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    Federica Bologna
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Rosamond Thalken
+    <break>
+    </break>
+    <break>
+    </break>
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  <bold>
+   Acknowledgments
+  </bold>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  Collaborators:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    David Mimno
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Matthew Wilkens
+    <break>
+    </break>
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  Code:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    Maria Antoniak’s reddit scraper;
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    code adapted from Matthew Wilkens for LDA topic modeling task;
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    code adapted from Jack Hessel’s rendition of Monroe et al.’s fightin’ words method;
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Xanda Shofield’s visualizer.
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  <bold>
+   Sources
+  </bold>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  Zhenhui Peng, Xiaojuan Ma, Diyi Yang, Ka Wing Tsang, and Qingyu Guo. 2021. Effects of Support-Seekers’ Community Knowledge on Their Expressed Satisfaction with the Received Comments in Mental Health Communities. Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems. Association for Computing Machinery, New York, NY, USA, Article 536, 1–12. DOI:
+  <link href="https://doi.org/10.1145/3411764.3445446"/>
+  https://doi.org/10.1145/3411764.3445446
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  De Choudhury, M. and De, S. 2014. Mental Health Discourse on reddit: Self-Disclosure, Social Support, and Anonymity. Proceedings of the International AAAI Conference on Web and Social Media. 8, 1 (May 2014), 71-80.
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  Maria Antoniak, David Mimno, and Karen Levy. 2019. Narrative Paths and Negotiation of Power in Birth Stories. Proc. ACM Hum.-Comput. Interact. 3, CSCW, Article 88 (November 2019), 27 pages.
+  <link href="https://doi.org/10.1145/3359190"/>
+  https://doi.org/10.1145/3359190
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  Diyi Yang, Robert E. Kraut, Tenbroeck Smith, Elijah Mayfield, and Dan Jurafsky. 2019. Seekers, Providers, Welcomers, and Storytellers: Modeling Social Roles in Online Health Communities. In Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems (CHI '19). Association for Computing Machinery, New York, NY, USA, Paper 344, 1–14. DOI:
+  <link href="https://doi.org/10.1145/3290605.3300574"/>
+  https://doi.org/10.1145/3290605.3300574
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Roz Thalken (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  <bold>
+   Feasibility check:
+  </bold>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  For our feasibility-check, we aimed to find evidence in our dataset that:
+ </paragraph>
+ <list style="ordered">
+  <list-item>
+   <paragraph>
+    Posts in endometriosis online communities mention the six roles mentioned in our proposal (e.g. (1) family, (2) friends, (3) partners, (4) doctors, (5) therapists, and (6) the endometriosis online support community
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Posts from r/Endo and r/endometriosis are consistently similar and thus can be merged into a single dataset
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Sentences in posts show variation in topic and what topics emerge using unsupervised methods, in this case LDA topic modeling.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Humans can label sentences in the dataset using the topics identified in the previous step
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  To do so, we employed close-reading, FightingWords, topic-modeling and hand-labeling.
+ </paragraph>
+ <paragraph>
+  First, we close-read posts, finding evidence that posts in the two subreddits often mention the six entities we defined for this project and confirming point (1). Here are some paraphrased examples:
+ </paragraph>
+ <paragraph>
+  <italic>
+   My mom ignores me when I try to speak to her about this, and my sister just says I shouldn’t worry or stress and that I should get over it. I just need someone to LISTEN. (r/Endo 2014)
+  </italic>
+ </paragraph>
+ <paragraph>
+  <italic>
+   I feel terribly alone in this. I’ve been telling all my friends, family, and husband that I'm fine, that I'll still be able to have kids and how relieved I am to finally have an explanation from my pain… (r/endometriosis 2015)
+  </italic>
+ </paragraph>
+ <paragraph>
+  <italic>
+   After years and years of disbelief, I’ve finally found an OBGYN who listens to me and thinks that I have endometriosis (r/Endo 2019)
+  </italic>
+ </paragraph>
+ <paragraph>
+  <italic>
+   Now my fertility will always be in question, not that I want to have children. Still, I’m struggling with understanding what it means to be a woman who can’t perform a basic biological function. But that's a can of worms for my therapist, not Reddit. (r/endometriosis 2020)
+  </italic>
+ </paragraph>
+ <paragraph>
+  <italic>
+   And then I have my friends saying bullshit like “if your dr hadn’t of told you you wouldn’t know so stop worrying about it so much” and I went off about how I can’t help but being in pain. (r/Endo 2021)
+  </italic>
+ </paragraph>
+ <paragraph>
+  We then used FightingWord to investigate similarities and differences between the vocabularies of the two subreddits. As represented in the image below, the two communities share a great part of their vocabulary, as there is little variation in the distribution of values on the y-axis. The words that vary most between the communities (e.g. endometriosis or lap) do not relate directly to our project’s research questions and hypotheses.
+ </paragraph>
+ <file filename="fightin_words.pdf" url="https://static.us.edusercontent.com/files/AoUWggt6dqb7frRpgnCFKLaC">
+ </file>
+ <paragraph>
+  The similarity in their vocabularies also emerges when performing FightingWords with each subreddit against
+  <italic>
+   r/PCOS
+  </italic>
+  , a community about polycystic ovarian syndrome, another chronic female genital condition. The top terms are more or less the same in both subreddits. This supports the decision to merge posts from the two subreddits into a dataset.
+ </paragraph>
+ <figure>
+  <image height="272" src="https://static.us.edusercontent.com/files/ymMWO2elOqR1y4H4SFQAbDFC" width="230"/>
+ </figure>
+ <paragraph>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  Moreover, we performed LDA topic modeling on the combined dataset at the level of the sentence using
+  <italic>
+   tomotopy
+  </italic>
+  . We split posts into sentences, removed stopwords and punctuation, tokenized and lemmatized the posts using
+  <italic>
+   spacy
+  </italic>
+  and Ted Underwood’s
+  <link href="https://www.ideals.illinois.edu/handle/2142/45709"/>
+  <underline>
+   stopwords’ list
+  </underline>
+  . We ran several LDA models using the following parameters: n_topics=5, 7, 10, 15, 20; n_removed_frequent_words=5, 10, 15, 20; n_iterations=10. To determine whether the results were accurate and which model was the best suited for our project, we manually checked that the dominant topic assigned by the model was aligned with the content of the sentences. We decided that the model at n_components=10 and n_removed_frequent_words provided the best results, as its topics were the most internally coherent. We further investigated the topics in this model by close-reading the top 10 sentences for each topic. We found a good level of variation in topic between sentences:
+ </paragraph>
+ <paragraph>
+  <bold>
+   <italic>
+    Topic 0: medical tests
+   </italic>
+  </bold>
+ </paragraph>
+ <paragraph>
+  <italic>
+   ultrasound say test cyst tell blood see normal back show
+  </italic>
+ </paragraph>
+ <paragraph>
+  <bold>
+   <italic>
+    Topic 1: medical appointments
+   </italic>
+  </bold>
+ </paragraph>
+ <paragraph>
+  <italic>
+   surgery see lap appointment diagnose week first endometriosis month specialist
+  </italic>
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    <italic>
+     ​​I had scheduled a follow up call with my OBGYN a few weeks after the MRI to discuss results and next steps (I was basically told that surgery would be the next step).
+    </italic>
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  <bold>
+   <italic>
+    Topic 2: being dismissed or disbelieved
+   </italic>
+  </bold>
+ </paragraph>
+ <paragraph>
+  <italic>
+   make think really bad something much tell thing want even
+  </italic>
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    <italic>
+     I’m sure we all experience this, that other people think we’re exaggerating or lying and they constantly question us
+    </italic>
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  <bold>
+   <italic>
+    Topic 3: desire to share experiences with the community
+   </italic>
+  </bold>
+ </paragraph>
+ <paragraph>
+  <italic>
+   experience want help other find really people advice ask read
+  </italic>
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    <italic>
+     I’m sure we all experience this, that other people think we’re exaggerating or lying and they constantly question us
+    </italic>
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  <bold>
+   <italic>
+    Topic 4: hormonal treatments
+   </italic>
+  </bold>
+ </paragraph>
+ <paragraph>
+  <italic>
+   control birth pill try month help stop start put effect
+  </italic>
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    <italic>
+     Everytime I start a new type of birth control I end up bleeding and having to stop it, I’ve been on the depot shot, the implant and the arm implant.
+    </italic>
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  <bold>
+   <italic>
+    Topic 5: menstrual pain
+   </italic>
+  </bold>
+ </paragraph>
+ <paragraph>
+  <italic>
+   month week last start bad time since 2 first cramp
+  </italic>
+ </paragraph>
+ <paragraph>
+  <bold>
+   <italic>
+    Topic 6: inability to work or study because of the condition
+   </italic>
+  </bold>
+ </paragraph>
+ <paragraph>
+  <italic>
+   work time even hour make bed bad pad try much
+  </italic>
+ </paragraph>
+ <paragraph>
+  <bold>
+   <italic>
+    Topic 7: specifics of the condition
+   </italic>
+  </bold>
+ </paragraph>
+ <paragraph>
+  <italic>
+   ovary remove cyst find surgery uterus endometriosis right say left
+  </italic>
+ </paragraph>
+ <paragraph>
+  <bold>
+   <italic>
+    Topic 8: pain and symptoms
+   </italic>
+  </bold>
+ </paragraph>
+ <paragraph>
+  <italic>
+   back low bad cramp side right pelvic during painful symptom
+  </italic>
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    <italic>
+     During this time, I noticed the pain in my back was not only getting worse, but that it seemed to linger around even when I didn’t have my period.
+    </italic>
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  <italic>
+   <bold>
+    Topic 9: financial problems and conceiving
+   </bold>
+  </italic>
+ </paragraph>
+ <paragraph>
+  <italic>
+   want try work life time surgery health really make even
+  </italic>
+ </paragraph>
+ <paragraph>
+  We used the obtained topics to develop categories for hand-labeling the data. Specifically, we distinguished five different categories: being dismissed/disbelieved, endometriosis treatment, desire to share, pain, and medical tests/appointments.
+ </paragraph>
+ <paragraph>
+  We then tested how well these labels fit posts from the endometriosis subreddits by hand-labeling 100 sentences for each category, and tracking sentences that didn’t seem to match any of the existing categorical labels. Our main finding from hand-labeling was that we need to add more labels, clarify what each does and does not cover, or divide some of the labels into multiple sub-categories. Some of our notes about missing labels include the following:
+ </paragraph>
+ <list style="unordered">
+  <list-item>
+   <paragraph>
+    Many posts begin by describing the OPs history with endometriosis; this is important context for their post, but not the primary reason for the post. We might consider a
+    <bold>
+     health history
+    </bold>
+    label.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Our
+    <bold>
+     pain
+    </bold>
+    label needs to be clarified and possibly expanded. We need to discuss whether “pain” also includes non-physical, emotional and mental pain. Similarly, many posts describe unpleasant symptoms that aren’t necessarily “pain.” We also should determine whether there is something specific about “pain” that requires it be differentiated from other unpleasant symptoms, in relation to our research question.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Many posts discuss either declining or improving symptoms. It might be worth finding a label for
+    <bold>
+     progress
+    </bold>
+    and
+    <bold>
+     decline
+    </bold>
+    .
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    There were a number of sentences that either intentionally provided or asked for advice. These labels (
+    <bold>
+     advice-seeking
+    </bold>
+    and
+    <bold>
+     advice-giving
+    </bold>
+    ) could be counterparts to each other, and slightly, but meaningfully, differentiated from the
+    <bold>
+     desire to share experiences
+    </bold>
+    label.
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  Ultimately, the above critiques about our existing categories came from only labeling 100 sentences. The number of issues with our current labels suggests that we still have a lot of work to do to refine our labels--but this will take time and is feasible. Coming up with a clear set of labels is also most feasible if we define what types of labels are most important to our research questions. Coming up with comprehensive labels is infeasible, so we need to strategically and thoughtfully decide on a small set of labels.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Roz Thalken (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Feasibility check appointment:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    It's worth looking for a classifier for some of these concepts, like pain or disbelief. May look into the Workshop of Clinical Psychology and NLP. We could also use the negative polarity concept from Danescu-Niculescu-Mizil et al.'s
+    <link href="https://www.cs.cornell.edu/home/llee/papers/deops.pdf"/>
+    "Without a Doubt"? paper to identify disbelief.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    We should label the entire post, rather than sentence by sentence. This will make labeling easier and also add context that might be missed with labeling only a sentence.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    We should label relationships instead of creating a dictionary. Then a classifier can make these predictions and we're less at risk of having the dictionary miss certain items.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    When labeling, we will split the task so that one person labels relationships and the other does topic/intent labeling. We discussed this after the meeting, and decided to do a first round of labeling where one person does relationships and the other topics (disbelief and symptoms); then both people will label "intent" since it's a fuzzier label, making it more important to have inter-rater reliability scores.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    On our question about content warnings: when presenting to the class we will omit any graphic examples; instead, we will explain what the example would have shown (and the class will have to take our word for it or follow up about it).
+   </paragraph>
+  </list-item>
+ </list>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

@@ -1,0 +1,94 @@
+<h1>
+ Title: Downloading Code Correctly
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-12T04:31:50.15918+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Where can I find the "directions to import the release code to your Eclipse workspace" that are referenced in post #190? I don't see it in assignment instructions and am having the same problem
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Zack Hatzis (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was working on this for awhile and I think I figured it out, or at least something that works. No idea where the directions referenced in #190 are.
+ </paragraph>
+ <list style="number">
+  <list-item>
+   <paragraph>
+    Extract the A2Skeleton.zip file into a file called a2. You can extract it into your eclipse workspace file, wherever that is. It contains A2.java and A2Test.java.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    In Eclipse, go to your Package Explorer pane and right click to create a new project. Name it a2, and keep "Use default location" checked IF you put the a2 file into your eclipse workspace (otherwise, uncheck it and browse to where you put a2). Click Finish, and java will make a project using the A2 and A2Test files.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Right click on the project file in your Package Explorer. Go to Properties &gt; Java Build Path &gt; Libraries. Click on
+    <underline>
+     Classpath,
+    </underline>
+    then do Add Library and add JUnit 5 to the Classpath. Click Apply and Close.
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  That should make it so you're able to test. Hope this helps.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Reid Fleishman (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  so, in the end, each file for A2 should have on the first line "package a2" right?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Savannah Jeffries (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  super helpful, thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

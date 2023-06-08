@@ -1,0 +1,62 @@
+<h1>
+ Title: Autohelper feedback
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-09T09:37:41.984239+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What does it mean when Autohelper says that there's an initializationError: java.security.AccessControlException: access denied ("java.lang.RuntimePermission""accessDeclaredMembers") for my ElephantTest.java?
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This can happen if you try to use the old JUnit 4
+  <code>
+   Test
+  </code>
+  annotation instead of the current JUnit 5 ("Jupiter")
+  <code>
+   Test
+  </code>
+  annotation.  Did you follow the directions exactly when creating your
+  <code>
+   ElephantTest
+  </code>
+  class?  Try following them again and compare the resulting
+  <code>
+   import
+  </code>
+  statements to what you currently have.
+ </paragraph>
+ <paragraph>
+  At a lower level, the error is telling you that, when we try to run your
+  <code>
+   ElephantTest
+  </code>
+  , your code tries to use Java's "reflection" features to query all of an object's members (both public and private).  But we run your code in a "sandbox" (implemented using Java's SecurityManager), and such behavior is disallowed.  Since you presumably aren't trying to use reflection yourself, this must be coming from the JUnit infrastructure.  We allow this for JUnit5 classes, so if access is being denied, you must be using something other than JUnit5.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

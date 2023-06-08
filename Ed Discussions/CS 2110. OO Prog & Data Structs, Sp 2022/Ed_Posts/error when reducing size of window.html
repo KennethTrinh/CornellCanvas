@@ -1,0 +1,55 @@
+<h1>
+ Title: error when reducing size of window
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-13T13:25:38.148183+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, I noticed that sometimes, but not always, I get an error when I reduce the size of the window. Here is the error:
+ </paragraph>
+ <paragraph>
+  Exception in thread "AWT-EventQueue-0" java.lang.IllegalArgumentException: bound must be positive at java.base/java.util.Random.nextInt(Random.java:322) at GameComponent$Target.respawn(GameComponent.java:263) at GameComponent.timeout(GameComponent.java:87) at GameComponent.lambda$0(GameComponent.java:45) at java.desktop/javax.swing.Timer.fireActionPerformed(Timer.java:311) at java.desktop/javax.swing.Timer$DoPostEvent.run(Timer.java:243) at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:771) at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:722) at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:716) at java.base/java.security.AccessController.doPrivileged(AccessController.java:399) at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86) at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:741) at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+ </paragraph>
+ <paragraph>
+  It looks like the error has to do with the respawn parameters. The ball also cuts in half when I make the window smaller.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Clarkson (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  1. Exceptions:  Note how the specification of
+  <code>
+   respawn
+  </code>
+  <bold>
+   implicitly
+  </bold>
+  requires the parameters to be at least zero. It really should be reworded to be explicit about that. At which point technically in TODO 5 we should be checking that precondition, thus avoiding the crash.  We're not going to grade whether you did that, though.
+ </paragraph>
+ <paragraph>
+  2. Cut in half:  Yeah, that's a known issue.  To fix it we'd have to extend the assignment to have you write code that handles resizing of the window.  You're welcome to try that on your own, but it's not necessary.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

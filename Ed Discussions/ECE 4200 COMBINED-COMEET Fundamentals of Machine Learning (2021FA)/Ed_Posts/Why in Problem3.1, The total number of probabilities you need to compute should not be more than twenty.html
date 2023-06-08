@@ -1,0 +1,63 @@
+<h1>
+ Title: Why in Problem3.1, The total number of probabilities you need to compute should not be more than twenty?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-15T13:46:37.289268+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If we have P(sunny|yes), P(sunny|no),....P(hot|yes),P(hot|no),...P(weak|yes),P(weak|no)
+ </paragraph>
+ <paragraph>
+  The total # probabilities we need to calculate is 20
+ </paragraph>
+ <paragraph>
+  10(sunny, overcast,rain,cold,mild,hot,high,normal,weak,strong)*2=20
+ </paragraph>
+ <paragraph>
+  Why only twelve?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Jayadev Acharya (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  You are correct and the question is also correct.
+ </paragraph>
+ <math>
+  P(sunny|yes)+P(rainy|yes)+P(overcast|yes)=1,
+ </math>
+ <math>
+  ...
+ </math>
+ <math>
+  P(strong|no)+P(weak|no)=1
+ </math>
+ <paragraph>
+  Now with these dependencies you should compute one fewer number per attribute (4) per label (2) which gives 8 fewer computations.
+ </paragraph>
+ <paragraph>
+  Computing 12 things sounds easier than computing 20, so we put this.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

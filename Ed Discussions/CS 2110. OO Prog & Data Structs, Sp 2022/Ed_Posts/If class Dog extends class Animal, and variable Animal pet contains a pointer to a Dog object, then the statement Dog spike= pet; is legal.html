@@ -1,0 +1,43 @@
+<h1>
+ Title: If class Dog extends class Animal, and variable Animal pet contains a pointer to a Dog object, then the statement Dog spike= pet; is legal.
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-09T06:57:36.916974+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If class Dog extends class Animal, and variable Animal pet contains a pointer to a Dog object, then the statement Dog spike= pet; is legal.
+ </paragraph>
+ <paragraph>
+  Why is the statement above false?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="1.0">
+ <paragraph>
+  This is because of the compile time reference rule, search this up in java hyper text. you can’t set a child class = super class;
+  <break>
+  </break>
+  If you did Dog spike = (Dog) pet; then that’s legal however could cause a runtime error
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,74 @@
+<h1>
+ Title: HW 2.1 emission probabilites sum
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-20T06:56:08.52873+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Shouldn't the sum of all the P(x = xi| y) = 1.
+  <break>
+  </break>
+  Sum taken along a row in the emission probabilities should be 1, example given the word is 'student',  it can be of either 'V','ART' etc but their sum should equal to 1 since it has to be of one of the 4 tags.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Richard Wang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Confused about this as well.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Lin (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I thought that these were learned probabilities that could be wrong (and in this case are obviously wrong because they don't add to 1). But I'm not sure
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Oliver Leung (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  They don't sum to 1 because we are only given a subset of the possible words in the vocabulary. I.e. given that a word $w_i$ is a verb, it could also be emitted as some other word that isn't included in "Students want a break".
+ </paragraph>
+ <paragraph>
+  If we were given all of the possible words in the vocabulary, it would likely be the case that columns sum to 1. However, rows should not sum to 1, because two probabilities like $\Pr(X=Students|Y=ART)$ and $\Pr(X=Students|Y=V)$ are dependent on different conditions of $Y$, and thus aren't part of the same "situation", in a sense.
+ </paragraph>
+ <paragraph>
+  Also Richard, please don't put comments in the answer submission, as TA's will be less likely to see the question.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

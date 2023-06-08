@@ -1,0 +1,93 @@
+<h1>
+ Title: Waiting for next ready realtime process
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-21T23:45:18.948607+10:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is there a way that we can make the scheduler execute NOPs while it waits for the next ready when there are no more non-realtime processes and no ready realtime processes? Or is there a better way of waiting?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You shouldn't just schedule an arbitrary number of NOPs, you should be checking for the condition for when the process's arrival time is greater than the current time.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If we busy wait checking that condition, won't that prevent the second PIT timer interrupt from being triggered?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  That is why you must make sure your priorities are configured correctly and that interrupts are enabled before you go into your busy loop.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  When it came to the busy waiting situation, changing the interrupt priority wasn't really doing anything for me. I just ended up doing polling for when the second PIT channel hit its mark (review lab 2 for reference) and then I incremented the current time accordingly. I put that polling in the while loop that busy waits until the current time reaches the start time of the next unready realtime process. I mean since we are busy waiting already polling won't really destroy performance. I could be wrong though so please feel free to correct me TAs.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is also a valid method.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

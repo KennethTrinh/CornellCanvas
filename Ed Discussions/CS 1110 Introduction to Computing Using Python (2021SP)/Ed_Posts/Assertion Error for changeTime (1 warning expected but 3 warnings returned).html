@@ -1,0 +1,29 @@
+<h1>
+ Title: Assertion Error for changeTime (1 warning expected but 3 warnings returned)
+</h1>
+<h3>
+ Author: Elisha Wang (student)
+</h3>
+<h3>
+ Date: 2021-05-15T08:26:04.449332+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, I am confused because I checked the times of the classes in the schedule and they do overlap? Thank you!
+ </paragraph>
+ <paragraph>
+  Traceback (most recent call last): File ".\schedule_tests.py", line 298, in testfn() # Adding the parentheses calls whatever testfn is File ".\schedule_tests.py", line 257, in test_course_changetime assert roster.warnings == [time_change_warning], ☃☃☃☃☃☃
+  <break>
+  </break>
+  AssertionError: roster warnings list should be ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm'], but is ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm', 'ARCH 1120 STU 520: time change causes conflict with AEP 3560 LEC 001', 'ARCH 1120 STU 520: time change causes conflict with FAKER 0000 LEC 002']
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

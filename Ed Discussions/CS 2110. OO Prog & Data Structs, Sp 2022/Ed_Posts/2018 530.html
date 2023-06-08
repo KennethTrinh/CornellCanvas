@@ -1,0 +1,51 @@
+<h1>
+ Title: 2018 5:30
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-08T15:05:57.968526+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Question 2BE:
+ </paragraph>
+ <paragraph>
+  In the question it states that it implements the interface Comparable. How were we suppose to know that the interface was pre built and has the method CompareTo in it? If we are just suppose to memorize that, which other built in classes/interfaces should we know.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  2A5:
+ </paragraph>
+ <paragraph>
+  In this question it states that String s=new String(); s==s.substring(0) is true. Therefore, can we assume that substring does not create a new pointer? If I had the declaration String a= new String("CS2110") and String x=a.substring(2). a==x will return false and a.substring(2)==a.substring(2) will also return false. So i'm a bit confused on this question.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  1st Question) Yes you are supposed to memorize that. To know everything you need to know, refer to the study guide.
+ </paragraph>
+ <paragraph>
+  2nd Question) This is a special Java case, when you do s == s.substring(0) since strings are immutable and you are creating a String of the exact same space Java has this "smart" way to allocate memory and just uses the result of s.subtring(0) as a pointer to the same string s.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,40 @@
+<h1>
+ Title: commonAncestor( ) toArray
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-24T00:15:03.257327+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When I call CovidRouteTo( ) in CommonAncestor( ) and use .toArray( ) on the list, I wasn't able to store it in a variable of type Human. I had to declare an array of Obejct instead. But I thought CovidRouteTo( ) returns a list of Humans?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Please look at the specification of method toArray in the Java API documentation.
+ </paragraph>
+ <paragraph>
+  Then look for another overloaded method toArray() that has a parameter. That parameter is used to tell what type of value to return. Give it as argument an array of length 0.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

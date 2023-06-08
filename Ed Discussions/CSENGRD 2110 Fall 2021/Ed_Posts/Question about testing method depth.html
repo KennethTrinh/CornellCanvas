@@ -1,0 +1,78 @@
+<h1>
+ Title: Question about testing method depth
+</h1>
+<h3>
+ Author: Lucas Shaw (student)
+</h3>
+<h3>
+ Date: 2021-10-10T16:54:26.400398+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi,
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  In the notes for "testing method depth" in A5, I'm a bit confused because it talks about testing the contain method:
+ </paragraph>
+ <paragraph>
+  This is what it says:
+ </paragraph>
+ <pre>    /* TESTING METHOD DEPTH.
+     * Take a look at the tree produced by method makeTree1. We have:
+     *    personA is at depth 0
+     *    personB is at depth 1
+     *    personC is at depth 1
+     *    personD is at depth 2  and so on.
+     *
+     * Array people already contains personA, personB, personC, ..., personL
+     * What if you constructed an array
+     *
+     *    int[] depths= {0, 1, 1, 2, ...}
+     *
+     * that contained the depth of each person in array people (including those
+     * that are not in it)? You could then write a loop in method test3Contains
+     * to test ALL of those people:
+     *
+     *    for (int k= 0; k &lt; people.length; k= k+1) {
+     *        assertEquals(depths[k], a suitable call on contains, for you to do);
+     *    }
+     *
+     * This is the work that has to go on to do adequate testing
+     */</pre>
+ <paragraph>
+  I'm confused especially on this line:
+ </paragraph>
+ <pre>assertEquals(depths[k], a suitable call on contains, for you to do);
+</pre>
+ <paragraph>
+  because the contains method returns a boolean value which wouldn't line up with the values in "depths." Can this be explained to me please?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  That should be a suitable call on depth, not contains.
+ </paragraph>
+ <paragraph>
+  Thanks.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

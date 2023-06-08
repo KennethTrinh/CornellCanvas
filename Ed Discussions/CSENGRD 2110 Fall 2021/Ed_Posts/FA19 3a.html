@@ -1,0 +1,79 @@
+<h1>
+ Title: FA19 3a
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-30T14:34:58.997268+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm still having a bit of trouble with when to use equals or ==. I understand that equals() is for when they're not in the same memory space, and is used on classes, while == is used on primitives.
+ </paragraph>
+ <paragraph>
+  1) Why is it that when comparing the getClass(), == is used, even though classes are being compared?
+ </paragraph>
+ <paragraph>
+  2) And for equals(color), is this because the field being compared belongs to a class and not a primitive type?
+ </paragraph>
+ <figure>
+  <image height="238.8591184096802" src="https://static.us.edusercontent.com/files/hRTDQ13JqnNk0W3yUetDdIL7" width="658"/>
+ </figure>
+ <paragraph>
+  and would the string here be the wrapper class String, thus being the reason why == is not used to compare what I thought was two strings, or is it due to the strings being fields for classes? Thank you!!
+ </paragraph>
+ <figure>
+  <image height="167.79893048128343" src="https://static.us.edusercontent.com/files/nR5vqxdWSrhHNPevqhvx3wnU" width="643"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Simon Huang (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  1. You can take a look at the API for getClass():
+ </paragraph>
+ <pre>https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#getClass()
+</pre>
+ <paragraph>
+  Basically is that getClass() will return you the class itself. Similarly, you will get
+  <code>
+   true
+  </code>
+  for
+  <code>
+   "a".getClass() == "b".getClass()
+  </code>
+  because they are both instances of String Class(String is not a primitive type)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  2. Yes. You want to use the equals method in class Color to make sure they are the same by the definitions in that Color class.
+ </paragraph>
+ <paragraph>
+  And String is not a primitive type in Java, it is a class, and there's no wrapper class for that.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

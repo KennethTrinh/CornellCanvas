@@ -1,0 +1,66 @@
+<h1>
+ Title: Tile in a8
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-06T10:55:15.217077+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am generally confused about the Tile class. do we have any reason to need to know or use the TileType in the seek state?
+ </paragraph>
+ <paragraph>
+  the isOpen() method seems useful when finding neighbors to move to but I am just confused how to construct a Tile as a parameter for a Node if I do not know the row, column, TileType, etc.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Please read the long specification on McDiver.seek.
+ </paragraph>
+ <paragraph>
+  One para. says ou know only your current tile's ID and the IDs
+  <break>
+  </break>
+  of neighbor tiles to which McDiver can move, and distances to the ring.
+ </paragraph>
+ <paragraph>
+  The next para. tells you what functions you should be using:
+ </paragraph>
+ <paragraph>
+  currentLocation(), neighbors(), and distanceToRing()
+ </paragraph>
+ <paragraph>
+  and in the next para.  moveTo(long id)
+ </paragraph>
+ <paragraph>
+  Concentrate on what that all means.
+ </paragraph>
+ <paragraph>
+  Also, read carefully the guidelines on writing seek that appear linked to from the
+ </paragraph>
+ <paragraph>
+  Ed Discussion pinned note for A8.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

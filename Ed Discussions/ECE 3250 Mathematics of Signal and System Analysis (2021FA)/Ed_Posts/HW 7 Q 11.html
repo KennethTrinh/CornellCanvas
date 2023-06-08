@@ -1,0 +1,107 @@
+<h1>
+ Title: HW 7 Q 11
+</h1>
+<h3>
+ Author: Rhia Malhotra (None)
+</h3>
+<h3>
+ Date: 2021-11-02T15:07:07.70398+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am confused how you to get the integral shown in this question from:
+ </paragraph>
+ <math>
+  \frac{\partial}{\partial\Omega}\int_{-\infty}^{\infty}e^{\frac{-t^2}{2}}e^{-j\Omega t}\ \partial t
+ </math>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It's the integral on the right-hand side of equation $\mathcal{F}$, which reads
+ </paragraph>
+ <paragraph>
+  $\widehat{X} ( \Omega ) = \int _ {- \infty} ^ \infty e ^ {- \frac{t ^ 2}{2}} e ^ {- j \Omega t} d t$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Rhia Malhotra (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, but aren't we required to take the derivative with respect to $\Omega$ of that?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yup.  That's a calculus thing, and here's the general form of it:
+ </paragraph>
+ <paragraph>
+  $\frac{d}{d \Omega} \int _ a ^ b f ( t , \Omega ) d t = \int _ a ^ b \frac{\partial{f}}{\partial{\Omega}} \, d t$.
+ </paragraph>
+ <paragraph>
+  I think people call it the Leibniz Rule.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Rhia Malhotra (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh I see where my issue was. I thought that the question was implying that the derivative with respect to $\Omega$ of $e ^{-t^2/2}$ = $-te^{-t^2/2}$ when in fact it was taking the the derivative of $e ^{-t^2/2-j\Omega t}$ and redistributing the coefficients.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yup!  :-)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

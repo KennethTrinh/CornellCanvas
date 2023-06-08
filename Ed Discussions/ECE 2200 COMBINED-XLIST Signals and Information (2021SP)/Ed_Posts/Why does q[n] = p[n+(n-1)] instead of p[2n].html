@@ -1,0 +1,45 @@
+<h1>
+ Title: Why does q[n] = p[n+(n-1)] instead of p[2n]
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-26T08:48:02.81283+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When shifting p[n] to equal q[n], don't we shift p[n] N to the left making it p[n+n]? Where does the extra minus one come from
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The leftmost 1 in $q [ n ]$ happens at $n = - ( N - 1 )$.  The correct specification for $q [ n ]$, about which some confusion has arisen, is
+ </paragraph>
+ <paragraph>
+  $q [ n ] = \left \{ \begin{array}{cl} 1 &amp; {\rm when} \; - N &lt; n &lt; N \\ 0 &amp; {\rm else.} \end{array} \right .$
+ </paragraph>
+ <paragraph>
+  Thus we shift $q [ n ]$ to the right by $N - 1$ to plant that left-most 1 at $n = 0$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

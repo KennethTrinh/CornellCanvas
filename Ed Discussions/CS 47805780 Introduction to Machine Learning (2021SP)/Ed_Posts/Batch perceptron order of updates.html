@@ -1,0 +1,44 @@
+<h1>
+ Title: Batch perceptron order of updates
+</h1>
+<h3>
+ Author: Haichen Wang (student)
+</h3>
+<h3>
+ Date: 2021-03-10T18:07:14.741229+11:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Based off of
+  <link href="https://edstem.org/us/courses/4342/discussion/293627"/>
+  this discussion post, we check from the beginning of the dataset after an update on $w$. However, this conflicts with the batch perceptron algorithm presented in lecture 9 (as attached). Here, in each epoch, we go through all the samples, even if we have performed an update on $w$. Given that the final output of a perceptron is dependent on update order, which one should we be using for hw/exams?
+ </paragraph>
+ <figure>
+  <image height="452.36541143654114" src="https://static.us.edusercontent.com/files/fMxDDcymkbTX1CcwmrepaKnt" width="641"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kaishuo Cheng (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The post and the screen shot are actually saying the same thing. "REPEAT UNTIL" is actually a while loop. Everytime we change w, we go through the "FOR i=1 to m" again
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

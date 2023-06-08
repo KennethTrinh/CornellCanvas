@@ -1,0 +1,141 @@
+<h1>
+ Title: Evaluation and Execution
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-04T14:21:05.08787+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I found this on JavaHyperText about how to evaluate a new-expression. And I have some questions about it.
+ </paragraph>
+ <blockquote>
+  1. Draw (create) a new object of class C.
+  <bold>
+   Remember to put its name (e.g. C@48ae) on the tab of the object.
+  </bold>
+  Put the default values in the fields. If Java creates it, the hexadecimal number 48ae is the memory location where the object is stored.
+ </blockquote>
+ <blockquote>
+  2. Execute the constructor call C(args) —remember, the constructor lives in the new object.
+ </blockquote>
+ <blockquote>
+  3.
+  <bold>
+   Use as the value of the new-expression the name of the new object
+  </bold>
+  (e.g. C@48ae).
+ </blockquote>
+ <paragraph>
+  1. I am a little bit confused with the use of "name" here. Does "name" stand for the memory location of the newly-created object? Or is it something we assign to the new object?
+ </paragraph>
+ <paragraph>
+  2. Correct me if I am wrong. Take
+  <code>
+   x= x+3
+  </code>
+  as an example.
+  <code>
+   x+3
+  </code>
+  is the expression and can be evaluated.
+  <code>
+   x= x+3
+  </code>
+  is a statement and can be executed. Another difference is that evaluation yields a value and the execution doesn't?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Please read step 1. It gives an example:
+ </paragraph>
+ <paragraph>
+  C@48ae
+ </paragraph>
+ <paragraph>
+  That's what you should put on the tab of the folder. The "C" is the class name, the @ sign stands for "at", and 48ae is either the address in memory of the object (if the computer is evaluating the new-expression) or a number that YOU chose (if you are evaluating the new-expression.
+ </paragraph>
+ <paragraph>
+  You don't "assign" anything to the new object.
+ </paragraph>
+ <paragraph>
+  There are several ways we might use this expression.
+ </paragraph>
+ <paragraph>
+  1. In an assignment like.   v= new C(...). Evaluation of the new-expression could yield the value C@48ae; that value is then stored in v.
+ </paragraph>
+ <paragraph>
+  2. In an expression, like.   (new Fraction(1/3).toDouble()
+  <break>
+  </break>
+  In this case, the new-expression is evaluated to yield something like   Fraction@5. Then, immediately, that object's function toDouble() is called to give that fraction as a value of type double. The object can't be referenced after this!
+ </paragraph>
+ <paragraph>
+  I hope this helps.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Thank you very much! That’s very clear.
+  <break>
+  </break>
+  Also did I get it right in the second part about difference between execution and expression?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you for all the helps!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

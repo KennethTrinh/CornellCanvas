@@ -1,0 +1,74 @@
+<h1>
+ Title: Error when exiting save screen
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-14T00:58:32.775004+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <pre>Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+</pre>
+ <paragraph>
+  This doesn't have to do with gameplay, but when I exit the "save score" screen without actually saving, I get this message in the console (the game continues to function). Is this an issue i should be looking into?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Clarkson (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yep.  Are you checking the return value from the save dialog?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was confused about this. I have an
+  <bold>
+   int
+  </bold>
+  saving the return value like the example from the java documentation (similar to this int returnVal = fc.showOpenDialog(FileChooserDemo.this);), but I dont know what to do with the return value.
+ </paragraph>
+ <paragraph>
+  To be clear, the saving works, and I get the proper error when it fails, but the console message when I get out of the Save screen (not press exit, but rather press "Save", then decide to cancel), i get a console message i dont fully understand.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Clarkson (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  There is a URL provided in the release code for TODO 15.  It is to the File Chooser section of the Swing Tutorial.  Please take a look at it.  It shows you what to do.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

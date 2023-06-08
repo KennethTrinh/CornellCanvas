@@ -1,0 +1,69 @@
+<h1>
+ Title: Structure of Well Received Comments
+</h1>
+<h3>
+ Author: Kowe Kadoma (student)
+</h3>
+<h3>
+ Date: 2021-09-07T22:04:33.236381+10:00
+</h3>
+<h3>
+ Category: A1
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  My project employs similar methods from Tan et al. (2016) on the Slashdot dataset. I enjoyed reading about the relationship between textual features and persuasion, specifically the relationship between word score-based features and argument effectiveness. Tan et al. find that effective and ineffective arguments have similar patterns regarding concreteness, dominance, and valence. Throughout the course of the argument, valence rises slightly, and dominance decreases in the middle while concreteness increases. Successful arguments have a calmer tone.
+ </paragraph>
+ <paragraph>
+  In the context of a discussion surrounding the news, I’m curious about the following: what is the structure of comments that receive a high moderator score, what is the structure of comments that receive a low moderator score, and are these structures similar to the structures of effective and ineffective arguments? Although an argument and a discussion have different goals, applying the characteristics of an effective argument could result in a well-received discussion regardless of the topic at hand.
+ </paragraph>
+ <paragraph>
+  My tentative research plan is as follows. A high moderator score is any score greater than or equal to four, and a low moderator score is any score less than zero. I haven’t thoroughly searched, but I’m hoping to find a dataset of common words that fall into word scored-based features. Every comment with a high or low score would be split into quarters, and for every quarter, the average of each word scored based features would be determined. I’d love to work with someone, and any advice would be appreciated!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  A pointer for some "scored" wordlists:
+  <break>
+  </break>
+  The
+  <link href="http://crr.ugent.be/programs-data"/>
+  Brysbaert group has
+  <link href="http://crr.ugent.be/programs-data/word-ratings"/>
+  a link to some word ratings for "age of acquisition, concreteness, valence, arousal and sensory modalities for thousands of Dutch and English words" - the Tan et al 2016 used this list. They also provide a list to some other databases of various sorts.
+ </paragraph>
+ <paragraph>
+  SentiWordNet has sentiment scores for word classes' positivity, negativity, and objectivity, and has been incorporated into the NLTK toolkit.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  One implementation note: this proposal will probably need to focus on individual comments that are sufficiently long to be divided into quarters.  That's OK!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

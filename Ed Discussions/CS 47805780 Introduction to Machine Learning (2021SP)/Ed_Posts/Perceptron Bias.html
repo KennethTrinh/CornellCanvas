@@ -1,0 +1,116 @@
+<h1>
+ Title: Perceptron Bias
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-14T07:03:58.538323+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Because the perceptron function outputs the weight vector and bias term, I'm assuming that we are not looking for a homogeneous linear classifier. My question is how are we supposed to calculate the bias? Are we supposed to find the margin and calculate the bias from that?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Scott Bass (student)
+</h3>
+<h3>
+ Vote Count: 11
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  You have to add an extra dimension to the training examples and to your weight vector to turn the non-homogenous problem into a homogenous one. So,
+  <code>
+   w' = (w, b)
+  </code>
+  and
+  <code>
+   x' = (x, 1)
+  </code>
+  . I.e., make your
+  <code>
+   w
+  </code>
+  vector be a
+  <code>
+   1x(d+1)
+  </code>
+  dimensional vector, and add a constant
+  <code>
+   1
+  </code>
+  value onto the end of each of your
+  <code>
+   x
+  </code>
+  vectors. Then, at the end,
+  <code>
+   w = w'[:d]
+  </code>
+  and
+  <code>
+   b = w'[d]
+  </code>
+  .
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jun Chang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why does w have to be 1x(d+1) and not 0x(d+1). I thought the perceptron algorithm started w as a 0 vector.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Richard Wang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Could you elaborate on this? What does it mean for bias to be the last element of the weight vector?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Yana Sang (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think this means that in the final weight vector, the last element is the value for the b. Since we extend the dimensions by 1, there's no "real" feature that the last element in the weight vector corresponds to -- we just take it as the value of b.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

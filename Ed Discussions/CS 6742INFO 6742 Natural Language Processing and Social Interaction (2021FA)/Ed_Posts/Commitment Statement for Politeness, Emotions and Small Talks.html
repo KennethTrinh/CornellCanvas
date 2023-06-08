@@ -1,0 +1,566 @@
+<h1>
+ Title: Commitment Statement for Politeness, Emotions and Small Talks
+</h1>
+<h3>
+ Author: Fengyang Lin (student)
+</h3>
+<h3>
+ Date: 2021-11-05T09:12:32.00712+11:00
+</h3>
+<h3>
+ Category: Commitment_statement (A4)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  My plan for next week is developed based on the meetup with Lillian and today's class. Please see details as follow:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    Fightin' words
+   </paragraph>
+   <list style="bullet">
+    <list-item>
+     <paragraph>
+      Check Fightin' words for conversations
+     </paragraph>
+     <list style="bullet">
+      <list-item>
+       <paragraph>
+        successful vs. unsuccessful
+       </paragraph>
+      </list-item>
+      <list-item>
+       <paragraph>
+        persuader vs persuadee
+       </paragraph>
+      </list-item>
+     </list>
+    </list-item>
+   </list>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Politeness and Sentiment
+   </paragraph>
+   <list style="bullet">
+    <list-item>
+     <paragraph>
+      Check the utterances with the lowest/highest score for politeness and sentiment
+     </paragraph>
+    </list-item>
+    <list-item>
+     <paragraph>
+      Label a set of 50 utterances (polite, impolite) + (positive, neutral, negative)
+     </paragraph>
+    </list-item>
+    <list-item>
+     <paragraph>
+      (If have bandwidth, ) Try different thresholds for the classifiers, calculate the accuracy based on the labeled set and go over the instances
+     </paragraph>
+    </list-item>
+   </list>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Small talks
+   </paragraph>
+   <list style="bullet">
+    <list-item>
+     <paragraph>
+      look for language models to use
+     </paragraph>
+    </list-item>
+   </list>
+  </list-item>
+ </list>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Fengyang Lin (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+ </paragraph>
+ <list style="unordered">
+  <list-item>
+   <paragraph>
+    Fightin' words
+   </paragraph>
+   <list style="unordered">
+    <list-item>
+     <paragraph>
+      Labels
+     </paragraph>
+     <list style="unordered">
+      <list-item>
+       <paragraph>
+        Conversations: includes utterances by both the persuader and the persuadee
+       </paragraph>
+      </list-item>
+      <list-item>
+       <paragraph>
+        Persuader utterances: utterances by persuaders
+       </paragraph>
+      </list-item>
+      <list-item>
+       <paragraph>
+        Persuadee utterances: utterances by persuadees
+       </paragraph>
+      </list-item>
+      <list-item>
+       <paragraph>
+        Persuader -&gt; donation_er; Persuadee -&gt; donation_ee
+       </paragraph>
+      </list-item>
+     </list>
+    </list-item>
+   </list>
+  </list-item>
+ </list>
+ <list style="bullet">
+  <list-item>
+   <list style="bullet">
+    <list-item>
+     <paragraph>
+      Conversations: Successful persuasion vs unsuccessful (
+      <underline>
+       persuadee donated or not
+      </underline>
+      ) (conducted fightin’ word analysis on “conversation” object level)
+     </paragraph>
+     <figure>
+      <image height="388.81605351170566" src="https://static.us.edusercontent.com/files/8nqANmUgsfhSvqffplcy9ZpG" width="560"/>
+     </figure>
+    </list-item>
+   </list>
+  </list-item>
+ </list>
+ <list style="bullet">
+  <list-item>
+   <list style="bullet">
+    <list-item>
+     <list style="bullet">
+      <list-item>
+       <paragraph>
+        Top10 words
+       </paragraph>
+       <list style="bullet">
+        <list-item>
+         <paragraph>
+          Successful: 'agree', 'results', 'match', '50', '05', 'super', 'glad', '00', 'excellent', '30'
+         </paragraph>
+        </list-item>
+        <list-item>
+         <paragraph>
+          Unsuccessful: 'sorry', 'understand', 'never', 'food', 'don', 'rather', 'why', 'provide', 'time', 'tax'
+         </paragraph>
+        </list-item>
+        <list-item>
+         <paragraph>
+          Successful conversations have more positive words and more numbers (as people are negotiating the donation amount) compared to those unsuccessful conversations.
+         </paragraph>
+        </list-item>
+       </list>
+      </list-item>
+     </list>
+    </list-item>
+    <list-item>
+     <paragraph>
+      Conversations: Successful persuasion vs unsuccessful (
+      <underline>
+       persuadee donated or not
+      </underline>
+      ) (conducted fightin’ word analysis on “utterance” object level)
+     </paragraph>
+    </list-item>
+    <list-item>
+     <figure>
+      <image height="388.81605351170566" src="https://static.us.edusercontent.com/files/akvHaeuc8NR0ygMWtOeFNimW" width="560"/>
+     </figure>
+     <list style="bullet">
+      <list-item>
+       <paragraph>
+        Top 10 words
+       </paragraph>
+      </list-item>
+     </list>
+    </list-item>
+    <list-item>
+     <list style="unordered">
+      <list-item>
+       <list style="unordered">
+        <list-item>
+         <paragraph>
+          Successful: 'thank', '05', 'glad', 'super', '00', 'excellent', 'cur', '30', 'will', 'yes'
+         </paragraph>
+        </list-item>
+        <list-item>
+         <paragraph>
+          Unsuccessful: 'not', 'money', 'sorry', 'understand', 'never', 'food', 'don', 'them', 'rather', 'why'
+         </paragraph>
+        </list-item>
+       </list>
+      </list-item>
+      <list-item>
+       <paragraph>
+        Should have the same results as the conversation level data, but there are still slight differences on parsed vocab size -&gt; different results (z-score, ranks, …)
+       </paragraph>
+      </list-item>
+      <list-item>
+       <paragraph>
+        Similar interpretations as the conversation level.
+       </paragraph>
+      </list-item>
+     </list>
+    </list-item>
+    <list-item>
+     <paragraph>
+      <underline>
+       Persuader
+      </underline>
+      utterance: Successful persuasion vs unsuccessful (
+      <underline>
+       persuadee donated or not
+      </underline>
+      )
+     </paragraph>
+     <figure>
+      <image height="388.81605351170566" src="https://static.us.edusercontent.com/files/tfmH3PDbVWFmuUtsB6tmo5uA" width="560"/>
+     </figure>
+     <list style="bullet">
+      <list-item>
+       <paragraph>
+        Top 10 words
+       </paragraph>
+       <list style="bullet">
+        <list-item>
+         <paragraph>
+          Successful: 'true', 'her', 'exactly', 'match', 'glad', 'yes', 'excellent', 'amazing', 'thank', 'will'
+         </paragraph>
+        </list-item>
+        <list-item>
+         <paragraph>
+          Unsuccessful: 'not', 'them', 'could', 'understand', 'food', 'over', 'get', 'tax', 'need', 'torn'
+         </paragraph>
+        </list-item>
+       </list>
+      </list-item>
+      <list-item>
+       <paragraph>
+        It is interesting to see“her” as a typical word for persuaders in successful conversations, and “them”, “tax” for unsuccessful ones.
+       </paragraph>
+      </list-item>
+     </list>
+    </list-item>
+    <list-item>
+     <paragraph>
+      <underline>
+       Persuadee
+      </underline>
+      utterance: Successful persuasion vs unsuccessful (
+      <underline>
+       persuadee donated or not
+      </underline>
+      )
+     </paragraph>
+     <figure>
+      <image height="388.81605351170566" src="https://static.us.edusercontent.com/files/tf61G5sAjLbTVe7dquWeR8Qg" width="560"/>
+     </figure>
+     <list style="bullet">
+      <list-item>
+       <paragraph>
+        Top 10 words
+       </paragraph>
+      </list-item>
+     </list>
+    </list-item>
+    <list-item>
+     <list style="unordered">
+      <list-item>
+       <list style="unordered">
+        <list-item>
+         <paragraph>
+          Successful: 'half', 'night', 'willing', '00', 'hi', 'children', 'he', 'yes', 'cur', '30'
+         </paragraph>
+        </list-item>
+        <list-item>
+         <paragraph>
+          Unsuccessful: 'not', 'money', 'never', 'sorry', 'don', 'rather', 'no', 'afford', 'keep', 'why’
+         </paragraph>
+        </list-item>
+       </list>
+      </list-item>
+      <list-item>
+       <paragraph>
+        “he” as a typical word for persuadees in successful conversations, anything related to the “her” for persuaders?
+       </paragraph>
+      </list-item>
+     </list>
+    </list-item>
+   </list>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Politeness
+   </paragraph>
+  </list-item>
+  <list-item>
+   <list style="bullet">
+    <list-item>
+     <paragraph>
+      Check the utterances with the lowest/highest score for politeness
+     </paragraph>
+     <list style="bullet">
+      <list-item>
+       <paragraph>
+        with higher politeness prob -&gt; should be more polite
+       </paragraph>
+       <figure>
+        <image height="193.18725099601593" src="https://static.us.edusercontent.com/files/rRn7JlNPZdm7pxi0ofQZHI5Q" width="520"/>
+       </figure>
+      </list-item>
+      <list-item>
+       <paragraph>
+        with lower politeness prob -&gt; should be more impolite
+       </paragraph>
+       <figure>
+        <image height="246.15075376884425" src="https://static.us.edusercontent.com/files/xqhsMvopPPgfCjRYO1hS75BD" width="520"/>
+       </figure>
+      </list-item>
+      <list-item>
+       <paragraph>
+        In general, for utterances with a pretty high classifier score (&gt;=0.9), I think the current classifier is reliable after some other random sampling. While a relatively higher score means more polite, a lower probability does not necessarily point to more impolite or rude - I would say it is more "not as polite", but not always rude. So consider using labels "polite" vs "not polite" and have more accurate labels by adjusting the threshold. I think the results are still promising and I will keep using the current models (maybe training with more data and more diverse data).
+       </paragraph>
+      </list-item>
+     </list>
+    </list-item>
+    <list-item>
+     <paragraph>
+      Label a set of 50 utterances (polite, impolite)
+     </paragraph>
+    </list-item>
+    <list-item>
+     <list style="bullet">
+      <list-item>
+       <paragraph>
+        I randomly chose 50 utterances from the annotated dataset and labeled a binary politeness label to each utterance -&gt; 24 polite utterances and 26 impolite. Will calculate the accuracy of the current classifiers and tune the threshold.
+       </paragraph>
+      </list-item>
+     </list>
+    </list-item>
+   </list>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Sentiment
+   </paragraph>
+   <list style="bullet">
+    <list-item>
+     <paragraph>
+      Check the utterances with the lowest/highest score for Vader
+     </paragraph>
+     <list style="bullet">
+      <list-item>
+       <paragraph>
+        with higher 'compound' score -&gt; should be more positive
+       </paragraph>
+       <figure>
+        <image height="355.5421686746988" src="https://static.us.edusercontent.com/files/KUhEHJ8cKe0eY4d3vUmYhFd9" width="520"/>
+       </figure>
+      </list-item>
+      <list-item>
+       <paragraph>
+        with lower 'compound' score -&gt; should be more negative
+       </paragraph>
+       <figure>
+        <image height="327.40740740740745" src="https://static.us.edusercontent.com/files/3wD4f0PzmHe0ol2MttbPdlh6" width="520"/>
+       </figure>
+      </list-item>
+      <list-item>
+       <paragraph>
+        In general, for the "extreme" cases, the classifier works well. Those with high scores are indeed very positive utterances, and those with low scores are with negative emotions. However, there are still several problems:
+       </paragraph>
+       <list style="bullet">
+        <list-item>
+         <paragraph>
+          When looking at these examples and begining labeling, I start thinking about the problem "what utterance should be positive/neutral/negative". As far as I could see, there are two definitions, one for "show signals for agreement or support the utterances before", another one is for "emotionally positive or negative". The case for neutral is even more tricky, if one is stating some facts but are actually including some sad story - if a persuader is telling how the children in poor countries are in need of food or water, intuitionally it should be negative. However, it is not some "negative" feedback, but just stating some facts, should we still consider it as negative or just neutral? Also, if one asks me to do something that I do not really want to do but I still agree to do so, I reply with "well I could do that", which is positive feedback but in fact with some "negative" emotion, should I take it as positive or neutral, or even negative? I will need to clarify this problem before I could really move forward. For now, I am more on the side of using the "emotional" definition, but could also try to do both, as I believe that either emotionally positive or attitude-wise positive should have some correlation with the final successful persuasion.
+         </paragraph>
+        </list-item>
+        <list-item>
+         <paragraph>
+          It is also notable that utterances are always comparatively long if with a higher absolute score - it might also introduce bias, and simply normalize by the length of utterances might be risky.
+         </paragraph>
+        </list-item>
+        <list-item>
+         <paragraph>
+          An extra problem is that for this persuasion dataset, upon my observations, fairly many utterances are "neutral", but currently I am not sure if Vader is trustworthy enough on those utterances.
+         </paragraph>
+        </list-item>
+       </list>
+      </list-item>
+     </list>
+    </list-item>
+    <list-item>
+     <paragraph>
+      Label a set of 50 utterances (positive, neutral, negative)
+     </paragraph>
+     <list style="bullet">
+      <list-item>
+       <paragraph>
+        The set is the same for politeness. Descriptive statistics as below. Neg:3, Neu: 32, Pos: 15. Will calculate the accuracy of the current classifiers and tune the threshold after solving the "definition" problem.
+       </paragraph>
+      </list-item>
+     </list>
+    </list-item>
+   </list>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Small talks
+   </paragraph>
+   <list style="bullet">
+    <list-item>
+     <paragraph>
+      At this point, I could not decide yet whether to build my own language model as in lectures or label and apply some existing models to detect the small talks. Will work on this this week and update!
+     </paragraph>
+    </list-item>
+   </list>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Appendix for Fightin' words
+   </paragraph>
+   <list style="bullet">
+    <list-item>
+     <paragraph>
+      Conversations that the
+      <underline>
+       persuaders donated
+      </underline>
+      vs
+      <underline>
+       did not donate
+      </underline>
+     </paragraph>
+     <figure>
+      <image height="388.81605351170566" src="https://static.us.edusercontent.com/files/VPPRccnpxggJLW8Rgb5wBPrx" width="560"/>
+     </figure>
+     <list style="bullet">
+      <list-item>
+       <paragraph>
+        Top 10 words
+       </paragraph>
+      </list-item>
+     </list>
+    </list-item>
+    <list-item>
+     <list style="unordered">
+      <list-item>
+       <list style="unordered">
+        <list-item>
+         <paragraph>
+          Successful: 'ask', 'was', 'nice', 'pretty', 'name', 'made', 'super', 'fine', '30', 'willing’
+         </paragraph>
+        </list-item>
+        <list-item>
+         <paragraph>
+          Unsuccessful: 'born', 'provide', '000', 'usa', 'provides', 'governmental', 'africa', 'dying', 'point', 'relief'
+         </paragraph>
+        </list-item>
+       </list>
+      </list-item>
+     </list>
+    </list-item>
+    <list-item>
+     <paragraph>
+      Persuader utterances vs Persuadee utterances
+     </paragraph>
+     <figure>
+      <image height="384.19035029742236" src="https://static.us.edusercontent.com/files/dI07mAlemaXKSoLNXTvsiq4r" width="560"/>
+     </figure>
+     <list style="bullet">
+      <list-item>
+       <paragraph>
+        Top 10 words
+       </paragraph>
+       <list style="bullet">
+        <list-item>
+         <paragraph>
+          Persuader: 'rights', 'helps', 'the', 'task', 'from', 'payment', 'you', 'save', 'your', 'children’
+         </paragraph>
+        </list-item>
+        <list-item>
+         <paragraph>
+          Persuadee: 'what', 'do', 'my', 'sounds', 'me', 'not', 'am', 'yes', 'ok', 'good
+          <break>
+          </break>
+         </paragraph>
+        </list-item>
+       </list>
+      </list-item>
+     </list>
+    </list-item>
+   </list>
+  </list-item>
+ </list>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Maybe drop the sentiment direction?  I agree that sentiment is typically hard to get right, and you'd want correct sentiment labels for what you are trying to do.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Fengyang Lin (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you Lillian for the suggestion! Yes, I would think about dropping the sentiment sections for now, also due to the bandwidth that I have and that I do want to start working on small talks.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

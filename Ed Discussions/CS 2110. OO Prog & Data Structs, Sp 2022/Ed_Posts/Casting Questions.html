@@ -1,0 +1,128 @@
+<h1>
+ Title: Casting Questions
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-08T14:33:33.498191+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  so in Jshell i created a classe and sublcass with the same field and method.
+ </paragraph>
+ <pre>jshell&gt; public class First{
+   ...&gt; int x = 0;
+   ...&gt; public int num(){
+   ...&gt; return 0;}
+   ...&gt; }
+
+jshell&gt; public class Second extends First{
+   ...&gt; int x = 1;
+   ...&gt; public int num(){
+   ...&gt; return 1;}
+   ...&gt; }
+   
+   jshell&gt; First a = new Second();
+a ==&gt; Second@2beabd31
+   
+   jshell&gt; a.x;
+$4 ==&gt; 0
+
+jshell&gt; ((Second)a).x;
+$5 ==&gt; 1
+
+jshell&gt; a.num();
+$6 ==&gt; 1
+
+jshell&gt; ((First)a).num();
+$7 ==&gt; 1
+</pre>
+ <paragraph>
+  I have 2 questions.
+ </paragraph>
+ <paragraph>
+  1) Why is it that when I access the field x for object a the default is from the class First, and I need to cast to Second to access the Second class field x?
+ </paragraph>
+ <paragraph>
+  2) it appears as though the default method num() for object a is from Second class and that I cannot access First's num() by casting? Are fields and methods treated differently with casting?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: CJ Lee (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  1. I think the answer is summed up in this JavaHyperText pdf regarding
+  <link href="https://www.cs.cornell.edu/courses/JavaAndDS/files/fieldHiding.pdf"/>
+  "Hiding a field". Basically, Java treats overridden fields and methods differently when you call them at runtime. Whereas methods work bottom-up based on the dynamic type of the object from which the method is called, fields are accessed bottom-up based on the
+  <italic>
+   compile-time
+  </italic>
+  type of the object. That's why
+  <code>
+   a.x == 0
+  </code>
+  ; because the static type of
+  <code>
+   a
+  </code>
+  is
+  <code>
+   First
+  </code>
+  ,  Java starts looking bottom-up from the from the
+  <code>
+   First
+  </code>
+  class. (Note that overriding fields is generally discouraged, so this shouldn't be a common occurrence you should be running into!)
+ </paragraph>
+ <paragraph>
+  2. Remember that casting between classes does not change anything about the object itself at runtime; it merely provides a different perspective to the compiler. Casting
+  <code>
+   a
+  </code>
+  to
+  <code>
+   First
+  </code>
+  does not change the fact that
+  <code>
+   a
+  </code>
+  is still of type
+  <code>
+   Second
+  </code>
+  at runtime, and so the dynamic dispatch of the
+  <code>
+   num()
+  </code>
+  method call means that it will still call the
+  <code>
+   num()
+  </code>
+  in
+  <code>
+   Second
+  </code>
+  . But, because field accesses are dependent on the compile-time type, casting will indeed make a difference there.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

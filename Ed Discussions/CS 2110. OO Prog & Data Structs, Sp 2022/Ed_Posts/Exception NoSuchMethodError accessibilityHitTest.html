@@ -1,0 +1,132 @@
+<h1>
+ Title: Exception NoSuchMethodError accessibilityHitTest
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-13T05:51:46.521518+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <pre>2022-04-12 15:50:12.828 java[88126:4145841] Bad JNI lookup accessibilityHitTest
+2022-04-12 15:50:12.856 java[88126:4145841] (
+    0   libawt_lwawt.dylib                  0x0000000127c44ee9 -[JavaComponentAccessibility accessibilityHitTest:withEnv:] + 153
+    1   libawt_lwawt.dylib                  0x0000000127beeef6 -[AWTView accessibilityHitTest:] + 182
+    2   AppKit                              0x00007ff80caebeea -[NSWindow(NSWindowAccessibility) accessibilityHitTest:] + 302
+    3   AppKit                              0x00007ff80c6803ab -[NSApplication(NSApplicationAccessibility) accessibilityHitTest:] + 285
+    4   AppKit                              0x00007ff80c64fd7c CopyElementAtPosition + 136
+    5   HIServices                          0x00007ff80f30379e _AXXMIGCopyElementAtPosition + 393
+    6   HIServices                          0x00007ff80f325084 _XCopyElementAtPosition + 355
+    7   HIServices                          0x00007ff80f2e29b9 mshMIGPerform + 182
+    8   CoreFoundation                      0x00007ff8098f4361 __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE1_PERFORM_FUNCTION__ + 41
+    9   CoreFoundation                      0x00007ff8098f4243 __CFRunLoopDoSource1 + 615
+    10  CoreFoundation                      0x00007ff8098f28b7 __CFRunLoopRun + 2419
+    11  CoreFoundation                      0x00007ff8098f1884 CFRunLoopRunSpecific + 562
+    12  HIToolbox                           0x00007ff8129e7ce6 RunCurrentEventLoopInMode + 292
+    13  HIToolbox                           0x00007ff8129e7913 ReceiveNextEventCommon + 283
+    14  HIToolbox                           0x00007ff8129e77e5 _BlockUntilNextEventMatchingListInModeWithFilter + 70
+    15  AppKit                              0x00007ff80c24f5cd _DPSNextEvent + 927
+    16  AppKit                              0x00007ff80c24dc8a -[NSApplication(NSEvent) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 1394
+    17  libosxapp.dylib                     0x000000012523a4fa -[NSApplicationAWT nextEventMatchingMask:untilDate:inMode:dequeue:] + 122
+    18  AppKit                              0x00007ff80c240339 -[NSApplication run] + 586
+    19  libosxapp.dylib                     0x000000012523a2c9 +[NSApplicationAWT runAWTLoopWithApp:] + 185
+    20  libawt_lwawt.dylib                  0x0000000127c4d578 +[AWTStarter starter:headless:] + 520
+    21  libosxapp.dylib                     0x000000012523c00f +[ThreadUtilities invokeBlockCopy:] + 15
+    22  Foundation                          0x00007ff80a69e857 __NSThreadPerformPerform + 179
+    23  CoreFoundation                      0x00007ff8098f3bca __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__ + 17
+    24  CoreFoundation                      0x00007ff8098f3b32 __CFRunLoopDoSource0 + 180
+    25  CoreFoundation                      0x00007ff8098f38b0 __CFRunLoopDoSources0 + 242
+    26  CoreFoundation                      0x00007ff8098f22c0 __CFRunLoopRun + 892
+    27  CoreFoundation                      0x00007ff8098f1884 CFRunLoopRunSpecific + 562
+    28  libjli.dylib                        0x0000000108f56e82 CreateExecutionEnvironment + 402
+    29  libjli.dylib                        0x0000000108f526a8 JLI_Launch + 1496
+    30  java                                0x000000010090cc0e main + 414
+    31  dyld                                0x0000000200cab51e start + 462
+    32  dyld                                0x0000000200ca6000 dyld + 0
+)
+Exception in thread "AppKit Thread" java.lang.NoSuchMethodError: accessibilityHitTest</pre>
+ <paragraph>
+  I have this exception popping up every time I input a mouse click and I have no idea how to debug it. My GUI works fine, despite the exception, and I'm getting all the info I need from the mouse click.
+  <break>
+  </break>
+  <break>
+  </break>
+  I think this has something to do with MacOS because I believe we didn't have this issue when working on my partner's windows computer.
+ </paragraph>
+</document>
+<h3>
+ Author: Michael Clarkson (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can you go to menu Eclipse-&gt;Preferences-&gt;Java-&gt;Installed JREs, and post a screenshot of what you see there?
+ </paragraph>
+ <paragraph>
+  (One possibility is your JDK is too old and has
+  <link href="https://bugs.openjdk.java.net/browse/JDK-8274326"/>
+  this bug.)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="390" src="https://static.us.edusercontent.com/files/Sza9ZB56rjrnWUMICncDUNJ9" width="624"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Clarkson (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yeah that confirms my suspicion.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Clarkson (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  You have 17.0.1 but the bug was fixed in 17.0.2 according to the page I linked above.  Installing the most recent version of Eclipse should fix this.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,121 @@
+<h1>
+ Title: Lab 1 Analysis Question 1
+</h1>
+<h3>
+ Author: Ariana Haghighi (student)
+</h3>
+<h3>
+ Date: 2022-02-17T06:29:36.587585+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I have both the graph of the IV characteristics and a text file filled with the data collected. In order to fit the data, I want to copy these two columns of data (current and voltage) into Excel or google sheets and then have Excel graph the data and find the best fit for the log-linear model. However, when I copy the data to excel or to google sheets, it combines both of the columns into one, so I have to manually move every other value over. Is there an easier way to separate the data or a different way to fit the data to the log-linear plot?
+ </paragraph>
+ <paragraph>
+  Here's an example:
+ </paragraph>
+ <figure>
+  <image height="358" src="https://static.us.edusercontent.com/files/GMfEIT6w9P2WPPuHzhOunaJF" width="631"/>
+ </figure>
+ <figure>
+  <image height="463" src="https://static.us.edusercontent.com/files/w95b5q7RTwWOv0y3376eA0dV" width="245"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Rosie Wildermuth (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  If you copy all of the data into a single column, then go to the data tab, click "Text to columns" and set the delimiter to be a space, it separates the two columns.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Amal El-Ghazaly (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  You can also import it into excel instead of copying it in. Go to File -&gt; import -&gt; select the file type (in general you'll usually see either .txt text files or .csv for specifically comma-separated data files), press import, browse to select your file, then select "Delimited" instead of "Fixed", finally choose the type of delimiter (most of the time, data files are delimited by either a space, a tab, or a comma), press Done, then Ok to place the data in the sheet starting at a certain row and column. Hope that helps!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Alternatively, a code-y solution! Run the following commands on the command line from the directory that you have the file in:
+ </paragraph>
+ <pre>grep "+" your_data.txt | cut -f1 | tee -a first_column.txt
+grep "+" your_data.txt | cut -f2 | tee -a second_column.txt
+</pre>
+ <paragraph>
+  This will create .txt files first_column and second_column with the appropriate data!
+ </paragraph>
+ <paragraph>
+  If you're curious, how it works:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    grep gets all the lines from a file. Here, I'm specifying only get the lines that start with "+" - this will therefore only get the lines with data, not the units and everything at the top
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    cut breaks apart the line - here, using the default delimeter (tab). For the first column, you want the first portion of this data (-f1), and for the second column, you wants the second portion (-f2)
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    tee takes this result and stores it in a text file
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    The | between all the commands pipelines the data from one to the next, so for all the lines that grep gets, they will be cut, and the result from cut will be stored in the .txt file. Pretty neat!
+   </paragraph>
+  </list-item>
+ </list>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Karina Melgar (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Also if you copy it into Excel rather than Google sheets, it actually does separate them by columns (at least for me it did)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

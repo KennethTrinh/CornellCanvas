@@ -1,0 +1,56 @@
+<h1>
+ Title: QuickSort Question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-08T15:32:48.350374+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why does it look like b[h...j -1]
+ </paragraph>
+ <paragraph>
+  when b[h + 1 ... t] describes values less than x?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="319.6445497630332" src="https://static.us.edusercontent.com/files/w325y7L3Mfwn0QDbOP90dXFg" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  According to the invariant, b[h..t-1] contains values &lt;= x, not b[h+1..t].
+ </paragraph>
+ <paragraph>
+  As long as b[t..j] contains a value, i.e. as long as t &lt;= j, at least one more iteration is necessary.
+ </paragraph>
+ <paragraph>
+  The loop ends when t = j+1. In that case, b[t..j] is empty, and b[j] is the element before the section of &gt;=x values, which means that b[j] is the last element of the &lt;=x values.
+ </paragraph>
+ <paragraph>
+  Compare carefully invariant P and postcondition R. When do they look the same? When the  ? section is empty.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,173 @@
+<h1>
+ Title: Code won't upload to board.
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-18T12:31:54.385872+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  As soon as I started using the debugger uploads to the board stopped working. I am just running "BL LEDON" but nothing is happening.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Are you sure you're running this project and not a previous project (make sure you select "Run as PE Microprobes" in the dropdown menu when you have the desired project selected). Also, if you're running in debug mode then it should stop the execution at the first line of the assembly, so you would have to step through the program to see the LED turn on
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes the debugger works but the LED won't turn on. I am running PE Microprobes on the correct project.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  To clarify, you should see two green LEDs on if you're running BL LEDON (since the power LED is green and then you're turning on another green LED). If you still see one, redownload the lab from Canvas and replace that with your current code. It's possible that you have an outdated version of the code
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, earlier today I made the led blink at varying intervals. I just noticed I am getting this error.
+ </paragraph>
+ <figure>
+  <image height="256" src="https://static.us.edusercontent.com/files/yOWkf6ZXGAMGYa1ZQznuNRWx" width="382"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  But when I click on the upload button I get this which makes me think that a probe was actually found?
+ </paragraph>
+ <figure>
+  <image height="419.7358490566038" src="https://static.us.edusercontent.com/files/72kC3VBImRYorS7acd364mb6" width="490"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Assuming the top one occurs when you're trying to debug the machine, it indicates that the board can't be found but with the bottom one you are finding it when you flash the board. I haven't seen this before. I'd recommend unplugging the board and replugging it in. Otherwise you should try resetting the IDE and if that doesn't work the computer (since it's possible but unlikely it's something with your computer's USB ports)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What do you mean by reseting the IDE? I have tried uninstalling and reinstalling it if that is what you mean. I have also restarted my computer and tried multiple USB ports. One of the TAs suggested that my computer might need more storage. Should I try deleting stuff on my mac?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I meant closing out of it and then opening it again, but it sounds like you've already done even more than that if you're uninstalled and reinstalled the IDEs. I don't know as much about macs as I do windows machines so I could be wrong, but I wouldn't think that making more space on your computer would make a difference. You could try a different version of the IDE or if you have access to another computer try that (we are going to try to get MCUXpresso on some computers in the computer lab). I'll ask the other TAs to see if they might know what's wrong
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Should I try running it on linux or windows? I think I still have the 2300 linux vm and I could try to make a windows one if that works better.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yeah, I would change operating systems if you can. MCUXpresso seems to be less buggy on Windows
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

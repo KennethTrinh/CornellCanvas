@@ -1,0 +1,53 @@
+<h1>
+ Title: Why does == compare the properties of strings instead of their location if strings are objects
+</h1>
+<h3>
+ Author: Young Zheng (student)
+</h3>
+<h3>
+ Date: 2022-03-07T08:43:11.390871+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For example, "abc" == "abc" is true.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Young Zheng (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  oh because of string pools
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Java saves space by providing only one object for "abc" if that literal occurs many times.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

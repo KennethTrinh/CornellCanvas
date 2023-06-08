@@ -1,0 +1,46 @@
+<h1>
+ Title: DFS/BFS
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-20T05:34:45.473572+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  BFS is faster for dense graphs while DFS is faster for sparse graphs. False
+ </paragraph>
+ <paragraph>
+  Is this question false because it really doesn't matter and they have the same run-time complexity or is there a preference of one over the other?
+ </paragraph>
+</document>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, they basically both process all reachable nodes and edges.
+ </paragraph>
+ <paragraph>
+  The preference of one over the other depends entirely on the application.
+ </paragraph>
+ <paragraph>
+  Example, supposed we have a graph of all flights in the US. Suppose we want to find flights from Ithaca to San Francisco with more more than 1 stop. Well, DFS one' give it to you easily. But do a BFS but stop when all nodes two steps from Ithaca have been found.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

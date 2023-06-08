@@ -1,0 +1,76 @@
+<h1>
+ Title: testing assert statements
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-12T07:21:25.448018+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi,
+ </paragraph>
+ <paragraph>
+  I am a bit confused on how the formatting of the testing the assert statements work. In the handout, this example is shown: assertThrows(AssertionError.class,
+  <bold>
+   ()
+  </bold>
+  -&gt; {new P(null);});
+ </paragraph>
+ <paragraph>
+  The
+  <bold>
+   ()
+  </bold>
+  is considered empty as there are no parameters for this example. However, when I was trying to write the assert statement test, I had filled those parentheses with parameters of the method in question and reached an error. When I erased the parameters and made it empty '()', the assert statement worked. Should I keep the paratheses empty then?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  There should be no parameters!
+ </paragraph>
+ <paragraph>
+  This call on assertThrows has as its second argument the anonymous function
+ </paragraph>
+ <paragraph>
+  <bold>
+   ()
+  </bold>
+  -&gt; {new P(null);}
+ </paragraph>
+ <paragraph>
+  When the body of assertThrows is being executed, it executes a call on this function. That call causes the method body   new P(null). to be executed, which should throw the AssertionError.
+ </paragraph>
+ <paragraph>
+  In your case you should replace the call new P(null) but, for example,
+ </paragraph>
+ <paragraph>
+  new PhD(...)
+ </paragraph>
+ <paragraph>
+  giving the constructor call PhD(...) suitable arguments that cause the assert statement to fail.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

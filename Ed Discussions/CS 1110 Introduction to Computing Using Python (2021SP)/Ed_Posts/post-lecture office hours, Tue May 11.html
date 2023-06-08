@@ -1,0 +1,83 @@
+<h1>
+ Title: post-lecture office hours, Tue May 11
+</h1>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Date: 2021-05-12T00:15:30.87599+10:00
+</h3>
+<h3>
+ Category: Megathread
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  ^like it says
+ </paragraph>
+</document>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Q: can superclasses call methods of a subclass?
+  <break>
+  </break>
+  <break>
+  </break>
+  A: (1) usually classes aren't designed this way, because superclasses may not know what subclasses they have.  [people can design the subclasses after the superclass is written.]
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Q: can I see an example of an object using a superclass variable that isn't defined for its type?  Can I see an example of an object using a superclass method that isn't defined for its type?
+  <break>
+  </break>
+  <break>
+  </break>
+  A: here you go --- fish gotta swim, birds gotta fly:
+ </paragraph>
+ <paragraph>
+  <link href="http://www.pythontutor.com/visualize.html#code=%22%22%22%0AModule%20containing%20a%20superclass%20Animal,%20with%0Asubclasses%20Bird,%20Parrot,%20and%20Penguin.%0A%0AAuthor%3A%20Bracy%20%28awb93%29,%20Lee%20%28ljl2%29,%20and%20Fan%20%28kdf4%29%0ADate%3A%20%20%20April%202020%0A%22%22%22%0A%0Aclass%20Animal%28%29%3A%0A%20%20%20%20%22%22%22%0A%20%20%20%20An%20instance%20is%20a%20single%20animal%20with%20a%20name,%20id%20number,%20and%20weight.%0A%20%20%20%20%22%22%22%0A%20%20%20%20%23%20Class%20Attribute%0A%20%20%20%20n_animals%20%3D%200%0A%20%20%20%20CAN_SWIM%20%3D%20False%0A%20%20%20%20CAN_FLY%20%3D%20False%0A%20%20%20%20CAN_SPEAK%20%3D%20False%0A%0A%20%20%20%20%23%20BUILT-IN%20METHODS%0A%20%20%20%20def%20__init__%28self,%20name,%20weight%3D50%29%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20Creates%20a%20new%20Animal%20with%20a%20unique%20tag%20number.%0A%20%20%20%20%20%20%20%20name%3A%20name%20of%20animal%20%5Bstr%5D%0A%20%20%20%20%20%20%20%20tag_no%3A%20unique%20identifier%20for%20each%20instance%20%5Bint%5D%0A%20%20%20%20%20%20%20%20weight%3A%20weight%20of%20the%20animal%20%5Bint%5D%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20%23%20Instance%20attributes%0A%20%20%20%20%20%20%20%20assert%20type%28name%29%20%3D%3D%20str%0A%20%20%20%20%20%20%20%20self.name%20%3D%20name%0A%20%20%20%20%20%20%20%20self.tag_no%20%3D%20Animal.n_animals%0A%20%20%20%20%20%20%20%20self.weight%20%3D%20weight%0A%20%20%20%20%20%20%20%20Animal.n_animals%20%2B%3D%201%0A%0A%20%20%20%20def%20speak%28self,%20words%29%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20prints%20out%20the%20words%20to%20the%20screen%20if%20the%20animal%20can%20talk%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20if%20self.CAN_SPEAK%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20print%28words%29%0A%0A%20%20%20%20def%20eat%28self%29%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20Prints%20out%20eating%20sound%20%26%20animal%20gains%20small%20amount%20of%20weight.%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20print%28%22NOM%20NOM%20NOM%22%29%0A%20%20%20%20%20%20%20%20self.weight%20%2B%3D%201%0A%0A%20%20%20%20def%20__str__%28self%29%3A%0A%20%20%20%20%20%20%20%20action%3D%20''%0A%20%20%20%20%20%20%20%20if%20self.CAN_SWIM%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20action%20%2B%3D%20'It%20swims!%20'%0A%20%20%20%20%20%20%20%20if%20self.CAN_FLY%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20action%20%2B%3D%20'It%20flies!%20'%0A%20%20%20%20%20%20%20%20if%20self.CAN_SPEAK%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20action%20%2B%3D%20'It%20speaks!%20'%0A%20%20%20%20%20%20%20%20return%20%22tag%20%22%2Bstr%28self.tag_no%29%2B%22%3A%20%22%2Bself.name%2B%22%20is%20a%20%22%2B%20%5C%0A%20%20%20%20%20%20%20%20%20%20%20%20str%28self.weight%29%2B%22%20pound%20%22%2Btype%28self%29.__name__%2B%22.%20%22%2Baction%0A%0A%0Aclass%20Fish%28Animal%29%3A%0A%20%20%20%20%22%22%22%0A%20%20%20%20An%20instance%20is%20a%20fish.%0A%20%20%20%20%22%22%22%0A%0A%20%20%20%20CAN_SWIM%20%3D%20True%20%20%20%23%20override%20the%20Animal%20default%0A%0A%20%20%20%20def%20__init__%28self,%20name,%20weight%3D3%29%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20superclass%20assigns%20all%20attributes,%20but%20weight%20defaults%20to%203%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20super%28%29.__init__%28name,%20weight%29%0A%0A%20%20%20%20def%20eat%28self%29%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20Prints%20out%20eating%20sound%20%26%20animal%20gains%20small%20amount%20of%20weight.%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20print%28%22.%20.%20.%22%29%0A%20%20%20%20%20%20%20%20self.weight%20%2B%3D%201%0A%0Aclass%20Bird%28Animal%29%3A%0A%20%20%20%20%22%22%22%0A%20%20%20%20An%20instance%20is%20a%20bird.%0A%20%20%20%20%22%22%22%0A%0A%20%20%20%20CAN_FLY%20%3D%20True%0A%0A%20%20%20%20def%20__init__%28self,%20name,%20weight%3D2%29%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20superclass%20assigns%20all%20attributes,%20but%20weight%20defaults%20to%202%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20super%28%29.__init__%28name,%20weight%29%0A%0A%20%20%20%20def%20eat%28self%29%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20Prints%20out%20eating%20sound%20%26%20animal%20gains%20small%20amount%20of%20weight.%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20print%28%22Peck%20Peck%20Peck!%22%29%0A%20%20%20%20%20%20%20%20self.weight%20%2B%3D%201%0A%0Aclass%20Parrot%28Bird%29%3A%0A%20%20%20%20%22%22%22%0A%20%20%20%20An%20instance%20is%20a%20parrot.%0A%20%20%20%20%22%22%22%0A%0A%20%20%20%20CAN_SPEAK%20%3D%20True%20%20%23%20override%20the%20Bird%20default%0A%0A%20%20%20%20def%20speak%28self,%20words%29%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20prints%20out%20the%20words%20to%20the%20screen%20and%20asks%20for%20a%20cracker%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20super%28%29.speak%28words%29%0A%20%20%20%20%20%20%20%20print%28%22Now%20give%20me%20a%20cracker!%22%29%0A%0A%0Aclass%20Penguin%28Bird%29%3A%0A%20%20%20%20%22%22%22%0A%20%20%20%20An%20instance%20is%20a%20penguin.%0A%20%20%20%20%22%22%22%0A%20%20%20%20CAN_FLY%20%3D%20False%20%20%23%20override%20the%20Bird%20default%0A%20%20%20%20CAN_SWIM%20%3D%20True%20%20%23%20override%20the%20Animal%20default%0A%0A%20%20%20%20def%20__init__%28self,%20name,%20weight%3D25%29%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20superclass%20assigns%20all%20attributes,%20but%20weight%20defaults%20to%2025%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20super%28%29.__init__%28name,%20weight%29%0A%20%20%20%20%20%20%20%20%0Ap1%20%3D%20Parrot%28%22Polly%22%29%0Ap2%20%3D%20Parrot%28%22Francesca%22%29%0Aprint%28p2.n_animals%29%20%23%20the%20n_animals%20comes%20from%20Animal.n_animals,%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23even%20though/because%20p2%20is%20a%20Parrot%0Ap1.eat%28%29%20%23%20eat%20method%20comes%20from%20the%20Bird%20class,%20%0A%20%20%20%20%20%20%20%20%20%23even%20though/because%20p1%20is%20a%20Parrot%0A&amp;cumulative=false&amp;heapPrimitives=nevernest&amp;mode=edit&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=true"/>
+  http://www.pythontutor.com/visualize.html#code=%22%22%22%0AModule%20containing%20a%20superclass%20Animal,%20with%0Asubclasses%20Bird,%20Parrot,%20and%20Penguin.%0A%0AAuthor%3A%20Bracy%20%28awb93%29,%20Lee%20%28ljl2%29,%20and%20Fan%20%28kdf4%29%0ADate%3A%20%20%20April%202020%0A%22%22%22%0A%0Aclass%20Animal%28%29%3A%0A%20%20%20%20%22%22%22%0A%20%20%20%20An%20instance%20is%20a%20single%20animal%20with%20a%20name,%20id%20number,%20and%20weight.%0A%20%20%20%20%22%22%22%0A%20%20%20%20%23%20Class%20Attribute%0A%20%20%20%20n_animals%20%3D%200%0A%20%20%20%20CAN_SWIM%20%3D%20False%0A%20%20%20%20CAN_FLY%20%3D%20False%0A%20%20%20%20CAN_SPEAK%20%3D%20False%0A%0A%20%20%20%20%23%20BUILT-IN%20METHODS%0A%20%20%20%20def%20__init__%28self,%20name,%20weight%3D50%29%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20Creates%20a%20new%20Animal%20with%20a%20unique%20tag%20number.%0A%20%20%20%20%20%20%20%20name%3A%20name%20of%20animal%20%5Bstr%5D%0A%20%20%20%20%20%20%20%20tag_no%3A%20unique%20identifier%20for%20each%20instance%20%5Bint%5D%0A%20%20%20%20%20%20%20%20weight%3A%20weight%20of%20the%20animal%20%5Bint%5D%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20%23%20Instance%20attributes%0A%20%20%20%20%20%20%20%20assert%20type%28name%29%20%3D%3D%20str%0A%20%20%20%20%20%20%20%20self.name%20%3D%20name%0A%20%20%20%20%20%20%20%20self.tag_no%20%3D%20Animal.n_animals%0A%20%20%20%20%20%20%20%20self.weight%20%3D%20weight%0A%20%20%20%20%20%20%20%20Animal.n_animals%20%2B%3D%201%0A%0A%20%20%20%20def%20speak%28self,%20words%29%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20prints%20out%20the%20words%20to%20the%20screen%20if%20the%20animal%20can%20talk%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20if%20self.CAN_SPEAK%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20print%28words%29%0A%0A%20%20%20%20def%20eat%28self%29%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20Prints%20out%20eating%20sound%20%26%20animal%20gains%20small%20amount%20of%20weight.%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20print%28%22NOM%20NOM%20NOM%22%29%0A%20%20%20%20%20%20%20%20self.weight%20%2B%3D%201%0A%0A%20%20%20%20def%20__str__%28self%29%3A%0A%20%20%20%20%20%20%20%20action%3D%20''%0A%20%20%20%20%20%20%20%20if%20self.CAN_SWIM%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20action%20%2B%3D%20'It%20swims!%20'%0A%20%20%20%20%20%20%20%20if%20self.CAN_FLY%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20action%20%2B%3D%20'It%20flies!%20'%0A%20%20%20%20%20%20%20%20if%20self.CAN_SPEAK%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20action%20%2B%3D%20'It%20speaks!%20'%0A%20%20%20%20%20%20%20%20return%20%22tag%20%22%2Bstr%28self.tag_no%29%2B%22%3A%20%22%2Bself.name%2B%22%20is%20a%20%22%2B%20%5C%0A%20%20%20%20%20%20%20%20%20%20%20%20str%28self.weight%29%2B%22%20pound%20%22%2Btype%28self%29.
+  <bold>
+   name
+  </bold>
+  %2B%22.%20%22%2Baction%0A%0A%0Aclass%20Fish%28Animal%29%3A%0A%20%20%20%20%22%22%22%0A%20%20%20%20An%20instance%20is%20a%20fish.%0A%20%20%20%20%22%22%22%0A%0A%20%20%20%20CAN_SWIM%20%3D%20True%20%20%20%23%20override%20the%20Animal%20default%0A%0A%20%20%20%20def%20__init__%28self,%20name,%20weight%3D3%29%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20superclass%20assigns%20all%20attributes,%20but%20weight%20defaults%20to%203%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20super%28%29.
+  <bold>
+   init
+  </bold>
+  %28name,%20weight%29%0A%0A%20%20%20%20def%20eat%28self%29%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20Prints%20out%20eating%20sound%20%26%20animal%20gains%20small%20amount%20of%20weight.%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20print%28%22.%20.%20.%22%29%0A%20%20%20%20%20%20%20%20self.weight%20%2B%3D%201%0A%0Aclass%20Bird%28Animal%29%3A%0A%20%20%20%20%22%22%22%0A%20%20%20%20An%20instance%20is%20a%20bird.%0A%20%20%20%20%22%22%22%0A%0A%20%20%20%20CAN_FLY%20%3D%20True%0A%0A%20%20%20%20def%20__init__%28self,%20name,%20weight%3D2%29%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20superclass%20assigns%20all%20attributes,%20but%20weight%20defaults%20to%202%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20super%28%29.
+  <bold>
+   init
+  </bold>
+  %28name,%20weight%29%0A%0A%20%20%20%20def%20eat%28self%29%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20Prints%20out%20eating%20sound%20%26%20animal%20gains%20small%20amount%20of%20weight.%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20print%28%22Peck%20Peck%20Peck!%22%29%0A%20%20%20%20%20%20%20%20self.weight%20%2B%3D%201%0A%0Aclass%20Parrot%28Bird%29%3A%0A%20%20%20%20%22%22%22%0A%20%20%20%20An%20instance%20is%20a%20parrot.%0A%20%20%20%20%22%22%22%0A%0A%20%20%20%20CAN_SPEAK%20%3D%20True%20%20%23%20override%20the%20Bird%20default%0A%0A%20%20%20%20def%20speak%28self,%20words%29%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20prints%20out%20the%20words%20to%20the%20screen%20and%20asks%20for%20a%20cracker%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20super%28%29.speak%28words%29%0A%20%20%20%20%20%20%20%20print%28%22Now%20give%20me%20a%20cracker!%22%29%0A%0A%0Aclass%20Penguin%28Bird%29%3A%0A%20%20%20%20%22%22%22%0A%20%20%20%20An%20instance%20is%20a%20penguin.%0A%20%20%20%20%22%22%22%0A%20%20%20%20CAN_FLY%20%3D%20False%20%20%23%20override%20the%20Bird%20default%0A%20%20%20%20CAN_SWIM%20%3D%20True%20%20%23%20override%20the%20Animal%20default%0A%0A%20%20%20%20def%20__init__%28self,%20name,%20weight%3D25%29%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20superclass%20assigns%20all%20attributes,%20but%20weight%20defaults%20to%2025%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20super%28%29.
+  <bold>
+   init
+  </bold>
+  %28name,%20weight%29%0A%20%20%20%20%20%20%20%20%0Ap1%20%3D%20Parrot%28%22Polly%22%29%0Ap2%20%3D%20Parrot%28%22Francesca%22%29%0Aprint%28p2.n_animals%29%20%23%20the%20n_animals%20comes%20from%20Animal.n_animals,%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23even%20though/because%20p2%20is%20a%20Parrot%0Ap1.eat%28%29%20%23%20eat%20method%20comes%20from%20the%20Bird%20class,%20%0A%20%20%20%20%20%20%20%20%20%23even%20though/because%20p1%20is%20a%20Parrot%0A&amp;cumulative=false&amp;heapPrimitives=nevernest&amp;mode=edit&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=true
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

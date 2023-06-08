@@ -1,0 +1,112 @@
+<h1>
+ Title: computing gradient of outcome of neural network - chain rule
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-12T23:36:58.287996+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="491.2851897184823" src="https://static.us.edusercontent.com/files/PUfDdsPlMUR5vjb7ysfYCIUY" width="658"/>
+ </figure>
+ <figure>
+  <image height="477.9476885644769" src="https://static.us.edusercontent.com/files/CNb24O8Y52tbauInfWDgap0b" width="643"/>
+ </figure>
+ <paragraph>
+  In the first slide above, when we are computing the gradient of the outcome of the neural network with respect to (wrt) the weights going from layer {d-1} to layer d, the second term in the chain rule computes the gradient of the intermediate function s
+  <bold>
+   <italic>
+    wrt the weights.
+   </italic>
+  </bold>
+ </paragraph>
+ <paragraph>
+  HOWEVER, in the second slide above, when we are computing the gradient of the outcome of the neural network wrt the weights going from layer {d-2} to layer {d-1}, the second term in the chain rule computes the gradient of the intermediate function s
+  <bold>
+   <italic>
+    wrt the values of the nodes in layer {d-1}
+   </italic>
+  </bold>
+  .
+ </paragraph>
+ <paragraph>
+  <underline>
+   my question is
+  </underline>
+  : when we're doing the chain rule, how do we know when we are supposed to compute the gradient of the intermediate function s
+ </paragraph>
+ <paragraph>
+  <bold>
+   <italic>
+    wrt the vector w
+   </italic>
+  </bold>
+ </paragraph>
+ <paragraph>
+  vs.
+ </paragraph>
+ <paragraph>
+  <bold>
+   <italic>
+    wrt the vector v
+   </italic>
+  </bold>
+  ?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We do both in an alternating pattern; basically, whatever is most recent in the NN.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What do you mean by "most recent" ?
+ </paragraph>
+ <paragraph>
+  Also, are there no weights going from layer {d-1} to layer d (i.e. the output layer) in this case? If yes, why is that the case here?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  By most recent I just mean whatever we last did in running the backpropagation algorithm. There are weights going from d-1 to d, since it is a linear layer.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

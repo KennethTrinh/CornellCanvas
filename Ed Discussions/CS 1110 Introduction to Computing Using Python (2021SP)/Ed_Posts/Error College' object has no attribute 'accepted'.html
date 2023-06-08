@@ -1,0 +1,136 @@
+<h1>
+ Title: Error: College' object has no attribute 'accepted'
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-06T03:42:22.379198+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When I run showdown with my new _dict implementation, I get the error:
+ </paragraph>
+ <paragraph>
+  AttributeError: 'College' object has no attribute 'accepted'
+ </paragraph>
+ <paragraph>
+  I have no idea which function is causing this error.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Hey!
+ </paragraph>
+ <paragraph>
+  There is no attribute “accepted.”
+  <break>
+  </break>
+  The following are College class attributes:
+  <break>
+  </break>
+  -accepted_enrolled
+  <break>
+  </break>
+  -accepted_not_enrolled
+  <break>
+  </break>
+  -rejected
+  <break>
+  </break>
+  -waitlisted
+ </paragraph>
+ <paragraph>
+  -best of luck :))
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I don't believe I did anything that should cause this error.
+ </paragraph>
+ <paragraph>
+  The traceback lists:
+ </paragraph>
+ <paragraph>
+  Traceback (most recent call last): File ".\showdown_time_a5.py", line 113, in  sd = college_module.Showdown(c1, c2) File "C:\Users\David\Creative Cloud Files\skeleton\college_a5.py", line 135, in
+  <bold>
+   init
+  </bold>
+  if c2.accepted(c1_student): AttributeError: 'College' object has no attribute 'accepted'
+ </paragraph>
+ <paragraph>
+  I didn't change anything in the college class.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Yes, but “accepted” is not a College class attribute. I think maybe there is something wrong with your process_line function. You should access the “.accepted_enrolled” of and “.accepted_not_enrolled” of lists of College objects in your process_line code, not “.accepted”, as “.accepted” is not a College class attribute. Hope this helps
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Elisabeth Finkel (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <code>
+   accepted
+  </code>
+  is actually the name of a method in the updated version of the College class. In college_a5.py, where class college is defined, is there a method that starts like this?
+ </paragraph>
+ <pre>    def accepted(self, tag):
+        """Returns True if the student with tag number `tag` was accepted at
+        College c; returns False otherwise.
+        etc...
+</pre>
+ <paragraph>
+  That method should have been in the provided skeleton
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

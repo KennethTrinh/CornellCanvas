@@ -1,0 +1,63 @@
+<h1>
+ Title: 2019SpringFinalQ1b [when can a method access instance or class attributes?]
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-21T21:57:01.886695+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am wondering why the answers D and E incorrect for the question
+ </paragraph>
+ <paragraph>
+  Suppose that fun1 is a class method for the class C and it has the following line of code in it: a1 = b1 * 2. Where might the variable b1 that was referred to in this line of code be located?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  D. an instance/object attribute of an object of type C
+ </paragraph>
+ <paragraph>
+  E. a class attribute of class C
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, good question!
+  <break>
+  </break>
+  <break>
+  </break>
+  Remember that in a method/function looks within its call frame to figure out what variables are being referred to.
+  <break>
+  </break>
+  <break>
+  </break>
+  In order for D to be true, one would have needed the call to be something like o.b1 where o is an object. An instance/object attribute needs to be referred to with respect to some "enclosing" object --- the folder that attribute is in.
+  <break>
+  </break>
+  <break>
+  </break>
+  In order for E to be true, one would have needed the call to C.b1 , i.e., saying that one is referring to the b1 that is in class C.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

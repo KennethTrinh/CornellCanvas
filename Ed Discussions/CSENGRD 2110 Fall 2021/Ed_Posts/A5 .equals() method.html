@@ -1,0 +1,59 @@
+<h1>
+ Title: A5 .equals() method
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-18T04:09:17.369515+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Based on the method specification, it seems state that two trees are equal as long as they have the same number and values of children. Is it correct to state that two trees are still equal even if they have different shapes, as long as they are of the same class, have the same size, and their children set are equal? In other words, order is not important when comparing H1N1Trees?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We define children as a SET of trees.
+ </paragraph>
+ <paragraph>
+  Therefore, Trees T1 and T2 are equal if
+ </paragraph>
+ <paragraph>
+  (a) They have the same person in their root node and
+ </paragraph>
+ <paragraph>
+  (b) T1's set of children equals T2's set of children.
+ </paragraph>
+ <paragraph>
+  We cannot talk about the "Shapes" of the children, because they are sets of children.
+ </paragraph>
+ <paragraph>
+  And, therefore, order is not important because order is not important in sets.
+ </paragraph>
+ <paragraph>
+  We could have defined the trees as Lists of children. Then, order would have been important.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

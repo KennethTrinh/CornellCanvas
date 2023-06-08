@@ -1,0 +1,47 @@
+<h1>
+ Title: Generics in Iterator/Iterable tutorial
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-13T11:34:07.082298+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The study guide says to know Generics at the level of the tutorial in Iterator/Iterable. I know generics are involved with the iterator and iterable interfaces but I am not sure why they are generic classes.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Java API:
+  <link href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html"/>
+  https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html. "T - the type of elements returned by the iterator" We need to make that type polymorphic so that we can substitute any
+  <italic>
+   object
+  </italic>
+  type for T.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

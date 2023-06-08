@@ -1,0 +1,87 @@
+<h1>
+ Title: How do you derive this linear rule from the classification rule?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-26T01:21:22.687586+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  How do you derive this linear rule from the classification rule?
+ </paragraph>
+ <figure>
+  <image height="445.27858627858626" src="https://static.us.edusercontent.com/files/eWJb0uaHPbdOIq8IesZo7rnZ" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Scott Bass (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Starting from the second to last line we can form the ratio:
+ </paragraph>
+ <paragraph>
+  $$\frac{exp(-\frac{1}{2}||\vec{x}-\vec{\mu}_{+}||^{2})P(Y=+1)}{exp(-\frac{1}{2}||\vec{x}-\vec{\mu}_{-}||^{2})P(Y=-1)} = exp(-\frac{1}{2}(||\vec{x}-\vec{\mu}_{+}||^{2} - ||\vec{x}-\vec{\mu}_{-}||^{2}))\frac{P(Y=+1)}{P(Y=-1)}$$
+ </paragraph>
+ <paragraph>
+  Taking the log of this ratio turns the argmax into sign:
+ </paragraph>
+ <paragraph>
+  $$sign(-\frac{1}{2}(||\vec{x}-\vec{\mu}_{+}||^{2} - ||\vec{x}-\vec{\mu}_{-}||^{2})+\ln\frac{P(Y=+1)}{P(Y=-1)})$$
+ </paragraph>
+ <paragraph>
+  Focusing on the first term we can expand it and cancel terms:
+ </paragraph>
+ <paragraph>
+  $$-\frac{1}{2}(\cancel{\vec{x} \cdot \vec{x}} - 2\vec{\mu}_{+} \cdot \vec{x} + \vec{\mu}_{+} \cdot \vec{\mu}_{+} -
+ </paragraph>
+ <paragraph>
+  \cancel{\vec{x} \cdot \vec{x}} + 2\vec{\mu}_{-} \cdot \vec{x} - \vec{\mu}_{-} \cdot \vec{\mu}_{-}
+ </paragraph>
+ <paragraph>
+  )$$
+ </paragraph>
+ <paragraph>
+  $$= \vec{\mu}_{+} \cdot \vec{x} - \vec{\mu}_{-} \cdot \vec{x} - \frac{1}{2} (\vec{\mu}_{+} \cdot \vec{\mu}_{+} - \vec{\mu}_{-} \cdot \vec{\mu}_{-})$$
+ </paragraph>
+ <paragraph>
+  $$= (\vec{\mu}_{+} - \vec{\mu}_{-}) \cdot \vec{x} - \frac{1}{2} (\vec{\mu}_{+} + \vec{\mu}_{-}) \cdot (\vec{\mu}_{+} - \vec{\mu}_{-})$$
+ </paragraph>
+ <paragraph>
+  Final expression:
+ </paragraph>
+ <paragraph>
+  $$sign((\vec{\mu}_{+} - \vec{\mu}_{-}) \cdot \vec{x} + (\ln\frac{P(Y=+1)}{P(Y=-1)} - \frac{1}{2} (\vec{\mu}_{+} + \vec{\mu}_{-}) \cdot (\vec{\mu}_{+} - \vec{\mu}_{-})))$$
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

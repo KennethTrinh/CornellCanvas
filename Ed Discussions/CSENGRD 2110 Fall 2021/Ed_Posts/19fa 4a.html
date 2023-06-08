@@ -1,0 +1,151 @@
+<h1>
+ Title: 19fa 4a
+</h1>
+<h3>
+ Author: Deemo Chen :) (None)
+</h3>
+<h3>
+ Date: 2021-12-11T16:00:15.055378+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I went on JHT but I don't really understand why is the next field of 2 is null in that situation. I kinda know 8 didn't get reversed is because it falls into the base case since its next is null, for which I don't know why
+ </paragraph>
+ <paragraph>
+  https://www.cs.cornell.edu/courses/JavaAndDS/recursion/RE04RevLinkedList.pdf
+ </paragraph>
+ <figure>
+  <image height="156.79321486268176" src="https://static.us.edusercontent.com/files/q16hnmyhELCGbeqN6o7Evvkk" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tianjiao Li (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is because "the recursive call rev(h.next) reverses all but the first node of the list".
+ </paragraph>
+ <paragraph>
+  Current head h points to 8. Linked list (3, 6, 2) is the result of calling rev(h.next) and 2 is the end of that linked list, and thus the next of 2 is null.
+ </paragraph>
+ <paragraph>
+  8 actually does not fall into the base case because neither it nor its next is null. Its next is 2. By doing h.next.next= h; h.next= null; the invariant is restored again.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tianjiao Li (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Each of the recursive call returns the new head, 3. The base case is 3, because before reversion, 3.next == null. Once the base case is resolved, the head pointing to 3 is left on the top of the call stack until all the frames finish. Each recursive call just elongates the reversed linked list by 1.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is not the way to understand/prove this method. This is viewing execution of it and we don't want t do that.
+ </paragraph>
+ <paragraph>
+  The answer to the student's problem: " I don't really understand why is the next field of 2 is null in that situation. " is simply this:
+ </paragraph>
+ <paragraph>
+  The specification says that the recursive
+  <break>
+  </break>
+  call rev(h.next) will reverse  that the linked
+  <break>
+  </break>
+  list beginning with h.next.
+ </paragraph>
+ <paragraph>
+  and that includes putting null in that field.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Deemo Chen :) (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  ah, I see, because now 2 is the last node of the reversed list, so it should point to null.
+ </paragraph>
+ <paragraph>
+  so in general when developing a recursive function, we should assume the recursive call is correct(follows the spec), and then look at the situation when it reaches the base case to complete the method?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, that is how we have always said to understand a recursive method.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  But don't think about "reaches the base case to complete the method."
+ </paragraph>
+ <paragraph>
+  Don't think about reaching anything. Just see that the base case makes sense, that the recursive case makes sense as said above, and that the arguments of the recursive call are "smaller" than the parameters in some sense so that the recursion stops.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tianjiao Li (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Aha! This is nicely put.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

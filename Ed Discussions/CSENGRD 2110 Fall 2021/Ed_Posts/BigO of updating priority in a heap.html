@@ -1,0 +1,39 @@
+<h1>
+ Title: BigO of updating priority in a heap
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-18T14:44:02.288425+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  A7 says that the worst case time complexity of changePriority(T v, double p) is linear in the size of the array and the expected complexity is O(logn). Its method body uses a hashmap to retrieve the index of the value (constant time) before executing bubbleUp or bubbleDown as needed (logarithmic). When would this result in a linear time complexity? Or does this linear worst case complexity refer to when there is no hashmap so each node must be traversed to find the node specified?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Its method uses a HashMap to retrieve something. The expected time for HashMap is O(1) but the worst-case is O(n) ---e.g. when the hash function turns all values into the same integer.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

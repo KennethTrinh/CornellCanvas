@@ -1,0 +1,54 @@
+<h1>
+ Title: Conflict between the Servo and AnalogWrite libraries
+</h1>
+<h3>
+ Author: Ruidong Zhang (admin)
+</h3>
+<h3>
+ Date: 2022-11-05T08:40:37.40223+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Some of you met issues while trying to use the servo and LEDs, buzzers, or DC motor together. This issue is caused by conflict in the Servo and AnalogWrite libraries. There is a workaround to this issue - not using these two libraries and use the lower-level PWM library
+  <code>
+   ledc
+  </code>
+  instead.
+ </paragraph>
+ <paragraph>
+  <link href="https://randomnerdtutorials.com/esp32-pwm-arduino-ide/"/>
+  Here is a detailed tutorial on how to use
+  <code>
+   ledc
+  </code>
+  instead of
+  <code>
+   analogWrite
+  </code>
+  to control LEDs. It can be used to control buzzers too.
+ </paragraph>
+ <paragraph>
+  <link href="https://www.electronicshub.org/esp32-servo-control/"/>
+  Here is a detailed tutorial on how to use
+  <code>
+   ledc
+  </code>
+  instead of
+  <code>
+   Servo
+  </code>
+  to control servos.
+ </paragraph>
+ <paragraph>
+  If you meet with similar issues, this should solve your problem.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

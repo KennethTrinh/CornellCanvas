@@ -1,0 +1,88 @@
+<h1>
+ Title: CSS &amp; images not linking after implementing router.php
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-02-24T05:05:54.28058+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi,
+ </paragraph>
+ <paragraph>
+  I've visited 4 office hours now over the last few days with this exact issue and so far no TA has been able to solve it.
+ </paragraph>
+ <paragraph>
+  After moving my files into
+  <code>
+   pages
+  </code>
+  and
+  <code>
+   public
+  </code>
+  folders and implementing router.php, nothing in my
+  <code>
+   public
+  </code>
+  folder appears (my CSS styling and website images do not show up). Every TA has told me that my paths appear correct and there are no errors in the console, yet nothing is appearing. They have tried to help me debug with no success. I have tried relaunching the website after making changes and rebuilding the container to no effect.
+ </paragraph>
+ <paragraph>
+  What are my options ahead of tonight's deadline if this problem can't be solved?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm sorry that you've gone to so many office hours and weren't able to figure out what's wrong with your code. I know this has been a frustrating experience for you.
+ </paragraph>
+ <paragraph>
+  I've reviewed your code, and noticed that your code is outputting this on top of every single file (HTML, CSS, Images, etc.):
+ </paragraph>
+ <blockquote>
+  <code>
+   &lt;!-- Source for all code in this `router.php` file: Kyle J. Harms (copied with permission for INFO 2300 project 1)--&gt;
+  </code>
+ </blockquote>
+ <paragraph>
+  This HTML comment turns every single file into an HTML file. View the source for your CSS in your web browser. You'll see this HTML comment. You're also putting this on every image.
+ </paragraph>
+ <paragraph>
+  Please note that the class notes for routing explicitly state that no citation is necessary for the router.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you so much! That was exactly the problem.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

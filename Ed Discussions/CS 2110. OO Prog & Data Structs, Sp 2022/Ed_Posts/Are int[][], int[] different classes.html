@@ -1,0 +1,57 @@
+<h1>
+ Title: Are int[][], int[] different classes?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-08T16:36:25.015079+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I found a picture in hypertext.
+ </paragraph>
+ <figure>
+  <image height="166.89795918367346" src="https://static.us.edusercontent.com/files/Qo9UcBPPC0sdbF8ZKKh2fNRk" width="658"/>
+ </figure>
+ <paragraph>
+  I'm confused. Do the three folders on the Right represent three objects of class int[][] and int[]? When you mentioned that an array is an object, does "array" refer to variables like e which contains pointers to those arrays of elements, or the arrays of elements themselves? And based on our convention, int[][] and int[] are class names. Is that really the case? Or is it just an abuse of notation?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: CJ Lee (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  1. Yes, the folders all represent objects of either int[][] or int[].
+ </paragraph>
+ <paragraph>
+  2. You should consider an "array" to be an object, whose behavior is just like any other object; it is located in some place in memory, where the variable allows us to access it in its place in memory. An array is not solely the variable
+  <code>
+   e
+  </code>
+  itself, nor is simply the elements contained within the array, because we can also do things like
+  <code>
+   e.length
+  </code>
+  which is a field of the object.
+ </paragraph>
+ <paragraph>
+  3. int[][] and int[] are indeed class names, but they're defined by Java in a special way, so that we can add more brackets if we want more dimensions, thereby making them extensible.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

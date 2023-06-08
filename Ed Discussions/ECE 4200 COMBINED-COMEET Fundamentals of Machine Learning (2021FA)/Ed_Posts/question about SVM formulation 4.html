@@ -1,0 +1,55 @@
+<h1>
+ Title: question about SVM formulation 4
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-13T07:41:55.608661+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am having a hard time understand the following transition
+ </paragraph>
+ <paragraph>
+  if w' = w/gamma', and t' = t/gamma', where gamma' = gamma * ||w||
+ </paragraph>
+ <paragraph>
+  why would we want to minimize 0.5*||w||^2?
+ </paragraph>
+ <paragraph>
+  also where are the 1/2 and square coming from?
+ </paragraph>
+ <figure>
+  <image height="274.6137640449438" src="https://static.us.edusercontent.com/files/kk1jbMirCdmcRCcj9Tdt1LdI" width="495"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Jayadev Acharya (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  minimizing 1/|w| is the same as maximizing |w|, which is the same as maximizing |w|^2
+ </paragraph>
+ <paragraph>
+  note |w|^2 is a nice convex function which is now easy to differentiate compared to 1/|w|, which is not convex.
+ </paragraph>
+ <paragraph>
+  The half is usually put to cancel the square after derivative.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

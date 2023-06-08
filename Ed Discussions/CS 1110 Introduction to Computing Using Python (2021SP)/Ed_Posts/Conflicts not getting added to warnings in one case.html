@@ -1,0 +1,98 @@
+<h1>
+ Title: Conflicts not getting added to warnings in one case
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-15T09:20:48.294599+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Running test_course_changetime
+ </paragraph>
+ <paragraph>
+  905am-955am
+ </paragraph>
+ <paragraph>
+  940am-1055am
+ </paragraph>
+ <paragraph>
+  905am-955am
+ </paragraph>
+ <paragraph>
+  1125am-1240pm
+ </paragraph>
+ <paragraph>
+  1125am-1240pm
+ </paragraph>
+ <paragraph>
+  805am-920am
+ </paragraph>
+ <paragraph>
+  905am-955am
+ </paragraph>
+ <paragraph>
+  930am-945am
+ </paragraph>
+ <paragraph>
+  130pm-230pm
+ </paragraph>
+ <paragraph>
+  Traceback (most recent call last):
+ </paragraph>
+ <paragraph>
+  File "schedule_tests.py", line 297, in &lt;module&gt;
+ </paragraph>
+ <paragraph>
+  testfn() # Adding the parentheses calls whatever testfn is
+ </paragraph>
+ <paragraph>
+  File "schedule_tests.py", line 249, in test_course_changetime
+ </paragraph>
+ <paragraph>
+  assert my_schedule.warnings == temp_exp_warnings, \
+ </paragraph>
+ <paragraph>
+  AssertionError: my_schedule warnings list should be ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm', 'ARCH 1120 STU 520: time change causes conflict with AEP 3560 LEC 001', 'ARCH 1120 STU 520: time change causes conflict with FAKER 0000 LEC 002'], but is ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm']
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  ive checked everything multiple times along with printing values to see whats wrong and everything seems like it should run correctly.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hey,
+ </paragraph>
+ <paragraph>
+  Seems like you appending stuff wrong.  The first schedule is the roster, right? So the roster should only have the time change warning.  Then, every schedule after that, you also need to append the time change warnings and the time conflict warnings for every student schedule.  Please use the in_schedules attribute in your changeTime function.
+ </paragraph>
+ <paragraph>
+  Best,
+ </paragraph>
+ <paragraph>
+  Troy
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

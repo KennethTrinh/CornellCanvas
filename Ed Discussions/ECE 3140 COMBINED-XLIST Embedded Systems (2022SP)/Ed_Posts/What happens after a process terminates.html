@@ -1,0 +1,45 @@
+<h1>
+ Title: What happens after a process terminates
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-17T16:02:06.286228+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  After a process terminates, do we expect that it is automatically deleted from the front of queue, and added back? Or do we have to implement this dequeue and enqueue process by ourselves? (The is for the process_select function, when cursp = NULL; process terminates)
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Nils Napp (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  You should not put a terminated process back on the queue to be scheduled again. The handout code does nothing for you in this regard other than letting you know that the process has terminated by passing in NULL. You'll need to free up the resources from the process etc.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

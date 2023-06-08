@@ -1,0 +1,37 @@
+<h1>
+ Title: How to test node() method?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-01T02:29:23.15584+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Curious about testing for this method. I know that it is supposed to return a node, so when I create a DLList object, and use the append() method to add values to it, how do I know what the actual node object of those elements are, and how do I compare this to the node returned from the node() method.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  You can use the node.value() method to know the value of the node. To use this information effectively you want to append unique values, so let's say you have at node 5 the value "2110" you must make sure no other node in the list has the value of "2110" (this is something you should make sure as a tester when making your list) then you can use assertequals to make sure the value at node(5) is "2110", testing the node directly would be confusing (annoying) and unnecessary knowing this fact.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

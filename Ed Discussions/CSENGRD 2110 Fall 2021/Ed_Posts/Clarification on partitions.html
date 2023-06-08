@@ -1,0 +1,48 @@
+<h1>
+ Title: Clarification on partitions
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-02T13:35:16.079045+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was looking at lecture 7, which says that ob instanceof C returns true if ob is a subtype or supertype of C. Does this mean that all instances of an object contain partitions with the object's class's subtypes? This doesn't seem to be the case because JHT shows an example where it would be detrimental if it returned true for objects with subtype Driverless (regular Car objects wouldn't be able to park)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The expression
+ </paragraph>
+ <paragraph>
+  ob instance of C
+ </paragraph>
+ <paragraph>
+  is true iff object ob has a partition named C.
+ </paragraph>
+ <paragraph>
+  That is the simplest way to think about it.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

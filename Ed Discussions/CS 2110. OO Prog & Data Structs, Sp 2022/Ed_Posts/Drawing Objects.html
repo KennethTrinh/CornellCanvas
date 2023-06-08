@@ -1,0 +1,89 @@
+<h1>
+ Title: Drawing Objects
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-04T13:43:36.673035+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi team,
+ </paragraph>
+ <paragraph>
+  Suppose you have a variable b at runtime which has a dynamic type of "Account"
+ </paragraph>
+ <paragraph>
+  If you explicitly downcast "Account" to one of it's subclasses "InterestAccount"
+ </paragraph>
+ <paragraph>
+  Does the dynamic type of variable b change to "InterestAccount" and is the pointer pointing to the "InterestAccount" part of the partition?
+ </paragraph>
+ <paragraph>
+  Thanks!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Depends on how variable b was initialized and how it ended up as Account.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  If the declaration of variable b was just
+ </paragraph>
+ <paragraph>
+  Account b = new Account(..);
+ </paragraph>
+ <paragraph>
+  then you downcasted you'd get an error,
+ </paragraph>
+ <paragraph>
+  however,
+ </paragraph>
+ <paragraph>
+  if you did
+ </paragraph>
+ <paragraph>
+  Account b = new IAccount(...);
+ </paragraph>
+ <paragraph>
+  then downcasted you would not get an error.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You can only explicitly downcast if it was originally declared from a lower partition.
+ </paragraph>
+ <paragraph>
+  Makes sense thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

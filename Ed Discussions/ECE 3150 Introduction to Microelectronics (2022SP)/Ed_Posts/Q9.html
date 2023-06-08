@@ -1,0 +1,139 @@
+<h1>
+ Title: Q9
+</h1>
+<h3>
+ Author: Nikhil Satheesh Pillai (student)
+</h3>
+<h3>
+ Date: 2022-02-04T09:06:20.630861+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="429.5548961424332" src="https://static.us.edusercontent.com/files/YTvb87BzKXxRAfBViuf1Hjgj" width="658"/>
+ </figure>
+ <paragraph>
+  I'm having a bit of a hard time trying to get this diagram. If say, using the ideal model, D1 faces forward bias and it shorts. Would Vout be 2V or (V in - 2). Also, here D1 would be in forward bias when (Vin - 2) is negative right?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Hyunjea Lee (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  In the ideal model, a diode acts as a short circuit when forward biased. In this case, Vout does not depend on Vin as you see from the circuit diagram. When Vin is large, D1 is turned off, so there's no voltage drop across R, and thus the voltage at the cathode of D1 is Vin. Then you know the condition to make it forward biased.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Nikhil Satheesh Pillai (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why does v_out not depend on V_in. Also, the rest of explanation didn't make sense either. Why do I need to consider V_in being large since the problem only asks for -4 to 4. Also, why does the diode turn off and why would there not be any current across R. I still don't get how to know in the above diagram that the LED is forward bias?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Hyunjea Lee (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For the first part, Vout is in parallel with 2V voltage source.
+ </paragraph>
+ <paragraph>
+  When I said large, that means it's some value like 3 or 4 V. A diode acts as an open circuit when it's reverse biased. If D1 is reverse biased, there's no loop to flow current. There's no current across R, and there's no voltage drop across R.
+ </paragraph>
+ <paragraph>
+  You may start from two cases: D1 forward biased and D1 reverse biased. Then you try to find the threshold condition. Let's assume Vin = 4 V is applied and D1 is turned off in the beginning. As you increase Vin, the voltage across D1 changes: 2V - Vin. Then you know at which Vin D1 becomes turned on. You get the expression for Vout at the two extreme cases (Vin = 4 or -4 V), find the threshold, and plot the two equations separated at the threshold voltage.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Nikhil Satheesh Pillai (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm still a bit confused on the 2 cases. If V_in = 4 V, why does the voltage across the diode be 2 - 4? Wouldn't the voltage drop be distributed between the resistor and diode and shouldn't it be Vin - 2 (not the other way around?). Also what does "off" mean - does it mean open circuit?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Hyunjea Lee (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  V_in = 4 V ⇨ D1 reverse biased ⇨ open circuit ⇨ no current flowing on R ⇨ no voltage drop across R ⇨ V on the cathode = V_in = V_out ⇨ V_D1 = 2 - Vin
+ </paragraph>
+ <paragraph>
+  I'm just repeating what I said. This is everything I can explain to you. I think other TAs might explain better. Sorry. "off" means open circuit.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Nikhil Satheesh Pillai (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thanks for trying to explain. I think the point of confusion I am having is why the voltage across the diode is 2 - Vin instead of V_in - 2?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Hyunjea Lee (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh I see. When I say the voltage across D1, it means V_anode - V_cathode. I should have clarified this. Thanks for pointing it out.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

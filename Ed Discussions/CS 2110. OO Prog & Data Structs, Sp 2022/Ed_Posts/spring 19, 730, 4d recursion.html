@@ -1,0 +1,112 @@
+<h1>
+ Title: spring 19, 7:30, 4d recursion
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-17T07:13:01.337693+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For this problem, if root have no childern, will the for-loop have any problem since root.children == Null?
+ </paragraph>
+ <figure>
+  <image height="364.64166666666665" src="https://static.us.edusercontent.com/files/kfnT5gjyRbRYIvAA0ZcCjoCk" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  If there are no children the loop executes 0 iterations, hasnext() would return false in the case that there are no children.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Sarah Gates (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi! This wasn't originally my post, but I was wondering why we don't have to do largestChild = largestChild*Math.max(...) within the for loop -- Where is largestChild actually increasing in the solution?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  This is because we already have the recursion with maxPathProduct(child). Also the largestChild can change. If we first find the maxPathProduct of child1, largestChild is set to the path of child1. But the path for child 2 could be bigger, and the largestChild will be reset to path of child 2 etc. We can only be sure the child is the largest when we go over all the children. That’s why we do the multiplication after the loop terminate, at the very end in the return statement.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Sarah Gates (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  oh I see, thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Marking resolved.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

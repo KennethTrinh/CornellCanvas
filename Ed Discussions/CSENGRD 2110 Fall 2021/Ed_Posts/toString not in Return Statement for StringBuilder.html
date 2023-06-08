@@ -1,0 +1,66 @@
+<h1>
+ Title: toString not in Return Statement for StringBuilder
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-30T01:50:08.879366+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I noticed that the code doesn't invoke a toString() function during the return statement of the toString() method.
+ </paragraph>
+ <paragraph>
+  What I mean is the return statement is: return res + "]"
+ </paragraph>
+ <paragraph>
+  Instead of:  return res.toString() + "]"
+ </paragraph>
+ <paragraph>
+  Why is toString() not necessary in this case to convert back to a string? Is toString() called implicitly in the return statement or does the concatenation of a StringBuilder with a string cause it to be turned back into a string?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When s is a String and b is something else:
+ </paragraph>
+ <paragraph>
+  b + s
+ </paragraph>
+ <paragraph>
+  then + is then string catenation. What does Java then do with b?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ahhh I see! Java would turn StringBuilder back into a String due to string catenation. Thank you
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

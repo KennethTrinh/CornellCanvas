@@ -1,0 +1,105 @@
+<h1>
+ Title: How do we cite seed images
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-04-30T17:15:22.514766+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I know we are supposed to cite external resources for all of our images. Do we need to make a comment cite like this above all images
+ </paragraph>
+ <pre>&lt;!-- Source: https://www.example.com/image.png --&gt;
+&lt;img src="/public/uploads/clipart/&lt;?= htmlspecialchars($record["id"]) . '.' . 'jpeg' ?&gt;"&gt;
+</pre>
+ <paragraph>
+  Since I have it that I loop over all records for my images would I need to make 10 comment citations like this?
+ </paragraph>
+ <pre>foreach...
+&lt;!-- Source: https://www.example.com/image.png --&gt;
+&lt;!-- Source: https://www.example.com/image.png --&gt;
+&lt;!-- Source: https://www.example.com/image.png --&gt;
+&lt;!-- Source: https://www.example.com/image.png --&gt;
+&lt;!-- Source: https://www.example.com/image.png --&gt;
+&lt;!-- Source: https://www.example.com/image.png --&gt;
+&lt;img src="/public/uploads/clipart/&lt;?= htmlspecialchars($record["id"]) . '.' . 'jpeg' ?&gt;"&gt;
+</pre>
+ <paragraph>
+  Would I also need to do this on the details page in addition to the view all entries page?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You're close. Each comment should be above the HTML element. So change the code so that the citation comments are above each
+  <code>
+   &lt;img&gt;
+  </code>
+  element.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I only have 1 &lt;img&gt; element since I am looping through all records as record. So would I just do it all over that 1 HTML element
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is this a way I can do it?
+ </paragraph>
+ <pre> &lt;!--Source: &lt;?php echo htmlspecialchars($record['source']); ?&gt; --&gt;
+</pre>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, this is one way to do this.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

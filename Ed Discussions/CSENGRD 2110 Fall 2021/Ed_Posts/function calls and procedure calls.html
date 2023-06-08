@@ -1,0 +1,102 @@
+<h1>
+ Title: function calls and procedure calls
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-01T04:25:18.230432+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="76.16467780429593" src="https://static.us.edusercontent.com/files/Vh7c8AFYJSxJ94xT8VuQa5MO" width="658"/>
+ </figure>
+ <pre>Hi.  May I know the difference between function calls and procedure calls? How are they defined? Why println(); is a procedure call?
+In lecture 2 we have c1.increment();
+Is c1.increment(); a function call or a procedure call?</pre>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If you search on the homepage of JavaHyperText, you can read its definition of "procedure" and "procedure call," which may help clarify things.
+ </paragraph>
+ <paragraph>
+  In this course, a "procedure" is a method that does not return a value; therefore, procedures can be identified as methods whose return type is
+  <code>
+   void
+  </code>
+  .  If a method is to be useful, yet does not return a value, then it must have some kind of side effect.  Often, that side effect is mutating the fields of the object that the procedure was invoked on.
+ </paragraph>
+ <paragraph>
+  <code>
+   c1.increment()
+  </code>
+  is a
+  <italic>
+   procedure
+  </italic>
+  call because method
+  <code>
+   increment()
+  </code>
+  in class
+  <code>
+   Counter
+  </code>
+  has a
+  <code>
+   void
+  </code>
+  return type.  Its side effect is incrementing the field
+  <code>
+   count
+  </code>
+  in the object referenced by variable
+  <code>
+   c1
+  </code>
+  .
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Type these terms into the JavaHyperText Filter Field:
+ </paragraph>
+ <paragraph>
+  procedure             procedure call
+ </paragraph>
+ <paragraph>
+  function                 function call
+ </paragraph>
+ <paragraph>
+  Get used to using JavaHyperText as your first place to look for something.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

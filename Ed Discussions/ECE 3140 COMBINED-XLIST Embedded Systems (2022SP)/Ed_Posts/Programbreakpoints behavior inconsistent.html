@@ -1,0 +1,39 @@
+<h1>
+ Title: Program/breakpoints behavior inconsistent
+</h1>
+<h3>
+ Author: Tenny Yin (None)
+</h3>
+<h3>
+ Date: 2022-03-27T09:15:14.792071+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, the behavior of our program is inconsistent depending on whether we used break points or not: sometimes it gives hard faults if we are stepping through certain lines of code and sometimes the program just ignores the breakpoints and goes into fault. Right now our program functions correctly if we remove all breakpoints and run it directly, but still faults if we step over/into at some locations so its almost impossible to debug. Can anyone explain why that's the case? Thanks.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Without providing the information outlined in #485 it's hard to give an exact answer (if you do you may need to make this post private). Most likely there is a bug that only occurs when a context switch is triggered while certain portions of the code are being executed
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,140 @@
+<h1>
+ Title: Lab 3 process_select
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-15T08:03:10.481403+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The handout says that the current_process variable is set to NULL when the process terminates. This is done with the given code, right? We do not need to implement this?
+ </paragraph>
+ <paragraph>
+  Also, we need to have some logic when a process terminates to free its memory, but if the current_process is set to NULL, how will we know which process was the one that terminated? Will we need to keep track of which process is currently running in the process_t and check for that if we run into a NULL current_process?
+ </paragraph>
+ <paragraph>
+  In regards to freeing the stacks of terminated processes, when calling process_stack_free, it says we need to pass in the initial stack pointer. Does this mean that we will have to keep track of the initial sp and size in the process_t?
+ </paragraph>
+ <paragraph>
+  One more question: does the order of the outputs of process_select matter? Can I cycle between the same two processes until one of them terminates, or should I do a round-robin and make sure every process has run before rerunning the same one? This isn't specified and it would make sense to do round-robin so we have concurrency between all processes.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The variable
+  <code>
+   current_process
+  </code>
+  is never modified by the support code and will only operate on the
+  <italic>
+   stack pointers
+  </italic>
+  returned by
+  <code>
+   process_select
+  </code>
+  .
+ </paragraph>
+ <paragraph>
+  When a process finishes executing, you will know this as
+  <code>
+   cursp
+  </code>
+  will be
+  <italic>
+   NULL
+  </italic>
+  . Then you may take appropriate action to nullify the
+  <code>
+   current_process
+  </code>
+  .
+ </paragraph>
+ <paragraph>
+  Correct.
+ </paragraph>
+ <paragraph>
+  I do not understand your example. Switching back and forth is the same as round-robin when you only have two processes. For a larger number of processes, you will be using round-robin and switching to a different one at each context switch. Here is an example where you have three processes where process 1 runs indefinitely, process 2 finishes in its 2nd time slot, and process 3 finishes in its 4th time slot.
+  <break>
+  </break>
+  1, 2, 3, 1, 2, 3, 1, 3, 1, 3, 1, 1, 1,...
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If a process terminates (cursp == NULL) and we still have other processes that are ready, then there is no need to set current_process to NULL, right? We just immediately swap it from the terminated process to the next ready process, without ever setting it to NULL.
+ </paragraph>
+ <paragraph>
+  What I meant is if you have 3 processes and the way you select the processes is you do 1 and 2 until one of them terminates, then you start 3. This is possible if I have a queue and I first return 1. After 1 runs, I switch to 2 with 1 now ready for the next switch. After 2 runs, I switch to 1 with 2 now ready, etc. until one finishes. I have a new way of switching but I'm just curious why this case is not prevented from the specifications?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You cannot leave the terminated process. It contains
+  <code>
+   malloc
+  </code>
+  'd memory which must be
+  <code>
+   free
+  </code>
+  'd to avoid memory leaks.
+ </paragraph>
+ <paragraph>
+  Your proposition still supports concurrency, but lacks fairness between all processes. We want to ensure that all ready processes are equally advancing in their work.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ok, thanks for the help. I know my proposition is unfair but the function specifications allow for it. Maybe "next ready process" should be clarified to "ready process that has been idle for the longest time".
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

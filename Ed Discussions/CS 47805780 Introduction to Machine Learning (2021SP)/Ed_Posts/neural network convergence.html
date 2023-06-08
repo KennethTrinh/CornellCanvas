@@ -1,0 +1,74 @@
+<h1>
+ Title: neural network convergence
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-10T04:59:05.335713+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When I train my neural network for 1000 epochs at lr=0.001 the loss keeps converging. That's way too many epochs. When I increase the learning rate eg:0.005, 0.01 it doesn't converge anymore... What do I do?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Victor Butoi (staff)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is a problem that you will rerun into over and over again in ML. The general solution (as a best-of-practice method) is to choose the highest learning rate that allows for your model to converge and then train as long as you can for train loss to go to 0. The latter thought was combated a bit recently because long you train -&gt; more you overfit; however, recent literature like
+  <link href="https://openreview.net/pdf?id=B1g5sA4twr"/>
+  https://openreview.net/pdf?id=B1g5sA4twr has exposed there also exists a double descent catch to this kind of thinking.
+ </paragraph>
+ <paragraph>
+  To answer shortly: 1000 epochs is not way too many epochs from my perspective. No such thing as too many epochs. If your training objective is continuing to go down, train longer!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Samar Khanna (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Also, keep track of your validation set error/loss! Since in this case the models we are using for the data are not too large, I think the classical wisdom that we learned this semester of "you should stop if your validation loss/error starts increasing" is relevant.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Victor Butoi (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yeah, honestly this is better advice than mine because of our context. Remember k-fold is a great tool for validation.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

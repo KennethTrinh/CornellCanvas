@@ -1,0 +1,73 @@
+<h1>
+ Title: todo 4: use of paintDot(), general scope confusion
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-01T07:28:54.333306+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  it seems to me that paintDot() could be called to handle the whole process of finding current location, determining height/width of target relative to window, etc (based on the spec). but it seems like the instruction handout is guiding us to have to do some of these things for TODO 4, so i am a bit confused how to know which tasks i can push off to TODO 6 vs having to do now.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  also, would we just use (this.)target to make/reference the target we are trying to draw in this method or do we make a new Target that is local to the method?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Do not create another Target object. Use the one that already exists. Why should you create another one?
+ </paragraph>
+ <paragraph>
+  Push off onto TODO 6 only Look at the specification of method paint(g) in TODO 6. That method must do what its specification says and nothing more, nothing less. Based on that, you can tell what must be done in TODO 4.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  ohhh wait is there only ever one target at a time? its the same one showing and hiding in different places?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  That is correct.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

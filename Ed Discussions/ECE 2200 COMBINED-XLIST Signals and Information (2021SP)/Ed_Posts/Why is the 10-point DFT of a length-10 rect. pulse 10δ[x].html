@@ -1,0 +1,51 @@
+<h1>
+ Title: Why is the 10-point DFT of a length-10 rect. pulse 10δ[x]
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-24T16:04:21.843797+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Textbook says it. I thought it was a dirchlet thing
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  $\widehat{X} [ k ] = \sum _ {n = 0} ^ 9 e ^ {- j n k 2 \pi  / 10}$ for $0 \leq k &lt; 10$.  For $k = 0$, this equals 10.  For $1 \leq k &lt; 10$, partial geometric series yields
+ </paragraph>
+ <paragraph>
+  $\widehat{X} [ k ] = \frac{1 - e ^ {- j k 2 \pi}}{1 - e ^ {- j k 2 \pi / N}} = 0$
+ </paragraph>
+ <paragraph>
+  because $e ^ {j k 2 \pi} = 1$.
+ </paragraph>
+ <paragraph>
+  Another way to see it: the DTFT of the length-10 pulse is the Dirichlet thing
+ </paragraph>
+ <paragraph>
+  $\widehat{X} ( \widehat{\omega} = \frac{\sin ( 5 \widehat{\omega} )}{\sin ( \widehat{\omega} / 2 )} e ^ {- j 5 \widehat{\omega}}$, and $\widehat{X} [ k ] = \widehat{X} ( k 2 \pi / 10 )$.  Evaluate that for each $k$ and you get $\widehat{X} [ k ] = 10$ for $k = 0$ and zero for $1 \leq k &lt; 10$.  Consider $k = 0$ separately --- use L'Hôpital if you want.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

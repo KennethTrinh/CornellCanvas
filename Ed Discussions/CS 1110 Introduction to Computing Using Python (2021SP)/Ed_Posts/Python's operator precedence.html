@@ -1,0 +1,75 @@
+<h1>
+ Title: Python's operator precedence
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-02-11T15:55:09.089096+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why does exponentiation having higher precedence than the unary operators matter? In what expression would the result be different if the opposite were true?
+ </paragraph>
+</document>
+<h3>
+ Author: Cornelius Boateng (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  -2**3 is same as -2^3.
+ </paragraph>
+ <paragraph>
+  This is equivalent to cubing 2 and then negating your answer.
+  <break>
+  </break>
+  It is different from (-2)**3 or (-2)^3.
+  <break>
+  </break>
+  In this case, the parenthesis takes precedence. Hence the solution would be cubing -2
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Good question!
+  <break>
+  </break>
+  Here's some expressions that demonstrate:
+ </paragraph>
+ <pre>Python 3.8.5 (default, Sep  4 2020, 02:22:02)
+[Clang 10.0.0 ] :: Anaconda, Inc. on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt; -(2**2)
+-4
+&gt;&gt;&gt; (-2)**2
+4
+&gt;&gt;&gt; -2**2
+-4</pre>
+ <paragraph>
+  So you can see that Python treats -2**2 as if there were invisible parentheses around the "2**2" part, i.e., the exponentiation gets done before the unary-minus gets applied.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

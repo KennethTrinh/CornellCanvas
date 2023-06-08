@@ -1,0 +1,52 @@
+<h1>
+ Title: zoology.py  Parrot def speak
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-21T04:37:38.27435+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi there! Quick question about Parrot def speak(self, words) in zoology.py:
+ </paragraph>
+ <paragraph>
+  So I noticed in the answer code for that method, def speak in the Parrot class calls the superclass, which tells it to print(words). In the next line of def speak, it then has print("Now give me a cracker!"). In some of the other classes, the value of one of the parameters was changed in the method header (like changing the default weight for certain animals). Could the same approach be done for words in def speak, like this? Or does def speak in parrot need to have its own print statement despite the superclass having print(words)?
+ </paragraph>
+ <pre>class Parrot(Bird):
+    """
+    An instance is a parrot.
+    """
+    CAN_SPEAK = True
+
+    def speak(self, words="Now give me a cracker!"):
+        super().speak(words)</pre>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Almost! In this case, this wouldn't quite work because we want to print "Now give me a cracker!"
+  <italic>
+   in addition
+  </italic>
+  to words. Your code would set the default to words, so that it would print "Now give me a cracker!" if no words were given, and words if it was given, but never both.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

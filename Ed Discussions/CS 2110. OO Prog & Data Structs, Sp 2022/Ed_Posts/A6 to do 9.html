@@ -1,0 +1,97 @@
+<h1>
+ Title: A6 to do 9
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-13T03:29:25.04811+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I don't understand how to make "Game Score" the action event for the PropertyChangeListener. I keep getting that the PropertyChangeListener is undefined for strings. Can someone elucidate how to approach this?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Atulya Lohani (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Are you using an anonymous function? Use the method addPropertyChangeListener() on game with an anonymous function as the argument.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, I'm using an anonymous function, but I don't know where to include "Game Score"
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Clarkson (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Possibly you haven't seen that there are two overrides of
+  <code>
+   addPropertyChangeListener
+  </code>
+  , one of which takes a string parameter for the property name.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Atulya Lohani (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Use setText() on scoreLabel and pass in a string argument for the score. You will have to use game.getScore() to get the current score.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Clarkson (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Marking resolved due to inactivity.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,110 @@
+<h1>
+ Title: Lab 6 Part 1 Error, No Function Returned
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-02-27T04:04:46.010888+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Error Message:
+ </paragraph>
+ <paragraph>
+  The call change_hrs('9:04', 5) returned None, not '14:04'.
+  <break>
+  </break>
+  Possible cause: could you have forgotten keyword 'return'?
+  <break>
+  </break>
+  The system's verifier seems unhappy. ....Debug info for staff:
+  <break>
+  </break>
+  flag_header returned 0, success!
+  <break>
+  </break>
+  flag_function returned 5, test case failed
+  <break>
+  </break>
+  flag_conditionals_or_pass returned 0, success!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  When I test the lab05_test.py in python, I receive something like
+ </paragraph>
+ <paragraph>
+  Trying input...
+ </paragraph>
+ <paragraph>
+  Function Returned: None
+ </paragraph>
+ <paragraph>
+  Correct Answer: ___
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  How can I fix this?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aliva Das (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Your function
+  <italic>
+   change_hrs
+  </italic>
+  is supposed to return the string
+  <italic>
+   outstr
+  </italic>
+  - which is the new string obtained on adding
+  <italic>
+   change
+  </italic>
+  to
+  <italic>
+   timestr
+  </italic>
+  . Do you have a return statement in
+  <italic>
+   change_hrs
+  </italic>
+  ?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  That helped! Thank you
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

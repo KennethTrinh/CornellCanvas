@@ -1,0 +1,56 @@
+<h1>
+ Title: Constraint On A8 Runtime
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-29T06:23:37.159177+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Forgive me if these are stupid questions, but I want to make sure I am understanding the time constraints correctly. The note for advice on the scram phase says that our program should run in 12-14 seconds. First I want to clarify that that time constraint is for running the whole program, including both the seek phase
+  <italic>
+   and
+  </italic>
+  scram phase in headless mode rather than just the scram phase. Next, I saw on note
+  <link href="https://edstem.org/us/courses/7377/discussion/895836"/>
+  #1416 that we should look up how to measure elapsed time on JavaHyperText. On there, the method provided gives us elapsed milliseconds. I want to clarify that in terms of meeting our time constraints, we would have to convert this number from milliseconds to seconds in order to see if we are staying within the bounds, instead of just taking the raw number.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Not stupid questions.
+ </paragraph>
+ <paragraph>
+  Yes, the time constraint is for the whole run, but the seek phase doesn't take much time.
+ </paragraph>
+ <paragraph>
+  And the scram phase takes too much time only if you are trying very complicated and time0-consuming ways of optimizing.
+ </paragraph>
+ <paragraph>
+  Yes, you have to convert from milliseconds to seconds. You could do that in your code if you wanted.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

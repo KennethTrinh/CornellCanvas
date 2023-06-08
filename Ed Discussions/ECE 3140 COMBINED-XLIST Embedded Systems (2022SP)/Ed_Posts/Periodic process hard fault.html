@@ -1,0 +1,62 @@
+<h1>
+ Title: Periodic process hard fault
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-30T05:06:04.360367+10:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm currently working on the extra cerdit part of the lab, and I'm getting a hard fault in this line. (It executes a dequeue function). I used break point and checked the execution of my dequeue function, which is correct. But after dequeue and returning the current process stack pointer, the code goes in the 3140.s file and execute a branch to resume_process which causes error. I'm not sure what happening there, any guidance is appreciated!
+ </paragraph>
+ <figure>
+  <image height="100.38829787234042" src="https://static.us.edusercontent.com/files/3Kp5o6wghevFoPNCtI4YiDM8" width="466"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Resolved in OH
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    0xf4240 = 1 million (iteration amount for delay() in utils.c)
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Somehow value from inside process is being popped in PC
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Since issue occurs second time periodic process runs, issue must be with process stack reinitialization
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Resolved by properly free'ing and then re-allocing stack for process
+   </paragraph>
+  </list-item>
+ </list>
+</document>
+<h3>
+ ------------------------------------
+</h3>

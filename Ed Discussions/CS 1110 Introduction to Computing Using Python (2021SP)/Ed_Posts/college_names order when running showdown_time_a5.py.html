@@ -1,0 +1,122 @@
+<h1>
+ Title: college_names order when running showdown_time_a5.py
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-29T11:54:28.591498+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  After implementing sd_utilities_list.process_line(), I ran showdown_time_a5 to check my work and the available college_names that are printed are not in the same order as the sample runs.
+ </paragraph>
+ <paragraph>
+  For example, the sample runs shows the available college_names as:
+ </paragraph>
+ <paragraph>
+  0: B 1: A 2: D 3: E
+ </paragraph>
+ <paragraph>
+  My output looks like:
+ </paragraph>
+ <paragraph>
+  0: B 1: D 2: E 3: A
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Are they supposed to be the same order, or is my output okay how it is now?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  As an aside, your question made me realize the code as written is using the wrong function for sorting. The spec says the Colleges should be in reverse sorted order of number of applicants. BUT, the code as written...
+ </paragraph>
+ <pre>    college_list.sort(key=lambda c: len(c.rejected) \
+                                + len(c.accepted_not_enrolled) \
+                                + len(c.rejected) + \  ### &lt;- copy-paste wasn't updated!  Why counting "rejected" twice?!
+                                len(c.waitlisted), 
+                  reverse=True)
+</pre>
+ <paragraph>
+  should clearly be:
+ </paragraph>
+ <pre>college_list.sort(key=lambda c: len(c.rejected) \
+                     + len(c.accepted_not_enrolled) \
+                     + len(c.accepted_enrolled) \ ### fixed
+                     +  len(c.waitlisted), reverse=True)
+</pre>
+ <paragraph>
+  How embarrassing.
+  <break>
+  </break>
+  <break>
+  </break>
+  BUT, since we (or at least I) have already memorized that "0" is Stanford, etc., for the purposes of not getting me confused about sample queries,
+  <bold>
+   let's all stay with the old, albeit dumb, sort order
+  </bold>
+  when submitting and talking about this assignment.
+  <break>
+  </break>
+  <break>
+  </break>
+  For the record: Stanford is thus NOT the most applied-to college; its previous vaunted 0 position was because it rejected a lot of students.  Cornell drops, but just a notch.
+ </paragraph>
+ <pre>0: UC-San_Diego    1: UC-Los_Angeles    2: UC-Berkeley    3: Northeastern_U    4: UC-Santa_Barbara    5: Cornell_U    6: UC-Irvine    7: UMichigan-Ann_Arbor    8: Stanford_U    9: Yale_U    10: Columbia_U    11: UC-Davis    12: USouthern_California    13: UPennsylvania    14: Harvard_U    15: New_York_U    16: Brown_U    17: Duke_U    18: Princeton_U    19: Northwestern_U    20: Georgia_Institute_of_Technology    21: Boston_U    22: Vanderbilt_U    23: Carnegie_Mellon_U    24: Emory_U    25: California_Polytechnic_State_U-San_Luis_Obsipo    26: UC-Santa_Cruz    27: UIllinois_at_Urbana-Champaign    28: UVirginia    29: Washington_U_in_St._Louis    30: Massachusetts_Institute_of_Technology    31: Purdue_U    32: Case_Western_Reserve_U    33: UWashington    34: UChicago    35: Dartmouth_College    36: Johns_Hopkins_U    37: UTexas-Austin    38: Fordham_U    39: Rice_U    40: SUNYs    41: UNorth_Carolina_at_Chapel_Hill    42: Tufts_U    43: Penn_State    44: Georgetown_U    45: Boston_College    46: Rutgers_U    47: UMinnesota-Twin_Cities    48: UMassachusetts-Amherst    49: George_Washington_U    50: UPittsburgh    51: UWisconsin    52: URochester    53: UMaryland-College_Park    54: California_State_U_(All)    55: Pomona_College    56: San_Diego_State_U    57: Swarthmore_College    58: UFlorida    59: William_&amp;_Mary    60: California_Institute_of_Technology    61: Tulane_U    62: Arizona_State_U    63: Amherst_College    64: Cal_Poly_Pomona    65: Williams_College    66: Texas_A&amp;M_U    67: Drexel_U    68: The_Ohio_State_U    69: Wesleyan_U    70: Rensselaer_Polytechnic_Institute    71: American_U    72: Santa_Clara_U    73: Rochester_Institute_of_Technology    74: Indiana_U-Bloomington    75: San_Jose_State_U    76: UMiami    77: UNotre_Dame    78: UColorado-Boulder    79: Virginia_Tech    80: Colby_College    81: UGeorgia    82: Middlebury_College    83: Stevens_Institute_of_Technology    84: Vassar_College    85: UTexas_at_Dallas    86: Grinnell_College    87: Notre_Dame_U    88: Villanova_U    89: Michigan_State_U    90: Wellesley_College    91: UC-Riverside    92: Barnard_College    93: North_Carolina_State_U    94: Lehigh_U    95: Bowdoin_College    96: Florida_State_U    97: McGill_U    98: UConnecticut    99: Temple_U    100: Worcester_Polytechnic_Institute    101: Colorado_School_of_Mines    102: The_UAlabama    103: Syracuse_U    104: Claremont_McKenna_College    105: UOregon    106: Harvey_Mudd_College    107: Loyola_Marymount_U    108: UArizona    109: Miami_U_(OH)    110: Kenyon_College    111: Baylor_U    112: Carleton_College    113: Oberlin_College    114: Reed_College    115: Hamilton_College    116: Occidental_College117: Colgate_U    118: Brandeis_U    119: Howard_U    120: Haverford_College    121: Wake_Forest_U    122: USouth_Carolina    123: UC-Merced    124: UIowa    125: USan_Francisco    126: UDelaware    127: Macalester_College    128: UVermont    129: Bryn_Mawr_College    130: U_at_Buffalo    131: Scripps_College    132: Bucknell_U    133: URichmond    134: Virginia_Commonwealth_U    135: Skidmore_College    136: UUtah    137: Bates_College    138: Lafayette_College    139: Clemson_U    140: Smith_College    141: Colorado_State_U    142: Uthe_Pacific    143: UOklahoma    144: Washington_&amp;_Lee_U    145: Franklin_and_Marshall_College    146: Chapman_U    147: USan_Diego    148: Mount_Holyoke_College    149: UDenver    150: James_Madison_U    151: UTennessee    152: Southern_Methodist_U    153: Oregon_State_U    154: Pitzer_College    155: UPortland    156: Iowa_State_U    157: UMaine    158: Davidson_College    159: Babson_College    160: Washington_State_U    161: Lewis_and_Clark_College    162: St._Olaf_College    163: Rose-Hulman_Institute_of_Technology    164: Emerson_College    165: College_of_the_Holy_Cross    166: Whitman_College    167: Ohio_U    168: Seattle_U    169: Pepperdine_U    170: UCincinnati    171: Auburn_U    172: UHawaii_at_Manoa    173: Saint_Louis_U    174: Elon_U    175: Xavier_U    176: Florida_Institute_of_Technology    177: Gonzaga_U    178: Rhodes_College    179: UKansas    180: UNebraska-Lincoln181: Trinity_U    182: Colorado_College    183: Texas_Christian_U    184: Fairfield_U    185: Providence_College    186: Trinity_College    187: Spelman_College    188: UKentucky    189: Mississippi_State_U    190: UNevada-Reno    191: Clarkson_U    192: Bentley_U    193: Texas_Tech_U    194: Rhode_Island_School_of_Design    195: URhode_Island    196: UNew_Mexico    197: UMissouri-Columbia    198: St._John's_College    199: UAlabama-Birmingham    200: Wheaton_College    201: Illinois_Institute_of_Technology    202: West_Virginia_U    203: Gettysburg_College    204: UArkansas    205: College_of_Charleston    206: Oklahoma_State_U    207: Embry_Riddle    208: Whitworth_U    209: UNew_Hampshire    210: United_States_Military_Academy_at_West_Point    211: The_Cooper_Union_for_the_Advancement_of_Science_and_Art    212: Brigham_Young_U    213: Gustavus_Adolphus_College    214: Morehouse_College    215: UMontana    216: New_Mexico_State_U    217: UWyoming    218: Kansas_State_U    219: Sarah_Lawrence_College    220: Tuskegee_U    221: UAlaska_Fairbanks    222: USouth_Dakota    223: New_Mexico_Tech    224: Fisk_U    225: Sewanee    226: UNorth_Dakota    227: Claflin_Unversity    228: A_college_or_university_not_listed.    229: Community_College    230: Bob_Jones_U    231: Liberty_U    232: A_college_or_university_outside_of_the_United_States
+</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  As long as the ordering your A5 code produces is
+  <italic>
+   the same as the ordering the A3 solutions produce when run on your computer,
+  </italic>
+  the difference in output is OK!
+ </paragraph>
+ <paragraph>
+  Reason: See  item 1 in the response to "
+  <link href="https://edstem.org/us/courses/3933/discussion/325799"/>
+  Misc. A3 [does tag order matter? delete comments? values of `small_test` and `show_sd_internals`?]":
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+ <blockquote>
+  From page 9 of the [A3] handout:
+ </blockquote>
+ <blockquote>
+  But: warning: it is possible that your computer might assign different menu numbers than what is listed here, as ties in number of applications might be broken differently than the way Prof. Lee’s did.
+ </blockquote>
+</document>
+<h3>
+ ------------------------------------
+</h3>

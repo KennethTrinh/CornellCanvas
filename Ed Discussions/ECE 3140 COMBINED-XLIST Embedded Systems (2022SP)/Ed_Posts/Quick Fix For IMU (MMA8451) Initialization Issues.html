@@ -1,0 +1,28 @@
+<h1>
+ Title: Quick Fix For IMU (MMA8451) Initialization Issues
+</h1>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Date: 2022-05-04T02:50:23.777224+10:00
+</h3>
+<h3>
+ Category: Final Project
+</h3>
+<h3>
+ Vote Count: 6
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi all,
+ </paragraph>
+ <paragraph>
+  Many people have had initialization problems when trying to use the demos that use the on-board IMU. As a quick fix, I have found that a delay inserted during the initialization process fixes the problem for my board for the bubble and bubble_peripheral demo. Attached is a modified version of fsl_mma.c with the fix. If you replace the fsl_mma.c file included in the accel folder in the demos it should (hopefully) work.
+ </paragraph>
+ <file filename="fsl_mma.c" url="https://static.us.edusercontent.com/files/J6ckrwGz9dzTUm3HOoVWOYf2">
+ </file>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

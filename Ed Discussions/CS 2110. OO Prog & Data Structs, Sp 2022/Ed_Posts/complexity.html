@@ -1,0 +1,48 @@
+<h1>
+ Title: complexity
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-19T04:55:38.152718+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  hi ! i still never fully grasped what log(n) means... where did this come from, like why log? how is it computed? if anyone could pls clarify... ty
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Melissa Ginaldi (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  log(n) is how we describe time that is exponentially decreasing with respect to n
+ </paragraph>
+ <paragraph>
+  For example if we have the loop: for(int i = 0, i &lt; n, i++){...} then clearly this loop is going to run n times and the complexity is O(n)
+ </paragraph>
+ <paragraph>
+  But what if we have for(int i = 1, i &lt;=n, i = 2*i){...} This is not constant time since the number of loops depends on n in some way but notice that if n is 100 then this loop is executed only 7 times (i=1,2,4,8,16,32,64) which is way less than 100. So clearly this runtime is between O(n) and O(1) and as n increases the fewer and fewer extra loops occur (meaning as n increases the runtime increases more and more slowly). These traits are representative of the log function (look at the graph attached - red is O(n) and blue is O(log n)).
+ </paragraph>
+ <figure>
+  <image height="479.1845386533666" src="https://static.us.edusercontent.com/files/9hABY2r2KX4MHMkYCFYWl36L" width="758"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>

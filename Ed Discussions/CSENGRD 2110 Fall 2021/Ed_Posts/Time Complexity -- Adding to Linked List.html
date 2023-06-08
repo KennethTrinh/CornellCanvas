@@ -1,0 +1,68 @@
+<h1>
+ Title: Time Complexity -- Adding to Linked List
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-15T08:04:25.411477+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="57.752517985611505" src="https://static.us.edusercontent.com/files/ucX4SZGrhOqHD4YAbGpGKJlE" width="658"/>
+ </figure>
+ <paragraph>
+  I'm don't quite understand why l1.add(e) is O(1)? It was my understanding that it takes on average O(n) time to add an element to a LinkedList,
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Think back to your linked list project. To add to that linked list, all you did was change the values of some of the pointers of the nodes on either side of the node you were adding as well as assign values to the node you were adding. The same is the case for any LinkedList, so adding an element to a linked list doesn't depend on the size of the list. That means it has an average time complexity of O(1).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Wouldn't we have to traverse through the entire linked list to reach the last pointer in that last?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tomer Shamir (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We assume that the header of the LinkedList has a pointer to the tail so that we can add to the end of the LinkedList in constant time.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

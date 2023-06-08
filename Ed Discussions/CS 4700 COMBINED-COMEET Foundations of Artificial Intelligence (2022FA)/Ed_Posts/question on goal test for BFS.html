@@ -1,0 +1,50 @@
+<h1>
+ Title: question on goal test for BFS
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-10-20T00:34:06.443171+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  the notes says that a property of bfs is that
+ </paragraph>
+ <figure>
+  <image height="335.20754716981133" src="https://static.us.edusercontent.com/files/qzpZqhFwQoqFll6nPkOxk3kO" width="658.0000000000001"/>
+ </figure>
+ <paragraph>
+  but the textbook says this on page 81
+ </paragraph>
+ <figure>
+  <image height="241.6305031446541" src="https://static.us.edusercontent.com/files/QtdrDaBg3Yd4Fp3czS84HUiD" width="643"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Niko Grupen (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  "Properties of breadth-first search" is the title of the slide, which refers to the coverage of completeness, time complexity, space complexity, and whether or not an optimal solution is found by BFS. The note in bold applies only to the statement about time complexity -- if the goal test occurs when nodes are expanded, the time complexity will be O(b^d+1). As you point out, the textbook proposes a slightly more efficient version of BFS in which goal tests occur when nodes are generated (instead of expanded), which reduces the time complexity to O(b^d). Both are valid approaches to BFS, as they will find the same goal state.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,89 @@
+<h1>
+ Title: Time limit A8
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-08T09:16:31.627224+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello, for the seed "-7398192653017001472" (which is the second example of "Seeds with lots of gold!" in the spreadsheet, my solution takes about 20 seconds. All the other seeds take less than 10 seconds. Should I try to make a change?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Your problem may be that you are timing it based on running with the GUI.
+ </paragraph>
+ <paragraph>
+  Try it in Headless mode, running with only 1 seed. And fix code as shown below to print out the elapsed time for flee().
+ </paragraph>
+ <paragraph>
+  1.  Put this two items into class Pollack (you can leave them there):
+ </paragraph>
+ <paragraph>
+  private long startTime= 0; // start time in milliseconds
+ </paragraph>
+ <paragraph>
+  /** Return the time from start time till when this method is called, in milliseconds */
+  <break>
+  </break>
+  public long elapsedTime() {
+  <break>
+  </break>
+  return System.currentTimeMillis() - startTime;
+  <break>
+  </break>
+  }
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  2. Change your method flee() to put the first statement below as its first statement and the second statement below as its last statement. This will cause the elapsed time for flee to be printed. Be sure to comment out the println statement before you submit.
+ </paragraph>
+ <paragraph>
+  startTime= System.currentTimeMillis();
+ </paragraph>
+ <paragraph>
+  System.out.println("Elapsed time: " + elapsedTime() / 1000.00 + " seconds");
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you professor!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

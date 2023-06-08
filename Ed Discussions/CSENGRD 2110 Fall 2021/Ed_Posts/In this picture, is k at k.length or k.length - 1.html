@@ -1,0 +1,59 @@
+<h1>
+ Title: In this picture, is k at k.length or k.length - 1?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-06T02:05:07.056397+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="76.76666666666667" src="https://static.us.edusercontent.com/files/4yPgzXyNtELfNlBAxCLqU7XX" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Rebecca Liu (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Here, the image depicts b[h..k], which may not be the entire array b.
+ </paragraph>
+ <paragraph>
+  Since k is an index of array b, there is no notion of k.length.
+ </paragraph>
+ <paragraph>
+  If the image depicted the entire array b[0..b.length-1] and was drawn as below:
+  <break>
+  </break>
+  <break>
+  </break>
+  h                                i                                                      k  b.length
+  <break>
+  </break>
+  _______________________________________________________
+  <break>
+  </break>
+  b |       unknown        |       s=sum of these elements     |
+ </paragraph>
+ <paragraph>
+  Then k would be at b.length-1, but this is not the case in the image, and you should not assume that h=0 and you should not assume that k = b.length-1.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

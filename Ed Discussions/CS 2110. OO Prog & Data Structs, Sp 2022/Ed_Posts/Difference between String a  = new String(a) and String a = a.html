@@ -1,0 +1,135 @@
+<h1>
+ Title: Difference between String a  = new String("a") and String a = "a"?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-04T07:30:43.891535+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What's the difference between
+ </paragraph>
+ <paragraph>
+  String a = new String("a")
+ </paragraph>
+ <paragraph>
+  and
+ </paragraph>
+ <paragraph>
+  String a = "a"?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Also, I tried String a = new String("a")  and String b = "a", and a==b returned false. Why is this?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Essentially the same meaning. BUT
+ </paragraph>
+ <paragraph>
+  1. String a = new String("a")    // ALWAYS creates a new String object.
+ </paragraph>
+ <paragraph>
+  2. String a = "a"?  // This is preferred because the compiler may create only ONE
+ </paragraph>
+ <paragraph>
+  // object with string "a", thus saving space.
+ </paragraph>
+ <paragraph>
+  Rather than post a reply thread the way you did, far better is to edit your original.
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  a==b  is false because different object were stored in a and b
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What does "may create only ONE object" mean? So in the first case it creates more than one??
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Also a==b returns false because == checks for space in memory, variable a points to a different object folder than variable b.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  But "Class String overrides function equals: for String objects s1 and s2, s1.equals(s2) is true exactly when s1 and s2 contain the same string of characters." So is one of them not a String object?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  s1.equals(s2) just checks for their values (are the same), the other one ( == ) checks for their location in memory to be the same (which it's not)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

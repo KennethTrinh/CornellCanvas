@@ -1,0 +1,59 @@
+<h1>
+ Title: "do not store tag names in entries table" clarification
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-03-30T05:03:54.210956+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  It says that "
+  <bold>
+   Hint:
+  </bold>
+  You need a table to store the relationship between entries and tags; do not store tag names in your
+  <italic>
+   entries
+  </italic>
+  table." under Media Catalog Feature Requirements.
+ </paragraph>
+ <paragraph>
+  What if entries and tags overlap? Should I make a separate table anyways with duplicate data?
+ </paragraph>
+ <paragraph>
+  ie, for food categories, burgers are listed as fast food, and that category is listed in the details of the burgers. Should that tag "fast food" be stored away from the same table that stores the information for burgers, even though its part of the information for burgers?
+ </paragraph>
+ <paragraph>
+  https://pages.github.coecis.cornell.edu/info2300-2023sp/info2300-2023sp-documents/project3.html#database-requirements
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I don't understand your question. It might be helpful to chat about this. But here's what I think will help you. Your database should not have any duplicate data. You shouldn't have fast food in the entries table and the tags table. It should only be in one place because that's best practice.
+ </paragraph>
+ <paragraph>
+  I don't think this answers your question, though. Would you please follow up with comments if you need additional help.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

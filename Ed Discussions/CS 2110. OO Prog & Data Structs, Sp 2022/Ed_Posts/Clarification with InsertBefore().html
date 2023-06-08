@@ -1,0 +1,51 @@
+<h1>
+ Title: Clarification with InsertBefore()
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-01T14:04:48.891719+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi! I was wondering for both insertBefore and delete if we can apply the spec function based on the node value? Or do we have to make sure that the node is exactly at position n. For instance, if there were two instances of 3 in [0, 3, 8, 3], does our code have to differentiate between the node(1) and node(3), or is that something we don't have to worry about? Thank you!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In the function header, It passes in the node, so it doesn’t matter if 2 nodes have the same value you should be able to differentiate between them, so it can't be with the value but rather the actual node.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Testing insertBefore does not have to look at values at all. Just use toString, toStringRev, and size.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

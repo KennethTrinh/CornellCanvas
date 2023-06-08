@@ -1,0 +1,72 @@
+<h1>
+ Title: recursion in linked list
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-28T14:38:37.039106+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  hi, I was wondering why 2 has null in its next field
+ </paragraph>
+ <figure>
+  <image height="360.9161196207148" src="https://static.us.edusercontent.com/files/iPXFC6RYWgvLobS41xGn3biq" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Read the specification. Based on the specification, the list rev(h.next) is to be reversed.
+ </paragraph>
+ <paragraph>
+  Well, it is. r points at the first node, containing the 3,
+  <break>
+  </break>
+  that node points at the second node, containing the 6,
+  <break>
+  </break>
+  that node points at the third node, containing the 2, and
+  <break>
+  </break>
+  that node is the last one, its next field is null.
+ </paragraph>
+ <paragraph>
+  Until you learn to understand a recursive call in terms of its specification,
+  <break>
+  </break>
+  you will have trouble with recursion.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  but 2 is not the last one. isn't 8 the last one?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

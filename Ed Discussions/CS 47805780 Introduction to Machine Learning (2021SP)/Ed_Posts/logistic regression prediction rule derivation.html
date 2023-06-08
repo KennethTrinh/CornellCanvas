@@ -1,0 +1,40 @@
+<h1>
+ Title: logistic regression prediction rule derivation
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-25T23:46:18.097028+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="411" src="https://static.us.edusercontent.com/files/9wdRDsBzMqCduMoHmnomLA2a" width="624"/>
+ </figure>
+ <paragraph>
+  In the prediction rule, how do we know that finding the y that maximizes P(y_i|x_i,w) is equivalent to giving the sign of (w dot x_i)? I'm not quite understanding how we can connect those two.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is assuming y_i can only be -1/1 valued; basically if w*x is positive we predict the probability sigm(w*x) of y_i=1 to be greater than .5, and smaller if it's negative. This is a generalization of the same prediction rule we used before for linear classifiers, where now we're actually estimating the probability of a label.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

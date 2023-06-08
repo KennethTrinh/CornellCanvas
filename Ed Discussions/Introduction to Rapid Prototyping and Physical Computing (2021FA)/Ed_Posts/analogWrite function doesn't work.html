@@ -1,0 +1,113 @@
+<h1>
+ Title: analogWrite function doesn't work
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-12T14:17:39.370978+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm trying to use analogWrite to control the speed of the motor. The following is my code for the motor to go forward:
+ </paragraph>
+ <pre>  analogWrite(motorEnablePin,0);
+  digitalWrite(leftSidePin, HIGH);
+  digitalWrite(rightSidePin, LOW);
+  analogWrite(motorEnablePin, 255);</pre>
+ <paragraph>
+  This doesn't work. But when I changed the two analogWrite functions to digitalWrite(motorEnablePin, LOW/HIGH), it now works. I can't figure out what might cause this.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  We will be happy to help, but we need more context, such as the full code as well as the circuit you are using.
+ </paragraph>
+ <paragraph>
+  Francois.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is my code:
+ </paragraph>
+ <pre>#include &lt;analogWrite.h&gt;
+// Motor control
+const int motorEnablePin = 15;
+const int leftSidePin = 32;
+const int rightSidePin = 14;
+
+const int encoderPin = 33;
+
+void setup()
+{
+  // configure the motor pins
+  pinMode(motorEnablePin,OUTPUT);
+  pinMode(leftSidePin,OUTPUT);
+  pinMode(rightSidePin,OUTPUT);
+  // Motor is off going forward
+  analogWrite(motorEnablePin,0);
+  digitalWrite(leftSidePin, HIGH);
+  digitalWrite(rightSidePin, LOW);
+  analogWrite(motorEnablePin, 255);
+}
+
+void loop(){
+{
+
+</pre>
+ <paragraph>
+  The circuit is the same as the one we saw during the class.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Was the circuit working with analogWrite in class?
+ </paragraph>
+ <paragraph>
+  It will be best for us to see the full code and the circuit you are using
+ </paragraph>
+ <paragraph>
+  Francois
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

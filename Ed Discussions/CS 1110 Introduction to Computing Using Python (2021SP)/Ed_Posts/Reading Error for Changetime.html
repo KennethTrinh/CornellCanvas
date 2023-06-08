@@ -1,0 +1,60 @@
+<h1>
+ Title: Reading Error for Changetime
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-13T02:07:26.394455+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Running test_course_changetime
+ </paragraph>
+ <paragraph>
+  Traceback (most recent call last):
+ </paragraph>
+ <paragraph>
+  File "schedule_tests.py", line 297, in &lt;module&gt;
+ </paragraph>
+ <paragraph>
+  testfn() # Adding the parentheses calls whatever testfn is
+ </paragraph>
+ <paragraph>
+  File "schedule_tests.py", line 252, in test_course_changetime
+ </paragraph>
+ <paragraph>
+  my_schedule.warnings)
+ </paragraph>
+ <paragraph>
+  AssertionError: my_schedule warnings list should be ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm', 'ARCH 1120 STU 520: time change causes conflict with AEP 3560 LEC 001', 'ARCH 1120 STU 520: time change causes conflict with FAKER 0000 LEC 002'], but is ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm', 'ARCH 1120 STU 520 : time change causes conflict with AEP 3560 LEC 001', 'ARCH 1120 STU 520 : time change causes conflict with FAKER 0000 LEC 002']
+ </paragraph>
+ <paragraph>
+  To me, these look like the same messages. Could someone help me understand why this would throw an error?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It looks like there's a space after the colon after "520"; I think that's the problem.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

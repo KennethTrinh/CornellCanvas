@@ -1,0 +1,46 @@
+<h1>
+ Title: S16 Prelim Question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-04T05:09:40.315085+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="47.266524520255864" src="https://static.us.edusercontent.com/files/IcMoMqBPxXC0J227NcJL8POj" width="652"/>
+ </figure>
+ <paragraph>
+  The answer key says this is false. Am I understanding this correctly if I reason that it is false because pet is static type Animal are compile-time, while spike is of static type Dog, which therefore is why this statement is illegal?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It doesn't compile because it requires casting an Animal object down to a Cat, and only upward casts are inserted automatically. Write:
+ </paragraph>
+ <paragraph>
+  Dog spike= (Dog) pet;
+ </paragraph>
+ <paragraph>
+  That will compiler=.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

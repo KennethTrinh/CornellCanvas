@@ -1,0 +1,87 @@
+<h1>
+ Title: Gradient Exploding - Competition
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-10T06:29:12.52532+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  When I did hyper-parameter tuning outside the competition_dl(), I could always get hyperparameters that make the loss less than 20. However, when I applied the
+  <underline>
+   <bold>
+    same hyper-parameters
+   </bold>
+  </underline>
+  inside competition_dl(), the loss explodes in the first few epochs before starting to decrease (I printed out the loss in ## TODO 6), eventually down to ~500 for the final loss. The autograder's evaluation of comp_loss usually yields ~6000. I wonder what could be the reason of this problem? All previous test cases passed.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tianxing Jiang (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Are you normalizing the training data inside competition_dl?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Katharine Sadowski (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm having the same issue. I'm normalizing xTr with the same formula as in the first function we use, and I've printed it to ensure that it is normalized, but I'm still getting really large comp_loss.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tianxing Jiang (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Make sure the returned mean and std are in the correct shape. We are normalizing each feature to have zero mean and std 1. Both mean and std should be arrays of length d.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Katharine Sadowski (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You are a life saver!! I was saving them as scalars. This is perfect!! Thank you, thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

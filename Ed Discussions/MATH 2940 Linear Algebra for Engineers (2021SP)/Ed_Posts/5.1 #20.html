@@ -1,0 +1,118 @@
+<h1>
+ Title: 5.1 #20
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-21T01:25:20.491818+10:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  I understand how the eigenvalue of A is 0, but how does that mean that any nonzero vector whose entries sum to 0 will work?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Esther Wang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The matrix is entirely 5's. Imagine a column vector with entries (a,b,c) where a+b+c = 0. Then the matrix vector product will be (5a + 5b + 5c, 5a + 5b + 5c, 5a + 5b + 5c) = (5(a+b+c), 5(a+b+c), 5(a+b+c)) and since a+b+c = 0, the resulting vector will be (0,0,0) which is 0 * the original vector.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I don't see how this is related to the fact that the eigenvector entries must sum to 0..?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Phillip Jang (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Row reduce [A|0] and you'll get a row of all 1's at the top and two rows of zeros below.
+ </paragraph>
+ <paragraph>
+  This top row means x1+x2+x3=0 defines the solution set to Ax=0.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Esther Wang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  (a,b,c) is your eigenvector. If they don't sum to 0, then 5*(a+b+c) will not equal to 0.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am confused about why exactly the eigenvectors must sum to 0 given that the eigenvalue is 0. How is that related to the original matrix A and why do we want 5*(a+b+c) = 0?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Esther Wang (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Eigenvectors are defined such that Ax = λx with x (the eigenvector) not equal to 0. Given that the matrix is clearly not invertible, we know one such λ = 0. That is, Ax = 0x or Ax = 0. That is, the matrix vector product between A and our eigenvector has entries all 0. By definition of matrix vector product, each entry will be 5*(a+b+c). We've already established that this must be 0. So the entries in the eigenvector x (a b and c) sum to 0.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

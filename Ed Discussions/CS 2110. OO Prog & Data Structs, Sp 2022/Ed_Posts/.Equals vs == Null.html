@@ -1,0 +1,43 @@
+<h1>
+ Title: .Equals vs == Null
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-25T09:27:39.449764+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Am I correct in saying that .equals(null) will tell me whether an existing node's value is null, and == null will tell me if a node exists?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  If p points to an object, p.equals(null) can never be true.
+ </paragraph>
+ <paragraph>
+  The only case you might think it might be true is:  null.equals(null). But that throws a null-pointer exception!
+ </paragraph>
+ <paragraph>
+  x == null  is ALWAYS the way to test whether x evaluates to null
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,71 @@
+<h1>
+ Title: H1N1RouteTo(Person c) no test for null but what about efficiency?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-20T14:43:33.601654+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The actual implementation really does not need a null test for correctness, but then the program has to traverse all nodes to return null, because it does not know the input is null and has to compare till the last leaf. This is O(1) vs O(n) when the input is null. Is there a more elegant way to handle null?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I don't now what you mean by "The actual implementation really does not need a null test for correctness".
+ </paragraph>
+ <paragraph>
+  There being no route to c certainly has to be tested.
+  <break>
+  </break>
+  Also, A.H1N1RouteTo(null) should also be tested.
+ </paragraph>
+ <paragraph>
+  Perhaps your question is about putting in a special base case
+ </paragraph>
+ <paragraph>
+  if (c == null) return null;
+ </paragraph>
+ <paragraph>
+  One COULD put this in to remove the task of traversing the whole tree if c is null.
+ </paragraph>
+ <paragraph>
+  But I would NOT do this because the case would happen so rarely.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Great! I won't bother with "if (c == null) return null;"!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,47 @@
+<h1>
+ Title: Eclipse: Failed to init ct.sym for …
+</h1>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Date: 2021-12-29T02:18:55.887784+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <bold>
+   Problem:
+  </bold>
+ </paragraph>
+ <paragraph>
+  When creating a new project, there is a red "x" on top of the project icon, and Eclipse's "Problems" view shows the error "Failed to init ct.sym for …"
+ </paragraph>
+ <paragraph>
+  <bold>
+   Diagnosis:
+  </bold>
+ </paragraph>
+ <paragraph>
+  Eclipse seems to easily get confused when both a JRE and a JDK are available for the same Java version (many Eclipse problems we've seen this semester relate to a JRE being used instead of a JDK). The solution is to remove Eclipse's knowledge of the JRE.
+ </paragraph>
+ <paragraph>
+  <bold>
+   Solution:
+  </bold>
+ </paragraph>
+ <paragraph>
+  Go to Window&gt;Preferences, then Java&gt;Installed JREs. If there is more than one entry in the list, select any that have "jre" in their name (instead of "jdk") and click the "Remove" button. You only want to have JDKs in that list, and the one for Java 11 should be checked. Most students should only have a single development environment in their list, as shown here:
+ </paragraph>
+ <figure>
+  <image height="326" src="https://static.us.edusercontent.com/files/AdJoTtQjCE2fi5Mj3pvvrbIw" width="405"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

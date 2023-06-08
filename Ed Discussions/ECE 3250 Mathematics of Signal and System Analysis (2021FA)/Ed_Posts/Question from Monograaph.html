@@ -1,0 +1,80 @@
+<h1>
+ Title: Question from Monograaph
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-18T16:13:04.956045+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="157.80090497737558" src="https://static.us.edusercontent.com/files/PNnl8c8NUd4DRZnBmtFYHcGd" width="658"/>
+ </figure>
+ <paragraph>
+  why does taking the inner product with the expression allow you to conclude that the set is linear independet. My understanding of linear independence is that the coefficients of the linear combinations must be 0 in order for the linear combination to result in 0. Also how did you conclude that this becomes a spanning set. Maybe I'm missing a bridge idea here?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You're not missing anything.  Take the inner product of the given expression with $w _ 1$ and you get
+ </paragraph>
+ <paragraph>
+  $c _ 1 \langle w _ 1 , w _ 1 \rangle + c _ 2 \langle w _ 2 , w _ 1 \rangle + \cdots + c _ n \langle w _ n , w _ 1 \rangle = 0$.
+ </paragraph>
+ <paragraph>
+  The first term in the sum is $c _ 1$ and the rest are zero because the $w _ k$ are orthonormal.  Conclusion: $c _ 1 = 0$.
+ </paragraph>
+ <paragraph>
+  Next, take the inner product with $w _ 2$, and you'll discover that $c _ 2 = 0$.
+ </paragraph>
+ <paragraph>
+  Similarly you find that $c _ k = 0$ for all $k$,  Thus: if you have a linear combo of that form that equals zero, all the coefficients must be zero --- so the $w _ k$ are linearly independent.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  why does taking the inner product help you define linear independence. I see how the coefficients are 0, but why is taking the inner products with the basis vectors themselves the way to go. I am not sure if my questions makes sense.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  My best answer is, "That's how you show that orthonormal vectors are linearly independent."  It's a neat proof technique in this situation.  I know no other.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

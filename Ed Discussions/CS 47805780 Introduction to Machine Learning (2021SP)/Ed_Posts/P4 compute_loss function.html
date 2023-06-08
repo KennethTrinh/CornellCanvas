@@ -1,0 +1,43 @@
+<h1>
+ Title: P4 compute_loss function
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-12T02:40:46.571991+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am getting an error when I run the release code for the compute_loss function:
+ </paragraph>
+ <figure>
+  <image height="279" src="https://static.us.edusercontent.com/files/7JEtFeGeAuKjrUhUIa1sCnN4" width="443"/>
+ </figure>
+ <paragraph>
+  Is that supposed to happen?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Andrew Dettmer (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Try rerunning the previous cells.  V was last defined in a previous cell from a call to forwardpass, so that could be indicating there's a bug in that function (specifically V seems to have the wrong output dimension for that example)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

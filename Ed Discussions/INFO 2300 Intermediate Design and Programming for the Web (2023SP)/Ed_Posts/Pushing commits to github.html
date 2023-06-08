@@ -1,0 +1,135 @@
+<h1>
+ Title: Pushing commits to github
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-02-01T03:41:21.790814+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I know this problem would be much easier to solve during office hours, but I am currently at them and the TA did not show up so I apologize if this question leads to a long answer.
+ </paragraph>
+ <paragraph>
+  In lab the other day my commits were not being pushed onto git hub. I would commit my changes, but this would happen (see the image below). My TA was able to push my changes onto Git Hub through the terminal, but I don't remember exactly what commands she typed. What are the steps to push your changes through the terminal?
+ </paragraph>
+ <figure>
+  <image height="334" src="https://static.us.edusercontent.com/files/oQntzFQoroCiEbKBsOGv885m" width="500"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Phyllis Ju (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi! "Sync changes" means "push commits to server". Have you tried clicking this button?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, I have tried that, but it does not work :(
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm sorry that the TA didn't show up. Please also know that I have office hours at this time as well, and I'm happy to help you with these problems.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Kim (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In general, to keep things simple, if you want to put all your code changes on GitHub (the website with your repositories) via a command line (e.g. terminal), you can follow these steps:
+ </paragraph>
+ <paragraph>
+  First, navigate to the project directory, e.g.
+  <code>
+   cd ~/info2300/lab1
+  </code>
+  . Then:
+ </paragraph>
+ <list style="number">
+  <list-item>
+   <paragraph>
+    <code>
+     git add &lt;file name(s)&gt;  # For example: git add .  &lt;- this will add all files in the current directory to be committed
+    </code>
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    <code>
+     git commit -m "Title of commit message"  # For example: git commit -m "Changes to Lab 1 website frontend"
+    </code>
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    <code>
+     git push  # Usually this will work without issues, however if you see some message about "failed to push upstream" then try following the suggested fix in the message and try again.
+    </code>
+    <break>
+    </break>
+   </paragraph>
+  </list-item>
+ </list>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Huong Pham (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Omg thank you for this - VS Code takes SO LONG to Commit (with the image files from our current website added on). Terminal is much faster.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

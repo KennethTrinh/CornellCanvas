@@ -1,0 +1,78 @@
+<h1>
+ Title: BoundedBuffers
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-03T05:45:06.36319+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  While I understand the idea that having multiple procedures the perform the same task can result in race conditions, I don't understand how this could be applicable in real-world settings/real-world code. When would we have code that has two of the same methods? Couldn't we just avoid the race condition all together if we only had one method perform the desired function on a certain data structure (in the case of the image below, the ArrayQueue)?
+ </paragraph>
+ <figure>
+  <image height="436.686230248307" src="https://static.us.edusercontent.com/files/JfUdVHaw1ARoE7QWv6WAcDEL" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Race conditions due to multiple threads trying to write to the same shared resource are extremely common.  Some examples:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    Your computer's filesystem: multiple applications may try to write files to the same hard drive at the same time
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Social networks: thousands or millions of users click the same "like" button, which needs to update a single "likes" counter
+   </paragraph>
+   <list style="bullet">
+    <list-item>
+     <paragraph>
+      More generally, any actions taken by users of online platforms result in changes being made to a central database, while displaying pages to other users requires reading values from that same database.  Not synchronizing will likely corrupt the database; at a minimum it will result in showing inconsistent data to users.
+      <italic>
+       Fine-grained
+      </italic>
+      synchronization techniques are essential here to maintain performance (locking the entire database for each user action would be a huge bottleneck, so you find ways to only lock as much as you need to).
+     </paragraph>
+    </list-item>
+   </list>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Message queues: In many situations, it's better to have a single thread manage a resource, rather than try to share it.  To allow other threads to still use the resource, they send "messages" to the owner asking it to perform certain tasks.  These messages are
+    <italic>
+     produced
+    </italic>
+    by multiple threads and need to go into a "mailbox" where they will be
+    <italic>
+     consumed
+    </italic>
+    by the resource manager.  The mailbox is a multi-producer buffer, just like we developed in class!
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

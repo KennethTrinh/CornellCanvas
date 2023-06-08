@@ -1,0 +1,45 @@
+<h1>
+ Title: recoverbias confusion
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-02T11:06:03.655639+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  From the hint, we are supposed to find the alpha farthest from 0 and C and find the y for that (say a_i and y_i). I'm not really sure how we approach the summation part after. What exactly is it summing up? And instead of looping through the alphas and ys, do we just use a_i and y_i from before?
+ </paragraph>
+</document>
+<h3>
+ Author: Carlos Alvarez (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, you're supposed to pick a specific a_i that's as far as possible from C and 0, and you should also use the x_i and y_i that correspond to that a_i. Once you've selected the x_i and y_i you want, you can rearrange the equation below to solve for b.
+ </paragraph>
+ <math>
+  y_i(\sum_{j=1}^na_j\ y_j\ k(x_j,\ x_i)+b)=1
+ </math>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  For the summation, you're supposed to sum up (a_j * y_j * k(x_j, x_i)), for j = 1 through j=n, where n is the total number of support vectors. You can do this using numpy operations.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

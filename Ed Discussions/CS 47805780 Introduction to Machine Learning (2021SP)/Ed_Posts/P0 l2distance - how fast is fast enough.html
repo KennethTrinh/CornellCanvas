@@ -1,0 +1,45 @@
+<h1>
+ Title: P0 l2distance - how fast is fast enough?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-02-26T13:22:05.105929+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is entirely out of curiosity, but I'm using the
+  <code>
+   l2distance
+  </code>
+  function I made in P0 for P1. The test in P0 showed it was about 10 times faster than the naive (numpy-less) implementation. What's expected? Is that within reason?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bonnie Akhavan (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It's expected that numpy computations should be
+  <italic>
+   much
+  </italic>
+  faster than the naive implementation. That being said, there could be a range of times based on your specific numpy implementation. 10x faster is a possibility, but you could also get numbers that would be over 1000x faster. As long as you used numpy somewhat efficiently, you shouldn't need to worry too much about it.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

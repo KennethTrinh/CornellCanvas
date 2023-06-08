@@ -1,0 +1,167 @@
+<h1>
+ Title: Recursion Calls
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-05T04:55:57.285465+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Just to confirm, would the correct answer to this question be:
+ </paragraph>
+ <paragraph>
+  f(3), f(2), f(1)? or, would it be f(3), f(2), f(1), f(1)?
+ </paragraph>
+ <figure>
+  <image height="200.7981220657277" src="https://static.us.edusercontent.com/files/Naje1phcfnpQFEnhxBBT97Wj" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The answer that is given in the question is correct (i.e. F(3), F(2), F(1), F(0), F(1))
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Gries said it is incorrect
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tomer Shamir (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm pretty sure the answer given is correct.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  <bold>
+   F(3)
+  </bold>
+  is called first. Since 3 is not equal to 0 or 1 you evaluate F(n-1) + F(n-2). Call F(n-1) where n = 3, which is
+  <bold>
+   F(2)
+  </bold>
+  , first. Since 2 is not equal to 0 or 1, then evaluate F(n - 1) where n = 2 first, which is
+  <bold>
+   F(1)
+  </bold>
+  . 1 equals 1, so F(1) returns 1. Then you evaluate F(n - 2) where n = 2 which is
+  <bold>
+   F(0)
+  </bold>
+  . F(0) returns 1. Then 1+1 is returned by the call of F(2). Now call F(n-2), where n = 3, which is
+  <bold>
+   F(1)
+  </bold>
+  . That returns 1, so F(3) returns 2 + 1, which is 3.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In solving F(n-2), shouldn't n start out as 3? So it calls F(1), not F(0)?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tomer Shamir (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Not quite, remember that a full method call must terminate before the code that called said method can continue. This means F(2) must finish executing before F(n - 2) where n = 3 can be called. For F(2) to finish executing, both F(n - 1) where n = 2 an F(n - 2) where n = 2 must be called (i.e. F(1) and then F(0))
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is this definitely the right answer? Gries saying the answer was incorrect makes sense to me so i just don't want to train myself to rethink this whole thing if it could potentially be wrong - is there somewhere else I can look too?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tomer Shamir (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Yes this is definitely the correct answer. Follow the train of thought in my explanation and hopefully that should clear up any confusion
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Got it. Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

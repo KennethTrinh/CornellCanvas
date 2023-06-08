@@ -1,0 +1,79 @@
+<h1>
+ Title: Error retrieving from Database
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-03-15T09:48:06.660831+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="69.29789368104312" src="https://static.us.edusercontent.com/files/VehXhqGJy1A1zoYiPLZKKBJa" width="658"/>
+ </figure>
+ <paragraph>
+  keep receiving this error which won't allow me to retrieve any database data- any ideas on fixing this? there aren't errors in the router from what I've seen- I haven't changed the router at all and it matches the router from labs etc.
+ </paragraph>
+</document>
+<h3>
+ Author: Marko Djuranovic (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  I had the same issue, I think, just make sure to include "include_once('includes/db.php');" in your router.php file
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is the correct answer. Please see the class notes for calling the database. The first step is to load the library by using
+  <code>
+   include_once('includes/db.php');
+  </code>
+  .
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Allison Hsu (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is open_sqlite_db working? If not, it seems you are missing a step that lets you actually use functions in db.php. Try checking back to notes on using a database in PHP to see what you may have missed. If this is not the problem, then please visit OH.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

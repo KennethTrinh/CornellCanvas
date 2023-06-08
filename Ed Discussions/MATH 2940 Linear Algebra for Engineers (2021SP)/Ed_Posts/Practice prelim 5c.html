@@ -1,0 +1,81 @@
+<h1>
+ Title: Practice prelim 5c
+</h1>
+<h3>
+ Author: Esther Wang (student)
+</h3>
+<h3>
+ Date: 2021-04-18T15:23:10.652582+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Would it be valid to argue using determinants?
+ </paragraph>
+ <paragraph>
+  That is, suppose for a contraction that A is not invertible. Then det(A) = 0. Since det(ABA) = det(A)det(B)det(A), det(ABA) = 0, which contradicts the fact that ABA is invertible. Then make the same case for B.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Phillip Jang (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, that is valid. Theorems 4 &amp; 6 in section 3.2 are what you use here, and $0 \neq det(ABA) = det(A)det(B)det(A)$ means both $det(A)$ and $det(B)$ are not zero.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Raleigh Clemens (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Would a similar argument about the unique invertibility work for this question? For instance:
+ </paragraph>
+ <paragraph>
+  If ABA is invertible, there exists a matrix C s.t. CABA = I, and by intuition, that matrix must be $$A^{-1}B^{-1}A^{-1}$$. Since this matrix is unique, A and B therefore must be invertible.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Phillip Jang (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  You cannot do this because the term-by-term inversion requires you to assume $A$ and $B$ are individually invertible in advance. However, you can use associative property to "peel off" terms and infer invertibility.
+ </paragraph>
+ <paragraph>
+  $I=C(ABA)=(CAB)A$ implies $A$ is invertible since the matrix $CAB$ is a left inverse and $A$ is square.
+ </paragraph>
+ <paragraph>
+  Right multiply both sides to get $A^{-1}=CAB$ and then left multiply by $A$ to get $I=(ACA)B$ so $B$ is invertible.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,82 @@
+<h1>
+ Title: HW1 Q3b
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-02-17T13:57:44.896602+11:00
+</h3>
+<h3>
+ Category: Homeworks
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When I used the hint on how damping affects the mass's velocity, the math worked out to be that velocity was proportional to 1/Ta which would mean that oscillation frequency increases instead of decreases. My intuitive understanding is that it should decrease because the number of oscillations required to reach the steady-state should decrease but I can't get the math to show that. How can I reconcile these two?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Cameron Flynn (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm not sure what you are doing for math, but try to do this physically, not mathematically. What is damping? From that definition, how would it affect acceleration and/or velocity? How would those affect the time it takes to go from point A to point B and back again (i.e. complete a full cycle)?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Cameron Flynn (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I recognize that this doesn't help you reconcile the two things, but I'm not sure what you are doing mathematically.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Dan Ralph (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think I might have an idea about the math issue.  The full expression for the displacement is
+ </paragraph>
+ <math>
+  x\left(t\right)=Ae^{-\frac{t}{\tau_A}}\cos\left(\sqrt{\omega_0^2-\frac{1}{\tau_A^2}}t+\phi\right)
+ </math>
+ <paragraph>
+  If you want to directly calculate the velocity, taking a time derivative of this expression would give you two terms: one from taking the derivative of the exponential and the other from taking the derivative of the cosine.  I expect that you might have considered only the first term, while for an underdamped oscillator the larger term actually comes from the derivative of the cosine.
+ </paragraph>
+ <paragraph>
+  Working from this formula doesn't really help to address the physics question as brought into focus by Cameron, though.  The question asks you to consider physically why the oscillation frequency is reduced from
+ </paragraph>
+ <math>
+  \omega_0\ to\ \sqrt{\omega_0^2-\frac{1}{\tau_A^2}}.
+ </math>
+ <paragraph>
+  If an oscillator is traveling away from its equilibrium position, heading toward a maximum, and turning around back toward its equilibrium position,, will more damping increase or decrease the time it takes to pass back past the equilibrium position?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

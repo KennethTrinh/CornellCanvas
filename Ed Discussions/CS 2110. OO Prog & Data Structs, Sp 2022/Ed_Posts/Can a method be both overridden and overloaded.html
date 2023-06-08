@@ -1,0 +1,52 @@
+<h1>
+ Title: Can a method be both overridden and overloaded?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-07T17:56:05.753497+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can a method be both overridden and overloaded? If so, how?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes a method can both be overridden and overloaded. Here's an example:
+ </paragraph>
+ <pre>class Foo1 {
+    int foo() {
+        return 0;
+    }
+    
+    int foo(int i) {
+        return i + 3;
+    }
+}
+
+class Foo2 extends Foo1 {
+    int foo() {
+        return 3;
+    }
+}    </pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>

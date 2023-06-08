@@ -1,0 +1,56 @@
+<h1>
+ Title: Defining helper functions
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-25T09:49:27.622244+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Should all the code for part 2 and part 3 go in the respective main functions? Would it be better coding practice to factor the code out into helper functions that I call in main, similar to switch_demo.c  from this week's discussion?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  For example, in main body of Framework2.c, I see
+ </paragraph>
+ <paragraph>
+  NVIC_EnableIRQ(PIT_IRQn);
+ </paragraph>
+ <paragraph>
+  /* enable PIT Interrupts (for part 2) */
+ </paragraph>
+ <paragraph>
+  /* your code goes here */
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Would it be ok to replace the above three lines with a call to a helper function, say it is called operate_LED_interrupts() and within this function I have NVIC_EnableIRQ(PIT_IRQn);
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You may use helper functions, as long as your code is still clean, readable, and does not impact the performance of your program.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

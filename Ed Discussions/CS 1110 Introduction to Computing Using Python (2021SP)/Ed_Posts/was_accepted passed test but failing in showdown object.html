@@ -1,0 +1,69 @@
+<h1>
+ Title: was_accepted passed test but failing in showdown object
+</h1>
+<h3>
+ Author: Veda Balte (student)
+</h3>
+<h3>
+ Date: 2021-03-28T07:36:04.332873+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello! My partner and I have been getting this error when we run showdown even though our was_accepted function was working
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Traceback (most recent call last):
+ </paragraph>
+ <paragraph>
+  File "showdown_time.py", line 180, in &lt;module&gt;
+ </paragraph>
+ <paragraph>
+  sd = showdown_time(cnames[cnum1], cnames[cnum2], colleges)
+ </paragraph>
+ <paragraph>
+  File "showdown_time.py", line 42, in showdown_time
+ </paragraph>
+ <paragraph>
+  if was_accepted(tag, c1name) == was_accepted(tag,c2name):
+ </paragraph>
+ <paragraph>
+  File "/Users/leodavies/A3/skeleton/college.py", line 113, in was_accepted
+ </paragraph>
+ <paragraph>
+  print(c.accepted_enrolled)
+ </paragraph>
+ <paragraph>
+  AttributeError: 'str' object has no attribute 'accepted_enrolled'
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Lenhard Thomas (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Your was_accepted function may be completely correct, but you're currently breaking the precondition for was_accepted that the paramater 'c' must be a College object. You're calling was_accepted with c1name and c2name as the second paramter, but c1name and c2name are strings instead of College objects.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

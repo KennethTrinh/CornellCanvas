@@ -1,0 +1,37 @@
+<h1>
+ Title: A6 TODO 5 Testing
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-03T04:23:46.419119+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  My TODO 5 seems to work properly and during testing, it usually reverts back to the inactive state after 15 seconds. However, sometimes it will not immediately turn inactive, and it only turns inactive once I click into a different window outside of the game. This seems strange, so I was wondering if this is an issue?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This sounds like an issue.  A repaint should be requested if an event (like the game ending) could change the appearance of a component.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

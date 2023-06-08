@@ -1,0 +1,83 @@
+<h1>
+ Title: return method in A4
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-03T12:37:59.567667+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  are we supposed to return just the node or the value inside of it for the 4th method (returning @ node n)?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Atulya Lohani (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  One of the beauties of Java is that the method header explicitly says the type that the method will return. Since the header is public
+  <bold>
+   Node
+  </bold>
+  node(int k), we know that the method node will return a node object. In short: return the node
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  yeah, sorry. what should this return if the linked list is empty though?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Atulya Lohani (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The precondition states 0 &lt;= k &lt; size of the list. k being anything violates the precondition when the list is empty. Because even if k is 0, it won't be less than the size(also 0). Thus, you assume that you will never run into the case where the method is run and the list is empty.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Adding on, for A4, you can assume preconditions will never be violated.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,74 @@
+<h1>
+ Title: Co-op 2 Amplitude
+</h1>
+<h3>
+ Author: Ariel Shaked (student)
+</h3>
+<h3>
+ Date: 2021-02-15T06:07:26.942651+11:00
+</h3>
+<h3>
+ Category: Coops
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm confused how to go about finding the amplitude for question 1. I know the correct answer, but I keep getting .5
+ </paragraph>
+ <paragraph>
+  If x(t) = Re(Ae^(iωt)) = Acos(ωt) = .5
+ </paragraph>
+ <paragraph>
+  and v(t) = Re(Aieω^(iωt)) = -Aωsin(ωt) = 0
+ </paragraph>
+ <paragraph>
+  For the second equation to be true, sin(ωt) = 0 (assuming that A and w are both non zero). But if sin(ωt)=0, then cos(ωt) = 1 or -1, so A must be .5
+ </paragraph>
+ <paragraph>
+  Or more intuitively, at the point where the block on the spring has 0 velocity, it is turning around and so has reached its peak amplitude, right? I know that I'm missing something I just don't know what.
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  Thank you for the help.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Dan Ralph (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This problem deals with an underdamped oscillator, so the general form of the position versus time is
+ </paragraph>
+ <math>
+  x\left(t\right)=Re\left[Ae^{i\ \phi}e^{-\frac{t}{\tau_A}}e^{i\omega t}\right]=Ae^{-\frac{t}{\tau_A}}\cos\left(\omega t+\phi\right)
+ </math>
+ <paragraph>
+  where here I have written a complex-valued
+  <bold>
+   <italic>
+    A
+   </italic>
+  </bold>
+  in terms of a real-valued A and a phase phi.  When you take the time derivative of this to determine the velocity, there will be a contribution from taking the derivative of the
+ </paragraph>
+ <math>
+  e^{-\frac{t}{\tau_A}}
+ </math>
+ <paragraph>
+  term as well as the cosine.  You can then use the initial conditions to determine A and phi.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

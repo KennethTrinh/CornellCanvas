@@ -1,0 +1,89 @@
+<h1>
+ Title: Homework 1 Question 3c
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-02-19T13:01:16.756402+11:00
+</h3>
+<h3>
+ Category: Homeworks
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="256.5739484396201" src="https://static.us.edusercontent.com/files/mUhQIKa8MlhyhEZXdMgSTPiR" width="641"/>
+ </figure>
+ <figure>
+  <image height="360.9339065018807" src="https://static.us.edusercontent.com/files/yy4pmwVZGPVm1FdWoLEWl2uM" width="626"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  After looking at the solutions for Homework 1, I was a bit confused on the graph for 3c. I approached the problem as a piecewise graph where the formula dictating the relationship between b and decay time was governed by decayTime=2m/b for underdamped, decayTime=2m/b for critically damped (one point), and decayTime=b/k for overdamped. I gave mass and k a value of 1 and graphed accordingly. This gave me a discontinuous piecewise graph.
+ </paragraph>
+ <paragraph>
+  In the solutions, it appears that the non linear region does not end at the critically damped marker and it was continuous and differentiable. I was wondering how to arrive at this solution.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Glenn Case (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Good question!  The graph provided is a qualitative sketch and may not (or may) be correct in all details.  My thinking when I originally made the figure is that a gradual, continuous variation in 'b' would not result in a discontinuity in the value or slope of the decay time graph.  Frankly, I'm not even sure what is meant by 'decay time' in the overdamped region, because the solution has two roots and therefore two different decaying exponentials (see Course Notes page 1-11).  For very large 'b' one root dominates, but it is not clear to me how to deal with near-critical overdamping when the two roots are similar (and therefore neither approximated as k/b).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Dan Ralph (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I like this question, too!  I think in a careful treatment there will actually be a continuous crossover for the decay times between the underdamped and overdamped regimes.  The expressions given in the Course Notes for the decay times in the overdamped regime are derived assuming that $b^2 \gg 4mk$ -- that the system is $very$ overdamped (see the discussion leading up to Equations 1-37 and 1-38).  This assumption does not hold if you imagine starting in the highly damped regime and reducing $b$ until you cross over to the underdamped regime.  It is, however, also possible to calculate the two decay times in the overdamped regime without approximation.  The answers are
+ </paragraph>
+ <math>
+  \tau_1=\frac{2m}{b-\sqrt{b^2-4mk}};\ \tau_2=\frac{2m}{b+\sqrt{b^2-4mk}}.
+ </math>
+ <paragraph>
+  From this you can see that if you reduce $b$ until $b^2 = 4mk$ that the decay constants converge to $2m/b$, the decay constant in the underdamped regime.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Veit Elser (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Here's a plot of the amplitude-decay time constant (the largest of the two in the over-damped case) vs. the damping parameter $b$. There's a slope discontinuity where under/over-damped meet.
+ </paragraph>
+ <figure>
+  <image height="391" src="https://static.us.edusercontent.com/files/hBrbD7kqPPnfete8Ldfnhw2F" width="600"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

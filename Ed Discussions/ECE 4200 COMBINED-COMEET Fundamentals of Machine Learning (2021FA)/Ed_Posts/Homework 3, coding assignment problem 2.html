@@ -1,0 +1,86 @@
+<h1>
+ Title: Homework 3, coding assignment problem 2
+</h1>
+<h3>
+ Author: Jayadev Acharya (admin)
+</h3>
+<h3>
+ Date: 2021-09-29T04:06:17.980841+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  In the second problem for understanding the complete effect of regularization, please take a larger range of lambda. In particular, in the following part of the code change all 15-&gt;30 and run the code again. That way you can see the effect of lambda becoming really big and w's converging to 0.
+ </paragraph>
+ <paragraph>
+  N = np.array(range(0,15))
+  <break>
+  </break>
+  lamb = 0.00001*(4**N)
+  <break>
+  </break>
+  error_trn = np.zeros(15)
+  <break>
+  </break>
+  error_tst = np.zeros(15)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Andrew Tsai (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image/>
+ </figure>
+ <paragraph>
+  When I change those lines and run it, I get a bunch of the following errors, and the graph is shown below. Any idea why this might be occurring? It works fine once I change it back to 15.
+  <break>
+  </break>
+ </paragraph>
+ <figure>
+  <image height="38.67297297297297" src="https://static.us.edusercontent.com/files/zaQaGiRs4vMYi2Wc08Edd81B" width="698"/>
+ </figure>
+ <figure>
+  <image height="293" src="https://static.us.edusercontent.com/files/UqENlUEYeeKqF9HwhKbo7Otd" width="503"/>
+ </figure>
+ <figure>
+  <image height="147" src="https://static.us.edusercontent.com/files/oqX5DHmdMum4BUhqEDN5IWFA" width="638"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Esther In (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I made the above change (15-&gt;30) and the code starts to break, saying there is a divide by 0 somewhere:
+ </paragraph>
+ <figure>
+  <image height="297.1834061135371" src="https://static.us.edusercontent.com/files/lxNAJEISKMgHDvPNyPzjqm12" width="698"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

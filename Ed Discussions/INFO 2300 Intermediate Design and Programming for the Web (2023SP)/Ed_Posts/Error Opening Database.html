@@ -1,0 +1,50 @@
+<h1>
+ Title: Error Opening Database
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-03-09T05:38:18.340568+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am having an issue opening my database in my project 2. I am using the same code as we used in the labs and in class to open it: $db = open_sqlite_db('secure/site.sqlite');. However, when I do this I get the error
+ </paragraph>
+ <paragraph>
+  PHP Fatal error: Uncaught Error: Call to undefined function open_sqlite_db()
+ </paragraph>
+ <paragraph>
+  Stack trace: #0
+  <link href="null"/>
+  /workspaces/project2/router.php(46): require() #1 {main}  thrown in
+  <link href="null"/>
+  /workspaces/project2/pages/home.php on line 35
+ </paragraph>
+ <paragraph>
+  I do not get this error when I use the same code to open a database in the labs or in-class examples that we get. I have SQLite downloaded and it has worked fine in the past. I have even gone so far as to copy the code from class and labs that I know have worked into this file, and I still get the error. What would be the best way to  overcome this problem?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Please see the class notes for 3/1. You're missing the first step necessary to open a database in PHP. You need to load the library.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

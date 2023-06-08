@@ -1,0 +1,56 @@
+<h1>
+ Title: 19fa iterator
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-19T12:56:40.545882+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I wonder why the last method next() needs to be written as "idx++; return b[idx-1]", rather than "return b[idx]; idx++". Is it because the invariant states that b[idx..size-1] remain to be enumerated, so we cannot return b[idx], which must remain in the to-be-enumerated part? Thank you!
+ </paragraph>
+ <figure>
+  <image height="353.28859060402687" src="https://static.us.edusercontent.com/files/ar47KRg0aESI3Ey0PryfONNH" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Vladia Trinh (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Once you return, you exit the method. idx++ would never execute.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  ohh okay thanks!!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

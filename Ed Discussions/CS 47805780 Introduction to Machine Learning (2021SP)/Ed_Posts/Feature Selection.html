@@ -1,0 +1,39 @@
+<h1>
+ Title: Feature Selection
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-12T12:08:10.66603+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Kind of related to #1416 but I was wondering if forward or backward selection would ever account for the best subset of features. Like for instance you had feature vector that was  [age, gender, income, education]. With forward and backward selection you would always go through the same order, right? If that's the case, what if it turns out that age and gender don't work so great together, but gender and education produce a better model? With forward and backward selection, wouldn't gender be dropped, so you wouldn't be able to test gender and education together?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Katharine Sadowski (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think this post does a good job talking about all of the different types of subset selections (though the code is for R). Basically you are right, this doesn't consider all combinations. Doing that can be taxing for larger datasets. There are options for considering all combinations, you just have to be careful with the number of features you have (https://daviddalpiaz.github.io/appliedstats/variable-selection-and-model-building.html).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

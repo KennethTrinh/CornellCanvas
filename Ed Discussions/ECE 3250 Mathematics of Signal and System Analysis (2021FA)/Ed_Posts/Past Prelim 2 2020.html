@@ -1,0 +1,119 @@
+<h1>
+ Title: Past Prelim 2 2020
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-11T16:06:13.498391+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was looking through the sampling questions on this prelim and I needed some help on certain parts of it:
+ </paragraph>
+ <figure>
+  <image height="399.0610211706102" src="https://static.us.edusercontent.com/files/cefmzOUB21Pes6jyf73Pfcf3" width="658"/>
+ </figure>
+ <figure>
+  <image height="184.86249999999998" src="https://static.us.edusercontent.com/files/ta6dxlpQmMnfgKIUComxaR4J" width="643"/>
+ </figure>
+ <paragraph>
+  why is vi) false. technically if you are bandlimited to within pi/T doesn't that also mean you are bandlimited to within 2pi/T and so the reconstruction should work fine?
+ </paragraph>
+ <paragraph>
+  viiI) how are we so sure that the interpolation is going to be sinusoidal. Is it because the discrete signal was sinusoidal?
+ </paragraph>
+ <paragraph>
+  ix) For this one do you use like scaling law? I am a bit confused on what to do here. I
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  (vi) $x _ c$ needs to be bandlimited within $\pi / T$, and it's not necessarily if it's only bandlimited to within $2 \pi / T$.
+ </paragraph>
+ <paragraph>
+  (viii) One of the mantras: "if the samples could have come from a pure sinusoid, the sinc-function $T$-interpolation of them will be a pure sinusoid no matter what $T$ is."  We demonstrated that in class using pictures of signals going through boxes.
+ </paragraph>
+ <paragraph>
+  (ix) Various approaches work, including scaling laws for Fourier transforms, which is the one I can think of now.  One way to think of it without scaling laws: the discrete-time signal $x$ is now $y _ c$ sampled every $T / 3$, or at angular frequency $6 \pi / T$, which is faster than the Nyquist rate of $y _ c$.  Thus no aliasing occurs during sampling, so we'll get $x _ R = x _ c$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Raleigh Clemens (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can you explain the reasoning behind why (ii) is true and (iii) is false?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  (iii) is false because $\widehat{X}$ is $2 \pi$-periodic, not $2 \pi / T$-periodic.
+ </paragraph>
+ <paragraph>
+  (iii) is true because if $x _ c$ is bandlimited to within $\pi / 2 T$, then on the $\omega$-interval $[ - \pi , \pi ]$ $\widehat{X} ( \omega )$ is nonzero only out to $\omega = \pm \pi // 2$.  This results from the $\omega \leftrightarrow \Omega T$ scaling.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  So just to confirm. The sinc interpolation of a possibly sinusoidal sampled discrete function guarantees a sinusoidal output?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The sinc-funtion $T$-interpolation does.  Also, see my edit above to the response on (ix).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

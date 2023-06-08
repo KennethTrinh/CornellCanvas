@@ -1,0 +1,43 @@
+<h1>
+ Title: Prelim 2018
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-08T12:33:49.614477+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="402.1111111111111" src="https://static.us.edusercontent.com/files/izfXSDGjGXARHEJfFIf9pRfA" width="658"/>
+ </figure>
+ <paragraph>
+  I said that Dress3 wouldn't compile also because it doesn't implement getColor() as a subclass of Dress1, is that wrong? I know a reason Dress3 wouldn't work at all is because it instantiates Dress1 when it's an abstract class but is that another reason?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Naman Madan (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  You're correct that Dress3 wouldn't compile because it doesn't implement getColor().
+ </paragraph>
+ <paragraph>
+  BUT, the problem then asks which classes will fail to compile even if they are abstract. In this case, if Dress3 were abstract, then it doesn't need to implement getColor(). However, because it contains "new Dress1()", and you cannot instantiate abstract classes, this fails to compile still even if it were abstract.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

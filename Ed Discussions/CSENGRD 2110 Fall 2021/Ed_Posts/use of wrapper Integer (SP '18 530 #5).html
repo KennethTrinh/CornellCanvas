@@ -1,0 +1,54 @@
+<h1>
+ Title: use of wrapper Integer (SP '18 5:30 #5)
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-17T12:55:27.527604+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="188" src="https://static.us.edusercontent.com/files/b15NjVIVtGsjhGQ0psH9bWtR" width="387"/>
+ </figure>
+ <paragraph>
+  why is s an Integer, not an int?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  For that, you should look up method remove in Map in the javadoc API documentation.
+ </paragraph>
+ <paragraph>
+  Both arguments of the constructor of a Map have to be objects, not elements of a primitive type.
+ </paragraph>
+ <paragraph>
+  1. if ob is the key of a pair in the Map, the corresponding value is returned, and in this case it is Integer (and not a primitive int value).
+ </paragraph>
+ <paragraph>
+  2. If ob is NOT the key of a pair in the Map, then null is returned.
+ </paragraph>
+ <paragraph>
+  Thus, a returned value of null tells you that ob was not a key in the Map.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

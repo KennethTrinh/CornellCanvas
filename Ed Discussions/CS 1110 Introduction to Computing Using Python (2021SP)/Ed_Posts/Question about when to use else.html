@@ -1,0 +1,85 @@
+<h1>
+ Title: Question about when to use "else"
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-30T01:32:34.265913+11:00
+</h3>
+<h3>
+ Category: Other
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello!
+ </paragraph>
+ <paragraph>
+  I was reviewing conditionals and wondered if there were instances in which using an "else" statement would cause problems in the code.  Why is that the case?
+ </paragraph>
+ <paragraph>
+  When in doubt should we always add "else" or should we simply end the code with another unindented return statement without adding "else"?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Rachel Brotherton (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For our purposes writing something like
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="false">
+  <snippet-file id="code">
+   if True:
+    return 5
+else:
+    return 6
+  </snippet-file>
+ </snippet>
+ <paragraph>
+  works the same as writing
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="false">
+  <snippet-file id="code">
+   if True:
+    return 5
+return 6
+  </snippet-file>
+ </snippet>
+ <paragraph>
+  Adding the else statement should not cause problems.
+ </paragraph>
+ <paragraph>
+  You can do either, but omitting the else is more concise.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  ...although keeping the else statement may make your logic clearer.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

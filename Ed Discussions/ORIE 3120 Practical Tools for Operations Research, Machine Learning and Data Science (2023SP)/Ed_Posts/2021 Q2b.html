@@ -1,0 +1,53 @@
+<h1>
+ Title: 2021 Q2b
+</h1>
+<h3>
+ Author: Alice Ke (student)
+</h3>
+<h3>
+ Date: 2023-03-31T06:08:18.934461+11:00
+</h3>
+<h3>
+ Category: Prelim
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why do we need to reset_index() in this problem?
+ </paragraph>
+ <list style="ordered">
+  <list-item>
+   <paragraph>
+    SELECT OrderID, SUM(Quantity*UnitPrice*(1-Discount)) FROM OrderDetail
+    <break>
+    </break>
+    GROUP BY OrderID
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  orderdetail['revenue'] = orderdetail['Quantity']*orderdetail['UnitPrice']*(1-orderdetail['Discount'])
+ </paragraph>
+ <paragraph>
+  orderdetail.groupby('OrderId')['revenue'].sum().reset_index()
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Varun Gande (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If we don't reset index, OrderId will be an index column and not an actual column of the dataframe. Meaning, you could not reference the OrderId column by calling df['OrderId'].
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

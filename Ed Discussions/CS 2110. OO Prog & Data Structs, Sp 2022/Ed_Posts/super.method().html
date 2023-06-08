@@ -1,0 +1,56 @@
+<h1>
+ Title: super.method()
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-17T22:37:19.90751+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Say you have a superclass C, and a subclass S, both with a method with the same name,  but performs different functions.  If you call super.method(), do you call S's method, or C's method.  I know the slides said it "calls the method within the object where it appears. To determine which version is called, compiler uses the bottom-up (overriding) rule, but starts looking in the partition above the one in which the method call", and I am confused as to what exactly that statement means.
+ </paragraph>
+ <paragraph>
+  Thanks!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Atulya Lohani (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="1.0">
+ <paragraph>
+  If you use super to call a method in your subclass class then it will call the method in the superclass. The statement you quoted means that the bottom-up rule is used, however, the computer will start looking in the superclass of the class in which the method was called. So if you called it on class S, it would start looking for the method in superclass C since it's the parent class. If it's not in C then the computer will look in the parent class of C and so on.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you so much!!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

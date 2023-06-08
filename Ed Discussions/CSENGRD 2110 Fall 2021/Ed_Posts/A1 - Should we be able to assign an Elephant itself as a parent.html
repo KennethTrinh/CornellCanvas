@@ -1,0 +1,71 @@
+<h1>
+ Title: A1 - Should we be able to assign an Elephant itself as a parent?
+</h1>
+<h3>
+ Author: Ahmed Sultan (student)
+</h3>
+<h3>
+ Date: 2021-09-12T04:16:22.467355+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  This may be similar to #94, but I just figured I'd clarify: because the assignment doesn't specify, we should not have to check in the addMom() or addDad() methods that the elephant we are adding is not also the elephant that's being modified?
+  <break>
+  </break>
+  <break>
+  </break>
+  I realize this is slightly confusing, so I've attached an example from my ElephantTest.java:
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  <italic>
+   Elephant o= new Elephant("Loop", 'F', 2000, 8);
+   <break>
+   </break>
+   o.addMom(o);
+   <break>
+   </break>
+   assertEquals(o, o.mom());
+   <break>
+   </break>
+   assertEquals(1, o.children());
+  </italic>
+  <break>
+  </break>
+  <break>
+  </break>
+  Under the specifications provided, this passes the JUnit test. Thanks!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  There are lots of inconsistencies that COULD be checked, but don't.
+ </paragraph>
+ <paragraph>
+  Check only the Preconditions with assert statements.
+ </paragraph>
+ <paragraph>
+  This was discussed in the pinned A1 handout on Ed Discussions. Save yourself time by looking there.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

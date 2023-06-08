@@ -1,0 +1,43 @@
+<h1>
+ Title: Final 19sp 5da
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-12T20:03:58.9651+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  The question is as follows:
+ </paragraph>
+ <paragraph>
+  Your friend from CS 2110, Dave, comes to you win an idea for a better implementation of a singly linked list. SuperLinkedList is like a normal linked list, but it also has an array b with pointers to the nodes at each index (so b[2] has a pointer to the second node). Dave claims that, thanks to this improvement, the expected time of the get() operation is now constant thanks to the array, while prepend() and append() remain constant time due to the linked list. Is Dave correct? Why or why not?
+ </paragraph>
+ <paragraph>
+  I understand why prepend would now take O(n) time, but would append too, in the case that array b is full and a new array has to be created? The answer key only stated prepend would take O(n) time so I wanted to check my reasoning on this question.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  But in that case we talk of AMORTIZED TIME. The amortized time to add an element to an ArrayList is still constant. Look it up in JHT and in the API Documentation for ArrayList.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

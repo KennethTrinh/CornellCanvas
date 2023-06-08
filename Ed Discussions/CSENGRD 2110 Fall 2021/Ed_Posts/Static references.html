@@ -1,0 +1,77 @@
+<h1>
+ Title: Static references...
+</h1>
+<h3>
+ Author: Kenisha Stills-Ogburn (None)
+</h3>
+<h3>
+ Date: 2021-09-26T00:32:54.453275+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What's it mean when the IDE says: "cannot make a static reference to a non-static method".
+ </paragraph>
+ <paragraph>
+  I know I can fix that by tacking on "static" to the non-static method I'm trying to use, but why is it that referencing something non-static from a static method an issue?
+ </paragraph>
+ <paragraph>
+  Thank you
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  what is this referring to? What are you working on?
+ </paragraph>
+ <paragraph>
+  What does non-static mean? Where is a non-static method?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kenisha Stills-Ogburn (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="384.75" src="https://static.us.edusercontent.com/files/V9bs57ZGAwWNBJfMemKWbbm1" width="684"/>
+ </figure>
+ <paragraph>
+  When hover my mouse over the red lines, I'm told that I can't make a static reference to a non-static method.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes. A non-static method is in every single object. So how can you reference a non-static object if you don't have an object to point to? Make the method static.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

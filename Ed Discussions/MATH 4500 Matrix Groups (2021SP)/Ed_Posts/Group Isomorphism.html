@@ -1,0 +1,164 @@
+<h1>
+ Title: Group Isomorphism
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-11T10:47:45.649517+10:00
+</h3>
+<h3>
+ Category: Other
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi Professor,
+ </paragraph>
+ <paragraph>
+  Can we say that if two groups are isomorphic, they will share the same properties, e.g.  bounded (as in the HW).  If so, what "kinds" of same properties can they share?  Are there any theorems or axioms out there that summarize this?
+ </paragraph>
+ <paragraph>
+  I hope it makes sense. I just wanted to know if isomorphism can make things simple for us.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Marcel Mazur (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is my understanding of your question; not sure if this is 100% right.
+  <break>
+  </break>
+  <break>
+  </break>
+  If two groups are isomorphic, they will indeed share the same properties. This is what makes isomorphisms interesting. Isomorphisms are "structure-preserving" bijections, so they preserve group structure. So the "kinds" of properties they share are group properties. There is just really one group property, however, and that is the typical one that defines a homomorphism
+  <break>
+  </break>
+  <break>
+  </break>
+  Now, if you want to talk about boundedness, then I think you first need to put your groups inside metric spaces. Groups in general don't come with a metric, but to measure boundedness, you will need a metric, which can in general be defined in a number of ways. Then to prove that A is bounded given that B is bounded wrt to the endowed metrics, you would need to find an isometry between A and B.
+  <break>
+  </break>
+  <break>
+  </break>
+  For the problem on the homework, however, I think you can quickly see that T0 is bounded without using an isomorphism. Closure is also not too hard to prove. I think its easiest, therefore, to do things directly.
+  <break>
+  </break>
+  <break>
+  </break>
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you, Marcel.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Marcel Mazur (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ok so I would like to make some adjustments to what I wrote above because in the problem, we are actually dealing with
+  <italic>
+   topological groups.
+  </italic>
+  What is the topology? Well, it is the same topology as in R^n, ie the topology that has a basis of open balls. In particular, in this topology, a subgroup A of a matrix group B is closed if any sequence of elements in A that converges to an element a in B has the property that a is also in A.
+  <break>
+  </break>
+  <break>
+  </break>
+  The fact that we are dealing with topological groups changes things. In particular, note  that now we can ask how topological properties of two groups compare. To do so, it is useful to introduce the notion of a
+  <italic>
+   homeomorphism.
+  </italic>
+  A homeomorphism is a bijective map between topological spaces that is continuous and has a continuous inverse. In particular, look back at how we defined a Lie group Isomorphism, and note that a Lie group Isomorphism is a
+  <italic>
+   homeomorphism that is also a homomorphism.
+  </italic>
+  Ok, you ask. So what? Why do we care about homeomorphisms? Well, homeomorphisms are nice because they preserve
+  <italic>
+   topological properties,
+  </italic>
+  and unlike group properties, there is a long list of these properties. (To learn about the list, take topology!). Long story short, one of these properties is compactness. Hence, if you have a Lie group Isomorphism between two topological groups, they are both either compact or not compact. Also, boundedness is now another property that is preserved, as you mentioned initially. But the reason it is preserved is because the isomprphsim is not just an isomorphism, but also a Lie group isomorphism
+  <break>
+  </break>
+  <break>
+  </break>
+  I believe this is how you can think about things, but if Professor Sjamaar reads this, perhaps he can comment on whether I have made any mistakes in my explanations.
+  <break>
+  </break>
+  <break>
+  </break>
+  To answer your question about properties: If you want a list of properties preserved by a Lie group isomorphism, google topological properties preserved by homeomorphisms, and you will find your answer.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Reyer Sjamaar (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Marcel's answer is by and large correct.
+ </paragraph>
+ <paragraph>
+  But you have to be a little careful with boundedness, which is
+  <italic>
+   not
+  </italic>
+  a topological property.  For instance, the open interval $(0,1)$ is homeomorphic to the real line $\mathbf{R}$, but one is bounded and the other is not.
+ </paragraph>
+ <paragraph>
+  However, the property of being a
+  <italic>
+   closed and bounded
+  </italic>
+  subset of $\mathbf{R}^n$
+  <italic>
+   is
+  </italic>
+  a topological property: if $X$ and $Y$ are subsets of $\mathbf{R}^n$ and $X$ is closed and bounded and $Y$ is homeomorphic to $X$, then $Y$ is also closed and bounded.  This follows from the Heine-Borel theorem.
+ </paragraph>
+ <paragraph>
+  (None of these considerations are really necessary to do the homework.  As Marcel points out, you can verify directly that the group $T_0$ is closed and bounded.)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

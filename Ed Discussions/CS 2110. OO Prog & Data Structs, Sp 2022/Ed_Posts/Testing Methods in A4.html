@@ -1,0 +1,50 @@
+<h1>
+ Title: Testing Methods in A4
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-03T09:48:32.157167+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The pdf for A4 states that, "
+  <bold>
+   You must test every method call that changes the linked list with three such assertEquals calls...
+  </bold>
+  " Do we have to include these assertEquals calls to the methods that aren't the methods that is being tested by the test method but still changes the linked list?
+ </paragraph>
+ <paragraph>
+  <underline>
+   Example:
+  </underline>
+  Do we have to include the assertEquals calls for the call on the prepend method in testDelete?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Once a method has been tested, say, append,
+ </paragraph>
+ <paragraph>
+  If you use that method, append, in other testing procedures, you do NOT have to test those calls.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

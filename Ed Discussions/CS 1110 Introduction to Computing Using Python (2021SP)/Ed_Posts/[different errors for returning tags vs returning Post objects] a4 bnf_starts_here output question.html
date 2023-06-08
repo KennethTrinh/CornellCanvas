@@ -1,0 +1,154 @@
+<h1>
+ Title: [different errors for returning tags vs returning Post objects] a4 bnf_starts_here output question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-16T08:42:33.026888+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When I run my code and append the tags of a post, I get this error message (with a print statement of print(list) before return list):
+ </paragraph>
+ <pre>Starting test_bnf_starts_here
+['0', '00', '001']
+Traceback (most recent call last):
+  File "a4_test.py", line 341, in &lt;module&gt;
+    test_bnf_starts_here()
+  File "a4_test.py", line 303, in test_bnf_starts_here
+    raise RuntimeError(errormsg)
+RuntimeError: Wrongly found back-and-forth for users A and B at Post 0 for k=3
+</pre>
+ <paragraph>
+  I understand that the list should contain the objects, but I believe this is still the correct path that is supposed to be taken. However, when I change my function to append the actual posts themselves and not the tags, I get a completely different error:
+ </paragraph>
+ <pre>Starting test_bnf_starts_here
+[&lt;post.Post object at 0x00000132CE4E6C40&gt;, &lt;post.Post object at 0x00000132CE54A070&gt;, &lt;post.Post object at 0x00000132CE53BFA0&gt;]
+Traceback (most recent call last):
+  File "a4_test.py", line 341, in &lt;module&gt;
+    test_bnf_starts_here()
+  File "a4_test.py", line 303, in test_bnf_starts_here
+    raise RuntimeError(errormsg)
+RuntimeError: Wrongly found back-and-forth for users A and D at Post 011 for k=2</pre>
+ <paragraph>
+  I assume the printed list is the correct back-and-fourth for A and B at 0 with k=3, but I don't understand why the error is a completely different case just because the tags were changed to posts.
+ </paragraph>
+ <paragraph>
+  Any clarification, advice, or direction would be greatly appreciated.
+ </paragraph>
+ <paragraph>
+  Thanks!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Jamie Cashman (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm not sure but based on the k value your first run through is actually getting farther than the second. How did you get the test file to print the tags? I can only get the object ids
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  First, let's recall what the bnf function is supposed to return. The spec says, "...returns a list of Post objects".
+  <break>
+  </break>
+  <break>
+  </break>
+  So, returning a list of tags (strings) is not what the function should do; it should return a list of Posts (objects). So, changing your code to return lists of Posts, not tags, is definitely progress!
+  <break>
+  </break>
+  <break>
+  </break>
+  Now, checking other Ed Discussion posts about what "Wrongly found ... " means:
+  <link href="https://edstem.org/us/courses/3933/discussion/353489"/>
+  https://edstem.org/us/courses/3933/discussion/353489 , we see that "Wrongly found ... " means:
+  <break>
+  </break>
+  <bold>
+   (a)
+  </bold>
+  either you returned not-False when the answer should be False,
+  <italic>
+   or,
+  </italic>
+  <break>
+  </break>
+  <bold>
+   (b)
+  </bold>
+  at least your code didn't return False, but it didn't return what it was supposed to do, either.
+  <break>
+  </break>
+  <break>
+  </break>
+  So!
+  <italic>
+   Your first error message
+  </italic>
+  , "Wrongly found back-and-forth for users A and B at Post 0 for k=3" --- that is because, although there is in fact a bnf at 0 of length 3 for A, B, you were returning tags, not Posts.  So that's case (b).
+  <break>
+  </break>
+  <break>
+  </break>
+  <break>
+  </break>
+  Your
+  <italic>
+   second error message
+  </italic>
+  , "Wrongly found back-and-forth for users A and D at Post 011 for k=2" --- let's see.  According to the figure, is there a length-2 A&amp;D bnf at 011?  Yes.  So, what appears to be happening is that whatever your code is returning for 011, A&amp;D, for k=2, it's not what we're expecting (which would be a list of the Post at 0.1.1 and then the Post at 0.1.1.0.  This is case (b) again.
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  How can you figure out what your code is returning?  Use the "small test" idea from section 7.1.3 of the handout to test what exactly is being returned by your code for 0.1.1, A and D, length =2.
+  <break>
+  </break>
+  <break>
+  </break>
+  See also
+  <link href="https://edstem.org/us/courses/3933/discussion/360971"/>
+  https://edstem.org/us/courses/3933/discussion/360971 on the order in which the tests are being run.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

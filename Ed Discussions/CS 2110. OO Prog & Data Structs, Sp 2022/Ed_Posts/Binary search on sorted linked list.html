@@ -1,0 +1,95 @@
+<h1>
+ Title: Binary search on sorted linked list
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-05T10:52:52.653917+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  "Sorting a linked list allows us to use binary search instead of linear search on the list."
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Why is this statement wrong? I thought that linear search would use O(n) time, and when the list is sorted, by doing binary search it will only use O(log n) time.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  To get to node  I. in a linked list takes time O(i) -- takes time linear in i.
+ </paragraph>
+ <paragraph>
+  Therefore, to find the middle element of a linked list with n elements takes n/2 tests --its O(n).
+ </paragraph>
+ <paragraph>
+  Therefore, using binary search doesn't help.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, adding on: what you described with the time complexities only applies to arrays and ArrayLists, or anything in which querying the collection by index takes O(1) time. So in an array, we can simply write arr[i] for any i and we get the element at that index in O(1) time.
+ </paragraph>
+ <paragraph>
+  In a LinkedList, as you saw in A4, you have to iterate (from the head or the tail) to get to that element at index i.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Does int[]  or char[] count as an array, and thus getting an element at some index only take O(1) time?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yep! Those are int and char arrays. Querying by index would take O(1) time, yes, all correct.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

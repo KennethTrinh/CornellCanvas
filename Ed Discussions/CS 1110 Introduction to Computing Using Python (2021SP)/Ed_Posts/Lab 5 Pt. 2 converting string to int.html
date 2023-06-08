@@ -1,0 +1,128 @@
+<h1>
+ Title: Lab 5 Pt. 2 converting string to int
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-02-26T14:34:07.734246+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm having difficulty converting from str to int in lab 5 pt. 2. I have reviewed the lecture slides to no avail.  Would appreciate some guidance.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Dylan Castillo (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  Wrap the expression you’re trying to convert to an int with int().
+  <break>
+  </break>
+  e.g. int(“53”)
+  <break>
+  </break>
+  or
+  <break>
+  </break>
+  x = “53”
+  <break>
+  </break>
+  x = int(x)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you for your help. I am having an additional problem with the string slicing.
+ </paragraph>
+ <paragraph>
+  I'm either string slicing only the first position and receiving and error, or string slicing the first two positions and receiving an error for including a colon in the first input of 9:04
+ </paragraph>
+ <paragraph>
+  ... On input '9:04', your code returned correct value 9
+  <break>
+  </break>
+  ... On input '22:13', your code returned incorrect value 2, not correct value 22.
+  <break>
+  </break>
+  ... On input '22:09', your code returned incorrect value 2, not correct value 22.
+  <break>
+  </break>
+  ... On input '22:00', your code returned incorrect value 2, not correct value 22.
+  <break>
+  </break>
+  ... On input '10:55', your code returned incorrect value 1, not correct value 10.
+  <break>
+  </break>
+  ... On input '0:00', your code returned correct value 0
+ </paragraph>
+ <paragraph>
+  If I attempt to string slice the first two positions instead of only the first position I receive the following error:
+ </paragraph>
+ <paragraph>
+  Did you accidentally include the colon when string slicing? Or could your string slice accidentally be empty?
+  <break>
+  </break>
+  Here is what Python reported as the problem: invalid literal for int() with base 10: ':'
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Dylan Castillo (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  That is because the colon will be at different indexes depending on whether the hour is one digit long or two digits long.
+ </paragraph>
+ <paragraph>
+  You should look into using the string "index" function, to which you basically give a string and subsection of that string, and it gives you the index of where in the string that subsection is.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  (Lecture 2 has slides on "Converting from one type to another")
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

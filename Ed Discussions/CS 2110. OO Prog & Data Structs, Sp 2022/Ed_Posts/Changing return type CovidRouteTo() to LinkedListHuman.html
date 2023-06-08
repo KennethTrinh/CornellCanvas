@@ -1,0 +1,107 @@
+<h1>
+ Title: Changing return type CovidRouteTo() to LinkedList
+ <human>
+  ?
+ </human>
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-20T16:32:09.729112+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Without an explicit cast of the result of CovidRouteTo, I am getting a compiler error. Are we allowed to change the return type of the CovidRouteTo() function to LinkedList&lt;Human&gt; instead of List&lt;Human&gt;?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  I don’t see why you should get a compiler error when you create your list in your code do you do
+  <break>
+  </break>
+  List&lt;Human&gt; whatever = new LinkedList&lt;&gt;(); ?
+  <break>
+  </break>
+  I think you’re doing LinkedList&lt;Human&gt; for the static type
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  That is not where error is. For example, this would yield an error. Error is: Type mismatch between List&lt;Human&gt; and LinkedList&lt;Human&gt;, though CovidRouteTo does return a LinkedList.
+ </paragraph>
+ <figure>
+  <image height="44" src="https://static.us.edusercontent.com/files/VuXBq8z9obeTKasGj757X6Fj" width="527"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  you want to do List&lt;Human&gt; on the left hand side like I already said above
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ok, thanks.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  it returns a list not a linked list, this is why your compiler is whining
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,90 @@
+<h1>
+ Title: == vs .equals
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-15T04:38:36.21497+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For contains(), it says to use .equals() when comparing persons, however in node() which was given to us, it uses if(person == p). How come?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sloppy proofreading - it should say
+  <code>
+   if (person.equals(p))
+  </code>
+  .
+ </paragraph>
+ <paragraph>
+  In this context the
+  <code>
+   ==
+  </code>
+  happens to work because only one
+  <code>
+   Person
+  </code>
+  object is ever created with the same name in the
+  <code>
+   H1N1
+  </code>
+  app and in the test cases (note the use of static fields like
+  <code>
+   personC
+  </code>
+  in the test, rather than
+  <code>
+   new
+  </code>
+  expressions).  But because
+  <code>
+   Person
+  </code>
+  's superclass overrides
+  <code>
+   equals
+  </code>
+  , the use of
+  <code>
+   ==
+  </code>
+  should be considered a bug.  Sorry about that - feel free to fix it in your submission.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In this assignment, we will accept either one. Points will not be deducted for using one or another.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

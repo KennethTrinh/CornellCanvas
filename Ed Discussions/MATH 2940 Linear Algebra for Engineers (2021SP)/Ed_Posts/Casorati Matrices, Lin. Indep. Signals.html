@@ -1,0 +1,133 @@
+<h1>
+ Title: Casorati Matrices, Lin. Indep. Signals
+</h1>
+<h3>
+ Author: Vivian Ding (student)
+</h3>
+<h3>
+ Date: 2021-04-20T14:44:26.940519+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The text defines signals {u_k}, {v_k}, {w_k} as linearly independent if, for all k,
+ </paragraph>
+ <math>
+  c_1u_k+c_2v_k+c_3w_k=0
+ </math>
+ <paragraph>
+  has only the solution where c1=c2=c3=0. It then states if the Casorati matrix is invertible for at least one value of k, then the signals are linearly independent.
+ </paragraph>
+ <paragraph>
+  Why is it that verifying the matrix is invertible for one particular value of k implies that the solution has only the trivial solution for all values of k? (Would we use induction?)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Phillip Jang (staff)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Each signal has infinite entries, and the "zero vector" in this vector space is an infinite sequence of zeros.
+ </paragraph>
+ <paragraph>
+  $$\vec{0} = \{0,0,0,0,0,\ldots\}$$
+ </paragraph>
+ <paragraph>
+  If you can show for 3 signals that there's a window of 3 successive indices {k,k+1,k+2} which is impossible to cancel out with a nontrivial solution, then you can never get a zero sequence by taking non-trivial linear combinations of the entire sequences since the values at those three indices will never be all zeros.
+ </paragraph>
+ <paragraph>
+  To be more formal, let $\{z_k\}_{k=0}^\infty = \{c_1u_k+c_2v_k+c_3w_k\}_{k=0}^\infty =  c_1\{u_k\}_{k=0}^\infty+c_2\{v_k\}_{k=0}^\infty+c_3\{w_k\}_{k=0}^\infty$ for $c_1,c_2,c_3$ not all zero. Then
+ </paragraph>
+ <paragraph>
+  $$z_k = c_1u_k+c_2v_k+c_3w_k$$
+ </paragraph>
+ <paragraph>
+  $$z_{k+1} = c_1u_{k+1}+c_2v_{k+1}+c_3w_{k+1}$$
+ </paragraph>
+ <paragraph>
+  $$z_{k+2} = c_1u_{k+2}+c_2v_{k+2}+c_3w_{k+2}$$
+ </paragraph>
+ <paragraph>
+  If the Casorati matrix is invertible here, then the segment $z_k, z_{k+1}, z_{k+2}$ is never all zeros if $c_1,c_2,c_3$ are not all zero, so $\{z_k\}_{k=0}^\infty =  c_1\{u_k\}_{k=0}^\infty+c_2\{v_k\}_{k=0}^\infty+c_3\{w_k\}_{k=0}^\infty$ is not the zero sequence.
+ </paragraph>
+ <paragraph>
+  Thus the three signals $\{u_k\}_{k=0}^\infty,\{v_k\}_{k=0}^\infty,\{w_k\}_{k=0}^\infty$ are linear independent.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Vivian Ding (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  So is it necessary only to show that "z_k is not 0 for c1, c2, c3 not all 0" for one particular value of k? And checking the invertibility of a Casorati matrix is simply an easy way of doing so?
+ </paragraph>
+ <paragraph>
+  Or do we necessarily need to show it is true for n consecutive indices given n signals?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Phillip Jang (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  It has to be for n consecutive indices {k,k+1,...,k+n-1} given n signals where the first index k can be any convenient choice. The Casorati matrix being invertible means the non-trivial solution doesn't exist so it's impossible to zero out n consecutive indices with a non-trivial linear combination.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Alma Thaler (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If we only have two signals, can we use a 2X2 Casorati matrix?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Phillip Jang (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

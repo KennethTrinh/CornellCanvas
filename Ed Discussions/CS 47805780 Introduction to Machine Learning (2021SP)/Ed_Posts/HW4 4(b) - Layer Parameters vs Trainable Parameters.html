@@ -1,0 +1,84 @@
+<h1>
+ Title: HW4 4(b) - Layer Parameters vs Trainable Parameters
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-05T11:52:52.674926+10:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What is the difference between layer parameters and trainable parameters in this question? Are the trainable parameters indicating the total number of parameters up to that layer?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Jane Du (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Layer Parameters column: just the different specs you need to understand a layer. For example, you can see that Conv 2 has a filter of side length 15.
+ </paragraph>
+ <paragraph>
+  Trainable parameters column: for each row in the table, write down a single number that is the number of trainable parameters in that layer. You should know how to compute this depending on the type of layer (FC, Conv, etc.)
+ </paragraph>
+ <paragraph>
+  At the end of the problem, provide a total count of trainable parameters -- the sum of the trainable parameters column.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  So in the question, when it says that we expect a total of
+ </paragraph>
+ <math>
+  f\times f\times n_{c-in}\times n_{c-out}
+ </math>
+ <paragraph>
+  parameters, does this simply refer to the specs of the conv layer, not the actual number of "trainable" parameters?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jane Du (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  This refers to the specs of the conv layer. You expect to see this expression in the column "layer parameters". Using these numbers, you should be able to calculate the number of trainable parameters from this convolution layer. Put that count into the last column.
+ </paragraph>
+ <paragraph>
+  You should be able to do this for every layer, of all the types! Some of the layers, like "flatten", don't have any specs -- it's just a hardcoded operation. And, some of the layers don't necessarily have any trainable parameters (i.e. weights).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

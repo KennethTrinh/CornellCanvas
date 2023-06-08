@@ -1,0 +1,82 @@
+<h1>
+ Title: Hashing equals
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-13T13:25:16.718957+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I know that if e1.equals(e2) then e1.hashCode()==e2.hashCode().
+ </paragraph>
+ <paragraph>
+  But if e1.hashCode()==e2.hashCode(), does that mean that e1.equals(e2)?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Sara Yoo (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Not necessarily... It is collision when e1.hashCode() == e2.hashCode() and e1.equals(e2) is false.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I thought that it's collision when they hash to the same place, but because of the mod, their hashCodes may be different even though they hash to the same place.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Sara Yoo (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Collision could happen when 1) their mod values are the same as you said or 2) their hashCodes are the same, which would result in the same mod value as well.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Got it, thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

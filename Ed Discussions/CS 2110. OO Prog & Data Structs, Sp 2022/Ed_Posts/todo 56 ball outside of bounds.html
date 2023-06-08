@@ -1,0 +1,53 @@
+<h1>
+ Title: todo 5/6 ball outside of bounds
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-13T17:29:44.678814+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I've double-checked that the xmax and ymax provided to respawn() in todo5 are taken from this.getHeight() and this.getWidth(), but for some reason, the circles placed by todo6 sometimes spawn underneath the Start Game button - I'm not sure how to go about avoiding this unless I subtract the pixel height of the button from yMax before parsing it into respawn() (I don't know if this is allowed because it's a 'magic number'). Unless I just implemented the start button incorrectly onto the window.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Clarkson (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yeah actually your last sentence sounds like the issue.  I'd pursue that...
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I figured it out, it turns out I had switched up my inputs for the xMax and yMax, in terms of which one corresponded to getHeight() and getWidth()
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

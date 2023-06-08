@@ -1,0 +1,200 @@
+<h1>
+ Title: Commitment statement: Conversation buzziness
+</h1>
+<h3>
+ Author: Joyce Zhou (they/them) (student)
+</h3>
+<h3>
+ Date: 2021-11-05T11:49:03.440011+11:00
+</h3>
+<h3>
+ Category: Commitment_statement (A4)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  (Working with Kowe on project based on
+  <link href="https://edstem.org/us/courses/8208/discussion/752914"/>
+  https://edstem.org/us/courses/8208/discussion/752914 initial proposal)
+ </paragraph>
+ <paragraph>
+  Intending to:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    Keep collecting 2019 data (the subreddit blew up a LOT in late 2018)
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Check the distribution of post judgement comments and the final judgement tag/label, determine if I can identify the (distribution of?) opinions of a single user in relation to a post they comment on
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Identify subset of posts that are actually active (instead of being the very quiet, 5-comment posts) that we can focus attention on
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Check in with Kowe at least once through the week...
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Joyce Zhou (they/them) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I had a way worse workload and also worse work capacity than expected within the last two weeks, but here's an update on what I got done:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    Implemented metrics for identifying the final decision on a post
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Implemented metrics for tagging the "controversialness" of a post (as defined by the filter in related newer subreddit /r/aitafiltered which only includes links to the more "controversial" posts in r/aita)
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Implemented metric capturing how "successful" (?) a commenter was with a specific post. Really, whether or not they agreed or disagreed with the final judgement.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Kept collecting 2019 data, as it turns out data collection has probably been the most painful part of this process so far. (It's short but intense periods of realizing I could probably make the process more resilient somehow and updating the code for that, separated by long periods of just letting the script run for HOURS to DAYS ;_;)
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  I will try to update this comment / follow up on this update tomorrow before lecture with:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    Visualizing the relationship between post controversialness and mean/median/maximum user buzziness (excluding OP)
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Visualizing the relationship between buzziness and alignment with final judgement: controlling for overall comment count within a post, for each user/post instance with identical buzziness, find the average agreement with final judgement
+   </paragraph>
+  </list-item>
+ </list>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  the discovery of r/aitafiltered is news to me; thanks for the pointer.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Joyce Zhou (they/them) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It was apparently created by the r/aita mods in Dec 2019 - I'm imagining the subreddit just kept exploding and people started complaining about too many straightforward NTA posts being boring to read?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Joyce Zhou (they/them) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Update 1.5?
+ </paragraph>
+ <paragraph>
+  Graph of "controversialness" distribution for all posts with greater than 50 comments we have (y-axis is number of posts, x-axis is "controversialness" metric where 0 is full agreement across all commenters who left a bot-recognizable tag and 1 is 50-50 split, separating between YTA+ESH and NAH+NTA)
+ </paragraph>
+ <figure>
+  <image height="207" src="https://static.us.edusercontent.com/files/V9CXypvT6z1N4dgh857FaD61" width="355"/>
+ </figure>
+ <paragraph>
+  Scatterplot of each of the posts included in histogram above, showing their (comment count, controversialness):
+ </paragraph>
+ <figure>
+  <image height="258" src="https://static.us.edusercontent.com/files/hnnMGcwreK52LAzj4DedAkdL" width="381"/>
+ </figure>
+ <paragraph>
+  Same data as above but with taking the average of post controversialness, aggregated over groups comment counts (0-10-20...100-200-300...1000-2000-3000...7000)
+ </paragraph>
+ <figure>
+  <image height="256" src="https://static.us.edusercontent.com/files/sl580oK9ZCqQ3sQbeBwIQttZ" width="379"/>
+ </figure>
+ <paragraph>
+  It basically seems like controversialness stays at an average of 0.4ish across posts with varying numbers of comments. Also whatever the two dots on the top right and bottom right are doing seems very strange, maybe I've accidentally included subreddit meta-posts (not AITA posts) in the analysis somehow?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Did the mystery of the outliers get resolved?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Joyce Zhou (they/them) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Funny enough, they actually were genuine question posts! That post with the most comments and weirdly high controversialness score was this post:
+  <link href="https://www.reddit.com/r/AmItheAsshole/comments/avple4/aita_for_refusing_to_lift_something_heavy_for_a/?sort=old"/>
+  https://www.reddit.com/r/AmItheAsshole/comments/avple4/aita_for_refusing_to_lift_something_heavy_for_a/?sort=old (also seems like there have been a
+  <italic>
+   lot
+  </italic>
+  of deleted comments included in our dataset haha)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

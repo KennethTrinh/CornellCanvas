@@ -1,0 +1,119 @@
+<h1>
+ Title: HW6 Q1 Animation
+</h1>
+<h3>
+ Author: Will Hintlian (student)
+</h3>
+<h3>
+ Date: 2021-10-14T05:31:11.130165+11:00
+</h3>
+<h3>
+ Category: Homework
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Below is my animation and code for Q1 of HW6. The arrow body origin is in the middle of the "base" of the arrow. The rate of body rotation increases exponentially as it revolves around the origin.
+ </paragraph>
+ <paragraph>
+  Animation:
+ </paragraph>
+ <figure>
+  <image height="505.7069672131148" src="https://static.us.edusercontent.com/files/fQfURr0HsvnIPlmPdebbR8e7" width="641"/>
+ </figure>
+ <paragraph>
+  Code:
+ </paragraph>
+ <pre>clear
+clc
+close all
+
+t = linspace(0,2*pi,500);
+
+figure
+hold on
+xlim([-18 18]);
+ylim([-18 18]);
+plot(0,0,'r+');
+xlabel('x');
+ylabel('y');
+title('Arrow moving around the orign while spinning around itself');
+
+filename = 'hw6Animation.gif';
+
+for i = 1:length(t)
+    
+    % compute shape position about the origin
+    x = 9*cos(t(i));
+    y = 9*sin(t(i));
+    
+    % compute rotation angle
+    theta = mod(t(i)^2,2*pi);
+    
+    % compute rotation matrix
+    R = [cos(theta), -sin(theta); sin(theta), cos(theta)];
+    
+    % apply rotation to shape and add shape position about the origin
+    r_topLeftCorner = R*[0; 1] + [x; y];
+    r_bottomLeftCorner = R*[0; -1] + [x; y];
+    r_topRightCorner = R*[5; 1] + [x; y];
+    r_bottomRightCorner = R*[5; -1] + [x; y];
+    r_topPoint = R*[5; 2] + [x; y];
+    r_bottomPoint = R*[5; -2] + [x; y];
+    r_rightPoint = R*[8; 0] + [x; y];
+        
+    % organize coordinates and plot each side. doing this all at once
+    % causes weird extra lines that I couldnt get rid of.
+    leftSideX = [r_topLeftCorner(1),r_bottomLeftCorner(1)];
+    leftSideY = [r_topLeftCorner(2),r_bottomLeftCorner(2)];
+    leftSide = plot(leftSideX,leftSideY,'Color','#7E2F8E');
+    
+    topSideX = [r_topLeftCorner(1),r_topRightCorner(1)];
+    topSideY = [r_topLeftCorner(2),r_topRightCorner(2)];
+    topSide = plot(topSideX,topSideY,'Color','#7E2F8E');
+    
+    upperVertX = [r_topRightCorner(1),r_topPoint(1)];
+    upperVertY = [r_topRightCorner(2),r_topPoint(2)];
+    upperVert = plot(upperVertX,upperVertY,'Color','#7E2F8E');
+    
+    lowerVertX = [r_bottomRightCorner(1),r_bottomPoint(1)];
+    lowerVertY = [r_bottomRightCorner(2),r_bottomPoint(2)];
+    lowerVert = plot(lowerVertX,lowerVertY,'Color','#7E2F8E');
+    
+    upperAngleX = [r_topPoint(1),r_rightPoint(1)];
+    upperAngleY = [r_topPoint(2),r_rightPoint(2)];
+    upperAngle = plot(upperAngleX,upperAngleY,'Color','#7E2F8E');
+    
+    lowerAngleX = [r_bottomPoint(1),r_rightPoint(1)];
+    lowerAngleY = [r_bottomPoint(2),r_rightPoint(2)];
+    lowerAngle = plot(lowerAngleX,lowerAngleY,'Color','#7E2F8E');
+    
+    bottomSideX = [r_bottomLeftCorner(1),r_bottomRightCorner(1)];
+    bottomSideY = [r_bottomLeftCorner(2),r_bottomRightCorner(2)];
+    bottomSide = plot(bottomSideX,bottomSideY,'Color','#7E2F8E');
+
+    drawnow;
+    
+    % Store the image of the figure
+    frame = getframe;
+    im = frame2im(frame); 
+    [imind,cm] = rgb2ind(im,256);
+    
+    % Write to the GIF File
+    if i == 1 
+      imwrite(imind,cm,filename,'gif', 'Loopcount',inf,'DelayTime',.02); 
+    elseif mod(i-1,3)==0 
+      imwrite(imind,cm,filename,'gif','WriteMode','append','DelayTime',.02); 
+    end
+    
+    if i==length(t)
+        break
+    end
+    delete([leftSide,topSide,bottomSide,lowerVert,upperVert,lowerAngle,upperAngle]);
+end</pre>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

@@ -1,0 +1,71 @@
+<h1>
+ Title: H1N1RouteTo
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-21T10:02:08.835044+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In the recursive case, how do we add elements to our List&lt;Person&gt; variable if all we do is declare its type without the new expression? I tried setting it to null, but that also prevents me from adding elements without an error. I am very confused, please help!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tanya Zhou (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In the method's specification (#2), it says :
+ </paragraph>
+ <pre>2. The ONLY case in which this method must create a list object (using
+        // a new expression new ArrayList&lt;&gt;() or new LinkedList&lt;&gt;()) is the base
+        // case, when c is the root. Do NOT create a new list object using a new-expression
+        // in the recursive case.
+</pre>
+ <paragraph>
+  So, in the base case, it should actually create a new list object and not just declare its type. I think it would be important to consider what is done with this new list in the base case and also to remember that this method is returning a List&lt;Person&gt; object.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is this a searching method or a counting method? Once you determine that, write it to follow the pattern of that kind of method.
+ </paragraph>
+ <paragraph>
+  Here's question. In the recursive case, suppose you call the method recursively on child, like this:
+ </paragraph>
+ <paragraph>
+  child.H1N1RouteTo(c);
+ </paragraph>
+ <paragraph>
+  and save it in a local variable of type List&lt;Person&gt;. Suppose the value returned is not null.
+ </paragraph>
+ <paragraph>
+  WHAT DOES THE METHOD SPECIFICATION TELL YOU IS BEING RETURNED?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

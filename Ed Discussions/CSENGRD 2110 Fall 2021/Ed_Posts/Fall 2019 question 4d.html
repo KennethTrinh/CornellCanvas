@@ -1,0 +1,100 @@
+<h1>
+ Title: Fall 2019 question 4d
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-17T12:27:39.783635+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I have a couple questions similar question #1260. I do not quite understand why the answer is O(min(m,k)). This was my logic:
+ </paragraph>
+ <paragraph>
+  If your trie graph was a straight tree of m elements with no branching and you wanted to find a word with length k, the time complexity would be O(k). However, if you have n strings in the tree (which I have interpreted to mean there are n possible word paths), the worst scenario would be that you have to check every possible path of length k to see if it matches. From this, I thought the time complexity would be O(kn).
+ </paragraph>
+ <paragraph>
+  My first question regards the min(m,k). I do not quite understand why the min(m,k) needs to be explicitly stated. If you are looking for a word of length k in a trie graph of length m, the maximum length k could be is m or else the word would not be in the graph, so I do not quite understand why that needs to be specified. My second question is why the time complexity is constant and not kn. I might be misinterpreting the question, but it seems to me that if you wanted to check if word k is in a list of words n, you would have to check each word n in the worst case. This combined with the fact that some variation of DFS/BFS needs to be done to get down to the correct depth k, I do not understand why the complexity is not O(kn). Thank you for your help.
+ </paragraph>
+ <figure>
+  <image height="305.6885245901639" src="https://static.us.edusercontent.com/files/aTzFCewSLtCbie6hJqU9I8he" width="643"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  1. Suppose we are looking for the word "in". Its length is 2.
+  <break>
+  </break>
+  Starting at the root, it takes constant time to traverse the edge labeled i to the leftmost circle, and it takes constant time from there to traverse the edge labeled n and end up at the black node at the end of the edge. It's black, so  "in" is found in time proportional to 2. In the same way, to find any word of length k in a tree will take time proportional to k.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  2. Suppose we are looking for the word "innermost". Length k = 9. Proceeding as above, when we have parsed down to the node after "inn", we have to stop. There are no more letters. In general, the farthest we would have to look is m, the length of the longest string in the trie.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I still don't quite understand the answer. I see what you're saying about traversing down a singular branch is proportional to size of the branch , however I thought the question has us traversing multiple branches. For example. what if we had a trie of height 4 with two branches that at the end spell "find" and "fine." If we were looking for the word fine, we would first have to traverse down the "find" branch, just to find it doesn't equal, and then go down the fine and return true.  In this case, the time is proportional to how many branches of words we have (2). From the question, it states that we have n strings with max length m, which I've interpreted to mean there are n amount of branches (words) with max length m. When we traverse one branch to see if the final node is equal to our word, the worst case is O(m). If the first DFS shows that the last node equals our word, then we are done and the time was O(m). But if its not, we have to check the second branch, and then possibly the third, fourth, etc. Since there are n words with max length m, the worse that could happen is if we had to check all n branches to find our word, which would imply a time complexity of O(mn).
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Is my interpretation of the question wrong?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, you misinterpret. there is no "traversing multiple branches".
+ </paragraph>
+ <paragraph>
+  Suppose at a node that an "e" is the next letter.
+  <break>
+  </break>
+  The data structure used is such that you can tell whether there is "e" branch or not and follow it in constant time.
+ </paragraph>
+ <paragraph>
+  For example, suppose only letters in 'a'..'z' are used. Then have an array of size 26, the first element for 'a', the second for 'b', etc. Of course you have to map the letter to its index, but that's easy. The element is  null if that letter is not a branch and the node at the end of the branch it is is. Something like that.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,53 @@
+<h1>
+ Title: lab4_l0
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-01T12:44:12.433607+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The first couple of "rounds" of toggling work fine, but after that, the red LED toggles twice in a row and the green LED toggles twice in a row. In total, each LED still toggles six times, but they don't exactly go back and forth at the end. What might be causing this to happen?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  It's hard to say in general, but it sounds like your locks aren't guaranteeing safety - take a look at your l_lock() function and process_select(). How are you making sure that a blocked process isn't scheduled again?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thanks for your help! If anyone else has the same issue, it is worth looking at l_unlock() too and ensuring that the lock is locked after being passed to another process.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

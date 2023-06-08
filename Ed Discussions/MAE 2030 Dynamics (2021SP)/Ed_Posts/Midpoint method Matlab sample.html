@@ -1,0 +1,320 @@
+<h1>
+ Title: Midpoint method Matlab sample
+</h1>
+<h3>
+ Author: Andy Ruina (admin)
+</h3>
+<h3>
+ Date: 2021-02-25T15:12:39.983954+11:00
+</h3>
+<h3>
+ Category: Homework Problems
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In office hours today a student wanted help modifying Euler's method into the midpoint method.
+ </paragraph>
+ <paragraph>
+  Together we wrote a version of
+  <code>
+   ODE2
+  </code>
+  .  The version we wrote does not have
+  <code>
+   options.RelTol
+  </code>
+  and
+  <code>
+   options.maxtime
+  </code>
+  .  We just kept it simple to highlight the midpoint method.  If you want to do the homework by copying examples you would have to merge about 4  lines of this code with ODE1 which I posted last Friday.
+ </paragraph>
+ <paragraph>
+  Here is the code (far below), demonstrated with the forced damped harmonic oscillator.  A prize for the first person who can explain the output shown for the parameters in the example. A good answer would, amongst other things, predict the final time used.   Post below. Can be anonymous-to-students if you are humble.
+ </paragraph>
+ <paragraph>
+  If you just want to quickly look at the midpoint part of it, here that is. The key 4 lines are near the bottom.
+ </paragraph>
+ <pre>function [tarray, zarray] = ODE2(eqn,tarray,z0)
+% 2nd order ODE solver, called, for obvious reasons, 'The midpoint method'
+% It is also called 'RK2'
+%    -Andy Ruina , Feb 24, 2021
+% This has no error estimation and no max time.
+% That is, no use of options.maxtime, &amp; also without options.RelTol
+% Uses tarray and not tspan.
+
+ntimes  = length(tarray);        % user proves tarray, this counts the elements.
+nstates = length(z0);            % This counts the number of first order ODEs
+zarray  = zeros(ntimes,nstates); % Initialize the solution matrix
+
+zarray(1,:) = z0'; % First row of solution is the initial condition
+znew        = z0;  % Needed for the first time through the solution loop
+
+ % once through for each time interva
+ for i = 1:ntimes-1    % start midpoint loop
+     znow  = znew;         % z at start of step
+     tnow  = tarray(i);    % t at start of step
+     tnew  = tarray(i+1);  % t at end of step
+     h     = tnew - tnow;  % size of time step
+     thalf = tnow + h/2;   % t , half way through a step
+
+    %The next 4 lines are the midpoint method
+     zdotnow  = eqn(tnow,znow);          % zdot at start of step
+     zhalf    = znow + (h/2) * zdotnow;  % Take half a step
+     zdothalf = eqn(thalf,zhalf);        % find zdot at the half step
+     znew     = znow + h * zdothalf;     % The heart of the whole thing
+
+     zarray(i+1,:) = znew';              % put the new z into the zarray
+
+ end % end midpoint loop
+
+end % end of ODE2
+</pre>
+ <paragraph>
+ </paragraph>
+ <file filename="ODE2.zip" url="https://static.us.edusercontent.com/files/yBAZpohIik3wgqOBpR3Haebl">
+ </file>
+</document>
+<h3>
+ Author: Eugene Jeong (student)
+</h3>
+<h3>
+ Vote Count: 4
+</h3>
+<document version="2.0">
+ <paragraph>
+  My understanding of what needs to be explained is the shape of the plot being a low frequency envelope carrying a higher frequency wave.
+ </paragraph>
+ <paragraph>
+  In short, I think the answer is related to beat frequency and average frequency, which creates the effect of an envelope which is seen in the plot.
+ </paragraph>
+ <paragraph>
+  I begin with an analytic solution of the ODE
+ </paragraph>
+ <math>
+  mx"+cx'+kx=F_0\sin\left(\omega_0t\right)
+ </math>
+ <paragraph>
+  which for the constants given becomes
+ </paragraph>
+ <math>
+  x"+x=\sin\left(\omega_0t\right)
+ </math>
+ <paragraph>
+  The particular solution is of form
+ </paragraph>
+ <math>
+  A\cos\left(\omega_0t\right)+B\sin\left(\omega_0t\right)
+ </math>
+ <paragraph>
+  and the homogeneous solution of form
+ </paragraph>
+ <math>
+  \exp\left[\lambda t\right]
+ </math>
+ <paragraph>
+  where lambda in this case is
+ </paragraph>
+ <math>
+  \pm\frac{\sqrt{-4}}{2}=\pm i
+ </math>
+ <paragraph>
+  Then, the homogeneous solution is of form
+ </paragraph>
+ <math>
+  C\cos t+D\sin t
+ </math>
+ <paragraph>
+  This results in the following:
+ </paragraph>
+ <math>
+  x=A\cos\left(\omega_0t\right)+B\sin\left(\omega_0t\right)+C\cos\left(t\right)+D\sin\left(t\right)
+ </math>
+ <math>
+  x'=-\omega_0A\sin\left(\omega_0t\right)+\omega_0B\cos\left(\omega_0t\right)-C\sin t+D\cos t
+ </math>
+ <math>
+  x"=-\omega_0^2A\cos\left(\omega_0t\right)-\omega_0^2B\sin\left(\omega_0t\right)-C\cos\left(t\right)-D\sin\left(t\right)
+ </math>
+ <paragraph>
+  Plugging in initial conditions gives
+ </paragraph>
+ <math>
+  A+C=0,\ B\omega_0+D=0
+ </math>
+ <paragraph>
+  I plug back into the ODE, giving
+ </paragraph>
+ <math>
+  \left(1-\omega_0^2\right)A\cos\left(\omega_0t\right)+\left(1-\omega_0^2\right)B\sin\left(\omega_0t\right)=\sin\left(\omega_0t\right)
+ </math>
+ <math>
+  A=0,\ B=\frac{1}{1-\omega_0^2}
+ </math>
+ <paragraph>
+  Using the equations relating A and B to C and D gives
+ </paragraph>
+ <math>
+  C=0,\ D=-\frac{\omega_0}{1-\omega_0^2}
+ </math>
+ <paragraph>
+  Ultimately,
+ </paragraph>
+ <math>
+  x=\frac{1}{1-\omega_0^2}\left(-\omega_0\sin\left(t\right)+\sin\left(\omega_0t\right)\right)
+ </math>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  This is a superposition of two waves. To analyze this, I thought of the example in physics 2214 of two sound waves. The sound heard when two distinct notes are played has the average of their frequencies, and a beat frequency that is the difference between them. Since the given driving frequency of 1.01 /s is close to the natural frequency of 1, there is a beating effect.
+ </paragraph>
+ <paragraph>
+  The average frequency is 1.005 /s, which matches with the pseudo period of the wave, 6.25s (by dividing 2pi by omega_average).
+ </paragraph>
+ <paragraph>
+  The beat frequency is 0.01 /s, which matches with the envelope period of the wave, 628.3s (by dividing 2pi by omega_difference).
+ </paragraph>
+ <paragraph>
+  Edited because the /s inadvertently created hyperlinks.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Eugene Jeong (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In response to Professor Ruina's last comment, this is an explanation of the envelope behavior:
+ </paragraph>
+ <paragraph>
+  Begin with result from original comment:
+ </paragraph>
+ <math>
+  x=\frac{1}{1-\omega_0^2}\left(-\omega_0\sin t+\sin\left(\omega_0t\right)\right)
+ </math>
+ <paragraph>
+  Add and subtract a term to equalize amplitudes
+ </paragraph>
+ <math>
+  x=\frac{1}{1-\omega_0^2}\left(-\omega_0\sin t+\sin\left(\omega_0t\right)+\left(\omega_0-1\right)\sin\left(\omega_0t\right)-\left(\omega_0-1\right)\sin\left(\omega_0t\right)\right)
+ </math>
+ <math>
+  x=\frac{1}{1-\omega_0^2}\left(-\omega_0\sin t+\omega_0\sin\left(\omega_0t\right)-\left(\omega_0-1\right)\sin\left(\omega_0t\right)\right)
+ </math>
+ <math>
+  x=\frac{\omega_0}{1-\omega_0^2}\left(\sin\left(-t\right)+\sin\left(\omega_0t\right)\right)-\frac{\omega_0-1}{1-\omega_0^2}\sin\left(\omega_0t\right)
+ </math>
+ <math>
+  x=\frac{\omega_0}{1-\omega_0^2}\left(2\sin\left(\frac{\left(\omega_0-1\right)t}{2}\right)\cos\left(\frac{\left(\omega_0+1\right)t}{2}\right)\right)+\frac{1}{1+\omega_0}\sin\left(\omega_0t\right)
+ </math>
+ <paragraph>
+  The second term has a small effect on the total wave, as its amplitude is less than 0.5. The shape of the wave is mostly due to the first term, which is a product of the high frequency and low frequency expressions.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Marigot Fackenthal (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  oh dang!!!🤯✨
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andy Ruina (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Eugene:  I think I have to give you full credit.
+ </paragraph>
+ <paragraph>
+  In short, there  is a beating of the homogeneous solution and the particular solution.  You know that they have to cancel at the start.  And you know they cancel again after 100 oscillations.
+ </paragraph>
+ <paragraph>
+  But, without just quoting a result from another class, can you explain what the shape of the outer curve is?
+ </paragraph>
+ <paragraph>
+  You have to claim your prize:  coffee with the professor! lucky you.  Once the weather is nice.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Eugene Jeong (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If the solutions were of equal amplitude, I would have used a sum to product identity, which would allow me to express the general solution as a product of a sine and cosine, one of which would have described the envelope curve. I think the different amplitude makes the resulting shape imperfect, but in this case it was close enough.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andy Ruina (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You can add and subract a term to make the two added sine waves have the same amplitude, and then you have just a tiny sine wave left over. You then, in  sum, get a slow sinewave with huge amplitude multiplying a fast sine wave.  Plus a tiny fast sine wave.  You could edit your post with that to get cream (or soy milk) with the coffee or tea I'll buy for you.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andy Ruina (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Eugene:
+ </paragraph>
+ <paragraph>
+  I think it may be obvious to you, about I don't think it shines out to most people that, because $\omega_0 \approx1$ the amplitude is huge and one frequency is about 1 and the other much slower.  It would be good to explain that as well as possible.  Then you get a cookie with the cream (or soy milk) with your coffee.
+  <break>
+  </break>
+  <break>
+  </break>
+  I gather, from class today,  and your comfort with the stuff above, that your math background is somewhow better than that of most students.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

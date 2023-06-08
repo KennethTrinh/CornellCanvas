@@ -1,0 +1,81 @@
+<h1>
+ Title: P3 recoverBias
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-24T12:04:16.711045+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When we create the recoverBias function, should we use a loop that evaluates each alpha individually to see if it is between 0 and C and inside the loop calculate the bias? Or is there another way to think about this?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Raahi Menon (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can you think of something we may be trying to minimize in this recover bias?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bozhou Jin (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am trying to minimize the value of C-2alphai by indexing different entries of alpha, but it seems I could not use a variable as the index of an array. Is this the right way of thinking or is there another way to do this?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Yagmur Dulger (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Did you figure this out?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bozhou Jin (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes I used numpy functions argmin and absolute to calculate the index of alpha with minimun absolute value for C-2alphai.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,316 @@
+<h1>
+ Title: Grading Rubrics for Lab 1 (long post)
+</h1>
+<h3>
+ Author: Nils Napp (admin)
+</h3>
+<h3>
+ Date: 2022-03-06T03:43:47.770906+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 4
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi All,
+ </paragraph>
+ <paragraph>
+  I wanted to make a clarifying post about grading Lab 1 and give some rationale behind the rubrics. Overall the lab went well, but I have gotten several requests for clarification and regrades. If you finish reading this post and feel like we misapplied the rubrics please don't hesitate to put in a regrade request. That's what they are for! Yifang will also old an extra OH next week so if you have any specific questions about your code.
+ </paragraph>
+ <paragraph>
+  An important aspect of any type of coding is to understand the functional specifications of the software you are writing, and adhering to functional specifications is ESPECIALLY important in embedded systems where innocuous seeming inconsistencies can have dire consequences, see Lecture 1.1 about rocket exploding because of type conversion. However, in an academic environment being sticklers for everything is not great when you are just trying to learn new material so we try to strike a balance.
+ </paragraph>
+ <paragraph>
+  In general, we try hard to give you points when you demonstrate that you understand the material. In many instances, we tried to fix code that did not compile (though we did take off some points) or had silly mistakes. We also graded each problem two different ways: 1) If your answer basically works we subtract points for errors, but there are so many ways to mess stuff up that you could end up with very few points. 2) We also tried to give you points for each aspect you did right even in non-functional code. You got the higher of the two scores, but it means that in the grading comments sometimes you see + points (starting from zero) and sometimes you see - points (starting from the full value).  The only time you should get a zero is if you don't hand anything in, or the code is so far from working that we can't even get it to compile.
+ </paragraph>
+ <paragraph>
+  There were two important exceptions to our generous interpretation of your code where we were sticklers and most of the comment we've gotten are related to those:
+ </paragraph>
+ <list style="number">
+  <list-item>
+   <paragraph>
+    The function call to
+    <bold>
+     void MorseDigit(int)
+    </bold>
+    had to work on a basic level. At the very least execution should branch to the right location and the function call should return. After all, that's why we want to write functions in the first place (Lec 3.2)!  We took off major points (-10) if it didn't. Being callable as a function with that signature is explicitly and clearly stated in the handout:
+    <break>
+    </break>
+   </paragraph>
+   <figure>
+    <image height="172.63306451612902" src="https://static.us.edusercontent.com/files/bfCLvq5e07QFEht2dGSPdpKS" width="603"/>
+   </figure>
+   <paragraph>
+    <break>
+    </break>
+    If you understood the lectures, it should be clear that this means the label for the function has to be MorseDigit, and not MORSE_DIGIT, digit, dot_dash, mores_digit, etc. (we got about 30 different versions). The majority of students did this correctly, but this was a common mistake. While I understand this is an
+    <italic>
+     easy
+    </italic>
+    and
+    <italic>
+     frustrating
+    </italic>
+    mistake to make it is also a major and critical error that indicates you didn't fully appreciate what calling a function with the signature void MorseDigit(int) means or how to implement it in assembly. Don't think of this as a "simple typo" think of it as "handing in code that doesn't work at all". We can't really give you the majority of the points for a problem that is all about implementing function calls. We treated this the same has having to go in and fix your code.
+    <break>
+    </break>
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    In Part 1 we took off points if your code returned multiple Morse code digits. This is not due to some fundamental concept but just about reading the specs:
+    <break>
+    </break>
+   </paragraph>
+   <figure>
+    <image height="63.65269943593876" src="https://static.us.edusercontent.com/files/PaAeXwgRtJ2bsPW1QiRvRJ6u" width="603"/>
+   </figure>
+   <paragraph>
+    <break>
+    </break>
+    The reason for this specification is the way we test. We put new values into R0 at the beginning of your code don't want to look through it. Again, we treated this the same way as having to go in and fix your code.
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  There were some issues in Part 3 as well about having a different recursive structure, or loop etc, but those were not common mistakes.
+  <break>
+  </break>
+  <break>
+  </break>
+  Here are the rubrics for the different parts
+  <break>
+  </break>
+  <break>
+  </break>
+  <bold>
+   Part 1
+   <break>
+   </break>
+  </bold>
+  <break>
+  </break>
+  <underline>
+   Partial Credit:
+   <break>
+   </break>
+  </underline>
+  +1 compiles
+  <break>
+  </break>
+  +2 Blinks the LED at all, at any speed.
+  <break>
+  </break>
+  +2 for each base case
+  <break>
+  </break>
+  +4 (Other digits) (+0.5 for each (2-9) )
+  <break>
+  </break>
+  +2 Right timing range for dot
+  <break>
+  </break>
+  +2 Dash = 3*dot
+  <break>
+  </break>
+  +2 Inter Digit pause same as dot
+ </paragraph>
+ <paragraph>
+  Deductions:
+  <break>
+  </break>
+  -5 Had to modify code to work, e.g. switching dot/dash, commented out sections ...
+  <break>
+  </break>
+  -5 Single run returns multiple digits (this also makes it so the code fails all our i/o test cases)
+  <break>
+  </break>
+  -2 Wrong timing range for dot
+  <break>
+  </break>
+  -2 Dash not 3*dot
+  <break>
+  </break>
+  -2 Inter Digit pause not same as dot
+ </paragraph>
+ <paragraph>
+  <bold>
+   Part 2
+   <break>
+   </break>
+  </bold>
+  <break>
+  </break>
+  <underline>
+   Partial Credit:
+   <break>
+   </break>
+  </underline>
+  +2 R0 as input
+  <break>
+  </break>
+  +2 R0 as ONLY input
+  <break>
+  </break>
+  +4 save + restore callee saved regs (2 for push, 2 for pop)
+  <break>
+  </break>
+  +2 Saves LR
+  <break>
+  </break>
+  <break>
+  </break>
+  <underline>
+   Possible Deductions for mostly working code:
+   <break>
+   </break>
+  </underline>
+  -10 Bad label and/or not returning
+  <break>
+  </break>
+  -10 Had to modify code to work
+  <break>
+  </break>
+  -5 Does not preserve SP
+  <break>
+  </break>
+  -4 for unsaved callee registers
+  <break>
+  </break>
+  -2 messes up blinking pattern (with a different error  from part 1)
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+  <break>
+  </break>
+  <bold>
+   Part 3
+   <break>
+   </break>
+  </bold>
+  <break>
+  </break>
+  <underline>
+   Partial Credit:
+   <break>
+   </break>
+  </underline>
+  +2: Input in R0
+  <break>
+  </break>
+  +2: Result in R0
+  <break>
+  </break>
+  +3: Save/Store callee registers
+  <break>
+  </break>
+  +3: Save/restore caller reg around BL
+  <break>
+  </break>
+  +2: Leaves clean stack SP entry == SP return
+  <break>
+  </break>
+  +3: Returns from call
+  <break>
+  </break>
+  +3: Uses BL / BX for function calls
+  <break>
+  </break>
+  +3: At least 1 call to fib
+  <break>
+  </break>
+  +2 fib call logic (call with n-1 and n-2)
+  <break>
+  </break>
+  +2 Added two return values
+ </paragraph>
+ <paragraph>
+  <underline>
+   Deductions for code that has mostly correct I/O behavior:
+   <break>
+   </break>
+  </underline>
+  -15 correct output but does not use recursion
+  <break>
+  </break>
+  -10 wrong function label
+  <break>
+  </break>
+  -10 had to modify code
+  <break>
+  </break>
+  -5 correct but uses different recursive structure
+  <break>
+  </break>
+  -5 Fails base case(s) but works otherwise
+  <break>
+  </break>
+  -5 fail to preserve some callee registers
+  <break>
+  </break>
+  -5 relies on R1-R3
+  <break>
+  </break>
+  <break>
+  </break>
+  NOTE: One mistake we saw a few times was to create non ARM-function code that requires a different function setup with multiple registers and violates the calling convention in other ways. This would result in failing all our basic tests and switching to the partial credit mode. If this happened to you, post a private Ed message and/or come to the extra OH next week with Yifang and we can explain why the code did not work.
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  <bold>
+   Report Grading Rubric Lab 1 + Code Review (10 + 10 points)
+  </bold>
+ </paragraph>
+ <paragraph>
+  (5 pts): Stack diagram and description of recursive fib call. Full points if mostly right, and clear.
+  <break>
+  </break>
+  -1 minor errors in numbers or order.
+  <break>
+  </break>
+  -2 does not show recursive call
+  <break>
+  </break>
+  -2 No picture, but text description or no description
+  <break>
+  </break>
+  <break>
+  </break>
+  (3 pts) Describe approach and coding. Should include approach to determining the appropriate morse digit pattern
+  <break>
+  </break>
+  -1 Does not describe pattern decoding approach.
+  <break>
+  </break>
+  -1 Not clear
+  <break>
+  </break>
+  <break>
+  </break>
+  (2 pts) Describe testing strategy. Should identify cases that need to be tested. Describe how they were tested.
+  <break>
+  </break>
+  -1 If confusing but present.
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  Code Inspection:
+  <break>
+  </break>
+  Up to -5pts missing appropriate comments in the code.
+  <break>
+  </break>
+  Up to- 5pts confusing naming / code organization
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

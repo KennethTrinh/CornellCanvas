@@ -1,0 +1,39 @@
+<h1>
+ Title: HW 4 Q1 Frequency Range
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-15T04:50:24.748868+11:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm kind of confused about what this question is asking. So we want to find 3 pure sinusoids whose principle CT alias has a frequency of 440Hz. And the sampling frequency is set to 900Hz. So, you want to solve x -900k = 440 where k is an int. So x= 440, 1340, 2240, etc, but we're given the limit of 1500Hz. Am I misunderstanding the question or do I not understand principle CT alias?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is one of the problems part of which depends on Tuesday's lecture, where we talk about finding all the continuous-time aliases of a sinusoid w.r.t. a given sampling frequency.  For now, see whether this helps: $\cos ( 2 \pi ( f _ o - k 900 ) t + \phi )$ samples the same as $\cos ( 2 \pi f _ o t + \phi )$ even when $f _ o - k 900 &lt; 0$.  Also, remember that $\cos ( - \theta ) = \cos \theta$ for all real $\theta$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,166 @@
+<h1>
+ Title: Extend, method, in super class or this class
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-05T11:25:05.398618+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  " Assume class B extends A and A x= new B();. Then x.m() is valid if and only if m is declared in class A or one of its superclasses."
+ </paragraph>
+ <paragraph>
+  Why can't the method be in B?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Have you heard of the compile-time reference rule? Look it up.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I don't understand. The compile-time reference rule says "The variable reference p.v (or method call p.m(...)) is syntactically correct and can be compiled only if v (or method m) is declared in P or is inherited by P." But the question here is, when the initiation says "A x = new B()", is this x a A or a B? If it's a B, then it should be able to use all the methods in B and in its superclasses (instead of A and A's superclasses), right?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When we declare a variable of type A, and initialize an instance of its subclass B, we are actually limited to accessing only the fields and methods in A. The Object is of type B, but the reference type is A. We would have to downcast x to B in order to access m().
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  But here in this exam question, it says "Animal emma= new Cow("xxx")", and class Cow extends Animal, and they both have the method makeSound. So when we call emma.makeSound(), it should use the method in Animal rather than in Cow right? Why is it not the answer here?
+ </paragraph>
+ <figure>
+  <image height="639.5034246575342" src="https://static.us.edusercontent.com/files/IyyQwHhal0iOL0PHIuUkRdKv" width="590"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  When a method is accessible in the parent class, Animal here, and we call the method, we look at the dynamic type. So since the dynamic type of emma is Cow, we call Cow’s method makeSound()
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  So if class animal doesn't have the method makeSound, even if class cow has it, "emma.makeSound()" wouldn't be valid?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Will "(cow)emma.makeSound()" make it valid?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  That is correct. We would HAVE to downcast to Cow if the method was not in Animal, because then it wouldn't be accessible in class Animal. Without downcasting, this code then wouldn't compile.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh I get it. So the declared type is like the superficial thing that decides if you can use this method (decides if it compiles). The pointer points to the real stuff that gets used after it compiles. So changing (casting) it only change the superficial thing and determines whether it's allowed, while the real stuff is what is really used.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  That sounds right! Nice analogies :)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

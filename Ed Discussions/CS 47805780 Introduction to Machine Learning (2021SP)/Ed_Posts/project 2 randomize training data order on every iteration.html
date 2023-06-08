@@ -1,0 +1,134 @@
+<h1>
+ Title: project 2 randomize training data order on every iteration
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-11T13:00:34.231402+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  If I made an update on xi, do I randomize the next i immediately or am I supposed to wait until I make sure that xi if fully classified correctly before moving on to randomize the order and test the next example?
+ </paragraph>
+ <paragraph>
+  Also, is it possible for the iteration to pass the 100 limit so that not all examples are correctly classified, and we don't get to pass the test?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  also, if within one iteration where I call perceptronupdate, if the classification is correct and no update is actually made, does that still count as one iteration?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Carlos Alvarez (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The instructions say to randomize "on each iteration," so I think we have to  randomized after each update.
+ </paragraph>
+ <paragraph>
+  I'm not sure I understand the second question. I think the algorithm should always stop after iterating
+  <code>
+   max_iter
+  </code>
+  times, regardless of whether it classifies the data correctly or not.
+ </paragraph>
+ <paragraph>
+  For the last question: Once the perceptron correctly classifies all the data, there's no point in going through the data again because you won't misclassify any point, and, as a result, you won't make any updates. Therefore, it doesn't matter whether it counts as an iteration  or not because, if that happens, then you're done training.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Josh Park (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm running into the same problem. It seems the correct interpretation is to reshuffle after every update of the weight, and do this a maximum of 100 times. However, I run into the same problem where sometimes this results in perceptron giving an inconsistent classifier.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tianxing Jiang (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You are supposed to do the updates on the entire training set, and then shuffle the training set. Repeat the process for 100 times, or until no update is made.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  just to clarify here, by updating on the entire training set, am I supposed generate a random element order in advance and then move one element after another like how we normally do the perceptron.  Once we go through every element in the training set, we call it an iteration cycle,  and then reshuffle the training set order and repeat this process?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tianxing Jiang (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  that's right
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Liangchen Li (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  this works! thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

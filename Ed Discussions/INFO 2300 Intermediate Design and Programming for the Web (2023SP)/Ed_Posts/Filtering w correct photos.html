@@ -1,0 +1,55 @@
+<h1>
+ Title: Filtering w/ correct photos
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-04-20T09:24:20.637898+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi! I'm not sure if anyone else has encountered this problem, but I can filter my entries correctly on my home page, but the pictures either don't show up or are the wrong ones. It seems to be almost randomly assigning a picture to an entry when I filter. I know it's probably difficult to diagnose the issue without seeing my code, but I was wondering if anyone has had this problem and has any insight.
+ </paragraph>
+ <paragraph>
+  Any guidance would be appreciated.
+ </paragraph>
+ <paragraph>
+  Thanks!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This suggests to me that your URLs for your pictures are not using the record's
+  <code>
+   id
+  </code>
+  field. I would suggest setting a breakpoint within your for each loop and inspecting the current record's
+  <code>
+   id
+  </code>
+  and the
+  <code>
+   id
+  </code>
+  that you're echo'ing in the URL.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,60 @@
+<h1>
+ Title: poll() for Max heap
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-05T02:50:57.258455+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="210" src="https://static.us.edusercontent.com/files/j1wKEfBcDdK1TnNNHq0hXwer" width="372"/>
+ </figure>
+ <paragraph>
+  I am kind of confused about the first line in the while loop for the bubble down helper function for poll(). As I understand, the (h+1==n) checks if there exists a right node. If suppose there is no right node, then h+1&gt;n and the first half of the conditional statement will be false. If so then while checking the second half i.e. (b[h]&gt;b[h+1]) wont it raise a null-pointer error for b[h+1]?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Short circuit evaluation!
+ </paragraph>
+ <paragraph>
+  If h+1 == n, then the first term is true, so the whole condition is true, and the second term  b[h] &gt; b[h+1] is not evaluated.
+ </paragraph>
+ <paragraph>
+  Isn't that neat?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  That makes sense! Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,90 @@
+<h1>
+ Title: Accumulator resetting with recursion
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-20T10:40:05.622356+10:00
+</h3>
+<h3>
+ Category: Other
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I've noticed I keep running into a problem where my accumulators reset due to a recursive call. How do I avoid this problem? Here is an example on a module I made (not from class):
+ </paragraph>
+ <figure>
+  <image height="312" src="https://static.us.edusercontent.com/files/l00IloPNtejzjjzvzN26G3qE" width="426"/>
+ </figure>
+ <paragraph>
+  On line 17, the function adds the correct string to path, but it resets to the empty string after every recursive call (which results in infinite recursion due to the nature of the function).
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It looks as though your function should run correctly (with path being defined locally), but it's hard to say without seeing all of the other functions - maybe try including a print statement after path += move + ... and after path += knightPath(ki, square) to see if that can help you determine what's happening?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  (Nice chess code, btw! One other way that you could implement it is for any given square that's a maximum of n squares away, create an imaginary nxn board with the knight at one corner. Then, you could call something like knightMove(n), where n is the number of moves it's made. After move one, you could then recursively call knightMove(n+1) from that square, and populate each square object with a value for the knight move that far away. Not only would this eventually find your answer, but you'd also then have a database of answers to reference if you ever want to call it again (I had to look it up for some code I was implementing about microwaves - long story :) - but this technique of remembering an answer in a recursive call is called memoization)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm thinking the infinite recursion stems from the local definition of path, as on line 16, I want to reference the path accumulator in the first call of the function, but what python is really doing is checking to see if the current move is in the
+  <italic>
+   locally
+  </italic>
+  defined, empty path.  This makes it possible to infinitely move from one square to another, which is what happens when I run the test code with print statements.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh yup, that looks like it would cause a problem! You could probably just have path defined globally in that case. In that case, you'd run into the issue of path still containing moves from the last call of knightPath (if you were to ever run it multiple times), so what you might do is have something like this:
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   def knightPath2(k, square):
+    path.clear()
+    return knightPath(k, square)
+  </snippet-file>
+ </snippet>
+ <paragraph>
+  , and call knightPath2 anytime you might have previously called knightPath, so that you make sure that you clear the global path before starting recursion.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

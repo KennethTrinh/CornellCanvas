@@ -1,0 +1,47 @@
+<h1>
+ Title: explain knn formula
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-28T21:37:06.121929+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can someone explain how this formula works?
+ </paragraph>
+ <figure>
+  <image height="188.3737574552684" src="https://static.us.edusercontent.com/files/SchWcrbSysRGAxIaa1cW1NoA" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Anna Effenberger (student)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  You take the "majority vote" of the labels of the k nearest neighbors.
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+  Suppose you are running knn with k = 3. You have the set knn(x') of these 3 closest points. Say 2 of these nearest points have label A and 1 has label B. The set Y = {A,B}. So for each label y in Y, you count how many instances have that label (this is what the sum over the indicator function is doing). Then you output whatever label y maximizes this, in this case A.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

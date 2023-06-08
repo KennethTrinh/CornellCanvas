@@ -1,0 +1,75 @@
+<h1>
+ Title: is casting okay in commonAncestor?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-23T05:40:27.749404+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  ^^
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Atulya Lohani (student)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am assuming you're having a problem with how .toArray() returns an Object[]. You can just do Human[] l1=c1.toArray(new Human[0]) where c1 is a List&lt;Human&gt; from CovidRouteTo and then you'll have a Human array. But the short answer to your question is: yes, casting should be ok.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Edward He (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  why does putting new Human[0] work in this instance? I basically had the same problem and then I did that and my test cases work. I don't understand why that works though (why it changes the return type to Human[] instead of Object[] )
+  <break>
+  </break>
+  <break>
+  </break>
+  My test cases also pass if I just cast the Object that the array returns if you don't put new Human[0].
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Atulya Lohani (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  The reason is that that's just how toArray() works if you look at the documentation. Here is the documentation about toArray().
+ </paragraph>
+ <figure>
+  <image height="294.66101694915255" src="https://static.us.edusercontent.com/files/VUw5vxwVJNsl35ZF7K9biyEf" width="610"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

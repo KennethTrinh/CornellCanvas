@@ -1,0 +1,64 @@
+<h1>
+ Title: Lab 3: process_select
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-12T07:25:41.38966+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, I was wondering if when cursp is NULL in function process_select, does that mean that we should return NULL always, or is that when we need to take other action to select a process to run?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If
+  <italic>
+   cursp
+  </italic>
+  is
+  <italic>
+   NULL
+  </italic>
+  , you need to take appropriate action on the
+  <italic>
+   current_process
+  </italic>
+  (if such one exists).
+ </paragraph>
+ <paragraph>
+  If there is no process ready,
+  <italic>
+   process_select
+  </italic>
+  should return
+  <italic>
+   NULL
+  </italic>
+  . If there is a ready process,
+  <italic>
+   process_select
+  </italic>
+  must return the value of the stack pointer for the next ready process.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

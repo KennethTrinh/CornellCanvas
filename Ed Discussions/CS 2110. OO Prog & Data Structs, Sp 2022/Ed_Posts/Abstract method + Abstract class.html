@@ -1,0 +1,71 @@
+<h1>
+ Title: Abstract method + Abstract class
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-07T16:40:07.259319+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  1. Is an abstract method a method that's not implemented?
+ </paragraph>
+ <paragraph>
+  2. Why would we make a class abstract, and what is the purpose of an abstract class? I read JavaHyperText and watched the video, but an example would help me understand better.
+ </paragraph>
+ <paragraph>
+  I know that we make a class abstract so we can't create instances of it... but why? Why would we not want instances of an abstract class like Shape made? If Circle is a subclass of the abstract class Shape, why can Circle be non-abstract?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 4
+</h3>
+<document version="2.0">
+ <paragraph>
+  1) An abstract method is a method defined that you know Must be overrided.
+ </paragraph>
+ <paragraph>
+  2) A class is abstract when you don't want a user to create an object of that class, but to be just more of a template, so let's say you have Abstract Class Animal, we have subclasses Cat,Dog, Cow. We want Cat and Dog and Cow to have all the methods that Animal does but that doesn't mean we want to be able to create an animal, we want to be more specific.
+ </paragraph>
+ <paragraph>
+  3) You can't create instances of an abstract class because you're using Java period. Creating an instance of Shape or Animal in my case is too unspecific, and useless. Circle is more of a SPECIFIC shape therefore we want to be able to use circles, we never say "I'm going to make the Animal make a sound", Which sound? Which animal? We know all animals make a sound though, so we have an abstract method called makeSound() in the Animal class for example.
+ </paragraph>
+ <paragraph>
+  I'm going to find the area of the shape.
+ </paragraph>
+ <paragraph>
+  Which Shape? How do you find the area? Which equation do you use? But we know all shapes have a way to find their area so we create a findArea() abstract method in shape.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Ahh this makes sense thank you so much
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

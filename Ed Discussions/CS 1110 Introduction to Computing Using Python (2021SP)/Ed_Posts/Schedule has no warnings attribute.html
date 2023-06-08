@@ -1,0 +1,75 @@
+<h1>
+ Title: Schedule has no warnings attribute
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-15T02:25:51.41324+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am trying to implement changeTime but I keep getting the error ''Schedule' has no attribute 'warnings'. Are we suppose to use the init method and assert for the Schedule class to create the 'warnings' attribute?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can you please post the entire error message, not just the last line?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Something seems strange, because we already provided you with an _ _ init _ _ method for Schedule tjat creates the warnings attribute.
+  <break>
+  </break>
+  <break>
+  </break>
+  Do you have these lines in your schedule.py? (For me they are lines 30-40, indented under the
+  <code>
+   class Schedule
+  </code>
+  header?
+  <break>
+  </break>
+ </paragraph>
+ <pre>    def __init__(self, n):
+        """Initializes a new Schedule with name `n`, 
+        attribute `courses` to the empty dictionary {},
+        and attribute `warnings` set to the empty list.
+
+        Preconditions: 
+            n: non-empty string.
+        """ 
+        self.name = n 
+        self.courses = {} 
+        self.warnings = []</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>

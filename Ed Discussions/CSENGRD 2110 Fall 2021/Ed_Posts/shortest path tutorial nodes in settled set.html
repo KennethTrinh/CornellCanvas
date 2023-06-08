@@ -1,0 +1,50 @@
+<h1>
+ Title: shortest path tutorial: nodes in settled set
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-03T05:25:09.204967+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The sets, settled, frontier, and far-off contain nodes, not paths. Is that the reason why we say that "at least one of the shortest paths contains only settled nodes"?
+ </paragraph>
+ <paragraph>
+  The nodes themselves have paths that could contain only settled nodes or some settled nodes, but the point of the set is to just hold the settled nodes, not just settled nodes with paths that contain settled nodes?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Thanks
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, for each node in the settled set, there is a shortest path from the start node to that node that consists only of spelled node.
+ </paragraph>
+ <paragraph>
+  The algorithm as developed calculates on only the distances of shortest paths, not the shortest paths themselves. The lecture on Thursday will show how to extend the algorithm to compute the shortest the paths.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,59 @@
+<h1>
+ Title: FA 2017 Q3
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-17T09:44:13.13425+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why do we have bubbleDown(b,k)? B[k...n] isn't part of the max heap yet, so how are we able to use method bubble down?
+ </paragraph>
+ <figure>
+  <image height="422.38427947598257" src="https://static.us.edusercontent.com/files/W2eolDwA6eZG3ktX14XdqWLA" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kenisha Stills-Ogburn (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yea so b[0...k - 1]  is the partition that represents the max-heap and b[k..n] is the partition that represents the sorted array (i.e lists the values from the max heap in descending order). After this loop finishes doing its thing, we're supposed to get a post condition of a sorted array (because polled everything off the max heap starting with the biggest value)
+ </paragraph>
+ <paragraph>
+  k is steadily making its way to 0 as the loop runs...
+ </paragraph>
+ <paragraph>
+  When we poll what's happening is that b[0] is being swapped with b[k-1] the very last node in the heap (the root is at b[0], the left child of the root is b[1], the right child of the root is at b[2], the left child of b[1] is at b[3] its right is b[4], the left child of b[2] is b[5] and its right child is b[6], etcetera. (
+  <link href="https://www.cs.cornell.edu/courses/JavaAndDS/files/Trees7HeapSort.pdf"/>
+  https://www.cs.cornell.edu/courses/JavaAndDS/files/Trees7HeapSort.pdf)
+ </paragraph>
+ <paragraph>
+  Before we do the swap, though, be have to prepare the sorted array to accept a new node that's why we say k= k - 1 to make room for the new node we just polled off and swapped with the very last node in the heap (which was temporarily in the sorted partition to be replaced by the thing we polled off, the largest value in the heap).
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Hope that helps
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

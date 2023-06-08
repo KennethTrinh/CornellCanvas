@@ -1,0 +1,67 @@
+<h1>
+ Title: External keyboard
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-14T10:48:24.859444+10:00
+</h3>
+<h3>
+ Category: Final Project
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We want to enable the UART to send a character to our python code every time a button on an external keyboard is pressed. We are not sure how to connect the external keyboard to the KL64Z board and also how to detect whether the key is pressed or not. Are there any suggestions or any resources we can refer to? Thank you so much in advance.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  An external keyboard would be hooked up to pins set up as GPIO (similar to past labs with LEDs). Also see the onboard push button code to see how interrupts can be utilized for detecting key pressed.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you so much! Would you please tell us where can we find the onboard push button code with interrupts? We can only find the setup() and loop() code that use digitalRead() and digitalWrite() to detect the button press.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  Those are Arduino functions....the KL46Z button code can be found on Canvas.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

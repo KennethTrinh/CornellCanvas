@@ -1,0 +1,97 @@
+<h1>
+ Title: menu_listing [test fails, "expected 4 but instead got 1"]
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-29T08:09:05.552281+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="91.10769230769232" src="https://static.us.edusercontent.com/files/bxS3mnnLWK6iMeNYD5AeFKvT" width="658"/>
+ </figure>
+ <paragraph>
+  If the return value is A string, why would the expected length be 4? Thanks!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Dylan Castillo (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  4 letters in the string!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was able to get the same output, but since '0: B\t1: A\t2: D\t3: E' is the expected output, would there be more than 4 characters in the string? Thank you so much!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Dylan Castillo (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Make sure you are using the college's name! It's an attribute of each college object. Don't just try to do str(college_object)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hang on --- the test is expecting 4 colleges names (A, B, D, E) in the menu listing, because of these lines in
+  <code>
+   helper_test.py
+  </code>
+  :
+  <break>
+  </break>
+ </paragraph>
+ <pre>result = sdu.menu_listing(colleges)
+[... other lines ...]
+r = result.split('\t')
+cornellasserts.assert_equals(num_colleges_map[infile], len(r))
+
+</pre>
+ <paragraph>
+  So there is not actually a check for the number of characters in a string, but the number of colleges listed in the menu listing.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

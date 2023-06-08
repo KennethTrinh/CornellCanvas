@@ -1,0 +1,37 @@
+<h1>
+ Title: autocorrelation function
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-27T09:02:48.311354+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm still a little bit confused on what the purpose of this definition is. I know that cxx[0] is the energy of a signal, but when is this function used and why? Thanks!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  It turns out to play an important role in more advanced signal-processing and data analysis settings.  Sometimes it comes up when you're analyzing data and you want to figure out, say, whether the color of someone's house correlates with their choice of car to buy.  You have a long data vector of house colors and a long data vector of car models, suitably numerically defined, and you compute their cross-correlation, and if it's small, you say "no correlation."  Autocorrelation is just a special case of cross-correlation.  It turns out that signals with autocorrelation equal to a constant times $\delta [ n ]$ play a fundamental role in various kinds of orthogonal expansions, e.g. wavelets.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

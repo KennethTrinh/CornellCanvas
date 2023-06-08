@@ -1,0 +1,66 @@
+<h1>
+ Title: What’s the difference between having two if statements vs if and elif
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-22T01:47:39.516477+10:00
+</h3>
+<h3>
+ Category: Other
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  title
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   fish_gotta_swim = True
+birds_gotta_fly = True
+
+def two_ifs():
+    if fish_gotta_swim:
+        print("version 1: fish gotta swim")
+    if birds_gotta_fly:
+        print("version 1: birds gotta fly")
+
+def one_elif():
+    if fish_gotta_swim:
+        print("version 2: people gotta sit")
+    elif birds_gotta_fly:
+        print("version 2: and wonder why, why, why")
+
+two_ifs()
+print(".....")
+one_elif()
+  </snippet-file>
+ </snippet>
+ <paragraph>
+  <break>
+  </break>
+  <break>
+  </break>
+  In the "two ifs" version, both conditions are tested, but in the "one-elif" version, if the first "if" condition is true, the "else" one isn't considered.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,39 @@
+<h1>
+ Title: Why use an interface?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-06T07:51:54.338837+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I don't fully understand the benefit of using an interface vs creating a class and then making subclasses that extend that class. Interfaces are more "abstract", which from my understanding means that we can create interfaces for data types that we don't fully know how they will behave yet, or they behave differently. I just don't get the benefit of creating an interface as oposed to just having a normal class/subclass.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Whenever you implement an interface, the class implementing the interface is required to have an implementation for the interface methods. In other words, you can think of an interface as a framework for a few methods that some class must follow in order to implement said interface. For example, interface List has a few methods that must be implemented in order for a list to work properly and then classes like ArrayList and LinkedList are required to have implementations for the methods in interface List. This forces the programmer who is writing those classes to write an implementation for the basic methods that essentially make a list a list.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

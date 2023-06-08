@@ -1,0 +1,86 @@
+<h1>
+ Title: When executing a catch-statement, if it calls another exception, should it go to that exception's catch-block?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-05T13:14:40.180346+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In other words, can statements in a try-statement be caught by multiple catch-blocks?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Exceptions are
+  <italic>
+   thrown
+  </italic>
+  , not called (though they can be constructed).
+ </paragraph>
+ <paragraph>
+  When an exception is thrown, it will be handled by the
+  <code>
+   catch
+  </code>
+  block associated with the nearest
+  <bold>
+   enclosing
+  </bold>
+  <code>
+   try
+  </code>
+  block.  A
+  <code>
+   try
+  </code>
+  block does not enclose its own
+  <code>
+   catch
+  </code>
+  blocks.
+ </paragraph>
+ <paragraph>
+  Exceptions can be (re-)thrown in a
+  <code>
+   catch
+  </code>
+  block.  Such exceptions would have to be handled by a different try/catch statement higher in the call stack.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Got it, okay then I am confused on the question I put in post #628 - if the exception can still be thrown, why isn't it caught by the RuntimeException?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,64 @@
+<h1>
+ Title: style question a7
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-10T06:20:45.180084+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  when an assignment to a variable is calculated each iteration of a loop (it changes each time), i understand that the variable should be assigned inside the loop, but should the variable be declared before the loop starts or just at the same place it is assigned?
+ </paragraph>
+ <paragraph>
+  for example:
+ </paragraph>
+ <paragraph>
+  int x;
+ </paragraph>
+ <paragraph>
+  while(condition){ x= something;}
+ </paragraph>
+ <paragraph>
+  OR
+ </paragraph>
+ <paragraph>
+  while(condition){int x= something;)
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If the value of x is needed from one iteration to the next, then it should be declared before the loop and
+  <italic>
+   Its meaning should be placed in the loop invariant!!!
+  </italic>
+ </paragraph>
+ <paragraph>
+  If it can be written as you say,
+ </paragraph>
+ <paragraph>
+  while(condition){int x= something;    )
+ </paragraph>
+ <paragraph>
+  then the value is NOT needed from one iteration to the next and the declaration should be in the repetend and not before the loop.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

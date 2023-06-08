@@ -1,0 +1,239 @@
+<h1>
+ Title: Docker Installation Issue
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-01-28T07:01:43.677627+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I tried installing Docker and have it installed as an app, but when I try to open my folder in a dev container in VSCode, it tells me that I need to install Docker. I've tried uninstalling and reinstalling Docker several times, worked with my TA (Discussion 212) who also tried fixing it and even manually installing Docker with Homebrew, and I still have this issue.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We want to help you, but we're having a hard time figuring out what's going on with your code.
+  <bold>
+   Please visit office hours or seek help from a peer.
+  </bold>
+ </paragraph>
+ <paragraph>
+  We know it's frustrating that we weren't able to help you here.
+  <bold>
+   Please know that we are better able to help you in office hours because
+   <italic>
+    together
+   </italic>
+   we can troubleshoot your code.
+  </bold>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Vin Bui (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I had the same issue and the following worked for me. If you have an Apple silicon chip, install Docker Desktop from the provided website for your processor. When VSCode tells you to install it again, install it.
+  <bold>
+   When a popup appears telling you to drag it into the applications folder, make sure you click on "Keep Both".
+  </bold>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Kim (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hey! I was the TA that checked your installation the other day. Two other things you can try:
+ </paragraph>
+ <list style="number">
+  <list-item>
+   <paragraph>
+    Copy these four lines into the end of your
+    <code>
+     ~/.zshrc
+    </code>
+    file and restart terminal.
+    <break>
+    </break>
+    <code>
+     # Add Visual Studio Code (code)
+    </code>
+    <break>
+    </break>
+    <code>
+     export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+    </code>
+    <break>
+    </break>
+    <code>
+     # Add Docker Desktop for Mac (docker)
+    </code>
+    <break>
+    </break>
+    <code>
+     export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
+    </code>
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Try the following command:
+    <break>
+    </break>
+    <code>
+     /Applications/Docker.app/Contents/Resources/bin/docker --version
+    </code>
+    <break>
+    </break>
+    If this works, you just need to run:
+    <break>
+    </break>
+    <code>
+     ln -s /Applications/Docker.app/Contents/Resources/bin/docker /usr/local/bin/docker
+    </code>
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  Then, restart terminal and try to type a docker command again, like
+  <code>
+   docker --version
+  </code>
+  . Hopefully this works. If you're still stuck, then please come to office hours!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Actually, for some reason it's not working anymore. I tried the second choice and it did seem to give me an answer of what version of Docker I had. Still, when I try to open something in a dev container VS code is telling me to install Docker again.
+ </paragraph>
+ <paragraph>
+  I'm confused by what you mean in the first option -- what is the
+  <code>
+   ~/.zshrc
+  </code>
+  file? do i just copy those four lines of code right into terminal or do I have to type something else inf first?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Kim (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  There's a file in your
+  <code>
+   ~
+  </code>
+  directory (usually
+  <code>
+   /Users/&lt;your_macbook_username&gt;
+  </code>
+  on Mac) and you should be able to see a file named
+  <code>
+   .zshrc
+  </code>
+  there. Basically, I would recommend opening your
+  <code>
+   ~
+  </code>
+  folder in VSCode, looking for
+  <code>
+   .zshrc
+  </code>
+  on the left side panel, and add these 4 lines to the end of the file.
+ </paragraph>
+ <paragraph>
+  If you need more help, I can take a look during discussion section on Friday.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Never mind, I realized the issue is I just didn't have Docker open. Thanks again!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you! I actually tried deleting it and reinstalling it again and somehow it worked without me having to do much else? I'm not sure what happened but thanks for the help!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If you are unable to get Docker working on your computer, you will need to use the in-person Engineering labs or the virtual Engineering labs. I would suggest using the virtual labs, as you'll be able to access them from your laptop.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

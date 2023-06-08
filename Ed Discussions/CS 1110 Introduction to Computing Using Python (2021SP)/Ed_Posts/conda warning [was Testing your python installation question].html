@@ -1,0 +1,356 @@
+<h1>
+ Title: conda warning [was: "Testing your python installation" question]
+</h1>
+<h3>
+ Author: Sterre Hoogendoorn (student)
+</h3>
+<h3>
+ Date: 2021-02-09T13:07:52.531978+11:00
+</h3>
+<h3>
+ Category: Installation
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <callout type="info">
+  <italic>
+   If dealing with a Windows computer, which version (7, 8, 10, other (please specify))?
+   <break>
+   </break>
+   <break>
+   </break>
+   If Mac OS X, which version (High Sierra = 10.13, Mojave = 10.14, Catalina = 10.15 , Big Sur = 11, or other (please specify))?
+   <link href="https://support.apple.com/en-us/HT201260"/>
+   Lookup instructions.
+   <break>
+   </break>
+   <break>
+   </break>
+   If Linux, which version? Give us the output of  the command
+  </italic>
+  uname -a
+ </callout>
+ <paragraph>
+  Windows 10
+ </paragraph>
+ <callout type="info">
+  <italic>
+   <link href="https://www.cs.cornell.edu/courses/cs1110/2021sp/materials/install-test.html"/>
+   esting instructions is failing?
+  </italic>
+ </callout>
+ <paragraph>
+  Test #1
+ </paragraph>
+ <callout type="info">
+  <italic>
+   <bold>
+    Copy-paste the error messages you get here
+   </bold>
+   :
+  </italic>
+ </callout>
+ <paragraph>
+  Python 3.8.5 (default, Sep 3 2020, 21:29:08) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
+ </paragraph>
+ <paragraph>
+  Warning: This Python interpreter is in a conda environment, but the environment has not been activated. Libraries may fail to load. To activate this environment please see https://conda.io/activation
+ </paragraph>
+ <callout type="info">
+  Anything else you'd like to add about the installation problem you are seeing?
+ </callout>
+ <paragraph>
+  I do get the correct python banner (I believe), but also the above warning and was wondering if this is an issue.
+ </paragraph>
+</document>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can you provide a screenshot of your PowerShell window that shows your command prompt
+  <italic>
+   before
+  </italic>
+  you run the python command?
+  <break>
+  </break>
+  <break>
+  </break>
+  What I'm particularly curious about is whether there's something in parentheses before your command prompt.
+  <break>
+  </break>
+  <break>
+  </break>
+  That is, your command prompt could look like this, with something in parentheses at the beginning, like this:
+  <break>
+  </break>
+  <break>
+  </break>
+  (env) C:\Users\yourname&gt;
+ </paragraph>
+ <paragraph>
+  or doesn't have that parentheses, like this:
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  C:\Users\yourname&gt;
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  My guess is that you'll see the parentheses (which give the name of something called a "virtual environment"), but I want to verify this first before proceeding.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Shu Chen Xu (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi Professor, just for quick information, I have the exact same issue, all screenshots match, but I haven't installed Python before.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Sterre Hoogendoorn (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="402.11644535240043" src="https://static.us.edusercontent.com/files/201bzLBB6d51wgRemseCCd98" width="698"/>
+ </figure>
+ <figure>
+  <image height="163.55498458376155" src="https://static.us.edusercontent.com/files/7ZoQ1pgg5a34FdVtmGFGxs9k" width="683"/>
+ </figure>
+ <paragraph>
+  I put a screenshot of both the original error message and of the command prompt before I run the python command.
+ </paragraph>
+ <paragraph>
+  For reference, I have used and installed python before, but I uninstalled and reinstalled using your directions.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Interesting!  What happens if, at the command prompt, you enter
+  <break>
+  </break>
+  <break>
+  </break>
+  Get-Command python
+  <break>
+  </break>
+  <break>
+  </break>
+  ?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Sterre Hoogendoorn (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="204.23093220338984" src="https://static.us.edusercontent.com/files/zMKAsnbDQgwI3ChmcBe5ootP" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thanks!
+  <break>
+  </break>
+  Do you recall ever  typing a command something like "conda" when you did the previous installs of python?
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bella Hu (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi Professor, I have the same exact issue here.  All the given screenshots also match my PowerShell.  Over winter break, I installed Python 3.7.6 via Professor Walker White's instructions for CS 1110 for the fall 2020 semester, and it also gave me the same error.  I don't remember typing "conda" anywhere though.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ah HA!  The fall 2020 instructions ... that's a very good clue for me; thank you! Let's see ...
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Since it is midnight in Ithaca, let me post a direct short answer as the "answer", and leave my curiosity-driven investigations for the next day or two.  Thank you all for the info!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Sterre Hoogendoorn (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello! So I used the instructions posted on the website -- I don't know if they were the fall instructions or have been updated for the spring semester. As for previous installations of python, I may very well have typed something like "conda." I was self-learning some python and the installation had many issues that I tried to fix myself or through googling, so I could have easily typed some other things during that.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  May I use your screenshot, with attribution to you, in an update our testing instructions webpage to reassure students about this message?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Sterre Hoogendoorn (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes you may use it, could you get rid of my name on the screenshot? Just blur over it or something similar? Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you!
+  <break>
+  </break>
+  <break>
+  </break>
+  Strangely, I meant to say I would redact your username in the screenshot, but appear to have deleted that part of my request.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Sterre Hoogendoorn (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Haha, no problem! Sounds good!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Short answer: for the purposes of CS1110 you can ignore that warning!
+ </paragraph>
+ <paragraph>
+  But it is
+  <italic>
+   always
+  </italic>
+  good to check in about warnings, since it can be very difficult for someone starting out (or even sometimes those of us who have been around the block a few times) to know what is ignorable and what could lead to major problems...
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

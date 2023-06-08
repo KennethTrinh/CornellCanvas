@@ -1,0 +1,80 @@
+<h1>
+ Title: Char vs Int
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-01T12:07:15.623876+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What is the relationship between char and int. In the lecture 1 slides the sequence is byte short int long float double, then char and int are underneath the sequence. What does it mean?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  A char is represented by an int. You can cast, like this:
+ </paragraph>
+ <paragraph>
+  The value of (
+  <bold>
+   char
+  </bold>
+  ) 65 is 'A'
+  <break>
+  </break>
+  The value of (
+  <bold>
+   int
+  </bold>
+  ) 'A' is 65
+ </paragraph>
+ <paragraph>
+  When arithmetic operators are used with characters, Java automatically coerces chars to ints:
+ </paragraph>
+ <paragraph>
+  'A'+1 evaluatesto 66
+  <break>
+  </break>
+  (
+  <bold>
+   char
+  </bold>
+  )('A'+1) evaluatesto'B'
+  <break>
+  </break>
+  'A' &lt; 'B' evaluates to true
+  <break>
+  </break>
+  'Z' +1 - 'A' evaluates to 26
+ </paragraph>
+ <paragraph>
+  Please visit JavaHyperText, type    char    into the Filter field, and study the pdf there. Here it is:
+ </paragraph>
+ <paragraph>
+  https://www.cs.cornell.edu/courses/JavaAndDS/files/char.pdf
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

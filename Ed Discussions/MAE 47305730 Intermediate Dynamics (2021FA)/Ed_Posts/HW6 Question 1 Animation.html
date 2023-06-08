@@ -1,0 +1,85 @@
+<h1>
+ Title: HW6 Question 1 Animation
+</h1>
+<h3>
+ Author: Yu Yang (student)
+</h3>
+<h3>
+ Date: 2021-10-14T15:30:13.848234+11:00
+</h3>
+<h3>
+ Category: Homework
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+ </paragraph>
+ <file filename="MAE5730HW6PART1.pdf" url="https://static.us.edusercontent.com/files/GuJTevzfwTL4wOiKpbDhtJAU">
+ </file>
+ <paragraph>
+  Crazy Rotating House
+ </paragraph>
+ <figure>
+  <image height="420" src="https://static.us.edusercontent.com/files/Lhag4Axq3fIge3Zyb33Yd65G" width="560"/>
+ </figure>
+ <pre>%%MAE5730 HW6 QUESTION 1 Simple animation of a shape
+clear
+clc
+close all
+
+% Set time amd eqiation of motion
+t = linspace(0,2*pi,500);
+
+% Define the equation of motion
+x =@(t)  5*cos(t) + 2*cos(t/2);
+y =@(t)  5*sin(t) + 2*sin(t/2);
+
+theta = @(t) pi/2+atan2(y(t),x(t)); 
+rot = @(t) [cos(theta(t)) sin(theta(t));
+ -sin(theta(t)) cos(theta(t))];
+%Plot path of object
+% figure
+% hold on
+% axis([-20 20 -20 20]);
+% plot(x(t), y(t),'r');
+
+
+%Animation
+h = figure;
+filename = 'Crazy Rotating house.gif';
+for i = 1:length(t)
+ %Plot the path of object
+ plot(x(i), y(i),'r');  
+ %Create an object, which is like a house.
+ x1 = [-0.5 -1;-0.5 0;0.5 1;0.5 -1];
+ y1 = [-1  1; 1 2;1 1;-1 1];
+ c = [0; 1];
+ p = patch(x1,y1,c);
+ ori = p.Vertices;
+ p.Vertices = (rot(i)'*ori')';
+ q = [ones(8,1)*x(i), ones(8,1)*y(i)];
+ p.Vertices = p.Vertices + q;
+ axis([-10 10 -10 10]);
+ grid on
+ 
+ drawnow
+% Capture the plot as an image 
+      frame = getframe(h); 
+      im = frame2im(frame); 
+      [imind,cm] = rgb2ind(im,256); 
+      % Write to the GIF File 
+      if i == 1 
+          imwrite(imind,cm,filename,'gif', 'Loopcount',inf); 
+      else 
+          imwrite(imind,cm,filename,'gif','WriteMode','append','DelayTime',0.02); 
+      end 
+  end
+</pre>
+ <file filename="null" url="null">
+ </file>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

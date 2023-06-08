@@ -1,0 +1,116 @@
+<h1>
+ Title: the 4th loopy questions
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-19T02:55:16.847565+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In the example, after executing z = z+k , the second half of the invariant becomes z = sum of m..k.
+ </paragraph>
+ <paragraph>
+  I'm wondering why is it z = sum of m..k, instead of z = sum of m..k-1?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Which example? Please post the whole question so that everyone that views this does not have to search for what you are talking about.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I apologize, this is the example.
+ </paragraph>
+ <figure>
+  <image height="324" src="https://static.us.edusercontent.com/files/lGKxc1a5jCexPbXN3Qo48eLD" width="618"/>
+ </figure>
+ <figure>
+  <image height="74.9632768361582" src="https://static.us.edusercontent.com/files/kdoC6ieP7JT3WGkyKfC2ZXCb" width="669"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is this because z = sum of m..k - 1 = z+k, so we are actually finding (sum of m..k-1) + k?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When does the Lopo terminate? When  k = n+1.
+ </paragraph>
+ <paragraph>
+  Substitute   n+1   for   k. in the invariant   z = sum of  m..k-1  and you get
+ </paragraph>
+ <paragraph>
+  z =  sum of m..n+1-1
+ </paragraph>
+ <paragraph>
+  which reduces to      z =  sum of m..n .
+ </paragraph>
+ <paragraph>
+  Remember upon termination, you know  !B and invariant. Use that to figure out whether R is true.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

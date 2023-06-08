@@ -1,0 +1,40 @@
+<h1>
+ Title: HW3 1bii
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-19T13:38:16.15589+11:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Could you provide some advice for how to start this question? Is there a formula for getting a normalized weight vector?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Jane Du (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The idea is that you can "reuse" the w and b you got from 1b) i). Consider the following: if I know that $\mathbf w\mathbf x+b = 0$ represents my desired hyperplane, what does $(c\mathbf w) \mathbf x + cb = 0$ as a line look like? i.e. what effect (or lack thereof) does scaling my w and b by a factor $c$ have? Knowing this, how can I force the magnitude of some vector to be 1?
+ </paragraph>
+ <paragraph>
+  Normalizing some arbitrary vector $v$ is easy, by the way. Get its unit vector by dividing by its magnitude. But, you should convince yourself that the unit vector you get after such a division actually represents the hyperplane you want.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

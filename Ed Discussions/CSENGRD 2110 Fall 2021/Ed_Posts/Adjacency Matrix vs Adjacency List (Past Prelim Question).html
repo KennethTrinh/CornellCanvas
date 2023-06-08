@@ -1,0 +1,125 @@
+<h1>
+ Title: Adjacency Matrix vs Adjacency List (Past Prelim Question)
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-07T10:39:53.384692+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This question is from a past prelim "If a graph has a thousand vertices, each having at most 5 neighbors, you should implement the graph using an adjacency matrix instead of a adjacency list."
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  The answer for this question is "False."
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  I thought it would be true since this would be a large graph, and using an adjacency matrix would be better as you can find an edge between two nodes in O(1) while it would be O(n^2) for this dense graph.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Suppose there are n vertices. How many edges are there? At most 5n.
+ </paragraph>
+ <paragraph>
+  Therefore, the adjacency list implementation requires only space O(n) (for the vertices) plus O(5n), which is a total of O(n).
+ </paragraph>
+ <paragraph>
+  But the adjacency matrix representation requires space O(n*n).
+ </paragraph>
+ <paragraph>
+  Further, many operations, like processing the nodes adjacent to a particular node, requires constant time --at most 5 nodes have to be processed. But to even find the nodes adjacent to a particular node with the adjacency matrix implementation requires time O(n) to find those nodes.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="187.28388278388277" src="https://static.us.edusercontent.com/files/KLVtgHXKsgcAa97LidgCiV0V" width="698"/>
+ </figure>
+ <paragraph>
+  This screenshot is from Java HyperText.  I thought the graph for this problem would be a "dense" graph) since there are an enormous amount of vertices and each having 5 neighbors.  How can you tell between a "dense" and a "sparse" graph?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  You misunderstand the word "dense".
+  <break>
+  </break>
+  Type     dense       into JavaHyperText and you get what you see below.
+  <break>
+  </break>
+  Please study this.
+ </paragraph>
+ <paragraph>
+  A graph is
+  <italic>
+   dense
+  </italic>
+  if the number of edges is close to the maximum. A graph is
+  <italic>
+   sparse
+  </italic>
+  if the number of edges is close to the minimum.
+  <break>
+  </break>
+  These terms are not well defined in the literature. So we use these definitions:
+  <break>
+  </break>
+  A graph with n nodes is
+  <italic>
+   dense
+  </italic>
+  if the number of edges is proportional to n*n; it is
+  <italic>
+   sparse
+  </italic>
+  if the number of edges is O(n).
+  <break>
+  </break>
+  A map of a city is generally a sparse graph because the number of edges leaving each intersection is generally 4 or less.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,125 @@
+<h1>
+ Title: Prelim 1 Q6(d) T1, T2
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-14T01:32:34.880106+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What's fundamentally different when we write
+ </paragraph>
+ <paragraph>
+  <bold>
+   public class T2 extends T1 {
+  </bold>
+ </paragraph>
+ <paragraph>
+  <bold>
+   public void y() {
+  </bold>
+ </paragraph>
+ <paragraph>
+  <bold>
+   super.y();
+  </bold>
+ </paragraph>
+ <paragraph>
+  <bold>
+   static int b = 2*b;
+  </bold>
+ </paragraph>
+ <paragraph>
+  <bold>
+   }
+  </bold>
+  <break>
+  </break>
+  <break>
+  </break>
+  When I tried it in Java it screamed "only final is allowed!" Why is that?
+ </paragraph>
+ <paragraph>
+  Is it also true to say that writing static int b= 2*b inside public void y() is just repeatedly declaring and initializing a new static variable b?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  What about when it's outside of public void y() as in...
+ </paragraph>
+ <paragraph>
+  <bold>
+   public class T2 extends T1 {
+  </bold>
+ </paragraph>
+ <paragraph>
+  <bold>
+   public static int b;
+  </bold>
+ </paragraph>
+ <paragraph>
+  <bold>
+   public void y() {
+  </bold>
+ </paragraph>
+ <paragraph>
+  <bold>
+   super.y();
+  </bold>
+ </paragraph>
+ <paragraph>
+  <bold>
+   b = 2*b;
+  </bold>
+ </paragraph>
+ <paragraph>
+  <bold>
+   }
+  </bold>
+ </paragraph>
+ <paragraph>
+  Every time a new T2 is created isn't public static int b being declared again? I know that every time a T2 is created there's just one solitary "copy" of the static variable that's shared between it and the other instances of T2.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Local variables cannot have the modifier "static".
+  <break>
+  </break>
+  "static" is used only for fields and methods.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Cool. Thank you
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

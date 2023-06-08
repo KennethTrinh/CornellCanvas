@@ -1,0 +1,73 @@
+<h1>
+ Title: HW8 Q3 -- Linear in the Parameters
+</h1>
+<h3>
+ Author: Rob Mosher (student)
+</h3>
+<h3>
+ Date: 2023-04-18T06:40:16.639374+10:00
+</h3>
+<h3>
+ Category: Homework
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Problem #3
+ </paragraph>
+ <paragraph>
+  HW #8
+ </paragraph>
+ <paragraph>
+  I am not exactly sure what exactly we are allowed to do in terms of transforming models that are not linear in the parameters. Can we define new features using ones we already have (for example, X3 = X1*exp(X2), or X3 = log(X2)), and use those in a new model? Is there another way we should go about doing this? Any help is appreciated. Thanks!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Julia Vanputte (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  See #545 . You can redefine Betas but not Xs
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Rob Mosher (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Just to be clear -- if I had a term such as b0 + b1^2*x^2, redefining a new Beta2 as Beta1^2 and writing the model as b0 + b2*x^2 would be a model that is linear in the parameters?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Rob Mosher (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

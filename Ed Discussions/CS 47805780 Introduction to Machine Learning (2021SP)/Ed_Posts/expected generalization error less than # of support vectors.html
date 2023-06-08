@@ -1,0 +1,135 @@
+<h1>
+ Title: expected generalization error less than # of support vectors
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-20T00:04:50.393145+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="319" src="https://static.us.edusercontent.com/files/y5PCrUvdIhXVMHYzhJovutUX" width="451"/>
+ </figure>
+ <paragraph>
+  I understand intuitively why the expected # of support vectors would be an upper bound on generalization error, but I don't understand why we need to multiply that by (1/m), and how this inequality would still be true in that case? Isn't finding the expected value already essentially taking the average? Why do we also have to divide by m?
+ </paragraph>
+ <paragraph>
+  Also, just to clarify, is gamma = margin, or is {R^2/gamma^2} = margin?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Jane Du (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We get this from slide 9 of the same deck. This is just an fact we know about SVMs specifically; we're interested in the generalization error, but what we have is the sample leave-one-out error. But we know that's an unbiased estimator of the generalized error! So we effectively slap an $E_S$ on the below theorems and work from there.
+ </paragraph>
+ <paragraph>
+  Also, yes, $\gamma$ is the margin.
+ </paragraph>
+ <figure>
+  <image height="411.0927419354839" src="https://static.us.edusercontent.com/files/VVJ4DmelIk8oDoMZEkADOJDf" width="758"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Thorsten Joachims (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  To further clarify: $E_S[#SV]$ is the expected
+  <bold>
+   number
+  </bold>
+  of support vectors if you kept sampling new training samples of size $m$ each. This means it is not a fraction, but the absolute number which scales with the size of the training sample. This is why we need to normalize by $m$.
+ </paragraph>
+ <paragraph>
+  And $\gamma$ is the
+  <bold>
+   geometric
+  </bold>
+  margin.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I see, thank you!
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  I have a few more questions about the second theorem:
+ </paragraph>
+ <figure>
+  <image height="315" src="https://static.us.edusercontent.com/files/EokqtONacmPfQW0s96AKqlDt" width="446"/>
+ </figure>
+ <paragraph>
+  If gamma is the geometric margin, and R is the max length of the feature vectors, what does (R^2/gamma^2) intuitively represent? And what is the reason we multiply this by (1/m)? Is this for the same reason that we multiply (1/m) in the first theorem (as explained above by Prof Joachims)?
+ </paragraph>
+ <paragraph>
+  Also, what is the reason that we take expected value over
+  <bold>
+   <italic>
+    S'
+   </italic>
+  </bold>
+  for the LHS of both inequalities, but we take expected value over
+  <bold>
+   <italic>
+    S
+   </italic>
+  </bold>
+  for the RHS of both inequalities? I understand that the |S|=m and |S'|=m-1, but I don't understand how we chose which sample to take expected value over for the LHS and RHS of both inequalities.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Thorsten Joachims (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, the reason to divide by m is that same as for the first theorem. (R^2/gamma^2) bounds the number of leave-on-out-errors, and dividing by m turns this into a fraction (i.e. leave-one-out error rate).
+ </paragraph>
+ <paragraph>
+  The difference of 1 in sample size between the LHS and the RHS comes from the leave-one-out procedure - we are leaving 1 example out. The leave-one-out procedure is an unbiased estimate of the generalization error over training sets of size m-1 (i.e. we are training on one fewer example). From the unbiasedness of the estimator is where the expectation on the LHS comes from. The expectation on the RHS comes from the dataset we are running leave-one-out on, which has size m.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

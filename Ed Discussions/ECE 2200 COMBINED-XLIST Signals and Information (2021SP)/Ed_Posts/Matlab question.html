@@ -1,0 +1,69 @@
+<h1>
+ Title: Matlab question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-02-18T17:00:47.714001+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="424.6666666666667" src="https://static.us.edusercontent.com/files/AFQ0V9OmZGvvxyZ9fzG6Fr7l" width="658"/>
+ </figure>
+ <paragraph>
+  I tried different dimension addition. It is supposed to show an error, but it worked..
+ </paragraph>
+ <paragraph>
+  Is there something I missed or did wrong?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hmmm ... this surprises me .... maybe one of the TAs better at MATLAB than I am can help.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Alexander La Cour (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  According to the documentation for
+  <bold>
+   plus
+  </bold>
+  , vectors with different orientations (one row vector and one column vector) implicitly expand to form a matrix. This implicit expansion will also occur whenever MATLAB determines that two arrays have 'compatible' sizes. Check out the "Add Row and Column Vector" example in the second link below.
+  <break>
+  </break>
+  <break>
+  </break>
+  https://www.mathworks.com/help/matlab/ref/plus.html
+  <break>
+  </break>
+  https://www.mathworks.com/help/matlab/matlab_prog/compatible-array-sizes-for-basic-operations.html
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

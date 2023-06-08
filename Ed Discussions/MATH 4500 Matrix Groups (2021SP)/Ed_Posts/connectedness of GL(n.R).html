@@ -1,0 +1,49 @@
+<h1>
+ Title: connectedness of GL(n.R)
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-17T17:07:20.170801+11:00
+</h3>
+<h3>
+ Category: Other
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why can't the same argument for I and J work for GL(n.C)? does the continuity of det(gamma(t)) breaks when the field of matrix is complex?
+ </paragraph>
+ <math>
+  \left[\begin{matrix}1&amp;0&amp;0\\0&amp;...&amp;0\\0&amp;0&amp;1\end{matrix}\right]\begin{matrix}-1&amp;0&amp;0\\\ 0&amp;...&amp;0\\\ \ 0&amp;0&amp;1\end{matrix}
+ </math>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Reyer Sjamaar (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, the determinant $\det(A)$ of a complex matrix $A$ depends continuously on $A$.  However, the determinant of a complex matrix is a complex number.  In the complex plane there are paths from $1$ to $-1$ which avoid the origin.
+ </paragraph>
+ <paragraph>
+  Here is an explicit path of complex invertible matrices from $I$ to $J$:
+ </paragraph>
+ <paragraph>
+  $$\gamma(t)=\begin{pmatrix}\exp(\pi it/2)&amp;&amp;&amp;&amp;\\&amp;1&amp;&amp;&amp;\\&amp;&amp;1&amp;&amp;\\&amp;&amp;&amp;\ddots&amp;\\&amp;&amp;&amp;&amp;1\end{pmatrix}.$$
+ </paragraph>
+ <paragraph>
+  We have $\gamma(0)=I$, $\gamma(1)=J$, and $\det(\gamma(t))=\exp(\pi it/2)\ne0$ for all $t$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

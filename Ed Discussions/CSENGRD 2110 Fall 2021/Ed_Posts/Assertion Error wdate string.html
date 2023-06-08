@@ -1,0 +1,54 @@
+<h1>
+ Title: Assertion Error w/date string
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-05T04:28:20.24956+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I keep getting an assertion error for testing date() method. When I print out elephant1.date() it gives me the correct thing but when i assert elephant1.date() == &lt;date&gt;; I get an error even though &lt;date&gt; was printed correctly. Not sure what to do.
+ </paragraph>
+</document>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  it is working for testing name which is also a string so idk what the issue it here
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  You  should use function equals, not == to test for String equality.
+ </paragraph>
+ <paragraph>
+  The expression d1 == d2, where d1 and d3 point to objects, tests whether they point to the same object, not whether the Strings in the objects are equal.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

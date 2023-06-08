@@ -1,0 +1,59 @@
+<h1>
+ Title: Grouping without hardcoding
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-04-25T04:51:18.387438+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Howdy!
+ </paragraph>
+ <paragraph>
+  For my filtering feature, I have drop down menus grouped by the type of tag. For example, I have 4 tags that are states, 3 tags that are rapids, and 2 tags related to the permits needed for a river. Right now I am hard coding these tags into separate div containers so that I can make drop down menus related to each type of tag. If I were to query the database for the tags and use a foreach loop, I am not sure how I would then group the tags up to keep the usability of the site up. Do you have any recommendations?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I suggest added a key-valuing code field to categorize tags:
+ </paragraph>
+ <pre>tags (
+  id,
+  name,
+  category
+)
+</pre>
+ <pre>const TAG_CATEGORY = array (
+  1 =&gt; 'Rapids',
+  2 =&gt; 'Permits',
+  3 =&gt; 'States'
+);
+</pre>
+ <paragraph>
+  Now, when you render the tag records, you can use the key value coding to present the different tag categories to users.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

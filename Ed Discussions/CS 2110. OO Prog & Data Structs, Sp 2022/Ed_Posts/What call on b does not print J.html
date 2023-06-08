@@ -1,0 +1,45 @@
+<h1>
+ Title: What call on b does not print "J"?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-07T12:33:21.137296+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="523.9908466819222" src="https://static.us.edusercontent.com/files/2OPyKFndEf06Se9l5ZjHSGYU" width="658"/>
+ </figure>
+ <paragraph>
+  When you run b(1,null) you will get an arithmeticexception in the first catch block... shouldn't that be caught by the Runtime exception block (because arrithmeticexceptions are subclasses of RuntimeExceptions? therefore ultimately allowing "J" to be printed?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  You get a nullPointerException null.length() is not a valid method.
+ </paragraph>
+ <paragraph>
+  Then you go into that catch block which raises another error because of 1/0 which can't be caught since that's not in anther try catch block therefore throwing an arithmeticexceptions Exception
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,71 @@
+<h1>
+ Title: conditional max likelihood derivation
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-25T23:33:59.737452+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="421" src="https://static.us.edusercontent.com/files/kG9KMHmgvFRxa1r5cvsSxZwR" width="615"/>
+ </figure>
+ <paragraph>
+  The lecture mentioned that we can go from the first to the second step because the data are iid.
+ </paragraph>
+ <paragraph>
+  From what I understand, since the data are identically distributed, we can say that P(y1|x1)=P(y2|x2)=P(y_i|x_i). And I know that if two RV's X and Y are independent, then we can say that P(XY)=P(X)*P(Y). However, I don't understand how exactly we can use independence with conditional probabilities? And how exactly we get from step 1 to step 2?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It's sort of skipping a step; P(y_1, ..., y_m|x_1, ..., x_m, w) = P(y_1|x_1, ..., w) * ... due to independence, and since y_i depends only on x_i and not the other xs, you can eliminate them from the condition.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  How do we know that y_i depends only on x_i and not the other x's?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is an assumption of our model; it might have been mentioned elsewhere in a lecture as well.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

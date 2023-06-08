@@ -1,0 +1,72 @@
+<h1>
+ Title: Bubble Down Algorithm in JVT
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-17T09:16:02.12887+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="518.1848739495798" src="https://static.us.edusercontent.com/files/OwZIEotfJVqzxdOZqihpaaCG" width="658"/>
+ </figure>
+ <paragraph>
+  For this bubble down algorithm,
+  <break>
+  </break>
+  I'm assuming int h is describing the parents position in the array, but what about int c? How is it that that is the smallest child of b[h]?  I didn't think the max-heap shared the same properties of a BST (i.e left is the smallest child and right is the largest child).
+ </paragraph>
+ <paragraph>
+  I'm a bit confused about what's going on inside the while loop
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The comment
+ </paragraph>
+ <paragraph>
+  // c= larger child of h (return if h has no children)
+ </paragraph>
+ <paragraph>
+  is implemented by the following three if-statements.
+  <break>
+  </break>
+  1. h is set to the index left child.
+  <break>
+  </break>
+  2. If h &gt; k-1, then h &gt; the index of the last element of the heap.
+  <break>
+  </break>
+  No further bubbling needs to be done, so return.
+  <break>
+  </break>
+  3. If the right child (as well as the left child) exists and its value if bigger
+  <break>
+  </break>
+  than the value of the left child, set c to the index of the right child.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  You should be able to follow the rest.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

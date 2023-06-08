@@ -1,0 +1,111 @@
+<h1>
+ Title: Difference between logical and physical current working directory
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-01-27T06:27:01.600758+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was wondering what the difference between the logical and physical current working directory was and which scenarios we would use one over the other.
+ </paragraph>
+ <figure>
+  <image height="320.0094786729858" src="https://static.us.edusercontent.com/files/oauLdD4pwXGl2AeajJmbZCHY" width="637"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Joshua Caplan (staff)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  I can show you the difference. I created a test folder called
+  <code>
+   test
+  </code>
+  , located in
+  <code>
+   ~/test/
+  </code>
+  , I then create a symbolic link in my home directory to my
+  <code>
+   test
+  </code>
+  folder called
+  <code>
+   asdf
+  </code>
+  , it is also located in
+  <code>
+   ~/asdf
+  </code>
+  . Let's change our directory to follow the symbolic link:
+ </paragraph>
+ <paragraph>
+  <code>
+   cd ~/asdf
+  </code>
+ </paragraph>
+ <paragraph>
+  If you do
+  <code>
+   pwd -L
+  </code>
+  , it shows us
+  <code>
+   /home/[username]/asdf
+  </code>
+  , this is our "logical" working directory.
+ </paragraph>
+ <paragraph>
+  If you do
+  <code>
+   pwd -P
+  </code>
+  it shows us
+  <code>
+   /home/[username]/test
+  </code>
+  , this is our "physical" working directory, because this is the actual directory we are working in after you remove the symbolic link that links
+  <code>
+   asdf -&gt; test
+  </code>
+ </paragraph>
+ <paragraph>
+  I recommend you try this yourself (In your VM with a test directory) so you can see this for yourself.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Ronald Dinapoli (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thanks
+  <mention id="344193">
+   Joshua Caplan
+  </mention>
+  !     I kind of glossed over the differences in lecture that day because we have a more detailed lecture on the file system in a couple of weeks :-)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

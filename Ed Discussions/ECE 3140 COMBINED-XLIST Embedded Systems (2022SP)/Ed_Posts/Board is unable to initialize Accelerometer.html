@@ -1,0 +1,159 @@
+<h1>
+ Title: Board is unable to initialize Accelerometer
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-28T13:32:24.20245+10:00
+</h3>
+<h3>
+ Category: Final Project
+</h3>
+<h3>
+ Vote Count: 4
+</h3>
+<document version="2.0">
+ <paragraph>
+  My partner and I both tried running the bubble example from the SDK on both our boards (example code for the accelerometer). While we were looking at the serial output, we both saw that it said "Sensor device initialize failed!", which comes from the highlighted section of the code:
+ </paragraph>
+ <figure>
+  <image height="373.38242574257424" src="https://static.us.edusercontent.com/files/ifvWhtV8cHNuv0gDcxgkI053" width="658"/>
+ </figure>
+ <paragraph>
+  We were wondering if we would need to pick up a different board or if there is additional setup that we need to do for this example.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Rabail Makhdoom (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  We were getting the same error in the debugger and were wondering how to fix this as we need the accelerometer values for the final project
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Alma Thaler (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can you explain how you ran it? I tried building and running and nothing prints to terminal (it's supposed to print like "welcome to Bubble example")
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I ended up having to go with
+  <bold>
+   UART
+  </bold>
+  for
+  <bold>
+   SDK Debug Console
+  </bold>
+  during the initial project setup as shown below. Then I used the procedures from the links in
+  <link href="https://edstem.org/us/courses/19442/discussion/1446010"/>
+  #697 to see the programs output.
+ </paragraph>
+ <figure>
+  <image height="494.5434880576837" src="https://static.us.edusercontent.com/files/LiMO7TLPQaBcDJfQRftTVmFW" width="641"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Alma Thaler (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thanks! I did setup as "semihost" following lab0, I'll try this.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I haven't had a chance to look into this completely myself, but when I ran the accelerometer demo on my board I also experienced the same problem. However, once when I used the debugger and suspended it for a while it was able to work. I'm thinking that this may indicate that the microcontroller is trying to communicate with the accelerometer before it is ready. Try inserting some delays (maybe even up to a few seconds while trying to figure this out) to see if that helps
+ </paragraph>
+ <paragraph>
+  Also, I believe if you choose semihost for the SDK Debug Console then it will just output the print statements to the console tab as opposed to the terminal tab
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I tried the delay, but it didn't work. Can you let us know if you find out what the issue is?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Totally, I'll let you know if I get more time to figure it out
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was able to find a quick fix that makes this work for my board for the bubble and bubble_peripheral demo. See #744
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

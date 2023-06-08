@@ -1,0 +1,126 @@
+<h1>
+ Title: HW 7 Q1
+</h1>
+<h3>
+ Author: Meghan Flack (student)
+</h3>
+<h3>
+ Date: 2023-03-24T11:18:12.233208+11:00
+</h3>
+<h3>
+ Category: Homework
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Problem #1
+ </paragraph>
+ <paragraph>
+  HW #7
+ </paragraph>
+ <paragraph>
+  In creating a confidence interval for b1, you use the found value of b1_hat. since this is repeated 1000 times, I have only gotten intervals that contain b1_hat (they're reforming around each new datapoint). Since this doesn't seem like what I'm supposed to do, which b1_hat value should I use?
+ </paragraph>
+ <paragraph>
+  also, the formula I'm using to calculate this interval is:
+ </paragraph>
+ <paragraph>
+  95% Confidence Interval for b1 = b1_hat +/- t_(95, 998) * std err (b1_hat). Does this seem correct? When I hard-code the confidence interval in as around the first b1 hat value I find, I get a really high percentage of 0s (much higher than 5%, closer to 30%)
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Samantha Klein (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You could try using model.conf_int(0.05) to get the confidence interval for your model.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Meghan Flack (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When I run model.conf_int(), I get 2 1x2 arrays with different numbers. Which one should I use?
+ </paragraph>
+ <figure>
+  <image height="119" src="https://static.us.edusercontent.com/files/9mAOwZnv7PgAC7Q5ec63V3nP" width="312"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Varun Gande (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You should do the second one I believe: the first confidence interval corresponds to the constant term (intercept) and the second one corresponds to X (beta_hat_1).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Arya Patel (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What do the other values in the array represent?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Varun Gande (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  The first array represents the confidence interval bounds of the constant, the second array represents the confidence interval bounds of beta1.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Meghan Flack (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Awesome, thank you
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

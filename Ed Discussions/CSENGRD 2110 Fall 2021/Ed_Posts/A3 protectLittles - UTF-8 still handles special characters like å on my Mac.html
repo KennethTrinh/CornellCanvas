@@ -1,0 +1,82 @@
+<h1>
+ Title: A3: protectLittles - UTF-8 still handles special characters like å on my Mac?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-17T03:56:39.397153+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="191.3074074074074" src="https://static.us.edusercontent.com/files/motwd34OL6kkM6L94whcMMMX" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Hello, I am using UTF-8 on my MacBook and I am encountering an error where Eclipse is including letters outside a...z.  How would I fix this?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Thanks in advance.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What is the error? Yes, characters like å can be used in Eclipse! And that is indeed a lower-case character. But it is not in the range 'a' through 'z'. What boolean expression are you using to test whether a character  c  is in the range 'a' through 'z'?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh, perhaps I have misread the specification for the function. I assumed that UTF-8 included only letters in a..z.  My apologies.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For reference, UTF-8 is an
+  <italic>
+   encoding
+  </italic>
+  of Unicode characters.  Unicode contains characters and symbols from pretty much every language - tens of thousands of them (this is in contrast to ASCII, which only contains about 100 characters common to Latin-based languages).
+ </paragraph>
+ <paragraph>
+  An encoding is how characters get represented as bits when they are written to disk.  UTF-8 is the most common and convenient Unicode encoding, with many Latin characters requiring only 8 bits to encode them, and it is the default file encoding that Java assumes on Mac and Linux.  However, many other encodings have been used throughout history, most of which can't represent all of Unicode, and they use different bits to represent less-common characters (so if you assume one encoding but are given another, you'll misinterpret the file's contents).  Java assumes one of these legacy encodings by default on Windows, which is why we ask everyone to confirm that their Eclipse is set to use UTF-8 instead.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

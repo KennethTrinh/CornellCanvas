@@ -1,0 +1,59 @@
+<h1>
+ Title: ISR  -- Put special return value on LR
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-21T17:18:44.939162+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I wonder, what is the purpose of "putting special return value in LR", which is a part of ISR? I don't get what it is trying to do.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Naomi Koh (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  This special return value is used to denote that the ISR is being executed/an exception has occurred. Once the ISR is complete, it will execute
+  <code>
+   BX LR
+  </code>
+  which will pop the saved registers from the stack and return to the main program. It's basically an automatic mechanism that assists the exception return.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Naomi is correct. In this week's discussion we'll be looking at the how the processor saves the original state, executes the ISR, and then returns back to the original state of execution. If things are still unclear hopefully with the live demo it makes more sense :)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

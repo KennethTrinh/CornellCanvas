@@ -1,0 +1,40 @@
+<h1>
+ Title: HW1 3(b.1)
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-02-18T14:19:46.941466+11:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For question 3(b.1), when determining which feature splits the dataset as evenly as possible, should we consider the entire dataset at every split, or the narrowed-down dataset (for levels lower than the root of the DT)?
+ </paragraph>
+ <paragraph>
+  For instance, say I've decided feature A should be the root and have split into branches for "Yes" and "No". To determine what feature I should split on next continuing down the "Feature A = Yes" branch, should I calculate which feature splits the instances with "Feature A = Yes" as evenly as possible or which of the remaining features splits the entire dataset as evenly as possible?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  You only want to consider the data points still in the node you're splitting.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

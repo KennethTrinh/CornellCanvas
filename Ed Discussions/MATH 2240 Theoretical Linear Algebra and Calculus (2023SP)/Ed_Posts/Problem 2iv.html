@@ -1,0 +1,49 @@
+<h1>
+ Title: Problem 2iv
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-03-14T11:16:36.905318+11:00
+</h3>
+<h3>
+ Category: Homework
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm finding it hard to picture the condition being true for $k&lt;n$. If $A\in R^{n\times n}$ and we let $c_1,...,c_k$ be the vectors that span $C'_k$, then we can take $A$ such that $k\leq rank(A)&lt;n$ and choose it appropriately such that $Ae_1,...,Ae_k$ are linearly dependent but $Ac_1,...,Ac_k$ are not, meaning one volume will be $0$ and the other one won't.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  For example, if I let $C'_k=Span(e_2,...,e_{k+1})$, I can find $A$ such that $Ae_i=e_i$ for $1\leq i\leq k$ and $Ae_{k+1}=0$, giving $vol_k(A(C_k))\neq 0 = vol_k(A(C'_k))$.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Reyer Sjamaar (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  You are misreading the question.  First of all, $A$ is not an $n\times n$-matrix, but an $n\times k$-matrix.  Secondly, the cubes $C_k$ and $C_k'$ are not in $\mathbf{R}^n$, but in $\mathbf{R}^k$.
+ </paragraph>
+ <paragraph>
+  The unit cube $C_k$ is the parallelotope spanned by the $k$ standard basis vectors in $\mathbf{R}^k$ (
+  <italic>
+   not
+  </italic>
+  in $\mathbf{R}^n$).  The other cube $C_k'$ is the parallelotope spanned by some other $k$-tuple of edge vectors $\mathbf{c}_1,\dots,\mathbf{c}_k$ in $\mathbf{R}^k$.  The assumption that $C_k'$ is a cube of edgelength $1$ tells you something about its edge vectors, namely that they are $\dots$
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

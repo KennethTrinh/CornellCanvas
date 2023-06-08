@@ -1,0 +1,54 @@
+<h1>
+ Title: Tree3Binary.pdf  "Searching for a node that satisfies some property"
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-10T02:40:34.873126+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <pre>
+/** = a node of t whose value is v (null if none). 
+* Note: t can be null. 
+*/ public TreeNode getV(TreeNode t, T v) { 
+
+    if (t == null) return null; 
+
+    if (v.equals(t.data)) return t; 
+
+    TreeNode t1= getV(t.left, v);
+
+    if (t1 != null) return t1; 
+
+    return getV(t.right, v); 
+
+}
+</pre>
+ <paragraph>
+  JHT mentions that we store the result of getV(...) in t1 to avoid duplicate calls for the left node. Why not do the same for the right node?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  There are no duplicate calls on getC(r.right, ..). There is only one.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

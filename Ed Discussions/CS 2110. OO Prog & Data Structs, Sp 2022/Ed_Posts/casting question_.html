@@ -1,0 +1,157 @@
+<h1>
+ Title: casting question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-01T11:04:05.673111+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If Cat is a subclass of Animal, how/why do we know that
+ </paragraph>
+ <paragraph>
+  (Cat)( new Animal() ) will throw a ClassCastException during runtime?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="380" src="https://static.us.edusercontent.com/files/kLVp4JzewE5MDhQs5tG4LcHw" width="358"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Animal is not an instance of Cat therefore trying to make it go from an Animal to a Cat might be ok in the compiler's eyes but in runtime it'll raise an error.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  can you not downcast to a Cat?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <link href="https://www.baeldung.com/java-classcastexception-arrays-arraylist#:~:text=ClassCastException%20is%20a%20runtime%20exception,it%20is%20not%20an%20instance"/>
+  https://www.baeldung.com/java-classcastexception-arrays-arraylist#:~:text=ClassCastException%20is%20a%20runtime%20exception,it%20is%20not%20an%20instance
+ </paragraph>
+ <paragraph>
+  A post with more info
+ </paragraph>
+ <paragraph>
+  Here too: https://www.tutorialspoint.com/what-is-a-classcastexception-and-when-it-will-be-thrown-in-java
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  not when you create a new Animal, the folder doesn't have any cat information connected to it.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  You cannot downcast to a
+  <bold>
+   Cat
+  </bold>
+  if the instance is of class
+  <bold>
+   Animal.
+  </bold>
+  An
+  <bold>
+   Animal
+  </bold>
+  is not the same as a
+  <bold>
+   Cat
+  </bold>
+  .
+ </paragraph>
+ <paragraph>
+  So this is legal:
+ </paragraph>
+ <paragraph>
+  Animal a= new Cat();
+ </paragraph>
+ <paragraph>
+  Cat c2= (Cat) a;
+ </paragraph>
+ <paragraph>
+  But this is not:
+ </paragraph>
+ <paragraph>
+  Animal a=
+  <bold>
+   new
+  </bold>
+  Animal();
+ </paragraph>
+ <paragraph>
+  Cat c2= (Cat) a;
+ </paragraph>
+ <paragraph>
+  Notice how the reference type/static type in both scenarios is Animal. However, whether or not downcasting is legal depends on whether or not the dynamic type is actually an Animal or a Cat. Basically, is the variable a pointing to an Animal or a Cat? Search up "dynamic type" in JHT.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

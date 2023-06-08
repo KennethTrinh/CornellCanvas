@@ -1,0 +1,102 @@
+<h1>
+ Title: Stepper Driver Broken?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-13T03:08:57.87196+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  My circuit is currently not working for the mini project. The stepper motor just jiggles no matter how much I turn the potentiometer, and the stepper driver turns really hot within a minute of plugging it in. The potentiometer on my stepper driver keeps turning with no end so I suspect that it is broken. I'm fairly certain that the wiring on my board is correct and my code should (at the very least) produce a stepper motor that turns, and it shouldn't be heating up the driver.
+ </paragraph>
+ <paragraph>
+  I have debugged in the following ways:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    compared my circuit with someone else in the class (whose circuit works) and our circuits are identical, but we're getting different results (her multimeter readings change as she turns the potentiometer and her motor actually moves correctly)
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    use the multimeter to read the voltage as I turn the potentiometer (it stays at -0.21 reading even when I'm turning)
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  I'm not really sure how to proceed or if anyone knows what might be causing this issue. Does anyone else have this issue?
+ </paragraph>
+</document>
+<h3>
+ Author: Cheng Zhang (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The behavior of motor you described sometimes can be caused by incorrect wirting of the motor. Can you share a picture of the wiring of the motor in both ends ( the wires connected on the step motor , and the wiring on the breadboard?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  From your description, it seems that the driver might be broken. Could you arrange with one of the TA to pick up a replacement circuit?
+ </paragraph>
+ <paragraph>
+  Francois.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I just contacted Hynchul about a replacement part. However, this also means I'm unable to submit the mini project this week.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Irena Gao (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  My potentiometer was really hot and my stepper motor would just vibrate, but this was a code issue - I had tried to analog read stepper_pin. Assuming your potentiometer screw location is correct and your wiring is correct did you check that?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

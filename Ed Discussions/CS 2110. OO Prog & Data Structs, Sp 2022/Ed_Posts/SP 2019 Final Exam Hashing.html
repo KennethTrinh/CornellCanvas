@@ -1,0 +1,48 @@
+<h1>
+ Title: SP 2019 Final Exam Hashing
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-16T05:59:34.052692+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="177.38866719872308" src="https://static.us.edusercontent.com/files/HUUo1ecanDwrKWdKl1DSCp6H" width="614"/>
+ </figure>
+ <paragraph>
+  I've attempted this problem but I'm not really understanding the answer key. Would someone mind explaining why x --&gt; 10x would work?
+ </paragraph>
+ <paragraph>
+  Also, I understand that if the load factor is &gt; 0.75, then putting the elements of the set into a new array and re-hashing is necessary but how do you know the exact size of the new rehashed array? I also don't really understand why the new hash table looks like what is presented in the answer key.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Victoria Baker (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  a) x-&gt;10x works because the hash table has a fixed size 10. Because 10(1) mod 10 = 0, 10(3) mod 10 = 0, 10(7) mod 10 = 0, and 10(9) mod 10 = 0, every insertion results in a collision.
+ </paragraph>
+ <paragraph>
+  b) The size of the new rehashed array is twice the old array. For how to rehash, see #2356
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

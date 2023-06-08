@@ -1,0 +1,66 @@
+<h1>
+ Title: Rin into the base
+</h1>
+<h3>
+ Author: Annabel Lian (student)
+</h3>
+<h3>
+ Date: 2022-03-11T08:38:32.037257+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Just to clarify. When we look into the base, and we have a resistance attached to the collector, we just see rpi; the resistance on the collector has no effect on Rin. However, when we look into the base and have a resistance attached to the emitter, then it changes. Is this a general rule? Every time I have converted my transistors to the small signal model, I have kind of noticed this.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Sounak Maji (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, this could be very well understood from the small signal model, where in the first case, since emitter is connected to ground, the input impedance is just rpi.  Think of this that in small signal view, any change in input voltage will just change the input current in proportion to just rpi. However, when emitter is not tied to ground, you need to solve the small signal model to find the exact value of Rin.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Clifford Pollock (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Here is a deeper dive:
+ </paragraph>
+ <paragraph>
+  A pn junction in forward bias has a small signal resistance of 26/I(mA), so one mA through the pn juction looks like 26 ohms, 2 mA looks like 13 ohms, etc.  Note the resistance is 1/g_m.
+ </paragraph>
+ <paragraph>
+  When the collector current goes through the same pn junction, there is (beta+1) times as much current going through it so the change in voltage is beta times bigger.  It is as if the resistance is Beta times larger.  We define r_pi exactly in this way.
+ </paragraph>
+ <math>
+  r_{\pi}=\frac{\beta+1}{g_m}
+ </math>
+ <paragraph>
+  Now, if we add a series resistor between the emitter and ground, all of that current has to go through the resistor, and the change in voltage is again beta times bigger than if there had been no collector current added.
+ </paragraph>
+ <math>
+  r_{in}=\left(\beta+1\right)\ \left(\frac{1}{g_m}+R_e\right)
+ </math>
+</document>
+<h3>
+ ------------------------------------
+</h3>

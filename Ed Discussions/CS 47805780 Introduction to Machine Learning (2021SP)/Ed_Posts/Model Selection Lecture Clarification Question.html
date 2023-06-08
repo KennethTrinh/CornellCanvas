@@ -1,0 +1,63 @@
+<h1>
+ Title: Model Selection Lecture Clarification Question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-02-25T01:10:32.877103+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="482.7580025608195" src="https://static.us.edusercontent.com/files/RRHjUgU4k9Mqmq5qycFUaXDR" width="658"/>
+ </figure>
+ <paragraph>
+  Since we are dealing with two learning problems here (i.e. the primary and secondary learning problems), does this mean we are also dealing with two hypothesis spaces? First, the hypothesis space
+  <italic>
+   for a certain value of our parameter
+  </italic>
+  (from which we will choose the best hypothesis and call it h_hat). And second, the hypothesis space that contains the best hypothesis h_hat for each value of the parameter ?
+ </paragraph>
+ <paragraph>
+  Is this the correct way to understand the hypothesis spaces corresponding to the two nested learning problems?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kaishuo Cheng (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Frist, we have a huge hypothesis space, which can be any mapping from instances to labels. Then, we give different parameters to train, getting "best hypothesis of their parameter", and the result is a subset hypothesis space. Then, we pick the best out of this subset based on how they perform on the validation sample.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Thorsten Joachims (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, the way you describe it in the question is a good way to think about these two hypothesis space.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

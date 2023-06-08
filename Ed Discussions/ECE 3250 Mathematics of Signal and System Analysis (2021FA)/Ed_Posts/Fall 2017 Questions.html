@@ -1,0 +1,74 @@
+<h1>
+ Title: Fall 2017 Questions
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-11T01:44:07.731292+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was wondering if you could explain the answers to the following questions from the Fall 2017 final exam?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Question 9, part i (do we have to assume that x has a Fourier transform here?)
+ </paragraph>
+ <paragraph>
+  Question 10, part ii
+ </paragraph>
+ <paragraph>
+  Question 11, part i (if we took the greatest common integer divisor of the frequencies of all the nonzero terms in this Fourier series, wouldn't we come up with 7? If instead the fundamental period is smaller than 7, how would we find that?)
+ </paragraph>
+ <paragraph>
+  Question 11, part iii
+ </paragraph>
+ <paragraph>
+  Question 14, part iv
+ </paragraph>
+ <paragraph>
+  Question 19, part b
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Thank you so much!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  9(i): $x$ bandlimited implies $x$ has a Fourier transform (wouldn't make sense otherwise).
+ </paragraph>
+ <paragraph>
+  10(ii): The I/O mapping is in the standard LTI form of $S ( x ) = h _ 0 * x +$ a shift term.  $h _ 0 ( t ) = e ^ {- t} u ( t + 1 )$.
+ </paragraph>
+ <paragraph>
+  11(iii): The output will have terms at exactly the same frequencies as the input because $\widehat{H} ( \Omega )$ is never zero, so the output has the same fundamental period as the input.
+ </paragraph>
+ <paragraph>
+  14(iv): Write out $A$ in SVD form and take $A ^ H$ and this is what you get.
+ </paragraph>
+ <paragraph>
+  19(b): You have to make sure each signal gets pulse-sampled by the switch faster than its Nyquist rate, so the signal with the wider bandwidth needs to get sampled twice every cycle.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,82 @@
+<h1>
+ Title: Serial.print() vs Serial.write()
+</h1>
+<h3>
+ Author: Ava Cohen (student)
+</h3>
+<h3>
+ Date: 2021-10-08T04:09:10.755507+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is there a difference between these two functions? When I use Serial.write() I often get a lot of strange characters (?s and boxes), but Serial.print() doesn't do this. Even when casting to a String Serial.write() acts differently than Serial.print(). What's the difference? I assumed Serial.write() was used for Serial.read() (ie it would write to the serial port, which the read() function could detect), but is that the only difference?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Mose Sakashita (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi Ava,
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  While Serial.write() sends binary data, Serial.print() sends ASCII formatted text. I found useful explanations of the difference between them in
+  <link href="https://arduino.stackexchange.com/questions/10088/what-is-the-difference-between-serial-write-and-serial-print-and-when-are-they"/>
+  this thread.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Best,
+ </paragraph>
+ <paragraph>
+  Mose
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Ansh Godha (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  can you still read the output of print using Serial.read()? When i try to do that, it seems that the system can't read the output when I try using print.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Mose Sakashita (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm not sure if I understand your question. Serial.read() does not read what you send using Serial.print() but waits for serial inputs from another end through serial communication (e.g., serial monitor, the processing program)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,43 @@
+<h1>
+ Title: "infinite" recursion
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-02T15:19:36.894248+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  During lecture it was mentioned that there is no infinite recursion but just that the instruction limit was reached. Does this mean there is no such thing as an infinite recursion?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Ben Rosenberg (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  There is such a thing as infinite recursion in some
+  <italic>
+   functional
+  </italic>
+  programming languages like OCaml (see this StackOverflow post) but it's rather complicated -- you won't have to worry about that until CS 3110. (See
+  <link href="https://www.cs.cornell.edu/courses/cs3110/2019sp/textbook/data/tail_recursion.html"/>
+  this link for some info from the online CS 3110 textbook from Spring 2019.) The reason we don't do that in Python is that recursion uses call frames for each function call, which takes up memory proportional to the number of times a function is called. If you try to call a function a large number of times, you'll run out of space!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

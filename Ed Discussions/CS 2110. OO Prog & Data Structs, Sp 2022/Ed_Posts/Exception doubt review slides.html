@@ -1,0 +1,46 @@
+<h1>
+ Title: Exception doubt review slides
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-16T12:41:09.341878+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  As Runtime exception is a subclass of the Exception class, why doesn't the 'throw new RuntimeException() cause the catch (Exception e) block to be executed and 7 to be printed too?
+ </paragraph>
+ <paragraph>
+  Also, just wanted to make sure that when an exception is not caught, we output the type of the Exception (like in this case RuntimeException) as the last output and stop there, correct?
+ </paragraph>
+ <figure>
+  <image height="360.5042424242424" src="https://static.us.edusercontent.com/files/8ucfaStqoVP7HIkvCJiSnssE" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michaela Eichel (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think it's because exceptions are only caught if they are in the try block. The RuntimeException() is in a catch block, not the try block, so it is not caught.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

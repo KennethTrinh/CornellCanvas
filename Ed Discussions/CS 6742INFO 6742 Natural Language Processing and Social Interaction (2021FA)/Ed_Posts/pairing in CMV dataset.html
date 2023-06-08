@@ -1,0 +1,93 @@
+<h1>
+ Title: pairing in CMV dataset
+</h1>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Date: 2021-09-04T00:20:59.56611+10:00
+</h3>
+<h3>
+ Category: A1
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I misremembered how the CMV comment pairs were selected [in fact, there was not a temporal control and the length control was complicated --- I confused these facts with what happened in a different project].
+  <break>
+  </break>
+  <break>
+  </break>
+  Documentation on pairing is in Section 4.1 of the
+  <link href="https://chenhaot.com/papers/changemyview.html"/>
+  Winning Arguments paper with relevant excerpts here:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    [from Section 3] A direct reply to an original post is called a root reply ... The author of a root reply is a root challenger
+    <break>
+    </break>
+    <break>
+    </break>
+    A path constitutes all nodes from root reply to a leaf node.
+    <break>
+    </break>
+    <break>
+    </break>
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    We define all replies in a path by the root challenger as a rooted path-unit
+    <break>
+    </break>
+    <break>
+    </break>
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    In response to the same original post, there are many possible ways to change someone’s view. We aim to find linguistic factors that can help one formulate her/his argument, rather than to analyze reasoning strategies.... Hence, for each rooted path-unit that wins a ∆, we find the rooted path-unit in the same discussion tree that did not win a ∆ but was the most “similar” in topic. We measure similarity between rooted path-units based on Jaccard similarity in the root replies after removing stopwords
+    <break>
+    </break>
+   </paragraph>
+  </list-item>
+ </list>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    We further avoid trivial cases, such as replies that are not arguments but clarifying questions, by removing cases where the root
+    <break>
+    </break>
+    reply has fewer than 50 words. In order to make sure that there are
+    <break>
+    </break>
+    enough counterarguments that the OP saw, motivated by the results
+    <break>
+    </break>
+    in §3.2, we also require that there are at least 10 challengers in the
+    <break>
+    </break>
+    discussion tree and at least 3 unsuccessful rooted path-units before
+    <break>
+    </break>
+    the last reply that the OP made in the discussion tree
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    In an ideal world, we would control for both length... and topic ..., but we don’t have the luxury of having enough data to do so. [see paper for description of more discussion of ways to length-control]
+   </paragraph>
+  </list-item>
+ </list>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

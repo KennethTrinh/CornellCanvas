@@ -1,0 +1,57 @@
+<h1>
+ Title: Why doesn't the console for m(1) also print 7 and 8?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-05T13:33:58.880455+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="725.9852398523985" src="https://static.us.edusercontent.com/files/9lXReoYxnvQDE7RuUveGIqyj" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In order for "7" to be printed, a
+  <code>
+   RuntimeException
+  </code>
+  would have to be thrown from within the
+  <code>
+   try
+  </code>
+  block.  In order for "8" to be printed, all exceptions thrown would have to be caught.  But presumably you think that "5" should be printed, but not "6".  This means that an exception is thrown on the line in between.  What
+  <code>
+   try
+  </code>
+  statement
+  <bold>
+   encloses
+  </bold>
+  that line?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

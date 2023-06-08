@@ -1,0 +1,69 @@
+<h1>
+ Title: Shortest Path Algorithm Invariant
+</h1>
+<h3>
+ Author: David Wang (student)
+</h3>
+<h3>
+ Date: 2021-11-14T05:37:40.425716+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When reading on JavaHyperText about the shortest path algorithm I found something very confusing. The pdf says "Note that if w is in the settled set, like w1, nothing will change" after putting the frontier node into the settled set. However, in a situation like the following:
+ </paragraph>
+ <paragraph>
+  distance from v to a settled node s1 is 1
+ </paragraph>
+ <paragraph>
+  distance between v to a settled node s2 is 4
+ </paragraph>
+ <paragraph>
+  distance from s1 to frontier node f is 1
+ </paragraph>
+ <paragraph>
+  distance from f to s2 is 1
+ </paragraph>
+ <paragraph>
+  The shortest distance from v to s2(d[s2]) would change from 4 to 3 if f is added to settled set, so why does the pdf say nothing should be changed for settled nodes? It doesn't affect how the algorithm would be written, but I'm confused about the logic behind this line.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For  node s in the settled set, d[s] is the shortest distance from the start node to s over ALL paths from the start node to s.
+ </paragraph>
+ <paragraph>
+  Therefore, the situation that you describe cannot happen.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Wang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ok I got it. Thank you professor Gries!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

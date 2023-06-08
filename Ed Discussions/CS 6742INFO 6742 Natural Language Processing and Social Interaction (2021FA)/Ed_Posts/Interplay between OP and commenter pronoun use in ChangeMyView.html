@@ -1,0 +1,172 @@
+<h1>
+ Title: Interplay between OP and commenter pronoun use in ChangeMyView
+</h1>
+<h3>
+ Author: Kiran Tomlinson (student)
+</h3>
+<h3>
+ Date: 2021-09-07T08:37:20.852646+10:00
+</h3>
+<h3>
+ Category: A1
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This project idea builds on two results from Tan et al. (2016) on the r/ChangeMyView data: (1) that the interplay between an original post's text and a comment's text (measured by shared word fractions or counts) is correlated with successful arguments; and (2) that pronoun usage in a comment is correlated with successful arguments. To elaborate on result (1), Tan et al. found that successful arguments shared more stopwords and fewer content words with the OP than unsuccessful arguments. They argue that this indicates that successful arguments match the OP's style (similar stopwords) but also introduce new ideas or perspectives (different content words).  I'm curious to see how this idea of matching style but changing perspective plays out in pronoun usage. In result (2), Tan et al. find that comments using more 1st and 2nd person pronouns are more likely to be successful. Is this correlation stronger when the OPs uses similar or different pronouns? I'm also interested to extend the measurements to 3rd person pronouns.
+ </paragraph>
+ <paragraph>
+  Using the same pronouns as the OP could be a stylistic alignment: perhaps a post using examples in the 2nd person (e.g., "you wouldn't want someone else in the tontine to poison your tea") would be more likely to be convinced by similar 2nd person examples. Alternatively, an OP who uses a lot of 1st person pronouns (and thus may prefer thinking of themselves first) could be more likely to be convinced by comments with fewer 1st person pronouns. Other interesting questions could include the overlap of "he" vs "she" examples in comments and OP text.
+ </paragraph>
+ <paragraph>
+  This project will use the matched successful/unsuccessful CMV comment pairs and look at the interaction between pronoun counts (and fractions, as in Tan et al.) in the comment and OP text. Since these are questions about the effect of an interaction between two features on an outcome, one option for analysis would be to do binning along one dimension (e.g., 1st person pronoun count in OP text) and then regression along the second dimension (e.g., 1st person pronoun count in comment). I could also just do logistic regression with interaction terms (e.g., product or absolute difference).
+ </paragraph>
+</document>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  A bit tangential to this proposal, but: on the topic of interplay in general, a good paper to look at is Jo, Y., Poddar, S., Jeon, B., Shen, Q., Rosé, C., &amp; Neubig, G. 2018. “Attentive Interaction Model: Modeling Changes in View in Argumentation.” In
+  <italic>
+   Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers)
+  </italic>
+  , New Orleans, Louisiana: Association for Computational Linguistics, 103–16.
+  <link href="https://aclanthology.org/N18-1010"/>
+  https://aclanthology.org/N18-1010 (September 7, 2021).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Comment after re-reading this proposal: do think about distinguishing between 1st person singular (I, me) vs 1st person plural (we, our), since one could imagine "thinking of oneself first" corresponds with the first but not the second.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kiran Tomlinson (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Good idea!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Might there be a possibility of joining forces with Richard,
+  <link href="https://edstem.org/us/courses/8208/discussion/599374"/>
+  https://edstem.org/us/courses/8208/discussion/599374 ?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kiran Tomlinson (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <heading level="2">
+  Project update
+ </heading>
+ <paragraph>
+  I downloaded the CMV data from convokit (winning-args-corpus) and organized the comments according to their successful/unsuccessful pairs. I've made some regexes for matching first-person singular, first-person plural, and second-person pronouns (I'm skipping third person for now, although I can add them later).
+  <break>
+  </break>
+  <break>
+  </break>
+  As an initial exploration, I counted the number of each pronoun type in successful vs unsuccessful comments. Successful comments had more of all three types of pronouns than unsuccessful comments (1st sing.: 22929 vs 16498, 1st pl.: 8163 vs 5502, 2nd: 26077 vs 19866). However, this seems likely due to the tendency for successful comments to be longer, so I also measured the proportion of words in comments that belong to each pronoun type, which dramatically shrank the gaps (1st sing.: 2.04% vs 2.12%, 1st pl.: 0.65% vs 0.62%, 2nd: 2.49% vs 2.49%). One easy todo is to apply a statistical test to see if the marginally higher rate of 1st person singular pronouns in unsuccessful comments is significant (I would be surprised if it is). (Edit: the differences in rates are not significant--two-sided t-test p=0.12, p=0.16, and p=0.91, respectively.)
+ </paragraph>
+ <paragraph>
+  The main task I have left is to do the analysis of interplay between OP and commenter pronoun usage. As an initial approach, I'm going to threshold OP posts into high (&gt;50th %ile) and low (&lt;50th %ile) usage rates for each pronoun type, and compare successful/unsuccessful commenter pronoun usage rates across those categories.
+ </paragraph>
+ <paragraph>
+  Another thing I want to measure is the correlation between commenters' pronoun usage rates--do commenters who use more of one type use less of another type?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  from checkin meeting:
+  <break>
+  </break>
+  <break>
+  </break>
+  1. posting some examples here of "odd" usages (or lack) of 1st person (etc): looking for patterns that are being confounded by just counts.  Also, any anecdotal: when do people use personal pronouns, when do they just not?
+  <break>
+  </break>
+  <break>
+  </break>
+  an example of back-n-forth "can you", "I ...": https://www.reddit.com/r/changemyview/comments/poraq3/cmv_genderneutral_pronouns_reinforce_the_gender/hcyeea4/?utm_source=reddit&amp;utm_medium=web2x&amp;context=3
+  <break>
+  </break>
+  <break>
+  </break>
+  2. Are there correlations with OPs/topics and whether 1st person (or whatever) shows up in the comments. [related to the mirroring-with-OP idea]
+  <break>
+  </break>
+  <break>
+  </break>
+  3. instead of &lt;50 and &gt;50 as threshold, suggest using only the bottom third and top third, because then the two categories are clearly distinct, no ambiguity.  You do lose some data that way.
+  <break>
+  </break>
+  <break>
+  </break>
+  4. Do OPs just have a high rate of 1st person because of "the rules"?  If yes, one might want to concentrate on where OP doesn't use 1person pronouns:  is there a subsequent drop in rate of challengers using them? (a form of negative echoing)
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  5. what to do with edits?  (Just like point it out, for the purposes of pilot study)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  6. Keep an eye on Remy's project:  1st person as in "my experience" vs 1st person as in "my opinion".
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

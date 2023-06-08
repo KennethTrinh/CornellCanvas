@@ -1,0 +1,77 @@
+<h1>
+ Title: 19sp prelim2 clarification
+</h1>
+<h3>
+ Author: Hao Zhuo (None)
+</h3>
+<h3>
+ Date: 2021-11-15T16:08:32.689472+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  According to the solution, it seems we are supposed to talk just about time complexity in 5(c) and 5(d)'s context? However, when I practiced on this, I wrote both time and space complexity. How to clarify such questions?
+ </paragraph>
+ <paragraph>
+  Additionally, I am also confused about 5(d). In what case will the complexity be O(n^2) since the get and put methods in hashmap are both O(1)?
+ </paragraph>
+ <figure>
+  <image height="331.05625" src="https://static.us.edusercontent.com/files/UskGRqnSOflCrooEhl1iYZNx" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If the question asks for complexity and doesn't specify time or space, assume it's asking for time complexity
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tomer Shamir (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In the worst case, get() and put() are O(n). You'll learn why this is when we cover hashing, but the idea is that in the worst case, every value hashes to the same bucket in the hashtable, so get() and put() take O(n).
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Hao Zhuo (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Got it! Thanks a lot.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

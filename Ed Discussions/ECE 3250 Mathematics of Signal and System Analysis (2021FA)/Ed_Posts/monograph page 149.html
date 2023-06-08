@@ -1,0 +1,124 @@
+<h1>
+ Title: monograph page 149
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-15T11:50:59.814415+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For the symmetry properties, why is X(w) an even function when x(t) is an even function? I try to use change of variable to prove this, but what I get is that X(w) should be an odd function when x(t) is even.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  $\widehat{X} ( - \Omega ) = \int x ( t ) e ^ {j \Omega t} d t = \int x ( - \tau ) e ^ {- j \Omega \tau} d \tau = \int x ( t ) e ^ {- j \Omega \tau} d \tau = \widehat{X} ( \Omega)$.
+ </paragraph>
+ <paragraph>
+  The second equality follows from the change of variable $\tau = - t$.  Remember that $d \tau = - d t$ and $\int _ {- \infty} ^ \infty d t = \int _ {\infty} ^ {- \infty} d \tau = - \int _ {- \infty} ^ \infty d \tau$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  As
+  <italic>
+   τ
+  </italic>
+  =−
+  <italic>
+   t,
+  </italic>
+  will dτ = -dt and X(−Ω) = ∫x(t)ej^(Ωt)dt = ∫x(−τ)e^(−jΩτ)(-dτ) = ∫ -x(−τ)e^(−jΩτ)dτ ?
+ </paragraph>
+ <paragraph>
+  $\widehat{X} ( \Omega ) = \int x ( t ) e ^ {- j \Omega t} d t$, so $\widehat{X} ( - \Omega ) = \int x ( t ) e ^ {j \Omega t} d t$.  This happens before any change of variable.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes. But when doing change of variable, won't dt be changed into -d
+  <italic>
+   τ
+  </italic>
+  instead of just d
+  <italic>
+   τ ?
+  </italic>
+  Thus, $\widehat{X} ( - \Omega ) = \int x ( t ) e ^ {j \Omega t} d t$ = ∫-
+  <italic>
+   x
+  </italic>
+  (−
+  <italic>
+   τ
+  </italic>
+  )
+  <italic>
+   e
+  </italic>
+  −
+  <italic>
+   j
+  </italic>
+  Ω
+  <italic>
+   τdτ ?
+  </italic>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  See my original answer.  The integral limits flip, which cancels the minus sign from the $d t = - d \tau$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

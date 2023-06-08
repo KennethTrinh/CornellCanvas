@@ -1,0 +1,63 @@
+<h1>
+ Title: Why do we need a validation set?
+</h1>
+<h3>
+ Author: Filip Osowski (student)
+</h3>
+<h3>
+ Date: 2021-04-29T10:20:41.483269+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Maybe I'm missing something obvious, but why do we need a validation set? The slide below explains that we use $S_{val}$  to evaluate how well the parameters of our learning algorithm perform on the data. But why can't we just use $S_{train}$ to do this? (I.e. train the algorithm with different parameters on $S_{train}$ and just choose the one that achieves the lowest error.)
+ </paragraph>
+ <figure>
+  <image height="494.6267123287671" src="https://static.us.edusercontent.com/files/Uy1hNOMVxbQuILbNvXb457WX" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Victor Butoi (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Essentially, because what you care about with model performance isn't how well you can optimize your ML algorithm to fit a set of data, but how well you can create a model that will generalize to a real world distribution.
+ </paragraph>
+ <paragraph>
+  If you only look at the training set and attempt to tune your hyper-parameters from that; you have no idea how those hyper-parameters will make your model overfit your training set as well as how it affects your ability to generalize. The validation set then allows for this intermediate check of your model's performance on data that it isn't trained on so that you can choose the hyper-parameters which allow for the validation to be as low as possible. Now, you might say that what if we overfit our validation set? This is 100% a real issue that happens; however, it then becomes a bit weird what the word overfitting means. Since if the validation set is a representative sample of our the real-world distribution looks like, then overfitting it just means that we will perform well even on data that our model hasn't corrected itself with.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Filip Osowski (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  That makes sense! Thanks for the thorough answer!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

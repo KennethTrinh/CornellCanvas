@@ -1,0 +1,269 @@
+<h1>
+ Title: Lexical innovations in the online communities
+</h1>
+<h3>
+ Author: Heather Zheng (student)
+</h3>
+<h3>
+ Date: 2021-10-21T04:20:18.815785+11:00
+</h3>
+<h3>
+ Category: Project_proposals (A2)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This project aims to learn lexical innovation in the online community. I am especially interested in the following questions:
+ </paragraph>
+ <list style="ordered">
+  <list-item>
+   <paragraph>
+    What’s the lexical innovation in the given community
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    New words dissemination pattern
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    What kind of word will be widely accepted by the community
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  Defining what’s lexical innovation would be the very first step.
+ </paragraph>
+ <list style="ordered">
+  <list-item>
+   <paragraph>
+    For the word never used before, used &gt;=10 times by multiple users talking about different products for a period of 6 months after first use. [1]
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Identify all words that were not used during the first years of the group, and that was consistently used for at least some years thereafter. No more than 20% of occurrences in a single month, no more than 40% of occurrences by a single user, and no more than 80% of occurrences by five users. [2]
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  For the word dissemination pattern, I plan to calculate the dissemination of words across words and threads using formulas defined in [3] and draw the graph similar the Figure 1 in [4], but not represented in the geographical dissemination(maybe in community dissemination).
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Hypothesis 1: Different types of words will have different dissemination patterns. For example P words (products and public figures) vs S words (slang words) [3]
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  Hypothesis 2: Lexical innovation of highly related communities evolves together.
+ </paragraph>
+ <paragraph>
+  Inspired by [3], I am going to observe lexical innovation of highly related communities such as Science, AskScience, and BadScience. I am going to test prevalence correlation and co-occurrence[5] of the same words among highly related communities.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  For what kind of words will be widely accepted, I am making the following assumptions:
+ </paragraph>
+ <paragraph>
+  Hypothesis1: Easily accessible words are more likely to be widely accepted: number of phonemes, length of the word
+ </paragraph>
+ <paragraph>
+  Hypothesis2: If the word is mentioned by an authoritative expert in the field, it’s more likely to be spread.
+ </paragraph>
+ <paragraph>
+  Hypothesis3: Different communities and topics will have very different preferences towards words.
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  Feasibility Check:
+ </paragraph>
+ <list style="ordered">
+  <list-item>
+   <paragraph>
+    Tuning with different lexical innovation definitions on different communities, and check if there are enough innovation words to study question 3. Make sure to select the Reddit group with great lexical creativity.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Observe if the same new words appear in the highly related communities and analyze the prevalence correlation and co-occurrence.
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  Team: Heather Zheng
+ </paragraph>
+ <paragraph>
+  Dataset: Reddit
+  <link href="https://files.pushshift.io/reddit/comments/"/>
+  https://files.pushshift.io/reddit/comments/
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  Sources:
+ </paragraph>
+ <paragraph>
+  [1] Danescu-Niculescu-Mizil, Cristian, et al. "No country for old members: User lifecycle and linguistic change in online communities." Proceedings of the 22nd international conference on World Wide Web. 2013.
+ </paragraph>
+ <paragraph>
+  [2] Altmann, Eduardo G., Janet B. Pierrehumbert, and Adilson E. Motter. "Niche as a determinant of word fate in online groups." PloS one 6.5 (2011): e19009.
+ </paragraph>
+ <paragraph>
+  [3] Hessel, Jack, Chenhao Tan, and Lillian Lee. "Science, askscience, and badscience: On the coexistence of highly related communities." Proceedings of the International AAAI Conference on Web and Social Media. Vol. 10. No. 1. 2016.
+ </paragraph>
+ <paragraph>
+  [4] Eisenstein, Jacob, et al. "Diffusion of lexical change in social media." PloS one 9.11 (2014): e113114.
+ </paragraph>
+ <paragraph>
+  [5]Tan, Chenhao, Dallas Card, and Noah A. Smith. "Friendships, rivalries, and trysts: Characterizing relations between ideas in texts." arXiv preprint arXiv:1704.07828 (2017).
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ Author: Heather Zheng (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Dataset:
+ </paragraph>
+ <paragraph>
+  <link href="https://convokit.cornell.edu/documentation/subreddit.html"/>
+  <underline>
+   https://convokit.cornell.edu/documentation/subreddit.html
+  </underline>
+ </paragraph>
+ <paragraph>
+  Because the original file of the whole Reddit dataset is too large, I used the subreddit in the Convokit instead. Although it’s much easier to use, it misses some earlier conversations on Reddit.
+ </paragraph>
+ <paragraph>
+  I tested two ways to define lexical innovation on the three sub-communities: BadScience, AskScience, Wine with different thresholds.
+ </paragraph>
+ <list style="ordered">
+  <list-item>
+   <paragraph>
+    For the word never used before, used &gt;=10 times by multiple users talking about different products for a period of 6 months after first use. [1]
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Identify all words that were not used during the first years of the group, and that was consistently used for at least some years thereafter. No more than 20% of occurrences in a single month, no more than 40% of occurrences by a single user, and no more than 80% of occurrences by five users. [2]
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  Initial Observation:
+ </paragraph>
+ <list style="ordered">
+  <list-item>
+   <paragraph>
+    Posts are very limited at the start of the subcommunity and surge at a certain point
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Vocabulary size is steadily increasing for different communities
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    There are more innovative words in the bigger sub-community
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    By using the lexical innovation definition [1], we get a much smaller set of lexical innovations. And innovation definition [2] creates too many lexical innovations.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Threshold greatly influences the number of lexical innovations found.
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  There are some words that are regarded as lexical innovation by definition [2] by not definition [1]. For example “realism”. Although it’s not used before 2014/07. It’s used less than 10 times in the beginning when the word was brought up and caused a huge debate in the future.
+ </paragraph>
+ <figure>
+  <image height="265.6111111111111" src="https://static.us.edusercontent.com/files/cdjYci0aJLQjfeACiIh3GNFF" width="683"/>
+ </figure>
+ <paragraph>
+  For the lexical innovation defined by [1], there are two very common patterns.
+ </paragraph>
+ <paragraph>
+  Users of the BadScience community started to cite ‘/r/snapshillbot’ subreddit broadly from 2016/06. And only talks about ‘ebola’ in a very short break because of the outbreak of the disease.
+ </paragraph>
+ <figure>
+  <image height="245.41412911084046" src="https://static.us.edusercontent.com/files/YEzR98NqagesseQ5xsWs95y3" width="683"/>
+ </figure>
+ <figure>
+  <image height="272.3299363057325" src="https://static.us.edusercontent.com/files/xDe37eb443xdMCEzxjofQVnm" width="683"/>
+ </figure>
+ <paragraph>
+  The following graph is the frequency of ‘coravin’ in the wine community. I think the distribution of community with more is more meaningful somehow.
+ </paragraph>
+ <figure>
+  <image height="237.03084832904884" src="https://static.us.edusercontent.com/files/tWg804zNcw6jJh7fLhbnfiqt" width="683"/>
+ </figure>
+ <paragraph>
+  Additional Question:
+ </paragraph>
+ <list style="ordered">
+  <list-item>
+   <paragraph>
+    Should word innovation check on the conversation(post) level or the utterance level?
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Given the example in the graph of “Frequency of the word subspecies” and “Frequency of the word equality”, should they be regarded as lexical innovation?
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    How to evaluate which threshold is better
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Not enough space to save the whole Reddit Dataset
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  The following is the link to my full feasibility check report:
+ </paragraph>
+ <paragraph>
+  https://docs.google.com/document/d/1pJmxer7b2p13IZyHdX7tNpoHZX8MjRWUiBN9d928kVA/edit?usp=sharing
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

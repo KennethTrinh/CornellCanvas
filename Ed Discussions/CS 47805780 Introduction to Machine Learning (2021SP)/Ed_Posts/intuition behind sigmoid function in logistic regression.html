@@ -1,0 +1,40 @@
+<h1>
+ Title: intuition behind sigmoid function in logistic regression
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-25T23:43:02.106301+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="429" src="https://static.us.edusercontent.com/files/dK3gBQ62wMu84cpGTouZTeTE" width="621"/>
+ </figure>
+ <paragraph>
+  What is the intuition behind why logistic regression uses the sigmoid function of (w dot x_i) for the probability parameter in the bernoulli RV that models our conditional probability distribution? I understand that it squashes the value between 0 and 1 so that it can be a valid probability value, but beyond that I'm not sure how to think about it. Also, why do we use the dot product between w and x_i?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Basically the sigmoid is supposed to look roughly linear close to 0 and flatten out toward the ends; a lot of loss functions have very high punishment for incorrect predictions that were given with probability close to 0/1 so the sigmoid allows us to approach 0/1 as we get more confident in our prediction without every exactly equaling them. The dot product is just a similarity measure in much the same way we were using w for linear classification, where now we're using the actual value of that dot product to form a probability instead of simply using its sign to make a binary prediction.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

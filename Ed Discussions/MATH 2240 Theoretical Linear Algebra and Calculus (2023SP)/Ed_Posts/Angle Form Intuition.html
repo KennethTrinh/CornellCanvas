@@ -1,0 +1,64 @@
+<h1>
+ Title: Angle Form Intuition
+</h1>
+<h3>
+ Author: Yehoshua Milman (student)
+</h3>
+<h3>
+ Date: 2023-04-04T08:05:26.602753+10:00
+</h3>
+<h3>
+ Category: Other
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If $\alpha$ is the angle form defined in lecture and $\gamma:[a, b]\to \mathbb R^2$ is a $C^1$ path, how do you see from the formula for the integral of $\alpha$ over $\gamma$
+ </paragraph>
+ <paragraph>
+  $$\int_\gamma \alpha =\int_a^b \frac{-\gamma_2(t) \gamma_1^{\prime}(t)+\gamma_1(t) \gamma_2^{\prime}(t)}{\gamma_1(t)^2+\gamma_2(t)^2} d t$$
+ </paragraph>
+ <paragraph>
+  that it represents the increment in the angle between the positive $x$ axis and the vector $\gamma(t)$ from $t = a$ to $t = b$?
+ </paragraph>
+ <figure>
+  <image height="364.2793017456359" src="https://static.us.edusercontent.com/files/KCTt2K9Wa5UBaf96LR4D8mEA" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bryan Lu (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  One way you can intuitively see it is the following: imagine you could reparameterize $\gamma_1(t)$ and $\gamma_2(t)$ in "polar coordinates" as $\gamma_1(t) = r(t) \cos \theta(t)$ and $\gamma_2(t) = r(t) \sin \theta(t)$, where $r : [a, b] \to [0, \infty)$ and $\theta(t) : [a, b] \to \mathbb{R}$ probably at least be $C^1$ (there's some Inverse Function Theorem argument needed here that can go through if your functions are nice enough). Then with a little bit of computation, you see that the form you get here evaluates to $\theta'(t)$ from some trigonometric manipulation. Then, the interpretation of this integral as an angular displacement follows naturally from the Fundamental Theorem of Calculus.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Reyer Sjamaar (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  You can show that the "angle function" $\theta(t)$ is $C^1$ by proving that $\theta(t)=\int_a^t\alpha$, the integral of the angle form along $\gamma$, taken from time $a$ to time $t$.  There is a detailed discussion in Section 4.3 of my online
+  <link href="http://pi.math.cornell.edu/~sjamaar/manifolds/"/>
+  lecture  notes.  (This is not required material for Math 2240.)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

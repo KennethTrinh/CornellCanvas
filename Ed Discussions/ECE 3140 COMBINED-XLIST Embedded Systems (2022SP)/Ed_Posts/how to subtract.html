@@ -1,0 +1,143 @@
+<h1>
+ Title: how to subtract??
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-18T15:08:14.853299+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  hi, i am trying to use the following code to do 5-(input number) and then blink that many dashes but it does the dot sequence then blinks 5 dashes (should do 2) and then hard faults. am i not subtracting correctly?
+ </paragraph>
+ <figure>
+  <image height="262" src="https://static.us.edusercontent.com/files/xR4lf7WoX8d2kQqetSlbw3Qi" width="289"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Benjamin Kogan (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It looks like you are doing a nested function call, so you should PUSH {LR} before anything. Also, does the call to flash_n_dots affect R1? If it does, you have to save it on the stack.
+ </paragraph>
+ <paragraph>
+  Also, which register does flash_n_dashes expect the input value in? Right now it looks like it is R2, is that right?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  yes, R2 is right. and pushing LR fixed the fault, but it only flashes 2 dashes no matter my R0 input now
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Benjamin Kogan (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Did you save R1 on the stack before calling flash_n_dots? I suspect that value is getting overwritten.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  yes I updated that to save R1
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Benjamin Kogan (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Not sure then. I would try looking step by step with the debugger to see where those 2 dashes are coming from.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  ok it seems like when i pop R1 back off the stack it always fills in as a 3 even when it started as a 2, for example. any idea why that would be?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Benjamin Kogan (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Unless your stack pointer changes after the function call, there is no way the value can change when you pop it off. That number is changing somewhere.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  wait i think it was left over from when i ran the program before. i got it now- thank you so much!!!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

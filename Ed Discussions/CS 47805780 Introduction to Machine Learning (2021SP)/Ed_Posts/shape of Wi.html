@@ -1,0 +1,43 @@
+<h1>
+ Title: shape of Wi?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-30T09:36:54.394413+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="126" src="https://static.us.edusercontent.com/files/FdeUKbIZibkt5JHDMFkhgGEv" width="634"/>
+ </figure>
+ <paragraph>
+  what is the shape of w_i?
+ </paragraph>
+ <paragraph>
+  what is the 2 shapes in the w_i.T * vi?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Jerry Sun (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The shape of W_i (upper case) is i x j where i is the current layer's number of nodes, j is the width of the next layer with respect to which ith layer your weights are associated with. So each component of W_i (w_i,j) is the weight vector with all of the weights coming from layer i (width of i nodes) into node j of the i+1 layer.  The shapes in W_i ^T * v_i are j x i and i x 1 since v_i are the node values from the current layer. This results in a v_i+1 matrix which has dimension j x 1 which represents the node values in the next layer (for which there are j of)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

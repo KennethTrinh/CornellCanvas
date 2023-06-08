@@ -1,0 +1,63 @@
+<h1>
+ Title: While loop - trees
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-27T07:06:45.177774+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am a little confused on the set up of a while loop for A5. I wanted to use one for the equals function, so that once its false the program stops iterating. Is there anywhere in java hypertext that I can look for help or an advice that you can give me on how to move the loop forward since we aren't use .left or .right in this list. Thank you.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Below is part of the specification of equals:
+ </paragraph>
+ <paragraph>
+  "for every t1 in s1..."
+  <break>
+  </break>
+  tells you to write a foreach loop over elements of s1.
+ </paragraph>
+ <paragraph>
+  You have to figure out what the body of the loop should do, returning if something isn't true. Use of the suggested helper function will help.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  (3) their children sets are equal.&lt;br&gt;
+  <break>
+  </break>
+  * ------ Let the two children sets be s1 and s2.
+  <break>
+  </break>
+  * ------ Since their sizes are equal, this requires:
+  <break>
+  </break>
+  * ---------- for every CovidTree t1 in s1 there is a CovidTree
+  <break>
+  </break>
+  t2 in s2 for which t1.equals(t2) is true.&lt;br&gt;
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,58 @@
+<h1>
+ Title: Autohelper feedback
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-08T03:59:45.663524+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We got the feedback from the autohelper says:
+ </paragraph>
+ <paragraph>
+  Failure in testBooleanFunctions(): java.lang.AssertionError: expected:&lt;false&gt; but was:&lt;true&gt;
+  <break>
+  </break>
+  Failure in testassert(): org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==&gt; expected: &lt;java.lang.AssertionError&gt; but was: &lt;java.lang.NullPointerException&gt;
+ </paragraph>
+ <paragraph>
+  For our test file. what does those feedback mean? Are we having some mistakes in the code or we don't have enough test cases? Thanks in advance!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The first: It looks like one of the following holds:
+ </paragraph>
+ <paragraph>
+  1. You don't have an assert statement for a Precondition
+ </paragraph>
+ <paragraph>
+  2. You have an assert statement even though the method spec has no precondition.
+ </paragraph>
+ <paragraph>
+  3. An assert statement is incorrect.
+ </paragraph>
+ <paragraph>
+  that's all I can say ...
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

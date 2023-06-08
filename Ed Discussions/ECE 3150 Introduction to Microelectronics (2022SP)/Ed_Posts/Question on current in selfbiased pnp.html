@@ -1,0 +1,46 @@
+<h1>
+ Title: Question on current in selfbiased pnp
+</h1>
+<h3>
+ Author: Nicholas George (student)
+</h3>
+<h3>
+ Date: 2022-03-04T11:06:25.913973+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="477.5494613124388" src="https://static.us.edusercontent.com/files/gNYRD9Bfve2i423VJQeW98PX" width="658"/>
+ </figure>
+ <paragraph>
+  If we are already treating the base current to be so small we don't need to account for it in the collector current, why do we still use the base current in voltage calculations? If we think its so low shouldn't the voltage drop across the base resistor be treated as zero?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think the best explanation is when comparing magnitudes. When we are looking at current, we can say beta is much larger than 1, as 1 is a known quantity, making
+ </paragraph>
+ <math>
+  I_C+I_B=\frac{\beta+1}{\beta}I_C\longrightarrow I_C
+ </math>
+ <paragraph>
+  However, when looking at voltage, we're comparing R_B/beta to R_C. Here, we don't know the relative magnitude difference, so we can't say anything definitively. Even if beta&gt;&gt;1, if R_B&gt;&gt;R_C, the R_B/beta term could still contribute meaningfully to your result (it could still be comparable to R_C), meaning we can't disregard it
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

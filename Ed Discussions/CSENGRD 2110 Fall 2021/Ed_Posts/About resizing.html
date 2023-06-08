@@ -1,0 +1,64 @@
+<h1>
+ Title: About resizing
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-14T16:19:18.727184+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When you resize a hash table, what order do you start to reinsert the elements? The order they were shown in the original hash table? The order the hash codes were provided to you? Or something else?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Andrew Chen (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  The implementation on JHT recopies using the order shown in the original hash table before rehashing.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  https://www.cs.cornell.edu/courses/JavaAndDS/hashing/03loadFactor.pdf
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It doesn't matter what order the rehashing takes.
+  <break>
+  </break>
+  The one we use is the simplest.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

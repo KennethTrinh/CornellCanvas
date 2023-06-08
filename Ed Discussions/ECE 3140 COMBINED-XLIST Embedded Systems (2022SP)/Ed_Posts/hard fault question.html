@@ -1,0 +1,54 @@
+<h1>
+ Title: hard fault question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-19T07:52:54.432838+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Our code works to make the LEDs blink concurrently, but when both programs in the test0 are finished running, our code goes into a Hard Fault. Is this supposed to happen? If not, does anyone know why this would be happening?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Nevermind! We realized we weren't saving our original stack pointer.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kate Meuse (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can you elaborate on this? I'm having the same error 🥺
+ </paragraph>
+ <paragraph>
+  Edit: Fixed by remembering to update cursp of process even if queue is empty
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

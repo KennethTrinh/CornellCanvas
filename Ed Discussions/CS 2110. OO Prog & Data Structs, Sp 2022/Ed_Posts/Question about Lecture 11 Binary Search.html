@@ -1,0 +1,50 @@
+<h1>
+ Title: Question about Lecture 11 Binary Search
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-15T15:20:58.407778+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  For the binary search example in lecture 11, I'm a bit confused about why the worst case time is log(b.length), especially when considering the case where there's an array [0,1,2,3,4,5,6,7], and v = 7.
+ </paragraph>
+ <paragraph>
+  Wouldn't this case have log(b.length)+1 iterations?
+ </paragraph>
+ <paragraph>
+  Or does this case not satisfy the condition that b[0..i] &lt;= v &lt; b[i+1..], since the values of an empty array cannot be greater than v?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Will Huey (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Time complexity O(log(b.length)) is the same as O(log(b.length)+1).
+ </paragraph>
+ <paragraph>
+  It may be easier to think of the function that grows the fastest. If the function does one extra iteration, the time will barely change. Doing log(b.length) iterations will require much more time as b.length grows.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

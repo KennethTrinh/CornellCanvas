@@ -1,0 +1,72 @@
+<h1>
+ Title: lec 14
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-20T14:40:08.024074+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="308.4712643678161" src="https://static.us.edusercontent.com/files/fKJSRIc9B8ICDwYX2VqcgXjj" width="658"/>
+ </figure>
+ <paragraph>
+  what underline sentence means here? the ==n and ||? I thought the later part that already compares and can make uc= h/h+1 that has a larger b[n]value?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This statement has a conditional expression. Let me parenthesize it:
+ </paragraph>
+ <paragraph>
+  int uc=  (h+1==n || b[h] &gt; b[h+1)  ?  h  :  h+1);
+ </paragraph>
+ <paragraph>
+  Now, we know that h &lt; n. That means that the left child of k exists. Three cases arise:
+ </paragraph>
+ <paragraph>
+  1. h+1 = n. Then, k has only ONE left child in the heap. So n is bigger one and h is stored in uk.
+ </paragraph>
+ <paragraph>
+  2. h+1 &lt; n. Aah. k has two children in the heap. The bigger one must be stored in uc.
+ </paragraph>
+ <paragraph>
+  2A. b[h] &gt; b[h+1]. So b[h] is bigger, and h is stored in uc.
+ </paragraph>
+ <paragraph>
+  2B. b[h] &lt;= b[h+1]. So b[h+1] is bigger, and h+1 is stored in uc.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  thank you for the explanation! but why when h+1=n, k has only one left child? h is left child, isn't h+1 the right one?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

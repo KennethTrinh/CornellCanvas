@@ -1,0 +1,123 @@
+<h1>
+ Title: @Test annotation not working
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-03T08:21:19.301409+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="221" src="https://static.us.edusercontent.com/files/VXNGXeNh4UXfgZmP7KjTZvWH" width="497"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  To add the necessary import statements:
+ </paragraph>
+ <paragraph>
+  On a PC, use ctrl + shift + o.
+ </paragraph>
+ <paragraph>
+  On a Mac, use command + shift + o.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  It may be that you don't have the necessary important statements.
+ </paragraph>
+ <paragraph>
+  To add the necessary ones:
+ </paragraph>
+ <paragraph>
+  On a PC, use ctrl + shift + o.
+ </paragraph>
+ <paragraph>
+  On a Mac, use command + shift + o.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Let us know whether this worked.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Nothing happened when I did ctrl + shift + o
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Figured out that renaming the JUnit to something other than Test fixed the issue. Not too sure why.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The reason for this is cause it was attempting to use the name Test as in your class instead of the predefined @Test annotation. Since your class was called Test, it didn't think to import the JUnit @Test annotation because there was already a type called Test visible in the class.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

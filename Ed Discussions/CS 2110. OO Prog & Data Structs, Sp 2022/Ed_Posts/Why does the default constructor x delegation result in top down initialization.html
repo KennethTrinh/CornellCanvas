@@ -1,0 +1,73 @@
+<h1>
+ Title: Why does the default constructor x delegation result in top down initialization?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-26T14:31:38.205161+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The default constructor is only inserted when a constructor is defined....
+ </paragraph>
+ <paragraph>
+  Super is inputted automatically with a default constructor
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  So why if there is a constructor implemented (that is not the default constructor) does initialization have to be top down?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  1. Every constructor you write must begin with either
+ </paragraph>
+ <paragraph>
+  this(...);    or   super(...);
+ </paragraph>
+ <paragraph>
+  Constructors cannot be recursive.
+ </paragraph>
+ <paragraph>
+  Therefore, at least one constructor will have a call. super(...); at its beginning.
+ </paragraph>
+ <paragraph>
+  2. The principle "Fill in superclass fields first" is the proper OO way to fill in fields.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you professor
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

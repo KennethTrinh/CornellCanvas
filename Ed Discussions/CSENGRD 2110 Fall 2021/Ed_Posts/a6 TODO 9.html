@@ -1,0 +1,56 @@
+<h1>
+ Title: a6 TODO 9
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-28T13:53:40.93439+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  "
+  <italic>
+   Start with TODO 9 in GameMain for showing the score in the score label. As with TODO 3, the work to be performed should be specified in an anonymous function, which is passed to a method of the object that will be generating the events (in this case, the GameComponent game). Search the documentation for that object’s superclasses to find an appropriate method; look for an overload that will only listen for changes to the “GameScore” property. "
+  </italic>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  I don't quite understand the part "which is passed to a method of the object that will be generating the events".  I thought that "the object" was GameComponent game, but it sounds like it's something else. Could I get some more clarity about this part?
+ </paragraph>
+ <paragraph>
+  Thanks
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If
+  <code>
+   game
+  </code>
+  refers to the object generating "GameScore" events, then
+  <code>
+   game
+  </code>
+  is what you should invoke the method on.  (Apologies for the awkward wording here; it was meant to be a hint for where you should look for the relevant method.)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

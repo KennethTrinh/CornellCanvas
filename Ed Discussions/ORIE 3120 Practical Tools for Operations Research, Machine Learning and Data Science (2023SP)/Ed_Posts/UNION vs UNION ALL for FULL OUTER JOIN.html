@@ -1,0 +1,78 @@
+<h1>
+ Title: UNION vs UNION ALL for FULL OUTER JOIN
+</h1>
+<h3>
+ Author: Michael Cao (student)
+</h3>
+<h3>
+ Date: 2023-03-28T10:15:27.016048+11:00
+</h3>
+<h3>
+ Category: Lecture
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Lecture 6 slide 25:
+ </paragraph>
+ <paragraph>
+  I'm not understanding why
+ </paragraph>
+ <paragraph>
+  <italic>
+   A full outer join B
+  </italic>
+ </paragraph>
+ <paragraph>
+  is equivalent to
+ </paragraph>
+ <paragraph>
+  <italic>
+   [A left join B] UNION ALL [A right join B]
+  </italic>
+ </paragraph>
+ <paragraph>
+  instead of
+ </paragraph>
+ <paragraph>
+  <italic>
+   [A left join B] UNION [A right join B]
+  </italic>
+ </paragraph>
+ <paragraph>
+  since it is stated that UNION ALL does not remove the duplicates.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Yuheng Wang (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Good question.  I think the case that you are referring to is that  B table has two exactly the same records. In that case, when you do the union after you right-join or left-join, you will have some duplicate records. But in that case, the
+  <code>
+   Full Outer Join
+  </code>
+  will also return two duplicate records, since each record in B (even though they are duplicate) is treated differently.  In other words, you need to collect everything from either Table A and Table B for a
+  <code>
+   Full Outer Join
+  </code>
+  and
+  <code>
+   Union All
+  </code>
+  is still needed.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

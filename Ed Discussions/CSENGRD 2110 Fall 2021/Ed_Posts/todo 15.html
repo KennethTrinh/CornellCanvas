@@ -1,0 +1,244 @@
+<h1>
+ Title: todo 15
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-05T13:15:32.601106+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  After clicking on save file, my pop up window doesn't show the option of searching for a file name. It only has this:
+ </paragraph>
+ <figure>
+  <image height="267" src="https://static.us.edusercontent.com/files/FMgiKxJGnr0281fSc4hfOI5f" width="405"/>
+ </figure>
+ <paragraph>
+  What did I do wrong? It works when I save onto a certain file, and appends the score number. But I'm not sure how to show the option to search for a file.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Also, are we just supposed to append the score (if the score was 1) as "1" or "Score: 1" ?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You are using showOpenDialog when you are not supposed to.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I changed it to save thank you! Is it supposed to "1" or "score: 1"?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Regarding how to format the score, we allow some flexibility here.  It needs to be on one line, and it needs to show the score as a number, but if you you want to "embellish" it by adding a prefix string, we don't mind.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  File dialogs look different on Macs than on other platforms (due to the different default Swing look-and-feel on Mac OS), so it may not match the screenshot in the handout, and that is okay.  However, I would have expected the confirm button to say "Save" and not "Open", so I'm wondering if you're showing the appropriate dialog type (perhaps another Mac user can confirm).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I changed to the correct dialog. But it still doesn't give the option to search for a file.
+ </paragraph>
+ <paragraph>
+  This is what I see right now:
+ </paragraph>
+ <figure>
+  <image height="247" src="https://static.us.edusercontent.com/files/BK0b7b2pqiHKbGO8hbieWPHs" width="318"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm not sure what you expect to see.  You have a place to type in a file name, and you can change directories.  Is there something on the handout that suggests it should provide additional functionality?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The screenshot made me believe that you should be able to search for a specific file to save in, so I was trying to implement that. Do we not need to be able to this? I apologize for all the questions.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think there is an option to search for a file in the picture on the handout because the oeprating system is Linux, so I assume that the save dialogue is going to be different between macOS and Linux?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You just need to show the default "save" dialog, which should provide the ability to choose a directory and type in a file name.  No search features are required (nor are they present in the save dialog on other platforms).  Sorry if the screenshot in the handout seemed to suggest fancier features - it's really pretty barebones.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh ok, thank you very much!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  That looks right, but make sure you are checking the value of the method you just implemented before executing the try-catch statement.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  By this do you mean if the value equals the approve option?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, you need to check that before executing the try-catch statement.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think the person is using showOpenDialog because the screenshot has an "open" button when it should be "save."  I had this problem before because I was using the wrong method.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

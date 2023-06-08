@@ -1,0 +1,146 @@
+<h1>
+ Title: A8: The scram phase
+</h1>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Date: 2021-11-08T01:25:29.85252+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We introduce the methods that can be used in writing method scram. Then, we give some hints and suggestions.
+ </paragraph>
+ <paragraph>
+  ===================
+ </paragraph>
+ <paragraph>
+  Method scram’s parameter state, of type ScramState, describes McDiver's environment. Every time McDiver makes a move, this object automatically changes to reflect McDiver's new location.
+ </paragraph>
+ <paragraph>
+  This object includes the following methods:
+ </paragraph>
+ <list style="ordered">
+  <list-item>
+   <paragraph>
+    Node currentNode(): Return the Node corresponding to McDiver's location.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Node exit(): Return the Node corresponding to the exit from the sewer system (the destination).
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Collection&lt;Node&gt; allNodes(): Return a collection of all traversable nodes in the graph.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    int stepsToGo(): Return the number of steps that are left for McDiver to get to the exit.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    void moveTo(Node n): Move McDiver to node n and pick up all coins on that node. Also, reduce the steps remaining by the weight of the edge from McDiver's current location to n.
+    <break>
+    </break>
+    This fails if n is not adjacent to the current location.
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  ===================
+ </paragraph>
+ <paragraph>
+  <bold>
+   1.
+  </bold>
+  There is no single way to write method scram that works well on
+  <italic>
+   all
+  </italic>
+  sewer systems (maps/graphs).
+ </paragraph>
+ <paragraph>
+  Some of you may find better ways than we did and get higher scores ---more coins.
+ </paragraph>
+ <paragraph>
+  So, get innovative, try various things, post your best scores on Ed Discussion note #1124 so others can see what you got.
+ </paragraph>
+ <paragraph>
+  Here are some points to consider.
+ </paragraph>
+ <paragraph>
+  <bold>
+   2.
+  </bold>
+  When scram is called, following the shortest path to the exit is guaranteed to get McDiver out within the prescribed number of steps.
+ </paragraph>
+ <paragraph>
+  Therefore, your first order of business is to make that simple solution work: Find the shortest path and traverse it.
+ </paragraph>
+ <paragraph>
+  Write a method that given a path starting on McDiver's current position, has McDiver traverse that path and end up on exit node. It can be useful in lots of situations.
+ </paragraph>
+ <paragraph>
+  Remember, when McDiver moves to a new node, coins on the node are picked up automatically. You don't have to be concerned with picking them up.
+ </paragraph>
+ <paragraph>
+  <bold>
+   3. TRY DIFFERENT APPROACHES
+  </bold>
+  . Write a new method for each new approach you take, and
+  <italic>
+   always
+  </italic>
+  have a solution that works to fall back on.
+ </paragraph>
+ <paragraph>
+  Remember, it is better to have a solution that
+  <italic>
+   always
+  </italic>
+  gets out in the prescribed number of steps than one that sometimes fails.
+ </paragraph>
+ <paragraph>
+  <bold>
+   4. TIME LIMIT
+  </bold>
+  . There is an elapsed time limit of about 10-12 seconds on any map. We need that so that it doesn't take hours to grade your submission. We will run on our faster computers, so if yours is a bit slow and old, perhaps 12-14 seconds will be OK.
+ </paragraph>
+ <paragraph>
+  <bold>
+   5. HELPER METHODS
+  </bold>
+  . Write as many helper methods as you want. It is in your best interests to
+  <italic>
+   specify them carefully
+  </italic>
+  . The staff cannot help you if there are methods without specifications --how can they help when they can't tell what the methods are supposed to do? How do
+  <italic>
+   you
+  </italic>
+  remember what they are supposed to do? We have instructed the staff not to answer questions when methods are not properly specified.
+ </paragraph>
+ <paragraph>
+  <bold>
+   6. CHANGE SHORTEST PATH ALGORITHM
+  </bold>
+  . Right now, the shortest path algorithm gives you a path from the current position to any one of your choosing. But you may want to change it or make a copy and alter the copy. For example, one version could find the shortest path to
+  <italic>
+   all
+  </italic>
+  nodes and return the HashMap that gives all the information.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

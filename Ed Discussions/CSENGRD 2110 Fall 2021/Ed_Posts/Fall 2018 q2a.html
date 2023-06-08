@@ -1,0 +1,61 @@
+<h1>
+ Title: Fall 2018 q2a
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-13T11:35:15.428311+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, I am confused why 2a is false.
+ </paragraph>
+ <figure>
+  <image height="29.7208480565371" src="https://static.us.edusercontent.com/files/IBioHYKgStBfuL2ahb3Vqfmh" width="647"/>
+ </figure>
+ <paragraph>
+  According to Java Hyper Text,
+ </paragraph>
+ <paragraph>
+  "Throwing an Error causes immediate termination of a program. There is no chance for the program to handle it in some fashion."
+ </paragraph>
+ <paragraph>
+  The try-catch statement can be used to catch ANY thrown exception --any subclass of class Throwable. That includes Error and its subclasses. JavaHyperText does not mean to say it can't but only that in general, a thrown Error results in a real mistake that cannot be fixed.
+ </paragraph>
+ <paragraph>
+  Here's a case where we actually wrote a program to catch an Error, a StackOverFlowError. Do you remember the demo of method Power(b, n), to raise b to the power n? We had a slow method Power and a fast method Power. We actually had a method main that would call the slow method Power with increasing value of n until the call stack overflowed. This gave us a chance to demo vividly the  O(n) power method and the O(log n) power method. So, even though in general an Error is not fixable, we used an Error to learn something.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Varun Gande (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  Try-catch can be used to handle any subclass of Throwable (which includes both Exceptions and Errors).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

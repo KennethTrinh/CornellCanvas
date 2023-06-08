@@ -1,0 +1,77 @@
+<h1>
+ Title: Hello please help
+</h1>
+<h3>
+ Author: Kevin Huang (student)
+</h3>
+<h3>
+ Date: 2022-02-17T16:16:58.861494+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="91.12244897959184" src="https://static.us.edusercontent.com/files/NIXpQ8BzctuHLB5faLVaqaRb" width="658"/>
+ </figure>
+ <paragraph>
+  What is the range of these registers? I thought it was 32 at first but then someone told me it was 16, then i assumed half of those get used for negative numbers but it appears 2^15 -1 doesnt work either please help fast im getting very bad stomach ache (no back pain or reopening of past wounds like in 3110 yet)
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Benjamin Kogan (None)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  The registers store 32-bit values. I assume you are using the MOV instruction, which can only work with 8-bit immediate values. So, if you want to get larger values into your registers, you have to define them as a constant 32-bit number at compile time using the .equ directive. Looks something like this:
+ </paragraph>
+ <paragraph>
+  .equ constant_name, 0x400FF0D4
+ </paragraph>
+ <paragraph>
+  and load it with:
+ </paragraph>
+ <paragraph>
+  LDR Rd, =constant_name
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kevin Huang (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ok I was trying this but gave up I didn't realize i forgot to put the comma before the hex number when i was assigning the constnt
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Alternatively, store a smaller value and edit it with operations to make it bigger!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

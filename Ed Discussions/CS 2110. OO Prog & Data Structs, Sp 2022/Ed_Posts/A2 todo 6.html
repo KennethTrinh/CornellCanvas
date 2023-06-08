@@ -1,0 +1,73 @@
+<h1>
+ Title: A2 todo 6
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-13T06:32:13.28321+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  In this part of the assignment
+ </paragraph>
+ <pre>/** If x = 0, print 1; &lt;br&gt;
+     * Otherwise, print 2x */
+    public static void p(int x) {
+        /* TODO 6: This exercise introduces you to the return statement in a
+         * procedure --a method with return type  void . Type
+         *    return   into the JavaHyperText Filter Field and read about it.
+         *
+         * 1. The goal here is to get you to see that execution of the return
+         * statement terminates execution of the method body; nothing else
+         * happens in this method after that.
+         *
+         * 2. Within the JUnit testing class, the only way to know that this
+         * method does the right thing is to look at what it prints in the
+         * Console. That's not so good but we live with it. Look at how we
+         * do that in method testP, annotating what is printed to help the reader.
+         * Don't use this way of testing, by looking at printed output,
+         * unless there is no other choice.
+         *
+         * 3. To print the value of an expression like b + c, write:
+         *      System.out.println(b+c);
+         *
+         * 4. Write this method with two statements:
+         *    (1) An if-statement that performs the first line of the spec
+         *        and returns, using a return statement.
+         *    (2) A print statement that performs the second line of the spec.</pre>
+ <paragraph>
+  The first line says "Print 1" but then in number four, it is asking for a return statement. It had me confused at first but then I added
+ </paragraph>
+ <paragraph>
+  return;
+ </paragraph>
+ <paragraph>
+  to my code but when I save it, it gets deleted so I'm a bit confused on what to do.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Atulya Lohani (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  That means you're not using the return correctly. You're using return in a manner that is redundant so the eclipse formatting preferences just gets rid of it when you save. Rather than having an else block, just use the return keyword in your if statement. And then you can put everything that used to be in your else block, after the if statement. If the if statement body is run, then the method will return after printing 1. Otherwise, it will print 2x because the if statement body will be skipped. This gets rid of the necessity of having an else statement because you are using short-circuiting your code through the return.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

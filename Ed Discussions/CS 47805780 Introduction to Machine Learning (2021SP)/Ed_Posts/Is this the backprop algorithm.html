@@ -1,0 +1,210 @@
+<h1>
+ Title: Is this the backprop algorithm?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-09T15:08:50.344048+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="288" src="https://static.us.edusercontent.com/files/yo2WQWDpF47mXahgwF3j4jCR" width="322"/>
+ </figure>
+ <paragraph>
+  Maybe it could be another algorithm. I'm having so much trouble getting the output shapes right, that I don't even know if I'm doing it right at all. Am I supposed to output D_0... D_l in backprop?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Joanna Saikali (student)
+</h3>
+<h3>
+ Vote Count: 60
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes that's it but I found it to be kind of unhelpful since what we have in the code is different...
+  <break>
+  </break>
+  This is more like what it should be:
+ </paragraph>
+ <paragraph>
+  for l in m-1,...,0
+ </paragraph>
+ <math>
+  \text{Gradient}_l=\frac{1}{n}\ \left(V_l^T\ \cdot D_{l+1}\right)
+ </math>
+ <math>
+  D_l=\ \sigma'\left(S_l\right)\ \circ\ \left(D_{l+1}\cdot W_l^T\right)
+ </math>
+ <paragraph>
+  We were given the first delta value ($D_m$) in the function, and replace it with the updated $D_l$ in each iteration.
+ </paragraph>
+ <paragraph>
+  ($\circ$ is element-wise multiplication)
+ </paragraph>
+ <paragraph>
+  I waited in office hours for hours and it took me forever to figure this out so I hope this helps someone. I don't know how we were expected to figure this one out on our own.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jacquelyn Peng (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  thank you soooo much for this, you are a lifesaver!!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Willem van Osselaer (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm not sure if anyone else had this problem, but the type of multiplications I used were slightly different from the ones in the formula. In the step where you update D, I matrix multiplied D_{l+1} and W_l transpose, then I element-wise multiplied the result with sigma prime of S_l.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Joanna Saikali (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes this is what I meant to convey, sorry if I caused confusion! I didn't know how to notate element-wise multiplication... I replaced the previous multiplication symbol with a $\circ$ to annotate element-wise multiplication
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jeremy Freedman (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <blockquote>
+  We were given the first delta value (d_m) in the function
+ </blockquote>
+ <paragraph>
+  Is this what
+  <code>
+   delta
+  </code>
+  refers to? I don't really understand its construction...
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Joanna Saikali (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes in the code there is a variable called "delta", which is initialized with the first $D_m$ value that you need! Then you will reassign delta to the new value as computed the second equation I provided
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Buckman Peter (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thanks, this helped me out. Is there any reason why the first $D_m$ doesn't rely on $ \sigma'(s_{d, 1})$? I'm just curious, I got stuck for a while because this is what they put on the slides (and "delta" in the code seems to just calculate $\frac{\partial L}{\partial v_{d, 1}}$ over all the samples).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Joanna Saikali (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The delta variable they gave us is already equivalent to $\sigma ' (s_{d,1})$ I think, but I could be wrong. I also am not sure I have a full understanding of the components
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Yirui Li (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  isn't it because we are assuming the last activation function is f(x)=x, from a previous post, asking about why S_m=V_m
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Brian Lu (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Does anybody know why we multiply by 1 / n for the gradient?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Victor Chen (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  #919
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

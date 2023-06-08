@@ -1,0 +1,99 @@
+<h1>
+ Title: Attribute error for test_course_conflictswith
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-15T12:45:00.256989+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <pre></pre>
+ <paragraph>
+  I keep getting this error when I run the test for conflicts with:
+ </paragraph>
+ <pre>Running test_course_conflictswith
+{'T': [545, 595]}
+{'T': [545, 595], 'R': [545, 595]}
+{'T': [580, 655]}
+{'T': [580, 655], 'R': [580, 655]}
+{'R': [545, 595]}
+{'T': [685, 760]}
+{'T': [685, 760], 'R': [685, 760]}
+{'T': [685, 760]}
+{'T': [685, 760], 'R': [685, 760]}
+Warning: The time of this course is still TBA
+{'T': [485, 560]}
+{'T': [485, 560], 'R': [485, 560]}
+{'M': [545, 595]}
+{'M': [545, 595], 'W': [545, 595]}
+{'M': [545, 595], 'W': [545, 595], 'F': [545, 595]}
+{'T': [570, 585]}
+{'F': [810, 870]}
+Traceback (most recent call last):
+  File "schedule_tests.py", line 298, in &lt;module&gt;
+    testfn() # Adding the parentheses calls whatever testfn is
+  File "schedule_tests.py", line 157, in test_course_conflictswith
+    result = c1.conflictsWith(c2)
+  File "/Users/schedule.py", line 235, in conflictsWith
+    if selfint.overlaps(otherint) == True :
+AttributeError: 'dict' object has no attribute 'overlaps'</pre>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  I'm not really sure what to do; I created a new class for the time interval of each course with the method "overlaps" and I am trying to use it here.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Chris Desir (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Check selfint, it says that you defined it as dictionary. Maybe the values in your dictionary are the objects for the new time interval class but I am unsure from here.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  so selfint should be the values of the dictionary and not the dictionary itself?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Chris Desir (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It all depends on what exactly is stored in the dictionary and what your intentions are. Just know that selfint right now is a dictionary and not an object of the time interval class you defined!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

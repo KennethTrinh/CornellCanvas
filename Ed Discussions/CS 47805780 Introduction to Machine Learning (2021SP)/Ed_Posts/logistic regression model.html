@@ -1,0 +1,58 @@
+<h1>
+ Title: logistic regression model
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-25T23:03:50.283662+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="453.3167938931298" src="https://static.us.edusercontent.com/files/rdKVVc2MogQVF4lcGObCvnmD" width="658"/>
+ </figure>
+ <paragraph>
+  I don't understand how (1-sigm(w dot x_i)) = (sigm(-w dot x_i) ) ? I was trying to do the derivation but it wasn't working out. Could someone explain the derivation? Thanks!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Weilin Xu (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  $$1 - sigm(\vec{w}, \vec{x}) = \frac{\exp(-\vec{w}\cdot\vec{x})}{1 + \exp(-\vec{w}\cdot\vec{x})}  = \frac{\exp(-\vec{w}\cdot\vec{x}) \cdot \exp(+\vec{w}\cdot\vec{x})}{\exp(+\vec{w}\cdot\vec{x}) + \exp(-\vec{w}\cdot\vec{x}) \cdot \exp(+\vec{w}\cdot\vec{x})} = \frac{1}{1 + \exp(+\vec{w}\cdot\vec{x})} = \frac{1}{1 + \exp[-(-\vec{w}\cdot\vec{x})]} = sigm(-\vec{w}, \vec{x}) $$
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you so much!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

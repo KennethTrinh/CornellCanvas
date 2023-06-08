@@ -1,0 +1,76 @@
+<h1>
+ Title: Question about dimensions of S, G in Euclidean Distance Matrix Calculations
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-02-16T09:22:27.96435+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="61.02866779089376" src="https://static.us.edusercontent.com/files/RZOMjQrvdNwiudpXC6PakNKb" width="658"/>
+ </figure>
+ <paragraph>
+  In this question, since S = XX^T, and dim(X) = (n, d), how can S have dimensions n x m?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Artem Streltsov (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This definition, indeed, looks somewhat counterintuitive. Notice that in this definition j does not enter the formula for S on the right-hand sight. Similarly, i does not change input for R. So, via broadcasting this is still a valid formula, i.e. it will still work for the purposes of computing D. For instance, S and R defined as above look as follows (for n=2,m=3):
+ </paragraph>
+ <math>
+  S=\left(\begin{matrix}x_1x_1^T&amp;x_1x_1^T&amp;x_1x_1^T\\x_2x_2^T&amp;x_2x_2^T&amp;x_2x_2^T\end{matrix}\right),\ R=\left(\begin{matrix}z_1z_1^T&amp;z_2z_2^T&amp;z_3z_3^T\\z_1z_1^T&amp;z_2z_2^T&amp;z_3z_3^T\end{matrix}\right)
+ </math>
+ <paragraph>
+  Now, the beauty of this approach is that you can compute S and R (as given above) and the G Gram-matrix from before. Then matrix D is simply a linear combination of these 3 matrices (just expand the formula for D).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jinny Gui (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is the right train of thought to slice and transpose the inner products of X and Z to create S and R? In attempting P-1 l2distance, I've gone back to P-0 and am currently trying to figure how to make the (2,3)(5,3) assert case pass.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Adrian Chu (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  What is the best way to implement S and R with numpy without using loops?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

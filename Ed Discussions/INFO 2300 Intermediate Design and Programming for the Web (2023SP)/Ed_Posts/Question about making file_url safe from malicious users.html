@@ -1,0 +1,53 @@
+<h1>
+ Title: Question about making file_url safe from malicious users
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-04-25T05:20:08.634771+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When we display all the entries and the file url, are there any specific requirements regarding making the file url secure from malicious hackers?
+ </paragraph>
+ <paragraph>
+  For example, currently $record['product.id'] and $record['product.file_ext'] are being directly accessed:
+ </paragraph>
+ <paragraph>
+  &lt;?php
+ </paragraph>
+ <paragraph>
+  $file_url = '/public/uploads/products/' . $record['product.id'] . '.' . $record['product.file_ext'];
+ </paragraph>
+ <paragraph>
+  ?&gt;
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Because the URL comes from the database, and you've already protected that data using parameter markers to insert it into the database, you need not worry about security for the URL or path so long as you follow the convention we use for storing the uploaded files.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

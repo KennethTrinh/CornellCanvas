@@ -1,0 +1,60 @@
+<h1>
+ Title: Testing addMom() and addDad()
+</h1>
+<h3>
+ Author: Cody Torgovnik (student)
+</h3>
+<h3>
+ Date: 2021-09-09T23:14:14.308235+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  I have a question for testing addMom() and addDad(). I know that we should test all the fields that change. So we can test the children field. But I’m guessing we should also check with the observer methods mom() and dad(). However, since we do not have a toString method, wouldn’t the output just be the memory location of the object? I am a bit confused on how to check with these methods.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Good thinking. Yes, you should test those things.
+ </paragraph>
+ <paragraph>
+  And there is nothing wrong with testing the pointers.
+ </paragraph>
+ <paragraph>
+  Suppose you did this:
+ </paragraph>
+ <paragraph>
+  Elephant dad= new Elephant("dad", 'M', 2040, 6);
+  <break>
+  </break>
+  kid1.addDad(dad);
+ </paragraph>
+ <paragraph>
+  Then you should test whether  kid1.dad() is equal to dad.
+ </paragraph>
+ <paragraph>
+  Just use an assertEquals statement for that. dad is the expected value; the other is the computed value.
+ </paragraph>
+ <paragraph>
+  You should also check that dad's number of children increased by 1!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

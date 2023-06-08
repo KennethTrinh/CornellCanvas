@@ -1,0 +1,209 @@
+<h1>
+ Title: test_studentschedule_add_noconflicts Key error "M"
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-15T05:05:05.412061+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  this is the error message i get and I don't know what to do about it
+ </paragraph>
+ <pre>Running test_studentschedule_add_noconflicts
+Warning: The time of this course is TBA
+Traceback (most recent call last):
+  File "schedule_tests.py", line 298, in &lt;module&gt;
+    testfn() # Adding the parentheses calls whatever testfn is
+  File "schedule_tests.py", line 99, in test_studentschedule_add_noconflicts
+    my_schedule.add(c)
+  File "/Users/...schedule.py", line 119, in add
+    if c.conflictsWith(self.courses[course]) :
+  File "/Users...../schedule.py", line 228, in conflictsWith
+    otherinterval = other.timedict[date]
+KeyError: 'M'
+</pre>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Rachel Brotherton (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This error means that your dictionary other.timedict does not have the key 'M'. I suggest printing out other.keys() right above that line so you can see what's going on.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I added this but it didnt do anything
+ </paragraph>
+ <pre>oi = other.timedict[date]
+print(other.keys())
+</pre>
+ <paragraph>
+  I also did
+ </paragraph>
+ <pre>print(other.keys())
+oi = other.timedict[date]
+</pre>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  but got some type of attribute error  like
+ </paragraph>
+ <paragraph>
+  attribute error: 'Course' object has no attribute 'keys'
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Rachel Brotherton (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  My bad, I meant other.timedict.keys()
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, I am still confused about what to do
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I tried that and this is what happened:
+ </paragraph>
+ <paragraph>
+  it looks like I'm missing 'M' but I don't know why?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <pre>Running test_studentschedule_add_noconflicts
+Warning: The time of this course is still TBA
+dict_keys(['T', 'R'])
+Traceback (most recent call last):
+  File "schedule_tests.py", line 298, in &lt;module&gt;
+    testfn() # Adding the parentheses calls whatever testfn is
+  File "schedule_tests.py", line 99, in test_studentschedule_add_noconflicts
+    my_schedule.add(c)
+  File "/Users/schedule.py", line 119, in add
+    if c.conflictsWith(self.courses[course]) :
+  File "/Users/schedule.py", line 227, in conflictsWith
+    oi = other.timedict[date]
+KeyError: 'M'</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  It seems that you either need to check for 'M' being in there before trying to reference it as a key, or, when setting up your dictionary, you need to make sure there's an entry for all possible days of the week, I think?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi,
+ </paragraph>
+ <paragraph>
+  so I printed out the dictionary I was using to make sure it was working. Basically, each key is the day (MTWRF) and there are two values per key, which are the start and end time of each class represented as minutes after midnight.
+ </paragraph>
+ <paragraph>
+  This is what I got. I am still confusd about how I should go about the 'M' thing.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <pre>Running test_studentschedule_add_noconflicts
+{'T': [545, 595]}
+{'T': [545, 595], 'R': [545, 595]}
+{'T': [580, 655]}
+{'T': [580, 655], 'R': [580, 655]}
+{'R': [545, 595]}
+{'T': [685, 760]}
+{'T': [685, 760], 'R': [685, 760]}
+{'T': [685, 760]}
+{'T': [685, 760], 'R': [685, 760]}
+Warning: The time of this course is still TBA
+{'T': [485, 560]}
+{'T': [485, 560], 'R': [485, 560]}
+{'M': [545, 595]}
+{'M': [545, 595], 'W': [545, 595]}
+{'M': [545, 595], 'W': [545, 595], 'F': [545, 595]}
+{'T': [570, 585]}
+{'F': [810, 870]}
+dict_keys(['T', 'R'])
+Traceback (most recent call last):
+  File "schedule_tests.py", line 298, in &lt;module&gt;
+    testfn() # Adding the parentheses calls whatever testfn is
+  File "schedule_tests.py", line 99, in test_studentschedule_add_noconflicts
+    my_schedule.add(c)
+  File "/Users/schedule.py", line 119, in add
+    if c.conflictsWith(self.courses[course]) :
+  File "/Users/schedule.py", line 230, in conflictsWith
+    otherint = other.timedict[day]
+KeyError: 'M'
+</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>

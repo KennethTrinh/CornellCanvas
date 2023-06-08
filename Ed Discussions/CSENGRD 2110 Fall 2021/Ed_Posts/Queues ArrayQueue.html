@@ -1,0 +1,122 @@
+<h1>
+ Title: Queues: ArrayQueue
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-05T08:33:46.592837+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="318.00401069518716" src="https://static.us.edusercontent.com/files/nwcEsMeUPxEfSQ85wcU03X7Y" width="658"/>
+ </figure>
+ <paragraph>
+  I'm having a hard time understanding what's going on with the indexes. What is h when the first element is put into the queue. What is it when the second one is put into the queue?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Thanks
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  https://www.cs.cornell.edu/courses/JavaAndDS/files/boundedBuffer.pdf
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="900" src="https://static.us.edusercontent.com/files/uEjh7mPbTq4hbPozEA7AxgP7" width="636"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  no u
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The specification for the fields is a little mathematical, but if you study it for a bit, you should see that
+  <code>
+   h
+  </code>
+  is the index of the "first" element in the queue (that is, the one that was added longest ago and would be the next one returned by a "get" operation).  And the index of the last element in the queue (the one added most recently) is
+  <code>
+   (h+n-1)%b.length
+  </code>
+  .
+ </paragraph>
+ <paragraph>
+  If you were to append an additional element to the queue, then the first element would not change, but the last element would.  The indices will remain consistent as long as you update
+  <code>
+   n
+  </code>
+  , the total number of elements in the queue.
+ </paragraph>
+ <paragraph>
+  If this queue had a "get" or "remove" operation (not shown), such an operation would return the element at index
+  <code>
+   h
+  </code>
+  <italic>
+   and
+  </italic>
+  increment
+  <code>
+   h
+  </code>
+  by 1 to point to the next-oldest element.  This is why
+  <code>
+   h
+  </code>
+  is not always 0.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

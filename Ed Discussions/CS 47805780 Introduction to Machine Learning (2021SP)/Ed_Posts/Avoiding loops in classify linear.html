@@ -1,0 +1,67 @@
+<h1>
+ Title: Avoiding loops in classify linear
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-12T09:55:19.321133+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In classify linear, is it alright to use list compression as a means of avoiding loops? Also, I was wondering if anybody could point me to any numpy methods that would achieve this instead.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Daniel Ye (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You should be able to perform numpy multiplication with w and xs so that the result is a 1xn array of 'raw' prediction values and then add your constant. From there, you can use the numpy sign function to get your predictions, although you may have to do a bit of cleanup since sign returns -1, 0, or +1 but we are only looking for -1 or +1 predictions.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Austin Chen (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  How do we do the cleanup without a for loop?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You could use something like np.nonzero or arr==0 to identify where the zeros are, but since sign requires the input to exactly equal 0 to return 0, it's unlikely to matter much.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

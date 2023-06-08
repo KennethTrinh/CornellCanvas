@@ -1,0 +1,52 @@
+<h1>
+ Title: Still Confused on 3bi vs 3bii
+</h1>
+<h3>
+ Author: Filip Osowski (student)
+</h3>
+<h3>
+ Date: 2021-04-24T01:04:52.128898+10:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 4
+</h3>
+<document version="2.0">
+ <paragraph>
+  I've been reading through the previous Ed posts about this question and I'm still confused on how I should treat these two questions differently.
+ </paragraph>
+ <paragraph>
+  To begin with, #1098 says that the formula used for both questions is the same (I can't tell whether they mean the first or second formula). I tried applying the first formula (on the slide they show) to both problems, but I don't get the 100-to-1 difference in answers that #1085 mentions. (I assume that the only thing different for calculating $m$ between these two questions is $\epsilon$ (i.e. |H| stays the same). Is this wrong?) I also don't understand how to apply the second formula to either question (I commented on this below #1098). What's more is that #1074 makes it sound like the formula used for the two questions is different (one where $h$ is exposed to data and the one where it's not), so I'm not even sure if #1098 is correct about the same formula being used for both questions. Are all these posts correct?
+ </paragraph>
+ <paragraph>
+  Can anyone please clarify what I'm doing wrong or give some tips on which direction to go?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Christopher Vincens (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  You do not use the same formula in both questions.
+ </paragraph>
+ <paragraph>
+  On slide for #1098, both of the fomulas are the same, the second formula is just the first formula solved for m.
+ </paragraph>
+ <paragraph>
+  For the first question, the general sample complexity formula applies, as you can see on the slides. #1048 explains why you need to use this formula, rather than using Hoeffding's inequality directly. Also, #998 explains why calculating the probability of $err_{s}(h_{s})$ - $err_{p}(h_{s}) &gt; \epsilon /2$ is the same as the probability of $err_{p}(h_{s})$ - $err_{p}(h^{*})$ $&gt;$ $\epsilon$, which is why the general sample complexity formula is helpful here.
+ </paragraph>
+ <paragraph>
+  To answer part ii, $h_{friend}$ is a random hypothesis (rather than one you selected using training), which means you do not need to do the union bound.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

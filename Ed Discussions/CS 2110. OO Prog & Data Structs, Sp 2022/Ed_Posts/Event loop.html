@@ -1,0 +1,64 @@
+<h1>
+ Title: Event loop
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-07T23:37:35.658516+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello!
+ </paragraph>
+ <paragraph>
+  I am not sure I fully understand the Event loop in GUI applications. From what I understand, the handling event here refers to triggering specific sections of the code and their execution which continues till all the events are completed? I am not sure about what dequeue event means here. Is it listeners waiting for an event?
+ </paragraph>
+ <figure>
+  <image height="190" src="https://static.us.edusercontent.com/files/4Z5fJvrhcaoGxweg9ggaHDWm" width="375"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Clarkson (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Your understanding is good.  Here "dequeue" means that the OS has put an event into the event queue, the Swing event loop dequeues that event and creates an Event object to represent it.
+ </paragraph>
+ <paragraph>
+  Since JHT doesn't have any sections on GUIs yet, let me point you to
+  <link href="http://web.mit.edu/6.005/www/sp16/classes/24-graphical-user-interfaces/#input_handling"/>
+  this MIT page for further reading.  I know several of the authors named on that page and can vouch that they're good.  :)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This really helped! Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

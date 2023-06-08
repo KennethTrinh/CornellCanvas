@@ -1,0 +1,137 @@
+<h1>
+ Title: Adjacency List
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-12T09:53:20.444032+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  On the slides I found that the time complexity of finding if v1 is adjacent to v2 is v+#edges leaving v1. If we implement the adjacency list using an array or an array list instead of a linked list, would the complexity just be the #edges from v1 instead?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Answer that question yourself, giving an explanation, and then we will look at your answer and comment on it.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Using an array will take #edges of node v1 time because finding node V1 in the array is constant time. In a linked list finding a specific node requires going through the list. If this is true, when would a linked list be preferable over an array list? Does it have to do with space complexity?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why does using an array or ArrayList make it constant time? That array or ArrayList contains a number of nodes. You still have to search that array or ArrayList for the node.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  I thought in an array the nodes would be numbered so if we want the node labeled 4 we just go to v[4] but the answer is probably that the nodes can also have strings as labels or something else. But then how does an adjacency matrix take constant time to do the same thing?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Assume that the nodes are not numbered --they could be objects. You have to look through the array or ArrayList looking for the one you want.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Got it. In that case, how does an adjacency matrix take constant time to perform the same action?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  With an adjacency matrix, the nodes have to be numbered 0..n-1 or 1..n!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Oh I see. Thank you
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

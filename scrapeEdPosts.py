@@ -1,11 +1,12 @@
 import requests
 import re
 import os
+import pandas as pd
 
 from bs4 import BeautifulSoup
-from utils import (sanitize, cprint, extract_files, 
-                   write, writeJson, 
-                   ThrowsLambdaError, getCourse)
+from utils import (sanitize, cprint, 
+                   write, writeJson, retry,
+                   getCourse)
 from canvasapi import Canvas
 from canvasDuoEdLogin import EdLogin, canvasDuoLogin
 from consts import API_KEY, API_URL, ED_URL, MAX_PAGES
@@ -25,7 +26,10 @@ def getEdUrl(s, course_id):
     # get the href of  the <a> tag with 'Ed Discussion' in it
     #  <a class="context_external_tool_3334" href="/courses/24870/external_tools/3334?display=borderless" target="_blank">
     # Ed Discussion </a>
-    ed_url = soup.find('a', text='Ed Discussion')['href']
+    ed_url = soup.find('a', text='Ed Discussion')
+    if not ed_url:
+        return None
+    ed_url = ed_url['href']
     return f'{API_URL}{ed_url}'
 
 def EdCourseAuthenticationThroughCanvas(s, canvas_course_id):
@@ -35,6 +39,8 @@ def EdCourseAuthenticationThroughCanvas(s, canvas_course_id):
     authentication to get it)
     """
     ed_url = getEdUrl(s, canvas_course_id)
+    if not ed_url:
+        return None, None
     r1 = s.get(ed_url)
     soup = BeautifulSoup(r1.text, 'html.parser')
     r2 = s.post(f'{ED_URL}/api/lti/oidc_login', 
@@ -96,7 +102,8 @@ class Thread:
         for key, value in jsonDict['thread'].items():
             setattr(self, key, value)
         self.users = {
-            x['id']: x['name'] for x in jsonDict['users']
+            x['id']: {'name': x['name'], 'course_role': x['course_role']}
+                      for x in jsonDict['users']
         }
 
     def __repr__(self):
@@ -104,35 +111,71 @@ class Thread:
 
     def getUser(self, user_id):
         if user_id in self.users:
-            return self.users[user_id]
+            return (f'{self.users[user_id]["name"]}'
+                    f' ({self.users[user_id]["course_role"]})'
+            )
         return 'Anonymous'
 
-    def recursiveReplies(self, html, replies):
+    def bfsRepliesStructure(self, replies):
         """
-        Replies aren't serialized recursively, so we have to
-        access like dictionary instead of attributes
+        We want a structure like this:
+        REPLY # 1
+        |   COMMENT # 1
+            |    COMMENT # 1
+        |   COMMENT # 2
+        REPLY # 2
+        |   COMMENT # 1
         """
+        ordering  = []
+        while replies:
+            reply = replies.pop(0)
+            ordering.insert(
+                0 if reply['is_endorsed'] else len(ordering),
+                {
+                    'user_id': reply['user_id'],
+                    'content': reply['content'],
+                    'is_endorsed': reply['is_endorsed'],
+                    'depth': 0 if 'depth' not in reply else reply['depth'],
+                    'vote_count': reply['vote_count'],
+                }
+            )
+            if 'comments' in reply:
+                for comment in reply['comments']:
+                    comment['depth'] = reply.get('depth', 0) + 1
+                    replies.insert(0, comment)
+        return ordering
+    def bfsReplies(self, html, replies):
         if not replies:
             return html
-        for reply in replies:
-            html += (f"<h4>Author: {self.getUser(reply['user_id']) }</h4>"
+        for reply in self.bfsRepliesStructure(replies):
+            html += (f"<h3>Author: {self.getUser(reply['user_id']) }</h3>"
+                     f"<h3>Vote Count: {reply['vote_count']}</h3>"
+                    f"{'<h3>ENDORSED</h3>' if reply['is_endorsed'] else ''}"
                     f"{reply['content']}"
+                    '<h3> ------------------------------------ </h3>'
             )
-            html = self.recursiveReplies(html, reply['comments'])
         return html
-    
+                        
     def format(self):
         html = (f'<h1>Title: {self.title} </h1>'
-                f"<h2>Author: {self.getUser(self.user_id)} </h2>"
-                f'<h2>Date: {self.created_at}  Category: {self.category}</h2>'
+                f"<h3>Author: {self.getUser(self.user_id)} </h3>" 
+                f"<h3>Date: {self.created_at}</h3>"
+                f"<h3>Category: {self.category}</h3>"
+                f"<h3>Vote Count: {self.vote_count}</h3>"
+                f"{'<h3>ENDORSED</h3>' if self.is_endorsed else ''}"
                 f'{self.content}'
         )
-        html = self.recursiveReplies(html, self.answers)
+        html = self.bfsReplies(html, self.comments)
+        html += '<h3> ----------- REPLIES ----------- </h3>'
+        html = self.bfsReplies(html, self.answers)
         return html
 
+@retry(3)
 def getThread(thread_id, xtoken):
     r = requests.get(f'{ED_URL}/api/threads/{thread_id}',
                     headers = {'x-token': xtoken})
+    if 'code' in r.json() and r.json()['code'] == 'rate_limit':
+        raise Exception('Rate Limit')
     return Thread(r.json())
 
 def scrapeEdPostForCourse(folder, xtoken, thread_id):
@@ -144,41 +187,56 @@ def scrapeEdPostForCourse(folder, xtoken, thread_id):
     html = thread.format()
     write(html, os.path.join(folder, sanitize(thread.title) + '.html'))
 
-def scrapeEdPostsForCourse(folder, ed_course_id, xtoken):
-    folder = os.path.join(folder, 'Ed_Posts')
+def scrapeEdPostsForCourse(canvasSession, canvas, course_id):
+    course = getCourse(canvas, course_id)
+    if not course:
+        print(f'Course {course_id} not found')
+        return
+    print(f'***** Course: {course.name} *****')
+    course_name = sanitize(course.name) if hasattr(course, 'name') else f'MISC_{course_id}'
+    ed_course_id, xtoken = EdCourseAuthenticationThroughCanvas(canvasSession, course_id)
+    if not ed_course_id:
+        print(f'Edstem login failed for course {course_id}')
+        return
+    folder = os.path.join('Ed Discussions', course_name, 'Ed_Posts')
     threads = requestAllThreads(ed_course_id, xtoken)
-    for thread in threads:
-        print(f'*** Scraping thread: {thread["title"]} ***')
+    for i, thread in enumerate(threads):
+        if i%50 == 0:
+            print(f'*** Thread ({thread["id"]}): {i} / {len(threads)} ***')
         scrapeEdPostForCourse(folder, xtoken, thread['id'])
 
-canvas  = Canvas(API_URL, API_KEY)
-courses = list(canvas.get_courses()) # --> lists all courses you've taken
+def scrapeEdPosts(personal_courses=False):
+    canvas = Canvas(API_URL, API_KEY)
+    # courses = list(canvas.get_courses()) # --> lists all courses you've taken
+    courses = list(canvas.get_courses()) if personal_courses else \
+                                        pd.read_csv('misc/courses.csv') 
+    courses = courses if personal_courses else \
+                    courses.id.tolist()
+    s = canvasDuoLogin()
+    for course in courses:
+        scrapeEdPostsForCourse(s, canvas, course.id if personal_courses else course)
 
-course = getCourse(canvas, 24870)
+if __name__ == '__main__':
+    scrapeEdPosts(False)
+
+# canvas  = Canvas(API_URL, API_KEY)
+# courses = list(canvas.get_courses()) # --> lists all courses you've taken
+# course = getCourse(canvas, 24870)
 # course = getCourse(canvas, 51447)
-s = canvasDuoLogin()
-ed_course_id, xtoken = EdCourseAuthenticationThroughCanvas(s, course.id)
-# write(r.text, overwrite=True)
+# course = getCourse(canvas, 28427)
+# s = canvasDuoLogin()
+# scrapeEdPostsForCourse(s, canvas, course.id)
 
-# threads = requestAllThreads(ed_course_id, xtoken)
-# thread_ids = [thread['id'] for thread in threads]
+# ed_course_id, xtoken = EdCourseAuthenticationThroughCanvas(s, course.id)
 
-# t = getThread(437166, xtoken)
-# write(t.format(), overwrite=True)
-# scrapeEdPostForCourse('test', xtoken, 437166)
-folder = os.path.join('testing_ed', sanitize(course.name))
-scrapeEdPostsForCourse(folder, ed_course_id, xtoken)
-
-    
-# page = 30
-# r = requests.get(f'{ED_URL}/api/courses/{ed_course_id}/threads',
-#                  headers = {'x-token': xtoken}, params = {'sort': 'new', 'limit': page,
-#                                                           'offset': page*0})
-# threads = r.json()['threads']
-# titles = [thread['title'] for thread in threads]
-# ids = [thread['id'] for thread in threads]
-
-
+# xtoken = EdLogin()
+# thread_id = 3032849
+# scrapeEdPostForCourse('testing', xtoken, thread_id)
+# r = requests.get(f'{ED_URL}/api/threads/{thread_id}',
+#                     headers = {'x-token': xtoken})
 # writeJson(r.json())
 
-# r = requests.get(f'{ED_URL}/courses/{ed_course_id}', headers = {'x-token': xtoken})
+# threads = getThread(1859828, xtoken)
+
+# r = requests.get(f'{ED_URL}/api/threads/{1859828}',
+#                     headers = {'x-token': xtoken})

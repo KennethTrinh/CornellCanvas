@@ -1,0 +1,63 @@
+<h1>
+ Title: The new-expression cannot be used on interfaces. But we're able to assign variables to an interface? Do I have that correct
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-05T06:00:13.585613+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I don't understand why we can assign variables to an interface but not declare a variable as an interface
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Suppose we have this:
+ </paragraph>
+ <paragraph>
+  interface I1 {...}
+  <break>
+  </break>
+  class C implements I1{}
+ </paragraph>
+ <paragraph>
+  and somewhere we write
+ </paragraph>
+ <paragraph>
+  I1 b= new C{...};
+ </paragraph>
+ <paragraph>
+  The object created looks as shown below. It has three partitions, for superset class Object, class C, and interface I1. In evaluating the new-expression   new C{...} this object is created and a pointer to it is used as the value of the new-expression. Assignment to variable b requires an upward cast to I1, which is inserted automatically since it is an upward cast. Then the pointer to the object is stored in b.
+ </paragraph>
+ <paragraph>
+  This means that b points at the whole object. However, since b's (static) type is I1, by the Compile-time reference rule, the only method calls like  b.m(...) that can be compiled are ones in which m is declared in interface I1 or in class Object.
+ </paragraph>
+ <pre>       Object
+          |   I1
+          |  /
+          | /
+          C
+</pre>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

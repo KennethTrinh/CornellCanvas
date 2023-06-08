@@ -74,6 +74,9 @@ def scrapeQuizzesForCourse(canvas, course_id):
     """
     quizzes_downloaded = set()
     course = getCourse(canvas, course_id)
+    if not course:
+        print(f'Course not accessible for course: {course_id}')
+        return
     course_name = sanitize(course.name) if hasattr(course, 'name') else f'MISC_{course.id}'
     folder = os.path.join('data', course_name)
     session = canvasDuoLogin()

@@ -1,0 +1,99 @@
+<h1>
+ Title: A5 menu_listing Function [\t vs \n]
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-03T16:09:53.236874+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was just wrapping up the assignment and working with the dictionary version of the file, when I noticed that in the menu_listing function, there's a comment that alludes to the fact that changing the separator from '\t' to '\n' could be ideal. The menu with \n is overall easier to read, but I end up with the following error when I attempt to do a showdown between any two college while \n is active:
+ </paragraph>
+ <pre>Traceback (most recent call last):
+  File ".\showdown_time_a5.py", line 111, in &lt;module&gt;
+    c1 = sdu.college_named(cnames[int(cnums[0])], colleges)
+IndexError: list index out of range
+</pre>
+ <paragraph>
+  I was wondering if changing menu_listing to use \n as a separator rather than \t is required for the assignment, or if it is an aesthetic choice we can choose to make.
+ </paragraph>
+ <paragraph>
+  Regardless of whether or not it's required, I'm genuinely curious why a seemingly innocuous change immediately breaks the functionality of the code.
+ </paragraph>
+ <paragraph>
+  Thanks!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Hansol (Hannah) Lee (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Great observation! First, changing to \n isn't required for the assignment, so you don't need to worry about making it work with \n.
+ </paragraph>
+ <paragraph>
+  Changing the separator to \n in menu_listing breaks the program because the choice of \t is already hardcoded in another part of the code (in showdown_time_a5.py). A quick fix to make it work again would be to change line 87 in showdown_time_a5.py so that it uses \n, not \t, to split the given list m. Here's the relevant part of the code:
+ </paragraph>
+ <snippet language="py" line-numbers="false" runnable="false">
+  <snippet-file id="code">
+   # Technical: make cnames a list of names from the menu_listing `m`
+cnames = []
+for s in m.split("\t"): # line 87: change to for s in m.split("\n"):
+    cnames.append(s[s.index(' ')+1:])
+  </snippet-file>
+ </snippet>
+ <paragraph>
+  Now, here's how we could debug this issue. The given error message shows that there is an IndexError at line 111 in showdown_time_a5.py: c1 = sdu.college_named(cnames[int(cnums[0])], colleges). This tells us there must be something wrong with the list (cnames) and/or the index (cnums[0]).
+ </paragraph>
+ <paragraph>
+  So, the next thing we could do is to check the actual values of cnums and cnames using print statements to see what may be causing the IndexError. It turns out cnames has the value ['B', 'A', 'D', 'E'] when using \t in the menu_listing function, but it has the value ['B\n1: A\n2: D\n3: E'] when using \n in the same function.
+ </paragraph>
+ <paragraph>
+  We would then look at how cnames is being created, which is happening at lines 86-88 in showdown_time_a5.py, and find that line 87 assumes that the input string m can be split by \t. If we change the separator from \t to \n in menu_listing, we then need to also change the separator for the split function in showdown_time_a5 accordingly.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you so much for your response! This all makes more sense now
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Hansol (Hannah) Lee (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Glad it helped!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,125 @@
+<h1>
+ Title: Confused on p(x|y=1) in P5 naivebayesPXY_mle
+</h1>
+<h3>
+ Author: Megan Yin (student)
+</h3>
+<h3>
+ Date: 2021-04-18T04:52:58.336209+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  In the naivebayesPXY_mle function we are asked to return a 1xd vector for each of p(x|y=1) and p(x|y=-1) . However, what does the x refer to? In the slides we have P(X_i = x | Y = y) but upon inspection, the features of X can take more than just binary values. So what is the X_i = x part in p(x|y=1)?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Lucy Lu (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think the 1xd vector represents a histogram-like probability distribution of how often a letter appears in the given dataset.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Justin Lee (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Your x's in the problem are essentially a letter within the English alphabet. The reason why you want a 1xd vector is because you need to have the conditional probabilities of a letter appearing  or $P(X_i=x | y = \pm1)$.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Mahika Phutane (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Since the letter can appear more than once, couldn't this also be a case:
+ </paragraph>
+ <math>
+  P(X_i=2\ |\ y=\pm1)
+ </math>
+ <paragraph>
+  But, since we want a 1d array, we can't count the # of occurrences for each letter. So is the goal to calculate whether the letter appears or not? i.e.
+ </paragraph>
+ <math>
+  P(X_i\ge1|\ y=\pm1)
+ </math>
+ <paragraph>
+  ?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Drake Schiller (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think it's simpler than that. You're just trying to find the probability of a letter occurring given a label. So for the 1d array posprob, the first element would be the probability of finding an 'a' given y = +1 across the whole dataset.  Not sure if this is what Justin meant though.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Megan Yin (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am also wondering this because it seems each feature can only have one value in the resultant posprob/negprob array but by your suggestion @justin we would $k$ entries for each letter that a feature could be
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Justin Lee (staff)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Well each feature in the training set is a bag of letters so to say. You are essentially finding the $$P(X_{i} \geq 1 | y =\pm 1)$$. This is equivalent to finding $$P(X_{i} = x| y =\pm 1)$$ for a letter x
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,105 @@
+<h1>
+ Title: Prelim II 2017 Q3
+</h1>
+<h3>
+ Author: Ariana Haghighi (student)
+</h3>
+<h3>
+ Date: 2021-11-18T11:51:39.760898+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why is iii linear? Consider the decent finite duration signal x(t) = t^2 for 0&lt;=t&lt;5 else zero. How is this closed under linear combos? Isn't this signal by definition quadratic, not linear?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Guadalupe Bernal (None)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  As far as I understand, to be closed under linear combos doesn't mean that the signal itself is linear, just that it can undergo linear combinations. If x1 and x2 are both in the given set,
+ </paragraph>
+ <paragraph>
+  x1 = t^2 for 0&lt;=t&lt;5 else zero
+ </paragraph>
+ <paragraph>
+  x2 = 2t^2 for 0&lt;=t&lt;5 else zero
+ </paragraph>
+ <paragraph>
+  We can make x3 a linear combo of x1 and x2 as follows
+ </paragraph>
+ <paragraph>
+  x3 = x1 + x2 = 3t^2 0&lt;=t&lt;5 else zero
+ </paragraph>
+ <paragraph>
+  Here you can see that the resulting signal x3 still belongs to the set of all decent finite-duration continuous-time signals. Another linear combo would be simply multiplying x1 by 2, the solution would still be in the set.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Just to add: a single signal is never closed under anything.  "Closed under [fill in operation]" applies to sets of things on which [operation] is defined.  For us, the bulk of our encounters with this have been assertions about whether a set $X$ of signals is
+ </paragraph>
+ <paragraph>
+  = closed under linear combos, meaning that when $x _ 1$ and $x _ 2$ are in $X$, then so is $c _ 1 x _ 1 + c _ 2 x _ 2$ for all constants $c _ 1$ and $c _ 2$
+ </paragraph>
+ <paragraph>
+  = closed under shifting, meaning that when $x \in X$ and $t _ o \in \mathbb{R}$ (or $k _ o \in \mathbb{Z}$ in discrete time), then ${\rm Shift} _ {t _ o} ( x ) \in X$ (or ${\rm Shift} _ {k _ o} ( x ) \in X$).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Ariana Haghighi (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ok this makes sense, I was treating the example signal as if it were a system.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  .... and individual systems aren't closed under anything, either.  Only sets of things can be closed under stuff.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

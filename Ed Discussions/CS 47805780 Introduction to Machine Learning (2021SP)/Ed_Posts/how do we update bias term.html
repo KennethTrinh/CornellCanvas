@@ -1,0 +1,73 @@
+<h1>
+ Title: how do we update bias term
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-08T20:33:11.880562+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  w is updated once perceptron encounters an error, i.e.
+ </paragraph>
+ <math>
+  y\left(\vec{w}\cdot\vec{x}\right)\le0
+ </math>
+ <paragraph>
+  what about scenario b != 0? how do we update b
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For each x, b is just an additional 1 in the last term. You should treat it like any other x_i in updating perceptron.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Janet Chen (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What do you mean by an additional 1 in the last term?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For example, if a point we had already was x_i=(x_i0, x_i1, ..., x_in) we append a 1 to the end, so now x_i=(x_i0, x_i1, ..., x_in, 1)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

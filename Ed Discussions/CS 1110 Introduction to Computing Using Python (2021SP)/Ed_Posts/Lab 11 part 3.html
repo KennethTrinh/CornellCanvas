@@ -1,0 +1,93 @@
+<h1>
+ Title: Lab 11 part 3
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-27T08:23:47.542078+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi I keep getting this error in lab 11 part 3
+ </paragraph>
+ <paragraph>
+  assert_true: expected True got False Line 102 of .\cardstuff_test.py: cornellasserts.assert_true(hand[i] &gt; hand[i+1]) Quitting with Error
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  I have completed the helper functions and have the drawn cards part of draw_poker_hand done. I just do not know how to incorporate less_than.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Thank you
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Nick Araya (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  hey im not a TA and idk if this is exactly what you're talking about but here are a few things:
+ </paragraph>
+ <paragraph>
+  1) i dont think i ended up incorperating the less_than into the draw_poker_hand
+ </paragraph>
+ <paragraph>
+  2) it looks like ur draw_poker_hand function is failing on line 102 at the part where it checks to see if the cards are in reverse sorted order. so i'd recommend going into your code and making sure you have taken appropriate measures to like do those things if that makes sense.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  With respect to the
+  <code>
+   less_than
+  </code>
+  function:  good question, OP (original poster!), We could have added more explanation --- although we have to trade off the fact that some students prefer less text.
+  <break>
+  </break>
+  <break>
+  </break>
+  The lab sentence "We'll use your
+  <code>
+   less_than()
+  </code>
+  function to sort cards properly." actually means (and there is no way you should have known this): "The way we wrote the class Card, it has a sort-related function that calls
+  <italic>
+   your
+  </italic>
+  <code>
+   less_than()
+  </code>
+  function."
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

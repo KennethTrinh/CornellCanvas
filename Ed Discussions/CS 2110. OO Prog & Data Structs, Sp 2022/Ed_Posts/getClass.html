@@ -1,0 +1,57 @@
+<h1>
+ Title: getClass
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-08T02:09:02.458645+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm having a bit of trouble understanding this part. I remember getClass() is to check the dynamic type, then in this function below, if getClass() = ob.getClass() returns true, doesn't it means that ob is already class Point? Why should we still need to downcast ob to Point and then check the variables? Thanks!
+ </paragraph>
+ <figure>
+  <image height="281.1514543630893" src="https://static.us.edusercontent.com/files/hIwtnOssN3hkJuhHBlfTQACP" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  1. No, in general, it doesn't mean the are both class Point. It means they have the same bottom-partition name. For example, there might be a subclass of Point.
+ </paragraph>
+ <paragraph>
+  2. Have you heard of the compile-time reference rule? What does it say about a reference  ob.x?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

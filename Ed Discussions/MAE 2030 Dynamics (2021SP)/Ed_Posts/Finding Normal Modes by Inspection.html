@@ -1,0 +1,69 @@
+<h1>
+ Title: Finding Normal Modes by Inspection
+</h1>
+<h3>
+ Author: Alison Candy (None)
+</h3>
+<h3>
+ Date: 2021-03-03T12:59:34.963041+11:00
+</h3>
+<h3>
+ Category: Concepts
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I've done a few problems on practice problems that involve finding normal modes by inspection, rather than by finding them through eigenvalue and eigenvector calculations. I understand, in some cases, how to find the shape of the mode by using symmetry of the system. However, I'm still a little confused on how to find the frequency by introspection. I know that it is usually a multiple of root k/m, but am not sure how to find this multiple. Does it have something to do with the equivalent spring constant on each mass, or of the entire system?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Andy Ruina (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Finding an eigenvector $[v]$ of a matrix $[A]$ from eigenvalue $\lambda$ is a bit of a chore, you have to solve a set of equations.
+ </paragraph>
+ <paragraph>
+  However finding an eigenvalue $\lambda$  from an eigenvector $[v]$ is trivial.
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  You know that $$[A][v] = \lambda [v]$$.
+  <break>
+  </break>
+  And you know $[A]$,  and $[v]$.   So, just look at the first element of $[A][v]$ and compare it with the first element of $[v]$ and the ratio is $\lambda$ which is $\omega^2$ (Assuming $[A] = [M]^{-1} [K]$).
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Another more physical, and less easy, method is to look at any one mass. Say, it's mass 3.  Look at the eigenvector's, say, 2d, 3rd and fourth elements, call them $v_2, v_3$ and $v_4$. Consider those as displacements.  Then calculate the net force  $F_3$ on mass 3 with those displacements (using the spring constant and the stretches you calculate).   Then calculate the 'effective' spring constant for mass three for that mode  $k_3^{eff} = F_3/v_3$.  Then the frequency of vibration of that mode is
+ </paragraph>
+ <paragraph>
+  $$\omega
+  <underline>
+   = \sqrt{k_
+  </underline>
+  3^{eff}/m_3}$$.
+  <break>
+  </break>
+  <break>
+  </break>
+  You will get the same answer no matter which mass you use.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

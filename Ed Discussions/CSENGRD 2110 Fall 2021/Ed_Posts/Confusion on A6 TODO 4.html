@@ -1,0 +1,90 @@
+<h1>
+ Title: Confusion on A6 TODO 4
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-28T02:56:17.579665+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm still confused about what is meant about drawing the target at its current location on top of a default JPanel background. What is meant by deferring to a superclass in order to provide a default. Also, as per drawing the target itself, I see that in the inner class Target there are fields that provide the x and y coordinates of the Target's location but I'm unsure how to actually use those for the purposes of the TODO specification.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  1. This is in paintComponent. Deferring to the superclass means calling the superclass method by that name.
+ </paragraph>
+ <paragraph>
+  2. Look at methods of class Graphics, since g, of class Graphics, will be used to draw items using g. You don't have to be concerned where these are drawn, Graphics G knows that.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Samuel Reveiz (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm still a little unsure about what providing a default means. Does this refer to the color of the background for an inactive game?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The superclass,
+  <code>
+   JPanel
+  </code>
+  , already knows how to paint itself, and it will do so by drawing an appropriate background that blends in with the rest of the window (adapting to the current "look-and-feel" settings).  You could consider this the "default" look of a component derived from JPanel.  When a game is active, we want to start with that default look, then draw on top of it.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Samuel Reveiz (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  thank you, that was very helpful!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

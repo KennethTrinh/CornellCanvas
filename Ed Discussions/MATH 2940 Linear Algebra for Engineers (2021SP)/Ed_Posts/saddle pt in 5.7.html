@@ -1,0 +1,62 @@
+<h1>
+ Title: saddle pt in 5.7
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-27T13:07:38.445331+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm having trouble understanding how negative eigenvalues represent attraction. Given a negative eigenvalue of magnitude &gt;1, aren't we repelled from the origin, because as k grows large, the negative eigenvalue's magnitude grows large?
+ </paragraph>
+ <paragraph>
+  For instance, given $\lambda_1 = -2$ wouldn't the solution jump back and forth through the origin as we increment k, since $(-2)^1 = -2$, and $(-2)^2 = 4$, so to go from k=1 to k=2 we approach the origin and exit twice as far out?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Phillip Jang (staff)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  You're confusing the conditions of differential equation (5.7) and dynamical system (5.6). They are not the same.
+ </paragraph>
+ <paragraph>
+  In differential equations, the eigenvalues appear in the exponent of the general solution
+ </paragraph>
+ <paragraph>
+  $$\vec{x}(t) = c_1e^{\lambda_1t}\vec{v}_1 + c_2e^{\lambda_2t}\vec{v}_2$$
+ </paragraph>
+ <paragraph>
+  Hence attraction occurs on $Span\{\vec{v}_i\}$ as $t \rightarrow \infty$ if $\lambda_i&lt;0$.
+ </paragraph>
+ <paragraph>
+  Contrast this with the dynamical system where the eigenvalue is the base of the exponent itself
+ </paragraph>
+ <paragraph>
+  $$\vec{x}_k = c_1\lambda_1^k\vec{v}_1 + c_2\lambda_2^k\vec{v}_2$$
+ </paragraph>
+ <paragraph>
+  where attraction occurs on $Span\{\vec{v}_i\}$ as $k \rightarrow \infty$ if $|\lambda_i|&lt;1$.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

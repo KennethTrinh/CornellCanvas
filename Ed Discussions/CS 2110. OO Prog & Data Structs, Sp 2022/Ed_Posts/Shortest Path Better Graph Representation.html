@@ -1,0 +1,56 @@
+<h1>
+ Title: Shortest Path Better Graph Representation
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-16T06:05:09.470745+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  For Dijkstra's shortest path algorithm, which representation of the graph leads to a better execution time: adjacency matrix or adjacency list?
+ </paragraph>
+ <paragraph>
+  I was thinking adjacency matrix would be better since it is O(1) for the expected time to get the distances d[n] for node n. Is this a correct way to think about this?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Neha Sunkara (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  It depends on how dense or spare the graph is. If the graph is dense (you will most likely use an adjacency matrix to implement a dense graph) then the execution time of the shortest path is O(n^2logn). If the graph is sparse and you use an adjacency list to implement it, then the execution time is O(nlogn). I hope this helps!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  That makes a lot of sense now! Thank you so much!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

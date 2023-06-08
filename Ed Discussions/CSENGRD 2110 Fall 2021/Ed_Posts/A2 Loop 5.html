@@ -1,0 +1,67 @@
+<h1>
+ Title: A2 Loop 5
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-15T09:33:41.481475+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Do we need to use the form c*2^y in our answer?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  I read the pinned post but it didn't clarify whether we needed to follow the javadoc comment or the comment under the method header. One says return the value of c the other says return n.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why should you need that? c and y are NOT program variables. They are "thought" variables used in describing the algorithm.
+ </paragraph>
+ <paragraph>
+  Look at the spec (revised as per the item in pinned note Assignment A2);\:
+ </paragraph>
+ <paragraph>
+  Any positive integer n can be written in this form: c*2^y, where
+  <break>
+  </break>
+  c &gt; 0 and c is odd and y &gt;= 0.  Return the value c.
+ </paragraph>
+ <paragraph>
+  Your program does not have to have a variable x. Suppose n is  5 * 2^4 = 5*16 = 80. Then return the value 5.
+ </paragraph>
+ <paragraph>
+  Now look at what the hint in the method says to do:
+ </paragraph>
+ <paragraph>
+  Write a while-loop that continually divides n by 2 until n is odd. Then return n.
+ </paragraph>
+ <paragraph>
+  Suppose n = 2*2^4 = 80. If you divide n by 2 4 times you get n = 5*2^0 = 5, which is the value that should be returned.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

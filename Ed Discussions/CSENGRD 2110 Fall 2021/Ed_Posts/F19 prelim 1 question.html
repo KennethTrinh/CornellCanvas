@@ -1,0 +1,97 @@
+<h1>
+ Title: F19 prelim 1 question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-03T04:03:15.352217+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For 2g, can anyone explain why the second line is yes but the third and fourth line are no?
+ </paragraph>
+ <figure>
+  <image height="297.6443812233286" src="https://static.us.edusercontent.com/files/GsdZPf0euVmpyc5nCOVsrt7a" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You will do better on these it you take the time to draw the objects.
+ </paragraph>
+ <paragraph>
+  Second line: b is class B. Class b implements I2. Therefor, and upward cast, or coercion, from B to I2 will inserted.
+ </paragraph>
+ <paragraph>
+  Third line: This would require a cast from i1 to I2. that is not an upward cast, so it won't be inserted automatically, and this is illegal.
+ </paragraph>
+ <paragraph>
+  Fourth line: Here, the expression (I1) i1 has (static) type I1. So this is similar to the second line; a cast from I1 to I2 will not be inserted.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  So would i1 point to the same object as b? If so, wouldn't i1 be able to implement I2?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It has nothing to do with that. Only upward casts are inserted when necessary, and a cast from i1 to i2 is not an upward cast. PLEASE draw an object of class b.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

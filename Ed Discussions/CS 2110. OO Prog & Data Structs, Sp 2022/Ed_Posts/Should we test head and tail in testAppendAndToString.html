@@ -1,0 +1,59 @@
+<h1>
+ Title: Should we test head and tail in testAppendAndToString?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-28T04:41:01.47252+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Because we are unable to access/instantiate the private innerclass Node...
+ </paragraph>
+ <paragraph>
+  to test that head and tail are correct, we must save their memory location to a String with head(), or tail()...
+ </paragraph>
+ <paragraph>
+  Do we need to do this or is this overkill?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="1.0">
+ <paragraph>
+  Testing it directly is overkill, your tostring and the method that checks for the string reverse ( i think tostringrev) should access the head and tail (which in turn tests for the head and tail but indirectly)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

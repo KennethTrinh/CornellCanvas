@@ -1,0 +1,42 @@
+<h1>
+ Title: Notify()
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-05T13:11:44.170116+10:00
+</h3>
+<h3>
+ Category: Homeworks
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  On question 9 of the multiple choice it asks  whether the system will call notify() if a  thread that completed didn’t call notify() or notifyAll().
+ </paragraph>
+ <paragraph>
+  A thread moves off the waitlist when notify() is called. The javahypertext says that if the state of the object changes, then the thread tries to execute again. Does this mean that a thread does not need to call notify() because the while loop condition will check whether the state of the Dropbox changed or not?
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  No. The person waits on the waitlist until taken off by notify() or notifyAll().
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

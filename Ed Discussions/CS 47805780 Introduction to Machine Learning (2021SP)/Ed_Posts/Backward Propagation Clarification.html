@@ -1,0 +1,67 @@
+<h1>
+ Title: Backward Propagation Clarification
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-28T13:36:47.143095+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="322.20648967551625" src="https://static.us.edusercontent.com/files/hBg4fnQYdwmHmj7Of33a0YQC" width="658"/>
+ </figure>
+ <paragraph>
+  I want to make sure that I'm understanding backward propagation correctly. My understanding is that this refers to both the forward pass and backward pass. The forward pass predicts all of the s_i and v_i's going in order starting with the first layer. After all of these have been determined, we then go backwards through the layers using the s_i and v_i from the respective layer to update the weight vector. It does this by subtracting the gradient times the step size. It then computes the loss of the layer, so that it can use this loss to compute the gradient.
+ </paragraph>
+ <paragraph>
+  Questions:
+ </paragraph>
+ <paragraph>
+  1) Is backward pass giving us one final set of weights for the entire neural network? Or is it giving us a set of weights for each layer?
+ </paragraph>
+ <paragraph>
+  2) My understanding is that we are getting one final set of weights, so this leads me to another confusion. I don't fully understand how taking a gradient and updating the weights from the last layer and going to the first makes intuitive sense. I thought the weights were different on purpose for each layer?
+ </paragraph>
+ <paragraph>
+  3) The video says running backward pass over all the layers is the same as taking one stochastic gradient step. What does this mean? In the other videos it looked like we needed to take multiple stochastic gradient steps to get to a good prediction, so how would we do that?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Yu (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Your understanding on the forward pass is correct, but it seems like the backward part is a bit confusing.
+ </paragraph>
+ <paragraph>
+  (1) actually, we are calculating a gradient on each weight layer during a full backward pass. Suppose you have a NN with 2 layers, 1 has 3 weights and the other has 5, you will have a gradient (the direction we will be changing these weights) of the loss with respect to each and every one of them (it is just so happened that we can represent all the gradients for weights in the same layer as one vector). A single forward-backward pass does NOT generate new set of weights, instead, it only finds out gradients that it believes each of these weights should be changed towards.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  (2): it definitely does not make sense to have 1 value for weight for all nodes in NN, so you are right about the concern. As mentioned above, we have graidents (that are typically different) value for each and every weight in the network. After many iterations, we (hopefully) will arrive at a state that a full pass like this will not help increase the accuracy of the model and that NN (and its weights) is the final model we will use.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  (3): Hopefully, pt2 has already resolved this question! each forward-backward pass will only change the model weight a little (just like GD for SVMs), after many iterations we will have a good model.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

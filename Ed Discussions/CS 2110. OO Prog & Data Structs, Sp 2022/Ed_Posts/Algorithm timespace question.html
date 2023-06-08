@@ -1,0 +1,67 @@
+<h1>
+ Title: Algorithm time/space question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-18T17:00:58.751696+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is time complexity the same thing as space?
+ </paragraph>
+ <paragraph>
+  For example, is an algorithm that has a constant time complexity the same thing as an algorithm that can be done in constant space?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  time complexity is about the time it takes to execute the algorithm.
+ </paragraph>
+ <paragraph>
+  space complexity is about the extra space the algorithm takes while executing.
+ </paragraph>
+ <paragraph>
+  They are different.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Clarkson (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  And our very own Prof. John Hopcroft
+  <link href="https://dl.acm.org/doi/abs/10.1145/322003.322015"/>
+  proved in 1977 that an algorithm that runs in O(f(n)) time also runs in O(f(n)) space!  Rough intuition: if the algorithm can use at most O(f(n)) time, then during that time it can access at most O(f(n)) space, but not more.  Because to access more space, it would need more time!
+ </paragraph>
+ <paragraph>
+  If this sort of thing interests you, take CS 4810.  Lots of neat results in that class about how hard it is to compute various algorithms.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

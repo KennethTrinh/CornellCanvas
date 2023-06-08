@@ -1,0 +1,60 @@
+<h1>
+ Title: Fermi Energy Level
+</h1>
+<h3>
+ Author: Courtney Golden (student)
+</h3>
+<h3>
+ Date: 2022-01-31T03:55:07.50931+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In class, we said that the Fermi energy level is defined as the energy level for which there is a 50% probability of an electron being below that level and a 50% chance of the electron having an energy above that level. I am confused on why the Fermi energy level is always located between E_c and E_v in our energy diagrams.
+ </paragraph>
+ <paragraph>
+  In the case of an n-type extrinsic semiconductor, we drew the Fermi level as between E_c and E_v but closer to E_c. However, when we drew curves to indicate the carrier distribution, there is no density between E_v and E_c. How, then, does moving the Fermi energy level upwards in that middle region cause any more electron density to be located below the line than when the Fermi energy level is exactly in the middle between E_c and E_v? Why would we not need to move the Fermi energy level up past E_c so that more area under the density curves we drew is located beneath the Fermi energy level line?
+ </paragraph>
+ <figure>
+  <image height="171" src="https://static.us.edusercontent.com/files/HBT1eva3zTW0Jek26ih1D4JH" width="200"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Hyunjea Lee (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, I believe this is a very good and important question. As you pointed out, as you n-dope the semiconductor more and more, Ef approaches Ec. Ef can be actually placed above Ec if you heavily dope the semiconductor. This is called degenerately doped semiconductor. You can think of this as a special case, and the transistor equation you are gonna learn in this class does not work in degenerately doped semiconductors, so let's assume in most cases Ef is somewhere between Ec and Ev.
+ </paragraph>
+ <paragraph>
+  Yes. If your semiconductor is ideal, there's no allowed states in the forbidden gap (between Ec and Ev). But you can still change the free electron density by moving Ef in that regime if the temperature is not 0 K. The energy band diagram you drew shows the Ef location and the electron and hole concentration in the conduction and valence band respectively. When you count the number of carriers in the conduction and valence band, you need to consider two things: density of states function and probability function.
+ </paragraph>
+ <paragraph>
+  The attached figure shows the carrier concentrations in intrinsic, n-doped, and p-doped semiconductors. The electron concentration is determined as N(E) * f(E), density of states function times the occupation probability. There should be states to occupy (density of states), and the probability to have carriers at the energy level (probability function) should be as well. You need to make sure there are enough seats for carriers (density of states) and carriers can reach there to sit (probability function) to make them located. In the bandgap, because DOS is zero, there's no concentration.
+ </paragraph>
+ <paragraph>
+  Even though the Ef is located inside the bandgap, because the finite tails of probability function at large energies, electrons can be located in the conduction band. As you change the Ef position, the probability tail penetrated into the conduction band changes, and thus the electron concentration changes accordingly. The same thing is applied to holes, but the hole is from a broken bond (lack of electron), the probability function for holes is 1 - f(E).
+ </paragraph>
+ <paragraph>
+  The figure is from Streetman, Ben G., Solid state electronic devices - 5th ed., Prentice Hall
+ </paragraph>
+ <figure>
+  <image height="738" src="https://static.us.edusercontent.com/files/PmTBFYNnF3eirFfhyDofgfCU" width="658"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,61 @@
+<h1>
+ Title: why this is worst case
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-10T13:15:15.803716+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="387.0588235294117" src="https://static.us.edusercontent.com/files/1bmePYd5aNBxHhfN5cOj057U" width="657.9999999999999"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  In this case, if j is the smallest value, what's the next step? We can't do QS(b, h , j-1) anymore, since that would be out of range?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You CAN "do" QS(b, h , j-1). In this case, b[h..j-1] is the empty segment, with 0 values, and that's a base case --the recursive call terminates immediately.
+ </paragraph>
+ <paragraph>
+  THEN the call QS(b, j+1 , k) is executed.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  thank you!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

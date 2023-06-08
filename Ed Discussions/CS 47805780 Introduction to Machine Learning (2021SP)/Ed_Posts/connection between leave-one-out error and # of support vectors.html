@@ -1,0 +1,43 @@
+<h1>
+ Title: connection between leave-one-out error and # of support vectors
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-19T00:49:23.768884+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="136" src="https://static.us.edusercontent.com/files/DwQCElMWNA5NMc6u9ENXSIAN" width="456"/>
+ </figure>
+ <paragraph>
+  Why is it that, if our # of support vectors is small, then we can be sure our leave-one-out error will be small?
+ </paragraph>
+ <paragraph>
+  I'm trying to understand this intuitively. Is it because, if we have a large number of support vectors, then there is a greater chance that more training examples are training errors, and so there is a greater chance that we have more leave-one-out errors?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Basically, only the support vectors influence the decision boundary, so if we leave out something that isn't a support vector we know the decision boundary will remain unchanged and it won't be a loo (note misclassified points are support vectors).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

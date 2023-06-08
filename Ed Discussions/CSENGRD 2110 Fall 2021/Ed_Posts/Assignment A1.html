@@ -1,0 +1,305 @@
+<h1>
+ Title: Assignment A1
+</h1>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Date: 2021-09-05T02:11:58.24477+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  This pinned note contains questions and answers concerning assignment A1: Monitoring Elephants. Check this note regularly while doing A1 in case something comes up that requires notifying all students. You are responsible for the information in this note.
+  <break>
+  </break>
+  <break>
+  </break>
+  The due date is on the CMS.
+ </paragraph>
+ <heading level="2">
+  <bold>
+   Frequently asked questions and concerns and typos
+  </bold>
+ </heading>
+ <paragraph>
+  <bold>
+   -3 Typo on page 2 about assert statements
+  </bold>
+  . See below.
+ </paragraph>
+ <paragraph>
+  <bold>
+   -2 For questions on the A1 Auto-Helper, look at post #115.
+  </bold>
+ </paragraph>
+ <paragraph>
+  <bold>
+   -1. When I create a JUnit testing class and then put in an assertEquals or assertThrows statement, I get an error.
+  </bold>
+  See answer below.
+ </paragraph>
+ <paragraph>
+  <bold>
+   0. What if my files are not in package a1?
+  </bold>
+  See answer below.
+ </paragraph>
+ <paragraph>
+  <bold>
+   1. How many times can I submit on the CMS
+  </bold>
+  ? See answer below.
+ </paragraph>
+ <paragraph>
+  <bold>
+   2. I get a warning about my method specification because I am not using @param or @return
+  </bold>
+  .
+  <bold>
+   What do I do?
+  </bold>
+  See answer below.
+ </paragraph>
+ <paragraph>
+  <bold>
+   3. Should we check for situations like if an Elephant is its own child
+  </bold>
+  ? See answer below.
+ </paragraph>
+ <paragraph>
+  <bold>
+   4. Can we add other methods to class Elephant
+  </bold>
+  ? Do not add other methods. There is no need for them.
+ </paragraph>
+ <paragraph>
+  <bold>
+   5. If I want to call constructor 1 from a constructor 2, I can't put assert statements in the beginning of constructor 2. What do I do?
+  </bold>
+  See answer below.
+ </paragraph>
+ <paragraph>
+  <bold>
+   6. Suppose my field for the number of children is nchilds. Since nchilds is private, from Elephant object e (say), how can I reference/change nchilds, the number of children in Elephant object d?
+  </bold>
+  See answer below.
+ </paragraph>
+ <paragraph>
+  <bold>
+   7. May I use fields in ElephantTest to reduce the number of declarations needed in methods in this class?
+  </bold>
+  See answer below.
+ </paragraph>
+ <paragraph>
+  <bold>
+   8. How can I write this in Java? "this Elephant and Elephant e are different"?
+  </bold>
+  See answer below.
+ </paragraph>
+ <paragraph>
+  <bold>
+   9. What do I do if I get the error "The method assertThrows(Class&lt;AssertionError&gt;, () -&gt; {}) is undefined for the type ElephantTest." ?
+  </bold>
+  Press the mouse over the red x to the left. A small window should pop up, and one option in it is to import static org.junit.jupiter.api.Assertions.assertThrows; Select it so that it is imported.
+ </paragraph>
+ <paragraph>
+  <bold>
+   10. Do I need specifications of JUnit testing procedures? Do I have to put comments in them?
+  </bold>
+  No. The important thing is to make the name of the testing procedure indicate what is being tested.
+ </paragraph>
+ <heading level="2">
+  <bold>
+   ANSWERS
+  </bold>
+ </heading>
+ <paragraph>
+  <bold>
+   -3 Typo on page 2 about assert statements
+  </bold>
+  . You see this:
+ </paragraph>
+ <paragraph>
+  <bold>
+   assert
+  </bold>
+  n !=
+  <bold>
+   null
+  </bold>
+  &amp;&amp; name.length() &gt;= 1;
+ </paragraph>
+ <paragraph>
+  It should be the following, where n is the parameter for the name of the elephant:
+ </paragraph>
+ <paragraph>
+  <bold>
+   assert
+  </bold>
+  n !=
+  <bold>
+   null
+  </bold>
+  &amp;&amp; n.length() &gt;= 1;
+ </paragraph>
+ <paragraph>
+  <bold>
+   -1. When I create a JUnit testing class and then put in an assertEquals or assertThrows statement, I get an error.
+   <break>
+   </break>
+  </bold>
+ </paragraph>
+ <paragraph>
+  Press your mouse over the red x before a line with an assertEquals or assertThrows call that shows an error. A window will pop up suggesting the need for an import statement. Select that and let Eclipse put in the import statement.
+ </paragraph>
+ <paragraph>
+  <bold>
+   0. What if my files are not in package a1?
+  </bold>
+ </paragraph>
+ <paragraph>
+  You must put the .java files in package a1; otherwise, your classes will not compile with our grading program and we have great difficulty grading it.
+ </paragraph>
+ <paragraph>
+  To create the package, select directory src in the ExplorerPane and do menu-item File -&gt; New -&gt; package. Once it is created, drag your two .java files to into that package. You may then have to put a package statement at the head of each .java file.
+ </paragraph>
+ <paragraph>
+  <bold>
+   1. How many times can I submit on the CMS
+  </bold>
+  ? Submit as often as you like. Only the last one is graded.
+ </paragraph>
+ <paragraph>
+  BUT DO NOT take this as an opportunity to submit every 3 minutes, submitting 15-20 times.
+  <break>
+  </break>
+  Submit when you know it is done, but if later you see how to do something better, submit again. Don't choke up the system by wantonly submitting every two seconds.
+  <break>
+  </break>
+  Note: the auto-helper will grade only 3 submissions for your group each day.
+ </paragraph>
+ <paragraph>
+  <bold>
+   2. I get a warning about my method specification because I am not using @param or @return
+  </bold>
+  .
+  <bold>
+   What do I do?
+  </bold>
+ </paragraph>
+ <paragraph>
+  Ignore the warnings and delete those @param thingies for now. We don't need them.
+ </paragraph>
+ <paragraph>
+  Read about method specifications in our Style Guidelines: Visit JavaHyperText page and click "Style Guide" in the left part of the top navigation bar.
+  <break>
+  </break>
+  <break>
+  </break>
+  <bold>
+   3. Should we check for situations like if an Elephant is its own child or if an Elephant is awarded in a year that is &lt; 0
+  </bold>
+  ?
+ </paragraph>
+ <paragraph>
+  No. Please implement the spec of each method exactly; do nothing more, nothing less. We are not attempting to create a completely realistic class to be used in a real live situation. We are attempting to teach you about OO in Java with a minimum amount of your time.
+ </paragraph>
+ <paragraph>
+  <bold>
+   4. Can we add other methods to class Elephant
+  </bold>
+  ? Do not add other methods. There is no need for them.
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  <bold>
+   5. If I want to call constructor 1 from a constructor 2, I can't put assert statements in the
+   <break>
+   </break>
+   beginning of constructor 2. What do I do?
+  </bold>
+  <break>
+  </break>
+  If you are not contemplating calling one constructor from another, which hasn't been taught as
+  <break>
+  </break>
+  of this writing, no need to read further.
+ </paragraph>
+ <paragraph>
+  But the answer to this question appears in note #106.
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  <bold>
+   6. Suppose my field for the number of children is nchilds. Since nchilds is private, from Elephant object e (say), how can I reference/change nchilds, the number of children in Elephant object d?
+  </bold>
+ </paragraph>
+ <paragraph>
+  Just do it; you will see that it works. Just use nchilds to reference e's field nchilds. Any method in class Elephant can reference private fields and methods of any object of class Elephant.
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  <bold>
+   7. May I use fields in ElephantTest to reduce the number of declarations needed in methods in this class?
+  </bold>
+ </paragraph>
+ <paragraph>
+  No, don’t do that, for at least three reasons.
+ </paragraph>
+ <list style="ordered">
+  <list-item>
+   <paragraph>
+    You don’t know enough about JUnit testing to do this right.
+    <break>
+    </break>
+    For example, you don’t know the order in which methods are called.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Such fields often create interactions between testing procedures, but those testing
+    <break>
+    </break>
+    procedures should be completely independent of each other.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    A declaration may be far from its use, making it more difficult to understand the methods.
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  Remember, once you write a declaration-assignment, you can easily copy-and-paste it into another method.
+ </paragraph>
+ <paragraph>
+  <bold>
+   8. How can I write this in Java? "this Elephant and Elephant e are different"?
+  </bold>
+ </paragraph>
+ <paragraph>
+  Keyword
+  <bold>
+   this
+  </bold>
+  is a pointer to the object in which it appears. You will learn this soon. So you can write this expression as
+ </paragraph>
+ <paragraph>
+  <bold>
+   this
+  </bold>
+  != e
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

@@ -1,0 +1,221 @@
+<h1>
+ Title: [how do I tell what tests are happening when?] bnf_starts_here testing clarification
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-11T10:49:46.899476+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  When testing bnf_starts_here, is it supposed to have text stating what case is being tested as in num_user_posts and user_paths? I'm just confused if I'm editing my code in the right direction since the cases listed in the error messages are changing but I don't know where in the testing order it is.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We did not include such printouts for everything being tested,  because there are a
+  <italic>
+   lot
+  </italic>
+  of tests in
+  <code>
+   test_bnf_starts_here()
+  </code>
+  ; rather, for that testing function, we only had print statements (actually, assertion messages)  only for when a problem was detected.
+  <break>
+  </break>
+  <break>
+  </break>
+  However, you should feel empowered to add such print statements for all tests, successful or not, if you would find that helpful.
+  <break>
+  </break>
+  <break>
+  </break>
+  As an alternative, you could use the technique suggested in the handout's section 7.1.3,  "Optional: If you want to do additional testing".
+  <break>
+  </break>
+  <break>
+  </break>
+  If you go the route of adding print statements to the function
+  <code>
+   test_bnf_starts_here()
+  </code>
+  , for how to do that and to understand the testing order:  looking at lines 298 through 332, you can see that the testing code is running through some nested for-loops:
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <pre>for u1 in unames:   # possible u1 users
+    for u2 in unames: # possible u2 users
+        if u1 == u2:
+            continue  # skip case where u1 and u2 are the same
+         for k in [1, 2, 3, 4, 5]: # check values of k from 1 to 5 inclusive
+             for post in main_posts:  # for every Post in the main example tree
+                 result = a4.bnf_starts_here(post, u1, u2, k) ### &lt;-- where we call your code</pre>
+ <paragraph>
+  So notice that for each user pair u1 and u2, we first, for k =1, check the results for all the Posts in the main example tree; then, for k=2, check the results for all the Posts in the main example tree, and so on.
+  <break>
+  </break>
+  <break>
+  </break>
+  Note that our error messages have a form like:
+ </paragraph>
+ <pre>                        errormsg = "Wrongly found back-and-forth for users " + \
+                               u1 + " and " + u2 + \
+                               " at Post " + post.tag  + \
+                               " for k=" + str(k)
+</pre>
+ <paragraph>
+  You could create a similar string and print it right before the line
+  <code>
+   result = a4.bnf_starts_here(...)
+  </code>
+  <break>
+  </break>
+  <break>
+  </break>
+  But be warned that would create a lot of input.
+  <break>
+  </break>
+  <break>
+  </break>
+  You could reduce the number of tests being run by altering any of the for-loop headers.
+  <break>
+  </break>
+  For example, here's what I would do to just test the cases of k being 1:
+  <break>
+  </break>
+  I would edit line 302 like this:
+  <break>
+  </break>
+  <break>
+  </break>
+  <code>
+   for k in [1]: #@ change back to: [1, 2, 3, 4, 5]:
+  </code>
+ </paragraph>
+ <paragraph>
+  That "#@" is my own personal marker for "something I commented out that I need to remember to change back".  When I think I'm done with a debugging edit like the above, I undo it.  And I search for any "#@" markers to make sure I didn't forget to undo any other changes.  You can pick your own special marker.
+  <break>
+  </break>
+  <break>
+  </break>
+  Similarly, you could decide you don't want to test all Posts, but just the one at, say, 0.0.1, by changing line 306 to:
+  <break>
+  </break>
+  <break>
+  </break>
+  <code>
+   for post in gnlist2plist(["0.0.1"], main_dict): #@  change back to: main_posts:
+  </code>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you so much for the tips! I just have another question. When I try to print the result or add it to the error message, it gives me a list like
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   RuntimeError: Wrongly found back-and-forth for users A and B at Post 0 for k=1[&lt;post.Post object at 0x000001E69C42BD00&gt;]
+  </snippet-file>
+ </snippet>
+ <paragraph>
+  How should I make it so it's just the post object, or is this a problem with how I wrote my code?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think it's an issue with your code; there shouldn't be a k=1 b-n-f for A and B at Post 0, but your code seems to be returning a list of length 1.
+  <break>
+  </break>
+  <break>
+  </break>
+  (No b-n-f there for k=1 because it would be enclosed in a longer b-n-f starting at the same Post at 0)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jamie Cashman (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  is there any way to decipher the post object at the id given by running the test (where it says [&lt;post.Post obejct at ...&gt;]?
+ </paragraph>
+ <paragraph>
+  Looking at the test case for post 0 from A to B at k=3, I return a list of three post objects with that format, but I can't tell what those posts are and i am getting the "wrongly found" error. I'm fairly certain I am supposed to get a list of 3 objects with this case, but I don't know where to go from here since I'm not sure which posts its returning if not the right ones.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes!  Take a look at the body of function we suggest you might want to use in section 7.1.3 for running a small test.  You can loop through the result, and for each item in the result, print its tag attribute:
+  <break>
+  </break>
+ </paragraph>
+ <pre>def my_own_private_testfn():
+    print("**** Running my own private test function!")
+    [main_tree, main_dict] = main_example_tree()
+    result = bnf_starts_here(main_dict["0"], "A", "D", 2) # replace with whatever test you like
+    if result:
+        print("\tHere's the length-2 back-and-forth I found at 0 for A and D") # change as appropriate
+        for p in result:
+            print(p.tag + " by " + p.author)
+    else:
+        print("No such back-and-forth here!")
+print("**** Done with my own private test function!")
+</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>

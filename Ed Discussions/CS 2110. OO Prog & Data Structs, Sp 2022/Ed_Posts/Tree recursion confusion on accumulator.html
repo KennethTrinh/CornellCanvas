@@ -1,0 +1,40 @@
+<h1>
+ Title: Tree recursion confusion on accumulator
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-19T08:47:39.655998+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  When the method is called recursively, why doesn’t int oldest get reset to 0 every time? How does oldest accumulate if int oldest is set to 0 at the beginning of each call of oldestGen()?
+ </paragraph>
+ <figure>
+  <image height="892" src="https://static.us.edusercontent.com/files/Cec00fHjtS3KdRcVddN2S0Pq" width="1181"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Vladia Trinh (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  oldest is reassigned in the for each loop using a recursive call, so it does end up accumulating.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

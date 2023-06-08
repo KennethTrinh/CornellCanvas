@@ -1,0 +1,129 @@
+<h1>
+ Title: Can you declare a variable of an interface?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-05T10:06:04.983085+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  "If W is an interface, the declaration W e; is illegal."
+ </paragraph>
+ <paragraph>
+  This is false. Why is that? Interfaces can't be initiated right?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes,
+ </paragraph>
+ <paragraph>
+  W e. is legal.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Suppose we have
+ </paragraph>
+ <paragraph>
+  class C implements I1;
+ </paragraph>
+ <paragraph>
+  Then I1 e= (I1) (new C(...));
+ </paragraph>
+ <paragraph>
+  is fine.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  And to clarify, W e is not
+  <bold>
+   initializing
+  </bold>
+  an instance of type W. It is just
+  <bold>
+   declaring
+  </bold>
+  a variable of type W.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  isn’t the variable e in the professors example upcasted to I1 though? If i’m not wrong does that make e an instance of I1 or does upcasting with interfaces work different
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It's still an instance of C. The dynamic type is C. The static type is I1 because that's what we declared it as. Upcasting here is implicit actually, so the (I1) was extra.
+ </paragraph>
+ <paragraph>
+  I1 e= new C(...);
+ </paragraph>
+ <paragraph>
+  would have done the same thing.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  didn’t even know you could have a static type as an interface lol
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,64 @@
+<h1>
+ Title: Lab 13 recursion: sum_it and "incorporate f(sublist, param2, param3, ..., paramn) into accum"
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-05T06:21:27.650756+10:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We're given the advice:
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  "So, for a function
+  <code>
+   f(x,param2, param3, ..., paramn)
+  </code>
+  on a potentially nested list
+  <code>
+   x
+  </code>
+  , the following code structure is common.
+ </paragraph>
+ <pre>        if x is empty or isn't a list or is otherwise un-separable:
+            return the right results for base cases
+        else:
+            accum = some initial value
+            for sublist in x:
+                incorporate f(sublist, param2, param3, ..., paramn) into accum
+            return accum
+           </pre>
+ <paragraph>
+  However, I'm not sure how to "incorporate f(sublist, param2, param3, ..., paramn) into accum" using recursion. I know that we have to sum each element and accumulate this sum, but I do not see how we can do this recursively.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Rachel Brotherton (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  By calling f(sublist, param2, param3, .....) you are using recursion.
+ </paragraph>
+ <paragraph>
+  Consider calling sum_it on the nested list [[1, 2], [3, 4]]. We know that the sum of that function call must be the result of sum_it([1, 2]) plus the result of sum_it([3, 4]). By calling sum_it on the sublists we are using recursion, and by adding them we are accumulating the sum.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

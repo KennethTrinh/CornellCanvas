@@ -1,0 +1,106 @@
+<h1>
+ Title: how to access an object from its attribute?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-14T11:03:11.639623+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  How can I access an object from its attribute? In function `changeTime(self, newtime)`, where I need to see if newtime conflicts with any Course already in a StudentSchedule, how would I be able to first access the object that newtime belongs to?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  <code>
+   newtime
+  </code>
+  here is a string, so it itself doesn't below to any object.
+  <break>
+  </break>
+  <break>
+  </break>
+  But let's say I had a course
+  <code>
+   c
+  </code>
+  , and I wanted to check if its (new) time conflicts with any other course
+  <bold>
+   in the StudentSchedules that c is in.
+  </bold>
+  (I don't care if the new time conflicts for courses in any Schedule that
+  <code>
+   c
+  </code>
+  isn't in.)
+  <break>
+  </break>
+  <break>
+  </break>
+  But conceptually, we need to do the following
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <pre>
+for every schedule that c is in,     <italic># Is there an attribute of <code>c</code> that relates to this information?</italic>
+
+       if that schedule is a StudentSchedule, # <italic>how do we check the type of an object?</italic>
+
+                check if there's any course in that StudentSchedule that conflicts with <code>c</code>: <italic># have you written a conflictsWith() method that can help?</italic> 
+
+                          if so, add a warning to that StudentSchedule. <italic># where are the warnings for a StudentSchedule kept?</italic>
+
+                
+</pre>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  I'm now going to look for a sample worked problem that can be used as an example.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  See (new, pinned) post
+  <link href="https://edstem.org/us/courses/3933/discussion/441069"/>
+  https://edstem.org/us/courses/3933/discussion/441069
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

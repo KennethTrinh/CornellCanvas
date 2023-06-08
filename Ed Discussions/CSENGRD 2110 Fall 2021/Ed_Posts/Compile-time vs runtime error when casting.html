@@ -1,0 +1,45 @@
+<h1>
+ Title: Compile-time vs runtime error when casting
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-05T13:42:49.696328+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  How do you tell the difference between a compile-time and runtime error when casting? I am still a little confused after reading the JHT page
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Varun Gande (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Compile-time error: a downcast is made that doesn’t make sense (e.g. casting from Dog to Cat)
+ </paragraph>
+ <paragraph>
+  Run-time error (aka ClassCastException): a downcast is made that makes sense (e.g casting from Animal to Dog) but the object does not have partition Dog
+ </paragraph>
+ <paragraph>
+  Everything runs smoothly: downcast makes sense and the partition exists
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,48 @@
+<h1>
+ Title: F19 prelim (7:30) Question 6 on Exception Handling
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-05T15:05:48.36913+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For part c), is it correct that an ArrayIndexOutOfBOundsException is thrown at the end of the try block and the exception is caught in the last catch (Throwable e) block?
+ </paragraph>
+ <paragraph>
+  Then for part d), the RuntimeException() created from the new expression is not caught. Is this because once each method call only reaches at most one catch block?
+ </paragraph>
+ <figure>
+  <image height="376" src="https://static.us.edusercontent.com/files/ggflWHTj9PN74YGEM3d1DCqD" width="500"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  <break>
+  </break>
+  Yes your reasoning looks mostly correct, and it’s more of one method call reaches at most one catch block BECAUSE you only have one try block, if the method had multiple try blocks (this would be the equivalent to indenting a bunch of try excepts in python) then you would be able to POSSIBLY catch more errors.
+  <break>
+  </break>
+  Also to make it clearer, the error for the second one is because you try to parseint a string with characters in them
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

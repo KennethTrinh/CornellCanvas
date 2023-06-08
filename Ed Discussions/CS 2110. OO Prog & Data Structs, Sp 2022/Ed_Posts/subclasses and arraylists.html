@@ -1,0 +1,62 @@
+<h1>
+ Title: subclasses and arraylists
+</h1>
+<h3>
+ Author: Young Zheng (student)
+</h3>
+<h3>
+ Date: 2022-03-03T05:16:01.318456+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Let's say Cat is a subclass of Animal
+ </paragraph>
+ <paragraph>
+  Since ArrayList&lt;Integer&gt; is not a subclass of ArrayList&lt;Object&gt;, is ArrayList&lt;Cat&gt; also not a subclass of ArrayList&lt;Animal&gt;?
+ </paragraph>
+ <paragraph>
+  I think the same issue with &lt;ArrayList&gt;Integer and &lt;ArrayList&gt;Object would apply here if they were allowed to be subclasses.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes.
+ </paragraph>
+ <paragraph>
+  To put this notion firmly in your mind, why don't you actually try it in Eclipse somewhere? That would be far better than just taking our word for it. Get used to answering questions yourself using Eclipse.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  In any class, put this:
+ </paragraph>
+ <paragraph>
+  ArrayList&lt;Cat&gt; c= new ArrayList&lt;Cat&gt;();
+ </paragraph>
+ <paragraph>
+  ArrayList&lt;Animal&gt; an= c;
+ </paragraph>
+ <paragraph>
+  somewhere
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

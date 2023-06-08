@@ -1,0 +1,54 @@
+<h1>
+ Title: Question about getters and setters
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-03T08:56:08.798577+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was a little confused about Curran's explanation of getters and setters today. I 100% understand their function, but I don't understand the bullet point "instead of getters and setters... don't use them at all" on the slides.
+ </paragraph>
+ <paragraph>
+  Why would getters and setters be taught if we're instructed not to use them at all? Shouldn't the more general idea be that we should be conscious of which getters and setters we write instead of mindlessly writing them for each field?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When Java first started, people would put a getter and a setter method for all fields. This turns out to be a bad thing from the standpoint of good software engineering principles and our notion of encapulation.
+ </paragraph>
+ <paragraph>
+  The state of an object should be largely hidden from the user. In terms of class Fraction, you hide the numerator and denominator and just provide the fraction itself.
+ </paragraph>
+ <paragraph>
+  So, yes, as you say, don't mindlessly provide all getters and setters. That is what Curran said today in class.
+ </paragraph>
+ <paragraph>
+  And, don't call a method getX(), call it just x().
+ </paragraph>
+ <paragraph>
+  Nowadays, we tend to use the words observers and mutators. An observer is a function that provides some information about the state of an object; a mutator is a method that changes the state. Look those words up in JavaHyperText.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

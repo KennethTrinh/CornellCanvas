@@ -1,0 +1,62 @@
+<h1>
+ Title: BFS checking whether if a node is visited inside the for loop
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-15T13:14:56.564527+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If I have this code:
+ </paragraph>
+ <snippet language="java" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   void bfs(Node start){
+    instantiate Queue named queue;
+    queue.add(node);
+    while(queue is not empty){
+        Node n = queue.remove();
+        n.visited = true;
+        for(Node nb: n.neighbors){
+            if(!nb.visited) queue.add(nb);
+        }
+    }
+    return false;
+}
+  </snippet-file>
+ </snippet>
+ <paragraph>
+  Where I check whether or not a node was visited inside the for loop instead of before the for loop, would it still be correct?
+ </paragraph>
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This loop is not correct.
+ </paragraph>
+ <paragraph>
+  After removing n from the queue, one must check whether n.visited is true, and if no, do nothing; only if it is not visited should one proceed to set its visited status and put its neighbors on the queue.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,105 @@
+<h1>
+ Title: a1 assert statement testing
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-10T06:50:54.876161+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  hi, are we expected to test for different types of assertion errors for a1? or when we're testing our assert statements is it fine to have this same expected value for all of them:
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  assertThrows(AssertionError, () -&gt; this.mom
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You should test as many of your assert statements as you wish. Do enough so that you know you are on the right track.
+ </paragraph>
+ <paragraph>
+  But I don't know what Precondition you are testing in your example.
+ </paragraph>
+ <paragraph>
+  Let's suppose that, in addMom, you have the assert statement:
+ </paragraph>
+ <paragraph>
+  assert mom == null;
+ </paragraph>
+ <paragraph>
+  To test it, you have to create an Elephant object in which mom is NOT null:
+ </paragraph>
+ <paragraph>
+  1. Create an elephant e1.
+  <break>
+  </break>
+  2. Create an elephant m.
+  <break>
+  </break>
+  3. call e1.addMom(m)  so that e1 has a mom.
+  <break>
+  </break>
+  4. Finally, have an assertThrows in which the anonymous function calls e1.addMom(m) .
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you! So then would I create a new testing unit called something like testAssertStatements where I test all of my assert statements? Or should I just test the assert statements under the units that represent the methods where they are defined?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The handout says, if you read it carefully, to do one of the following:
+ </paragraph>
+ <paragraph>
+  1. Write a fifth testing procedure to test all assert statements.
+ </paragraph>
+ <paragraph>
+  OR
+ </paragraph>
+ <paragraph>
+  2. For each method that has assert statements, add tests for them to the appropriate one of the four testing procedures you already have (for groups A, B, C, D).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

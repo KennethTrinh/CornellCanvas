@@ -1,0 +1,88 @@
+<h1>
+ Title: Expression vs Statement
+</h1>
+<h3>
+ Author: Kenisha Stills-Ogburn (None)
+</h3>
+<h3>
+ Date: 2021-09-01T08:41:15.223936+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is it true that the main difference between a procedure call and function call is that the function call returns a value, but the procedure call does not?
+ </paragraph>
+ <paragraph>
+  I haven't really thought about this question until today. Open to any correction or additional clarification.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Thanks
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, that is correct.
+ </paragraph>
+ <paragraph>
+  Consider function max(x, y), which returns an int depending on whether int x is bigger than int y or not. You can use a call max(x, y) in a statement, such as
+ </paragraph>
+ <paragraph>
+  z= max(x, y) + 2;
+ </paragraph>
+ <paragraph>
+  Consider a procedure p(x, y), which DOES something but doesn't return a value. Therefore, the statement
+ </paragraph>
+ <paragraph>
+  z= p(x, y);
+ </paragraph>
+ <paragraph>
+  is syntactically wrong. It won't compile. Because procedure p does not return a result.
+ </paragraph>
+ <paragraph>
+  A procedure call is a statement, not an expression, so it would be written as
+ </paragraph>
+ <paragraph>
+  p(x,y);
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kenisha Stills-Ogburn (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Thank Professor Gries. I'm tracking.
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

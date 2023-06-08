@@ -1,0 +1,57 @@
+<h1>
+ Title: Passing other test cases but census output not matching
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-29T13:04:59.810785+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  My code works for the other 2 test cases but for the census one, it keeps getting a massive output:
+ </paragraph>
+ <paragraph>
+  FYI, here is the internal showdown data Cornell_U vs. Harvard_U accepted at both: 67,83,106,124,157,182,231,242,273,275,276,297,413,425,438,450,500,501,663,666,723,740,755,760,769,794,845,846,887,957,988,1004,1104,1112,1208,1273,1318,1403,1420,1450,1465,1505,1512,1516,1536,1587,1588,1629,1639,1651,1666,1685,1700,1802,1824,1831,1861,1866,1871,1889,1903,1931,1932,2015,2020,2056,2063,2120,2125,2134,2404,2430,2461,2509,2512,2513,2567,2750,2814,2826,2856,2882,2938,2950,2955,2996,3016,383,404,453,548,888,1464,1731,1896,1902,1952,2665 accepted at both, enrolled at Cornell_U: 67,83,106,124,157,182,231,242,273,275,276,297,413,425,438,450,500,501,663,666,723,740,755,760,769,794,845,846,887,957,988,1004,1104,1112,1208,1273,1318,1403,1420,1450,1465,1505,1512,1516,1536,1587,1588,1629,1639,1651,1666,1685,1700,1802,1824,1831,1861,1866,1871,1889,1903,1931,1932,2015,2020,2056,2063,2120,2125,2134,2404,2430,2461,2509,2512,2513,2567,2750,2814,2826,2856,2882,2938,2950,2955,2996,3016 accepted at both, enrolled at Harvard_U: 383,404,453,548,888,1731,1902,1952,2665
+ </paragraph>
+ <paragraph>
+  Cornell_U vs. Harvard_U Number of students accepted at both: 98 Number of such students who enrolled at one of them: 96 % who chose Cornell_U over Harvard_U: 90.62 % who chose Harvard_U over Cornell_U: 9.38
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Elisabeth Finkel (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  If you look at the census data file, student 740 was accepted at Cornell and not Harvard
+ </paragraph>
+ <blockquote>
+  740 &gt;&gt; Boston_U : Accepted ## Carnegie_Mellon_U : Accepted ## Claremont_McKenna_College : Rejected ## Cornell_U : Accepted ## Dartmouth_College : Accepted ## Emory_U : Accepted ## Georgetown_U : Accepted ## Harvard_U : Rejected ## Indiana_U-Bloomington : Accepted ## Northwestern_U : Accepted ## Princeton_U : Rejected ## UIllinois_at_Urbana-Champaign : Rejected ## UPennsylvania : Rejected ## Vanderbilt_U : Accepted ## Washington_U_in_St._Louis : Wait-listed ## Yale_U : Rejected ## enr : Cornell_U
+ </blockquote>
+ <paragraph>
+  but student 740 is appearing in your "accepted at both" printout. Your
+  <code>
+   showdown_time
+  </code>
+  function must be building the list incorrectly - make sure that
+  <code>
+   accepted_at_both
+  </code>
+  contains only students accepted at both schools.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

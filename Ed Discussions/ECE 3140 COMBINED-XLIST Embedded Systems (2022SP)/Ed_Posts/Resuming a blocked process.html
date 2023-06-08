@@ -1,0 +1,157 @@
+<h1>
+ Title: Resuming a blocked process
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-30T16:45:13.114533+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  When a process calls lock() and the lock is locked, we add the process to the lock queue and call process_blocked. When process_select is called with this blocked process, do we update the stack pointer of the blocked process, which means it would start executing after the process_blocked call? If so, does that mean that in the lock function, after we call process_blocked, we should then have the check for if the lock is unlocked?
+ </paragraph>
+ <paragraph>
+  What I'm confused by is where does a blocked process pick up its execution after the lock gets unlocked? Does it start right after the process_blocked call that blocked it, in which case it grabs the lock in that same lock() call, and proceeds? If this is the case, would it also be possible that a blocked process gets unlocked, resumes from the process_blocked call, and the lock is still locked because there was a process in the process queue that got it quicker after the unlock? In this case, we would have to call another process_blocked, and this seems to go on in a loop. Can you help me better understand this flow?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes - you should update the stack pointer. This means that the blocked process (once unblocked) will resume from the call to l_lock(). Given that it's unblocked, no other process should have the lock, and it should have the same functionality as a process trying to obtain the lock for the first time.
+ </paragraph>
+ <paragraph>
+  In regards to your second question, while the PC will point to process_blocked() when the program is switched, the stack pointer for that particular process' stack will still be on l_lock() (as the stack pointer only points to the location within the process' code, and not to any other subsequent call - in terms of assembly, it would be on the
+  <bold>
+   BL l_lock
+  </bold>
+  instruction). When the program gets switched out, given that l_lock() hasn't returned, the stack pointer will still be on l_lock(). Then, when we resume the process, the processor will see the stack pointer on l_lock(), and will resume by executing that line (resulting in another call to l_lock() to acquire the lock)
+ </paragraph>
+ <paragraph>
+  Edit: incorrect on the second part! See comments...
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  "Given that it's unblocked, no other process should have the lock, and it should have the same functionality as a process obtaining the lock for the first time."
+ </paragraph>
+ <paragraph>
+  Are you sure about this? Isn't it possible in a multi-process system that one process gets unblocked, placed at the back of process queue, and some other process higher up in the queue is just about to enter some critical section of the same lock for the first time? So, when we resume execution from the l_lock() call, we will have to check if it is locked again?
+ </paragraph>
+ <paragraph>
+  Edit: I see what you mean by resuming with a new call to l_lock(). Then that means that we restart the lock call, and will have an additional check for it is locked.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yup! It'll check again - the point is it calls l_lock again (I edited my response to make it more clear, thanks!)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hey, just to clarify again: when we call process_blocked, the process will resume by restarting the function call that it was in? Is this true for all context switches, or just process_blocked? Also, how can you tell this happens?
+ </paragraph>
+ <paragraph>
+  Does this mean that if we have a function like fib for large n that takes longer than the PIT interval, it will never finish executing because it will just get restarted over and over?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Whoops, I think I may have gotten this incorrect initially! Apologies - let me start over fresh:
+ </paragraph>
+ <paragraph>
+  When we block a process, the interrupt handler is called. This
+  <bold>
+   does
+  </bold>
+  store the PC as a normal interrupt handler (as well as us storing the SP by modifying the interrupt handler). When a process that has been unblocked is re-scheduled, it will resume from right after the call to process_blocked, as that's where the PC points to.
+ </paragraph>
+ <paragraph>
+  The bug you're referring to in this case (what if another process comes along and takes the lock first?) is a good one, and definitely something to be aware of. When we unlock, if there is a blocked process, in the process of putting it back on the process queue, we should also
+  <bold>
+   assign the lock to that process
+  </bold>
+  . This will avoid the bug you're talking about (the new process will find the lock already acquired by the unblocked process). This also is the way that we can ensure fairness in our lock, as it prevents a process that just unlocked from re-acquiring the lock (which would not guarantee blocked processes a chance to run and would violate fairness)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  That makes sense. Thanks you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It is good practice to recheck the status of the lock before acquiring it (in case your scheduler is not perfectly fair).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

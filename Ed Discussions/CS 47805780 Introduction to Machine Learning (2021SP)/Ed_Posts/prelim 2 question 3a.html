@@ -1,0 +1,51 @@
+<h1>
+ Title: prelim 2 question 3a
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-07T23:41:32.532338+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why can't we split on A,B or C. I am getting the same error minimization for all 3.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Justin Ni ツ (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Err(S), the size of the minority label is 2
+ </paragraph>
+ <paragraph>
+  Err(S|A) = 1 + 0, because when you split on A the size of the minority labels is 1 for A=0 and 0 for A=1
+ </paragraph>
+ <paragraph>
+  Err(S|B)  = 2
+ </paragraph>
+ <paragraph>
+  Err(S|C)  = 2
+ </paragraph>
+ <paragraph>
+  so the max Err(S) - Err(S| Feature) is Err(S) - Err(S|A) = 1, so we split on A first, the next splits don't matter which order you do them as they have the same error.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

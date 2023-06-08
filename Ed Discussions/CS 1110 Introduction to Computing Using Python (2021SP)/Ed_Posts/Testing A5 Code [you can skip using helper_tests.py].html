@@ -1,0 +1,109 @@
+<h1>
+ Title: Testing A5 Code [you can skip using helper_tests.py]
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-29T04:33:47.042705+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  I cannot seem to figure a way to test the new process_line function.
+ </paragraph>
+ <paragraph>
+  I already changed the names of the imports in the provided helper_tests.py:
+ </paragraph>
+ <paragraph>
+  import cornellasserts
+ </paragraph>
+ <paragraph>
+  import
+  <bold>
+   college_a5
+  </bold>
+  as college_module # minimize name confusion
+ </paragraph>
+ <paragraph>
+  import
+  <bold>
+   sd_utilities_list
+  </bold>
+  as sdu
+ </paragraph>
+ <paragraph>
+  import inspect # to print the name of a (test) function that is running import copy
+ </paragraph>
+ <paragraph>
+  However, even after fixing the import statements, the tests cannot run because college_a5 does not have "was_accepted" attribute.
+ </paragraph>
+ <paragraph>
+  How can I test my code?
+ </paragraph>
+ <paragraph>
+  I tried to modify the A3 code to run my new process_line but the process_line code is inherently different now since we are using add_student().
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi!
+  <break>
+  </break>
+  <break>
+  </break>
+  I probably shouldn't have included the helper_tests.py file --- I forgot to take it out of the code distribution, but I wasn't expecting students to use it.
+  <break>
+  </break>
+  <break>
+  </break>
+  I did all my testing just by running the new showdown file: from Section 5 of the handout: "All the code you’ll write in this assignment should have the same functionality as what you wrote in A3. So, you only need to check that running showdown_time_a5.py produces the same results as running A3’s showdown_time.py."
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If you
+  <italic>
+   do
+  </italic>
+  want to use helper_tests.py, you are on the right track --- modifying it to take into account the changes.  So I am very pleased that you were working on it, even though you didn't have to ...
+  <break>
+  </break>
+  <break>
+  </break>
+  You would indeed have to adjust for the fact that the function was_accepted() was changed into the College method accepted().  You can look inside showdown_time_a5.py's script code (at the bottom) to see how I changed it (in comparison to the A3 code) to handle this adjustement.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

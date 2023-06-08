@@ -1,0 +1,145 @@
+<h1>
+ Title: how to test CovidRouteTo()
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-23T13:54:52.442367+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello,
+ </paragraph>
+ <paragraph>
+  I am having trouble with CovidRouteTo and I don't know whether it's my method implementation or my test cases.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  <bold>
+   var
+  </bold>
+  dt=
+  <bold>
+   new
+  </bold>
+  CovidTree(
+  <italic>
+   humanA
+  </italic>
+  );
+ </paragraph>
+ <paragraph>
+  dt.insert(
+  <italic>
+   humanA
+  </italic>
+  ,
+  <italic>
+   humanB
+  </italic>
+  );
+ </paragraph>
+ <paragraph>
+  dt.insert(
+  <italic>
+   humanB
+  </italic>
+  ,
+  <italic>
+   humanD
+  </italic>
+  );
+ </paragraph>
+ <paragraph>
+  dt.insert(
+  <italic>
+   humanB
+  </italic>
+  ,
+  <italic>
+   humanE
+  </italic>
+  );
+ </paragraph>
+ <paragraph>
+  <bold>
+   var
+  </bold>
+  route3= dt.CovidRouteTo(
+  <italic>
+   humanE
+  </italic>
+  );
+ </paragraph>
+ <paragraph>
+  <italic>
+   assertEquals
+  </italic>
+  ("[A, B, E]", getNames(route3));
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  This test fails because of a NullPointerException. Is this test case formatted correctly?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It looks OK. To tell us anything, you have to give us more information. That null-pointer exception will tell you what line caused the exception. Without more information, there is no way for us to tell whether the error is in CovidRouteTo(), insert(), or the code above. Post something in a private thread if you want.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Ashley Miller (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Did you end up finding a solution for this? I also have a null pointer exception when testing CovidRouteTo. I used makeTree1(), not insert(), so my error is in CovidRouteTo() or my test case. Maybe I made a similar mistake.
+ </paragraph>
+ <paragraph>
+  Edit: I figured it out. For me, it was a problem with my recursive case in covidrouteto and the placement of a return statement.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I had the same problem. Glad we both got it!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,136 @@
+<h1>
+ Title: [a College object vs a College object's name attribute] Many more numbers than the sample when running the grand finale
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-23T10:57:31.07168+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When I run my code identically to the example, I get the same percentages for each one. But the example has far, far fewer student ids listed.
+ </paragraph>
+ <paragraph>
+  Was this cut short just for brevity reasons (and the real response IS long), or am I missing something?
+ </paragraph>
+ <paragraph>
+  Thank you
+ </paragraph>
+</document>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sorry, i don't quite understand.  Do you have repeated student tags in your listings, for example, which make your lists of students longer?
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  My internal data (lists of students for the out object) is exactly like the example in the assignment 3 pdf, but when I actually run the script, it prints out Rejected: and then like five hundred unique IDs. Is this supposed to happen? Is it just because the 3rd data set is so large?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It seems like at some point your code is printing out a
+  <bold>
+   College
+  </bold>
+  (which would include who was rejected and stuff) when it should be printing a College's
+  <bold>
+   name
+  </bold>
+  (which would just be a string like "Cornell_U").
+  <break>
+  </break>
+  <break>
+  </break>
+  Be careful to distinguish between these two!
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <pre>&gt;&gt;&gt; import showdown_time
+&gt;&gt;&gt; import sd_utilities as sd
+&gt;&gt;&gt; colleges = sd.colleges_from_file('a2c_census2020_processed.txt')
+
+
+
+
+&gt;&gt;&gt; <bold>print(colleges[28].name)</bold>
+UC-Davis
+&gt;&gt;&gt;  print(type(colleges[28].name))
+&lt;class 'str'&gt;
+
+
+
+
+
+&gt;&gt;&gt; print(type(colleges[28]))
+&lt;class 'college.College'&gt;
+&gt;&gt;&gt; <bold>print(colleges[28])</bold>
+UC-Davis
+Accepted and enrolled:
+    70,267,619,639,810,866,1189,1216,1382,1445,1447,1563,1620,1691,1913,1989,2334,2420,2772,2773,2845
+Accepted and not enrolled:
+    2,6,8,9,10,12,14,15,21,35,43,53,56,65,71,73,77,80,81,89,96,114,138,148,156,160,193,201,208,210,218,228,237,249,252,254,272,283,284,290,305,324,347,395,396,402,430,433,439,448,459,460,467,470,471,473,482,485,490,495,520,542,544,559,575,595,596,612,624,652,671,698,699,703,717,756,759,777,787,831,836,839,852,868,872,874,881,884,899,913,935,939,941,947,949,973,989,1001,1016,1032,1035,1036,1043,1059,1090,1092,1097,1109,1135,1138,1139,1145,1150,1163,1164,1170,1178,1184,1187,1192,1198,1206,1209,1233,1239,1263,1264,1272,1275,1281,1298,1317,1366,1376,1391,1411,1428,1437,1443,1452,1457,1471,1473,1482,1496,1515,1530,1534,1553,1571,1573,1583,1618,1660,1662,1676,1695,1704,1715,1727,1741,1746,1785,1794,1803,1804,1808,1834,1835,1843,1845,1847,1853,1859,1863,1874,1882,1886,1888,1894,1903,1906,1955,1970,1982,1993,2039,2041,2044,2052,2055,2076,2079,2097,2114,2120,2131,2153,2163,2172,2174,2178,2204,2217,2224,2229,2262,2266,2274,2285,2286,2300,2317,2327,2333,2350,2354,2357,2368,2374,2398,2405,2435,2437,2452,2453,2481,2496,2515,2516,2537,2546,2565,2587,2597,2599,2622,2629,2642,2650,2652,2669,2677,2681,2682,2689,2692,2697,2704,2705,2708,2720,2723,2731,2738,2751,2761,2767,2786,2808,2835,2840,2852,2865,2873,2892,2894,2906,2909,2915,2920,2924,2926,2940,2948,2949,2962,2968,2997,3005,3013,3026
+Rejected:
+    126,560,569,637,645,659,764,840,1057,1068,1074,1105,1121,1270,1313,1320,1329,1336,1347,1432,1458,1468,1477,1488,1489,1511,1777,1792,1806,1809,1935,1937,1966,1988,2123,2129,2145,2147,2164,2210,2270,2275,2311,2370,2380,2497,2519,2571,2590,2615,2659,2744,2768,2820,2832,2838,2844,2959,3001,3024,3035
+Wait-listed:
+    47,113,146,162,255,263,299,309,310,332,420,442,478,563,650,735,830,919,948,1087,1110,1111,1112,1113,1162,1167,1181,1204,1227,1276,1353,1364,1404,1416,1419,1433,1485,1486,1529,1536,1557,1599,1622,1634,1636,1673,1678,1701,1728,1737,1796,1887,1911,1986,1997,2048,2067,2091,2112,2202,2245,2257,2305,2309,2351,2358,2498,2568,2628,2645,2714,2732,2752,2753,2828,2836,2837,2853,2885,2887,2973,3036
+
+</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Curse you, Ed Discussions; why have you not preserved my boldfacing in the code block above?!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

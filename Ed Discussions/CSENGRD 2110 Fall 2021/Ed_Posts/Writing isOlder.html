@@ -1,0 +1,169 @@
+<h1>
+ Title: Writing isOlder
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-06T11:05:51.16243+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Are we allowed to use year and month fields or are we only allowed to use what's returned by the date method?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Dylan Lee (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I used the year and month fields.
+ </paragraph>
+ <paragraph>
+  Edit: I meant I used the methods to access the fields when testing, I never actually accessed the fields themselves.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Using the year and month fields will NOT work. Those fields are private and should stay private. You can use function date()!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Sarah Levy (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm confused by this thread - we can access birthMonth and birthYear in the method definition, correct? Because we are in the same class?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Reid Fleishman (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I believe so.
+ </paragraph>
+ <paragraph>
+  https://edstem.org/us/courses/7377/discussion/589491?comment=1376403
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm looking for confirmation from course staff that it's allowed before resorting to that. I'm not sure if it violates how we're supposed to maintain encapsulation.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You CANNOT use fields month and year in the JUnit testing class because they are private. The only way to test them is to use method date.
+ </paragraph>
+ <paragraph>
+  If you used fields month and year, you have a mistake. Fix it. They must be private.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Dylan Lee (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am slightly confused by this. We are allowed to access the fields when defining the method because they are in the same class, correct? Because how are we supposed to change the fields otherwise? We cannot access them or change them when testing because of the scope of the variables is only inside the class.
+ </paragraph>
+ <paragraph>
+  So when we are writing isOlder(), the definition can directly access the fields of year and month and e.year and e.month, but when testing we can only use isOlder(), am I correct?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Stanley Lin (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, the method definition can utilize the fields. And yes, you are only allowed to use
+  <code>
+   isOlder()
+  </code>
+  , or any public method, like date(), during testing, not the fields.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Using the year and month fields will NOT work. Those fields are private and should stay private. You can use function date()!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

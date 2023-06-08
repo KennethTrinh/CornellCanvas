@@ -1,0 +1,41 @@
+<h1>
+ Title: I'm getting the following error when running helper_tests:
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-29T09:22:27.709792+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <pre>Starting the tests in this module.
+Starting test_was_accepted
+    Testing with small_test1.txt
+</pre>
+ <pre>Traceback (most recent call last):
+  File "C:\Users\giust\Desktop\a3_skeleton\skeleton\helper_tests.py", line 209, in &lt;module&gt;
+    test_was_accepted()
+  File "C:\Users\giust\Desktop\a3_skeleton\skeleton\helper_tests.py", line 77, in test_was_accepted
+    colleges = sdu.colleges_from_file(fname)
+  File "C:\Users\giust\Desktop\a3_skeleton\skeleton\sd_utilities.py", line 43, in colleges_from_file
+    with open(os.path.join(DATADIR,fn), "r") as fp:
+FileNotFoundError: [Errno 2] No such file or directory: 'data\\small_test1.txt'
+
+
+</pre>
+ <pre>[Finished in 0.343s]</pre>
+ <paragraph>
+  Small_tests1 is in the same folder as helper_tests but it's in the data sub-folder while helper_tests isn't. Where can I move small_tests1 to resolve this issue?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

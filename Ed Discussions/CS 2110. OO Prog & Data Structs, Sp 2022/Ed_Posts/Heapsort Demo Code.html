@@ -1,0 +1,76 @@
+<h1>
+ Title: Heapsort Demo Code
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-18T05:08:10.889334+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In the Heapsort demo code from lecture, for bubble down, it includes c &gt; n - 1 in an if statement to decide whether to execute c = c - 1 or not → why does bubble down check this in addition to comparing b[c] and b[c - 1] (which I understand is to decide whether to choose between the left or right child)? I've studied the code for a bit and can't seem to figure it out.
+ </paragraph>
+ <paragraph>
+  The code is shown below.
+ </paragraph>
+ <figure>
+  <image height="289.52" src="https://static.us.edusercontent.com/files/s5dvwMuAPLtpl8cuZkbPYwWZ" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  I forgot to initially add this other question I have about the Heapsort method itself. Why do we create an entirely new array and add all of the values to it (seen in the for loop below)? Is it because the add method uses bubbleUp and make sure the array given is in max-heap form, since there is no precondition that the array given, b, is in max-heap form? I'm a bit confused because the b given in the test cases is already "max-heapified."
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="213.52146464646464" src="https://static.us.edusercontent.com/files/MgKQCSbvODtT42JcRfO2Vuvc" width="643"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="361" src="https://static.us.edusercontent.com/files/Y2eCG3lC1WNXxtobbJk4puqO" width="410"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If c = n-1, then c+1 = n and node k has only one child, its left child.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  That makes sense, thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

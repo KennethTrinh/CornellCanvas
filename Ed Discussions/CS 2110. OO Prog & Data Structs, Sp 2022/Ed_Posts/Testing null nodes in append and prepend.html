@@ -1,0 +1,46 @@
+<h1>
+ Title: Testing null nodes in append and prepend
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-01T17:54:30.065993+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Both the append method and the prepend method do not specify whether the parameter 'v' can be null or not. Should we test cases when appending and pretending a null node? For example...
+ </paragraph>
+ <paragraph>
+  dl.append(null);
+ </paragraph>
+ <paragraph>
+  assertEquals("[null]", dl.toString());
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  If it is not specified, assume that you are allowed to assign the value of a particular node to be null. This doesn't mean the node itself is null, but rather the value v (the field) of the node is null.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

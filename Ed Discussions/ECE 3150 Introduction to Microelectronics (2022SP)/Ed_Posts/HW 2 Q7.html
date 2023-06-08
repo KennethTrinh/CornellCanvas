@@ -1,0 +1,67 @@
+<h1>
+ Title: HW 2 Q7
+</h1>
+<h3>
+ Author: Ariana Haghighi (student)
+</h3>
+<h3>
+ Date: 2022-02-22T07:11:10.968539+11:00
+</h3>
+<h3>
+ Category: Homework
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can I make the assumption that V_BE1 is equal to Vg, or is there a voltage contribution due to the connection between the PNP and NPN transistors?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kirsten Scheller (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The latter is correct. Looking closely at the circuit diagram, you can see that Vg spans across both transistors, and there are two Vbe (or Veb) voltage drops. So Vg would be equal to the sum of these two voltages.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Ariana Haghighi (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  ok, that makes sense. We know that I_e1 equals I_e2 by KCL through the wire the connects Q1 and Q2. So we know that I_e1/I_e2 = 1. When you evaluate this, you get constant * exp(V_BE1 - V_EB2). However, when I do KVL, I have -Vg + V_BE1 + V_EB2 = 0. Am I just flipping a sign somewhere or flipping the base-emitter order?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Sounak Maji (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When you evaluate Ie1/Ie2=1, you can use this information to find the Ic of each transistor. Then that should help you find Vg=V_BE1 + V_EB2 since all parameters needed to find VBE are now known.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

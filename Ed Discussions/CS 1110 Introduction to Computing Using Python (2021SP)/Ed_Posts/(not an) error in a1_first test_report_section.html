@@ -1,0 +1,47 @@
+<h1>
+ Title: (not an) error in a1_first test_report_section
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-05T15:08:35.8223+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  in the test report section function in the first output:
+ </paragraph>
+ <paragraph>
+  s0 = 'data-ssr-component="ITHACA" As you set out for ' s0 = s0 + 'Ithaca data-section="1865 on the Dot" hope your road i' s0 = s0 + 's a long one open-status-wAIting" full of adventure, full class=' s0 = s0 + '"instr-mode"&gt;Instruction Mode: On The Road of discovery.' result = a1_second.report_section(s0) cornellasserts.assert_equals('Ithaca 1865 on the Dot Waiting On the road', result)
+ </paragraph>
+ <paragraph>
+  the data section is '1865 on the Dot' so the report section function should make all the letters lower case except for the 1st character in the string, but in the assert_equals function in 1865 on the Dot the D is capitalized when it should be lowercase as the result. On the assignment it said there wouldn't be any errors in this code, should I mark the code as student fixed error by making the D lowercase?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Elisabeth Finkel (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  see
+  <link href="https://edstem.org/us/courses/3933/discussion/284906"/>
+  https://edstem.org/us/courses/3933/discussion/284906
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,50 @@
+<h1>
+ Title: "Default values"
+</h1>
+<h3>
+ Author: Tristan Golden (student)
+</h3>
+<h3>
+ Date: 2021-09-09T12:35:11.326389+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In A1 Part A describes a sort of a value that certain variables should be set to when the corresponding parameter is absent in the constructor. I liken this to a "default value". Can I set this value with the variable declarations and so I don't have to change them in the constructor(s) where they aren't present or do you want me to set this value to its default inside the constructor? i.e. if no father is given it is null| Can I set this to null on declaration? or do I have to set it in the constructor?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If the default value for a field is what is needed to truthify the class invariant, then just use the default and there is no need to store a value in the field in the constructor.
+ </paragraph>
+ <paragraph>
+  For example, my solution has the following. Since the default for type int is 0 and initially the child has no children, there is no need to have an assignment to children in the constructor. But of course, in your testing of the constructor, you must still test that children contains 0.
+ </paragraph>
+ <paragraph>
+  /** Number of known children of this elephant. */
+  <break>
+  </break>
+  private int children;
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

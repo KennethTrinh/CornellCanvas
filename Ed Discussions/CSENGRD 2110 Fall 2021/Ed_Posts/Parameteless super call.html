@@ -1,0 +1,47 @@
+<h1>
+ Title: Parameteless super call
+</h1>
+<h3>
+ Author: Kenisha Stills-Ogburn (None)
+</h3>
+<h3>
+ Date: 2021-09-25T12:40:32.259276+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I get that Java inserts a default constructor in a class if another one isn't already define, but when super() is call where is super() found? Is it found in the Object class?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Suppose  B extends A.
+ </paragraph>
+ <paragraph>
+  Suppose B does not have a constructor, so Java inserts  super();
+ </paragraph>
+ <paragraph>
+  That calls a constructor with no parameters in A. A doesn't have such a constructor, it is a syntax error, and the program is not compiled.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

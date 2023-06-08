@@ -1,0 +1,51 @@
+<h1>
+ Title: Can you synchronize multiple variables in the same line
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-16T00:52:59.174516+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  the sample code for deadlock in the java hypertext synchronizes variables separately and leads to a deadlock. Is it possible have something like "synchronized (DdLck.a, DdLck.b)" to prevent the deadlock from happening? If not how else could you prevent deadlock.
+ </paragraph>
+ <paragraph>
+  Here's part of the code.
+ </paragraph>
+ <pre>class P1 extends Thread {
+     public void run() {
+         synchronized (DdLck.a) {
+         System.out.println("P1 has a");
+         synchronized (DdLck.b) {
+         }
+       }
+       System.out.println("P1 finished");
+     }
+}
+</pre>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You can do it with multiple variables but just in different blocks, you can't have 2 people in the potty hole at the same time is our analogy
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

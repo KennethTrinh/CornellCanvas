@@ -1,0 +1,68 @@
+<h1>
+ Title: Deadlock Homework5 question#3
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-14T12:49:23.828256+10:00
+</h3>
+<h3>
+ Category: Homeworks
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="683.5533980582524" src="https://static.us.edusercontent.com/files/olNWGgaGrRteE7SegvBeZxA5" width="657.9999999999999"/>
+ </figure>
+ <paragraph>
+  I am confused about when a deadlock occurs vs when it doesn't. Does it occur when 1 process is using the file and the other process tries to acquire it? In the lecture slide, it said if a process has to acquire two or more resources at the same time in order to do work then deadlock can occur. I am not sure how it relates to this homework question.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Both processes acquire F1 and F2, but not at the same time, this is an issue, we need one program to make the other program 'wait' until one is done executing is our aim
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  when does it wait? when the other program acquire the file it needs to acquire or only when the other program is using it?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  When one program tries to acquire it when the other has already acquired the same thing (F1 in our case) one of the program 'pauses' until the other can complete it's process and that is when we call notify()
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

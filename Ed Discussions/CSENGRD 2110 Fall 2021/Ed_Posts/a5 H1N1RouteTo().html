@@ -1,0 +1,65 @@
+<h1>
+ Title: a5 H1N1RouteTo()
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-18T08:22:39.918977+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can someone explain if we are doing recursion from the root to person c or from person c to root? In other words, are we starting at person c and going backwards until we reach the base case, or are we starting at the root and going to person c?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Reid Fleishman (student)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was stumped on this for a while.  It actually really helps to do what Gries says which is to look at the specification of the method to develop the recursive case.  For each child of the root, the method "Returns the route H1N1 took to get from "here" (the root of this H1N1Tree) to descendent c," if the route is non-null.  Literally translate that into Java and you will get it.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Given the first call A.H1N1RouteTo(c),
+ </paragraph>
+ <paragraph>
+  if it's not the bases case, try calling all the children of A, as in, ch is a child of A,
+ </paragraph>
+ <paragraph>
+  ch.H1N1RouteTo(c).
+ </paragraph>
+ <paragraph>
+  Why this talk of talk of starting at c and going backwards or something else? Just follow the correct recursive pattern (searching or counting) and it should write itself.
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

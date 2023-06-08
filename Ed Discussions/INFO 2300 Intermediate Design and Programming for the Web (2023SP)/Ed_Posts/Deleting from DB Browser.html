@@ -1,0 +1,47 @@
+<h1>
+ Title: Deleting from DB Browser
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-04-20T10:10:22.473109+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm trying to delete test data that I entered in my database, but I keep getting the following error message:
+ </paragraph>
+ <paragraph>
+  Error deleting record: FOREIGN KEY constraint failed (DELETE FROM "main"."products" WHERE rowid IN ('21', '20', '19', '18', '17', '16', '15');)
+ </paragraph>
+ <paragraph>
+  Does anyone know how to fix this?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This means you need to delete all records with the same entry id in your
+  <code>
+   entry_tags
+  </code>
+  table.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

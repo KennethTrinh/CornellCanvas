@@ -1,0 +1,102 @@
+<h1>
+ Title: A5 H1N1RouteTo(Person c)
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-17T11:52:08.999462+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi,
+ </paragraph>
+ <paragraph>
+  I am unsure how to complete this method and would like some guidance. From what I understand is that this method will involve searching down from the route and only adding a person to the list if they are in a path that leads down to person c (assuming person c is in the tree). However, I am unsure how to do this with recursion and how can I choose to only add 1 person from each depth and not all the children I search through(at each level)?
+ </paragraph>
+ <paragraph>
+  Thank you!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I guess you are confused about the recursive case.
+ </paragraph>
+ <paragraph>
+  First, is this a searching or a counting method? Tell me that!
+  <break>
+  </break>
+  When figuring it out, do NOT look at the return type of H1N1RouteTo(Person c) ---the return type has absolutely nothing to do with this question.
+ </paragraph>
+ <paragraph>
+  Second, suppose you have a child of the root node, and you write a recursive call
+  <break>
+  </break>
+  child.H1N1RouteTo(Person c). Exactly what does that recursive call return (there are two possible cases). In figuring this out, do NOT think about how the recursive call gets executed. LOOK AT THE SPECIFICATION! What does the spec say will be returned?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi Professor Gries,
+ </paragraph>
+ <paragraph>
+  I am trying to write the recursive case as a searching method. I think that the recursive call should return the path or null if it doesn't exist. My method however just returns the node itself and not also the parents in the path. I am unsure why this is the case because I am looping through the children and then calling child.H1N1RouteTo(c) and returning that immediately in my loop if the  child.H1N1RouteTo(c) is not null.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Oren Steingarten (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am having trouble with the same issue. I can't seem to append the parents to the path properly.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Please post your method in a separate private note, both of you with this trouble.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

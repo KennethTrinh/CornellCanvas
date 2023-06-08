@@ -1,0 +1,87 @@
+<h1>
+ Title: Error on realtime_t
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-22T09:31:02.692974+10:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, I am getting an error trying to create a global variable current_time. I know someone has asked a similar question and one of the TA has provided a solution, but somehow the solution doesn't fix my error. Can anyone help?
+ </paragraph>
+ <figure>
+  <image height="251.3282149712092" src="https://static.us.edusercontent.com/files/YWbeAt0guIoMQydDsf3ZeG0f" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Benjamin Kogan (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You need to add 'volatile' to the definition.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I tried it before but I don't think it worked
+ </paragraph>
+ <figure>
+  <image height="217.36119116234389" src="https://static.us.edusercontent.com/files/F0HnroI7HDAF6Schiur96SFa" width="641"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Benjamin Kogan (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You also don't need to redefine the realtime_t struct in process.c. It is already defined in realtime.h; that might be causing the conflict.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ohh that makes sense, thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

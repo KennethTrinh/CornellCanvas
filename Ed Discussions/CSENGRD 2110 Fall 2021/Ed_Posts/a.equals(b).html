@@ -1,0 +1,101 @@
+<h1>
+ Title: a.equals(b)
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-27T04:15:38.240739+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi! I am little bit confused about two properties of equality, as when will the equality be not reflective and transitive? What does it mean by a.equals(a) == false? Is there any examples that we could look at?
+ </paragraph>
+ <paragraph>
+  Thanks!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello,
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Here is a PDF file from java hyper text on the function equals:
+  <link href="https://www.cs.cornell.edu/courses/JavaAndDS/files/equals.pdf"/>
+  https://www.cs.cornell.edu/courses/JavaAndDS/files/equals.pdf
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Some examples can be found here:
+  <link href="https://www.cs.cornell.edu/courses/JavaAndDS/files/equals.zip"/>
+  https://www.cs.cornell.edu/courses/JavaAndDS/files/equals.zip
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  a.equals(a) == false means that object a is not equal to itself.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  An equivalence relation
+  <italic>
+   must
+  </italic>
+  always be symmetric, reflexive, and transitive.  Any implementation of
+  <code>
+   equals()
+  </code>
+  that does not have these properties is buggy.  Examples of such bugs were included on the recent Canvas quiz (you should be able to review your responses).
+ </paragraph>
+ <paragraph>
+  If you follow our template for implementing
+  <code>
+   equals()
+  </code>
+  and compare all fields using either
+  <code>
+   equals()
+  </code>
+  or
+  <code>
+   ==
+  </code>
+  as appropriate, then your implementation will most likely satisfy all three of these properties automatically.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

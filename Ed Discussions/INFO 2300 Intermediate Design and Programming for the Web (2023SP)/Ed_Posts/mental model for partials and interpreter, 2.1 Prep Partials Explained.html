@@ -1,0 +1,45 @@
+<h1>
+ Title: mental model for partials and interpreter, 2.1 Prep: Partials Explained
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-01-31T09:34:49.087072+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  i was watching the 2.1 prep and had a question about the mental model for partials
+ </paragraph>
+ <paragraph>
+  its said in the video that as the interpreter is interpreting the original php file that has links to the partials php file, it eventually hits the partials code and it "sucks it in". does this mean that the partials code is interpreted at that moment or is it stored somewhere and then later interpreted at the end, with the html chunk loading?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Good question!
+ </paragraph>
+ <paragraph>
+  The partials code is interpreted at that exact moment like it's part of the original PHP file. (This means you can reference or create variables in the partials, and they will be available in the original PHP file, etc.)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,142 @@
+<h1>
+ Title: S16 Q2 Complexity
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-18T12:15:49.420058+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="273.9092331768388" src="https://static.us.edusercontent.com/files/wgTZpQYEjRWVOMlya4GlnXPl" width="658"/>
+ </figure>
+ <paragraph>
+  I'm curious why this function is not O(n^3)? If add() is O(n), and remove is O(i) where i goes from [0,n], and the outer loop runs n times, wouldn't the runtime be O(n^3)?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Thank you in advance!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The for loop will loop through n-1 elements, which is O(n).  Every element in the for loop will be treated with the list.add(0, list.remove(i)) line of code, which  is O(n).  Thus, n*n = n^2.  Therefore, this function takes O(n^2)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  But the solution key says list.remove(i) itself takes O(i), wouldn't that mean list.add(0, list.remove(i)) takes O(n^2)?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sorry I am really tired I skimmed over your question quickly.  I believe O(i) means amortized time, which I think is technically constant time?  It depends on what i is.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  You could also see it as 2n, which would result in 2n^2.  That would still be O(n^2)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you guys!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The operations remove and add are sequential in this case. You first remove, which takes O(n) time, and then you add, which takes O(n) time. So list.add(0, list.remove(i)) takes O(n) time. Remember when you add, it's O(n) because prepending shifts all the elements down the array, but we're not removing an element each time we shift. We remove,
+  <bold>
+   then
+  </bold>
+  we add.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Just to confirm I am understanding you correctly, you are saying list.add(0, list.remove(i)) technically takes f(n) = 2n time, which is thus bounded by O(n), instead of taking f(n) = n * n/2 time?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Without getting into the formal proof, roughly yes.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

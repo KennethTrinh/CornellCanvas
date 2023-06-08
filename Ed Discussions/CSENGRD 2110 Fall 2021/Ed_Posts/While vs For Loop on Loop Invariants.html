@@ -1,0 +1,73 @@
+<h1>
+ Title: While vs For Loop on Loop Invariants
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-15T04:44:00.778946+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="327.30703259005145" src="https://static.us.edusercontent.com/files/Cufd9OUFCSCFgXb7ICrScF9n" width="658"/>
+ </figure>
+ <paragraph>
+  Would we still get full points on this problem if we had used a for loop instead? Something like:
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  int e = k+1;
+ </paragraph>
+ <paragraph>
+  int f = k;
+ </paragraph>
+ <paragraph>
+  for (int i=e-1; i&gt;=h; i--){
+ </paragraph>
+ <paragraph>
+  if (b[i] &gt;= 0) {
+ </paragraph>
+ <paragraph>
+  .      swap(b, i, f);
+ </paragraph>
+ <paragraph>
+  f--;
+ </paragraph>
+ <paragraph>
+  .   }
+ </paragraph>
+ <paragraph>
+  }
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm not going to check the details, but yes, we use loop invariants for both for-loops and while loops.
+ </paragraph>
+ <paragraph>
+  Since this question was given in terms of a while loop, I don't know why you want to change it, making it harder for yourself. On tests, give the simplest, shortest correct answer. Save yourself time and effort
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

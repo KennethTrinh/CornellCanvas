@@ -1,0 +1,140 @@
+<h1>
+ Title: Loop invariants
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-15T09:39:19.749005+11:00
+</h3>
+<h3>
+ Category: Homeworks
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="114.14056603773585" src="https://static.us.edusercontent.com/files/bvDe28DlYdQF1ZtX7hrMcnnC" width="647"/>
+ </figure>
+ <paragraph>
+  In this question, my answer is k=0 and v=b[0]. Why is that wrong?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In this case, the invariant says that v is the minimum value of the array segment b[k..n]. If you initialize k to 0 and v = b[0], you are saying that b[0] is the minimum value in array segment b[0..n]
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  well, I am kind of confused about why b[0] won't be the minimum or how to judge what is the minimum? I thought since the minimum value of k is 0, on keeping k=0, b[0] will have the minimum value?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The point of loop invariants is that this invariant says something that will always be true at the beginning and end of each loop iteration. In this case, that invariant is that v = the minimum value of b[k..n]. With this invariant, initializing k=0 and v=b[0] violates that loop invariant for the reason I explained above. We need to find an initialization that doesn't violate the invariant
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sorry! I am still a little confused. Why is b[0] not the minimum value?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Because there's nothing saying that b[1] is larger than b[0] for example.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  oh alright! but then how do we know that b[n] is the minimum value?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Because when we assign k = n, by the invariant v = minimum of b[k..n] and since k = n, the v = minimum of b[n..n], so the mimimum of that array segment must be b[n]
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ah, I see it now. Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,73 @@
+<h1>
+ Title: Test case for equals for A5
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-23T06:49:12.207357+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  My partner and I were a little confused about the wording of two lines  in the equals() specifications.
+ </paragraph>
+ <paragraph>
+  1) "First, you have to check them all until you find an equal one (or // return false if you don't.)"
+ </paragraph>
+ <paragraph>
+  Does this mean that it's okay for covid trees to have children in different orders, as long as the children themselves are the same? (i.e. Is A[B, C] equal to A[C, B]?)
+ </paragraph>
+ <paragraph>
+  2) "Second, A child of one tree cannot equal more than one child of
+ </paragraph>
+ <paragraph>
+  // tree because the names of Human's are all unique; there are no duplicates."
+ </paragraph>
+ <paragraph>
+  Does this mean the tree that we pass in can't have duplicates or does it mean no duplicates in general? Basically, could we please get clarification on what "no duplicates" refers to?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Atulya Lohani (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  1) Yes, technically A[B, C] is equivalent to A[C, B]. Think about the children of A as sets. {B,C} is the same as {C,B} mathematically.
+ </paragraph>
+ <paragraph>
+  2) Trees cannot have duplicate humans because there isn't a way to put duplicates without running into an IllegalArgumentException. We already know this from reading the insert() specification.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Minh Nguyen (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Wait, doesn't the definition: "they must have the same Human in their root" and "their children sets are equal" imply that the order of the children does matter? It's just dealt with in the main equals function rather than the helper function?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

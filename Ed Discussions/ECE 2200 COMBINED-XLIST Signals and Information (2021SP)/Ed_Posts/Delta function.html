@@ -1,0 +1,55 @@
+<h1>
+ Title: Delta function
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-30T07:39:24.927686+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is the following expression
+ </paragraph>
+ <math>
+  \frac{\sin\left(kn\pi\right)}{kn\pi}
+ </math>
+ <paragraph>
+  equivalent to
+ </paragraph>
+ <math>
+  \delta\left[n\right]
+ </math>
+ <paragraph>
+  for any integer k?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yeah, but it's not completely rigorous.  Usually you can avoid the $k = 0$ or $n = 0$ case by considering it separately during the calculation.  Like for example
+ </paragraph>
+ <paragraph>
+  $\frac{1}{2 \pi} \int _ {-  \pi} ^ {\pi} e ^ {j n \widehat{\omega}} d \widehat{\omega} = \left \{ \begin{array}{cl} 1 &amp; {\rm when} \; n = 0 \\ \frac{\sin ( \pi n )}{\pi n} &amp; {\rm when} \; n \neq 0 \; , \end{array} \right .$
+ </paragraph>
+ <paragraph>
+  which is the same as $\delta [ n ]$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

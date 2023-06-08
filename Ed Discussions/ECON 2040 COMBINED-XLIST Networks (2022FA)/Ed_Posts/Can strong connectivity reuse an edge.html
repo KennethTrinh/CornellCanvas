@@ -1,0 +1,184 @@
+<h1>
+ Title: Can strong connectivity reuse an edge?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-10-20T23:18:46.861801+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  can an edge be traversed twice to return to the starting edge?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, although it might be more accurately characterized as two paths rather than one?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  so though a cycle cannot reuse an edge, SCC can?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Not quite sure what you mean by a "cycle" and SCC "using" an edge.
+ </paragraph>
+ <paragraph>
+  The definition of SCC is that there is a path between every set of nodes in the set (as well as being maximal). If you use an edge twice in a path, then there was a cycle in the path, and you could just use the path without that cycle
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  take figure 1 in the hw. you can go from 5 to 7 to 8 to 10 to 9 back to 7, but if you go back to 8 again, then you can return to 5 via 6. that is not a valid path, but is it a valid SCC? I think not.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  A path is still valid, even if it re-uses an edge. What I was saying is that if you re-use an edge, there's going to be a shorter, simpler path available (in the example you gave above, you can just go 5 -&gt; 7 -&gt; 8 -&gt; 6) Does this help? I don't think this would make it not an SCC...
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  5-7-8-6 is a smaller component than 5-7-8-10-9-7-8-6-5
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ok - I think I was misunderstanding what you were asking. Bottom line is - you can re-use edges in paths. (Note that 5-7-8-6 isn't an SCC, but the other one you specified is)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  5-7-8-6-5 is a SCC if my understanding is correct
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  To clarify:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    The path 5-7-8-6 alone doesn't constitute a path that defines an SCC, but the path 5-7-8-6-5 does, as all nodes have a path to all other nodes (as does the other circular path you mentioned)
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    The
+    <italic>
+     set
+    </italic>
+    {5,7,8,6} is therefore an SCC because of the circular path above. SCC's are sets of nodes, not paths
+   </paragraph>
+  </list-item>
+ </list>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  key distinction, thank you
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

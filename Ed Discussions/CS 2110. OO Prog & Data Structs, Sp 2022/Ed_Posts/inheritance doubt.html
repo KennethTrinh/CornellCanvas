@@ -1,0 +1,40 @@
+<h1>
+ Title: inheritance doubt
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-16T09:49:25.562872+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Having trouble understanding why (new B(3)).m() gives 4 and ((A)(new B(3))).m() gives 4. Can someone explain why? Thanks
+ </paragraph>
+ <figure>
+  <image height="689.5098591549296" src="https://static.us.edusercontent.com/files/iNKv2d1StdlOh1DQ1DhAsIL7" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Mark Bodik (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think since the dynamic type of both of those objects is B it is using B's method m, which gives 3+1 = 4. The static type just determines what is legal to write (i.e. what won't error at compile time).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

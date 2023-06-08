@@ -1,0 +1,79 @@
+<h1>
+ Title: Videos
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-14T05:12:52.561859+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="370.7286413248024" src="https://static.us.edusercontent.com/files/3wLY60Ee5Hu7cusruE86V6ry" width="658"/>
+ </figure>
+ <paragraph>
+  Are we assuming that it's empty because it is unknown? And why do we say b[h..j] = b[0..k], is it because it's b[0..k] is unknown as well, therefore it's empty and since h..j is in the range 0..k we can also conclude b[h..j] is empty?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is the initial condition, so at the point at the beginning of the loop, we don't know anything about the array, so the entire array is in the question-mark region. You can think of it as initializing h and j in the invariant so that the invariant looks like the precondition.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It has nothing to do with "unknown".
+ </paragraph>
+ <paragraph>
+  You want the loop to stop when b[h..j] is empty. That section has this many elements in it: j+1-h. Therefore, when j+1-h = 0, the section is empty. That is, when h = j+1.
+ </paragraph>
+ <paragraph>
+  Does that make sense to you?
+ </paragraph>
+ <paragraph>
+  If h = j+1, then b[0..h-1] &lt;= 0. and b[h..k] &gt;= 0.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  How do we know we want the loop to stop when b[h..j] is empty, Is that because of R?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

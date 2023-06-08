@@ -1,0 +1,43 @@
+<h1>
+ Title: Elephant.java does not compile
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-11T13:22:39.669004+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I've submitted my Elephant.java and ElephantTest.java to CMS, and I received a message from the AutoHelper stating that while my ElephantTest passed all 4 tests, my Elephant.java did not compile.
+ </paragraph>
+ <paragraph>
+  I've checked through the A1 # Autohelper post but it doesn't seem like any of those are the problem. Are there any other possible issues I could look out for? Thank you!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You didn't test your assert statements very well, and your mistake causes our grading program to fail when constructing a particular Elephant.
+ </paragraph>
+ <paragraph>
+  I suggest that you put a test of the second constructor into the JUnit class Elephant.Test. You will find that it always fails because of how your assert statements are written. I don't want to tell you exactly what the error is; you need practice finding errors.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

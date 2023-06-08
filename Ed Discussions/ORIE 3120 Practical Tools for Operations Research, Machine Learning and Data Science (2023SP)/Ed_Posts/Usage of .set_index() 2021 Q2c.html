@@ -1,0 +1,90 @@
+<h1>
+ Title: Usage of .set_index() 2021 Q2c
+</h1>
+<h3>
+ Author: Nicholas Varela (student)
+</h3>
+<h3>
+ Date: 2023-03-27T13:32:58.640261+11:00
+</h3>
+<h3>
+ Category: Prelim
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <pre>Orders.join(OrderDetail.set_index("OrderId" ), on = 'OrderID', how = 'inner')
+</pre>
+ <paragraph>
+  Why do we need to do .set_index("OrderID")? What would happen if we left it off? I figured since we specify "on = 'OrderId'" we would not need to manipulate the index.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Varun Gande (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  The way that joins work in python, the match is specified on the row index in the second table, rather than the column value. Therefore, you need to set the index of the second table to be the column of interest, otherwise your joins will be either offset or incorrect.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Sarah Hu (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Do we always need to set the index? In the first example in the slides with the right join, we didn't.
+ </paragraph>
+ <paragraph>
+  <bold>
+   zones.join(pu_trips, on=”LocationID”, how=”right”)
+  </bold>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Varun Gande (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In this example, pu_trips is already a series with the correct index, so you wouldn't need to reset the index here. The general rule is that if you have a column in a dataframe that constitutes the primary key of the reference table, it should be set to the index in order to comply with the pandas join function. Your second reference table should be a pandas series where the index column is your primary key.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Nicholas Varela (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

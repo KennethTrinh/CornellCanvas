@@ -1,0 +1,108 @@
+<h1>
+ Title: changeTime() error message Assertion Error
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-15T12:20:36.228025+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Starting tests
+ </paragraph>
+ <paragraph>
+  Running test_schedule_add
+ </paragraph>
+ <paragraph>
+  Finished running test_schedule_add
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  Running test_studentschedule_add_noconflicts
+ </paragraph>
+ <paragraph>
+  Finished running test_studentschedule_add_noconflicts
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  Running test_course_conflictswith
+ </paragraph>
+ <paragraph>
+  Finished running test_course_conflictswith
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  Running test_studentschedule_add_conflicts
+ </paragraph>
+ <paragraph>
+  Finished running test_studentschedule_add_conflicts
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  Running test_course_gettime
+ </paragraph>
+ <paragraph>
+  Finished running test_course_gettime
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  Running test_course_changetime
+ </paragraph>
+ <paragraph>
+  Traceback (most recent call last):
+ </paragraph>
+ <paragraph>
+  File "schedule_tests.py", line 297, in &lt;module&gt;
+ </paragraph>
+ <paragraph>
+  testfn() # Adding the parentheses calls whatever testfn is
+ </paragraph>
+ <paragraph>
+  File "schedule_tests.py", line 249, in test_course_changetime
+ </paragraph>
+ <paragraph>
+  assert my_schedule.warnings == temp_exp_warnings, \
+ </paragraph>
+ <paragraph>
+  AssertionError: my_schedule warnings list should be ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm', 'ARCH 1120 STU 520: time change causes conflict with AEP 3560 LEC 001', 'ARCH 1120 STU 520: time change causes conflict with FAKER 0000 LEC 002'], but is ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm']
+ </paragraph>
+</document>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Correct link u should look at https://edstem.org/us/courses/3933/discussion/443581
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

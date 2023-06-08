@@ -1,0 +1,156 @@
+<h1>
+ Title: ConflictWith method [reply includes debugging hints]
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-10T22:43:59.008763+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi,
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  My algorithm for conflictWith passes for CS1110 v. CS1110, but it fails when checking CS1110 and INFO 2450. I have the start and end time all printed out, and the algorithm seems to work but I got False instead of True. I am not sure what went wrong. Thanks!
+ </paragraph>
+ <figure>
+  <image height="454.1324786324786" src="https://static.us.edusercontent.com/files/aC06I1ZGotRrfTrgLWH9Ft4m" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  It’s a bit confusing to look at your print statements.  I suggest doing things like print(“Debug: Comparing “ + course1days + course2days) than just printing the barebones of your stuff.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi,
+ </paragraph>
+ <paragraph>
+  Let's take a look at the test cases.
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="false">
+  <snippet-file id="code">
+   conflicts_with = {
+        "CS1110": ["CS1110", "INFO2450", "BIOG1140", "AEM2010", "fake1"],
+        "INFO2450": ["INFO2450", "BIOG1140", "fake1"],
+        "BIOG1140": ["BIOG1140", "AEM2010"],
+        "ENGL2650": ["ENGL2650", "HADM1150"],
+        "HADM1150": ["HADM1150"],
+        "ARCH1120": [], # TBA doesn't conflict with TBA
+        "AEM2010": ["AEM2010"],
+        "AEP3560": ["AEP3560"],
+        "fake1": ["fake1"],
+        "fake2": ["fake2"]
+  </snippet-file>
+ </snippet>
+ <paragraph>
+  CS1110 v. CS1110 is the very first test case, while CS1110 v. INFO2450 being the second test case is failing for you.  So, we know that you coded successfully to return True if a course equals itself.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Now, let's take a look at the times for both CS and INFO:
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  <bold>
+   CS1110:
+  </bold>
+  TR 9:05am-9:55am
+ </paragraph>
+ <paragraph>
+  <bold>
+   INFO2450
+  </bold>
+  : TR 9:40am-10:55am
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Now looking at your print statements and assertion error, this maybe is going to a bit difficult to answer, as there are many possibilities causing the assertion error, so I suggest heading to consulting hours today.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Here is a short list of some possibilities causing your second test case to fail:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    Using elif statements when you should be if statements
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    You are not converting the course times from string form to int form
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Your conditional flow is not correct
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    If you are using a helper function to compare the times and days, I suggest looking at that and trying to debug the code for it
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    You are not checking whether the start time of CS1110 is less than the start time of INFO2450 while
+    <bold>
+     <italic>
+      <underline>
+       simultaneously
+      </underline>
+     </italic>
+    </bold>
+    checking that the end time of CS1110 is greater than the start time of INFO2450
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Best,
+ </paragraph>
+ <paragraph>
+  Troy
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

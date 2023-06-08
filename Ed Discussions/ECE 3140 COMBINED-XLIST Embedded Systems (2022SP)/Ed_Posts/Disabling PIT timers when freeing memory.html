@@ -1,0 +1,46 @@
+<h1>
+ Title: Disabling PIT timers when freeing memory
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-22T05:42:00.255461+10:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When freeing memory from a process that is no longer running, we disable PIT interrupts temporarily in order to replicate an atomic action (for example in process_select funciton).
+ </paragraph>
+ <paragraph>
+  However, now that we are using PIT_1 as a timer to maintain current time, would we want to disable both PIT timers briefly or just PIT_0?
+ </paragraph>
+ <paragraph>
+  If PIT_1 is disabled while freeing the memory, it will not be as accurate of a timer, but if it is not disabled it may interrupt the memory freeing operation, so we are not sure which route to take
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Olive Faber (staff)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="1.0">
+ <paragraph>
+  We've only been disabling timer *interrupts*, not the timers themselves.  The timers continue to tick when the interrupts are disabled, as they should.
+ </paragraph>
+ <paragraph>
+  That said, in `process_select` interrupts are already disabled (by 3140.s) so that's two counts of don't worry about it.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

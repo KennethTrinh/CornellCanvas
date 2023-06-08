@@ -1,0 +1,52 @@
+<h1>
+ Title: Graphs adjacency doubt
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-18T13:52:14.13699+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Why is the complexity O(|
+  <italic>
+   V
+  </italic>
+  |^2) for the 1st and 2nd one and O[1] for the 3rd? I'm having a little trouble understanding this.
+ </paragraph>
+ <figure>
+  <image height="540.5873605947955" src="https://static.us.edusercontent.com/files/L9HDwf8BbdVdQNl1Dy4CU0wF" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Because in an array we can just put whether v1,v2 is in the matrix by doing array[v1][v2] == True and accessing an element in an array is O(1),
+ </paragraph>
+ <paragraph>
+  for the first and second, you can see the drawing of the matrix is O(|V|^2) where V is the number of vertices (think of it as an nxn matrix)
+  <break>
+  </break>
+  and to loop through something that big would be a double for loop (again O(|V|^2) ) because you have to access every element in the matrix
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

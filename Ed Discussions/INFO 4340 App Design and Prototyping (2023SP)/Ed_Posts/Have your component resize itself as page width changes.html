@@ -1,0 +1,138 @@
+<h1>
+ Title: Have your component resize itself as page width changes
+</h1>
+<h3>
+ Author: Bob Zhang (staff)
+</h3>
+<h3>
+ Date: 2023-04-28T00:18:13.38647+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I promised someone in class that I'd post this by the end of Tue, so I apologize for the delay. Hope it'll be helpful to more than one of you :)
+ </paragraph>
+ <paragraph>
+  To have some component resize itself based on page width, you need some way to keep track of the page width as it changes. To do so, we use something called
+  <code>
+   eventListener
+  </code>
+  . You can read about its documentation
+  <link href="https://www.w3schools.com/js/js_htmldom_eventlistener.asp"/>
+  here, but I'll outline what you'll need for this task below.
+ </paragraph>
+ <paragraph>
+  1. In the
+  <code>
+   &lt;script&gt;
+  </code>
+  section of the component (not
+  <code>
+   &lt;script
+   <bold>
+    setup
+   </bold>
+   &gt;
+  </code>
+  !), add / find the section
+  <code>
+   export default { ... }
+  </code>
+  , and add the following pieces in it:
+ </paragraph>
+ <pre>export default {
+    data: function() {
+        return {
+            windowHeight: window.innerHeight,
+            windowWidth: window.innerWidth,
+        }
+    },
+    emits: ["add-if-you-need"],
+    methods: {
+        // add if you need
+    },
+    mounted() {
+        window.addEventListener('resize', () =&gt; {
+            this.windowHeight = window.innerHeight;
+            this.windowWidth = window.innerWidth;
+        })
+    },
+    beforeDestroy() {
+        window.removeEventListener('resize', () =&gt; {
+            this.windowHeight = window.innerHeight;
+            this.windowWidth = window.innerWidth;
+        })
+    }
+}
+</pre>
+ <paragraph>
+  We use the
+  <code>
+   data()
+  </code>
+  function to keep track of page height and width, feel free to give them different names if you'd like. The
+  <code>
+   eventListener
+  </code>
+  we add to the window will update those variables as the window
+  <code>
+   resize
+  </code>
+  . Note that we will need to remove these
+  <code>
+   eventListener
+  </code>
+  before we close the window (aka
+  <code>
+   destroy
+  </code>
+  the component) - otherwise you are only adding more and more of them every time you open the page which is not fun to your processor :(
+ </paragraph>
+ <paragraph>
+  2. You will then be able to use
+  <code>
+   v-bind
+  </code>
+  as you do with other components to "bind" the
+  <code>
+   windowWidth
+  </code>
+  to a component's style, for example:
+ </paragraph>
+ <pre>&lt;div :style="{backgroundColor: windowWidth &gt; 900 ? 'red' : 'blue'}" &gt; 123 &lt;/div&gt;
+</pre>
+ <paragraph>
+  I believe the above is called "inline styling", which is basically saying the styles go "inline" with your actually component. This can get messy quickly if you do that to all components on your page, and unfortunately there's no good way to use
+  <code>
+   windowWidth
+  </code>
+  or other computed variables in your
+  <code>
+   &lt;style&gt;
+  </code>
+  section. So if you hate inline styling, you might have to stick with:
+ </paragraph>
+ <pre>&lt;style <bold>scoped</bold>&gt; // always put scoped here!!
+.div {
+    background-color: blue;
+}
+
+@media (min-width: 800px) {
+    .div {
+        background-color: red;
+    }
+}
+&lt;/style&gt;
+</pre>
+ <paragraph>
+  I hope this is helpful! Let me know below or come by to office hours if you have further questions!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

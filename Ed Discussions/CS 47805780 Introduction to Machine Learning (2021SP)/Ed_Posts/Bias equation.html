@@ -1,0 +1,71 @@
+<h1>
+ Title: Bias equation
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-24T01:46:42.683633+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The equation that we are given to invert to find the b parameter of the hyperplane in P3 is
+ </paragraph>
+ <paragraph>
+  yi (∑αi yi k(xi,x) + b)=1
+ </paragraph>
+ <paragraph>
+  There are two different indices i being referred to - am I correct in understanding that a less ambiguous form of the equation is
+ </paragraph>
+ <paragraph>
+  yi (∑αj yj k(xi,xj) + b)=1 ?
+ </paragraph>
+ <paragraph>
+  Another question: are we allowed to use a for loop for this sum? I understand how to get a sum over two terms (an inner product) but I'm a little confused as to how to get a sum over the three terms here.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Daniel Ye (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, a more clear equation would be yi (∑αj yj k(xj,x) + b)=1. As for computing the sum, numpy allows for the element wise multiplication of arrays which could then be summed over using numpy functions rather than using for loops.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Imaan Seraphine Islam Rahim (student)
+</h3>
+<h3>
+ Vote Count: 4
+</h3>
+<document version="2.0">
+ <paragraph>
+  What is the term k(xj, x)? As in what exactly is x here?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

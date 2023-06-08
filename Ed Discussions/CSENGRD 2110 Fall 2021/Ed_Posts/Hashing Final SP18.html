@@ -1,0 +1,43 @@
+<h1>
+ Title: Hashing Final SP18
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-15T02:23:51.237665+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="392.4985781990521" src="https://static.us.edusercontent.com/files/4kRXW7VVGE9PNYEdDLcCKg2n" width="640.9999999999999"/>
+ </figure>
+ <paragraph>
+  Hi, for this question I was wondering why does "Grant" go after "Ramya" after we remove "Gries"? I thought "Grant" should have gone in "Gries" ' s spot because even if we leave a tombstone there, that only prevents a search function from stopping there. I didn't know if it prevented another add function from mapping to that bucket too. Thanks!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Before putting Grant anywhere, one has to search to see whether Grant is already in, and this includes skipping over the tombstone and probing further until either Grant or null is found.
+ </paragraph>
+ <paragraph>
+  If it is null, we COULD put grant in the tombstone. We have opted for a simpler version, with coding being simpler, that is all.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

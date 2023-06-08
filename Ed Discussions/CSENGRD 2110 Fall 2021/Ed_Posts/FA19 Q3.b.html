@@ -1,0 +1,67 @@
+<h1>
+ Title: FA19 Q3.b
+</h1>
+<h3>
+ Author: Kenisha Stills-Ogburn (None)
+</h3>
+<h3>
+ Date: 2021-09-30T11:29:36.49492+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is it necessary to use equals on primitive type int in this example?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="553.9367396593674" src="https://static.us.edusercontent.com/files/SUKNre5lf4Re26fGwRdPyYg8" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Apologies, the use of
+  <code>
+   .equals()
+  </code>
+  to compare the values of
+  <code>
+   maxDepth
+  </code>
+  (an
+  <code>
+   int
+  </code>
+  ) is a typo.  It is impossible to invoke methods on primitive types (they do not inherit from
+  <code>
+   Object
+  </code>
+  ), and autoboxing will not help us here (this is easy to verify using JShell).
+ </paragraph>
+ <paragraph>
+  Equivalence tests of primitive fields must always be done using
+  <code>
+   ==
+  </code>
+  .
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

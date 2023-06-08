@@ -1,0 +1,89 @@
+<h1>
+ Title: process_t question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-13T08:33:40.058766+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, I have a few questions about
+  <code>
+   process_t
+  </code>
+ </paragraph>
+ <paragraph>
+  1. Where is
+  <code>
+   process_t
+  </code>
+  defined?
+ </paragraph>
+ <paragraph>
+  2. What are the fields of
+  <code>
+   process_t
+  </code>
+  ?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The following is found in
+  <italic>
+   3140_concur.h
+  </italic>
+  :
+ </paragraph>
+ <pre>struct process_state;
+typedef struct process_state process_t;
+   /* opaque definition of process type; you must provide this
+      implementation.
+            
+            To do this, write code similar to the following in your process.c:
+            
+            struct process_state {
+                int var1;
+                struct process_state* some_pointer;
+            };
+   */
+</pre>
+ <paragraph>
+  As stated, you will be implementing the struct
+  <italic>
+   process_state
+  </italic>
+  in
+  <italic>
+   process.c
+  </italic>
+  .
+ </paragraph>
+ <paragraph>
+  The fields of
+  <italic>
+   process_state
+  </italic>
+  are up to do you decide based on several factors: the implementation of your linked list, the process stack, and anything else that you may find helpful to store alongside each process.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

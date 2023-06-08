@@ -1,0 +1,121 @@
+<h1>
+ Title: What does int h represent in bounded buffer question?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-14T10:37:03.975427+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="496.94142259414224" src="https://static.us.edusercontent.com/files/VFxwdslVdkbj1WIedzbd56Tu" width="658"/>
+ </figure>
+ <paragraph>
+  This is a screenshot from the BoundedBuffer pdf from JHT. I'm confused as to what int h represents. To my understanding, n is the number of elements in the buffer, but would h just represent the index of the last element that was inserted in the buffer?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Varun Gande (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  h is the index of the first element in the queue
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Look at the comment:The n elements in the queue are in b[h], b[(h+1)%length] , ...
+ </paragraph>
+ <paragraph>
+  Doesn't that say that the first element of the queue is in b[h]?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I see, I was just a little confused by the condition 0 &lt;= h &lt; b.length.
+ </paragraph>
+ <paragraph>
+  If I understand this correctly, this means that the first element can "change" as things are pulled from the bounded buffer?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kenisha Stills-Ogburn (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Does this also mean the element that's first in line to be booted out of the buffer when we call take()?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Varun Gande (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  exactly, since this is a queue.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kenisha Stills-Ogburn (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes sir/ ma'am
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

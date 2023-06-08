@@ -1,0 +1,107 @@
+<h1>
+ Title: LEDGreen_On() Hard fault
+</h1>
+<h3>
+ Author: Deemo Chen :) (None)
+</h3>
+<h3>
+ Date: 2022-04-28T14:52:05.224007+10:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi,
+ </paragraph>
+ <paragraph>
+  I am experiencing a hard fault right at the LEDGreen_On() (step in/over both hard faults immediately)
+ </paragraph>
+ <paragraph>
+  1. I am using the new 3140.s file
+ </paragraph>
+ <paragraph>
+  2. I went through the very first call of the process_select, which is behaving correctly. AKA it selects the real-time process, returns the correct stack pointer, empties the not-ready queue, etc.
+ </paragraph>
+ <paragraph>
+  3. I tried switching to UART debugging mode as suggested by some NXP forum people
+ </paragraph>
+ <paragraph>
+  4. I looked through all the conditional expressions, all start with checking if one queue is NULL or not, thus not calling NULL-&gt;vars.
+ </paragraph>
+ <paragraph>
+  5. Here attached below is my stack trace, however, I don't understand why there is no previous call on the LEDGreen_ON(), does that suggests as soon as I enter the loop, some interrupt got triggered and somehow resulted in a hard fault? I looked through both my interrupt handling routines but I can't find anything possibly triggering a hard fault.
+ </paragraph>
+ <paragraph>
+  6. Any help will be appreciated!
+ </paragraph>
+ <figure>
+  <image height="120.27988748241913" src="https://static.us.edusercontent.com/files/wzkZEkSnqVuhtCqS7td4WrA7" width="643"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Britni Canale (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm having this same issue, let me know if you figure out why it was happening!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Zack Hatzis (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  From my limited experience, it might not be the LEDGreen_On() function causing a hard fault, but some other weird memory thing that for some reason gets triggered at that point in the program. In the context of this assignment the we got the most hard faults from 1) allocating memory incorrectly, and 2) not enqueuing processes correctly (both of which tended to cause hard faults at other points in the program, not necessarily right when we made the error). Maybe double check your enqueue function, if you changed it for Lab 5?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Deemo Chen :) (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  tks for the reply, yes we did use a new sorting version for enqueue , definitely gonna check again, however since there is only one rt process I can't find reasons for it behaving differently...
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Deemo Chen :) (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  apparently,  we need to load the value before enable the timer
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

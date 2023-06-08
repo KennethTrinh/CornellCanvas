@@ -1,0 +1,119 @@
+<h1>
+ Title: Sum of Cosines to Complex Exponential Fourier Series
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-02-26T11:41:22.928083+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, I have some questions from today's lecture (2/25) regarding how we got to the complex exponential Fourier series form. From my notes, this is what I have down:
+ </paragraph>
+ <paragraph>
+  In the lecture, we had a sum in the form:
+ </paragraph>
+ <math>
+  x\left(t\right)\ =\ a_0+\sum_{k=1}^LA_k\cos\left(2\pi\left(kf_0\right)t+\phi_k\right)
+ </math>
+ <paragraph>
+  We then said we could rewrite the kth term as:
+ </paragraph>
+ <math>
+  a_ke^{jk2\pi f_0t}+a_{-k}e^{-jk2\pi f_0t}
+ </math>
+ <paragraph>
+  Where
+ </paragraph>
+ <math>
+  a_k\ =\frac{A_k}{2}
+ </math>
+ <paragraph>
+  And then we can rewrite the sum as follows:
+ </paragraph>
+ <math>
+  x\left(t\right)\ =\ \sum_{k=-N}^Na_ke^{jk2\pi f_0t}
+ </math>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  I have three questions about this process. First, what does a(-k) represent in the rewrite of the kth cosine term? Second, why does that term with a(-k) in the cosine rewrite not appear in the complex exponential Fourier series? Lastly, what happened to the phi value?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  First of all, $a _ k = \frac{A _ k}{2} e ^ {j \phi _ k}$ and $x _ {- k} = \frac{A _ k}{2} e ^ {- j \phi _ k}$ when $1 \leq k \leq N$.  Sorry if I got that wrong on the board --- I haven't checked the video.
+ </paragraph>
+ <paragraph>
+  For your other questions, let's see whether this helps.  Suppose for simplicity $N = 2$.  Then the last expression, i.e. the complex-exponential Fourier series for $x ( t )$, reads
+ </paragraph>
+ <paragraph>
+  $x ( t ) = a _ {- 2} e ^ {- j 2 ( 2 \pi ) f _ o t} + a _ {- 1} e ^ {- j 2 \pi f _ o t} + a _ 0 + a _ 1 e ^ {j 2 \pi f _ o t} + a _ 2 e ^ {j 2 ( 2 \pi ) f _ o t}$.
+ </paragraph>
+ <paragraph>
+  Thus $a _ {\pm 1}$ and $a _ {\pm 2}$ all appear in the sum.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ah, I see, the k = -N in the sum takes care of the a(-k) terms. Just to be clear: in the example you gave, a(1) and a(-1) only differ in the negative in the exponential, right? A(k) and Phi(k) are the same for a(±1)?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes to both of your questions here.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ok thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

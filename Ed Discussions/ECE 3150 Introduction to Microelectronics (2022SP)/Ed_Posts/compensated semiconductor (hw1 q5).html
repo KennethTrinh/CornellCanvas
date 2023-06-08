@@ -1,0 +1,69 @@
+<h1>
+ Title: compensated semiconductor (hw1 q5)
+</h1>
+<h3>
+ Author: Raleigh Clemens (student)
+</h3>
+<h3>
+ Date: 2022-01-28T12:27:17.965867+11:00
+</h3>
+<h3>
+ Category: Homework
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The lecture notes state that for a p-type compensated semiconductor, we can approximate the number of holes as $N_A-N_D$. It seems like this approximation assumes that all the electrons from the donor atoms combine with holes from the acceptor atoms, such that there's a net of $N_A-N_D$ holes. Why are we allowed to make this assumption?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Max McCarthy (staff)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, this assumes that the number of holes is the net value. This is because the net impurity determines the effective concentration of the of the majority carrier. If you think of the material as a whole, there should be a balance of charge:
+ </paragraph>
+ <math>
+  \sum_{ }^{ }\left(positive\right)=\sum_{ }^{ }\left(negative\right)\ \longrightarrow\ p\ +\ N_D\ =\ n\ +\ N_A
+ </math>
+ <paragraph>
+  where
+  <italic>
+   p
+  </italic>
+  represents the holes, and
+  <italic>
+   n
+  </italic>
+  represents electrons.
+ </paragraph>
+ <paragraph>
+  This can be rearranged in the case of a p-type material to:
+ </paragraph>
+ <math>
+  p\ \ =\ n\ +\ \left(N_A-N_D\right)
+ </math>
+ <paragraph>
+  Further assuming that:
+ </paragraph>
+ <math>
+  N_A\ -\ N_D\ &gt;&gt;\ n
+ </math>
+ <paragraph>
+  which is likely since doping values are often much larger than the intrinsic values, gives:
+ </paragraph>
+ <math>
+  p\ \ =\ N_A-N_D
+ </math>
+</document>
+<h3>
+ ------------------------------------
+</h3>

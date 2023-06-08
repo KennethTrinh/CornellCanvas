@@ -1,0 +1,40 @@
+<h1>
+ Title: Should I put advisor and advisee parameters in the PhD constructor?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-10T08:27:05.930559+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I initialized the advisor and advisee fields in the constructor but I realized that they were not included in the parameters given. So should I add the parameters or should I leave out the parameters and not initialize them as well?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Don't change the signatures of the methods at all. Do not add or delete parameters.
+ </paragraph>
+ <paragraph>
+  Read the class invariant. What values should be in all fields? Initialize fields for which there are no parameters to whatever they should be to make the class invariant true.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

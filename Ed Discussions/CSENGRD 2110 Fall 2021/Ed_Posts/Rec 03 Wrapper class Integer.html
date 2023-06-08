@@ -1,0 +1,141 @@
+<h1>
+ Title: Rec 03: Wrapper class Integer
+</h1>
+<h3>
+ Author: Kenisha Stills-Ogburn (None)
+</h3>
+<h3>
+ Date: 2021-09-16T23:23:09.460265+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why is it better to use:
+ </paragraph>
+ <paragraph>
+  Integer v= Integer.valueOf(9)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Instead of using the constructor?:
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Integer v= Integer(9);
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is a rather new feature, that use of the constructor is discouraged.
+ </paragraph>
+ <paragraph>
+  One reason: This allows optimization. For a small int value like 9, they may create only one Integer object with that value and return a pointer to that one object. That can't be done if a constructor is being used.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kenisha Stills-Ogburn (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Isn't a pointer created when a class is instantiated and the constructor is called?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The optimization allowed by avoiding a
+  <code>
+   new
+  </code>
+  -expression is called "interning" (related to "memoization" - memorizing the return values of functions called multiple times with the same arguments).  While both expressions will yield an object with the appropriate value, they correspond to slightly different commands:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    A
+    <code>
+     new
+    </code>
+    -expression" says "I want you to allocate a new folder in memory and initialize it to this state"
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    A "factory method" like
+    <code>
+     valueOf()
+    </code>
+    says "I want a reference to an object representing this value; I don't care where it comes from"
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  The latter is less constraining and therefore opens the door to optimizations like interning.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Dasha Griffiths (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes but that would be unoptimized since a constructor will do that for all cases. The valueOf method is optimized so that it will use the most efficient way to get the value you want to assign. While using valueOf vs the constructor might not matter for small cases like 9, it could make a large difference with values like 100000000000.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, a new object is created. But, since Integer objects are immutable, there is no need
+ </paragraph>
+ <paragraph>
+  for more than one Integer object that houses the value 9.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

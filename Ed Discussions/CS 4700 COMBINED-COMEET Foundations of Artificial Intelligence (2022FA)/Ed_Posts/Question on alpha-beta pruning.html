@@ -1,0 +1,53 @@
+<h1>
+ Title: Question on alpha-beta pruning
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-10-19T15:41:33.259747+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am a bit confused about the definition of "ancestors" in the slides:
+ </paragraph>
+ <paragraph>
+  A MIN node can be $\alpha$ pruned if its own $\beta$ satisfies $\beta \leq \alpha$ of some MAX ancestor nodes.
+ </paragraph>
+ <paragraph>
+  Here by ancestors, do they refer to MAX nodes that have been explored so far? Or they mean MAX nodes that have been explored
+  <bold>
+   and
+  </bold>
+  are "directly" above the current node.
+ </paragraph>
+ <paragraph>
+  For example, in HW3 1c, node M could be pruned if we consider node G as its ancestor. We have explored node G but it is in a different branch.
+ </paragraph>
+ <paragraph>
+  Thanks!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Laura Greenstreet (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  An ancestor node must be on the path from the root to the node. I.e. in HW3 1c, the ancestors of node M are F, C, A. Nodes in other branches will influence whether or not you evaluate a node, but that is captured in the $\alpha/\beta$ values of the ancestor nodes.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

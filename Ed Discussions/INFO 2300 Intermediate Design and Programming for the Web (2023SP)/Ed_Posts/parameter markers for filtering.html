@@ -1,0 +1,43 @@
+<h1>
+ Title: parameter markers for filtering
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-04-26T01:57:38.507759+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Do we need to use an array to successfully create a parameter marker when filtering?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, you will likely need to use
+  <code>
+   http_build_query()
+  </code>
+  which requires an array.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

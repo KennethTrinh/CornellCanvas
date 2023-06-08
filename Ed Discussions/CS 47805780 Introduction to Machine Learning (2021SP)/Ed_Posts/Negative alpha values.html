@@ -1,0 +1,66 @@
+<h1>
+ Title: Negative alpha values
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-02T10:12:11.496429+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In my
+  <code>
+   dualqp()
+  </code>
+  implementation,
+  <code>
+   cvxpy
+  </code>
+  does not seem to be adhering to my
+  <code>
+   alpha &gt;= 0
+  </code>
+  constraint. My implementation passes the test cases, but when I print the alpha values, they are half negative and half positive. They are all very small values, hovering very very close to zero (e-10 or e-11). If i change my constraint to be greater than a different number, say 5 or 0.1, it does not violate the constraint. It only appears to violate the constraint when forcing
+  <code>
+   alpha &gt;= 0
+  </code>
+  . I did try
+  <code>
+   alpha &gt;=  1e-99
+  </code>
+  , which also failed, giving  negative alpha values. However, the function passes its test cases  with
+  <code>
+   alpha &gt;= 0
+  </code>
+  .
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Donal Lowsley-Williams (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was able  to solve this by adding the constraint to alpha when the variable was initialized, e.g.
+  <code>
+   Variable(nonneg=True)
+  </code>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

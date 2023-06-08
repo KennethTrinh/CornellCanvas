@@ -1,0 +1,51 @@
+<h1>
+ Title: Assert statements
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-09T11:12:05.035018+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Do we need an assert statement for the method gotBefore despite it not explicitly stating that there is a precondition? The docstring "p is not null" kind of suggests that there is a precondition.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If there's no precondition, you should not have any assert statements.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  That "p is not null"  is part of the statement in the specification that says what is to be returned. If p is null, false should be returned.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

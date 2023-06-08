@@ -1,0 +1,72 @@
+<h1>
+ Title: What's the difference between space &amp; depth in complexity?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-08T15:32:39.394429+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In the sides, we define depth as number of frames that can be put on the call stack at the same time? But what's the difference between space &amp; depth in complexity? Thanks!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  To sort an array of size n, the first quicksort algorithm we wrote has recursion depth of O(n), which means that O(n) frames for calls will be on the call stack at some point in the worst cast. This is extra space used by the quicksort algorithm. Therefore, the worst-space requirement of quicksort is O(n).
+ </paragraph>
+ <paragraph>
+  However, by rewriting the algorithm to use some iteration instead of recursion, this can be reduced to worst-case depth O(log n), so the better quicksort algorithm requires O(log n) space.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Space complexity refers to how much memory an algorithm requires in order to do its worn, beyond that taken up by the inputs themselves.
+ </paragraph>
+ <paragraph>
+  For recursive functions, some space will always be required for the call stack.  Therefore, the space complexity for such functions is
+  <italic>
+   at least
+  </italic>
+  as much as the depth of recursion.
+ </paragraph>
+ <paragraph>
+  However, some functions also use auxiliary space in other ways.  Merge sort, for example, allocates a temporary array to store half of the values it is trying to merge - it is not an "in-place" algorithm.  The size of this temporary array contributes to the space complexity of merge sort.
+ </paragraph>
+ <paragraph>
+  Typically, the total space complexity will be the larger of the max recursion depth and the max size of any auxiliary arrays allocated.
+ </paragraph>
+ <paragraph>
+  (as an aside, the "merge" operation does not need auxiliary space if its inputs are linked lists rather than arrays; try it out!)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,85 @@
+<h1>
+ Title: Activation function for last layer (output)
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-06T03:41:17.617701+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The hint for
+  <code>
+   forward_pass
+  </code>
+  says
+  <code>
+   'S[m] = V[m]'
+  </code>
+ </paragraph>
+ <paragraph>
+  Does this mean that for the last layer, the activation function is just sigma(x) = x, and hence
+  <code>
+   V[m] = S[m]?
+  </code>
+  I was wondering how
+ </paragraph>
+ <math>
+  D_{d\ }=\ \sigma'\left(s_d\right)
+ </math>
+ <paragraph>
+  should be calculated. Is it correct to think that D_d = s_d in our case?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 6
+</h3>
+<document version="2.0">
+ <paragraph>
+  Generally you don't apply an activation function to the last layer of an NN, since that will constrain its range/limit its expressibility.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Scott Bass (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  But if you want to output probabilities (say for image classification), then wouldn't you want to apply the activation function (sigmoid) on the last layer?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, but this is a special case.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

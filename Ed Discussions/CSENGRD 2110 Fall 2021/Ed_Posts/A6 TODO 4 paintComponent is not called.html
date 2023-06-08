@@ -1,0 +1,43 @@
+<h1>
+ Title: A6 TODO 4 paintComponent is not called
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-05T12:59:36.741603+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When implementing TODO 4, I deferred to the superclass, and wrote the commands for the Active case and the non-Active case. I put a print statement at the beginning, and it seems that the method paintComponent itself is not called at all. I didn't change any part of the original code, so why did this happen?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I don't think we'll be able to diagnose this on a discussion board, sorry.  If you get stuck, I recommend attending office or consulting hours and showing the behavior to a TA.
+ </paragraph>
+ <paragraph>
+  My best guess is that you removed the GameComponent from your frame by adding another component in its place in the layout manager.  If the component isn't in the frame, then it won't be painted.
+ </paragraph>
+ <paragraph>
+  Otherwise, it should be painted when the window is first shown, as well as whenever you resize the window.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

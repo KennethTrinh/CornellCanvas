@@ -1,0 +1,67 @@
+<h1>
+ Title: neural network SGD update step question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-13T21:18:16.537579+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="461" src="https://static.us.edusercontent.com/files/Gv1SxPoenAtlvBlcFSkVhoaO" width="604"/>
+ </figure>
+ <figure>
+  <image height="236.64442636289664" src="https://static.us.edusercontent.com/files/NGvO4V3pP4rtdigXGq5X8Vs4" width="658"/>
+ </figure>
+ <paragraph>
+  I was comparing the SGD update step formula for neural network (1st screenshot above) with the general formula for the SGD update step (2nd screenshot above), ad I just wanted to make sure I understand.
+ </paragraph>
+ <paragraph>
+  In the neural network update step, is the G_l corresponding to {the gradient of the loss function} in the general update step? If yes, I'm confused how this could be the case, because I thought G_l is just the gradient of the outcome of the neural network, but G_l has no sign of the actual loss function for neural network?
+ </paragraph>
+ <paragraph>
+  I'm confused how the neural network update step aligns with the general SGD update step, because there doesn't seem to be a loss function in the neural network update step like there is a loss function (which we take the gradient of) in the general SGD update srep?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Scott Bass (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When l = d-1 (you're updating the weights on the last layer), you get the formula:
+ </paragraph>
+ <math>
+  W_{d-1}^{\left(t+1\right)}\leftarrow W_{d-1}^{\left(t\right)}-\eta G_{d-1}
+ </math>
+ <paragraph>
+  and
+ </paragraph>
+ <math>
+  G_{d-1}=v_{d-1}D_d
+ </math>
+ <paragraph>
+  where
+ </paragraph>
+ <math>
+  D_d=\sigma'\left(s_d\right)\frac{\partial L}{\partial v_{d,1}}
+ </math>
+ <paragraph>
+  So, you can see that when updating the last layer of weights, we are including the loss function w.r.t. the output of the last layer. If you look at all the other layers, you'll see they also include the term D_d, so in fact, in all the layers update rules you have one big chain rule with the loss function w.r.t. each layer's weights.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

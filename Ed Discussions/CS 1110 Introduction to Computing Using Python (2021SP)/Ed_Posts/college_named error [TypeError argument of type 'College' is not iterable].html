@@ -1,0 +1,74 @@
+<h1>
+ Title: college_named error [TypeError: argument of type 'College' is not iterable]
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-25T12:10:06.219929+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  working on college_named and am running into this error:
+ </paragraph>
+ <paragraph>
+  TypeError: argument of type 'College' is not iterable
+ </paragraph>
+ <paragraph>
+  i'm iterating using i and clist. is there a better way to iterate through a list of objects?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Dylan Castillo (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  From the error message it seems like you are not iterating through a list but through an object of type College, so make sure to iterate through a list!
+ </paragraph>
+ <paragraph>
+  Maybe you called college_named and used a College object as the clist parameter, or you are iterating through an object that is inside the clist rather than the clist itself.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hmm... I’m iterating through clist which I understood to be a list of objects. My code doesn’t mention College
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Dylan Castillo (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm sorry I can't be of much help without looking at your code (I highly recommend going to consulting hours), but the error code is saying exactly that: you are trying to loop through a College object rather than a College list
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

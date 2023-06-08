@@ -1,0 +1,72 @@
+<h1>
+ Title: Question about quicksort and optimizing it with tail recursion
+</h1>
+<h3>
+ Author: Young Zheng (student)
+</h3>
+<h3>
+ Date: 2022-03-12T11:41:05.227361+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="209" src="https://static.us.edusercontent.com/files/0epTJg0WY5IP3GsOllAWD5tS" width="292"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  If every pivot of quicksort turned out to be the smallest element, would the space complexity of quicksort be O(1) after its been optimized with tail recursion? In this case the smaller partition always immediately returns, so its space is a constant, and the larger partition would not create an additional call frame since its the tail.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, you are correct.
+ </paragraph>
+ <paragraph>
+  But this version of yours, with the smaller partition being sorted first and the larger partition being sorted last, using tail recursion, is another way to get logarithmic depth in general.
+ </paragraph>
+ <paragraph>
+  Unfortunately, Java does not implement tail recursion. One here's about them working on it, but that has been for some time. I think that one of the issues is exception handling. As you know, when an exception is thrown, it is sort of thrown up the call stack, and one frame on the call stack may catch it. That limits tail recursion somewhat.
+ </paragraph>
+ <paragraph>
+  But YOU can implement the two tail recursive call using recursion yourself.! This page in JavaHyperText shows you how:
+ </paragraph>
+ <paragraph>
+  https://www.cs.cornell.edu/courses/JavaAndDS/files/recursionTail.pdf
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Young Zheng (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Ok thanks!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

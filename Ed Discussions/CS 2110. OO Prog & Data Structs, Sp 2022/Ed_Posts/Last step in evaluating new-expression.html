@@ -1,0 +1,54 @@
+<h1>
+ Title: Last step in evaluating new-expression
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-08T17:23:40.371649+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The last step in evaluating the new-expression is:
+ </paragraph>
+ <paragraph>
+  Give as value of the new-expression the name of the object, C@2.
+ </paragraph>
+ <paragraph>
+  I don't really understand what that means, can I get some help here?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Sasha Loayza (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  When a new-expression is "evaluated", the value returned is the object itself, essentially a reference/pointer, which is stored in the variable.
+ </paragraph>
+ <paragraph>
+  If the new expression is:
+ </paragraph>
+ <paragraph>
+  Object o= new Object();
+ </paragraph>
+ <paragraph>
+  then the variable s (think of it as a box with a value inside of it) will contain the reference/pointer to the object o, for example o@5 (which is a representation of object o at memory location 5). The important thing is that the variable contains a reference to the object, not the object itself.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

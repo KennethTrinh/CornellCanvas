@@ -1,0 +1,44 @@
+<h1>
+ Title: Prelim I 5:30 Spring 2015 #4
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-06T09:02:34.133099+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When recreating the calculatePropertyTax() method, why is this valid? Why wouldn't each building need to be cast down to their type of building? So, compile-time reference rule means that b.tax() is only valid if tax() is in the class and all the superclasses, does that still mean that bottom-up rule always applies?
+ </paragraph>
+ <figure>
+  <image height="281.75" src="https://static.us.edusercontent.com/files/ot7QZQHari8T6Eck1tQbxcoE" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is valid because Building has method tax. The implementation depends on the
+  <bold>
+   dynamic type
+  </bold>
+  of object b, which is not Building (since Building is an abstract class), but rather one of its subclasses.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

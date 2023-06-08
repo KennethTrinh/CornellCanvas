@@ -1,0 +1,81 @@
+<h1>
+ Title: this in GUI
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-16T09:53:32.751794+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Here, why are we allowed to use this in addActionListener? What does this refer to?
+ </paragraph>
+ <figure>
+  <image height="421.29664429530203" src="https://static.us.edusercontent.com/files/zpR9w4ZE7E3cDj8Dmdmartq4" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Rebecca Liu (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  From: https://docs.oracle.com/javase/8/docs/api/java/awt/Button.html#addActionListener-java.awt.event.ActionListener-
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  "
+  <code>
+   public void addActionListener(
+   <link href="https://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionListener.html"/>
+   ActionListener l)
+  </code>
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+  Adds the specified action listener to receive action events from this button. Action events occur when a user presses or releases the mouse over this button. If
+  <code>
+   l
+  </code>
+  is null, no exception is thrown and no action is performed."
+  <break>
+  </break>
+  --
+  <break>
+  </break>
+  In this case,
+  <code>
+   this
+  </code>
+  (or IncrementButton) is
+  <code>
+   l
+  </code>
+  . IncrementButton is the ActionListener passed into
+  <code>
+   addActionListener
+  </code>
+  to receive events from
+  <code>
+   this
+  </code>
+  button (which is IncrementButton)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,183 @@
+<h1>
+ Title: Hyperplanes
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-02-27T12:28:16.057471+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="327.10265282583623" src="https://static.us.edusercontent.com/files/QZ4aslMRWCvVKknYINvScCya" width="658"/>
+ </figure>
+ <paragraph>
+  If the dot product $\vec{w}\cdot\vec{x} = -b &lt; 0$, shouldn't the origin instead be between the hyperplane and the "tip" of $\vec{w}$?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Abhinav Naikawadi (staff)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  The -b here corresponds to the distance starting at the intersection of the weight vector and the hyperplane and extending backwards until the origin. This can be mathematically understood by looking at the geometric interpretation of the dot product of w and x as the projection of vector x onto vector w. Then, the -b just represents the translation needed to move to the origin from the intersection of the weight vector and hyperplane .
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Samar Khanna (staff)
+</h3>
+<h3>
+ Vote Count: 8
+</h3>
+<document version="2.0">
+ <paragraph>
+  Good question. It's important to understand why the bias represents an offset from the hyperplane to the origin, as this idea is important for understanding linear classifiers and will be used in section this week. Here I've drawn a few pictures to help you visualise the mathematical intuition.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  We start in the homogenous case. For now, let's assume that all our hyperplanes $||\vec{w}|| = 1$ and that we are working in $\mathbb{R}^2$, where our vectors are $\vec{x} = (x_1, x_2)$.  We require that $||\vec{w}|| = 1$ because it is with this assumption that we can interpret the bias as an offset from the hyperplane to the origin.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  First, in the picture below we know that the blue-line hyperplane is described by the equation $\vec{w} \cdot \vec{x} = 0$, since all points $\vec{x}$ on the blue line are orthogonal to the vector $\vec{w}$ and so their inner product is 0.
+ </paragraph>
+ <figure>
+  <image height="211" src="https://static.us.edusercontent.com/files/40idTFwcvHwzGqjko1IcBbDp" width="322"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  In the general case, our hyperplanes need not pass through the origin. What I will show will explain how the hyperplane is described by the equation $\vec{w} \cdot \vec{x} + b = 0$ if we assume that $b$ is the shortest distance from the hyperplane to the origin.
+ </paragraph>
+ <paragraph>
+  In the second picture below, our hyperplane is still the solid blue line, except now it lies at a distance $b$ from the origin, where $b$ is the shortest (i.e. perpendicular) distance from the hyperplane to the origin.
+ </paragraph>
+ <figure>
+  <image height="217" src="https://static.us.edusercontent.com/files/wUGLg2EhWCJbcnKltAz303Kh" width="504"/>
+ </figure>
+ <paragraph>
+  Our goal is to find the equation of the blue line given that the vector representing it is $\vec{w}$, where $||\vec{w}|| = 1$, and that the l2 distance from the blue line to the origin is $b$. First, we will draw the red dashed line which represents the blue hyperplane shifted back up to intersect the origin. Here we know that for all $\vec{x}_0$ on  the red line, $\vec{w} \cdot \vec{x}_0 = 0$ since $\vec{w} \perp \vec{x}_0$.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  If we draw a vector from the solid blue line to the dashed red line such that it is perpendicular to both lines, then we note that the length of this vector is $b$ since it represents the shortest distance from the blue line to the origin. Let's call this vector $\vec{b}$, where $||\vec{b}|| = b$.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Now, for all vectors $\vec{x}$ on the blue line, we note that $\vec{x} = \vec{x}_0 - \vec{b} \Rightarrow \vec{x}_0 = \vec{x} + \vec{b}$. Since we know that $\vec{w} \cdot \vec{x}_0 = 0$ describes the red dashed line, we can now use our definition of $\vec{x}_0$ and the fact that $||\vec{w}|| = 1$ to find the equation for the solid blue line.
+ </paragraph>
+ <paragraph>
+  $$\vec{w} \cdot \vec{x}_0 = 0$$
+ </paragraph>
+ <paragraph>
+  $$ \Rightarrow \vec{w} \cdot (\vec{x} + \vec{b}) = 0$$
+ </paragraph>
+ <paragraph>
+  $$ \Rightarrow \vec{w} \cdot \vec{x} + \vec{w}  \cdot \vec{b} = 0$$
+ </paragraph>
+ <paragraph>
+  $$ \Rightarrow \vec{w} \cdot \vec{x} + ||\vec{w}|| ||\vec{b}|| \cos (0) = 0$$
+ </paragraph>
+ <paragraph>
+  $$ \Rightarrow \vec{w} \cdot \vec{x} + b = 0$$
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  In the case where the hyperplane is shifted on the other side, i.e., in the positive quadrant, then drawing a vector $\vec{b}$ from the blue line to the red dashed line would be represented with $\vec{x} = \vec{x}_0 + \vec{b} \Rightarrow \vec{x}_0 = \vec{x} - \vec{b}$ and the final equation of the blue hyperplane would be $ \vec{w} \cdot \vec{x} - b = 0$.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Hope this helps!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Cazamere Comrie (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Shouldn't it be cos(0) instead, since the angle between vectors w and b is 0? Thanks!
+ </paragraph>
+ <math>
+ </math>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Samar Khanna (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oops, yes, you are right!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Cazamere Comrie (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thanks Samar!!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Rishi Malhotra (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

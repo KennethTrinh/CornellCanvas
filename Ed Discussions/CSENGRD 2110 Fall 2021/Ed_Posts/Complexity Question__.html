@@ -1,0 +1,72 @@
+<h1>
+ Title: Complexity Question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-16T14:38:23.432259+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Suppose I have the following code:
+ </paragraph>
+ <snippet language="java" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   LinkedList&lt;Integer&gt; intList = new LinkedList&lt;Integer&gt;();
+LinkedList&lt;Boolean&gt; boolList = new LinkedList&lt;Boolean&gt;();
+
+public static void foo(LinkedList&lt;Integer&gt; list){
+    for(int i = 0; i &lt; n; i++){
+        boolList.add(0, intList.contains(5));
+    }
+}
+  </snippet-file>
+ </snippet>
+ <paragraph>
+  I want to determine the tightest average complexity of the method foo().
+ </paragraph>
+ <paragraph>
+  I think it's
+  <bold>
+   O(n^2)
+  </bold>
+  because we add the O(n) complexities of add and contains inside this loop to get O(2n), multiply it by the loop time O(n) to get O(2n^2) which simplifies to O(n^2).
+ </paragraph>
+ <paragraph>
+  My friend thinks it's
+  <bold>
+   O(n^3)
+  </bold>
+  because we multiply: O(n) of the loop, O(n) of the add, and O(n) of the contains to get O(n^3).
+ </paragraph>
+ <paragraph>
+  In other words, I'm asking if two operations take O(n) time inside the same loop, do we add or multiply them?
+ </paragraph>
+ <paragraph>
+  Thanks so much!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The complexity is O(n^2) for a different reason from both given. Adding to the front of a LinkedList takes constant time since you only change a few pointers in the list in order to add the new Node. Think back to how you wrote the prepend method in your LinkedList assignment. Did that method depend on the size of the list? As a result, since contains takes O(n) time, add takes O(1) time and the loop iterates n times, the overall complexity is O(n^2)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

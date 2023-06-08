@@ -1,0 +1,52 @@
+<h1>
+ Title: A7
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-28T07:27:46.118992+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When I insert w into the frontier set after the if statement what priority should I put it as?
+ </paragraph>
+ <paragraph>
+  In this same if statement when I put w into the hashmap I should put the distance of d[w] as well ? or should it be the the wgt(f,w)?
+ </paragraph>
+ <paragraph>
+  Lastly, how would I update the info of  a node  that already exist with the hashmap?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The value d[w] for any node w in the settled or frontier set is the length of the path (i.e. the sum of the weights on the edges of the path) from the start node to node w. Figure out how to calculate that.
+ </paragraph>
+ <paragraph>
+  Suppose (node, Info Object) is in the HashMap. Use a Hashmap function, you can get a pointer to the Info Object. Then you can simply reference/change the fields directly.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

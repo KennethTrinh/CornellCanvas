@@ -1,0 +1,105 @@
+<h1>
+ Title: Co-op 7
+</h1>
+<h3>
+ Author: Nikhil Satheesh Pillai (student)
+</h3>
+<h3>
+ Date: 2021-03-03T04:47:29.669225+11:00
+</h3>
+<h3>
+ Category: Coops
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For the max kinetic energy density, it asks to find (dy/dt)max but it seems like I keep getting dy/dx wrong. if x(t) = 2Acos(kx + phi)cos(wt), isn't dy/dt = 2Awcos(kx+phi)sin(wt), (dy/dx) max = 2Aw. But I keep getting the answer wrong, am I doing something wrong.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Glenn Case (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If the amplitude of dy/dt is 2Aw, why isn't the amplitude of dy/dx 2Ak ?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Nikhil Satheesh Pillai (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  i meant to say dy/dt = 2Aw, but when i subbed in the values for uk and up, i got differentt values and Im not sure why
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Dan Ralph (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It's a little difficult for me to diagnose the issue based on this information.  Are you finding different values for the maximum values of $u_k$ and $u_p$, or are you finding the same maximum values for $u_k$ and $u_p$ but they differ from the answer check in the coop?  If it is the latter, think about what is the maximum amplitude of the function you wrote down for the displacement -- It is not equal to $A$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Nikhil Satheesh Pillai (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm finding different answers for uk and up. I get the answer for up right, but uk is different and I don't get why. My uk calculation is = 0.5
+  <italic>
+   (6.8  * 10^-3)   (2 * 0.002  * w) where w = 2pi
+  </italic>
+  * 164 (value for second harmonic)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Dan Ralph (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think the issue is your value for the amplitude of the standing wave.  If the standing wave has a maximum amplitude of 0.002 m, this means the formula for the displacement should be
+ </paragraph>
+ <math>
+  y\left(t\right)=\left(0.002\ m\right)\cos\left(kx+\phi\right)\cos\left(\omega t\right)
+ </math>
+ <paragraph>
+  It looks like you are off by a factor of 2 on the amplitude, and therefore a factor of 4 for the maximum kinetic energy.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

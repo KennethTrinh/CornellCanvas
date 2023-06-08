@@ -1,0 +1,94 @@
+<h1>
+ Title: d[w] vs wgt(f,w)
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-27T11:53:13.366078+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What is the conceptual difference between what d[w] represents and what wgt(f,w) represents?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  d[w] is the shortest known distance from the start node to node w.
+ </paragraph>
+ <paragraph>
+  If w is in the settled set, it is the shortest known distance over all paths.
+  <break>
+  </break>
+  If w is in the frontier set, it is over paths all of whose nodes are in the settled set except w.
+ </paragraph>
+ <paragraph>
+  wgt(f, w) is the length on edge (f, w).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Elisa Kelly (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  and is the priority if w is in F wgt(f,w) or d[w]
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Elisa Kelly (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  for the return list i have :
+ </paragraph>
+ <paragraph>
+  List&lt;Node&gt; Spath= new LinkedList&lt;&gt;(SandF.keySet());
+ </paragraph>
+ <paragraph>
+  // return Spath;
+ </paragraph>
+ <paragraph>
+  But  then the instructions say this ( put below) i am unsure what I should do. because i get an error saying that the second return statement will never be reach  which is true I understand .   but how am i supposed to return the shortest path then .
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  alternatively can i just input SandF.keySet() into the code below?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <pre>Put all your code before this comment. Do not change this comment or return statement
+        // no path from v to end.
+        return new LinkedList&lt;&gt;();
+        </pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>

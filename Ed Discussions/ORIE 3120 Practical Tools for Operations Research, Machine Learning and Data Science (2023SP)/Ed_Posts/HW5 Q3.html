@@ -1,0 +1,145 @@
+<h1>
+ Title: HW5 Q3
+</h1>
+<h3>
+ Author: Paul Suh (student)
+</h3>
+<h3>
+ Date: 2023-03-14T09:39:12.814103+11:00
+</h3>
+<h3>
+ Category: Homework
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Problem #3
+ </paragraph>
+ <paragraph>
+  HW #5
+ </paragraph>
+ <paragraph>
+  Hi,
+  <break>
+  </break>
+  I'm noticing very small discrepancies between the plot posted in the HW and the plot that comes out from my implementation. Should I be concerned about this discrepancy? Does it indicate an error in my solution?
+  <break>
+  </break>
+  <break>
+  </break>
+  Plot from the Homework:
+ </paragraph>
+ <figure>
+  <image height="292" src="https://static.us.edusercontent.com/files/J9l9nSo0BC2lxU0xC45eVR0I" width="418"/>
+ </figure>
+ <paragraph>
+  <break>
+  </break>
+  <break>
+  </break>
+  My solution:
+ </paragraph>
+ <figure>
+  <image height="174" src="https://static.us.edusercontent.com/files/pitN9DssqQwGq0Dea0AChbO9" width="247"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Julia Vanputte (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  It looks like your points are consistently a bit different from the correct answer.
+ </paragraph>
+ <paragraph>
+  You are very close, but if you had the exact thing as correct, your points would be the same. For example in the solution at hour 0 we have a velocity of a little over 16mph and yours is a little over 14mph.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Paul Suh (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Restarting kernel and rerunning cells fixed the issue for me. Probably accidentally modified
+  <code>
+   df['duration']
+  </code>
+  .
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Ashwin Ajit (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm having the same issue but restarting the kernel didn't fix it for me
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Paul Suh (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You should make sure that you are using
+  <code>
+   df['trip_distance']
+  </code>
+  instead of
+  <code>
+   df['rounded_trip_distance']
+  </code>
+  . You should also make sure you are not accidentally modifying
+  <code>
+   df['trip_distance']
+  </code>
+  or
+  <code>
+   df['duration']
+  </code>
+  anywhere in your code.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Ashwin Ajit (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Turns out I had filtered incorrectly because I thought day 0 was Sunday like in a normal calendar.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

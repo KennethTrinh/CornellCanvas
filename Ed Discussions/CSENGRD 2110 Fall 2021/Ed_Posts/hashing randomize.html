@@ -1,0 +1,57 @@
+<h1>
+ Title: hashing randomize
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-11T07:59:24.834218+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why does the hash function need to be randomized? what is the relationship between the load factor and probing time and randomization?
+ </paragraph>
+ <list style="ordered">
+  <list-item>
+   <paragraph>
+    the results of hashing are randomly distributed. If not, the expected probing time, for example, would not be constant when the load factor is 1⁄2.
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  Confused about this explanation in sp15
+ </paragraph>
+ <paragraph>
+  Thanks
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  "Randomized" is perhaps not the best word to use here (since hash functions need to be deterministic).  More precisely, hash codes should be
+  <bold>
+   uniformly distributed
+  </bold>
+  over the space of hash values for any set of keys (that is, for any key, its hash code should be equally likely to be any number in -2^31..2^31-1).  The assumption of uniformly distributed hash codes is needed to justify the averaging done in the complexity analysis - we needed to assume that a requested key was equally likely to be assigned to any bucket.
+ </paragraph>
+ <paragraph>
+  For example, if all keys mapped to the same hash code, then they would all be in the same bucket, and lookups would degenerate to a linear search - O(N).  It's still true that the "average" chain length (including all the empty buckets) is equal to the load factor, but if keys haver 0 chance of mapping to an empty bucket, then this average is meaningless for the purpose of complexity analysis.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,71 @@
+<h1>
+ Title: Casting Among Types
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-14T05:31:16.623147+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am reviewing the slides for lecture 1 and I saw this example in the casting section:
+  <break>
+  </break>
+  <break>
+  </break>
+  (int) - (float) (4 + 5)
+ </paragraph>
+ <paragraph>
+  why there is no number expression behind "(int)" ?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  In this expression, the
+  <code>
+   -
+  </code>
+  is the unary negation operator, not subtraction.  This example shows how unary operators (which include both casts and negation) are parsed, namely, right-to-left.  So the order of operations is:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    4 + 5 → 9 (int)
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    9 → 9.0f (float)
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    9.0f → -9.0f (float)
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    -9.0f → -9 (int)
+   </paragraph>
+  </list-item>
+ </list>
+</document>
+<h3>
+ ------------------------------------
+</h3>

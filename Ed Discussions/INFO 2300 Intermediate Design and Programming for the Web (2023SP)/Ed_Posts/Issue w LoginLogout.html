@@ -1,0 +1,51 @@
+<h1>
+ Title: Issue w/ Login/Logout
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-04-28T04:27:05.144338+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm running into an issue with my login. I'm trying to display the insert form only if the user is logged in, but when I press the "sign in" button, I'm getting a HTTP ERROR 500 that reads "This page isn’t working localhost is currently unable to handle this request."
+ </paragraph>
+ <paragraph>
+  I went to office hours, and the TA and I spent 30 minutes trying to debug it with no luck.
+ </paragraph>
+ <paragraph>
+  We deleted my site.sqlite and added code to include the database and sessions.php in the form page. We also checked that sessions.php and the two tables for sessions and users in my init.sql are correct. Still, it's not working and I'm getting this error in the debug console:  exec_sql_query(NULL, 'SELECT * FROM u...', Array) password_login(NULL, Array, '', '') #2  process_session_params(NULL, Array). The TA wasn't sure why this is happening because everything I implemented seemed correct.
+ </paragraph>
+ <paragraph>
+  I honestly don't know how to fix it and am not sure where to go from here. If anyone has any idea about how to solve this, I'd be really appreciative.
+ </paragraph>
+ <paragraph>
+  Thanks!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I understand that you've tried a lot to fix this, and I wish I could help. However, with the information provided here, I'm not sure what's wrong. I would need to see the code to know more. I would suggest reviewing the steps for adding sessions to a website using the class notes. You may discover that one step is missing. Or try office hours.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

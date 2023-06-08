@@ -1,0 +1,88 @@
+<h1>
+ Title: Why we can't directly apply Hoeffding's inequality
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-18T12:20:33.78487+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I completely understand why there is a upper bound that is |H|2exp(-m*epsilon^2/2)
+ </paragraph>
+ <paragraph>
+  But this is just a larger upper bound.
+ </paragraph>
+ <paragraph>
+  My question is why can't we use Hoeffding's inequality directly for the |err_s(hs)-err_p(hs)&gt;epsilon/2|;
+ </paragraph>
+ <paragraph>
+  proceeding from the first to the second equation is simply stating the fact the "hs has large error" is the subset of the event "one of the h has a large error" . when we are doing sum in the third eqns, hs is also there
+ </paragraph>
+ <paragraph>
+  proceeding from 3th to 4th we also directly use hoeffding inequality on hs.
+ </paragraph>
+ <paragraph>
+  So I don't see why use hoeffding inequality on hs on the first eq is wrong. Why this smaller upper bound is wrong?
+ </paragraph>
+ <figure>
+  <image height="498.32731376975175" src="https://static.us.edusercontent.com/files/f0oPNPRZwYDDwok0KH7yjJa2" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Scott Bass (student)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  From the wiki:
+ </paragraph>
+ <blockquote>
+  In
+  <link href="https://en.wikipedia.org/wiki/Probability_theory"/>
+  probability theory,
+  <bold>
+   Hoeffding's inequality
+  </bold>
+  provides an
+  <link href="https://en.wikipedia.org/wiki/Upper_bound"/>
+  upper bound on the
+  <link href="https://en.wikipedia.org/wiki/Probability"/>
+  probability that the sum of bounded
+  <link href="https://en.wikipedia.org/wiki/Independent_random_variables"/>
+  independent random variables deviates from its
+  <link href="https://en.wikipedia.org/wiki/Expected_value"/>
+  expected value by more than a certain amount.
+ </blockquote>
+ <paragraph>
+  And we also have that: $$err_{S}(\hat{h}) = \frac{1}{m}\Sigma_{i=0}^{m}\Delta(y_{i}, \hat{h}(x_{i}))$$
+ </paragraph>
+ <paragraph>
+  So, $err_{S}(\hat{h})$ is a sum of bounded independent random variables so long as $\Delta(y_{i}, \hat{h}(x_{i}))$ is an
+  <bold>
+   independent RV
+  </bold>
+  . But, the $h_{S}$ that you get after doing ERM is
+  <italic>
+   using
+  </italic>
+  this loss function to choose the best hypothesis on the data. So, once you've picked the $h_{S}$ by minimizing the loss function, you've removed the randomness from the equation, breaking one of the assumptions needed for the Hoeffding inequality.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

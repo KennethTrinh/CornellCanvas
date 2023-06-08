@@ -1,0 +1,76 @@
+<h1>
+ Title: instanceof
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-07T06:38:01.578207+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I see this on java hyper text:
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  To determine whether an object ob has a partition named C, use ob instanceof C
+ </paragraph>
+ <paragraph>
+  To determine the class of object ob, use ob.getClass()
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  I still don't understand when to use which. In all the past exams that I have done, I've only seen getClass(), and they were about seeing if two classes are the same class or to answer "return true iff ob is a xxx". So when (if ever) do we use instanceof? What phrasing would suggest using this?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Sara Yoo (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  From my understanding, it depends on if you want to compare/check the object's status in general terms or specific terms.
+ </paragraph>
+ <paragraph>
+  For example, if obj A is a Cornell University freshman:
+ </paragraph>
+ <paragraph>
+  Using instanceof will check if the object belongs to a more broader group (ex: if A is a student). Using getClass() will check what its most specific identity is (ex: A is Cornell University freshman).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If you want to determine whether the object can be cast to some class or interface, the instanceof will do.
+ </paragraph>
+ <paragraph>
+  If you want to know the class with which the object was created, used getClass().
+ </paragraph>
+ <paragraph>
+  Generally when writing a method equals, look at the specification! It should give enough information for you to determine which to use.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

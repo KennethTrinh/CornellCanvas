@@ -1,0 +1,48 @@
+<h1>
+ Title: Confusion about quiz lec 5-8 question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-04T14:00:51.51371+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="399.98499061913697" src="https://static.us.edusercontent.com/files/syT3ExkMi7hVZ1rAHabRb0FC" width="658"/>
+ </figure>
+ <paragraph>
+  Hi! I don't understand why class Derived's toString() would print instead of Base's.
+ </paragraph>
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  d.foo calls Base's printMe(), which then calls toString().  This toString() will refer to Derived's toString() because variable d is of class Derived.  In order to call Base's toString(), you will need to call super.toString(), but that is never called during execution.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

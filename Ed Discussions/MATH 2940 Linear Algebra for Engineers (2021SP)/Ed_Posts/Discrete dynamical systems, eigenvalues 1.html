@@ -1,0 +1,71 @@
+<h1>
+ Title: Discrete dynamical systems, eigenvalues 1
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-15T09:15:44.167583+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Could someone reiterate to me what happens/why when you have an eigenvalue = 1 / complex eigenvalue of magnitude 1? Thanks in advance!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Phillip Jang (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  You should commit the general solutions of the dynamical system and differential equation to memory so that you can figure out behaviour from first principles.
+ </paragraph>
+ <paragraph>
+  If $\vec{x}_{k+1} = A\vec{x}_k$ and $A$ has eigenpairs $(\lambda_1,\vec{v}_1),\ldots,(\lambda_n,\vec{v}_n)$ and $[\vec{x}_0]_\mathcal{B} = \begin{bmatrix}c_1 &amp; \ldots &amp; c_n\end{bmatrix}^T$, the general solution of the dynamical system is
+ </paragraph>
+ <paragraph>
+  $$\vec{x}_k = c_1\lambda_1^k \vec{v}_1 + \ldots + c_n\lambda_n^k \vec{v}_n$$
+ </paragraph>
+ <paragraph>
+  Suppose $\lambda_1 = 1$ and all $c_i$'s are zero except $c_1$. Then
+ </paragraph>
+ <paragraph>
+  $$\vec{x}_k = c_1\lambda_1^k \vec{v}_1 = c_1 1^k \vec{v}_1 = c_1\vec{v}_1 \hspace{1cm} \forall k$$
+ </paragraph>
+ <paragraph>
+  So any vector that touches the subspace $Span\{\vec{v}_1\}$ stays in place forever. The steady state vector for a stochastic matrix in Markov Chains is an example of this.
+ </paragraph>
+ <paragraph>
+  Now if we have a real matrix $A$ with complex eigenvalue $\lambda_1 = re^{i\theta}$ where $r=1$ and complex eigenvector $\vec{v}=\vec{x}+i\vec{y}$, there is a corresponding conjugate eigenpair $\lambda_2 = re^{-i\theta}$ and $\vec{w}=\vec{x}-i\vec{y}$. Assume all $c_i$'s are zero except $c_1$ and $c_2$. Then
+ </paragraph>
+ <paragraph>
+  $$\vec{x}_k = c_1\lambda_1^k \vec{v} + c_2\lambda_2^k \vec{w} = c_1 1^ke^{ik\theta} \vec{v} + c_2 1^ke^{-ik\theta}\vec{w}$$
+ </paragraph>
+ <paragraph>
+  Assuming your initial vector $\vec{x}_0$ has real entries, the coordinates $c_1=a_1-ib_1$ and $c_2=a_1+ib_1$ must be in conjugate pairs, and if you expand everything out with sines and cosines, you'll get that $\vec{x}_k$ orbits the origin in closed elliptical orbits in the plane $Span\{\vec{x},\vec{y}\}$.
+ </paragraph>
+ <paragraph>
+  The origin is classified as a "center", and you can determine whether the orientation is clockwise or counterclockwise by computing $\vec{x}_1$ and seeing which direction you changed angle by $\theta$.
+ </paragraph>
+ <paragraph>
+  For the differential equation, the above cases happen when the real part of the complex eigenvalue is zero instead of absolute value equalling one.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

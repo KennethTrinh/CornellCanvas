@@ -1,0 +1,48 @@
+<h1>
+ Title: How do Convolutional Neural Networks learn?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-20T15:24:53.971179+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  We learned to construct gradients for weights in flattened neural networks, but how do we do backpropagation in CNN's? I assume the Jacobian method we learned wouldn't work since weight matrices would now be 3d (or even 4d)?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Victor Butoi (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is such a great question.
+ </paragraph>
+ <paragraph>
+  The tldr; we update the filter weights by convolving with a rotated version of the filter and the loss gradient from the next layer.
+ </paragraph>
+ <paragraph>
+  The non tldr is a lot of math, but if you're interested I recommend:
+  <link href="https://medium.com/@pavisj/convolutions-and-backpropagations-46026a8f5d2c"/>
+  https://medium.com/@pavisj/convolutions-and-backpropagations-46026a8f5d2c
+ </paragraph>
+ <paragraph>
+  P.S. In general, whenever I'm confused about something in ML, I've always found that when I google "X medium" there is a great visual explanation.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

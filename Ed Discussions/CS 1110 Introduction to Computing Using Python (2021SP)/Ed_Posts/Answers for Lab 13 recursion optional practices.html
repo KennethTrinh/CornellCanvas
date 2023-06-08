@@ -1,0 +1,164 @@
+<h1>
+ Title: Answers for Lab 13 recursion optional practices?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-11T01:56:19.223557+10:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Will the answers for the optional recursion practices become available? Thanks!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Unfortunately, we have an agreement with other instructors of this course that answers to lab questions will not be released.
+  <break>
+  </break>
+  <break>
+  </break>
+  However, you have pretty extensive testing code for those questions, which should help, and we'd love to go over your answers with you in office/consulting hours!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Isabella Paternostro (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Which file do we run to test the optional recursion file? When I run the recursion_qs_test file it only runs the recursion_qs functions.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, take a look at the bottom of recursion_qs_test.py: you should uncomment the test functions that you want to run.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <pre>    # Tests of the optional functions
+    # STUDENTS: uncomment out any tests you want to run
+    for fn in [
+                # test_print_nested_list,
+                # test_embed,
+                # test_max_nested_list,
+                # test_flatten_nested_list,
+                # #######
+                # test_reverses,               
+                # #######
+                # test_replace,
+                # test_remove_dups,
+                # test_number_not,
+                # test_remove_first,
+                # test_sum_list,
+                # test_sum_to,
+                # test_num_digits,
+                # test_sum_digits,
+                # test_number2,
+                # test_into,
+                # test_exp,
+                ]:
+        fn(is_verbose)
+        ask_to_quit(is_verbose)
+
+</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Isabella Paternostro (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Isabella Paternostro (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Actually, I uncommented the functions I wanted to run but it came up with this error message:
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Running test_print_nested_list Traceback (most recent call last): File ".\recursion_qs_test.py", line 516, in  fn(is_verbose) File ".\recursion_qs_test.py", line 137, in test_print_nested_list fns_to_test = [recursion_qs.print_nested_list] AttributeError: module 'recursion_qs' has no attribute 'print_nested_list'
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  There was an updated version of the testing file that fixes that issue. You can get it from the labs page, or change expressions of the form
+  <break>
+  </break>
+  <break>
+  </break>
+  recursion_qs.print_nested_list
+  <break>
+  </break>
+  <break>
+  </break>
+  to
+  <break>
+  </break>
+  <break>
+  </break>
+  recursion_optional.print_nested_list
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,75 @@
+<h1>
+ Title: Spring 2019 A Prelim II
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-18T06:07:37.043886+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For Section 4: Trees, question b, is there one right answer for putting the tree together? I put the tree together in another way while doing what I thought kept the invariant for a binary search tree true (for instance, I added 4 as the right child of 1 instead of as the right child of 2). Was it done in the way shown below in order to keep the tree balanced? Or is there some other piece of BSTs I'm misunderstanding?
+ </paragraph>
+ <figure>
+  <image height="194.5218702865762" src="https://static.us.edusercontent.com/files/teSEG4NFOXg1qWMspqW1Akag" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  You have to add the children in the given order, adding 1 to a child of 4 doesn’t maintain that order.
+  <break>
+  </break>
+  also 4 cant be a child of 1 here, doesn’t keep the BST invariant true (4&gt;3), read Java hyper text for more on this
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I wasn't saying to add 1 to a child of 4, I was saying to add 4 as a child of 1. So, the order would still be maintained. Regardless, I do understand that all values in the left subtree of a node must be less than the node's value. So I understand now that adding 4 as a child of 1 would be incorrect since 4 is greater than 2 and is part of 2's left subtree. Thank you for your help
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  no problem!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

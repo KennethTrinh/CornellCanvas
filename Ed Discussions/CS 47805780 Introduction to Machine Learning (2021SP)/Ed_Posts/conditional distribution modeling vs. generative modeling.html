@@ -1,0 +1,43 @@
+<h1>
+ Title: conditional distribution modeling vs. generative modeling
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-23T05:22:24.059645+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I understand that conditional distribution modeling models P(Y|X), whereas generative modeling models P(X,Y), but I'm not quite getting the intuition regarding the significance of this difference? What is important to know about the difference between these two modeling approaches?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  They effectively measure the same distribution in different ways.
+ </paragraph>
+ <math>
+  P(Y|X)=P(Y|X)P(X)/P(X)=\frac{P(X,Y)}{\Sigma_YP(X|Y)P\left(Y\right)}\sim P\left(X,Y\right)
+ </math>
+ <paragraph>
+  So P(Y|X) will basically just be a scaled-up version of P(X,Y); the main difference between the two, aside from this, is just the logistics of the model you choose–for example, conditional modeling might look like logistic or ridge regression when generative modeling might look like Naive Bayes.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,69 @@
+<h1>
+ Title: Heapsort
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-16T15:05:48.195263+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  // Make b[0..n-1] into a max-heap (in place)
+ </paragraph>
+ <paragraph>
+  // inv: b[0..k] is a heap, b[0..k] &lt;= b[k+1..], b[k+1..] is sorted
+ </paragraph>
+ <paragraph>
+  for (
+  <bold>
+   k = n-1
+  </bold>
+  ; k &gt; 0; k = k-1) {
+ </paragraph>
+ <paragraph>
+  b[k] = poll
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  <underline>
+   <italic>
+    For this heap method, why is it k=n-1 in the for loop? Where does it come from?
+   </italic>
+  </underline>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  // invariant: b[0..k-1] is a max-heap AND b is a permutation of its initial value
+ </paragraph>
+ <paragraph>
+  for (int
+  <bold>
+   k= 1
+  </bold>
+  ; k &lt; b.length; k= k + 1) {
+ </paragraph>
+ <paragraph>
+  // Make b[0..k] into a max-heap by bubbling b[k] up
+ </paragraph>
+ <paragraph>
+  <underline>
+   <italic>
+    For this heap method, why is k=1 in the for loop?
+   </italic>
+  </underline>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

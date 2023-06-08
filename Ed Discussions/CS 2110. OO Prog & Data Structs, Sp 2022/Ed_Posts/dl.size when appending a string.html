@@ -1,0 +1,112 @@
+<h1>
+ Title: dl.size when appending a string
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-02T00:55:36.633213+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When DLList is declared a &lt;String&gt;, the method toString() uses the line of code:
+ </paragraph>
+ <pre>if(n!=null) res.append(", ");  
+</pre>
+ <paragraph>
+  Since the &lt;E&gt; is a String,
+ </paragraph>
+ <paragraph>
+  ", " is also a String,
+ </paragraph>
+ <paragraph>
+  and there is a method append() in DLList,
+ </paragraph>
+ <paragraph>
+  How come when appending a second node during the testing of append(), our DLList.size() is 2 and not 3?  How come the program doesn't compute ", " as another node?
+ </paragraph>
+ <pre>1. public String toString() {
+
+2.     var res= new StringBuilder("[");
+
+3.     var n= head;
+
+4.     while (n != null) {
+
+5.       res.append(n.val);
+
+6.        n= n.next;
+
+7.        if (n != null) res.append(", ");
+
+8.     }
+
+9.     return res + "]";
+
+10. }
+</pre>
+ <paragraph>
+  I understand that
+  <italic>
+   res
+  </italic>
+  is declared a Stringbuilder, hence in line 7. res.append(", ") means Stringbuilder.append().  But by that reasoning, how come in line 5.
+  <italic>
+   res.append(n.val)
+  </italic>
+  , where
+  <italic>
+   n.val
+  </italic>
+  is also a String refers to
+  <italic>
+   DLList.append()
+  </italic>
+  ?  How do I differentiate between which append() is called, if they both have the same call-signature?
+ </paragraph>
+ <paragraph>
+  Thanks!!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Atulya Lohani (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  res.append(n.val) calls the append() from StringBuilder. You know which method is called if you know the type of the object before the dot. For example in this case, res is before the dot so append is called from the StringBuilder class since res is a StringBuilder object.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ohh... I see! The test case calls DLList.append() to increment the size, but that's entirely different from DLList.toString() which calls Stringbuilder.append().  Thank you so much!!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

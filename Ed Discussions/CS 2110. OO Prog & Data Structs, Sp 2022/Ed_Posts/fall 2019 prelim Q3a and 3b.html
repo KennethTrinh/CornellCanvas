@@ -1,0 +1,61 @@
+<h1>
+ Title: fall 2019 prelim Q3a and 3b
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-04T13:55:23.734586+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Why does the animal constructor need "this" in this.name = name. However in the rabbit constructor it's not this.height = h, but height = h? I thought it would be this.height = h.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Vladia Trinh (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  <code>
+   this
+  </code>
+  is necessary to distinguish the field name from the parameter name when they are called the same thing. But in the second case, the field is called height and the parameter is called h, so it is not necessary. Having
+  <code>
+   this.height= h
+  </code>
+  is correct, but we prefer to omit it to be more concise.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you!!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

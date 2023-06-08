@@ -1,0 +1,98 @@
+<h1>
+ Title: Initialization of Loop Invariant
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-09T06:22:54.724681+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="190.05750487329436" src="https://static.us.edusercontent.com/files/P0G2gYj7YlrqBicC4lQ16F4B" width="623"/>
+ </figure>
+ <paragraph>
+  How do you find the initialization to truthify the loop invariant? Why would it not be i=h instead of i=h-1, since b[h-1] is not even in the range given?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  When initializing, we make the "s = product of these" partition empty, so we set i = h-1
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Nikhil Kalyanraman (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  But then wouldn't the invariant be violated because i will be before h? I get that this is the only possible solution but is this simply a bad problem or is i = h-1 a valid initialization?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  the invariant is not violated. The invariant just says b[h..i] is the calculated region. We start with that region being completely empty because we haven't calculated anything yet
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Nikhil Kalyanraman (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Got it, thanks
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I see, thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

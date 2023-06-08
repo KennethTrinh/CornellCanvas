@@ -1,0 +1,47 @@
+<h1>
+ Title: Negative information gain?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-30T04:25:30.804413+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  From lecture 3c, I find the information gain on the last tree to be negative after splitting on farm. Have I done something wrong? What should it be? I got an information gain of 0 for firmness and 0.065 for size.
+ </paragraph>
+ <figure>
+  <image height="563.8743315508021" src="https://static.us.edusercontent.com/files/MTtlpyhMHQ8pEmGSx6FWTPcN" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Alexander Wang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For the exact expression for H(S) you wrote in the top right corner, I'm getting H(S) = -0.97095, not 0.55. Don't forget to take the negative of the full expression. (You wrote down the formula for H(S) correctly on the top left but forgot the negative in the top right)
+  <break>
+  </break>
+  <break>
+  </break>
+  In general, IG should be &gt;= 0 because you can never "lose" information from splitting. You can only gain or net-zero information.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

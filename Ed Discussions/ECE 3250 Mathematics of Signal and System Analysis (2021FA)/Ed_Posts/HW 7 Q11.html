@@ -1,0 +1,55 @@
+<h1>
+ Title: HW 7 Q11
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-04T10:59:32.685+11:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For part a, how is
+ </paragraph>
+ <math>
+  D\hat{X}\ \left(\Omega\right)=-\Omega\hat{X}\left(\Omega\right)
+ </math>
+ <paragraph>
+  true if equation F is
+ </paragraph>
+ <math>
+  \hat{X}\left(\Omega\right)=\int_{-\infty}^{\infty}x(t)e^{-j\Omega t}dt
+ </math>
+ <paragraph>
+  and
+ </paragraph>
+ <math>
+  \frac{\partial}{\partial\Omega}\int_{-\infty}^{\infty}x(t)e^{-j\Omega t}dt\ =\int_{-\infty}^{\infty}\left(-jt\right)x(t)e^{-j\Omega t}dt=-jt\hat{X}\left(\Omega\right)
+ </math>
+ <paragraph>
+  I'm not sure how to see where the flaw in my logic is or how $-j t = \Omega$
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  You can't factor the $j t$ out of an integral with respect to $t$.  You need to integrate by parts.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

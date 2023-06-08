@@ -1,0 +1,97 @@
+<h1>
+ Title: SPI bus signals using the logical analyzer
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-25T08:57:33.205027+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="471.51612903225805" src="https://static.us.edusercontent.com/files/KJwOUXKGSRaUxIs2zGu1dOLh" width="658"/>
+ </figure>
+ <paragraph>
+  Hello, should the pulseView look like the picture above when we include x, y, and z? My  pulseView (see the picture below) still looks like that only x is included, but the LCD prints out all the axises. So I am not sure where the problem comes from. Thanks!
+ </paragraph>
+ <figure>
+  <image height="411.45036101083036" src="https://static.us.edusercontent.com/files/M5gJNjlW1tc7Xqrbj2khLmsT" width="643"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="295.7112299465241" src="https://static.us.edusercontent.com/files/TW736H99eglCgokjTj4gF6d7" width="643"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Cheng Zhang (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Your set up looks fine. The reading is correct. The picture you used from slides was the second way to get x,y,z axis data .
+ </paragraph>
+ <paragraph>
+  I guess you are using the first method (replicating the code for x) to get the  data for Y , Z.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, I am using the first method. Thank you Prof.Zhang!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Ruidong Zhang (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The Y and Z axes are actually further behind the X axis. This is probably because you have some kind of delay between SPI requests. E.g., if you send the readings to LCD immediately after getting the readings, you will see that XYZ axes are separate, because LCD operations take time. This is OK. If you want three axes to be seen in the same window, you can try requesting XYZ axes data consecutively and put all LCD parts of the code after getting data from all axes.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yeah, I got the three axes shown in the same window following your advice. Thank you Ruidong!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,326 @@
+<h1>
+ Title: HW6 Animation Thread
+</h1>
+<h3>
+ Author: Andrew van Paridon (admin)
+</h3>
+<h3>
+ Date: 2021-10-15T07:51:57.912063+11:00
+</h3>
+<h3>
+ Category: Homework
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Post your animations here!
+  <break>
+  </break>
+  <break>
+  </break>
+  Those of you who already uploaded, don't worry about reuploading to this thread if you don't want to
+ </paragraph>
+</document>
+<h3>
+ Author: Suming Qiu (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="551.0103567318757" src="https://static.us.edusercontent.com/files/swhCVjBK9tcxO3rN6JWQtrSX" width="698"/>
+ </figure>
+ <paragraph>
+  Hi, I try to make a 3-d animation of the rotating sphere. Hope you like this.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Cong Liu (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="484" src="https://static.us.edusercontent.com/files/LU73ZqOcLd43DoIG8nt2jWi4" width="645"/>
+ </figure>
+ <pre>close all
+clc
+clear
+
+% Draw the Face
+x0= [0 2 2 0 0 nan 0.25 0.75 nan 1.25 1.75 nan 0.5 0.5 1.5 1.5];
+y0= [0 0 2 2 0 nan 1.5 1.75 nan 1.75 1.5 nan 0 1 1 0];
+r0 = [x0;y0];
+
+n = 100;
+t = linspace(0,2*pi,n);
+Fig = figure;
+
+filename = 'Sad face.gif';
+for i=1:1:n
+    drop = t(i); % The motoin function
+    R = [ cos(t(i))  -sin(t(i)); % Rotation function
+      sin(t(i))  cos(t(i))];
+    r = R* r0;
+    r = bsxfun(@minus, r, [0;drop]);
+    x=r(1,:);
+    y=r(2,:);
+    plot(x,y)
+    axis('equal'); 
+axis([-8 8 -8 8]);
+
+% Get Gif
+drawnow 
+frame = getframe(Fig); 
+    im = frame2im(frame); 
+    [imind,cm] = rgb2ind(im,256);
+    if i == 1
+        imwrite(imind,cm,filename,'gif','WriteMode','overwrite', 'Loopcount',inf);
+    else
+        imwrite(imind,cm,filename,'gif','WriteMode','append','DelayTime',0.02);
+    end
+end
+</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kate Mosle (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <file filename="starhop_hw6.gif" url="https://static.us.edusercontent.com/files/Voz3lflrsLELsioApcIy0Ewx">
+ </file>
+ <file filename="MotionRotation_hw6.pdf" url="https://static.us.edusercontent.com/files/W0cRnXhHMQZ4Y2TU15SBUbUE">
+ </file>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Yu Yang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <file filename="MAE5730HW6PART1.pdf" url="https://static.us.edusercontent.com/files/Gqojfb0gh0olevmsVweRamI6">
+ </file>
+ <paragraph>
+  Crazy Rotating House
+ </paragraph>
+ <figure>
+  <image height="420" src="https://static.us.edusercontent.com/files/K5FhiJeuAMdyxWGkaWc33VnC" width="560"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Zhiyu Wang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <file filename="HW6P1.pdf" url="https://static.us.edusercontent.com/files/VOA7cdQhgs0rZycwMuDvaVrC">
+ </file>
+ <figure>
+  <image height="544" src="https://static.us.edusercontent.com/files/MvFe2onOuQmvR8eEwlx3K8ak" width="640"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Vaibhav Bisht (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <file filename="Vaibhav_Bisht_GIF.pdf" url="https://static.us.edusercontent.com/files/w1BQZyBi82gAsfFZT5Du3OF2">
+ </file>
+ <file filename="Vaibhav_Bisht_GIF.m" url="https://static.us.edusercontent.com/files/hvPXBkxV9tk1GKJ1TBVZQ0vS">
+ </file>
+ <figure>
+  <image height="523.5" src="https://static.us.edusercontent.com/files/QFl9t8v8l4gCNE3GB17SePVT" width="698"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Shengjie Tang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <file filename="Rotation of a cube.mp4" url="https://static.us.edusercontent.com/files/OTByChQWRczftHYwwczPjF4g">
+ </file>
+ <file filename="Rotation of a cube code.pdf" url="https://static.us.edusercontent.com/files/IXq9KbFxs5Efo3nvJdsdFyMg">
+ </file>
+ <paragraph>
+  Rotation of a cube.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Chris Cavanaugh (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Outward spiral of a rotating star shape!
+ </paragraph>
+ <file filename="StarSpiral.mp4" url="https://static.us.edusercontent.com/files/bnOA4SQtNthBo8sNcbcjpcVP">
+ </file>
+ <file filename="imagerotations.m" url="https://static.us.edusercontent.com/files/0LwRx0BWHajTsxn93SKW3dGZ">
+ </file>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Hamza Akik (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Rotating Mass on a Pendulum
+ </paragraph>
+ <file filename="RotatingMassPendulum2D_Movie.mp4" url="https://static.us.edusercontent.com/files/rr6VTvGdz40gQM1Ww3Q4fvB0">
+ </file>
+ <file filename="RotatingMassOnPendulum.m" url="https://static.us.edusercontent.com/files/0ebTpsAHng9mUXLxxsLcylr9">
+ </file>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Erhe Zheng (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <file filename="Code of motion.pdf" url="https://static.us.edusercontent.com/files/GTLopIChh4c8LmMKIgCSNmO0">
+ </file>
+ <figure>
+  <image height="437.25000000000006" src="https://static.us.edusercontent.com/files/3wLZk1exhaQRII3IaT2d8h9k" width="583"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jiren Liu (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <file filename="falling paper.gif" url="https://static.us.edusercontent.com/files/0maPQpF1z0qsbcxlj2lcF0tI">
+ </file>
+ <file filename="Falling paper.pdf" url="https://static.us.edusercontent.com/files/nlVo6pBfKHIpVtGCcLhWJhG6">
+ </file>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Rebecca Mccabe (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is a rigid body oscillating in a pool of water. The center of mass moves down at the beginning of the simulation because the starting upright position is unstable, and it settles to a stable equilibrium.
+ </paragraph>
+ <file filename="HydroRectangle_2021_09_06_01_34.gif" url="https://static.us.edusercontent.com/files/GUZJgNjfxYaHEl4oSqVB1u2K">
+ </file>
+ <file filename="rectangleDynamics.m" url="https://static.us.edusercontent.com/files/abCVg5CBEXzWaJmVPKzbkDgW">
+ </file>
+ <file filename="HydroRectangle_2021_09_06_01_34.mp4" url="https://static.us.edusercontent.com/files/eKJAzpzD9WdQJyhwoTL7STid">
+ </file>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Gabriele Rampichini (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is a generalized version of Q1 that I created for a past project but thought it would be relevant to repost here. The code takes a 2D parametric function in and rolls the shape on the y=0 axis without slippage. The function can also track the motion of any point in the body reference frame and plot it on a graph relative to the inertial reference frame.
+ </paragraph>
+ <file filename="trajectoryRotatingFunction.mp4" url="https://static.us.edusercontent.com/files/EYazDHT1pBfplhf8lME4R9kc">
+ </file>
+ <file filename="trajectoryPointOfInterest.mp4" url="https://static.us.edusercontent.com/files/5ou4NRS7Qmr9Kqdwifg7guAr">
+ </file>
+ <file filename="trajectoryMinimalPointTrace.mp4" url="https://static.us.edusercontent.com/files/Xr689oRUGTkouZ2CHEcmsuv6">
+ </file>
+ <file filename="gabrieleRampichini_Proj.m" url="https://static.us.edusercontent.com/files/gMeBqnDiqVtbirFgt9cxv1BF">
+ </file>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jared Farley (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Here's a cube/die being rolled across a surface. I've also attached a video of a previous project, a controlled five-link walker kicking a cart and a ball, but the code is
+  <italic>
+   way
+  </italic>
+  too long to post.
+ </paragraph>
+ <file filename="rollDie.mp4" url="https://static.us.edusercontent.com/files/GshrVtViMThDTCQavfVLKnix">
+ </file>
+ <file filename="dieDynamics.m" url="https://static.us.edusercontent.com/files/J9ZhNHJ6moyWRfq88xOstHtW">
+ </file>
+ <file filename="run_sim_die.m" url="https://static.us.edusercontent.com/files/gweFzvQvb6ch4H8LrFM9MIms">
+ </file>
+ <file filename="kickStationary.mp4" url="https://static.us.edusercontent.com/files/08wOtEAjYgcMZGdkN38rkXYd">
+ </file>
+ <file filename="kick_2.mp4" url="https://static.us.edusercontent.com/files/hhtpS9UMkWCz8tiHHNGWO1le">
+ </file>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

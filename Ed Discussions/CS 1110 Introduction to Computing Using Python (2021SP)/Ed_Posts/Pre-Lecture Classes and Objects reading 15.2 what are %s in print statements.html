@@ -1,0 +1,73 @@
+<h1>
+ Title: Pre-Lecture Classes and Objects reading 15.2: what are %s in print statements?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-01T14:37:03.657499+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am a bit confused as to what this means: '(%g, %g)' % (blank.x, blank.y)
+ </paragraph>
+ <paragraph>
+  What is the (%g, %g) % supposed to be and do?
+ </paragraph>
+ <paragraph>
+  from
+  <link href="https://greenteapress.com/thinkpython2/html/thinkpython2016.html"/>
+  https://greenteapress.com/thinkpython2/html/thinkpython2016.html Section 15.2 as part of our pre-lecture reading
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh dang!  We haven't learned '%' for print statements yet (and probably won't bother to do so in CS1110, since it's very Python-specific)!
+  <break>
+  </break>
+  <break>
+  </break>
+  View that line as the equivalent of string concatenation in the way we're used to, in the sense demonstrated by the following example code. (Hit the "Run" button and marvel at Ed Discussion's power...)
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   first = 100.1
+second = 200.2
+
+# what you're used to:
+print("Output using string processing we are used to:")
+print('(' + str(first) + ', ' + str(second) + ')')
+
+# what the print statement with the %s does
+print("Demonstrating that the % syntax you don't need to know produces the same output")
+print('(%g, %g)' % (first, second))
+  </snippet-file>
+ </snippet>
+</document>
+<h3>
+ ------------------------------------
+</h3>

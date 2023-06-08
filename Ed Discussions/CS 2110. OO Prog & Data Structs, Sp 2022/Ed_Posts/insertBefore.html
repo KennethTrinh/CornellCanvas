@@ -1,0 +1,48 @@
+<h1>
+ Title: insertBefore
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-02T15:02:12.154001+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  To call the insertBefore(), I'm trying to make a node which is one of the parameters in the method so I wrote it like this
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Node n= Node(dl.node(0), "8", dl.node(2));
+ </paragraph>
+ <paragraph>
+  But I'm getting an error that the second arg can't be a string. How do I get it to have type value?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="1.0">
+ <paragraph>
+  It wouldn’t even let you create a new node outside of the DLList class, so making a node in your test case would raise an error since that’s an inner class, instead you want to somehow just pass in a node that’s already in the list, and then a value that you want that new node to be in your test cases.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

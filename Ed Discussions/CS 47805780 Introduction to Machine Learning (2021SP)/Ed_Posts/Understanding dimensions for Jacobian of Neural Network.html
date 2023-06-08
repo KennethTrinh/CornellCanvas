@@ -1,0 +1,64 @@
+<h1>
+ Title: Understanding dimensions for Jacobian of Neural Network
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-03T08:09:15.431625+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="131" src="https://static.us.edusercontent.com/files/cJLlRrykJZHyvsjHVmsRanun" width="441"/>
+ </figure>
+ <paragraph>
+  My first question has to do with the W_{d-l} matrix above. On the third line, why is it W_{d-l} instead of W_{d-l, 1}? Because in order for s_{d,1} to be scalar, don't we need a vector times a vector on the RHS, but here we have matrix times a vector giving the output as a vector?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="105.75000000000001" src="https://static.us.edusercontent.com/files/khK3GZ8zEtLehvII33n5ZhtZ" width="658.0000000000001"/>
+ </figure>
+ <paragraph>
+  My second question has to do with the second picture. How were we able to go from
+ </paragraph>
+ <math>
+  J_{s_{d,1}}\left(v_{d,1}\right)
+ </math>
+ <paragraph>
+  on the first line to
+ </paragraph>
+ <math>
+  J_{s_d}\left(v_d\right)
+ </math>
+ <paragraph>
+  on the second? Isn't this changing the dimensions of the output?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Ji Won Kim (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  To answer your second question, I believe that the last layer of the NN only has one output (v_{d,1}) and one intermediate value (s_{d,1}), so the two are essentially equivalent (v_{d,1} == v_{d}) in terms of dimensions.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

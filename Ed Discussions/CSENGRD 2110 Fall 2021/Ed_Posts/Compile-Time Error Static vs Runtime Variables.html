@@ -1,0 +1,51 @@
+<h1>
+ Title: Compile-Time Error Static vs Runtime Variables
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-06T02:23:01.652396+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="42.19236641221374" src="https://static.us.edusercontent.com/files/5sLaYej98xcVkTbEmaeCGHUK" width="658"/>
+ </figure>
+ <paragraph>
+  I just want to make sure my reasoning for this answer is correct -- This is illegal because b’s static value does not contain a partition to A, this results in a compile-time error.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I don't know what a "static value" is. Do you mean the static type of b?
+ </paragraph>
+ <paragraph>
+  At compiletime, only the types of expressions are used; values occur only at run time.
+ </paragraph>
+ <paragraph>
+  So your reasoning is not quite right.
+ </paragraph>
+ <paragraph>
+  The assignment-declaration   A a= b;  is illegal because for the assignment to work, the object must be cast down to A, and downward casts are not inserted automatically.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

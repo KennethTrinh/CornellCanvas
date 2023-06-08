@@ -1,0 +1,80 @@
+<h1>
+ Title: HW5 1bi
+</h1>
+<h3>
+ Author: Patrick Yuan (student)
+</h3>
+<h3>
+ Date: 2021-04-22T04:11:11.238626+10:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The formula in the lecture slides computes P(Y=y, X=x) not P(Y=y|X=x). But the HW says to compute P(Y=y|X=x). Is it sufficient to follow the lecture slides and only compute P(Y=y, X=x)?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Jane Du (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You should be able to calculate the conditional probability P(Y=y|X=x) based on the joint probability P(Y=y, X=x).  Googling the defn of "conditional probability" got me
+  <link href="http://www.stat.yale.edu/Courses/1997-98/101/condprob.htm"/>
+  http://www.stat.yale.edu/Courses/1997-98/101/condprob.htm which should help! Take a look at the first equation.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Fynn Datoo (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Using this formula yields values for P(Y = -1, X=x) and P(Y = +1, X=x) such that P(Y = -1, X=x) + P(Y = + 1, X = x) does
+  <bold>
+   not
+  </bold>
+  equal 1. But shouldn't these terms sum to 1?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jane Du (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Just double checking, but: P(Y=-1 | X=011) + P(Y=+1 | X = 011) should equal 1, yes. The expression P(Y = -1, X=x) + P(Y = + 1, X = x) should equal P(X=x).
+ </paragraph>
+ <paragraph>
+  And the equation from the link I sent should translate to P(Y=-1 | X=011) = P(Y=-1, X=011)/P(X=011). Again, this is just the definition of conditional probability. Note that you have to add the two joint probabilities (the expression with the comma) to get P(X=x).
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

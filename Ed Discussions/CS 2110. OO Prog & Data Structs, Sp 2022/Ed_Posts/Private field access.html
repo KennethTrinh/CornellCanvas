@@ -1,0 +1,67 @@
+<h1>
+ Title: Private field access
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-02T09:25:13.826034+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If a field is private, can we still access it in the methods? and Can you access it directly if it's another instance of a class (when comparing two instances)?
+ </paragraph>
+ <paragraph>
+  For example if you had a field
+ </paragraph>
+ <paragraph>
+  private int x;
+ </paragraph>
+ <paragraph>
+  And you wanted to use it in a method, could you just use ‘x’ or is a getter necessary.
+ </paragraph>
+ <paragraph>
+  And when comparing, are you able to do (where instance2 is an object of the same class):
+ </paragraph>
+ <paragraph>
+  x == instance2.x;
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  Private fields are accessible at the
+  <bold>
+   class
+  </bold>
+  level only. That's class level, not just instance level. So if the method you are describing is a method within the class that contains the private field, then yes, the field is accessible. And for your example with instance2, if instance2 is of the same class as the one you are inside, then x == instance2.x would compile. Again, since private is at the
+  <bold>
+   class
+  </bold>
+  level, not just
+  <bold>
+   instance
+  </bold>
+  level.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

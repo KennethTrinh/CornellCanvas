@@ -1,0 +1,164 @@
+<h1>
+ Title: HW7 2
+</h1>
+<h3>
+ Author: Jess Hensel (student)
+</h3>
+<h3>
+ Date: 2023-03-20T22:58:03.94377+11:00
+</h3>
+<h3>
+ Category: Homework
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Problem # 2
+ </paragraph>
+ <paragraph>
+  HW # 7
+ </paragraph>
+ <paragraph>
+  Hi,
+ </paragraph>
+ <paragraph>
+  I'm confused what the p-value given by model.pvalues['x'] represents here. I understand that a p-value represents the probability that a randomly generated Y (call this Y_rand) is more extreme than an observed value (== probability that Y_rand is outside of the 1-alpha confidence interval for Y_i), but if we are defining Y_i with B as a variable, I don't understand why varying B is going to change how often Y_rand will fall outside of the confidence interval for Y_i since if B gets bigger, Y_i and Y_rand will also get bigger. My thought is that when you multiply a standard random normal variable X_i by B, it becomes == N(0*B, 1*B), so larger Bs lead to a larger variance of Y_i. But I'm not sure why a larger variance of  Y_i would make a difference in the confidence interval of B.
+ </paragraph>
+ <paragraph>
+  Please let me know if there is an error in the way I am thinking about things/why the likelihood that B is in its confidence interval will change as B changes. Thanks!
+ </paragraph>
+ <figure>
+  <image height="371.5112359550562" src="https://static.us.edusercontent.com/files/Fegofa8YXNdWBoPrhS0Fe2DC" width="658"/>
+ </figure>
+</document>
+<h3>
+ Author: Jess Hensel (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Also are we varying B but still testing against the hypothesis that B=0?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Julia Vanputte (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  B is the slope of the regression that you are running. For each value of B between 0.1 to 1.0 in increments of 0.1, we want to estimate the type 2 error. I think your confusion is regarding the difference between B (model input slope) and B_hat (model output predicted slope).
+ </paragraph>
+ <paragraph>
+  To estimate the type 2 error, we are testing the hypothesis Bj=0 for
+  <italic>
+   each
+  </italic>
+  value of B. So, for each value of B, we generate 100 datapoints, fit the model Yi=1+
+  <bold>
+   B
+  </bold>
+  xi+ei. Then, we know that the hypothesis is
+  <bold>
+   rejected
+  </bold>
+  when
+  <bold>
+   B_hat
+  </bold>
+  &lt;.05. You get B_hat from running the model and using model.pvalues['x']. This will return the p value associated with the constant that is multiplied by x in the model,
+  <bold>
+   B_hat.
+  </bold>
+  You then, for each 100 models, count the number of times the
+  <bold>
+   B_hat
+  </bold>
+  &lt;.05, and this is your fraction of error for that particular B. Then plot the B values vs type 2 error.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jess Hensel (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you this is very helpful! I am still confused why when the p-value associated with B_hat is &lt; .05, you get the type 2 error with the null hypothesis that B=0 because in my code I don't ever input that the null hypothesis (mu_0 in the equation below) is 0. In this code is it implied that 0 is the null hypothesis or should 0 be an input into some function?
+ </paragraph>
+ <figure>
+  <image height="148" src="https://static.us.edusercontent.com/files/tCPfShb9DNGgd1os2uPb7Z69" width="451"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Julia Vanputte (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  When the p value for B_hat is less than .05, it means that the value given for B_hat is not significant. This means in the context of this question that the model would give you the result that B=0, because the beta value it returns is not statistically significant. So, it would be in effect telling you that B=0. However, because you are making the data with Bj having some non zero value from your equation, a result of B_hat being not significant indicates that Bj=0. When something is not significant we don't really include it in our model. But that would be an error in this case because the equation you are giving the model has a non-zero (and significant!) Bj.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Julia Vanputte (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  so, no you do not have to input this into your code anywhere. By nature of how the question is set up, when the p value for Beta_hat &gt;.05, there is a type 2 error
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Haley Longfellow (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Wouldn't there be a type II error when the p-value for Beta_hat
+  <bold>
+   &gt;= 0.05
+  </bold>
+  , since in this case we are failing to reject the null hypothesis that Bj = 0, and therefore holding that Bj = 0?
+ </paragraph>
+ <paragraph>
+  Then, wouldn't we also need to check that, in fact, Bj does not equal 0, such that there is an error and it is a type II error?
+ </paragraph>
+ <paragraph>
+  Just want to clarify; I may be mixing something up. I am posting the code I wrote in a private Ed discussion for reference. Thanks!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

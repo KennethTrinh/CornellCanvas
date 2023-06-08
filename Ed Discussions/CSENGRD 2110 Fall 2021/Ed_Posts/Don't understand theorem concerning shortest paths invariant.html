@@ -1,0 +1,95 @@
+<h1>
+ Title: Don't understand theorem concerning shortest paths invariant
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-04T05:04:02.041155+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The theorem: For a node f in the frontier with minimum d value (over nodes in the frontier), d[f] is indeed the shortest-path distance from v to f.
+ </paragraph>
+ <paragraph>
+  As I understand it, isn't this circular? The frontier node with the shortest distance to v will of course be the frontier node with the minimum distance among frontier nodes.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  NO, it is not circular.
+ </paragraph>
+ <paragraph>
+  For a node f in the frontier set, d[f] is the length of the shortest path over paths that consist of a bunch of red (settled) nodes followed by ONE blue node:
+ </paragraph>
+ <paragraph>
+  (v=s1, s2, s3, ..., sn, f)
+ </paragraph>
+ <paragraph>
+  So, d[f] may not be the length of the shortest path over ALL paths from v to f.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  BUT, if d[f0] is the smallest d[..] value for nodes in the Frontier set, the theorem says that d[f0] is the shortest path length over ALL paths to f0.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  So the shortest path may not always be the path of settled nodes followed by one frontier node? For example, the shortest path may be a settled node followed several frontier nodes? But if a frontier node has the smallest d[..] value among frontier nodes, then the shortest path to that node WILL be settled nodes followed by a frontier node? And that would be because no other frontier node could possibly help you get to f0 faster if a frontier node f0 has the shortest distance among those frontier nodes?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  So the shortest path may not always be the path of settled nodes followed by one frontier node? Correct.
+ </paragraph>
+ <paragraph>
+  For example, the shortest path may be a settled node followed several frontier nodes? Correct.
+ </paragraph>
+ <paragraph>
+  But if a frontier node has the smallest d[..] value among frontier nodes, then the shortest path to that node WILL be settled nodes followed by a frontier node? Correct.
+ </paragraph>
+ <paragraph>
+  And that would be because no other frontier node could possibly help you get to f0 faster if a frontier node f0 has the shortest distance among those frontier nodes? Correct.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

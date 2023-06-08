@@ -1,0 +1,71 @@
+<h1>
+ Title: HW3 Q1(c): Classification clarification
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-19T11:35:10.581821+11:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The problem set states that "for the features in
+  <italic>
+   L
+  </italic>
+  , at most 2 are equal to one for every positive example, and at least 8 are equal to one for every negative example". How should we interpret the classification for a training example where 3-7 features in
+  <italic>
+   L
+  </italic>
+  are equal to one?
+ </paragraph>
+ <paragraph>
+  More generally, how would a training example that doesn't fit the requirements of
+  <italic>
+   L
+  </italic>
+  and
+  <italic>
+   G
+  </italic>
+  for being a positive example or the requirements for being a negative example be classified? For example, the feature vector where all features = 0 would meet the requirement of at most 2 ones in
+  <italic>
+   L
+  </italic>
+  for being a positive example, but conflicts with the requirement of at least 5 ones in
+  <italic>
+   G
+  </italic>
+  to be a positive example.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Jane Du (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Simply put, you are guaranteed that no example will have between 3-7 1's in the group of features $L$; likewise for the assumptions on G. In this case, the vector of all 0's is guaranteed to
+  <italic>
+   not
+  </italic>
+  be in the dataset.
+ </paragraph>
+ <paragraph>
+  This is part of the problem statement/preconditions. While you don't know where L and G are exactly (in terms of indices in the whole feature vector), you know at least these facts about them, which can be used to guarantee that the points in the dataset are linearly separable in the first place.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

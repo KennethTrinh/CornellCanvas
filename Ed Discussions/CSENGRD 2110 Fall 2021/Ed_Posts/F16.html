@@ -1,0 +1,42 @@
+<h1>
+ Title: F16
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-05T15:54:10.169423+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="805.9659284497444" src="https://static.us.edusercontent.com/files/PgzAfvdJiA8NyVmktWchogAG" width="658"/>
+ </figure>
+ <paragraph>
+  Why does C.m(-1) only print "1:" ?
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Dave Tirtariyadi (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  After printing "1:", you go to the next line. There, you evaluate q / (q+1). But, q+1 evaluates to zero, and you have -1/0, which is an arithmetic error. So, the program shuts down there because you don't have a try-catch surrounding it.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

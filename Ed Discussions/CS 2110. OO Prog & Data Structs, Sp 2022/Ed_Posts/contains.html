@@ -1,0 +1,166 @@
+<h1>
+ Title: contains
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-13T11:34:44.194158+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is for the method contains in A5:
+ </paragraph>
+ <paragraph>
+  Test case:
+ </paragraph>
+ <paragraph>
+  <bold>
+   var
+  </bold>
+  dt=
+  <bold>
+   new
+  </bold>
+  CovidTree(
+  <italic>
+   humanA
+  </italic>
+  );
+ </paragraph>
+ <paragraph>
+  dt.insert(
+  <italic>
+   humanA
+  </italic>
+  ,
+  <italic>
+   humanB
+  </italic>
+  );
+ </paragraph>
+ <paragraph>
+  dt.insert(
+  <italic>
+   humanA
+  </italic>
+  ,
+  <italic>
+   humanC
+  </italic>
+  );
+ </paragraph>
+ <paragraph>
+  <italic>
+   assertEquals
+  </italic>
+  (
+  <bold>
+   true
+  </bold>
+  , dt.contains(
+  <italic>
+   humanC
+  </italic>
+  ));
+ </paragraph>
+ <paragraph>
+  It is returning false, even when the human equals p. I put print statements to debug:
+ </paragraph>
+ <paragraph>
+  comparing
+ </paragraph>
+ <paragraph>
+  (C) - HEALTHY
+ </paragraph>
+ <paragraph>
+  (A) - HEALTHY
+ </paragraph>
+ <paragraph>
+  false
+ </paragraph>
+ <paragraph>
+  now looking at(C) - HEALTHY
+ </paragraph>
+ <paragraph>
+  comparing
+ </paragraph>
+ <paragraph>
+  <bold>
+   (C) - HEALTHY
+  </bold>
+ </paragraph>
+ <paragraph>
+  <bold>
+   (C) - HEALTHY
+  </bold>
+ </paragraph>
+ <paragraph>
+  <bold>
+   true
+  </bold>
+ </paragraph>
+ <paragraph>
+  now looking at(B) - HEALTHY
+ </paragraph>
+ <paragraph>
+  comparing
+ </paragraph>
+ <paragraph>
+  (C) - HEALTHY
+ </paragraph>
+ <paragraph>
+  (B) - HEALTHY
+ </paragraph>
+ <paragraph>
+  false
+ </paragraph>
+ <paragraph>
+  I dont understand why when it identifies that the node is the same, it doesnt return true even if my code says:
+ </paragraph>
+ <paragraph>
+  <bold>
+   if
+  </bold>
+  (p.equals(human)) {
+  <bold>
+   return
+  </bold>
+  <bold>
+   true
+  </bold>
+  ; }
+ </paragraph>
+ <paragraph>
+  Even if the expression is true, does return true and stop the recursion
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Without seeing your method contains, we cannot help.
+ </paragraph>
+ <paragraph>
+  Post it in a private window,
+ </paragraph>
+ <paragraph>
+  Also, the error could be in your method insert.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

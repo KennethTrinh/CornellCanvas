@@ -1,0 +1,78 @@
+<h1>
+ Title: Array List vs. Linked List Prelim Question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-11T07:42:35.561008+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="401.27213114754096" src="https://static.us.edusercontent.com/files/lddfbx98jflcDoHoe0QDHaBy" width="658"/>
+ </figure>
+ <paragraph>
+  This question is from Prelim 2 Spring 2016 7:30pm.
+ </paragraph>
+ <paragraph>
+  <bold>
+   Why is the answer for IV Array List and not Linked List?  It takes O(n) time for an Array to insert/delete elements from a collection while it is O(1) for a Linked List.
+  </bold>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If the elements to be inserted or removed are clustered near the end of the ArrayList, then it doesn't take O(n) time to insert or add. To remove an element 2 from the end requires moving on two elements down in the ArrayList.
+ </paragraph>
+ <paragraph>
+  In order to remove element i from a linked list, you have to search through I-1 elements to get to it. If that i is close to the size of the list, n, that takes time O(n).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  So you need to factor in the time of searching with the time of insertion/deletion in order to solve this problem correctly?  Thank you.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  yes
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

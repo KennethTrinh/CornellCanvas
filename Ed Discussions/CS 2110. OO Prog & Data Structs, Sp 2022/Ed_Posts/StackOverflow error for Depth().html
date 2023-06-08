@@ -1,0 +1,202 @@
+<h1>
+ Title: StackOverflow error for Depth()
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-21T06:54:47.515123+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Even though I keep recursing through each child, and return, I keep getting a stackoverflow error and have no idea why. Any help would be appreciated!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Atulya Lohani (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  StackOverflow means the stack is full, and you cannot use up any more space in the stack. This can happen from infinite recursion.  Your base case could be a problem. Do you return 0 if human equals p? If the problem isn't the base case, do you have a return statement inside your for loop? Also, you need to return -1 if p is not in the tree or if p is null(you don't need a special if statement for this).  You should have three distinct return statements for this method.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What would be returned in the for loop? That part may be messing up my algorithm.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Atulya Lohani (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  if the depth is not -1 from your recursive calls then that means you found where p occurs. So you return 1 + depth of p in c ( this is straight from spec).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yeah i have that, this is very odd to me. Perhaps i'm not recursing correctly. To be clear, I would do a for-each loop for the children, then take the depth() of the human of each CovidTree object in the for-loop, right?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Atulya Lohani (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, the loop should be a for loop over the children as you mentioned. There should be a variable that stores depth, and it should store the return of the call depth on the child with argument p. If the variable doesn't have the value of -1 then you know you found p in the CovidTree so you return 1+ depth of p. If this still doesn't resolve your issue then do as Professor Gries said, and post your code privately so the course staff can help.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Satya Datla (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am trying to figure out how to return -1 if p is not in the tree without using any if statement, do you have any hints? I am not sure how the variable that stores depth will ever equal -1 if we only need one base case for if human equals p
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Atulya Lohani (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Just have a return statement at the end that returns -1. To ensure that your method  only reaches there when p is not in the tree, you want to return the depth variable+1 , only if that variable isn't equal to -1. Everything I said after my first sentence needs to happen inside the for loop. I suggest you look at getParent() which is towards the bottom of the file. Depth is very similar to this method. Apologies for the late reply.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Post your method in a private note.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I realized my mistake, I was calling the depth() method completely incorrectly where it was calling it for the same object over and over rather than the new recursed object.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Edward He (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am calling it to the new recursed object as well but then now I just keep getting the depth returned as 1 for any node whose depth is greater than 1.  Any pointers? I did what Atulya said and this is still happening
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is your method depth a searching or a counting method? Tell us that, and why you think so. Remember, the return type, the returned value, hav NOTHING to do with what kind of method it is.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Searching method because i'm looking for a specific node. I think im writing things correctly, so I'm getting very confused by this error.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

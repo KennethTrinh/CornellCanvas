@@ -1,0 +1,148 @@
+<h1>
+ Title: Motor behaving erratically
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-07T15:07:06.426919+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi there, i'm having some trouble with my motor functionality.
+ </paragraph>
+ <pre>const int step_pin = 13;
+const int direction_pin = 12;
+// 200 steps for 360 degree
+const int STEPS_PER_TURN = 200;
+// Adjust the delay for control speed
+const int delay_between_step_microsec = 5000;
+int curr_steps = 0;
+bool fwd = true;
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(step_pin, OUTPUT);
+  pinMode(direction_pin, OUTPUT);
+}
+
+void step(bool forward)
+{
+  // setting the direction
+  if (forward == true)
+  {
+    digitalWrite(direction_pin, HIGH);
+  }
+  else
+  {
+    digitalWrite(direction_pin, LOW);
+  }
+  // creating a step
+  digitalWrite(step_pin, HIGH);
+  delayMicroseconds(4);// minimum 1.9us
+  digitalWrite(step_pin, LOW);
+}
+
+void steps(int number_of_steps)
+{
+  bool move_forward = true;
+  // Establishing the direction
+  if (number_of_steps &gt;= 0)
+  {
+    move_forward = true;
+  }
+  else
+  {
+    move_forward = false;
+    number_of_steps = -number_of_steps;
+  }
+  // Generating the steps
+  for (int i = 0; i &lt; number_of_steps; i++)
+  {
+    step(move_forward);
+    // Delay for proper speed
+    delayMicroseconds(delay_between_step_microsec);
+  }
+}
+
+void loop()
+{
+  //your code here
+  if (fwd &amp;&amp; curr_steps &lt;= 100) {
+    curr_steps++;
+    steps(1);
+    if (curr_steps == 100) {
+      fwd = false;
+    }
+  } else if (!fwd &amp;&amp; curr_steps &gt;= 0) {
+    curr_steps--;
+    steps(-1);
+    if (curr_steps == 0) {
+      fwd = true;
+    }
+  }
+
+  int reading = analogRead(12);
+  int mapped = map(reading, 0, 4095, 0, 3300);
+  float volts = (float) mapped / 1000.0;
+  float dist = 10 * 70.0/volts - 6;
+  float angle = curr_steps * 1.8 * 10;
+  Serial.print(String(angle, 0) + "," + String(dist, 0) + ".");
+
+  while (!Serial.available());
+  Serial.read();
+} 
+
+</pre>
+ <paragraph>
+  My code makes the stepper motor turn at 180 degree angles normally as expected UNTIL I add the last 8 lines of code (
+  <code>
+   int reading = analogRad(12); ... Serial.read()
+  </code>
+  ). At this point, my motor suddenly moves in a very jerky fashion. After trying to see exactly what makes my code behave like this, i think it might be the Serial.print calls, but I'm not completely sure why this is happening.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Could you explain what causes this behavior? I remember discussing something about how overloading Serial.prints can cause erratic behavior, but I thought the last 2 lines (basically waiting for something to be available with the while loop and then flushing the buffer with
+  <code>
+   read
+  </code>
+  would help control overloading.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  All help is much appreciated!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello,
+  <break>
+  </break>
+  You are running into this problem because you are using pin #12 both for an output (Direction) and an Analog input. Each pin can be used for only one function at a time. Simply moving the range sensor input to an other pin should address your problem.
+ </paragraph>
+ <paragraph>
+  Francois.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

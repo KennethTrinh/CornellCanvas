@@ -1,0 +1,96 @@
+<h1>
+ Title: HW X Q 6d
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-04T03:10:10.672905+11:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi,
+ </paragraph>
+ <paragraph>
+  For 6d, DFT Yk, if I multiply I am left with a bunch of terms like:
+ </paragraph>
+ <math>
+  \psi_5^{-nk}
+ </math>
+ <paragraph>
+  I know that Yk will actually be a 9 point signal which makes sense because I get terms up to n=8, but should I instead be working with N=9 on all of the above terms?  I am not sure how to do that if so.
+ </paragraph>
+ <paragraph>
+  I am also not sure how to use the other part of the hint or where it comes in:
+ </paragraph>
+ <math>
+  \psi_N^N=1
+ </math>
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  $y$ is a 5-point signal --- it's the 5-point
+  <italic>
+   circular
+  </italic>
+  convolution of $x _ 1$ and $x _ 2$, not the
+  <italic>
+   ordinary
+  </italic>
+  convolution.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ah that makes sense to me now, the fact that the answer should then turn out as 5 point.
+ </paragraph>
+ <paragraph>
+  My other question still holds then, because when multiplying the two signals' DFTs I am getting terms up to n=8.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sorry for slow reply --- I've been driving.  If you get something like $\psi _ 5 ^ {7 k}$, that's the same as $\psi _ 5 ^ {2 k}$ because $\psi _ 5 ^ {5 k} = 1$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,56 @@
+<h1>
+ Title: Spring 2015 Final Question 4
+</h1>
+<h3>
+ Author: Chuhan Ouyang (student)
+</h3>
+<h3>
+ Date: 2021-12-18T14:12:42.538435+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi!
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  For question 4, concurrency, why would there be race condition problems when different threads (buttons) are looking up values in the hash map? I thought that since threads are just "reading" values, not changing the hashmap contents, there wouldn't be race conditions?
+ </paragraph>
+ <figure>
+  <image height="298.6145675265554" src="https://static.us.edusercontent.com/files/ctBVod9UacHtqv67k4EGIQzJ" width="641"/>
+ </figure>
+ <paragraph>
+  Thank you very much!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Jack Kalinski (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Not entirely sure if this is correct, but the method
+  <code>
+   downloadWebpage(String address)
+  </code>
+  is not synchronized, and because that call is done after the address is found (the value reading), you could have a situation where 2 consumers can read the same address, but only one can complete the method and download it. Therefore, I think changing
+  <code>
+   downloadWebpage
+  </code>
+  to a synchronized method would remove the race condition?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

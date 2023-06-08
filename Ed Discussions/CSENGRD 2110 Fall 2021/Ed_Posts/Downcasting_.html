@@ -1,0 +1,51 @@
+<h1>
+ Title: Downcasting
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-05T11:57:26.609598+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I have read the JavaHyperText entry, and wanted to make sure my understanding is correct. As I understand it, downcasting an object is only okay when that object was previously upcast. This would be because it retains the fields and methods of the original subclass, even if they weren't accessible following the upcast, and so downcasting makes them accessible again. Is my reasoning flawed? Thanks a lot!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  To answer this, we need to be more precise about what it means for a cast to be "okay".  A downcast is allowed at compile-time if it is conceivable for a class to be defined that would have partitions for both the "source" and the "destination" types.  A downcast will be successful at runtime if the value actually does have a partition for the "destination" type.
+ </paragraph>
+ <paragraph>
+  In a sense, what you say is correct for runtime behavior: a concrete object must have been constructed at some point with a partition for the destination type, but then presumably that information got lost as the result of an upcast somewhere.  However, remember that upcasts are allowed to be implicit, so this loss of information might not be obvious.  For example, storing an
+  <code>
+   InterestAccount
+  </code>
+  into an array of
+  <code>
+   Account
+  </code>
+  s is effectively an upcast.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

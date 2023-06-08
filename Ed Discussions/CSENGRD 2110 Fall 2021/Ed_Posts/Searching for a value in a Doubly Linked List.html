@@ -1,0 +1,122 @@
+<h1>
+ Title: Searching for a value in a Doubly Linked List
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-13T01:11:11.668013+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If the doubly linked list is sorted could the time complexity be O(log n) (use binary search to get to the node)?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  How much time does it take to find a node i in the doubly linked list?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  ?
+ </paragraph>
+ <paragraph>
+  O(n). Not sure what you mean, but are you trying to say that it's also O(n) for when the list is sorted?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You asked whether the binary search could be log n. I asked you a question that helped you answer your own question, that is all. How could it be O(log n) if it took O(n) to look at a particular element?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thanks for your help. Still I'm not sure that I understand. Could it be that since I don't know if the array is being search using binary search then I can only assume it's a linear search which runs at O(n).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Binary search through an array is O(log n) because finding an element given an index i is O(1). Remember that indexing an array is O(1). Indexing a doubly linkedlist is not constant time. Going to a particular index i will take i/n-i traversals(whichever one is less), since there's no way to simply jump to a specific index. We would have to start at the tail or head and count our way to a specific index(doing something like node = node.next or node = node.prev inside a loop most likely if that helps). So definitely O(n).
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Varun Gande (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Basically, since it already takes O(n) to search
+  <italic>
+   one
+  </italic>
+  element, there's no way it can take O(log n) to do a complete binary search (which involves searching a bunch of elements)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

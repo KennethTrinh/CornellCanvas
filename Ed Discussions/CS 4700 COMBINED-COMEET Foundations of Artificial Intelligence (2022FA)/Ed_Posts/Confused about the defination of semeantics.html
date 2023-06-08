@@ -1,0 +1,94 @@
+<h1>
+ Title: Confused about the defination of semeantics
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-12-06T10:24:25.55097+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm wondering if I can get some clarification on the definition of semantics.
+ </paragraph>
+ <paragraph>
+  Sec. 7.3 of the text says "The semantics defines the
+  <bold>
+   truth
+  </bold>
+  of each sentence with respect to each
+  <bold>
+   possible world
+  </bold>
+  ." And we also have this figure here:
+ </paragraph>
+ <figure>
+  <image height="203" src="https://static.us.edusercontent.com/files/NMOD2WuvlHYAgi5iWYIaaV2A" width="607"/>
+ </figure>
+ <paragraph>
+  To me, it seems here the semantics is at the sentence level. (i.e. each sentence will have its own semantics)
+ </paragraph>
+ <paragraph>
+  But sec. 7.4.2 says "The semantics defines the rules for determining the truth of a sentence with respect to a particular model." My interpretation is now since this semantics defines the rule, it will be applied to every sentence in a particular model.
+ </paragraph>
+ <paragraph>
+  That's why I'm confused.
+ </paragraph>
+ <paragraph>
+  Thanks!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Laura Greenstreet (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You can think of syntax as specifying structure in our representation and semantics as specifying meaning, which defines truth with respect to a possible world. For example, we might specify the syntax of the statement 'x or y is one' is  $(x = 1) \lor (y = 1)$ but not  $x=1/y =1$. However, whether the statement is true or false depends on the values of $x$ and $y$. Further, the semantics of the larger statement, $(x = 1) \lor (y = 1)$, depends on the semantics of its components. I.e. the statement holds if $x=1, y=2$ but not if $x=0, y=4$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thanks for the answer! I understand syntax is like "the rule of formatting". But I'm still confused here because the text gives two definitions for semantics.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Laura Greenstreet (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think the definitions are in agreement, but I agree they are confusing.
+ </paragraph>
+ <paragraph>
+  Semantics defines how we go from sentences in a representation to a truth value with respect to a possible world. For an atomic sentence, eg. $X$, this is a true/false value, but for more complicated sentences we need rules for how we go from components to a truth value. For example, our the rule for $X \lor Y$ is the statement is true if either $X$ or $Y$ is true but $X \land Y$ is only true if both $X$ and $Y$ are true. Semantics also needs to define rules for precedence. For example, is $X \lor Y \land Z$ true if only $X$ is true? This depends on whether you resolve the sentence as $X \lor (Y \land Z)$ or $(X \lor Y) \land Z$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

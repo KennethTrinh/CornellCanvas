@@ -1,0 +1,69 @@
+<h1>
+ Title: Hoeffding vs statistical learning theory
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-28T13:22:33.050364+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  When do we use the Hoeffding's inequality and when do we use slt to estimate the prediction error.
+ </paragraph>
+ <paragraph>
+  Hoeffding's inequality -
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  $err_p(h) \in [err_S(h) -\sqrt{\frac{(-0.5ln(\delta/2)}{m}}, err_S(h) +\sqrt{\frac{(-0.5ln(\delta/2)}{m}}]$
+ </paragraph>
+ <paragraph>
+  SLT
+ </paragraph>
+ <paragraph>
+  $err_p(h) &lt;= err_p(h*) + \epsilon$
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Scott Bass (student)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  SLT and the confidence interval tell you two different things. SLT tells you how close the true error of your $h_{S}$ is to the
+  <italic>
+   best possible
+  </italic>
+  prediction error you can obtain. It doesn't tell you what your true error is nor what the best possible prediction error is.
+ </paragraph>
+ <paragraph>
+  Confidence intervals, on the other hand, tell you how close your
+  <italic>
+   test error
+  </italic>
+  is of your hypothesis to the true error of the hypothesis.
+ </paragraph>
+ <paragraph>
+  In summary, if you want to know that your test error is close to the true error (i.e. obtain a good estimate of your generalization error), you can use a confidence interval to determine that. If you want to know that your true error is close to the best possible prediction error, you can use statistical learning theory. Together, you can get an estimate of your true error and know how close it is to the best possible true error.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,72 @@
+<h1>
+ Title: Confusion on insert() method
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-15T11:54:30.663612+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was a bit confused on the response to dicussion post
+  <link href="https://edstem.org/us/courses/7377/discussion/718363"/>
+  #727
+ </paragraph>
+ <paragraph>
+  From what I am understanding from the javadoc comment we are supposed to create a new Tree with person = c, then add this new Tree as a child to the node that has person = d. Am I understanding this correctly?
+ </paragraph>
+ <paragraph>
+  Also as a follow up, is it possible to access the children of node(p) like this:
+ </paragraph>
+ <paragraph>
+  node(p).children.add( [some new Tree])
+ </paragraph>
+ <paragraph>
+  Thank you!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Here is the spec, with all the stuff about illegal arguments deleted:
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  /** Give p a new child, a node with Person c. &lt;br&gt;
+  <break>
+  </break>
+  * Return the newly created node.
+  <break>
+  </break>
+  public H1N1Tree insert(Person p, Person c)
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  So, yes, you are supposed to create a new H1N1Tree object with Person c in field person.
+ </paragraph>
+ <paragraph>
+  Then, add this object to field children of the node whose Person is p.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

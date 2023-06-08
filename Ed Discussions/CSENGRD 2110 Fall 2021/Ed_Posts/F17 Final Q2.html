@@ -1,0 +1,88 @@
+<h1>
+ Title: F17 Final Q2
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-13T14:16:55.235769+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="475.38631346578364" src="https://static.us.edusercontent.com/files/IWb9HCiuSTOHzeBFaMFb8YH6" width="590"/>
+ </figure>
+ <paragraph>
+  Why does it matter that the left partition is smaller than right partition or what's the purpose of the j - h1 &lt; k1 - j ,  h1 = j + 1, and k1 = j - 1?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Varun Gande (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  The question asks you to quicksort the smaller partition recursively. So you need to check which of the two partitions is smaller (i.e., has less elements) and call QS on the appropriate segment.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh okay. What does the h1= j  + 1 or the k1 = j - 1 do?
+  <break>
+  </break>
+  When QS(b, h1, j - 1) returns h1 = j + 1 and we come back into the while loop if (j - h1 &lt; k1 - j) evaluates to false because j + 1 - j is 0 or empty?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Varun Gande (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  It might be helpful to visualize the invariant here (it's not listed). Basically, we have a ? segment bounded by h1 and k1. That's what the initializations of h1 and k1 do: truthify the precondition. What incrementing/decrementing h1/k1 does, is gradually whittle away at the ? segment, such that once it only contains 1 element or less, we're done.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thanks for the explanation. I didn't quite understand the comments in term of an invariant at first.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

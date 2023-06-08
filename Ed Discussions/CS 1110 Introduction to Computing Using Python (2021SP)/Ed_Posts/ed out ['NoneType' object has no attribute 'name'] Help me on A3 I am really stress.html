@@ -1,0 +1,95 @@
+<h1>
+ Title: ed out ['NoneType' object has no attribute 'name'] Help me on A3 I am really stress
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-27T09:35:19.798955+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  No matter what I do I keep getting this attribute error, and it doesn't seem like my code is wrong so please assist me someone thank you
+ </paragraph>
+ <figure>
+  <image height="138.82816901408452" src="https://static.us.edusercontent.com/files/8yfyzf5mA8ADdtAeTCaviIDt" width="444.00000000000006"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Elisabeth Finkel (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It says "'NoneType' object has no attribute 'name'". If you look at line 122 of helper_tests, and the lines just above it, you can see which test case is failing. In this case, the test is calling
+  <code>
+   college_named
+  </code>
+  and assigning that to
+  <code>
+   result
+  </code>
+  . Python then checks
+  <code>
+   result.name
+  </code>
+  , which throws that error, so
+  <code>
+   result
+  </code>
+  must be of type NoneType. This means that your function
+  <code>
+   college_named
+  </code>
+  is returning
+  <code>
+   None
+  </code>
+  instead of a college (even when the college exists), at least some of the time.
+ </paragraph>
+ <paragraph>
+  Make sure your function is always returning a college (if the college exists); if double-checking your logic doesn't help, then maybe try using debugging print statements to make sure that your variables all have the values you'd expect, or to check which lines are being run.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Lauren Parrott (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am getting the same error message and have been trying to debug with print statements. The problem I have found by doing that, seems to be that I can't figure out how to reach into each of the College objects and pull out their names to compare to 'n', since College objects are not iterable. Any suggestions to go from this point?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  (sorry this response is late - see solutions)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

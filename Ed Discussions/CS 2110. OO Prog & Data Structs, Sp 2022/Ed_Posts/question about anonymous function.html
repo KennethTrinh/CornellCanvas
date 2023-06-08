@@ -1,0 +1,43 @@
+<h1>
+ Title: question about anonymous function
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-19T05:37:22.651849+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm a little confused about when writing anonymous functions, whether or not we should have a return statement. In the recitation lecture, some do but some don't:
+ </paragraph>
+ <paragraph>
+  strs.removeIf( s -&gt; s.isEmpty());
+ </paragraph>
+ <paragraph>
+  (a, b) -&gt; { if (a &lt; b) return a; else return b;}
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It all depends. If the body is just an expression, without braces { }, there is no need for a return statement or a semicolon after the expression. Please look at JavaHyperText for simple examples of anonymous functions.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

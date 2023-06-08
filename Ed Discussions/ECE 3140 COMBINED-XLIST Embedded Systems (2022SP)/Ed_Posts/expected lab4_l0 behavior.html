@@ -1,0 +1,56 @@
+<h1>
+ Title: expected lab4_l0 behavior ?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-27T09:30:19.871493+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  what should we expect to see?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Each process is defined by a delay, acquiring a lock, blinking the red and green LEDs (in sequence, not simultaneously), and then releasing the lock. This occurs for three iterations.
+ </paragraph>
+ <paragraph>
+  Since two identical processes are defined and only one can hold the lock at a given point in time, you should expect to see the red LED blink and then green LED blink 6 times in a row.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Vedant Singh (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I get that the red light is lit up for slightly longer in some blinks. Is that incorrect behavior?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

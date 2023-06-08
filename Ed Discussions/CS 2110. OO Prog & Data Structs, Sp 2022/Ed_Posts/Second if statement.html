@@ -1,0 +1,64 @@
+<h1>
+ Title: Second if statement
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-28T11:54:18.445666+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello, I'm a bit confused about the meaning of the second if statement. Based on the algorithm, if the first if statement isn't true (w is not in S or F), doesn't that mean w has to be in F for the second if statement to be true (d[f] + wgt(f, w) &lt; d[w])? Would it be safe to assume that w is always in F when the code enters that the second if statement block?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  YES.
+ </paragraph>
+ <paragraph>
+  The first if-condition is "w is not in S or F".
+ </paragraph>
+ <paragraph>
+  If it is false, then "w IS in S or F". It could be in F, it could be in S.
+ </paragraph>
+ <paragraph>
+  It doesn't matter which. But yes, if
+ </paragraph>
+ <paragraph>
+  d[f] + wgt(f, w) &lt; d[w]
+ </paragraph>
+ <paragraph>
+  that tells you a shorter path to w has been found.
+  <break>
+  </break>
+  That cannot be if w is in S because the shortest path to w is already known.
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  Therefore, if d[f] + wgt(f, w) &lt; d[w], you know that w is in F.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

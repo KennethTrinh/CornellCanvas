@@ -1,0 +1,56 @@
+<h1>
+ Title: question about using larger "stride" in convolutional neural network
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-23T21:41:27.808339+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="493.7256515775034" src="https://static.us.edusercontent.com/files/rcxNPc80QJB3zCgohqg3bpdF" width="658"/>
+ </figure>
+ <paragraph>
+  I just wanted to clarify -- if our stride parameter is larger than 1, does that mean that our convolution matrix no longer has dimension (n-f+1)/(n-f+1), but would have smaller dimensions than this, since we will end up performing a lesser number of sums of elementwise multiplications between the larger matrix and filter matrix?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Alexandra Roberts (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, I believe the rule (assuming no padding) is
+ </paragraph>
+ <math>
+  \dim\left(output\right)=\frac{n-f}{s}+1
+ </math>
+ <paragraph>
+  where
+  <italic>
+   s
+  </italic>
+  is the stride. This agrees with the dimensions in the lecture when
+  <italic>
+   s = 1
+  </italic>
+  .
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

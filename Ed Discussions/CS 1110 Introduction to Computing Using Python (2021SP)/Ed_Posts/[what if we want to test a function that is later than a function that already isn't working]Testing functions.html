@@ -1,0 +1,61 @@
+<h1>
+ Title: [what if we want to test a function that is "later" than a function that already isn't working?]Testing functions
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-29T08:12:43.913061+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  My partner and I are waiting to get help with our college_named function since there's some issue with it when we try to test it, and so we decided to get started on the menu_listing function.
+ </paragraph>
+ <paragraph>
+  Obviously, the  helper_tests.py never gets to testing menu_listing since there's an error in college_named, which helper_tests.py tests first.
+ </paragraph>
+ <paragraph>
+  We wanted to know how we can begin testing and revising our menu_listing function given the nature of helper_tests.py, since helper_tests.py doesn't even get to checking out menu_listing function. Thanks!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  In
+  <code>
+   helper_test.py
+  </code>
+  , you can temporarily comment out line 210 that calls the
+  <code>
+   test_college_named()
+  </code>
+  testing function; this will allow the testing to get to
+  <code>
+   format_check_menu_listings()
+  </code>
+ </paragraph>
+ <paragraph>
+  Don't forget to go back and run
+  <code>
+   test_college_named()
+  </code>
+  !
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

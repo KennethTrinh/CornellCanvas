@@ -1,0 +1,60 @@
+<h1>
+ Title: Questions on loop invariants
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-14T16:31:06.102565+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  My questions are annotated on the text in the picture
+ </paragraph>
+ <figure>
+  <image height="463" src="https://static.us.edusercontent.com/files/ojZE5MG95gfGbVqV1giAugrR" width="1829"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  If I'm remembering correctly, it shows what Q looks like above in an array diagram. It means that those two ranges should be empty because in the precondition, Q, we don't know anything about the values in the array segment, so the sections of the array that we know something about should be empty.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  A section is empty if it contains no values.
+ </paragraph>
+ <paragraph>
+  Consider the section b[0..h-1].
+ </paragraph>
+ <paragraph>
+  The number of values in it is  h-0. (that's Follower - First). It is empty if h-0 = 0, that is, if h  = 0.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

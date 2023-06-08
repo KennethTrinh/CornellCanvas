@@ -1,0 +1,68 @@
+<h1>
+ Title: When you cast a Cat to an Animal, does it lose access to all cat-specific methods?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-05T11:09:32.896924+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Or can it still access them?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  By the Compile-time Reference Rule (PLEASE LEARN IT!), from a variable of (static) type Animal, one cannot reference methods that are declared only in Cat.
+ </paragraph>
+ <paragraph>
+  However, if you know the object pointed at has a Cat partition, you can cast it down to Cat and then reference the methods.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What if the variable has a static type of Cat but then is cast to an Animal? Then can the new Animal object still reference Cat's methods?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Varun Gande (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I believe when you cast it to an Animal, you have to define a new variable with static type Animal that points to the object. You can then use the compile-type reference rule from there.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

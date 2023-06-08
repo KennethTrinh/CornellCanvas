@@ -1,0 +1,84 @@
+<h1>
+ Title: Caller/Callee convention Clarification
+</h1>
+<h3>
+ Author: Vinay Bhamidipati (student)
+</h3>
+<h3>
+ Date: 2022-02-19T12:24:38.873678+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I watched the factorial video, and I have read the other ED questions regarding this. I am still confused on a couple points. I have been told by a couple TAs that we shouldn't modify the values of R0-R3 within a function in order to respect the Caller/Callee convention. However, from my understanding, these registers are caller saved, meaning that the callee should be free to modify them as it sees fit.
+ </paragraph>
+ <paragraph>
+  One particular case is a function (say f1) that calls another function (say f2). If f2 expects an argument in R0-R3, then f1 must necessarily change the values of R0-R3 so it can pass the arguments to f2. But if f1 is restricted to only R4 and up, there's no possible way it could do that.
+ </paragraph>
+ <paragraph>
+  Can somebody clear up my misunderstanding?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Benjamin Kogan (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Not sure what you mean "we shouldn't modify the values of R0-R3 within a function". Functions are expected to modify e.g. R0 for the output.
+ </paragraph>
+ <paragraph>
+  From what I understand, R0-R3 are caller-saved, meaning the caller has to save those registers and cannot expect the callee to keep them the same. The callee can do whatever it wants with R0-R3, including using them as local variables. The important thing is if you are using values in R0-R3 and call a function, you have to push R0-R3 onto the stack beforehand because there is no guarantee the callee will preserve them.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kaitlyn Beiler (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If they only use R0-R3 in f2 as described above and not in another function after execution of f1-&gt;f2, then I thought R0-R3 doesn't have to be saved/preserved. Is that wrong?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Benjamin Kogan (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  I meant if you are in a function and call another function (f1 calls f2). f1 might be using R0-R3 for a bunch of things, and the call to f2 has no guarantee of preserving them. In this case, you save on the stack.
+ </paragraph>
+ <paragraph>
+  If f2 itself does not call any other function (f2 only acts as a callee), then it does not have to save R0-R3.
+ </paragraph>
+ <paragraph>
+  The case you are describing is f1 -&gt; f2 and f2 is the only one that uses R0-R3. Here, there is no reason to save R0-R3 in either function. You should save them as needed, and since no one is using R0-R3 AND is at risk of losing their values, no one needs to save.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

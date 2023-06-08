@@ -1,0 +1,97 @@
+<h1>
+ Title: The little exercise for today (language model max-likelihood-estimation example)
+</h1>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Date: 2021-11-05T06:37:16.634167+11:00
+</h3>
+<h3>
+ Category: Lecture
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Recall from the blackboard (where $C_L$ is some normalization constant with factorials and stuff involving $L$ and the $S_i$'s that you can ignore and I can never remember):
+ </paragraph>
+ <math>
+  C_L\prod_{i} \phi_i^{S_i} + \lambda\left(\sum_k \phi_k - 1\right)
+ </math>
+ <paragraph>
+  Calculus tells us that if we're trying to find the arg-max, we should "set the derivative to zero and solve for the unknown".
+ </paragraph>
+ <list style="number">
+  <list-item>
+   <paragraph>
+    What is the unknown, that is, what variable(s) should we take the derivative with respect to?  (Answer is below)
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Try solving for the unknown.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Does using the
+    <italic>
+     log
+    </italic>
+    of the lefthand side make things easier? (Hint/motivation: you'll often see papers working with the log )
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  (Answer to 1 above: The $\phi$ variables are the unknowns.  I find it easiest, in order to keep all the notation and variables straight, to use, for each
+  <italic>
+   j
+  </italic>
+  , :
+ </paragraph>
+ <math>
+  \frac{d}{d\phi_j}
+ </math>
+ <paragraph>
+  That is, use a different variable,
+  <italic>
+   j
+  </italic>
+  , than the index variable
+  <italic>
+   i
+  </italic>
+  for the product. )
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

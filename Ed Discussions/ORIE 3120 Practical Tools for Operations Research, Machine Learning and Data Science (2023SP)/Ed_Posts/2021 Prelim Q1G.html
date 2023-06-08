@@ -1,0 +1,79 @@
+<h1>
+ Title: 2021 Prelim Q1G
+</h1>
+<h3>
+ Author: Nicholas Varela (student)
+</h3>
+<h3>
+ Date: 2023-03-23T01:20:21.54376+11:00
+</h3>
+<h3>
+ Category: Prelim
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <snippet language="sqlite" line-numbers="true" runnable="false">
+  <snippet-file id="code">
+   SELECT StudentID, B.Day, Min(A.Day) - B.Day as Gap 
+from Tests as A, Tests as B 
+WHERE A.Day &gt; B.Day and A.StudentID = B.StudentID
+GROUP BY B.StudentID, B.Day
+  </snippet-file>
+ </snippet>
+ <paragraph>
+  I was wondering how this query works. Specifically how does Min(A.Day) - B.Day not just return the same Min(A.Day) every time.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  These are the results produced
+ </paragraph>
+ <figure>
+  <image height="159.78582202111613" src="https://static.us.edusercontent.com/files/GKcJI9ZLhNNefEbIruVscjHd" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Yuheng Wang (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The key is the
+  <code>
+   where
+  </code>
+  clause. What it did is concatenate two Test table (A and B), but for each row, the
+  <code>
+   A.Day
+  </code>
+  from table A will always be larger than
+  <code>
+   B.Day
+  </code>
+  from table B. So in the end when you do
+  <code>
+   GROUP BY B.StudentIB, B.Day
+  </code>
+  , the
+  <code>
+   Min(A.Day)
+  </code>
+  will return the smallest day that is larger than each
+  <code>
+   B.Day
+  </code>
+  instead of returning the same.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

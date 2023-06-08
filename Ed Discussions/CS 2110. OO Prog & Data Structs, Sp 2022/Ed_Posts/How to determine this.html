@@ -1,0 +1,40 @@
+<h1>
+ Title: How to determine this/?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-16T06:35:35.094321+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  How do you determine whether to return ob_size - size or return size - ob_size? Is there a difference? Before I looked at the Answer, I didn’t know which one to do.
+ </paragraph>
+ <figure>
+  <image height="517" src="https://static.us.edusercontent.com/files/1Hnp2OZhcevBcxCL9QeEnMsg" width="1191"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Ethan Gabizon (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We want the catalogs ordered in decreasing inventory size, meaning bigger ones come first. The spec says that we want to return a positive int if this Catalog comes after ob. This means return a positive int if this Catalog is smaller than ob. You accomplish this with ob_size - size because if size &lt; ob_size then we return a positive int.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

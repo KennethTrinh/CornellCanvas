@@ -1,0 +1,75 @@
+<h1>
+ Title: sampling theorem
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-23T06:58:30.938955+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello,. I am aware that if we pass a signal to C-D sampler then D-C, y(t) may not be identical to x(t) by fact that x(t) may not even be periodic. The sampling theorem states that if we sample fs&gt;2fxmax, then the resulting signal can be reconstructed exactly from its samples. I think I am confused about the possibility of being extracted exactly but also about being not the same. any clarification is appreciated. Thanks
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The
+  <italic>
+   ideal
+  </italic>
+  D-to-C operates in a specific way.  If you sample a cosine $x ( t )$ and put the result through the
+  <italic>
+   ideal
+  </italic>
+  D-to-C, a cosine will indeed emerge --- it just might not be the same cosine as $x ( t )$.  It will be the principal continuous-time alias of $x ( t )$ wrt the sampling frequency.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  for part 1f in the multiple choice of the posted prelim, if there is no pesky boundary case and it is an ideal, should not x(t) be periodic because it should be similar to y(t) which is periodic in no pesky case.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  A non-periodic signal can sample the same as a sinusoid.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

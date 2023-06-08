@@ -1,0 +1,57 @@
+<h1>
+ Title: Can't get external switches to work
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-21T03:45:14.086933+10:00
+</h3>
+<h3>
+ Category: Final Project
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  Our project is a reflex-based game where you press a switch in response to an LED lighting up. We followed the switch_demo code, changing the ports and inputs to apply to our circuit, but the switches aren't working.
+ </paragraph>
+ <paragraph>
+  When we test switch_demo on the switches on our board, it works, but the similar code for our external switches (on the breadboard) do not work.
+ </paragraph>
+ <paragraph>
+  Anyone else having this issue/know how to fix it?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is your hardware set up properly? Using a digital multimeter make sure that the voltage is low when you expect it to be and high when you expect it to be. Also, if you're using interrupts for the input GPIO pins they only work for pins on ports C and D.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Luke Griffiths (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Having the same issue, and have checked the hardware with a multimeter.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

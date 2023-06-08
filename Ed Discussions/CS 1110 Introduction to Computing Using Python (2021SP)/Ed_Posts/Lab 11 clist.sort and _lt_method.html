@@ -1,0 +1,128 @@
+<h1>
+ Title: Lab 11: clist.sort and _lt_method
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-23T15:01:06.01494+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I read the instructions for the lab that "
+  <code>
+   clist.sort()
+  </code>
+  will sort
+  <code>
+   clist
+  </code>
+  by your
+  <code>
+   less_than()
+  </code>
+  function" for the function
+  <code>
+   cardstuff.draw_poker_hand.
+  </code>
+ </paragraph>
+ <paragraph>
+  However, when I do output.sort() I end up getting a None value for my list. Before doing the sort I have five cards in a list.
+ </paragraph>
+ <paragraph>
+  TypeError: 'NoneType' object is not iterable
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hint: Be careful about not using non-existent return values...
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   mylist = ['alpha', 'gamma', 'beta']
+mylist.sort()
+print(mylist)
+  </snippet-file>
+ </snippet>
+ <paragraph>
+  Notice, when you hit "Run", that
+  <code>
+   mylist
+  </code>
+  does not become None...
+ </paragraph>
+ <paragraph>
+  You may wish to use Python Tutor to visualize what's going on with your code!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sorry professor I still don't understand what you mean by "not using non-existent return values".
+ </paragraph>
+ <paragraph>
+  but I realized my problem was that you don't assign sort to a variable e.g. [redacted]
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, mylist.sort() has the non-existent return value of None, so you don't want to store its "value" anywhere. You have now mastered another important concept! :)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

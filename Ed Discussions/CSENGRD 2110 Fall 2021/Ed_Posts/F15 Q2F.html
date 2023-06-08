@@ -1,0 +1,94 @@
+<h1>
+ Title: F15 Q2F
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-05T14:08:10.494962+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="507.5626242544732" src="https://static.us.edusercontent.com/files/WcSUOtgDYtcPIjGFQcdjGymR" width="658"/>
+ </figure>
+ <paragraph>
+  Why aren't they restricted and forced to use Object's toString() when ob.toString() is called and D's toString() when d.toString() is called? I thought this was up-casting so even though the dynamic type is B(), it would be restricted to the static types methods.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Varun Gande (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  b has static and dynamic type B
+  <break>
+  </break>
+  ob has static type Object and dynamic type B
+  <break>
+  </break>
+  d has static type D and dynamic type B
+ </paragraph>
+ <paragraph>
+  Each static type has a method toString in its class or a superclass, so CTRR says the method call is legal.
+ </paragraph>
+ <paragraph>
+  Now, use the dynamic type to determine which version of method toString is called. All variables have dynamic type B, so B’s version is called by the bottom-up rule.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  is the restriction only when for interfaces?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Varun Gande (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  The restriction depends on dynamic type only. If you made a new Object (e.g. Object x = new Object()) and invoked x.toString(), that would use Object’s toString method. It’s all according to the bottom-up rule.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tomer Shamir (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Search "bottom-up rule" in the JavaHyperText
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

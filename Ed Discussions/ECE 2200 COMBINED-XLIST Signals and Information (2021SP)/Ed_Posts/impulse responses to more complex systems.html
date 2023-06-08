@@ -1,0 +1,57 @@
+<h1>
+ Title: impulse responses to more complex systems
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-25T11:23:35.17052+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If we were given a causal non-fir filter
+ </paragraph>
+ <paragraph>
+  $$y[n] = b_kx[n-k] + ... + b_0x[n] + f[n]$$
+ </paragraph>
+ <paragraph>
+  where f[n] has no relation to the input x[n], could you find the impulse response by plugging  $$\delta[n]$$ into y[n] ignoring the f[n], and then adding on f[n] to h[n]? If this is the case, and you want to find the output response for some x[n] input, how would you efficiently perform $$x[n] \circledast h[n]$$ when h[n] is no longer a sum of delta functions? Thanks!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Actually, the system you specify above isn't time-invariant, so all bets are off.
+ </paragraph>
+ <paragraph>
+  The LTI non-FIR filters we'll discuss take this form:
+ </paragraph>
+ <paragraph>
+  $y [ n ] = \sum _ {k = 1} ^ N a _ k y [ n - k ] + \sum _ {k = 0} ^ M b _ k x [ n - k ]$.
+ </paragraph>
+ <paragraph>
+  The "recursive terms" on the RHS are what make the system non-FIR.
+ </paragraph>
+ <paragraph>
+  For these systems, the impulse response in general has infinite duration.  Thus it's an "infinite sum of $\delta$-functions," if you will.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,100 @@
+<h1>
+ Title: ugclinux users with CS2043-A1-SubmitThisFile.txt
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-01-26T07:16:31.825396+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I started the assignment and was able to find the file and run it and found it in my home directory on the ugclinux.
+ </paragraph>
+ <paragraph>
+  What I am having a hard time with is moving said file to my Virtual Machine.
+ </paragraph>
+ <paragraph>
+  Can you give instructions on how to do that?
+ </paragraph>
+</document>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Should I copy the contents of the file and submit it in a file of the same name?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Joshua Caplan (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You can use the
+  <code>
+   scp
+  </code>
+  command like what is mentioned in #15
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I tried using the scp command as instructed but all it did was copy it to the remote system. Can you give a little more explanation as to how to do this?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Joshua Caplan (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If you want to move a file from ugclinux to your VM, you should be doing your
+  <code>
+   scp
+  </code>
+  command within your VM terminal. Then you can do the command
+ </paragraph>
+ <pre>scp [netid]@132.236.91.186:/home/[netid]/[filename] .
+</pre>
+ <paragraph>
+  This will copy your desired file from ugclinux to your "local" machine (in this case you should be doing it on your VM so it will appear as a file in your home directory on your VM. Then you can submit it to CMS
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

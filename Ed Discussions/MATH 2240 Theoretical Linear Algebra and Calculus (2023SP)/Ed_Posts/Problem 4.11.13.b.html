@@ -1,0 +1,96 @@
+<h1>
+ Title: Problem 4.11.13.b
+</h1>
+<h3>
+ Author: Lucas Sandleris (student)
+</h3>
+<h3>
+ Date: 2023-03-18T10:50:19.880173+11:00
+</h3>
+<h3>
+ Category: Homework
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can we assume that if $p_k$ converges then it must converge to a polynomial? Or, if not, can we use the equivalence for convergence that says that $a_k$ converges if and only if it is a Cauchy sequence (in a complete space such as $\mathbb{R}$, of course)?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bryan Lu (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The first statement is true, but you should justify it, I think. Remember that polynomials with degree $\leq m$ can be viewed as a vector space (in particular, one isomorphic to $\mathbb{R}^{m+1}$).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Lucas Sandleris (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  But did we see that limits behave in the same way in two isomorphic spaces?
+ </paragraph>
+ <paragraph>
+  I feel that it is really hard to prove that a sequence of degree-bounded polynomials converges to a polynomial without using Cauchy sequences.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bryan Lu (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I mean, in this case, they're not just isomorphic as vector spaces, you can view both as complete metric spaces in which the metric/limits behave as one would would expect. This might be what you're alluding to here re: Cauchy sequences.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Lucas Sandleris (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  So we can assume that thing (that their metric/limits behave equivalently). In other words, we can assume that if $p_k(x)\rightarrow f(x)$ pointwise then $f(x)$ is a polynomial (taking for granted that the degrees of $p_k$ are bounded).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bryan Lu (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  No, I'm not sure that you can say that. I'm thinking of the polynomials as formal sums in $x$, not as functions. In particular, view the polynomial $a_0 + a_1 x + a_2 x^2 + \dots + a_n x^n$ as the vector $\begin{bmatrix} a_0 \\ a_1 \\ \vdots \\ a_n \end{bmatrix}$ in $\mathbb{R}^{n+1}$. Then use the metric on $\mathbb{R}^{n+1}$ to define the metric on the polynomials of degree $\leq n$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

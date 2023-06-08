@@ -1,0 +1,49 @@
+<h1>
+ Title: loop invariant Doubt in practice prelim
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-18T01:12:02.070229+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In this question from one of the practice prelims, why are h=f+1, k= f, and the loop condition e!=h?
+ </paragraph>
+ <figure>
+  <image height="625.7207547169811" src="https://static.us.edusercontent.com/files/5sc6sjKy45dD8rxeNEb7G3fR" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  b[e…h-1] is the unknown region, we want that as the whole array initially, we see
+  <break>
+  </break>
+  so h-1 = f so h = f+1, we want b[h…k] to be an empty region so follower - first rule:
+  <break>
+  </break>
+  k + 1 - h = 0 so k = h-1, we can leave it like this since we’ve initialized h, or plug in for h, h = f+1 so k = f + 1 -1 so k = f,
+ </paragraph>
+ <paragraph>
+  We want to continue looping while the segment b[e..h-1] still has elements so h -1 + 1 - e != 0 in other words h != e
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

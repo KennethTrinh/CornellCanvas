@@ -1,0 +1,133 @@
+<h1>
+ Title: Hw5 Q3
+</h1>
+<h3>
+ Author: Julio Leanez (student)
+</h3>
+<h3>
+ Date: 2023-03-09T11:21:57.229011+11:00
+</h3>
+<h3>
+ Category: Homework
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Are we supposed to use the data from the original dataframe or should we keep working with the data we created on question 2? Also if we are supposed to divide the sum of trip distances by the sum of trip durations to find the velocity for this problem, wouldn't it be just a number instead of a whole column? Or should we find the velocities for those sums grouped by each specific day?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Hugo Mainguy (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi Julio,
+ </paragraph>
+ <paragraph>
+  You should be working with the cleaned up dataframe you created in the previous question (for 2b). And yes, you should get just a number (well, two numbers, because there are two approaches that will give you slightly different results).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Helen Ma (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If it's just one number, how do we get different values to plot?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Hugo Mainguy (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You don't need to plot anything for this, just output the two numbers. Let me know if anything does not make sense!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Reid Fleishman (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The question shows an example of a plot of velocity v.s. hour of day.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Hugo Mainguy (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh, I was thinking about Q2, I'm really sorry. One second.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Hugo Mainguy (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The general process is as follows:
+ </paragraph>
+ <paragraph>
+  Take the original dataframe
+ </paragraph>
+ <paragraph>
+  Filter out trips on the weekend and longer than an hour
+ </paragraph>
+ <paragraph>
+  Group by hour of the day
+ </paragraph>
+ <paragraph>
+  Sum over all trip durations and distances
+ </paragraph>
+ <paragraph>
+  Then for each hour, compute the average velocity (don't do this before the previous step).
+ </paragraph>
+ <paragraph>
+  And then plot.
+ </paragraph>
+ <paragraph>
+  Hope this helps - if not let me know, and very sorry about the earlier confusion.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

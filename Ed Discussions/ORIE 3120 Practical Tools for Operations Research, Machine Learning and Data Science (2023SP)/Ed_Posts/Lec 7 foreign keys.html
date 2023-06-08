@@ -1,0 +1,42 @@
+<h1>
+ Title: Lec 7 foreign keys
+</h1>
+<h3>
+ Author: Elana Pocress (student)
+</h3>
+<h3>
+ Date: 2023-03-31T08:36:43.023249+11:00
+</h3>
+<h3>
+ Category: Prelim
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why is the answer B to this? There can be multiplied shipper IDs to the same shipment method (shipvia) so shouldn't this be a Many to One where shippers is the child of ShipVia parents. B looks like it is saying that one ShipperID can be shipped my many different shipVias
+ </paragraph>
+ <figure>
+  <image height="378.3329886246122" src="https://static.us.edusercontent.com/files/LyzCxyGOK9pw2PpH8SPsf0r3" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Yuheng Wang (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Each record in Orders table will have one ShipVia, which corresponds to the ShipperID in the Shippers table. So the ShipperID in the Shippers table gets referenced and is unique. There could be multiple records in Orders table with the same ShipperVia (like different orders could use the same shipping companies)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

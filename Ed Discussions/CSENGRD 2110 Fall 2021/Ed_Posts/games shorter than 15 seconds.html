@@ -1,0 +1,57 @@
+<h1>
+ Title: games shorter than 15 seconds
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-04T12:23:27.3418+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  While testing TODO5, we found that our games run for 13-14 seconds rather than 15. Is this indicative of a problem?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  This could be indicative of a problem, but it would be helpful to get some more targeted diagnostics, such as:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    Does your game show 10 different targets?
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Is each target shown for about the same duration?
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Do the targets respawn faster and slower when you adjust the speed slider?
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  (as written, these rely on later TODOs, but you could also investigate them with print statements or manually calling functions).  If these diagnostics look good, then your program is probably fine; Swing timers are not particularly high-precision, and iirc, they do not preserve phase if an event is late.  But if your games are short because you are only showing 9 targets and not 10, that is a problem.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

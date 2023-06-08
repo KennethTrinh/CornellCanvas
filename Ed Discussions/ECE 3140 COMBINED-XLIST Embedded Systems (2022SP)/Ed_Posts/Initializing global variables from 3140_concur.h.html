@@ -1,0 +1,71 @@
+<h1>
+ Title: Initializing global variables from 3140_concur.h?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-16T09:36:08.56097+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  My partner and I are getting errors when trying to use the global variables process_queue and current_process defined in 3140_concur.h. In particular, the error is at each function and is "undefined reference to process_queue" or "current_process". We then tried initializing them at the start of the process.c file and received new errors, and were wondering how to use the global variables defined in the given file to keep track of our queue?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <pre>extern process_t* current_process; 
+extern process_t* process_queue;
+</pre>
+ <paragraph>
+  The
+  <code>
+   extern
+  </code>
+  keyword allows the variables to be declared such that the compiler knows of its existence, but memory is not actually allocated for them. You will still need to define the variables in
+  <code>
+   process.c
+  </code>
+  .
+ </paragraph>
+ <paragraph>
+  The following is an example of using
+  <code>
+   extern
+  </code>
+  :
+ </paragraph>
+ <paragraph>
+  lib.h
+ </paragraph>
+ <pre>extern int global_var;
+</pre>
+ <paragraph>
+  main.c
+ </paragraph>
+ <pre>#include "lib.h"
+int global_var;
+
+int main(void) {
+    global_var = 1;
+}</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>

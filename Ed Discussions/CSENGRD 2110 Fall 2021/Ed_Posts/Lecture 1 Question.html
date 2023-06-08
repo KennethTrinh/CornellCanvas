@@ -1,0 +1,108 @@
+<h1>
+ Title: Lecture 1 Question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-08-28T03:15:59.971329+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  While reviewing lecture 1 notes, I saw a bullet point saying "conversion from integer to floating-point type can change value (loss of precision)"
+ </paragraph>
+ <paragraph>
+  Just wondering if anybody could please clarify what that means? If floating-point types permit decimal digits but ints do not, shouldn't that aforementioned conversion result in
+  <italic>
+   increased
+  </italic>
+  precision rather than decreased precision?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 4
+</h3>
+<document version="2.0">
+ <paragraph>
+  An int takes 32 bits. You can think of it as a 1-bit sign and a 31 bit integer (although it's slightly different).
+ </paragraph>
+ <paragraph>
+  A float take 32 bits. You can think of it as a 1-bit sign, and 8-bit exponent, and a 23 bit mantissa. Therefore, a 31-bit integer cannot fit exactly in a  float variable.
+ </paragraph>
+ <paragraph>
+  Remember, floating point numbers are only APPROXIMATIONS to real numbers, because a real number can have an unbounded number of bits in its mantissa while in type float, it is only 23 bits.
+ </paragraph>
+ <paragraph>
+  Don't concern yourself with this too much. How type float and double work in real problems, since they are only approximations, is a topic for the field of "numerical analysis".
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 4
+</h3>
+<document version="2.0">
+ <paragraph>
+  Integer types have a fixed
+  <italic>
+   absolute
+  </italic>
+  precision - that is, the spacing between two adjacent values is always "1".
+ </paragraph>
+ <paragraph>
+  Floating-point types have a characteristic
+  <italic>
+   relative
+  </italic>
+  precision - that is, the spacing between two adjacent values is a certain percentage of their magnitude.  In other words, they have a fixed number of "significant figures".
+ </paragraph>
+ <paragraph>
+  A
+  <code>
+   float
+  </code>
+  in Java has about 7 digits of precision.  For a value like pi (3.141593), the corresponding absolute precision is about 0.0000002 - much better than "1".  But for a value like 2 billion (which requires 10 digits to write), the corresponding absolute precision would be 128 - much worse than "1".  So while
+  <code>
+   2000000034 - 2000000000
+  </code>
+  (as ints) gives the answer "34",
+  <code>
+   2000000034.0f - 2000000000.0f
+  </code>
+  (floats) yields "0".  Some integers (like 2000000034) cannot be represented as a 32-bit
+  <code>
+   float
+  </code>
+  , so if they are cast to that type, they will be rounded to the nearest value that
+  <italic>
+   can
+  </italic>
+  be represented, and information is lost in that rounding.
+ </paragraph>
+ <paragraph>
+  This makes floating-point types very bad for counting things.  In production software, they should never be used for representing things like money (for example), and they're often a bad choice for tracking dates and times (which often count the number of seconds or nanoseconds since some "epoch" in the past).  The resulting bugs are very subtle, because everything seems to work perfectly up to a point (including in all test cases), and then all of a sudden things start to break.  The fact that Java will
+  <italic>
+   implicitly
+  </italic>
+  convert integers to floating-point types of the same bit-size makes accidents more likely than they need to be.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

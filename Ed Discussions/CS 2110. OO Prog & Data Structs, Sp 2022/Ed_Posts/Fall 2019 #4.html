@@ -1,0 +1,59 @@
+<h1>
+ Title: Fall 2019 #4
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-08T08:10:46.713851+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="157.57619738751814" src="https://static.us.edusercontent.com/files/HAmQ4Uk1CZXoRn4Z5IAbcZoY" width="658"/>
+ </figure>
+ <paragraph>
+  How is this order of calls determined?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <bold>
+   F(3)
+  </bold>
+  is called first. Since 3 is not equal to 0 or 1 you evaluate F(n-1) + F(n-2). Call F(n-1) where n = 3, which is
+  <bold>
+   F(2)
+  </bold>
+  , first. Since 2 is not equal to 0 or 1, then evaluate F(n - 1) where n = 2 first, which is
+  <bold>
+   F(1)
+  </bold>
+  . 1 equals 1, so F(1) returns 1. Then you evaluate F(n - 2) where n = 2 which is
+  <bold>
+   F(0)
+  </bold>
+  . F(0) returns 1. Then 1+1 is returned by the call of F(2). Now call F(n-2), where n = 3, which is
+  <bold>
+   F(1)
+  </bold>
+  . That returns 1, so F(3) returns 2 + 1, which is 3.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

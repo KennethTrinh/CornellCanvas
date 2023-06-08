@@ -1,0 +1,62 @@
+<h1>
+ Title: Unicode Question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-08T08:01:55.568328+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  From Java Hypertext: 'Z' +1 - 'A' evaluates to 26
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Why is this true? Shouldn't it be 27 if there are 26 letters in the alphabet...
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Try this in jshell to help you understand.
+ </paragraph>
+ <paragraph>
+  Maybe this could help clear it up:
+ </paragraph>
+ <paragraph>
+  'A' is considered at the 0th index of an array if we made an array of all the alphabet, 'Z' is considered at the 25th index of an array if we made an array of the alphabet. 25-0+1 = 26, maybe this helps
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Consider the Follower minus First rule. The same thing applies here. We're calculating the number of values in the range 'A'..'Z' using the Follower minus First rule
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

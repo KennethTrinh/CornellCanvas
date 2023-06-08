@@ -1,0 +1,131 @@
+<h1>
+ Title: ECE 4740, ECE 5745 and ECE 4530
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-04-26T08:33:32.322604+10:00
+</h3>
+<h3>
+ Category: Courses
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Please what are the differences between them, especially the first two? They all seem to be courses on ICs.
+ </paragraph>
+ <paragraph>
+  And if someone knows, what is roughly the workload in hr/wk, or just qualitatively.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Disclaimer: haven't taken ECE 4530 (and probably won't, the digital designer in me gets scared :)
+ </paragraph>
+ <paragraph>
+  While all of these courses focus on IC design, they all focus on different aspects; specifically,
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    ECE 5745 (ASIC) focuses on automated, digital design. You get lots of experience with design flow, and complete designs in Verilog (although the lectures do cover lower-down topics)
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    ECE 4530 (Analog IC) instead focuses on analog circuits, such as amplifiers, and how we go about laying them out on chips, including the tools used in industry to do so.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Lastly, ECE 4740 (VLSI) focuses lower down, on the building blocks of how our designs get made. Topics include the processes used for manufacture, general concepts of how different blocks (such as arithmetic and memory blocks) are made, as well as standard cell design. It is not firmly analog or digital, but somewhat in between
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  4530 and 4740 are both CDE's and require a significant amount of work (although from what I've heard, 4530 is more than 4740). 5745 is a follow-up to 4750, and isn't light by any means either - the second half of the course involves an intensive personal design project. However, they all give you practical experience with commercial tools used to design ICs, and there would likely be overlap between the pairs 4740/4530 and 4740/5745 (with the second pair having the same textbook)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  My guy, thank you.
+ </paragraph>
+ <paragraph>
+  If possible, can you please elaborate on the potential overlaps? I might take 2 of these courses in the future and I am trying to maximize the amout I will learn and the practical skills I will get.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sure thing! I am very unaware of the overlaps involved with 4530. However, for 4740 and 5745, there is a significant amount of overlap at the transistor level. 5745 only ever goes as "low" in the computer stack as considering transistors as a whole, and 4740 only goes as "high" as functional blocks such as arithmetic units and memory. In between that area, there's a fair amount of overlap, including:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    Lots about delay (RC models, sizing for optimal delay, etc.)
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Power considerations/calculations
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Interconnect modeling
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    In-depth looks at sequential circuits (a.k.a. why do we have hold time?)
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  5745 covers stuff above this as well, such as overall design methodologies and architecture, as well as HDL's and a little on algorithms for an ASIC flow (synthesis, place-and-route, etc.) 4740 covers below this as well; think some transistor physics, manufacturing processes and considerations, and more in-depth looks at the considerations needed to make devices work. 4740 also tends to track the textbook a little more ("CMOS VLSI Design: A Circuits and Systems Perspective").
+ </paragraph>
+ <paragraph>
+  In terms of hands-on skills, 5745 gives you practice with Synopsys DC and Cadence Innovus to automate the RTL-&gt;GDS process (although the labs hide a lot of this behind the scenes, Prof. Batten posts a lot of great tutorials if you're interested in anything in particular). 4740 uses Cadence Virtuoso to do manual layout (think drawing lots of metal rectangles)
+ </paragraph>
+ <paragraph>
+  One last thing that may help - 5745 has
+  <link href="https://www.csl.cornell.edu/courses/ece5745/index.html"/>
+  a public website! You can look over the handouts and tutorials there as well and see if it is of interest to you
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

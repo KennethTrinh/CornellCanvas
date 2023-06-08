@@ -1,0 +1,100 @@
+<h1>
+ Title: 2016 fall 7:30 prelim 5
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-07T15:33:55.444361+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm having trouble with exception handling problems. Could someone explain the solution to C.me(0) and C.me(1)?
+ </paragraph>
+ <figure>
+  <image height="632.3636363636364" src="https://static.us.edusercontent.com/files/c4uRESQlRehJFaz1EHuzVGna" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Vladia Trinh (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For C.m(0)...
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    print 8
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    y is assigned to 0
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    print 7
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    if statement evaluates to true, so runtime exception is thrown
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    runtime exception is caught in catch branch so print 2
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    lastly print 1
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  So, you end up printing 8 7 2 1
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  For C.m(1)...
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    print 8
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    evaluating expression to assign y divides by 0, since this is not in the try statement it cannot be caught
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    program crashes
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  So, you end up just printing 8
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,56 @@
+<h1>
+ Title: PWM and mbed.h
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-21T09:06:16.07646+10:00
+</h3>
+<h3>
+ Category: Final Project
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, we're trying to change the frequency for our buzzer so it can produce different sound. We think we need PWM (thus the TPM module) to achieve this, but we're not sure what to do exactly. Any guidance is greatly appreciated.
+ </paragraph>
+ <paragraph>
+  Also, did anyone used "mbed.h"? It shows up in a lot of examples but we have no clue finding it.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Liam Kain (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You can use the PWM SDK example. In the TPM_SetupPwm function you can see where it assigns to the MOD register. Anything that involves those variables keep, but throw out all the other parts of the function and that's your change frequency function.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I dwonloaded this example, but I'm a bit confused. It seems to change the duty cycle base on some input, but it never specified which pin it is operating on. Does this change the duty cycle for all PWM pins?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

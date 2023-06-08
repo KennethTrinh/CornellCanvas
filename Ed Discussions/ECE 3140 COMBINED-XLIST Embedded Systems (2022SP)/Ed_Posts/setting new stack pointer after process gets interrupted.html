@@ -1,0 +1,48 @@
+<h1>
+ Title: setting new stack pointer after process gets interrupted
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-19T07:09:10.581372+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Im confused on what to set the stack pointer to in a process in process_select so that I can go back to the same position in that process once it's that process' turn on the queue again.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  <italic>
+   cursp
+  </italic>
+  will contain a pointer on the stack that points to where the process left off.
+  <italic>
+   process_select
+  </italic>
+  should also return the stack pointer where a process should resume. Think about how you might store this data? (Hint: you may need to edit your
+  <italic>
+   process_t
+  </italic>
+  struct definition)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

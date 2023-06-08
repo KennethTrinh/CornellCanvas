@@ -1,0 +1,147 @@
+<h1>
+ Title: Question regarding implementation of equals() method in Set
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-09T02:53:09.427661+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  According to Java, the method .contains() in class Set "returns true if this set contains the specified element. More formally, returns true if and only if this set contains an element e such that (o==null ? e==null : o.equals(e))." Does this mean that it internally calls the equals method that we implement?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If e has type Set&lt;E&gt; for some type E, then e.sequals(...) calls Set's method.
+ </paragraph>
+ <paragraph>
+  If e has type C where YOU declared class C, then it calls the method you wrote
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm not sure I understand your answer. I was specifically asking about the .contains() method. If I had a set a of type Set&lt;E&gt; and an object b of type E, and I call a.contains(b), does the contains() method internally call the .equals() method of class E? Thanks!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, the
+  <code>
+   Set
+  </code>
+  interface considers two objects to be equal if their
+  <code>
+   .equals()
+  </code>
+  method returns true (and since
+  <code>
+   .equals()
+  </code>
+  must be symmetric, it doesn't matter wither it calls
+  <code>
+   e.equals(o)
+  </code>
+  or
+  <code>
+   o.equals(e)
+  </code>
+  ).  The implementation of
+  <code>
+   equals()
+  </code>
+  is the one found via the bottom-up rule for the object it is invoked on (in this case,
+  <code>
+   o
+  </code>
+  , the argument passed to
+  <code>
+   contains()
+  </code>
+  ).  So if you implemented
+  <code>
+   o
+  </code>
+  's class and overrode
+  <code>
+   equals()
+  </code>
+  , then your method is the one it will call.
+ </paragraph>
+ <paragraph>
+  To clarify your follow-up question, this might not be the
+  <code>
+   equals()
+  </code>
+  method for type
+  <code>
+   E
+  </code>
+  , for two reasons: 1)
+  <code>
+   e
+  </code>
+  's type may be a
+  <italic>
+   subtype
+  </italic>
+  of
+  <code>
+   E
+  </code>
+  , and 2) the parameter type for
+  <code>
+   contains()
+  </code>
+  is
+  <code>
+   Object
+  </code>
+  , so
+  <code>
+   o
+  </code>
+  might not be an
+  <code>
+   E
+  </code>
+  at all.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

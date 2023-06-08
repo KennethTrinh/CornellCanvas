@@ -1,0 +1,62 @@
+<h1>
+ Title: Separating source files and class files
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-02T23:41:23.352023+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We are told to separate source files and .class files in different folders, but aren't all class files saved as java files? Could someone clarify what is meant by this?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  A file like  A0.java  contains Java source code, in this instance, class A0.
+ </paragraph>
+ <paragraph>
+  This file is compiled (translated) into the Java virtual machine language and stored in file A0.class. It is this version of the program, A0.class, that is actually executed.
+ </paragraph>
+ <paragraph>
+  The following image shows my Eclipse package explorer, showing project Recitation 01
+ </paragraph>
+ <figure>
+  <image height="205" src="https://static.us.edusercontent.com/files/YKOpQg9bYUweLdPN8gjb43NS" width="200"/>
+ </figure>
+ <paragraph>
+  All the files for this project are stored on my hard drive. If I navigate to where Eclipse store the files, in a
+  <italic>
+   workspace
+  </italic>
+  , it looks like this:
+ </paragraph>
+ <figure>
+  <image height="103" src="https://static.us.edusercontent.com/files/JZAIQpuGaN3kdysvHTaKUMPr" width="295"/>
+ </figure>
+ <paragraph>
+  You can see that directory  src. contains  the file for class Rec01. If you click directory bin, you will see file Rec01.class. You can open it in a text editor, but most of it will appear as gibberish or ???
+ </paragraph>
+ <paragraph>
+  Please DO find out where your workspace is on your computer and compare the Eclipse Explorer pane with that workspace on your hard drive.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

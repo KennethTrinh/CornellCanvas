@@ -1,0 +1,118 @@
+<h1>
+ Title: Pytorch lightning
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-08T04:15:07.886472+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can we use the Pytorch Lightning module for p5? It makes development a lot easier.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Victor Butoi (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You can use Pytorch Lightning but I don't think it will actually make development that much easier given the amount of bookkeeping you ~really need for this project.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh, what exactly do you mean by bookkeeping and why do you think it won't help?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Samar Khanna (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  To add to Victor's answer, be judicious with your time! Something like
+  <link href="https://www.pytorchlightning.ai"/>
+  PyTorch lightning is very likely overkill for this project (our datasets are small, we don't require lots of fancy compute, your chosen ML algorithms will probably not be too complicated).
+ </paragraph>
+ <paragraph>
+  However, if you think you have the time and the inclination to learn a new development API, then this project is a good chance to try it out.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes thank you. My ML research actually required me to work with pt lightning so I was trying to use this to gain some experience.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Victor Butoi (staff)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  As far as I remember, Lightning is OP when it comes to
+ </paragraph>
+ <paragraph>
+  Run distributed training
+  <break>
+  </break>
+  Logging
+  <break>
+  </break>
+  Metrics
+  <break>
+  </break>
+  Visualization
+  <break>
+  </break>
+  Early stopping
+ </paragraph>
+ <paragraph>
+  For other things like simple models, scikitlearn will have you covered.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

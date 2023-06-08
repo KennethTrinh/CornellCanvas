@@ -1,0 +1,53 @@
+<h1>
+ Title: Super.method() Usefulness
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-07T05:06:36.596942+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Would super.method() only be useful when there are 2 methods with the same name in both the super and sub classes?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  If you are simply trying to access a uniquely named function in the superclass, can't you simply call a function without super and by the inside out rule, the function in the superclass would automatically be called?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  super.method() would be
+  <bold>
+   absolutely necessary
+  </bold>
+  when you are overriding a method from the parent class and want to call the parent class's version of that method. Not putting the super. would make the method recursive.
+ </paragraph>
+ <paragraph>
+  Other methods that are not overridden are
+  <bold>
+   inherited
+  </bold>
+  , that is, they exist in the subclass automatically, so you would not use super.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

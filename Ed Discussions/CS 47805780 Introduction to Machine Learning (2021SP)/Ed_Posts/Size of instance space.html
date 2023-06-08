@@ -1,0 +1,71 @@
+<h1>
+ Title: Size of instance space
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-02-21T05:59:15.949154+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am unclear about the precise definition of the instance space and its size from the lecture. If there are three traits in
+  <italic>
+   X
+  </italic>
+  all of which could take on 3 values each, is the instance space defined as the set of those three traits or the set of all 3 x 3 = 9 possible trait values? And so would the size of the instance space be 3 or 9?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Samar Khanna (staff)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  The size of the instance space is the number of possible inputs you can have. Let's say you have a set of features $F$.
+ </paragraph>
+ <paragraph>
+  If you have a total of $|F|$ discrete features $A_1, A_2, \dots, A_F$ and each feature $A_i$ has $|A_i|$ possible feature values, then the size of your instance space is $$ |X| = \prod_{i=1}^{|F|} |A_i|$$
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  This number captures all possible inputs in your input space $X$. For example, in section this week we had $F = \{\text{Taste}, \text{Smell}, \text{Crust}, \text{Appearance}\}$. Since Taste could be good/bad, Smell could be spiced/fruity/woody, crust could be firm/soft and Appearance could be good/bad, we have $|Taste| = 2$, $|Smell| = 3$, $|Crust| = 2$ and $|Appearance| = 2$. Therefore, $$ |X| = |Taste| \times |Smell| \times |Crust| \times |Appearance| = 2 \times 3 \times 2 \times 2 = 24$$.
+ </paragraph>
+ <paragraph>
+  And so to answer your example, it would be $3 \times 3 \times 3 = 27$, not 3 or 9.
+ </paragraph>
+ <paragraph>
+  Please make this question public so that others can benefit (since there is no private information here).
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Great answer thank you
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

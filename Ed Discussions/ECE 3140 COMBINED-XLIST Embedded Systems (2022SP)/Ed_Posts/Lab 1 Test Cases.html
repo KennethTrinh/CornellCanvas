@@ -1,0 +1,71 @@
+<h1>
+ Title: Lab 1 Test Cases
+</h1>
+<h3>
+ Author: Ariana Haghighi (student)
+</h3>
+<h3>
+ Date: 2022-02-16T12:44:55.455141+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  How should we display test cases? Right now I have them set up in main, ex: mov r0, #0 BL fib. However, since my implementation of morseDigit ends in the forever loop, only one test case can be run on each debug to the board. So I can have multiple test cases in main, but only actually execute one of them. Should I leave it like this or change my implementation of morseDigit so I branch to the forever loop after executing all of my test cases?
+ </paragraph>
+ <paragraph>
+  example of change:
+ </paragraph>
+ <paragraph>
+  main:
+ </paragraph>
+ <paragraph>
+  test case 1
+ </paragraph>
+ <paragraph>
+  test case 2
+ </paragraph>
+ <paragraph>
+  test case 3
+ </paragraph>
+ <paragraph>
+  BL forever
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why does your implementation of morseDigit end in the for loop? That's equivalent to calling a function that gets stuck in an infinite loop which would not be desired behavior
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Ariana Haghighi (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yeah, that's a good point, thank you
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

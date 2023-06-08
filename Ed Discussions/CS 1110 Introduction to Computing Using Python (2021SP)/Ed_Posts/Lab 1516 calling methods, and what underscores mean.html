@@ -1,0 +1,138 @@
+<h1>
+ Title: Lab 15/16: calling methods, and what underscores mean
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-15T08:53:46.806291+10:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I still don't understand when to use something like self.method() vs method(self), could someone please explain this to me?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi!
+  <break>
+  </break>
+  <break>
+  </break>
+  We think of methods (or, technically, "instance methods" as we have introduced in class) as associated with a "calling object", so self.method() would always be preferred.
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, but on Lab 15 there was this comment as well: "The leading underscore "_" in the name indicates that it's intended to be a private function. You may wish to ponder whether it's better for
+  <code>
+   _score
+  </code>
+  to be a method or a non-method function."
+ </paragraph>
+ <paragraph>
+  Does this indicate that the _ for __ init __ or __ str __ are exceptions to this preference?
+ </paragraph>
+ <paragraph>
+  Thank you!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Good question!  This is a bit complicated, and there are various ways to answer it.
+  <break>
+  </break>
+  <break>
+  </break>
+  (a) I think for the purposes of CS1110, maybe the best way to think of this is that indeed, double-underscore methods are exceptions to the usual convention/preference. [footnote 1]
+  <break>
+  </break>
+  <break>
+  </break>
+  (b) What was said about "_score" was actually on a different topic.  "_score(...)" has only a single underscore in front of it, actually [footnote 2]. The note was meant to indicate: you can think about whether to leave _score(...) as is, or to redefine it as method with name score(...) (with no underscore).
+  <break>
+  </break>
+  <break>
+  </break>
+  [footnote 1: special, or double-underscore methods, are even processed differently by Python, in that they work on the class, not the object level, for Reasons.  If you are interested, see
+  <link href="https://docs.python.org/3/reference/datamodel.html#special-method-lookup"/>
+  https://docs.python.org/3/reference/datamodel.html#special-method-lookup but please don't feel that you should be able to understand what that document is talking about --- especially since CS1110 is an intro to
+  <italic>
+   programming
+  </italic>
+  , not to the particularities of Python per se.  (alliteration, hurrah)]
+  <break>
+  </break>
+  <break>
+  </break>
+  [If you're typographically inclined, you may find the different uses of underscores in Python semi-interesting.  See this part of the Python style guide:
+  <link href="https://www.python.org/dev/peps/pep-0008/#id36"/>
+  https://www.python.org/dev/peps/pep-0008/#id36]
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

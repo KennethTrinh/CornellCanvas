@@ -1,0 +1,76 @@
+<h1>
+ Title: Sample complexity question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-22T10:15:57.951696+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Tell me if my reasoning is correct: We know $h_{s}$, so there is no randomness about what it is. That means That the difference between its sample error and prediction error is an unknown constant (rather than a random variable). That is why we cannot directly treat it as a random variable, so we have to use union bounds to get a random variable.
+ </paragraph>
+ <figure>
+  <image height="337" src="https://static.us.edusercontent.com/files/kp1VxpoHsrYo9WYax6QjvNNB" width="468"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  What's going on here is that we cannot treat h_s as random because it is deterministic based on the sample–whatever h in H gives the best sample error will be chosen. So we have to consider each h_i we could have chosen and look at its performance on the sample, and apply the union bound
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why does h_s being deterministic mean we have to do this?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  It's not directly because h_s is deterministic, it's because it's the
+  <italic>
+   best
+  </italic>
+  , so we need to apply the union bound because it could be any one of the h_i.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

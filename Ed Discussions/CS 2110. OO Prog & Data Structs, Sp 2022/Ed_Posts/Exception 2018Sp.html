@@ -1,0 +1,65 @@
+<h1>
+ Title: Exception 2018Sp
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-08T07:44:15.946907+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, I was wondering for foo(0,0), why are we not executing the catch(ArithmeticException e) explicitly as( 1,5,6,8 ) .
+ </paragraph>
+ <paragraph>
+  Instead, the answer key left the answer as "1, Arithmetic Exception".
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="535.6536585365853" src="https://static.us.edusercontent.com/files/pBQBtBFCDsGhVWYuVymTOH8y" width="581"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Since the statement
+  <code>
+   int res = a / (b * 5)
+  </code>
+  is outside the try block of the try-catch statement, the ArithmeticException is not caught, so this call first prints 1 and then throws an ArithmeticException.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  ohh ok thanks!!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

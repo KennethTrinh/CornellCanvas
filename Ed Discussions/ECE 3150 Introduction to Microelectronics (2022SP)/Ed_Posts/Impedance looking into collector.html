@@ -1,0 +1,59 @@
+<h1>
+ Title: Impedance looking into collector
+</h1>
+<h3>
+ Author: Courtney Golden (student)
+</h3>
+<h3>
+ Date: 2022-02-25T10:30:35.127608+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In lecture last week, when we determined the impedance of a BJT looking into the collector terminal, we drew a small signal model of the transistor and in doing so set v_in to be zero. Why did we set v_in to be zero/why can we assume that the input signal would be constant?
+ </paragraph>
+ <paragraph>
+  Is this different from HW 2 Q7 where we did not ground the input voltage v_g in the small signal model since we could not assume it was constant?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Sounak Maji (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  When you want to find the resistance, you short/open all the voltage/current sources, much like you do while finding thevenin equiavalent resistances at a node. This does not imply that we assume the input signal to be constant. However, in HW 2 Q7, we are interested in finding the small-signal model (and not just the resistance), so we keep all the sources.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Clifford Pollock (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  If the input source had a resistor, we would need to consider the resistor in the analysis, but the voltage sourse itself acts like a short circuit to any external modulation.  This is like doing superposition, where you turn off every dependent source and replace with a short (for V) or open  (for current).  Remember that these impedances we are measuring are for small signal, so all the dc currents floating around due to bias have no direct impact o the small signal impedances.  The bias currents establish the r_pi and G_m and all those parameters that impact the small signal, so that is their role.
+ </paragraph>
+ <paragraph>
+  Q7 part a was just finding the dc bias conditions.  Part b was a little vague, as it wasn't clear where the input signal was coming from.  If we assume V_g had a DC bias point, and then a small signal voltage on top of it, then we would plave the test voltage on the base.  But to be fair this is an assumption and not clear from how the circuit was set up.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

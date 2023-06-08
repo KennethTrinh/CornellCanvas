@@ -1,0 +1,53 @@
+<h1>
+ Title: Clearing the TFLG
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-24T16:25:47.735729+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If we set the TFLG to 1, which means to clear it, we enable the interrupt service once the time has run out. However I am unsure of where the timer gets resetted? Does setting the TFLG also restarts the timer by any chance?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  Once the PIT hits zero (times out), the PIT stops and generates an interrupt. When an interrupt is cleared, the PIT will begin counting again starting at the value stored in the "Load Value" register.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  This makes whole lot of sense!!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

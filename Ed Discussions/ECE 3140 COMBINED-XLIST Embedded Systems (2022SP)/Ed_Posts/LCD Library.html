@@ -1,0 +1,268 @@
+<h1>
+ Title: LCD Library
+</h1>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Date: 2022-05-07T04:44:24.896418+10:00
+</h3>
+<h3>
+ Category: Final Project
+</h3>
+<h3>
+ Vote Count: 4
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi all,
+ </paragraph>
+ <paragraph>
+  I have a written a library to help students use the on-board LCD. The library has functions to write digits, decimal points, and the colon and additionally makes it easier to turn on or off individual segments for those of you who may want to write words.
+ </paragraph>
+ <paragraph>
+  The library is under the Final Project module on Canvas. Let me know if you have any questions/problems!
+ </paragraph>
+ <paragraph>
+  Good luck with the project,
+ </paragraph>
+ <paragraph>
+  Aaron
+ </paragraph>
+</document>
+<h3>
+ Author: Ally Younkman (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, I just downloaded the library and demo and tried to run it, but am missing
+  <code>
+   fsl_slcd.h
+  </code>
+  , do you have any suggestions on where I could find it? I looked under drivers but did not see it. Thanks!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When I looked just now in my example project it is under the "drivers" directory in the project folder
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Junwoo Jung (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I can't seem to find fsl_slcd.h in the drivers directory. Is there some way to find this header file and add it to my project if I don't have this file?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  Are you sure you have the correct SDK example downloaded? Try File-&gt;New -&gt; Import SDK Examples. Then choose the frdmkl46z (be sure to choose the correct board, click next, click the dropdown arrow next to driver_examples, selecting slcd and then hit finish. Finally in the drivers folder in the frdmkl46z_slcd project folder you should see the fsl_slcd.h file
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Junwoo Jung (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It works! Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  I don't have my computer in front of me right now so I can't check, but it's probably in one of the other files in the slcd sdk example. Setup the example and then carefully check through all of the subdirectories (board, drivers, etc) in the project directory to find the file, then add it to your project. When I get access to my computer I can try to check myself
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Ally Younkman (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi again, I imported the slcd SDK example and am now able to run the demo. However, when I run the code I get an error in
+  <code>
+   lcd.c
+  </code>
+  for
+  <break>
+  </break>
+  /* Hardware initialize. */
+  <break>
+  </break>
+  BOARD_InitPins();
+  <break>
+  </break>
+  BOARD_BootClockRUN();
+  <break>
+  </break>
+  the error says that
+  <code>
+   BOARD_InitPins();
+  </code>
+  is an undefined reference and
+  <code>
+   BOARD_BootClockRUN();
+  </code>
+  has a similar issue. Any idea what might be causing this? Thanks
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  BOARD_InitPins() and BOARD_BootClockRUN() are both methods defined in pin_mux.c in the "board" directory of the example. Make sure you downloaded the correct sdk demo and if you're using it in another project you need to make sure you copy over
+  <italic>
+   all
+  </italic>
+  of the files from the sdk slcd demo to your new project.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Ally Younkman (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  that worked thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Leo Davies (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello I was wondering which segments of the display corresponded to the 'A', 'B', 'C', etc command so I know which segments to display.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Benjamin is correct. You can also take a look at the documentation for the LCD so that you know which digit is which.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Benjamin Kogan (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  <link href="https://en.wikipedia.org/wiki/Seven-segment_display_character_representations#/media/File:7_segment_display_labeled.svg"/>
+  7 segment display labeled - Seven-segment display character representations - Wikipedia
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jeff Nan (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Does the LCD use port D somehow? The library works fine for me usually, but when I try to use it in a project that also uses some pins on port D for external peripherals nothing shows up.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It uses all of the ports. In pin_mux.c in the slcd demo you can see how it initializes all of the pins for the LCD screen, including D0
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

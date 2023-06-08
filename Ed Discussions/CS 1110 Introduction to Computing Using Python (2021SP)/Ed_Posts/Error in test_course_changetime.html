@@ -1,0 +1,125 @@
+<h1>
+ Title: Error in test_course_changetime
+</h1>
+<h3>
+ Author: Anna Alphenaar (student)
+</h3>
+<h3>
+ Date: 2021-05-15T03:48:16.564132+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I got this error when testing test_course_changetime:
+ </paragraph>
+ <paragraph>
+  AssertionError: roster warnings list should be ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm'], but is ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm', 'ARCH 1120 STU 520: time change causes conflict with AEP 3560 LEC 001', 'ARCH 1120 STU 520: time change causes conflict with FAKER 0000 LEC 002']
+ </paragraph>
+ <paragraph>
+  Why does ARCH 1120 STU 520 run for 12 hours?
+ </paragraph>
+ <paragraph>
+  also, the time for AEP 3560 LEC 001 is MWF 9:05am-9:55am
+ </paragraph>
+ <paragraph>
+  and the time for FAKER 0000 LEC 002 is F 1:30pm-2:30pm
+ </paragraph>
+ <paragraph>
+  How would these courses not conflict?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <blockquote>
+  Why does ARCH 1120 STU 520 run for 12 hours?
+ </blockquote>
+ <paragraph>
+  Lines 235-236 (and your changeTime method if it is working ) in the testing file causes this to happen:
+  <break>
+  </break>
+ </paragraph>
+ <pre>new_time = "MWF 8:00am-8:00pm" 
+arch1120.changeTime(new_time)
+</pre>
+ <paragraph>
+  <break>
+  </break>
+  &gt; How would these courses not conflict?
+  <break>
+  </break>
+  <break>
+  </break>
+  Femember from the handout, section 5.1: "We’ve written almost all of this class, which is used to represent both individual schedules and course rosters, for you in file schedule.py. Because of the latter application, one is allowed to add conflicting courses to an arbitrary Schedule via the add() method."
+  <break>
+  </break>
+  <break>
+  </break>
+  (If you were building the Cornell course roster with thousands of courses, you wouldn't want to get a message for every conflicting course!)
+  <break>
+  </break>
+  <break>
+  </break>
+  See the handout for a full printout of a sample run and what should happen.  There should be no warnings generated about conflicting courses for Schedules, only StudentSchedules.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anna Alphenaar (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  How do I check that something is a student schedule?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <link href="https://edstem.org/us/courses/3933/discussion/440712"/>
+  https://edstem.org/us/courses/3933/discussion/440712 , or what other function did we learn about early in the course that will tell you the type of something, such that you can check whether something is a string or a list ...?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anna Alphenaar (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you! I figured it out
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

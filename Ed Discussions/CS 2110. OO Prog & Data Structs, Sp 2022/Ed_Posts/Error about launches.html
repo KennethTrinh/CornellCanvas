@@ -1,0 +1,131 @@
+<h1>
+ Title: Error about launches
+</h1>
+<h3>
+ Author: Jialei Zhou (student)
+</h3>
+<h3>
+ Date: 2022-02-04T00:52:06.463454+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When I hit the run button for my java files, I kept receiving the error looking like this pic. How can I fix this problem? Thank you.
+ </paragraph>
+ <figure>
+  <image height="157.37261698440207" src="https://static.us.edusercontent.com/files/hV6P5zDcvwnMJrfBSnWlPY4T" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Jialei Zhou (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I just find a method:
+ </paragraph>
+ <paragraph>
+  <bold>
+   public
+  </bold>
+  <bold>
+   static
+  </bold>
+  <bold>
+   void
+  </bold>
+  main(String[] args) {
+ </paragraph>
+ <paragraph>
+  }
+ </paragraph>
+ <paragraph>
+  when I add this to the first place inside the class, it works out just fine. I see the 'open new project' video, which gives me a hint that when we create a new class, we need to check this box.
+ </paragraph>
+ <paragraph>
+  But when we import files (I'm trying to run codes given by lecture materials), do we need to add this method manually?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Search up “method main” in JavaHyperText for more info, here’s some notes:
+  <break>
+  </break>
+  I think the code you’re referring to is being run in JShell. JShell is not an IDE. It's important not to get confused between JShell and programming in an IDE, such as Eclipse. JShell lets us run code snippets without creating a java class and main method. But a proper Java application (written in an IDE) must have the main method, since that’s where all the execution happens (you’ll have to check the box when creating the class to add it, or yes, add it manually if you didn’t)
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jialei Zhou (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh I see. I just imported the given codes. Does it mean that I just need to insert this method (the exact same one) in the given class if I want to run it in eclipse?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  If you are trying to execute some code, you need to do so in the main method, which is always
+ </paragraph>
+ <paragraph>
+  <bold>
+   public
+  </bold>
+  <bold>
+   static
+  </bold>
+  <bold>
+   void
+  </bold>
+  main(String[] args) {
+ </paragraph>
+ <paragraph>
+  }
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

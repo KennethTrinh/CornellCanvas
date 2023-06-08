@@ -1,0 +1,76 @@
+<h1>
+ Title: Interfaces and abstract data types
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-07T16:30:22.866339+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <blockquote>
+  JavaHyperText explanations/definitions:
+ </blockquote>
+ <blockquote>
+  Using a Java interface to define an abstract data type: An interface consists basically of a set of abstract methods. We can therefore
+  <bold>
+   think of an interface as defining an abstract data type,
+  </bold>
+  where the syntax of operations on the set of values is defined by the abstract methods and the set of values and meaning of these operations are given in comments.
+ </blockquote>
+ <blockquote>
+  <bold>
+   Abstract data type (ADT):
+  </bold>
+  type whose implementation is not specified
+ </blockquote>
+ <paragraph>
+  I don't understand this explanation. What is the purpose of the connection between interfaces and ADTs?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Consider an abstract type LLList. Its values are lists of integers. It has two operations:
+ </paragraph>
+ <paragraph>
+  append an element
+  <break>
+  </break>
+  remove the last element that was appended
+ </paragraph>
+ <paragraph>
+  Below is the interface. The two declarations give the syntax of the operations. What they do is given by the specifications.
+ </paragraph>
+ <pre>interface LLList {
+
+    /** append k to the LLList */
+    public abstract void append(int k);
+
+   /** remove the last element that was appended */
+   public abstract void remove();
+
+}
+</pre>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,90 @@
+<h1>
+ Title: Implement &amp; Sub-class Question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-13T14:17:22.187035+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello!
+ </paragraph>
+ <paragraph>
+  I have attached a photo regarding the problem in question; I was wondering for the SportsCar, why does it not have to implement the getValue() function? SportsCar implements Valuable so it should also have to implement getValue() in the body SportsCar at some point, no?
+ </paragraph>
+ <figure>
+  <image height="366.52519893899205" src="https://static.us.edusercontent.com/files/I3fsVHGKqBJmZuHIEPhp5Gb7" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Technically it doesn’t, because by the bottom up rule, if (it should) Car had a getValue method it would call that getValue method so it is not a MUST that it has that method but it could have it if you want it
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh I see, in other words, the subclass is not required to implement getValue() if it's parent class already implements getValue()? (and the parent class also happens to implement the Valuable interface?)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Because the parent class implements the Valuable interface we are guaranteed that it has a getvalue method therefore the subclass doesn’t have to have it.
+ </paragraph>
+ <paragraph>
+  If the parent class didn’t implement the Valuable interface then the subclass MUST implement the getvalue method
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Got it tyy
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

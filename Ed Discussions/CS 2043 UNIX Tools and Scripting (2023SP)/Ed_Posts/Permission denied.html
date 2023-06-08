@@ -1,0 +1,64 @@
+<h1>
+ Title: Permission denied
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-02-03T00:08:37.554663+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  After I touch a2.sh and try to run it with
+  <code>
+   ./a2.sh
+  </code>
+  , it says
+  <code>
+   Permission denied
+  </code>
+  . But I can run the script using
+  <code>
+   bash a2.sh
+  </code>
+  as we learned in class. Do I need to update the permission for the a2.sh script file, or is it wrong to create a2.sh with the touch command?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Woosang Kang (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, you should update the permission by
+  <code>
+   chmod +x a2.sh
+  </code>
+  after writing a file with
+  <code>
+   touch
+  </code>
+  to add executable permission to it.
+ </paragraph>
+ <paragraph>
+  You can also check the current permission by
+  <code>
+   ls -la
+  </code>
+  ing in the directory that has the file.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

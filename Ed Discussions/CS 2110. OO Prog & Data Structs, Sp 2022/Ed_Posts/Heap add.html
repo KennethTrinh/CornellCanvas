@@ -1,0 +1,65 @@
+<h1>
+ Title: Heap add
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-18T23:13:49.996887+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  How is the method add(E v, double p) different from add(E v)?
+ </paragraph>
+ <paragraph>
+  Also, why do we write heap.add(in, in)? Doesn't that make priority change every time because it is inside the for-loop?
+ </paragraph>
+ <figure>
+  <image height="644.6621621621622" src="https://static.us.edusercontent.com/files/7tIukcrOeBFTIbQWhhbst3bu" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Whether one uses add(val, priority) or add(val) depends on the heap that is being constructed.
+ </paragraph>
+ <paragraph>
+  If creating a heap where the values are also the priorities, then the class has method add(val).
+ </paragraph>
+ <paragraph>
+  If creating a heap in a class where the values and priorities are different. use the 2-par add method.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  In the class used in this question, the values and priorities are different.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  That first assignment to heap and loop following it is constructing a heap of the elements in s.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

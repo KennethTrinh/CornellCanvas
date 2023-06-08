@@ -1,0 +1,68 @@
+<h1>
+ Title: fall 2019 5:30 5b
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-17T05:13:54.252444+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The question asks to find the tightest bound on worst-case time complexity for binary search on a doubly linkedlist of size n — why is this O(n) and not O(log(n))? I thought that O(log(n)) was generally the worst-case time complexity for binary searches
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Richard Gu (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  How would you implement binary search on a doubly linked list? There's no efficient way to know which "half" of the list contains the element you're searching for as with sorted arrays, so you would need to traverse each node. Hence, O(n).
+ </paragraph>
+ <paragraph>
+  Even if you somehow knew which part of the DLList to start your search from, element lookup time in LinkedLists is not O(1) as with arrays. So you can't "jump" to a particular node here to save time.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  makes sense, thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Richard Gu (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  np
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

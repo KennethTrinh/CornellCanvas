@@ -1,0 +1,54 @@
+<h1>
+ Title: Compile-time reference rule
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-03T08:28:01.946211+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is Cat c = new Animal(); valid? Or, is only Animal a = new Cat(); valid?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  I read hypertext but am getting confused when it comes to specific examples. I'm also confused on why (Cat)(new Animal()); would throw a ClassCastException at runtime. A cat is a type of animal, so why aren't we able to cast an animal to a cat?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  No, Cat c = new Animal(); will not compile. It requires that the expression on the right be cast down to Cat, and only upward casts will be inserted automatically if necessary.
+ </paragraph>
+ <paragraph>
+  Animal a = new Cat(); will compile. An upward cast to Animal will automatically be inserted.
+ </paragraph>
+ <paragraph>
+  You would well to draw objects before answering questions. You know that only upward casts will be automatically inserted. When you draw the objects, you can see what is upward and what is not.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,131 @@
+<h1>
+ Title: Use of this in Prelim question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-07T09:19:06.812419+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="126" src="https://static.us.edusercontent.com/files/i1uzuLnPpLG2VfSsLxJfa5Lf" width="647"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Is the use of this.gpa needed only because there is ambiguity between "gpa"?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Caleb Chin (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can't see the rest of the code but yes, I would assume that there is a field named gpa which conflicts with the parameter gpa. This requires the use of "this" in order to reference the field and not the parameter. Java HyperText also has a nice explanation of when to use the "this" keyword.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  There is not "ambiguity".
+ </paragraph>
+ <paragraph>
+  The inside-out rule tells you which declaration of gpa is to be used.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  So why is this. needed for gpa but not the other fields (name/studentID)?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="225.86741016109048" src="https://static.us.edusercontent.com/files/PQffKwORXatUXCOhvRLkDaww" width="575"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Caleb Chin (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Because the name of the parameters are different in those cases. Using the bottom up rule, "name" will reference the field "name" because there doesn't exist a local variable or parameter called "name" in the constructor.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This seems like it was used for ambiguity purposes then?... but according to inside out rule there is no ambiguity?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Caleb Chin (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Without the “this” modifier, it is not ambiguous which “gpa” is being referenced because of the bottom up rule. So just “gpa” will always reference the parameter by the bottom up rule. Using this.gpa will reference the field not the parameter also by the bottom up rule as “this” references the current object. So I guess in that sense, there is never ambiguity as to which one should be accessed because of the bottom up rule.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

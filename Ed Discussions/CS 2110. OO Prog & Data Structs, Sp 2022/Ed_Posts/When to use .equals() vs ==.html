@@ -1,0 +1,139 @@
+<h1>
+ Title: When to use .equals() vs == ?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-04T14:12:43.498072+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  For example on fall prelim 2019, is it valid to say obR.height.equals(this.height) instead of the solution which is obR.height == height? Or obR.height.equals(height)? Not sure when to use "this" and when not to.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  == checks if they're in the same place in memory (when referring to objects) if referring to primitive types it checks for the same value.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  .equals checks if the object has the same value (you'd need to write this as a method for your classes)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Wait isn't .equals() a string method you can use anytime?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes I mean for classes you write, string is a class that's already prewritten
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Also, when you want to compare the equality of two objects, you have to write/define a method for that yourself? It's not built in like for the string equals() method
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Someone had to write the equals method for String, but for a class that you write, you have to write the equals method. By default equals is inherited from class Object, and it is equivalent to == (if you don't override the equals method). Using == on objects is simply comparing the memory addresses to see if they are equal, so it tests to see if two objects are literally
+  <bold>
+   the same object
+  </bold>
+  , not just equal.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  I just edited my question, is my answer valid?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Vladia Trinh (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  When you are checking for equality of primitive types, you should use ==. In this case, I'm assuming that height is a float or int, so you should use ==. Using .equals would not work because methods can only be called on objects not primitive types.
+ </paragraph>
+ <paragraph>
+  As for your second question,
+  <code>
+   this
+  </code>
+  can be omitted. If you just say height, Java recognizes that you mean this object's height, so you don't have to explicitly say it.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

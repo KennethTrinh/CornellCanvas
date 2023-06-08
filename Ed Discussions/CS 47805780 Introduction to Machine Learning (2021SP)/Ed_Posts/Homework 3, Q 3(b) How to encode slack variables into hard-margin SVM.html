@@ -1,0 +1,68 @@
+<h1>
+ Title: Homework 3, Q 3(b): How to encode slack variables into hard-margin SVM?
+</h1>
+<h3>
+ Author: Oliver Leung (student)
+</h3>
+<h3>
+ Date: 2021-03-22T08:46:51.569528+11:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 5
+</h3>
+<document version="2.0">
+ <paragraph>
+  Intuitively, I understand so far that the difference between the given problem and the hard-margin SVM is that we are introducing slack variables $\xi_i$ that we want to minimize. From that, my thinking is: similarly to how we've encoded margins into the length of $\vec{w}$, we would encode something from the slack variables $\xi_i$ into $\vec{w}$.
+ </paragraph>
+ <paragraph>
+  However, I'm stuck on how to achieve this elegantly and without making the classifier's vector dependent on the number of examples. Could I be given a hint on how to achieve this? (Or is my approach completely off?)
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Artem Streltsov (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Write down the problems that Hard and Soft margin SVMs respectively are solving. You want to make the two equivalent. Equate the objective functions. How could you express the slack variables such that the soft objective resembles the hard one (define the new weight vector w')? Now look at the constraints. Put the soft constraints into the hard SVM form and equate the two. How could you set the new x' such that the two are equal (given the w' you found earlier)?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Franklin Tongxiang Deng (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  To clarify, what does "describe what features you would add to your training set" mean in the original question?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Artem Streltsov (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If X is your original dataset. The new dataset with new features is X'=[X, X''] (this is concatenation). X'' are the new features
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

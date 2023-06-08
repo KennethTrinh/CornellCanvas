@@ -1,0 +1,63 @@
+<h1>
+ Title: Nodes in HashMap
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-07T15:53:48.166551+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm struggling to understand which nodes go into the hash map. I know from the handout it says to replace set S, d, and b with the hash map. Yet, it also says the hash map should contain entries of the frontier set F. Do both of them go in the same hash map? If so, how do we differentiate which is in the frontier set or the settled set?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  1. Here's a quote from the handout, section 10, page 5.
+ </paragraph>
+ <paragraph>
+  4. Replace arrays d and bk and set S of the abstract
+  <break>
+  </break>
+  algorithm by a single HashMap&lt;Node, Item&gt;, which
+  <break>
+  </break>
+  should contain an entry for each node of Settled
+  <break>
+  </break>
+  set S and Frontier set F.
+ </paragraph>
+ <paragraph>
+  Doesn't that tell you what nodes go into the HashMap?
+ </paragraph>
+ <paragraph>
+  2. Where in the abstract algorithm do you have to test whether a node is in the settled or the frontier set? The only test I see in the abstract algorithm is:
+ </paragraph>
+ <paragraph>
+  if (w is not in S or F)
+ </paragraph>
+ <paragraph>
+  How can you use the HashMap to test that?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

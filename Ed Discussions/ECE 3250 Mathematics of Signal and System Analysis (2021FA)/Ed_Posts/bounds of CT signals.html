@@ -1,0 +1,51 @@
+<h1>
+ Title: bounds of CT signals
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-09T05:37:40.966246+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is $\lim_{n\to \infty} |x(n)| = 0$ true for every integrable signal? Or are we allowed to define some signal that has nonzero values for a finite duration at $n\to \infty$?
+ </paragraph>
+ <paragraph>
+  Conversely, is $\lim_{n\to \infty} |x(n)| &gt; 0$ true for every non-integrable signal? (not in L1, L2...L$^{\infty}$)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  You've mixed discrete- and continuous-time notation here.
+ </paragraph>
+ <paragraph>
+  In discrete time, you need $x ( n ) \rightarrpw 0$ as $n \rightarrow \pm \infty$ for $x$ to be absolutely summable.
+ </paragraph>
+ <paragraph>
+  In continuous time, you don't need $x ( t ) \rightarrow 0$ as $ t \rightarrow \pm \infty$ for $x$ to be absolutely integrable.  The counterexamples are kind of weird, but even decent counterexamples exist.
+ </paragraph>
+ <paragraph>
+  And you can have $x ( n ) \rightarrow 0$ as $n \rightarrow \pm \infty$ even for non-summable signals, e.g. $x ( n ) = ( 1 / n ) u ( n -  1 )$.  Similarly in continuous time.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,101 @@
+<h1>
+ Title: Can't meet expected race condition
+</h1>
+<h3>
+ Author: Hao Zhuo (None)
+</h3>
+<h3>
+ Date: 2021-11-27T09:43:19.086423+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="609.4987714987715" src="https://static.us.edusercontent.com/files/gtF4PwDNsT3NgK4AMPzI2BVW" width="658"/>
+ </figure>
+ <paragraph>
+  According to lecture 24 slides page 21, due to race condition, I should expect to get either 3 or 4 after running the code above. However, I kept getting 4. Can anyone clarify this for me?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is what makes race conditions so hard to debug - their behavior is unpredictable.  Both "3" and "4" are
+  <italic>
+   possible
+  </italic>
+  outcomes, but that doesn't mean that they occur randomly with equal likelihood.  The chance of your OS interrupting a thread during a single
+  <code>
+   ++
+  </code>
+  operation (or of scheduling both threads perfectly in-sync on two different cores) is extremely small, but it is non-zero.
+ </paragraph>
+ <paragraph>
+  One way you can increase your chances of seeing a race condition here is to perform many increments, rather than just one (since your main thread is responsible for starting both worker threads, and since the amount of work they have to do is miniscule, by the time thread
+  <code>
+   b
+  </code>
+  has started, thread
+  <code>
+   a
+  </code>
+  is probably already done).  Try starting 8 threads (you only need to define one
+  <code>
+   Runnable
+  </code>
+  class, since their
+  <code>
+   run
+  </code>
+  method body is the same) and having each of them perform
+  <code>
+   x++
+  </code>
+  100,000 times in a loop and see how many different answers you get each time you run it.  Even with this technique, though, it's possible that the compiler will "outsmart" you by replacing your loop with
+  <code>
+   x += 100000
+  </code>
+  .  Declaring
+  <code>
+   x
+  </code>
+  as
+  <code>
+   volatile
+  </code>
+  can thwart such optimizations (
+  <code>
+   volatile
+  </code>
+  is actually very important for the "publishing" side of avoiding race conditions in some situations, but it's beyond the scope of this course).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Hao Zhuo (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Thank you so much! It’s been really helpful.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

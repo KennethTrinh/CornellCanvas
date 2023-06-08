@@ -1,0 +1,171 @@
+<h1>
+ Title: Having cams behave properly.
+</h1>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Date: 2021-04-28T02:47:35.860785+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello,
+  <break>
+  </break>
+  This morning I was asked if one can add gravity to animation so that cams will behave as expected. This is not possible in Fusion 360, but you can get a similar effect as follow:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    once the rod is in place and its linear constraint is set, select the constrain and set the limit by clicking on the red arrow next to it
+   </paragraph>
+   <figure>
+    <image height="103" src="https://static.us.edusercontent.com/files/Q8h5a31dGLAgfUBQhPSTbtew" width="178"/>
+   </figure>
+  </list-item>
+  <list-item>
+   <paragraph>
+    in the dialog box that opens, set the rest position to the lowest point you want the rod to go (-20mm here). You can do this by typing the value or moving the rod.
+   </paragraph>
+   <figure>
+    <image height="246" src="https://static.us.edusercontent.com/files/5LDgBCQnhCcHYmtMM5zGDUqe" width="254"/>
+   </figure>
+   <paragraph>
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    The final step is to enable contacts:
+    <break>
+    </break>
+   </paragraph>
+   <figure>
+    <image height="265" src="https://static.us.edusercontent.com/files/otviZDIGSpKEveTi6WgWI0Qf" width="223"/>
+   </figure>
+  </list-item>
+ </list>
+ <paragraph>
+  At this point, the rod should follow the cam both upward and downward.
+  <break>
+  </break>
+  <break>
+  </break>
+  Please do not hesitate to let us know if you have any questions about this.
+  <break>
+  </break>
+  <break>
+  </break>
+  Francois.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Naotaka Kinoshita (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I did this and it seems to work, but the addition of the contact makes the motion study extremely laggy - if I disable contact, then the cam moves smoothly but once I enable contact, the cam barely moves. The same behavior occurs when I try to move the cam manually; it's extremely laggy and barely responds to my clicks. Is there a way to render the motion study or is it necessary to upload a smooth video of the motion study?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am not sure how complex your model is but one solution to speed things up is to define contacts sets (one for each rod/cam interaction). The contact analysis will only be performed between objects in contacts sets.
+  <break>
+  </break>
+  <break>
+  </break>
+  Let me know if this helps.
+  <break>
+  </break>
+  <break>
+  </break>
+  Francois.
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Naotaka Kinoshita (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I have contact sets for each interaction and it's still extremely laggy; I have 7 rods.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In that case, I will recommend using the renderer to render your animation study as it will be creating a movie of the animation for you. The system will render the model in the cloud so you can get the effect you want. Here is one
+  <link href="https://www.youtube.com/watch?v=L_Idi7sOuZk"/>
+  example.
+  <break>
+  </break>
+  <break>
+  </break>
+  Francois.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I followed the steps in the video, and it is quite easy to create a great animation. Here is an example (Edu licenses get free credits).
+  <break>
+  </break>
+  <break>
+  </break>
+  Francois.
+ </paragraph>
+ <file filename="crank-piston_v1_2021-Apr-27_06-32-52PM-000_CustomizedView8428198434_mp4.mp4" url="https://static.us.edusercontent.com/files/WGqf6lrmkGwwh9Ms77Xkg4N2">
+ </file>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

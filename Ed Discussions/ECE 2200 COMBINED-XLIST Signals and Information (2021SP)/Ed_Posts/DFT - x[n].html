@@ -1,0 +1,61 @@
+<h1>
+ Title: DFT -&gt; x[n]
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-06T13:33:37.479417+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm having trouble understanding conceptually how taking the inverse DFT recreates x[n], when the inverse DTFT also recreates x[n]. Since the DFT is a sampled version of the DTFT, isn't it missing a lot of information? For instance, here
+ </paragraph>
+ <figure>
+  <image height="168.04525862068965" src="https://static.us.edusercontent.com/files/54cQ4nulfuCH3wiHjINJTjyA" width="658"/>
+ </figure>
+ <paragraph>
+  we are missing the peak of $\hat{X}_4(\hat{w})$. Since x[n] requires the full continuity of the DTFT to be recreated, how can we recreate x[n] when we're only given a finite number of w-domain values, that changes based on how many samples we take?
+ </paragraph>
+ <paragraph>
+  In the example above, zero-padding the signal would increase the sampling rate, and provide some new (different) information about $\hat{X}_4(\hat{w})$ that was not captured in the previous DFT. How can this still produce the same x[n]?
+ </paragraph>
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  You've hit on what I call the Reverse Sampling Theorem.  It's essentially dual to the actual Sampling Theorem.  Here's the parallel.
+ </paragraph>
+ <paragraph>
+  Sampling Theorem: If you know that a continuous-time signal is bandlimited to within $f _ {\rm max}$, then you can reconstruct the signal completely from its samples $x ( n T _ s )$ provided $f _ s = 1 / T _ s &gt; 2 f _ {\rm. max}$.
+ </paragraph>
+ <paragraph>
+  Reverse Sampling Theorem: If you know that $\widehat{X} ( \widehat{\omega} )$ is the DTFT of a discrete-time signal that has duration at most $N$, then you can reconstruct $\widehat{X} ( \widehat{\omega} )$ completely from samples $\widehat{X} ( k 2 \pi / M )$, $0 \leq k &lt; M$, provided $M \geq N$.
+ </paragraph>
+ <paragraph>
+  In the Sampling Theorem, your "prior knowledge" is that the signal is bandlimited.  In the Reverse, your prior knowledge is that that function $\widehat{X} ( \widehat{\omega} )$ is the DTFT of a finite-duration signal.  In both theorems, you're amazed that you can rebuild a continuous thing out of a discrete sampling of it.
+ </paragraph>
+ <paragraph>
+  The Reverse theorem requires only finitely many samples as opposed to a countable infinity in the Sampling Theorem because $\widehat{X} ( \widehat{\omega} )$ is $2 \pi$-periodic.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,79 @@
+<h1>
+ Title: TODO15 Issue
+</h1>
+<h3>
+ Author: Benjamin Shwartzman (student)
+</h3>
+<h3>
+ Date: 2021-11-05T10:23:07.850537+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm having an odd user interface when I go to save things. It grays everything out as though I can't save to them, however when I click on them it gives me the option to save. Is there a reason this is occurring?
+ </paragraph>
+ <figure>
+  <image height="348" src="https://static.us.edusercontent.com/files/AVPrMWIDW2yxiccSQMWA0KWw" width="458"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is typical of how navigation on a save works. It allows you to click on folders to get to the folder where you want the file saved.
+ </paragraph>
+ <paragraph>
+  You CAN click on a greyed out file, but be careful, when you do that, the "Save As" file name is changed to the name you clicked on, and saving will store in that file. If it's where you want to append, fine. If not, you'll mess up that file.
+ </paragraph>
+ <paragraph>
+  Instead of clicking on a file name, just put in the Save As field what the name under which you want to store the file.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Benjamin Shwartzman (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ah I see what you're saying. When I go to save, I can create a new file by adding a name and clicking save. I can also click on a file and append the score to that file. I guess I still don't understand why the interface seems to imply that I am unable to append to any of these files. In general, when I do other drop downs to select a file, the interface usually shows me which files I can apply the changes to by normally showing the ones I can change and graying out the ones I can't. However, this interface grays out everything, even though I can select some and append the score without issue. Is there a reason why this is not occuring?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is a quirk of the default Swing look-and-feel on Macs.  On other platforms, the default look-and-feel is a pure-Java theme named "Ocean/Metal", which is designed to behave the same on all computers (and its "save" dialog behaves as expected).  It's possible to use this LaF on Macs as well, but by default it tries to use "native-looking" widgets instead.  Unfortunately, a quirk of that is that the default "save" dialog seems to gray out existing files.
+ </paragraph>
+ <paragraph>
+  There is probably a way to get the Mac save dialog to behave more normally, but I'm afraid I don't have a Mac myself to explore.  It's not needed for this assignment (the default dialog is all we're looking for), but if you're curious and figure out how, please share it here!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

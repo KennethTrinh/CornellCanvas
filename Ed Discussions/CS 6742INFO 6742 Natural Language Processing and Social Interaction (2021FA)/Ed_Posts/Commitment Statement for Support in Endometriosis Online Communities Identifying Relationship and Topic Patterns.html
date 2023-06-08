@@ -1,0 +1,87 @@
+<h1>
+ Title: Commitment Statement for Support in Endometriosis Online Communities: Identifying Relationship and Topic Patterns
+</h1>
+<h3>
+ Author: Fede Bologna (she/her) (student)
+</h3>
+<h3>
+ Date: 2021-11-06T00:04:46.50021+11:00
+</h3>
+<h3>
+ Category: Commitment_statement (A4)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For next week, I commit to complete the following:
+ </paragraph>
+ <list style="number">
+  <list-item>
+   <paragraph>
+    Structure the data in a proper format for the labeling task: Roz and I have decided to use Prodigy for the labeling task and Prodigy accepts json as input file. Therefore, I will structure our dataset as a json file having a dictionary for each row. Each dictionary will correspond to a single post, and will contain the content of the post itself, a unique identifier, and the url of the post.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Labeling topics in posts: after getting Prodigy up and running on my computer with the help of Roz, I will label posts based on two topics - symptoms and disbelief. For each post, I will annotate whether the post contains descriptions of symptoms and whether in the post, the original poster mentions having been disbelieved by one of the entities of interest in our project (friends, family, partners, therapist, doctors, and the reddit support community). Roz and I hope to label enough sentences to train a simple classifier and to obtain results on its performance given the amount of labeled data.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Meet with Roz to discuss the labeling task: despite the categories we plan to use being fairly defined, adjustments in the labeling step might still be necessary. Hence, toward the end of the week, Roz and I will meet to discuss any doubts we might have regarding the task, and any incongruencies that might have arisen while labeling.
+   </paragraph>
+  </list-item>
+ </list>
+</document>
+<h3>
+ Author: Fede Bologna (she/her) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Here, I report the results of my commitment statement:
+ </paragraph>
+ <paragraph>
+  1) I prepared a sample of 1000 posts in jsonl format for the labeling task. First, I checked for duplicates in our dataset, since it combines posts from similar endometriosis communities. I ordered the dataset chronologically from old to new and compared each post with: other posts from the same author when the username of the author was available; or with the preceding post. I evaluated post similarity using python’s Levenshtein distance package. I consider as duplicates the posts that were 0.99 similar to an earlier post. I chose this threshold by manually checking that it would retrieve posts that were identical but for formatting. Using this technique I found and removed 738 duplicates from the original set of 31272, obtaining 30534 unique posts. I then randomly sampled 1000 posts from the dataset. While sampling, I made sure that the obtained sample would have the same distribution of posts over time as the dataset. This allows for a more even and accurate representation of the language of the dataset including by both old and recent posts.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  2) I labeled 200 posts for topics. I started this task by labeling posts using only two labels for the topic category: symptoms and disbelief. For each post, I annotated whether the post mentioned symptoms and/or the OP shared that they had experienced disbelief from people. By labeling 100 posts, I noticed that the symptoms label did not satisfactorily represent the users' experiences of pain. Users of the community do not only describe symptoms related to endometriosis, but also side effects caused by medications and treatments, and symptoms they do not know the cause of yet. Depending on the kind of pain the users share and are concerned about, they mention different relationships in their life or address them differently. Therefore, Roz and I decided to split the symptoms label into three labels: ‘endometriosis symptoms’ when the user mentions symptoms in relation to their endometriosis; ‘treatment side effects’ when the user mentions symptoms in relation to a specific medication or treatment; and ‘unknown symptoms’ when the user mentions symptoms they do not know the cause of.
+ </paragraph>
+ <paragraph>
+  Moreover, I noticed that a great number of users perceived that one or more doctors were negligent towards their needs even though they did believe their pain. Therefore, Roz and I decided to add a ‘perceived negligence’ label. Lastly, we also added a ‘diagnosis’ label to identify posts where users mention the importance of receiving a diagnosis.
+ </paragraph>
+ <paragraph>
+  With these six updated labels in the topics categories (endometriosis symptoms, treatment side effect, unknown symptoms, disbelief, perceived negligence and diagnosis), I then proceeded to label 200 posts. Each post can be annotated with multiple labels depending how many topics of interest it mentions.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  3) After the first round of labeling, I met with Roz to talk about our doubts regarding the labeling task. We agreed that Roz would add “other” and “non-endo-author” labels to her relationship category and that I would add the four labels mentioned above in the topics category. We also agreed that Roz would try labeling for the topics category and we would compare our ratings. Labeling for topics with the updated labels was smoother and more clear than with the initial two labels only. However, it still required some thought as the labels are not clear-cut.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  glad to see the refinement-of-labels process!  Great fodder for a paper: "You might at first think that you can label in such-and-so way.  But in reality, there are further subtleties."  (That is, rather than only talk about the final label set in a writeup/paper submission, give yourself credit by noting that refinement was necessary.)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

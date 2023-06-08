@@ -1,0 +1,43 @@
+<h1>
+ Title: Testing Question from Past Prelim
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-08T04:41:28.349082+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="611.6308724832215" src="https://static.us.edusercontent.com/files/fzMGXriGoAhd3A4vdoxMeODg" width="658"/>
+ </figure>
+ <paragraph>
+  When foo(-1, -1) runs through this it reaches the line "if (b==0 || b== -1) throw new IllegalArgumentException()". I thought that once it reached this exception it would stop, and simply output Illegal ArgumentException.
+ </paragraph>
+ <paragraph>
+  But according to the answer, it doesn't stop, but rather goes to catch(Exception e) and then runs through those lines. Why is this?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Because IllegalArgumentException is a subclass of Exception (but not of ArithmeticException).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,57 @@
+<h1>
+ Title: Lab 3 QA.1
+</h1>
+<h3>
+ Author: Sergio Diaz (student)
+</h3>
+<h3>
+ Date: 2022-03-28T13:06:56.888277+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm very confused on what is expected for A.1 on this week's lab, particularly with regards to Kp (transconductance parameter).
+ </paragraph>
+ <paragraph>
+  When it says to find each device's transconductance parameter from the slope, is this just equal to the slope of the line we used to find Vth?
+ </paragraph>
+ <paragraph>
+  It also tells us to consider the equation for Id to answer the next part of the question, which is to figure out what Kp corresponds to and to write some expression. Where would I be able to find this equation (I wasn't able to find it anywhere in my notes), and what expression am I expected to write? The expression relating Kp and Id?
+ </paragraph>
+ <paragraph>
+  Thanks!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Hyunjea Lee (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello,
+ </paragraph>
+ <paragraph>
+  Yes you are supposed to get the transconductance as a function of V_GS, the slope of the tangent line to the I_D vs V_GS graph at each V_GS data point. You may use the following equation to get it.
+ </paragraph>
+ <math>
+  g_m\left(V_{GS}\right)=\frac{I_D\left(at\ the\ next\ V_{GS}\right)-I_D\left(at\ the\ current\ V_{GS}\right)}{\Delta V_{GS}}
+ </math>
+ <paragraph>
+  For the second question, first, get the linear fit of the g_m(V_GS) curve you extracted. The slope of the linear fit function corresponds to k_p. Then from the I_D equation in the inversion region, get the expression of g_m, which is linearly proportional to V_GS. Then you know what k_p is from the slope.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

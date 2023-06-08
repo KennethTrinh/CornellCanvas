@@ -1,0 +1,76 @@
+<h1>
+ Title: KNN classification errors when majority vote
+</h1>
+<h3>
+ Author: Zach Brodeur (student)
+</h3>
+<h3>
+ Date: 2021-02-27T01:12:42.922174+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I found that the vocareum grading scheme gave me classification errors (and a poor grade) when I implemented a majority voting scheme for the kNN classifiers and didn't provide any detail as to why the classifications were wrong. Choosing the kth classifier seemed to fix the problem in vocareum, but my understanding was that kNN classification was supposed to be implemented via a majority vote among the kNN. Is this incorrect?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Nina Tang (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, it should be the majority vote. I would double check your majority vote code.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Zach Brodeur (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I got the right answer by just choosing the k-th row of the classification matrix according to vocareum, so I am not sure if that was just luck or if there is an issue in the grading scheme tests. I am not going to change it at this point, but good to know that is the correct implementation. If other folks have this issue, it might be worth checking out.
+ </paragraph>
+ <paragraph>
+  Generally, it would be nice to know in future projects some more information about what tests our code has to pass for the grading, maybe as part of the notebook implementation (i.e. code must be able to do X, Y , and Z). My initial effort seemed to work fine with the provided examples, but was less than 50% correct when I ran the grading scheme. The feedback from vocareum like 'knnclassifier failed test 5' doesn't really provide adequate information to troubleshoot coding issues. It can become a rather time consuming exercise in guess and check in these cases. One of the responses provided was 'the knn classifier must have zero error with itself' which was actually really helpful in inferring what tests were being performed. Is more detailed information provided somewhere else in vocareum?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jacquelyn Peng (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I had the same problem, but did what the TA suggested in this post and it fixed it somehow.
+  <link href="https://edstem.org/us/courses/4342/discussion/275035"/>
+  https://edstem.org/us/courses/4342/discussion/275035
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

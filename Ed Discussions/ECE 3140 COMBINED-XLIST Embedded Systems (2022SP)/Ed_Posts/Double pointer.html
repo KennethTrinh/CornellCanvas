@@ -1,0 +1,65 @@
+<h1>
+ Title: Double pointer?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-18T06:53:51.352914+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, I believe that in the discussion when we talked about the linked lists, we used a double-pointer to keep the track of the first node right?
+ </paragraph>
+ <paragraph>
+  But in lab3, process_queue is just a pointer. My understanding of the process_queue is that it is used to keep track of the first process right?
+ </paragraph>
+ <paragraph>
+  Thanks a lot!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  Exactly! process_queue is just a pointer, but in some cases, you may want to create a pointer to it. This comes up if you are defining functions that take this in as a parameter - see below:
+ </paragraph>
+ <pre>void list_function(process_t* process_queue, process_t* process_to_append)
+{
+    &lt;some code that updates process_queue&gt;
+}
+
+list_function(process_queue, process_to_append)</pre>
+ <paragraph>
+  Here, if we update process_queue as passed in, we will only be updating the local variable inside the function, not the variable outside of a function. Instead, we would want to pass in a pointer to process_queue:
+ </paragraph>
+ <pre>void list_function(process_t** process_queue_pointer, process_t* process_to_append)
+{
+    &lt;some code that updates process_queue&gt;
+}
+
+list_function(&amp;process_queue, process_to_append)
+// &amp;process_queue gets a pointer to process_queue</pre>
+ <paragraph>
+  Now, we can change the variable process_queue outside of the function by dereferencing process_queue_pointer. In general, if you want to edit a variable outside of a function, you need to pass a pointer to it, or else you'll only be editing a local copy inside of the function
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

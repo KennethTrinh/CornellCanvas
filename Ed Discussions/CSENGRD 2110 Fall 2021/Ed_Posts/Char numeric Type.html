@@ -1,0 +1,152 @@
+<h1>
+ Title: Char numeric Type
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-29T12:22:53.055392+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  On the Prelim 1 study guide provided for recitation, point 1 highlights that char is a numeric type. However, after searching for the reasoning behind this, all the sources I looked at detailed char and boolean as being the two primitive types that are non-numeric.
+ </paragraph>
+ <paragraph>
+  Is char a numeric type, and for what reason?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Type    char   into the JavaHyperText Filter Field.
+ </paragraph>
+ <paragraph>
+  On the first line for that entry, click "this pdf file". Below is the link to it.
+ </paragraph>
+ <paragraph>
+  Read it, especially about casting and the examples there:
+ </paragraph>
+ <paragraph>
+  https://www.cs.cornell.edu/courses/JavaAndDS/files/char.pdf
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello Prof Gries,
+ </paragraph>
+ <paragraph>
+  I followed these instructions, and to my understanding, we consider char to also be a numeric type due to its ASCII values (so called
+  <italic>
+   magic numbers)
+  </italic>
+  ?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  A
+  <code>
+   char
+  </code>
+  will be
+  <italic>
+   implicitly converted
+  </italic>
+  to an
+  <code>
+   int
+  </code>
+  for the purpose of performing arithmetic operations on it (addition, subtraction, multiplication, division, remainder, negation).  This is not the case for
+  <code>
+   boolean
+  </code>
+  s.
+ </paragraph>
+ <paragraph>
+  A
+  <code>
+   char
+  </code>
+  is considered to be
+  <italic>
+   narrower
+  </italic>
+  than an
+  <code>
+   int
+  </code>
+  .  However, a
+  <code>
+   char
+  </code>
+  is neither narrower than nor wider than a
+  <code>
+   short
+  </code>
+  - they have mutually incompatible numerical ranges.  That is why
+  <code>
+   char
+  </code>
+  is in its own row in the wideness diagram.
+ </paragraph>
+ <paragraph>
+  When a character is considered as a number, Java uses its
+  <italic>
+   Unicode codepoint
+  </italic>
+  .  ASCII encoding represents a very small subset of Unicode (just the first 127 entries, out of nearly 150,000), but it's the subset used most often in English writing.  There's nothing "magic" about these numbers per se - you can look them up is the Unicode specification; when we use the term "magic number", we are referring to a style of coding where numerical constants are littered throughout the code with no meaningful names or explanations.  For example,
+  <code>
+   c &gt;= 97 &amp;&amp; c &lt;= 122
+  </code>
+  is an expression that makes use of "magic numbers" - where did 97 and 122 come from?  Better would be to use variables with names to capture the information you got by reading the specification:
+  <code>
+   littleA=97; littleZ=122; ... c &gt;= littleA &amp;&amp; c &lt;= littleZ
+  </code>
+  .  But even better is to leverage languages and libraries that already know about all these messy details:
+  <code>
+   c &gt;= 'a' &amp;&amp; c &lt;= 'z'
+  </code>
+  .
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

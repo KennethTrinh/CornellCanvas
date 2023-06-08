@@ -1,0 +1,37 @@
+<h1>
+ Title: Is the process_t struct freed from the heap behind the scenes?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-18T11:54:18.188934+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Wasn't sure if we had to also keep track of the process state memory allocation. Thanks!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  No it isn't! You need to make sure to free not only the process stack, but the process_t struct as well. In general, whenever there is a malloc(), you should think about where the corresponding free() will be (no memory should be left allocated at the end of runtime)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

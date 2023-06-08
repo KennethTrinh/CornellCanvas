@@ -1,0 +1,48 @@
+<h1>
+ Title: prelim Q5
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-25T15:13:17.431097+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For question 5a, it says to write down a nonzero vector satisfying Ux=0. So that means the nontrivial solution, so there has to be at least one free variable. My question is, I had created a vector that was [1,-2,1] for the reduced echelon U. I had leading entries of 1, but I included 2 instead of another 1. Would that vector still be correct or does it have to be [1 1 1]? I guess a followup to that is does reduced echelon mean it can only have 1s in the entries or can it have 1s in the leading entries and then a few other numbers if it can't be reduced all the way to 1?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Vivian Ding (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Reduced echelon form has 1 in leading entries, 0s in all other entries of each pivot column, and can have any values in entries of non-pivot columns.
+ </paragraph>
+ <paragraph>
+  I'm not sure [1, -2, 1] would work. Let U=[u1 u2 u3]. You know that u1+u2+u3=0, and
+ </paragraph>
+ <math>
+  1*u_1+-2*u_2+1*u_3=u_1+u_2+u_3-3*u_2=0-3*u_2.
+ </math>
+ <paragraph>
+  So Ux=0 for x=[1,-2,1] iff u2 is the zero vector, which is not always true. For Ux=0 for all U, we need [1 1 1] or some multiple of that.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

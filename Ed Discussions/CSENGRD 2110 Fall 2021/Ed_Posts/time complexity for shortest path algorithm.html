@@ -1,0 +1,49 @@
+<h1>
+ Title: time complexity for shortest path algorithm
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-11T15:53:41.187223+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi! I am wondering about the time complexity of line 10. why is it o((e-n)logn)? what does (e-n) mean? Thanks!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="472.674253200569" src="https://static.us.edusercontent.com/files/mIC13uDCl1DIra0qSS3wPJwl" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  e is the number of edges, n is the number of nodes.
+ </paragraph>
+ <paragraph>
+  Line 10 is performed a maximum of  e+1-n times. This changes d[w]. And if w is in F, it takes max log time to change its priority in the heap.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

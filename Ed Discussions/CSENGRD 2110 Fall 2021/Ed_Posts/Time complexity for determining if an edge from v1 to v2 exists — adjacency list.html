@@ -1,0 +1,71 @@
+<h1>
+ Title: Time complexity for determining if an edge from v1 to v2 exists — adjacency list
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-14T11:36:10.141905+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="489.84444444444443" src="https://static.us.edusercontent.com/files/RomSAv3prvU8F6aybwTAX6k5" width="658"/>
+ </figure>
+ <paragraph>
+  Using the adjacency list implementation of an array that contains a linked list for each index, can't the efficiency actually be O(# of edges leaving v1)? You'd simply index v1 and then look through its linked list.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes. It would be O(|V| + outdegree of v1)
+ </paragraph>
+ <paragraph>
+  We say that somewhere.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why would the time complexity include |V|? I'm a little confused about that part
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  You have to sequence through the list of vertices to find v1.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

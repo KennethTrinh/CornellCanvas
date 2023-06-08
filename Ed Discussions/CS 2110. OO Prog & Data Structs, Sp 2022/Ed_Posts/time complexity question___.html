@@ -1,0 +1,107 @@
+<h1>
+ Title: time complexity question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-13T11:31:22.426779+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  How can I reason about a problem like this? I was thinking it would be O(nm) because we have to look through each of the n strings and then check the length of each one.
+ </paragraph>
+ <figure>
+  <image height="297.16129032258067" src="https://static.us.edusercontent.com/files/O0790qY5vwddLcu7ods0rSxl" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: CJ Lee (staff)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  Remember that the problem is asking about checking a
+  <italic>
+   given word
+  </italic>
+  of length k. That means you know what the word you're trying to find is, and you know that its length is k. Thus, you don't need to look through each of the possible strings in the trie; you only need to check whether the trie contains each letter of the given word in its proper order. In the case that it does, then the complexity would be O(k) for the size of the word, but in the case that it does not, then you may potentially have to traverse O(m) before concluding that the word is not in the trie. Thus, for the tightest bound, we take the minimum of the two, giving us O(min(m, k)).
+ </paragraph>
+ <paragraph>
+  Anonymized and publicized for others.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  So do we also assume that we know where in our trie that string is located?
+ </paragraph>
+ <paragraph>
+  If so, then it would only take O(k) if the string was in our trie but it not then we wouldn't traverse at all.
+ </paragraph>
+ <paragraph>
+  Where is my logic messing up?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: CJ Lee (staff)
+</h3>
+<h3>
+ Vote Count: 4
+</h3>
+<document version="2.0">
+ <paragraph>
+  The key is to understand how the trie data structure works. In order to determine whether a string is located in a trie, you just have to begin traversing the children from the root in the expected order of the string's characters.
+ </paragraph>
+ <paragraph>
+  For example, if you wanted to see whether "in" was in the trie, you would start from the root, and check whether one of the root's children was "i". If such a node exists, then you go to that node, and then check whether that node's children has "n", and so forth. In the example, "in" does exist in the trie, so you can conclude in O(k) time that the word is there.
+ </paragraph>
+ <paragraph>
+  However, if you wanted to see whether "teams" was in the trie, then you would repeat the same process starting with traversing to the "t" node. However, by the time you get to the "a" node, you would find that the next "m" node would be null. Thus, you would conclude in O(m) time that "teams" is not present in the tree.
+ </paragraph>
+ <paragraph>
+  Notice how either case might give you a different run time of O(k) or O(m), corresponding to the min of the two, and note that we assume that finding whether a node has a child corresponding to a letter can be done in constant time. Nonetheless, this process of traversing the trie to easily determine whether a string is present or not is the advantage of tries.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  this makes so much more sense now. Thank you so much!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

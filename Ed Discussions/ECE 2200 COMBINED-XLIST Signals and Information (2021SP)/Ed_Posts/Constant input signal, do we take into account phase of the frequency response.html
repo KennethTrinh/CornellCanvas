@@ -1,0 +1,65 @@
+<h1>
+ Title: Constant input signal, do we take into account phase of the frequency response
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-29T01:03:11.686891+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If I have a constant input signal x[n]=1, and the frequency response at 0 is
+ </paragraph>
+ <math>
+  H\left(0\right)=1\cdot e^{j\varphi}
+ </math>
+ <paragraph>
+  for some non-zero phase, is the output signal
+ </paragraph>
+ <paragraph>
+  y[n]=1 , or
+ </paragraph>
+ <paragraph>
+  y[n] = 1*cos(phi).
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Basically do we take into account phase in the output signal for constant signals?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  If the system has a real-valued impulse response $h [ n ]$, then $\widehat{H} ( 0 )$ will always be a real number.
+ </paragraph>
+ <paragraph>
+  However, in general, constant input signal $x [ n ] = 1$ will yield constant output signal
+ </paragraph>
+ <paragraph>
+  $y [ n ] = \widehat{H} ( 0 )$,
+ </paragraph>
+ <paragraph>
+  whether that number is real or complex.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

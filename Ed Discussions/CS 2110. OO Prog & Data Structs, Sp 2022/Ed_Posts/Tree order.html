@@ -1,0 +1,142 @@
+<h1>
+ Title: Tree order
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-13T13:50:57.454381+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  I can’t wrap my head around how to do this - how do you do this question? I know that the root of the tree is 27 bc of the preorder. I also know that the LHS of the tree is 5, 10, and the RHS is everything else. I don’t know how to figure anything else out. Help?
+ </paragraph>
+ <figure>
+  <image height="234" src="https://static.us.edusercontent.com/files/qfv1hzk7PTp5zHRgT0pRkraE" width="949"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  You're right so far. The rest would be to take care of 51, 41, 73, 99, and 90. And you know that's the right subtree. So construct this tree separately, using the pre-order and in-order traversals.
+ </paragraph>
+ <paragraph>
+  Preorder: 51, 41, 73, 99, 90
+ </paragraph>
+ <paragraph>
+  In-order: 41, 51, 73, 90, 99
+ </paragraph>
+ <paragraph>
+  I can start by seeing 51 MUST be the root of that right subtree, since it comes first in the preorder traversal. I know then that 41 is either in the left or right subtree. I look at in-order traversal and I see 41 comes before 51, so I put 41 as the left subtree of 51.
+ </paragraph>
+ <paragraph>
+  I see 73, 90, 99 come after 51 in the in-order traversal, so I know those will go into 51's right subtree.
+ </paragraph>
+ <paragraph>
+  I construct the tree by looking at 73, 99, 90 as the pre-order, 73, 90, 99 as the in-order.
+ </paragraph>
+ <paragraph>
+  73 MUST be the root of this right subtree, since it comes first in the pre-order traversal. And since the in-order has nothing before 73, and then 90, 99 after 73, then 90 and 99 must be part of the right subtree.
+ </paragraph>
+ <paragraph>
+  Again, I construct a tree with 99, 90 as the preorder, 90, 99 as the inorder. 99 is the root, 90 is in the left subtree because it comes before 99 in the inorder traversal.
+ </paragraph>
+ <paragraph>
+  Here's my tree, might be easier to look at while following:
+ </paragraph>
+ <figure>
+  <image height="519.3976744186047" src="https://static.us.edusercontent.com/files/c2Col5cMBpQOKQ2QjO7TWRHI" width="683"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  Thank you so much! This makes sense
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Notice the process of constructing the tree based on the in-order/pre-order traversals is recursive.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Why is this important to note?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I suppose, if this makes things more confusing you don't have to think of it this way. But it'll probably make working with binary trees easier to think about.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I find it makes it easier to remember. Binary trees themselves are recursive data structures, since they are trees that store pointers to left and right subtrees.
+ </paragraph>
+ <paragraph>
+  A lot of operations you do on Binary trees will be recursive. For the problem here, the intuition is, apply the same logic you did on the original tree to the subtree, and the same logic to its subtrees.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,53 @@
+<h1>
+ Title: Hard Fault on malloc for third process
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-20T06:14:01.024977+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Two processes run fine with our code: we've tried various length processes, one process, and everything works. But when trying to test running three processes, the code hard faults as soon as we try to malloc space for the third process_state* (using the size of a pointer). The Heap shows plenty of space. The only way I can get it to not hard fault is by making "n" for the second process = 0 in the test input. This ONLY works if I make the second process n = 0, not 1, not 2, not 10 (this runs the first process to completion, then hard faults). It doesn't work if I make the first process n = 0, or the third process n = 0. This seems extremely strange considering that, even if you pass 0 to process_stack_init, it still allocates space on the heap. In every case, it looks like the heap has a ton of space left on it. The malloc hardfaults even if you allocate 0 bytes, again, ONLY on the third process. Any ideas? I can provide code screenshots.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Luke Forsman (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This does seem like weird behavior, but it is hard to tell what is going on without seeing your code. Feel free to make a private post with code, or if you can make it up to Rhodes 310 before 5:30 today we are holding an office hours.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ok, I made a separate post with our code. Thanks
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

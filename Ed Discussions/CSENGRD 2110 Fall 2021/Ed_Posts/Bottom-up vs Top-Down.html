@@ -1,0 +1,110 @@
+<h1>
+ Title: Bottom-up vs Top-Down
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-10T05:07:30.747893+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was a little confused by what the lecture meant when it said "Initialization order: delegate bottom-up, then resolve top-down." I remember Prof. Gries's example of methods being call from subclass to superclass, but I don't really understand what the computer is doing when it is initializing constructors from superclass to subclass.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We never said "then resolve top-down".
+ </paragraph>
+ <paragraph>
+  The best thing you can do for yourself at this point is to look up terms in JavaHyperText and use that "book" to read and study. Don't just go by the ppt slides.
+ </paragraph>
+ <paragraph>
+  The bottom-up rule is this: if you want to find a particular field f or method m(...) in an object, start at the bottom or the object and search upward until you find it. This is also called the "overriding rule", because, if a method is declared in a class and its subclass, the bottom-up rule gives you the overriding method in the subclass.
+ </paragraph>
+ <paragraph>
+  Consider the case today.
+ </paragraph>
+ <paragraph>
+  class Account ...
+  <break>
+  </break>
+  has fields balance and accountNumber
+ </paragraph>
+ <paragraph>
+  class InterestAccount extends Account ...
+  <break>
+  </break>
+  has fields interestRate
+ </paragraph>
+ <paragraph>
+  Well, in the constructor in InterestAccount looks like this:
+ </paragraph>
+ <paragraph>
+  public  InterestAccount(int b, String s, int r) {...}
+ </paragraph>
+ <paragraph>
+  The first thing this method should do is initialize fields balance and accountNumber to b and s, respectively. To do this write call on the superclass constructor  like this:
+ </paragraph>
+ <paragraph>
+  super(b, s).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I copied this line from the note taking guide for today's lecture. I tried looking on JavaHyperText prior to asking, but was only able to find information regarding the bottom-up rule.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Because a subclass inherits abilities from its superclass, the superclass must be fully constructed (its invariant truthified) before the subclass attempts to do anything (otherwise the inherited abilities might not work right).  Therefore, when constructing a subclass, the first thing that happens is that the superclass constructor is executed (you may either call
+  <code>
+   super(...)
+  </code>
+  explicitly on the first line, or you can let the compiler implicitly insert a call to
+  <code>
+   super()
+  </code>
+  there).  The superclass constructor likewise defers to its superclass, all the way up until we reach
+  <code>
+   Object
+  </code>
+  .  Once a superclass constructor finishes, execution resumes from the point where it was invoked, which would be the second line of the subclass constructor.  In this sense, the constructors are effectively resolved (executed) "top-down", because they were invoked on the first line of subclass constructors deferring to their supers in a bottom-up fashion.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

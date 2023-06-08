@@ -1,0 +1,104 @@
+<h1>
+ Title: Inheritance F16
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-09T02:21:00.327452+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Apologies if this is a very rudimentary question, but I'm having trouble understanding why the answer is 4 and not 1.
+ </paragraph>
+ <figure>
+  <image height="62.605825242718446" src="https://static.us.edusercontent.com/files/4rHAONkv8kAUXNcGbMGoN5BD" width="658"/>
+ </figure>
+ <figure>
+  <image height="940" src="https://static.us.edusercontent.com/files/7FUpJrS40Cd73xZnSgVniBXk" width="554"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Start by explaining why you think it should be "1" and not "4".  Then we can identify and clear up the misunderstanding in your mental model of inheritance.
+ </paragraph>
+ <paragraph>
+  I suspect you would benefit to review the "bottom-up rule" in JHT.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  My reasoning for why it should be 1 is that since there is an upcast, this instance of class B now accesses the methods of class A. After reviewing the "bottom-up rule" in JHT, my reasoning for why it should be 4 is that despite the upcast, m() is overriden, and thus the instance still calls m() in the subclass. Is this correct?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes. That is correct. When determining which of several methods with the same name is called, always use the bottom-up / overriding rule.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Abhijeet Saha (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  A follow up, what would we do if we wanted it to call A’s method?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ok, thank you professors!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,106 @@
+<h1>
+ Title: checking that thrown objects are caught
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-07T03:14:55.902433+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  On the Java hypertext, I found two cases.
+ </paragraph>
+ <figure>
+  <image height="196.83760683760684" src="https://static.us.edusercontent.com/files/hc748gP2eQ50EYWeXuy0jZ4S" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="240.33652530779753" src="https://static.us.edusercontent.com/files/wuxyhyiMZhyzy3FObHZIySFq" width="658"/>
+ </figure>
+ <paragraph>
+  I'm wondering why the first one won't cause the same error as the one below?
+ </paragraph>
+</document>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I got it. Java compiler won't check RuntimeExceptions.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Sara Yoo (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can you explain why there is no compile error for the first case?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  because it’s a subclass of Exception  and not just an Exception
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, more specifically, it's a subclass of RuntimeException. RuntimeException and Error are two classes of throwable objects which Java compiler won't check.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Sara Yoo (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ok I see. Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

@@ -1,0 +1,80 @@
+<h1>
+ Title: confusion lecture 15
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-16T09:20:22.830021+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The slides from lecture 15 say that the max # of nodes for a perfect tree are 2^(h+1) + 1 but then later it says t hat the number of nodes for a perfect tree are 2^(h+1) - 1. which one is it?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  also, is the worst case time to search a tree O(log n) for binary trees or binary search trees?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  thank you in advance!!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Varun Gande (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  For a perfect tree, it’s 2^(h+1)-1
+ </paragraph>
+ <paragraph>
+  The worst case for a binary tree is O(n) because it’s basically analogous to a linear search (the node could be anywhere in the tree). For a binary search tree, it is O(log n).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am getting so confused, the lecture slides say "Takeaway: BST search is O(n) time" ? Is it actually O(log n)?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Varun Gande (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  O(log n), where n is the number of nodes, is the best case if your binary search tree is balanced. The worst case is when the binary search tree degenerates to a list, and it’s effectively like searching through a list (hence O(n)).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

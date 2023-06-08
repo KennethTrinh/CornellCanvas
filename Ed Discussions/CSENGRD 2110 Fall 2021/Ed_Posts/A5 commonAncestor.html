@@ -1,0 +1,109 @@
+<h1>
+ Title: A5 commonAncestor
+</h1>
+<h3>
+ Author: Rithvik Duggireddy (student)
+</h3>
+<h3>
+ Date: 2021-10-17T12:25:48.476076+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I keep getting an error for commonAncestor(Person child1, Person child2).
+ </paragraph>
+ <paragraph>
+  I first created array representations of the lists for the 2 routes to each of the 2 children. I created these arrays with the help of the toArray function. I made a foreach loop for one of the arrays:
+ </paragraph>
+ <paragraph>
+  "for (Person
+  <underline>
+   anc
+  </underline>
+  : array1)".
+ </paragraph>
+ <paragraph>
+  The return statement in the loop body returns
+  <underline>
+   anc
+  </underline>
+  under specificied conditions. However, a compile-time error keeps showing up, saying "the method must return a result of type Person". I'm not sure how
+  <underline>
+   anc
+  </underline>
+  is not type Person.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Rebecca Liu (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Do you have a return statement after the loop?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Rithvik Duggireddy (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Adding a return statement after the loop fixed the compile-time error.
+ </paragraph>
+ <paragraph>
+  However, after testing the method, I received a Class Cast Exception ("java.lang.Object cannot be cast to class Person"). I'm not sure if I understand toArray properly, but I called the toArray method on H1N1RouteTo(child1) and cast that expression to Person[] before assigning it to a variable of class Person[], all in a single assignment statement. I also did the same for child 2. Is this the correct way of creating the array representation for each route or is this what caused the exception?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Rebecca Liu (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  You should not need to cast the result of toArray to a variable of class Person[]. It seems you are using the version of toArray that returns an Object[]. It might help to look at the ArrayList documentation to see if there is something else that is similar that you can use so that you do not need to do casting.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Rithvik Duggireddy (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This fixed the error. Thank you so much for the timely response!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,86 @@
+<h1>
+ Title: I don't understand why 2^f(n) has to be greater than or equal to n!
+</h1>
+<h3>
+ Author: Young Zheng (student)
+</h3>
+<h3>
+ Date: 2022-03-12T08:49:36.652111+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="289.4567307692308" src="https://static.us.edusercontent.com/files/u9hbuZ2R6yJRE6puIKhMYKbe" width="658"/>
+ </figure>
+ <paragraph>
+  What if we are using mergesort, which makes nlogn comparisons. 2^nlogn is not greater than or equal to n!.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Sasha Loayza (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Basically, when making a series of comparisons, you are trying to figure out which one of the n! permutations of an array of size n is the actual one you are looking at. Since f(n), which is just a placeholder for "the maximum number of comparisons to identify a list of size $n$", cannot distinguish one array from more than 2^f(n) other arrays (permutations), that number must be at least as big n!, which is how many permutations actually have to be distinguished. In terms of merge sort, at least according to symbolab, the limit of $\frac{2^{n log(n)}}{n!}$ is infinity, so it seems to work out.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Young Zheng (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  I used a limit calculated for that and i got 0 as n approaches infinity
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Clarkson (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I find it useful to compute concrete examples when intuition fails.  Here's a spreadsheet that I think demonstrates $2^{n \log_2 n}$ grows faster than $n!$.
+ </paragraph>
+ <file filename="comparison.xlsx" url="https://static.us.edusercontent.com/files/HO4340pMBTaU6QFUAmfD5R08">
+ </file>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Young Zheng (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh I had my log with a base of 10. Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

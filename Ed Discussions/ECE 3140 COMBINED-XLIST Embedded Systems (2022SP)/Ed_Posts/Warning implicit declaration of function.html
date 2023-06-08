@@ -1,0 +1,76 @@
+<h1>
+ Title: Warning: implicit declaration of function
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-28T11:32:21.494834+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is this a warning that I should worry about and if so, how to fix it?
+ </paragraph>
+ <pre>implicit declaration of function
+</pre>
+ <paragraph>
+  Thanks!
+ </paragraph>
+</document>
+<h3>
+ Author: Pietro Perez (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yeah I got this warning too when trying to call a function in lock.c but it was defined in process.c, and I wasn't sure how to include the functions from the process.c file
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  This happens when you try to call a function that isn't actually defined! To make sure that your file knows about the definition, make sure to include the line
+  <code>
+   #include "&lt;file name&gt;"
+  </code>
+  at the top of your file, similar to the examples from the lab handout. In effect (without getting to bogged down by pre-processor conditionals, which shouldn't be a concern), this copy-pastes the code from &lt;file name&gt; at the top of your file, so any functions that are defined in that file can be used by your code
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  thanks!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

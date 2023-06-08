@@ -1,0 +1,39 @@
+<h1>
+ Title: Gradient Descent and Differentiable loss function
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-29T12:53:57.755266+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In the practice prelim, a question asks T/F "for gradient descent to converge, the loss function must be convex and differentiable everywhere". This is false, right? Because in lecture we've seen an example of GD with hinge loss, which is not differentiable at one point.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Woosang Kang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  That could be one way to reason, but one other fundamental reason could be that the optimization that we're doing in GD is not necessarily convex, possibly converging in a local minimum instead of a single, global minimum (which is one of the reasons why we use SGD).
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

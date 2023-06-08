@@ -1,0 +1,93 @@
+<h1>
+ Title: Prelim 1 Q5
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-30T01:34:36.645417+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="507.24303797468355" src="https://static.us.edusercontent.com/files/95SgDIVrMl7wR84nGW0MXdr4" width="658"/>
+ </figure>
+ <paragraph>
+  for Q2 how did we get the length of the weight vector?
+ </paragraph>
+ <paragraph>
+  where did the (+9) come from?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is the euclidian length, so we have sqrt(20*1^2+(3-)^2), the 20 from the 20 1s and the 9 from the -3 bias term.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Man Yin Kwok (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why do we give a weight of -3 to the added feature?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Scott Bass (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why is it that the geometric margin is
+  <italic>
+   at least
+  </italic>
+  $2/ \sqrt{20 \times 1 + 9}$ and not equal to it? I.e. why do we need the weight vector $\vec{w}$ to have a functional margin $\gamma = 1$ for us to conclude that the geometric margin is $1/ ||\vec{w}||$?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is because we may or may not actually end up with points sitting on that margin, so if we have a nice dataset it's larger. For the geometric margin, it's equal to whatever the functional margin is divided by the euclidean norm of the weight vector (since the larger the magnitude of the weight vector, the larger the corresponding functional margin).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

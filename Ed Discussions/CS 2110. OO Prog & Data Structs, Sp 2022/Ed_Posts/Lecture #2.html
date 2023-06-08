@@ -1,0 +1,71 @@
+<h1>
+ Title: Lecture #2
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-05T07:47:41.642392+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am reviewing Lecture #2 but came across a question where I'm not exactly sure why I'm wrong.
+ </paragraph>
+ <paragraph>
+  Does the field c.y change values because it's not a parameter in the method?
+ </paragraph>
+ <paragraph>
+  How do I know that the value of field c.x is from the surrounding scope? Thank you in advance.
+ </paragraph>
+ <figure>
+  <image height="243" src="https://static.us.edusercontent.com/files/dC2UhWdEsXtO3Wv6jcIa9ydy" width="415"/>
+ </figure>
+</document>
+<h3>
+ Author: Ruize Ren (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  So as you could also tell by the color of the variables, in method m, x is refers to the parameter, but  y  refers to the field from Class C
+ </paragraph>
+ <figure>
+  <image height="294.8050541516245" src="https://static.us.edusercontent.com/files/KVNo06q6aOlRaTjUgq3NQfWl" width="643"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="89" src="https://static.us.edusercontent.com/files/3k27R3SFMPlW4JIpJuKK5JcW" width="278"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When you execute at the assignment  x= k;  use the inside-out rule to determine the declaration associated with x and with k. In both cases, the inside-out rule tells you that the variable (x, k) refers to the parameter. Thus, this assignment just stores the value in parameter k into parameter x. Thus, after this assignment, both parameters contain 3.
+ </paragraph>
+ <paragraph>
+  Now, execute the second statement, c.y= x; . The inside-out rule tells you that x refers to parameter x, whose value is 3. The, the right hand side evaluates to 3. y refers to field y of c, since this method call is  c.m(3, 4). The assignment changes c.y to 3.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

@@ -1,0 +1,221 @@
+<h1>
+ Title: Why isn't everything in O(1)?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-13T13:10:14.798016+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Let's say f(x) is a function that executes an algorithm. x has to be a member of a finite set of objects because you can't have infinite information on a computer. Therefore, there must be an object M such that f(M) takes the most time, which we will call T. Let g(x) be a function that first executes f(x) and then evaluates useless expressions to burn time until T time has passed since the start of the call. g(x) is in O(1) because it always takes T time. Thus, f(x) must be in O(1) because it's in g(x). Every algorithm is in O(1) because its execution time has a constant upper bound.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  What about an infinite while loop? that is not bounded to a time T, this is an error in your proof, to even try to prove something like this you'd need induction on the time T to prove it. (which won't work), therefore x is not necessarily finite by definition.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  If an infinite loop could potentially occur, then it doesn't make sense to even try to classify the execution time. I felt that this was a trivial edge case, but I guess I should've been more clear.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Edge cases destroy the whole proof, take this as an example
+ </paragraph>
+ <figure>
+  <image height="77.0965250965251" src="https://static.us.edusercontent.com/files/hxqVoCixrexcZEKoTZEccgKd" width="624"/>
+ </figure>
+ <paragraph>
+  The only thing that doesnt work is when x  or y =1, both a positive integer, but then applying theorem doesn't hold. x = 1 = y is an edge case and therefore the whole thing doesn't hold even though one edge case is the only thing that proves it wrong for arbitrary x,y and the proof would've actually worked for arbitrary x,y if it weren't for this edge case.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Some very elementary fact is escaping you. The fact that we are trying to find an execution time in the first place implies that the algorithm terminates. It should be obvious that we are talking about an algorithm that actually works. But sure, let me change my statement:
+  <break>
+  </break>
+  Every terminating algorithm is in O(1) because its execution time has a constant upper bound.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  I can check your proof in the morning to find the other error that doesn’t make it hold but i’m tired rn :/
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  Yeah, you might be able to think clearer in the morning. Good luck and goodnight, Mr. Bahaa.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  goodnight anonymous!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  I'm pretty sure the real error just comes from the theoretically definition of big O provided in lecture 11.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  what do you think is wrong there
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Here's the rest of the bogus proof if you're interested.
+ </paragraph>
+ <figure>
+  <image height="248.6590038314176" src="https://static.us.edusercontent.com/files/b9aduCKHUbvQZ32hNtI2gytv" width="590"/>
+ </figure>
+ <paragraph>
+  Your proof should hold for all possibilities otherwise it doesn't hold.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Oh, nothing's wrong with the lecture. It just makes clear what's wrong with my proof.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Clarkson (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Indeed, but, you've actually hit on an important insight in the theory of computation (CS 4810)!  This
+  <link href="https://en.wikipedia.org/wiki/Halting_problem#:~:text=The%20halting%20problem%20is%20theoretically,..."/>
+  very brief Wikipedia sentence sketches it.  The normal model of computation is the Turing Machine (TM), which has infinite memory.  But a linearly-bounded automaton (LBA) has finite memory, which is what your post assumed.  Every LBA can enter therefore only a finite number of states (which of course could be huge -- too big to ever efficiently analyze).  At that point
+  <link href="https://courses.engr.illinois.edu/cs373/sp2009/lectures/lect_25.pdf"/>
+  some problems become decidable for LBAs even though they aren't for TMs. (Caveat: I haven't read those notes carefully and can't vouch for them.)
+ </paragraph>
+ <paragraph>
+  But that doesn't mean every algorithm's running time is O(1).  Rather, it means you've changed the algorithm to make the assumption the machine memory is finite and therefore execution can be cut off at some point.  For
+  <italic>
+   those
+  </italic>
+  algorithms there is a constant (but huge) running time
+  <italic>
+   determined by the size of the machine's memory
+  </italic>
+  .  Since the latter is really a property of machines, not algorithms, it's not the way we would analyze algorithms.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

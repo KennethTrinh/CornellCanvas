@@ -1,0 +1,79 @@
+<h1>
+ Title: Final sp19 7c Iterable
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-14T14:40:24.928521+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="317.14782608695657" src="https://static.us.edusercontent.com/files/mvA1kVIh0PL52iIS7q2VLw4w" width="658"/>
+ </figure>
+ <paragraph>
+  In the given solution for
+  <code>
+   hasNext()
+  </code>
+  I am wondering why this works?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Shouldn't it be
+  <code>
+   return index + 1 &lt; stockItems.size()
+  </code>
+  ?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Because for example if
+  <code>
+   size
+  </code>
+  is 5, and we are currently at index 4 (the last element in the ArrayList, there would be no next element. According to the solution, it would return true that the 4 &lt; 5 so there is another item which would then be at
+  <code>
+   i = 5
+  </code>
+  which is outside the ArrayList.
+ </paragraph>
+ <paragraph>
+  But I may not completely understand how Iterable works.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kenisha Stills-Ogburn (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  There's another example in Fall 18 Final where we do increment in the hasNext() method. I think that's because the HashSet is being implemented as an array. There's some null or unoccupied spots in there so we skip them by incrementing the index in hasNext(). The official incrementing happens in next() but hasNext() increments to deal with "1-off" situation or when there's an null at an index in the array.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  In this example, I see index only changing in next() so inside the hasNext() we're only checking if we've exceeding the ArrayList stockItems range.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

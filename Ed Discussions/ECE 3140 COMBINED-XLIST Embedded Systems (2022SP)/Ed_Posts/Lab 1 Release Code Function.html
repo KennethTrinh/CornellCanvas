@@ -1,0 +1,120 @@
+<h1>
+ Title: Lab 1 Release Code Function
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-13T05:35:39.750967+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I just wanted to confirm that the release code is supposed to turn on the on-board LED without adding or removing anything. My MCUXpresso detects my board and seems to program lab1.s successfully, but the on-board LED does not turn on.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Nils Napp (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Did you press the "resume"/"run" button on the debugger (it looks like a play button)? When you flash the code in the debugger, it will set everything up but not start executing your code automatically.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I actually had not tried actually "running" on the debugger, my mistake. But I did as you suggested and still the LED doesn't seem to turn on at any point. I've tried stepping through the code as well to see if it turned on momentarily, but nothing. I haven't changed anything in lab1.s yet and the board is connected via the port with "SDA" next to it. Also, when I try to hit the run button below (running as a local C/C++ application)
+ </paragraph>
+ <figure>
+  <image height="37" src="https://static.us.edusercontent.com/files/hBnDyI9I18rMgXToP3kUaNsY" width="55"/>
+ </figure>
+ <paragraph>
+  I get an error that says "'Launching la1.axf' has encountered a problem. Error starting process". Not sure if this is expected behavior.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  You should be flashing your code as described in lab0 section 5.1 or running it within the debugger. Running your code as a local C/C++ program is not a supported function and will not do anything which is why your board is required for development.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ok, good to know. I was initially trying to flash my code as the lab0 handout outlined and succeeded in running it through the debugger, but the code didn't seem to function. I tried running as a C program just to see and didn't know what the error meant.
+ </paragraph>
+ <paragraph>
+  As I said in a comment below, however, the issue was that the version of lab1 code I downloaded was from last year. Thanks!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anushka Mukherjee (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I had to redownload the code from canvas and insert my functions, but it works now
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Zack Hatzis (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  After speaking with my discussion TA I realized the issue. The file I had downloaded from canvas (last Thursday, I think) was the one from last year, so all the pins were different. Maybe when the files were first put up for download the old one was put up by accident? That file was called lab1_handout.zip, while the updated one is lab1.zip. Downloading the updated code fixed my issue; the LED turns on now.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

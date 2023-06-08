@@ -1,0 +1,119 @@
+<h1>
+ Title: How is this expression evaluated?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-05T09:34:00.699491+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  ((Object)(new Integer(7))).equals(7)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  I know Java normally reads from left to right. But then I also know that when casting, Java reads from right to left. But then I ALSO know that parentheses should be dealt with first. So I'm really at a loss for the steps to evaluating this statement and why it should return what it does.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  True because of autoboxing/autounboxing.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sorry I should've clarified - I know the answer already but what is the order in which it's evaluated?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Because the 7 on the left is an integer, it automatically boxes the 7 inside the equals() method into an integer.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  And  the equals method in class Object knows if an auto-boxed representation of an integer and an int integer are the same?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  (Object) new Integer(7) ----&gt; this is of class Integer
+ </paragraph>
+ <paragraph>
+  Try typing it in J Shell
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I typed it into jshell and it said it created a scratch variable of type Object though
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

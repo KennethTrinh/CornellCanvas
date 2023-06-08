@@ -1,0 +1,47 @@
+<h1>
+ Title: Mini Project: Processing program delay
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-12T06:13:23.529998+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Should the processing dot map have a delay? The drawer responds to the changes in the environment with a significant delay that gets worse the longer the program is running.
+ </paragraph>
+ <paragraph>
+  The dots, however, are being generated at a consistent pace. I have a suspicion that this is because the inputs are being generated too quickly and the program processes each input too slowly. Are we expected to account for this in our code? Or can our project have a delayed response?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Cheng Zhang (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The Arduino program on ESP32 should only send data to Processing code when being asked to.  The Processing program will send 'N' as the instruction to request data from ESP32.
+ </paragraph>
+ <paragraph>
+  If the program on ESP32 keeps sending data to Processing without waiting for the instruction('N'), it can cause delay, as the visualization program can not process data fast enough.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

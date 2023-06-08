@@ -1,0 +1,110 @@
+<h1>
+ Title: sending string to serial.write
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-14T07:14:05.867793+11:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi,
+ </paragraph>
+ <paragraph>
+  I am confused about how to send the degree and range reading to Serial.write for the LIDAR project.
+ </paragraph>
+ <paragraph>
+  Serial.write does not seem to be able to take multiple values, and if I put it all in a string, it does not unpack the variable values in the string.
+ </paragraph>
+ <paragraph>
+  For example, right now I have
+ </paragraph>
+ <paragraph>
+  Serial.write("angle, range.")
+ </paragraph>
+ <paragraph>
+  This just sends a string of "angle,range." If I take out the quotations, an error comes up - it doesn't like the comma and period.
+ </paragraph>
+ <paragraph>
+  How do I send the range and angle values?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Jordan - (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Did you figure this out?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I can only do it with Serial.print - I think that is why it wasn't working - write is only for bytes and chars?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, it is more difficult to do this with writes.
+ </paragraph>
+ <paragraph>
+  As Cheng said, the simplest way is to use one print for the angle, one for the comma, one for the range, and one for the final period.
+ </paragraph>
+ <paragraph>
+  Francois.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Cheng Zhang (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You do not need to send all values by just one call of serial.print or serial.write.
+ </paragraph>
+ <paragraph>
+  You can call serial. print multiple times.   Each time you output one char of the string. For instance, "11,11."  can be sent by calling serial.print 4 times.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

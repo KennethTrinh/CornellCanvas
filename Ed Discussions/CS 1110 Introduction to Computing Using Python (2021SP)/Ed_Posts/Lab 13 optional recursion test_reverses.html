@@ -1,0 +1,118 @@
+<h1>
+ Title: Lab 13 optional recursion test_reverses
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-21T06:00:42.334198+10:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When testing reverses1 I got the following error message:
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   Running test_reverses
+        testing reverse1
+        trying []
+        trying [3]
+        trying [3, 2, 1]
+assert_equals: expected False but instead got True
+Line 244 of recursion_qs_test.py: ca.assert_equals(False, mylist is reverse_fn(mylist))
+Quitting with Error
+  </snippet-file>
+ </snippet>
+ <paragraph>
+  Looking at recursion_qs_test.py, I think this means my code isn't returning a copy of the list. But when I check on python tutor, it does. I'm not really sure what to make of this error message.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Lenhard Thomas (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You're likely modifying the list rather than making a copy. Could you post a picture of what Python tutor shows?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="438" src="https://static.us.edusercontent.com/files/jrDnb6p3oJJtt3dl7haXxao5" width="340"/>
+ </figure>
+ <paragraph>
+  This is right before the call ends.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The check for returning a copy is actually not using all the test cases, but does the check for a copy
+  <italic>
+   outside
+  </italic>
+  the for-loop over the test cases:
+ </paragraph>
+ <pre>        for tc in test_cases:
+            inputlist = list(tc)
+            if verbose:
+                print('\ttrying ' + str(inputlist))
+            ca.assert_equals(test_cases[tc], reverse_fn(inputlist))
+
+        # check for returning a copy
+        mylist = [3]
+        ca.assert_equals(False, mylist is reverse_fn(mylist))
+        
+</pre>
+ <paragraph>
+  (In retrospect, I see why this was not a great choice of printouts on my part, sorry about that!)
+  <break>
+  </break>
+  <break>
+  </break>
+  So, check what your code does for the input list being just [3].  It looks like our testing code thinks you are returning the same list.ist.
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   x = [3]
+print(x is 3)
+y = x
+print(y is x)
+  </snippet-file>
+ </snippet>
+</document>
+<h3>
+ ------------------------------------
+</h3>

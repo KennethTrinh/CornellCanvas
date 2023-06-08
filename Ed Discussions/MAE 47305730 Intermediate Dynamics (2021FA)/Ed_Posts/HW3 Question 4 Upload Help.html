@@ -1,0 +1,27 @@
+<h1>
+ Title: HW3 Question 4 Upload Help
+</h1>
+<h3>
+ Author: Andrew van Paridon (admin)
+</h3>
+<h3>
+ Date: 2021-09-21T03:45:21.986796+10:00
+</h3>
+<h3>
+ Category: Homework
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We found that one of the issues with uploading the solution was that I had used 'options' with ode45, and it was enough to make a difference to the first and third test cases.  Try adding these options to your rhs equation;
+ </paragraph>
+ <pre>options = odeset('absTol',1e-9,'relTol',1e-9);
+  [t,Z] = ode45(@(t,Z) RHS(Z,p), tspan, Z0, options);</pre>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

@@ -1,0 +1,78 @@
+<h1>
+ Title: When to re enable interrupts
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-25T06:47:08.025578+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="138" src="https://static.us.edusercontent.com/files/bsVImgHGTFbKoZBoW1WLkchB" width="579"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="136.37305699481863" src="https://static.us.edusercontent.com/files/lNgfId8SJtRHED8VH6zOb0Wb" width="657.9999999999999"/>
+ </figure>
+ <paragraph>
+  In our lock function, if a lock isn't available and we need to call process_blocked within l_lock, do we need to re enable interrupts prior to calling process blocked? It seems like we don't but the discussion slides talk about always renabling at the exit.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  As per the comment above the
+  <code>
+   extern
+  </code>
+  definition of
+  <code>
+   process_blocked
+  </code>
+  , interrupts must be disabled prior to calling
+  <code>
+   process_blocked
+  </code>
+  (see image 2).
+ </paragraph>
+ <paragraph>
+  Please not that
+  <code>
+   l_lock
+  </code>
+  ,
+  <code>
+   block_process
+  </code>
+  , and
+  <code>
+   process_blocked
+  </code>
+  are all different functions. The atomicity of the lock is referring to
+  <code>
+   l_lock
+  </code>
+  (see image 1).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

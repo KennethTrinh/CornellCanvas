@@ -1,0 +1,210 @@
+<h1>
+ Title: Getting the priority from the heap
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-07T02:52:05.059116+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm not sure, but if I'm adding a frontier node to the settled set (i.e the  HashMap&lt;Node, Item&gt; or SandF) then I have get the priority value of the distance of a Node from the Heap, F. Does the array, b, in F contain pairs? For instance it might have something like this?
+ </paragraph>
+ <paragraph>
+  b [ (v, 0.0), (node1, 3.4), (node2, 2.0) ...]?
+ </paragraph>
+ <paragraph>
+  Then I could use the map methods to access the priority value?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why do you have to look at the heap? Look at the initialization of the abstract algorithm:
+ </paragraph>
+ <paragraph>
+  S= {}; F= {v}; d[v]= 0;
+ </paragraph>
+ <paragraph>
+  Start node v is place in F, and its distance f[v] is 0. It takes not steps to get from where you are to where you are.  And the back pointer would be null.
+ </paragraph>
+ <paragraph>
+  (I used to play a game with my kids: "I'll beat you to where I am!")
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Please read the handout and the code. It is all explained there.
+ </paragraph>
+ <paragraph>
+  If you have a question after studying that, I am happy to answer.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm a bit confused about if I need to calculate the distance from a settled node to frontier node or if I need to retrieve it.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Just which part are you trying to write? The answer depends on what part you are trying to write.
+ </paragraph>
+ <paragraph>
+  If f is in the frontier set, then d[f] contains the shortest distance from the start node to f, using only paths that contain red nodes except for f itself.
+ </paragraph>
+ <paragraph>
+  If there is an edge (f, w) and a node w is being moved from the far-off set to the frontier set, then w's shortest distance has to be calculated. It is d[f] plus the weight of the edge (f, w), since the path starts at the start node, winds up in f, and then hops along (f, w) to w.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 5
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm working on the part of adding the start node to the settled set or the HashMap, SandF.
+  <break>
+  </break>
+  I know I need the d[f] and the backpointer to instantiate a new Item and then put that and f into SandF, but I'm stuck on the part of getting d[f] from the Heap
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Hao Zhuo (None)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  Having the same problem :(
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Have understood the HashMap, named Sand F, for "S and F"?
+ </paragraph>
+ <paragraph>
+  Did you write a comment on its declaration saying exactly what nodes have entries in it? Please do that. When you get this right, finally, your question will go away.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I meant to refer to the inside the for loop when I'm removing the frontier node and adding it to SandF because it is the node in the Frontier with the minimum d value.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Look at the first line of the abstract algorithm:
+ </paragraph>
+ <pre>    S= {}; F= {v}; d[v]= 0; 
+</pre>
+ <paragraph>
+  So d[v] is 0 --it doesn't take any steps to get to where you are already standing. A the back pointer for v would be null since no node proceeds it on the path. Why do you have to look at the priority of v in f? You know it is 0.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Reid Fleishman (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think we are referring to the following line:
+ </paragraph>
+ <paragraph>
+  <code>
+   Remove f from F, add it to S;
+  </code>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

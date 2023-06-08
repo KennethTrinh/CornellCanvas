@@ -1,0 +1,228 @@
+<h1>
+ Title: practice prelim 2 pg29 #1
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-30T01:32:13.90317+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is there an equation from lectures that I could use to solve for the posterior ratio?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  There's no single equation from lectures you should be using, just find expressions for the two probabilities and plug them in.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Yana Sang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In this question, how do we handle combining the multinomial and multivariate features? Do we just multiple the corresponding estimators for each of the features?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You can just multiply the conditional probabilities together.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Yijing Zhao (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  is the answer 64/63?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  No; it's likely you made a mistake while simplifying, you can leave it in its complicated form.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Yijing Zhao (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm not entirely sure whether I understood this part. So the equation for p(y=-1|xt)  is
+ </paragraph>
+ <paragraph>
+  p(x=a|y=-1) * p(x=b|y=-1) * p(y=-1) / y(xt). And then to compute the conditional probability of p(x=a|y=-1), you add up the total number of words in instances where y = -1, and the vocab size, which is 2, as the denominator. then the number of words that are a + 1 as the numerator. so for example, p(x=a|y=-1) is (3+1)/(4+2) = 0.5?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, you apply bayes rule with smoothing. Note that (3+1)/(4+2)=4/6~.667!=.5
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Yijing Zhao (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  i recomputed it and got 256/189.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is closer, it's likely you made a similar mistake elsewhere.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Yijing Zhao (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  i might have a conceptual problem in the computation. I've been using the number of words that belong to class y/all words to approximate P(y). So if I use the fraction of instances that are labeled y as P(y), I got 128/63.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh, P(y) should definitely be the fraction of instances labeled as P(y)! That's almost correct–do make sure you didn't miss a smoothing or something.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Yijing Zhao (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think I definitely messed up with something in the equation. Can I make a private post to you on this?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sure!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anna Effenberger (student)
+</h3>
+<h3>
+ Vote Count: 5
+</h3>
+<document version="2.0">
+ <paragraph>
+  Could the solution to this be posted? Or, at least the numerical answer? I also got 64/63 as my final posterior ratio, so it would be very helpful to know where I made a mistake
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

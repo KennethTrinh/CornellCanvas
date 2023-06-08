@@ -1,0 +1,56 @@
+<h1>
+ Title: Runtime question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-01T14:34:43.062611+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why does (IAccnt) (value of static type Acct) fail at runtime? Can you not downcast?
+ </paragraph>
+ <figure>
+  <image height="365.012987012987" src="https://static.us.edusercontent.com/files/P3l9WXK6hxYtzuIrKAZCJvi1" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  That in general doesn't always fail. The slide is referring specifically to the case with the
+  <code>
+   //?
+  </code>
+  after it (i.e.
+  <code>
+   IAccnt w= (IAccnt) (new Accnt());
+  </code>
+  ). This fails at runtime because even though it is possible for a value with static type Accnt to have an IAccnt partition, since we used the Accnt constructor, the object has dynamic type Accnt, meaning it does not have an IAccnt partition, so casting would throw a ClassCastException.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Please don't make posts private when they don't need to be. You can post publicly and anonymously.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

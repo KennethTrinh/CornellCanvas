@@ -1,0 +1,80 @@
+<h1>
+ Title: union bound example
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-26T05:27:11.245175+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="437" src="https://static.us.edusercontent.com/files/gRL8hjLQsrb3PNaqfZEvE2ui" width="654"/>
+ </figure>
+ <paragraph>
+  At the bottom of the slide, the question is asking for the probability that the fraction of rocks in EVERY one of the n regions is p +- epsilon, but the probability that we actually upper bound (at the very bottom of slide) is the probability that at least one of the regions does not get p +- epsilon fraction of the rocks. So, in order to find the probability the question was actually asking for, would we just take the complement of the probability that we actually found the upper bound of?
+ </paragraph>
+ <paragraph>
+  That is, would we do the following:
+ </paragraph>
+ <paragraph>
+  {the probability that the fraction of rocks in EVERY one of the n regions is p +- epsilon}
+ </paragraph>
+ <paragraph>
+  &gt;=
+ </paragraph>
+ <paragraph>
+  1 - {the upper bound of the probability that at least one of the regions does not get p +- epsilon fraction of the rocks}
+ </paragraph>
+ <paragraph>
+  ?
+ </paragraph>
+</document>
+<h3>
+ Author: Rishi Malhotra (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I personally found the analogy of rocks in squares and triangles very unintuitive. I just remembered the 2 useful inequalities
+ </paragraph>
+ <math>
+  \Pr\left[\cup X_i\right]\ \le\ \sum_{ }^{ }\Pr\left[X_i\right]
+ </math>
+ <paragraph>
+  and
+ </paragraph>
+ <math>
+  \Pr\left[\cup X_i\right]\ =\ 1-\Pr\left[\cap X_i^C\right]
+ </math>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is basically saying "The probability that at least one of of the regions doesn't get this fraction of the rocks is upper bounded by the probability that it happens to region 1 plus the probability it happens to region 2 plus the probability that it happens to region 3 plus ..."
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

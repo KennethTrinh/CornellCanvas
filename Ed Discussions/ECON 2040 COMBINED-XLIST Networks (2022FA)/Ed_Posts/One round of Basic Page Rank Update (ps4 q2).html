@@ -1,0 +1,96 @@
+<h1>
+ Title: One round of Basic Page Rank Update (ps4 q2)
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-10-21T03:48:31.275837+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Does one iteration mean going through one time INCLUDING or EXCLUDING the step where the values get moved back up from E/F to A/B? (i.e. in q2, a change in a node within the graph affects the "final" step, which changes the value of B (since B is now different = some value from A
+  <italic>
+   plus
+  </italic>
+  some value recycled from F)).
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In a graph, there is no sense of "up" or "down" - all nodes are equal, and should be treated as such. The Basic PageRank Update affects all nodes - you should calculate how the PageRank will flow along the edges, and update each node accordingly. Not sure if this is the confusion, but each node changes simultaneously (i.e. the PageRank value for some node in Step 2 only depends on the PageRank values of other nodes from Step 1)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  So like in the pset, I know B's value is based on A and F. I also know that F's value changes during the iteration. So at the end of the iteration, is B's value based on the new or old value of F (does it stay the same of would it have changed)?
+ </paragraph>
+ <paragraph>
+  I think some of my confusion comes from how in the notes (attached), the value of node A was based on old values of the E G H and F (1/8) nodes that fed into it, not the new ones (1/16).
+  <bold>
+   Below, is A = 1/8 or 1/2 at the END of one round of Basic PageRank update rule?
+  </bold>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="479.25" src="https://static.us.edusercontent.com/files/dhaBTdhpTGCdgm4ScrhhwNMa" width="639"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  New values are always based on the old values of other nodes (otherwise, how would you know which order to compute values in?). In the example below, A would be 1/2
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Okay thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

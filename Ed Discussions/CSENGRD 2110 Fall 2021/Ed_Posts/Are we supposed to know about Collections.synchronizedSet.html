@@ -1,0 +1,55 @@
+<h1>
+ Title: Are we supposed to know about Collections.synchronizedSet?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-02T08:22:40.198401+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="111.27941176470588" src="https://static.us.edusercontent.com/files/zwjCIIfa7592DlYdlKQyoBkE" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  I am not sure if synchronizedSet was covered in lecture and I can't seem to find any thing on Java Hyper Text about it.  Thanks!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It is worth knowing that the collections classes in
+  <code>
+   java.util
+  </code>
+  are thread-unsafe and should not be shared "raw" with multiple threads.  To make them thread-safe, additional synchronization must be implemented (ideally encapsulating the thread-unsafe class behind thread-safe methods).  The "synchronized" wrapper collections are one way of doing this.
+ </paragraph>
+ <paragraph>
+  However, this question is not very specific about what it considers to be "threadsafe".  By synchronizing the collection's methods, race conditions cannot violate the collection's class invariants (so the
+  <italic>
+   class
+  </italic>
+  is thread-safe).  But it is still possible to write higher-level operations that are subject to race conditions.  The important point is that using thread-safe classes and synchronizing individual method calls is not sufficient to protect your program from race conditions; thread-safety isn't "composable".  Typically, synchronization must be done at the level of a "transaction".
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,52 @@
+<h1>
+ Title: SVM Lagrange multipliers
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-22T08:06:48.757309+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi,
+ </paragraph>
+ <paragraph>
+  I am a bit confused about the Lagrange multipliers in the following equation:
+ </paragraph>
+ <math>
+  \vec{w}=\sum_{ }^{ }\alpha_iy_ix_i
+ </math>
+ <paragraph>
+  How can we prove that only points that lie closest to the hyperplane have alphas that are not zero?
+ </paragraph>
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Sharang Sriramu (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  This is a consequence of the complementary slackness condition.
+  <break>
+  </break>
+  In the primal SVM problem, you have the constraint $y_i(w^Tx_i + b) \geq 1$. The complementary slackness condition for this tells us that $\alpha_i(1 - y_i(w^Tx_i + b) ) = 0$. This forces $\alpha_i=0$ for all points that are not on the margin line.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

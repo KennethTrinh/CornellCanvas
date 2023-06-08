@@ -1,0 +1,55 @@
+<h1>
+ Title: Program Correctness HW Question 9
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-16T03:06:54.844229+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I didn't really understand the logical equivalence of the Hoare Triple question in the Program Correctness Question. I interpreted the solution as "{Q &amp;&amp; !B} S2 {R}" as an implication "Q &amp;&amp; !B =&gt; R" removes the need for "else S2 {R}", but I don't really understand why this is.
+ </paragraph>
+ <figure>
+  <image height="268.19471947194717" src="https://static.us.edusercontent.com/files/vrL1tPy3V3QeBSE3cBN73COC" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Does this makes sense?
+ </paragraph>
+ <paragraph>
+  We want R to be true when the method ends.
+  <break>
+  </break>
+  But if B is false, S1 is not executed --nothing is executed
+  <break>
+  </break>
+  so R better be true in the beginning.
+  <break>
+  </break>
+  That is, whenever Q is true and B is false, R better be true also.
+  <break>
+  </break>
+  That means that    Q and !B  implies  R
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

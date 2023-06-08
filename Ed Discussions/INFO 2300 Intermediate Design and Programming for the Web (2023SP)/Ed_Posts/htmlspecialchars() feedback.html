@@ -1,0 +1,53 @@
+<h1>
+ Title: htmlspecialchars() feedback
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-02-23T08:21:10.909655+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <italic>
+   Could you please explain  what "f
+  </italic>
+  orm confirmation securely (`htmlspecialchars()`) echos the form data to the page"
+  <italic>
+   means?
+  </italic>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Allison Hsu (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  htmlspecialchars() is required when echoing input information from the user onto the screen, as it filters out the meaning some special characters in html (such as &lt;style&gt; &lt;/style&gt;), and outputs the exact raw text that was inputted. One thing you can try to test out the effect of this try to input something into a form textbox with &lt;style&gt; tags around it, such as changing the color. As was demonstrated in the HTML forms lecture, without htmlspecialchars(), you will notice that the style of the input-text echoed will have the style you added into the textbox instead of what you have coded in your codebase. With htmlspecialchars(), the echoed text will appear as you have intended in your code.
+ </paragraph>
+ <paragraph>
+  The style tags is just one example- there are much more malicious things a user can input to test whether or not you have htmlspecialchars() or not.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,101 @@
+<h1>
+ Title: Hw5 Q1bi
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-20T08:54:19.317843+10:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  In the problem statement for 1bi it says to show the values of
+ </paragraph>
+ <math>
+  \left(P\left(Y=y\right|X=x\right)
+ </math>
+ <paragraph>
+  for both classes, but I'm honestly not sure how this is relevant since the decision rule for the naive Bayes classifier is
+ </paragraph>
+ <figure>
+  <image height="92.32516703786192" src="https://static.us.edusercontent.com/files/YWmGML7Sg1uSg4RszfCr7xAQ" width="658"/>
+ </figure>
+ <paragraph>
+  Would appreciate any help!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Jerry Sun (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  There's 2 classes: +1,-1. The chosen x point is the same, the only thing you're changing in the decision rule is the y (either +1 or -1). Substitute into the expression x and one y at a time, and compute the argmax of those expressions (choose between +1/-1). Does this clarify it?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 4
+</h3>
+<document version="2.0">
+ <paragraph>
+  That I get - i'm confused by this line of the question
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="36.924914675767916" src="https://static.us.edusercontent.com/files/o5dqQz1fvxpydJBFYXC6PXz0" width="698"/>
+ </figure>
+ <paragraph>
+  I thought we would have P(X=x|Y=y), not this way?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jerry Sun (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ah ok I see, well just from an intuition standpoint we're given an x point to classify, so we want to find the probability that it is either of the classes and predict the class with the largest probability. That aligns more with the conditional probability of P(Y=y|X=x) which is the probability of Y=y given x.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Patrick Yuan (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  So do we need to calculate  P(Y=y|X=x) or can we just calculate P(Y=y, X=x) like in the lecture slides?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,49 @@
+<h1>
+ Title: lec 14
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-20T15:08:32.715747+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="335.8762057877814" src="https://static.us.edusercontent.com/files/yIUWepVppJlCVyhgJkf3clv5" width="658"/>
+ </figure>
+ <paragraph>
+  I am confused on this.. since we want to turn array into heap, then why are we taking the root to the bottom? It seems like it's turning heap into array to me..?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The first step is
+ </paragraph>
+ <paragraph>
+  // Make b[0..n-1] into a max-heap (in place)
+ </paragraph>
+ <paragraph>
+  We don't show the code for that here!! Sorry, the "//" before should be taken away. But you see the below that there are two steps: 1. turn the array into a heap and 2. poll repeatedly. The last is shown in red because that is what the loop is doing.
+ </paragraph>
+ <paragraph>
+  The second step is to change heap b[0..n-1] into a sorted array. and we give the invariant for that loop
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

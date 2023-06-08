@@ -1,0 +1,64 @@
+<h1>
+ Title: why softmax
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-11T03:39:04.511148+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  softmax casts scores into probabilities to cast it to a probability distribution.
+ </paragraph>
+ <paragraph>
+  [1, 2] -&gt; [$(e^1/(e^1+e^2)$, $(e^2/(e^1+e^2)$]
+ </paragraph>
+ <paragraph>
+  But we could have just used standard normalization to cast it to a probability distribution.
+ </paragraph>
+ <paragraph>
+  [1, 2] -&gt; [$1/(1+2)$, $2/(1+2)$]
+ </paragraph>
+ <paragraph>
+  So why softmax?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  One primary reason we use softmax is that it tolerates negative values well/logically.
+ </paragraph>
+ <paragraph>
+  Say, for instance, we have [1, -2]. Softmax will output:
+ </paragraph>
+ <math>
+  \left[\frac{e}{e+e^{-2}},\ \frac{e^{-2}}{e+e^{-2}}\right]\approx\left[.95,.05\right]
+ </math>
+ <paragraph>
+  Whereas standard normalization would output:
+ </paragraph>
+ <math>
+  \left[\frac{1}{1-2},\frac{-2}{1-2}\right]=\left[-1,2\right]
+ </math>
+ <paragraph>
+  Both sum up to one, but softmax outputs probabilities and standard normalization does not.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

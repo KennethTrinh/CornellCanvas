@@ -1,0 +1,50 @@
+<h1>
+ Title: sample complexity of ERM and hoeffding's inequality
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-28T03:18:15.590427+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="456" src="https://static.us.edusercontent.com/files/se39gollbnMHLMsfrHhJ9UvD" width="627"/>
+ </figure>
+ <paragraph>
+  When we plug in (epsilon/2) into hoeffding's inequality, shouldn't the upper bound become
+ </paragraph>
+ <paragraph>
+  {size of hypothesis space H} * 2 * exp(-(m*epsilon^2)/2^2) ?
+ </paragraph>
+ <paragraph>
+  That is, shouldn't the "2" in the denominator of the exp function be squared, since "epsilon" is squared in hoeffding's inequality?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Scott Bass (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hoeffding's inequality normally has the term $2e^{-2m\epsilon^{2}}$ on the RHS. So the $2$ cancels with the $4$ in the denominator (taken from the
+  <link href="https://en.wikipedia.org/wiki/Hoeffding%27s_inequality"/>
+  wiki).
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

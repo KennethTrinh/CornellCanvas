@@ -1,0 +1,105 @@
+<h1>
+ Title: SVD
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-12-15T14:41:26.74234+11:00
+</h3>
+<h3>
+ Category: Other
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For SVD, if the diagonal entries of $\Sigma$ become 0 for indices $(i,i)$ where $i&gt;r$, does it matter what goes in the columns past $r$ in $P$ and $Q$ for $A$ to equal $P \Sigma Q^T$?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Reyer Sjamaar (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  It doesn't matter, as long as the matrices $P$ and $Q$ are orthogonal (i.e. their columns are orthonormal).
+ </paragraph>
+ <paragraph>
+  Suppose you have determined the first $r$ columns $\mathbf{v}_1,\mathbf{v}_2,\dotsc,\mathbf{v}_r$ of $Q$.  Then the  first $r$ columns $\mathbf{w}_1,\mathbf{w}_2,\dotsc,\mathbf{w}_r$ of $P$ are determined by $\mathbf{w}_i=\frac1{\sigma_i}A\mathbf{v}_i$.
+ </paragraph>
+ <paragraph>
+  For the columns $\mathbf{v}_{r+1},\dotsc,\mathbf{v}_n$ of $Q$ you can take
+  <italic>
+   any
+  </italic>
+  orthonormal basis of $\operatorname{ker}(A)=\operatorname{im}(A^T)^\perp$.
+ </paragraph>
+ <paragraph>
+  For the columns $\mathbf{w}_{r+1},\dotsc,\mathbf{w}_m$ of $P$ you can take
+  <italic>
+   any
+  </italic>
+  orthonormal basis of $\operatorname{ker}(A^T)=\operatorname{im}(A)^\perp$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If I'm understanding this correctly, $\textbf{v}_{r+1},...,\textbf{v}_n$ need to be an orthonormal basis of $\ker(A)$, since $A\textbf{v}_{r+1},...,A\textbf{v}_n$ need to be $\textbf{0}$, so $Q$ is orthogonal, which allows us to say $Q^{-1} = Q^T$ and $A=P \Sigma Q^T$. But I'm not sure why $\textbf{w}_{r+1},...,\textbf{w}_m$ need to be an orthonormal basis of $\ker(A^T)$. If all the columns past $r$ in $\Sigma$ are $\textbf{0}$, wouldn't $P \Sigma$ have all of its columns past $r$ be $\textbf{0}$ no matter what?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Reyer Sjamaar (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sure, but we
+  <italic>
+   want
+  </italic>
+  $P$ to be orthogonal, which forces the last $m-r$ columns of $P$ to be an o.n. basis of the kernel of $A^T$.
+ </paragraph>
+ <paragraph>
+  One reason why we want $P$ to be orthogonal is that we want $A^T=Q\Sigma^TP^T$ to be a SVD of $A^T$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I see, thanks!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

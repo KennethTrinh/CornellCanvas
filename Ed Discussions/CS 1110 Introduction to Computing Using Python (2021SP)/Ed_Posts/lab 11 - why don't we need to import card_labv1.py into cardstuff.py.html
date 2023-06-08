@@ -1,0 +1,39 @@
+<h1>
+ Title: lab 11 - why don't we need to import card_labv1.py into cardstuff.py ?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-25T07:55:43.026563+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When implementing the helper function less_than(c1, c2) in cardstuff.py, why do we not need to import the module card_labv1.py ? (How is Python able to access the attributes "rank" and "suit" of Card if the class Card and its attributes have not been defined?)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Dylan Castillo (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  When you actually use the function less_than(c1, c2) (such as in the test file), you have to import the module to create the cards and use them for the parameters of less_than. Python is basically able to backtrack when you use c1.rank in less_than back to the test file, to the module import.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

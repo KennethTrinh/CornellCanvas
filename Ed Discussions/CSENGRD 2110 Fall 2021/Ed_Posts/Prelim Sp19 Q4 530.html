@@ -1,0 +1,57 @@
+<h1>
+ Title: Prelim Sp19 Q4 5:30
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-14T06:58:13.363824+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="145.55870674985817" src="https://static.us.edusercontent.com/files/wAnPSpjGHjLqiDXQKs7Zk9ZO" width="658"/>
+ </figure>
+ <paragraph>
+  Would n^2 + 1 have time complexity of O(n^2) in this example?
+ </paragraph>
+ <paragraph>
+  If inserting 6, the algo would be looking past 1, 3, 5 for a place to put it even though it's event? Is that why we need 3 tests?
+ </paragraph>
+ <paragraph>
+  What n + 1 case? Since we're adding integers to the tree from least to largest would the BST degenerate to a linked list? So the algo would do n + 1 steps to figure out where to drop the node and a we see an O(n) time complexity?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  If something takes n^2+1 time, it would be O(n^2).
+ </paragraph>
+ <paragraph>
+  Besides that, inserting 6 will take O(n) time because it would take at most 3 tests as there are three odd numbers in 1..5.  I think it depends on how you code your insertion algorithm for the BST?  The first line of code would be checking if the 6 is an odd number or not, and that would just take 1 test.  And if check 6 towards the bottom of your code, it would take at most 3 tests since there are 3 odd numbers in 1...5.
+ </paragraph>
+ <paragraph>
+  Worst case of insertion in a BST is O(n) time.  You will be searching n+1 elements, which is basically the whole BST.  n+1 takes time proportional to what the value of n is.
+ </paragraph>
+ <paragraph>
+  Also it is important to know that the best case of searching/deletion/insertion in a BST is O(nlogn).  So if you were searching for an element very close to the root of the BST, it will probably take O(nlogn) time.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

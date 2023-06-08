@@ -1,0 +1,109 @@
+<h1>
+ Title: "None" Value
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-02-19T03:58:05.980695+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For lecture today, we learnt that in functions:
+ </paragraph>
+ <paragraph>
+  "Any statements after executing return are ignored
+ </paragraph>
+ <paragraph>
+  [and that return statements are] Optional (if absent, special value None will be sent back)"
+ </paragraph>
+ <paragraph>
+  However, when I ran a function without return, it just ended up doing &gt;&gt;
+ </paragraph>
+ <paragraph>
+  I did not see a 'None' special value.
+ </paragraph>
+ <paragraph>
+  Could someone please explain how to obtain this 'None' value?
+ </paragraph>
+</document>
+<h3>
+ Author: Dylan Castillo (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Did you try posting a screenshot? I think it’s not appearing
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Dylan Castillo (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Nevermind, I just realized what you meant
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Dylan Castillo (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If you try writing
+  <code>
+   None
+  </code>
+  (as you would
+  <code>
+   True
+  </code>
+  ) on the terminal in python, you can see also nothing shows up. Same as if you try to do
+  <code>
+   x = None
+  </code>
+  and then type
+  <code>
+   x
+  </code>
+  into the terminal. Nothing shows up either. Python in the command line just doesn't show the "None" value. Nevertheless, if you tried your method call and compared it to None, as such:
+  <code>
+   no_return_method() == None
+  </code>
+  , you can see you get
+  <code>
+   True
+  </code>
+  back, meaning that you are getting None from the function call (even if it does not show).
+ </paragraph>
+ <paragraph>
+  Sidenote: If the function has no return statement, it is most of the time bad practice to try to do anything with its return value. If the function is designed not to return anything, it is probably not a good idea to try to do anything with the None value it returns.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

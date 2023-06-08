@@ -1,0 +1,42 @@
+<h1>
+ Title: Fall 2020 Q4 Final
+</h1>
+<h3>
+ Author: Ariana Haghighi (student)
+</h3>
+<h3>
+ Date: 2021-12-11T13:18:11.114143+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  First we are given that h satisfies h(n) = 0 for n &lt;0. So, we know that h is causal. Next, we are given that the sum of the absolute value of h(k) from 0 to n is less than or equal to 73 for all n in N. When I first approached this problem, I thought that this meant that h is not necessarily L1 (meant to be lower case, but I upper cased it for clarity). My thinking was that h(k) may be less than 73 for n = 10^59, but we don't know what happens as n approaches infinity. Essentially, my question boils down to why the sum from 0 to n for all n in N is the same as the limit as n approaches infinity of the sum from 0 to n.
+ </paragraph>
+ <paragraph>
+  From this, if I conclude that h is not L1, then the signal is not BIBO. So we can say that i through iv are false. However, if this means that h is L1, then i, ii, and iv are correct.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  If $\sum _ {k = 0} ^ n | c _ k | \leq R$ for every $n &gt; 0$, then $\sum _ {k = 0} ^ \infty$ converges, and it converges to something $\leq R$.  This is in the monograph Chapter 3, I think.  Thus the condition on $h$ in this problem guarantees that $h \in l ^ 1$ and $\| h \| _ 1 \leq 73$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

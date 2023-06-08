@@ -1,0 +1,52 @@
+<h1>
+ Title: Delta function as in input to FIR
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-15T10:35:42.975077+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is this covered in the textbook? It's in HW6.6 so I assume it is, but can't seem to find it. If so, does anyone have the page number(s)?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The way we did it in class: say the FIR system's I/O relationship is
+ </paragraph>
+ <paragraph>
+  $y [ n ] = \sum _ {k = 0} ^ M b _ k x [ n - k ]$.
+ </paragraph>
+ <paragraph>
+  Let the input be a $\delta$ and the output that arises we call the system's impulse response and denote it $h [ n ]$.
+ </paragraph>
+ <paragraph>
+  $h [ n ] = \sum _ {k = 0} ^ M b _ k \delta [ n - k ]$.
+ </paragraph>
+ <paragraph>
+  For $n &lt; 0$ and $n &gt; M$, all terms on the right are zero.  When $0 \leq n \leq M$, the $k = n$-term is $b _ n$ and the rest are zero.  Accordingly
+ </paragraph>
+ <paragraph>
+  $h [ n ] = \left \{ \begin{array}{cl} 0 &amp; {\rm when} \; n &lt; 0 \\ b _ n &amp; {\rm when} \; 0 \leq n \leq M \\ 0 &amp; {\rm when} \; n &gt; M \; . \end{array} \right .$
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

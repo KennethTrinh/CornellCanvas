@@ -1,0 +1,96 @@
+<h1>
+ Title: Mappings (HW1 Q4)
+</h1>
+<h3>
+ Author: Ian Mackey (None)
+</h3>
+<h3>
+ Date: 2021-09-24T01:40:01.157747+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi class,
+ </paragraph>
+ <paragraph>
+  I'm currently grading Q4 on HW1 and for part a where you have to show
+  <bold>
+   N-&gt;NxN
+  </bold>
+  is injective, I'm seeing a somewhat insidious mistake repeatedly. I won't be taking points off for this mistake on this assignment (if I do, please let me know) but I just want to clear up what a mapping is and how this mistake can be easily made.
+ </paragraph>
+ <paragraph>
+  When trying to map
+  <bold>
+   N-&gt;NxN
+  </bold>
+  , we want to map
+  <bold>
+   {0, 1, 2, ...}
+  </bold>
+  to
+  <bold>
+   {(0,0), (0,1), ..., (1,0), (1,1), ...}
+  </bold>
+  .
+ </paragraph>
+ <paragraph>
+  After showing the mapping for
+  <bold>
+   NxN-&gt;N
+  </bold>
+  is injective by using the prime factorization of
+ </paragraph>
+ <paragraph>
+  <bold>
+   (n1,n2) -&gt; (3^n1)*(7^n2)
+  </bold>
+ </paragraph>
+ <paragraph>
+  many students are quick to turn that mapping around and say
+ </paragraph>
+ <paragraph>
+  <bold>
+   (3^n1)*(7^n2) -&gt; (n1,n2)
+  </bold>
+  proves N-&gt;NxN is injective because
+  <bold>
+   (3^n1)*(7^n2)
+  </bold>
+  is an element of
+  <bold>
+   N
+  </bold>
+  .
+ </paragraph>
+ <paragraph>
+  However, take a look at the possible results of
+  <bold>
+   (3^n1)*(7^n2): {0,3,7,9,14,21,27...}
+  </bold>
+ </paragraph>
+ <paragraph>
+  Therefore
+  <bold>
+   (3^n1)*(7^n2) does not cover all elements of N.
+  </bold>
+ </paragraph>
+ <paragraph>
+  In general, when trying to show a mapping is injective this way, make sure to start with every element within the input set. As you'll see in the solutions for HW1, this can be done trivially by just writing the mapping
+  <bold>
+   n -&gt; (n,0)
+  </bold>
+  .
+ </paragraph>
+ <paragraph>
+  If you have further questions, feel free to ask them here or come to OH!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

@@ -1,0 +1,57 @@
+<h1>
+ Title: Recursion in A8
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-05T05:23:09.744917+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hey, I'm confused when it says to not make find() or flee() methods recursive in the A8 handout. Does this mean not using recursion at all or just containing recursion to helper methods so that the find/flee code is more flexible? I have a find method I like a lot but it uses recursion via helper methods and I would like to know if I should rethink it. Thanks!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Atulya Lohani (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  Keep recursion in helper methods, so the find/flee code is more flexible. This way declarations of things like HashSet, HashMap, or other data structures don't happen over and over again. You can just declare them once, and pass them in as parameters to your helper methods that do the bulk of the work.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Of course you can use recursion. For find, it is best! A recursive walk.
+ </paragraph>
+ <paragraph>
+  Please look at #1926 for an explanation. It's all there.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

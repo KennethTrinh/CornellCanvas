@@ -1,0 +1,42 @@
+<h1>
+ Title: ArraySize for Heaps
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-21T03:46:28.16583+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Just a general question about heaps: I remember in the CMS reading that array size were heaps were determined at runtime. However, at what point does the heap decide it needs to increase it's array size, and does it accomplish this by simply doubling the length and copying the contents over?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  1. In class ArrayList, when the need is to add an element but there is no more room, yes a new array of at least twice the size is created, the old array contents is copied into the new array, and from then on the new array is used.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  2. We can do the same thing in the implementation of a heap.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

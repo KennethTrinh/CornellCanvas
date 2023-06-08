@@ -1,0 +1,53 @@
+<h1>
+ Title: Polymorphism Question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-02T05:05:35.039836+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="284" src="https://static.us.edusercontent.com/files/1jE9MzTBmsdVUaEkLFjs1vfU" width="254"/>
+ </figure>
+ <paragraph>
+  I am reviewing the course materials from the beginning of the year and am at this question on Lecture II of polymorphism.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  I am a bit confused by it. I had thought that the "new" expression will yield a pointer to the object with its type being the one in the constructor call. By this logic, wouldn't v have access to method m because its constructor is type S?  Or does the CC in variable v's declaration mean it will only have access to CC methods since it is a supertype rather than a subtype?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Basically, what is the point of creating an S object in class CC only for said object to not be able to use S's functions?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="1.0">
+ <paragraph>
+  It doesn’t compile because of the compile time reference rule so even though at runtime it might have the methods of class S because it’s static type is CC at compile time it can only call methods from class CC
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

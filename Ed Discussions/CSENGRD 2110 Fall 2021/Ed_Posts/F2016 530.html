@@ -1,0 +1,48 @@
+<h1>
+ Title: F2016 5:30
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-05T03:26:59.140304+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="191.24137931034483" src="https://static.us.edusercontent.com/files/VdxXYhdvDcz7YrzqeAxTgTV3" width="658"/>
+ </figure>
+ <paragraph>
+  Isn't var an object of class C? If so, I thought casting it to D wouldn't be allowed since that would be a downcast.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Vladia Trinh (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In order for this to work, the D object must be cast to C.
+ </paragraph>
+ <paragraph>
+  This cast will be inserted automatically because it is an upcast. It's as if it was written like this:
+ </paragraph>
+ <paragraph>
+  C var= (C) (new D(...));
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

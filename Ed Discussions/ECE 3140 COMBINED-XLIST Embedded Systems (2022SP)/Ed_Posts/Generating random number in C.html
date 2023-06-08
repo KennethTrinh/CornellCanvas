@@ -1,0 +1,126 @@
+<h1>
+ Title: Generating random number in C
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-07T07:29:23.97518+10:00
+</h3>
+<h3>
+ Category: Final Project
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  We tried using the rand() function in C to generate a random number, but the board hard faults any time we try to use the generated number. This leads us to believe that the rand() function is not generating a number at all. We tried including stdio.h and stdlib.h, but this didn't work. Any advice on generating a number would be appreciated!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  One option suggested by Aaron was to generate a seed by reading an analog value from one of the GPIO pins that is not connected to anything. As the pin will be floating random EMF noise will be read, giving you a random seed for your generator. Some of this is mentioned in the GPIO discussion where we read the input from a switch connected to a GPIO pin.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Nils Napp (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Another way to get a random number would be to start a timer at boot time and then use the time until a user first presses a button.  That way you don't need to mess with analog reads.
+ </paragraph>
+ <paragraph>
+  A single read from a digital pin will probably not be enough to randomize the seed sufficiently.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Alma Thaler (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can you explain a bit more about how to use GPIO output for a random seed
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Alma Thaler (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  As in can you just read from the pin without doing all the setup
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Well you will have to set up some random pin as GPIO, configure it for input, and then read from it. It will be similar to as how we set up our LEDs in prior labs and you can read through the GPIO section of the manual for help.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  How do you read from a pin? Is it the value in the PCR?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  See 42.2.5 (Port Data Input Register)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

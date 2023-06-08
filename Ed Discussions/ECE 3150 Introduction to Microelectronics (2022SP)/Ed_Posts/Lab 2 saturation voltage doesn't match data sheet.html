@@ -1,0 +1,60 @@
+<h1>
+ Title: Lab 2: saturation voltage doesn't match data sheet
+</h1>
+<h3>
+ Author: Ibiyemi Abiodun (student)
+</h3>
+<h3>
+ Date: 2022-03-14T14:01:35.74986+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  To find my collector-emitter saturation voltage, I took the line that I created for determining the Early voltage (slope and intercept from the flat part of the I_C vs. V_CE graph) and then picked the first voltage where the measured I_C is within 1% of what is predicted by the line.
+ </paragraph>
+ <paragraph>
+  I did that b/c I figured that that's where the line starts to flatten out, so that would be the saturation voltage. However, the value that I got by doing this (0.45 V) did not match the datasheet for the 2N3904 transistor (0.20 V). What did I do wrong?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Clifford Pollock (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  It is a subjective call, and your process is fine.  1% is probably a tighter tolerance that the manufacturer used, so the difference is due to how each of you defined when saturation began.  In my analysis, I also found the saturation voltage I (subjectively) decided on was larger than that listed in the data sheet.
+ </paragraph>
+ <paragraph>
+  My pnp data was a much better match.
+ </paragraph>
+ <paragraph>
+  There is no "wrong" answer when you can support a claim based on your data.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Amal El-Ghazaly (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I recommend just inspecting by eye. Temporarily change your x-axis limits to be from 0 to 0.5 V for Vce, then estimate where the curve starts to flatten. Call that Vce_sat. Mine matched pretty closely to the datasheet value.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

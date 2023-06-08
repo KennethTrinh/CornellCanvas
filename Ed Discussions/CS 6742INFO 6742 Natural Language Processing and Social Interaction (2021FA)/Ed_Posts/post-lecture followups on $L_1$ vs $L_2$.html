@@ -1,0 +1,94 @@
+<h1>
+ Title: post-lecture followups on $L_1$ vs $L_2$
+</h1>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Date: 2021-11-18T08:58:53.168876+11:00
+</h3>
+<h3>
+ Category: Lecture
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <heading level="1">
+  $L_1$ vs $L_2$ in two dimensions
+ </heading>
+ <paragraph>
+  <break>
+  </break>
+  In general, the $L_1$ distance and the $L_2$ distance do {\em not} have a linear relationship. But they do in certain special cases, including the situation that the figure on the handout --- $|V|=2$ --- is situated in. Thus, the $L_2$ distance is omitted in the figure. (It's also true that the $L_1$ and the $L_2$ are the same in one dimension, but, unlike what I misleadingly implied, that's not a reason one could omit $L_2$ from the figure.))
+ </paragraph>
+ <paragraph>
+  Calculations posted as a comment.
+ </paragraph>
+ <heading level="1">
+  $L_1$ and $L_2$ distances vs norms (used in regularization)
+ </heading>
+ <paragraph>
+  You can think of the $L_1$ norm for a vector $\overrightarrow{x}$ as the $L_1$ distance between $\overrightarrow{x}$ and the all-zeroes vector, and similarly for the $L_2$ norm.
+ </paragraph>
+ <paragraph>
+  Hyperlink: Stats StackExchange answers to the question
+  <link href="https://stats.stackexchange.com/questions/45643/why-l1-norm-for-sparse-models/159379#159379"/>
+  Why L1 norm for sparse models.  I like the graph-of-derivatives images.
+ </paragraph>
+</document>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Calculations, just for completeness:
+  <break>
+  </break>
+  <break>
+  </break>
+  For $q$, $r$ (proper) distributions over a two-word vocabulary $\{v_1, v_2\}$, we have $q_2 = 1 - q_1$ and $r_2 = 1 - r_2$.
+  <break>
+  </break>
+  So, $q_2 - r_2 = r_1 - q_1$.
+ </paragraph>
+ <paragraph>
+  So, for the $L_1$ distance,
+  <break>
+  </break>
+  <break>
+  </break>
+  $L_1(q, r)  =  |q_1 - r_1| +  |q_2 - r_2|
+  <break>
+  </break>
+  =  |q_1 - r_1| + |r_1 - q_1|
+  <break>
+  </break>
+  =  {2}|q_1 - r_1|.$
+ </paragraph>
+ <paragraph>
+  This turns out to be off by just a constant  to what the $L_2$ distance looks like:
+  <break>
+  </break>
+  <break>
+  </break>
+  $L_2(q, r)  =  \sqrt{(q_1 - r_1)^2 +  (q_2 - r_2)^2}
+  <break>
+  </break>
+  = \sqrt{(q_1 - r_1)^2 +  (r_1 - q_1)^2}
+  <break>
+  </break>
+  =  \sqrt{2}|q_1 - r_1|.$
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

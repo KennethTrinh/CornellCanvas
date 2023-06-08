@@ -1,0 +1,83 @@
+<h1>
+ Title: Invariant P1. Settled nodes
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-30T14:04:55.935432+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  "For a settled node s, at least one shortest v-s path contains only settled nodes and d[s] is its distance."
+ </paragraph>
+ <paragraph>
+  I feel like this is saying that there's other shortest paths from v to s except those paths don't contain just settled nodes...
+ </paragraph>
+ <paragraph>
+  Is it the shortest, though, if there's other short paths?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  There could be 4 different ways to get from  v to s, all of length 100, and all other ways to get from v to s have length &gt; 100. So there are 4 shortest paths. That's why we can't always talk about THE shortest path from v to s.
+ </paragraph>
+ <paragraph>
+  The sentence is trying to convey that
+ </paragraph>
+ <paragraph>
+  1. for s in the settled set, d[s] IS the length of
+  <break>
+  </break>
+  the shortest path from v to s over ALL paths.
+  <break>
+  </break>
+  2. At least one of those shortest paths contains
+  <break>
+  </break>
+  only nodes in the settled set.
+ </paragraph>
+ <paragraph>
+  I hope this helps.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

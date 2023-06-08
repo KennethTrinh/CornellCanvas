@@ -1,0 +1,59 @@
+<h1>
+ Title: Start Game Button Weird result
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-04T11:49:55.478294+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am trying to setup the start button, when I click to start it looks like the start button and slider gets duplicated as shown in the picture, but when I resize my frame it will revert to how it should look so far (just a white screen with no duplicate button), has anyone experienced this before? Am I doing something wrong that causes this bug?
+ </paragraph>
+ <figure>
+  <image height="457" src="https://static.us.edusercontent.com/files/XN4QXQrEewqq1qdeeCsPewwV" width="515"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Alexander Arebalo (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm having the same(or similar) issue. I moved on to implement other pieces before coming back to this bug, this is a screenshot of what my application looks like at the moment:
+ </paragraph>
+ <figure>
+  <image height="460" src="https://static.us.edusercontent.com/files/PkCDO6lvfs3Ue1tVh0pCFFZ2" width="612"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Alexander Arebalo (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Found the answer in my case, when calling fillRect() on the Graphics object, I had been using getX() and getY() for the positioning, with getWidth() and getHeight() for the size of the draw. Using the getX and getY methods put the origin for the draw in a strange place, and I didn't need to use them at all, since this is drawing relative to the Graphics component itself rather than to the whole JFrame. In short, the Graphics object should have it's own origin that doesn't need to be specially specified.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

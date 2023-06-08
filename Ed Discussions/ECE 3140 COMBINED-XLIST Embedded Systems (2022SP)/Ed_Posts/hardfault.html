@@ -1,0 +1,49 @@
+<h1>
+ Title: hardfault
+</h1>
+<h3>
+ Author: Kevin Huang (student)
+</h3>
+<h3>
+ Date: 2022-04-30T00:54:56.258107+10:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="171" src="https://static.us.edusercontent.com/files/f5jWI6FQgbImUCRkCLWOmAjB" width="580"/>
+ </figure>
+ <paragraph>
+  What is g_pfnVectors? is that anything meaningful? It says we hardfault in process select but when stepping through we hardfault right when we step into green LED on
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Olive Faber (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  <code>
+   g_pfnVectors
+  </code>
+  is something startup code related, but the real important information there is "at 0x0".  That means that it tried to call or use something at address 0, which is what
+  <code>
+   NULL
+  </code>
+  means.  So, this stack trace likely means you're dereferencing a null pointer on line 320 of your process.c.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

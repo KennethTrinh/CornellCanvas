@@ -1,0 +1,70 @@
+<h1>
+ Title: Looking at Heap Usage in MCUExpresso
+</h1>
+<h3>
+ Author: Crystal Shi (student)
+</h3>
+<h3>
+ Date: 2022-03-17T08:30:35.400167+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was trying to see whether there might be any memory leaks in my code, and so I used the debugger to look at the heap right before the program exits. However, it appears that everything that I ever allocated is still in my heap, despite me freeing things. When stepping through with debugger, it seems like my code should be freeing space correctly, so I was wondering whether this is just an IDE issue with not properly displaying that my heap has been deallocated, or whether I should continue trying to debug?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Raquel Taborga Sierra (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I know this response is late, but there are two necessary
+  <code>
+   malloc()
+  </code>
+  calls in this assignment - one that you will write and one from
+  <code>
+   process_stack_init()
+  </code>
+  . Therefore, there should be two
+  <code>
+   free()
+  </code>
+  calls, one in
+  <code>
+   process_stack_free()
+  </code>
+  and one you should write. If everything you've ever malloc'd is still in the heap, it could be that you are not calling
+  <code>
+   free()
+  </code>
+  properly, or you're doing it in a piece of code that never executes, or you're missing either your
+  <code>
+   free()
+  </code>
+  or
+  <code>
+   process_stack_free()
+  </code>
+  .
+ </paragraph>
+ <paragraph>
+  If  you've already submitted and are still worried about this, don't worry, we don't extensively test for memory leaks ;)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

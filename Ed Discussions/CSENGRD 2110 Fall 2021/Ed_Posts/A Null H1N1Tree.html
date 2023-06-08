@@ -1,0 +1,108 @@
+<h1>
+ Title: A Null H1N1Tree?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-20T07:53:42.389095+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Suppose I write:
+ </paragraph>
+ <paragraph>
+  H1N1Tree myTree = null;
+ </paragraph>
+ <paragraph>
+  Is there anything stopping the user from calling:
+ </paragraph>
+ <paragraph>
+  myTree.size();
+ </paragraph>
+ <paragraph>
+  When I try to handle this, by writing if(this == null) {return 0;}, it says the code in the brackets is unreachable.
+ </paragraph>
+ <paragraph>
+  What should I do?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  "this" can never be null.
+ </paragraph>
+ <paragraph>
+  It evaluates to a pointer to the object in which it appears.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  How would I check if the object I am calling size() on is null?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If you execute
+ </paragraph>
+ <paragraph>
+  H1N1Tree myTree = null;
+ </paragraph>
+ <paragraph>
+  then myTree contains null, and any call myTree.size() will cause a null pointer exception.
+ </paragraph>
+ <paragraph>
+  I don't know what problem you are trying to solve. What is the problem?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I understand now; this was very helpful. Thank you, and sorry for the confusion.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

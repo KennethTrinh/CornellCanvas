@@ -1,0 +1,65 @@
+<h1>
+ Title: Backprop: Why is $D_d$ delta given in the function and not $s_d$?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-10T04:15:21.521022+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I understand that we don't apply activation function at the end, which is why our $D_d$ is not $\sigma'(s_d)$, but I don't understand why it is $v_d - y$ and not $v_d$.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Franklin Tongxiang Deng (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  It's the derivative of the loss function
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  So we're using the square loss function? Good to know
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Franklin Tongxiang Deng (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  yes as indicated in compute_loss
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

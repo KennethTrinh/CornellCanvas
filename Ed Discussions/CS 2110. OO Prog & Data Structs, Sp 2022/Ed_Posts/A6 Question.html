@@ -1,0 +1,169 @@
+<h1>
+ Title: A6 Question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-31T07:19:45.528631+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  //
+  <bold>
+   TODO
+  </bold>
+  9: Add a PropertyChangeListener to `game` that updates
+ </paragraph>
+ <paragraph>
+  // `scoreLabel`'s text whenever the "GameScore" property changes.
+ </paragraph>
+ <paragraph>
+  // The label text should start with "Score: ", followed by the numerical
+ </paragraph>
+ <paragraph>
+  // score.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  I'm a bit confused about how to implement this specification. How do you identify if the GameScore property changed, would this be using the Game component isHit method? Also how does the anonymous function change the score label? I'm unsure how "Score:" followed by getScore() would be implemented by the anonymous function
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Clarkson (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  1. Take a look back at TODO 8. It said to use a method related to scores. Read the body of that method. What does it do on its last line?  With that in mind, consider a button instead of a property: your code does nothing to
+  <italic>
+   identify
+  </italic>
+  whether a button is clicked; rather, it
+  <italic>
+   reacts
+  </italic>
+  to that event upon being notified. It's the same with the property change. You don't write code to detect it; you write code to react to it. This is
+  <italic>
+   inversion of control
+  </italic>
+  -- and yeah, it's different than how we're used to coding.
+ </paragraph>
+ <paragraph>
+  2. You are trying to set the text in a JLabel. Take a look at the API page for JLabels, or, at the tutorial "How to use JLabels" linked from the first GUI lecture.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Sara Yoo (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Based on your comment, my partner and I am trying to implement an anonymous function for addPropertyChangeListener in GameMain.java. We used game.mousePressed(MouseEvent e) so that addPropertyChangeListener would react to firePropertyChange inside setScore(), which is inside mousePressed(MouseEvent e). However, we are not sure what to pass in for its parameter MouseEvent e. Could you give us some advice on this?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  if you hover over addPropertyChangeListener you will see that it requires 2 parameters
+  <break>
+  </break>
+  a
+  <link href="eclipse-javadoc:%E2%98%82=a6/%5C/Library%5C/Java%5C/JavaVirtualMachines%5C/adoptopenjdk-11-openj9.jdk%5C/Contents%5C/Home%5C/lib%5C/jrt-fs.jar%60java.desktop=/module=/true=/=/javadoc_location=/https:%5C/%5C/docs.oracle.com%5C/en%5C/java%5C/javase%5C/11%5C/docs%5C/api%5C/=/%3Cjava.awt(Container.class%E2%98%83Container~addPropertyChangeListener~Ljava.lang.String;~Ljava.beans.PropertyChangeListener;%E2%98%82java.lang.String"/>
+  String
+  <bold>
+   propertyName and a
+  </bold>
+  <link href="eclipse-javadoc:%E2%98%82=a6/%5C/Library%5C/Java%5C/JavaVirtualMachines%5C/adoptopenjdk-11-openj9.jdk%5C/Contents%5C/Home%5C/lib%5C/jrt-fs.jar%60java.desktop=/module=/true=/=/javadoc_location=/https:%5C/%5C/docs.oracle.com%5C/en%5C/java%5C/javase%5C/11%5C/docs%5C/api%5C/=/%3Cjava.awt(Container.class%E2%98%83Container~addPropertyChangeListener~Ljava.lang.String;~Ljava.beans.PropertyChangeListener;%E2%98%82java.beans.PropertyChangeListener"/>
+  PropertyChangeListener
+  <bold>
+   listener.
+  </bold>
+  The --&gt; {} part of the anonymous function should be changing the score label to update the score.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Sara Yoo (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you, this was very helpful!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Clarkson (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For new questions, please make separate new posts, rather than chains of follow-ups. Thanks!
+ </paragraph>
+ <paragraph>
+  You should not be calling
+  <code>
+   mousePressed
+  </code>
+  . Swing calls that when the user presses the mouse. There's no (reasonable) way for you to ever create a
+  <code>
+   MouseEvent
+  </code>
+  .
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Sara Yoo (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We were able to figure out the correct method. Thank you, Professor Clarkson!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,120 @@
+<h1>
+ Title: num_user_posts accessing objects
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-10T07:28:20.21645+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi I am confused about how once you have the tag/gorn you access the corresponding object since it is just an attribute of it.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Thank you!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi! I can think of several interpretations of your question, and will do my best to answer all of them.
+  <break>
+  </break>
+  <break>
+  </break>
+  Overall, your question is a good one, because it isn't obviously easy to go from a tag to an object with that tag.
+  <break>
+  </break>
+  .....
+  <break>
+  </break>
+  <break>
+  </break>
+  If you mean, "within
+  <code>
+   num_user_posts
+  </code>
+  how do I access the Post object itself?", the specification says that the input
+  <code>
+   post
+  </code>
+  will be a Post object, not a Gorn numberstring. So you are given the Post object itself as input.
+ </paragraph>
+ <paragraph>
+  .............................................
+  <break>
+  </break>
+  If you mean in testing, do you mean you are curious about being able to access a Post with a particular Gorn numberstring and you have already executed the statement
+  <code>
+   [main_tree, main_dict] = main_example_tree()
+  </code>
+  ?
+  <break>
+  </break>
+  <break>
+  </break>
+  If so,
+  <code>
+   main_dict
+  </code>
+  is a dictionary that maps Gorn numberstrings to Posts; so,
+  <code>
+   main_dict["0"]
+  </code>
+  evaluates to the Post at 0,
+  <code>
+   main_dict["0.0.1"]
+  </code>
+  evaluates to the post at 0.0.1, and so on.
+  <break>
+  </break>
+  <break>
+  </break>
+  ...............
+ </paragraph>
+ <paragraph>
+  If we hadn't given you that
+  <code>
+   main_dict
+  </code>
+  in order to make your life easier, then give a tag, you would have probably no choice but to recursively find the Post with that tag, starting from the Post at 0.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you very much! That all makes sense!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

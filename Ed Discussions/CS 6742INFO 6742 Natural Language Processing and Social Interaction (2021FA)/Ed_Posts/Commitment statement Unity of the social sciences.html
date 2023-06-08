@@ -1,0 +1,212 @@
+<h1>
+ Title: Commitment statement: Unity of the social sciences?
+</h1>
+<h3>
+ Author: Benjamin Rosche (student)
+</h3>
+<h3>
+ Date: 2021-11-07T08:38:57.975355+11:00
+</h3>
+<h3>
+ Category: Commitment_statement (A4)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I solemnly swear that I am up to no good!
+ </paragraph>
+ <paragraph>
+  In particular, I will
+ </paragraph>
+ <list style="ordered">
+  <list-item>
+   <paragraph>
+    Load both sociology and economics JSTOR data
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Extract abstracts from the data
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Do the fighting words analysis
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Create the co-occurrence networks of words in each discipline
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Benjamin Rosche (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I have downloaded both sociology and economics JSTOR data now. The datasets are very large and processing them takes forever as they are full-text.
+ </paragraph>
+ <paragraph>
+  A somewhat surprising finding of trying to extract abstracts for all articles is that abstracts seem to be a rather new phenomenon. Articles start including abstracts from ~ 1980s on. Therefore, my plan to analyze abstracts is not viable. Instead, I will have to go for the full-text or title analysis.
+ </paragraph>
+ <paragraph>
+  To save time, for now, I have done all analyses on the titles.
+ </paragraph>
+ <paragraph>
+  <bold>
+   1. Fighting words analysis
+  </bold>
+ </paragraph>
+ <paragraph>
+  I use convokit to set up the fighting words analysis. These are the results:
+ </paragraph>
+ <figure>
+  <image height="510.0753968253968" src="https://static.us.edusercontent.com/files/4kL1VY73gxQkBPqoPBejtvvc" width="743"/>
+ </figure>
+ <paragraph>
+  <underline>
+   The top 15 words in sociology are:
+  </underline>
+ </paragraph>
+ <paragraph>
+  ['social', 'sociology', 'gender', 'women', 'family', 'work', 'class', 'community', 'politics', 'cultural', 'health', 'culture', 'race', 'children', 'society']
+ </paragraph>
+ <paragraph>
+  <underline>
+   The top 15 words in economics are:
+  </underline>
+ </paragraph>
+ <paragraph>
+  ['economic', 'trade', 'growth', 'market', 'evidence', 'model', 'economics', 'demand', 'price', 'with', 'industry', 'models', 'investment', 'cost', 'rate'])
+ </paragraph>
+ <paragraph>
+  <underline>
+   Z-scores of words that appear both in sociology and economic:
+  </underline>
+ </paragraph>
+ <paragraph>
+  z &gt; 0 -&gt; leaning towards sociology
+ </paragraph>
+ <paragraph>
+  z &lt; 0 -&gt; leaning towards economics
+ </paragraph>
+ <paragraph>
+  inequality: 5.31
+ </paragraph>
+ <paragraph>
+  equity: -20
+ </paragraph>
+ <paragraph>
+  norms: 7
+ </paragraph>
+ <paragraph>
+  rational: -15
+ </paragraph>
+ <paragraph>
+  behavior: -17.2
+ </paragraph>
+ <paragraph>
+  networks: 12.5
+ </paragraph>
+ <paragraph>
+  education: 16.52
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  <bold>
+   2. Co-occurrence networks
+  </bold>
+ </paragraph>
+ <paragraph>
+  I can not simply have the co-occurrence networks be exactly how often two words occur in a title together because, even if they are independent of each other, we would expect them to occur together by chance. I therefore first calculate how often we would expect two words to appear together based on their overall frequencies.
+ </paragraph>
+ <paragraph>
+  I do this by calculating the relative frequency of the word A, P(A), and the word B, P(B). I then multiple those probabilities P(A) *P(B). Then I compare this quantity to the actual probability, P(A&amp;B).
+ </paragraph>
+ <paragraph>
+  <bold>
+   A co-occurrence network in sociology:
+  </bold>
+ </paragraph>
+ <figure>
+  <image height="665.6013033175356" src="https://static.us.edusercontent.com/files/eJiEvKqq7Ri7OgRVKNf1AkdZ" width="683"/>
+ </figure>
+ <paragraph>
+  <bold>
+   Co-occurrence networks in economics:
+  </bold>
+ </paragraph>
+ <figure>
+  <image height="665.6013033175356" src="https://static.us.edusercontent.com/files/G3ToCwAmqYlCen0fGKWSY5RJ" width="683"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  <bold>
+   Next steps
+  </bold>
+ </paragraph>
+ <paragraph>
+  Now that I have the neighbors of each word, in next steps, I would like to use time-series analysis to see whether the neighbors of the word 'a' in sociology at time point t are predictive of the neighbors of 'a' in economics at time point t+1 and vice versa. In that way, I would like to find out whether sociology and economics are coming closer to each other and who moving.
+ </paragraph>
+ <paragraph>
+  I also would like to do the fighting words analysis over time for specific terms to see, e.g. whether the term "inequality" becomes more econ or more soc over time
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is it clear it wouldn't be of interest to just do 1980s on? (Treating your class project as a pilot study, if you will?)
+  <break>
+  </break>
+  <break>
+  </break>
+  The idea could be that after you work out analyses on just abstracts, perhaps you could then go back to the bigger, earlier documents and treat the last couple of paragraphs (or other targeted area of the document) as essentially abstracts?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Benjamin Rosche (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I personally think the changes between 1950 and 2020 are gonna be way more pronounced than the changes that occurred from 1980 to 2020. That is why, I think, I would like to keep my idea of working on the titles as a pilot and then switching to the full text once I have time to set up a cluster to do the work in parallel.
+ </paragraph>
+ <paragraph>
+  I really like the idea, though, to take the first and last paragraphs as abstracts! That way I can skip the methods sections etc, which are likely gonna throw the models off.
+ </paragraph>
+ <paragraph>
+  Thank you!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

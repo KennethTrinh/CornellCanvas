@@ -1,0 +1,40 @@
+<h1>
+ Title: Collections and Interface question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-20T02:53:25.955924+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  in the remove function, if s==1, map.remove(ob) is called recursively. But how does this method move forward considering that the parameter is ob again in the recursive call? i understand how it could work for s ==2, etc., but not for s==1
+ </paragraph>
+ <figure>
+  <image height="811.3899782135076" src="https://static.us.edusercontent.com/files/V4bwtV6TAfJNk3DX5fv3FAcW" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: K Oso (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I believe that line is calling the method remove(ob) in Class Map&lt;E, Integer&gt; not the method remove(ob) in Class MapBag&lt;E&gt; so there shouldn't be any recursion.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

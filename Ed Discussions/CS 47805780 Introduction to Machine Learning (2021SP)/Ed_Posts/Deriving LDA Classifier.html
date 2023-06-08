@@ -1,0 +1,51 @@
+<h1>
+ Title: Deriving LDA Classifier
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-14T12:16:28.668998+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What algebra exactly did we do to get this linear classifier? I understand the ln(P(Y=1)/P(Y=-1)) part, but I don't understand how we got the rest of b or all of w.
+ </paragraph>
+ <figure>
+  <image height="154.55769230769232" src="https://static.us.edusercontent.com/files/2rxae8F0zwNMS63VbV9gCX1w" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Jane Du (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sorry about the general messiness. The gist of it is that you already know that it's a linear classifier. So, you can expect the line 0 = wx+b to represent the boundary where Y = -1 and Y = +1 are equally likely. Then substitute y = +1 and y = -1 into the expression with the argmax, and set them equal as below.
+ </paragraph>
+ <paragraph>
+  You can double-check yourself that if you select x such that wx+b &gt;= 1, that it would also correspond to the argmax classifier to pick Y = +1, and vice versa.
+ </paragraph>
+ <paragraph>
+  And I didn't expand the last differences between squares thing, oops! Just finish it off with a^2 - b^2 = (a+b)(a-b)
+ </paragraph>
+ <figure>
+  <image height="661.6029277218664" src="https://static.us.edusercontent.com/files/akvii1N6xtzsoxDHFJOkzpqO" width="758"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>

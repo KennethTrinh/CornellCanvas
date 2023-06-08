@@ -1,0 +1,99 @@
+<h1>
+ Title: Eclipse: Unbound classpath container: 'JRE System Library [JavaSE-11]'
+</h1>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Date: 2021-08-20T20:27:50.448246+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <bold>
+   Errors:
+  </bold>
+ </paragraph>
+ <paragraph>
+  The project cannot be built until build path errors are resolved
+ </paragraph>
+ <paragraph>
+  Unbound classpath container: 'JRE System Library [JavaSE-11]'
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  <bold>
+   Problem:
+  </bold>
+  <break>
+  </break>
+  Eclipse is not using the most up to date JRE.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  <bold>
+   Solution 1:
+  </bold>
+  <break>
+  </break>
+  From Package Explorer, right click any project and choose Build Path &gt; Configure Build Path.
+  <break>
+  </break>
+  Click the Modulepath heading and choose "Add Library"
+  <break>
+  </break>
+  Choose "JRE System Library" then click "Next"
+  <break>
+  </break>
+  From the next window, check to make sure that the Workspace default JRE is pointed to jdk 11.
+  <break>
+  </break>
+  <break>
+  </break>
+  If this isn't the case, click "Installed JREs" and click "Search"
+  <break>
+  </break>
+  Then navigate to the newly installed JRE in your file explorer and click "Select Folder"
+  <break>
+  </break>
+  Click "Apply and Close"
+ </paragraph>
+ <figure>
+  <image height="263" src="https://static.us.edusercontent.com/files/7sRXmOdvC54eUsrBGC4x4wuZ" width="343"/>
+ </figure>
+ <paragraph>
+  At this point, the 2 errors should disappear from all previous projects.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  <bold>
+   Solution 2:
+  </bold>
+ </paragraph>
+ <paragraph>
+  You can also change the default JRE Eclipse uses when creating a project:
+ </paragraph>
+ <paragraph>
+  Go to Preferences &gt; Java &gt; Installed JREs
+ </paragraph>
+ <figure>
+  <image height="319" src="https://static.us.edusercontent.com/files/gHIkPDdQR2MhW9s8Itgdw4Y7" width="453"/>
+ </figure>
+ <paragraph>
+  and then make sure Java SE 11 is checked.
+ </paragraph>
+ <paragraph>
+  Hit 'Apply and Close' and that should do it!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

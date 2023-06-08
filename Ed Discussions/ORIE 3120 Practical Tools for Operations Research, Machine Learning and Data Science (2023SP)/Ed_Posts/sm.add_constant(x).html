@@ -1,0 +1,70 @@
+<h1>
+ Title: sm.add_constant(x)
+</h1>
+<h3>
+ Author: Ivan Xie (student)
+</h3>
+<h3>
+ Date: 2023-03-30T12:57:55.696566+11:00
+</h3>
+<h3>
+ Category: Lecture
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi,
+ </paragraph>
+ <paragraph>
+  I am having trouble understanding the theoretical reason as to why we need to alter our features by doing sm.add_constant(x) when we fit the model through linear regression in sm.OLS. I see that we want our y_hat to be in the form
+  <bold>
+   Y = beta[0]*X['const'] + beta[1]*X['temperature'] + noise
+  </bold>
+  but if we are predicting beta[0] directly I thought that it would be redundant to multiply it by a constant of 1 in the equation. Is it something to do with the need for converting
+  <bold>
+   beta[0]*X['const']
+  </bold>
+  to a float, or making sure our dimensions for X and Y are valid?
+ </paragraph>
+ <paragraph>
+  Thanks for the help.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Varun Gande (staff)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  beta0 is being predicted as is beta1, beta2, etc. The only key difference is that beta0 is not the coefficient of one of the features of X since it's an intercept: which we simulate by making it the coefficient of a variable that is always 1.
+ </paragraph>
+ <paragraph>
+  If you didn't do sm.add_constant(X), your model would just be of the form Y = beta[1]*X['temperature'], and it would force the intercept to be 0.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Ivan Xie (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I see, this makes sense. Thanks!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

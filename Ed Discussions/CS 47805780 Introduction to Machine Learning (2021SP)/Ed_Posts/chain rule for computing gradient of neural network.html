@@ -1,0 +1,56 @@
+<h1>
+ Title: chain rule for computing gradient of neural network
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-12T23:47:21.267691+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="491.49878345498786" src="https://static.us.edusercontent.com/files/YFvqeQ6Zq3QsA3MlpgVuCS2H" width="658"/>
+ </figure>
+ <paragraph>
+  I don't quite understand how we got that the jacobian of s_{d,1} wrt w_{d-1,1} is the transpose of v_{d-1}.
+ </paragraph>
+ <paragraph>
+  In the expression for s_{d,1}, we have
+  <italic>
+   the transpose of
+  </italic>
+  w_{d-1,1}; how do we compute the gradient of s_{d,1} wrt w_{d-1,1} (which is NOT the transpose of w_{d-1,1}) ?
+ </paragraph>
+ <paragraph>
+  And how do we know its gradient is
+  <italic>
+   the transpose of
+  </italic>
+  v_{d-1}, and not just v_{d-1} ?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Here, s_d,1 is a single value, so you can transpose it and it's the same–i.e. s_d,1=w_d-1,1^T*v_d-1=v_d-1^Tw_d-1,1, and we can just use whichever works better for our use case. The jacobian is equal to v_d-1^T rather than v_d-1 by definition of Jacobian, since the ith row of the jacobian corresponds to the ith entry in the function, and the jth column corresponds to the jth entry in the input.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

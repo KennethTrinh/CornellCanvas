@@ -1,0 +1,128 @@
+<h1>
+ Title: Complexities
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-10T12:01:41.47756+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  How should one come up with the run times for all the sorting algorithms rather than memorizing the table? Is there some sort of intuition for this?
+ </paragraph>
+ <paragraph>
+  Also in general, I noticed on the prelims we have to determine the worst time scenarios, is there some sort of intuition to this too?
+ </paragraph>
+ <figure>
+  <image height="352.58947368421053" src="https://static.us.edusercontent.com/files/c1UDEGBC2iSHpIldpkdcMbnv" width="632"/>
+ </figure>
+ <figure>
+  <image height="302.80564603691636" src="https://static.us.edusercontent.com/files/526ZE6Ljhc89GxBLhGNYe5f9" width="617"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  Understanding the various sorting algorithms can help you memorize the time complexities.
+ </paragraph>
+ <paragraph>
+  Let's look at merge-sort. for example:
+ </paragraph>
+ <snippet language="java" line-numbers="true" runnable="false">
+  <snippet-file id="code">
+   public static void mergeSort(int[] b, int h, int k) { 
+    if (h &gt;= k)  return;  // if b[h..k] has size 0 or 1 
+    int e= (h + k) / 2; 
+    mergeSort(b, h, e);      // Sort b[h..e] 
+    mergeSort(b, e + 1, k);   // Sort b[e+1..k] 
+    merge(b, h, e, k);           // Merge the 2 segments 
+}
+  </snippet-file>
+ </snippet>
+ <paragraph>
+  For example, array B has 8 items in it.  Mergesort will divide array B log(8) times, which is equal to 3.  Draw this out.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Visualization of division of array B of size 8 in merge sort:
+ </paragraph>
+ <paragraph>
+  [1,2,3,4,5,6,7,8] (Before division)
+ </paragraph>
+ <paragraph>
+  [1,2,3,4]   [5,6,7,8]  -  (level 1)
+ </paragraph>
+ <paragraph>
+  [1,2]   [3,4]   [5,6]   [7,8]  -  (level 2)
+ </paragraph>
+ <paragraph>
+  [1]   [2]   [3]   [4]   [5]   [6]   [7]   [8]  -  (level 3)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  As you can see, merge-sort splits array B of length 8, three times.  log(8) = 3.
+ </paragraph>
+ <paragraph>
+  At each level, the merge method (which you can find on javahypertext) will take o(n) time.
+ </paragraph>
+ <paragraph>
+  This would result in the time complexity of mergesort being n*log(n).
+ </paragraph>
+ <paragraph>
+  Merge-sort's best and worst time complexity are both n*log(n), but this may be different for other algorithms.
+ </paragraph>
+ <paragraph>
+  Also for the purpose of this explanation, array B is already sorted so that I am able to answer your question in an efficient amount of time.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Note: log has base of 2.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes! Don't memorize time complexities.
+ </paragraph>
+ <paragraph>
+  Know the algorithms and you can figure them out.
+ </paragraph>
+ <paragraph>
+  You should be able to develop those algorithms from specifications. Practice doing that. Once you can write the algorithm down, you can figure out the time/space complexity.
+ </paragraph>
+ <paragraph>
+  Practice figuring them out, because you gain skill doing that practice.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

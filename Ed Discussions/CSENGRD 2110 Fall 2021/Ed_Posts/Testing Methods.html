@@ -1,0 +1,81 @@
+<h1>
+ Title: Testing Methods
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-03T12:17:12.621044+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  After completing the problem set for Recitation 1, i'd like to test my code, however I am unsure of how to do so. Obviously Eclipse does not have a command window like Matlab, and I don't know how to access or properly use Jshell, as has been done in lecture. Any ideas?
+ </paragraph>
+ <paragraph>
+  Also, when trying to print the date, as per part 4, my "month" variable (possessing the string of the month name) seems to be unassigned in the final line of the code below, despite the lines above seeming to declare it and give it an assignment. Thanks for any help!
+ </paragraph>
+ <figure>
+  <image height="339.11111111111114" src="https://static.us.edusercontent.com/files/vuf7h6Ih9njyrriL1gFac1iN" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Varun Gande (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Your current if...else...if chain doesn't have it's own separate "else" clause, which you need in order for the String month to be declared and assigned. For example: what happens if you input m as 13? Would the String month get declared and/or assigned?
+ </paragraph>
+ <paragraph>
+  As for testing it in Eclipse, you can implement this in the main method and run the main method.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  1. Method main looks like this:
+ </paragraph>
+ <paragraph>
+  public static void main(String[] pars) {...}
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Brian Jeong (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  For your code, it looks like you didn't declare your month variable first. If you declare and assign it within an if statement, then it can only be accessed locally within that if statement; this means that once the code reaches the print line, month is not accessible.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,71 @@
+<h1>
+ Title: Downcast and Class cast exception
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-05T08:59:25.575525+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am a bit confused about when a downcast will be caught at runtime versus at compile-time. Can you let me know if this is correct? Thank you.
+ </paragraph>
+ <paragraph>
+  If we have:
+ </paragraph>
+ <paragraph>
+  class A
+ </paragraph>
+ <paragraph>
+  class B extends A
+ </paragraph>
+ <paragraph>
+  class C extends B
+ </paragraph>
+ <paragraph>
+  Then this is something that would be caught at runtime and throw a class cast exception? Is this not caught at compile time because Object a
+  <italic>
+   could
+  </italic>
+  be a B but the Java doesn't know if it is until runtime?:
+ </paragraph>
+ <paragraph>
+  Object a = new A();
+ </paragraph>
+ <paragraph>
+  B b = (B) a;
+ </paragraph>
+ <paragraph>
+  And this would be caught at compile time since there is no way that something of static type int could be a C?:
+ </paragraph>
+ <paragraph>
+  int i = 0;
+ </paragraph>
+ <paragraph>
+  C c = (C) i;
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Class Cast Exceptions are run-time errors.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

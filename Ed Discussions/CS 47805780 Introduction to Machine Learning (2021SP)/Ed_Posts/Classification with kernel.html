@@ -1,0 +1,88 @@
+<h1>
+ Title: Classification with kernel
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-02T16:16:45.193201+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I have been having a lot of difficulty in using the kernel with
+  <code>
+   dualSVM
+  </code>
+  and producing a classification with it. More specifically, I am unsure of how to compute the K[xi, x] component, shown below circled in red. I understand I likely have to use computeK to produce another kernel with the test data x. But, I don't see how this is possible within the lambda function. More specifically, I am  unsure about which parameters to use for computeK. I  initially thought I should use the input x with itself,  but that produced a memory error due to such a large matrix. Any tips would be appreciated.
+ </paragraph>
+ <figure>
+  <image height="161.3623978201635" src="https://static.us.edusercontent.com/files/mbhw4LF6EgYbuWWSz1wQdgdp" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Nina Tang (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In the formula above, x represents the new instance that you want to classify, like you said. The x_i's are instances from the training set (that you used to compute the alphas). We use the training set instances x_i and their alphas to classify new instances x.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Fynn Datoo (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  But isn't the kernel only defined for operations between the matrices it was computed for? If the new instance
+  <bold>
+   x
+  </bold>
+  is not part of the training data (which the kernel was computed from), then do we have to recompute the kernel for each new instance
+  <bold>
+   x
+  </bold>
+  ?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Nina Tang (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, sort of. The kernel is a function, so you can apply it to any two vectors.
+ </paragraph>
+ <paragraph>
+  In your first call to computeK, you apply the kernel function on the training data with itself (calling computeK(xTr,xTr)). From here, you derive the alphas.
+ </paragraph>
+ <paragraph>
+  Then to classify new points x, you must reapply the kernel function to the training data and x (ie calling computeK(xTr, x)). To classify x, you use computeK(xTr,x) as well as the alphas derived from calling computeK(xTr,xTr).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

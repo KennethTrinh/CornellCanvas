@@ -1,0 +1,62 @@
+<h1>
+ Title: can more than one timer cause interrupts?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-20T07:23:04.849083+10:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  If so, how can we distinguish where an interrupt came from? Is it that we have two interrupt handlers?
+ </paragraph>
+</document>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  as a follow up, is the lab handout suggesting that we modify the code for
+  <code>
+   PIT_IRQHandler()
+  </code>
+  that's found in
+  <code>
+   3140.s
+  </code>
+  ?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Yes, multiple timers can cause interrupts. Please read through 3140.s to see how the IRW handler to see how the interrupt sources are distinguished.
+ </paragraph>
+ <paragraph>
+  You will not need to modify the provided assembly files, but you will need to implement a new C function. See #615
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,93 @@
+<h1>
+ Title: displaying tags for thumbnail
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-04-29T17:58:04.515604+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  is it algorithmically implementing queries if i have a for loop that checks if the tag is a part of the entry? i have nested for loops basically.
+ </paragraph>
+ <paragraph>
+  i think i'm just confused as to what algorithmically implementing queries is and i'm afraid that i might be doing that to display the tags for each thumbnail.
+ </paragraph>
+ <paragraph>
+  i saw that you should have another query for each thumbnail if you want to add the tags to the thumbnails from another ed post (#313), but isn't it better to have one general query and check if the tags exist for that entry rather than create a new query for each entry since it cuts down on the amount of queries that are made? or is it better to make multiple shorter queries versus one large query whose database you must loop through multiple times? i hope this question made sense and sorry if it doesn't
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  An algorithmically implemented query is when you query all records and then use conditional statements inside the foreach loop to either display or not display a record. It's really inefficient.
+ </paragraph>
+ <paragraph>
+  If you want each entry to have its tags visible on the view all page, you will need to have another foreach loop nested and query the database again. This is how modern web frameworks handle it. This is because many websites may have millions of tags. But each entry only has a few tags. If you query the entire list of tags and then try and store them whether than querying again, it would consume a lot of memory. You probably would have been better off making the tags query... like you're doing.
+ </paragraph>
+ <paragraph>
+  Does this make sense? Did I answer your questions? :)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Danvass Gekonge (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I have an HTML form that allows users to select
+  <italic>
+   n
+  </italic>
+  tags. I'd like newly created entries to be related to the tags that were selected in the form. Since I'm not sure how many (or which) tags the user selected, I want to use a for loop.
+  <break>
+  </break>
+  <break>
+  </break>
+  Would the following structure result in a deduction regarding algorithmically implemented queries? What should I do instead if this is a problem?:
+ </paragraph>
+ <pre>for each tag in user selected tags:
+    execute SQL query that relates tag to entry (storing relationship in entry_tag table)
+    
+    
+</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  No, this is the correct way to do this. I know of no other way to implement this. This is a good solution. It is not an algorithmic query.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

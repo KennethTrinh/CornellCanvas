@@ -1,0 +1,119 @@
+<h1>
+ Title: H1N1RouteTo() direction of recursion
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-18T04:58:03.924078+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  since we can't use getParent, should we be working from the root of "this" H1N1Tree down to Person c rather than starting at person c and working back up? i remember an example we did at one point where it was easier to work backwards, is that not the case here?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Use recursion.
+ </paragraph>
+ <paragraph>
+  In the recursive case, call the method recursively on the children of the root node.
+ </paragraph>
+ <paragraph>
+  The difficult thing for people is wondering how the list of Person's gets constructed. Don't think about this. Think only about What the recursive guarantees to return --its given in the specification.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  i guess i don't really understand what else to think about than how the result is constructed.
+ </paragraph>
+ <paragraph>
+  my thinking is the recursive call looks something like this--
+ </paragraph>
+ <paragraph>
+  path to ch (from root) + path from ch to c
+ </paragraph>
+ <paragraph>
+  -- but it is either incompatible with my base case, or i just don't know how to implement it correctly
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Well, you are not using the specification of the method to help you.
+ </paragraph>
+ <paragraph>
+  Suppose the Tree is as shown below. Suppose the initial call is  A.H1N1RouteTo(F).
+ </paragraph>
+ <paragraph>
+  B is a child of A. What does the recursive call  BH1N1RouteTo(F)  return? Give the
+ </paragraph>
+ <paragraph>
+  answer exactly, according to the method specification. And what do you have to do
+ </paragraph>
+ <paragraph>
+  to that returned value to get the answer for the initial call?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <pre>            A
+          /   \
+         B       C 
+       /  \      \  
+      D    E      G
+           |
+           F
+
+
+
+</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  thank you so much-- i figured it out!!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

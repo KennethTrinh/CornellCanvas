@@ -1,0 +1,82 @@
+<h1>
+ Title: How to change dot color to red
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-28T14:13:17.216358+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I got up to TODO 8 where I could successfully check if the dot was clicked and set isHit to true, but then in my paintDot method, I have an if statement to check isHit which would set the color to red but it does not change color. Is this the correct way to do this and is paintDot the correct place to set the color to red once hit?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kenisha Stills-Ogburn (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I just found this doing google searches, but apparently it works if you write a line to set the color and then write a line to fill the oval, in that order
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <break>
+  </break>
+  David Gries
+ </paragraph>
+ <paragraph>
+  STAFF
+ </paragraph>
+ <paragraph>
+  Yes, that is correct. As Prof Muhlberger explains, think of having cans of paint and determining which one to use BEFORE painting. Changing the color is not going to affect things already painted.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Your logic sounds reasonable here.  One way to debug would be to add a
+  <code>
+   println()
+  </code>
+  statement where you change the color to ensure that the desired branch is actually executing.
+ </paragraph>
+ <paragraph>
+  Another thing to be aware of is that the color will only affect subsequent drawing operations (usually assumed to be in that same method).  If you fill the circle before changing the color, or previously in another method entirely, then the color change will have no effect (think of it as "switching cans of paint" - it doesn't affect anything you've already painted).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

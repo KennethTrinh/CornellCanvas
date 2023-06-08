@@ -1,0 +1,42 @@
+<h1>
+ Title: Lecture 3.1
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-12T06:07:13.261023+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In the small example on page 8, is the only label available is mymath? Why is the global variable myvar not a label?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Nils Napp (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The global variable in global in for all the functions in mylab.c, and certainly in label!
+  <break>
+  </break>
+  <break>
+  </break>
+  What I was trying to get at is that,  if you wanted to use it in a different .c. file, by including mymath.h, the compiler would complain that the variable is not defined during compilation. And myvar would be a label in the .o file but the linker should not use it for linking to other compilation units. If you wanted to make the variable available to other c-files you would need to somehow define it in mymath.h.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

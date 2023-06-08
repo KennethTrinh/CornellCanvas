@@ -1,0 +1,62 @@
+<h1>
+ Title: Hashing Question on Open Addressing
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-18T13:47:05.540279+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="226.1875" src="https://static.us.edusercontent.com/files/sddfzWTVc570ry9xTamk5WUn" width="658"/>
+ </figure>
+ <paragraph>
+  I'm very confused about the order of insertion for this problem. Why does the solution for start with 9 instead of 1?  Isn't the first element being computed 1?
+ </paragraph>
+ <figure>
+  <image/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Jack Kalinski (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  So for 1, it's inserted into the third slot, or h[2] since 2*1 = 2. At the same time, 9*2=18, which is modded by 6 so 18 % 6 = 0, therefore 9 is placed at h[0]. While 1 is the first element processed, 9 ends up being the first element in the hashed array.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

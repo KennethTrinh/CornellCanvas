@@ -1,0 +1,114 @@
+<h1>
+ Title: Do ALL values have to be sticky (referring to
+ <input type="number"/>
+ )
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-03-20T10:08:35.481073+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The
+  <code>
+   &lt;input type="number"&gt;
+  </code>
+  input tag only allows for integer values to be sticky. For example, if u write "apple" into this input, it will not allow it to carry a non-numerical sticky value.
+ </paragraph>
+ <paragraph>
+  As such, if the user types in "apple" into a number input which is clearly a number input, do we have to return that value?
+ </paragraph>
+ <paragraph>
+  if we must return that value, then should all
+  <code>
+   &lt;input type="number"&gt;
+  </code>
+  simply be
+  <code>
+   &lt;input type="text"&gt;
+  </code>
+  and just convert it to an integer on the server side. Will we lose points in this case cus we aren't technically using the proper input type to display this?
+ </paragraph>
+ <paragraph>
+  I feel very stuck in this situation
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  this thread shows why it can't be sticky for a non-numerical input:  https://html.spec.whatwg.org/multipage/input.html#number-state-(type%3Dnumber)
+ </paragraph>
+ <paragraph>
+  <italic>
+   "The
+   <code>
+    value
+   </code>
+   attribute, if specified and not empty, must have a value that is a valid floating-point number."
+  </italic>
+ </paragraph>
+ <paragraph>
+  <bold>
+   <italic>
+    "The value sanitization algorithm is as follows
+   </italic>
+  </bold>
+  <italic>
+   : If the value of the element is not a valid floating-point number, then set it to the empty string instead."
+  </italic>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  All inputs should be sticky. You should make them all stick. However, if the input is invalid (as in your example), it's perfectly reasonable that the browser won't place "apple" in a number input. As long as the sticky value has been echo'd in the HTML, you've met the project requirement. It doesn't matter if the browser won't show it because it's invalid. Does that make sense?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  so to clarify, we will not lose points if for a specific input such as &lt;input text=number&gt; doesn’t make alphabetical values stick  but it does stick for numerical values ?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If the sticky value is correctly inserted to be sticky in the HTML, then you will receive full credit. Please note that your code is invalid HTML. It must be valid HTML:
+ </paragraph>
+ <pre>&lt;input value="number" ...&gt;
+</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>

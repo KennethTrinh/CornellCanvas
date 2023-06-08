@@ -1,0 +1,94 @@
+<h1>
+ Title: can someone explain how the awk command works and what we need to know for the prelim?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-03-09T03:35:07.498618+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  title
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kurt Lehmkuhl (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  Here in the first photo. awk goes through each line of marks.txt and looks for what is in between the first pair of /. Which is Ron in this case, then once it finds a match (which would be the word Ron in line 1) it executes the statement after the second / which is print $4 which prints the 4th column/field in the line, in this case that would be 90. THE BOLDED LINE IS WHAT WE WERE TOLD TO KNOW FOR THE PRELIM
+ </paragraph>
+ <paragraph>
+  The second photo has some more explanations.
+ </paragraph>
+ <figure>
+  <image height="2048" src="https://static.us.edusercontent.com/files/scDmTUc5y3LYY9YZ9a6NXjGh" width="2732"/>
+ </figure>
+ <figure>
+  <image height="2048" src="https://static.us.edusercontent.com/files/VKQNewyPsi5jb1Ml7HK7NFln" width="2732"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  But this doesn't work for me on unix! I keep getting this when i print the command
+ </paragraph>
+ <paragraph>
+  awk "/Xander/{print $3}" marks.txt
+ </paragraph>
+ <figure>
+  <image height="26.28246013667426" src="https://static.us.edusercontent.com/files/LjcYq8Jf48eGkghnojpokUfR" width="641"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jason Wilson (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Try using single quotes instead of double quotes.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  oh wow thanks!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

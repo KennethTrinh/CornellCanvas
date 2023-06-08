@@ -1,0 +1,77 @@
+<h1>
+ Title: Time Complexity for adding an element into a hash table
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-30T00:49:05.247779+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When we are using a hash table for a set of objects, I do not understand how adding and removing an element to the hash table has expected time O(1).
+ </paragraph>
+ <paragraph>
+  For adding, you would first have to search through the linked list in the bucket to determine whether the element is in there, which is O(n), and then add the element if it is not there.
+ </paragraph>
+ <paragraph>
+  For removing, you would also have to search through the linked list in the bucket again, and then remove the element if it is there.
+ </paragraph>
+ <paragraph>
+  I understand that it would be O(1) if there were no collisions, but then why would we be creating a linked list to hold elements if there were no collisions?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  A
+  <italic>
+   probe
+  </italic>
+  is either a test of some b[i] to see whether it is null or a comparison of a linked-list element with some value.
+ </paragraph>
+ <paragraph>
+  Consider the hash table shown below. Suppose we ask whether value e is in the list.
+ </paragraph>
+ <paragraph>
+  In the one case that e hashes to 6, we might say that it takes 7 probes to say it is not in the list.
+  <break>
+  </break>
+  In the other 8 cases, where e hashes to 0, 1, 2, 3, 4, 5, 6, or 8, it takes 1 probe.
+ </paragraph>
+ <paragraph>
+  What's the average number of probes? (1*7 + 8) / 9 = 15/9  —less than 2 probes on average.
+ </paragraph>
+ <paragraph>
+  This is one example. You can look at other ways the 6 values are distributed among the 9 linked lists; you'll come up with the same answer.
+ </paragraph>
+ <paragraph>
+  This is ONE example. Someone has proved that if the load factor is 1/2, at most two probes are necessary on the average.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="548" src="https://static.us.edusercontent.com/files/mdfK0BeRtEHJMELG6I2gGxy9" width="324"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

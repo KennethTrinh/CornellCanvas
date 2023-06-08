@@ -1,0 +1,43 @@
+<h1>
+ Title: 8iv FA20
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-18T14:58:29.013156+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The way I understand iv is take an admissible signal $x=e^{j\Omega _0 t}$, find its bandlimited Fourier transform $\hat{X}$, find $\hat{S} = \hat{H} \hat{X}$, and now $\hat{S}$ has finite duration in $\Omega$-space because $\hat{X}$ is bandlimited. This implies that $S(x)$ is bandlimited.
+ </paragraph>
+ <paragraph>
+  Is this the right way to think about it? By thinking about it like this I think I'm conflating the two signal-into-system diagrams. Is there a more efficient way to arrive to this conclusion?
+ </paragraph>
+ <figure>
+  <image height="223.039070749736" src="https://static.us.edusercontent.com/files/s7hP0hLoQu4f55HgPd31O9ag" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  $x$ could also be a bandlimited signal with a "nice" Fourier transform, and your argument for the Fourier transform of $S ( x )$ being zero outside of a bounded $\Omega$-interval still holds.  That's what I actually had in mind when I wrote the problem.  If you want to use finitely summed pure sinusoidal $x$'s, it's probably better to process them one by one using what I call the "first picture" and then you'll see that the output is still a sum of pure sinusoids and is bandlimited.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

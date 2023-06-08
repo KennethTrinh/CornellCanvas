@@ -1,0 +1,71 @@
+<h1>
+ Title: hw1 - 1-b
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-02-21T11:00:11.932803+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When it says a function F X E X A does it mean a function on x of all instance space -&gt; {yes, no} or does it mean that the function can only be expressed as "AND" of features. For eg, is a function with 'AND' and 'OR' togerther like (((flies = yes)&amp;(eggs =no)&amp;(aquatic = no)) OR ((flies = yes)&amp;(eggs = no)&amp;(aquatic = no))) a valid function?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Artem Streltsov (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think the question is asking about all possible functions mapping the instance into the binary space, so no prior is imposed (like only 'and' or 'or' type operations).
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Yana Sang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Does it impose restrictions on whether all the features must be used in the hypothesis, or if a feature can be used more than once?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Artem Streltsov (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is a discrete feature space and we assume we know all possible values each feature can take. In such a setting the instance space is simply generated via a cartesian product of all unique attributes. The hypothesis space is then the set of all possible maps from this instance space that contains all combinations of attributes to {yes,no}. All features are used, but the instance space already has subsets that a hypothesis can map to the same constant as if a particular feature does not matter.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

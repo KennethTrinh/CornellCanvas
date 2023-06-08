@@ -1,0 +1,60 @@
+<h1>
+ Title: Question about method in demo code from lecture 18
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-17T04:30:53.556301+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In the demo for lecture 18 in the class AdjListGraph, the method, hasVertex(), which I have pasted below, uses a foreach loop, but the class that it is in, AdjListGraph, does not implement the interface Iterable. I thought foreach loops can only be used if Iterable is implemented. How does this method in the lecture demo work then?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  public boolean hasVertex(VL v) {
+ </paragraph>
+ <paragraph>
+  for (Vertex u : vertices) {
+ </paragraph>
+ <paragraph>
+  if (u.label.equals(v)) return true;
+ </paragraph>
+ <paragraph>
+  }
+ </paragraph>
+ <paragraph>
+  return false;
+ </paragraph>
+ <paragraph>
+  }
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Richard Gu (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  Adjacency Lists are represented by the List interface, which are implemented by ArrayLists or LinkedLists, as seen in lecture. I believe these classes are automatically Iterable, so you don't need to manually implement Iterable/Iterator every time you want to use a for-each loop. You only need to do it yourself when it's not one of the classes imported from Java that do this already.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

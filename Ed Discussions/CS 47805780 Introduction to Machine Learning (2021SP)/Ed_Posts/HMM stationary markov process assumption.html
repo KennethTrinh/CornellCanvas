@@ -1,0 +1,61 @@
+<h1>
+ Title: HMM stationary markov process assumption
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-17T02:04:14.225019+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="450.2105263157895" src="https://static.us.edusercontent.com/files/UhsgmyQ0hVHJfDbs8OpcZ2QR" width="658"/>
+ </figure>
+ <paragraph>
+  What does the "stationary" Markov process assumption mean? Is it saying that, regardless of where in the sequence we are transitioning from a particular state (let's call it state A) to another particular state (let's call it state B), the transition probability from state A to state B will always be the same?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Scott Bass (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Exactly. In a non-stationary problem, the transition probabilities could change over time such that $$P(S_{i} = s | S_{i-1} = s') \neq P(S_{j} = s | S_{j-1} = s')$$ for some $i \neq j$.
+ </paragraph>
+ <paragraph>
+  For POS tagging, this could mean for example that the probability of
+  <italic>
+   ART
+  </italic>
+  following
+  <italic>
+   V
+  </italic>
+  early on in the word sequence is not equal to the probability that
+  <italic>
+   ART
+  </italic>
+  follows
+  <italic>
+   V
+  </italic>
+  later on in the sequence which would change how you calculate the predictions in Viterbi's Algorithm.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

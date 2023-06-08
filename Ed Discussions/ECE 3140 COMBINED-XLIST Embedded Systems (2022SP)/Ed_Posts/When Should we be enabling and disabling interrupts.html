@@ -1,0 +1,45 @@
+<h1>
+ Title: When Should we be enabling and disabling interrupts?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-23T03:32:29.262075+10:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am confused about which sections interrupts need to be disabled for? Any advice?
+ </paragraph>
+</document>
+<h3>
+ Author: Trenton Lyke (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  They already disable interrupts when they call your
+  <code>
+   process_select
+  </code>
+  and
+  <code>
+   PIT1_Service
+  </code>
+  functions in assembly (and re-enable them afterwards). So you don't really need to there. I don't really think you have to do it anywhere yourself for this assignment.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

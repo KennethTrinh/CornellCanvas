@@ -1,0 +1,159 @@
+<h1>
+ Title: HW7 4
+</h1>
+<h3>
+ Author: Elana Pocress (student)
+</h3>
+<h3>
+ Date: 2023-03-26T06:41:52.806557+11:00
+</h3>
+<h3>
+ Category: Homework
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Problem # 4
+ </paragraph>
+ <paragraph>
+  HW #7
+ </paragraph>
+ <paragraph>
+  How can we tell if errors are independent of each other, or if errors are normally distributed if we do not make the autocorrelation or QQ plots? Lecture 15 only discussed how to address these assumptions using these plots and not really any other way.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="133" src="https://static.us.edusercontent.com/files/H6RZYmWJdMwz7mjDWYptnhzO" width="543"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Qian Xie (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Think about how the code generates the data.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Daniel Tuan (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Bumping this question as well (in response to Jonathan)! I managed to make the QQ plots and autocorrelation plots but would like to understand on a more basic level how we can interpret the code as well to better understand why these assumptions are met. In essence, how do we analyze the code to understand that the assumptions of independence and normal are met? Would analyzing the graphs be sufficient explanation as well?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Hugo Mainguy (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  To respond to this question - for the purposes of this homework, analyzing the graphs is sufficient, and even in real life, when you don't have nice formulas for explaining how the data is generated, it usually is too.
+  <break>
+  </break>
+  For the code interpretation, think about what each transformation does to the data, what its distribution is, does that depend on the position of the value, its neighbors, etc...
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Elana Pocress (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I see that we use np.random.randn to generate the errors, is this sufficient to tell that the errors are normally distributed?
+ </paragraph>
+ <paragraph>
+  And to tell if the errors are independent of each other from the code, do we check if the errors are correlated with the predictors?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Hugo Mainguy (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  That would not be sufficient - I'd look at Qian's advice again, and see whether all the required conditions are met for each example (e.g. normally distributed errors, independence, etc). For example, imagine taking the square of each np.random.randn - would the errors be normally distributed then?
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+  To see if the errors are independent, check how each value is generated. Is it completely independent of the values around it?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jonathan Gotian (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi,
+ </paragraph>
+ <paragraph>
+  Going off this question, I generated the Autocorrelation plot using the code from lecture 15. If this is the output generated for one of the examples, would that mean there is no autocorrelation/it is independent? Vs. if there were two long lines next to each other, would that indicate that they are not independent?
+  <break>
+  </break>
+  <break>
+  </break>
+  I am confused by what "think about how the code generates the data" can lead us to an answer so is interpreting a plot sufficient?
+ </paragraph>
+ <figure>
+  <image height="176" src="https://static.us.edusercontent.com/files/OV3OKIutyxU0sNbAcUFx2jzG" width="253"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Hugo Mainguy (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In this case, the way you should read this is "the correlation between an element and the one k elements further is the y value". It makes sense that the value is 1 at 0, since an element and the one 0 elements after it (aka itself) will always be the same, and the correlation will be 1. If you have a significant correlation elsewhere (generally, anything going far beyond the shaded area), then there is likely correlation between those elements (e.g. some element and the one 10 elements after it, if you have a spike in either direction at 10).
+  <break>
+  </break>
+  <break>
+  </break>
+  What Qian and I meant with that line is to think about "how is each value generated? What are you using, is there pairwise independence, are residuals independent of the position on the line, etc". Hope this makes sense!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

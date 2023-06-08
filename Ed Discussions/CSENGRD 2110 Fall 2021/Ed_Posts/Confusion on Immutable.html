@@ -1,0 +1,175 @@
+<h1>
+ Title: Confusion on Immutable
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-20T02:41:04.134504+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The definition of immutable says they are unchanging but that confuses me. Don't we reassign value to variables all the time? because we could do:
+ </paragraph>
+ <paragraph>
+  <bold>
+   String it = "hey"
+  </bold>
+ </paragraph>
+ <paragraph>
+  and then say
+ </paragraph>
+ <paragraph>
+  <bold>
+   it = "no"
+  </bold>
+ </paragraph>
+ <paragraph>
+  What is the definition of unchanging here.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The distinction is between a
+  <italic>
+   variable
+  </italic>
+  and an
+  <italic>
+   Object
+  </italic>
+  .  It is true that all non-
+  <code>
+   final
+  </code>
+  variables in Java are "mutable", in that they can be reassigned.  And for primitive types, this is the only kind of mutability you need to worry about.
+ </paragraph>
+ <paragraph>
+  But objects contain state in their fields and may be referenced by multiple variables.  If those fields are non-
+  <code>
+   final
+  </code>
+  variables that can be reassigned (either because they are public, or as the result of invoking a public method), then the object itself is logically mutable.  Additionally, even final fields may reference other objects that are themselves mutable, which potentially makes the object referencing them mutable as well.  (This is one way in which the
+  <code>
+   final
+  </code>
+  keyword in Java is different from the
+  <code>
+   const
+  </code>
+  keyword in C++.)
+ </paragraph>
+ <paragraph>
+  A good example to illustrate with is
+  <code>
+   String
+  </code>
+  .  In Java, strings are immutable.  To extend your example,
+ </paragraph>
+ <pre>String it= "hey";
+String alias= it;
+it= "no";</pre>
+ <paragraph>
+  After this code runs,
+  <code>
+   alias
+  </code>
+  still points to an object representing "hey" - reassigning the
+  <italic>
+   variable
+  </italic>
+  <code>
+   it
+  </code>
+  had no effect on the
+  <italic>
+   Object
+  </italic>
+  it previously referenced.  And
+  <code>
+   String
+  </code>
+  has no method for changing one of its letters; they best you can do is create a new string that reflects the change.
+ </paragraph>
+ <paragraph>
+  In contrast,
+  <code>
+   StringBuilder
+  </code>
+  is a mutable class - you can append to a
+  <code>
+   StringBuilder
+  </code>
+  via public, mutating methods, which does not involve reassigning the variable referencing the builder.  If you have two variables pointing to the same builder, appending to it via one of the variables will affect what can be seen via the other variable (since there's only one object they are both referencing, and the object's fields are what changed).
+ </paragraph>
+ <paragraph>
+  An immutable
+  <code>
+   String
+  </code>
+  , or
+  <code>
+   Integer
+  </code>
+  , or
+  <code>
+   Double
+  </code>
+  , etc. is what we call a "value class" - they mimic primitive types in that they contain no mutable state, so any "changes" are accomplished by the user reassigning variables.  Value classes are excellent candidates for overriding
+  <code>
+   equals()
+  </code>
+  and
+  <code>
+   hashCode()
+  </code>
+  and for using as keys in a
+  <code>
+   Map
+  </code>
+  or putting in a
+  <code>
+   Set
+  </code>
+  .  In CS 3110, pretty much all types are immutable like this.
+ </paragraph>
+ <paragraph>
+  In contrast, mutable classes like
+  <code>
+   StringBuilder
+  </code>
+  are very convenient "utility classes" and can often perform their task more efficiently than a sequence of immutable transformations.  However, "shared mutable state" is the cause of many bugs in software, so mutable classes are best used locally, not shared.  You'll notice that
+  <code>
+   StringBuilder
+  </code>
+  does
+  <italic>
+   not
+  </italic>
+  override
+  <code>
+   equals()
+  </code>
+  , and that was a good choice on the part of its implementers.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

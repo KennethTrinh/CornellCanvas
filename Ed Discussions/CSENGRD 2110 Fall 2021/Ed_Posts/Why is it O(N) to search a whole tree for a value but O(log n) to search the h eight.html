@@ -1,0 +1,49 @@
+<h1>
+ Title: Why is it O(N) to search a whole tree for a value but O(log n) to search the h eight?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-15T02:00:58.254508+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Confused on this after today's lecture
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Today's lecture dealt dealt with COMPLETE binary trees.
+ </paragraph>
+ <paragraph>
+  That means that the height of the tree of size n is O(log n).
+ </paragraph>
+ <paragraph>
+  Bubble-up starts with a node on the lowest level and proceeds upward. This requires at most log n swaps.
+ </paragraph>
+ <paragraph>
+  Bubble-down start at the root and bubbles downward, at each top through either the left or right child. This requires at most log n swaps.
+ </paragraph>
+ <paragraph>
+  However, to find a value in a heap of size n, you may have to look at every node of the heap for that value, That's O(n) work.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

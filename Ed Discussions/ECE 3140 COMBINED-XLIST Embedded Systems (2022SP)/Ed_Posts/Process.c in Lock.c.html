@@ -1,0 +1,70 @@
+<h1>
+ Title: Process.c in Lock.c
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-31T05:21:50.003977+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can we #include "process.c" in lock.c (I am trying to use process.c's enqueue function)
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You
+  <italic>
+   can
+  </italic>
+  , but a couple things arise:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    At least when I tried it, I got linker errors of multiple definitions (it was defining the enqueue function twice somewhere), even with pre-compiler #ifndef statements (yea, it was weird)
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    You actually want your enqueue functions to be slightly different for the process queue and locks! (Think about what the next_process pointer should point to)
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  Because of this, it's probably easier to just define a new function (enqueue_lock) inside of lock.c, and use that for enqueuing to lists of blocked processes
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kate Meuse (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I added extern declarations in shared_structs.h to use those functions in lock.c.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

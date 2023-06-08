@@ -1,0 +1,112 @@
+<h1>
+ Title: Labeling AssertEquals
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-06T05:35:30.157536+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is it good to label assert equals tests?
+ </paragraph>
+ <paragraph>
+  ex. "test 1" label as shown below
+ </paragraph>
+ <paragraph>
+  assertEquals("test1", &lt;expected&gt;, &lt;actual&gt;);
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I don't think it's necessary to do that. Additionally, assertEquals only takes 2 arguments, so that use of it would not be syntactically correct
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It seems to take 3 arguments. As seen below
+ </paragraph>
+ <heading level="3">
+  assertEquals
+ </heading>
+ <pre>public static void <link href="http://junit.org/junit4/javadoc/latest/src-html/org/junit/Assert.html#line.110"/><bold>assertEquals</bold>(<link href="http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/String.html?is-external=true"/>String message,
+                                <link href="http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true"/>Object expected,
+                                <link href="http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html?is-external=true"/>Object actual)</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  There is no need to use the 3-argument assertEquals. Use the 2-argument assertEquals and keep things simple.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  That doesn't look like the correct assertEquals method. What imports do you have in your test file. assertEquals only takes 2 arguments
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  import static org.junit.Assert.assertEquals;
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Is this the right one? I tried to just click the underlined assertEquals when first implemented.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

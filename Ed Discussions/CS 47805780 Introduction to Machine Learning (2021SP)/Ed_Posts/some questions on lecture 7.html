@@ -1,0 +1,49 @@
+<h1>
+ Title: some questions on lecture 7
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-03T21:11:29.377582+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  1. To prove the theorem of the convergence of perceptron, is w* assumed to be the final consistent linear classifier that can be reached? If so, do we assume that we have different classifiers and thus different margin values?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  2. for the linear program section, I'm having a really hard time understanding what exactly the program is trying to do here? Can someone just explain how this program will give a consistent classifier intuitively? And also, why is the constraint &gt;= 1 for all points in the dataset? I still don't quite get this part.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Linnea May (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  w* is a final consistent linear classifier with norm of 1. We could end up with a different weight vector with a different margin, but we assume that at least w* exists for the sake of analysis.
+ </paragraph>
+ <paragraph>
+  For question 2, we're using linear programming to find a weight vector w that will linearly separate the data. We can make this into an LP problem by creating a constraint for each point in the dataset, which is that yi(wxi+b) &gt;=1
+  <italic>
+   .
+  </italic>
+  That is, every point will be correctly labelled correctly and will be at least distance 1 away from the decision boundary. Normally we'd have the constraint that yi(wxi+b) &gt;0, or that it's just a nonzero distance from the boundary, but linear programming solvers don't like strict inequalities. That's OK, though, because we can just scale the weight vector we found to meet tis original constraint. As for the maximization part, normally we have some objective (aka utility) function that's in terms of the decision variables, which in our case is the weight vector. We don't actually care about finding any sort of optimum, just that we find some weight vector that linearly separates the data (thus meeting the constraints mentioned before), so we can use a "dummy" utility function that will tell the LP solver to ignore it and focus on meeting the constraints.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

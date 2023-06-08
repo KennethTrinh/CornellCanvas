@@ -1,0 +1,746 @@
+<h1>
+ Title: Arduino Compiling Error on Mac
+</h1>
+<h3>
+ Author: Alex Lindsay (staff)
+</h3>
+<h3>
+ Date: 2021-02-16T09:42:05.628879+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi everyone,
+ </paragraph>
+ <paragraph>
+  It seems there is still a compiling error among the Macs where you cannot upload to the board and you get the error:
+  <break>
+  </break>
+ </paragraph>
+ <pre>Arduino: 1.8.13 (Mac OS X), Board: "Adafruit ESP32 Feather, 80MHz, 921600, None, Default"
+
+Traceback (most recent call last): File "/Library/Arduino15/packages/esp32/tools/esptool_py/<link href="http://3.0.0.0/esptool"/>3.0.0/esptool", line 38, in import serial ModuleNotFoundError: No module named 'serial' exit status 1 Error compiling for board Adafruit ESP32 Feather.
+</pre>
+ <paragraph>
+  <break>
+  </break>
+  Follow these steps if you haven't already to possibly fix the issue:
+  <break>
+  </break>
+  1. Check to make sure you have the esp32 library installed on the arduino software.
+ </paragraph>
+ <paragraph>
+  2. Check if you have the URL in the board manager on the arduino software.
+ </paragraph>
+ <paragraph>
+  <link href="https://canvas.cornell.edu/courses/25897/assignments/213562?module_item_id=856554"/>
+  Slides to show these steps^
+ </paragraph>
+ <paragraph>
+  3. Follow the slides attached below to reinstall the CP210x driver.
+ </paragraph>
+ <paragraph>
+  If none of these work to fix your issue please leave a thread and we will help on a case by case basis. Thank you!
+  <break>
+  </break>
+ </paragraph>
+ <file filename="3_FindingPort_Solution.pdf" url="https://static.us.edusercontent.com/files/dw7dXJXLSxqlhCfUXc2MHmNI">
+ </file>
+</document>
+<h3>
+ Author: Ann Gao (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi so I've done all these steps and keep getting the same error message. I've also done pip install and it is installed under anaconda3 packages. Would really appreciate some help
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Did you receive help about your problem? Was it fixed?
+  <break>
+  </break>
+  <break>
+  </break>
+  Francois.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Samantha Weaver (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  After you change the old esptool file to "esptool_old" and download and change the new package to an executable file, uninstall the esp32 library in Arduino and then reinstall it - that's what fixed the python "serial" issue for me.
+ </paragraph>
+ <paragraph>
+  I also tried the pip install and added the package to my python file - it did not work, only un-installing and re-installing the esp32 board.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Could you copy the error message for us to better understand your problem? Thanks.
+ </paragraph>
+ <paragraph>
+  Francois.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Logan Horowitz (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi all. I added a .py to the end of the file name so it reads esptool.py. This fixed it for me. For now! Hope this helps anyone.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Antonio Dominguez (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When I tried this arduino was no longer able to find esptools anymore
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  How is your installation process going?
+  <break>
+  </break>
+  <break>
+  </break>
+  Francois.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Could you let us know what kind of message you are getting? Thanks.
+ </paragraph>
+ <paragraph>
+  Francois.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Emma Wang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm having a hard time locating the old esptool files
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Mose Sakashita (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  In Finder, you can select Go-&gt;Go To Folder and type "~/Library/Arduino15/packages/esp32/tools/esptool_py/2.6.1/" in the box. This should take you to the right folder in Finder. Then you should rename
+  <code>
+   esptool
+  </code>
+  to
+  <code>
+   esptool_old
+  </code>
+  and copy the downloaded
+  <code>
+   esptool
+  </code>
+  to the folder and follow the rest of the steps.
+ </paragraph>
+ <figure>
+  <image height="268" src="https://static.us.edusercontent.com/files/RiaQ6Ezun7gssMeyDg4SmOpj" width="233"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Emma Wang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  So I believe I did everything correctly and I do have Python 3 installed, but then I got this error message
+ </paragraph>
+ <paragraph>
+  Arduino: 1.8.13 (Mac OS X), Board: "Adafruit ESP32 Feather, 80MHz, 921600, None, Default"
+ </paragraph>
+ <paragraph>
+  fork/exec /Users/emmawang/Library/Arduino15/packages/esp32/tools/esptool_py/2.6.1/esptool: no such file or directory Error compiling for board Adafruit ESP32 Feather.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Mose Sakashita (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Just to double check-- did you change the permission so that the arduino can execute the esptool file? You can do this on your Terminal:
+  <code>
+   chmod +x esptool
+  </code>
+  in your
+  <code>
+   /Users/emmawang/Library/Arduino15/packages/esp32/tools/esptool_py/2.6.1/
+  </code>
+  directory.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Emma Wang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In the directions, it says chmod u+x esptool, but I tried both and I'm still getting an error
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Just to check, the chmod u+x was OK?
+  <break>
+  </break>
+  <break>
+  </break>
+  Could you confirm that you have Python 3 installed and that pyserial is installed for Python 3. Thanks.
+ </paragraph>
+ <paragraph>
+  Francois.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Emma Wang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, I tried both chmod u+x esptool and chmod +x esptool and I also confirmed that I have python3 and pyserial installed
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  could you show us the content of this directory: /Users/emmawang/Library/Arduino15/packages/esp32/tools/esptool_py/2.6.1/ Thanks.
+ </paragraph>
+ <paragraph>
+  Francois.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Emma Wang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="477.89701897018966" src="https://static.us.edusercontent.com/files/BJfUecYKcfodugJx4GACLfuY" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thanks. What happens if you type: ls - l /Users/emmawang/Library/Arduino15/packages/esp32/tools/esptool_py/
+  <link href="http://2.6.0.1/"/>
+  2.6.1/ in a terminal window?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Emma Wang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="196.52539404553414" src="https://static.us.edusercontent.com/files/JYjgOL2oito4SKAyeHvUtf93" width="332"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sorry about the typo, but there should be no space between the - and the l...:
+ </paragraph>
+ <paragraph>
+  ls -l /Users/emmawang/Library/Arduino15/packages/esp32/tools/esptool_py/
+  <link href="http://2.6.0.1/"/>
+  2.6.1/
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Emma Wang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="389.49912434325745" src="https://static.us.edusercontent.com/files/Xry7t4r8ljuw72lg9xMTuCrH" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thanks. This is identical to my configuration. What happen if you type python3 in a terminal? Do you get a Python 3 prompt?
+  <break>
+  </break>
+  <break>
+  </break>
+  Anyway, it might be best to fix this during a meeting. Do you happen to have some time tomorrow afternoon?
+ </paragraph>
+ <paragraph>
+  Francois.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Antonio Dominguez (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  didnt fix problem :(
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  How is your installation going?
+  <break>
+  </break>
+  <break>
+  </break>
+  Francois.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Could you let us know the error message you are getting?
+  <break>
+  </break>
+  <break>
+  </break>
+  For this system to work, you need to install the patch, have Python 3 installed and pyserial installed as a module for Python 3.
+ </paragraph>
+ <paragraph>
+  Francois.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Samantha Weaver (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The error went away after I uninstalled and re-installed the esp32 library after following those steps. I have Big Sur.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Sang Yun (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello, I've also done all the different troubleshooting issues but still not able to compile.
+ </paragraph>
+ <paragraph>
+  <bold>
+   Check out my error below:
+  </bold>
+ </paragraph>
+ <paragraph>
+  Traceback (most recent call last): File "/Users/shane/Library/Arduino15/packages/esp32/tools/esptool_py/2.6.1/esptool", line 38, in  import serial ModuleNotFoundError: No module named 'serial' exit status 1 Error compiling for board Adafruit ESP32 Feather.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Mose Sakashita (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can you try this?: 1) In Terminal, type
+  <code>
+   python3
+  </code>
+  . This brings you to an interactive mode for python scripting, 2) Type
+  <code>
+   import serial
+  </code>
+  and hit enter.
+ </paragraph>
+ <paragraph>
+  What do you get from this? If there's an import error, there's a high chance that the pyserial isn't properly installed for python3.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Soyee Park (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi I've downloaded everything and tried compiling but I am getting this error. I was unable to resolve this during OH.
+ </paragraph>
+ <paragraph>
+  Here is the error:
+ </paragraph>
+ <paragraph>
+  Arduino: 1.8.13 (Mac OS X), Board: "Adafruit ESP32 Feather, 80MHz, 921600, None, Default"
+ </paragraph>
+ <paragraph>
+  fork/exec /Users/soyeepark/Library/Arduino15/packages/esp32/tools/esptool_py/2.6.1/esptool: no such file or directory Error compiling for board Adafruit ESP32 Feather.
+ </paragraph>
+ <paragraph>
+  This report would have more information with "Show verbose output during compilation" option enabled in File -&gt; Preferences.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  As a follow up on our meeting, here is a solution to your error message: https://apple.stackexchange.com/questions/254380/why-am-i-getting-an-invalid-active-developer-path-when-attempting-to-use-git-a
+  <break>
+  </break>
+  <break>
+  </break>
+  Let me know if that works for you.
+  <break>
+  </break>
+  <break>
+  </break>
+  Francois.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Soyee Park (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am still getting this error :(
+ </paragraph>
+ <paragraph>
+  Arduino: 1.8.13 (Mac OS X), Board: "Adafruit ESP32 Feather, 80MHz, 921600, None, Default"
+ </paragraph>
+ <paragraph>
+  Traceback (most recent call last): File "/Users/soyeepark/Library/Arduino15/packages/esp32/tools/esptool_py/2.6.1/esptool", line 38, in  import serial ModuleNotFoundError: No module named 'serial' exit status 1 Error compiling for board Adafruit ESP32 Feather.
+ </paragraph>
+ <paragraph>
+  This report would have more information with "Show verbose output during compilation" option enabled in File -&gt; Preferences.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Matt Terwilliger (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm getting the exact same error as well
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Matt were you able to address your problem?
+ </paragraph>
+ <paragraph>
+  Francois.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The problem is coming from the specific of your python install. I have a couple of question:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    when you type python on a terminal is it running python 3?
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    in python does the command "import serial" work?
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  Let me know if you feel comfortable answering this questions  if not we can schedule a meeting.
+  <break>
+  </break>
+  <break>
+  </break>
+  Francois.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Soyee Park (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, python 3 works and the command import serial works as well. The same error occurs.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Could you meet me now in my Zoom room? If not could you schedule a meeting with me and we can look at it tomorrow.
+  <break>
+  </break>
+  <break>
+  </break>
+  Francois.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

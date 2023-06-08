@@ -1,0 +1,70 @@
+<h1>
+ Title: Question 1c) Clarification
+</h1>
+<h3>
+ Author: Sidharth Vasudev (staff)
+</h3>
+<h3>
+ Date: 2021-03-22T09:08:09.199402+11:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  For Question 1c), specified that a homogeneous SVM should be used to solve this problem. The dataset is linearly separable, but you are also allowed to introduce a "non homogenous" SVM but introducing a new feature into the dataset (as per the transformation from non homogenous problems to homogeneous ones).
+ </paragraph>
+ <paragraph>
+  To be clear:
+  <italic>
+   both the homogeneous and non homogenous
+  </italic>
+  <italic>
+   solutions can be correct/earn full points.
+  </italic>
+  We are offering those who have used the non homogenous solution a hint as to how to compute the R and margin correctly.
+ </paragraph>
+ <paragraph>
+  For those who have used a non homogenous SVM, you currently have a classification hypothesis of the form:
+  <break>
+  </break>
+  $sign(\overrightarrow{w} \cdot x + b)$.
+  <break>
+  </break>
+  <break>
+  </break>
+  To use the formula provided in part iv., you can convert this problem to a homogeneous SVM by adding a bias term to the feature vectors x, (a 100,001st feature that is equal to 1 for all elements in the database). Doing this, the 100,001st feature of w will be equal to b. Using this you will need to recalculate R and the geometric margin as you were originally doing.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  To those currently using a non homogenous SVM, we would recommend adding the bias feature and solving parts i., ii., and iii. as though you were using a homogenous SVM where x has the additional feature equal to 1 and the bias itself becomes the 100,001st feature of w. We recommend this since in the end you will be calculating those values for part iv. of this question. This will prevent you from doing double the calculations and will also allow you to use the heterogeneous SVM you have already derived.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  For any questions on this, please post a comment on this announcement and we will resolve this as soon as possible.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Thorsten Joachims (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Let me just add: It is not necessary to add this 100,001st feature, and I think it makes everything unnecessarily complicated. Just use a homogeneous SVM with the 100,000 given features. When you construct you the weight vector $w$ of your separating homogeneous hyperplane, you compute the functional margin via $y_i(w*x_i)$ and the geometric margin via $y_i (w*x_i)/||w||$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

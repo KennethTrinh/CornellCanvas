@@ -1,0 +1,96 @@
+<h1>
+ Title: HW3 Q10.2.16
+</h1>
+<h3>
+ Author: Oliver Moura (student)
+</h3>
+<h3>
+ Date: 2021-02-27T02:28:57.448418+11:00
+</h3>
+<h3>
+ Category: Homework Problems
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <link href="https://canvas.cornell.edu/courses/25081/pages/homework-assignments"/>
+  <bold>
+   <underline>
+    Link to Homework Assignments page on Canvas
+   </underline>
+  </bold>
+ </paragraph>
+ <callout type="info">
+  Which problem are you working on? (ex. HW 1, Problem 3, 9.1.15)
+ </callout>
+ <paragraph>
+  HW3 Problem 10 - 10.2.16
+ </paragraph>
+ <callout type="info">
+  What is your question?
+ </callout>
+ <paragraph>
+  How do we figure out vdot/graph speed over time? (part b)
+ </paragraph>
+ <callout type="info">
+  Describe the solution attempts you've made thus far.
+ </callout>
+ <paragraph>
+  I've done part a and I'm pretty sure it is correct, but, I'm struggling to actually set up part b. With whatever ODE I try to write I end up having to divide by zero which would suggest infinite acceleration (I'm guessing this is actually part of the answer for part d and e) which I can't manage to graph in MATLAB.... I imagine there is some simple solution for something I'm overcomplicating I just can't quite figure out what to do :/
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Alex Merrill (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes you are correct that at v=0 there would be infinite force applied.  what is one small change to the initial conditions you could make so this problem doesn't make matlab mad?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Oliver Moura (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  ok well its nice to know I'm atleast
+  <italic>
+   somewhat
+  </italic>
+  on the right track.
+  <break>
+  </break>
+  I thought that maybe I could put some very small value for v_0 but the graph I get out doesn't make much sense... so either something is wrong with my code (which I don't think is the case because it was working last week with other ODEs) or I messed up writing my differential equation.
+  <break>
+  </break>
+  The latter I sorted by having net power equal to the constant power from the cyclist minus drag power and solving for vdot from there, but that didn't work as far as I can tell
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  EDIT: I fixed it! not sure if this is what you were suggesting but, if I make both t0 and v0 some small non-zero value and I get a graph that actually makes sense; thanks! :)
+ </paragraph>
+ <paragraph>
+  EDIT2: I think I only needed to have v0 be non-zero, I think that before my value for v0 was just too small and so with rounding error it became essentially zero. Thanks again!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

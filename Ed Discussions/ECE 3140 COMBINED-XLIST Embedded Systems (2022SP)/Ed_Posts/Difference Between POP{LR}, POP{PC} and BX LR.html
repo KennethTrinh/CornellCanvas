@@ -1,0 +1,93 @@
+<h1>
+ Title: Difference Between POP{LR}, POP{PC} and BX LR
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-16T16:48:03.952565+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm currently struggling with the difference between POP{LR}, POP{PC} and BX LR. From my understanding, all 3 functions return to where the branch link occurred. However, not all of them were interchangeable when I was working on Lab 1 so I was wondering what the difference between the 3 was and how we know which one to use.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Brian Hsu (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Push/Pop {register} stores the address in the stack and manipulates the stack pointer, where as BX branches to the address specified in LR. If you are calling just one function inside your main, they both could work. Imagine, however, that you have a recursive function call, LR would we overwritten every time you go one layer deeper so your system won't remember the earlier return addresses.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Please correct me if I misspoke something :)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Nils Napp (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  To expand on the answer. POP{LR} does not actually return from a function call. (It also does not compile on ARMv6-M!). Conceptually, you could do:
+  <break>
+  </break>
+  <break>
+  </break>
+  POP{LR} &lt;--loads return address into LR
+  <break>
+  </break>
+  BX LR     &lt;-- actually returns by loading LR into PC
+ </paragraph>
+ <paragraph>
+  You can do this in one step via:
+ </paragraph>
+ <paragraph>
+  POP{PC}
+ </paragraph>
+ <paragraph>
+  If you wanted to the two-step route were you first pop the return address into a reg and the Branch, you need to use a low register on ARMv6-M. So something like:
+  <break>
+  </break>
+  <break>
+  </break>
+  POP{R3}
+  <break>
+  </break>
+  BX R3
+  <break>
+  </break>
+  <break>
+  </break>
+  The value in R3 originally came from LR when it was pushed, but you can put the value into any register you want.
+  <break>
+  </break>
+  <break>
+  </break>
+  Between the different options, POP{PC} is the easiest.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

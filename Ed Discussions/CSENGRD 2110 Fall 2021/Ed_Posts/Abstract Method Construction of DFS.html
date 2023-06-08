@@ -1,0 +1,60 @@
+<h1>
+ Title: Abstract Method Construction of DFS
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-18T09:47:24.358227+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="334.5387205387205" src="https://static.us.edusercontent.com/files/RBs0fqrqLQrHpeq0nsUa6Lgf" width="658"/>
+ </figure>
+ <paragraph>
+  I just want to make sure I am correctly interpreting why "visit node u" must be the first statement in this method. My understanding is that this prevents inefficiency in the case of possible cycles. However, is it correct to state that the program will still run, albeit not rigorously as a DFS, if visit node u; is at the last line?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I assume that the specification says "Node u is not visited". If that precondition is not there, I would answer differently.
+ </paragraph>
+ <paragraph>
+  This has nothing to do with efficiency. If you did not have that statement, if you do not start out by visiting u, when WOULD you visit u? At the end is illogical. I don' know what else to day.
+ </paragraph>
+ <paragraph>
+  Second, the statement sequence   visit node v; dfs v;   is absolutely wrong, because recursive call violates the precondition.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  That makes sense, thank you Prof. Gries!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

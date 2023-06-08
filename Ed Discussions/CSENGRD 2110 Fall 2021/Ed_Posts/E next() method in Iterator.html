@@ -1,0 +1,56 @@
+<h1>
+ Title: E next() method in Iterator
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-27T23:35:19.330266+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Referring to Iterator/Iterable videos...
+ </paragraph>
+ <paragraph>
+  In the method,
+  <italic>
+   public @Override E next():
+  </italic>
+ </paragraph>
+ <paragraph>
+  why do we set n = n - 1 and then to return the element b[n+1]?
+ </paragraph>
+ <paragraph>
+  Can I think of it as "moving to the next item to iterate, but return the item we just left (i.e n moved to the next item down in the stack, but we still need to return the item just above that item)?"
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The class invariant tells you which element to enumerate next.
+ </paragraph>
+ <paragraph>
+  Your code must return that value.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

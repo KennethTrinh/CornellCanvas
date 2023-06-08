@@ -1,0 +1,90 @@
+<h1>
+ Title: Deleting seed entries vs. uploaded entries?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-04-24T06:17:26.759126+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Should the admin have the ability to delete seed entries, or just entries that have been created/uploaded after the site's initialization?
+ </paragraph>
+ <paragraph>
+  Right now I have it so that the admin
+  <italic>
+   can
+  </italic>
+  delete seed entries from the database, but it doesn't delete the image file since that would be destructive. For uploaded entries it deletes both the entries from the database and the image file.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Jordyn Vu (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Are you having trouble deleting the seed entries' image files? If so, take a look at
+  <link href="https://www.php.net/manual/en/function.unlink.php"/>
+  this resource. Otherwise, I don't see how the process for the two would be different.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  There should be no difference to an admin for deleting an entry regardless of whether it's a seed entry or a user submitted entry.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Wouldn't that mean that if I deleted a seed entry, then reinitialized the site using the existing init.sql, the reinitialized site wouldn't be able to display the image file that goes with the seed entry that was deleted but is now re-added?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is true so long as you don't commit this file deletion to your git repo. Simply revert deleting the file in the git panel in VS Code
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,80 @@
+<h1>
+ Title: spring 2017 Q2 [parameter names vs names of objects supplied as parameters]
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-22T00:04:53.541419+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <callout type="info">
+  Put in your question title the year, semester, and question.  Ideal would also be to include the topic.   Example: 2018SP Q2(b) - call frames
+ </callout>
+ <callout type="info">
+  Include a screenshot of the question, so readers/answerers don't have to go find the relevant pdf.
+ </callout>
+ <paragraph>
+  At the
+  <code>
+   plan
+  </code>
+  function call, the arguments are left, right, middle, but not as strings. However,  the IDs of the objects with names "left", "right", and "middle" are placed into its call frame. How does Python know that the argument
+  <code>
+   left
+  </code>
+  is pointing to the object with the string name "left" and argument
+  <code>
+   right
+  </code>
+  is pointing to the object with name "right" and so on?
+ </paragraph>
+ <paragraph>
+  (How does Python know that
+  <code>
+   left
+  </code>
+  iin line 34 is referring to the object with name "left"?)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="973.8640776699028" src="https://static.us.edusercontent.com/files/OXIUjBLgYzcoikDvhoqMXawd" width="643"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="324.6245524296675" src="https://static.us.edusercontent.com/files/6MyxhSnjFBXWPud69C6EhfQU" width="643"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  In lines 31-33, the Tower objects are assigned to the variables left, right, and middle (which are not strings). In happens to be a coincidence (likely planned to make the code easier to understand) that the object assigned to the variable left also has the name "left". When plan is called in line 34, Python uses the ID of the the Tower object stored in left (as left not as a string is the Tower object), which so happens to have the name "left" (and so on for right and middle).
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  If it would help for understanding, lines 31-33 could instead assign the Tower objects to the variables Tower1, Tower2, and Tower3 respectively. In this case, we would call plan(Tower1, Tower3, Tower2, len(Tower2.disks)) (but these objects would still have the names "left", "middle", and "right"). The variable names given are just used for conceptual understanding of what's going on.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

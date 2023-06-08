@@ -1,0 +1,164 @@
+<h1>
+ Title: special method
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-21T08:01:10.781046+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  can you clarify what a special method is? Is that a method specific to a class?
+ </paragraph>
+</document>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  What exam question/lecture/assignment/lab are you referring to?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm watching the programming lecture
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Honestly, I'd recommend doing practice problems from previous exams (or assignments or labs) over re-watching lectures as an efficient way to study.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  will do. thank you!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Maybe the easiest way to think about special methods is as "the common methods we know about with the double-underlines", like
+  <code>
+   __init__
+  </code>
+  ,
+  <code>
+   __str__
+  </code>
+  ,
+  <code>
+   __eq__
+  </code>
+  .
+ </paragraph>
+ <paragraph>
+  They are methods that aren't usually called directly, but rather underly calls like when a new object is created, printed, or compared.
+  <break>
+  </break>
+  <break>
+  </break>
+  For example, if we have a class named ExamQuestion, then for calls like
+ </paragraph>
+ <paragraph>
+  eq= ExamQuestion()
+ </paragraph>
+ <paragraph>
+  eq2 = ExamQuestion(optional=True)
+ </paragraph>
+ <paragraph>
+  the righthand sides secretly involve a call to the
+  <code>
+   __init__
+  </code>
+  for ExamQuestion.
+  <break>
+  </break>
+  <break>
+  </break>
+  A call like
+  <code>
+   str(eq)
+  </code>
+  secretly involves a call to the
+  <code>
+   __str__
+  </code>
+  for ExamQuestion.
+  <break>
+  </break>
+  <break>
+  </break>
+  An expression like
+  <code>
+   eq == eq2
+  </code>
+  --- OMG I did not think ahead to have a variable named "eq" and to be talking about the
+  <code>
+   __eq__
+  </code>
+  method, that's just a massive coincidence --- anyway, an expression like
+  <code>
+   eq == eq2
+  </code>
+  secretly involves a call to the
+  <code>
+   __eq__
+  </code>
+  method for ExamQuestion.
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

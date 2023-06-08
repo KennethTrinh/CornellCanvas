@@ -1,0 +1,46 @@
+<h1>
+ Title: Prelim 2018
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-08T10:42:32.742848+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="340.61176470588236" src="https://static.us.edusercontent.com/files/oBxDfLhIFlkkmuu32s87mbgM" width="658"/>
+ </figure>
+ <paragraph>
+  I tried running the test case given in specs and 3152463%1000 = 463, pass that into f and that would return "0463" I don't see how that would be the same thing as the example in the test case
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Naman Madan (staff)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Seems like an error in the answer key. This would work if function f were:
+ </paragraph>
+ <pre>public static String f(int m){
+    if (m &gt;= 100) return "" + m;
+    if (m &gt;= 10) return "0" + m;
+    return "00" + m;
+}
+</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,124 @@
+<h1>
+ Title: Prelim 2
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-12T09:16:57.327988+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="160.29971988795518" src="https://static.us.edusercontent.com/files/YuoAvUR9frgdiZXfFCsMHEJp" width="643"/>
+ </figure>
+ <paragraph>
+  I do not understand the base condition. I thought s==t is comparing s and t's pointers, and we are interested in checking if the trees have the same shape and values. I thought the base case would be:  if (s==null &amp;&amp; t==null) return true;
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tianjiao Li (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The base case is a null check. If both are null, then return true. If only one is null, return false.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Why does s==t yield true when they are both null? I thought s==t will only be true if they point to the same node
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tianjiao Li (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If they both point to some node (which is not null), then they won't pass the test, the program goes to the recursive calls.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Oh so if they are both null they don't point to anything and s==t is true?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tianjiao Li (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yeah I think "null == null" evaluates to "true". The reason we have to implement this equals method is that we don't want reference comparison when they both are not null. They could be different objects in memory, but they may have the same shape and values.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Got it. Thank you
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am assuming that   null   represents the empty tree. If both are null, then both are the empty tree and equal.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

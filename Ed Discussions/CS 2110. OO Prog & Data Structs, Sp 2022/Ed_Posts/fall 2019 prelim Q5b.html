@@ -1,0 +1,65 @@
+<h1>
+ Title: fall 2019 prelim Q5b
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-04T15:30:08.355537+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For the loop condition B, why is k&gt;=m not correct? Why should it be k&gt;m?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Vladia Trinh (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Think about the case when k == m. At that point, s = product of these for b[m..n] according to the loop invariant. If that is the case, we are done because that is precisely the post condition. So the condition should be k &gt; m or k != m, because at the iteration where k == m, we meet the post condition and should terminate, not execute the loop body.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Satya Datla (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Could you explain how when k == m meets the post condition? I don't see how s could equal the product for b[m..n] if it still hasn't multipled s by b[k] when k == m. Wouldn't that leave out the last value, b[m] in the product s?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Vladia Trinh (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  With the way k is indexed, it is already included in the product from the last iteration. Take a look at the repetend solutions and it will make more sense.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

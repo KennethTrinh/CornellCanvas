@@ -1,0 +1,185 @@
+<h1>
+ Title: Stochastic Gradient Descent
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-05T12:13:31.743734+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Are we supposed to randomly choose an element to perform stochastic gradient descent on like in the lecture slides or are we supposed to do forward pass and backward pass using all the training examples?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Use all the training examples
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Wouldn't that make these formulas kinda complicated? Because the $s_l$'s and $v_l$'s will no longer be single vectors, but multiple vectors. To account for this, I think the $D_d$'s couldn't be simple matrices, but rather hypermatrices (indexed by three indices). This hurts my brain to think about; do you have any tips to understand these formulas?
+ </paragraph>
+ <figure>
+  <image height="573.65991902834" src="https://static.us.edusercontent.com/files/Tdo1MN2neu64clFQVYC9USIg" width="698"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  There should not be any 3 dimensional matrices to deal with
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I guess what I don't understand, is normally in stocastic gradient descent you have to compute these $D_l$ matrices (which I think are row vectors). For gradient descent if we're taking into account all training examples, then we have to compute a $D_l$ matrix for each training example, then compute $G_l=v_lD_l$ for each training example and average them to get the whole gradient. But since $G_l$ is already a two-dimensional matrix, computing $n$ of them for $n$ training examples would give a three-dimensional matrix. Am I misunderstanding something?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Didn't you just say D_l is a row matrix for sgd? What's an array of rows?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Here is what I have for the dimensions of the various matrices. Assume there are $k_l$ nodes in the $l$th layer. If there's only one training example like in stochastic gradient descents in the slides, then the dimensions are:
+  <break>
+  </break>
+  $$s_l,v_l:k_l\times 1$$
+  <break>
+  </break>
+  $$\sigma'(s_l):k_l\times 1$$
+  <break>
+  </break>
+  $$diag(\sigma'(s_l)):k_l\times k_l$$
+  <break>
+  </break>
+  $$W_l:k_l\times k_{l+1}$$
+  <break>
+  </break>
+  $$D_l:1\times k_l$$
+  <break>
+  </break>
+  $$G_l = v_lD_{l+1}: k_l\times k_{l+1}$$
+  <break>
+  </break>
+  Not all of them are columns/rows so some of them would have to be three-dimensional if taking into account more than one training example. Somewhere I must be going wrong...
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  True, not all of them are columns and rows, but also not all of them interact with the training points differently. For example, consider W_l. W_l applies to x_i in exactly the same way it applies to x_j. Thus, adding another dimension for the xs doesn't make sense.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Yana Sang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm a little confused by this as well. I think I'm currently thinking of the problem in the same way as the original poster.
+ </paragraph>
+ <paragraph>
+  I understand that $W_l$ applies to all of the training examples in the same way, but I'm having trouble seeing how we can form the matrices $G_l$ to match the dimensions of their corresponding $W_l$ matrices so that they can later be used in the update step.
+ </paragraph>
+ <paragraph>
+  It seems to me that the gradient can be calculated for each training example, resulting in multiple $G_l$s for one layer, each corresponding to one training example. How can they all be consolidated back into one $G_l$ for the layer?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It's possible to perform matrix multiplication in such a way that it calculates a sum of the point-by-point gradients, which you can then divide to get an average.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

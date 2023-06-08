@@ -1,0 +1,40 @@
+<h1>
+ Title: Question About Deletion/Insertion for open addressing
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-14T10:10:35.41462+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When you remove an element in a hashset using open addressing and leave a tombstone, and later you insert an element that would've been inserted into the position with the tombstone, can you replace the tombstone with the new element?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You have to be careful about replacing a tombstone by another element. It can be done, but carefully.
+ </paragraph>
+ <paragraph>
+  But to keep things simple, our algorithms will not do that. The ideas are in general more important than any one implementation. Here, the idea of tombstone and its need is new. Keep it simple and don't replace it by another element.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

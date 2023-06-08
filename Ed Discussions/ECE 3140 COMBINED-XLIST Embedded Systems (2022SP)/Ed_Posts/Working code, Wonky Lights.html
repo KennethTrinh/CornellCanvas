@@ -1,0 +1,53 @@
+<h1>
+ Title: Working code, Wonky Lights
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-19T04:11:45.787313+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Good afternoon, I was wondering if our code executes properly but the LED output makes dots and dashes indistinguishable if we would be penalized. I have tested to make sure that I have a reasonable length for a dot and the function that executes a dash calls dot three times. Additionally I tested that the correct sequence is outputted by tracking the registers for each output 0-9, however I still am unable to distinguish a dot and a dash.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The length of the dash needs to be three times the length of the dot (which needs to be within the timing specs outlined in the lab handout). Even though it is not visible, you should not be turning off the LED until the dash is completed (this will fail with our autograder)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sounds good. I turn the light on and off after a function call to either dot or dash for code reusability. That allows me to call dot three times.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

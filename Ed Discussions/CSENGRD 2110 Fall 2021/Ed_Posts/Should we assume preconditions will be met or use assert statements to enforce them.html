@@ -1,0 +1,82 @@
+<h1>
+ Title: Should we assume preconditions will be met or use assert statements to enforce them?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-06T06:19:30.729285+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For example, before declaring int y in my constructor, am I expected to write an assert statement that says "assert y &gt;=2000"? I know my question is similar to #3 on post #105, but I'm still confused.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why are you declaring   int y;   in the body of the constructor?
+ </paragraph>
+ <paragraph>
+  y is declared as a parameter of the constructor; you should not be declaring it again.
+ </paragraph>
+ <paragraph>
+  Yes, because of the Precondition, put in the assert statement "assert y &gt;=2000;"
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Whoops, thank you - I used the wrong terminology in saying I was declaring it again. I was just setting this.y = y in the body of the constructor.
+ </paragraph>
+ <paragraph>
+  Why can't the assert statement be put above the variable declaration of y? is there a reason it has to be above where I assign parameter y to field y in the constructor body ?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  There IS not declaration of y in the body. Please use correct terminology.
+ </paragraph>
+ <paragraph>
+  this.y= y; is NOT a declaration of y, it is simply an assignment.
+ </paragraph>
+ <paragraph>
+  We prefer that the assert statement be placed BEFORE this assignment statement. But note that the assert statement must use parameter y and not field this.y.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

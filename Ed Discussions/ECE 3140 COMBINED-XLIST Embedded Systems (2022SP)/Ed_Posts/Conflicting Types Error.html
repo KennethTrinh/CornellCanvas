@@ -1,0 +1,89 @@
+<h1>
+ Title: Conflicting Types Error
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-16T07:43:28.456914+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="62" src="https://static.us.edusercontent.com/files/iZprKpMkFWpkGbo7UA8Xe01y" width="506"/>
+ </figure>
+ <paragraph>
+  This is my function enqueue. I'm calling it by "enqueue(&amp;process)" where process is a process_t , but I'm getting a conflicting types error.
+ </paragraph>
+ <paragraph>
+  Does anyone know the issue?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Benjamin Kogan (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Maybe process is a process_t*? What's the type error?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It just says "conflicting types for enqueue" next to my function enqueue.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Benjamin Kogan (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think it might be that you are using the function before defining it. So you either have to move the function definition above the line of code that you use it, or write a header definition at the top of the file (like in a header file).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you so much!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

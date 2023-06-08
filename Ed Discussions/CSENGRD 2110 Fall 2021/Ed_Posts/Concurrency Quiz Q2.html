@@ -1,0 +1,113 @@
+<h1>
+ Title: Concurrency Quiz Q2
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-14T06:32:32.009997+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  For #2, I got 3 and 5, but am wondering how you can get 4? Thank you!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Do you know how to get "4" for question 1?  If so, the same applies to question 2.  One of the threads is not synchronized, so in the analogy, it ignores the "occupied" sign on the door and barges in through the broken latch.
+ </paragraph>
+ <paragraph>
+  Synchronization is an opt-in, cooperative mechanism for preventing race conditions in critical sections of code.  If a thread doesn't cooperate, then no protection is provided.  This is why encapsulation is critical when writing data structures for safe concurrent use.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  so it would only be 3,5 if both processes were synchronized?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What sequence of execution would yield 3 if both threads synchronized before incrementing the shared variable?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ohhh I think I understand. If both were synchronized, it would only be 5.
+ </paragraph>
+ <paragraph>
+  So, if only one is synchronized is it basically this same as neither being synchronized?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  There is a distinction if you consider a hypothetical third thread, which could be synchronized.  But looking only at the two threads in this example, what you say is valid.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

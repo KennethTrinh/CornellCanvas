@@ -1,0 +1,134 @@
+<h1>
+ Title: How to Use a Breadboard
+</h1>
+<h3>
+ Author: Felix Shi (staff)
+</h3>
+<h3>
+ Date: 2021-02-23T11:39:03.535767+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 7
+</h3>
+<document version="2.0">
+ <paragraph>
+  For many students, this is the first time they have been exposed to breadboards. Consequently, several of you have expressed confusion about how to translate circuit schematics into wires and components on your breadboard. Debugging breadboards can be incredibly frustrating (trust me, I know from experience) so this post is intended to help you understand how breadboards work and how they relate to circuit diagrams. Hopefully, you will develop more confidence assembling circuits on your own without the guidance of pictures.
+ </paragraph>
+ <paragraph>
+  First, we must understand what a
+  <bold>
+   node
+  </bold>
+  is.
+  <bold>
+   A node is a junction where two or more circuit elements are connected
+  </bold>
+  . In the diagram below (taken from Slide 20 of the 2/15 lecture), each black bar on the breadboard indicates a node. Two wires plugged into the same node will be connected.
+ </paragraph>
+ <figure>
+  <image height="330" src="https://static.us.edusercontent.com/files/5uqjJQpoBfEm0JtnvNnonehL" width="230"/>
+ </figure>
+ <paragraph>
+  In applications outside electrical engineering, such as in network theory, nodes are explicitly defined as
+  <italic>
+   points
+  </italic>
+  at which lines or edges intersect. On circuit schematics, nodes can be points
+  <bold>
+   or sections of wire
+  </bold>
+  . Understanding this latter point is
+  <bold>
+   crucial
+  </bold>
+  . It explains why we can connect two wires by plugging them into the same row on the breadboard. If nodes were just points, we would only be able to connect circuit elements by plugging them into the same hole.
+ </paragraph>
+ <paragraph>
+  Take a look at the following schematic. The nodes are drawn as stretches of wire, labeled 1, 2, and 3. On a breadboard, the following terminals should be connected at the same node:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    positive terminal of the voltage source, side A of the yellow resistor, and side A of the green resistor
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    side B of the yellow resistor, side B of the green resistor, and side A of the blue resistor
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    side B of the blue resistor, negative terminal of the voltage source
+   </paragraph>
+  </list-item>
+ </list>
+ <figure>
+  <image height="199.88389513108612" src="https://static.us.edusercontent.com/files/IMlt7VZhhrYl2lu4TZ5lRvMW" width="643"/>
+ </figure>
+ <paragraph>
+  Sometimes, we'll want to use jumper wires to connect nodes together. This is useful when trying to make our breadboard more organized, or combat space limitations. Both of the configurations below are functionally identical.
+ </paragraph>
+ <figure>
+  <image height="403" src="https://static.us.edusercontent.com/files/wXcq1ROLxOM3FyqIioQ16NQx" width="290"/>
+ </figure>
+ <figure>
+  <image height="412" src="https://static.us.edusercontent.com/files/0UszOWkreJ5tJCaucQ3dcXc9" width="290"/>
+ </figure>
+ <paragraph>
+  In the first image, the resistor and LED are connected at row 10. In the second image, a jumper wire connects rows 10 and 15. Therefore, row 10, the blue jumper wire, and row 15 are all one node.
+  <bold>
+   Wires are nodes, so wires extend and connect nodes
+  </bold>
+  . When we connect a wire between the red terminals (vertical bars) on either side of the breadboard, we create one large node that is at 3.3 V. This allows us to get power on both sides of the breadboard. Ditto for ground.
+ </paragraph>
+ <paragraph>
+  Please thread any questions below. Hope this helps!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  <bold>
+   Further Reading:
+  </bold>
+ </paragraph>
+ <paragraph>
+  Introduction to Physical Computing, linked on this Canvas page:
+  <link href="https://canvas.cornell.edu/courses/25897/assignments/193771?module_item_id=773047"/>
+  https://canvas.cornell.edu/courses/25897/assignments/193771?module_item_id=773047
+ </paragraph>
+ <paragraph>
+  You should have read this before the 2/15 lecture. If not, please read it soon.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Khan Academy:
+ </paragraph>
+ <paragraph>
+  <link href="https://www.khanacademy.org/science/electrical-engineering/ee-circuit-analysis-topic/circuit-elements/a/ee-circuit-terminology"/>
+  https://www.khanacademy.org/science/electrical-engineering/ee-circuit-analysis-topic/circuit-elements/a/ee-circuit-terminology
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you for these clarifications Felix!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

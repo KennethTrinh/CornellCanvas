@@ -1,0 +1,103 @@
+<h1>
+ Title: A8: Seeking the ring
+</h1>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Date: 2021-11-08T01:23:50.134073+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Throughout 2110, we have emphasized developing programs in a systematic, careful way, doing one step at a time and testing incrementally.
+ </paragraph>
+ <paragraph>
+  The videos in JavaHyperText on stepwise refinement give examples of this.
+ </paragraph>
+ <paragraph>
+  Stepwise refinement is especially important in developing the method for the seek phase in A8. We have seen too many attempts to write this phase all at once, without real understanding, leading to a lot of wasted time.
+ </paragraph>
+ <paragraph>
+  We hope that the suggested method of development shown below will be one more example to help you learn this strategy while making this assignment less difficult and more rewarding.
+ </paragraph>
+ <paragraph>
+  Here's how we suggest proceeding.
+ </paragraph>
+ <paragraph>
+  <bold>
+   1. Get a dfs-walk implemented, making it look like the one in the tutorial
+  </bold>
+  .
+ </paragraph>
+ <paragraph>
+  Look in JavaHyperText at the last video on DFS/BFS.
+ </paragraph>
+ <paragraph>
+  This means implementing that fairly abstract algorithm, making changes to fit this environment.
+ </paragraph>
+ <paragraph>
+  McDiver will do the dfs of the whole graph but not stop at the ring. That's OK! COPY
+  <break>
+  </break>
+  THE SPEC FROM THAT ABSTRACT ALGORITHM AND CHANGE IT TO FIT THIS SITUATION! Don't just say "Do a DFS walk."
+ </paragraph>
+ <paragraph>
+  <bold>
+   2. Change the method spec to take into account stopping when the ring is found
+  </bold>
+  .
+ </paragraph>
+ <paragraph>
+  Where should McDiver be standing when a recursive call ends? Two possible cases:
+  <break>
+  </break>
+  (1) McDiver didn't find the ring during this recursive call. (2) McDiver found the ring during this recursive call.
+ </paragraph>
+ <paragraph>
+  <bold>
+   3. Change the method body to fit the new specifications.
+  </bold>
+ </paragraph>
+ <paragraph>
+  Look at the recursive calls, note what the changed specification says, and revise accordingly.
+ </paragraph>
+ <paragraph>
+  <bold>
+   4. Figure out how to optimize.
+  </bold>
+ </paragraph>
+ <paragraph>
+  The optimization has to do with noting that the distance to the ring from each node is known and visiting neighbors of a node in an order that reflects this knowledge.
+ </paragraph>
+ <paragraph>
+  This should lead to a
+  <italic>
+   local
+  </italic>
+  ,
+  <italic>
+   greedy
+  </italic>
+  choice; it should not result in rewriting the whole method!
+ </paragraph>
+ <paragraph>
+  <bold>
+   OTHER POINTS.
+  </bold>
+ </paragraph>
+ <paragraph>
+  <bold>
+   A.
+  </bold>
+  Having a data structure to maintain information on what has been visited and figuring out a way to optimize are two totally different things. Don't confuse them.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

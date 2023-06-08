@@ -1,0 +1,46 @@
+<h1>
+ Title: Fall prelim 2019 q6
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-04T15:52:57.603574+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  What is throwable? (Where I annotated on the picture) how does it work? And why do you return -2 after catching Throwable e?
+ </paragraph>
+ <figure>
+  <image height="986" src="https://static.us.edusercontent.com/files/b26NHiro0cIFmkP1d7zdk5O3" width="1446"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Vladia Trinh (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Whenever your code does something weird like divide by 0 for example, Java create an object and throws it. Throwable is the super class of the Error and Exception classes. So, when Java throws an object, you can write code that catches the object. In this case, if a Throwable object is caught you print "F".
+ </paragraph>
+ <paragraph>
+  The point of this is so that your program doesn't crash when weird exceptions happen. After the Throwable object is caught, you just move on to the next line of code, which is to return -2.
+ </paragraph>
+ <paragraph>
+  For more info, search "throwable" in Java Hypertext.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

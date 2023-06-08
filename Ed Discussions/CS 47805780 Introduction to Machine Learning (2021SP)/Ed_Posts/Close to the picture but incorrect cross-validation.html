@@ -1,0 +1,75 @@
+<h1>
+ Title: Close to the picture but incorrect cross-validation
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-02T16:02:08.884615+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm getting something really close to the example picture shown for the cross_validation function, but I'm not passing the autograder. Also passed all the previous test cases. Has anyone else had this issue / is our output supposed to be identical to the picture shown? And does it matter which 0 error hyperparameters our function selects for best C and best lambda?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="366.2857142857143" src="https://static.us.edusercontent.com/files/hPfeCsGkgUwc1LOyfDeOQTJp" width="641"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  If anyone else is having this problem it was caused by using the same set for training and validation!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Han Shu (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Could you explain in more detail? I ran into the same problem: obtained a similar heat map pic but failed in autograder. In cross_validation function, xTr,yTr,xValid,yValid are input. It is impossible to use the same set for training and validation.
+ </paragraph>
+ <paragraph>
+  cross_validation(xTr,yTr,xValid,yValid,ktype,CList,lmbdaList)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  My two bugs were returning the index of bestC best lambda instead of the values themselves and then I used the same sets xTr,yTr to train each model as well as compute the error rate when I should have been using xValid yValid.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

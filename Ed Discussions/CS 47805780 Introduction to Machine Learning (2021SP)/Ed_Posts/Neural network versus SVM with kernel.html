@@ -1,0 +1,43 @@
+<h1>
+ Title: Neural network versus SVM with kernel
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-03T17:22:16.841853+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  If I understand correctly, they are both capable of learning on non-linearly separable datasets, and they both do this by computing decision boundaries that are not linear. Then in practice, how do we decide which to use? Is it just a matter of computational resources?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Victor Butoi (staff)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="1.0">
+ <paragraph>
+  Decent question that requires just a deft hand in the field to know which is good, but generally, SVMs scale incredibly poorly with dimension; therefore you will rarely seem them in high dimensional problems.
+ </paragraph>
+ <paragraph>
+  Further, with the advent of deep learning and the current status quo of chucking compute at a problem until it's solved, neural nets are the dominant model in ML for most applications, because they can have so much more capacity given the amount of parameters they can have.
+ </paragraph>
+ <paragraph>
+  That's not the say we don't use SVMs all the time nowadays, especially because Neural Net optimization is a block box and poorly understood, but NNs generally are a catch-all when you are tasked with a modeling problem .
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

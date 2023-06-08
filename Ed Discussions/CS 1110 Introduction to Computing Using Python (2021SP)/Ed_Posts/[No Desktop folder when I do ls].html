@@ -1,0 +1,320 @@
+<h1>
+ Title: [No Desktop folder when I do "ls"?]
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-02-16T10:59:08.533789+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello,
+ </paragraph>
+ <paragraph>
+  I was looking through the labs and tried to run the first exercise with moving the folder lab03 to Desktop and running it. However, when I typed ls, there was no desktop (I double checked and got an error message when I tried to type "cd Desktop"). Is there any reason why my desktop would not be in my list directory and how could I change that?
+ </paragraph>
+ <paragraph>
+  Thanks!
+ </paragraph>
+</document>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is a very good question!  So I have "hearted" it!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Dylan Castillo (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Edited:
+  <break>
+  </break>
+  If you don't mind removing your Desktop from the OneDrive folder (in which case, it would stop being backed up), follow the instructions of
+  <link href="https://www.tenforums.com/tutorials/23504-restore-default-location-personal-folders-windows-10-a.html#option2s4"/>
+  the first method here.
+ </paragraph>
+ <paragraph>
+  If you would like to keep your Desktop folder backed up on your OneDrive folder, while still having that same folder appear in "its normal location," follow the following advice from Professor Lee (and found in Lab 3 activity 1):
+ </paragraph>
+ <pre>If you don't see "Desktop" in the ls output, your computer might have the Desktop folder
+inside your OneDrive folder. (Check by entering ls OneDrive. If "Desktop" doesn't show 
+up there, get help from a staff member.) Our recommended workaround is to create a 
+"portal" from the Desktop in OneDrive to your home directory (this should allow 
+OneDrive to still back up your Desktop). While in your home directory, enter 
+New-Item -Name Desktop -ItemType Junction -Value OneDrive\Desktop
+Now when you do ls, Desktop should be there, and you can continue with this lab!
+</pre>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="583.900284900285" src="https://static.us.edusercontent.com/files/h8svoMrPHatbLBVscmD52mFM" width="659"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  [
+  <italic>
+   sorry, put my reply in the wrong place
+  </italic>
+  ]
+  <break>
+  </break>
+  In addition to what consultant Dylan asks, I realize that what you've reported is bringing up vague memories from last year of an interaction with OneDrive.
+  <break>
+  </break>
+  <break>
+  </break>
+  OP (original poster): If you do "ls OneDrive" (the uppercase version would be "LS ONEDRIVE", so you can see what letters I'm talking about), does a Desktop folder show up in the listing of the contents of OneDrive?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Dylan Castillo (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Seems like your Desktop folder is missing. Could you try
+  <link href="https://www.tenforums.com/tutorials/23504-restore-default-location-personal-folders-windows-10-a.html#option2s4"/>
+  the first method here?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  That worked, thank you so much!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  OP, are you depending on OneDrive for backups, or did your computer come with the OneDrive folder already on it, do you happen to know?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sorry just seeing this! I was using OneDrive, that was the problem. My Desktop was only in OneDrive for some reason so I changed that. Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  OK, here's my second reply!
+  <break>
+  </break>
+  <break>
+  </break>
+  Consultant Dylan's solution "the first method here"  that moves the Desktop folder out of OneDrive and into their "normal" locations, made a lot of sense!  So if that works fine for you, that's great, and thanks again,
+  <mention id="142207">
+   Dylan Castillo
+  </mention>
+  !
+  <break>
+  </break>
+  <break>
+  </break>
+  Another option,
+  <italic>
+   if
+  </italic>
+  you want to keep the Desktop folder  backed up by OneDrive, is given in the newly-added "sidenote d" in Lab 3 Activity 1. OP, if you wanted to go with this option,
+  <bold>
+   first
+  </bold>
+  move the Desktop folder
+  <italic>
+   back into OneDrive
+  </italic>
+  , so that everything is as it was before you asked this question.
+  <bold>
+   Then (second)
+  </bold>
+  :
+  <break>
+  </break>
+ </paragraph>
+ <blockquote>
+  d. [Added Mon Feb 15 10pm] If you don't see "Desktop" in the
+  <code>
+   ls
+  </code>
+  output, your computer might have the
+  <code>
+   Desktop
+  </code>
+  folder inside your
+  <code>
+   OneDrive
+  </code>
+  folder. (Check by entering ls OneDrive. If "Desktop" doesn't show up there, get help from a staff member.) Our recommended workaround is to create a "portal" from the Desktop in OneDrive to your home directory (this should allow OneDrive to still back up your Desktop). While in your home directory, enter
+  <code>
+   New-Item ‑Name Desktop ‑ItemType Junction ‑Value OneDrive\Desktop
+  </code>
+  . Now when you do ls,
+  <code>
+   Desktop
+  </code>
+  should be there, and you can continue with this lab!
+ </blockquote>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Ivan Bourov (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Good Afternoon,
+ </paragraph>
+ <paragraph>
+  I just wanted to follow up with this issue. During lab today, I tried running this portal command, but I got this error message:
+ </paragraph>
+ <figure>
+  <image height="322.10091743119267" src="https://static.us.edusercontent.com/files/ktKk4tSpzYCRLohA9NphhBns" width="658"/>
+ </figure>
+ <paragraph>
+  Thanks,
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ah: I think the lab webpage html is lying to you about what the punctuation marks are!  (My fault; I was going some trickery to get things to display nicely).
+  <break>
+  </break>
+  <break>
+  </break>
+  Can you try copy-pasting the following into your command shell?  (Looks the same, as what's on the webpage, but copy-pastes differently!)
+  <break>
+  </break>
+ </paragraph>
+ <pre>New-Item -Name Desktop -ItemType Junction -Value OneDrive\Desktop
+</pre>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ah - let's think about this.  If you
+  <italic>
+   want
+  </italic>
+  to use OneDrive for backup, we may not want to take your Desktop (and other important folders) out of the OneDrive folder.
+  <break>
+  </break>
+  <break>
+  </break>
+  Go ahead with the lab for now; behind the scenes, we'll figure out some general advice.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

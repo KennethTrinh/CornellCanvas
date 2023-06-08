@@ -1,0 +1,1092 @@
+<h1>
+ Title: questions for Apr 22 "lecture" office hours
+</h1>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Date: 2021-04-22T23:07:24.963913+10:00
+</h3>
+<h3>
+ Category: Megathread
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  post questions and vote!
+ </paragraph>
+</document>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 6
+</h3>
+<document version="2.0">
+ <paragraph>
+  Could we go over the example with 2D lists on slide 23 on prelim 2 review 2021?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   def max_cols(table):
+    """Returns: List storing max value of each column
+    Precondition: table is a NONEMPTY 2D list of floats"""
+    
+    # table might be: 
+    # [[3., 100., 23.],
+    #  [-1., 200., 2.]]
+    #  the return should be:  [3., 200., 23.]
+
+    # print("first row is: " + str(table[0]))
+    # print("2nd row is: " + str(table[1]))
+
+    # if just one row, we'd want just that row!
+    # I want a COPY because I'm going to be editing maxes,
+    # and don't want to edit the table itself.
+    # so, don't do maxes = table[0]
+
+    # &lt;listname&gt;[:] --- automatically creates a new list, 
+    #                   with entries just like &lt;listname&gt;
+    # &lt;listname[1:] --- creates a new list
+    #
+    maxes = table[0][:]  # list of the maxes so far
+                         # the [:] makes a copy.
+
+    #@ different version: this is totally fine!
+    maxes = []
+    for val in table[0]:
+        maxes.append(val)
+
+    for row in table[1:]: # row will be a list
+        for i in range(len(row)): # compare to max so far ... 
+            if row[i] &gt; maxes[i]:
+                maxes[i] = row[i]
+    return maxes
+
+    # rowwise solution
+
+table = [[3., 100., 23.], [-1., 200., 2.], [250., 5, 1]]
+# should get [250.0, 200.0, 23.0]
+
+print(max_cols(table))
+  </snippet-file>
+ </snippet>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  notice I never wrote a table[i][j] line up there, i.e., I never used explict double indexing.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I had a different approach, would this work?
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   def max_cols(table):
+    max_list=[]
+    for col in range(len(table[0])):
+        max=-9999999999999999 # this is the impossible max
+        for row in table:
+            if row[col]&gt;max:
+                max=row[col]
+        max_list.append(max)
+    return max_list
+
+table = [[3., 100., 23.], [-1., 200., 2.], [250., 5, 1]]
+# should get [250.0, 200.0, 23.0]
+
+print(max_cols(table))
+  </snippet-file>
+ </snippet>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  im still a bit confused by line 14, can you explain why it is just [0] again? sorry
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  why is the [:] necessary?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 13
+</h3>
+<document version="2.0">
+ <paragraph>
+  quick review on dictionaries?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   days = {"Monday": "is fair of face",
+        "Tuesday": "is full of grace",
+        "Wednesday": "is full of woe",
+        "Thursday": "has far to go"}
+days["Thursday"] = "... wait, that's prelim day, bro!"
+
+# insert new key/value pairs is possible!
+days["Friday"] = "oh thank goodness for wellness days"
+
+for day in days:
+    print(day + "'s child " + days[day])
+  </snippet-file>
+ </snippet>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  did you just change the values for the keys of the dictionary at thursday and friday?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I did!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 6
+</h3>
+<document version="2.0">
+ <paragraph>
+  How do you edit tuples in iteration or recursion problems?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Tuples are immutable! So you can't.
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   x = ("boy", "are", "we", "out", "of", "energy")
+print(x[5])
+x[5] = "food" # this will produce an error
+  </snippet-file>
+ </snippet>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 19
+</h3>
+<document version="2.0">
+ <paragraph>
+  Could we maybe do a diagram drawing of a class folder? Just to see an example?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  why is it not p.parent1?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Should the format of the method in the diagram be method" or "self.method"?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  it should be &lt;method&gt;
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Could you go through an example where we'd need to diagram a class folder?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  do we just write the method and parameters?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  method yes --- whether parameters, we will tell you.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  would we add more methods than just init if they are there?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  yes - all methods should go in the class folder
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  See: https://edstem.org/us/courses/3933/discussion/386458
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 13
+</h3>
+<document version="2.0">
+ <paragraph>
+  Would it be in our best interest to understand how to visualize recursion w call frames etc? Could we go over an example or be referred to an example?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It is in your good interest, yes; here is an example in Python tutor for you already to try out!
+ </paragraph>
+ <paragraph>
+  <link href="http://www.pythontutor.com/visualize.html#code=class%20Person%3A%0A%0A%20%20%20%20def%20__init__%28self,%20name,%20parent1,%20parent2%29%3A%0A%0A%20%20%20%20%20%20%20%20self.name%3D%20name%0A%20%20%20%20%20%20%20%20self.parent1%3D%20parent1%0A%20%20%20%20%20%20%20%20self.parent2%3D%20parent2%0A%0Adef%20all_ancestors%28p%29%3A%0A%20%20%20%20%22%22%22%20Returns%20a%20list%20of%20all%20known%20ancestors%20of%20p%0A%0A%20%20%20%20Each%20element%20of%20the%20returned%20list%20is%20a%20Person%20instance%20%0A%20%20%20%20or%20the%20list%20is%20empty.%0A%0A%20%20%20%20Precondition%3A%20p%20is%20a%20Person%20%28not%20None%29%0A%20%20%20%20%22%22%22%0A%20%20%20%20out%20%3D%20%5B%5D%20%20%23%20list%20of%20Parents%0A%0A%20%20%20%20%23%20I%20need%20the%20parents,%20%0A%20%20%20%20%23%20and%20then%20the%20parents%20of%20parents%0A%20%20%20%20%23%20handle%20parent1,%20if%20it%20exists,%20do%20the%20same%20thing%20with%20parent2%0A%20%20%20%20for%20parent%20in%20%5B%20p.parent1,%20p.parent2%5D%3A%0A%20%20%20%20%20%20%20%20if%20parent%20is%20not%20None%3A%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20out.append%28parent%29%20%0A%20%20%20%20%20%20%20%20%23%20what%20about%20parent's%20ancestors%3F%0A%20%20%20%20%20%20%20%20%20%20%20%20out%20%2B%3D%20all_ancestors%28parent%29%20%23%20list%20of%20Persons%0A%20%20%20%20%20%20%20%20%23%20%20OK%20to%20do%20out.extend%28%3Clist%3E%29%0A%20%20%20%20return%20out%0A%0A%23%20testing%20the%20init%20%0A%23%20%28command-slash%20for%20%28un%29commenting%20blocks%29%0Agp%20%3D%20Person%28%22Mildred%22,%20None,%20None%29%0Ap1%20%3D%20Person%28%22Deborah%22,gp,%20None%29%0Ap2%20%3D%20Person%28%22Karen%22,%20None,%20gp%29%0Ac%20%3D%20Person%28%22Gigi%22,p1%20,%20p2%20%29%0A%0Aprint%28c.parent1.name%29%0Aresult%20%3D%20all_ancestors%28c%29%20%23%20list%20of%20Persons%0A%0Afor%20p%20in%20result%3A%0A%20%20%20%20print%28p.name%29%0A%0A&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"/>
+  http://www.pythontutor.com/visualize.html#code=class%20Person%3A%0A%0A%20%20%20%20def%20__init__%28self,%20name,%20parent1,%20parent2%29%3A%0A%0A%20%20%20%20%20%20%20%20self.name%3D%20name%0A%20%20%20%20%20%20%20%20self.parent1%3D%20parent1%0A%20%20%20%20%20%20%20%20self.parent2%3D%20parent2%0A%0Adef%20all_ancestors%28p%29%3A%0A%20%20%20%20%22%22%22%20Returns%20a%20list%20of%20all%20known%20ancestors%20of%20p%0A%0A%20%20%20%20Each%20element%20of%20the%20returned%20list%20is%20a%20Person%20instance%20%0A%20%20%20%20or%20the%20list%20is%20empty.%0A%0A%20%20%20%20Precondition%3A%20p%20is%20a%20Person%20%28not%20None%29%0A%20%20%20%20%22%22%22%0A%20%20%20%20out%20%3D%20%5B%5D%20%20%23%20list%20of%20Parents%0A%0A%20%20%20%20%23%20I%20need%20the%20parents,%20%0A%20%20%20%20%23%20and%20then%20the%20parents%20of%20parents%0A%20%20%20%20%23%20handle%20parent1,%20if%20it%20exists,%20do%20the%20same%20thing%20with%20parent2%0A%20%20%20%20for%20parent%20in%20%5B%20p.parent1,%20p.parent2%5D%3A%0A%20%20%20%20%20%20%20%20if%20parent%20is%20not%20None%3A%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20out.append%28parent%29%20%0A%20%20%20%20%20%20%20%20%23%20what%20about%20parent's%20ancestors%3F%0A%20%20%20%20%20%20%20%20%20%20%20%20out%20%2B%3D%20all_ancestors%28parent%29%20%23%20list%20of%20Persons%0A%20%20%20%20%20%20%20%20%23%20%20OK%20to%20do%20out.extend%28%3Clist%3E%29%0A%20%20%20%20return%20out%0A%0A%23%20testing%20the%20init%20%0A%23%20%28command-slash%20for%20%28un%29commenting%20blocks%29%0Agp%20%3D%20Person%28%22Mildred%22,%20None,%20None%29%0Ap1%20%3D%20Person%28%22Deborah%22,gp,%20None%29%0Ap2%20%3D%20Person%28%22Karen%22,%20None,%20gp%29%0Ac%20%3D%20Person%28%22Gigi%22,p1%20,%20p2%20%29%0A%0Aprint%28c.parent1.name%29%0Aresult%20%3D%20all_ancestors%28c%29%20%23%20list%20of%20Persons%0A%0Afor%20p%20in%20result%3A%0A%20%20%20%20print%28p.name%29%0A%0A&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Do we need to draw the call frame of function __ init __ in class like python tutor does?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For prelim 2, we'll specify in the question whether we want you to or not.  You should be prepared to do so.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  Could we go over class vs object attributes?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  in breakout room
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 17
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can we please go over recursion with objects? It is very confusing!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  does out get reset to empty list when the function gets recursively called -- and other questions about execution?
+  <break>
+  </break>
+  <break>
+  </break>
+  Python tutor link:
+  <link href="http://www.pythontutor.com/visualize.html#code=class%20Person%3A%0A%0A%20%20%20%20def%20__init__%28self,%20name,%20parent1,%20parent2%29%3A%0A%0A%20%20%20%20%20%20%20%20self.name%3D%20name%0A%20%20%20%20%20%20%20%20self.parent1%3D%20parent1%0A%20%20%20%20%20%20%20%20self.parent2%3D%20parent2%0A%0Adef%20all_ancestors%28p%29%3A%0A%20%20%20%20%22%22%22%20Returns%20a%20list%20of%20all%20known%20ancestors%20of%20p%0A%0A%20%20%20%20Each%20element%20of%20the%20returned%20list%20is%20a%20Person%20instance%20%0A%20%20%20%20or%20the%20list%20is%20empty.%0A%0A%20%20%20%20Precondition%3A%20p%20is%20a%20Person%20%28not%20None%29%0A%20%20%20%20%22%22%22%0A%20%20%20%20out%20%3D%20%5B%5D%20%20%23%20list%20of%20Parents%0A%0A%20%20%20%20%23%20I%20need%20the%20parents,%20%0A%20%20%20%20%23%20and%20then%20the%20parents%20of%20parents%0A%20%20%20%20%23%20handle%20parent1,%20if%20it%20exists,%20do%20the%20same%20thing%20with%20parent2%0A%20%20%20%20for%20parent%20in%20%5B%20p.parent1,%20p.parent2%5D%3A%0A%20%20%20%20%20%20%20%20if%20parent%20is%20not%20None%3A%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20out.append%28parent%29%20%0A%20%20%20%20%20%20%20%20%23%20what%20about%20parent's%20ancestors%3F%0A%20%20%20%20%20%20%20%20%20%20%20%20out%20%2B%3D%20all_ancestors%28parent%29%20%23%20list%20of%20Persons%0A%20%20%20%20%20%20%20%20%23%20%20OK%20to%20do%20out.extend%28%3Clist%3E%29%0A%20%20%20%20return%20out%0A%0A%23%20testing%20the%20init%20%0A%23%20%28command-slash%20for%20%28un%29commenting%20blocks%29%0Agp%20%3D%20Person%28%22Mildred%22,%20None,%20None%29%0Ap1%20%3D%20Person%28%22Deborah%22,gp,%20None%29%0Ap2%20%3D%20Person%28%22Karen%22,%20None,%20gp%29%0Ac%20%3D%20Person%28%22Gigi%22,p1%20,%20p2%20%29%0A%0Aprint%28c.parent1.name%29%0Aresult%20%3D%20all_ancestors%28c%29%20%23%20list%20of%20Persons%0A%0Afor%20p%20in%20result%3A%0A%20%20%20%20print%28p.name%29%0A%0A&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"/>
+  http://www.pythontutor.com/visualize.html#code=class%20Person%3A%0A%0A%20%20%20%20def%20__init__%28self,%20name,%20parent1,%20parent2%29%3A%0A%0A%20%20%20%20%20%20%20%20self.name%3D%20name%0A%20%20%20%20%20%20%20%20self.parent1%3D%20parent1%0A%20%20%20%20%20%20%20%20self.parent2%3D%20parent2%0A%0Adef%20all_ancestors%28p%29%3A%0A%20%20%20%20%22%22%22%20Returns%20a%20list%20of%20all%20known%20ancestors%20of%20p%0A%0A%20%20%20%20Each%20element%20of%20the%20returned%20list%20is%20a%20Person%20instance%20%0A%20%20%20%20or%20the%20list%20is%20empty.%0A%0A%20%20%20%20Precondition%3A%20p%20is%20a%20Person%20%28not%20None%29%0A%20%20%20%20%22%22%22%0A%20%20%20%20out%20%3D%20%5B%5D%20%20%23%20list%20of%20Parents%0A%0A%20%20%20%20%23%20I%20need%20the%20parents,%20%0A%20%20%20%20%23%20and%20then%20the%20parents%20of%20parents%0A%20%20%20%20%23%20handle%20parent1,%20if%20it%20exists,%20do%20the%20same%20thing%20with%20parent2%0A%20%20%20%20for%20parent%20in%20%5B%20p.parent1,%20p.parent2%5D%3A%0A%20%20%20%20%20%20%20%20if%20parent%20is%20not%20None%3A%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20out.append%28parent%29%20%0A%20%20%20%20%20%20%20%20%23%20what%20about%20parent's%20ancestors%3F%0A%20%20%20%20%20%20%20%20%20%20%20%20out%20%2B%3D%20all_ancestors%28parent%29%20%23%20list%20of%20Persons%0A%20%20%20%20%20%20%20%20%23%20%20OK%20to%20do%20out.extend%28%3Clist%3E%29%0A%20%20%20%20return%20out%0A%0A%23%20testing%20the%20init%20%0A%23%20%28command-slash%20for%20%28un%29commenting%20blocks%29%0Agp%20%3D%20Person%28%22Mildred%22,%20None,%20None%29%0Ap1%20%3D%20Person%28%22Deborah%22,gp,%20None%29%0Ap2%20%3D%20Person%28%22Karen%22,%20None,%20gp%29%0Ac%20%3D%20Person%28%22Gigi%22,p1%20,%20p2%20%29%0A%0Aprint%28c.parent1.name%29%0Aresult%20%3D%20all_ancestors%28c%29%20%23%20list%20of%20Persons%0A%0Afor%20p%20in%20result%3A%0A%20%20%20%20print%28p.name%29%0A%0A&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   class Person:
+
+    def __init__(self, name, parent1, parent2):
+
+        self.name= name
+        self.parent1= parent1
+        self.parent2= parent2
+
+def all_ancestors(p):
+    """ Returns a list of all known ancestors of p
+
+    Each element of the returned list is a Person instance 
+    or the list is empty.
+
+    Precondition: p is a Person (not None)
+    """
+    
+    # # traditional base case: 
+    # if p.parent1 is None and p.parent2 is None:
+    #     return []
+
+
+    out = []  # list of Parents
+
+    # I need the parents, 
+    # and then the parents of parents
+    # handle parent1, if it exists, do the same thing with parent2
+    for parent in [ p.parent1, p.parent2]:
+        if parent is not None:  
+            out.append(parent) 
+        # what about parent's ancestors?
+            out += all_ancestors(parent) # list of Persons
+        #  OK to do out.extend(&lt;list&gt;)
+    return out
+
+# testing the init 
+# (command-slash for (un)commenting blocks)
+gp = Person("Mildred", None, None)
+p1 = Person("Deborah",gp, None)
+p2 = Person("Karen", None, gp)
+c = Person("Gigi",p1 , p2 )
+
+print(c.parent1.name)
+result = all_ancestors(c) # list of Persons
+
+for p in result:
+    print(p.name)
+  </snippet-file>
+ </snippet>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If you use a recursive call on the first parent, does it do all the ancestors of the first parent and THEN go to the second parent or does it go back and forth?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  why are we testing for __ init __ ? isn't init just an initializer?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  "we" == me, who doesn't type well, I need to test it out to make sure there aren't mistakes.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It was lecture 16
+ </paragraph>
+ <paragraph>
+  Parents
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <pre>A module to provide Person objects
+
+Author: Daisy Fan (kdf4)
+Date: Apr 5, 2021
+"""
+
+class Person():
+    """
+    An instance is a Person with a name and possibly two parents.
+
+    Examples:
+    To create a Person with the name 'Pat' and no parents, type:
+        p1= person.Person('Pat', None, None)
+    To create a Person with the name 'Kai' and p1 (a Person) as one parent, type:
+        p2= person.Person('Kai', p1, None)
+    or
+        p2= person.Person('Kai', None, p1)
+    """
+
+    def __init__(self, name, parent1, parent2):
+        """
+        Creates a new Person with the given name and parents.
+
+        Preconditions: name is a non-empty string. parent1 and parent2 are each
+        a Person or None.  parent1 and parent2 are distinct if they are not None.
+        """
+        self.name= name
+        self.parent1= parent1
+        self.parent2= parent2</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <pre>p01= Person('John Sr.', None, None)
+p02= Person('Pamela', None, None)
+p04= Person('Eva', None, None)
+p05= Person('Shane', None, None)
+p06= Person('Carmen', None, None)
+p11= Person('John Jr.', p01, p02)
+p12= Person('Jane', None, p04)
+p13= Person('Portia', None, None)
+p14= Person('Ellen', p05, p06)
+p21= Person('John III', p11, p12)
+p22= Person('Alice', p13, p14)
+p31= Person('John IV', p21, p22)
+</pre>
+ <paragraph>
+  If this is helpful
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <pre>def all_ancestors(p):
+    """ Returns a list of all known ancestors of p
+
+    Each element of the returned list is a Person instance or the list is empty.
+
+    Precondition: p is a Person (not None)
+    """
+    # 1. Handle base case
+
+    # 2. Break into two parts
+
+    # 3. Combine the result
+
+</pre>
+ <paragraph>
+  https://www.cs.cornell.edu/courses/cs1110/2021sp/schedule/lecture/lec16/lec16.html
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Link to answer: https://www.cs.cornell.edu/courses/cs1110/2021sp/schedule/lecture/lec16/family.py
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 9
+</h3>
+<document version="2.0">
+ <paragraph>
+  how do you know when an accumulator may be neccessary vs just doing divide &amp; conquer for a recursion problem?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sorry, it depends on what precisely you are doing.
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 7
+</h3>
+<document version="2.0">
+ <paragraph>
+  can we also go over recursion with dictionary?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Please see previous exam problems --- fall 2020 in particular.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  can we have more practice problems for dictionary recursion since its so new
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  can we go over flatten_nested_list?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  (would have to do in person, since we can't publicize solutions to lab problems)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can we go over embed and max_nested_list? (from the optional recursion exercises)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Would have to do in person, since we can't publicize solutions to lab problems ...
+  <break>
+  </break>
+  <break>
+  </break>
+  although embed was actually covered in a lecture long ago, which enabled us to be able to discuss it in this
+  <link href="https://edstem.org/us/courses/3933/discussion/371684?answer=869975"/>
+  Ed Discussions post
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Could we go over question 3.b in Fall 2020 Prelim 2?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Do check the comments in the
+  <link href="https://www.cs.cornell.edu/courses/cs1110/2021sp/exams/prelim2/2021-spring-prelim2-studyguide.pdf"/>
+  prelim study guide about that question.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can you go over accessing nested lists in recursion?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The
+  <link href="https://cs1110.cs.cornell.edu/py/labs/cs1110/lab13/act2:0"/>
+  sum_it function from lab 13 is your go-to template here!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  can we go over question 4 in Spring 2017 Prelim 2? I'm still confused about printing Object related things and how to draw these diagrams.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Daisy Fan (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  [Discussed in breakout room.] Spring 2017 Q4 does not apply fully to our Prelim 2.  You should be able to deal with the code related to class A, but class B is a subclass of A and is NOT for our Prelim 2.  You will want to understand class B for our final exam, but not for Prelim 2.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  (remember to check the
+  <link href="https://www.cs.cornell.edu/courses/cs1110/2021sp/exams/prelim2/2021-spring-prelim2-studyguide.pdf"/>
+  prelim study guide for comments on what parts of questions aren't applicable to our semester.)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  should we need to know copy/deepcopy
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You don't need to know deep copy for the prelim.
+ </paragraph>
+ <paragraph>
+  You should know how to copy a list using slicing:
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   my_motto = ["hang", "in", "there"]
+your_motto = my_motto[:] 
+# your motto is, temporarily, the same words, but you could change
+# your motto and that doesn't change mine.
+
+print("your_motto looks like this: " + str(your_motto))
+print("my_actual_motto looks like this: " + str(my_actual_motto))
+
+print("\nDoes changing your_motto change my_motto? let's see!")
+your_motto = ["to", "infinity", "and", "beyond"]
+print("your_motto is now " + str(your_motto) + ", but my_motto is still " + str(my_motto) + ", so list2 was an independent copy")
+  </snippet-file>
+ </snippet>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

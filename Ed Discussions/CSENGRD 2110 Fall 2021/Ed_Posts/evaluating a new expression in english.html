@@ -1,0 +1,70 @@
+<h1>
+ Title: evaluating a "new" expression in english
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-05T03:01:40.736962+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I know this isn't in the exact words that it is on Java Hypertext, but I was wondering if this would also be a valid way to explain how a "new" expression is evaluated (I sometimes find terminology  to be be tricky so I just want to be sure I don't have this wrong):
+ </paragraph>
+ <paragraph>
+  1. create a new object of the class name with default values
+ </paragraph>
+ <paragraph>
+  2. fill in the values according to constructor call
+ </paragraph>
+ <paragraph>
+  3. store name of folder as the name of the object that variable should point to
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  1. This is OK.
+ </paragraph>
+ <paragraph>
+  2. This is wrong. You don't know it is going to fill in values. If the call is new C(...),
+  <break>
+  </break>
+  you should write:
+ </paragraph>
+ <paragraph>
+  Execute the constructor call C(...) .
+ </paragraph>
+ <paragraph>
+  3. This is wrong. There is no variable to store it into. all you have is a new expression.
+  <break>
+  </break>
+  Suppose the new-expression was used like this:   (new C()).toString();  The value of the new-expression is not being stored anywhere. Here is how to write step 3.
+ </paragraph>
+ <paragraph>
+  Use as value of the new-expression a pointer to (or the name of) the new object.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

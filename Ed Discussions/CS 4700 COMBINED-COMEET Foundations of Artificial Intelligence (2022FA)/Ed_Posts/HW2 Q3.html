@@ -1,0 +1,45 @@
+<h1>
+ Title: HW2 Q3
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-10-07T00:28:07.09208+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  1. For part (a), For uniform-cost search, what happens if the path cost is the same when considering which node to expand next?
+ </paragraph>
+ <paragraph>
+  2. For both (b-c), the node expansion order and the "correct" path to the goal seem the same. Is this correct or is there something I'm missing?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Laura Greenstreet (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  (a) If multiple nodes have the same cost they can be expanded in any order and you only need to provide one ordering in your solution.
+ </paragraph>
+ <paragraph>
+  (b) It is possible for greedy-first search and A* search to expand the same set of nodes and have the same path to the goal, but then f_greedy(n) = h(n) and f_A*(n) = g(n) + h(n) would need to result in the same node on the frontier having the minimum function value at each step. Does that happen in our instance?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

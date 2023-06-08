@@ -1,0 +1,68 @@
+<h1>
+ Title: practice final q2 part f
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-17T10:26:00.650834+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="278.40711111111113" src="https://static.us.edusercontent.com/files/GbbKvzg0pXVgtaWkp5ylFmG9" width="658"/>
+ </figure>
+ <paragraph>
+  In q2 part f on the practice final, why did T get condensed into a 3x3 matrix? If T is a 3x3 matrix, how can it operate on vectors in R^4?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Alma Thaler (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  It's like 5.4 page 292 in the textbook. What the solution isn't showing is finding the coordinate vectors of (0 1 0 0), (0 0 1 0), (1 0 0 1), as those coordinate vectors are the columns of the B-matrix of T
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Caleb McCurdy (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  But why wouldn't the solution be a combination of the coordinate vectors? For example if v1 = (0 1 0 0), v2 = (0 0 1 0), v3 = (1 0 0 1), why wouldn't the B-matrix of T be [v1 v2 v3]? I don't understand why it gets condensed to the 3x3 matrix for the final answer.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Alma Thaler (student)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  because B-matrix of T is [(T(b1))b (T(b2))b ... ]. I think it's just the dimensions throwing you off. Since the B-matrix of T describes how T acts in B coordinates, you have to convert the answers you get from T(b1), TIb2), etc, which you called v1...v3, into B coordinates. B coordinate vectors only have 3 entries because the vector space spanned by B has 3 dimensions (there were 3 vectors in the given basis)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

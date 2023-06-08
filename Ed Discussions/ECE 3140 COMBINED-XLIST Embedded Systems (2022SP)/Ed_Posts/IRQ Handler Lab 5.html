@@ -1,0 +1,58 @@
+<h1>
+ Title: IRQ Handler Lab 5
+</h1>
+<h3>
+ Author: Rhia Malhotra (None)
+</h3>
+<h3>
+ Date: 2022-04-19T06:00:40.636821+10:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, we are trying to modify the PIT_IRQHandler function for lab 5. For this lab, in which file should we implement this function to handle interrupts?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  The IRQ handler should be written within
+  <code>
+   process.c
+  </code>
+  . Please make sure you read through
+  <code>
+   3140.s
+  </code>
+  carefully as to understand how you are supposed to implement the "
+  <italic>
+   handler
+  </italic>
+  ".
+ </paragraph>
+ <pre>...
+30: //Function to service PIT Chanel 1 Routine
+31: //Export this so you can write C-function
+32: .weak PIT1_Service
+33: .type PIT1_Service, %function
+...
+112: .type  PIT_IRQHandler, %function
+113: PIT_IRQHandler: // Timer Interrupt
+...</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>

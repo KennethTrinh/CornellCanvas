@@ -1,0 +1,42 @@
+<h1>
+ Title: Monotonicity of training error
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-24T00:33:44.949599+10:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I have seen this graph a couple of times in the discussion section but can't find it in either the book or the lectures. Is this plot referenced in course material anywhere?
+ </paragraph>
+ <figure>
+  <image height="204.1652386780906" src="https://static.us.edusercontent.com/files/EksOAFfmj0kipGz4sAS21FGi" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Thorsten Joachims (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  We got to this type of plot both empirically (first when we talked about decision trees and overfitting) and theoretically. For the latter, solve the generalization error bound for $\epsilon$, the difference between the training and prediction error. This difference grows as you add more hypotheses to H. At the same time, more hypotheses typically mean lower training error. Once the decrease in training error becomes smaller than the increase in difference, you are starting to enter overfitting.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,52 @@
+<h1>
+ Title: Node method
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-28T09:40:33.20326+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For the node(int k) method in A4 I am getting the error below.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  "This method must return a result of type DLList&lt;E&gt;.Node"
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  But I thought I am returning the correct type of DLList&lt;E&gt; Node since I either return head or tail.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This probably means you are returning inside an if statement and Java's compiler can't guarantee that the if statement will be entered so if none of the if statements are ever entered then then there is nothing returned is what this error message means.
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+  There are two ways to fix this, either break out of the loop and return what you'd normally return (when the if statement is satisfied), the other option is to return a random Node at the very end of the method that will never be reached (assuming your if statements are always guaranteed to be entered)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

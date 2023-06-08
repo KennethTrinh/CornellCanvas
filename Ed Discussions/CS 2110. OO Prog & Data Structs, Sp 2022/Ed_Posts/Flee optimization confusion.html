@@ -1,0 +1,51 @@
+<h1>
+ Title: Flee optimization confusion
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-11T13:25:40.29653+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am confused on the hint to optimize flee: One version could find the shortest path of all nodes and return the HashMap the gives all the information.
+ </paragraph>
+ <paragraph>
+  Is this referring to having a hash map of paths from the starting node to each other node or all nodes to the end node?
+ </paragraph>
+ <paragraph>
+  My initial thought to optimize was to find all possible paths and then traverse all of them to see which one has the most gold, but I am unsure how to find all possible paths. Any guidance is appreciated!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The shortest-path algorithm uses a HashMap. That HashMap is what is being talked about.
+  <break>
+  </break>
+  Suppose you change the shortest-path algorithm so that it does NOT stop when it reaches end, so you don't need that second parameter.
+ </paragraph>
+ <paragraph>
+  Now, have the call shortest-path(exit), return the HashMap. It contains the shortest paths from exit to all nodes. Since this is an undirected graph, use as containing the shortest paths from all nodes to the exit.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

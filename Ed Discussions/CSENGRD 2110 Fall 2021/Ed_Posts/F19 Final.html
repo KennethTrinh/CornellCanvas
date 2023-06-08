@@ -1,0 +1,59 @@
+<h1>
+ Title: F19 Final
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-28T12:48:13.903891+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It’s possible to have f(x) in O(g(x)) but f(x) &gt; g(x) for all x. True. e.g. 2 in O(1).
+ </paragraph>
+ <paragraph>
+  I don't quite understand the reasoning provided to explain why the answer is true.
+ </paragraph>
+ <paragraph>
+  Is it because 2 &gt; 1?  As in f(x) = 2 and g(x) = 1? Wouldn't O(2) degenerate to O(1)?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, f(x) = 2 and g(x) = 1 is a goo example.
+ </paragraph>
+ <paragraph>
+  But remember the definition of f(x) in O(g(x)): There exists  c&gt;0 and N&gt;0 such that f(x) &lt;= c*g(x) for x&gt;= N.
+ </paragraph>
+ <paragraph>
+  So, take c + 3, for example, and
+ </paragraph>
+ <paragraph>
+  f(x) = 2 &lt;= c*g(x) = 3*1 = 3 for all x.
+ </paragraph>
+ <paragraph>
+  O(2) and O(1) are the same sets
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

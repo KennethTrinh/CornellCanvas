@@ -1,0 +1,57 @@
+<h1>
+ Title: Testing Constructor for all 7 Fields
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-10T12:03:13.225435+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  As I am going through my project with a fine tooth comb before submitting, a question popped up:
+ </paragraph>
+ <paragraph>
+  The instructions say to test that all 7 fields are properly initialized in the constructor. It also says to do this using the observer methods. However, there is one method for date() while there are 2 fields for year and month that correspond. So this means if we are only testing using observer methods, we can't test month and year separately, correct? So would you like us to use string slicing to test year and month or just test the 6 (with date as 1) values instead of 7?
+ </paragraph>
+ <paragraph>
+  Thanks!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, as long as you test that all 7 fields were properly initialized using the observer methods you have access to, you should be fine.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You don't need string slicing. If the fields are month 5 year 2021, then the expected value of the call date() is: "5/2021".
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

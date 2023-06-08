@@ -1,0 +1,71 @@
+<h1>
+ Title: Understanding 3140.s -- Get Hard Fault in "resume_process"
+</h1>
+<h3>
+ Author: Alma Thaler (student)
+</h3>
+<h3>
+ Date: 2022-03-17T07:02:19.091148+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  (The code snippet is from 3140.s, not our own code)
+ </paragraph>
+ <paragraph>
+  Our code hard faults after selecting the red LED process, executing it, selecting the green LED process, executing it, and then selecting the red LED process for the second time is when the fault occurs. Specifically stepping through our code, this line triggers the hard fault. What exactly is going on here? Is it the context switching? Does this mean PC has some bad address, and if so, what could that suggest about our code? We aren't sure what to look at.
+ </paragraph>
+ <figure>
+  <image height="254.76102088167053" src="https://static.us.edusercontent.com/files/Kj3PKWcDkvI6pjs2o6MGcqHt" width="644"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Benjamin Kogan (None)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Maybe you are not updating the stack pointer after the red LED process stops for the first time?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Alma Thaler (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  OMG thank you! It was that!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Alma Thaler (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  We assumed that the process' stack pointer gets updated somewhere else, not that we had to mainly set it to cursp. Thanks!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

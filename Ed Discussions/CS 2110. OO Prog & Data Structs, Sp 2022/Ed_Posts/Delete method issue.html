@@ -1,0 +1,95 @@
+<h1>
+ Title: Delete method issue
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-03T16:06:34.400985+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Upon testing my method I realized that when I delete the
+  <bold>
+   <italic>
+    head
+   </italic>
+  </bold>
+  , my
+  <italic>
+   <bold>
+    toStringRev
+   </bold>
+  </italic>
+  does not have it deleted. The interesting thing is that my
+  <bold>
+   <italic>
+    toString
+   </italic>
+  </bold>
+  method returns the correct String.
+ </paragraph>
+ <paragraph>
+  Similarly, when I delete the
+  <bold>
+   <italic>
+    tail
+   </italic>
+  </bold>
+  , my
+  <bold>
+   <italic>
+    toString
+   </italic>
+  </bold>
+  does not return it deleted. The interesting thing is that my
+  <bold>
+   <italic>
+    toStringRev
+   </italic>
+  </bold>
+  method returns the correct String.
+ </paragraph>
+ <paragraph>
+  Is this an issue with the toString / toStringRev methods or the delete method? The delete method seems to work one way.. I am very confused!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  toString() is already correct, and I assume you did not change it.
+ </paragraph>
+ <paragraph>
+  You already wrote and completely tested append and toStringRv together, so the mistake should not be there. This is why we write and test small group of methods completely before moving on to other methods.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  So, the error is probably in method delete.
+ </paragraph>
+ <paragraph>
+  Consider the case of deleting the head. Di you draw a list with more more than one node, then draw a list with the first node deleted, and then compare the two to see which fields had to be changed?
+ </paragraph>
+ <paragraph>
+  Try that, carefully. Let us know whether it worked.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

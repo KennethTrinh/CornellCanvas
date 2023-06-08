@@ -1,0 +1,42 @@
+<h1>
+ Title: Fields for lock_state
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-27T08:26:59.108283+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  We were confused with what should be the fields of lock_state. We have an unsigned int to represent if it is locked (1) or unlocked (0). But should we also have a field for struct process_state so we know what process is being locked? Is there anything else we should be considering?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  Lab 4 handout, page 4:
+  <break>
+  </break>
+  Hint: save some information into the current_process data structure before calling process_blocked()
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

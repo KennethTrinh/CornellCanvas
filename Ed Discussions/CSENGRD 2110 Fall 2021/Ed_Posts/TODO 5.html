@@ -1,0 +1,110 @@
+<h1>
+ Title: TODO 5
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-03T06:47:54.308607+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I wrote through TODO 6 but my dot doesn't move around. It just stays put. I did testing with some print statements and determined that respawn is being called the proper number of times in TODO 5, it just isn't changing position on the screen even though repaint() is called in the line directly after respawn. Not sure what could be causing this
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Did you make sure you are using the correct parameters for respawn?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I have it as the width and height of the rectangle
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  maybe something wrong with how you implemented repaint()?
+ </paragraph>
+ <paragraph>
+  I think it is responsible for repainting the dot in a random position
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If
+  <code>
+   respawn()
+  </code>
+  is being called and
+  <code>
+   repaint()
+  </code>
+  is called immediately afterwards, then the issue is likely in either
+  <code>
+   paintComponent()
+  </code>
+  or
+  <code>
+   paintDot()
+  </code>
+  .  Try printing the new x and y coordinates in
+  <code>
+   respawn()
+  </code>
+  , then print them in
+  <code>
+   paintDot()
+  </code>
+  .  Do they match?  If not, figure out why not.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

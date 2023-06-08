@@ -1,0 +1,71 @@
+<h1>
+ Title: Iterable &amp; iterator
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-18T02:47:50.249229+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi! I am wondering that why do we need iterable interface if it has the same functions as implements iterator?  I notice on the slides it says using iterable allows us to use for-each loop but why that doesn't that work for iterator?
+ </paragraph>
+ <paragraph>
+  Thanks!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Interfaces
+  <code>
+   Iterable
+  </code>
+  and
+  <code>
+   Iterator
+  </code>
+  are different - they declare different abstract methods.  Look them up in the API documentation - one declares a method named
+  <code>
+   iterator()
+  </code>
+  , while the other declares methods like
+  <code>
+   hasNext()
+  </code>
+  and
+  <code>
+   next()
+  </code>
+  .
+ </paragraph>
+ <paragraph>
+  An
+  <code>
+   Iterator
+  </code>
+  is a mutable type for tracking your current
+  <italic>
+   location
+  </italic>
+  in a collection, but the for-each loop is for iterating over an entire collection.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

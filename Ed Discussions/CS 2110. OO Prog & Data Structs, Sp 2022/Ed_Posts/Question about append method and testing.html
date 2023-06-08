@@ -1,0 +1,65 @@
+<h1>
+ Title: Question about append method and testing
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-01T16:24:32.39002+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am having some problems with figuring out how to write the append method properly. I am running into a NullPointerException (in the testing part for appending to an empty list) that says "cannot assign field 'val' because this.head is null."
+ </paragraph>
+ <paragraph>
+  Does this mean I need to somehow make "head" not null before I can set it to the assigned value? Do I need to create a new node to make this happen? I'm not sure how to make a new node since there isn't a constructor method (when I try to, it says that the constructor for Node is undefined). Will using .next and/or .prev automatically create a new node? Thank you for the help in advance!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="1.0">
+ <paragraph>
+  This is probably because you didn’t account for the case when there’s no head and tail. When you append a node and there is currently no head or tail, then both the head and tail should be that node you appended. Make sure to update your head and tail fields accordingly. Also to create a new node you must do
+ </paragraph>
+ <paragraph>
+  Node test = new Node(previous,val,next)
+  <break>
+  </break>
+  (if i remember correctly at least), this is something you should double check with the constructor in the inner class Node
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ok, that makes sense. Thank you for your help!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

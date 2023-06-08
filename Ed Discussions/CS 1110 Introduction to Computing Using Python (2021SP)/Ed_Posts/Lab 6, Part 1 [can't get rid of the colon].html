@@ -1,0 +1,89 @@
+<h1>
+ Title: Lab 6, Part 1 [can't get rid of the colon]
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-01T09:25:20.021404+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm working on a code, but can't seem to find a string method that gives me everything right of the colon (the minutes sections). I tried index, but my answer contains the colon in it. This prevents me from adding my 2 ints together.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Dylan Castillo (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  When string slicing starting at a certain index, if you do something like string[index:] you’ll get the string starting from index. If you want to get the string starting from the character right after the index, how can you change index to do that?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is an example of what I'm talking about. The 0 disappears for some reason.
+ </paragraph>
+ <figure>
+  <image height="271" src="https://static.us.edusercontent.com/files/r4Oa6c3zUWsv6PJd3aVXZ2eS" width="498"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thanks, I solved that but now I have a new problem. For some reason, if the minutes has a 0 (ex. 12:04), then the 0 doesn't show in the final answer. But if it has both digits (ex. 12:11), then both digits will show.
+ </paragraph>
+ <figure>
+  <image height="144.875" src="https://static.us.edusercontent.com/files/cqJB1ZW1p5saCPVURvy8Eh3o" width="684"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Elisabeth Finkel (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  bear in mind that if you convert a string containing a number to an integer, it will lose its leading zeroes
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

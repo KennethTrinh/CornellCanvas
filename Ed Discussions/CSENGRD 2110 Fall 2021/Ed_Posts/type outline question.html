@@ -1,0 +1,156 @@
+<h1>
+ Title: type outline question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-08-31T06:33:15.284957+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  There is a question that states: byte, short, char always convert to ___
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Is the answer int?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, those types are always converted to
+  <code>
+   int
+  </code>
+  when performing mathematical operations.  This can be a bit surprising, but fortunately we don't use the smaller integer types very much.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am still confused... I thought byte can also be converted to a character?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Any primitive type can be converted to another (possibly with a loss of information) by using a
+  <italic>
+   cast
+  </italic>
+  .
+ </paragraph>
+ <paragraph>
+  However, Java will also
+  <italic>
+   automatically
+  </italic>
+  convert some types to wider ones in certain circumstances.  For example, when adding an
+  <code>
+   int
+  </code>
+  and a
+  <code>
+   double
+  </code>
+  , the
+  <code>
+   int
+  </code>
+  will first be converted to a
+  <code>
+   double
+  </code>
+  , and then the
+  <code>
+   +
+  </code>
+  operator will act on two
+  <code>
+   double
+  </code>
+  values.  The rule is that all operands are converted to the type of the widest operand.  This rule works well for
+  <code>
+   int
+  </code>
+  ,
+  <code>
+   long
+  </code>
+  ,
+  <code>
+   float
+  </code>
+  , and
+  <code>
+   double
+  </code>
+  .
+ </paragraph>
+ <paragraph>
+  For the other types, an additional rule comes into play.  Those types don't actually have any mathematical operators of their own - there is no
+  <code>
+   +
+  </code>
+  operator that adds two
+  <code>
+   byte
+  </code>
+  s and returns a
+  <code>
+   byte
+  </code>
+  , for example.  In those cases, Java again automatically converts operands to a wider type that
+  <italic>
+   does
+  </italic>
+  have the requested operation.  The narrowest such type is
+  <code>
+   int
+  </code>
+  , so those types will all be converted to at least
+  <code>
+   int
+  </code>
+  in order to do math on them, even if there is no other
+  <code>
+   int
+  </code>
+  operand.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

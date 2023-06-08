@@ -1,0 +1,216 @@
+<h1>
+ Title: fall prelim 2019 7:30 #3a
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-05T10:35:53.623652+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  1. Why do we have to cast ob to the class Vehicle? If ob passes the if statement in line 1, that means it is of the Vehicle class.
+ </paragraph>
+ <paragraph>
+  2. Is it valid to say: return obA.color.equals(this.color)? Why are we allowed to say obA.color.equals(this.color)?
+ </paragraph>
+ <figure>
+  <image height="527.2763596004439" src="https://static.us.edusercontent.com/files/bzEwaiG9y0RSnDiilruveKXi" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Please post a screenshot of the question too so that others can see the question. This also makes it easier for course staff to answer your question.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  screenshot added
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  DO you know the compile-time reference rule?
+ </paragraph>
+ <paragraph>
+  Look it up. If, after reading it, you don't fully understand, ask a more specific question.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I've read it and it makes sense. For clarification, 1) do the subclasses inherit the methods of the parent class? However, the danger is when you have a parent class, then you cannot access the methods of the subclasses. You can
+  <italic>
+   only
+  </italic>
+  access the methods of the subclasses if you downcast to the subclass. Is this correct?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, we downcast because that will allow you to access the methods of the class you are downcasting to. A parent class cannot access the methods of its subclass. A subclass
+  <bold>
+   can
+  </bold>
+  access all inherited methods of its parent class.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: James Liu (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="45.469094922737305" src="https://static.us.edusercontent.com/files/y7lQjYRRfOZDyfuGBUiPogLg" width="535"/>
+ </figure>
+ <paragraph>
+  But if the static/dynamic type of ob is Object, shouldn't it return false right after the execution of the if statement? Doesn't entering the second line mean that ob is of type Plane?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Yes, the dynamic type is Plane, not object.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: James Liu (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Then why do we still have to cast down ob, given that it is of type Plane? What's the meaning of casting a Plane to Plane?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Because the static type is Object, and the code would not compile (specifically the part the references the Plane’s fields) if we did not cast to a Plane object.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ohh I understand now my confusion stemmed from the fact that I didn't realize that ob was of type Object and not Vehicle. Thus, ob is in the parent class Object and not in the subclass Vehicle. Thank you!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I would agree that the first question can be answered by looking up "equals" in JHT, as the example in the textbook is extremely similar.
+ </paragraph>
+ <paragraph>
+  For your second question, this.color is also valid, but it's not necessary. It just means that the field is of
+  <bold>
+   this
+  </bold>
+  instance. However, that is implied here so
+  <bold>
+   this.
+  </bold>
+  is not necessary.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,99 @@
+<h1>
+ Title: Hardfault on LEDGreen_On()
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-25T06:24:10.942309+10:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi,
+ </paragraph>
+ <paragraph>
+  when we run the given test case with our code it hardfaults. When we looked into the debugger we found that it hard faults within
+  <code>
+   LEDGreen_On();
+  </code>
+  , however, when we go to enter the function to look deeper into the code, the debugger immediately hard faults. I'm not sure what function within our code could be causing an issue within
+  <code>
+   LEDGreen_On()
+  </code>
+  ?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Benjamin Kogan (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  There might be a PIT interrupt that occurs before it runs LEDGreen_On, and the hard fault might be due to that. After the hard fault in the debug window, does the stack trace last show LEDGreen_On, or something else?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It says it hard faults on line 131 of
+  <code>
+   3140.s
+  </code>
+  :
+ </paragraph>
+ <figure>
+  <image height="436.19040697674416" src="https://static.us.edusercontent.com/files/X4JXqyJgBgEpXhKy5SKy26Dj" width="599"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="1.0">
+ <paragraph>
+  Are you using the latest release of 3140.s?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I updated the 3140.s code and it worked, thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

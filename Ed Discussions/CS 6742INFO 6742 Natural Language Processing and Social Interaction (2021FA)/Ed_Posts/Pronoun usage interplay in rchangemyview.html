@@ -1,0 +1,109 @@
+<h1>
+ Title: Pronoun usage interplay in r/changemyview
+</h1>
+<h3>
+ Author: Kiran Tomlinson (student)
+</h3>
+<h3>
+ Date: 2021-09-22T13:25:04.15161+10:00
+</h3>
+<h3>
+ Category: A1_reflection
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Here's the presentation and report for my A1 project. Group members: Kiran Tomlinson
+ </paragraph>
+ <file filename="presentation.pdf" url="https://static.us.edusercontent.com/files/axI4OknfthfYByScwtZQ1Tam">
+ </file>
+ <file filename="report.pdf" url="https://static.us.edusercontent.com/files/xz78UHi0NAFlkdFqkU1aQyvo">
+ </file>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Kiran Tomlinson (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  A1 Reflection:
+ </paragraph>
+ <list style="number">
+  <list-item>
+   <paragraph>
+    Taking a look at the data before working too hard on getting results can give you a better sense of what to expect/what pitfalls to avoid. I only started looking at example posts and comments fairly late in the project when Lillian encouraged it. Doing so helped me realize some ways in which my pronoun detection approach was failing, e.g. mistaking "US" (as in USA) for a pronoun. It also helped me see what typical high-pronoun usage posts looked like (e.g., using "I" a lot when the topic is what OP wants to happen with their body who they die).
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    I'm most proud of the statistical analysis &amp; findings about interplay--it was really gratifying to see some sensible patterns in the data, like commenters using both "you" and "I" more when the OP uses "I" more.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    I think I spent the most time on presenting my results in a nice way for the report. Thanks to convokit, the data processing and analysis were not too time consuming. On the other hand, finding a nice way to present 36 numbers and the results of 36 t-tests required some iteration and a lot of copying (I probably should have generated the table programmatically...).
+   </paragraph>
+  </list-item>
+ </list>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Benjamin Rosche (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  What I really like about your project, Kiran, is that you not only checked the marginal pronoun usage in the original posts and comments but also the conditional usage rates. It adds a relational / reciprocity element to the study, which is pretty cool! And, indeed, this is also where you found significant differences: commenters react to the pronouns used in the original post.
+ </paragraph>
+ <paragraph>
+  If I were added to your team, I would suggest sourcing all comments rather than just one successful and one unsuccessful one because differences in persuasiveness solely due to pronoun usage are likely going to be small. To detect weak signals in noisy data, we need all the observations we can get.
+ </paragraph>
+ <paragraph>
+  Moreover, there might be confounding relationships that need to be taken into account, which probably requires switching from simple t-tests to a regression-based approach. As you note yourself in the report, text length is correlated with persuasiveness and pronoun usage. While you employ usage rates to control for that, it might be that there is an interaction effect over which you average with the normalization approach. It might be that for short comments, it does not matter whether and which pronouns you use because the comments won't persuade the OP anyway. But for long comments, the relationship might actually hold.
+ </paragraph>
+ <paragraph>
+  Thus, I would suggest a subgroup analysis of comments that, on a number of covariates are predicted to have a high chance of being persuasive, but some just happen to not get the delta. Maybe on this subset, pronoun usage might indeed matter.
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Richard Lp (he/they) (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I thought it was fantastic how well you broke down errors and false-positives in your analysis. I stuck with primarily identifying first-person singular pronouns and then estimating the false positive rate in my analysis, but it was surprising that all forms of pronouns tended to trip relatively common pronoun usage.
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  I think the statistical treatment is very solid, and something I would not have thought to do at the outset of the project. That is, I expected more noticeable differences from the past readings and was solely looking for large discrepancies. A more careful treatment of the training group and explicit statement of the estimand would have been prudent. Also, the powerpoint is fantastic.
+ </paragraph>
+ <paragraph>
+  Also, I think to a certain extent especially short comments should have been removed from all stages of the analysis. CMV allows for reply comments, and these are often of very little value if they do no engage with the OP. The failure modes that identify large proportion first and second pronoun usage fit my intuition for how usage in a small sample (eg short document) would be distributed. This is also problematic for top third and lower third pronoun usage splits. What is more, I think it would be useful to examine the structure of comment threads and pronoun usage in greater detail. Whereas some of the more provocative and poorly performing responses you highlight seem like they must be one-offs. Perhaps there is a certain optimal pattern to identify the effectiveness of pronouns. I’d want to test whether using first-person pronouns helps build rapport, especially on sensitive issues. Then, we might be able to tell whether mirroring is consistent throughout comments, or simply a good opening strategy. I’d also echo stated issues with the paired dataset.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

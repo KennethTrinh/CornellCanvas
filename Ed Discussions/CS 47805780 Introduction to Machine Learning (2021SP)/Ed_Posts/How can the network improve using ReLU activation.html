@@ -1,0 +1,26 @@
+<h1>
+ Title: How can the network improve using ReLU activation?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-09T09:17:23.067254+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  For any value less than zero, the derivative of ReLU is zero, which means that if the network wants the value of a node to increase, it would get a zero gradient for that node and not change any of the relevant weights.
+ </paragraph>
+ <paragraph>
+  This is preventing me from creating a working backpropagation function, too: all of the S values in the final layer are negative, which is giving me a zero gradient for the last layer, which makes everything else zero as well. How might I fix this?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

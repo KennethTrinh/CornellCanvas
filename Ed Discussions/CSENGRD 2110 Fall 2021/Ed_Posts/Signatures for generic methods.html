@@ -1,0 +1,115 @@
+<h1>
+ Title: Signatures for generic methods
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-23T13:53:21.218698+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  From JavaHyperText:
+ </paragraph>
+ <pre>For a generic method, the signature includes the type parameter, with names in the type parameter replaced by some canonical names. For example,
+
+     the signature of method &lt;T, E&gt; m1(T p, E q) {...}    would be &lt;T1, T2&gt; m1(T1, T2)
+     the signature of method &lt;E1, E2&gt; m2(E1 x, E2) {...} would be &lt;T1, T2&gt; m2(T1, T2)
+
+so they are the same except for the name of the method.
+</pre>
+ <paragraph>
+  I don't understand this. The names (m1, m2) seem to be the same. In the examples, the names are preceeded by &lt;T1, T2&gt;. Do they represent the two types? So for example, could it be &lt;Integer, String&gt;? If so, are the parameters simply (Integer, String)? Or would they be (Integer p, String q)?
+ </paragraph>
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Look up   "signature"   in JavaHyperText. One sentence definition:
+ </paragraph>
+ <paragraph>
+  The method name together with the types of its parameters.
+ </paragraph>
+ <paragraph>
+  The signature does NOT include the return type or the parameter names; the names are irrelevant for what one uses signatures.
+ </paragraph>
+ <paragraph>
+  Suppose we have the signatures:
+ </paragraph>
+ <paragraph>
+  m(Integer, String)   and   m(String String)
+ </paragraph>
+ <paragraph>
+  method m is overloaded. The a call  m(5, "who")  calls the first method.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  So how would one write the signature if the two parameters are generic?
+  <break>
+  </break>
+  m(T1, T2)? Or would it best practice to ensure the type is specific?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The text you quoted says what the signatures are for those two examples:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    <code>
+     &lt;T1, T2&gt; m1(T1, T2)
+    </code>
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    <code>
+     &lt;T1, T2&gt; m2(T1, T2)
+    </code>
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  In your question, you said "the names (m1, m2) seem to be the same."  What names are you referring to?  "m1" and "m2" are two different method names.  Because the name of a method is included in its signature, those signatures are distinct.  However, the input parameter portion of their signatures are the same, even though the original declarations used different names for the type parameters.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,116 @@
+<h1>
+ Title: Fifth term acceleration
+</h1>
+<h3>
+ Author: Edith Liu (None)
+</h3>
+<h3>
+ Date: 2021-05-05T19:46:19.029448+10:00
+</h3>
+<h3>
+ Category: Concepts
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Here's some work I did trying to figure out what are the five terms in the a_p/fixed frame. I'm doing this for a more general setup that we used in 4.30 Friday's class.
+ </paragraph>
+ <paragraph>
+  Notations: B=moving frame; F= fixed frame; P=point mass P
+ </paragraph>
+ <paragraph>
+  In the example in May 5th class, we only use the angular speed of moving frame related to fixed frame to calculate for a_P/F. When I tried this out using a more general setup as shown below, I get confused since I was thinking that B is moving around and at the same time P is moving around related to B (both translational and rotational). Shouldn't there be 2 different expression for angular speed? Or is the two angular speed shown in my work the same?
+ </paragraph>
+ <figure>
+  <image height="514.5359408033827" src="https://static.us.edusercontent.com/files/80jb2SDNlVGsZlPppj6JT6M9" width="643"/>
+ </figure>
+ <figure>
+  <image height="1023.4277389277389" src="https://static.us.edusercontent.com/files/eYpbTLAPx07zyJR38qU1UOzj" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Arnaldo Rodriguez-Gonzalez (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  A couple of things:
+ </paragraph>
+ <paragraph>
+  1) The reason you’re not getting two different angle terms is because the coordinate system in the body frame you defined is Cartesian—as a result, all of the terms involving the acceleration of the point P relative to B can be expressed using $\ddot{x’}$ and $\ddot{y’}$ (as you wrote down). Consequently, the only angle that gets introduced into the system is the one that connects the orientation of the body frame unit vectors with the fixed frame vectors.
+ </paragraph>
+ <paragraph>
+  If you had chosen to include a polar coordinate system attached to the B frame, then you'd need two angles—one that relates the orientation of your polar coordinate system to the Cartesian B frame, and one that relates the orientation of the B frame to the fixed frame. However, if you re-define the B frame using polar coordinates, then you can get away with using a single angle that would be different from the angle you drew in your example. Complicated, I know! 😵
+ </paragraph>
+ <paragraph>
+  2) In your equation labeled 2), you’ve got a math mistake—you’re taking the dot product of something that’s a scalar with a vector, which doesn’t make sense. Likely you want something that involves two cross products.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Edith Liu (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you for answering!
+ </paragraph>
+ <paragraph>
+  Base on the first point you mentioned, if I apply the same logic to the problem below (from lecture) even though it is not defined in Cartesian, can I still obtain the same result? (Which I believe I can?).  Also, if we doesn't have a constant omega (angular speed of moving frame related to fixed), does that statement still holds?
+ </paragraph>
+ <paragraph>
+  For the second point, that's not a dot product but a simple multiply sign, I shouldn't write it so seperatly, sorry for the confusion!
+ </paragraph>
+ <figure>
+  <image height="556.75442043222" src="https://static.us.edusercontent.com/files/RsCpomOFveilcoGxUGdGNtGl" width="698"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Arnaldo Rodriguez-Gonzalez (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Here you have to be a bit careful, because you actually have three frames in the problem (compared to two in your initial post)—the fixed frame, a body frame fixed on the circle, and a body frame fixed on the stick attached to the circle. In that scenario, two angles are necessary, since you can consider the orientation of the stick relative to the circle and the orientation of the circle relative to the fixed frame. This two-angle fact is due entirely to the fact that there are three frames in your problem, not due to the polar/Cartesian nature of the frames themselves—every fixed/body frame could be a Cartesian frame and you’d still need those two angles to identify the angular velocities of the system.
+ </paragraph>
+ <paragraph>
+  (I edited my initial response to clarify the angle thing a bit.)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andy Ruina (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am not trying to follow the details of your post above.  However, if you would explain it all to me in office hours I would love to discuss.  And, speaking of love, I love that you are putting in all of this careful thought and effort.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

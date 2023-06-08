@@ -1,0 +1,65 @@
+<h1>
+ Title: How to access current_process from lock.c
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-01T05:51:56.601451+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am trying to refer to current_process ( a variable initialized in process.c ) in lock.c. Is there anyway I can reference it besides include process.c?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prithwish Dan (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yeah you can define the current_process as an extern in shared_structs.h (copy the line of code from 3140_concur.h involving current_process)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Olive Faber (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  I believe lock.h includes 3140_concur.h, so you should just have it available out of the box.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prithwish Dan (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  oh strange it didn't work for me initially
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

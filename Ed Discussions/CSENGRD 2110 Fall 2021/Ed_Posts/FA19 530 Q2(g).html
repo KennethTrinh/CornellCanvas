@@ -1,0 +1,120 @@
+<h1>
+ Title: FA19 5:30 Q2(g)
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-05T07:06:13.06733+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi!
+  <break>
+  </break>
+  <break>
+  </break>
+  I have a question about a practice prelim (2019, 5:30 PM).  For 2g), I am confused on why "I2 k2 = i1" does not compile while "I2 k = b" does. Is it because i1 is declared as a variable of type interface and interface can't be actual objects?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Thank you!
+ </paragraph>
+ <figure>
+  <image height="251.0951724137931" src="https://static.us.edusercontent.com/files/aEmU9vW9kluRFgtfI2xzlWMn" width="641"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I2 k = b compiles because class B implements I2.
+ </paragraph>
+ <paragraph>
+  I2 K2 = i1 does not compile because i1 is declared to reference Interface 1 while this assignment is trying to make K refer to interface 2.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Allen Chen (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  is I1 i1 = b; pointing i1 to the same memory location as b or is it just copying the values of b?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think #595 will help explain it to you.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Got it, thank you very much!!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Allen Chen (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It sounds like for i1 = b, it is pointing to the same memory location as b. In that case, wouldnt there be a partition in b (and thus in i1) for both I1 and I2 thus allowing it to compile?
+ </paragraph>
+ <paragraph>
+  I was looking at #561 and there, C1 h = (C1)(A) b; is valid for this exact reason because for C1 h = (C1)(A) b; to be valid, (A) b would have to have a partition for C1, which A by itself does not have.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

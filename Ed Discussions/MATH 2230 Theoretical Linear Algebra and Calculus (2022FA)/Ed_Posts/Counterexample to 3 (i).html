@@ -1,0 +1,99 @@
+<h1>
+ Title: Counterexample to 3 (i)?
+</h1>
+<h3>
+ Author: Yehoshua Milman (student)
+</h3>
+<h3>
+ Date: 2022-11-22T12:50:48.180324+11:00
+</h3>
+<h3>
+ Category: Homework
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is the function
+ </paragraph>
+ <paragraph>
+  $$f(x)= \begin{cases}
+ </paragraph>
+ <paragraph>
+  \sin (x-\pi / 2), &amp; x \in\left[-\frac{3\pi}{2},-\frac{\pi}{2}\right] \cup\left[\frac{\pi}{2}, \frac{3 \pi}{2}\right] \cup\left[\frac{5 \pi}{2}, \frac{7\pi}{2}]\right. \ 0, &amp; x \in\left(-\infty, -\pi\right)\cup\left(-\frac{\pi}{2}, \frac{\pi}{2}\right) \cup\left(\frac{3 \pi}{2}, \frac{5 \pi}{2}\right)\cup \left(\frac{7\pi}{2},\infty\right)
+ </paragraph>
+ <paragraph>
+  \end{cases}$$
+ </paragraph>
+ <paragraph>
+  a counterexample to part (i) of question 3, or am I just missing something? The graph of the function looks like this:
+ </paragraph>
+ <figure>
+  <image height="292.95571095571097" src="https://static.us.edusercontent.com/files/8cfRhlZSi8m0emhnkEeEF2Lk" width="658"/>
+ </figure>
+</document>
+<h3>
+ Author: Yehoshua Milman (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sorry, the \cases environment isn't working here for me, but the function is $\sin(x-\pi/2)$ on the first three intervals, and $0$ on the other four intervals.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Luke Serafin (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think it is. Two ways to fix the problem would be to require that the function be analytic, or to drop the strictness requirement for the local minima. Good catch!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Luke Serafin (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The problem is corrected to just ask for local minima now (not strict), but I wanted to note that $C^1$ is not enough to guarantee strict local minima, and indeed $C^\infty$ is still not enough. There are $C^\infty$ functions with compact support (i.e. zero off a compact set) which have unique maxima, and if we string three of these together with an interval outside the support between each pair we get a counterexample similar to your continuous-but-not-differentiable counterexample.
+  <break>
+  </break>
+  <break>
+  </break>
+  Requiring that $f$ be analytic, i.e. representable by a power series with infinite radius of convergence, is enough to guarantee strict local minima because an analytic function which is constant on some interval is constant everywhere. That proof should be accessible via the methods of this class, but of course it is an exercise purely for your own enrichment if you decide to pursue it.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Reyer Sjamaar (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thanks, I'll post a correction.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

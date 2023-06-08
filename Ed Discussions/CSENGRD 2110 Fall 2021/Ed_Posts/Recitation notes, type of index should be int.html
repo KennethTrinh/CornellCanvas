@@ -1,0 +1,67 @@
+<h1>
+ Title: Recitation notes, type of index should be int?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-28T07:21:34.98068+11:00
+</h3>
+<h3>
+ Category: Sections
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We have this snippet in recitation 8:
+ </paragraph>
+ <snippet language="java" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   private class StackIterator implements Iterator&lt;E&gt; {
+     E n; // b[n] is next el. to iterate (-1 if none)
+     /** Constructor: iterator over stack elements, from top to bottom. *.     
+     public StackIterator() { n= h-1; }
+     /** = there is another element to enumerate */ 
+     public @Override boolean hasNext() { return 0 &lt;= n; }
+    /** Return the next element to enumerate. ...  */
+    public @Override E next() { 
+  if (!hasNext()) throw new NoSuchElementException();
+n= n - 1;
+return b[n+1];
+} }
+  </snippet-file>
+ </snippet>
+ <paragraph>
+  Shouldn't the type of
+  <code>
+   n
+  </code>
+  be
+  <code>
+   int
+  </code>
+  ?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Vladia Trinh (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, it should be an index which has to be an int. I believe that's a typo.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

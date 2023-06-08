@@ -1,0 +1,47 @@
+<h1>
+ Title: Queue Time Complexity
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-19T08:10:18.049437+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="269.10986367281475" src="https://static.us.edusercontent.com/files/58FgeMNohGngWw2e1EMesOKu" width="658"/>
+ </figure>
+ <figure>
+  <image height="242.19887730553327" src="https://static.us.edusercontent.com/files/v2jOt4TIexPPoP2nrAcJK4TE" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  I am confused with the time complexity for the add() method of priority queue.   If it can be implemented with a linked list, would that mean add() can take O(1) instead of O(logn)?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Varun Gande (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If you were to use a linked list, add() wouldn't be O(1) because you would have to bubble up to the correct priority (which would be O(n) and worse than a heap's implementation). For a heap, adding and bubbling up would take O(log n).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

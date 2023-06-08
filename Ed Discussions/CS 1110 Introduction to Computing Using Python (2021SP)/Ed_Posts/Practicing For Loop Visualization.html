@@ -1,0 +1,72 @@
+<h1>
+ Title: Practicing For Loop Visualization
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-25T07:15:01.046452+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is there anywhere we can practice visualization for 'for-loop/nested for-loop' type questions? I understand that theoretically, we could plug in any of the functions we've written into python tutor, but I'm wondering if there is a formal worksheet or pset that might relate to this.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Natalie Isak (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Have you done the for loop section of the lab yet? I believe that would be good practice. In addition, nearly all of the practice exams in the archive have loop questions, so I would recommend them as well.
+ </paragraph>
+ <paragraph>
+  In terms of visualization for nested for loops, that can be tricky. One way I like to think about it: the outer loop sets the bounds for the inner loop. For example: if the outer loop's index is at 0, then the inner loop's range is 0-0. When the outer loop increments to 1, now the inner loop's range is 0-1.
+ </paragraph>
+ <paragraph>
+  Try an example for yourself. Here is one to get you started, and I would recommend playing around with the lengths of the lists to see what happens.
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   inner = ["a", "b", "c"]
+outer = ["x", "y", "z"]
+
+for i in range(len(inner)):
+  for j in range(len(outer)):
+     print(i, j)
+  </snippet-file>
+ </snippet>
+ <paragraph>
+  You can also do similar experiments with for loops without using range.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  (see comment above)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,179 @@
+<h1>
+ Title: How to find the value of a coin on a tile?
+</h1>
+<h3>
+ Author: Ming DeMers (student)
+</h3>
+<h3>
+ Date: 2021-12-06T15:32:32.251853+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi,
+ </paragraph>
+ <paragraph>
+  I am trying to find the value of a coin I know is on a certain tile. Using the methods coins() or originalCoinValue() return erroneously, often to 0. They are contained in the Tile.java class.
+ </paragraph>
+ <paragraph>
+  Is there a better method or class I should be using?
+ </paragraph>
+ <paragraph>
+  Thanks!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  I use coins() with no problem.  Could you elaborate?  What do you mean "erroneously"?
+ </paragraph>
+ <paragraph>
+  Also a lot of tiles do not have coins, so checking whether a tile has a coins() value greater than zero would be ideal.
+ </paragraph>
+ <paragraph>
+  Perhaps you are not accurately using coins().  First, you need to access the tile of a node with a special method, then call coins() on it.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Ming DeMers (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thanks for the reply.
+ </paragraph>
+ <paragraph>
+  I mean the method simply does not return the correct value of the coin, according to the GUI. Often the call will return "0," or a different value that is expected of a different tile.
+ </paragraph>
+ <paragraph>
+  For example, if I call "map.get(i).getTile().coins()" it simply returns incorrectly.
+ </paragraph>
+ <paragraph>
+  Could I be accessing the tile incorrectly? Should I try using its ID?
+ </paragraph>
+ <paragraph>
+  Thanks!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What file is map in?  I access coins in a different way, without calling map.get(i)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Ming DeMers (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sorry, Map is the allNodes collection converted into an ArrayList.
+ </paragraph>
+ <paragraph>
+  How do you access the coins?
+ </paragraph>
+ <paragraph>
+  Maybe I shouldn't convert, it could be causing data loss/bad translation?
+ </paragraph>
+ <paragraph>
+  Thanks again!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I do node.getTile().coins()
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Ming DeMers (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Right, I call that too, but it returns an unexpected value.
+ </paragraph>
+ <paragraph>
+  Ultimately, I'm trying to find all the tiles with coins and figure out their value.
+ </paragraph>
+ <paragraph>
+  I do this by creating an ArrayList of just tiles with coins called coinTiles. Then I iterate through allSets() and add tiles of coin value &gt; 0. In theory, the resulting array should contain the nodes where their coin value is greater than 0.
+ </paragraph>
+ <paragraph>
+  However, when I print this array and the coin values, many of them show as zero, and none of them are accurate to what the GUI shoes as the tile's coin value.
+ </paragraph>
+ <paragraph>
+  Would you suggest a better method to do this?
+ </paragraph>
+ <paragraph>
+  Merci
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  This is difficult to see why you’re having this problem without seeing your code because I have done something similar with no problem.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

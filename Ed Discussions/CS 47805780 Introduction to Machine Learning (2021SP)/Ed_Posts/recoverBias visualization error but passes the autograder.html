@@ -1,0 +1,114 @@
+<h1>
+ Title: recoverBias visualization error but passes the autograder
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-01T08:27:07.788301+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  My recoverBias visualization is off but it passes the autograder. I feel that this is causing downstream functions to work incorrectly. Any suggestions?
+ </paragraph>
+ <figure>
+  <image height="478.4459234608985" src="https://static.us.edusercontent.com/files/eLn0ZlHQmfuEylQxxtMtFogs" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Christopher Vincens (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I had a very similar problem. In my case it was caused by my dualqp being incorrect (despite both dualqp and recoverBIas passing the autograder).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Rishi Malhotra (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It seems as if my bias is always offset by some number and that my w is correct.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Rishi Malhotra (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  Do you remember which error you had in dualqp specifically? Was it about quad_form?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kursti DeLello (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What helped me was using as many "native" cvxpy functions as possible when calculating anything. So rewriting anywhere I was using np.func() with like an @ or multiply, etc. I hope this is helpful and not too vague...
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Could you be a little more explicit - which function did you implement these changes in?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kursti DeLello (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  the arguments in quad_form specifically benefit from this treatment, but I found that writing my objectives and constraints following their
+  <link href="https://www.cvxpy.org/tutorial/functions/index.html"/>
+  operator rules carefully was helpful too.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

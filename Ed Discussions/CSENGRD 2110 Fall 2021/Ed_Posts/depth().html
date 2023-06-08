@@ -1,0 +1,72 @@
+<h1>
+ Title: depth()
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-18T13:39:58.432607+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm having trouble understanding how to design this. I know I need to be using a searching method but the examples given are for returning of type Node. In this scenario, we need to keep a global track of the depth and then somehow exit the recursion as soon as we find our value, but I don't see how you can do that under the current constraints. Any return value has to be an integer, so what do you return so that the loop will terminate? I also know it will probably look something like 1 + depth() but then I get confused because leaves in the tree can break the recursion because I can't come up with a proper base case.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You are thinking too hard about this. I have no idea about why the thoughts you are express are arising.
+ </paragraph>
+ <paragraph>
+  Yes, it's a searching method. What does the return type have to do with it?
+ </paragraph>
+ <paragraph>
+  First, what is the base case? In what case do you now the answer immediately?
+  <break>
+  </break>
+  Write that down in your code.
+ </paragraph>
+ <paragraph>
+  Second, look at the searching pattern and have your method have essentially the same.
+  <break>
+  </break>
+  You call the method recursively on the children. and stop the recursion when one of the calls returns something not -1.
+ </paragraph>
+ <paragraph>
+  Use the recursive definition we give you:
+ </paragraph>
+ <paragraph>
+  // Here is recursive insight:
+  <break>
+  </break>
+  // ... Let child c of the root contain p.
+  <break>
+  </break>
+  // ... Then the depth of p in the root = (1 + depth of p in c)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

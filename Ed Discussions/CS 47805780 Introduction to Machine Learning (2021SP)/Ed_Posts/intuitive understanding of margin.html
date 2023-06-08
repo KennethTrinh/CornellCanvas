@@ -1,0 +1,197 @@
+<h1>
+ Title: intuitive understanding of margin
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-12T06:59:29.483633+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="287.3851640513552" src="https://static.us.edusercontent.com/files/1c3o74HcFlpsQBtmGwfzhHuS" width="437"/>
+ </figure>
+ <paragraph>
+  How can we intuitively and geometrically understand the expression for margin?
+ </paragraph>
+ <paragraph>
+  I understand that (w dot x + b) is the expression for the hyperplane, and then that is multiplied by some y in {-1, 1} to give the margin. I don't understand how multiplying these two would necessarily yield the margin though?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aaron Zhang (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Intuitively, you can think of multiplying by $y_i$ as just a fancy way of writing absolute value bars around the remainder of the expression.
+ </paragraph>
+ <paragraph>
+  As to what the geometric margin means, it's just the distance between the hyperplane and the point. If you calculate this using arbitrary values, the formula you see on the slides should appear.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  How is multiplying by y_i equivalent to absolute value bars?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aaron Zhang (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It doesn't make sense to have negative distance. When $w \cdot x + b$ is negative, the corresponding $y$ should be $-1$ because this is how the hyperplane makes its classification rule. Multiplying them together will give a positive result. When $w \cdot x + b$ is positive, then the corresponding $y$ should be $+1$, where the two terms have a positive product again.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Because $|y| = 1$ you can essentially think of $y(w \cdot x + b)$ as $|w \cdot x + b|$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I see. So (w dot x + b) would be negative for misclassified cases, and it would be positive for correctly classified cases.
+ </paragraph>
+ <paragraph>
+  But how do we know that (w dot x + b) will be negative for misclassified cases?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aaron Zhang (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  not quite
+ </paragraph>
+ <paragraph>
+  suppose you have a linearly separable training set. then you can find a valid hyperplane which correctly separates the data (which is the hyperplane i think they are talking about in the slides). this is why you can say that training examples labelled $-1$ will have negative $w \cdot x + b$ (because if it was positive than the hyperplane wouldn't be correct).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ohh I see. But how can we know that training examples labelled -1 will have negative (w dot x + b) ?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aaron Zhang (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  By definition, a hyperplane correctly classifies a training set in this scenario if $w \cdot x + b$ is positive for $+1$ labelled examples and negative for $-1$ labelled examples.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Thorsten Joachims (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  The answer became a bit convoluted and I think there was some a bit of a "communication knot" (literal translation from German, but pretty self-explanatory). So, let me try give it a try:
+ </paragraph>
+ <paragraph>
+  Margin is a handy way to encode two things in one number.
+ </paragraph>
+ <paragraph>
+  First, the sign of the margin tells you whether the examples is correctly or incorrectly classified by the hyperplane. If the true label $y_i$ and the predicted label $sign(w \cdot x_i +b)$ are the same, then the margin $y_i (w\cdot x_i + b)$ is positive. If they are different, the margin is negative.
+ </paragraph>
+ <paragraph>
+  Second, the margin tells you "easily" the hyperplane gets the example right. If one example has a margin of 0.1, and another one has a margin of 1.2, then the second one is 12 times farther on the correct side of the hyperplane than the first one. And farther away is good, since it makes the classification robust to perturbations (either to the hyperplane or the example's features). A point that is far away is less likely to change its classification under small perturbations.
+ </paragraph>
+ <paragraph>
+  Finally, if the weight vector is normalized to Euclidian length 1, then the absolute value of the margin actually has a geometric meaning in a cardinal sense: it is the distance of the point to the hyperplane.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If margin is negative for misclassified examples, then how is multiplying by y_i in the margin equivalent to having absolute value bars around the expression for margin? If we had absolute value bars, then wouldn't margin always be positive?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aaron Zhang (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes you are correct. My understanding of this slide was incorrect and they are not equivalent. Sorry about that!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

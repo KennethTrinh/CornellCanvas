@@ -1,0 +1,73 @@
+<h1>
+ Title: When to prefer L1 regularization and when to prefer L2 ?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-28T05:11:05.392801+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When to prefer L1 regularization and when to prefer L2 over the other?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Artem Streltsov (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  L2 prevents overfitting by controlling size of the weights (all weights are small and of positive magnitude); L1 instead pushes some weights all the way to 0 and essentially carries out a feature selection. so the question is whether you want to completely rule out some features or keep using them all and just want to prevent overfitting. computationally l2 is also quite a bit easier, although there are good algos out there for lasso now too.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  So, to summarize, can I write
+ </paragraph>
+ <paragraph>
+  L1 is to be preferred for feature selection  and
+ </paragraph>
+ <paragraph>
+  L2 is to be preferred to avoid overfitting
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Artem Streltsov (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  yes. for the record, l1 reduces overfitting too. wlog dropping poor features reduces overfitting
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,52 @@
+<h1>
+ Title: Binary search invariant (SP195:30, 2d)
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-05T08:30:23.822924+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Does it matter if k is to left or right of the bar?
+ </paragraph>
+ <figure>
+  <image height="338.91743119266056" src="https://static.us.edusercontent.com/files/UisarHgCgzmnHR9psE9DQ488" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  No, for you can develop it from the invariant, wherever k is placed.
+ </paragraph>
+ <paragraph>
+  However, we know from experience that it is easier to put k to the left. Here are some reasons:
+ </paragraph>
+ <paragraph>
+  1. You want to compute e as the middle value in the ? section. This is most easily done it k is before.
+ </paragraph>
+ <paragraph>
+  2. Proving termination is MUCH easier with k to the left.
+ </paragraph>
+ <paragraph>
+  3. There is no need to reference b[k+1] or b[h-1].
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

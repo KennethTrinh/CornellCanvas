@@ -1,0 +1,223 @@
+<h1>
+ Title: 2019 sp final Q7a
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-18T12:54:07.94467+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, from specification, is it true that we cannot use 'in' to test if p is already in the list because the element in the list is object type instead of normal 'str' or 'int'?
+ </paragraph>
+ <figure>
+  <image height="315.4666666666667" src="https://static.us.edusercontent.com/files/OXykKt9bTlNhW89p5SZ2ddqF" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Great question!  See below!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Somebody can correct me if I'm wrong, but I believe it goes back to when we tried the operator "==" with objects; it only returns True if the objects have the same id, not necessarily if they're the same by some external definition. Similarly here, I'd expect that "in" would only return True if the Product you are looking at in self.goods has the same id as p, which is not what we want. Suppose you are adding a new Product named Milk. There is an identical product in self.goods (in terms of the equals method defined), but since they don't have the same id's (as they are different instances), "in" wouldn't find p in self.goods (when we would want it to in this case)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Elisabeth Finkel (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <code>
+   is
+  </code>
+  checks whether they have the same id.
+  <code>
+   ==
+  </code>
+  by default compares the ids; but for many classes (eg lists), the
+  <code>
+   __eq__
+  </code>
+  function has been overwritten to do something else.
+ </paragraph>
+ <paragraph>
+  And the behavior of
+  <code>
+   in
+  </code>
+  depends on the behavior of
+  <code>
+   __eq__
+  </code>
+  (except I guess if you overwrite
+  <code>
+   __contains__
+  </code>
+  , based on the professor's answer)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  AAAAAAARGG! Just irretrievably deleted my whole answer!!!!!!
+  <break>
+  </break>
+  <break>
+  </break>
+  Grr. Trying again.
+  <break>
+  </break>
+  .........
+  <break>
+  </break>
+  <break>
+  </break>
+  I should have read this question more carefully when writing up the final exam study guide.  Using "in"
+  <italic>
+   would
+  </italic>
+  work ....
+  <bold>
+   IF
+  </bold>
+  you had already correctly defined _ _ eq _ _ for Products to ignore differences in quantity but check for differences in name ... but, question 6(d)
+  <bold>
+   did
+  </bold>
+  ask students to do that!  So,
+  <bold>
+   under the condition that an _ _ eq _ _ method was written as specified in question 6(d),
+  </bold>
+  using "in" would have worked.
+  <break>
+  </break>
+  Here we are showing success:
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   class Product:
+    """ Simplified version with fewer attributes"""
+    def __init__(self, n, quantity):
+        self.name =n
+        self.quantity = quantity
+    def __eq__(self, other):
+        """Suppose we only care that the name matches"""
+        return isinstance(other, Product) and self.name == other.name 
+
+tp1 = Product("Think Python", 30)
+goods = [tp1]
+tp_newshipment = Product("Think Python", 50) # note the quantity can be different
+print(tp_newshipment in goods) # this is true!!!
+  </snippet-file>
+ </snippet>
+ <paragraph>
+  <break>
+  </break>
+  <break>
+  </break>
+  But if we didn't have an _ _ eq _ _ , or had an _ _ eq _ _ that also checked that the quantities are the same (this would be weird: why would a new shipment have the same quantity as the amount we already have in stock), the desired behavior of
+  <code>
+   in
+  </code>
+  telling us whether we had a product in our inventory would fail, as shown here:
+  <break>
+  </break>
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   class Product2:
+    """ Simplified version"""
+    def __init__(self, n, quantity):
+        self.name =n
+        self.quantity = quantity
+    # No __eq__ here!
+
+
+tp1 = Product2("Think Python", 30)
+goods = [tp1]
+tp_newshipment = Product2("Think Python", 50) # note the quantity can be different
+print(tp_newshipment in goods) # this will print False
+  </snippet-file>
+ </snippet>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  But, I think the question was worded that way to force students to explicitly use ==  and thus demonstrate they understand that it uses
+  <code>
+   __eq__
+  </code>
+  .  [
+  <code>
+   in
+  </code>
+  actually uses a special method called
+  <code>
+   __contains__
+  </code>
+  which, for lists, defaults to checking
+  <code>
+   __eq__
+  </code>
+  for each item in the list.]
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

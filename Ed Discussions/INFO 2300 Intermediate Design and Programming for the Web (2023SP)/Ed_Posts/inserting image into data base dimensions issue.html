@@ -1,0 +1,43 @@
+<h1>
+ Title: inserting image into data base dimensions issue
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-04-19T11:19:45.910934+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  My form works to insert a new entry and loads at the bottom of the entries page. But it looks really bad when I use sample images because theoretically, the user can input whatever .ext image they want. I had pre-sized each image in my seed data the same square size, and each fits nicely in their respective box. But now, when a new entry is submitted, I can't control its dimensions. Is there a property that I'm missing that can access this, or how should I go about ensuring that the inserted image styles accordingly?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is typically handled two ways:
+ </paragraph>
+ <paragraph>
+  1. Server-side image scaling and cropping using a background job. This is an advanced topic that we won't cover in this class.
+ </paragraph>
+ <paragraph>
+  2. CSS to resize and crop/frame images. Please check out the reference documentation for this. There are many ways to do this. A quick web search comes up with this, which has many viable solutions: https://stackoverflow.com/questions/15167545/how-to-crop-a-rectangular-image-into-a-square-with-css
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

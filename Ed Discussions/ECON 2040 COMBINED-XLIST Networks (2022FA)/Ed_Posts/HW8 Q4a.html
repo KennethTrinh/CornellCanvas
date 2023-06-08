@@ -1,0 +1,63 @@
+<h1>
+ Title: HW8 Q4a
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-11-16T10:24:28.521164+11:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Does it make logical sense for cluster X which although has less people, is more interconnected to have a lower cluster density than Y which is more sparesly connected (but has more people)? In my head it seems like a cluster which is more interconnected should have greater density. If this doesn't make logical sense then I must be calculating something wrong.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Not quite:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    Density measures fraction of connections nodes in a cluster have going to nodes
+    <underline>
+     outside
+    </underline>
+    the cluster
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Interconnectedness measures the fraction of connections nodes in a set have going to
+    <underline>
+     other nodes inside
+    </underline>
+    a set
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  Therefore, if a node has a higher fraction of connections to nodes in the cluster, it must have a lower fraction going to nodes outside the cluster, and vice versa. In this way, there is a tradeoff between interconnectedness and density of the set at large
+ </paragraph>
+ <paragraph>
+  (Since interconnectedness isn't well defined for this, I took it as a fraction. One could also consider it as the raw number of connections to other nodes in the set, in which case they wouldn't be as related, although still somewhat. You could have a low density cluster with high or low interconnectedness)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

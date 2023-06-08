@@ -1,0 +1,40 @@
+<h1>
+ Title: S19 5d
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-14T07:00:44.971373+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="157.30202774813233" src="https://static.us.edusercontent.com/files/lH3rKyjCWHm4D24yTbS8a0gw" width="658"/>
+ </figure>
+ <paragraph>
+  Just for clarification, does adding a node take O(n) time because you have the change the keys for the other nodes? The put function itself, for HashMap, is still O(1) time, correct?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Varun Gande (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  You might have O(n) time to add/remove a node in a hashmap when the buckets are not well distributed in chaining (in the worst case) or when clustering occurs during open addressing. The get and put functions are O(1) under the assumption the buckets are well distributed.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

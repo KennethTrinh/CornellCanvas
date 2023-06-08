@@ -1,0 +1,95 @@
+<h1>
+ Title: Confusion about casting down
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-02T08:02:34.302183+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello,
+ </paragraph>
+ <paragraph>
+  I am having trouble understanding the JavaHyperText page on recursion of ragged arrays (linked here:
+  <link href="https://www.cs.cornell.edu/courses/JavaAndDS/files/recursionArray.pdf"/>
+  https://www.cs.cornell.edu/courses/JavaAndDS/files/recursionArray.pdf ), and I think it is because I am having trouble understanding the casting involved. Here is the code:
+ </paragraph>
+ <paragraph>
+  /** Return the sum of all integer values in obj. * Precondition: obj is one of the classes: Integer, Integer [], Integer [][], Integer [][][], etc. * None of the elements in obj is null. */
+ </paragraph>
+ <paragraph>
+  public static int arraySum (Object obj) {
+ </paragraph>
+ <paragraph>
+  if (obj instanceof Integer) return (Integer) obj;
+ </paragraph>
+ <paragraph>
+  // obj is an Object array
+ </paragraph>
+ <paragraph>
+  Object [] oba= (Object []) obj;
+ </paragraph>
+ <paragraph>
+  int sum= 0;
+ </paragraph>
+ <paragraph>
+  for (Object ob: oba) {sum= sum + arraySum (ob); }
+ </paragraph>
+ <paragraph>
+  return sum; }
+ </paragraph>
+ <paragraph>
+  I don't understand why we make Object[] oba, or the parameters of the for loop. How does this casting help to make the array less nested?
+ </paragraph>
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Will Huey (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  obj has type Object, but it can also be an array containing elements of type Object. If it is not an Integer, then it is an Object array. We must cast obj from Object to Object[] so we can iterate on it.
+ </paragraph>
+ <paragraph>
+  Then we iterate through each Object
+  <italic>
+   ob
+  </italic>
+  in the array
+  <italic>
+   oba
+  </italic>
+  . But
+  <italic>
+   ob
+  </italic>
+  may itself be an Object array, so we use recursion until we reach an object that is an Integer, and not an Object array. Then, we can add it to our sum.
+ </paragraph>
+ <paragraph>
+  The casting makes it work for an Integer array of any dimensions. Otherwise, you would need to write separate methods for Integer, Integer[], etc.
+ </paragraph>
+ <paragraph>
+  Recursion is what makes the arrays less nested. Without recursion, you would need 3 nested for loops to add every element in an object of class Integer[][][].
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

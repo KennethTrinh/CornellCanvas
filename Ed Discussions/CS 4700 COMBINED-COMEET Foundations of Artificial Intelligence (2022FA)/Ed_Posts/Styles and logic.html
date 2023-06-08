@@ -1,0 +1,142 @@
+<h1>
+ Title: Styles and logic
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-12-08T15:12:25.550968+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The lecture slides confused me a little bit on the different styles like style1, inference by numerating, and style2, semantics and inference rules. Would it be possible to get an explanation on the differences? I couldn't differentiate between the two styles but I understand that resolution is a proof by contradiction and we aim to reach the empty clause. Can you explain style 1, 2, and 4?
+ </paragraph>
+ <paragraph>
+  Also are propositional logic and first-order logic the same?
+ </paragraph>
+</document>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Could someone answer :) I would greatly appreciate it!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Dan Ni (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sure. In short, the styles are all just different proof methods.
+  <break>
+  </break>
+  <break>
+  </break>
+  <italic>
+   Style 1 is proof by
+   <underline>
+    model checking
+   </underline>
+   .
+  </italic>
+ </paragraph>
+ <paragraph>
+  Entailment is formally defined as: $\alpha \models \beta$ iff $M(\alpha)  \subseteq M(\beta)$, where $M(\alpha)$ denotes the set of all models of $\alpha$. (Recall that a model is just a construct that assigns a True/False value to every relevant sentence, and that a model $m$ "is a model of" a sentence $\alpha$, if $\alpha$ is true in $m$.)
+ </paragraph>
+ <paragraph>
+  Style 1 shows that $KB \models \alpha$ by showing that $M(KB) \subseteq M(\alpha)$, which we can do by enumerating all the models in $M(KB)$ and checking if $\alpha$ is true in all those models. Note that Style 1 doesn't actually tell you anything about how $KB \models \alpha$, just that it does. (Paraphrasing the book: If the $KB$ is a haystack and $\alpha$ is a needle, entailment is the needle being in the haystack, while inference is finding it.)
+ </paragraph>
+ <paragraph>
+  <italic>
+   Style 2 is proof through
+   <underline>
+    inference rules
+   </underline>
+   .
+  </italic>
+ </paragraph>
+ <paragraph>
+  From the definition of entailment, one can prove the deduction theorem, which states that $\alpha \models \beta$ iff $\alpha \Rightarrow \beta$ is valid. (Recall that valid sentences (aka tautologies) are true in all models.)
+ </paragraph>
+ <paragraph>
+  Style 2 proves $KB \models \alpha$ by using inference rules to prove $KB \Rightarrow \beta$. ("Inference rule" is just a general term for any rule that draws conclusions from some premise(s), e.g. Modus Ponens, And-Elimination, De Morgan's laws, etc.). Through sequential application of inference rules, Style 2 provides a line of reasoning (a proof) for how $KB \models \alpha$.
+ </paragraph>
+ <paragraph>
+  This works because we can prove that these particular rules are sound, meaning they produce a valid output (conclusion) given true inputs (premises). And we could easily show this by enumerating all the possible truth values of their inputs.
+ </paragraph>
+ <paragraph>
+  <italic>
+   Style 3 is proof through
+   <underline>
+    contradiction
+   </underline>
+   .
+  </italic>
+ </paragraph>
+ <paragraph>
+  From the definition of entailment, we can also prove that $\alpha \models \beta$ iff $\alpha \wedge \neg \beta$ is unsatisfiable. (Recall that satisfiable sentences are true in any model.)
+ </paragraph>
+ <paragraph>
+  Style 3 proves $KB \models \alpha$ by proving $KB \wedge \neg \alpha$ is unsatisfiable using the resolution rule. The resolution rule is just a particular inference rule that alone is sufficient to form a complete inference algorithm.
+ </paragraph>
+ <paragraph>
+  <italic>
+   Style 4 is a "special case" of Style 3.
+  </italic>
+ </paragraph>
+ <paragraph>
+  Style 4 is just talking about SAT solvers. SAT solvers are trying to prove the same thing as Style 3, i.e. that $KB \wedge \neg \alpha$ is inconsistent, but leverages various different techniques that make it much faster.
+ </paragraph>
+ <paragraph>
+  ~~~~~~~~~~~~~~~~~~~~~~~~~
+ </paragraph>
+ <paragraph>
+  Everything above is associated with propositional (aka zeroth-order) logic.
+ </paragraph>
+ <paragraph>
+  Propositional logic (PL) is
+  <italic>
+   not
+  </italic>
+  the same as first-order logic (FOL). The biggest difference is that, in PL, only facts exist in the world, whereas in FOL, facts, objects and relations exist in the world.
+ </paragraph>
+ <paragraph>
+  Another key difference is in their vocabulary. FOL can use all the same symbols as PL (e.g. $\vee$, $\wedge$, $\neg$), in addition to individual quantifiers (e.g. $\exists$ and $\forall$). Thus, FOL is more expressive then PL.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  thank you so much! this was extremely helpful
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

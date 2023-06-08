@@ -1,0 +1,57 @@
+<h1>
+ Title: Append method
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-24T02:27:32.686042+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  my append method is failing the given assert to ensure that there is 1 element in the linked list. toString() verifies that [2110] is in the linked list, so then why is the size 0 of the linked list?
+ </paragraph>
+ <paragraph>
+  EDIT: are we supposed to increment size in append()?? I do this and it works
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Atulya Lohani (student)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  Did you increment the size in your append() method?
+ </paragraph>
+ <paragraph>
+  EDIT: Yes, you must increment the size. There is no other way size will increase when you append. Just do size++ in your append method body.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  There is something called the class invariant --the set of comments on the fields of the class. Every method starts with the class invariant true and is supposed to end with it true --so you must change variables to keep it true.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,71 @@
+<h1>
+ Title: A6 TODO 15 Error Message Detail
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-03T04:25:34.263491+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is our error dialog supposed to look exactly the same as the one shown in the handout when we test it as the handout suggests? I did what's suggested (change file to read only and then attempt to save score), and the error message in the dialog I got look slightly different from the example - it doesn't have the class of the exception in the text of the dialog, and instead of (permission denied) it has (access is denied). Does this mean there's something wrong in my code? I think I know how to add the class in the text, but I don't know how to change what's in the parenthesis, and I'm wondering how much difference is allowed.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  i.e. instead of
+ </paragraph>
+ <paragraph>
+  "java.io.FileNotFoundException: /home/curran/Teaching/FA21/CS2110/A6/scores.txt (Permission denied.)"
+ </paragraph>
+ <paragraph>
+  I got
+ </paragraph>
+ <paragraph>
+  "/home/curran/Teaching/FA21/CS2110/A6/scores.txt (Access is denied.)"
+ </paragraph>
+ <paragraph>
+  (with different file location of course)
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The exact text of the error, and possibly even the subclass of exception, will depend on your operating system.  Therefore, "Access is denied" is fine if that's what's in the exception's message on your computer.
+ </paragraph>
+ <paragraph>
+  As for including the exception class in the dialog text (and not just the title), that's an optional embellishment.  Strictly speaking, the handout only requires the exception's message and not its type.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

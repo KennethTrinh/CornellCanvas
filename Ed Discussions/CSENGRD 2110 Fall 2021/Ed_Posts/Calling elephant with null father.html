@@ -1,0 +1,56 @@
+<h1>
+ Title: Calling elephant with null father
+</h1>
+<h3>
+ Author: Sofia Paredes (student)
+</h3>
+<h3>
+ Date: 2021-09-12T06:55:34.412191+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We're getting an error with running a test case we made up in which the elephant's father is "null." However, should we be able to run it with a "null" father? Or do we just give the elephant a father?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The Precondition of the second constructor requires that the father parameter has gender 'M'. That implies also that the father parameter must not be null, because null does not point at an object and therefore has no gender. Therefore, an implied Precondition, which you should test for with an assert statement, is that the father parameter is not null.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Same for the mother parameter.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Sofia Paredes (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you so much!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

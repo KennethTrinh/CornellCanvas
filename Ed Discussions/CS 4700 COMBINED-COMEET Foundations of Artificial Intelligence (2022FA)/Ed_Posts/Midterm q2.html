@@ -1,0 +1,97 @@
+<h1>
+ Title: Midterm q2
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-12-12T13:33:36.244321+11:00
+</h3>
+<h3>
+ Category: Final
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="806.7201051248358" src="https://static.us.edusercontent.com/files/mVel23qEpYVUmj6EKIHs0QD2" width="658"/>
+ </figure>
+ <paragraph>
+  For part a, how do we go about calculating that these heuristics are admissible and consistent?  I've seen the formulas on the slides but am I bit unsure as to how to calculate these values given these heuristics and the table.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Nicola Tysall (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi! Here is my reasoning, but I'm not sure if it's all the way right! A heuristic is admissible/consistent if it does not overestimate the actual cost.
+ </paragraph>
+ <paragraph>
+  Heuristic 1: this is the Euclidean distance, which, by the Pythagorean Theorem, will be shorter than the actual distance because we are only moving individually by the x and y coordinates at a given time.
+ </paragraph>
+ <paragraph>
+  Heuristic 2: this might actually overestimate the difference. For instance, say that the point is at (0, 0) and the goal is at (5, 0). Then the true distance is 5 units. However, the Heuristic will give us 2(max(0, 5)) = 2(5) = 10 &gt; 5.
+ </paragraph>
+ <paragraph>
+  Heuristic 3: The Manhattan Distance will always underestimate the goal.
+ </paragraph>
+ <paragraph>
+  Heuristic 4: Assuming that we do not have to travel extra distance because of blocked passages (which would cause the true path to be longer than the heuristic anyway), then we travel in a straight or L-shaped line. Then the true distance is equal to
+ </paragraph>
+ <math>
+  dist\ =\ \left(x_{ }-x_{goal}\right)+\ \left(y-y_{goal}\right)
+ </math>
+ <paragraph>
+  Arbitrarily assuming that the x coordinate is closer to the goal than the y coordinate, the heuristic gives us
+ </paragraph>
+ <math>
+  2\left(\min\left(\left|x\ -\ x_{goal}\right|,\left|y-y_{goal}\right|\right)\right)\le2\ \bullet\left|x-x_{goal}\right|\le dist
+ </math>
+ <paragraph>
+  Thus, heuristics 1, 2, and 4 are admissible and consistent.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Laura Greenstreet (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Great answer Nicola!
+  <break>
+  </break>
+  Just a note that all of your arguments/definitions are for a heuristic being admissible not both admissible and consistent. However, a heuristic only needs to be admissible to find an optimal solution!
+ </paragraph>
+ <paragraph>
+  A heuristic is
+  <bold>
+   admissible
+  </bold>
+  if it never over estimates the cost to the goal. Symbolically, for all states $n$, $h(n) \leq h^*(n)$, where $h(n)$ is the heuristic and $h*(n)$ is the true distance to the goal state.
+ </paragraph>
+ <paragraph>
+  A heuristic is
+  <bold>
+   consistent/monotone
+  </bold>
+  if it obeys the triangle inequality, i.e. the heuristic value at a node is never less than the cost of travelling to another node plus the heuristic value at that node. Symbolically, for all $n, n'$, $h(n) \leq c(n,n') + h(n')$, where $c(n,n')$ is the cost to move from state $n$ to state $n'$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

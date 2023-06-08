@@ -1,0 +1,43 @@
+<h1>
+ Title: Autohelper feedback nullpointer
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-10T06:03:03.173282+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I keep receiving this feedback from the autohelper about Elephant.java:
+ </paragraph>
+ <pre>Failure in testassert(): org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==&gt; expected: &lt;java.lang.AssertionError&gt; but was: &lt;java.lang.NullPointerException&gt;</pre>
+ <paragraph>
+  I'm having trouble figuring out what my issue is. My understanding is that NullPointer is being thrown because thrown because null is being used in place of an object or one of my assert statements is wrong?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Brian Jeong (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  A NullPointerException is when an object is null and you are trying to perform some operations on it. Check that your code isn't handling a null object.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

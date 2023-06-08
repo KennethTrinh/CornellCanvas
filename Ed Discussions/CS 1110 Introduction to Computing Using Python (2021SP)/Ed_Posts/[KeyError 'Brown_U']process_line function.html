@@ -1,0 +1,86 @@
+<h1>
+ Title: [KeyError: 'Brown_U']process_line function
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-03T12:42:38.966194+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  What does this error message mean? Isn't the keys in cdict the college name? Am I referring to the wrong key in dictionary?
+ </paragraph>
+ <pre>Traceback (most recent call last):
+  File "showdown_time_a5.py", line 77, in &lt;module&gt;
+    colleges = sdu.prompt_for_data()
+  File "C:\Users\vduah\OneDrive\Desktop\cs1110-spring\a5\skeleton\sd_utilities_dict.py", line 149, in prompt_for_data
+    return colleges_from_file(datafilename)
+  File "C:\Users\vduah\OneDrive\Desktop\cs1110-spring\a5\skeleton\sd_utilities_dict.py", line 43, in colleges_from_file
+    process_line(studentline.strip(), unordered_colleges)
+  File "C:\Users\vduah\OneDrive\Desktop\cs1110-spring\a5\skeleton\sd_utilities_dict.py", line 103, in process_line
+    names = cdict[scname]
+KeyError: 'Brown_U'</pre>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="1.0">
+ <paragraph>
+  Hey!!!!
+  <break>
+  </break>
+  I think you are receiving this error message because there is no key “Brown_U” in cdict, and you have to create a new college object with that name and then append it to cdict.  I could be wrong, however. Please let me know.
+  <break>
+  </break>
+  Best of luck!!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Isn't that counterintuitive? The function process_line wants us to add the tag of sline to the appropriate list of each College in cdict. Shouldn't the function be able to work with any key in cdict?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Some colleges in outcomes may not already be in cdict, as mentioned in the function specification for process_line.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

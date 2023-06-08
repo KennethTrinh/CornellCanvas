@@ -1,0 +1,286 @@
+<h1>
+ Title: Trouble With SPI
+</h1>
+<h3>
+ Author: Jordan - (student)
+</h3>
+<h3>
+ Date: 2021-04-09T09:30:19.552973+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm having trouble running SPI on my board. When I try to load the code from lecture (I did download and include the ZIP file), I get the following error:
+ </paragraph>
+ <pre>/var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_cache_515230/core/core_d286f17a5ad8591119bb5b44498cdfc4.a(main.cpp.o):(.literal._Z8loopTaskPv+0x4): undefined reference to `loop()'
+/var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_cache_515230/core/core_d286f17a5ad8591119bb5b44498cdfc4.a(main.cpp.o): In function `loopTask(void*)':
+/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/cores/esp32/main.cpp:17: undefined reference to `loop()'
+Multiple libraries were found for "SPI.h"
+collect2: error: ld returned 1 exit status
+ Used: /Users/jordan/Documents/Arduino/libraries/SPI
+ Not used: /Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/libraries/SPI
+exit status 1
+Error compiling for board Adafruit ESP32 Feather.
+</pre>
+ <paragraph>
+  When I delete the "used"  SPI in Documents/Arduino... I get this error:
+ </paragraph>
+ <pre>/var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_cache_515230/core/core_d286f17a5ad8591119bb5b44498cdfc4.a(main.cpp.o):(.literal._Z8loopTaskPv+0x4): undefined reference to `loop()'
+/var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_cache_515230/core/core_d286f17a5ad8591119bb5b44498cdfc4.a(main.cpp.o): In function `loopTask(void*)':
+/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/cores/esp32/main.cpp:17: undefined reference to `loop()'
+collect2: error: ld returned 1 exit status
+exit status 1
+Error compiling for board Adafruit ESP32 Feather.
+
+</pre>
+ <paragraph>
+  Any insight into what is causing this error? I didn't write any code. Just copied it from lecture slides after importing the .ZIP library. Thanks in advance for your help!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It is most likely that the error is before these lines. Could you you send us the full compiler trace?
+ </paragraph>
+ <paragraph>
+  Francois.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jordan - (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  /Applications/Arduino.app/Contents/Java/arduino-builder -dump-prefs -logger=machine -hardware /Applications/Arduino.app/Contents/Java/hardware -hardware /Users/jordan/Library/Arduino15/packages -tools /Applications/Arduino.app/Contents/Java/tools-builder -tools /Applications/Arduino.app/Contents/Java/hardware/tools/avr -tools /Users/jordan/Library/Arduino15/packages -built-in-libraries /Applications/Arduino.app/Contents/Java/libraries -libraries /Users/jordan/Documents/Arduino/libraries -fqbn=esp32:esp32:featheresp32:FlashFreq=80,UploadSpeed=921600,DebugLevel=none,PartitionScheme=default -ide-version=10813 -build-path /var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_build_937385 -warnings=none -build-cache /var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_cache_515230 -prefs=build.warn_data_percentage=75 -prefs=runtime.tools.xtensa-esp32-elf-gcc.path=/Users/jordan/Library/Arduino15/packages/esp32/tools/xtensa-esp32-elf-gcc/1.22.0-80-g6c4433a-5.2.0 -prefs=runtime.tools.xtensa-esp32-elf-gcc-1.22.0-80-g6c4433a-5.2.0.path=/Users/jordan/Library/Arduino15/packages/esp32/tools/xtensa-esp32-elf-gcc/1.22.0-80-g6c4433a-5.2.0 -prefs=runtime.tools.esptool_py.path=/Users/jordan/Library/Arduino15/packages/esp32/tools/esptool_py/2.6.1 -prefs=runtime.tools.esptool_py-2.6.1.path=/Users/jordan/Library/Arduino15/packages/esp32/tools/esptool_py/2.6.1 -prefs=runtime.tools.mkspiffs.path=/Users/jordan/Library/Arduino15/packages/esp32/tools/mkspiffs/0.2.3 -prefs=runtime.tools.mkspiffs-0.2.3.path=/Users/jordan/Library/Arduino15/packages/esp32/tools/mkspiffs/0.2.3 -verbose /Users/jordan/Documents/Arduino/mini_project5_part2/mini_project5_part2.ino /Applications/Arduino.app/Contents/Java/arduino-builder -compile -logger=machine -hardware /Applications/Arduino.app/Contents/Java/hardware -hardware /Users/jordan/Library/Arduino15/packages -tools /Applications/Arduino.app/Contents/Java/tools-builder -tools /Applications/Arduino.app/Contents/Java/hardware/tools/avr -tools /Users/jordan/Library/Arduino15/packages -built-in-libraries /Applications/Arduino.app/Contents/Java/libraries -libraries /Users/jordan/Documents/Arduino/libraries -fqbn=esp32:esp32:featheresp32:FlashFreq=80,UploadSpeed=921600,DebugLevel=none,PartitionScheme=default -ide-version=10813 -build-path /var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_build_937385 -warnings=none -build-cache /var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_cache_515230 -prefs=build.warn_data_percentage=75 -prefs=runtime.tools.xtensa-esp32-elf-gcc.path=/Users/jordan/Library/Arduino15/packages/esp32/tools/xtensa-esp32-elf-gcc/1.22.0-80-g6c4433a-5.2.0 -prefs=runtime.tools.xtensa-esp32-elf-gcc-1.22.0-80-g6c4433a-5.2.0.path=/Users/jordan/Library/Arduino15/packages/esp32/tools/xtensa-esp32-elf-gcc/1.22.0-80-g6c4433a-5.2.0 -prefs=runtime.tools.esptool_py.path=/Users/jordan/Library/Arduino15/packages/esp32/tools/esptool_py/2.6.1 -prefs=runtime.tools.esptool_py-2.6.1.path=/Users/jordan/Library/Arduino15/packages/esp32/tools/esptool_py/2.6.1 -prefs=runtime.tools.mkspiffs.path=/Users/jordan/Library/Arduino15/packages/esp32/tools/mkspiffs/0.2.3 -prefs=runtime.tools.mkspiffs-0.2.3.path=/Users/jordan/Library/Arduino15/packages/esp32/tools/mkspiffs/0.2.3 -verbose /Users/jordan/Documents/Arduino/mini_project5_part2/mini_project5_part2.ino Using board 'featheresp32' from platform in folder: /Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4 Using core 'esp32' from platform in folder: /Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4 Detecting libraries used... /Users/jordan/Library/Arduino15/packages/esp32/tools/xtensa-esp32-elf-gcc/1.22.0-80-g6c4433a-5.2.0/bin/xtensa-esp32-elf-g++ -DESP_PLATFORM "-DMBEDTLS_CONFIG_FILE="mbedtls/esp_config.h"" -DHAVE_CONFIG_H -DGCC_NOT_5_2_0=0 -DWITH_POSIX -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/config -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/app_trace -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/app_update -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/asio -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/bootloader_support -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/bt -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/coap -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/console -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/driver -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp-tls -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp32 -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_adc_cal -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_event -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_http_client -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_http_server -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_https_ota -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_ringbuf -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/ethernet -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/expat -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/fatfs -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/freemodbus -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/freertos -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/heap -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/idf_test -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/jsmn -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/json -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/libsodium -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/log -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/lwip -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/mbedtls -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/mdns -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/micro-ecc -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/mqtt -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/newlib -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/nghttp -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/nvs_flash -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/openssl -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/protobuf-c -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/protocomm -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/pthread -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/sdmmc -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/smartconfig_ack -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/soc -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/spi_flash -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/spiffs -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/tcp_transport -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/tcpip_adapter -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/ulp -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/vfs -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/wear_levelling -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/wifi_provisioning -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/wpa_supplicant -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/xtensa-debug-module -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp-face -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp32-camera -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp-face -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/fb_gfx -std=gnu++11 -Os -g3 -Wpointer-arith -fexceptions -fstack-protector -ffunction-sections -fdata-sections -fstrict-volatile-bitfields -mlongcalls -nostdlib -w -Wno-error=maybe-uninitialized -Wno-error=unused-function -Wno-error=unused-but-set-variable -Wno-error=unused-variable -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-unused-but-set-parameter -Wno-missing-field-initializers -Wno-sign-compare -fno-rtti -c -w -x c++ -E -CC -DF_CPU=240000000L -DARDUINO=10813 -DARDUINO_FEATHER_ESP32 -DARDUINO_ARCH_ESP32 "-DARDUINO_BOARD="FEATHER_ESP32"" "-DARDUINO_VARIANT="feather_esp32"" -DESP32 -DCORE_DEBUG_LEVEL=0 -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/cores/esp32 -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/variants/feather_esp32 /var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_build_937385/sketch/mini_project5_part2.ino.cpp -o /dev/null -DARDUINO_LIB_DISCOVERY_PHASE Alternatives for SPI.h: [SPI@1.0 SPI@1.0] ResolveLibrary(SPI.h) -&gt; candidates: [SPI@1.0 SPI@1.0] /Users/jordan/Library/Arduino15/packages/esp32/tools/xtensa-esp32-elf-gcc/1.22.0-80-g6c4433a-5.2.0/bin/xtensa-esp32-elf-g++ -DESP_PLATFORM "-DMBEDTLS_CONFIG_FILE="mbedtls/esp_config.h"" -DHAVE_CONFIG_H -DGCC_NOT_5_2_0=0 -DWITH_POSIX -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/config -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/app_trace -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/app_update -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/asio -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/bootloader_support -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/bt -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/coap -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/console -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/driver -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp-tls -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp32 -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_adc_cal -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_event -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_http_client -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_http_server -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_https_ota -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_ringbuf -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/ethernet -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/expat -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/fatfs -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/freemodbus -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/freertos -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/heap -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/idf_test -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/jsmn -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/json -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/libsodium -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/log -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/lwip -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/mbedtls -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/mdns -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/micro-ecc -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/mqtt -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/newlib -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/nghttp -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/nvs_flash -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/openssl -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/protobuf-c -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/protocomm -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/pthread -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/sdmmc -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/smartconfig_ack -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/soc -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/spi_flash -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/spiffs -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/tcp_transport -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/tcpip_adapter -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/ulp -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/vfs -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/wear_levelling -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/wifi_provisioning -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/wpa_supplicant -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/xtensa-debug-module -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp-face -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp32-camera -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp-face -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/fb_gfx -std=gnu++11 -Os -g3 -Wpointer-arith -fexceptions -fstack-protector -ffunction-sections -fdata-sections -fstrict-volatile-bitfields -mlongcalls -nostdlib -w -Wno-error=maybe-uninitialized -Wno-error=unused-function -Wno-error=unused-but-set-variable -Wno-error=unused-variable -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-unused-but-set-parameter -Wno-missing-field-initializers -Wno-sign-compare -fno-rtti -c -w -x c++ -E -CC -DF_CPU=240000000L -DARDUINO=10813 -DARDUINO_FEATHER_ESP32 -DARDUINO_ARCH_ESP32 "-DARDUINO_BOARD="FEATHER_ESP32"" "-DARDUINO_VARIANT="feather_esp32"" -DESP32 -DCORE_DEBUG_LEVEL=0 -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/cores/esp32 -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/variants/feather_esp32 -I/Users/jordan/Documents/Arduino/libraries/SPI/src /var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_build_937385/sketch/mini_project5_part2.ino.cpp -o /dev/null -DARDUINO_LIB_DISCOVERY_PHASE Using cached library dependencies for file: /Users/jordan/Documents/Arduino/libraries/SPI/src/SPI.cpp Generating function prototypes... /Users/jordan/Library/Arduino15/packages/esp32/tools/xtensa-esp32-elf-gcc/1.22.0-80-g6c4433a-5.2.0/bin/xtensa-esp32-elf-g++ -DESP_PLATFORM "-DMBEDTLS_CONFIG_FILE="mbedtls/esp_config.h"" -DHAVE_CONFIG_H -DGCC_NOT_5_2_0=0 -DWITH_POSIX -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/config -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/app_trace -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/app_update -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/asio -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/bootloader_support -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/bt -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/coap -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/console -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/driver -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp-tls -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp32 -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_adc_cal -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_event -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_http_client -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_http_server -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_https_ota -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_ringbuf -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/ethernet -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/expat -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/fatfs -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/freemodbus -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/freertos -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/heap -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/idf_test -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/jsmn -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/json -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/libsodium -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/log -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/lwip -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/mbedtls -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/mdns -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/micro-ecc -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/mqtt -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/newlib -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/nghttp -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/nvs_flash -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/openssl -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/protobuf-c -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/protocomm -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/pthread -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/sdmmc -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/smartconfig_ack -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/soc -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/spi_flash -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/spiffs -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/tcp_transport -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/tcpip_adapter -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/ulp -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/vfs -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/wear_levelling -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/wifi_provisioning -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/wpa_supplicant -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/xtensa-debug-module -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp-face -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp32-camera -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp-face -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/fb_gfx -std=gnu++11 -Os -g3 -Wpointer-arith -fexceptions -fstack-protector -ffunction-sections -fdata-sections -fstrict-volatile-bitfields -mlongcalls -nostdlib -w -Wno-error=maybe-uninitialized -Wno-error=unused-function -Wno-error=unused-but-set-variable -Wno-error=unused-variable -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-unused-but-set-parameter -Wno-missing-field-initializers -Wno-sign-compare -fno-rtti -c -w -x c++ -E -CC -DF_CPU=240000000L -DARDUINO=10813 -DARDUINO_FEATHER_ESP32 -DARDUINO_ARCH_ESP32 "-DARDUINO_BOARD="FEATHER_ESP32"" "-DARDUINO_VARIANT="feather_esp32"" -DESP32 -DCORE_DEBUG_LEVEL=0 -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/cores/esp32 -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/variants/feather_esp32 -I/Users/jordan/Documents/Arduino/libraries/SPI/src /var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_build_937385/sketch/mini_project5_part2.ino.cpp -o /var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_build_937385/preproc/ctags_target_for_gcc_minus_e.cpp -DARDUINO_LIB_DISCOVERY_PHASE /Applications/Arduino.app/Contents/Java/tools-builder/ctags/5.8-arduino11/ctags -u --language-force=c++ -f - --c++-kinds=svpf --fields=KSTtzns --line-directives /var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_build_937385/preproc/ctags_target_for_gcc_minus_e.cpp Compiling sketch... /Users/jordan/Library/Arduino15/packages/esp32/tools/xtensa-esp32-elf-gcc/1.22.0-80-g6c4433a-5.2.0/bin/xtensa-esp32-elf-g++ -DESP_PLATFORM "-DMBEDTLS_CONFIG_FILE="mbedtls/esp_config.h"" -DHAVE_CONFIG_H -DGCC_NOT_5_2_0=0 -DWITH_POSIX -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/config -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/app_trace -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/app_update -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/asio -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/bootloader_support -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/bt -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/coap -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/console -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/driver -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp-tls -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp32 -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_adc_cal -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_event -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_http_client -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_http_server -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_https_ota -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp_ringbuf -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/ethernet -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/expat -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/fatfs -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/freemodbus -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/freertos -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/heap -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/idf_test -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/jsmn -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/json -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/libsodium -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/log -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/lwip -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/mbedtls -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/mdns -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/micro-ecc -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/mqtt -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/newlib -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/nghttp -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/nvs_flash -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/openssl -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/protobuf-c -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/protocomm -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/pthread -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/sdmmc -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/smartconfig_ack -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/soc -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/spi_flash -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/spiffs -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/tcp_transport -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/tcpip_adapter -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/ulp -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/vfs -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/wear_levelling -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/wifi_provisioning -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/wpa_supplicant -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/xtensa-debug-module -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp-face -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp32-camera -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp-face -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/fb_gfx -std=gnu++11 -Os -g3 -Wpointer-arith -fexceptions -fstack-protector -ffunction-sections -fdata-sections -fstrict-volatile-bitfields -mlongcalls -nostdlib -w -Wno-error=maybe-uninitialized -Wno-error=unused-function -Wno-error=unused-but-set-variable -Wno-error=unused-variable -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-unused-but-set-parameter -Wno-missing-field-initializers -Wno-sign-compare -fno-rtti -MMD -c -DF_CPU=240000000L -DARDUINO=10813 -DARDUINO_FEATHER_ESP32 -DARDUINO_ARCH_ESP32 "-DARDUINO_BOARD="FEATHER_ESP32"" "-DARDUINO_VARIANT="feather_esp32"" -DESP32 -DCORE_DEBUG_LEVEL=0 -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/cores/esp32 -I/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/variants/feather_esp32 -I/Users/jordan/Documents/Arduino/libraries/SPI/src /var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_build_937385/sketch/mini_project5_part2.ino.cpp -o /var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_build_937385/sketch/mini_project5_part2.ino.cpp.o Compiling libraries... Compiling library "SPI" Using previously compiled file: /var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_build_937385/libraries/SPI/SPI.cpp.o Compiling core... Using precompiled core: /var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_cache_515230/core/core_d286f17a5ad8591119bb5b44498cdfc4.a Linking everything together... /Users/jordan/Library/Arduino15/packages/esp32/tools/xtensa-esp32-elf-gcc/1.22.0-80-g6c4433a-5.2.0/bin/xtensa-esp32-elf-gcc -nostdlib -L/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/lib -L/Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/ld -T esp32_out.ld -T esp32.common.ld -T esp32.rom.ld -T esp32.peripherals.ld -T esp32.rom.libgcc.ld -T esp32.rom.spiram_incompatible_fns.ld -u ld_include_panic_highint_hdl -u call_user_start_cpu0 -Wl,--gc-sections -Wl,-static -Wl,--undefined=uxTopUsedPriority -u __cxa_guard_dummy -u __cxx_fatal_exception -Wl,--start-group /var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_build_937385/sketch/mini_project5_part2.ino.cpp.o /var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_build_937385/libraries/SPI/SPI.cpp.o /var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_cache_515230/core/core_d286f17a5ad8591119bb5b44498cdfc4.a -lgcc -lesp32 -lphy -lesp_http_client -lmbedtls -lrtc -lesp_http_server -lbtdm_app -lspiffs -lbootloader_support -lmdns -lnvs_flash -lfatfs -lpp -lnet80211 -ljsmn -lface_detection -llibsodium -lvfs -ldl_lib -llog -lfreertos -lcxx -lsmartconfig_ack -lxtensa-debug-module -lheap -ltcpip_adapter -lmqtt -lulp -lfd -lfb_gfx -lnghttp -lprotocomm -lsmartconfig -lm -lethernet -limage_util -lc_nano -lsoc -ltcp_transport -lc -lmicro-ecc -lface_recognition -ljson -lwpa_supplicant -lmesh -lesp_https_ota -lwpa2 -lexpat -llwip -lwear_levelling -lapp_update -ldriver -lbt -lespnow -lcoap -lasio -lnewlib -lconsole -lapp_trace -lesp32-camera -lhal -lprotobuf-c -lsdmmc -lcore -lpthread -lcoexist -lfreemodbus -lspi_flash -lesp-tls -lwpa -lwifi_provisioning -lwps -lesp_adc_cal -lesp_event -lopenssl -lesp_ringbuf -lfr -lstdc++ -Wl,--end-group -Wl,-EL -o /var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_build_937385/mini_project5_part2.ino.elf /var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_cache_515230/core/core_d286f17a5ad8591119bb5b44498cdfc4.a(main.cpp.o):(.literal._Z8loopTaskPv+0x4): undefined reference to
+  <code>
+   loop()' /var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_cache_515230/core/core_d286f17a5ad8591119bb5b44498cdfc4.a(main.cpp.o): In function
+  </code>
+  loopTask(void*)': /Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/cores/esp32/main.cpp:17: undefined reference to `loop()' collect2: error: ld returned 1 exit status Multiple libraries were found for "SPI.h" Used: /Users/jordan/Documents/Arduino/libraries/SPI Not used: /Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/libraries/SPI Using library SPI at version 1.0 in folder: /Users/jordan/Documents/Arduino/libraries/SPI exit status 1 Error compiling for board Adafruit ESP32 Feather.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Cheng Zhang (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This long log seems to me like an envrioment setup issue. Can you download the arduino and reset up the ESP32 environment as well as the SPI library?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jordan - (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Unfortunately, this didn't work. It continues to say something about loop() despite me not changing that section and also it looking fine. I also deleted the arduino_cache to force a (hopefully corrected) recompile, but it still compiled wrong
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Cheng Zhang (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Besides, after deleting the used folder, can you also import the library again?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The key error is here:
+  <break>
+  </break>
+  /core/core_d286f17a5ad8591119bb5b44498cdfc4.a(main.cpp.o):(.literal._Z8loopTaskPv+0x4): undefined reference to
+  <code>
+   loop()' /var/folders/wc/d97k0kl90hj_zkpvpfzkj54c0000gn/T/arduino_cache_515230/core/core_d286f17a5ad8591119bb5b44498cdfc4.a(main.cpp.o): In function
+  </code>
+  loopTask(void*)': /Users/jordan/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/cores/esp32/main.cpp:17: undefined reference to `loop()'
+  <break>
+  </break>
+  <break>
+  </break>
+  Could you verify that your definition of loop is correct?
+ </paragraph>
+ <paragraph>
+  Francois
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jordan - (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I looked at the file and I can't see anything wrong with it. I also don't remember ever opening it though. I'm currently erasing and downloading a new Arduino, ada fruit, etc as per Cheng's suggestion
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Here is that code
+ </paragraph>
+ <pre>#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "esp_task_wdt.h"
+#include "Arduino.h"
+
+TaskHandle_t loopTaskHandle = NULL;
+
+#if CONFIG_AUTOSTART_ARDUINO
+
+bool loopTaskWDTEnabled;
+
+void loopTask(void *pvParameters)
+{
+    setup();
+    for(;;) {
+        if(loopTaskWDTEnabled){
+            esp_task_wdt_reset();
+        }
+        loop();
+    }
+}
+
+extern "C" void app_main()
+{
+    loopTaskWDTEnabled = false;
+    initArduino();
+    xTaskCreateUniversal(loopTask, "loopTask", 8192, NULL, 1, &amp;loopTaskHandle, CONFIG_ARDUINO_RUNNING_CORE);
+}
+
+#endif
+
+</pre>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jordan - (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  As an update, I redownloaded everything. When I try to run the code from lecture for SPI, I continue to get the errors. When I run previous code of mine like my past projects, everything compiles fine, however.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Han Wang (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I got the same error but it was because I didn't include void loop() {} in my code. Adding it fixed it for me
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jordan - (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  THIS WAS IT! Thanks
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Isaac Newcomb (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Yeah, I'd agree with Han here. Did you forget to add the loop function to your code? (Because we gave the loop function on a later slide). Does adding the loop function fix your problem?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jordan - (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  yes! I'm very happy now. Thanks to all of you for helping me out!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

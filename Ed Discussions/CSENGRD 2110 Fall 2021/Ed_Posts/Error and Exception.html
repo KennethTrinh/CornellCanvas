@@ -1,0 +1,64 @@
+<h1>
+ Title: Error and Exception
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-10T09:26:29.831035+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I have been confused by the concept of error and exception, as what's the difference between them? I have read that exception may or may not terminate the program while error definitely does. So are errors like more severe problems while exceptions are smaller problems? And I have read that errors are handled by throwing exceptions. What does this mean?
+ </paragraph>
+ <paragraph>
+  And on the powerpoint, it says that errors cannot be caught. Why is that?
+ </paragraph>
+ <paragraph>
+  Thank you so much!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Here are the facts. Read carefully.
+ </paragraph>
+ <paragraph>
+  1. Any object of class Throwable or its subclasses can the thrown in a throw statement.
+ </paragraph>
+ <paragraph>
+  2. Any object of class Throwable or its subclasses can be caught using a try-statement. Below, T can be Throwable or any of its subclasses:
+ </paragraph>
+ <paragraph>
+  try { code a try block }
+  <break>
+  </break>
+  catch (T e) {code in a catch block}
+ </paragraph>
+ <paragraph>
+  3. The TWO direct subclasses of Throwable are Exception and Error. By points 1 and 2, they and their subclasses can be thrown and caught.
+ </paragraph>
+ <paragraph>
+  4. However, it makes no sense to try to catch Error and its subclasses because their nature is that the program cannot be continued properly. For example, one error is OutOfMemoryError (or something like that).
+ </paragraph>
+ <paragraph>
+  5. Catch an Exception object (or one of its subclasses) if at the level that it is caught, something reasonable can be done about it. That's enough for now.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

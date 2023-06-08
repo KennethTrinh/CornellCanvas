@@ -1,0 +1,85 @@
+<h1>
+ Title: [how to debug] A4 error [Assertion Error: path A, D, E missing for num_paths]
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-12T02:13:00.345799+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When I run my code I get the following error
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Assertion Error: path A, D, E missing
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  I made sure my code went through the entire list in post.replies. Why am I getting this error?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You'll probably want to look at exactly what your code is returning for the case of the Post at 0.1.1 (which is where the path A, D, E starts at).
+  <break>
+  </break>
+  <break>
+  </break>
+  You can do this by suitably modifying the snippet we wrote for you in 7.1.3: "If you want to add additional testing — such as if you are having trouble getting any of the test cases to pass — you may want to add your own small-scale tests":
+  <break>
+  </break>
+  <break>
+  </break>
+  Add the my_own_private_testfn() to your testing code (name it whatever you like), and change what function it runs from bnf_starts_here to a4.num_paths and what the printout is.
+  <break>
+  </break>
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  (Also, I don't think "running through the entire list in post.replies" is all one needs to do to get num_paths() implemented properly.)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

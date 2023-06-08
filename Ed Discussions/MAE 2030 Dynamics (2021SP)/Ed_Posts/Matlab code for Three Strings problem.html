@@ -1,0 +1,124 @@
+<h1>
+ Title: Matlab code for Three Strings problem
+</h1>
+<h3>
+ Author: Andy Ruina (admin)
+</h3>
+<h3>
+ Date: 2021-03-09T16:02:04.362425+11:00
+</h3>
+<h3>
+ Category: Lecture Clarification
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  In lecture today I informally described 2 ways to solve for the tensions of strings that were pulling on a mass with known acceleration.  Here is code that implements those two methods:
+  <break>
+  </break>
+  1) Write linear equations in matrix form and use the backslash command; and
+ </paragraph>
+ <paragraph>
+  2) Use a judicious dot product to kill off two of the tensions so as to get one equation in one unknown.
+ </paragraph>
+ <paragraph>
+  The "Run" button below works.  Or, you can cut and paste into Matlab.
+  <break>
+  </break>
+  (Octave is free software that is a slightly pruned version of Matlab.)
+  <break>
+  </break>
+  <break>
+  </break>
+  My recommendation for your use of this code is to use it as little as possible. Only go as far down the list as you need to based on your abilities, background, interest and available time.
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    a) Write your own code
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    b) Look at this code only if you need to for hints.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    c) Read this code and use it, and then write your own code
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    d) Use this code and modify it slightly (e.g., find a different tension), and then write your own code.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    e) Just use and understand this code as well as you can.
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  Ultimately you should be able to write it yourself, and debug it, without looking up anything beyond Matlab help files. However, the more you get there by doing it yourself, the more you will learn by the process.
+ </paragraph>
+ <snippet language="m" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   % Three tensions  -Andy Ruina March 8, 2021
+% 3D.
+% A mass m at A  is held by three strings/rods anchored at B, C and D.
+% The strings/rods are 'two-force members' only having tension or
+% compression.
+% Gravity g acts and the tensions cause an acceleration a (a vector).
+% The positions of A, B, C and D are given as are m,g and a.
+% Find the tension in string AB.
+%  
+% Two methods are shown  1) Matrix solving; 2) dot and cross products
+
+% GIVENS  (more or less random numbers used here
+%          consistent units are assumed.)
+m = 7; g = 10;  a = [ 1 2  3]';  mg = m*g*[0 0 -1]';  ma = m*a;
+rA = [ 2 5 9 ]'; rB = [ 5 6 10]'; rC = [30 -10 50]';  rD = [0 0 100]';
+
+rAB   = rB - rA;          rAC = rC - rA;          rAD = rD - rA;
+lamAB = rAB/norm(rAB);  lamAC = rAC/norm(rAC);  lamAD = rAD/norm(rAD);
+
+% Thus the problem is to solve this LMB equation for tension TAB
+
+%  lamAB * TAB + lamAC*TAC + lamAD * TAD  + mg  = ma         (1)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% METHOD 1:  write linear equations in matrix form
+disp('Method 1:')
+lambdamatrix = [lamAB, lamAC, lamAD];
+
+% Equation  (1) turns into:             lambdamatrix * T  = ma - mg (2)
+% where T = [TAB  TAC  TAD]' is unknown.
+% So, we solve (2) using backslash
+
+T = lambdamatrix\(ma - mg);
+TAB = T(1)    % Done, we have found TAB.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% METHOD 2: use a judicious dot product
+disp('Method 2:')
+% Find a vector perpendicular to  lamAC and lamAD
+
+goodvec =  cross(rAC, rAD);
+
+% Dot goodvec with both sides of (1).  The TAC and TAD terms drop out.
+%  Solve for TAB
+
+TAB = dot(goodvec, (ma - mg)) / dot(goodvec, lamAB)
+
+disp('Note that the two answers agree.')
+  </snippet-file>
+ </snippet>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

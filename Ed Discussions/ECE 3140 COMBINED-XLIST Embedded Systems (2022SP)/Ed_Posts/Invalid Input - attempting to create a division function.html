@@ -1,0 +1,62 @@
+<h1>
+ Title: Invalid Input - attempting to create a division function
+</h1>
+<h3>
+ Author: Rhia Malhotra (None)
+</h3>
+<h3>
+ Date: 2022-02-18T15:57:36.267146+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  MOV R7, =0x199A // R7 = 1/10 * 2^16
+ </paragraph>
+ <paragraph>
+  MOV R7, #6554 // R7 = 1/10 * 2^16
+ </paragraph>
+ <paragraph>
+  Whichever version of this function I try to execute, I get the error:
+  <italic>
+   invalid immediate: 6554 is out of range
+  </italic>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prithwish Dan (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think it's because the MOV instruction has a limited set of bits that can be used for passing in the immediate value. I believe there's some way to define a constant within the file and then use a different instruction to directly load that constant into your register, or you could use MOV on a smaller value and multiply your way up
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is correct. I recommend loading a variable from memory as we did in the assembly tutorial for the second discussion.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,69 @@
+<h1>
+ Title: Recursion Problem
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-09T06:31:33.000036+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  For the second part of this question would;
+ </paragraph>
+ <paragraph>
+  if (hasTradePost) {return True;}
+  <break>
+  </break>
+  return leftFork.isTradeRoute() || rightFork.isTradeRoute();
+ </paragraph>
+ <paragraph>
+  Work?
+ </paragraph>
+ <paragraph>
+  I don’t understand why the answer says we have to check if the fork is not equal to null. Isn’t it impossible for a null fork to return true by the base case?
+ </paragraph>
+ <paragraph>
+  Thanks I’m advanced.
+ </paragraph>
+ <figure>
+  <image height="2732" src="https://static.us.edusercontent.com/files/jcvGoaeY3y3DrQaMfMLigtXd" width="2048"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  what if it doesn’t have a trade post and there’s no left fork? (it’s null) Your code raises a null pointer exception
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Your code executes the line null.isTradeRoute();, even though left is null your code still calls this line.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

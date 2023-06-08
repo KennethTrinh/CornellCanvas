@@ -1,0 +1,53 @@
+<h1>
+ Title: Classcastexception
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-03T08:59:24.109127+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why does Animal a = (Cat) new Animal(); throw a classcastexpression when a cat is a type of animal? I get it when a classcastexpression is thrown because animal was earlier declared as a dog and then Animal a = (Cat) new Animal(); because a dog is not a cat but I don't understand why a classcastexpression when animal is not already declared as a subtype
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Below is an object of class Animal. Does it have a partition named  Cat?
+ </paragraph>
+ <paragraph>
+  No. Therefore, casting it to Cat can't be done.
+ </paragraph>
+ <pre>-----------
+| Animal@1 |
+------------------------------
+|                     |Object|
+|                            |
+------------------------------
+|                     |Animal|
+|                            |
+------------------------------</pre>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

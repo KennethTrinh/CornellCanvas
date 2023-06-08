@@ -1,0 +1,95 @@
+<h1>
+ Title: HW7 Q3
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-11-08T07:22:20.980041+11:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was wondering if someone could help explain the intuition behind the power law. I know that it is based on the Normal distribution, and that f(k) exponentially decreases, which illustrates the rich-get-richer phenomenon.
+ </paragraph>
+ <paragraph>
+  What does the constant c represent? How is that factored into the power law for online popularity?
+ </paragraph>
+ <paragraph>
+  For Q3b and Q3c, what is the intuition behind why the value for c might be different / same for specific values of number of articles (n) and the number of views (k) they receive?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Deemo Chen :) (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I also have this question
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  1)
+  <code>
+   c
+  </code>
+  represents the constant offset. We know that
+  <code>
+   f(k)
+  </code>
+  should decrease proportional to
+  <code>
+   1/k^a
+  </code>
+  , but what is it decreasing from? If we just had
+  <code>
+   f(k)=1/k^a
+  </code>
+  , then we'd always have fractional pages getting the number of views, which isn't realistic.
+  <code>
+   c
+  </code>
+  therefore represents some constant coefficient that helps scale our model to real-life (or, if it's easier to think about, it's how many pages get one view, which can be verified from the formula)
+ </paragraph>
+ <paragraph>
+  2) The intuition is only that they are governed by different power laws (if at all). We know that the power law will be something of the form
+  <code>
+   b/k^a
+  </code>
+  , but those exact coefficients depend on the application/exact source of data (see lecture slides from Nov. 2nd for some examples of
+  <code>
+   a
+  </code>
+  ). Some intuition for why we might perform this check might be to see whether the pieces of data came from the same phenomena (governed by the same law), or if they are, whether that phenomena itself is governed by a power law at all
+ </paragraph>
+ <paragraph>
+  Hope this helps!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

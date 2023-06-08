@@ -1,0 +1,142 @@
+<h1>
+ Title: HW4 2.2.20(b)
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-06T13:14:45.875943+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm a little stuck with this one. I thought I had solved it when I did
+ </paragraph>
+ <math>
+  \left(A-AX\right)^{-1\ }=X^{-1}B
+ </math>
+ <math>
+  A-AX=B^{-1}X
+ </math>
+ <math>
+  A=AX+B^{-1}X
+ </math>
+ <math>
+  A=\left(A+B^{-1}\right)X
+ </math>
+ <paragraph>
+  and thought I could just multiply both sides by the inverse of (A + B^-1) to isolate X. However, I didn't see any property that states that the sum of two invertible matrices is also an invertible matrix (and a quick Google search also says the sum of two inverted matrices cannot generally be said to be invertible).
+ </paragraph>
+ <paragraph>
+  I'm wondering if I am taking the correct approach to this problem, and any suggestions/hints would be greatly appreciated!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Alekos Robotis (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Your attempt is reasonable but not the easiest way. You could instead try multiplying by $(A-AX)$ at the beginning instead.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Indeed you're right that the sum of invertible matrices might not be invertible. For instance, just take $A+(-A)=0$. This is certainly not invertible.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Yoon Jae Seo (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think both X and A+B^-1 should be invertible in this case as they make up the product of A, which is invertible.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  But just because A is invertible, does that necessarily mean that the product of the matrices that produce A are invertible as well?
+ </paragraph>
+ <paragraph>
+  My lecture notes state that:
+ </paragraph>
+ <paragraph>
+  Any nxn invertible matrix A has the following properties... If an nxn matrix B is also invertible, then so is AB with
+ </paragraph>
+ <math>
+  \left(AB\right)^{-1}=B^{-1}A^{-1}
+ </math>
+ <paragraph>
+  But I don't think this necessarily implies the converse is true right?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Yoon Jae Seo (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, I think the converse is also true but not entirely sure.
+ </paragraph>
+ <paragraph>
+  Let C=AB. We know that AB is invertible, so inverse of C exists.
+ </paragraph>
+ <paragraph>
+  Then if you multiply inverse of C to the back of both sides, it becomes
+ </paragraph>
+ <math>
+  I=\ A\left(BC^{-1}\right)
+ </math>
+ <paragraph>
+  We can see that that A has some inverse (BC^-1) whose product makes it into I and hence, it's invertible.
+ </paragraph>
+ <paragraph>
+  Similarly, if we muliply C to the front of both sides. This is...
+ </paragraph>
+ <math>
+  I=\left(C^{-1}A\right)B
+ </math>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Once again, B has some inverse that makes the product into I, so it should be invertible.
+ </paragraph>
+ <paragraph>
+  I found this proof somewhere on the internet a while ago because I was wondering about the same thing. It seems to make sense for me, but please let me know if you think the proof is incorrect somewhere.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

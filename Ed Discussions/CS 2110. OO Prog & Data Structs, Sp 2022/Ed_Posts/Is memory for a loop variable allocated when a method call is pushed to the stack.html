@@ -1,0 +1,60 @@
+<h1>
+ Title: Is memory for a loop variable allocated when a method call is pushed to the stack?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-24T16:10:37.466269+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In lecture, we were told that memory for all local variables and parameters in a method is allocated when the call is pushed to the stack. Loop variables can be declared multiple times in a method. Ex.
+ </paragraph>
+ <paragraph>
+  for (int i=0, i&lt;10; i++) {};
+ </paragraph>
+ <paragraph>
+  for (int i=5, i&lt;10; i++) {};
+ </paragraph>
+ <paragraph>
+  Does not result in any errors. Does this mean that memory is allocated only for the first declaration of the variable, and future declarations are ignored?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The two i's in the loops are totally different variables.
+  <break>
+  </break>
+  Each is allocated space in the frame for the call when that frame is pushed onto the stack.
+ </paragraph>
+ <paragraph>
+  That is what you should remember.
+ </paragraph>
+ <paragraph>
+  However, the compiler can be smart enough to use the same memory location for both variables since their scopes don't intersect. Even compilers we wrote in the 1960s (for a different language, Algol 60) could do that.
+ </paragraph>
+ <paragraph>
+  When you say "future declarations are ignored" what do you mean? Be careful with words. At compile-time, each declaration-assignment is checked for syntactic correctness. At compile-time, space for must be allocated for each declared local variable in the frame for a call. At runtime, absolutely nothing has to be done for the declaration of a local variable.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

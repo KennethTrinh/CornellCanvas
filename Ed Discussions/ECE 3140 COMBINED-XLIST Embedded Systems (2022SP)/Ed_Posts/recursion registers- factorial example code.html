@@ -1,0 +1,60 @@
+<h1>
+ Title: recursion registers- factorial example code
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-19T04:05:11.484302+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  how does the following code from the factorial demo work? i would think that when FACTORIAL1 is called recursively, the number you are trying to pass to it is in R1, however the FACTORIAL1 function expects its input to be in R0. i am running into a similar issue with my fibonacci function
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="478" src="https://static.us.edusercontent.com/files/bvfCAVFXb2WNCIcCiRTf8yS5" width="331"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The code follows the ARM convention and is passing the first (and only) argument in R0. R1 is used to hold the original value of R0 (i.e. the function argument) so we can use it later to multiply (input argument) * factorial(input - 1). Notice that the code never expects a certain value to be in R1 when the subroutine is called; the first instruction with R1 moves the value of R0 into R1. R1 is pushed and popped before/after the recursive subroutine call since factorial1 is caller saved
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

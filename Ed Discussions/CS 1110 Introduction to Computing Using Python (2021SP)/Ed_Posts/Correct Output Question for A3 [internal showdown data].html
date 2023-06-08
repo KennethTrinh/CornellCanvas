@@ -1,0 +1,174 @@
+<h1>
+ Title: Correct Output Question for A3 [internal showdown data]
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-26T06:15:53.943262+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi there,
+ </paragraph>
+ <paragraph>
+  I think i've successfully finished A3, but I just want to check. I can run showdown_time.py on a2c_census2020_processed.txt and produce the showdown sample outputs given in 5.1 of the assignment brief. E.g. things like:
+ </paragraph>
+ <pre>     Cornell_U vs. Harvard_U
+     Number of students accepted at both: 12
+     Number of such students who enrolled at one of them: 10
+     % who chose Cornell_U over Harvard_U: 10.0
+     % who chose Harvard_U over Cornell_U: 90.0 
+</pre>
+ <paragraph>
+  However, when I run showdown_time.py the terminal doesn't show the following information that was also given under the sample outputs section of the assignment brief:
+ </paragraph>
+ <pre>FYI, here is the internal showdown data
+Cornell_U vs. Harvard_U
+accepted at both: 383,404,453,548,888,1464,1731,1896,1902,1952,2665,1903
+accepted at both, enrolled at Cornell_U: 1903
+accepted at both, enrolled at Harvard_U: 383,404,453,548,888,1731,1902,1952,2665
+</pre>
+ <paragraph>
+  Does my function also need to produce this? Or was this 'FYI' given for our information only?
+  <break>
+  </break>
+  <break>
+  </break>
+  Thanks!
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Set the appropriate variable in the script code for showdown_time.py to get the internal showdown data, to check whether that output is correct.  (If it isn't, then there is something wrong with your code.)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Samantha (Meiyang) Wang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  To clarify, the internal showdown data should not be printed in our final submission?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, please see Q3 in pinned post
+  <link href="https://edstem.org/us/courses/3933/discussion/325799"/>
+  Misc. A3 [does tag order matter? delete comments? values of `small_test` and `show_sd_internals`?]
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Okay great, thanks! Does it matter if the lists of tags (e.g.) in attribute accepted_enrolled have the same members as those in the sample output, but are not sorted?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think that this does suggest a problem with the code, since nothing you were supposed to write should have altered any College's accepted_enrolled attribute (but am I misremembering?)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh! Sorry. I meant the 'accepted at both' or 'accepted at both, enrolled at X' in the "FYI, here is the internal showdown data" readout? Sorry if this is too many questions, I can just come to an office hours.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Looks like we never specified the order of the lists for Showdown attributes in the class definition, so no, you don't have to have the tags in sorted order in them.
+  <break>
+  </break>
+  <break>
+  </break>
+  (If somewhere we documented that they need to be sorted, then that documentation supercedes this response!)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thanks! :)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

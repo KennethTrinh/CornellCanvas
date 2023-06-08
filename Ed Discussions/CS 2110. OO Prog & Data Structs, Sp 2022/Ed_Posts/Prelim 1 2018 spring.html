@@ -1,0 +1,127 @@
+<h1>
+ Title: Prelim 1 2018 spring
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-07T07:01:26.012508+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="404" src="https://static.us.edusercontent.com/files/0SRlZwTKHML9XkRckXdIKgae" width="621"/>
+ </figure>
+ <paragraph>
+  In this question, why is it necessary for Dress 1 to be abstract? Why can't a non-abstract class have an abstract method when an abstract class can have a non-abstract method?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The whole idea of an abstract class is to define a class that will not be instantiated. So you will not create a class Dress1, but rather you will create a subclass that inherits Dress1's methods/fields and defines the abstract methods. We think of abstract classes (and interfaces for that matter) as contracts of more general types. They are two general so we don't want to create an object of that type, but we create a template for child classes to base their definition off of.
+ </paragraph>
+ <paragraph>
+  Why abstract classes can declare and implement non-abstract methods: Maybe you have some methods which you want to allow the subclasses to define. But for others maybe you have an implementation that you want to define for the child classes.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh okay! So only abstract classes can have abstract methods but abstract classes can have both abstract as well as non-abstract classes?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think you meant abstract classes can have non-abstract methods (meaning they must be defined) and abstract methods. non-abstract classes can only have non-abstract methods. Yes, that is correct.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  That makes sense, thank you! I am still confused about the second part though. Why does dress 4 compile after it has been made abstract if the only non-abstract method is the constructor? Doesn't it mean I can use that method to create it's object which should not be possible for an abstract class?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, so this is a little bit weird to think about. The constructor would be invalid if you made Dress4 abstract, but we also
+  <bold>
+   have
+  </bold>
+  to make it abstract because it is a subclass of Dress1, which has an abstract method getColor(), and getColor() must be implemented if Dress4 is non-abstract.
+ </paragraph>
+ <paragraph>
+  Remember that when Dress4 extends Dress1, we inherit all its methods and have to implement the abstract ones.
+ </paragraph>
+ <paragraph>
+  You are correct that it does not compile even after being made abstract though
+  <bold>
+   if we were to leave the constructor in
+  </bold>
+  . My interpretation of the answer key is that "making it abstract" implies getting rid of the constructor, so it WOULD compile after you "make it abstract". Although I agree this could be ambiguous, so in the actual prelim-setting, I would ask the proctors for clarification/look for a regrade if the question was ambiguous and you lost points.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Okay! I think I get it now. Thank you so much! :)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

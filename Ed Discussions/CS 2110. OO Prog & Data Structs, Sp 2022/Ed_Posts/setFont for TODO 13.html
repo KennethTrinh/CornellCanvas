@@ -1,0 +1,134 @@
+<h1>
+ Title: setFont for TODO 13
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-13T12:28:48.202415+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I have tried calling setFont on the JPanel and JSlider for making the font size 16, but the calls don't seem to change the size from what it was by default. Am I calling it on the wrong object? How do I make this font change?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: CJ Lee (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You should be calling setFont on the label you create, as that label is what holds the actual
+  <code>
+   title
+  </code>
+  . Not on the JPanel or JSlider.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I used TitledBorder to add the title, and cannot figure out how to use setFont on that. Do I not have to use TitledBorder?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: CJ Lee (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ah, you don't necessarily have to use TitledBorder. Following the steps in the TODO, using just an EmptyBorder along with manually making a separate JLabel for the title would make it easier to adjust the font.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Im not able to figure out how to add the label to the top of the panel.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tony Chen (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  JPanel has an overloaded add method: JPanel.add(component, constraint)
+ </paragraph>
+ <paragraph>
+  The component will be your label. The constraint uses BorderLayout as the argument.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm Getting an IllegalArgumentException when using a borderlayout as the constraint.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tony Chen (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Did you construct your panel with a BorderLayout argument? There is example code in the tutorial link provided in the specification. That may be the reason for the IllegalArgumentException.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

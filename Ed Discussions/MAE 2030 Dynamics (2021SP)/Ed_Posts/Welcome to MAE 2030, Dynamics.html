@@ -1,0 +1,208 @@
+<h1>
+ Title: Welcome to MAE 2030, Dynamics
+</h1>
+<h3>
+ Author: Andy Ruina (admin)
+</h3>
+<h3>
+ Date: 2021-01-23T02:26:19.341238+11:00
+</h3>
+<h3>
+ Category: Concepts
+</h3>
+<h3>
+ Vote Count: 5
+</h3>
+<document version="2.0">
+ <paragraph>
+  Welcome to Dynamics, Spring 2021.
+  <break>
+  </break>
+  This course is also on an (evolving)
+  <link href="https://canvas.cornell.edu/courses/25081"/>
+  Canvas page.
+  <break>
+  </break>
+  <break>
+  </break>
+  The first purpose of this post is for me to try out Ed Discussion. Similarly,  you can try out Ed Discussion comments and questions below.
+  <break>
+  </break>
+  <break>
+  </break>
+  <bold>
+   Boring prelude
+  </bold>
+  . I have used Piazza on and off for years,  and, a couple of times tried a competitor  (CampusWire).  Piazza was OK, and I didn't find CampusWire to be as easy to navigate.  Now, Piazza is charging more than Cornell likes, so Cornell is recommending this new platform "Ed Discussion" for discussion.  So here we are. And here I am with my first post.
+ </paragraph>
+ <heading level="1">
+  <bold>
+   Pre-semester thoughts
+  </bold>
+  <break>
+  </break>
+  (things to think about, and do,  before the semester).
+ </heading>
+ <paragraph>
+  <bold>
+   Prerequisites for MAE 2030, Dynamics:
+  </bold>
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    <bold>
+     MAE 2020, Statics.
+    </bold>
+    <italic>
+     This is for real.
+    </italic>
+    If you are not quite competent at the first 1/2 of MAE 2020, "Statics", you will struggle with Dynamics.  Dynamics will help you with Statics, but it would/will be hard for you to catch up with the needed statics sills if you don't have a solid start.
+    <break>
+    </break>
+    <bold>
+     Implication:
+    </bold>
+    review vectors, free-body diagrams (FBDs), and setting up and solving force balance and moment balance vector equations.
+    <link href="http://ruina.tam.cornell.edu/Book/"/>
+    My book is fine for that purpose. If you can do every vector and statics homework problem in my book you will be fine. If you can do most, that's probably enough to get by. If you can do few, you should study up now.
+   </paragraph>
+  </list-item>
+ </list>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    <bold>
+     Matlab.
+    </bold>
+    We will use lots of Matlab in Dynamics.  It will be easier for you if you are competent at the start.  If you did not take and do well in a freshman Matlab course, you should spend about 10 hours doing Matlab tutorials before the semester starts.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    <bold>
+     Math 2930, ODEs.
+    </bold>
+    The things you really need to know are also in my book, linked above. Here are some examples.
+    <break>
+    </break>
+    - Writing 2nd order ODEs in 1st order form
+    <break>
+    </break>
+    - Knowing, cold and solid, the solutions of all first and second order, linear, constant- coefficient  ODEs.     With barely a thought you should know which of these (below) have solutions of constant velocity, constant acceleration, exponential growth, exponential decay and sinusoidal oscillations. In these equations assume $c,m,k,A$ and $\omega$ are positive constants.
+   </paragraph>
+   <math>
+    \dot x = 0, \quad \dot x = c,   \quad \dot x = cx,\quad \dot x = -cx,\\ \ddot x = 0, \quad \ddot x = c, \quad \ddot x = cx,     \quad \ddot x = - cx, \\ m\ddot x + c \dot x + k x = A \sin (\omega t)
+   </math>
+   <paragraph>
+    The last of these, the forced and damped harmonic oscillator is more complicated and takes some work to solve. You should know how to solve it and the nature of the solutions (e.g., homogeneous solution, particular solution, over-damped and under-damped cases, etc).
+    <break>
+    </break>
+    <break>
+    </break>
+    - Euler's method of numerical solution of systems of first-order ODEs.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    <bold>
+     Math 2940, Linear Algebra.
+    </bold>
+    This is a co-requisite.  We will use bits and pieces of this as we go along.  The key fact is that one can write a set of linear algebraic equations in matrix form  ($Ax = b$) and one can usually solve these equations with Matlab's backslash command (
+    <code>
+     x = A\b
+    </code>
+    ).
+   </paragraph>
+  </list-item>
+ </list>
+ <heading level="2">
+  <bold>
+   Zoom
+  </bold>
+ </heading>
+ <paragraph>
+  Most (at least 131/140) of you will be seeing lectures on Zoom.  Eventually 9 of you will be able to see the lectures live and in person.  Some recitations will be live and in person and others will be in zoom. None will be mixed (the in-person recitations will not be broadcast nor recorded).  Here are some things.
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    <bold>
+     Cameras on.
+    </bold>
+    <italic>
+     Please have your camera on all the time during lectures.
+    </italic>
+    Please have there be more light on your face than on your background so that your face is clearly visible. Open windows and bright lights behind you make your face hard to see.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    <bold>
+     Microphones on.
+    </bold>
+    Please only use "mute" if you have background noises you need to squelch.  Zoom is pretty good at minor background noise suppression. Try it with a friend (in audio settings you can control the amount of background noise suppression).  If your background noise is small enough to be suppressed, you can leave your microphone on.   If, on the other hand, you don't have a private place, you can use mute.  Why have mikes on?  Because the small noises people make help me pick up on what people are thinking as they watch.  It also enhances your group experience. And it makes it easier for you to ask quick little questions and  correct my errors (which I depend on your doing).
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    <bold>
+     Good microphone.
+    </bold>
+    Many people don't know how much the Zoom experience is improved by  the use of a good microphone; in particular, my experience, if you use a good microphone that is close to your mouth.  Only a few built-in microphones, and then only in acoustically dead rooms, give good sound. The easiest and cheapest good microphones are phone earbuds.  These are especially good if you wrap the cord to the microphone around the opposite ear from the one it is attached to; the microphone itself then sits between your lip and chin.  Headsets with microphones are great.  External microphones are good if they are close to your mouth, or you are in an acoustically dead space.
+    <break>
+    </break>
+    <break>
+    </break>
+    Make sure, in your Zoom audio settings that the good microphone is selected. You can make sure by tapping it when you do a microphone sound check (in Zoom audio settings).
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    <bold>
+     External camera.
+    </bold>
+    <break>
+    </break>
+    <bold>
+     - At-home exams
+    </bold>
+    need an external camera. This could be a USB camera with a long cord or a phone logged in to zoom.  The camera view needs to include you, your hand-written work, and your computer screen. This is to protect against cheating which has become a bigger problem in this pandemic era.
+    <break>
+    </break>
+    <bold>
+     - Recitation.
+    </bold>
+    You need a way to share your written work with a partner. This could be an iPad, a Surface, a tablet connected to your computer, a document camera, a webcam aimed at your paper (mock document camera), or your phone set up as a document camera.  I have not done it myself, but there are tons of google hits if you search on: use phone as document camera (
+    <link href="https://teaching.cornell.edu/media/285"/>
+    here's one by Cornell's own Matt Ford).
+    <link href="https://docs.google.com/document/d/1LDcFPCKSwx47wYQaMCNMQtpF3Vam5ybQSV8L8QFLnj0/edit?usp=sharing"/>
+    Please see this google doc for much more detail
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  <break>
+  </break>
+  <bold>
+   - Collaboration.
+  </bold>
+  In general, you will find it useful if you can easily share your sketches and hand calculations with others, who,  in turn,  can share with you.
+  <break>
+  </break>
+  <break>
+  </break>
+  The tricky part is having two people share written work at once.  This is possible  but takes a little set up and practice.  See the "Technology" post linked above.
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

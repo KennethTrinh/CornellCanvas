@@ -1,0 +1,74 @@
+<h1>
+ Title: Admin/user difference
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-04-28T03:40:23.897365+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm confused about differentiating between the two
+ </paragraph>
+ <paragraph>
+  Are
+  <bold>
+   USERS
+  </bold>
+  individuals who can view the site but
+  <bold>
+   cannot
+  </bold>
+  login
+ </paragraph>
+ <paragraph>
+  Are
+  <bold>
+   Admins
+  </bold>
+  individuals who can view the site AND
+  <bold>
+   can
+  </bold>
+  login and make changes
+ </paragraph>
+ <paragraph>
+  if so, do we need to create a admin group table? and do we have to run this code below?
+ </paragraph>
+ <pre>define('ADMIN_GROUP_ID', 1); // see init.sql
+
+$is_admin = is_user_member_of($db, ADMIN_GROUP_ID);
+</pre>
+ <paragraph>
+  I am confused about this, I feel that I have a very large amount of tables and feel that my work is far removed from what's expected.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Consumers are not required to login. Some designs may have this. If you do, you will need a groups table, etc.
+ </paragraph>
+ <paragraph>
+  Administrative users are required to login. If you only have administrative users, you don't need groups, etc. because everyone who logs in would be an admin.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,50 @@
+<h1>
+ Title: fall 2016 Prelim 1
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-04T16:20:28.511306+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="59.81818181818181" src="https://static.us.edusercontent.com/files/Ogcu7ZPchOxulKvg8AEOkO4p" width="658"/>
+ </figure>
+ <paragraph>
+  Can someone explain this in detail? - I don't get it. Thanks in advance.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  new Integer(7) creates an object of wrapper class Integer that wraps the value 7; the value of that expression is a pointer to the object. Remember, that object has two partitions. The top one is Object, below that is Integer.
+ </paragraph>
+ <paragraph>
+  Cast the pointer to Object. We now have a pointer to the object, but that static type of the pointer is Object.
+ </paragraph>
+ <paragraph>
+  Now call function equals in the object. The overriding/bottom-up rule says to use the one in partition Integer, which checks for equality of its value 7 with the parameter.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

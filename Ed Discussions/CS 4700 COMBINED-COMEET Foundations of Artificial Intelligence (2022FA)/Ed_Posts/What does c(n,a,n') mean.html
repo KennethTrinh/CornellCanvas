@@ -1,0 +1,69 @@
+<h1>
+ Title: What does c(n,a,n') mean?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-10-20T05:50:56.246599+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="470.1203585147247" src="https://static.us.edusercontent.com/files/IH96pqNwzFihg33vCrboZDD3" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Niko Grupen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  c(n, a, n') is the cost of stepping from a node n to a successor node n' by action a. See Section 3.5.2 of the textbook for a discussion of g(n) vs. h(n) vs. c(n, a, n').
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am not sure why my comment was deleted, but can you confirm if the first statement is saying that a heuristic is consistent if the heuristic step cost does not overestimate the actual stepcost ?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Niko Grupen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yep and it is often referred to as "local admissibility" for this reason -- it guarantees that the total estimated path cost does not decrease along any path (which you can see by re-writing as h(n) - h(n') &lt;= c(n, a, n')). The connection to triangle inequality is also helpful for understanding this -- it is impossible for h(n) to be a lower bound on the cost to reach G if there exists a route from n to G via n' that is cheaper than h(n).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

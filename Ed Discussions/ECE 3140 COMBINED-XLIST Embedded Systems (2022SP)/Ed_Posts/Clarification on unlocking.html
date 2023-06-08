@@ -1,0 +1,119 @@
+<h1>
+ Title: Clarification on unlocking
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-25T09:38:27.872169+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I understand locking. If several processes share a resource in the CS of code, and any one of them enters the CS it will "lock" the lock. This means that when the other processes reach the lock, they will stop running and block.
+ </paragraph>
+ <paragraph>
+  What I don't understand is the specifics of unlocking. When a program exits the CS, it unlocks the lock. Does this mean that:
+ </paragraph>
+ <list style="number">
+  <list-item>
+   <paragraph>
+    ALL of the processes on the "blocked" queue for the lock get put back on the ready queue. OR
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    You only remove one process from the blocked queue, meaning that the next one will have to wait for the next time the lock is unlocked (this seems like it wouldn't work, because there could be a case where the last process on the ready queue finishes while there are still processes on the blocked queue?)
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  Additionally, I am confused about what to do with the currently running process. Do you:
+ </paragraph>
+ <list style="number">
+  <list-item>
+   <paragraph>
+    Interrupt the current process as soon as it unlocks the lock and put it on the ready queue behind the processes that just got unblocked OR
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Let it finish its turn on the processor, knowing that it could feasibly gain the lock again and thus waste time and context switches blocking the processes again that were just unlocked.
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  If I had to guess, I would say 1. and 1. for both of these questions. But can someone confirm for me?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  As per the description in
+  <code>
+   lock.h
+  </code>
+  ,
+  <code>
+   l_unlock
+  </code>
+  should "release the lock along with the first process that may be waiting on the lock. This ensures fairness wrt lock acquisition."
+ </paragraph>
+ <paragraph>
+  The process that runs
+  <code>
+   l_unlock
+  </code>
+  should only be interrupted by the scheduler (end of time slot) or if it finished executing. Calling
+  <code>
+   l_unlock
+  </code>
+  should not halt execution to pass it to the unblocked process.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  How does this maintain fairness? In theory, this would allow the process that unlocked the lock to loop around and re-enter the lock if uninterrupted. Even if we put an unlocked process back into the process queue, it would still find the lock locked when it got scheduled in this case
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  The function specification tells you which process should be unblocked and that processes should not pre-empt, not how you should fit that unblocked process back into the ready queue. The implementation of a fairness is up to the programmer.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

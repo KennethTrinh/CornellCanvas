@@ -1,0 +1,64 @@
+<h1>
+ Title: OutofMemoryError ?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-03T11:51:59.363254+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  trying to test append &amp; toStringRev and receiving this:
+ </paragraph>
+ <paragraph>
+  java.lang.OutOfMemoryError: Java heap space
+ </paragraph>
+ <paragraph>
+  followed by a long list of "at org.junit.jupiter.engine.extension"
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  That generally means that your code is creating too many objects.
+ </paragraph>
+ <paragraph>
+  You function append has probably created a circular list --e.g. node 1 point to node 2 points to node 3 points to node 1.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  fixed it, thank u!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

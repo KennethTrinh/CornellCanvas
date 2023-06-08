@@ -1,0 +1,43 @@
+<h1>
+ Title: Discussion 5 demo
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-27T06:41:03.106616+10:00
+</h3>
+<h3>
+ Category: Sections
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="266.6749226006192" src="https://static.us.edusercontent.com/files/DZDzQZKHdN5x0PRGzTOCcVdm" width="592"/>
+ </figure>
+ <paragraph>
+  In section, professor stated that the right graph uses a smaller C and this leads to a sparser representation of x's. However, I'm kind of confused as to what x, x^2, x^4, etc. actually refer to and what the lambda refers to? I thought the point of the regularizer was to give more or less weight to different x features, so if we had a matrix of features, x1 could get more weight than x2. How do the exponents/cosine come into play? And what does lambda mean or do?
+ </paragraph>
+ <paragraph>
+  Oh, and do we want a smaller or larger loss? I feel like we want a lower loss in general, but this isn't always great because of overfitting?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The lambda is the regularization parameter, out front of the l-1 norm term (i.e. how much the size of our weight vector gets punished). The x, x^2 etc. represent the coefficients for the corresponding x^k term. What we want is a low test loss, which is why overfitting is bad, since that can get us really poor performance on unseen test points.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

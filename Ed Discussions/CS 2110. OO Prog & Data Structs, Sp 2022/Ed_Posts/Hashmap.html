@@ -1,0 +1,93 @@
+<h1>
+ Title: Hashmap
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-25T07:08:13.972575+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  From thread #1952, I understand that when we poll f from F, we are not really adding it anywhere. However, it confuses me because now I don't understand how and when we are now supposed to put stuff into the hashmap and the general use of the hashmap. Initially I thought I understood but now I'm confused. Help please, thanks.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Adding f to the HashMap doesn't happen when you poll f from F. Because if you polled it from F, that means that f was in the frontier set already. And the hashmap contains the frontier set and the settled set.
+ </paragraph>
+ <paragraph>
+  Take a look at the high level implementation you're given. Where in it do we add nodes to the frontier set (and thereby the Heap and the map)?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I have my code as close as the abstract algorithm to my best understanding (including what we just talked about) but it's still not working. After using print statements to check for error location, I realized that when my code is running, it never gets to the else block that deals with if w is in SandF. I don't know why. I made a private post yesterday afternoon and I did not get a response, so I'm discouraged from making another private post even though my code has changed from the last time I posted.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Got it, sorry to hear no one has responded! You said your code is updated. I'm online now and can help out if you want to either update that post/post your new code.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Do you have a clear, precise definition of what nodes are the keys of the hash map?
+ </paragraph>
+ <paragraph>
+  If not, you will have trouble.
+ </paragraph>
+ <paragraph>
+  If you do, just write code keeping that definition true!
+ </paragraph>
+ <paragraph>
+  Look at the part of the handout that discusses the abstract algorithm for what nodes are in the hashmap.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

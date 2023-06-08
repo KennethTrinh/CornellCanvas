@@ -1,0 +1,157 @@
+<h1>
+ Title: Implements and Extends
+</h1>
+<h3>
+ Author: Yixin Zhang (student)
+</h3>
+<h3>
+ Date: 2021-09-30T14:27:27.574934+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Consider this situation:
+ </paragraph>
+ <paragraph>
+  1. C is an interface, E and F are class
+ </paragraph>
+ <paragraph>
+  2. F implements C
+ </paragraph>
+ <paragraph>
+  3. E extends F
+ </paragraph>
+ <paragraph>
+  Do we need to have all methods in C declared in E? Should I also write E implements C?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The best way to answer your question is to try it in Eclipse.  Define interfaces and classes exactly as you describe here and see what happens.  You will remember the rules much better that way.
+ </paragraph>
+ <paragraph>
+  For the formal answer, if
+  <code>
+   class F implements C
+  </code>
+  and
+  <code>
+   class E extends F
+  </code>
+  , then:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    Class
+    <code>
+     F
+    </code>
+    must implement all methods declared in
+    <code>
+     C
+    </code>
+    (unless
+    <code>
+     F
+    </code>
+    is marked as
+    <code>
+     abstract
+    </code>
+    )
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Because
+    <code>
+     E
+    </code>
+    extends
+    <code>
+     F
+    </code>
+    ,
+    <code>
+     E
+    </code>
+    will inherit all methods declared in
+    <code>
+     C
+    </code>
+    , so it does not need to declare them itself (unless
+    <code>
+     F
+    </code>
+    is
+    <code>
+     abstract
+    </code>
+    , in which case
+    <code>
+     E
+    </code>
+    will need to implement any
+    <code>
+     abstract
+    </code>
+    methods left in
+    <code>
+     F
+    </code>
+    )
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    The compiler knows that
+    <code>
+     E
+    </code>
+    implements
+    <code>
+     C
+    </code>
+    because of subtyping rules:
+    <code>
+     E
+    </code>
+    IS-A
+    <code>
+     F
+    </code>
+    , and
+    <code>
+     F
+    </code>
+    implements
+    <code>
+     C
+    </code>
+    .  Therefore, you should not write
+    <code>
+     E implements C
+    </code>
+    - that is redundant to the compiler.
+   </paragraph>
+  </list-item>
+ </list>
+</document>
+<h3>
+ ------------------------------------
+</h3>

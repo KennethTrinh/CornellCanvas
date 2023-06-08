@@ -1,0 +1,100 @@
+<h1>
+ Title: Purpose of Runnable vs Thread
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-01T02:23:40.540852+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I have been doing all of the reading in JHT on implementing Runnable vs extending Thread, but I find myself confused on why we have to do this in the first place? What is the purpose or motivation behind having a class implement Runnable or extend Thread? I under the 1st pdf under concurrency details
+  <italic>
+   what
+  </italic>
+  it is, and the SyncIntro.pdf shows examples of thread conflicts and deadlocks, but I don't really understand why we have to create a distinct class for it.
+ </paragraph>
+ <paragraph>
+  My personal interpretation is that we do this for the purpose of multithreading. However, I'm not quite sure if this encapsulates the entire reasoning?
+ </paragraph>
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  A
+  <code>
+   Thread
+  </code>
+  object encapsulates low-level operating system features that allow a second thread of execution to run on the computer's CPU cores while accessing the same memory as the main program.  But such an object still needs to be told which code to run when the thread is started.  The
+  <code>
+   Runnable
+  </code>
+  interface (which can be implemented with an anonymous function) is Java's way of representing some piece of code that can be run (the code goes in its abstract procedure named
+  <code>
+   run()
+  </code>
+  ).  By giving a
+  <code>
+   Thread
+  </code>
+  a
+  <code>
+   Runnable
+  </code>
+  , you're telling Java to run a particular piece of code on its own dedicated thread.
+ </paragraph>
+ <paragraph>
+  These two concepts (a thread, and the code that it should run) really are distinct, so representing them with two different types is a good example of "separation of concerns".  The easiest way to see the advantage  of this is to think about "thread pools" - threads are operating system resources that can be scheduled on CPUs; starting, stopping, and maintaining threads has an overhead cost associated with it.  But once a thread has been created, it could be used for many different tasks, and tasks generally don't care what thread they are running on.  Therefore, you could imagine a handful of threads executing a sequence of tasks drawn from a list of
+  <code>
+   Runnable
+  </code>
+  s - it makes sense to separate the tasks' code from the
+  <code>
+   Thread
+  </code>
+  it runs on.
+ </paragraph>
+ <paragraph>
+  That being said, there are many ways people might want to use a piece of reusable utility code like
+  <code>
+   Thread
+  </code>
+  .  If, in a particular application, the concepts of "thread" and "task" are synonymous, then one can extend
+  <code>
+   Thread
+  </code>
+  and override its
+  <code>
+   run()
+  </code>
+  method rather than defining a separate
+  <code>
+   Runnable
+  </code>
+  , just for convenience.  However, separating the two concepts tends to result in more flexible and reusable code, which is why this year's lecture slides emphasize that usage.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

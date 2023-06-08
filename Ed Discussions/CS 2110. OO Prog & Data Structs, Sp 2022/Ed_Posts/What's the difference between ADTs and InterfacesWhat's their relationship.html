@@ -1,0 +1,134 @@
+<h1>
+ Title: What's the difference between ADTs and Interfaces/What's their relationship?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-16T11:56:55.679495+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  What's the difference between ADTs and Interfaces? What's their relationship?
+ </paragraph>
+ <paragraph>
+  I know that Array, List, Map, Queue, Set, Stack, Table, Tree, and Vector are ADTs. And class ArrayList implements type List.
+ </paragraph>
+ <paragraph>
+  So does this mean that List is an ADT
+  <bold>
+   and
+  </bold>
+  an interface? I'm getting confused by this...
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Richard Gu (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I believe all ADTs (as a model for useful data types) are interfaces. But interfaces are broader and serve as an abstraction for other non-data type classes that we saw in Prelim 1. So all (or at least almost all) ADTs are interfaces, but only some interfaces are ADTs.
+ </paragraph>
+ <paragraph>
+  List is an ADT and an interface, since you can't implement List directly and need to instead instantiate ArrayList or LinkedList.
+ </paragraph>
+ <paragraph>
+  Hope this helps.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  When we show you an ADT --abstract data type-- we tell you what the set of values are and its behavior: what operations there are on it. For example:
+ </paragraph>
+ <paragraph>
+  Stack of integers.
+  <break>
+  </break>
+  Values: all the integers
+  <break>
+  </break>
+  Operations:  size, push value onto the stack, pop a value from the stack
+ </paragraph>
+ <paragraph>
+  This definition has nothing to do with Java! It's just a definition.
+ </paragraph>
+ <paragraph>
+  It CAN be implemented in Java, but it can be implemented in lots of other language too --Python, Matlab, Pascal, Ruby, Lisp, ...
+ </paragraph>
+ <paragraph>
+  -------------------------
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  We can use the Java interface to define this ADT for use in Java, as shown below. Here, the interface declares the operations as methods, giving you information about how to call them. Comments define the behavior --what the methods do. Other languages may have their way of defining this ADT. Many do not.
+ </paragraph>
+ <paragraph>
+  Then, in Java, one writes a class that implements this ADT.
+ </paragraph>
+ <paragraph>
+  /** A stack is a bunch of integers, with a LIFO behavior,
+  <break>
+  </break>
+  like a bunch of cafeteria trays */
+  <break>
+  </break>
+  interface StackOfIntegers {
+  <break>
+  </break>
+  /** The size of this collection */
+  <break>
+  </break>
+  int size();
+ </paragraph>
+ <paragraph>
+  /** Push e onto the top of the stack. */
+  <break>
+  </break>
+  void push(int e);
+ </paragraph>
+ <paragraph>
+  /** Pop (and return) the value at the top of the stack. */
+  <break>
+  </break>
+  void pop();
+  <break>
+  </break>
+  }
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

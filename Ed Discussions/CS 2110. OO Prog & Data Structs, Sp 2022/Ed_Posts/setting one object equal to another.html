@@ -1,0 +1,69 @@
+<h1>
+ Title: setting one object equal to another
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-16T03:55:05.064309+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When you have something like the picture below and you set two objects equal to each other and then change one of them, they both change. But if you did something like...
+ </paragraph>
+ <paragraph>
+  String a = new String();
+ </paragraph>
+ <paragraph>
+  String b = new String();
+ </paragraph>
+ <paragraph>
+  a = b;
+ </paragraph>
+ <paragraph>
+  b =  "abc"
+ </paragraph>
+ <paragraph>
+  ....
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  the value of a is still "".
+ </paragraph>
+ <paragraph>
+  When does assigning one variable to another and then changing it cause both to change?
+ </paragraph>
+ <figure>
+  <image height="718.422077922078" src="https://static.us.edusercontent.com/files/tKZKFHFlIlzzG8Wvc4ePk2mw" width="513"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  because the variables are just pointers to the object, so when you do
+ </paragraph>
+ <paragraph>
+  a = b; they both have the same pointer in memory,
+ </paragraph>
+ <paragraph>
+  but doing b = "abc" changes b's pointer to a new object in memory (namely a String object) but a still points to that same location in memory.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

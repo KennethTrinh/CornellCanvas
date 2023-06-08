@@ -1,0 +1,62 @@
+<h1>
+ Title: LDA as linear classifier
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-28T21:52:09.883589+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="425" src="https://static.us.edusercontent.com/files/E3Lx0YIiQbwwejRUXAb9FLHp" width="607"/>
+ </figure>
+ <paragraph>
+  I don't quite understand how we got from the final form of our LDA classification rule to the linear rule.
+ </paragraph>
+ <paragraph>
+  How do we know weight vector w = mu_(+) - mu_(-)?
+ </paragraph>
+ <paragraph>
+  How do we know bias term b is expressed as it says on the slide above?
+ </paragraph>
+</document>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, just wanted to make sure this question was seen
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Basically, w=mu_(+)-mu_(-) because the more you move in the direction of mu_(+) the more positive your objective should be, and vice versa. the bias term is as it is such that the objective is exactly 0 halfway between mu_(+) and mu_(-), since by our LDA description that's where the probabilities of being in each class should be equal.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,50 @@
+<h1>
+ Title: Keeping a Tail Pointer
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-16T11:33:11.688775+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The lab document mentions that
+ </paragraph>
+ <blockquote>
+  While you can use this basic version of a linked list, a useful extension would be a slightly more complex list that keeps track of both the start and end, so that you can quickly insert tasks at the end without having to traverse the list firsts.
+ </blockquote>
+ <paragraph>
+  To my understanding, right now, process_queue works as the pointer to the head of the linked list (or is that current_process?). Can I simply declare a global variable in process.c, changing the value on enqueue, to maintain a pointer to the last element of my list?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Your understanding is correct. Whether or not the head of the linked list also happens to be
+  <code>
+   current_process
+  </code>
+  is up to your implementation.
+ </paragraph>
+ <paragraph>
+  Yes, you are allowed to create a new global variable that acts as a tail pointer.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

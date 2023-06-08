@@ -1,0 +1,53 @@
+<h1>
+ Title: Lab 4 Behavior when all processes are blocked
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-24T09:37:56.899544+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Are we allowed to just exit out of the scheduler (i.e. return NULL in process_select()) when all the processes are currently being blocked (i.e. there is a deadlock)?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  If there is no process ready,
+  <code>
+   process_select
+  </code>
+  should return
+  <code>
+   NULL
+  </code>
+  . This is the same as with
+  <italic>
+   lab3
+   <underline>
+    .
+   </underline>
+  </italic>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

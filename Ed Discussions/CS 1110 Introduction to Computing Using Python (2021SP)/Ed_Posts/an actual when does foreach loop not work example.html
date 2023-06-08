@@ -1,0 +1,55 @@
+<h1>
+ Title: an actual "when does foreach loop not work" example
+</h1>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Date: 2021-03-31T02:30:22.421039+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  (extracted from today's office hours transcript)
+  <break>
+  </break>
+  <break>
+  </break>
+  <bold>
+   if you want to work directly with positions, use "for .i.. range (...)", because that directly gives you index numbers; if you just want to work with the values in a list, just iterate through the values, which are give be "for x in whatever_list"
+  </bold>
+  <break>
+  </break>
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   # this doesn't work (the way you expect)
+print("the attempt to use a for-each loop")
+thelist = ['hi', 'hi', 'hi']
+list2 = ['nothing', 'nothing', 'nothing']
+for s in thelist:
+    i = thelist.index(s)
+    print('i is: ' + str(i))
+    list2[i] = 'done'
+print(list2)
+print("finished attempt to use a for-each loop\n\n")
+
+#this works
+print("using range")
+thelist = ['hi', 'hi', 'hi']
+list2 = ['nothing', 'nothing', 'nothing']
+for i in range(len(thelist)):
+    print("i is: " + str(i))
+    list2[i] = 'done'
+print(list2)
+  </snippet-file>
+ </snippet>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

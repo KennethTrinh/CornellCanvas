@@ -1,0 +1,50 @@
+<h1>
+ Title: A3 - Testing Error
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-23T10:25:15.955538+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When testing just the individual function
+  <italic>
+   areMidsDiff
+  </italic>
+  I receive the following error:
+ </paragraph>
+ <paragraph>
+  java.lang.Exception: No tests found matching [{ExactMatcher:fDisplayName=testAreMidsDiff], {ExactMatcher:fDisplayName=testAreMidsDiff(a3.A3Test)], {LeadingIdentifierMatcher:fClassName=a3.A3Test,fLeadingIdentifier=testAreMidsDiff]] from org.junit.internal.requests.ClassRequest@51b7e5df at org.junit.internal.requests.FilterRequest.getRunner(FilterRequest.java:40) at org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader.createFilteredTest(JUnit4TestLoader.java:83) at org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader.createTest(JUnit4TestLoader.java:74) at org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader.loadTests(JUnit4TestLoader.java:49) at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:513) at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:756) at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:452) at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210)
+ </paragraph>
+ <paragraph>
+  However, when testing the other functions individually, the error is non-existent. I'm currently running JUnit5 and I'm unsure where this issue may be coming from.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Do you have   @Test before that method.
+ </paragraph>
+ <paragraph>
+  When you test all methods, is areMidsDiff tested?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,181 @@
+<h1>
+ Title: Docker Troubleshooting
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-01-30T06:06:55.618799+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I've tried troubleshooting docker installation issues on my own, gone to office hours, used a different PC (windows &amp; Mac), and have tried using the remote lab computers. On the remote lab computers and my personal windows PC, I get the error "docker daemon not running" and have had no success with troubleshooting. I'm genuinely unsure of what next steps I should take to try and resolve this issue. Any help would be greatly appreciated
+ </paragraph>
+</document>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was able to finally fix the issue. Thank you!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Kim (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For the error "Docker daemon not running" could you make sure that Docker Desktop is open and try running docker commands again?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jenny Chen (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, I am having this same issues, and I was wondering which docker commands are u referring to?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Kim (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I meant any docker commands to verify that it is installed correctly. When you follow the instructions for installing Docker on their website (
+  <link href="https://docs.docker.com/desktop/install/mac-install/"/>
+  https://docs.docker.com/desktop/install/mac-install/), you can verify the installation on the command line by trying something like
+  <code>
+   docker --version
+  </code>
+  .
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Liu (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm having the same issue ^^
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I can run the version command but nothing else. For example, "docker run hello-world" doesn't work
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Kim (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When you run
+  <code>
+   docker run hello-world
+  </code>
+  , what's the command line output?
+ </paragraph>
+ <paragraph>
+  For me, I see
+ </paragraph>
+ <pre>$ docker run hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+</pre>
+ <paragraph>
+  If you see something like "Is the docker daemon runnning?" then you should check if Docker is open
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If you are unable to get Docker working on your computer, you will need to use the in-person Engineering labs or the virtual Engineering labs. I would suggest using the virtual labs, as you'll be able to access them from your laptop.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

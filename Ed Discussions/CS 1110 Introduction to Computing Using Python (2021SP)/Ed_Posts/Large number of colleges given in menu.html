@@ -1,0 +1,68 @@
+<h1>
+ Title: Large number of colleges given in menu
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-06T12:27:29.382758+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello, I was looking over my code one more time before submitting and when using sd_utilities_list to run showdown_time there are over a thousand options given by the menu, but the function works fine otherwise (attached screenshot). When using sd_utilities_dict, however, it seems to run perfectly fine. Is this an indication of a problem in my while loop in sd_utilities_list?
+ </paragraph>
+ <figure>
+  <image height="374" src="https://static.us.edusercontent.com/files/fW9DbcV9SpFyYkafUt6kplbM" width="598"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Elisabeth Finkel (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  A correct solution will print two-hundred-something colleges, yes. Your
+  <code>
+   process_line
+  </code>
+  seems to be producing duplicates. This could mean that it is mistakenly not finding an outcome/enrollment school in
+  <code>
+   clist
+  </code>
+  , and is unnecessarily creating a new College and adding it to
+  <code>
+   clist
+  </code>
+  .  It definitely could be a problem with your while loop.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  https://edstem.org/us/courses/3933/discussion/413642
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

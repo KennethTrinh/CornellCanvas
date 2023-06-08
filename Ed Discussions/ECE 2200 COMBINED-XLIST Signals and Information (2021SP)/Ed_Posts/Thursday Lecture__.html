@@ -1,0 +1,108 @@
+<h1>
+ Title: Thursday Lecture
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-17T01:50:42.444594+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am confused about why q[n]=p[n + (N-1) ].
+ </paragraph>
+ <paragraph>
+  p[n]=1 when 0&lt;= n &lt; 2N-1,
+ </paragraph>
+ <paragraph>
+  then p[n+ (N-1)] =1 when 0&lt;= n + (N -1) &lt;2N-1
+ </paragraph>
+ <paragraph>
+  which means that q[n] = p[n+ (N-1)] = 1 when 1-N &lt;= n &lt; N and this is different from the q[n] we have at first, which is q[n]=1 when -N &lt;= n &lt;N.
+ </paragraph>
+ <paragraph>
+  Also for q[n]= 1 when -N &lt;= n &lt; N, I think there should be only 2N's 1 here as when n=N, q[n] should be 0. I am not sure whether I have made a mistake and I am really confused about this part. Thanks in advance.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The specification for $q [ n ]$ should be that it's 1 for $- N &lt; n &lt; N$ --- Ii think I wrote it wrong at first and then fixed it.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  But if this is the case, 0 &lt; n &lt; 2N-1 will not have (2N-1)'s 1. Does it has (2N-2)'s 1?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  $q [ n ]$ has $2 N - 1$ 1's in it, as does $p [ n ]$.  Try a few vales of $N$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh I see. So we only change q[n] to -N &lt; n &lt;N and p[n] is still 0&lt;= n &lt; 2N-1? Thank you.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Correct.
+ </paragraph>
+ <paragraph>
+  Also, one other error that I'll fix Tuesday: the peak value of the DTFT is $2 N - 1$ rather than $N - 1/2$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

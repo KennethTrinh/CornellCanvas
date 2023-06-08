@@ -1,0 +1,49 @@
+<h1>
+ Title: Process_select hard fault
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-24T06:49:04.312683+10:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We are getting a weird hard fault. We are running test_t0. From what we can tell, we are getting the first process_select call that grabs the first ready RT process, which runs up until LEDGreen_On. At this point, the unready RT queue is set to NULL. Sometime before that call, the PIT1 service routine is called once and the current_time is at 1 ms. At LEDGreen_On, there is another PIT0 interrupt that calls process_select. This time, before anything happens in process_select, the unready RT queue is now set to 0x4b3 &lt;do_process_select+10&gt;. It somehow went from NULL to this value, and it obviously causes an error. See below:
+ </paragraph>
+ <figure>
+  <image height="363.5104895104895" src="https://static.us.edusercontent.com/files/Ffns5yhF9491i0mywVYRpk72" width="658"/>
+ </figure>
+ <paragraph>
+  All other values seem to be as expected. It is just this one variable that is somehow getting updated, and it seems to be something in 3140.s that is causing it. Any ideas?
+ </paragraph>
+ <paragraph>
+  I also updated my 3140.s file with the new changes.
+ </paragraph>
+ <paragraph>
+  Update, we realized it is something to do with our PIT1 setup. When we comment out the initialization of PIT1 in process_start, the test passes.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We figured it out. I have no idea why this happens, but here you go: inside our pit1 service routine, we were calling a function that incremented the current_time. This function took a pointer to a realtime, not a pointer to a volatile realtime. So, when we called it, we casted the volatile current_time to a normal realtime, then called the function. For some reason, this causes a completely separate variable to be set to some random instruction. I am actually curious what is going on under the hood to cause this, so any C experts, please explain.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

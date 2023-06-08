@@ -1,0 +1,78 @@
+<h1>
+ Title: Difference between an expression and a statement
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-13T06:09:14.522481+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Someone asked a similar question a few weeks ago but I'm still not clear. I looked at HyperText and the notes and still am confused about what the difference between an expression and a statement is in Java. It seems that many things are both expressions AND statements. Is a statement something that doesn't return something, but an expression has to? And what are some examples of things that are ONLY expressions, only statements, or both?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  An expression is evaluated to yield a value.
+ </paragraph>
+ <paragraph>
+  A statement doesn't yield a value.
+ </paragraph>
+ <paragraph>
+  The statement
+ </paragraph>
+ <paragraph>
+  System.output.println(5);
+ </paragraph>
+ <paragraph>
+  does not give a value, although it prints something out. Therefore, this is not a legal expression:
+ </paragraph>
+ <paragraph>
+  4 + System.output.println(5);
+ </paragraph>
+ <paragraph>
+  A while-loop is a statement to be executed:
+ </paragraph>
+ <paragraph>
+  while (x &lt; 5) { s= s + x; x= x+1};
+ </paragraph>
+ <paragraph>
+  The distinction get blurred in Java because the assignment statement
+ </paragraph>
+ <paragraph>
+  x=  x+1;
+ </paragraph>
+ <paragraph>
+  written without the semicolon, is actually defined to be an expression; its value is the value assigned to x. Therefore, one can write this:
+ </paragraph>
+ <paragraph>
+  y= 5 + (x= x+1);
+ </paragraph>
+ <paragraph>
+  This adds 1 to x and then stores in y the sum of 5 and the new value of x.
+ </paragraph>
+ <paragraph>
+  We NEVER writes such things because it is easy to misunderstand.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

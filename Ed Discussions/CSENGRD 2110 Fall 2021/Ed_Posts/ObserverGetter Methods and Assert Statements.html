@@ -1,0 +1,42 @@
+<h1>
+ Title: Observer/Getter Methods and Assert Statements
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-12T09:08:48.523718+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If we have our assert statements in our constructors to enforce preconditions, are we required to enforce those same preconditions in the observer/getter methods? (since the information observer methods get has already been run through assert statements in the constructors)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  No, do not put assert statement in the observer methods --they have no preconditions.
+ </paragraph>
+ <paragraph>
+  Remember: If the preconditions are all asserted properly, every method that changes the object keeps the class invariant true. Therefore, the observer methods should assume that the class invariant is true.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

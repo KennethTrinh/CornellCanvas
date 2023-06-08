@@ -1,0 +1,68 @@
+<h1>
+ Title: loop diagrams
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-08T13:30:03.166011+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="106.37413394919167" src="https://static.us.edusercontent.com/files/UaH2ngXY0BM817MOCxJi6naJ" width="658"/>
+ </figure>
+ <paragraph>
+  So I'm a little confused about how this diagram works.
+ </paragraph>
+ <paragraph>
+  The array has k drawn before the last element, so b[k] is the last element in the array, not b[k-1]. So I assume if the variable is before the line, the line indicates b[that variable].
+ </paragraph>
+ <paragraph>
+  Then why is 0 after the beginning, shouldn't the line indicating b[0] be after the positioning of 0 then? And I get that b[0...h-1] is the first section since the line is before h, so why is the second section b[j+1...k], the line is immediately after j so shouldn't that line be representing b[j]?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Any help is greatly appreciated!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  1. b[k] is NOT the last element in the array. This is NOT processing the whole array, just the segment b[0..k].
+ </paragraph>
+ <paragraph>
+  2. If the ? section is empty, then the &lt;= 0 section can be written as b[0..h-1] OR b[0..j].
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I guess I get that, but how would you differentiate (in the above diagram) the last part of the invariant being b[j+1...k] &gt; 0 vs. b[j..k] &gt; 0? Like I guess what's a steadfast rule for interpreting the positioning of the line before/after the variable names?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

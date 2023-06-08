@@ -1,0 +1,65 @@
+<h1>
+ Title: Binary Search question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-12T12:54:39.432224+11:00
+</h3>
+<h3>
+ Category: Homeworks
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In the sorting homework there was an example where they first checked the midpoint at 2. Why do they check it at 2 and not 1? My understanding is that the length of the list is 4 so (4+ -1)/2 is 1.5 which rounds down to 1 and not up to 5?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="60" src="https://static.us.edusercontent.com/files/5FOgdAh9k0XaaNNM3vTUimh4" width="372"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Aah. It's array segment c[0..4]. Therefore, c.length, the length of the list, is 5.
+ </paragraph>
+ <paragraph>
+  But read on.
+ </paragraph>
+ <paragraph>
+  Note that our loop invariant puts the two boundaries markers outside the ? section, something like shown below. Here's a reason for this: It makes proving termination --making progress within the repetend-- easier to see.
+ </paragraph>
+ <paragraph>
+  With this invariant, let b.length = 5, so initially k = -1 and t = 5.
+  <break>
+  </break>
+  In this case, we calculate e = (t+k)/2 to get the middle value.
+  <break>
+  </break>
+  That's e = (5 -1)/2 = 2.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <pre>    0         k               t           b.length
+   ---------------------------------------
+b |    &lt;= v    |      ?      |    &gt; v    |
+</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>

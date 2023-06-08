@@ -1,0 +1,53 @@
+<h1>
+ Title: Partition Algorithm for Quicksort: Why k + 1 - h?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-14T03:40:54.768782+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="354.76506024096386" src="https://static.us.edusercontent.com/files/kWrCQ350wvfQtpQirUnlTX2B" width="658"/>
+ </figure>
+ <paragraph>
+  I remember hearing that k + 1 - h came from from the follower - first concept.
+  <break>
+  </break>
+  Is it analogous to say then that the reason we're expecting at max k + 1 - h swaps because k + 1 - h = all the elements of the array that we'll potentially need to move from one position to another?
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, there are k+1-h elements in b[h..k].
+ </paragraph>
+ <paragraph>
+  Take a look at the partition algorithm. Depending on how you write it, each iteration of the partition algorithm may make one swap.
+ </paragraph>
+ <paragraph>
+  One CAN make it more complicated and have each swap put TWO elements in place. But that's still O(k+1-h).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

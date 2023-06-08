@@ -1,0 +1,132 @@
+<h1>
+ Title: Some helper code to clean Slashdot data
+</h1>
+<h3>
+ Author: Celine Lee (student)
+</h3>
+<h3>
+ Date: 2021-09-14T03:17:36.829959+10:00
+</h3>
+<h3>
+ Category: A1
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <file filename="remove_htmltext.py" url="https://static.us.edusercontent.com/files/QWT26QZVPhiWDgkWkAbhYGmZ">
+ </file>
+ <paragraph>
+  Hi! My group and I are working with the Slashdot data and wrote some clean-up code so that we could use Python's XML parser (xml.etree). Attaching code &amp; instructions, if it might help you as well:
+ </paragraph>
+ <file filename="clean_data.sh" url="https://static.us.edusercontent.com/files/HTW6sXPESDwjZgZ1GFafHqlX">
+ </file>
+ <paragraph>
+  What the script does:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    Fixes the
+    <code>
+     &lt;tokenext&gt;
+    </code>
+    tag --&gt;
+    <code>
+     &lt;tokentext&gt;
+    </code>
+    .
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Places a parent
+    <code>
+     &lt;root&gt;
+    </code>
+    tag around the whole file (so
+    <code>
+     &lt;root&gt;
+    </code>
+    in the beginning,
+    <code>
+     &lt;/root&gt;
+    </code>
+    at the end).
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Removes all
+    <code>
+     &lt;htmltext&gt; ... &lt;/htmltext&gt;
+    </code>
+    tags. (We did this because we didn't need the information included in it, and it was complicating the XML parsing because html formatting within it were not always consistent.)
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Removes all non-UTF8 characters.
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  To use:
+ </paragraph>
+ <list style="number">
+  <list-item>
+   <paragraph>
+    Download the slashdot data
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Download the attached files and copy them into the data folder you want to clean up (e.g. into
+    <code>
+     slashdot_part_1
+    </code>
+    ) so that the folder now has all the
+    <code>
+     *instancedata.txt
+    </code>
+    ,
+    <code>
+     clean_data.sh
+    </code>
+    , and
+    <code>
+     remove_htmltext.py
+    </code>
+    files.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Run the script:
+    <code>
+     . ./clean_data.sh
+    </code>
+    on Mac.
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  This was great to post, Celine and group!!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

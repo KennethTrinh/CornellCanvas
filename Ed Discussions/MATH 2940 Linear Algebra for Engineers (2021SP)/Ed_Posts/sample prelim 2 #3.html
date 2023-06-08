@@ -1,0 +1,110 @@
+<h1>
+ Title: sample prelim 2 #3
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-20T08:40:33.090851+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm very confused on what's going with specifically question 3b and 3d. What does the PQRS notation refer to? Are they just representing the individual matrices in basis B?
+ </paragraph>
+ <paragraph>
+  If so, how is this obtained?
+ </paragraph>
+ <figure>
+  <image height="60.47405660377358" src="https://static.us.edusercontent.com/files/pTtRgOkuObUISeBdT6pzR55p" width="333"/>
+ </figure>
+ <paragraph>
+  More specifically, where does 1*P, 3*P, 6*R, and -2*R come from?
+ </paragraph>
+ <paragraph>
+  Similarly, why does F(P) = 1*P+0*Q+0*R+0*S?
+ </paragraph>
+ <paragraph>
+  And what textbook section does this problem refer to? 4.7? 5.4?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Dikkila Sherpa (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think this is coordinate vectors and change of basis for this specific part and P, Q, R, S refer to the matrices in the basis B and you are trying to add/subtract/scale the matrices (make a linear combination) in such a way that you get the matrix given to us. I preferred using the matrix itself rather than the notation P,Q,R,S cause I think it helps visualize. for 3d, I think its bc F(A) = A^T but since you are doing it on P only the rest are zero, and it stays as P because P^T results in P.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ohh, I understand what's happening now with 3b. So the scalars are sort of arbitrary as long as they make up a linear combination of E. Got it.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  For 3d, I'm still sort of confused though. If P is
+ </paragraph>
+ <figure>
+  <image height="60" src="https://static.us.edusercontent.com/files/N6pKfEwnyiNrpuwlUAxJW5Ty" width="77"/>
+ </figure>
+ <paragraph>
+  Why is Pb equal to
+ </paragraph>
+ <figure>
+  <image height="109" src="https://static.us.edusercontent.com/files/5TCeMoFD7MR69eHsHmmKbESi" width="66"/>
+ </figure>
+ <paragraph>
+  ?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Phillip Jang (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Since $\mathcal{B}=\{P,Q,R,S\}$ is a basis of $\mathbb{R}^{2 \times 2}$, every $2 \times 2$ matrix can be uniquely written as a linear combination of $P,Q,R,S$. You need to solve for the unique scalars $c_1,\ldots,c_4$ such that
+ </paragraph>
+ <paragraph>
+  $$E=\begin{bmatrix}1 &amp; 4 \\ 8 &amp; 3\end{bmatrix} = c_1P+c_2Q+c_3R+c_4S$$
+ </paragraph>
+ <paragraph>
+  These four coefficients are the $\mathcal{B}$-coordinates of $E$.
+ </paragraph>
+ <paragraph>
+  $$[E]_\mathcal{B} = \begin{bmatrix}c_1 \\ c_2 \\ c_3 \\ c_4\end{bmatrix}$$
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

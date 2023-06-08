@@ -1,0 +1,70 @@
+<h1>
+ Title: rec. 9 loop doesn't stop at the right place
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-30T06:42:17.404915+11:00
+</h3>
+<h3>
+ Category: Homeworks
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  My code fails the test to see if the loop stops at the right place (k=10), and I get k=9 instead. I don't know why, but when n=18, it returns false for hasNext() even though the next element of the list exists and isn't null (19). Did I miss something when coding hasNext()? The other tests passed.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Atulya Lohani (student)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  I assume your hasNext is checking if the node's next is null. This is not what you want to do. You want to check if the node is null.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ah, thank you!!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Atulya Lohani (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  My pleasure :)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,83 @@
+<h1>
+ Title: PhD Constructor - advisors
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-06T07:19:14.771084+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The constructor method for the PhD class says that it is supposed to instantiate a PhD object with all 6 fields. I realize that with the first PhD it has no advisors however what do you assign as a placeholder then?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Read the class invariant (i.e. the javadoc comments that should be on each field)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I tried using null however when I run the test it keeps getting stuck on the first test for method advisor1 saying "java.lang.Error: Unresolved compilation problems: The field PhD.advisor1 is not visible" and then "The field PhD.advisor2 is not visible". Should I not put null as the expected out put in the advisor test?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You're trying to access private fields in your test class. Since the fields are private, you cannot access them outside the PhD class
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ah thanks, just realized I had a some silly syntax errors.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

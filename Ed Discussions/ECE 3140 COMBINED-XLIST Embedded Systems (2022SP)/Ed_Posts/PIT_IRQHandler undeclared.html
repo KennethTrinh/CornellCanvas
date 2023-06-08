@@ -1,0 +1,58 @@
+<h1>
+ Title: PIT_IRQHandler undeclared
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-19T07:43:14.729018+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm trying to call NVIC_EnableIRQ(PIT_IRQHandelr) in process_start, but for some reason, I am getting an "'PIT_IRQHandler' undeclared (first use in this function); did you mean 'LPTimer_IRQHandler'?" error. I thought it was declared in the 3140.s file, but I am unable to use it.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prithwish Dan (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <blockquote>
+  NVIC_EnableIRQ(PIT_IRQHandelr)
+ </blockquote>
+ <paragraph>
+  Assuming you copy and pasted this, maybe it's just a typo in the Handler?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The correct code is
+ </paragraph>
+ <pre>NVIC_EnableIRQ(PIT_IRQn);
+</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>

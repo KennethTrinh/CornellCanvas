@@ -1,0 +1,52 @@
+<h1>
+ Title: A6 Questions
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-30T14:30:40.570047+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  1. For mousePressed, it says that we have to notify the observer, but in the setScore method it already notifies the observer, so does that take care of the task? Or should we check for it in mousePressed as well?
+ </paragraph>
+ <paragraph>
+  2. For checkHit, is it sufficient to check within the box containing the dot or should we check the actual circle area of the dot?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Clarkson (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  1. What matters is that the observers are notified. How you implement that is up to you. You just have to satisfy the specification.
+ </paragraph>
+ <paragraph>
+  2. Here is the specification of
+  <code>
+   checkHit
+  </code>
+  :
+ </paragraph>
+ <pre>        /** Return true and set state to "hit" if coordinates (cx,cy) are <bold>within this target's
+         * circular area</bold> and it was not already "hit"; return false otherwise. */
+</pre>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

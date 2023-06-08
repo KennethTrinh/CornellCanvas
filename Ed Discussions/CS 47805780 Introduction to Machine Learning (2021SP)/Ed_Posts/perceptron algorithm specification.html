@@ -1,0 +1,71 @@
+<h1>
+ Title: perceptron algorithm specification
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-11T21:53:57.270297+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  After we make an update do we check the same point again? As in the example in the class, after w0 is updated to w1, it checks x1 again. But then when it updates with x4 it doesn't check with x4 again but it starts with checking x1 again.
+ </paragraph>
+ <figure>
+  <image height="456.30652503793624" src="https://static.us.edusercontent.com/files/hXrTD9HutbZVymZQ8fZbZldh" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Perceptron should be checking each data point once per iteration, I'm not quite sure why it was shown like that in lecture.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jeremy Freedman (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  To clarify, if the weight vector is updated on x_n, do we proceed to x_n+1 with the new weight vector or return to x_1 with the new weight vector?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Thorsten Joachims (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  There is actually quite some flexibility in how you implement the Perceptron algorithm, since the upper bound on the number of updates holds for any order of examples. So, you could repeatedly update on the same one until you get it right, always pick a random one, always go round-robin, or any other order. We will learn in a few lectures that always picking the next example uniformly at random actually has some attractive properties as a "stochastic gradient descent" procedure (will explain in a few lectures what that means).
+ </paragraph>
+ <paragraph>
+  For the homework, please stick to the algorithm on the slides.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

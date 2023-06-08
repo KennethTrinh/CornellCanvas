@@ -1,0 +1,40 @@
+<h1>
+ Title: cursp question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-19T03:56:19.79136+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  do we have to define cursp in our struct process_state ?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The current stack pointer refers to the stack pointer the processor is currently using. Each of your processes will need to store its own original stack pointer and stack pointer returned since it may have moved (allocation new variables for example).
+ </paragraph>
+ <paragraph>
+  See discussion 7 slide 18.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

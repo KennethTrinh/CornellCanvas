@@ -1,0 +1,73 @@
+<h1>
+ Title: Where does t + 1 come from?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-29T15:53:07.053411+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why do we multiply the margin by (t + 1) in the last step?
+ </paragraph>
+ <figure>
+  <image height="487.1381215469613" src="https://static.us.edusercontent.com/files/VwVfrwMw3bWjDc4hXKvSZgMY" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Jane Du (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    $w^* \cdot w^{t+1} \ge w^* \cdot w^{t} + \gamma$
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    $w^* \cdot w^{t} \ge w^* \cdot w^{t-1} + \gamma$
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    $w^* \cdot w^{t-1} \ge w^* \cdot w^{t-2} + \gamma$
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    ...
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    $w^* \cdot w^{1} \ge w^* \cdot w^{0} + \gamma$
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  So we get
+ </paragraph>
+ <paragraph>
+  $$w^* \cdot w^{t+1} \ge (w^* \cdot w^{t}) + \gamma \ge (w^* \cdot w^{t-1} + \gamma) + \gamma \ge  ((w^* \cdot w^{t-2} + \gamma) + \gamma) + \gamma$$
+ </paragraph>
+ <paragraph>
+  and so on which collapses to the final statement.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,48 @@
+<h1>
+ Title: Permission denied to push changes
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-02-02T04:21:27.485785+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am trying to push my changes by keep getting the error: git@github.coecis.cornell.edu: Permission denied (publickey). fatal: Could not read from remote repository.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is almost always an issue with your SSH Agent. (Not your SSH Keys. If the command
+  <code>
+   ssh -T git@github.coecis.cornell.edu
+  </code>
+  successfully authenticates after you run it in Git Bash (Windows) or Terminal (Mac), then your keys are correct. Please do not redo your keys.)
+ </paragraph>
+ <paragraph>
+  Please see the
+  <link href="https://pages.github.coecis.cornell.edu/info2300-2023sp/info2300-2023sp-documents/lab1/lab1.html#configure-ssh-agent"/>
+  Configure SSH Agent instructions in Lab 1 to fix issues with the SSH Agent.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

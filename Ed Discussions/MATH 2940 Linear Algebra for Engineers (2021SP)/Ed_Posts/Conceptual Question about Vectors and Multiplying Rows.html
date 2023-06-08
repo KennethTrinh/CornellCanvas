@@ -1,0 +1,84 @@
+<h1>
+ Title: Conceptual Question about Vectors and Multiplying Rows
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-02-20T13:28:54.813424+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In a linear system, each column can be treated as a vector. For example, take 1.4.22:
+ </paragraph>
+ <math>
+  v_1=\left[\begin{matrix}\ \ \ 0\\\ \ \ 0\\-2\end{matrix}\right],\ v_2=\left[\begin{matrix}\ \ \ 0\\-3\\\ \ \ 8\end{matrix}\right],\ v_3=\left[\begin{matrix}\ \ \ 4\\-1\\-5\end{matrix}\right]
+ </math>
+ <paragraph>
+  If we were to write these vectors into one linear system coefficient matrix, it would become:
+ </paragraph>
+ <math>
+  \left[\begin{matrix}\ \ \ 0&amp;\ \ \ 0&amp;\ \ \ 4\\\ \ \ 0&amp;-3&amp;-1\\-2&amp;\ \ \ 8&amp;-5\end{matrix}\right]
+ </math>
+ <paragraph>
+  My question is how are we able to scale a row if scaling a row alters the proportions of a vector? For example, if we multiply row 2 of this coefficient matrix by 10, we get:
+ </paragraph>
+ <math>
+  \left[\begin{matrix}\ \ \ 0&amp;\ \ \ 0&amp;\ \ \ 4\\\ \ \ 0&amp;-30&amp;-10\\-2&amp;\ \ \ 8&amp;-5\end{matrix}\right]
+ </math>
+ <paragraph>
+  And clearly
+ </paragraph>
+ <math>
+  \left[\begin{matrix}\ \ \ 0\\-30\\\ \ \ 8\end{matrix}\right]
+ </math>
+ <paragraph>
+  is not a scalar multiple of the original
+ </paragraph>
+ <math>
+  \left[\begin{matrix}\ \ \ 0\\-3\\\ \ \ 8\end{matrix}\right]
+ </math>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Phillip Jang (staff)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Scaling the second row by 10 will change the set of right-hand-sides that have solutions (i.e. $Span\{v_1,v_2,v_3\}$ will be different from $Span\{w_1,w_2,w_3\}$ where $w_i$ comes from multiplying the second entry of $v_i$ by 10) but
+ </paragraph>
+ <math>
+  \left[\begin{matrix}v_1&amp;v_2&amp;v_3&amp;|&amp;b\end{matrix}\right]
+ </math>
+ <paragraph>
+  will have the same solution set as
+ </paragraph>
+ <math>
+  \left[\begin{matrix}w_1&amp;w_2&amp;w_3&amp;|&amp;c\end{matrix}\right]
+ </math>
+ <paragraph>
+  where
+ </paragraph>
+ <math>
+  b\ =\ \left[\begin{matrix}b_1\\b_2\\b_3\end{matrix}\right]\ and\ \ c\ =\ \left[\begin{matrix}b_1\\10b_2\\b_3\end{matrix}\right]
+ </math>
+ <paragraph>
+  When you are row reducing an augmented matrix, you are also adjusting the right hand side values so that the solution set stays the same. You will see more about this in Chapter 4 when we see how row operations change column spaces but preserve row spaces.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,69 @@
+<h1>
+ Title: A7.java  inserting the start node into the heap, F
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-07T00:43:40.667091+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I take it that the Heap class only contains a Node and it's priority. I need to put the start node into F, but I'm not sure what to do for it's priority, which is 0. I'm not sure if I can just drop 0 in as the second parameter or if I need to use something else like Item (but the HashMap should only be using Item...).
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Thanks
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If its priority is 0, then use 0 for the second argument.
+ </paragraph>
+ <paragraph>
+  Did you look at the spec of Heap at the top of Heap.java?
+ </paragraph>
+ <paragraph>
+  /** An instance is a max-heap or a min-heap of distinct values of type T &lt;br&gt;
+  <break>
+  </break>
+  * with priorities of type double. */
+ </paragraph>
+ <paragraph>
+  Did you look at the specification and signature of method insert?
+ </paragraph>
+ <paragraph>
+  /** Insert v with priority p to the heap. &lt;br&gt;
+  <break>
+  </break>
+  * Throw an illegalArgumentException if v is already in the heap. &lt;br&gt;
+  <break>
+  </break>
+  * The expected time is logarithmic and &lt;br&gt;
+  <break>
+  </break>
+  * the worst-case time is linear in the size of the heap. */
+  <break>
+  </break>
+  public void insert(T v, double p) throws IllegalArgumentException
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

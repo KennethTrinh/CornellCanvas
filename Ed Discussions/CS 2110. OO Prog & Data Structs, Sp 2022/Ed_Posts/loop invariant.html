@@ -1,0 +1,80 @@
+<h1>
+ Title: loop invariant
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-16T02:29:21.852065+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I lost one point on this question
+ </paragraph>
+ <figure>
+  <image height="169.91851851851854" src="https://static.us.edusercontent.com/files/VFxBDiyAtbmXRFF71e2nqa01" width="609"/>
+ </figure>
+ <paragraph>
+  would moving k to the right side of the line make it correct? If not, what did I do wrong
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="1.0">
+ <paragraph>
+  the segment b[h+1…k] should always be the =3, you do not maintain this.
+  <break>
+  </break>
+  Swap j and k in your solution
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Look at your invariant. When the unknown section becomes empty, h and k are the same.
+ </paragraph>
+ <paragraph>
+  Why do you make j the last element of the = 3 section?
+ </paragraph>
+ <paragraph>
+  Look at the postcondition.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  That was a careless mistake. Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

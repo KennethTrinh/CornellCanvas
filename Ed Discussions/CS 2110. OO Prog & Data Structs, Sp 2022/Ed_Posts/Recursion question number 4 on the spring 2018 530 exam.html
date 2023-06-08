@@ -1,0 +1,143 @@
+<h1>
+ Title: Recursion question number 4 on the spring 2018 5:30 exam
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-09T05:24:07.177213+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is this an acceptable way to implement the recursion question on the spring 2018 5:30 pm exam?
+ </paragraph>
+ <figure>
+  <image height="286.676695563488" src="https://static.us.edusercontent.com/files/duHrvhaI4MDtSQFFgN7Eefwj" width="453"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  No, name can never be null, base case will never be entered.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If I wrote name != n instead would the implementation be right?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  No you can't use != with Strings to check inequality.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is this right?
+ </paragraph>
+ <figure>
+  <image height="47.44480073293633" src="https://static.us.edusercontent.com/files/e5nwDifX244poefEcV2HZM7A" width="274"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  No, you need to check whether child is null or not.
+  <break>
+  </break>
+  I'd do something like this
+ </paragraph>
+ <paragraph>
+  if( child ==null){
+ </paragraph>
+ <paragraph>
+  if (name.equals(n){ return 1;}
+ </paragraph>
+ <paragraph>
+  return 0;}
+ </paragraph>
+ <paragraph>
+  else{
+ </paragraph>
+ <paragraph>
+  if (name.equals(n)){ return 1 + child.numNames(n);}
+ </paragraph>
+ <paragraph>
+  return child.numNames(n); }
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  This can definitely be optimized though, I'm writing this as I'm eating
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you!!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

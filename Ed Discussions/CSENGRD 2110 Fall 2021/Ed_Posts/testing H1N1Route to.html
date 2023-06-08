@@ -1,0 +1,99 @@
+<h1>
+ Title: testing H1N1Route to
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-21T07:35:14.411513+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For Testing this method, do we need to test the case where the result would be null.
+ </paragraph>
+ <paragraph>
+  for example,
+ </paragraph>
+ <pre>H1N1Tree dt= makeTree1();
+List&lt;Person&gt; route4= dt.H1N1RouteTo(personK);
+assertEquals(null, getNames(route4));</pre>
+ <paragraph>
+  this should give null because personK is not in maketree1.
+ </paragraph>
+ <paragraph>
+  but this will lead to a nullpointerexception .
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  so should I test for this case and if I should how can I avoid this nullpointerexception.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Abhijeet Saha (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  getnames() will be failing, because null is not a person, but if you wrote your H1N1RouteTo correctly it should give null. To test it you can just do assertEquals(null, route4);
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Rebecca Liu (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <code>
+   getNames(sp)
+  </code>
+  iterates through sp (in this case route4) to
+  <code>
+   Return the names of Persons in sp, separated by ", " and delimited by [ ].
+  </code>
+  Since
+  <code>
+   route4
+  </code>
+  is null, this throws a NullPointerException when you try to iterate through it (at the line:
+  <bold>
+   <code>
+    for
+   </code>
+  </bold>
+  <code>
+   (Person p : sp) {
+  </code>
+  ).
+  <break>
+  </break>
+  <break>
+  </break>
+  You could do the test without using
+  <code>
+   getNames
+  </code>
+  , as described below.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

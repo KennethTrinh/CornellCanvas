@@ -1,0 +1,47 @@
+<h1>
+ Title: sentence.txt directory
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-02-07T09:48:18.355263+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  As the instruction indicates that sentence.txt should be in the same directory as the ./A2 directory, does that mean sentence.txt should be inside the folder of A2 or should it be inside the parent folder of A2 (in parallel with A2)?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Woosang Kang (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It's the latter:
+ </paragraph>
+ <snippet language="py3" line-numbers="true" runnable="false">
+  <snippet-file id="code">
+   ~/cs2043 
+❯ tree -L 1 .
+.
+├── A2
+├── a2.sh
+└── sentence.txt
+  </snippet-file>
+ </snippet>
+</document>
+<h3>
+ ------------------------------------
+</h3>

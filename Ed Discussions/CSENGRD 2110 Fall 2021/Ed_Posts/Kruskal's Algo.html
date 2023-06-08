@@ -1,0 +1,105 @@
+<h1>
+ Title: Kruskal's Algo
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-12T10:57:57.619367+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why is that executing Kruskals algo on an unconnected graph with n components produce a forest of n spanning trees?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  By unconnected you mean undirected?
+ </paragraph>
+ <paragraph>
+  From what I wrote down in office hours last Friday, Kruskal's algo picks the edge with the lowest weight that does not produce a cycle.  Spanning trees do not have cycles, so Kruskal's algo would produce spanning trees.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  unconnected does not mean undirected.
+ </paragraph>
+ <paragraph>
+  Prim and Kruskal always operate on undirected graphs.
+ </paragraph>
+ <paragraph>
+  The graph shown above has two unconnected components: nodes (A, B, C) and nodes (D, E).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh thank you, I did not know what they meant by unconnected.  Thank you professor.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Below is a graph consisting of two connected components.
+  <break>
+  </break>
+  One contains nodes A, B, and C and one contains  nodes D and E.
+  <break>
+  </break>
+  All the edges are shown.
+ </paragraph>
+ <paragraph>
+  You can also see that each connected component is already a spanning tree.
+  <break>
+  </break>
+  Isn't this a forest of two spanning trees?
+ </paragraph>
+ <pre>A---3--B---4--C
+
+D--8--E</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>

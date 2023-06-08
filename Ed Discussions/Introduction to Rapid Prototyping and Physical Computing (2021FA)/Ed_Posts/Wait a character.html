@@ -1,0 +1,73 @@
+<h1>
+ Title: Wait a character
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-08T13:50:19.717267+11:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What does it mean by waiting a character? Serial.write a character or?
+ </paragraph>
+ <paragraph>
+  Thanks
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Ansh Godha (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If you look at the Processing .pde file, the program sends a 'new character' (N) once it's ready to add a new point to the canvas. Waiting to see if the Serial buffer has something available to read and then flushing it (using Serial.available() + Serial.read()) before looping again should give you what you're looking for.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Mose Sakashita (staff)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  The processing program sends a character 'N' to esp32 as a request to receive new information. So in your arduino code, you need to wait for a character from the processing until you move to the next step and send new information.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Practically, it means that you have to have something like
+  <code>
+   while(Serial.available()==0); Serial.read();
+  </code>
+  inside the loop function.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Best,
+ </paragraph>
+ <paragraph>
+  Mose
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

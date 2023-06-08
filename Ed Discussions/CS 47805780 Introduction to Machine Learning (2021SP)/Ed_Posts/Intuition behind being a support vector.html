@@ -1,0 +1,40 @@
+<h1>
+ Title: Intuition behind being a support vector?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-13T15:09:18.96119+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In lecture 9 it is mentioned that a point is a support vector iff $\alpha_i^* &gt; 0$. Is there an intuitive way to justify this? I found something that derives this using the Kuhn-Tucker conditions but I don't understand the intuition behind those either.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Atul Ganju (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Note that the definition of a support vector is a point in the dataset that directly influences the hyperplane.
+ </paragraph>
+ <paragraph>
+  If the $\alpha_i$ of a point is greater than $0$ it plays a roll in determining the value of our loss function. Thus, it has influence on the hyperplane we found and is therefore a support vector. To see the other direction, if something does directly influence the hyperplane then it plays a roll in determining the value of our loss function. This is only the case for a given point if its $\alpha_i$ is greater than $0$. We have seen both direction of the implication. Let me know if there are further questions :).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

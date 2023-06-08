@@ -1,0 +1,46 @@
+<h1>
+ Title: Hashing
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-15T01:10:01.988699+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="209.40125786163523" src="https://static.us.edusercontent.com/files/ix6uqBixbUc4HisZ7gUbdyh6" width="658"/>
+ </figure>
+ <paragraph>
+  How did they come up with the answers for this one? One way I thought to do this is to think about 14 % 5  or  14 = 5 (2) + 4. So I'll end up at 4, but 4 is occupied. So I check 0; that's occupied. I check 1; that's occupied, and then 2; that's open. It goes there.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Andrew Chen (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="1.0">
+ <paragraph>
+  Yep, you first identify h, which is hashCode%size, and then attempt to place the element in bucket h. It’s possible that bucket h is full and does not contain the element you want to add. So you continue checking buckets, until you either find an empty one or find the element itself. Linear probing tells you then to check h, (h+1)%size, (h+2)%size,…
+ </paragraph>
+ <paragraph>
+  Quadratic probing checks in this order: h, h+1^2, h+2^2, h+3^2(from JHT), also with wrap around like linear probing.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

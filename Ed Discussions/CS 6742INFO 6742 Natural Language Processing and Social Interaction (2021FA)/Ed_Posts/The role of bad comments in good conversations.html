@@ -1,0 +1,226 @@
+<h1>
+ Title: The role of "bad" comments in "good" conversations
+</h1>
+<h3>
+ Author: Celine Lee (student)
+</h3>
+<h3>
+ Date: 2021-09-08T14:17:31.806311+10:00
+</h3>
+<h3>
+ Category: A1
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Do "bad" comments make for bad conversation? In 'Attacked from within,' anesthetica advocates for moderation in web communities to focus on "the relational quality of comments" rather than "on users or on comments in isolation." Therefore, in theory, "bad" comments still have the potential to yield high-quality, insightful conversations.
+ </paragraph>
+ <paragraph>
+  Slashdot comments are labeled with moderation classification labels with some set of "Good" labels and some set of "Bad" labels. Additionally, comments are given a moderated score indicating perceived quality of the post. "Bad" comments can include flame-bait, troll, off-topic and redundant tags, while "good" comments can include interesting, insightful, informative, and funny tags. However, consider the case in which a "flame-bait" comment elicits a thoughtful "insightful" response from somebody who does not take the bait to flame. Or if an "off-topic" comment is responded to by an "informative" comment that ties the content of the original post with the content of the parent "off-topic" comment. In these cases, "bad" comments actually produce "good" conversation.
+ </paragraph>
+ <paragraph>
+  I'd like to propose a project that examines the role of "bad" comments in the greater picture of an entire thread conversation. Some questions I would like to consider are: (1) are "bad" comments often the last comment in a thread? If not, what does the structure of follow-up comments look like? (e.g. great breadth, short depth? vice versa?) (2) Are responses to "bad" comments unproductive or insightful? What are their tags and scores? (3) Do "bad" comments often follow from conversation threads of "good" comments? I believe that all of this information should be able to be extracted from the Slashdot data itself, in the
+  <code>
+   &lt;parent&gt;, &lt;commentlist&gt;
+  </code>
+  sections.
+ </paragraph>
+</document>
+<h3>
+ Author: Kowe Kadoma (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  If you're open to working in a group, I'd love to join you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Celine Lee (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes! I also read your post-- I think we have similar ideas. Happy to work together :)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Linda Wang (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Following up on our discussion, may I join your group as well? Many thanks in advance!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Celine Lee (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes! :)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  One thing to mention in your analyses (if you can actually control for it, great!  But it's OK if not for a pilot project): there's a potential confound in that "bad" comments are potentially hidden to users (there are score-based slider filters on Slashdot, a feature I never got to mentioning in class), and so users might not see those "bad" comments, necessarily causing a thread to end there.
+  <break>
+  </break>
+  <break>
+  </break>
+  One way around this that I can think of is to check for users who have managed to make comments on "bad comments", and focus on their behavior and which bad comments they reply or don't reply to.  The thinking is: if a user has been able to comment on a bad comment, that means they don't have their view filter set too high, or at least not all the time!
+  <break>
+  </break>
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Here's a screenshot of the filter, which has two sliders -- see the thing on the top right.  For this setting, 10 comments have high enough score to be shown in full, 35 don't have that high a score but score well enough for an abbreviated version to appear, and 2 comments' scores are so low that they are completely hidden (until the user changes the slider values).
+ </paragraph>
+ <figure>
+  <image height="162.67750677506774" src="https://static.us.edusercontent.com/files/Pssx6HHDXstTQCnqVuNS7nyG" width="698"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Linda Wang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Project Update:
+ </paragraph>
+ <file filename="9-15 Update.pdf" url="https://static.us.edusercontent.com/files/jyALBRrbBYT2SMM5rm7yJu61">
+ </file>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  checkin meeting:
+ </paragraph>
+ <paragraph>
+  0. data q:  do you happen to know why part II conversations seem to have longer conversations --- could that have been the rationale behind the split of the data into two parts? (This may have been a design decision among the contest organizers.)  Proposal: could look at the "early" parts of Part II trees so that length matches with Part I; but if so, strongly recommend doing all analyses twice: 1 on just part I, and one either on the combination or separately on part II, and examine differences.
+ </paragraph>
+ <paragraph>
+  1. could the "sparseness" of bad comments for the extreme lengths be due to the sparseness of those categories (e.g., could there be only, say, 2 conversations of length 225)?
+ </paragraph>
+ <paragraph>
+  * check for whether the bad comments are by distinct users or not. Or count distinct-user bad comments; handle "Anonymous coward" somehow (these are potentially different people with the apparent same username)
+  <break>
+  </break>
+  2. try to indicate how many conversations per "little square graph" .
+ </paragraph>
+ <paragraph>
+  3. for convos w/ at least one bad comment [this could be "at least two". or whatever], what;s the avg/std dev of the number of comments; vs those without.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Linda Wang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi Lillian,
+ </paragraph>
+ <paragraph>
+  Thanks again for the helpful guidance! We just had a quick follow-up question:
+ </paragraph>
+ <paragraph>
+  Would it be alright for us to write up A1 from this kind of exploratory perspective (i.e. techniques = visualizations and discussions based on them)?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yep!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Celine Lee (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Presentation Slies:
+ </paragraph>
+ <file filename="AI Presentation.pdf" url="https://static.us.edusercontent.com/files/66QA8IqNGWZbZbIatZrorD3X">
+ </file>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

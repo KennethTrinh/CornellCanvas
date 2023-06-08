@@ -1,0 +1,102 @@
+<h1>
+ Title: shattering
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-15T20:28:23.986114+10:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  To see whether a dataset of size N can be shattered, do we make any assumptions about whether these N points are located?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  just to clarify my question. So if I have + - + - + with the same x2 value, that would be impossible to classify with the double-rectangular classifier in problem set 5. But if I move the center + upward, then the classifier should be able to classify it perfectly. I was wondering when counting whether a classifier can classify all points correctly, do we fix their position? I feel like if the position is not fixed, then N can be infinite.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jane Du (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Your intuition about N being infinite if you don't fix them seems right! Sure, I could move all my instance space points around until they fit into a given "donut" just right. But that tells us nothing about the complexity of the donut hypothesis class, which is the point of the VC dimension.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jane Du (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is a great question.
+ </paragraph>
+ <paragraph>
+  In short, yes, you need to fix them. But, you can fix them anywhere you like.
+ </paragraph>
+ <paragraph>
+  e.g. hypothesis space of circles, where the inside is positive and outside is negative, cannot shatter 3 points in a line like + - +. However, if you moved the middle point up in space a little, suddenly you can get all possible combinations using circles. So, circles can shatter a set of 3 points.
+ </paragraph>
+ <paragraph>
+  Then to show that the VC dimension is 3, you'd have to prove that no 4 points is shatterable by circles no matter how you initially place (and then fix) them.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  will it give a different answer if the initial positions are different?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jane Du (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Err, not quite? You want to find the largest n such that n points is shatterable. That means for any given n points, you want to arrange them in the best way possible so that you could potentially label all subsets of those points positive or negative, using only your hypotheses.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

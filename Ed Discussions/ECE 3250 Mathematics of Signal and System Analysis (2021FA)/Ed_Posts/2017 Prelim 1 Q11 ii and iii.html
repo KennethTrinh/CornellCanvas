@@ -1,0 +1,70 @@
+<h1>
+ Title: 2017 Prelim 1 Q11 ii and iii
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-07T14:56:39.677799+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think that ii implies that h is finite duration and ii implies h is left sided if not finite duration. How does this tie into BIBO stability?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  (ii) says IF BIBO stable, THEN impulse response decays to zero as $n \rightarrow \pm \infty$ --- which it must because it's an absolutely summable signal.  Nothing here about FIR.
+ </paragraph>
+ <paragraph>
+  (iii) says system is FIR.  Does that mean the impulse response is absolutely summable?  I think so.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Ariana Haghighi (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Could you elaborate as to why a finite impulse response means that is is absolutely summable (and therefore l-1)? I understand how h has to be l-1 to prove the system is BIBO, but how does this qualify h to be abs summable? Say h = 3 for [0,5] and 0 else. Sum -infinity to infinity gets you 3(6) = 18. You can calculate the sum, but it isn't zero. My understanding was that it has to be zero.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  The sum just has to be finite, not zero.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

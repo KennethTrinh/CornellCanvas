@@ -1,0 +1,74 @@
+<h1>
+ Title: HW 5 q 5
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-31T13:56:14.601362+11:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  I get that the output of S1 is the input to S2 but i’m confused on what the input to S1 is. What exactly is x[n]? Is it the unit impulse signal?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Parts (a) and (b) ask you to find impulse responses of various systems.  To find the impulse response of a system, you set its input signal to be $\delta [ n ]$ and find what the output signal is.  In (b), you set the input of the first system to be $\delta [ n ]$ and find the output of the overall system.  FYI we didn't quite get to cascaded systems in today's lecture, which I'd hoped we would, but you can actually do this problem using stuff we've covered already.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Adele Smolansky (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  For part a do we assume that xi[n] us always equal to δ[n] ?
+ </paragraph>
+ <paragraph>
+  And for part b do we assume:
+  <break>
+  </break>
+  y1[n]= δ[n] + δ[n-1] = δ[n] * h1[n] ?
+  <break>
+  </break>
+  And y2[n]= (δ[n] + δ[n] ) - ( δ[n-2] + δ[n-2] ) = δ[n] * h2[n] = δ[n] * h1[n] - δ[n-2] * h1[n-2]
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm not sure Ed is the best way for me to address these questions beyond what I wrote above.  I would just say, for (b), set $x [ n ] = \delta [ n ]$ and figure out what $y [ n ]$ comes out to be --- that'll be $h [ n ]$, what the problem asks for.  The impulse response is the response to an impulse --- that's the definition.  It's also what you convolve with inputs to give outputs, but for this problem I recommend thinking of it in the primary way.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,224 @@
+<h1>
+ Title: [missing output in] Spring 2018 Question 2d Testing Code
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-20T06:29:54.255105+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <callout type="info">
+  Put in your question title the year, semester, and question.  Ideal would also be to include the topic.   Example: 2018SP Q2(b) - call frames
+ </callout>
+ <callout type="info">
+  Include a screenshot of the question, so readers/answerers don't have to go find the relevant pdf.
+ </callout>
+ <paragraph>
+  Question 2: Object Creation and For-Loops
+ </paragraph>
+ <figure>
+  <image height="547.1140350877192" src="https://static.us.edusercontent.com/files/bOW12mIplyYUcU9jOvhMJzWU" width="643"/>
+ </figure>
+ <paragraph>
+  In the testing code, I get the following error:
+ </paragraph>
+ <paragraph>
+  AssertionError: the_menu[4] should be 'LunchItem Tomato Soup. is_veggie: True; price: 10', but is 'LunchItem Tomato Soup. is_veggie: True; price: 10'
+ </paragraph>
+ <paragraph>
+  This was my implementation:
+ </paragraph>
+ <figure>
+  <image height="242.46458333333334" src="https://static.us.edusercontent.com/files/oaQRP6nrIjiaas97l3pg2ILY" width="643"/>
+ </figure>
+ <paragraph>
+  <break>
+  </break>
+  I'm confused as to why this is an error because both the expected value and actual output are the same?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, good question!
+  <break>
+  </break>
+  <break>
+  </break>
+  Looking at your code, I see that in the case that the lunch_price  &gt; 11, the code is setting the price of the item to be the lunch price instead of the (non lunch) price.
+  <break>
+  </break>
+  <break>
+  </break>
+  And, there's also a difficult-to-see but pernicious/vicious bug: the line with the "9" in it has "==" instead of "="!
+  <break>
+  </break>
+  <break>
+  </break>
+  And ... the reason the output of the assert message doesn't seem right is that
+  <italic>
+   I forgot to make a _ _ str _ _ method for LunchItems to override the _ _ str _ _ method for MenuItems!
+  </italic>
+  <break>
+  </break>
+  <break>
+  </break>
+  <italic>
+   I
+  </italic>
+  f you add this to method to the class LunchItem:
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+ <pre>    def __str__(self):
+        outstr = super().__str__()
+        outstr += "; lunch price: " + str(self.lunch_price)
+        return outstr </pre>
+ <paragraph>
+  Then your code would result in the error message:
+  <break>
+  </break>
+  <break>
+  </break>
+  AssertionError: the_menu[4] should be 'LunchItem Tomato Soup. is_veggie: True; price: 10; lunch price: 9', but is 'LunchItem Tomato Soup. is_veggie: True; price: 10; lunch price: 11'
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ahh thank you!! Also, why did the solution use  list() in the for-loop header?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Solution:
+ </paragraph>
+ <paragraph>
+  for i in list(range(len(the_menu))):
+ </paragraph>
+ <paragraph>
+  item = the_menu[i]
+  <break>
+  </break>
+  if isinstance(item, LunchItem):
+ </paragraph>
+ <paragraph>
+  if item.lunch_price == 11: item.lunch_price = 9
+ </paragraph>
+ <paragraph>
+  elif item.lunch_price &gt; 11:
+  <break>
+  </break>
+  newItem = MenuItem(item.name, item.is_veggie, item.price) the_menu[i] = newItem
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Page 5
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Technically speaking, range() doesn't return a list, but something that is related to lists.
+  <break>
+  </break>
+  <break>
+  </break>
+  In 2018sp, we explained to students that for-loops go over "lists", and so decided we should, to be consist, cast the objects produced by range(...) to lists.
+  <break>
+  </break>
+  <break>
+  </break>
+  In 2021sp, we've decided students can live with fact that for-loops can iterate over whatever objects range() returnds as well as lists, and stopped bothering to do the cast!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  (Also this question came up in the open office hours, record of which is here:
+  <link href="https://edstem.org/us/courses/3933/discussion/449189"/>
+  https://edstem.org/us/courses/3933/discussion/449189)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Corrected version of testing code posted to the course website now!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

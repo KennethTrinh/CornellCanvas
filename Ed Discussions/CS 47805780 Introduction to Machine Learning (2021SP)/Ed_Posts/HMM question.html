@@ -1,0 +1,48 @@
+<h1>
+ Title: HMM question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-17T01:58:11.516227+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="398" src="https://static.us.edusercontent.com/files/8LAtoCvInjS9aQHuCGoInYGk" width="607"/>
+ </figure>
+ <paragraph>
+  In lecture, it was mentioned that the HMM allows us to only have "a squared number of parameters in the number of part-of-speech tags" -- I don't quite understand how we got to this conclusion? How do we know that the number of parameters is squared? What are the parameters in this case (i.e. are the parameters the part-of-speech tags?) ?
+ </paragraph>
+ <paragraph>
+  It was mentioned that HMM takes an exponential-size problem and brings it down to a polynomial number of parameters -- how do we know that HMM gives a polynomial number of parameters?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Scott Bass (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Because you need the transition probabilities from $y_{i-1}$ to $y_{i}$ for all possible values of $Y$. Since $Y$ is the set of POS tags, you have a total of $|Y \times Y| = |Y|^{2}$ parameters (where each parameter is an estimate for $P(y_{i}|y_{i-1})$).
+ </paragraph>
+ <paragraph>
+  Without HMM, you would need to calculate the joint probability $P(Y = (y_{1}, ... , y_{l}))$ for all possible sequences which is exponential (would be order $|Y|^{l}$ where $l$ = length of sequence).
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

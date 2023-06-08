@@ -1,0 +1,64 @@
+<h1>
+ Title: Error message from showdown time and college_a5 [AttributeError: 'str' object has no attribute 'accepted_not_enrolled']
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-04T01:40:57.310504+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was getting error messages in my code after I got the correct format from menu listing that had to do with the code I didn't write.
+ </paragraph>
+ <paragraph>
+  Traceback (most recent call last): File ".\showdown_time_a5.py", line 113, in  sd = college_module.Showdown(c1, c2)
+ </paragraph>
+ <paragraph>
+  File "C:\Users\marcu\cs1110\CS1110 Assignment 5\skeleton\college_a5.py", line 134, in
+  <bold>
+   init
+  </bold>
+  for c1_student in c1.accepted_not_enrolled:
+  <break>
+  </break>
+  AttributeError: 'str' object has no attribute 'accepted_not_enrolled'
+ </paragraph>
+ <paragraph>
+  Is something wrong with my code or did I accidentally change the original file to cause this error?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hey!!
+ </paragraph>
+ <paragraph>
+  It is possible that you are accessing the keys of the dictionary rather than the values, which are college objects. The keys in cdict are strings, so this may be the reason that this error is showing up.
+ </paragraph>
+ <paragraph>
+  -Best of luck :))
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

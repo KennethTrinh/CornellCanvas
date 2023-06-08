@@ -1,0 +1,87 @@
+<h1>
+ Title: Dynamic v. Static Types - Lecture 7
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-20T02:03:47.22507+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, for
+ </paragraph>
+ <paragraph>
+  Account b = new InterestAccount();
+ </paragraph>
+ <paragraph>
+  I know that the static type of b is Account, but what is b's dynamic type when a method is called, such as b.printStatement()?
+ </paragraph>
+ <paragraph>
+  I think it should also be Account, because on the lecture slide for Compile-time vs. Runtime the pointer still points to the Account folder. So it's possible for b to access the Interest Account methods that also exist in Account, even if its dynamic type is Account? Further, is it possible to change the dynamic type? Can b ever have a dynamic type of InterestAccount?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The dynamic type is the type of the object currently pointed to by b. It can change with each assignment to b. In this case, after execution of the assignment, the dynamic type of the object pointed to by b is InterestAccount.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When we draw variables as boxes pointing to folders on the lecture slides, we may occasionally draw an arrow pointing to an intermediate partition, as a clue to reflect the static type of the variable.  However, because Java uses
+  <italic>
+   dynamic dispatch
+  </italic>
+  , there is really no such thing as a variable pointing to an intermediate partition.  In Java, a variable always points to
+  <italic>
+   the entire folder
+  </italic>
+  , and the bottom-up rule is always used to resolve method calls.  Therefore, the dynamic type is
+  <code>
+   InterestAccount
+  </code>
+  after the assignment in your example has taken place.
+ </paragraph>
+ <paragraph>
+  (In languages with
+  <italic>
+   static dispatch
+  </italic>
+  , like C++, it
+  <italic>
+   is
+  </italic>
+  possible for a variable to point to an intermediate partition of a folder.  This makes code written in the language much harder to understand, since the bottom-up rule only sometimes applies, and it leads to bugs, because it breaks encapsulation.  Thankfully we never need to worry about such situations in CS 2110.)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

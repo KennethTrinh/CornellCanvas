@@ -1,0 +1,46 @@
+<h1>
+ Title: Lecture 7 slide question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-05T08:52:46.668602+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In Lecture 7 slide 18, I had a question on whether the statement b.accrueInterest would compile. I believe that this wouldn't compile because b is declared as an Account, and the method printStatement() is within InterestAccount which is a subclass of Account, not a superclass. Is this correct?
+ </paragraph>
+ <figure>
+  <image height="385.04208416833666" src="https://static.us.edusercontent.com/files/ATG4Zpda3EueagE7TTKZNygC" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Varun Gande (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  The compile time reference rule tells you what methods are able to be called (NOT which one is called). Since no method accrueInterest exists in class Account (the static type of b) or any superclass, b.accrueInterest() cannot be legal.
+ </paragraph>
+ <paragraph>
+  However, for the method printStatement(), there exists a method called printStatement in class Account. So a method call b.printStatement() is legal. Which rule tells you which version of printStatement is used?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

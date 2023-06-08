@@ -1,0 +1,45 @@
+<h1>
+ Title: Page Refresh
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-03-22T08:30:44.985019+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  After a new entry has been added to my catalog, I'm displaying a confirmation page which links the user back to the original catalog with the form. However, if I simply refresh the page (and don't click on this link), it duplicates the entry that was just added. What could be the source of this issue?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  There are a couple of issues here:
+ </paragraph>
+ <paragraph>
+  1. You may only have a single page website for Project 2. Your confirmation needs to be on the same page as the catalog. Self-processing forms are a learning objective for this assignment.
+ </paragraph>
+ <paragraph>
+  2. If you refresh the page after submitting a form, the user should be prompted about refreshing the page by the browser. If you don't see this message, then you're not using a POST request. While it's unfortunate that refreshing a POST request will add another entry into the database, this is in fact how the web was designed and is the intended behavior. This isn't something you can fix, because it's how HTTP works. (There are methods to address this issue, but they aren't for an intermediate level web programming course.)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

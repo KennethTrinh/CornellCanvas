@@ -1,0 +1,40 @@
+<h1>
+ Title: UART pins on the board
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-18T12:00:03.613386+10:00
+</h3>
+<h3>
+ Category: Final Project
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello! We are trying to communicate using UART between the NXP board and an Arduino. We tested the code we want to communicate with the debugger terminal, but when we try to receive it on the Arduino, it only shows up as a lot of 0s. Which pins are we supposed to use for the UART Tx and Rx? I am using the same pin/port configurations as on the UART example code. I found this image for reference:
+ </paragraph>
+ <figure>
+  <image height="479.36328125" src="https://static.us.edusercontent.com/files/hHRHfVY9yfiblcARGI65WFPi" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  The default configuration uses PTA1 and PTA2, but you can use any other pair as long as you configure the pins and corresponding UART module correctly.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

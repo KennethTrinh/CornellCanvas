@@ -1,0 +1,137 @@
+<h1>
+ Title: API Suggestions
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-26T08:42:12.81071+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am getting the error "Error compiling for board Adafruit ESP32 Feather." when trying to compile some code I wrote connecting to a weather api. Should I try using a different api?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Could you let us know what code you are using? It seems that there is an error in the code.
+ </paragraph>
+ <paragraph>
+  Francois.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The API I am trying to use is
+  <link href="https://openweathermap.org/api"/>
+  https://openweathermap.org/api this api.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am trying to connect to my mobile network through SPI.h and WiFi101.h libraries.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The ESP32 includes a WiFi interface. You can see some examples sin the example sub-menu of the File menu in the Arduino IDE. Are you using that code as a starting point?
+ </paragraph>
+ <paragraph>
+  Francois.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes I am. I keep getting
+ </paragraph>
+ <pre>Arduino: 1.8.13 (Mac OS X), Board: "Adafruit ESP32 Feather, 80MHz, 921600, None, Default"
+
+In file included from /Users/sohwijung/Documents/Arduino/libraries/WiFi101-master/src/WiFiClient.h:28:0,
+                 from /Users/sohwijung/Documents/Arduino/libraries/WiFi101-master/src/WiFi101.h:35,
+                 from /Users/sohwijung/Documents/Arduino/libraries/WiFi101-master/examples/AP_SimpleWebServer/AP_SimpleWebServer.ino:20:
+/Users/sohwijung/Documents/Arduino/libraries/WiFi101-master/src/socket/include/socket.h:1839:32: error: conflicting declaration of C function 'sint8 close(SOCKET)'
+ NMI_API sint8 close(SOCKET sock);
+                                ^
+In file included from /Users/sohwijung/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/newlib/stdio.h:29:0,
+                 from /Users/sohwijung/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/cores/esp32/Arduino.h:27,
+                 from sketch/AP_SimpleWebServer.ino.cpp:1:
+/Users/sohwijung/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/newlib/sys/unistd.h:30:9: note: previous declaration 'int close(int)'
+ int     _EXFUN(close, (int __fildes ));
+         ^
+AP_SimpleWebServer:29:12: error: cannot declare variable 'server' to be of abstract type 'WiFiServer'
+ WiFiServer server(80);
+            ^
+In file included from /Users/sohwijung/Documents/Arduino/libraries/WiFi101-master/src/WiFi101.h:37:0,
+                 from /Users/sohwijung/Documents/Arduino/libraries/WiFi101-master/examples/AP_SimpleWebServer/AP_SimpleWebServer.ino:20:
+/Users/sohwijung/Documents/Arduino/libraries/WiFi101-master/src/WiFiServer.h:28:7: note:   because the following virtual functions are pure within 'WiFiServer':
+ class WiFiServer : public Server {
+       ^
+In file included from /Users/sohwijung/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/cores/esp32/Arduino.h:152:0,
+                 from sketch/AP_SimpleWebServer.ino.cpp:1:
+/Users/sohwijung/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/cores/esp32/Server.h:28:18: note:     virtual void Server::begin(uint16_t)
+     virtual void begin(uint16_t port=0) =0;
+                  ^
+exit status 1
+cannot declare variable 'server' to be of abstract type 'WiFiServer'
+
+
+This report would have more information with
+"Show verbose output during compilation"
+option enabled in File -&gt; Preferences.
+
+The following error.</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>

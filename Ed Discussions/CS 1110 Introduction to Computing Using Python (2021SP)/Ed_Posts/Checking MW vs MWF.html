@@ -1,0 +1,49 @@
+<h1>
+ Title: Checking MW vs MWF
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-10T01:21:11.213333+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi,
+ </paragraph>
+ <paragraph>
+  I was wondering for A6, should we be considering the cases where some courses meet at MW and making sure they don't conflict with courses that meet MWF? In other words, are there more courses beyond output_a6_in_action.text that we should be considering? Thank you!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Elisabeth Finkel (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Correct; if courses conflict on some but not all of the days that they meet, then those courses are considered conflicting.
+ </paragraph>
+ <paragraph>
+  In the test function
+  <code>
+   test_studentschedule_add_conflicts
+  </code>
+  , the student schedule adds "CS 1110 LEC 001" (a 9am TR course) and then tries to add "BIOG 1140 DIS 201" (a 9am R course), so I believe it's already being tested. If you'd like, you can add more tests.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

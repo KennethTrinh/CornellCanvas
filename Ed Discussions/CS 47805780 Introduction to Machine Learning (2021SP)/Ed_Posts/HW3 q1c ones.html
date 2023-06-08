@@ -1,0 +1,70 @@
+<h1>
+ Title: HW3 q1c "ones"
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-23T12:39:37.866978+11:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <blockquote>
+  For the features in L, at most 2 are equal to one for every positive example, and every negative example has at least 8 ones.
+ </blockquote>
+ <paragraph>
+  I just want to make sure I understand this correctly -- in other words, at most 2 features classify all positive examples as "+1", and at least 8 features classify all negative examples as "+1"?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Carlos Alvarez (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think it's saying that for the set of features in L, if example xi is positive, then it has a 1 for at most 2 of those features, and it has a 0 for the rest. If xi is a negative, then it has a 1 for at least 8 of those features, and it has 0 for the rest. Therefore, [1,0,0,0,0,0,0,0,0] is positive, and [1,0,1,1,1,1,1,1,1,0] is negative.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  To clarify, it doesn't necessarily imply the same features are 1 or 0 each time, right? So along with your example, [0,1,0,1,1,1,1,1,1,1] would also be classified as negative? Also, what if L=[0,0,0,0,1,1,1,1,1,1]? Six 1s is in between the bounds (at least 8 or fewer than 3), is this considered possible?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Carlos Alvarez (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  [0,1,0,1,1,1,1,1,1,1] would be negative, and [0,0,0,0,1,1,1,1,1,1] is not possible
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,43 @@
+<h1>
+ Title: BJTs: Collector Current Direction in Saturation
+</h1>
+<h3>
+ Author: Courtney Golden (student)
+</h3>
+<h3>
+ Date: 2022-03-12T08:59:21.512854+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When we drew a general structural diagram of an npn BJT, we defined the collector current to be flowing into the collector terminal. When an npn BJT is in saturation mode, however, the base-collector junction is in forward bias, which I think from my understanding would indicate that current flows from the base to the collector. Does this mean that I_c is actually flowing out of the collector terminal, in the opposite direction to our convention for npn's, when the BJT is in saturation mode?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Clifford Pollock (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  The current flows into the collector until the collector-emitter voltage get to nearly zero.  Think about your lab this week, you measured the collector current and found it started at zero when the V_ce=0, and grew steadily until it reached the active region  at V_ce about 1/2 V.
+ </paragraph>
+ <paragraph>
+  The built-in reverse bias of the Base-collector junction continues to sweep up minority carriers even when the base-collector voltage is weak, but still reverse.  It stays reverse until the base-collector voltage reaches about 0.5 volts,
+ </paragraph>
+ <paragraph>
+  From the base current perspective, there probably is a small fraction of base current that goes toward the collector as that reverse bias decreases, but the total current entering the collector is still dominant.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

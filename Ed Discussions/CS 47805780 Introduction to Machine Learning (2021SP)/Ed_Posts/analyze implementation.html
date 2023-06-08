@@ -1,0 +1,43 @@
+<h1>
+ Title: analyze implementation
+</h1>
+<h3>
+ Author: Jack Defay (student)
+</h3>
+<h3>
+ Date: 2021-02-26T14:48:00.624448+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The spec of the analyze function defines abs as a subtraction, but in the example states that the 25% is because 1 of the 4 cases is incorrect. Do we assume that these input arrays will differ only by 1 so a subtraction can be used to calculate the percentage that is incorrect? Or would it be the same percentage wrong if the two values were 1 and 3 for example?
+ </paragraph>
+ <paragraph>
+  Is 'acc' implemented the same way or is this one supposed to be the percentage of values that are different instead of the mathematical difference in their values?
+ </paragraph>
+</document>
+<h3>
+ Author: Bonnie Akhavan (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You can assume that the 'abs' formula given in the notebook (elementwise subtraction) will always work. Just be careful that you're taking the absolute difference between the predictions and the true values (i.e. you don't want to accidentally get 0 absolute loss because one prediction was -1 wrong and the other was +1 wrong, instead you should get 2/|instances| absolute loss).
+ </paragraph>
+ <paragraph>
+  Acc and abs are implemented differently. Acc is the more intuitive "% incorrect".
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

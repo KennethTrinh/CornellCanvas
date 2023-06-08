@@ -1,0 +1,113 @@
+<h1>
+ Title: A question on ranges
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-20T06:27:31.400304+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi,
+ </paragraph>
+ <paragraph>
+  I'm a bit confused on certain ranges. Are ranges of b[0..0] and b[0..-1] valid? And if so, what would they be?
+ </paragraph>
+ <paragraph>
+  If the formula for the number of values in the range is n + 1 - m, then for the first array there is 1 value, and for the second array there are 0 values. Is this correct?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  b[0..2] consists of b[0] and b[1] and b[2]
+ </paragraph>
+ <paragraph>
+  b[0..1] consists of b[0] and b[1]
+ </paragraph>
+ <paragraph>
+  b[0..0] consists of b[0]
+ </paragraph>
+ <paragraph>
+  b[0..-1] consists of             (its the empty range)
+ </paragraph>
+ <paragraph>
+  b[0..-2] is not allowed. doesn't make sense
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Do not talk about arrays. These are not arrays but sections of an array, or of a String, or of any list
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kenisha Stills-Ogburn (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why wouldn't b[0..1] not also not make sense
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Did you mean to say
+  <code>
+   b[0..-1]
+  </code>
+  ?  We need some notation to refer to the "empty range", and since our range notation's endpoints are inclusive, the only way to do that is to allow the bounds to be "inverted".  However, we don't want to allow arbitrary inverted bounds; we just want to extend the pattern (as shown above).
+ </paragraph>
+ <paragraph>
+  Since many loops change a bound by +/- 1 each time, this notation well come in handy as we start to develop algorithms.  We will find situations where we have a range
+  <code>
+   b[i..j]
+  </code>
+  where
+  <code>
+   i==j
+  </code>
+  , and the next step either increments
+  <code>
+   i
+  </code>
+  or decrements
+  <code>
+   j
+  </code>
+  , and we need the next step to be left with an empty range.  This notation allows this naturally.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

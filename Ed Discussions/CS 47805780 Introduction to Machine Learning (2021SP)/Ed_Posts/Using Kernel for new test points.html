@@ -1,0 +1,45 @@
+<h1>
+ Title: Using Kernel for new test points
+</h1>
+<h3>
+ Author: Haichen Wang (student)
+</h3>
+<h3>
+ Date: 2021-03-23T02:11:14.941558+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  In
+  <code>
+   recoverBias
+  </code>
+  , there is the term $k(x_i,x)$ in $h(x)$. Although we have
+  <code>
+   K
+  </code>
+  as an input, I believe it only contains the result of kernel operations on existing data points since it is an $n*n$ matrix. How can we get the kernel result on a new data point $x$?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You would need access to the kernel function to apply to the new data point x; however, it is not needed to compute any additional kernels to complete recoverBias
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

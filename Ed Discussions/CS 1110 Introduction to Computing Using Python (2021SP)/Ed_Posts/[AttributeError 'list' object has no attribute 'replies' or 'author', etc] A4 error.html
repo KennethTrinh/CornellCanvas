@@ -1,0 +1,242 @@
+<h1>
+ Title: [AttributeError: 'list' object has no attribute 'replies' or 'author', etc] A4 error
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-11T04:23:45.510793+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When I run my code, I get the following error:
+ </paragraph>
+ <paragraph>
+  AttributeError: 'list' object has no attribute 'replies'
+ </paragraph>
+ <paragraph>
+  This error occurred when I used post.replies, which I thought was supposed to be a list.  Why is this error occurring?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm not sure which function you're referring to, but I think each specification mentions that
+  <code>
+   post
+  </code>
+  is a Post object (not a list).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am referring to the first function.  I know post is a Post object, but shouldn't post.replies be a list of tags that is possibly empty?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <code>
+   post.replies
+  </code>
+  is a list of Post objects, not of tags.
+  <break>
+  </break>
+  <break>
+  </break>
+  But right, a list (whether of Post objects, or of tags), doesn't have an attribute
+  <code>
+   replies
+  </code>
+  , as Python is telling you.
+  <break>
+  </break>
+  <break>
+  </break>
+  What kind of thing
+  <italic>
+   does
+  </italic>
+  have an attribute
+  <code>
+   replies
+  </code>
+  ?  a Post...
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For some reason when I check to see if post.replies is an empty list, it still gives the attribute error.  I am not sure why this is happening, because post.replies is a list of Post object.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can you post a screenshot of the entire set of  error messages?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="411.25" src="https://static.us.edusercontent.com/files/X7uHJCINnzKTYLDzALuqofm3" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  OK, what must be happening is that, although
+  <code>
+   post
+  </code>
+  is
+  <italic>
+   supposed
+  </italic>
+  to be a
+  <code>
+   Post
+  </code>
+  object according to the preconditions, your recursive call is feeding in an input that is a list, not a
+  <code>
+   Post.
+  </code>
+  <break>
+  </break>
+  <break>
+  </break>
+  The error message actually indicates what's happening, because it shows you the call frame for
+  <code>
+   num_user_posts()
+  </code>
+  , which is currently in the middle of line 32; and then the call frame for another call of
+  <code>
+   num_user_posts()
+  </code>
+  , which crashed while executing line 24. Can you see why your line 32 is passing a list to
+  <code>
+   num_user_posts()
+  </code>
+  ?
+  <break>
+  </break>
+  <break>
+  </break>
+  <break>
+  </break>
+  By the way:  Something I''m confused by is that this should have been caught by the assert statements at the beginning of
+  <code>
+   num_user_posts
+  </code>
+  .  Do you still have those assert statements at the beginning of the body of
+  <code>
+   num_user_posts()
+  </code>
+  ?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I realized the assert statements were written below my code instead of above.  Now the error statement is as follows:
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="411.25" src="https://static.us.edusercontent.com/files/IhovqyMgc76rAGEbTVfWIcWM" width="658"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yep, just as I said above: there is a place in your code that is passing in a list rather than a Post.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

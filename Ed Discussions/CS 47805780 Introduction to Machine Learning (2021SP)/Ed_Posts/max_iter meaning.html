@@ -1,0 +1,69 @@
+<h1>
+ Title: max_iter meaning?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-09T18:26:29.273542+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  in the cell below def perceptron I got AsertionError: yw'x should be +1 for every input
+ </paragraph>
+ <paragraph>
+  I think the iteration run too few times so it did not cover all vectors so some of them still misclassified
+ </paragraph>
+ <paragraph>
+  if I iterate only 100 times on the 100 vectors randomly, it is not possible to cover every vector , resulting in the assertion error
+ </paragraph>
+ <paragraph>
+  what does max_iter means in here?  how should I do the iteration?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Navin Ramsaroop (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  My understanding was that an iteration meant going through all the vectors until you hit a vector you misclassified. Then you adjust
+  <code>
+   w
+  </code>
+  , shuffle the order of the vectors, and start the second iteration with the adjusted w and new order of training data.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Josh Park (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I did this, but I think the original commenter is right. Sometimes if the shuffles are good I get a consistent classifier and I pass the assertion. Other times the shuffles result in some vectors still being misclassified by the end of the 100 iterations. Are we sure this is the correct interpretation?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

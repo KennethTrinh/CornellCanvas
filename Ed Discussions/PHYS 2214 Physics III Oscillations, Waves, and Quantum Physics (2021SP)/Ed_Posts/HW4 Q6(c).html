@@ -1,0 +1,80 @@
+<h1>
+ Title: HW4 Q6(c)
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-17T11:54:51.928216+11:00
+</h3>
+<h3>
+ Category: Homeworks
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I found this page in the textbook, and it agrees with the numerical solution that the largest coefficient is when frequency is equal to zero, but after looking over the reading multiple times, I still don't really understand why this is the case. I understand why the coefficient should decrease as frequency increases because the denominator increases but I am confused with regards to this zero case.
+ </paragraph>
+ <paragraph>
+  If anyone could shed some light on this, much appreciated!
+ </paragraph>
+ <paragraph>
+  Also, is there a specific reason why
+  <bold>
+   F
+  </bold>
+  (w) is written with a tau in both the numerator and denominator? Why not simplify the expression?
+ </paragraph>
+ <figure>
+  <image height="425.1123595505618" src="https://static.us.edusercontent.com/files/5Pm08JIf902Ry3IQsdLjdn2j" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Joshua Pan (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  The way the expression is written is to make it clear what should happen in the zero case.
+ </paragraph>
+ <math>
+  \lim_{x\longrightarrow0}\ \frac{\sin x\ }{x}=1
+ </math>
+ <paragraph>
+  This limit can be shown by L'Hopital's rule.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Replace x with omega tau/2 in the limit expression to see that the same thing happens for the zero case of the Fourier transform.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Veit Elser (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Not meaning to disrespect hospitals, as a physicist you should understand this as a direct consequence of the Taylor series $\sin x = x - x^3/3!+\cdots$ (so $\sin x /x= 1 - x^2/3!+\cdots$).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

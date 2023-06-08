@@ -1,0 +1,46 @@
+<h1>
+ Title: online learning - 1D thresholds
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-29T08:51:37.950691+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="448.5243445692884" src="https://static.us.edusercontent.com/files/F5Kh4NQEifiaDObhKhUXS7dD" width="658"/>
+ </figure>
+ <paragraph>
+  How do we know that the depth of the tree is equal to the algorithm's # of mistakes?
+ </paragraph>
+ <paragraph>
+  In lecture, it was mentioned that it was because the algorithm always chooses the correct label to be the label that the algorithm did not predict, but I don't understand how this makes the depth of the tree equal to the algorithm's # of mistakes, because, even if the algorithm didn't make a mistake, wouldn't the next depth of the tree still be created?
+ </paragraph>
+ <paragraph>
+  Or, is it that, if the algorithm didn't make a mistake then the tree would just stop at that node and wouldn't create another level? However, I don't understand why this would be the case.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is just helping visualize that binary search; when the algorithm makes a mistake you take the child node that would have avoided the mistake, and when you eventually land on a leaf you know that has to have perfect accuracy because of how you got there (e.g. if you end up at 3, 2 was too low and 4 was too high, so 3 has to work).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

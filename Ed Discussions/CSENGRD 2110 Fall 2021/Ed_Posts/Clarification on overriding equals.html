@@ -1,0 +1,61 @@
+<h1>
+ Title: Clarification on overriding equals
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-02T14:19:36.110336+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Part of the three steps to overriding equals is to cast an object ob down to a class C so that its fields can be accessed. Why is this? Shouldn't the initial conditional where getClass() is called on ob mean that a downcast is not needed?
+ </paragraph>
+ <paragraph>
+  I'm referring to this JHT entry: https://www.cs.cornell.edu/courses/JavaAndDS/files/equals.pdf
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You are forgetting the Compile-Time reference rule! Consider class C below. ob has (static) type Object. Does class Object have a field named x? No. Therefore ob.x is illegal and will not compile.
+ </paragraph>
+ <paragraph>
+  public class C {
+  <break>
+  </break>
+  int x;
+  <break>
+  </break>
+  public boolean equals( Object ob) {
+  <break>
+  </break>
+  ...
+  <break>
+  </break>
+  ...   ob.x    ...
+  <break>
+  </break>
+  }
+  <break>
+  </break>
+  }
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

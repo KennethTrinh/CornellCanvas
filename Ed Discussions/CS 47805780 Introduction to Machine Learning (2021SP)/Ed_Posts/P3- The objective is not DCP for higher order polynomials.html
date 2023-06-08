@@ -1,0 +1,62 @@
+<h1>
+ Title: P3- The objective is not DCP for higher order polynomials
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-28T11:14:25.216419+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 4
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm having trouble getting the objective to follow DCP rules when using the polynomial kernel for a degree higher than 2. I think my polynomial kernel is fine since I can separate the spiral data with a parabola when setting kerneltype = "poly" and kpar = 2. However, when I set kpar = 3 or higher (to be able to separate the data with higher degree polynomials), I keep getting that the "objective is not DCP". Is there any reason why this might be the case?
+ </paragraph>
+ <paragraph>
+  The radial basis function and linear kernels are fine as well since I've finished the main part of the project- I would just like to try to use the polynomial kernel with higher degrees for the competition. Earlier in the project, I was also getting errors that the objective was "not DCP" when trying to separate the spiral data, until I used the quad_form atom like suggested on a previous post.
+ </paragraph>
+ <paragraph>
+  Does raising the data to polynomials larger than 2 suddenly make the objective not concave anymore (since we're trying to maximize the dual)? Or could it just be that CVXPY package is acting buggy? I normally wouldn't ask but I've been trying to debug for a while and it's getting pretty frustrating. Thanks.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Scott Bass (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm also having the same issue. I'm getting high error rates for linear and RBF kernels on the competition, so I'm trying to use higher degree polynomials but I can't stop getting DCP errors. Any updates on this issue?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Joanna Saikali (student)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  I ended up using SCS solver instead of ECOS for polynomial. I am not sure if this was something we were allowed to do but it worked for me.
+ </paragraph>
+ <paragraph>
+  Also I only tried integer values for polynomial to avoid accidentally square-rooting negative values (although I am not sure if there was a smarter way. to go about this)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

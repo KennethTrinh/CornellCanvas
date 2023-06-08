@@ -1,0 +1,50 @@
+<h1>
+ Title: fall 2019 2d
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-08T08:59:12.492036+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <pre>public class S {
+  private int a= 2;
+</pre>
+ <pre>  public S() {
+     System.out.println(a);
+     int a= 5;
+     a= this.a + 1;
+     System.out.println(a);
+     System.out.println(a + this.a);
+}
+}</pre>
+ <paragraph>
+  Although subclasses cannot access private variables in the superclass, why did the first print statement of a still print 2?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  You’re still in the same class (this is the constructor method of Class S not a subclass ) it still has scope of the private fields. So the first a refers to the private field a, which has int value 2.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

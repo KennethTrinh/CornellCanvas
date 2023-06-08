@@ -1,0 +1,59 @@
+<h1>
+ Title: Node method - case where list is empty
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-01T05:39:20.375252+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Should we test the case where the list is empty, i.e. size==0?
+ </paragraph>
+ <paragraph>
+  The spec doesn't mention the null list case, but it says k&lt;size of list and k also non-negative, so does this imply size of list&gt;0 is assumed?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  You shouldn’t test that since if size = 0 and k must be less than size and nonnegative, k can’t be an integer and there is no other possible value to check at
+  <break>
+  </break>
+  <break>
+  </break>
+  Think about it like 0… size -1 if size = 0 then 0..-1 is an empty range
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, in other words, trying to find a Node within an empty list violates the precondition, and you can assume that that would never happen.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

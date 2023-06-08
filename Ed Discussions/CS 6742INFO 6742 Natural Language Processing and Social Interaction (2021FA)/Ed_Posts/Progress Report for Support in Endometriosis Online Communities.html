@@ -1,0 +1,445 @@
+<h1>
+ Title: Progress Report for Support in Endometriosis Online Communities
+</h1>
+<h3>
+ Author: Roz Thalken (student)
+</h3>
+<h3>
+ Date: 2021-12-03T02:20:51.815604+11:00
+</h3>
+<h3>
+ Category: Progress report for in-class comments (A5)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <heading level="2">
+  Overview
+ </heading>
+ <paragraph>
+  Federica Bologna and Rosamond Thalken
+ </paragraph>
+ <paragraph>
+  Our project studies online support communities for people with endometriosis and how members of the online community discuss their personal relationships. There are many types of support a person with endometriosis might seek online and offline, but the online support community seems to provide support through shared experiences and affirmation.
+ </paragraph>
+ <paragraph>
+  <bold>
+   Hypotheses:
+  </bold>
+ </paragraph>
+ <list style="unordered">
+  <list-item>
+   <paragraph>
+    H1: Mentions of different roles external to the online community (e.g. friends, family, doctors) will emphasize types of support that they do not receive.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    H2: Mentions of the online community will emphasize support received through shared experiences.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    H3: Over time, when discussing personal relationships external to the support community, members will discuss disbelief or underappreciation of endometriosis symptoms and pain less often.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    H4: Comparing how a person frames the support from personal relationships to support from the endometriosis community will highlight that a person posts to this community to find shared experiences and affirmation.
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  These hypotheses highlight the different roles people assume in relation to the person with endometriosis, who is usually (but not always) the person posting to the online support community. We emphasize these different relationships because we expect that they all function differently in relation to support or lack of support. Whereas support from friends and family might appear like affirmation or sympathy, support from doctors is likely characterized more by diagnosis, listening, and proper care. The online support community provides a unique type of support, which may not be represented in other relationships in the person with endometriosis’ life, as it is marked foremost by shared experiences and relevant information
+  <link href="https://www.zotero.org/google-docs/?dhg62h"/>
+  [1].
+ </paragraph>
+ <heading level="3">
+  Supervised Classification
+ </heading>
+ <paragraph>
+  To identify correlation between types of relationships and support, we designed a supervised classification task to identify segments of posts that discuss relationships, topics, and intent. After some refinement of our chosen labels, we’ve decided that these three categories of labels serve our research questions about relationships, experiences, and support.
+ </paragraph>
+ <paragraph>
+  <bold>
+   The Labeling Task
+  </bold>
+ </paragraph>
+ <paragraph>
+  We use
+  <link href="https://prodi.gy/docs/"/>
+  <underline>
+   Prodigy
+  </underline>
+  , a labeling tool built by Explosion (the same group behind spaCy). Our manual labeling task presents a post or paragraph, depending on labeling category, and allows us to choose as many label options (e.g., friend, family, doctor, etc. for our relationship category) as seems appropriate. Each label is a binary representation of whether the subject exists at all in the paragraph/post, and does not characterize a specific span of tokens.
+ </paragraph>
+ <paragraph>
+  For this task, we create two samples from the dataset: one of 1000 posts and one of 1000 paragraphs. First, we check for duplicates as our dataset combines posts from two similar subreddits. We do so by ordering the dataset chronologically and comparing each post with: when the username of the author was available, other posts from the same author e; or with the earlier post in time. We evaluate post similarity using python’s Levenshtein distance package. We consider duplicates if the Levenshtein distance between the two posts is 0.99 or higher. We choose this threshold by manually checking that it would retrieve posts that were identical but for formatting. Using this technique we find and remove 738 duplicates from the original set of 31272, obtaining 30534 unique posts.
+ </paragraph>
+ <paragraph>
+  To obtain the first sample consisting of 1000 posts, we randomly sample posts from each year proportionally to the total number of posts published in that year. This ensures that the obtained sample has the same distribution of instances over time as the original dataset. Thus, it more evenly and accurately represents the overall language of the original dataset over time.
+ </paragraph>
+ <paragraph>
+  To obtain the second sample consisting of 1000 paragraphs, we take the deduplicated dataset and divide each post into paragraphs based on double newline characters. We then sample from this new dataset of paragraphs following the same technique described above.
+ </paragraph>
+ <paragraph>
+  <bold>
+   Label Category #1: Relationships
+  </bold>
+ </paragraph>
+ <paragraph>
+  Our relationships labels includes eight likely, but non-exhaustive, relationship types:
+  <italic>
+   friend
+  </italic>
+  ,
+  <italic>
+   family
+  </italic>
+  ,
+  <italic>
+   partner
+  </italic>
+  ,
+  <italic>
+   therapist
+  </italic>
+  ,
+  <italic>
+   doctor
+  </italic>
+  ,
+  <italic>
+   endometriosis support community
+  </italic>
+  ,
+  <italic>
+   non-endo author
+  </italic>
+  (i.e., the person posting doesn’t have endometriosis but is looking to support someone close to them who has endo), and
+  <italic>
+   other
+  </italic>
+  - a catchall category that so far is mostly composed of people talking about their pets. We have labeled relationships in 1,000 paragraphs, with the distribution as follows:
+ </paragraph>
+ <figure>
+  <image height="167" src="https://static.us.edusercontent.com/files/1F8VxEUuhJrG0jrqNDMrz2Tg" width="451"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  <bold>
+   Label Category #2: Topics
+  </bold>
+ </paragraph>
+ <paragraph>
+  This second category comprises four topic labels:
+  <italic>
+   symptoms
+  </italic>
+  ,
+  <italic>
+   disbelief
+  </italic>
+  ,
+  <italic>
+   perceived negligence
+  </italic>
+  and
+  <italic>
+   diagnosis
+  </italic>
+  . After initially labeling for
+  <italic>
+   symptoms
+  </italic>
+  and
+  <italic>
+   disbelief
+  </italic>
+  only, we find that the
+  <italic>
+   perceived negligence
+  </italic>
+  and
+  <italic>
+   diagnosis
+  </italic>
+  topics were particularly relevant for our research questions and should be included in our analysis. These labels are not meant to be exhaustive of the variety of topics and themes people discuss in endometriosis communities, are only meant to capture the kinds of needs people mention when referring to a specific relationship type. We have labeled 500 paragraphs so far as labeling for this category is not entirely straightforward and requires careful examination of the paragraphs. We obtained the following distribution of labels over 500 posts:
+ </paragraph>
+ <figure>
+  <image height="170" src="https://static.us.edusercontent.com/files/3ckhDUfcXSG6eM9vG0lUjifC" width="228"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  <bold>
+   Label Category #3: Intent
+  </bold>
+ </paragraph>
+ <paragraph>
+  The relationships and topic labels were developed through close reading and topic modeling, and are specific to the endometriosis community, but our intent labels draw from Yang et al.’s research on “emergent roles” in online health communities
+  <link href="https://www.zotero.org/google-docs/?6VTFUT"/>
+  [2]. Whereas our project’s “relationship” categories are determined by formal positions in relation to the author of the post, Yang et al.’s roles are characterized by the actions of a member and the apparent intent of their posts. We’ve made small alterations to their labels, especially informed by Maria Antoniak and LeAnn McDowall’s forthcoming project on birth control support communities These labels include
+  <italic>
+   seeking emotional support
+  </italic>
+  ,
+  <italic>
+   providing emotional support
+  </italic>
+  ,
+  <italic>
+   seeking informational support
+  </italic>
+  ,
+  <italic>
+   providing informational support
+  </italic>
+  ,
+  <italic>
+   seeking experiences
+  </italic>
+  and
+  <italic>
+   providing experiences
+  </italic>
+  . We’ve only begun labeling this category, but have found the following distribution so far:
+ </paragraph>
+ <figure>
+  <image height="160" src="https://static.us.edusercontent.com/files/hxEiMdv9b6zhksiwIQfpQGbn" width="521"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  <bold>
+   Classification Task Setup
+  </bold>
+ </paragraph>
+ <paragraph>
+  Going into this project, our plan was to develop a classification pipeline that uses two models, logistic regression and BERT. Logistic regression would be the first step, and we would use it to assess whether or not we had enough data for each label. Our assumption is that logistic regression may not work as well with the more complex labels, especially our “intent” category, so we expect to still need BERT for classification, eventually. Logistic regression is also a useful baseline to use as a point of comparison to BERT. For now, logistic regression has worked surprisingly well on the relationships and topic labels, but these are more straightforward labels that have relatively balanced classes.
+ </paragraph>
+ <paragraph>
+  <italic>
+   Logistic Regression
+  </italic>
+ </paragraph>
+ <paragraph>
+  For each of the labels, we perform binary logistic regression based on the endometriosis post/paragraph in TF-IDF structure, using scikit-learn’s TfIdfVectorizer and LogisticRegression models. The relationships and intents label categories include a few labels (doctors, endometriosis support community, and symptoms) that have enough data to analyze through cross-validation, and these all reach F1 accuracies between .78 and .83. Because we only just began labeling the intent category, we do not test the accuracy of the logistic regression on this labeling task.
+ </paragraph>
+ <paragraph>
+  However, the rest of the labels are not ready to classify new posts or paragraphs accurately because of a lack of data due to unbalanced classes. This especially affects the
+  <italic>
+   friend
+  </italic>
+  ,
+  <italic>
+   family
+  </italic>
+  ,
+  <italic>
+   partner
+  </italic>
+  ,
+  <italic>
+   therapist
+  </italic>
+  and
+  <italic>
+   non-endo author
+  </italic>
+  labels for the relationship category and the
+  <italic>
+   disbelief
+  </italic>
+  ,
+  <italic>
+   perceived negligence
+  </italic>
+  and
+  <italic>
+   diagnosis
+  </italic>
+  categories in the topics category. This is an issue that we need to figure out, and have some ideas about how to do this listed below in our “Next Steps.”
+ </paragraph>
+ <paragraph>
+  <italic>
+   BERT
+  </italic>
+ </paragraph>
+ <paragraph>
+  We have also designed a BERT classifier, which we expect will be most helpful for the intent category. After fine-tuning the model on our labeled data, we’ve trained and tested (binary) classification models on the
+  <italic>
+   doctor
+  </italic>
+  and
+  <italic>
+   endo support community
+  </italic>
+  labels, based on the encoded posts, and found it to reach an F1 about equal to that of the logistic regression.
+ </paragraph>
+ <heading level="2">
+  Next Steps
+ </heading>
+ <paragraph>
+  In the following weeks, we plan to revise the labeling and classification tasks. Since several of our labels are unevenly represented in our dataset, we plan to continue annotating our dataset through a model in the loop in
+  <italic>
+   prodigy
+  </italic>
+  . Given a label of interest, the model shows instances of data on which it’s particularly uncertain. We are given a binary question to annotate whether said label is represented or not in the instance. At cold start, we provide the model with a few keywords that are likely indicators of the label we plan to annotate for. For example, for the
+  <italic>
+   friend
+  </italic>
+  label in our relationship category, we would provide the keywords ‘friend’, ‘friends’, ‘buddies’. These keywords help the model provide better suggestions and the answers guide it toward better predictions.
+ </paragraph>
+ <paragraph>
+  Once we will have more data available for the underrepresented labels, we plan to re-implement the classification tasks described above to obtain better accuracy. This would allow us to confidently investigate the correlation between our labels in endometriosis posts. Specifically, we are interested in examining the topics that emerge when certain relationships are mentioned. For example, an interesting comparison would be between the occurrence of the
+  <italic>
+   symptoms
+  </italic>
+  topic in relation to
+  <italic>
+   doctor
+  </italic>
+  s and
+  <italic>
+   endometriosis support community
+  </italic>
+  .
+ </paragraph>
+ <paragraph>
+  There are other possible changes we might make to the labeling task, but these will likely happen after this class ends and not in the next few weeks. When labeling the relationships category of labels, we noticed that (unlike intent or topic) relationships are often clear just at the sentence level. We might be able to train a more precise model by changing the segmentation of the posts for this category. We are also considering adding some new labels that are more salient in the data than we originally expected, like a label to categorize when the author of the post discusses family specifically to demonstrate a family history of endometriosis. We are also considering adding a fertility label to the topics.
+ </paragraph>
+ <paragraph>
+  <bold>
+   Outstanding Issues and Questions
+  </bold>
+ </paragraph>
+ <list style="unordered">
+  <list-item>
+   <paragraph>
+    For all of our classification tasks, we’ve designed a task that’s simply a binary categorization of a label. This approach provides the result we want (a model that can classify whether or not a paragraph/post indicates the label is appropriate) but it feels like a lot of different models to train and handle, or that there should be some optimized approach to training so many models. Is there a good way of doing this?
+   </paragraph>
+  </list-item>
+ </list>
+ <heading level="2">
+  References
+ </heading>
+ <paragraph>
+  <link href="https://www.zotero.org/google-docs/?s01keO"/>
+  [1] Zhenhui Peng, Xiaojuan Ma, Diyi Yang, Ka Wing Tsang, and Qingyu Guo. 2021. Effects of Support-Seekers’ Community Knowledge on Their Expressed Satisfaction with the Received Comments in Mental Health Communities. In
+  <italic>
+   Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems
+  </italic>
+  , ACM, Yokohama Japan, 1–12. DOI:https://doi.org/10.1145/3411764.3445446
+ </paragraph>
+ <paragraph>
+  <link href="https://www.zotero.org/google-docs/?s01keO"/>
+  [2] Diyi Yang, Robert E. Kraut, Tenbroeck Smith, Elijah Mayfield, and Dan Jurafsky. 2019. Seekers, Providers, Welcomers, and Storytellers: Modeling Social Roles in Online Health Communities. In
+  <italic>
+   Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems
+  </italic>
+  , ACM, Glasgow Scotland Uk, 1–14. DOI:https://doi.org/10.1145/3290605.3300574
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Roz Thalken (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm not sure why the section numbers are linking to a different post--please ignore :)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Breanna Green (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  &lt;&lt;apologies if this is a duplicate&gt;&gt;
+ </paragraph>
+ <paragraph>
+  Fantastic work you guys!!! You are so thorough and I know this has been a lot of work. In reading, I can't speak to anything that seems like it is "missing", per se. So my points below are general questions about your process:
+ </paragraph>
+ <paragraph>
+  For my own clarification, are you hard labeling each post/paragraph given one of the 3 label categories? Meaning can a post/paragraph only exist in one of each label (i.e. Partner + Disbelief + Seeking Emotional Support) or can it have multiple labels?
+ </paragraph>
+ <paragraph>
+  Are there cases where there is a mix of label types at all? Or is that relatively rare for this community?
+ </paragraph>
+ <paragraph>
+  Are there cases in which you imagine certain label combinations shouldn't (or are less likely to) exist? (i.e. Partner + Perceived Negligence)
+ </paragraph>
+ <paragraph>
+  Regarding BERT - if it's quite similar to the Logistic Regression results, do you have plans on how to improve that score? Or might it be okay (in this early stage) to stick with LR? I'm just interested in your thoughts because I fully agree that BERT might be more useful for the complex tasks like labelling intent.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Roz Thalken (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I made a couple of edits to the update to clarify that this is a binary classification task. Apologies for the confusion!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Could you say a bit more on how the F1 results were obtained?  That is, are the .78 and .83 results achieved on a held-out dataset, or are these averaged cross-val results? What was the train/dev/test split percentages? What was the percentage of the minority class in the two cases (labels) under consideration?  (I'm presuming F1 was computed on the minority class; if the classification was somehow balanced, then accuracy, rather than F1, should be computed.)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Roz Thalken (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you for these questions! The results so far are from a held-out dataset, mostly because we didn't have enough data for cross-validation (though cross-validation is the plan). For now, the train/test percentages were .75 for training and .25 for testing.
+ </paragraph>
+ <paragraph>
+  We will plan to report on accuracy, F1, and recall in the final write-up, since there will be a range of balanced to unbalanced classification tasks, given the prevalence of each label in our dataset. The F1 scores that we've already reported are all for the classes where there was enough data to train/test, so that means they were the more balanced classes.
+ </paragraph>
+ <paragraph>
+  Any other suggestions for validation measures (especially in relation to the range of balanced to unbalanced classes) are welcome.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

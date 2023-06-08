@@ -1,0 +1,80 @@
+<h1>
+ Title: GL(V) and gl(v)
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-29T09:31:10.765461+10:00
+</h3>
+<h3>
+ Category: Other
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I know that GL(V)={A: V--&gt;V| A is linear and invertible}, gl(V)={A: V--&gt;V| A is linear}.
+ </paragraph>
+ <paragraph>
+  But I do not understand that "gl(V) forms a Lie algebra under the bracket [x, y]= xy-yx."
+ </paragraph>
+ <paragraph>
+  What does the sentence in the previous quote in mean? Does it mean that all the linear maps in gl(V) have to satisfy the Lie bracket?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Marcel Mazur (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  By definition, a Lie algebra is a vector space equipped with a Lie bracket that satisfies the usual conditions. I think the sentence in the quotation just means that if you take the vector space gl(V) and give it the structure of a Lie bracket, you get what we call a Lie algebra.
+  <break>
+  </break>
+  <break>
+  </break>
+  I'm not sure what it would mean for a linear map to "satisfy the bracket".
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Reyer Sjamaar (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  If $f$ and $g$ are two linear maps from $V$ to $V$, then we can compose $f$ and $g$ both ways: $f\circ g$ and $g\circ f$ are both well-defined linear maps.  We
+  <italic>
+   define
+  </italic>
+  the bracket of $f$ and $g$ to be the difference,
+ </paragraph>
+ <paragraph>
+  $[f,g]=f\circ g-g\circ f.$
+ </paragraph>
+ <paragraph>
+  This bracket makes $\mathfrak{gl}(V)$ a Lie algebra.
+ </paragraph>
+ <paragraph>
+  If we choose a basis $v_1,v_2,\dots,v_n$ of $V$, we can represent $f$ and $g$ by $n\times n$-matrices $A$ and $B$.  Then $f\circ g$ is represented by the matrix $AB$, so the bracket $[f,g]$ is represented by the matrix
+ </paragraph>
+ <paragraph>
+  $[A,B]=AB-BA$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

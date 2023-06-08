@@ -1,0 +1,107 @@
+<h1>
+ Title: Why does the frequency response function have a range from -pi to pi?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-29T06:44:31.738456+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The reasoning in my head is a little fuzzy- is it because the values reflected around -pi/pi are all equal? The math behind it makes sense, but why is the frequency response 2pi periodic in the first place?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  $\widehat{H} ( \widehat{\omega} )$ is defined for all $\widehat{\omega}$, but because it turns out to be a $2 \pi$-periodic function of $\widehat{\omega}$, people customarily graph it only on an interval of length $2 \pi$, which determines what it looks like for all $\widehat{\omega}$ by periodicity. $[ - \pi , \pi ]$ is the usual interval people use, although in a sense the DFT uses $[ 0 , 2 \pi ]$.
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why is the frequency response periodic though? Is it because signals outside the [-pi,pi] range are aliases?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Just look at the formula for it in terms of impulse response, namely
+ </paragraph>
+ <paragraph>
+  $\widehat{H} ( \widehat{\omega} ) = \sum _ {n = - \infty} ^ \infty h [ n ] e ^ {- j n \widehat{\omega}}$,
+ </paragraph>
+ <paragraph>
+  and you see that every term in the sum is $2 \pi$-periodic.  BTW for a causal FIR system the sum is finite --- goes fron $n = 0$ to $n = M$ --- and the same reasoning applies.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Raleigh Clemens (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sorry if this is obvious but is it because any $e^{jkw}$ is $2\pi$-periodic for $k$ as an integer? Does this same logic also apply if $k$ is not an integer?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes to the first question, no to the second.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

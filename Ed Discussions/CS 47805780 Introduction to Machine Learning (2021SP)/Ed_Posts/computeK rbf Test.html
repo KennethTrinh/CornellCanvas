@@ -1,0 +1,53 @@
+<h1>
+ Title: computeK rbf Test
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-25T07:06:51.408412+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The default test for computeK is the following code:
+ </paragraph>
+ <pre>K=computeK("rbf",xTr,xTr,kpar=0.05)
+</pre>
+ <paragraph>
+  In the description of the function, when ktype = rbf, it says to use the following formula:
+ </paragraph>
+ <paragraph>
+  k(x,z)=exp(−gamma * ||x−z||^2)
+ </paragraph>
+ <paragraph>
+  Won't this result in exp(-gamma*(0)) = exp(0) = 1 in this scenario? Also doesn't this always return a single value and not an n x m matrix for all inputs?
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Raahi Menon (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The kernel is intended to take in two vectors and return a single value.
+ </paragraph>
+ <paragraph>
+  In our case, we're looking for a kernel matrix; when you plug in $X$ and $Z$ (matrices) instead of $x$ and $z$ (vectors), how does that affect the dimensions?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

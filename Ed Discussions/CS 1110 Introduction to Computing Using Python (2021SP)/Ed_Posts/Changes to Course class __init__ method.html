@@ -1,0 +1,157 @@
+<h1>
+ Title: Changes to Course class __init__ method
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-09T07:26:11.506279+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello,
+ </paragraph>
+ <paragraph>
+  Can we make changes to the __init__ method of the Course class and give it another attribute?
+ </paragraph>
+ <paragraph>
+  Thanks!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi,
+ </paragraph>
+ <paragraph>
+  The following comments in the Course class are as follows:
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="false">
+  <snippet-file id="code">
+   # STUDENTS: below this comment block (but within the docstring for class
+        # Course), document any attributes you add.  
+        # Don't delete this comment block, so the graders can easily see what you 
+        # added.
+        #
+        # You'll want attribute(s) or method(s) that 
+        # (1) represent the meeting time of the course,
+        # (2) make it easy to retrieve the Course's times in "standard" format
+        # (3) make it easy to compute whether another Course conflicts.
+        # COURSE_DOCSTRING_BLOCK
+  </snippet-file>
+ </snippet>
+ <paragraph>
+  This means that you are allowed to make more attributes for the course Class. To make these attributes a reality, you will need to update the init method of the course Class.
+ </paragraph>
+ <paragraph>
+  So, for instance, you want to add the attribute "cool_person_rating" to the course Class. After implementing this attribute, the code would look like the following.  Note that the description of the attribute has been added to the specification of the course Class to explain what it is.
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="false">
+  <snippet-file id="code">
+   class Course:
+    """ An instance represents a class.
+
+    Instance attributes:
+        name [non-empty string]: name of the course
+        in_schedules: list of Schedules this Course is in
+
+        # STUDENTS: below this comment block (but within the docstring for class
+        # Course), document any attributes you add.  
+        # Don't delete this comment block, so the graders can easily see what you 
+        # added.
+        #
+        # You'll want attribute(s) or method(s) that 
+        # (1) represent the meeting time of the course,
+        # (2) make it easy to retrieve the Course's times in "standard" format
+        # (3) make it easy to compute whether another Course conflicts.
+        # COURSE_DOCSTRING_BLOCK
+
+        cool_person_rating = rates how cool a person is
+
+
+        
+    """
+    def __init__(self, n, t):
+        """
+        Creates a new Course with name n, some internal representation of 
+        meeting time t, and in_schedules set to the empty list
+
+        Preconditions: 
+            n: non-empty string, no other course of the same name exists.
+                (Examples: "CS 1110 LEC 001", "CS 1110 DIS 201")
+            t: string of the form (no beginning or trailing spaces)
+                &lt;days&gt; &lt;starthrs&gt;:&lt;startms&gt;&lt;am or pm&gt;-&lt;endhrs&gt;-&lt;endms&gt;&lt;am or pm&gt;
+               where &lt;days&gt; is a subsequence of "MTWRF"
+               ***OR***
+               the string "TBA"
+
+               Examples of valid values for t:
+                "MWF 10:10am-2:30pm"
+                "R 8:07am-11:00am"
+                "TBA"
+        """
+        self.name = n
+        self.in_schedules = []
+
+        # STUDENTS: implement the rest of this method below; leave the lines
+        # above alone.
+        # Do not delete this comment block, to help the graders find your code.
+        # COURSE INIT BLOCK
+
+        self.cool_person_rating = t
+  </snippet-file>
+ </snippet>
+ <paragraph>
+  As a note, I do not think you can change the parameters of the init method.
+ </paragraph>
+ <paragraph>
+  -Hope this helps! :)))
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Elisabeth Finkel (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Correct, and you shouldn't change the parameters for any provided methods
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

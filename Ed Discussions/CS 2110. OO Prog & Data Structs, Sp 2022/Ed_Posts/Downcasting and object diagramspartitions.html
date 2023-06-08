@@ -1,0 +1,93 @@
+<h1>
+ Title: Downcasting and object diagrams/partitions
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-17T12:19:27.684451+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Say class B is a subclass of class A, and we create an object of class A. In the object diagram, does the partition for class B exist when we first create the object of class A? Or does the lower partition for class B only appear if we do a downcast to class B?
+ </paragraph>
+ <paragraph>
+  A a = new A();
+ </paragraph>
+ <paragraph>
+  a = (B) a;
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  If B is a subclass of A, creating an object of class A will not create a B partition since B extends A. Creating an object of class B will create an A partition.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ok, that makes sense. Thanks! I was also reading the Java HyperText entry for object casts and got a bit confused by the following:
+ </paragraph>
+ <figure>
+  <image height="262.0306451612903" src="https://static.us.edusercontent.com/files/Qba51ILIAndmQjDbPycuNAPo" width="594"/>
+ </figure>
+ <paragraph>
+  In this case, isn't C a subclass of ob? So how does instanceof work if ob doesn't have a C partition? (I know it doesn't work in this case, but just in general when you're trying to test whether a downward cast will work using instanceof)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, but the difference is that variable ob was assigned the value returned by calling the C constructor rather than the Object constructor and the variable itself just has type Object
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  OHHHHH I seeeee TYSM
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,83 @@
+<h1>
+ Title: How to write ASync Function in C(lab2 part3)
+</h1>
+<h3>
+ Author: Deemo Chen :) (None)
+</h3>
+<h3>
+ Date: 2022-03-01T13:52:04.98916+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  "The LEDs do not have to stay synchronized."
+ </paragraph>
+ <paragraph>
+  Is it even possible to make the main function and the handler to be Asynchronized?
+ </paragraph>
+ <paragraph>
+  Do I have to apply some sort of multi-threading techniques?
+ </paragraph>
+ <paragraph>
+  My guesses for this part are:
+ </paragraph>
+ <paragraph>
+  1. Multi-threading(async)
+ </paragraph>
+ <paragraph>
+  2. The handler can't have any loops(sync)
+ </paragraph>
+ <paragraph>
+  3. The handler can have a small loop for the green led(but what's the point of saying the two leads shouldn't be synchronized?)
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Wei (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The use of a global variable in the interrupt method could lead to an asynchronous implementation.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Deemo Chen :) (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  oh ya, that's right. Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Going off of this, I think it would even be difficult to synchronize them perfectly without looking at the compiled assembly. Given that they use different mechanisms (global loops vs. timer interrupts), both LED's should function independent of one another
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

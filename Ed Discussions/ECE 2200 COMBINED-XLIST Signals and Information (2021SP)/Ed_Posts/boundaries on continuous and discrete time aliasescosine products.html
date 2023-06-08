@@ -1,0 +1,94 @@
+<h1>
+ Title: boundaries on continuous and discrete time aliases/cosine products
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-22T14:33:56.225859+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Just to compile all of the information in one place, I wanted to ask a couple questions:
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  (1) What happens when we sample a 17Hz signal at exactly twice the frequency (34Hz)? Are 17Hz and -17Hz both continuous time aliases of each other under this sampling frequency? Given the wheel example in class, would we not be able to determine if the wheel is spinning 17Hz CW versus CCW?
+ </paragraph>
+ <paragraph>
+  (2) Similar to (1), for discrete time aliases, given some y[n] = Acos(n*pi), decrementing the argument by 2pi*n does not put w
+  <sub>
+   prin
+  </sub>
+  in (-pi, pi). What should be done with this y[n]- what's its w
+  <sub>
+   prin
+  </sub>
+  ?
+ </paragraph>
+ <paragraph>
+  (3) Given the product of sinusoids, is there any way to determine the frequencies present in the signal without doing a frequency shift/euler expansion? For instance, x(t) = cos(f
+  <sub>
+   1
+  </sub>
+  t)*cos(f
+  <sub>
+   2
+  </sub>
+  t)*cos(f
+  <sub>
+   3
+  </sub>
+  t) sampled at f
+  <sub>
+   4
+  </sub>
+  : would we have to express x(t) as the sum of cosines to determine the signal's maximum frequency as well as each term's individual frequency?
+ </paragraph>
+ <paragraph>
+  (4) Similar to (3), given the product of sinusoids, is there any way to determine the fundamental frequency without expanding it out or doing a frequency shift?
+ </paragraph>
+ <paragraph>
+  Thank you!
+ </paragraph>
+ <paragraph>
+  Edit: Looking back at my notes, I think (1) and (2) may correlate to the pesky boundary case. However, I'm still interested in what should be done in this case. What is the physical output of sampling something at exactly twice its maximum frequency?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  (1) and (2) are indeed the pesky boundary case.  I'm not sure how you mean "what should be done in this case."  I'll give you a handout toward the end of the course that addresses it.  It turns out that if you sample $A \cos ( 2 \pi f _ o t + \phi )$ at frequency $f _ s = 2 f _ o$ and put the resulting discrete-time signal through an ideal D-to-C with interpolation interval $T _ s = 1 / f _ s$, what comes out is the signal
+ </paragraph>
+ <paragraph>
+  $( A / 2 ) \cos ( 2 \pi f _ o t + \phi ) + ( A / 2 ) \cos ( 2 \pi f _ o t - \phi )$.
+ </paragraph>
+ <paragraph>
+  In the case of the movie, $f _ o  = 12$ and $\phi = \pi / 2$, and the output of the D-to-C is half clockwise rotation plus half counterclockwise rotation.  To prove this properly requires more math than ECE 2200 covers.
+ </paragraph>
+ <paragraph>
+  As for your questions (3) and (4). the only way I know how to do it reliably is go full Euler on everything.  And remember, the product of two cosines need not even be periodic if the frequencies aren't harmonically related.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

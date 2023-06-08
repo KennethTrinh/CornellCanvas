@@ -1,0 +1,102 @@
+<h1>
+ Title: Implementing interface Runnable
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-07T04:00:21.532285+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In preparing for the final, I came across this statement: To make several instances of a class execute concurrently, it is sufficient to implement interface Runnable.
+ </paragraph>
+ <paragraph>
+  My understanding after reading the Javadocs for Thread is that the class must also implement method run(). Is this understanding correct?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Interface Runnable has one abstract method, run().
+  <break>
+  </break>
+  Therefore, if a class implements Runnable, it must override method run().
+ </paragraph>
+ <paragraph>
+  Thus, you are right; run() must be declared in the class.
+ </paragraph>
+ <paragraph>
+  However, we don't have to mention it because if a class implements an interface, it must override all methods declared in that interface.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  One thing that might be confusing you is that, if you write a class containing instructions that you want to execute concurrently, and you decide to
+  <italic>
+   extend
+  </italic>
+  class
+  <code>
+   Thread
+  </code>
+  , then you must
+  <italic>
+   override
+  </italic>
+  <code>
+   Thread
+  </code>
+  's
+  <code>
+   run()
+  </code>
+  method and put your instructions there.
+ </paragraph>
+ <paragraph>
+  However, the more flexible way to do this is to write a class that implements
+  <code>
+   Runnable
+  </code>
+  , in which case the compiler will require you to override
+  <code>
+   run()
+  </code>
+  .  Then you can pass instances of that class to the constructor of generic
+  <code>
+   Thread
+  </code>
+  objects.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

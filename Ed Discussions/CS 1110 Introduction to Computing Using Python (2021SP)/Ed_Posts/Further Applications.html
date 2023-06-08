@@ -1,0 +1,240 @@
+<h1>
+ Title: Further Applications
+</h1>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Date: 2021-05-22T09:56:16.085143+10:00
+</h3>
+<h3>
+ Category: Other
+</h3>
+<h3>
+ Vote Count: 4
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi all,
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Now that the course is "over", I wanted to ask a couple questions more specific to applying what we've learned in everyday scenarios?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  1) How would one go about storing the info that they generate from Python? Such as wanting to not only return a list, but save it as a file or put it on a spreadsheet (sort of the interface between Python and the rest of the world, like how we got data on the available courses from online (which I'm also curious about :) )
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  2) Is there a way to make our Python code more along the lines of an executable, such that we're able to send it to people who don't have to have Anaconda/Python installed in order to run it?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  What would be the best way to go about learning these things in general? (Or is it just delving into API's?)
+ </paragraph>
+ <paragraph>
+  Thanks for a great semester!
+ </paragraph>
+</document>
+<h3>
+ Author: Ben Rosenberg (admin)
+</h3>
+<h3>
+ Vote Count: 4
+</h3>
+<document version="1.0">
+ <paragraph>
+  You mentioned APIs: there are many wonderful things that you can do with them! As Elisabeth mentioned, JSONs are frequently used for data storage; most APIs use JSONs as well. The most simple way to use an API is probably to use it in the context of glorified webscraping (similar to A1) in which you grab the website's contents and extract the meaningful data from them. The thing is, APIs will usually be much easier to deal with than the crazy HTML you were given to parse in A1; they'll usually be just a JSON (kind of like a dictionary) with keys and values that store the useful data. If you work with JSONs you'll want to read up on the documentation for the JSON module (which you can import), which will allow you to turn a JSON string into a Python dictionary (I'm blanking on which method does that right now, but it'll probably be front and center if you Google "JSON Python".
+ </paragraph>
+ <paragraph>
+  There are other APIs that are more involved. A good example is the Discord API, which can be used to make bots and webhooks which interact with users. If you want a nice introduction to using APIs to make a project, I highly recommend trying to make one of these bots (it was one of the first things I did with my 1110 knowledge!), or making a simple and useful application that grabs info from an API (maybe a COVID tracker? There are plenty of APIs for that data).
+ </paragraph>
+ <paragraph>
+  Sorry for the rant -- I hope you continue to apply your CS knowledge in a meaningful way!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Ben Rosenberg (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="1.0">
+ <paragraph>
+  Oh, and to cover the other topics you were asking about:
+ </paragraph>
+ <paragraph>
+  1. If you want a quick and dirty way to export data from Python, there's always the `file` object, which you can both read from and write to. Looking up "Python reading and writing files" should yield some good results about this.
+ </paragraph>
+ <paragraph>
+  2. If you want to really run Python across platforms, you could always just zip up the code and make a README text file to tell users how to use it. But if you really want a way to run it *anywhere*, you might want to consider web programming with Python, with Django or Flask. I don't have any experience with either of these so I can't really say how easy (or difficult) they would be to learn from a CS 1110 experience standpoint, but I'm sure there are helpful tutorials out there.
+ </paragraph>
+ <paragraph>
+  3. If you want specific advice on where to go with Python knowledge in the same kind of CS 1110-esque way you've been learning so far, consider taking a look at some cool Python tricks, like list comprehension, the functions `map` and `embed`, and lambda functions. (Maybe also consider learning about generators and/or coroutines, which we covered in the Fall for use with the final game project.) There's a lot of Python that's outside the scope of this course, but is easy to pick up and can be very convenient once you know how to use it!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Erik Kirakosyan (student)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  Likewise, are there any resources the professors would recommend to further learn python on our own? I don't think I have time for additional CS classes, but I want to learn more about using Python in research. Thanks for an amazing semester!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Elisabeth Finkel (admin)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  I learn the most when I have a specific project I've come up with. I decide what I want it to do, and then I use documentation/stackoverflow/google to figure out how to implement it. Google is particularly good for higher-level questions like "is there a Python package that does x".
+ </paragraph>
+ <paragraph>
+  Tutorials or free online classes (which I find with Google) can be helpful for more guided learning - it will give you the project idea and then walk you through implementing it.
+ </paragraph>
+ <paragraph>
+  Re research, I know that packages like
+  <code>
+   numpy
+  </code>
+  and
+  <code>
+   pandas
+  </code>
+  are sometimes used for data processing/representation?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Ben Rosenberg (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  Yep, pandas is definitely extremely useful and being familiar with it will open many doors for internships etc.! It has its own set of quirks to get familiar with, although the documentation is pretty good. In the same vein, matplotlib is used often with pandas to generate graphics. Usually, you'll see the following at the top of a data science workbook:
+ </paragraph>
+ <paragraph>
+  import pandas as pd
+  <break>
+  </break>
+  import matplotlib.pyplot as plt
+ </paragraph>
+ <paragraph>
+  Reading in data to pandas is really easy with pd.read_csv("filename.csv"), which will give you a dataframe (basically a fancy pandas table that is easily manipulable). Read the documentation for more info!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Elisabeth Finkel (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  For tools used in research, you could also look into how to use Jupyter notebooks, which is a nice interactive environment for python
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Elisabeth Finkel (admin)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm glad this course has piqued your interest!
+ </paragraph>
+ <paragraph>
+  ----
+ </paragraph>
+ <paragraph>
+  I sometimes store data in json or csv form.
+ </paragraph>
+ <paragraph>
+  JSON allows for recursively nested dictionaries/lists, and is the format used to send data between webpages and web servers (so both Python and Javascript can read/write json). Python would use the json package, see
+  <link href="https://docs.python.org/3/library/json.html"/>
+  https://docs.python.org/3/library/json.html
+ </paragraph>
+ <paragraph>
+  CSV is used in many data-analysis settings, although it doesn't allow for recursive structures. It's readable by Excel. There's a Python package called csv. I also used a package once that supposedly reads/writes directly to Excel format, but it didn't work very well.
+ </paragraph>
+ <paragraph>
+  Data is also sometimes stored in databases - google "SQL". I've used the package
+  <link href="https://docs.sqlalchemy.org/en/14/"/>
+  https://docs.sqlalchemy.org/en/14/ (pip install sqlalchemy should work?). Those databases can only be read by certain applications, whereas json and csv formats are sort of human readable, not that it really matters.
+ </paragraph>
+ <paragraph>
+  -----
+ </paragraph>
+ <paragraph>
+  Re making Python executables, ...
+  <break>
+  </break>
+  edit: You can try
+  <link href="https://www.pyinstaller.org/index.html"/>
+  https://www.pyinstaller.org/index.html , but it looks like people with different OS's won't be able to run the executable
+ </paragraph>
+ <paragraph>
+  You can try going to
+  <link href="https://www.pythonanywhere.com"/>
+  https://www.pythonanywhere.com and following the tutorial at
+  <link href="https://blog.pythonanywhere.com/121/"/>
+  https://blog.pythonanywhere.com/121/ - this will let you host a Python app online for anyone to see. You will have to write an actual Python backend, which is somewhat more involved than what you've done, but that tutorial seems good. Users will have to interact with basic HTML (which you have to write), rather than just a terminal window. The tutorial also talks about the
+  <code>
+   git
+  </code>
+  tool, and you can skip those parts, although
+  <code>
+   git
+  </code>
+  does get used a lot in industry (and upper level CS classes). The tutorial also talks about using databases, which may help with your first question.
+ </paragraph>
+ <paragraph>
+  For a structured approach to web development generally, Cornell has some courses, eg
+  <link href="https://www.cornellappdev.com/courses/backend"/>
+  https://www.cornellappdev.com/courses/backend, whose materials you can read even if you don't want to enroll. That course involves mostly Python.
+ </paragraph>
+ <paragraph>
+  ----
+ </paragraph>
+ <paragraph>
+  In general, I've learned a lot from StackOverflow, documentation, and Google. There are lots of free tools + tutorials online; the tutorials often tell you to copy their exact code, but they explain enough of what it does that you could experiment with modifying it for your own purposes.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,54 @@
+<h1>
+ Title: Why does this use .equals()
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-05T19:28:13.088042+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="175.59164292497627" src="https://static.us.edusercontent.com/files/rlWzXJHR3KlJamAOpWTDsxiL" width="658"/>
+ </figure>
+ <paragraph>
+  I wrote:
+ </paragraph>
+ <paragraph>
+  return name == ((Restaurant) ob).name;
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  would this work? Or does it have to use .equals()
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  == will not work.
+ </paragraph>
+ <paragraph>
+  == is true if the two variables name contain the same object, just as for int variables x and y, x== y is true if they contain the same values.
+ </paragraph>
+ <paragraph>
+  .equals is true if the two objects contain the same string, even if they are different objects.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

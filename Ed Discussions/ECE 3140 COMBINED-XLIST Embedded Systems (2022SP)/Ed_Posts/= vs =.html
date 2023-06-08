@@ -1,0 +1,62 @@
+<h1>
+ Title: |= vs =
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-24T06:53:23.797784+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I noticed in the Lab 2 handout, in part 1, the clock was enabled using |= like in discussion, but in part 2, the clock is enabled using = . When should |= be used and when should = be used?
+ </paragraph>
+ <paragraph>
+  Here are the specific example lines:
+ </paragraph>
+ <figure>
+  <image height="56" src="https://static.us.edusercontent.com/files/pC8KTmVUWX6IE3RmGkj7UPUt" width="440"/>
+ </figure>
+ <figure>
+  <image height="69" src="https://static.us.edusercontent.com/files/dtnLGtCMCoI4vGxDbp5hzqO7" width="440"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prithwish Dan (student)
+</h3>
+<h3>
+ Vote Count: 5
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think |= is used to ensure only that bit at bit 12 will be affected by the operation, whereas using = can override other bits on accident
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Correct. The equal sign is the operator for literally assigning values to registers. Or-equal (|=) is short-hand that allows you to perform a bitwise-or and assignment in a single line. `x |= y` expands to `x = x | y`
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

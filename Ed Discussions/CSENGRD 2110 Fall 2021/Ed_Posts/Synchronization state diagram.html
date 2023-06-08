@@ -1,0 +1,54 @@
+<h1>
+ Title: Synchronization state diagram
+</h1>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Date: 2021-12-03T05:38:26.149187+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 4
+</h3>
+<document version="2.0">
+ <paragraph>
+  During office hours this afternoon, we drew the following state diagram on the whiteboard to illustrate how concurrency works in Java:
+ </paragraph>
+ <figure>
+  <image height="370.125" src="https://static.us.edusercontent.com/files/Mu497v7LpF48bPAKog5VI4Jk" width="658"/>
+ </figure>
+ <paragraph>
+  A thread can execute code while in the green state (as well as before and after the diagram), but a thread is
+  <italic>
+   blocked
+  </italic>
+  while in an orange state.
+ </paragraph>
+ <paragraph>
+  Using the wait list (the "condition variable" side of monitors) is optional - its purpose is to improve efficiency (and reduce bugs) when one thread needs to wait for another to do something before it can proceed.  Lots of concurrent code only makes use of the lock list (the "mutex" side of monitors).
+ </paragraph>
+ <paragraph>
+  When using the wait list, the general pattern is as follows:
+ </paragraph>
+ <snippet language="java" line-numbers="false" runnable="false">
+  <snippet-file id="code">
+   synchronized (guard) {
+    // ... evaluate condition
+    while (!condition) {
+        guard.wait();
+        // ... reevaluate condition
+    }
+    // ... do stuff
+}
+  </snippet-file>
+ </snippet>
+ <paragraph>
+  Hopefully visualizing things this way helps you make sense of the various synchronization features.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

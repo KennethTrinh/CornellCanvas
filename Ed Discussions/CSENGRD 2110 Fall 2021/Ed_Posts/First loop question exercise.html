@@ -1,0 +1,49 @@
+<h1>
+ Title: First loop question exercise
+</h1>
+<h3>
+ Author: Nathaniel Navarro (student)
+</h3>
+<h3>
+ Date: 2021-09-20T01:56:34.077876+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In the second exercise presented here:
+  <link href="https://www.cs.cornell.edu/courses/JavaAndDS/loops/21practiceQ1.pdf"/>
+  https://www.cs.cornell.edu/courses/JavaAndDS/loops/21practiceQ1.pdf
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  The initialization of v=b[n] assumes that the array is of size n+1 at the very least. Wouldn't we want to initialize v as b[0] and define it as the minimum of b[k..n]?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The invariant is.  v = min of b[k..n] and 0 &lt;= k &lt;= n
+ </paragraph>
+ <paragraph>
+  Variables v and k are to be initialized. To do this, you want the range k..n to be as small as possible: b[k..n] should contain ONE value, so k has to be n. Then b is b[n]. So the initialization is. k= n; v= b[n];
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

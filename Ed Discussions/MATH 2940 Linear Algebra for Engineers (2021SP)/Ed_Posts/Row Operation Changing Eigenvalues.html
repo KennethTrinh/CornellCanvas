@@ -1,0 +1,124 @@
+<h1>
+ Title: Row Operation Changing Eigenvalues
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-11T04:08:51.524783+10:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm unsure why row operations changes eigenvalues. Since the characteristic equation is determined by the determinant of a A-λI and row operations don't change the determinant, should the two matrix have identical characteristic equations? Wouldn't this lead to having the same characteristic polynomial and thus, the same eigenvalue? Could someone tell me what I'm misunderstanding?
+ </paragraph>
+</document>
+<h3>
+ Author: Esther Wang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  But row operations do change the determinant don't they...?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh, I was thinking specifically about the row replacement operation.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Phillip Jang (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Subtracting $\lambda I$ from the row-replaced matrix $EA$ is not the same as row-replacing $A-\lambda I$. While equality of roots can be possible by chance, $det(EA-\lambda I) \neq det(E[A-\lambda I])$ in general.
+ </paragraph>
+ <paragraph>
+  For example, these two row-replaced matrices (R1 &lt;- R1-R2) have the same eigenvalues (1 with algebraic multiplicity 2)
+ </paragraph>
+ <paragraph>
+  $$\begin{bmatrix}1 &amp; 1 \\ 0 &amp; 1\end{bmatrix} \&amp; \begin{bmatrix}1 &amp; 0 \\ 0 &amp; 1\end{bmatrix}$$
+ </paragraph>
+ <paragraph>
+  but these matrices (R2 &lt;- R2-2R1) have different eigenvalues ($1 \pm \sqrt{2}$ and $\{1,-1\}$ respectively)
+ </paragraph>
+ <paragraph>
+  $$\begin{bmatrix}1 &amp; 1 \\ 2 &amp; 1\end{bmatrix} \&amp; \begin{bmatrix}1 &amp; 1 \\ 0 &amp; -1\end{bmatrix}$$
+ </paragraph>
+ <paragraph>
+  Hence you cannot generally assume row-replacement preserves eigenvalues even if it sometimes happens.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Phillip Jang (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If you're doing a row operation, you're left multiplying $A$ against some elementary matrix $E$ before subtracting $\lambda I$ so the characteristic polynomials from $EA-\lambda I$ and $A-\lambda I$ will generally not have the same roots.
+ </paragraph>
+ <paragraph>
+  Consider the eigenvalues of these row equivalent matrices for example:
+ </paragraph>
+ <paragraph>
+  $$
+ </paragraph>
+ <paragraph>
+  \begin{bmatrix} 2 &amp; 0 \\ 0 &amp; 1 \end{bmatrix} \&amp; \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}
+ </paragraph>
+ <paragraph>
+  $$
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

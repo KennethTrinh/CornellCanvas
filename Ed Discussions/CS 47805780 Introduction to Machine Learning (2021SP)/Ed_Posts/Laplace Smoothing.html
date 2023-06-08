@@ -1,0 +1,71 @@
+<h1>
+ Title: Laplace Smoothing
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-24T14:14:19.626378+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In the project, a word can have arbitrarily many letters. But the equation for laplace smoothing requires the cardinality of the features to be finite. How are we supposed to reconcile these two facts?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Scott Bass (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For Laplace you use $|V|$ which is the size of the vocabulary (in this case 26 since there are 26 letters).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  But in #1050 the slides say that it should be the number of possible values that feature X_i takes. It seems there's two different definitions at hand: the number of features vs the number of values a feature can take. How should we know which ones to use?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Alexandra Roberts (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  That's the Laplacian estimator for the multivariate Bayes assumption whereas
+  <italic>
+   |V|
+  </italic>
+  is used for the multinomial naive Bayes assumption.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

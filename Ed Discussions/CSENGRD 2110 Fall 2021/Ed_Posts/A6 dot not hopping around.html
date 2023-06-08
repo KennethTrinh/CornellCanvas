@@ -1,0 +1,65 @@
+<h1>
+ Title: A6 dot not hopping around
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-29T11:40:58.93437+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I completed up to TODO 6, and when I run the code only one dot appears in the upper right corner. The game reverts back to the inactive state per the specification of TODO 5, but I don't see the dot hopping around, just the one original dot stays in place. What could be the problem?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  As a follow up, how are we supposed to respawn the target if the respawn() method is defined within the private inner class Target?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If you have a variable referencing a
+  <code>
+   Target
+  </code>
+  object, then you can invoke
+  <code>
+   respawn()
+  </code>
+  on that variable in order to activate that behavior.  If the
+  <code>
+   Target
+  </code>
+  object for the game board is not respawned each time the timer expires, then I would not expect the dot to move, as that method is the only way to change its position.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

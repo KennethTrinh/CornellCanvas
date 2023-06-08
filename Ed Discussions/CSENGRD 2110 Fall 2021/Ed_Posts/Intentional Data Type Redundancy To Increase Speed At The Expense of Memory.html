@@ -1,0 +1,49 @@
+<h1>
+ Title: Intentional Data Type Redundancy To Increase Speed At The Expense of Memory
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-10T15:21:13.483819+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was looking at the lecture 8 slides and found it interesting how Array Lists and Linked Lists do the same thing, but their methods have different efficiencies.
+ </paragraph>
+ <paragraph>
+  Is it at all common to, sort of, combine data types into one data type to incorporate the best aspects of each type?
+ </paragraph>
+ <paragraph>
+  Like if I wanted a data type that takes constant time for both prepending and getting would it make sense to create a new datatype that holds an Array List and Linked List version of our data, and then have getting and prepending methods that only call the faster prepending and getting methods of each sub datatype? And then maybe a third method that makes any changes to one sub datatype carry over to the other sub datatype when switching from prepending to getting?
+ </paragraph>
+ <paragraph>
+  Is this a thing?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We do sometimes add data structures to mae some operation efficient. You'll see this in the lecture on heaps.
+ </paragraph>
+ <paragraph>
+  But implementing both ArrayList and LInkedList at the same time wouldn't help, probably. If you have to prepend something, you would have to prepend it to BOTH of them, otherwise they wouldn't represent the same list.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

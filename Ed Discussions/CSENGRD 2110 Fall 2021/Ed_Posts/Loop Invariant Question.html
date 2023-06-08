@@ -1,0 +1,116 @@
+<h1>
+ Title: Loop Invariant Question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-12T12:06:41.516769+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="445.22480620155034" src="https://static.us.edusercontent.com/files/qIp1ghmyRyxIZs6HeAr1eICj" width="658"/>
+ </figure>
+ <paragraph>
+  Why does the segment b[k...n] say inside of it original b[t + 1...n]? Doesn't b[t+1...k-1] contain don't cares?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Vladia Trinh (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  No, b[k..n] does not contain any dups. There are potentially dups in the b[0..t] part. This can be accomplished by processing from right to left. It's done this way so that your final array can look like the post condition provided.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Right, but I'm not seeing quite why b[t+1...n] includes don't cares and the original without dups
+ </paragraph>
+ <paragraph>
+  They're also saying the original b[t+1...n], so what's included in there? don't cares and original without dups?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Vladia Trinh (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It might be easier to think of b[t+1...n] as two separate regions where b[t+1..k-1] is don't cares which holds the duplicates you want to remove from the original list and b[k..n] is the part of the original array but without the duplicates.
+ </paragraph>
+ <paragraph>
+  I don't think I fully understand your question so let me know if I can clarify my answer.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  So the duplicates get moved to the don't care segment?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Vladia Trinh (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, the don't care section is where all the duplicates from the b[k..n] section go.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ok. I sat here with it for a bit. I understand now. Thank you
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

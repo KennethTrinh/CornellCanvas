@@ -1,0 +1,39 @@
+<h1>
+ Title: What is the output of dualSVM supposed to be?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-01T08:40:07.588663+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I initially tried returning a 1-by-n vector or a n-by-1 vector, where n is the number of rows in xTe, but I got an error both times. I looked in visclassifier, and it looks like it's supposed to be an n-by-n matrix, but, if that's the case, then what does each value of the matrix represent?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Rishi Malhotra (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  DualSVM outputs a function. This function takes in a matrix X which contains several examples to classify. This function then returns a vector containing -1/+1 for each example in the function
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

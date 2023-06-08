@@ -1,0 +1,40 @@
+<h1>
+ Title: I2C 16x2 LCD Driver for KL46Z
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-10T10:24:53.972859+10:00
+</h3>
+<h3>
+ Category: Final Project
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Are there any board-compatible I2C drivers for a 16x2 LCD? We're looking to use a 16x2 LCD display (HD44780 compliant) to display multiple digits.
+ </paragraph>
+ <paragraph>
+  It seems that there is a lot of I2C documentation for the LiquidCrystal_I2C library on Arduino but it's very hard to find something similar for the KL46Z.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  It is extremely unlikely that you will find a software package to help you drive an LCD display since we are running on bare metal with very little support. If you want to use a display, your best bet is to write your own driver. (I had to write my own SPI driver for a ST7735R based display when I did my final project). You can always reverse engineering the Arduino library and adapt its digital communications to your I2C setup.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

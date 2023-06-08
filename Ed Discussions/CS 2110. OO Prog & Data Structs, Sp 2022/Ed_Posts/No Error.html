@@ -1,0 +1,74 @@
+<h1>
+ Title: No Error
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-01-28T13:41:31.836896+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="411.25" src="https://static.us.edusercontent.com/files/ms1rv4gIMRkMlfdkB0WV5muJ" width="658"/>
+ </figure>
+ <paragraph>
+  When the Professor declares the variable c4 as a Counter without a semicolon why isn't an error raised?
+ </paragraph>
+ <paragraph>
+  I know it's null because it's a Class but not assigned to a value so the default is null (from JavaHyperText) but in the line above c3 was declared with a semi colon and a different message is shown
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="1.0">
+ <paragraph>
+  A few notes to answer your question:
+ </paragraph>
+ <paragraph>
+  JShell doesn't require us to put semicolons at the end of statements. The end of the statement is determined when you press "return" on your keyboard. As Professor Gries mentioned in #77, "[JShell] is not a complete Java program but just a way to try things out." JShell is not an IDE. It's important not to get confused between JShell and programming in an IDE, such as Eclipse. Semicolons are required if you are programming in Java in an IDE.
+ </paragraph>
+ <paragraph>
+  The semicolon you see in the JShell was extraneous. We didn't need it. But the code will still compile even with extra semicolons at the end of the statement. Again, this is just with JShell, which is not the same as programming in an IDE.
+ </paragraph>
+ <paragraph>
+  To address your question on c3/c4:
+ </paragraph>
+ <paragraph>
+  c3 would be null as well (If class Count had been declared), but that's irrelevant because the Count class itself hasn't even been declared yet, so you are not allowed to reference c3. In fact, this is only allowed in JShell, and the code written would not compile in an IDE (you would get a syntax error "Count cannot be resolved to a type"). The Counter class has been declared so we can declare a variable of type Counter, and we don't get that message. However, by default c4 points to null.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

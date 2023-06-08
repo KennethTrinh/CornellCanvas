@@ -1,0 +1,79 @@
+<h1>
+ Title: What is the main difference between using math.floor(x) and division and %?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-02-26T01:13:25.734714+11:00
+</h3>
+<h3>
+ Category: Other
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What is the main difference between using math.floor(x) and division and %?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aliva Das (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  math.floor(x) is a function takes x as input and returns the largest integer &lt;= x.
+ </paragraph>
+ <paragraph>
+  Eg.
+ </paragraph>
+ <paragraph>
+  math.floor(7.8) = 7
+ </paragraph>
+ <paragraph>
+  math.floor(-1.2) = -2
+ </paragraph>
+ <paragraph>
+  / is a binary operator that is used like this : a / b where a and b can be floats or integers. This operator results in the quotient you get on dividing a by b. There is no rounding up/down going on here, you get the answer as a float, as precise as Python can get it.
+ </paragraph>
+ <paragraph>
+  Eg.
+ </paragraph>
+ <paragraph>
+  6/7 = 0.8571428571428571
+ </paragraph>
+ <paragraph>
+  6/4 = 1.5
+ </paragraph>
+ <paragraph>
+  6.0/4.0 = 1.5
+ </paragraph>
+ <paragraph>
+  % is a binary operator that is used like this : a % b where a and be can be floats or integers. This operator results in the remainder you get on dividing a by b. If both a an b are integers, you get an integer result, if at least one of a and b is a float you get a float result.
+ </paragraph>
+ <paragraph>
+  Eg.
+ </paragraph>
+ <paragraph>
+  6%4 = 2
+ </paragraph>
+ <paragraph>
+  6.0%4 = 2.0
+ </paragraph>
+ <paragraph>
+  6%4.0 = 2.0
+ </paragraph>
+ <paragraph>
+  6.0%4.0 = 2.0
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

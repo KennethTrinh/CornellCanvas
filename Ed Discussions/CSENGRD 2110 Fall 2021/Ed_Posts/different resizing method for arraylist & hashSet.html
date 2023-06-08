@@ -1,0 +1,72 @@
+<h1>
+ Title: different resizing method for arraylist &amp; hashSet
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-01T14:04:15.244116+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi! I just noticed that for hashing, arraylist and hashset has different conditions. Is there a specific reason fo this?
+ </paragraph>
+ <figure>
+  <image height="218.36283185840708" src="https://static.us.edusercontent.com/files/mwQQdvitsqp2bSBde3DQASN7" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am not exactly sure what your question is - what conditions are you referring to, and where does ArrayList differ?
+ </paragraph>
+ <paragraph>
+  It seems like you're interested in what's called the "growth policy" of the "backing store" (that is, the way that arrays are resized inside of these classes).  For
+  <code>
+   ArrayList
+  </code>
+  ,
+ </paragraph>
+ <blockquote>
+  The details of the growth policy are not specified beyond the fact that adding an element has constant amortized time cost. (
+  <link href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html"/>
+  API specification)
+ </blockquote>
+ <paragraph>
+  It doesn't make much sense for an
+  <code>
+   ArrayList
+  </code>
+  to automatically resize before it is full, because performance does not get worse as the capacity fills up, and resizing unnecessarily just wastes space.  As for how much bigger to make the array when it is resized, it has to be a
+  <italic>
+   multiple
+  </italic>
+  of the previous capacity (otherwise the amortized cost isn't O(1)), but the precise factor is up to the implementer.  A factor of 2 is common, but a factor of 3/2 has also been used.  There is a tradeoff between the expected amount of wasted space (growth factor too large) vs. a larger constant amortized cost due to lots of resizing (growth factor too small).
+ </paragraph>
+ <paragraph>
+  For a hash table, performance does get worse as the capacity fills up (that is, as the load factor increases).  Therefore, you typically want to resize before the load factor reaches 1 (you
+  <italic>
+   must
+  </italic>
+  do this if using open-addressing; with chaining, you are allowed to "overfill" the table).  But if you resize too early and too often (small load factor threshold), then you waste space, take longer to iterate over all elements, and increase amortized cost.  Resizing whenever the load factor exceeds 0.75 is a good compromise.  How much bigger should the new capacity be?  As with ArrayList, there are tradeoffs to this growth factor, and there may be additional constraints depending on your probing strategy (the capacity might need to be prime, or might need to be a power of 2, etc.).  Once again, a growth factor of 2 is common.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

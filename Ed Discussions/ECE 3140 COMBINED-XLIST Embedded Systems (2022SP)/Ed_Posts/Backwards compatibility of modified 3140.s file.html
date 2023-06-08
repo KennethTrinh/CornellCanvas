@@ -1,0 +1,112 @@
+<h1>
+ Title: Backwards compatibility of modified 3140.s file
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-20T08:23:45.768302+10:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  I know that the lab handout for Lab 5 states that "This file is modified compared to the previous labs to handle the second PIT channel,
+  <bold>
+   but is compatible with previous lab handouts.
+  </bold>
+  "
+ </paragraph>
+ <paragraph>
+  However, I just tried going back to Lab 3 and swapping out the original Lab 3 3140.s file for the Lab 5 3140.s file and got a hard fault as depicted by the sequence of debugging screenshots below. On second thought, I don't know if it's the stack overflow as depicted by the IDE, since I would assume that the stack would just expand into the memory originally saved for the heap.
+ </paragraph>
+ <figure>
+  <image height="455.9594110624751" src="https://static.us.edusercontent.com/files/JwCPwPJhDp508oRdQnvcn8nK" width="642.9999999999999"/>
+ </figure>
+ <figure>
+  <image height="457.19888401753684" src="https://static.us.edusercontent.com/files/qRR8lAngrwcd61cjj4grYmXX" width="643"/>
+ </figure>
+ <figure>
+  <image height="455.3838824930528" src="https://static.us.edusercontent.com/files/ArczbaqpktAts2KqLxJRwY4F" width="643"/>
+ </figure>
+ <figure>
+  <image height="466.5295752282652" src="https://static.us.edusercontent.com/files/p8VlFahlRVqblkLvwLV08TgH" width="658"/>
+ </figure>
+ <paragraph>
+  Regardless, when I switch back to the original 3140.s file from Lab 3 the program runs smoothly as usual. I was wondering if we needed to take extra steps relating to the new 3140.s file in Lab 5 to prevent this issue?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 4
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  <bold>
+   NEW SOLUTION:
+  </bold>
+ </paragraph>
+ <paragraph>
+  <underline>
+   Replace your current 3140.s file with the new updated 3140.s file that the TAs posted today as Scott said in the comment below.
+  </underline>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  <bold>
+   OLD SOLUTION. DO NOT USE. IF YOU ADDED THE 2 LINES HIGHLIGHTED BELOW TO YOUR process.c FILE REMOVE THEM AS INSTRUCTED BY SCOTT IN THE COMMENT BELOW:
+  </bold>
+ </paragraph>
+ <paragraph>
+  A temporary fix found by the TAs in the Help Session was to add the following 2 lines highlighted below to the top of your process.c file. They said they would probably be implementing a fix later on.
+ </paragraph>
+ <figure>
+  <image height="473.75" src="https://static.us.edusercontent.com/files/wMmbrzJW3gjM2h81bfoNa9Yv" width="758"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Due to the nuances of the different labs, the two 3140.s files are slightly different - you can see this if you open them up. My guess is the hard fault came from the fact that 3140.s from Lab 5 tried to access PIT Channel 1, when it wasn't initialized in Lab 3
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Olive Faber (staff)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="1.0">
+ <paragraph>
+  We've updated 3140.s to fix this! If you've added the two lines for my temporary fix, please remove them as now with the permanent fix it'll cause a multiple definition error.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,82 @@
+<h1>
+ Title: s == ""
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-13T01:12:29.785179+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="261.00317965023845" src="https://static.us.edusercontent.com/files/wi6j1IRoUxKJPUOCgQTUfNm3" width="658"/>
+ </figure>
+ <paragraph>
+  Why is s == "" wrong here?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Strings are not primitive types. You cannot use == to compare two Strings directly
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  so we can only use == for primitive types?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  == checks equality for primitive types, and for object types it checks if the references are the same, aka are the objects THE SAME OBJECT, not just that they’re equal.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Than's really helpful; thank you so much!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,475 @@
+<h1>
+ Title: Tue May 18th Prof Lee Open Office Hours megathread
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-19T00:03:41.21039+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  ^like it says on the tin
+ </paragraph>
+</document>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <link href="https://www.cs.cornell.edu/courses/cs1110/2021sp/exams/final/2018-spring-final-answers.pdf"/>
+  2018 2d solutions
+ </paragraph>
+ <paragraph>
+  is the "list" in
+  <code>
+   for i in list(range(...)):
+  </code>
+  necessary?
+  <break>
+  </break>
+  <break>
+  </break>
+  Answer: no!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Melanie Gao (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  what is the password for the meeting?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  https://edstem.org/us/courses/3933/discussion/449188
+ </paragraph>
+ <paragraph>
+  it is 913432
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <link href="https://www.cs.cornell.edu/courses/cs1110/2021sp/exams/final/2018-spring-final-answers.pdf"/>
+  spring 2018 1b/c are there no "return None" in the call frames because these are methods?
+  <break>
+  </break>
+  <break>
+  </break>
+  A: there should be "return Nones", I just didn't bother to draw them in because the question didn't require the diagrams, actually.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  <link href="https://www.cs.cornell.edu/courses/cs1110/2021sp/exams/final/2019-fall-final.pdf"/>
+  Fall 2019 Q4
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Observations:
+ </paragraph>
+ <paragraph>
+  1: it's OK for upper-triangular matrices to have 0s above the diagonal, and for lower-triangular to have 0s below the diagonal.  Having a 0 on the diagonal does not disqualify.
+  <break>
+  </break>
+  <italic>
+   Don't be too focused on the examples --- make sure to read the exact specifications.
+  </italic>
+  <break>
+  </break>
+  <break>
+  </break>
+  2.  matrix[i][j], then: if j &gt; i, I'm in the "northeast" part, and if j &lt;i, I'm in the "southwest" part
+  <break>
+  </break>
+  <break>
+  </break>
+  3. Probably the question should have said: a diagonal matrix is both an upper-triangular and a lower-triangular matrix.
+  <break>
+  </break>
+  =&gt; have booleans for the upperness and the lowerness.
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   NORMAL_MATRIX = -1 # Non-zeroes in both upper and lower triangle
+UPPER_TRIANGULAR = 0 # Zeroes only in lower triangle
+LOWER_TRIANGULAR = 1 # Zeroes only in upper triangle
+PURE_DIAGONAL = 2 # Zeroes only off the diagonal
+def checkmatrix(matrix):
+"""Returns the value BEST describing the given matrix.
+Value returned is one of NORMAL_MATRIX, UPPER_TRIANGULAR, LOWER_TRIANGULAR,
+or PURE_DIAGONAL. It should return the highest value describing the matrix.
+Precondition: matrix is a non-empty square 2d list of numbers."""
+  </snippet-file>
+ </snippet>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <pre>
+</pre>
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   NORMAL_MATRIX = -1 # Non-zeroes in both upper and lower triangle
+UPPER_TRIANGULAR = 0 # Zeroes only in lower triangle
+LOWER_TRIANGULAR = 1 # Zeroes only in upper triangle
+PURE_DIAGONAL = 2 # Zeroes only off the diagonal
+def checkmatrix(matrix):
+    """Returns the value BEST describing the given matrix.
+    Value returned is one of NORMAL_MATRIX, UPPER_TRIANGULAR, LOWER_TRIANGULAR,
+    or PURE_DIAGONAL. It should return the highest value describing the matrix.
+    Precondition: matrix is a non-empty square 2d list of numbers."""
+
+    lower_triangular = True
+    upper_triangular = True
+
+    n = len(matrix) #nxn matrix
+
+    for irow in range(n): #Iterates through the index of the rows
+        for jcolumn in range(n):
+            value = matrix[irow][jcolumn]
+            if irow&lt;jcolumn and value!=0: #Found a non-zero in northeast
+                #This means it's not lower triangular
+                lower_triangular = False
+            elif irow&gt;jcolumn and value!=0: #Found a non-zero in the southwest
+                #This means it's not upper triangular
+                upper_triangular = False
+
+    if upper_triangular and lower_triangular:
+        best = PURE_DIAGONAL
+    elif upper_triangular:
+        best = UPPER_TRIANGULAR
+    elif lower_triangular:
+        best = LOWER_TRIANGULAR
+    else:
+        best = NORMAL_MATRIX
+    
+
+    return best
+
+
+
+
+pd = [[1, 0, 0, 0], 
+        [0, 6, 0, 0], 
+        [0, 0, 11, 0], 
+        [0, 0, 0, 16]]
+
+ut = [[1, 2, 3, 4], 
+        [0, 6, 7, 8],
+        [0, 0, 11, 12],
+        [0, 0, 0, 16]]
+
+lt = [[1, 0, 0, 0],
+        [5, 6, 0, 0],
+        [9, 10, 11, 0],
+        [13, 14, 15, 16]]
+
+nm = [[1, 0, 0, 0],
+        [5, 6, 0, 0],
+        [9, 10, 11, -1],
+        [13, 14, 15, 16]]
+
+
+# format: (matrix, expected answer, label for matrix (for printing))
+exp_answers = [(pd, PURE_DIAGONAL, "pd"), 
+                (ut, UPPER_TRIANGULAR, "ut"), 
+                (lt, LOWER_TRIANGULAR, "lt"),
+                (nm, NORMAL_MATRIX, "nm")]
+
+for item in exp_answers:
+    inmatrix = item[0]
+    expected = item[1]
+    label = item[2]
+
+    result = checkmatrix(inmatrix)
+    assert result == expected,\
+        assert_msg("checkmatrix result for " + label, expected, result)
+    print(label+": " + str(result))
+  </snippet-file>
+ </snippet>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tiffany Sarver (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Alternative solution to the problem (with testing code):
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   NORMAL_MATRIX = -1 # Non-zeroes in both upper and lower triangle
+UPPER_TRIANGULAR = 0 # Zeroes only in lower triangle
+LOWER_TRIANGULAR = 1 # Zeroes only in upper triangle
+PURE_DIAGONAL = 2 # Zeroes only off the diagonal
+def checkmatrix(matrix):
+    """Returns the value BEST describing the given matrix.
+    Value returned is one of NORMAL_MATRIX, UPPER_TRIANGULAR, LOWER_TRIANGULAR,
+    or PURE_DIAGONAL. It should return the highest value describing the matrix.
+    Precondition: matrix is a non-empty square 2d list of numbers."""
+
+    diag = -1
+
+    upper = True
+    lower = True
+
+    n = len(matrix) # We have an nxn matrix (credits to Aidan McNay and Professor Lee for this part)
+
+    for row_num in range(n):
+        diag += 1 # Gives the index of the diagonal for this row.
+        for entry_num in range(n): # entry_num is the "index" of that entry in the row.
+            entry = matrix[row_num][entry_num]
+
+            if entry != 0:
+
+                if entry_num &gt; diag: # There is a non-zero entry above the diagonal.
+                    # This means, the matrix cannot be a lower-triangular.
+                    lower = False
+                elif entry_num &lt; diag: # # There is a non-zero entry below the diagonal.
+                    # This means, the matrix cannot be a upper-triangular.
+                    upper = False
+
+            if lower == False and upper == False: # Prof. Lee note: early return works here!
+                return NORMAL_MATRIX
+    if lower == True and upper == True:
+        return PURE_DIAGONAL
+    elif lower == True:
+        return LOWER_TRIANGULAR
+    elif upper == True:
+        return UPPER_TRIANGULAR
+
+
+pd = [[1, 0, 0, 0], 
+        [0, 6, 0, 0], 
+        [0, 0, 11, 0], 
+        [0, 0, 0, 16]]
+
+ut = [[1, 2, 3, 4], 
+        [0, 6, 7, 8],
+        [0, 0, 11, 12],
+        [0, 0, 0, 16]]
+
+lt = [[1, 0, 0, 0],
+        [5, 6, 0, 0],
+        [9, 10, 11, 0],
+        [13, 14, 15, 16]]
+
+nm = [[1, 0, 0, 0],
+        [5, 6, 0, 0],
+        [9, 10, 11, -1],
+        [13, 14, 15, 16]]
+
+
+# format: (matrix, expected answer, label for matrix (for printing))
+exp_answers = [(pd, PURE_DIAGONAL, "pd"), 
+                (ut, UPPER_TRIANGULAR, "ut"), 
+                (lt, LOWER_TRIANGULAR, "lt"),
+                (nm, NORMAL_MATRIX, "nm")]
+
+for item in exp_answers:
+    inmatrix = item[0]
+    expected = item[1]
+    label = item[2]
+
+    result = checkmatrix(inmatrix)
+    assert result == expected,\
+        assert_msg("checkmatrix result for " + label, expected, result)
+    print(label+": " + str(result))
+  </snippet-file>
+ </snippet>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thanks for this alt solution! I'm going to add it to the study guide for posterity!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tracy Wei (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  what is the context for using the sorting/searching algorithms? for instance, will we be expected to use them in another function? is it just being able to understand how they work?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For efficiency purposes: it speeds search up to have a sorted list.
+  <break>
+  </break>
+  <break>
+  </break>
+  ex: you have a list of targets, and a list
+  <code>
+   goods
+  </code>
+  of where those targets might be, and for every t in target, you have to check if it's in
+  <code>
+   goods
+  </code>
+  ,
+ </paragraph>
+ <paragraph>
+  it would be more efficient to search in
+  <code>
+   goods
+  </code>
+  if it were sorted first.  (Or make a copy of it, and sort the copy.)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Becky Lee (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This may be helpful in answering your question.
+ </paragraph>
+ <paragraph>
+  https://edstem.org/us/courses/3933/discussion/448283
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  2018 Q1, what is the deal with line 6?
+  <break>
+  </break>
+  It involves a class variable; Run the following in Python tutor [
+  <link href="http://www.pythontutor.com/visualize.html#code=class%20A%3A%0A%20%20%20%20number_of_As%20%3D%200%0A%0A%20%20%20%20def%20__init__%28self%29%3A%0A%20%20%20%20%20%20%20%20A.number_of_As%20%2B%3D%201%0A%0Aprint%28A.number_of_As%29%0Aa%20%3D%20A%28%29%0Aprint%28A.number_of_As%29%0Aa1%20%3D%20A%28%29%0Aprint%28A.number_of_As%29&amp;cumulative=false&amp;curInstr=6&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=true"/>
+  link with code]
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   class A:
+    number_of_As = 0
+
+    def __init__(self):
+        A.number_of_As += 1
+
+print(A.number_of_As)
+a = A()
+print(A.number_of_As)
+a1 = A()
+print(A.number_of_As)
+  </snippet-file>
+ </snippet>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

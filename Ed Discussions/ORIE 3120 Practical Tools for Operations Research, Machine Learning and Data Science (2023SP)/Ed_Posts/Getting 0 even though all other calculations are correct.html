@@ -1,0 +1,71 @@
+<h1>
+ Title: Getting 0 even though all other calculations are correct
+</h1>
+<h3>
+ Author: Serena Huang (student)
+</h3>
+<h3>
+ Date: 2023-02-06T13:15:33.595893+11:00
+</h3>
+<h3>
+ Category: Homework
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Problem #4
+ </paragraph>
+ <paragraph>
+  HW #1
+ </paragraph>
+ <figure>
+  <image height="252.0226843100189" src="https://static.us.edusercontent.com/files/rvFjJvvDyFvtbdp7D7oEFwHf" width="330"/>
+ </figure>
+ <paragraph>
+  These are my data results in Q1. However, when I go to calculate the fractions in Q3a, I get a 0 in frac_below_190 in 1996 even though all the other years are the right numbers.
+ </paragraph>
+ <figure>
+  <image height="293.4651539708266" src="https://static.us.edusercontent.com/files/9YU9ThMJdzoH3BBryHAv8OA4" width="316"/>
+ </figure>
+ <paragraph>
+  I'm not sure what could be causing this, since the calculation I wrote in my query seems to work for the other years. Any help is greatly appreciated!! Thank you.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Julia Vanputte (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I would first check if your divisions are implemented correctly. This can sometimes cause weird errors when we do not ensure the numerators of our divisions are of type REAL. If you know python, think about this as an equivalent of float vs int division.
+ </paragraph>
+ <paragraph>
+  Try using a CAST function in Q3a to ensure our numerators are of type REAL. Another fix for this is to multiply every numerator by 1.0
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Serena Huang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This works, thank you so much!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

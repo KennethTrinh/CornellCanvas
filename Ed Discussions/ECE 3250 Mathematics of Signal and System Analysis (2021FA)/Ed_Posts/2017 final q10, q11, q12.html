@@ -1,0 +1,60 @@
+<h1>
+ Title: 2017 final q10, q11, q12
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-10T04:26:51.593607+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  Just a couple questions regarding the 2017 final:
+ </paragraph>
+ <paragraph>
+  q)10)ii): What is the general procedure for determining time invariance? I originally plugged in $S(\textrm{Shift}_{t_0}(x)) = 7x(t-t_0) + \int_{- \infty}^{t-t_0+1} e^{t-\tau}x(\tau) d\tau$, but how do I show this is equal to Shift$_{t_0}(S(x))$ without evaluating the integral?
+ </paragraph>
+ <paragraph>
+  q10)iv): I plugged in $\delta (t)$ and solved for $h$, which turned out to be $7\delta + e^t$ for $t+1 \geq 0$, and since $h \notin L^1$, the system is not BIBO stable and doesn't have a frequency response. This doesn't seem too rigorous to me because $\delta$ is not a real signal in CT. Is there better way to determine if the system has a frequency resp?
+ </paragraph>
+ <paragraph>
+  q11)i): Since all the terms in the fourier series (besides the constant term) have periods 7, 7/2, 7/3, ... etc, why is the fundamental period not 7?
+ </paragraph>
+ <paragraph>
+  q12)i): Is $\hat{X}(3 \frac{2\pi}{5}) = \hat{X}_k(3)$? What would something like $\hat{X}(3)$ be equal to in $X_k$?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  10(ii) The system's I/O mapping is in the general form $S ( x ) = h _ 0 * x +$ shift term, where $h _ 0$ is a decent signal.  Any I/O mapping in that form is LTI.  BTW your formula isn't quite right --- you need to shift the $x$ under the integral rather than the limit on the integral.
+ </paragraph>
+ <paragraph>
+  Your approach to (iv) is fine.  You could also just plug  in $e ^ {j \Omega t}$ for $x ( t )$ and you'd discover that the integral doesn't converge, so the system doesn't have a frequency response.  The shift (i.e. $d$-type) terms in $h$ never affect existence of frequency response --- it's all about $h _ 0$.
+ </paragraph>
+ <paragraph>
+  The fundamental frequency is $7$ radians per second.  The fundamental period is $2 \pi / 7$ sec.
+ </paragraph>
+ <paragraph>
+  $\widehat{X} ( 3 \times 2 \pi / 5 )$ equals what you get when you plug $k = 3$ into the expression in the problem statement.  It'll be the sum of four terms.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,95 @@
+<h1>
+ Title: covidrouteto
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-21T05:46:21.591697+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  hi, I am not sure of how to go about this function after the base case. It says that we can only make a list at the base case, so I don't know how to go about adding the previous humans to the list when the list is made at the base case. I also am not sure how to store each human (outside the base case) in the recursive case.  I hope this makes sense. Thank you.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Atulya Lohani (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  #1218 should answer your question.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I followed your steps but I'm running into a problem that follows a particular pattern. Like the list it returns does not have the human it starts from and it has the human we are looking for twice. For example, if the route is B-&gt;C-&gt;D-&gt;F, it returns C-&gt;D-&gt;F-&gt;F. Any idea as to what may be causing this please?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Atulya Lohani (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Your base case should make a new LinkedList and add in the human of the CovidTree, and return it.  Your recursive case has a for loop that goes through the children. The for loop should have a variable declared inside it that holds the return of a recursive call of CovidRouteTo() on a child. If that variable isn't null then you must add human so it is the first element of the list, and then return the variable. Let me know if this still doesn't fix your issue.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  omG thank you. I was adding ch.human instead of human. It works now!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Atulya Lohani (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  My pleasure.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

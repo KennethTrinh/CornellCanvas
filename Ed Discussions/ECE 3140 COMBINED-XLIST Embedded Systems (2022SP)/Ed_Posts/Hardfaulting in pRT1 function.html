@@ -1,0 +1,53 @@
+<h1>
+ Title: Hardfaulting in pRT1 function
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-22T04:44:54.871615+10:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, our code is hardfaulting in the pRT1 function of the provided test case in the call to LED_GreenON(). Any speculation as to what may be the reason?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Did you implement the fix as per
+  <link href="https://edstem.org/us/courses/19442/discussion/1417477"/>
+  #623? Otherwise, it seems like it would be an issue with your interrupts.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Implemented the fix and that worked, thanks!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

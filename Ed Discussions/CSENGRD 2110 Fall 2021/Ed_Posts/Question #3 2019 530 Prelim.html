@@ -1,0 +1,56 @@
+<h1>
+ Title: Question #3 2019 5:30 Prelim
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-06T03:27:57.014311+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, I noticed in both of the .equals methods for question 3 of the 5:30 2019 prelim, the parameter ob was cast to either a Restaurant or Fancy Restaurant even though the answer already contained a statement checking whether the classes were the same. Would somebody mind clarifying why this is necessary? I thought since they were the same class, we could check name/numTables just using ob.name/ob.numTables
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="207.59724349157733" src="https://static.us.edusercontent.com/files/KTZrbd2yXNkbGzTHRJweCysA" width="619"/>
+ </figure>
+</document>
+<h3>
+ Author: Minha Kim (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  I think it’s because in the case that ob belonged to a subclass of FancyRestaurant, numTables could return a different value. This would also be why we used getClass instead of instanceOf since ob would not be equal to the object if its lowest partition was not FancyRestaurant.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Varun Gande (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  ob has static type Object, so you cannot access the fields in FancyRestaurant because they are hidden by the compile-time reference rule
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

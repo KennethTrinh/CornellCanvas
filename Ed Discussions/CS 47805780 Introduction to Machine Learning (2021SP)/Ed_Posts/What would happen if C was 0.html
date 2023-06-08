@@ -1,0 +1,155 @@
+<h1>
+ Title: What would happen if C was 0
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-29T04:12:57.258754+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  How would the SVM decide the values of Psi since there is no unique solution now? Would this not be allowed?
+ </paragraph>
+ <figure>
+  <image height="512.8329896907217" src="https://static.us.edusercontent.com/files/ytzpeWu6cJRAnnsQNA6tGWBA" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Victor Butoi (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Well, because then our x_i could be anything, I'd actually imagine that it will immediately converge to w = all 0s, and set our xi to the original error value per example.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Alexandra Roberts (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Somewhat related to this question, if
+  <italic>
+   C = 0
+  </italic>
+  , the cost function reduces to the same as a hard margin SVM, right? Which is sort of odd because
+  <italic>
+   C
+  </italic>
+  approaching infinity is also supposed to converge to a hard margin SVM...is this just an inconvenient relationship or is there more to it?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Carlos Alvarez (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think what Victor was trying to say is that, since psi_i can be any positive number we want it to, we could make each psi_i a very large positive number, and then we wouldn't have to worry about the constraint because it would always be true. Therefore, we would minimize the objective by setting all weights in w would be 0.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Rishi Malhotra (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  C = 0 does not mean hard margin SVM since the constraints still have the psi's in them and there are no psi's in the hard margin SVM
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Alexandra Roberts (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Does that matter if the cost function is reduced to
+ </paragraph>
+ <math>
+  \min\left(\frac{1}{2}w\cdot w\right)
+ </math>
+ <paragraph>
+  when
+  <italic>
+   C = 0
+  </italic>
+  and some of the constraint variables don't appear at all? For both hard and soft margin SVMs where
+  <italic>
+   C = 0
+  </italic>
+  , would this give
+  <italic>
+   w = 0?
+  </italic>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Rishi Malhotra (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I still think it wouldn't be a hard margin SVM if C = 0. It would be a hard margin SVM if C = infinity.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Thorsten Joachims (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, it is NOT the same as a hard-margin SVM, since the additional slack variables $\xi_i$ can just all be set to 1 to fulfill all the constraints even when $\vec w=0$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

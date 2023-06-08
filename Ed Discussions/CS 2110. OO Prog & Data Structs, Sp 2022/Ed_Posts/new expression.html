@@ -1,0 +1,93 @@
+<h1>
+ Title: new expression
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-09T07:52:53.712273+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  in the constructor below:
+ </paragraph>
+ <paragraph>
+  public exampleClass (String n, ArrayList a) {
+ </paragraph>
+ <paragraph>
+  n = new String ();
+ </paragraph>
+ <paragraph>
+  a = new ArrayList&lt;&gt;();
+ </paragraph>
+ <paragraph>
+  }
+ </paragraph>
+ <paragraph>
+  is n an empty string or null? is a an empty arraylist or null? To my understanding a new expression without an argument does not create a new object yet, but only stores a pointer, however this question below seems to be saying that new ArrayList&lt;&gt;() is creating an empty arraylist that is not null.
+ </paragraph>
+ <paragraph>
+  Thank you!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="244.41987577639753" src="https://static.us.edusercontent.com/files/tN1XcpsetueDdU2oC9Ek2PQ3" width="643"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In your examples, both would be empty, an empty String, and an empty arraylist. The new statement creates new objects.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Then I'm confused. why is this saying 'no new string will be created'?
+ </paragraph>
+ <figure>
+  <image height="60.61770623742454" src="https://static.us.edusercontent.com/files/a820DxvqYaEoEVe4GZG7Jtjt" width="641"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is a special case, when you do s.subtring(0) it's just a pointer to s, because it's the same string and string are immutable. So Java has this smart way to allocate memory and since it's the same NON MUTABLE object it points to the same object, however s.substring(1) creates a new string
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

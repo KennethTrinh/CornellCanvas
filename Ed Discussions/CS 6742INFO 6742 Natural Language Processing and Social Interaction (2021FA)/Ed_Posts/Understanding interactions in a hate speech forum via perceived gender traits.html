@@ -1,0 +1,473 @@
+<h1>
+ Title: Understanding interactions in a hate speech forum via perceived gender traits
+</h1>
+<h3>
+ Author: Breanna Green (student)
+</h3>
+<h3>
+ Date: 2021-10-21T15:00:05.880527+11:00
+</h3>
+<h3>
+ Category: Project_proposals (A2)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For my final project, I would like to examine the role of the
+  <italic>
+   perceived gender
+  </italic>
+  of users on in-group communication interactions, particularly users who outwardly self-categorize (herein denoted as
+  <italic>
+   OSC
+  </italic>
+  ) as female. Gab.com (formerly Gab.ai) has been touted as a social network of “free speech” that welcomes all users, however its emergence gained the attention of many alt-right and conservative social media users. Gab became an alt-right haven particularly after Donald Trump was banned from Twitter, and from there researchers have examined Gab as an echo-chamber of radical thought. This is also a space by which I make some clear assumptions (each of which should be investigated): 1.) as a conservative, right-leaning site, the majority of the users on the platform should view others as in-group members, 2.) as users who should have (radically) traditionalist values, conservative opinions of gender should dictate that users likely exist closer to the binary male-female labels (or those users may face harsh sanctions by the in-group), and finally 3.) given assumption #2, OSC female users should be held to a particular standard of femininity espoused by traditionalist belief. To be clear, by no means do I seek to ascribe gender to such users. Rather, I am interested in the OSC of gender and what affects take place in terms of interactions.
+ </paragraph>
+ <paragraph>
+  <bold>
+   Data
+  </bold>
+ </paragraph>
+ <paragraph>
+  Researchers of hate speech must often devise various hate speech detection methods in order to examine hate speech users’ language and interactions. Given the time constraints of the project, I sought to utilize a curated dataset with this type of data. Therefore, via Pushshift.io [
+  <link href="https://files.pushshift.io/gab/"/>
+  source], I will examine a dataset containing a corpus of over 34 million Gab posts spanning from 2016 to late 2018, which was scraped monthly and pre-cleaned. Additionally, because this is such a niche dataset and many of these users migrated to the site from Twitter, it would be useful to use Twitter as a source by which to compare any results.
+ </paragraph>
+ <paragraph>
+  <bold>
+   Methods
+  </bold>
+ </paragraph>
+ <paragraph>
+  I would like to conduct both lexical and sentiment analysis on posts from OSC male versus female Gab users. Specifically, I will utilize the Moral Foundations dictionary [
+  <link href="https://moralfoundations.org/links/"/>
+  source] to measure the five foundations of care/harm, fairness/cheating, loyalty/betrayal, authority/subversion, and sanctity/degradation between groups, as well as in responses. To measure sentiment and other lexical features, I will utilize the Linguistic Inquiry and Word Count (LIWC) software [
+  <link href="http://liwc.wpengine.com/"/>
+  source].
+ </paragraph>
+ <paragraph>
+  <bold>
+   Hypotheses:
+  </bold>
+ </paragraph>
+ <paragraph>
+  ·H.1: In comparison to users who OSC as male on Gab, less users will OSC as female.
+ </paragraph>
+ <paragraph>
+  ·H.2: Those users that OSC as female will have a higher average score on the Moral Foundations of care/harm and sanctity/degradation than both OSC males and matched Twitter users.
+ </paragraph>
+ <paragraph>
+  ·H.3: Responses to OSC females will score higher in negative sentiment on average compared to OSC males.
+ </paragraph>
+ <paragraph>
+  <bold>
+   Feasibility Test
+  </bold>
+ </paragraph>
+ <paragraph>
+  To determine the feasibility of my project, I reviewed the Gab data from Pushshift.io to ensure that user data was made available. Specifically, I examined the bio of Gab users, and ran a naïve regex search for keywords which might indicate OSC. This included terms such as
+  <italic>
+   gal, wife, mom, mother, maiden, woman, girl, daughter
+  </italic>
+  which, on visual inspection, were prominent signifiers. Equivalent male keywords included
+  <italic>
+   guy, husband, dad, father, bachelor, man, boy, son.
+  </italic>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Descriptive
+ </paragraph>
+ <paragraph>
+  N
+ </paragraph>
+ <paragraph>
+  Length of OSC female dataframe:
+ </paragraph>
+ <paragraph>
+  3,273
+ </paragraph>
+ <paragraph>
+  Sum of post_counts for naive gender: OSC Female
+ </paragraph>
+ <pre>883,395</pre>
+ <pre>Length of OSC male dataframe:</pre>
+ <pre>29,738</pre>
+ <pre>Sum of post_counts for naive gender: OSC Male</pre>
+ <pre>2,033,334</pre>
+ <paragraph>
+  I also searched users’ bios for indications of Twitter handles, for which I could link their information.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Descriptive
+ </paragraph>
+ <paragraph>
+  N
+ </paragraph>
+ <paragraph>
+  OSC Female with Twitter info
+ </paragraph>
+ <paragraph>
+  177
+ </paragraph>
+ <paragraph>
+  % of Total
+ </paragraph>
+ <paragraph>
+  5.4%
+ </paragraph>
+ <paragraph>
+  OSC Male with Twitter info
+ </paragraph>
+ <paragraph>
+  323
+ </paragraph>
+ <paragraph>
+  % of Total
+ </paragraph>
+ <paragraph>
+  1.1%
+ </paragraph>
+ <paragraph>
+  Further efforts must be made to inspect if these keyword checks are useful. This may include interrater coding of OSC female and male bios, or other methods.
+ </paragraph>
+ <paragraph>
+  <bold>
+   Team Member
+  </bold>
+  : Breanna (Bre) Green
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  <bold>
+   Acknowledgments
+  </bold>
+ </paragraph>
+ <paragraph>
+  Input and paper contributors:
+ </paragraph>
+ <paragraph>
+  ·Will Hobbs
+ </paragraph>
+ <paragraph>
+  ·Lillian Lee
+ </paragraph>
+ <paragraph>
+  <bold>
+   Sources
+  </bold>
+ </paragraph>
+ <paragraph>
+  Carter P., Kondor K. (2020) Researching the Radical Right: Making Use of the Digital Space and Its Challenges. In: Littler M., Lee B. (eds) Digital Extremisms. Palgrave Studies in Cybercrime and Cybersecurity. Palgrave Macmillan, Cham.
+  <link href="https://doi.org/10.1007/978-3-030-30138-5_11"/>
+  https://doi.org/10.1007/978-3-030-30138-5_11
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Graham, J., Haidt, J., Koleva, S., Motyl, M., Iyer, R., Wojcik, S. P., &amp; Ditto, P. H. (2013). Moral foundations theory: The pragmatic validity of moral pluralism. In Advances in experimental social psychology (Vol. 47, pp. 55-130). Academic Press.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Pennebaker, J. W., Francis, M. E., &amp; Booth, R. J. (2001). Linguistic inquiry and word count: LIWC 2001. Mahway: Lawrence Erlbaum Associates, 71(2001), 2001.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Wilhelm, C. (2021). Gendered (in)visibility in digital media contexts. Studies in Communication Sciences, 21(1), 99–113.
+  <link href="https://doi.org/10.24434/j.scoms.2021.01.007"/>
+  https://doi.org/10.24434/j.scoms.2021.01.007
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Wilhelm, C., &amp; Joeckel, S. (2019). Gendered morality and backlash effects in online discussions: An experimental study on how users respond to hate speech comments against women and sexual minorities. Sex Roles, 80(7), 381-392.
+ </paragraph>
+ <figure>
+  <image height="635" src="https://static.us.edusercontent.com/files/HEUXDenPHokUbP84M9hoOKC5" width="468"/>
+ </figure>
+</document>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  see comment
+  <link href="https://edstem.org/us/courses/8208/discussion/752990?comment=1745046"/>
+  https://edstem.org/us/courses/8208/discussion/752990?comment=1745046
+ </paragraph>
+ <paragraph>
+  for a random find of potentially related work, in this case "Running While Female: Using AI to Track how Twitter Commentary Disadvantages Women in the 2020 U.S. Primaries".  (Don't have time right now to track down if published or not)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Breanna Green (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <bold>
+   Feasibility Check 2:
+  </bold>
+ </paragraph>
+ <paragraph>
+  <bold>
+   Completeness of Data
+  </bold>
+  – In the initial check-in with Lillian, an important concern was whether the PushShift.io Gab data was pulled accurately and completely. This involved checking the post ids for any sequence structure (i.e., do the post ids increase incrementally and uniformly?) and whether there were any large missing time points or repetitions in post ids.
+ </paragraph>
+ <paragraph>
+  To check for this, I examined the post ids for the first 9,733 posts, beginning from the first post noted on Aug-10-2016 by the Gab chief technology officer Ekrem Büyükkaya. I reformatted my dataframe so that the ‘created_at’ column was in a proper datetime format, sorted on this column, then lag differenced the post ids. I also lag differenced the ‘created_at’ column to examine if there were large differences in time between posts.  While the posts do not increase sequentially (such as post_id=12345, post_id=12346, post_id=12347, etc.), they do follow a uniform, incremental increase as a function of time between each post. In an instance in which a post is submitted at the same time as another, we then see sequential increase in post_id (by an increase in 1). See the below table for a brief illustration.
+ </paragraph>
+ <figure>
+  <image height="233.12052117263843" src="https://static.us.edusercontent.com/files/m4UIUGumysjwpoB9abeuZMM0" width="504"/>
+ </figure>
+ <figure>
+  <image height="262.92260061919507" src="https://static.us.edusercontent.com/files/5nIgYpgEw70MbfPTUBFFu6Tn" width="504"/>
+ </figure>
+ <paragraph>
+  One other consideration noted from examining the date stamped data was restricting the final data set to a less volatile date range. From the first date of posts (08-10-2016) through the first 15 days, you can see that the number of posts increase exponentially quickly. This is a result of new user migration and use, which might reach a more stable level after some time. I will need to examine a larger set of the data as I move forward or keep this in mind during the process.
+ </paragraph>
+ <figure>
+  <image height="791" src="https://static.us.edusercontent.com/files/gPx1QGPu4AjHiazc8JGdD1lr" width="245"/>
+ </figure>
+ <paragraph>
+  <bold>
+   Further Efforts for Keyword Checks
+  </bold>
+  – In my observation of the bios, the naïve regex search for keywords which might indicate OSC was a useful first step. To further clean the data, I hand-coded the bios for clearer indications of OSC female users. This resulted in 2,003 OSC female users (as compared to the original search resulting in 3,273).
+ </paragraph>
+ <paragraph>
+  Sum of post_counts for OSC female: 587,783
+ </paragraph>
+ <paragraph>
+  Sum of follower_counts for OSC female: 640,364
+ </paragraph>
+ <paragraph>
+  Sum of following_counts for OSC female: 727,731
+ </paragraph>
+ <paragraph>
+  OSC female users with 'Twitter' in bio: 127
+ </paragraph>
+ <paragraph>
+  % of total with 'Twitter': 6.34%
+ </paragraph>
+ <paragraph>
+  I plan to hand-code for OSC males in the coming days, however I felt it was more important to determine if this particular group yielded a reasonable dataset.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Breanna Green (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <bold>
+   Notes from Check-In #2:
+  </bold>
+ </paragraph>
+ <list style="unordered">
+  <list-item>
+   <paragraph>
+    Might this be topic based?
+   </paragraph>
+   <list style="unordered">
+    <list-item>
+     <paragraph>
+      Should I look at time points around influential policies such as health care bills, abortion bills, around election times
+     </paragraph>
+    </list-item>
+   </list>
+  </list-item>
+  <list-item>
+   <paragraph>
+    In that same regard, should I be aware of event based timepoints - 2 months before and after each influential time point
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    If Moral Foundations doesn’t work, be on the lookout for something else  along the lines of MF
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Consider - People who post at the same time who don’t pass OCS check should be used as control
+   </paragraph>
+  </list-item>
+  <list-item>
+   <list style="unordered">
+    <list-item>
+     <paragraph>
+      Posting about the same topic - lexically similar posts
+     </paragraph>
+    </list-item>
+    <list-item>
+     <paragraph>
+      Get content words - what most similar/balanced users
+     </paragraph>
+    </list-item>
+    <list-item>
+     <paragraph>
+      At least 3 content words
+     </paragraph>
+    </list-item>
+    <list-item>
+     <paragraph>
+      Interactions versus non-interactions with OSC
+     </paragraph>
+    </list-item>
+   </list>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Consider - Users who post at different rates
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Something to check for - Do OSC female post more on average than OSC males?
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Surprising notes/observations - User bios were more genuine than I expected! I expected many trolling accounts or satirical accounts, but people seemed very interested to be in the space and sincere.
+   </paragraph>
+  </list-item>
+ </list>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Just saw this talk announcement:
+  <break>
+  </break>
+  <break>
+  </break>
+  <bold>
+   ExtremeBB: Enabling Large-Scale Research into Extremism, the Manosphere and Their
+  </bold>
+ </paragraph>
+ <paragraph>
+  <bold>
+   Correlation by Online Forum Data
+  </bold>
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+  November 29, 2021
+ </paragraph>
+ <paragraph>
+  12:00 -1:00 PM EST
+ </paragraph>
+ <paragraph>
+  <link href="https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Farxiv.org%2Fsearch%2Fcs%3Fsearchtype%3Dauthor%26query%3DVu%252C%2BA%2BV&amp;data=04%7C01%7Csara.fox%40pitt.edu%7C26e4fad377e54d96754008d9a61e3810%7C9ef9f489e0a04eeb87cc3a526112fd0d%7C1%7C0%7C637723470979843779%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=fpozEkU%2BaBAVqkeV1oVR8ijOI1WePJgVMcah9yifJV4%3D&amp;reserved=0"/>
+  Anh V. Vu,
+  <link href="https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Farxiv.org%2Fsearch%2Fcs%3Fsearchtype%3Dauthor%26query%3DWilson%252C%2BL&amp;data=04%7C01%7Csara.fox%40pitt.edu%7C26e4fad377e54d96754008d9a61e3810%7C9ef9f489e0a04eeb87cc3a526112fd0d%7C1%7C0%7C637723470979853742%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=Ewq%2BhjhbqkNAQL3e7VWimzhyGoc6Y0inEX6fQiKFQ30%3D&amp;reserved=0"/>
+  Lydia Wilson,
+  <link href="https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Farxiv.org%2Fsearch%2Fcs%3Fsearchtype%3Dauthor%26query%3DChua%252C%2BY%2BT&amp;data=04%7C01%7Csara.fox%40pitt.edu%7C26e4fad377e54d96754008d9a61e3810%7C9ef9f489e0a04eeb87cc3a526112fd0d%7C1%7C0%7C637723470979853742%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=bbeZMFbAksDcahI7Xy7yOoWrUPIHKb26v7xjxTuQCeA%3D&amp;reserved=0"/>
+  Yi Ting Chua,
+  <link href="https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Farxiv.org%2Fsearch%2Fcs%3Fsearchtype%3Dauthor%26query%3DShumailov%252C%2BI&amp;data=04%7C01%7Csara.fox%40pitt.edu%7C26e4fad377e54d96754008d9a61e3810%7C9ef9f489e0a04eeb87cc3a526112fd0d%7C1%7C0%7C637723470979863694%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=6ukGztvffdjaN6tzvlPYWFb2xt0XudzXqyPTg51F1G4%3D&amp;reserved=0"/>
+  Ilia Shumailov,
+  <link href="https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Farxiv.org%2Fsearch%2Fcs%3Fsearchtype%3Dauthor%26query%3DAnderson%252C%2BR&amp;data=04%7C01%7Csara.fox%40pitt.edu%7C26e4fad377e54d96754008d9a61e3810%7C9ef9f489e0a04eeb87cc3a526112fd0d%7C1%7C0%7C637723470979873653%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=UZhmwxXA2s0qFBErv8KiPUnyImoyLQUcragyaijmiqg%3D&amp;reserved=0"/>
+  Ross Anderson
+ </paragraph>
+ <paragraph>
+  Cambridge University
+ </paragraph>
+ <paragraph>
+  <link href="https://arxiv.org/abs/2111.04479"/>
+  Paper Available Here |
+  <link href="https://cornell.zoom.us/j/98805214703?pwd=U0lrUng3T2VlMitMSVozZUhWeGNSdz09"/>
+  Zoom Link
+ </paragraph>
+ <paragraph>
+  Hosted by:
+  <link href="https://twitter.com/gsslab"/>
+  Cornell Gender and the Security Sector Lab
+ </paragraph>
+ <paragraph>
+  Online extremism is a growing and pernicious problem and is increasingly linked to real-world violence. We introduce a new resource to help research and understand it: ExtremeBB is a structured textual dataset containing nearly 44M posts made by more than 300K registered members on 12 different online extremist forums, enabling both qualitative and quantitative large-scale analyses of historical trends going back two decades. It enables us to trace the evolution of different strands of extremist ideology; to measure levels of toxicity while exploring and developing the tools to do so better; to track the relationships between online subcultures and external political movements such as MAGA and to explore links with misogyny and violence, including radicalisation and recruitment. To illustrate a few potential uses, we apply statistical and data-mining techniques to analyse the online extremist landscape in a variety of ways, from posting patterns through topic modelling to toxicity and the membership overlap across different communities. A picture emerges of communities working as support networks, with complex discussions over a wide variety of topics. The discussions of many topics show a level of disagreement which challenges the perception of homogeneity among these groups. These two features of mutual support and a wide range of attitudes lead us to suggest a more nuanced policy approach than simply shutting down these websites. Censorship might remove the support that lonely and troubled individuals are receiving, and fuel paranoid perceptions that the world is against them, though this must be balanced with other benefits of de-platforming. ExtremeBB can help develop a better understanding of these sub-cultures which may lead to more effective interventions; it also opens up the prospect of research to monitor the effectiveness of any interventions that are undertaken.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Breanna Green (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh no, I didn't get a notification for your comment here!! Thank you for sending the information!
+ </paragraph>
+ <paragraph>
+  I went to this talk and will DEFINITELY be using this dataset. It's right up my alley. Thank you for thinking of me regarding this!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kowe Kadoma (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi Bre! I really like your idea and I think we have similar research interests. I'd love to work with your if you're interested in pairing up.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  maybe also require that the avatar be consistent with the OSC?  It seemed like the avatar might be the only thing the readers cannot avoid seeing.  (A cheap thing would be to use a face recognizer to see if some sort of face is there, although there are well-documented problems with face recognizers)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

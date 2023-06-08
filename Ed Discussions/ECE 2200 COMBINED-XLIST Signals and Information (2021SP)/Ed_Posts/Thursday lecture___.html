@@ -1,0 +1,94 @@
+<h1>
+ Title: Thursday lecture
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-09T23:23:43.014944+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am confused about the shifting part of the phi(w) of the y[n]=x[n]-x[n-1] example.
+ </paragraph>
+ <paragraph>
+  1. In order to make 2sin(w/2) &gt;0, we shift the phi(w) down by pi. How does 2sin(w/2) relate to phi(w) ? Why can we make 2sin(w/2)&gt;0 by shifting the phi(w) ?
+ </paragraph>
+ <paragraph>
+  2. Where does the pi come from? Does it come from 2sin(w/2) = -2sin(w/2 -pi) ?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The phase of a complex number of the form $a e ^ {j \psi}$ is $\psi$ when $a &gt; 0$ and $\psi \pm \pi$ when $a &lt; 0$.  I.e., a minus sign in the amplitude adds (or subtracts --- either way is fine) a $\pi$ from the "apparent" phase $\psi$.
+ </paragraph>
+ <paragraph>
+  In the example from class (the rudimentary high-pass filter), we're looking at $a ^ {j \psi}$ where $a = 2 \sin ( \widehat{\omega} / 2 )$ and $\psi = - \widehat{\omega} / 2 + \pi / 2$.  Because $a &gt; 0$ when $\widehat{\omega} &gt; 0$ and $a &lt; 0$ when $\widehat{\omega} &lt; 0$, we have
+ </paragraph>
+ <paragraph>
+  $\phi ( \widehat{\omega} ) = \left \{ \begin{array}{cl} - \widehat{\omega} / 2 + \pi / 2  &amp; {\rm when} \; \widehat{\omega} &gt; 0 \\ - \widehat{\omega} / 2 - \pi / 2 &amp; {\rm when} \; \widehat{\omega} &lt; 0 \; . \end{array} \right .$
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  So for the function H(ω), is it like:
+ </paragraph>
+ <paragraph>
+  when ω&gt;0,  H(ω)=2sin(ω/2)e^j(−ω/2 + π/2)
+ </paragraph>
+ <paragraph>
+  when ω&lt;0, H(ω)=|2sin(ω/2)|e^j(−ω/2 - π/2)
+ </paragraph>
+ <paragraph>
+  Thanks in advance.
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Correct.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,58 @@
+<h1>
+ Title: loop invariant 2019spring
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-08T15:17:28.295748+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="225.04742547425474" src="https://static.us.edusercontent.com/files/E97qoaQO7K7ncwz6Vhp8yqrM" width="563"/>
+ </figure>
+ <paragraph>
+  How do we decide which list is supposed to be empty?
+ </paragraph>
+ <paragraph>
+  why couldnt this be h =0; m = b.length; t = b.length;
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  No, let's go through it together.
+ </paragraph>
+ <paragraph>
+  These are our initial declerations based on the Invariant and precondition:
+ </paragraph>
+ <paragraph>
+  We know b[0...h] must be empty (nothing is sorted yet) so using follower - first we know h+1 - 0 = 0, so h = -1
+ </paragraph>
+ <paragraph>
+  We know b[h+1...m] must be the whole list (unknown region) so again, follower - first, we want m+1 - (h +1) = b.length, m +1 - h - 1 = b.length then m - h = b.length and we know h = -1 so m - (-1) = b.length then m +1 = b.length so m = b.length -1.
+ </paragraph>
+ <paragraph>
+  We know b[m+1...t] must be empty (nothing is sorted yet) so again one last time, follower - first, t+1 - (m+1) = 0
+ </paragraph>
+ <paragraph>
+  t + 1 - m -1 = 0 and we know m=b.length -1 so t+1 - (b.length - 1) -1 = 0 so t + 1 - b.length +1 - 1 = 0 so t-b.length +1 = 0 so t = b.length-1 and we are done.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

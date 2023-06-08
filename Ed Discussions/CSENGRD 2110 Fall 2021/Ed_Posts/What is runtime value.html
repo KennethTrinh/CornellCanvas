@@ -1,0 +1,153 @@
+<h1>
+ Title: What is runtime value?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-08-27T02:53:41.412489+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Every expression has a type
+ </paragraph>
+ <list style="ordered">
+  <list-item>
+   <paragraph>
+    Known (and fixed) at compile time
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Depends on | Independent of runtime value
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Static type checking (in contrast to Python)
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The runtime value is the value that is in the variable during execution. It changes with execution of an assignment statement like x= x+2;
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Ibrahim Ismail (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Would the runtime value be x or x+2 in this case?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  x is not a value. x ia variable that contains a value.
+  <break>
+  </break>
+  1, 2, 3 etc. are values.
+ </paragraph>
+ <paragraph>
+  If x initially contains 1, then after executing  x= x + 1; variable c contain 3.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  so would the runtime value be 3 then?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  yes
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Desai Wang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  So the expression type is independent of runtime value?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, the type of an expression in Java is independent of the runtime values of any of the variables involved.  The types of all expressions are known at compile-time and checked for consistency then.
+ </paragraph>
+ <paragraph>
+  (You can try to fool the type-checker by using casts, in which case Java adds runtime checks to preserve safety - if the runtime type of the value doesn't match the cast, then Java will throw an exception rather than executing any expressions affected by the assumed type.)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

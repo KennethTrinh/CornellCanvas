@@ -1,0 +1,70 @@
+<h1>
+ Title: Can recursive cases violate the precondition?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-25T04:22:16.27865+10:00
+</h3>
+<h3>
+ Category: Other
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was looking back at the optional recursion problems and I noticed this would be useful in the function remove_first. I'm not sure if I could post all of my code for this but my recursive case was:
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   def remove_first(thelist, v):
+    """Returns: a COPY of thelist but with the FIRST occurrence of v
+    removed (if present).
+
+    Precondition: thelist is a list of ints
+                  v is an int"""
+    ...
+    copy.append(thelist[0])
+    for x in remove_first(thelist[1:], ''):
+        copy.append(x)
+    ...
+  </snippet-file>
+ </snippet>
+ <paragraph>
+  Prior to the recursive case I deleted v if v was in thelist. The function worked properly, but I'm not sure if this would be acceptable as the recursive call violates the precondition. Thanks!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Elisabeth Finkel (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You are not allowed to make recursive calls like this, that violate preconditions. Think of it as  treating the function as a black box when calling it, and assuming you only know what's in the specs; the outcome will not be well-defined here. In the context of CS 1110, we give you the specification, and your code must match it. Sometimes that poses an additional challenge. In other contexts where you write the skeleton yourself, you can theoretically change the specifications to match the implementation.
+ </paragraph>
+ <paragraph>
+  In the recursive case for this problem, there's a sub-case where you've already seen
+  <code>
+   v
+  </code>
+  and a sub-case where you haven't; in the one where you have seen
+  <code>
+   v
+  </code>
+  , which I'm guessing is what your code snippet is for, it's not really necessary to make a recursive call. As long as the sub-case where you haven't seen
+  <code>
+   v
+  </code>
+  has a recursive call, that qualifies as "solving the problem with recursion".
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

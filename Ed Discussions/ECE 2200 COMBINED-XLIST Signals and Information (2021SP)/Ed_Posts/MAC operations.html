@@ -1,0 +1,102 @@
+<h1>
+ Title: MAC operations
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-05T06:42:08.146215+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm still pretty confused about how to calculate the number of MAC operations required to compute a sum. If y[n] is the convolution of h[n] and x[n], why does y[0] only require 1 operation and y[1] require 2? I think I'm thinking about this very wrong, but why would it not require (1024) * (the length of y[n]) MAC operations?
+ </paragraph>
+ <math>
+  y\left[n\right]\ =\ \sum_{k=0}^{1023}h\left[k\right]x\left[n-k\right]
+ </math>
+ <paragraph>
+  How would we go about solving question 7 on homework 8? None of my attempts bring me anywhere near a number on the order of 512.5*10^11. Thanks
+ </paragraph>
+</document>
+<h3>
+ Author: Karina Melgar (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Also just wanted to point out that it actually says 512.5*2^11 on the hw, not *10^11 (I made this same mistake reading the problem)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ohhhh that makes way more sense, thanks so much! I was really wondering why I was like 7 orders of magnitude off
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When $n = 0$, that sum has only one nonzero term.  When $n = 1$, only two.  Etc.  Thus MAC ops required to compute a $y [ n ]$-value for some $n$ varies with $n$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh I see. So why would the number of operations not just be 2*((1024*1025)/2) based on the suggestion at the end of the problem?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Work through it carefully and you'll see how it goes ...
+ </paragraph>
+ <paragraph>
+  It might help to work through the case where you're convolving a 4-point signal with a 5-point signal to get the ide.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

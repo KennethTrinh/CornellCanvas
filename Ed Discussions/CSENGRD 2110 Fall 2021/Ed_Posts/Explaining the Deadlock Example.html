@@ -1,0 +1,88 @@
+<h1>
+ Title: Explaining the Deadlock Example
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-11T14:48:45.026509+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="369.37545565006076" src="https://static.us.edusercontent.com/files/2TMXfDD1Bv1bqluZUVTGRsGq" width="658"/>
+ </figure>
+ <paragraph>
+  I don't understand how this would solve the deadlock problem. If everyone picks up a lower numbered fork, isn't it possible that everyone picks up the lower numbered fork simultaneously(0, 1, 2, 3, and 4 are all picked up), leaving no higher numbered fork for anyone to use to eat? Or in this scenario, is it assumed that numbered forks are in some kind of infinite pile where only one philosopher can grab from a pile at a time? But I don't think that can be it, because if it were like that, then grabbing from the left and right wouldn't cause problems. I think I may be missing some context here, and would really appreciate if someone could fill in the gaps.
+ </paragraph>
+</document>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think a better example is the deadlock problem from the concurrency HW since it involves actual programming
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="333.5117773019272" src="https://static.us.edusercontent.com/files/6W3307WI43qY3tYyiefR172d" width="623"/>
+ </figure>
+ <paragraph>
+  Okay, let me make sure I get the reasoning here. When a process acquires one of the files, it has a lock on it and the other thread has to wait until that file is released for it to continue when it's required. By making them acquire them in the same order, it's like a hand-me-down and there's no tangled ownership.
+ </paragraph>
+ <paragraph>
+  Could it be that in the dining philosopher example when they say pick up the lower numbered fork they mean the lower numbered fork in front of the philosopher and not the lower numbered fork available? So if a philosopher is facing 0 and 1 and 0 is taken, they'll wait for 0 rather than taking 1, the lower numbered fork available?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tianjiao Li (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  It is not that complicated. Edsger and Tony will both reach out for fork 0. One of them will get it, and the other will simply wait. If Edsger gets it and David gets fork 3, then there will be a computer scientist between Edsger and David who gets to finish their dinner. If Edsger gets it and David fails to acquire fork 3, David waits and Edsger picks up fork 4 and eat. If Tony gets it, Edsger waits and it will depend on whether David acquires fork 3 and so on recursively.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ahh, I get it now. I made the leap to thinking that it was lower numbered fork available and not lower numbered fork in general
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

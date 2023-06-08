@@ -1,0 +1,50 @@
+<h1>
+ Title: Convolution Confusion
+</h1>
+<h3>
+ Author: Nikhil Satheesh Pillai (student)
+</h3>
+<h3>
+ Date: 2021-10-05T12:42:56.730433+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  There was an example in the monograph that was showing how the following system S(x) = x(7n) is not time invariant. The sample input system used here for was delta. It was said that S(Shift_1(delta)) = 0 for all n and I am having a hard time understanding how and why.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  My line of reasoning is as follows:
+ </paragraph>
+ <paragraph>
+  if Shift_1(delta) = delta(n-1)
+ </paragraph>
+ <paragraph>
+  then S(delta(n-1)) = delta(7(n-1)) and is only one when n = 1 which is basically Shift_1(delta). So I am not completely sure how you arrived to the idea that S(Shift_1(delta)) is the zero signal?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  To get $S ( {\rm Shift} _ 1 ( \delta )$, you have to plug in $7 n$ wherever you see $n$ in ${\rm Shift} _ 1 ( \delta )$.  Think of that last signal as $x ( n )$; $S ( x ) ( n ) = x ( 7 n )$, which is $x$ with $7 n$ plugged in for $n$ in $x ( n )$.  Thus $S ( {\rm Shift} _ 1 ( \delta ) ) ( n ) = \delta ( 7 n - 1 ) = 0$ for all $n$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

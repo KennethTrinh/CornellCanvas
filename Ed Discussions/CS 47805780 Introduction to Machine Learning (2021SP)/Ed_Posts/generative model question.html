@@ -1,0 +1,40 @@
+<h1>
+ Title: generative model question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-23T09:32:10.125983+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="485.4362745098039" src="https://static.us.edusercontent.com/files/lsargyLB6dcvrdArgid5U1bd" width="658"/>
+ </figure>
+ <paragraph>
+  I thought generative modeling was about modeling the joint distribution P(X,Y) -- but how come we end up using Bayes rule to define the classification rule in terms of the conditional distribution P(X|Y) and the marginal distribution P(Y)? How is this different from discriminative conditional modeling?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  These are all things we learn from the joint distribution of P(X,Y) (E.x. P(Y)=sum_X P(X,Y)); since we're still trying to look at how likely a class or observation is there's no way to do that without messing with probabilities/bayes rule. The main difference between this and discriminative conditional modeling is that here we're looking directly at the probabilities in our training data rather than trying to minimize some loss function.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

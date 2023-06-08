@@ -1,0 +1,51 @@
+<h1>
+ Title: number_of function lab 14
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-18T00:02:48.177201+10:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  for some reason my recursive function is giving me incorrect values.
+ </paragraph>
+ <paragraph>
+  I told it to return the sum of
+ </paragraph>
+ <paragraph>
+  numberof( thelist[:1], v) + numberof( thelist[1:], v )
+ </paragraph>
+ <paragraph>
+  I did this to break the function apart. I kept the parameter v in my return statement as well. I have a base case where I check if the length of the list is zero and another base case where I check if a list value is equivalent to v. I don't know what is wrong.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Andrew Mackin (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It's unclear what you mean by a "base case where I check if a list value is equivalent to v," but I suspect this is where your issue lies. Often for simple recursions on lists, we want to check the 0th value in the list and then all the remaining values (i.e., recurse on the list w/ the 0th element removed). It may help to ask yourself the following question: "Given no further information, what do I know about the number of v's in the list based on what the 0th element in the list is?"
+ </paragraph>
+ <paragraph>
+  Another hint, you don't necessarily need a base case other than if the list is empty, but this is ultimately up to how you structure your code.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

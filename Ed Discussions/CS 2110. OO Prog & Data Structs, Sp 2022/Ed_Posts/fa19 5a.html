@@ -1,0 +1,71 @@
+<h1>
+ Title: fa19 5a
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-08T08:55:07.80711+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="227.28842832469775" src="https://static.us.edusercontent.com/files/JPzswHsyabyZD756HRoqzEhH" width="657.9999999999999"/>
+ </figure>
+ <paragraph>
+  can I write k=n; s=b[n] instead? and moreover why is the answer k=n+1;s=1; as it seems not truthifying the invariant: as s is the product of b[k..n] and if k=n+1, then s=product of b[n+1..n]=0, not 1.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="1.0">
+ <paragraph>
+  No, that means you know s is the product of all elements in the range b[n..n] which isn’t the precondition. And s=1 is because of something we discussed in class you set the initial sum value to 0 and the initial product value to 1, if you set it o 0 when you try multiplying any of the elements in the list by 0 you’ll get 0.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  To be more explicit, if segment b[m..n] is empty, referencing b[n] makes no sense, and the product of the empty segment is 1.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

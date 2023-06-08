@@ -1,0 +1,88 @@
+<h1>
+ Title: ADC for multiple Analog inputs
+</h1>
+<h3>
+ Author: Deemo Chen :) (None)
+</h3>
+<h3>
+ Date: 2022-05-10T10:39:24.527486+10:00
+</h3>
+<h3>
+ Category: Final Project
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, so we were trying to use 5 pins for the analog reads. We modified the ADC demo given to us in the NXP software, but we were having a hard time understanding how to get data from all pins.
+ </paragraph>
+ <paragraph>
+  As I understand, we need a base address(here it is ADC0), then a CHANNEL GROUP, we can choose channel 0, and then in which we can choose channel numbers, which correspond to the specific pins(like PTE 20, PTE16, etc...).
+ </paragraph>
+ <paragraph>
+  The demo only shows how to use one pin. So it basically has a while loop blocking in the main function, and it waits for the flag caused by the finishing of the AD conversion of that CHANNEL GROUP. But the interrupt flag is for the whole channel group as I understand, so I can't have as many unique interrupts for each pin as I want.
+ </paragraph>
+ <paragraph>
+  I am confused about how the whole ADC structure works? What is the relationship between CHANNEL GROUP and Channel Number? I read the manual but it does not explain.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Deemo Chen :) (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think I got it, so I basically change the channel_number(pin) for that channel_group after I got the conversion number from the previous pin, so it is re-usable
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Nelson Ooi (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  @Deemo we're trying to figure out the same issue - btw what do you mean by getting the conversion number?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Deemo Chen :) (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  ADC converts an analog signal to digital, so the digital number ranging from 0 to 2^12 is the conversion number
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Yes, you can just change ADCH between conversions.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

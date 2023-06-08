@@ -1,0 +1,82 @@
+<h1>
+ Title: PIT1_Service is not being called enough
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-23T04:43:43.247039+10:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We noticed that our current_time is not being updated fast enough. PIT1_Service is only being called a few times during each delay() call. The load value is not causing the expected behavior. We have the same setup for PIT channels 0 and 1 and give PIT_IRQn priority over SVCall_IRQn.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Trenton Lyke (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Did you calculate the load value by doing:
+ </paragraph>
+ <paragraph>
+  Load_value = 0.001*clock_frequency_in_Hertz
+ </paragraph>
+ <paragraph>
+  Notes:
+ </paragraph>
+ <paragraph>
+  0.001
+  <bold>
+   second
+  </bold>
+  = 1
+  <bold>
+   millisecond
+  </bold>
+ </paragraph>
+ <paragraph>
+  1
+  <bold>
+   Hertz
+  </bold>
+  = 1
+  <bold>
+   1/second
+  </bold>
+ </paragraph>
+ <paragraph>
+  Also, finding out the clock frequency can be a little tricky after some suggestions and a little testing I found mine was around 10.8 MHz (i.e. 10,800,000 Hz)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, we used this formula to calculate the load value. We also confirmed the clock speed.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

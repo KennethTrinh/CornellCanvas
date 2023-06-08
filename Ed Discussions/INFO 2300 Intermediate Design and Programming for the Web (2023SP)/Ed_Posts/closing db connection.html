@@ -1,0 +1,52 @@
+<h1>
+ Title: closing db connection
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-04-17T07:52:24.960514+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  hello,
+ </paragraph>
+ <paragraph>
+  im trying to teach myself more about sql and came across best practices for db connections. specifically about how often times we should close connections to databases after opening them. going through the boilerplate code provided by the class (includes/db.php), it looks like the function init_sqlite_db opens the connection to the database for us, but i dont know if we ever close it.
+ </paragraph>
+ <paragraph>
+  did i miss something in the boilerplate code that closes the connection for us? or is closing a connection to a database not as necessary as online forums make it out to be?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The best practices documentation are correct. The database connection should be closed after opening it.
+ </paragraph>
+ <paragraph>
+  The good news is that in PHP, this done for us automatically at the end of each HTTP request. However, if you wish to explicitly close the database, add the following at the end of
+  <underline>
+   router.php
+  </underline>
+  to close the database:
+ </paragraph>
+ <pre>$db = NULL;
+</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>

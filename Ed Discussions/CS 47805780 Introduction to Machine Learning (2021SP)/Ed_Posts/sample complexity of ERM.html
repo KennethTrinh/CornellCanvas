@@ -1,0 +1,104 @@
+<h1>
+ Title: sample complexity of ERM
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-18T03:18:20.302595+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="448.90037831021436" src="https://static.us.edusercontent.com/files/mdJTYBDISnWhlYhcma5aAWq3" width="658"/>
+ </figure>
+ <paragraph>
+  How do we know that we can represent the prediction error of h_i as the area of region i, and the sample error of h_i as the fraction of rocks in region i?
+ </paragraph>
+ <paragraph>
+  I'm having trouble understanding why we can represent these values in this way.
+ </paragraph>
+</document>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Which lecture is this in?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The "Learning Without Realizability" lecture in the Statistical Learning Theory module
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is simply using a physical analogy for our hypotheses' errors, where falling inside the region represents an error and falling outside the region represents a correct classification. What this is trying to show is that the mistake examples may or may not overlap, and the physical analogy is only meant to provide intuition, not any sort of proof.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="176" src="https://static.us.edusercontent.com/files/PhkZAiazxluhg6buCcT1CbbB" width="469"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  I see. But what does the above part of the slide mean then? I still don't understand how we can set prediction error = area of region i, and sample error = fraction of rocks in region i.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This is just continuing that same physical analogy. Err_p is the true probability of an error, which corresponds to how large the region is relative to the total area (or how likely a new rock is to fall into the error region), whereas Err_s is the observed error rate, which corresponds to what fraction of the rocks that were actually thrown happened to land in the region (i.e. happened to actually get an error in practice).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

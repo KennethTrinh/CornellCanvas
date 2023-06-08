@@ -1,0 +1,95 @@
+<h1>
+ Title: Not really understanding 2.3 Question
+</h1>
+<h3>
+ Author: Shreya Kumar (student)
+</h3>
+<h3>
+ Date: 2022-02-08T13:13:14.786649+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was confused about this 2.3 example here. I don't understand why the half word 0xadbe is not memory aligned and why 0xefbe is in big-endian form.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="347.90804597701145" src="https://static.us.edusercontent.com/files/aI8hO0gZcPT1YurdsmLoCCTy" width="657.9999999999999"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Shreya Kumar (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="406.51694094869316" src="https://static.us.edusercontent.com/files/Sf9WSujjaz8gr4bsrih2Ti0X" width="758"/>
+ </figure>
+ <paragraph>
+  I also was trying to figure out this question and didn't understand how to do this one either. Why are the strings interleaved with each other and why is systems not included in the address? Also why is address 3 related to the strings in address 1 and 2? Wouldn't it be it's own string, unrelated to addr. 1 and 2 (since we just load an address 3 into a register 3)?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Regarding this, please see #38 and #59. Please let me know if you are still confused with the problem so I can explain.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Words and half words are aligned. Slide 12 provides a nice diagram of the legally accessible half-words. The first (MSB) and second bytes in a word form a half-word, and the third and fourth (LSB) bytes in a word form a half-word. Forming 0xadbe would use a byte from the first half-word and a byte from the second half-word.
+ </paragraph>
+ <paragraph>
+  0xdeadbeef is arranged in memory such that the MSB 0xde is at the highest address and the LSB 0xef is at the lowest address. That means we are working in little endian where the accessible half-words are 0xdead and 0xbeef.
+ </paragraph>
+ <figure>
+  <image height="810" src="https://static.us.edusercontent.com/files/FfgAinKrBy8LNc784G5sXxgP" width="1080"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Shreya Kumar (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ohh ok that makes sense! Thanks!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

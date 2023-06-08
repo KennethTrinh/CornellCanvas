@@ -1,0 +1,40 @@
+<h1>
+ Title: Ranking R^2 values from practice questions
+</h1>
+<h3>
+ Author: Elana Pocress (student)
+</h3>
+<h3>
+ Date: 2023-03-31T06:32:16.030229+11:00
+</h3>
+<h3>
+ Category: Prelim
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Can someone explain the intuition behind these? Why is the one with the most influential and least influential feature the second. Does influential mean largest parameter?
+ </paragraph>
+ <figure>
+  <image height="421.918410041841" src="https://static.us.edusercontent.com/files/lvBS77bNtevRrIgmImcEgUHa" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Varun Gande (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Influentiality is based on the value of the actual coefficients used to generate the data. You can imagine a feature with a coefficient of 100 is likely to explain more of the variation in the outcome variable as opposed to a covariate with a coefficient of 0.01, for example. Additionally, including multiple covariates as opposed to just one will always explain more of the variation, which is indicated by the increase in R^2.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

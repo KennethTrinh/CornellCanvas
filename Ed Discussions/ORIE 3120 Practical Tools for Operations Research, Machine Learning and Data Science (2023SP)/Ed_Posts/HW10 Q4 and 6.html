@@ -1,0 +1,105 @@
+<h1>
+ Title: HW10 Q4 and 6
+</h1>
+<h3>
+ Author: Bella Hu (student)
+</h3>
+<h3>
+ Date: 2023-05-02T04:33:46.013824+10:00
+</h3>
+<h3>
+ Category: Homework
+</h3>
+<h3>
+ Vote Count: 5
+</h3>
+<document version="2.0">
+ <paragraph>
+  Problem #4 and 6
+ </paragraph>
+ <paragraph>
+  HW #10
+ </paragraph>
+ <paragraph>
+  For 4, is the cost of underage supposed to be 10 or 15?  The question is unclear and the TAs in office hours are giving different answers.
+ </paragraph>
+ <paragraph>
+  For 6b, the problem states that "
+  <bold>
+   set the number of eggs to cook via 3 * round(A + B * probability_of_rain)."
+  </bold>
+  However, I asked multiple TAs, and they all said that the 3 should not be multiplied in the code, but showed uncertainty about this answer.  Should we multiply by 3 or not?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Thank you!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Varun Gande (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  If you are letting q = the number of eggs to cook, you should indeed multiply by 3.
+ </paragraph>
+ <paragraph>
+  For 4, we want to interpret the cost of underage to be "how much extra do I have to pay per unit of inventory I have missing (unfulfilled demand)". In this case, it should be 15.
+ </paragraph>
+ <paragraph>
+  A good way to think about this is to figure out separate expressions for the cost in two cases: when Q &gt; D and when Q &lt; D, and relate that to the overage and underage expressions.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Sylviane Zhao (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Just to confirm: underage cost = 15 and overage cost = 5?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew The (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Don't you have to pay 15 for each unit missing? Unlike last week where we sold bagels for profit, so we lost out on 1.08 - 0.54 for each bagel missing. However, in this problem we must fulfill all demand, so if you're short (Q &lt; D) you have to pay the full 15.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Varun Gande (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Yes you’re correct, it should be 15. This is because in the underage case, you only fulfill Q demand.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

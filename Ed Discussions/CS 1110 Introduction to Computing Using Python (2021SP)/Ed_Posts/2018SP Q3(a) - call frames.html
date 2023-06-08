@@ -1,0 +1,253 @@
+<h1>
+ Title: 2018SP Q3(a) - call frames
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-27T05:30:50.601004+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <callout type="info">
+  Put in your question title the year, semester, and question.  Ideal would also be to include the topic.   Example: 2018SP Q2(b) - call frames
+ </callout>
+ <callout type="info">
+  Include a screenshot of the question, so readers/answerers don't have to go find the relevant pdf.
+ </callout>
+ <figure>
+  <image height="628.2885462555066" src="https://static.us.edusercontent.com/files/yVzzh2DsA3TVtwQAnCGLR48c" width="658"/>
+ </figure>
+ <paragraph>
+  In the 4th call frame there is the parameter is_female and True is assigned to it. I don't understand where the True came from. Is it from line 9? If so, I'm confused how if is_female: would evaluate to anything because it's not being operated/compared to anything. I originally thought it would just store is_female as the parameter is_female. Can I get a breakdown of what happens in the execution of this call frame?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You know, when you asked your question, I looked and also panicked, "Where is is_female coming from?".  So, happens to the best of us!  (Or at least also to me.)
+  <break>
+  </break>
+  <break>
+  </break>
+  First, by "4th" do you mean "1st", by any chance? Or did you mean "3rd".  The stack is going from top to bottom, so the frame for
+  <code>
+   song()
+  </code>
+  is the first one that is created, and that one has an
+  <code>
+   is_female
+  </code>
+  parameter.  So does the third one.  But the 4th one, for function
+  <code>
+   she()
+  </code>
+  , doesn't have an
+  <code>
+   is_female
+  </code>
+  parameter (variable) in it.
+  <break>
+  </break>
+  <break>
+  </break>
+  <bold>
+   One explanation
+  </bold>
+  <break>
+  </break>
+  Line 25 takes the value
+  <code>
+   True
+  </code>
+  and hands it to
+  <code>
+   song()
+  </code>
+  as input ...
+  <break>
+  </break>
+  ----&gt; which
+  <code>
+   song()
+  </code>
+  stores in its parameter, which is named
+  <code>
+   is_female
+  </code>
+  .
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  Line 21, when we get to it, hands the value of
+  <code>
+   is_female
+  </code>
+  --- which is
+  <code>
+   True
+  </code>
+  , from what we just said --- to
+  <code>
+   live_long()
+  </code>
+  as input ...
+  <break>
+  </break>
+  ---&gt; which
+  <code>
+   live_long()
+  </code>
+  stores in its parameter, which happens to also be named
+  <code>
+   is_female
+  </code>
+  .
+  <break>
+  </break>
+  <break>
+  </break>
+  So that's why all the
+  <code>
+   live_long()
+  </code>
+  frames have the
+  <code>
+   is_female
+  </code>
+  parameter set to
+  <code>
+   True
+  </code>
+  .
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+  <bold>
+   Another explanation
+  </bold>
+  <break>
+  </break>
+  <break>
+  </break>
+  What is happening when Python sees the code 1-25 is:
+  <break>
+  </break>
+ </paragraph>
+ <paragraph>
+  It reads all the function definitions in lines 1-23, nods its head sagely and says, "I got it", but doesn't actually do anything but remember those definitions.
+  <break>
+  </break>
+  <break>
+  </break>
+  The first time it executes any line is when it gets to line 25.
+  <break>
+  </break>
+  <break>
+  </break>
+  The execution of the call
+  <code>
+   song(True)
+  </code>
+  sends the value
+  <code>
+   True
+  </code>
+  as input to the function
+  <code>
+   song()
+  </code>
+  , which stores the value
+  <code>
+   True
+  </code>
+  into its parameter, named
+  <code>
+   is_female
+  </code>
+  .  So the
+  <code>
+   is_female
+  </code>
+  in the frame for
+  <code>
+   song()
+  </code>
+  has value
+  <code>
+   True
+  </code>
+  .
+  <break>
+  </break>
+  <break>
+  </break>
+  Executing line 21 in
+  <code>
+   song()
+  </code>
+  involves a call that looks like
+  <code>
+   &lt;some function&gt;(is_female)
+  </code>
+  .  Whatever "some function" is, Python first figures out the value of its argument.  In this case,
+  <code>
+   is_female
+  </code>
+  (in the frame for
+  <code>
+   song
+  </code>
+  ) is
+  <code>
+   True
+  </code>
+  .  So, whatever "some function" is, it takes the value
+  <code>
+   True
+  </code>
+  as input and stashes this value in its parameter variable.  In this case, "some function" is
+  <code>
+   live_long()
+  </code>
+  and the parameter for
+  <code>
+   live_long()
+  </code>
+  is called
+  <code>
+   is_female
+  </code>
+  . That
+  <code>
+   is_female
+  </code>
+  is the one you highlighted in the second
+  <code>
+   live_long()
+  </code>
+  frame.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

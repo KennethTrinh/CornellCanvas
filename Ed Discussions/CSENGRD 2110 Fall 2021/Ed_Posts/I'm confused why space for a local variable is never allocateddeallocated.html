@@ -1,0 +1,42 @@
+<h1>
+ Title: I'm confused why space for a local variable is never allocated/deallocated.
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-05T05:51:36.767213+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I know that the steps for executing a method call are to draw the frame, assign the arg values to the parameters, execute the method call, and then erase the frame.
+ </paragraph>
+ <paragraph>
+  When we're executing the method call, we need to keep memory of the local variable somehow so doesn't space have to be allocated? And therefore, when we erase the call, isn't it automatically de-allocated?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If you are referring to the question that was on the quiz, note that the question has the keywords "During its [the loop's] execution" meaning the question was asking how many times memory is allocated while the loop is executing. As you said, memory is allocated as one of the steps to execute a method call and deallocated after the method body is executed. This means that during execution of the method body, including before, during, and after execution of the loop, no allocation or deallocation of local variables happen.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

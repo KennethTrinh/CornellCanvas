@@ -1,0 +1,54 @@
+<h1>
+ Title: Normalizing Features
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-04T02:09:28.215586+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I have a question about normalization. One of the concepts that was presented was encoding categorical variables (e.g., country). I was wondering:
+ </paragraph>
+ <paragraph>
+  1. what is the difference between encoding a categorical variable versus creating indicators for each (i.e., features for each country with a 0/1 for whether the data point is for country x or not)? It seems like they would be similar mathematically
+ </paragraph>
+ <paragraph>
+  2. if you have continuous variables and then a categorical variable and you choose to encode the categorical and normalize the continuous, would it be okay to include these together in a learning model? Technically the encoding is 0 to 1 while the continuous is now -1 to 1, which are different scales. How should we think about that?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Similarly, it seems like for continuous variables there are certain variables we should and should not normalize. For instance, what does it mean to normalize time? How should we think about including time as a feature when it is on a very different scale.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  1. They're similar processes, the main difference being that if you encode them in separate variables they're more free to take whatever value/offset the data suggest (i.e. maybe with education level there's not much difference between middle and high school but a big difference between high school and bachelor's), whereas if you put it into one numerical variable directly the model has to stay consistent with it (e.g. if middle school is 2, high school is 3 and bachelors is 4 the difference between the two eduction increases is similar).
+ </paragraph>
+ <paragraph>
+  2. Yes, it's okay to include both, and it's also okay to encode the categorical variables prior to performing the normalization if you really want them on the same scale. The idea of normalization is just to get the variables to have comparable magnitudes, and -1–1 has comparable magnitudes to 0–1.
+ </paragraph>
+ <paragraph>
+  Normalization is simply a matter of "how does this variable compare to its mean," and you're converting each variable into its own standard units. There's no reason you couldn't normalize time. Remember that each variable is normalized independently of all others.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

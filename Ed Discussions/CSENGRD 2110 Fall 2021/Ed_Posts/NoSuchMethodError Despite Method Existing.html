@@ -1,0 +1,91 @@
+<h1>
+ Title: "NoSuchMethodError" Despite Method Existing
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-09T14:52:52.410528+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <pre>results0.txt:
+Checking Elephant.java:
+
+Using our version of ElephantTest to test your implementation of class Elephant.
+Only the most basic behavior is checked.
+
+Failure in testConstructor1(): java.lang.NoSuchMethodError: 'boolean a1.Elephant.isFemale()'
+Failure in testConstructor2(): java.lang.NoSuchMethodError: 'boolean a1.Elephant.isFemale()'
+Failure in testBooleanFunctions(): java.lang.AssertionError
+Failure in testassert(): org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==&gt; expected: &lt;java.lang.AssertionError&gt; but was: &lt;java.lang.NullPointerException&gt;
+Passed 1 / 5 tests
+
+================================================================================
+results1.txt:
+Checking ElephantTest.java:
+
+Using your version of ElephantTest to test our implementation of class Elephant.
+There should be no test failures and no extraneous output, and the number of
+tests executed should match the number that you have implemented.
+
+Passed 5 / 5 tests</pre>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  I have defined the 'isFemale()' method but I have received a "NoSuchMethodError" on the A1 auto-helper.
+ </paragraph>
+ <paragraph>
+  Also, I think my code should have no problems since I passed all the tests for my ElephantTest.java file which included testing the 'isFemale()' method.  I have passed all of the tests for my code in my testing file.
+ </paragraph>
+ <paragraph>
+  Thanks in advance.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Look very carefully at your method signature and return type.  Does it match the assignment description, including capitalization?
+ </paragraph>
+ <paragraph>
+  (Remember that primitive types always start with a lowercase letter; the uppercase versions refer to "wrapper classes", which you'll learn about next week.)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Also, keep in mind that passing all of your own tests does not imply that your code has no problems, especially if it needs to be integrated into a larger software system.
+  <italic>
+   Unit tests
+  </italic>
+  are only one stage of software verification;
+  <italic>
+   integration tests
+  </italic>
+  are the next level, and that is what the AutoHelper provides.  It is very easy to violate an interface specification in both your implementation and your tests, which is why integrating with independently-authored code that uses the same interface is so useful for finding bugs.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

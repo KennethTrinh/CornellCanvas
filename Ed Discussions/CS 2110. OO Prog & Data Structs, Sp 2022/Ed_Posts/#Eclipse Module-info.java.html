@@ -1,0 +1,67 @@
+<h1>
+ Title: #Eclipse: Module-info.java
+</h1>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Date: 2021-12-29T02:07:35.94269+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <bold>
+   Problem:
+  </bold>
+ </paragraph>
+ <paragraph>
+  In the code you have this error: "Must declare a named package because this compilation unit is associated with the named module 'module'"
+ </paragraph>
+ <paragraph>
+  When you run you get this error:
+ </paragraph>
+ <paragraph>
+  "Error occurred during initialization of boot layer
+  <break>
+  </break>
+  java.lang.module.FindException: Error reading module: &lt;filepath&gt;
+  <break>
+  </break>
+  Caused by: java.lang.module.InvalidModuleDescriptorException: ClassName.class found in top-level directory (unnamed package not allowed in module)"
+ </paragraph>
+ <paragraph>
+  <bold>
+   Solution:
+  </bold>
+ </paragraph>
+ <paragraph>
+  In your package explorer, find module-info.java and delete it
+  <break>
+  </break>
+ </paragraph>
+ <figure>
+  <image height="135" src="https://static.us.edusercontent.com/files/pSjFm66UrfbUmMxV3sJlPJuC" width="164"/>
+ </figure>
+ <paragraph>
+  <bold>
+   Prevention:
+  </bold>
+ </paragraph>
+ <paragraph>
+  When you create a new Java project, Eclipse will ask you if you want to create module-info.java:
+ </paragraph>
+ <figure>
+  <image height="220" src="https://static.us.edusercontent.com/files/4q2eQpCypXRTSS5NwR03Mfox" width="307"/>
+ </figure>
+ <paragraph>
+  Select "Don't Create" and you will not have this issue.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

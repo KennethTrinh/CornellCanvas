@@ -1,0 +1,56 @@
+<h1>
+ Title: Tags
+</h1>
+<h3>
+ Author: Marko Djuranovic (student)
+</h3>
+<h3>
+ Date: 2023-04-27T01:58:18.955979+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I build a website for a car dealership where admins can make a new listing for a new car and add appropriate tags. I have six tags in my tags table (blue, green, red, hatchback, sedan, and truck), so they can be grouped by color and type since a car cannot be blue and green or a sedan and a truck at the same time. I chose to use two radio button groups since the requirement says that "Each record must have at least two tags associated with it."  This means that every new car that comes in will have a combination of two out of those six tags, which I guess fulfills that requirement. My website does not support adding or editing new tags since that is not required. Reading
+  <link href="https://edstem.org/us/courses/36502/discussion/3017979"/>
+  #417 got me a little bit worried, but as the requirement says, "
+  <bold>
+   Each catalog entry should support multiple “tags;”
+  </bold>
+  each entry can have 0 to 1 million tags, etc." my entries will have multiple tags since they can choose from all six of them but as I said previously it does not make sense that a single car can have all tags. I hope this makes sense, and I would like to know whether or not this is okay. Thank you.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The context is important here. The quote you pulled here is from a section labeled "
+  <bold>
+   Include
+   <italic>
+    seed
+   </italic>
+   data in your database."
+  </bold>
+  This is saying that your seed entries need at least two tags. I have clarified the requirement.
+ </paragraph>
+ <paragraph>
+  It's true that the insert form needs to support tagging an entry with all available tags. I understand that it may not make sense for your design, however the learning objective of a one to many relationship is what's important here. Please see the "Each catalog entry should be able to be tagged by every tag in the database" requirement.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

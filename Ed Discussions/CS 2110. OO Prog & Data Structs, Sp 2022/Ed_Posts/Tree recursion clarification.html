@@ -1,0 +1,82 @@
+<h1>
+ Title: Tree recursion clarification
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-19T07:48:23.062826+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Is the purpose of this method to multiply the root with all of its children, including the leaf? E.g. if the tree consists of root-child-child-leaf, we multiply root*child*child*leaf? Or is it root*leaf?
+ </paragraph>
+ <paragraph>
+  I’m confused what the question is asking for when it says “One can multiply together the values of a root-to-leaf path; return the largest such product.”
+ </paragraph>
+ <figure>
+  <image height="601" src="https://static.us.edusercontent.com/files/Xi0crjXbQXi2S7nQ9J5PQDUf" width="1192"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Suppose one root-to-leaf path has these values: 3, 5, 2. The product is 3*5*2 = 30.
+ </paragraph>
+ <paragraph>
+  Suppose another root-to-leaf path has these values: 1, 5. The product is 1*5 = 6.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Ok! I'm still confused on how exactly the recursive part of this method works. When maxPathProduct(child) is called, I understand that the current child becomes the "new root", and we look at the children of it.
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+  Root {node 0}
+ </paragraph>
+ <paragraph>
+  |
+  <break>
+  </break>
+  Level 1 children {nodes 1,2}
+ </paragraph>
+ <paragraph>
+  |
+  <break>
+  </break>
+  Level 2 children{children of 1, children of 2}
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+  Say the method goes down the route of 0-&gt;1-&gt;children of 1 to find the product. How does the method go back and check 0-&gt;2-&gt;children of 2?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

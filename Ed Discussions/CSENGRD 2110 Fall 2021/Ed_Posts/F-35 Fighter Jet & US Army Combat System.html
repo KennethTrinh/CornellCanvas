@@ -1,0 +1,105 @@
+<h1>
+ Title: F-35 Fighter Jet &amp; US Army Combat System
+</h1>
+<h3>
+ Author: Kenisha Stills-Ogburn (None)
+</h3>
+<h3>
+ Date: 2021-09-04T09:38:13.758395+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  My ears perked up when I saw these two on the slides during lecture, but I didn't catch everything that was said except the software for F-35 and the Army Combat System were hard to maintain. Perhaps I misheard something, but I'd like to know more.  Might be  better question for Office Hours?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  What was the meaning of  "R" in the following command:
+ </paragraph>
+ <blockquote>
+  jshell &gt; R -ea
+ </blockquote>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  The part about not naming your getters/setters something obvious that betrays what the getter/setter actually does is for security reasons, right? Could I get more elaboration on that again.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Thank you all
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Many large programs are plagued by schedule and cost overruns related to software.  This has been a problem since the '50s (see Books,
+  <italic>
+   The Mythical Man-Month
+  </italic>
+  ), and unfortunately professional software engineers and project managers still have a lot of trouble.  Modern software tools and development practices have made things better, but it's not clear that they've kept pace with the growing size and complexity of software systems.  Military contracts are a common place to see failures (extensive sub-contracting makes interfaces more rigid and places greater demands on communication and encapsulation).  I don't have first-hand experience with either of those two programs, but much has been written about them, and you should be able to find some good studies with a library search.
+ </paragraph>
+ <paragraph>
+  Launching JShell like this:
+  <code>
+   jshell -R -ea
+  </code>
+  enables asserts at runtime.  Run
+  <code>
+   jshell --help
+  </code>
+  to see its own documentation.  The
+  <code>
+   -R
+  </code>
+  flag means "pass the next flag to the "runtime system" (aka Java Virtual Machine) that JShell will be using.  The
+  <code>
+   -ea
+  </code>
+  flag is a standard JVM flag that means "enable assertions".
+ </paragraph>
+ <paragraph>
+  Getter and setter names have nothing to do with security ("security by obscurity" is a bad policy regardless).  Their names
+  <italic>
+   should
+  </italic>
+  be obvious and stay what those methods do, but at a level of abstraction matching the
+  <italic>
+   class
+  </italic>
+  , not low-level field assignments.  They should describe the
+  <italic>
+   behavior
+  </italic>
+  of the object that the user is trying to leverage.  The prefixes "get" and "set" imply field access; simply leaving off "get" elevates that to "property query," which, while basically the same thing, isn't tied to a particular set of fields.  Setters are often a bad idea outside of what's called the "Builder Pattern;" you usually want to be thinking of higher-level mutations and transformations instead, which will naturally yield different names (think
+  <code>
+   addTo()
+  </code>
+  for a fraction, rather than
+  <code>
+   setNumeratorAndDenominator()
+  </code>
+  ).
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

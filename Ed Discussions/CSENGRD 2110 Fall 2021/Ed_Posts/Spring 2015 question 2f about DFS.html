@@ -1,0 +1,77 @@
+<h1>
+ Title: Spring 2015 question 2f about DFS
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-17T08:15:52.522424+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I have a question about question 2f for prelim 2 Spring 2015 5:30. I attached the question and the referred graph. This is my logic for answering the question:
+ </paragraph>
+ <paragraph>
+  For DFS, the first thing we do is mark the node we're on as visited. So we mark node A. And then we go look at the children in a for loop. Since the question prompts us to do it alphabetically, we go look a B first and see if it's visited. Since it's not visited, we call DFS recursively on the subtree starting at node B. That gives us children D and F. We first check D since we're going alphabetically, realize its not visited, and recursively call DFS on the subtree D. We do this a couple more times until we get to node H, which is the final node with no children. So far we've visited in order: A,B,D,E,H. So now that we've reached the base case, the call stack will now go backward and complete each call i.e DFS on subtree E will end and then DFS on subtree D will end. The issue I have comes when I get to DFS on subtree B. Technically, we haven't finished our call of DFS on subtree B since we've only looked at one child and B has two children. By this logic, I thought F would be the next node visited,  and then after DFS on F, DFS on B would end and then DFS on the original tree A would continue by visiting C and G for a final visiting pattern of: A,B,D,E,H,F,C,G. However, the answer key states that node C is visited before node F for a final order of A,B,D,E,H,C,F,G. I was wondering why C is visited before F and if the reason I got that F is visited first is a result of a flaw in my logic. Thank you.
+ </paragraph>
+ <figure>
+  <image height="397.40420271940667" src="https://static.us.edusercontent.com/files/yaZC6vUckDo3Ov32hDYZI6Y3" width="643"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I agree that the nodes will be visited in this order:
+ </paragraph>
+ <paragraph>
+  A B D E H
+ </paragraph>
+ <paragraph>
+  At that point, the call-stack contains frames for all those calls, with the frame for
+  <break>
+  </break>
+  H at the top of the stack.
+ </paragraph>
+ <paragraph>
+  Next, H has an unvisited neighbor, C, so a frame for the call on C is put on the stack.THe visited nodes are now
+ </paragraph>
+ <paragraph>
+  A B D E H C
+ </paragraph>
+ <paragraph>
+  That is why the sequence is as shown.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ah I see I forgot that the graph was undirected so that you could travel from H to C.Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

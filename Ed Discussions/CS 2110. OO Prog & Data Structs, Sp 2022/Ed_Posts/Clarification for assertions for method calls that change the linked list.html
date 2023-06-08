@@ -1,0 +1,121 @@
+<h1>
+ Title: Clarification for assertions for method calls that change the linked list
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-02T16:04:38.964383+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In the a4 assignment pdf, it is emphasized that:
+ </paragraph>
+ <figure>
+  <image height="46.3864229765013" src="https://static.us.edusercontent.com/files/idLNhjSm76MI9q4v5CrLtKYX" width="658"/>
+ </figure>
+ <paragraph>
+  In the next paragraph, it is restated in this way:
+ </paragraph>
+ <figure>
+  <image height="43.105973025048165" src="https://static.us.edusercontent.com/files/xhTR5uO6RANXqOYmEF9b3Jby" width="658"/>
+ </figure>
+ <paragraph>
+  I just wanted to clarify which method calls we should use the three assert equals after as there is a little ambiguity. I understand that every time we test a method that changes the list we should use the three assert equals, but do we need to do this as well when we call these methods in the process of testing other methods (those that do not change the list). I'm not sure if this is good practice (for extra assurance) or redundant (because we already tested those methods in their own test procedure).
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  toString(), toStringRev(), and size() do not change the list, so you wouldn't be chaining on more assertEquals() calls for those. Only for methods that change the list
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Right, so if we were to use append in a test procedure for the node() method (for example), we wouldn't need to chain assertEquals after the append?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Well if you are using append(), then you would need 3 assertEquals statements because you made changes to the list.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ok, thanks for the clarification
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh, do you mean to create your list before testing that node() with that list? In that case, no you wouldn't need to use 3 assertEquals.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  yeah, that's what I meant. thanks!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

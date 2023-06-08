@@ -1,0 +1,75 @@
+<h1>
+ Title: UnboundLocalError: local variable 'total' referenced before assignment
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-15T14:39:23.059104+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When I ran flow.sum_squares2(4) after importing flow, I got this error message:
+ </paragraph>
+ <paragraph>
+  UnboundLocalError: local variable 'total' referenced before assignment
+ </paragraph>
+ <paragraph>
+  not quite sure why, as Prof. White was able to run it in the lecture...
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I can't reproduce the error. Can you paste in the entire contents of flow.py that you are seeing?  Here's (essentially, skipping the import because I doubt Ed Discussions could handle that) what I get:
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   def sum_squares2(n):
+    """
+    Returns: sum of squares from 1 to n-1
+    
+    Example: sum_squares(5) is 1+4+9+16 = 30
+    
+    Parameter n: The number of steps
+    Precondition: n is an int &gt; 0
+    """
+    # Accumulator
+    total = 0
+    
+    print('Before while')
+    x = 0
+    while x &lt; n:
+        print('Start loop '+str(x))
+        total = total + x*x
+        x = x+1
+        print('End loop ')
+    print('After while')
+    
+    return total
+
+print(str(sum_squares2(4) ))
+  </snippet-file>
+ </snippet>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,46 @@
+<h1>
+ Title: testing code for while loops
+</h1>
+<h3>
+ Author: Caitlyn Johnson (student)
+</h3>
+<h3>
+ Date: 2021-05-06T06:28:21.1898+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I wanted to python tutor to make sure my while loop is actually cutting down on the number of steps the overall code is taking. I was wondering if there is any example of sline and clist that I could use in the Assignment or if you could provide one, so that I could understand exactly how my code is working.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Hansol (Hannah) Lee (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  An example of sline would be a line from the enrollment data (e.g. small_test1.txt in the "data" folder in your A5 directory). Here is one example of sline from a2c_new.txt:
+ </paragraph>
+ <pre>"8    &gt;&gt; Boston_U : Accepted ## Carnegie_Mellon_U : Wait-listed ## Cornell_U : Rejected ## Emory_U : Rejected ## Georgia_Institute_of_Technology : Rejected ## New_York_U : Wait-listed ## Purdue_U : Accepted ## Stanford_U : Rejected ## UC-Berkeley : Rejected ## UC-Davis : Accepted ## UC-Irvine : Wait-listed ## UC-Los_Angeles : Rejected ## UC-Merced : Accepted ## UC-San_Diego : Accepted ## UC-Santa_Barbara : Accepted ## UIllinois_at_Urbana-Champaign : Rejected ## UMichigan-Ann_Arbor : Rejected ## USouthern_California : Rejected ## enr : Purdue_U"</pre>
+ <paragraph>
+  For clist, you could just use an empty dictionary since it doesn't seem necessary to use a non-empty dictionary for clist for your specific testing purpose. But if you want, you could create some dictionary that meets the precondition of process_line. for example,
+ </paragraph>
+ <pre>c1 = College("Boston_U") # assuming you have imported college_a5.py
+c2 = College("Cornell_U")
+
+clist_example = {"Boston_U": c1, "Cornell_U": c2}
+</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>

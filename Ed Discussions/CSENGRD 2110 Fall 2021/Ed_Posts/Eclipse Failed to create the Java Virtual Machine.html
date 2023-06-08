@@ -1,0 +1,54 @@
+<h1>
+ Title: Eclipse: Failed to create the Java Virtual Machine
+</h1>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Date: 2021-08-20T20:00:16.48379+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <bold>
+   Problem:
+  </bold>
+ </paragraph>
+ <paragraph>
+  I am getting the message "Failed to create the Java Virtual Machine"
+ </paragraph>
+ <paragraph>
+  <bold>
+   Windows Solution 1:
+  </bold>
+ </paragraph>
+ <paragraph>
+  If you have Windows, try going to Control Panel. Then search environment variables. Click to edit the system environment variables. Then go to the advance tab. Click Environment Variables near the bottom of that window. Then click "New" under System Variables. Make the variable name "_JAVA_OPTIONS" without the quotation marks, and the value "Xmx256M". If this doesn't work, try 512 instead of 256.
+ </paragraph>
+ <paragraph>
+  <bold>
+   Windows Solution 2:
+  </bold>
+ </paragraph>
+ <paragraph>
+  Find your eclipse.ini file. Then open it with a text editor. Find -vm in the file and make sure that the path that follows is the correct path to the local java VM you have installed.
+ </paragraph>
+ <paragraph>
+  <bold>
+   Mac Solution:
+  </bold>
+ </paragraph>
+ <paragraph>
+  Delete the jdk/jre that you downloaded following the original instructions. (Directory: Library/Java/JavaVirtualMachines). Then, you should install the Oracle jdk found
+  <link href="https://www.oracle.com/java/technologies/javase-jdk11-downloads.html"/>
+  here. You will have to create an account with Oracle. Don't worry, it's free. Once you have finished with this, your Eclipse installer should work.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

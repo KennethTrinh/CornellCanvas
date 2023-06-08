@@ -1,0 +1,55 @@
+<h1>
+ Title: F17 Q5
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-03T14:00:18.288403+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="564.5176211453744" src="https://static.us.edusercontent.com/files/yvM1sC5horPexoNpbo64bM6g" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Why are the owners here compared using ==? owner is of type student, which isn't a primitive type, so I would have thought it would have used equals()? Is this because the pointers should point back to the same owner? if so, would equals() still have worked in this case?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="233.41400172860847" src="https://static.us.edusercontent.com/files/zaDlNc18oHjtOqs918O5ndon" width="643"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  whereas in this case, the colors for each of the individual vehicles exist separately in memory? Thank you!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Read the specification, it always depends on what is to be implemented.
+ </paragraph>
+ <paragraph>
+  The specification says "and the owners are the same object" that means that wonder and as.owner contain the same pointer. Use  ==  for that.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

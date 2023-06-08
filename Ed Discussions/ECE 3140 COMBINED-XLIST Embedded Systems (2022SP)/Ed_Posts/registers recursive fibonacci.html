@@ -1,0 +1,40 @@
+<h1>
+ Title: registers recursive fibonacci
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-10T12:02:31.337312+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm having trouble determining which registers the arguments for the recursive Fibonacci calls will be stored. I would think the n-1 and n-2 arguments need to be stored in different registers and then their results could go in those respective unique registers. However, there is only one function, so in the function body I wouldn't know which register to access. is there a better way to think about this?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Guankai Zhai (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I did it this way (not sure if it's correct though):
+ </paragraph>
+ <paragraph>
+  First move n - 1 to the input register, call the fib function, then save the result in a register like R4 that is guaranteed to be maintained properly. Then store n - 2 to the input register, call the fib function again, and add the result to the value in R4 to obtain the final answer :)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

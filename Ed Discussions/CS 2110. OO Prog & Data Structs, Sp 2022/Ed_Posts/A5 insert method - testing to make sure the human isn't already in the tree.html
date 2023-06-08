@@ -1,0 +1,83 @@
+<h1>
+ Title: A5 insert method - testing to make sure the human isn't already in the tree
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-15T13:42:26.61443+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Given a tree [A[B[C] D[E]]:
+ </paragraph>
+ <paragraph>
+  If I try to call A.insert(..., C); it should fail because tracing through the children I can already find a node that contains the value C.
+ </paragraph>
+ <paragraph>
+  But if I try to call D.insert(..., C); it will not be able to trace that C is already in the big outer tree, since C does not branch from D. Thus it will add C to a subtree with D at its root, but then C will show up twice if I try to print out tree A.
+ </paragraph>
+ <paragraph>
+  Is this desirable behavior? Do I only care if it's not in the subtree of the CovidTree from which the method is called?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Here's the rule, straight from line 52 of the CovidTree.Java:
+ </paragraph>
+ <paragraph>
+  * Important note: Each human in the Covid tree is unique.
+ </paragraph>
+ <paragraph>
+  Therefore,  D.insert(..., C);   should not be done.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you for the clarification, this makes sense. I suppose part of my confusion stemmed from trying to figure out how to access a parent.
+ </paragraph>
+ <paragraph>
+  If D.insert(..., C); is not desirable, should I move up the tree toward the root so I can check to see if the whole tree does not contain the inserted node? Or is it a precondition that we are always going to be calling insert from the root of the main tree?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Given only a node, there is no way to get its parent.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

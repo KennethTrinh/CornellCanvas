@@ -1,0 +1,39 @@
+<h1>
+ Title: Debugger Is (Probably) Not Stuck When Polling
+</h1>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Date: 2022-02-24T11:28:35.640118+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi all,
+ </paragraph>
+ <paragraph>
+  We've had several questions from students who think the debugger is stuck when implementing polling so I wanted to post this to help others. Consider the following lines of code with an infinite loop with an if statement inside (as is the case from the switch demo):
+ </paragraph>
+ <figure>
+  <image height="122.16686251468859" src="https://static.us.edusercontent.com/files/BV7HcagRQkeZDNOtFULbse3M" width="658"/>
+ </figure>
+ <paragraph>
+  When you run this with the debug and hit the step over or step into buttons it will appear that nothing is happening.
+  <underline>
+   In reality though, it's executing the if statement, determining that it's false, and then since it's in an infinite loop it goes back to the same line
+  </underline>
+  . This is expected behavior (as long as the if statement is false).
+ </paragraph>
+ <paragraph>
+  I hope this helps!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

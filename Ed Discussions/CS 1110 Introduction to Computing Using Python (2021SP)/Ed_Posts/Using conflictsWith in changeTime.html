@@ -1,0 +1,62 @@
+<h1>
+ Title: Using conflictsWith in changeTime
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-13T11:38:02.322892+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Are we allowed to use methods within the class Course in the implementation of other methods? My partner and I are trying to use conflictsWith in our implementation for changeTime but are being met with an error that conflictsWith is not defined, which seems odd.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Elisabeth Finkel (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You are certainly allowed to write calls to Course methods outside of the Course class. Make sure you're calling conflictsWith as a method - if
+  <code>
+   a
+  </code>
+  and
+  <code>
+   b
+  </code>
+  are Course instances, the syntax is
+  <code>
+   a.conflictsWith(b)
+  </code>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  ah ok thank you so much!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

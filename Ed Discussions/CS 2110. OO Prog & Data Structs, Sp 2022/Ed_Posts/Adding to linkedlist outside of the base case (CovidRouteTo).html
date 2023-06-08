@@ -1,0 +1,56 @@
+<h1>
+ Title: Adding to linkedlist outside of the base case (CovidRouteTo)
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-20T05:06:16.895775+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  For CovidRouteTo, how can we append children nodes to the path list? It explicitely says to create the list object in the base case, but I'm not able to prepend values to it outside of the base case's if-statement then.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Atulya Lohani (student)
+</h3>
+<h3>
+ Vote Count: 4
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sure you can prepend: make a variable v inside your for loop and have it store dt.CovidRouteTo(c) where dt is a CovidTree in the children set of your human. v will either be null or be a list. If it is not null then you can prepend to the list by using v.add(0,human). You should know what to do after that.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Lookout the Java API documentation for Interface List.
+ </paragraph>
+ <paragraph>
+  You will find a method that allows you to add a value to the beginning of the List,
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

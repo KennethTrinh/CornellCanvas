@@ -1,0 +1,81 @@
+<h1>
+ Title: Function vs method
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-01T11:28:14.031078+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What is the difference between the two? I was slightly confused when they were explained individually in class. Thank you!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Sarah Benkoussa (student)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  A function is a type of method that returns a specific value. A method is a broader term that encompasses functions, procedures, and constructors.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  To be super pedantic, it is debatable whether constructors (the topic of Thursday's lecture) can be considered methods.  According to the
+  <link href="https://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.8"/>
+  Java Language Specification (the authority on all Java pedantry), constructor declarations "look like method declarations," but unlike methods they are not members, are not inherited, and are not subject to hiding and overriding (all things we'll get to in the next few weeks).  I would consider them separate (though Wikipedia does not).
+ </paragraph>
+ <paragraph>
+  But certainly it's fair to say that methods are a broader term, and that a method can be considered a "function" or a "procedure" based on its return type.  The distinction is useful for a few reasons:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    Functions can be used in expressions (while a procedure call concludes a statement)
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Procedures must have "side effects" to be useful, while some functions ("pure functions") only compute a value; the latter have useful mathematical properties which are the topic of CS 3110
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Historically, languages like FORTRAN and Pascal handled functions and procedures very differently (but in Java, they are basically unified, being declared and invoked with identical syntax)
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  That being said, when most computer programmers (including me) use the word "function," they mean to include procedures as well.
+ </paragraph>
+ <paragraph>
+  The pedantic definition of a method is simply "a class member representing executable code that can be invoked".  Some languages (C++) have functions that are not class members; there, methods are often called "member functions" to distinguish them from "free functions."  However, Java doesn't have free functions, so for us, all functions are methods.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

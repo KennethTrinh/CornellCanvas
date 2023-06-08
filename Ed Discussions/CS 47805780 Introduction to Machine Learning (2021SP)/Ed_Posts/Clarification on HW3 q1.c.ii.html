@@ -1,0 +1,78 @@
+<h1>
+ Title: Clarification on HW3 q1.c.ii
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-21T06:10:07.964513+11:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I realize this was discussed in #463, but I'm not sure what that answer means. I know that if we looked at the weight vector $w$ after the SVM ran, we would see specific invariants being held with groups $L$, $G$, and $Q$. Does this mean we can describe what $w$ looks like at $L$, $G$, and $Q$ instead of describing all of $w$ in general w/out referencing those 3 sets?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Artem Streltsov (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The key here is that we know which indices (or which exact features in x) belong to which subset. This means that we can find a weight vector conditional on this knowledge (since you take a dot product of x and w). Since the sets L and G are each hot for a particular label and there is enough margin in between the two, you can linearly separate the data. Think how you would construct a w that depends on L and G such that all points are classified correctly.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Ankush Rayabhari (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I get that once we know which indices/specific features belong to which subset, I can construct the weight vector.
+  <break>
+  </break>
+  <break>
+  </break>
+  However, how do we know which features belong to which subset? The question says the opposite: "even though we don't know which features are in L, which ones are in G, and which ones are in Q".
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Artem Streltsov (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In training your SVM you find out which subsets of features correlate with positive examples (are in G) and which ones are hot when the label is negative (are in L). If you know that these subsets exist you will easily find them from a simple correlation matrix. So, you can proceed as if you know what these subsets are.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

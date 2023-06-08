@@ -1,0 +1,70 @@
+<h1>
+ Title: Practice Prelim #8
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-03-07T02:09:46.976716+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I wrote up the script for #8 on the practice prelim, and I ran it and I got 4 7 7, which seems to be the length of the word + 1. I was wondering why this happens.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Jason Wilson (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  I believe this is because the
+  <code>
+   wc -m
+  </code>
+  command counts the newline
+  <code>
+   \n
+  </code>
+  character at the end of each line, while the
+  <code>
+   ${#var}
+  </code>
+  notation does not.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Ronald Dinapoli (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Just a quick note.   Since the fact that the newline is included with wc -m is not generally known and was not mentioned in class, I would have taken either answer (either 3,6,6 or 4,7,7).  That question was more testing that  you knew the additional read statement would consume another line of input.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

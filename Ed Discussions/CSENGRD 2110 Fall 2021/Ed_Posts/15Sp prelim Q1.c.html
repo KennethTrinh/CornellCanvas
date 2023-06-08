@@ -1,0 +1,91 @@
+<h1>
+ Title: 15Sp prelim Q1.c
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-29T10:33:39.640246+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If a and b hold pointers to objects of class A and equals is not overridden in class A, a.equals(b) will return true only if every field in a and b are equal.
+ </paragraph>
+ <paragraph>
+  Why is this False?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The implementation of
+  <code>
+   .equals()
+  </code>
+  in class
+  <code>
+   Object
+  </code>
+  is used.
+ </paragraph>
+ <paragraph>
+  That means that
+  <code>
+   a.equals(b)
+  </code>
+  iff
+  <code>
+   a
+  </code>
+  and
+  <code>
+   b
+  </code>
+  point at the same object.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What is  operation eval? Do you mean method eval() in Object?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  "evals" was a typo; Prof. Gries meant to say "equals".
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

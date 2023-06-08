@@ -1,0 +1,108 @@
+<h1>
+ Title: [module references now fixed] Error (I think) in test_print_nested_list(verbose):
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-12T04:23:22.427264+10:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi there,
+ </paragraph>
+ <paragraph>
+  I have been working on some of the optional recursion examples, and just wanted to let someone know that I think there is a problem with def test_print_nested_list(verbose): [recursion_qs_test.py]?
+  <break>
+  </break>
+  <break>
+  </break>
+  If you run the test, you get the following error:
+ </paragraph>
+ <figure>
+  <image height="146.10626185958253" src="https://static.us.edusercontent.com/files/PWz3lM5zAxs8gYcldQf2rdzn" width="626"/>
+ </figure>
+ <paragraph>
+  line 139 is:
+ </paragraph>
+ <pre>fns_to_test = [recursion_qs.print_nested_list]
+</pre>
+ <paragraph>
+  I tried changing line 139 in recursion_qs_test.py to:
+ </paragraph>
+ <pre>fns_to_test = [recursion_optional.print_nested_list]
+</pre>
+ <paragraph>
+  If you run the test again, you get the same error as above but for line 159. I changed line 159 (correspondingly) to:
+ </paragraph>
+ <pre>recursion_optional.print_nested_list(inlist)
+</pre>
+ <paragraph>
+  and this seems to let the test run.
+  <break>
+  </break>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You are correct!  I made a last-minute decision to move all the optional questions to a different file but didn't check that I updated all the test code.
+  <break>
+  </break>
+  <break>
+  </break>
+  You'll need to make the same fix for
+  <code>
+   test_replace()
+  </code>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Okay great! Just wanted to make sure someone knew. :)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yeah, about to post fixed version @_@
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

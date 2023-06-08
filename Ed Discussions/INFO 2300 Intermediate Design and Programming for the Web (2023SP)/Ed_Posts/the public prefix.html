@@ -1,0 +1,81 @@
+<h1>
+ Title: the "/public" prefix
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-04-29T06:33:51.143084+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  1.
+ </paragraph>
+ <paragraph>
+  When I tried displaying images from the uploads folder, I used this file path, "/public/uploads/photos/[id].[extension]" ("photos" is the name of the entries table). But I constantly got this error, "GET http://localhost:8001/public/uploads/photos/11.jpeg net::
+  <bold>
+   ERR_CONTENT_LENGTH_MISMATCH 200 (OK)
+  </bold>
+  ". Every time I refreshed the page I got this error for some of the images, and the set of images that failed to load each time seemed to be random. However, everything works perfectly if I use "/uploads/photos/[id].[extension]" as the file path.
+ </paragraph>
+ <paragraph>
+  2.
+ </paragraph>
+ <paragraph>
+  Another problem that might be related to file path is embedding javascript. All scripts are put inside the public/scripts folder. And I wrote:
+ </paragraph>
+ <paragraph>
+  &lt;script type="text/javascript" src= "public/scripts/jquery-3.6.1.js"&gt;&lt;/script&gt;
+ </paragraph>
+ <paragraph>
+  &lt;script type="text/javascript" src= "public/scripts/dropdown-tags.js"&gt;&lt;/script&gt;
+ </paragraph>
+ <paragraph>
+  at the end of the page.
+ </paragraph>
+ <paragraph>
+  Sometimes I got an error saying
+  <bold>
+   "Uncaught ReferenceError: $ is not defined at dropdown-tags.js:3:1"
+  </bold>
+  , but sometimes it worked fine.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  My TA and I tried debugging for an hour, but it turned out nothing worked. Can you kindly provide possible solutions to these? Thanks very much.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I understand that you've been working with a TA on these issues. Please review the file uploads class notes and review the path and URL differences. Observe that there is a / in front of the URL and not the path. You need to you the path to move the uploaded files and the URL for displaying images. I would also check that your files in public/uploads/photos are valid files and photos. After uploading, go to the folder in your windows explorer or finder and try and open the uploaded files in a tool like preview. This will tell you whether the files are valid.
+ </paragraph>
+ <paragraph>
+  Please refer to the routing class notes for URLs. All URLs should begin with /. It seems like you need to update your script tag to have the URLs start with /
+ </paragraph>
+ <paragraph>
+  I hope this helps!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

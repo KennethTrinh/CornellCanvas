@@ -1,0 +1,49 @@
+<h1>
+ Title: for loop inside http_build_query
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-04-27T10:05:06.808427+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If we are not allowed to hard code tag names and values in creating query strings, I would need to include a for loop inside http_build_query() to loop through all the tags. Is there a way to do this?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You're mostly there. You need
+  <code>
+   http_build_query
+  </code>
+  inside a for each loop to render the HTML element for each tag (
+  <code>
+   most likely &lt;a&gt;
+  </code>
+  or
+  <code>
+   &lt;input&gt;
+  </code>
+  )
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

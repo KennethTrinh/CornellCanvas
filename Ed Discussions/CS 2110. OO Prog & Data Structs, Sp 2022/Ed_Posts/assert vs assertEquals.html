@@ -1,0 +1,77 @@
+<h1>
+ Title: assert vs assertEquals
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-05T17:15:03.097109+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What is the difference between assert vs assertEquals methods? When do we know to use either in future projects?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  assert is used for assertions, so at the beginning of a function when you want to assert some preconditions (suppose I have a variable x of type int):
+ </paragraph>
+ <paragraph>
+  assert x == 3;
+ </paragraph>
+ <paragraph>
+  assertEquals() is a function used in your JUnit testing file. When you want confirm the returned value of a function is some value, you use it like this (suppose I have a function isEven() that takes in one int argument and returns a boolean telling me whether or not the argument was even)
+ </paragraph>
+ <paragraph>
+  assertEquals(true, isEven(2));
+ </paragraph>
+ <paragraph>
+  Very different usages in very different contexts!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why can't I just use an assert statement in my testing file? There shouldn't be anything syntactically wrong, correct?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Don't do it. It is the wrong usage. Do not use  assert statements in JUnit testing procedures. Use assertEquals.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

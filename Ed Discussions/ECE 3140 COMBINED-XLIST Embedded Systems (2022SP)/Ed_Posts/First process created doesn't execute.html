@@ -1,0 +1,47 @@
+<h1>
+ Title: First process created doesn't execute
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-18T09:35:09.177415+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  In all the test cases we write, the first process we create never runs. For example, in the example test case, only the green LED toggles. What might be wrong?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  We had this issue too! In our case, the issue was as follows:
+ </paragraph>
+ <paragraph>
+  Our process_select checked whether a process was currently running (by checking cursp). If cursp was NULL, we interpreted this as the process that was at the front of the queue had terminated, and free'd it appropriately. The issue with this was that cursp
+  <bold>
+   begins
+  </bold>
+  as NULL, so the first time you call process_select, it will see cursp as NULL and free the first process.
+ </paragraph>
+ <paragraph>
+  You need to figure out some way to differentiate this first call to process_select from all others where cursp is NULL
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

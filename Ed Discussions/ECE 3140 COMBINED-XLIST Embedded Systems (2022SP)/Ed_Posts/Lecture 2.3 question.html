@@ -1,0 +1,68 @@
+<h1>
+ Title: Lecture 2.3 question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-06T08:20:15.722196+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am really confused about how to solve this question. According to the question, each character of the string "Embedded Systems" is a single byte. In this case, when the "Embedded Systems" is stored into the memory address  3,  for the STR R4, [R3, R7] instruction, will the last 4 characters (tems) be stored into address 3 since STR stores 32-bit content? Then, for the STR R5, [R3, R7], where R5 stores "Rock!" and R7 is now 4, will the memory starting at address 3 become "temsock!"?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  There was an issue with the code provided.
+ </paragraph>
+ <paragraph>
+  Please see Professor Napp's response to
+  <link href="https://edstem.org/us/courses/19442/discussion/1074130"/>
+  #38
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Nils Napp (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yeah, It's super confusing because as stated the questions is wrong! ... The code should take 4-bytes (characters) at a time and interleave them. However in that case the stopping condition is kind of odd. You'd need for consecutive null characters in order to stop, and the second set of 4 bytes would have three NULL characters "!,0x00,0x00,0x00". So that's not really a good C-string.
+ </paragraph>
+ <paragraph>
+  I messed up when I re-recorded the questions, I'm really sorry for the confusion.
+ </paragraph>
+ <paragraph>
+  <break>
+  </break>
+  N
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

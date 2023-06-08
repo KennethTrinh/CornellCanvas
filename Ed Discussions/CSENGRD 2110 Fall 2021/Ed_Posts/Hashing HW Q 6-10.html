@@ -1,0 +1,39 @@
+<h1>
+ Title: Hashing HW Q 6-10
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-21T04:17:35.198599+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is the idea to take  h(i) mod 5? I'm not clear about how it would be different from chaining or linear probing except that chaining uses linked lists and probing uses the original array.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  With chaining, multiple keys may be stored in one bucket (because that bucket contains a list).  With open addressing, only one key may go in each bucket; therefore, a key may not end up being stored in its "preferred" bucket.  This distinction means that the answers for Qs 6-7 may be different from those to Qs 8-9.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

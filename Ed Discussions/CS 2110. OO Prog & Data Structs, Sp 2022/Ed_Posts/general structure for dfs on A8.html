@@ -1,0 +1,98 @@
+<h1>
+ Title: general structure for dfs on A8
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-09T03:51:37.66294+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, for the Find state in A8, the instructions encourage us to use DFS to find the orb, but they also discourage recursion. How are we meant to implement DFS in the find phase without calling find(state) or other recursive methods?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  We do NOT discourage recursion. We WANT you to use recursion. You are not reading carefully enough, not reading our reasons for doing what we say. We want you to do this:
+ </paragraph>
+ <paragraph>
+  public void find(FindState state) {
+  <break>
+  </break>
+  do anything necessary to set up for a call to dfsWalk;
+  <break>
+  </break>
+  dfsWalk(state, ...);
+ </paragraph>
+ <paragraph>
+  }
+  <break>
+  </break>
+  <break>
+  </break>
+  /** Good spec of dfswalk */
+  <break>
+  </break>
+  public void dfWal(FindState state, ... (if necessary, more parameters) ) {
+ </paragraph>
+ <paragraph>
+  //TODO write the recursive dfswalk here.
+ </paragraph>
+ <paragraph>
+  }
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  my apologies. I was confused by the directions under section 5 in the handout
+ </paragraph>
+ <figure>
+  <image height="96.8626198083067" src="https://static.us.edusercontent.com/files/QNeNvtenKLNHgucBcsGClEaW" width="558"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tony Chen (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  find() and flee() are just methods that contain your calls to recursive helper methods. By doing this, it allows for more versatility and you can just comment out the recursive helper methods in find() or flee() to test them. So don't write your dfs code in find().
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

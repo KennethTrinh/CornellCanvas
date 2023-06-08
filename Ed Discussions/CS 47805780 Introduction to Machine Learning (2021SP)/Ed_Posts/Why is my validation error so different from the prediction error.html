@@ -1,0 +1,96 @@
+<h1>
+ Title: Why is my validation error so different from the prediction error?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-12T13:14:44.002041+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 8
+</h3>
+<document version="2.0">
+ <paragraph>
+  Just been having a problem where my validation error is like 25% higher than my true error, and I have no idea how to proceed if I can't trust my validation error and I don't want to keep bombing precious kaggle submits just to get an idea of where I actually am. If anyone could give some advice that would be much appreciated.
+ </paragraph>
+</document>
+<h3>
+ Author: Carlos Alvarez (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm also having this issue. I tried using cross validation with k=100, but that didn't seem to help
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Katharine Sadowski (student)
+</h3>
+<h3>
+ Vote Count: 4
+</h3>
+<document version="2.0">
+ <paragraph>
+  My understanding is that some of the features that really help the training set aren't as helpful on the test set (e.g., time). I was able to get a better understanding of the data by graphing some of the features in the test and train and seeing potential areas that the two don't overlap or do.
+ </paragraph>
+ <paragraph>
+  Also, because this dataset is so small, I would test using a smaller k, like 5 so that you don't overfit on the data (I know you said it doesn't really matter, but this should be helpful in general).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Thorsten Joachims (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Also keep in mind how the test examples were sampled from the overall dataset. You probably get a better alignment between test and val, if val is selected in a similar way.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  That is helpful, thanks. Do you mind clarifying what you mean by "graphing the features"?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Katharine Sadowski (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sure! So for instance, the assignment starts with a line graph of the hospital occupancy by time for each country. You could theoretically create this for the test/train on the different features in the dataset.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

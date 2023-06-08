@@ -1,0 +1,48 @@
+<h1>
+ Title: Sending Array in UART
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-14T04:32:02.83976+10:00
+</h3>
+<h3>
+ Category: Final Project
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am trying to send an array from the board to python using UART, any suggestions on the best way to do this?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  An array of what? There are many different ways to do this depending on your needs.
+ </paragraph>
+ <paragraph>
+  Let's say you have some array of
+  <code>
+   uint8_t
+  </code>
+  of unknown length (8 bit unsigned integers). Your data transmission could be sending the raw data of the entire array, ending with some type of terminator (
+  <code>
+   '\0'
+  </code>
+  or other). When you receive the data, you can store a buffer of all the data received up to the terminator, and then split by byte to get your array back.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

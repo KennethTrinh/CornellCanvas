@@ -1,0 +1,92 @@
+<h1>
+ Title: question re: error of realizable learning
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-27T00:55:05.929033+10:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="496.49929873772794" src="https://static.us.edusercontent.com/files/TXvGj3qEwJ5x2mt2uD4P9yd4" width="658"/>
+ </figure>
+ <paragraph>
+  In lecture, it was mentioned that, even if one of the "rocks" fall inside the triangle for hypothesis h1, then that means the hypothesis h1 is not consistent with the training dataset.
+ </paragraph>
+ <paragraph>
+  However, I don't understand this. I understand that the training dataset is drawn iid from the probability distribution P, and I understand that the triangle has area p, which represents the probability that the hypothesis h1 errs
+  <italic>
+   on the true probability distribution P
+  </italic>
+  . Therefore, if one of the "rocks" fall inside the triangle for hypothesis h1, then I understand that we could say that the hypothesis h1 has a prediction error greater than zero, but I don't see how we could
+  <italic>
+   necessarily
+  </italic>
+  say that the hypothesis h1 is not consistent with the training dataset, just because one of the "rocks" falls inside the triangle for hypothesis h1.
+ </paragraph>
+ <paragraph>
+  Essentially, I thought the area of the triangle was talking about prediction error and thus I thought would would only be able to guarantee things about the true probability distribution P, but not necessarily the training dataset (since the training dataset is not necessarily equal to the whole probability distribution P).
+ </paragraph>
+ <paragraph>
+  So, my question is: how can we guarantee that, if one of the "rocks" fall inside the triangle for hypothesis h1, then that means the hypothesis h1 is not consistent with the training dataset?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We model the training dataset as being drawn independently at random from the true probability distribution; I think what he's referring to here is that if you're looking at a particular hypothesis and comparing it to the training set, only one error needs to be made for it to be an inconsistent hypothesis, and so our hypothesis is only consistent if none of the rocks fell in that region.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  But I thought the slide said that p = the area of the triangle = prediction error of hypothesis h1?
+ </paragraph>
+ <paragraph>
+  But, from what you're saying, it seems that the area of the triangle is actually representing sample error? This is where I'm confused.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The area of the triangle isn't representing sample error, but the fraction of rocks that happened to fall inside the triangle when thrown at random is. Does that clear things up?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

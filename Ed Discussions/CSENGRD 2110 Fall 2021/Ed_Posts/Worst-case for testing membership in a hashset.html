@@ -1,0 +1,151 @@
+<h1>
+ Title: Worst-case for testing membership in a hashset
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-12T12:01:05.513947+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <italic>
+   Worst-case time for testing membership in a hash set of size n
+  </italic>
+ </paragraph>
+ <paragraph>
+  O(n) because the array could be fully occupied, and you'd "loop" through the entire array and stop at the hashed value.
+ </paragraph>
+ <paragraph>
+  <italic>
+   Expected-time for testing membership in a hash set of size n when load factor is 1/2
+  </italic>
+ </paragraph>
+ <paragraph>
+  Is this because once the hash set is half-way occupied it doubles in size and the old entries are re-hashed into the array and then could hash a new value as usual? It could be that it's not half way full yet and I'd hash as usual. In both cases its O(1)?
+ </paragraph>
+</document>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  A load factor is # of entries / length of array.
+ </paragraph>
+ <paragraph>
+  With a load factor of 1/2, we can say for example that there is one entry in a hashset of length 2.  The element is in the first spot of the array and you are looking for that specific element.
+ </paragraph>
+ <paragraph>
+  In this hashset example, it would take O(1) time since the element is at the beginning of the hashset.
+ </paragraph>
+ <paragraph>
+  However, let us imagine that there is a hash-set that is length 10 with 5 elements.  This would mean that the load factor is 1/2.  In this case, the elements are al scattered about.  There is a chain of 3 elements in the second slot of the hash set, 1 element in the 5th slot, and 1 element in the 6th slot.  You will need to be looping until the 6th slot if you are specifically looking for that hashcode.  That would be O(6) which is constant time.
+ </paragraph>
+ <paragraph>
+  Unless you are trying to find the element that is located at the very end of the hash-set, I think it would usually take less time than O(n) which is why the expected time to test for a membership of a hashset that has a load factor of 1/2 is constant time.
+ </paragraph>
+ <paragraph>
+  If we were dealing with a load factor of 2 for a hashset, for instance, time complexity would be drastically different.  There would be an average of 2 elements per slot of the hashset and it would take a while to loop through it.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <italic>
+   "With a load factor of 1/2, we can say for example that there is one entry in a hashset of length 2. The element is in the first spot of the array and you are looking for that specific element."
+  </italic>
+ </paragraph>
+ <paragraph>
+  What makes it go in the first spot of the array? How do you know the element is at the beginning of the hashset?
+ </paragraph>
+ <paragraph>
+  "
+  <italic>
+   However, let us imagine that there is a hash-set that is length 10 with 5 elements. This would mean that the load factor is 1/2. In this case, the elements are al scattered about. There is a chain of 3 elements in the second slot of the hash set, 1 element in the 5th slot, and 1 element in the 6th slo
+  </italic>
+  t"
+ </paragraph>
+ <paragraph>
+  How do you calculate what position it hashes into without knowing the hash function?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I don't, I'm just giving an example of various hash sets.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  ok thanks
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Maybe this could help you see this better?
+ </paragraph>
+ <paragraph>
+  1/2 load factor means there is an average of one element per two hash-set spaces.
+ </paragraph>
+ <paragraph>
+  2 load factor means that there is an average of 2 elements per hash-set space.
+ </paragraph>
+ <paragraph>
+  In a hash-set with a load factor of 2, you will need to be looping through 2 elements per hash-set space, which means you will be looping through way more than O(n) in the worst case.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

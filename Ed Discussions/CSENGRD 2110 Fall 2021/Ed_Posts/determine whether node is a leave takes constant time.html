@@ -1,0 +1,51 @@
+<h1>
+ Title: determine whether node is a leave takes constant time
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-15T13:49:48.66567+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  hi! I am wondering that why determine a node is a leave will only take constant time?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Thank you so much!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Andrew Chen (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In a tree, a leaf is a node without any children.
+ </paragraph>
+ <paragraph>
+  So to see whether or not the node is a leaf, check whether or not it has any children. If it has at least one child, it is not a leaf node. If it has none, then it's a leaf node. This operation takes O(1) time.
+ </paragraph>
+ <paragraph>
+  In practice, you can think back to A5, where the children was a HashSet. That would be a simple call to size to see whether or not it's equal to 0.
+ </paragraph>
+ <paragraph>
+  If it's a binary tree with children of a node implemented as fields(let's say leftChild and rightChild), we can just check to see if they are both equal to null, in which case the node would be a leaf.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,74 @@
+<h1>
+ Title: Periodic Processes
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-04-25T08:36:24.666952+10:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What should happen when the average execution time is greater than the period of a periodic RT process?
+ </paragraph>
+ <paragraph>
+  Should we consider periodic processes when updating deadlineMet and deadlineMissed?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  1) Think about how delays may add up and what cases can / cannot your scheduler deal with (nice for your report).
+ </paragraph>
+ <paragraph>
+  2) Yes.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  2) Why is the answer yes? Since the periodic process will repeat over and over we will never exit back to main() where we see the number of deadlineMet and deadlineMiss processes with the flashing LED's.
+ </paragraph>
+ <paragraph>
+  Unless there is another process that is supposed to be checking the deadlineMet and deadlineMiss values?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I mean you will never actually see the blinks at the end. The global variables are still present so we could go into the debugger and see the values of the counters.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,107 @@
+<h1>
+ Title: Why doesn't any value show up when testing a script even when I use print()?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-14T12:23:52.369641+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was attempting one of the textbook exercises for writing functions with objects in chapter 15.2 but am kind of confused.
+ </paragraph>
+ <paragraph>
+  The prompt was to write a function called
+  <code>
+   distance_between_points
+  </code>
+  that takes two Points as arguments and returns the distance between them. When I test the script in my terminal, no values or results show up even though I put print statements in my code. Does anyone know why this is happening? This is the code i've written (it feels incorrect but i'm not sure how to fix it):
+ </paragraph>
+ <figure>
+  <image height="565.2454545454545" src="https://static.us.edusercontent.com/files/FMio8xlQmBWF3MWFAyfU0eF5" width="641"/>
+ </figure>
+ <paragraph>
+  Just to clarify, when I run this on my command shell, there are no printed values and it just looks like:
+ </paragraph>
+ <paragraph>
+  (base) myhome Desktop % python distance_between_points
+ </paragraph>
+ <paragraph>
+  (base) myhome Desktop %
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Dylan Castillo (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  The issue is that you’re printing the call to the function from inside the function because the print statement is indented to the same degree as the function. Try removing the indentation of the print statement!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I tried removing the indent, but it still didn't work.. I received a NameError:
+ </paragraph>
+ <paragraph>
+  Traceback (most recent call last):
+ </paragraph>
+ <paragraph>
+  File "distance_between_points", line 25, in &lt;module&gt;
+ </paragraph>
+ <paragraph>
+  print(distance_between_points(p1, p2))
+ </paragraph>
+ <paragraph>
+  NameError: name 'p1' is not defined
+ </paragraph>
+ <figure>
+  <image height="304.7469066366704" src="https://static.us.edusercontent.com/files/g43aCqXLnoXVL9baZBIUNaAI" width="521"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Elisabeth Finkel (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It looks like you haven't defined the variables
+  <code>
+   p1
+  </code>
+  and
+  <code>
+   p2
+  </code>
+  that you're passing into the function call. You can look at the code in sections 15.1-15.2 for an example of how to do this
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

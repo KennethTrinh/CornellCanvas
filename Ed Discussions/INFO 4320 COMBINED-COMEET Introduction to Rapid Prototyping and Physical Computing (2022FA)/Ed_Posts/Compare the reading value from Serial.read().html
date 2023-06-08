@@ -1,0 +1,45 @@
+<h1>
+ Title: Compare the reading value from Serial.read()
+</h1>
+<h3>
+ Author: Cheng Zhang (admin)
+</h3>
+<h3>
+ Date: 2022-09-02T07:30:05.855018+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When you input text in Serial Monitor,  the input data is transmitted as char or String coded using ASCII Codes:
+  <link href="https://www.computerhope.com/jargon/a/ascii.htm#:~:text=Short%20for%20American%20Standard%20Code,the%20language%20of%20all%20computers"/>
+  https://www.computerhope.com/jargon/a/ascii.htm#:~:text=Short%20for%20American%20Standard%20Code,the%20language%20of%20all%20computers.
+ </paragraph>
+ <paragraph>
+  If your input is '1',  the
+ </paragraph>
+ <pre>    incoming_byte = Serial.read();
+</pre>
+ <paragraph>
+  value of incoming_byte is actually 49, which is the ASCII code for '1'.
+ </paragraph>
+ <paragraph>
+  If you want to check whether the incoming_byte is '1',  you need to use one of the code below:
+ </paragraph>
+ <paragraph>
+  1. if (incoming_byte == '1')
+ </paragraph>
+ <paragraph>
+  2. if (incoming_byte == 49)
+ </paragraph>
+ <paragraph>
+  Both should work.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

@@ -1,0 +1,40 @@
+<h1>
+ Title: Not overriding indicates a subclass is actually an abstract class?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-07T18:04:46.133492+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Why does boat 4 failing to override getName() indicate that it should be abstract? I understand that subclasses of an abstract class must override abstract methods, but how does that indicate that the boat4 subclass must be abstract?
+ </paragraph>
+ <figure>
+  <image height="788" src="https://static.us.edusercontent.com/files/giUkbUgjf8HWBumslrjpLFRQ" width="1356"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Since getName is an abstract method in Boat1, it must be implemented in every non-abstract subclass of Boat1. Since Boat4 is a subclass of Boat1 and doesn't override abstract method getName, then Boat4 must be abstract.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

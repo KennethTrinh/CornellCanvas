@@ -1,0 +1,45 @@
+<h1>
+ Title: boolean function question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-25T00:04:50.96743+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="224.6487603305785" src="https://static.us.edusercontent.com/files/8lDGkXNGPWgOPkroMJN9ZWTl" width="655"/>
+ </figure>
+ <paragraph>
+  I don't understand how SVMs with kernel can represent any boolean function?
+ </paragraph>
+ <paragraph>
+  I understand that a boolean function is a function whose arguments and outputs are binary. And I understand that the polynomial kernel gives a product of sums (i.e. it is in conjunctive normal form). But I don't understand how the conjunctive normal form of polynomial kernels can represent any boolean function?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Thorsten Joachims (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Actually, I should have used Disjunctive Normal Form, which is a disjunction of conjunctions (but of course any formula in Conjunctive Normal Form can be translated in Disjunctive Normal Form). The polynomial kernel can represent the conjunctions as a product (especially after introducing two boolean features for each original feature - one for the feature itself and one for its negation). The disjunction is then represented by the sum of Kernels with the alpha coefficients.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

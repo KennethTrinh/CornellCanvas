@@ -1,0 +1,146 @@
+<h1>
+ Title: no Desktop in home directory, windows computer (was: Onedrive complications)
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-02-18T00:53:16.680799+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  My desktop it in my OneDrive and I'm not sure how to make the portal that the lab is asking us to make.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Dylan Castillo (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When you’re in the powershell, and you’re in your home directory (when you type ‘ls’ you can see “OneDrive” and “Documents,” for instance), just type in the powershell the following:
+ </paragraph>
+ <pre>New-Item -Name Desktop -ItemType Junction -Value OneDrive\Desktop
+</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  That is what I get when I input that command
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="97.85" src="https://static.us.edusercontent.com/files/CQVxSwIAEGUOaxpE3WRwAFsn" width="684"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Dylan Castillo (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For some reason I get the same error when I copy and paste that to the powershell too. Try typing it in manually (that worked for me).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Elisabeth Finkel (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <mention id="142207">
+   Dylan Castillo
+  </mention>
+  on a whim, I pasted your command into a python string, and apparently not all of the dashes are equal?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Dylan Castillo (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You're right! There was a mistake with the dashes. Edited the original answer with it correctly.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yeah, I had used a certain kind of html magic in the lab webpage to make sure a space wasn't inserted after the hyphens in the relevant command; but that particular incantation did not play well with Powershell.   I have since changed to a different kind of html magic, and copy-paste now works correctly.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  It worked thanks man!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

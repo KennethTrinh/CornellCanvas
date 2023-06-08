@@ -1,0 +1,48 @@
+<h1>
+ Title: Creative part, number of algorithms
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-09T22:32:02.218891+10:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Do we still need to have two algorithms for the creative part? Also I wonder do we need to train two results, one using features choosing from train_creative_t_value, one using  features choosing from train_creative? Or can we choose features from both of them and train to get a result.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Andrew Dettmer (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The two algorithm requirement is just for the baseline solution (i.e. not necessary for the creative part, but could be useful).
+ </paragraph>
+ <paragraph>
+  From the handout, in the section describing train_creative_t_values:
+ </paragraph>
+ <blockquote>
+  This is a lot of data so feel to use any number of these columns to improve your prediction.
+ </blockquote>
+ <paragraph>
+  You do not need to produce two separate sets of predictions based on separate training for each of those csvs. The data in train_creative_t_values is not strictly necessary for producing your creative result, but could definitely improve your model.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

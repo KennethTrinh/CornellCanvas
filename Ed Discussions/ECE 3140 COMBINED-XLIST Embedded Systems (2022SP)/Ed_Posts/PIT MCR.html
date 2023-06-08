@@ -1,0 +1,82 @@
+<h1>
+ Title: PIT MCR
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-24T12:53:56.802177+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, I am having some trouble understanding the documentation and figuring out the syntax for how to access the different registers.
+ </paragraph>
+ <paragraph>
+  When I try to do the following,
+ </paragraph>
+ <paragraph>
+  PIT-&gt;CHANNEL[0].MCR = (1 &lt;&lt; 1);
+ </paragraph>
+ <paragraph>
+  I am getting the error: 'struct &lt;anonymous&gt;' has no member named 'MCR'
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  In KL46Z4.h, the PIT_Type struct is defined as follows:
+ </paragraph>
+ <pre>typedef struct {
+  __IO uint32_t MCR;                               /**&lt; PIT Module Control Register, offset: 0x0 */
+       uint8_t RESERVED_0[220];
+  __I  uint32_t LTMR64H;                           /**&lt; PIT Upper Lifetime Timer Register, offset: 0xE0 */
+  __I  uint32_t LTMR64L;                           /**&lt; PIT Lower Lifetime Timer Register, offset: 0xE4 */
+       uint8_t RESERVED_1[24];
+  struct {                                         /* offset: 0x100, array step: 0x10 */
+    __IO uint32_t LDVAL;                             /**&lt; Timer Load Value Register, array offset: 0x100, array step: 0x10 */
+    __I  uint32_t CVAL;                              /**&lt; Current Timer Value Register, array offset: 0x104, array step: 0x10 */
+    __IO uint32_t TCTRL;                             /**&lt; Timer Control Register, array offset: 0x108, array step: 0x10 */
+    __IO uint32_t TFLG;                              /**&lt; Timer Flag Register, array offset: 0x10C, array step: 0x10 */
+  } CHANNEL[2];
+} PIT_Type;
+</pre>
+ <paragraph>
+  Notice that the PIT module contains a single 32-bit register called MCR. There does not exist separate MCR registers for each channel.
+ </paragraph>
+ <paragraph>
+  Using the information about C structs from last week's discussion, you can determine the correct syntax for accessing the MCR.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aaron Wilhelm (admin)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  Additionally, remember that you can CTRL/CMD click on a variable in the IDE to go straight to the definition which can make it easier to find out what member items the structs in the header files have
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

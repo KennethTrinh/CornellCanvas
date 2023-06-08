@@ -1,0 +1,68 @@
+<h1>
+ Title: a1 2nd constructor
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-11T06:13:45.544624+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For the 2nd constructor, do we need to assert that the mom and dad can't be null? Thank you
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What does the specification of the second constructor say?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  that the elephant has mother a mother ma, and father pa, which I would assume to mean that mom and dad can't be null? But it wasn't in the precondition so I wasn't sure if we need to assert it, but in the case that the mom or dad is null, then the gender precondition can't be checked.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The Precondition, shown below, says that ma is a female. It could not be a female if it were null, so it must be non-null as well. Yes, you have to check the latter case.
+ </paragraph>
+ <paragraph>
+  Precondition: n has at least 1 character, y &gt;= 2000, g is 'F' for female or 'M' for male, m is in 1..12, ma is a female, and pa is a male.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,51 @@
+<h1>
+ Title: foreach loop question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-15T05:12:51.409435+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  if I have a foreach loop : for(H1N1 Tree dt : children){...}, what happens when the node doesn't have any children? My guess is that it would look like for(H1N1 Tree dt : null) and so it would just skip over the loop entirely. is this correct?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  There is a difference between an empty list and
+  <code>
+   null
+  </code>
+  .  If the list object exists, but its size is zero, then the loop body will execute 0 time and move on.  However, if the list object itself is
+  <code>
+   null
+  </code>
+  , then a
+  <code>
+   NullPointerException
+  </code>
+  will be thrown.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

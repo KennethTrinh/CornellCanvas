@@ -1,0 +1,54 @@
+<h1>
+ Title: Adding to tombstone
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-13T13:27:14.952285+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Supposed there is a tombstone at index i, if a new element is added to the HashSet with Hashcode i, will the new element replace the tombstone, or will it need to be moved forward via linear probing?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  You said "Hashcode i", I think you mean more generally just being mapped to bucket i (hashcode mod number of buckets)?
+ </paragraph>
+ <paragraph>
+  With linear probing and tombstones, we will need to treat that space as occupied and keep looking for an open bucket.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

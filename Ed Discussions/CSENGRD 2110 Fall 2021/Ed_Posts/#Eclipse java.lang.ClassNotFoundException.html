@@ -1,0 +1,50 @@
+<h1>
+ Title: #Eclipse: java.lang.ClassNotFoundException
+</h1>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Date: 2021-08-20T20:22:33.747135+10:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <bold>
+   Problem:
+  </bold>
+ </paragraph>
+ <paragraph>
+  Error: Could not find or load main class &lt;classname&gt;
+  <break>
+  </break>
+  Caused by: java.lang.ClassNotFoundException: &lt;classname&gt;
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  <bold>
+   Solution:
+  </bold>
+ </paragraph>
+ <paragraph>
+  Right click on your project and go to Build Path -&gt; Configure Build Path. Go to the Libraries tab.
+ </paragraph>
+ <paragraph>
+  Once you're in the library tab, click on "JRE System Library" and then click the edit button. Then, in the Execution Environment dropdown menu, make sure that it is jdk, not jre. If it is jre, click on the dropdown menu and find jdk for Java 11 and select it. Then click Finish.
+ </paragraph>
+ <paragraph>
+  If you can't find jdk as an option, you either have downloaded jre and not jdk or the jdk may not be in the path. In the edit menu, try clicking on the Installed JRE's button and click Add. Next select Standard VM and click Next. Click the Directory Button and look for your jdk 11. It may either be in Library/Java/JavaVirtualMachines or Library/AdoptOpenJDK for Mac or C:/Program Files/Java or C:/Program Files/AdoptOpenJDK for Windows. The folder you need to find inside the directory should start with "jdk-11."
+ </paragraph>
+ <paragraph>
+  Note: you may still get the error after doing this. If you do, restart eclipse.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

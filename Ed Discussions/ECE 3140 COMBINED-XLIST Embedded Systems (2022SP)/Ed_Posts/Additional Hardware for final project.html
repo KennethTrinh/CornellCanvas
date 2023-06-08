@@ -1,0 +1,68 @@
+<h1>
+ Title: Additional Hardware for final project
+</h1>
+<h3>
+ Author: Kevin Huang (student)
+</h3>
+<h3>
+ Date: 2022-04-01T08:38:54.428906+11:00
+</h3>
+<h3>
+ Category: Final Project
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is there an easy way to hook up the boards to a motor or a servo of some kind?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For a motor, you should not try to directly hook it up to the boards output pins since they will not be able to delivery enough current. Trying to draw such a current would fry the pin, port, or possibly entire board. A motor should be hooked up using an H-bridge and an external power supply. You can then supply the appropriate signals to the H-bridge to spin the motor.
+ </paragraph>
+ <paragraph>
+  For something like a servo, they usually have pins for power, ground, and control. Power and ground can be hooked up to an external supply, and the control pin can be connected to a pin on the KL46Z set up for PWM.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kevin Huang (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Amazing, are there any brands that have worked well in the past? For reference my current idea for the project involves automating a fishing rod
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If you are buying hardware, doing a Google search or check Amazon or other reviews to see if it works well with other MCU platforms (Arduino, etc.)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

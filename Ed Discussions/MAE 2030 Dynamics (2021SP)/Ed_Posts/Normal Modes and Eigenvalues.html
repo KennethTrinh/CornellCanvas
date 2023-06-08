@@ -1,0 +1,89 @@
+<h1>
+ Title: Normal Modes and Eigenvalues
+</h1>
+<h3>
+ Author: Sean Han (student)
+</h3>
+<h3>
+ Date: 2021-04-07T08:18:01.586064+10:00
+</h3>
+<h3>
+ Category: Concepts
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  Hi,
+  <break>
+  </break>
+  For prelim 2, will we need to know how to solve eigenvalue problems to find normal modes?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Andy Ruina (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sean:
+ </paragraph>
+ <paragraph>
+  <bold>
+   Long answer
+  </bold>
+ </paragraph>
+ <paragraph>
+  Here are some things about eigenvectors:
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    You can find them by taking the determinant of $A - \lambda I$, finding the roots of the characteristic polynomial, plugging the roots back into $(A - \lambda I)\cdot v = 0$ and solving for $v$ using, say, row operations; and
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    A symmetric $n\times n$ matrix always has $n$ mutually orthogonal eigenvectors; and
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    A symmetric matrix $A$ can be diagonalized using a matrix $V$ whose columns are $A$'s eigenvectors $v_i$, and the inverse of that matrix $V^{-1}$:    $D = V^{-1}AV$.
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  Those are things that are taught in Math 2940, and probably not taught  yet this semester. These  have not been in the lectures nor the homework in MAE 2030 (and they are only discussed as an aside in the MAE 2030 textbook).  It will be possible to get a perfect score on this test without knowing any of those things above.
+  <break>
+  </break>
+  <break>
+  </break>
+  On the other hand, in this course, MAE 2030, we have discussed the central eigenvector equation  $$Av = \lambda v$$ and its relation to normal modes. And we have learned the Matlab command to find eigenvectors and eigenvalues.    And, it is assumed that you know how to multiply matrices and vectors so could check if a given vector was an eigenvector.
+ </paragraph>
+ <paragraph>
+  <bold>
+   Short answer
+  </bold>
+ </paragraph>
+ <paragraph>
+  It is possible that, for this coming up test, it would be useful to know how to find normal modes, or to recognize normal modes, possibly making use of appropriate Matlab commands.
+ </paragraph>
+ <paragraph>
+  <bold>
+   Shorter answer
+  </bold>
+ </paragraph>
+ <paragraph>
+  Was it in the lecture, recitations, homework,  text or prerequisite courses?  Then it could be on the test.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

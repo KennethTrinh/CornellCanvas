@@ -1,0 +1,43 @@
+<h1>
+ Title: 18sp q2 c II Run-time error
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-14T04:51:07.288828+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="258.40265120132557" src="https://static.us.edusercontent.com/files/58FYGgKxfdhEXnnVHM9qRlq7" width="658"/>
+ </figure>
+ <figure>
+  <image height="84" src="https://static.us.edusercontent.com/files/WJMABV9VScpE6amRwxfUvMpD" width="657"/>
+ </figure>
+ <paragraph>
+  Why is this a run-time error? Is it because at compile time the compiler sees (Jewel)(new Rock()) as a jewel object, which implements Valuable so it is okay to compile but then when it actually runs it tries to assign new Rock() to crownJewel before the cast is made? Or is that not the right logic.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Melissa Ginaldi (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes that is the correct logic. Java sees something of type Jewel being casted to type Valuable which is legal and so no compile time error occurs. However, during run time Java tries to cast Rock to type Jewel which is illegal (Rock does not extend Jewel) and so an error occurs.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

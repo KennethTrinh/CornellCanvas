@@ -1,0 +1,71 @@
+<h1>
+ Title: Fall 2019 2m
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-14T14:54:17.998487+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The answer says that Java will not let you execute a synchronized method on multiple threads simultaneously. However, isn't that not true in a non-static environment? For example, this code produces a number between 10000 and 20000 because each thread references itself when checking for synchronization, which means that despite being a synchronized method, increment() runs on two threads simultaneously.
+ </paragraph>
+ <figure>
+  <image height="39.60506863780359" src="https://static.us.edusercontent.com/files/MRvNDqYa7wNjTPqpkQwhPBOs" width="658"/>
+ </figure>
+ <figure>
+  <image height="516.2166666666667" src="https://static.us.edusercontent.com/files/XWG1w4LR0ZHahsL3zwGQNj06" width="658"/>
+ </figure>
+</document>
+<h3>
+ Author: Tianjiao Li (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  It looks like synchronized keyword specifies that the method is synchronized on an object instead of a class. In the code above, each thread does not reference itself. They reference the class. Thus, the expected locking behavior is missing.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, as the student said, synchronization is always on an object, not a class.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is the object in this case the thread that increment() is being called from?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

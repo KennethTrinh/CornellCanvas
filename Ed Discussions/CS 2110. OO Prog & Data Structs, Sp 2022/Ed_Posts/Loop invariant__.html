@@ -1,0 +1,126 @@
+<h1>
+ Title: Loop invariant
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-06T04:45:30.239718+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why is v= min(v, b[k+1]) and not v= min(v, b[k]) ?
+ </paragraph>
+ <figure>
+  <image height="166" src="https://static.us.edusercontent.com/files/vyEgF5iiJbz01kOovuiPKPKY" width="581"/>
+ </figure>
+ <figure>
+  <image height="75.16479400749063" src="https://static.us.edusercontent.com/files/zsHjeRA1lTT22bNTTib1lyOT" width="658"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Both options (the ones shown in the second screenshot) are accepted depending on where you increment your k value
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  if you say:
+ </paragraph>
+ <paragraph>
+  v=Math.min(v, b[k]);
+ </paragraph>
+ <paragraph>
+  k=k+1;
+ </paragraph>
+ <paragraph>
+  this is acceptable, right?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  so if you did k = k+1; at the end, k goes into the next element and the post condition is v = min(b[0..k]) but you changed k at the end to be the next element so you don't know whether that is the new minimum or not, so that violates the precondition.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  okay that makes sense. thanks!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  that doesn't truthify the precondition after every time.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  no, that’s not the same as the solution
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

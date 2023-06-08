@@ -1,0 +1,50 @@
+<h1>
+ Title: Shape.contains() in TODO 7
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-05T12:41:23.774888+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  For the checkHit method:
+ </paragraph>
+ <paragraph>
+  Are we allowed to create an ellipse2D with the dimensions of our target and use the .contains() method to check if our mouse coordinates are inside the shape?
+ </paragraph>
+ <paragraph>
+  I found that this allowed me to get a more precise hitbox because the constructor for ellipse2D takes doubles.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  (My coordinates for the upper left point of the circle ended up being a double because I had to calculate the upper left coordinates from the fields X, Y which define the center)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The precision is not necessary here (center coordinates, mouse positions, and radius are all integers, and we're being a bit sloppy about pixels centers vs. edges anyway), so I recommend doing the math yourself to determine whether the click is a hit.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

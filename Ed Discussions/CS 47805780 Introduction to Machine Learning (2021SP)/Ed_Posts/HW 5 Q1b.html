@@ -1,0 +1,67 @@
+<h1>
+ Title: HW 5 Q1b
+</h1>
+<h3>
+ Author: Will Jenner (student)
+</h3>
+<h3>
+ Date: 2021-04-18T02:31:17.188682+10:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello, in question B the bullet point examples seem to imply that
+ </paragraph>
+ <paragraph>
+  P(xi=z | y = -1) + P(xi=z | y= +1) = 1
+ </paragraph>
+ <paragraph>
+  This seems really weird, but it's consistent for all of the bullet points. If this was true, it would mean that P(xi = z) = 1 and that seems like that would mean that xi is a useless variable because it's always z.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Scott Bass (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  You're missing the multiplication by $P(Y=-1)$ and $P(Y=1)$:
+ </paragraph>
+ <paragraph>
+  $$P(X_{i} = z) = P(X_{i} = z | Y = -1)P(Y = -1) + P(X_{i} = z | Y = 1)P(Y = 1)$$
+ </paragraph>
+ <paragraph>
+  So $P(X_{i} = 0) = 0.4 \times 0.3 + 0.6 \times 0.7 = 0.54$
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Justin Lee (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  As an add-on, make sure that you are differentiating between conditional probability and regular probabilities. As Scott has written, determining $$P(X_{i}=z)$$ require you to use the law of total probability
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

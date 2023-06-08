@@ -1,0 +1,101 @@
+<h1>
+ Title: Breaking up Lab1
+</h1>
+<h3>
+ Author: Lauren Greenhill (None)
+</h3>
+<h3>
+ Date: 2022-02-15T06:10:15.360566+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am confused about how to break our code into different files. Should we have multiple definitions of main, or just one definition of main in lab1.s and reference different labels in the part files? If this is the case how do we reference labels defined in other files?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  On CMSX, you will be submitting separate files for each part of the lab (part1.s, part2.s, part3.s, part3ec.s). Since you will have overlapping definitions for most of your labels/functions, the best method to store your files together (without using multiple projects) is
+  <italic>
+   Exclusions
+  </italic>
+  . This tells your assembler to ignore certain files when creating builds of your project.
+ </paragraph>
+ <figure>
+  <image height="392" src="https://static.us.edusercontent.com/files/MImxtB7fnrzdTnSC9rodase7" width="449"/>
+ </figure>
+ <figure>
+  <image height="368" src="https://static.us.edusercontent.com/files/0hW0mc8a5oaMGQgjOVz7RPAW" width="444"/>
+ </figure>
+ <figure>
+  <image height="427" src="https://static.us.edusercontent.com/files/QigVBOQ2LHqG6hBJ5tlcDqT9" width="238"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Lauren Greenhill (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Should we keep our testing code in main or should it be commented out?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prithwish Dan (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  So in part1 and part2 we would have all our code that just corresponds to morse code (including main and testing morse), and part3 would have our code for morse AND fibonacci? And I'm assuming exclusions would allow us to pick and choose which files to run, and we can just submit the whole project like that?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="1.0">
+ <paragraph>
+  1) Yes
+  <break>
+  </break>
+  2) Yes, but you will select individual files to submit to specific categories on CMSX (not submitting large zip files).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

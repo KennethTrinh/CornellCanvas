@@ -1,0 +1,59 @@
+<h1>
+ Title: return statement
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-04T16:32:42.910987+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Let's say that I am implementing a fruitful method and I know that all inputs will go through an if-loop that I wrote in the method body.
+ </paragraph>
+ <paragraph>
+  Because I know this, I write a return statement in the if-loop body. However, do I also have to write a return statement outside of the if-loop body as well? I feel like the Java compiler will not know that all inputs will go through the if-loop body and raise an error telling me to write a return statement outside of the if-loop body as well.
+ </paragraph>
+ <paragraph>
+  Is this thinking correct?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  Yes, you need a return statement for the whole method so you ensure java’s compiler something is being returned in the worst case (no if statements are entered)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Andrew Chen (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, and additionally you could put the return statement in an else statement, and the compiler would allow that. I think you'll also benefit from trying these scenarios out in Eclipse.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

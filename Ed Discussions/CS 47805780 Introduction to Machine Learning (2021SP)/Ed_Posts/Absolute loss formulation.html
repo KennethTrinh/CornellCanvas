@@ -1,0 +1,55 @@
+<h1>
+ Title: Absolute loss formulation
+</h1>
+<h3>
+ Author: Zach Brodeur (student)
+</h3>
+<h3>
+ Date: 2021-02-27T01:32:23.31956+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The absolute loss formulation as the sum(abs(truth-preds)) / length(truth or preds) in the project seems odd to me. This formulation gives the correct results in the vocareum grading, but it would seem to me that the absolute loss should be symmetric with the accuracy and simply count the number of incorrect classifications / total # of classifications. The formulation given in the workbook can give values much larger than 1 if say a few of the misclassifications are class 40 vs class 1, since the absolute value of this error is 39. This wouldn't seem to provide useful information, since it isn't stated in the problem and wouldn't make sense that any misclassification is worse than another (e.g. misclassifying 1 as 2 is no different than misclassifying 1 as 40).
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Jane Du (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  You're right! The formulation works only for the case when the problem is
+  <bold>
+   binary classification with labels that differ by 1.
+  </bold>
+  In other words, since the labels are 0 and 1, any "mistake" would cause an absolute error of 1. More generalized zero-one loss would involve just counting how many are inequal, and L1-distance (or absolute distance) would involve normalizing (and doesn't make as much sense in the classification setting, so doesn't involve percentages in the same way. But you'll learn more about that later in the class!)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Zach Brodeur (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ok, thanks, makes sense. The vocareum test seems to want the 'sum(abs(...' implementation versus what seems to be the more correct implementation if other folks are having issues getting the 'analyze' function to pass the grading tests.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

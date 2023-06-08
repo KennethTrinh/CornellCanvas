@@ -1,0 +1,94 @@
+<h1>
+ Title: Fall 2017
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-12-11T15:30:27.509416+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I had 2 questions
+ </paragraph>
+ <figure>
+  <image height="220.22857142857143" src="https://static.us.edusercontent.com/files/EewzSzaI0tTjhoGvIldXQCxZ" width="658"/>
+ </figure>
+ <paragraph>
+  For this one how do I check if its time-invariant, I am having a hard time getting it. Also for checking if it's linear, you just check if 0 maps to 0 right.
+ </paragraph>
+ <paragraph>
+  Secondly,
+ </paragraph>
+ <figure>
+  <image height="164.79956188389923" src="https://static.us.edusercontent.com/files/MxXdZFpamR9KlDmhib8EF6Oy" width="643"/>
+ </figure>
+ <paragraph>
+  I just don't get why iv) is true. Wouldn't this need v to be orthogonal to w_1 and w_2 and we don't know that do we?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For LTI, you're supposed to see that the I/O mapping is in the standard LTI form of $S ( x ) = h _ 0 * x +$ some shift/identity terms, where $h _ 0$ is a decent signal, in this case $h _ 0 ( t ) = e ^ t u ( t + 1 )$.  FYI "0 maps to 0" isn't quite enough to show linearity.
+ </paragraph>
+ <paragraph>
+  If something's orthogonal to a bunch of $w$'s, it's also orthogonal to any linear combo of those $w$'s.  In this case, you can check that the indicated expression is orthogonal to $w _ k$, $1 \leq k \leq 3$, just by plug-in.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I didn't fully understand the second part. Why are the v's orthogonally to the w_1 and w_2?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Take the inner product of that expression with $w _ 1$.  You get
+ </paragraph>
+ <paragraph>
+  $\langle v , w _ 1 \rangle - \sum _ {k = 1} ^ 3 \langle v , w _ k \rangle \langle w _ k , w _ 1 \rangle = \langle v , w _ 1 \rangle - \langle v , w _ 1 \rangle = 0$,
+ </paragraph>
+ <paragraph>
+  where the second-to last equality holds because the $w _ k$ are orthonormal.
+ </paragraph>
+ <paragraph>
+  Intuition: the summation is the orthogonal projection of $v$ onto ${\rm span} ( \{ w _ 1 , w _ 2 , w _ 3 \} )$, so $v$ minus the sum is orthogonal to all three $w$'s.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

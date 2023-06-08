@@ -1,0 +1,64 @@
+<h1>
+ Title: HW6 Animation
+</h1>
+<h3>
+ Author: Cong Liu (student)
+</h3>
+<h3>
+ Date: 2021-10-14T08:48:25.252135+11:00
+</h3>
+<h3>
+ Category: Homework
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <file filename="Sad face by cl997.pdf" url="https://static.us.edusercontent.com/files/0qIdYD29ihed5LAQxGQuez2W">
+ </file>
+ <figure>
+  <image height="463" src="https://static.us.edusercontent.com/files/YNIwzxO5yWDD8G5jKYg1rDeT" width="618"/>
+ </figure>
+ <pre>close all
+clc
+clear
+
+% Draw the Face
+x0= [0 2 2 0 0 nan 0.25 0.75 nan 1.25 1.75 nan 0.5 0.5 1.5 1.5];
+y0= [0 0 2 2 0 nan 1.5 1.75 nan 1.75 1.5 nan 0 1 1 0];
+r0 = [x0;y0];
+
+n = 100;
+t = linspace(0,2*pi,n);
+Fig = figure;
+
+filename = 'Sad face.gif';
+for i=1:1:n
+    drop = t(i); % The motoin function
+    R = [ cos(t(i))  -sin(t(i)); % Rotation function
+      sin(t(i))  cos(t(i))];
+    r = R* r0;
+    r = bsxfun(@minus, r, [0;drop]);
+    x=r(1,:);
+    y=r(2,:);
+    plot(x,y)
+    axis('equal'); 
+axis([-8 8 -8 8]);
+
+% Get Gif
+drawnow 
+frame = getframe(Fig); 
+    im = frame2im(frame); 
+    [imind,cm] = rgb2ind(im,256);
+    if i == 1
+        imwrite(imind,cm,filename,'gif','WriteMode','overwrite', 'Loopcount',inf);
+    else
+        imwrite(imind,cm,filename,'gif','WriteMode','append','DelayTime',0.02);
+    end
+end
+
+</pre>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

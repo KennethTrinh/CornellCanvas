@@ -1,0 +1,76 @@
+<h1>
+ Title: issue launching junit test
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-16T07:28:09.177175+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="392.2433537832311" src="https://static.us.edusercontent.com/files/RgI1gMBvogQxhfe6iVLn1oJs" width="658"/>
+ </figure>
+ <paragraph>
+  why is this happening when I try to launch a test? and when I click ok, this pops up:
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="385.6221914967162" src="https://static.us.edusercontent.com/files/yzwmRWA4QUlgSgzafuEiujai" width="643"/>
+ </figure>
+ <figure>
+  <image/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: CJ Lee (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  It's probably because the name for your test file is
+  <code>
+   a2Test.java
+  </code>
+  , whereas your class declaration is named
+  <code>
+   A2Test
+  </code>
+  . Note the different in capitalization with the first letter. Eclipse can be picky with file names - normally, you should always capitalize the first letter of a class in Java, and you want the file name to be named exactly the same as the class defined within it.
+ </paragraph>
+ <paragraph>
+  Try right clicking on the a2Test.java file, and then clicking Refactor -&gt; Rename, and then rename it to
+  <code>
+   A2Test.java
+  </code>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

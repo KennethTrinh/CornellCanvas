@@ -1,0 +1,84 @@
+<h1>
+ Title: Big Sur - problem with serial package
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-02-12T03:57:48.024846+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am using a Mac with Big Sur
+ </paragraph>
+ <paragraph>
+  When I run the new esptool package, an error with the "import serial" line pops up - it says that "serial" does not exist. Thus, I can't verify or upload code in the Arduino application. I've tried to install pyserial using "pip install pyserial," as I believe that is the package "serial" is in, but it still doesn't work. Any suggestions?
+ </paragraph>
+</document>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <bold>
+   This is the error I get when I hit verify or upload:
+  </bold>
+ </paragraph>
+ <paragraph>
+  Arduino: 1.8.13 (Mac OS X), Board: "Adafruit ESP32 Feather, 80MHz, 921600, None, Default"
+ </paragraph>
+ <paragraph>
+  Traceback (most recent call last): File "/Library/Arduino15/packages/esp32/tools/esptool_py/3.0.0/esptool", line 38, in  import serial ModuleNotFoundError: No module named 'serial' exit status 1 Error compiling for board Adafruit ESP32 Feather.
+ </paragraph>
+ <paragraph>
+  This report would have more information with "Show verbose output during compilation" option enabled in File -&gt; Preferences.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Francois Guimbretiere (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Do you already have your kit with the ESP32 board connected to your computer?
+ </paragraph>
+ <paragraph>
+  Francois.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I ended up uninstalling and reinstalling esp32 and that fixed it. I also re-downloaded and re-executed the extra Big Sur package if anyone else is getting the same error.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,56 @@
+<h1>
+ Title: links showing up as localhost:8001 with a favicon I did not install
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2023-02-23T09:20:33.530643+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  As I was testing my site for submission, I realized that the pages now link to localhost:8001 instead of the original 8000. There is also a favicon I did not install. Any tips?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Allison Hsu (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Generally, localhost:8001 is used when port 8000 is already in use (e.g. another php server). Check that you are on the right port for the code you are looking at. An easy way to close php servers run through vscode is to restart vscode.
+ </paragraph>
+ <paragraph>
+  The favicon should only show up if it is in your code- if it is appearing erroneously, try restarting the php server and clearing your cache.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Kyle J. Harms (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You're seeing the cached favicon from the class activities and labs. Command/Control+Shift+R to hard refresh the page and the favicon will go away.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,137 @@
+<h1>
+ Title: Keep Same Error Everywhere
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-16T14:03:13.129259+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Everywhere I use an arrow, I get this error:
+ </paragraph>
+ <paragraph>
+  "invalid use of incomplete typedef 'process_t' {aka 'struct process_state'}"
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  However, there isn't even a process_state anywhere in my code when I search for it. Any help?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  In 3140_concur.h:
+ </paragraph>
+ <pre>struct process_state;
+typedef struct process_state process_t;</pre>
+ <paragraph>
+  The arrow operator is syntactic sugar for dereference then accessing a member. The following lines are equivalent:
+ </paragraph>
+ <pre>(*ptr).member
+ptr-&gt;member</pre>
+ <paragraph>
+  This only works when
+  <code>
+   ptr
+  </code>
+  is a pointer to a struct.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The following is a snippet of my code showing one example of the error, along with my struct definition and two initializations. From what I understand, since node is a pointer to a process_t, node-&gt;next should be valid, since it dereferences and then gets the field. So shouldn't this work?
+ </paragraph>
+ <figure>
+  <image height="210" src="https://static.us.edusercontent.com/files/E1aBtApnXieqSOfP9weDRhhB" width="286"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  At the top of 3140_concur.h you will see:
+ </paragraph>
+ <pre>struct process_state;
+typedef struct process_state process_t;
+   /* opaque definition of process type; you must provide this
+      implementation.
+            
+            To do this, write code similar to the following in your process.c:
+            
+            struct process_state {
+                int var1;
+                struct process_state* some_pointer;
+            };
+   */
+</pre>
+ <paragraph>
+  The struct is named
+  <code>
+   process_state
+  </code>
+  , but is then
+  <code>
+   typedef
+  </code>
+  'd to
+  <code>
+   process_t
+  </code>
+  . Your struct definition is incorrect since you are trying to define
+  <code>
+   process_t
+  </code>
+  , which confuses the compiler.
+ </paragraph>
+ <paragraph>
+  Unrelated note, please use the name
+  <code>
+   process_queue
+  </code>
+  instead of just
+  <code>
+   queue
+  </code>
+  as to be consistent with the declarations in 3140_concur.h:
+ </paragraph>
+ <pre>extern process_t* current_process; 
+extern process_t* process_queue;</pre>
+</document>
+<h3>
+ ------------------------------------
+</h3>

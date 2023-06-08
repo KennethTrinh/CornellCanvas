@@ -1,0 +1,87 @@
+<h1>
+ Title: AssertionError with roster and in_schedules
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-15T08:27:26.110383+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm getting this error message and am not sure where to look in my code/what method is causing the error. Any help is appreciated thanks!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Traceback (most recent call last):
+ </paragraph>
+ <paragraph>
+  File "schedule_tests.py", line 297, in &lt;module&gt;
+ </paragraph>
+ <paragraph>
+  testfn() # Adding the parentheses calls whatever testfn is
+ </paragraph>
+ <paragraph>
+  File "schedule_tests.py", line 63, in test_schedule_add
+ </paragraph>
+ <paragraph>
+  assert c.in_schedules == ['roster'], \
+ </paragraph>
+ <paragraph>
+  AssertionError: course CS 1110 LEC 001 doesn't have the roster in its in_schedules
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aliva Das (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Did you edit the schedule_tests.py file? Line 63 is supposed to be
+ </paragraph>
+ <paragraph>
+  assert c.in_schedules == [roster], \
+ </paragraph>
+ <paragraph>
+  where there are no quotes around the word
+  <italic>
+   roster
+  </italic>
+  .
+  <italic>
+   roster
+  </italic>
+  is a variable, not a string!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  ohhh yes not sure how that happened, thanks!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

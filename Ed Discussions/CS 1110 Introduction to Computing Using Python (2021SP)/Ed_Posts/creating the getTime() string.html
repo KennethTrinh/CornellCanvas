@@ -1,0 +1,269 @@
+<h1>
+ Title: creating the getTime() string
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-16T09:16:36.165049+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi,
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  We're trying to create the string for t in getTime(). While we were able to implement the &lt;days&gt; portion of the
+  <code>
+   t
+  </code>
+  string, we are confused on how to use class attributes (and accessing these values in the dictionary) to get the &lt;starthrs&gt;, &lt;startmins&gt;, &lt;endhrs&gt;, &lt;endmins&gt;. This is our error message below:
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="94.82601054481547" src="https://static.us.edusercontent.com/files/sfAi4Sd3DMgxpmuMhDch0zPA" width="658"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello,
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Lets take a quick look at the course Class.
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="false">
+  <snippet-file id="code">
+   class Course:
+    """ An instance represents a class.
+
+    Instance attributes:
+        name [non-empty string]: name of the course
+        in_schedules: list of Schedules this Course is in
+
+        # STUDENTS: below this comment block (but within the docstring for class
+        # Course), document any attributes you add.  
+        # Don't delete this comment block, so the graders can easily see what you 
+        # added.
+        #
+        # You'll want attribute(s) or method(s) that 
+        # (1) represent the meeting time of the course,
+        # (2) make it easy to retrieve the Course's times in "standard" format
+        # (3) make it easy to compute whether another Course conflicts.
+        # COURSE_DOCSTRING_BLOCK
+
+
+        
+    """
+    def __init__(self, n, t):
+        """
+        Creates a new Course with name n, some internal representation of 
+        meeting time t, and in_schedules set to the empty list
+
+        Preconditions: 
+            n: non-empty string, no other course of the same name exists.
+                (Examples: "CS 1110 LEC 001", "CS 1110 DIS 201")
+            t: string of the form (no beginning or trailing spaces)
+                &lt;days&gt; &lt;starthrs&gt;:&lt;startms&gt;&lt;am or pm&gt;-&lt;endhrs&gt;-&lt;endms&gt;&lt;am or pm&gt;
+               where &lt;days&gt; is a subsequence of "MTWRF"
+               ***OR***
+               the string "TBA"
+
+               Examples of valid values for t:
+                "MWF 10:10am-2:30pm"
+                "R 8:07am-11:00am"
+                "TBA"
+        """
+  </snippet-file>
+ </snippet>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  In the initializer for the course class, the argument "t" is already in the form of  &lt;days&gt; &lt;starthrs&gt;:&lt;startms&gt;&lt;am or pm&gt;-&lt;endhrs&gt;-&lt;endms&gt;&lt;am or pm&gt;
+ </paragraph>
+ <paragraph>
+  Perhaps you can make a new class attribute using that argument so you can get that exact format for each class.
+ </paragraph>
+ <paragraph>
+  Best,
+ </paragraph>
+ <paragraph>
+  Troy
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you!
+ </paragraph>
+ <paragraph>
+  We created a dictionary meeting time attribute in this class (where values are times). It's more that we're having trouble being able to access the times (also using our Time class).
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi,
+ </paragraph>
+ <paragraph>
+  Perhaps it would be better to have two attributes, one for the full form and the one for the time dictionary? That way you can use the full form for getTime() and the dictionary one for your other functions? I believe that it would make things less complicated for you.
+ </paragraph>
+ <paragraph>
+  Best,
+ </paragraph>
+ <paragraph>
+  Troy
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Okay, that makes a lot of sense. We created a new attribute for the full form time string but are still getting this error message when implementing getTime() using our new attribute.
+ </paragraph>
+ <figure>
+  <image height="223.5809199318569" src="https://static.us.edusercontent.com/files/SVGtpqBXoC9FyOOsOESDX3nV" width="622"/>
+ </figure>
+ <paragraph>
+  [ UPDATED W ERROR MESSAGE ]
+ </paragraph>
+ <paragraph>
+  Thank you!
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am not sure why you are still getting that error message.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I updated the message with our new error message.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hello,
+ </paragraph>
+ <paragraph>
+  Let us say that time_string is the attribute of the full form.
+ </paragraph>
+ <paragraph>
+  In getTime(), you want to return that full form.
+ </paragraph>
+ <paragraph>
+  If the argument of getTime() is a class, and that class has an attribute that has the full time format, all you need to do is return that format.
+ </paragraph>
+ <paragraph>
+  Best,
+  <break>
+  </break>
+  Troy
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Okay, that worked! Thank you so much, Troy. We were definitely overthinking this function.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  np
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

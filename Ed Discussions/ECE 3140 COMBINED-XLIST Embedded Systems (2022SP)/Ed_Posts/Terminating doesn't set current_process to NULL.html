@@ -1,0 +1,98 @@
+<h1>
+ Title: Terminating doesn't set current_process to NULL
+</h1>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Date: 2022-03-16T09:44:48.618807+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  See title...
+ </paragraph>
+ <paragraph>
+  Instead, what it does is set cursp to NULL.
+ </paragraph>
+ <paragraph>
+  Looking at what happens when a process terminates, the only variable that changes is that we set R0 to 0. This is the argument we're passing in to process_select. Nowhere does it change current_process to NULL. Should we design our code based on this? Just worried about failing autograder
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Alma Thaler (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  i thought this was expected and current_process is only NULL at the start?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  I understand that the lab3 document is slightly confusing. I did not write it but I will attempt to clarify. The support code
+  <code>
+   3140.s
+  </code>
+  and
+  <code>
+   3140_concur.c
+  </code>
+  has no reference or notion of
+  <code>
+   process_t* current_process
+  </code>
+  .
+ </paragraph>
+ <blockquote>
+  This variable is set to NULL when a process terminates, and should also be NULL until process_start() is called.
+ </blockquote>
+ <paragraph>
+  This should be interpreted as "you should set it [the process pointed to] to
+  <italic>
+   NULL
+  </italic>
+  when a process terminates, and [the pointer
+  <italic>
+   current_process
+  </italic>
+  ] should be set to
+  <italic>
+   NULL
+  </italic>
+  until
+  <italic>
+   process_start()
+  </italic>
+  is called."
+ </paragraph>
+ <paragraph>
+  Obviously, the current process consists of various bits of
+  <code>
+   malloc
+  </code>
+  'd data so you will need to deal with that appropriately to avoid memory leaks.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,88 @@
+<h1>
+ Title: HW 3: Heaps Question 5
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-18T07:54:20.624896+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I've narrowed down my choices to either a or d, but I'm on sure which would be correct? How do we determine the number of question marks "?" here.
+ </paragraph>
+ <figure>
+  <image height="153.5793103448276" src="https://static.us.edusercontent.com/files/xRUaqbSwXZKwtKl00G4SSpm4" width="571"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  The very beginning of this quiz says something like this: (5, 3, 2, ?, ?) is an array of size 5 that contains a heap of size 3. The question marks are elements of the array, and we don't care what their values are because they are not in the heap.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Lucia Zacek (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I'm a little confused on this problem too. Since the heap is only stored in b[0..6], that means the value 2 is not initially included in the heap.
+ </paragraph>
+ <paragraph>
+  I was deciding between answers A and D, but both include 2 within the heap. I don't understand how it is possible for 2 to end up in the heap if it doesn't start in it.
+ </paragraph>
+ <paragraph>
+  The way the pdf describes polling, it seems that the root (8) will be removed and replaced with the last node, which is then bubbled down. Since the heap is size 7, I thought the last node would be 4. Would it actually be 2; is that how 2 is entered into the heap?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  My first answer above said this:
+ </paragraph>
+ <paragraph>
+  (5, 3, 2, ?, ?) is an array of size 5 that contains a heap of size 3. Since the size is 3, the values in the heap are 5, 3, 2, and two values are not in the heap. The heap is shown below.
+ </paragraph>
+ <paragraph>
+  In our questions, we give you a heap in an array using exactly the same conventions. The values in the heap are shown explicitly, and the array values that are not part of the heap are shown with ?. Your job is to write the heap as a tree, perform whatever steps are necessary on the tree, transform that tree in to the same array notation, using the same conventions, and choose the corresponding answer that you got in your calculations.
+ </paragraph>
+ <pre>       5
+     /   \
+   3       2
+</pre>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

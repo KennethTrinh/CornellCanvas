@@ -1,0 +1,116 @@
+<h1>
+ Title: [ValueError: substring not found] Error Message
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-28T06:10:10.587039+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This error gets thrown each time when I run the showdown_time.py and select a college-info file directory..:
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Traceback (most recent call last):
+ </paragraph>
+ <paragraph>
+  File "showdown_time.py", line 141, in &lt;module&gt;
+ </paragraph>
+ <paragraph>
+  cnames.append(s[s.index(' ')+1:])
+ </paragraph>
+ <paragraph>
+  ValueError: substring not found
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Elisabeth Finkel (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Did you run the test file (
+  <code>
+   python helper_tests.py
+  </code>
+  ) to make sure your other functions are correct? Sometimes that's the issue
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="540.5986577181209" src="https://static.us.edusercontent.com/files/s0E6zfJbnbTKwsmNUduX4KOf" width="698"/>
+ </figure>
+ <paragraph>
+  This is what I get for running helper_tests.py
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Elisabeth Finkel (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  This helper test is looking at the the result of your
+  <code>
+   menu_listing
+  </code>
+  for small_test1, and is expecting 4 entries (separated by the
+  <code>
+   \t
+  </code>
+  character), but is finding 19 entries. Maybe try adding a debugging print statement to
+  <code>
+   menu_listing
+  </code>
+  to see whether the output is formatted the way you expect?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Also, the error message you are getting means that ' ' (a space character) is not being found in whatever
+  <code>
+   s
+  </code>
+  is.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

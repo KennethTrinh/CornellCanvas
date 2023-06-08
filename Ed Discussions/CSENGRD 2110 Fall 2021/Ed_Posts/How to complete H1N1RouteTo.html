@@ -1,0 +1,108 @@
+<h1>
+ Title: How to complete H1N1RouteTo
+</h1>
+<h3>
+ Author: Hao Zhuo (None)
+</h3>
+<h3>
+ Date: 2021-10-19T11:08:42.276294+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Since the return type is List, how can I keep using it as a linked list during the recursion?
+ </paragraph>
+ <paragraph>
+  Also, I am confused about the spec "But List is an interface, so use something that implements it."
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why are you confused about it?
+ </paragraph>
+ <paragraph>
+  You know that List is a interface. What implements it? There are two that we use all the time. Look them up in the API document for List.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Hao Zhuo (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I mean, are we supposed to cast the return object of H1N1RouteTo into LinkedList&lt;Person&gt; in the recursive case so that we can keep using it as a LinkedList ( esp using addFirst() method )?
+ </paragraph>
+ <paragraph>
+  This is what I do but I find it weird.
+ </paragraph>
+ <paragraph>
+  Thanks.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You can't cast a person into a list, but you can add a person to a list.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Hao Zhuo (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  To clarify, in the recursive case, the return value of calling H1N1RouteTo is a List type. In order to use methods like addFirst(), I have to cast that List into LinkedList. It that correct?
+ </paragraph>
+ <paragraph>
+  Thanks.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Tianjiao Li (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes you need to cast to ensure correct compile time behavior.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

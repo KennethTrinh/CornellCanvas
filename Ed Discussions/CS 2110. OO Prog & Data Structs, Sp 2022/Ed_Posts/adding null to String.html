@@ -1,0 +1,67 @@
+<h1>
+ Title: adding null to String
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-08T15:23:52.020292+11:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If a = null, when you do "b" + null, what error does this throw, if any? I thought it would be a NullPointerException, but according to an exam, it's not.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Bahaa Kotb (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why would it be an error? You are not calling a method on null, you are catenating a string and null is converted to a string.
+ </paragraph>
+ <paragraph>
+  I searched this on google:
+ </paragraph>
+ <paragraph>
+  The
+  <code>
+   concat()
+  </code>
+  method only accepts a String object as an argument, while the
+  <code>
+   +
+  </code>
+  operator will accept anything. If an object is passed to the
+  <code>
+   +
+  </code>
+  operator, it gets converted to a string by the
+  <code>
+   toString()
+  </code>
+  method of that object. If a null reference variable is passed to the
+  <code>
+   +
+  </code>
+  operator, it gets converted to string
+  <code>
+   "null"
+  </code>
+  .
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

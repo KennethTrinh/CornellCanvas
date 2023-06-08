@@ -1,0 +1,92 @@
+<h1>
+ Title: Tuples
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-23T07:10:08.122525+10:00
+</h3>
+<h3>
+ Category: Other
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Why do tuples exist? It seems like lists are just tuples with more functionality.  Is there a reason why someone would use a tuple over a list?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Elisabeth Finkel (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Good question!
+ </paragraph>
+ <paragraph>
+  Sometimes I use tuples when I want a data structure that has multiple elements, where the number of elements is well-defined. For instance, if you want a function that returns multiple values, you can put them in a tuple. Eg
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   def next_three_numbers(n):
+    """Return a tuple (a, b, c) where a==n+1, b==n+2, c==n+3; so a, b, and c are the integers that follow n."""
+    return (n+1, n+2, n+3) # For a return statement, it would also be okay to omit the parentheses 
+
+x, y, z = next_three_numbers(3) # Automatically "unpacks" the tuple
+print("First next number: "+str(x))
+  </snippet-file>
+ </snippet>
+ <paragraph>
+  which is a little cleaner than returning a list with exactly three elements and accessing them individually.
+ </paragraph>
+ <paragraph>
+  This is just my two cents; there are probably other uses, and more general answers. A Google search suggests that tuples sometimes take up less space than lists (as far as their binary representation in your computer's memory), and that using tuples instead of lists sometimes makes your code slightly faster.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Also, tuples are legal keys for dictionaries, whereas lists aren't, because of technical reasons involving immutability/"hashability". And since dictionaries are so super-useful, encoding things as tuples so they can be lists is convenient.
+  <break>
+  </break>
+  <break>
+  </break>
+  In the example below, we imagine that the dictionary
+  <code>
+   testcases
+  </code>
+  is meant to store examples of lists, and, as the "answer" that some function is supposed to store, the lengths of the lists.
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   # this is OK
+testcases = {(4, 5, 6):3, (1, 1): 2}
+
+# this causes an error "unhashable type: 'list'"
+testcases = {[4,5,6]:3, [1,1]: 2}
+  </snippet-file>
+ </snippet>
+</document>
+<h3>
+ ------------------------------------
+</h3>

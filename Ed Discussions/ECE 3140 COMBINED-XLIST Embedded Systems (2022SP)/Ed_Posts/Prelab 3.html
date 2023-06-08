@@ -1,0 +1,67 @@
+<h1>
+ Title: Prelab 3
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-13T12:56:10.269768+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Question 2:
+ </paragraph>
+ <paragraph>
+  Do we describe what happens in a general context switch, or should we express our understanding of the specific context switch implemented in the support code?
+ </paragraph>
+ <paragraph>
+  Question 3:
+ </paragraph>
+ <paragraph>
+  What does it mean to decide on the stack size for the processes if the required number of memory slots in standard? In 3140_concur.c it seems to say that each process needs to push a fixed number of 18 items onto its stack.
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Please discuss the context switch as implemented in
+  <italic>
+   3140.s
+  </italic>
+  .
+ </paragraph>
+ <paragraph>
+  As written in the comments, 18 more slots are needed for
+  <italic>
+   context
+  </italic>
+  . This is not saying that there are only 18 slots needed to cover the entire process context and memory needs. (Think about how much memory would be used by functions such as
+  <italic>
+   swap_ints
+  </italic>
+  or
+  <italic>
+   fib
+  </italic>
+  .)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

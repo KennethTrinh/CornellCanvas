@@ -1,0 +1,108 @@
+<h1>
+ Title: Lab 4 Questions Regarding blocked_queue and Process_select
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-27T09:09:51.209411+11:00
+</h3>
+<h3>
+ Category: Labs
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi! My partner and I had a few questions as we've been trying to get through the lab.
+ </paragraph>
+ <paragraph>
+  Question 1:
+ </paragraph>
+ <paragraph>
+  l * blocked_queue = NULL;
+ </paragraph>
+ <paragraph>
+  Do we need to write this on top of our process.c file? (similar to current_process and process_queue)
+ </paragraph>
+ <paragraph>
+  Is the blocked_queue only an attribute of the lock struct?
+ </paragraph>
+ <paragraph>
+  If the process is locked, what happens? Does it get added to the end of the blocked_queue?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Question 2:
+ </paragraph>
+ <paragraph>
+  In our process_select, we need to add conditionals for blocked or not.If it's blocked, does the process get added to blocked_queue?
+ </paragraph>
+ <paragraph>
+  Can we just check if block == 0 instead??
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  1) Each lock should have its own blocked queue. It wouldn't make sense to have a global blocked queue, as you want to have a process be blocked only for a specific lock (otherwise, when a lock is unlocked, how would you know which processes to add back to the queue?). Therefore, it shouldn't be part of your process.c file, but somewhere with your lock files. If a process is blocked, it should be added to the blocked queue of the particular lock
+ </paragraph>
+ <paragraph>
+  2) process_select doesn't add anything to a blocked queue (as it doesn't know which lock it was blocked for). Additionally, where are you getting "block" from in order to check it? To do that, you may have to edit your process_t struct
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  hi! thank you so much aidan i appreciate it. I realize there's a block queue for each lock now. We edited our process_t struct so we can figure out where we are getting blocked from. We're just having trouble figuring out where you can add a process to the blocked queue and what you should instead be doing in process select
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You should block a process (and add it to the corresponding blocked process queue) when the process attempts to lock the lock (but realizes that it's already locked). process_select should then just schedule the next (unblocked) process. To do this, you shouldn't have any blocked processes in your process queue
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Harris Miller (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  (In regards to Q2, you could technically have some clever fields within a process so that allow for movement between blocked and ready queues could happen within process_select. Fun thought but its just tedious.)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,57 @@
+<h1>
+ Title: Testing accuracy of getNode
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-25T06:12:52.945605+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Because getNode gives us a node, how can we check in our j unit test class that the node gotten is correct without having a toString function within the node class? Would we still use assert equals?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes, use assertEquals. Two ways you can test:
+ </paragraph>
+ <paragraph>
+  1. You can test the pointer to the Note. That requires that you save the pointer beforehand to the Node.
+ </paragraph>
+ <paragraph>
+  2. Ensure that all values in the linked list are different. Then you can test for the value in the Node.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I am having trouble creating a pointer to the node because when I can't create a Node in the j unit test class. Also, I am unable to get the value of the node because toString() does not return the actual value since the Node class does not have a toString() method.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

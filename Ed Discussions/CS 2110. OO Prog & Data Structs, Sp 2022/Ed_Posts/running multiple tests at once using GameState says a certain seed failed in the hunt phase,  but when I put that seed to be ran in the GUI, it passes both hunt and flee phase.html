@@ -1,0 +1,71 @@
+<h1>
+ Title: running multiple tests at once using GameState says a certain seed failed in the hunt phase,  but when I put that seed to be ran in the GUI, it passes both hunt and flee phase.
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-02T06:48:13.460891+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Do I take the gamestate output as the true one?
+ </paragraph>
+ <paragraph>
+  "Your solution to hunt returned at the wrong location."
+ </paragraph>
+ <paragraph>
+  i'm running 50 tests in gamestate and it says it failed on multiple (the majority actually), but when I put them in the gui run configuration they pass and the console outputs seed, gold collected, bonus multiplier, and score as it does when there isn't an error.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Edit: I found that when I enter the seeds that fail into
+  <italic>
+   gamestate
+  </italic>
+  configuration to be ran individually, it passes. It appears that if I run them as a batch most of them fail, but when ran individually (the same seed), they pass. Are the batch tests all supposed to pass?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  EDIT:
+  <bold>
+   was because I had static fields.
+  </bold>
+  <italic>
+   if you have a data structure that keeps track of something in a recursive  helper method and you want it to remember stuff, add a parameter to your helper method that will take in the data structure
+  </italic>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Do you have a static field that changes
+ </paragraph>
+ <paragraph>
+  That can cause a problem when maps are run concurrently.
+ </paragraph>
+ <paragraph>
+  You were warned against this,
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

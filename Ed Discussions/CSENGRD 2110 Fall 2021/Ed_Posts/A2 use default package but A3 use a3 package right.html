@@ -1,0 +1,43 @@
+<h1>
+ Title: A2 use default package but A3 use a3 package right?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-15T05:46:54.840787+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I just pasted the A3.java and A3Test.java to the src and the first line is package a3
+ </paragraph>
+ <paragraph>
+  should I rename the default package?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  All classes in Assignment 3 should be in a package named "a3".  In general, you should avoid putting any code in the "default" (unnamed) package - in a production environment, this leads to "namespace pollution" where you risk using the same name as someone else for different code, and some tools (including JShell) don't work with pre-compiled code in the default package.  It's fine for demos, but not for deliverables.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,58 @@
+<h1>
+ Title: error: unhashable type 'College'
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-05-04T12:31:15.423184+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  While working on the dictionary versions of process_line and college_named, we've been getting these errors on parts of the code that we haven't been working on.
+ </paragraph>
+ <paragraph>
+  Why are our implementations affecting these pre-written parts of the code, and what can we do to solve this problem?
+ </paragraph>
+ <pre>Traceback (most recent call last):
+  File "showdown_time_a5.py", line 77, in &lt;module&gt;
+    colleges = sdu.prompt_for_data()
+  File "[folders]\sd_utilities_dict.py", line 149, in prompt_for_data
+    return colleges_from_file(datafilename)
+  File "[folders]\sd_utilities_dict.py", line 58, in colleges_from_file
+    colleges[c.name] = c
+TypeError: unhashable type: 'College'
+</pre>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Troy Moslemi (he/him) (student)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<h3>
+ ENDORSED
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hey!!
+  <break>
+  </break>
+  Only hashable objects such as strings, tuples, and integers can be used as keys for dictionaries. It seems like c.name is returning a college object, and not a hashable object?
+ </paragraph>
+ <paragraph>
+  -Hope this helps :))
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

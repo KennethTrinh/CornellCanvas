@@ -1,0 +1,56 @@
+<h1>
+ Title: Assigning child object to variable with parent type
+</h1>
+<h3>
+ Author: Young Zheng (student)
+</h3>
+<h3>
+ Date: 2022-02-16T06:44:36.597218+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Assume Cat is the child of Animal. Cat has a method called meow(), which the Animal class does not. Let's write this assignment.
+ </paragraph>
+ <paragraph>
+  Animal an = new Cat ();
+ </paragraph>
+ <paragraph>
+  Just to make sure, the dynamic type of "an" is Cat. It's static type is Animal, which is why you couldn't then call an.meow()?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The compile-time reference rule tells you that an.meows() is illegal and won't compile, because it can't be guaranteed that method meows() will be present at runtime.
+ </paragraph>
+ <paragraph>
+  Remember, at compile-time, only the TYPES of expressions are used, not their values. Thus,
+ </paragraph>
+ <paragraph>
+  Variable an has (static) type Animal. class Animal and its superclasses do NOT have method meow().
+  <break>
+  </break>
+  Therefore an.meow(). is illegal and won't compile.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

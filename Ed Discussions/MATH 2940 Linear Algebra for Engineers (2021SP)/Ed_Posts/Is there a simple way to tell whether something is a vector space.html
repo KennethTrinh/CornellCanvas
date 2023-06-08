@@ -1,0 +1,51 @@
+<h1>
+ Title: Is there a simple way to tell whether something is a vector space?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-22T11:42:28.252777+11:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I was just wondering if there is a way to tell other than going through all the axioms. Also what are some examples of matrices that are not vector spaces?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Phillip Jang (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If you are working with a subset $H$ of an already known parent vector space $V$ such as $\mathbb{R}^n$ or $\mathbb{P}_n$, then it is sufficient to just prove $H$ is a subspace (only 3 axioms instead of 10), as all subspaces are vector spaces.
+ </paragraph>
+ <paragraph>
+  Also, all spans of elements of a vector space are automatically subspaces and hence vector spaces (see Theorem 1). If you have a set in the form of a span (such as the Column Space of a matrix, or the parametric vector form of the solutions to $Ax=0$), you can even bypass the subspace proof and outright declare it a vector space by Theorem 1.
+ </paragraph>
+ <paragraph>
+  If $V = \mathbb{R}^{2 \times 2}$ (which is a vector space) and
+ </paragraph>
+ <paragraph>
+  $$H = \{A \in \mathbb{R}^{2 \times 2} : a_{11}&gt;0 \}$$
+ </paragraph>
+ <paragraph>
+  then the subset $H$ is not a subspace (and hence not a vector space), as it doesn't contain the zero matrix and is not closed under scalar multiplication.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

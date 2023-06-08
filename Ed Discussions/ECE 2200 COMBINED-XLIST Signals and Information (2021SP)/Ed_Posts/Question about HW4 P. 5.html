@@ -1,0 +1,59 @@
+<h1>
+ Title: Question about HW4 P. 5
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-22T08:30:43.400642+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Screen Shot 2021-03-21 at 5.26.06 PM
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  In HW4 P5, I was wondering why you dont "fold" the cos(2pi*150*t) term when converting x(t) into x[n]. The solution set says to make 2pi*fs*n*Ts = w'n to find w', which makes sense for the 50Hz signal since 2*50 &lt; 250, but for the 150Hz cosine shouldn't we fold it into 100Hz, since 150Hz = 100Hz for a 250 sampling frequency.
+ </paragraph>
+ <figure>
+  <image height="439.83333333333337" src="https://static.us.edusercontent.com/files/Fsvhs7wegdr6bxbsRAsflrIr" width="658"/>
+ </figure>
+</document>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If I understand your question correctly, my answer is: the "folding" happened later when I converted $1.2 \pi$ to $0.8 \pi$.  We could have found the principal continuous-time aliases first, as you suggest (i.e. "fold" the 150 Hz term into a 100 Hz term and then sample), and the answer would have come out the same.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Ah yeah that answers it perfectly
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

@@ -1,0 +1,53 @@
+<h1>
+ Title: Can we sample a non periodic signal and get back a non periodic signal, even if we sample periodically?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-24T05:54:50.150487+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  What if x(t) was non periodic, but its frequency never exceeded 1/2 fsamp. If we sampled it periodically, would the final signal have to be periodic or could we get back the same non periodic signal? And if it was periodic, would that be a "periodic alias" of a non periodic signal?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Victor Butoi (None)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sample x(t) = t "periodically" although it's a bit confusing what that might mean since values never repeat it has no period.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Delchamps (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If you sample $x ( t )$ at  $f _ s &gt; 2 f _ {\rm max}$ and put the samples through an ideal D-to-C with interpolation interval $T _ s = 1 / f _ s$, then $x ( t )$ will emerge, whether $x ( t )$ is periodic or not.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

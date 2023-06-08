@@ -1,11 +1,13 @@
 import json
 import re
 import pandas as pd
+import os
+import time
+import functools
 from bs4 import BeautifulSoup
 from canvasapi.exceptions import Unauthorized, ResourceDoesNotExist, Forbidden
 from consts import LOG, FILES_REGEX
 from pathvalidate import sanitize_filename
-import os
 
 sanitize = lambda text: sanitize_filename(text)
 
@@ -126,3 +128,31 @@ def getDiscussionTopics(course, only_announcements):
 @ThrowsLambdaError(ResourceDoesNotExist)
 def getReplies(reply):
     return list(reply.get_replies())
+
+class MaxRetriesExceeded(Exception):
+    """Exception raised when max retries exceeded"""
+    pass
+
+
+def retry(retry_num, retry_sleep_sec=10):
+    """
+    retry decorator.
+    :param retry_num: the retry num; retry sleep sec
+    :return: decorator
+    usage: @retry(3)
+    """
+    def decorator(func):
+        """decorator"""
+        # preserve information about the original function, or the func name will be "wrapper" not "func"
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            """wrapper"""
+            for attempt in range(retry_num):
+                try:
+                    return func(*args, **kwargs)  # should return the raw function's return value
+                except Exception as err:   
+                    time.sleep(retry_sleep_sec)
+                print(f"Retry Attempt {attempt+1} / {retry_num}.")
+            raise MaxRetriesExceeded(f'Exceed max retry num: {retry_num} failed')
+        return wrapper
+    return decorator

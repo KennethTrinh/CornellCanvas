@@ -1,0 +1,61 @@
+<h1>
+ Title: Prelim practice page 21
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-26T11:16:37.622781+10:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The first question on pg 21 of the prelim practice asks us to express $\frac{\partial L}{\partial \boldsymbol{U}_l}$ in terms of $\delta_l$. If I'm not mistaking the different symbols in the problem, this seems to be the gradient w.r.t. a matrix ($\boldsymbol{U}_l$). I don't think we've ever done this before, and I'm having some trouble wrapping my head around it. Would someone be about to point me in the right direction for this?
+ </paragraph>
+ <paragraph>
+  Also, more generally for the questions related to gradients of neural nets, can we leave our answers just as the multiplication of Jacobians following the chain rule, or should we further evaluate the Jacobians to the various neural net vectors (i.e. $\vec{v}_l$, $\vec{s}_l$, etc.)?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Victor Butoi (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For the first part, I would say that even if the form of the partial derivative is unfamiliar, maybe we can reason about it? That is to say, how could you perform ∂Ul/∂L​ using chain rule in terms of things you know?
+ </paragraph>
+ <paragraph>
+  As for the second part, I would say in general that you should always simplify the multiplication in your chain rule to quantities involving that layer and the following layers.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Using the chain rule, I think it would be something like: $\frac{\partial L}{\partial \boldsymbol{U_l}}$ = $\frac{\partial L}{\partial a_l}\frac{\partial a_l}{\partial \boldsymbol{U_l}}$ = $\delta_l\frac{\partial a_l}{\partial \boldsymbol{U_l}}$, but then I'm still having trouble expressing $\frac{\partial a_l}{\partial \boldsymbol{U_l}}$ in terms of the quantities in the network. Is this the correct way to apply the chain rule? If it is, how could I go about further expressing $\frac{\partial a_l}{\partial \boldsymbol{U_l}}$?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

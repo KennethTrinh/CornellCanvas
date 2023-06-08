@@ -1,0 +1,51 @@
+<h1>
+ Title: "this" keyword
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-11T15:53:29.711229+11:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If my constructor2 uses the keyword "this" to refer to constructor1, do I still need to implementthe s me aassert statements nd aassertThrow already covered by constructor 1s?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Tomer Shamir (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  You don't need to rewrite the assert statements, but you should still test that they work properly.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The point is: At some point during execution of the constructor, including calls on other constructors using "this", will the appropriate assert statement be executed. It doesn't matter WHERE that assert statement is, as long as it is executed.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

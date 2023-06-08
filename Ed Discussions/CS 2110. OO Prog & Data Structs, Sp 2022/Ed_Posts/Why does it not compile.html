@@ -1,0 +1,58 @@
+<h1>
+ Title: Why does it not compile?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-05-14T04:41:14.11259+10:00
+</h3>
+<h3>
+ Category: Exams
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="213.43059490084985" src="https://static.us.edusercontent.com/files/OcmtBQOdy8p6A4mdQ54jnoh8" width="658"/>
+ </figure>
+ <paragraph>
+  For the 4th assignment statement, I thought because TreeSet is a subtype of set, that the code would compile. But is TreeSet not a subtype of set? Or is the reason why it does not compile because s points to a HashSet and the evaluation of an assignment happens bottom-up?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Melissa Ginaldi (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  TreeSet is a subtype of Set so 3 will compile because you can cast up. However, set is not a subtype of treeSet and so you cannot cast down. Java knows this so 4 will not compile
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Oh okay, what if a superclass is set to a new instance of its subclass instead of a variable pointing to it? Would that compile because that is explicit downcasting? Thanks!
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

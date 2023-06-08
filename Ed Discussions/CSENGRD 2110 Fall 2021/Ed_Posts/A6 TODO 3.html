@@ -1,0 +1,72 @@
+<h1>
+ Title: A6 TODO 3
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-31T07:26:30.218901+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <file filename="a6_game_comp.jpg" url="https://static.us.edusercontent.com/files/lqXoukgFTOfddHbgPhOVRQZU">
+ </file>
+ <paragraph>
+  I was trying to implement TODO 3 with the code:
+ </paragraph>
+ <pre>startButton.addActionListener(
+            (ActionEvent ae) -&gt; GameComponent.startGame());</pre>
+ <paragraph>
+  My code didn't compile and Eclipse said "Cannot make a static reference to the non-static method startGame() from type GameComponent". Additionally, Eclipse said on the GameComponent constructor: "The serializable class GameComponent does not declare a static final serialVersionUID field of type long". Is this supposed to happen? If not what should I check and if so how should I approach TODO 3. Thanks.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Shane Racey (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  A new game component was already created near the top of the code I think
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <code>
+   GameComponent
+  </code>
+  is the name of a class.  Attempting to invoke a method on a class name only makes sense of that method is
+  <code>
+   static
+  </code>
+  .  (And you should ignore Eclipse's warning about serial versions.)
+ </paragraph>
+ <paragraph>
+  Also, please refrain from including code snippets in public posts for this assignment - several of the TODOs only require a single line of code to complete them.  Try to ask questions in more general terms.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

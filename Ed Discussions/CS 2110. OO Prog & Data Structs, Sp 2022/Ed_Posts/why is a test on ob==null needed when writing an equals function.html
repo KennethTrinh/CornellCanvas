@@ -1,0 +1,58 @@
+<h1>
+ Title: why is a test on ob==null needed when writing an equals function?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-02-16T04:14:59.100168+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  The "equals" function implementation in the javahypertext is:
+ </paragraph>
+ <paragraph>
+  @Override public boolean equals(Object ob) {
+  <break>
+  </break>
+  if (ob == null || getClass() != ob.getClass())
+ </paragraph>
+ <paragraph>
+  return false;
+  <break>
+  </break>
+  Point op= (Point) ob;
+  <break>
+  </break>
+  return x == op.x &amp;&amp; y == op.y;
+ </paragraph>
+ <paragraph>
+  }
+ </paragraph>
+ <paragraph>
+  I know that the book also provides an explanation for this that "the test on ob null is needed so that ob.getClass() can be called" but why is the test on ob null relevant to ob.getClass()?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Ruize Ren (staff)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Because if it is a null pointer, like ob = null, without checking in advance. The program will throw null pointer exception when you use the method from ob.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

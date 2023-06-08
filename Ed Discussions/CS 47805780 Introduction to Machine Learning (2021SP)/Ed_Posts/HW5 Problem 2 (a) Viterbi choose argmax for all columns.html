@@ -1,0 +1,52 @@
+<h1>
+ Title: HW5 Problem 2 (a) Viterbi "choose argmax for all columns"
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-28T16:07:34.024933+10:00
+</h3>
+<h3>
+ Category: Problem Sets
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I notice that in Gradescope it mentions we should "choose argmax for all columns". However, if we use backtracking that starts from the last column (right-most column) all the way through the first column (left-most column), we also get the same path as the "choosing argmax for all columns" path.
+ </paragraph>
+ <paragraph>
+  I was wondering whether the
+  <underline>
+   backtracking
+  </underline>
+  path would
+  <italic>
+   always
+  </italic>
+  coincide with the path that chooses
+  <underline>
+   argmax
+  </underline>
+  for all columns?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Michael Noor (staff)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Not necessarily, since for example, whatever is in the argmax of column 2 might have really low-weight connections to everything in column 3, and therefore not be chosen as the previous node by any of the ones in column three. Always go for what backtracking chooses.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

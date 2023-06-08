@@ -1,0 +1,78 @@
+<h1>
+ Title: Animation Example
+</h1>
+<h3>
+ Author: Andrew van Paridon (admin)
+</h3>
+<h3>
+ Date: 2021-08-31T04:06:43.006895+10:00
+</h3>
+<h3>
+ Category: Homework
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Here is an example of some code running an animation.  It doesn't fulfill the homework alone, as it doesn't describe the set up of what's going on, but it does look nice and give you a stepping off point for some basics.
+  <break>
+  </break>
+  <break>
+  </break>
+ </paragraph>
+ <pre>n = 1000;
+R = 10;
+v = linspace(0,100,n)';
+
+B1 = [zeros(n,1) v zeros(n,1)];
+B2 = [R*cos(2*pi/10*v) v -R*sin(2*pi/10*v)];
+B3 = [-R*cos(2*pi/10*v) v R*sin(2*pi/10*v)];
+
+ 
+
+figure
+hold on
+axis equal
+axis(1.2*[-R R -R R -R R])
+grid on
+view([2 1 1])
+
+A1 = animatedline(B1(1,1),B1(1,2),B1(1,3),'Color','k');
+A2 = animatedline(B2(1,1),B2(1,2),B2(1,3),'Color','r');
+A3 = animatedline(B3(1,1),B3(1,2),B3(1,3),'Color','b');
+
+P1 = plot3(B1(1,1),B1(1,2),B1(1,3),'k.','MarkerSize',30);
+P2 = plot3(B2(1,1),B2(1,2),B2(1,3),'r.','MarkerSize',10);
+P3 = plot3(B3(1,1),B3(1,2),B3(1,3),'b.','MarkerSize',10);
+
+xlabel('x')
+ylabel('y')
+zlabel('z')
+title('Animation Test')
+ 
+for i = 2:n
+
+    P1.XData = B1(i,1); P1.YData = B1(i,2); P1.ZData = B1(i,3);
+    P2.XData = B2(i,1); P2.YData = B2(i,2); P2.ZData = B2(i,3);
+    P3.XData = B3(i,1); P3.YData = B3(i,2); P3.ZData = B3(i,3);
+
+    addpoints(A1,B1(i,1),B1(i,2),B1(i,3))
+    addpoints(A2,B2(i,1),B2(i,2),B2(i,3))
+    addpoints(A3,B3(i,1),B3(i,2),B3(i,3))
+    axis(1.2*[-R R B1(i,2)/1.2+[-R R] -R R])
+    drawnow
+
+end
+</pre>
+ <paragraph>
+ </paragraph>
+ <figure>
+  <image height="409" src="https://static.us.edusercontent.com/files/exlolUOz1wqzRdKDkKJRGq9N" width="424"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

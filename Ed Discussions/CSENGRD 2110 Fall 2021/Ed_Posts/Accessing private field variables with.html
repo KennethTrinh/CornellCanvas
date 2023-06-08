@@ -1,0 +1,79 @@
+<h1>
+ Title: Accessing private field variables with "."
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-10-04T05:41:56.507544+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="81.79636363636364" src="https://static.us.edusercontent.com/files/dySf4HJfu8hYWPpCfxvuEM3T" width="652"/>
+ </figure>
+ <paragraph>
+  If magicShield is private, why is it that we can access it simply with "."? I know this was used in A2 and A3, but I'm still a little confused as why this is allowed. Is it that private fields can be accessed like this because we are referring to an object of the same class?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You haven't given us enough of the question. It depends on where this code is.
+ </paragraph>
+ <paragraph>
+  More info please
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Sorry about that. Here is the entire problem
+ </paragraph>
+ <figure>
+  <image height="625.7472527472527" src="https://static.us.edusercontent.com/files/dstv4rMtKq9xPr3SGhQMyvcP" width="567"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Method launchSpell is declared in class FireGateStudent. Parameter opponent  has type FireGateStudent. Therefore  opponent.magicShield is OK. From within a class C, private fields of class C of ANY C object can be referenced.
+ </paragraph>
+ <paragraph>
+  You did this in A1, where you added 1 to the children of the mother in addMOm
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

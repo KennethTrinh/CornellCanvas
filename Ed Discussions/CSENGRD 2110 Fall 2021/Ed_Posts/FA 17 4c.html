@@ -1,0 +1,40 @@
+<h1>
+ Title: FA 17 4c
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-11-17T10:00:37.428044+11:00
+</h3>
+<h3>
+ Category: General
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="224.95100222717147" src="https://static.us.edusercontent.com/files/GxyKNevVuZ11UWKxWuJw0dm1" width="658"/>
+ </figure>
+ <figure>
+  <image height="200" src="https://static.us.edusercontent.com/files/t7SE1f7Z6JHFopgEzBrswLwv" width="535"/>
+ </figure>
+ <paragraph>
+  Why do we do t.val - 1 and t.val +1 and pass those in for k and h respectively?
+  <break>
+  </break>
+  <break>
+  </break>
+  *Edit: I found this in JVT
+ </paragraph>
+ <figure>
+  <image height="415.6078431372549" src="https://static.us.edusercontent.com/files/zPSh4pyUvKljF1xEmXRg89Ff" width="644"/>
+ </figure>
+ <paragraph>
+  I think h and k might've gotten swapped in the explanation here. In the first part where the root is 50 and we say all the nodes to the right have to be &gt;= 51 we use h to denote 51. However, later it says that, for the left subtree, we have to pick h...t.val - 1 or in the case of root = 50 that means all the values to the left have to be somewhere in between 0...41. That's why we say t.val - 1 for the left side to mark the max value we could have that's not the root value?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>

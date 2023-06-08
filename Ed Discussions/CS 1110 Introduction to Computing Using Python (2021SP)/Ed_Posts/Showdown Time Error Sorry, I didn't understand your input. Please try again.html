@@ -1,0 +1,174 @@
+<h1>
+ Title: Showdown Time Error: "Sorry, I didn't understand your input. Please try again."
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-04-29T12:59:29.135325+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I have implemented my code for the dictionary version of sd_utilities
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  However, every time I try to select a college from menu select by running the script of the college showdown file, it states:
+ </paragraph>
+ <paragraph>
+  "Sorry, I didn't understand your input. Please try again."
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  I have been inputting ints associated with colleges on the menu select, but it results in the error.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  How do I get around this?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Thanks in advance!
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Prof. Lee (she/they) (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Hi, let's see how we can figure out why you are getting that message.
+ </paragraph>
+ <paragraph>
+  If you only get the error with the dictionary version and not the list version, the problem has to be with some dictionary-based implementation. Looking in showdown_time_a5.py, the only calls involving the dictionary stuff are:
+  <break>
+  </break>
+  <break>
+  </break>
+  sdu.prompt_for_data()
+ </paragraph>
+ <paragraph>
+  and
+ </paragraph>
+ <paragraph>
+  sdu.college_named(...)
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Searching for the word "Sorry" in showdown_time_a5.py shows that it is produced when
+  <code>
+   get_better_info()
+  </code>
+  is called...
+  <break>
+  </break>
+  <break>
+  </break>
+  ...which is called if
+  <code>
+   is_good_input(cnums, max_num)
+  </code>
+  is False
+  <break>
+  </break>
+  <break>
+  </break>
+  And this is before the sdu.college_named() calls happen, so you know that the issue has to be with sdu.prompt_for_data(), which --- when we find out when we examine the code --- calls colleges_from_file which calls process_line &lt;--
+  <italic>
+   which is a function you implemented.
+  </italic>
+  We thus have a prime suspect.
+  <break>
+  </break>
+  <break>
+  </break>
+  What is it doing wrong? Let's figure out what
+  <code>
+   is_good_input(cnums, max_num)
+  </code>
+  is doing.
+  <break>
+  </break>
+  Here is that function (don't run it; I just wanted to get line numbers.)
+ </paragraph>
+ <snippet language="py" line-numbers="true" runnable="true">
+  <snippet-file id="code">
+   def is_good_input(inlist, max_num):
+    """Returns True if inlist is a list of 2 strings that each represent ints
+    that are between 0 and max_num, inclusive, and they are different ints
+    False otherwise.
+
+    Preconditions: inlist is a list of strings.
+    """
+    try:
+        assert len(inlist) == 2  # need at least 2 so next line doesn't bomb
+        i1 = int(inlist[0])
+        i2 = int(inlist[1])
+        return 0 &lt;= i1 &lt;= max_num and  0 &lt;= i2 &lt;= max_num and i1 != i2
+    except ValueError:
+        # int conversion failed
+        return False
+    except AssertionError:
+        # length check failed
+        return False
+  </snippet-file>
+ </snippet>
+ <paragraph>
+  So here's my suggestion: add print statements under line 13 that say something like this:
+ </paragraph>
+ <pre>
+print("DEBUG: i1 is " + repr(i1))
+
+print("DEBUG: i2 is " + repr(i2))
+
+print("DEBUG: max_num is " + repr(max_num))
+
+print("DEBUG: this was a ValueError")
+</pre>
+ <paragraph>
+  and do the analogous thing for under line 16 (i.e., when an AssertionError happens; change the print statement about "ValueError" to be about "AssertionError"
+  <break>
+  </break>
+  <break>
+  </break>
+  Rerun the code and use the printed output to see if you can figure out what is going on!
+  <break>
+  </break>
+  <break>
+  </break>
+  If that doesn't help, can you copy-paste the output of your code so we can see exactly what is happening, using a small dataset?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you! I figured out what it was, I forgot to add two college selections, and I just kept selecting one lol, sorry about that! :(
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

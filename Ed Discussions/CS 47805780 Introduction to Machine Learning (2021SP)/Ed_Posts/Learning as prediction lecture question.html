@@ -1,0 +1,58 @@
+<h1>
+ Title: Learning as prediction lecture question
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-02-23T23:49:00.174887+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="144" src="https://static.us.edusercontent.com/files/mT8h9o93Xa9RMajVSAP1aoqK" width="546"/>
+ </figure>
+ <paragraph>
+  <italic>
+   [From the "Learning as Prediction" lecture]
+  </italic>
+ </paragraph>
+ <paragraph>
+  In lecture, it mentioned that, for a deterministic label, P(Y=f(x)|X=x) = 1 and P(Y=-f(x)|X=x)=0. I don't quite understand why this is true and how we would know this. Is it just saying that, regardless of what x is, if we know that the label of all instances in the world are determined by a fixed but unknown function f, then the probability of the label space being f(x) would be 1 ?
+ </paragraph>
+ <paragraph>
+  Also, is this saying that, if the label is deterministically defined by f, then we would not have fractional probabilities, BUT that, if the label is non-deterministically defined, then we
+  <italic>
+   would
+  </italic>
+  have fractional probabilities? Is this the correct way to understand this?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Thorsten Joachims (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Let me phrase it a different way. Our initial definition of what is the correct label y for a given feature vector x was via the target function f, namely y=f(x). This assumes the world is deterministic. For example, if I get an apple with features (A,red,medium,crunchy), then I will ALWAYS like it --- as indicated by f((A,red,medium,crunchy))=+1.
+ </paragraph>
+ <paragraph>
+  In the more general non-deterministic (i.e. probabilistic) model, there may be some randomness involved in the labeling, for example P(Y=+1|X=(A,red,medium,crunchy))=0.9 and P(Y=-1|X=(A,red,medium,crunchy))=0.1. This randomness may come from a number of different sources. For example, I may like those apples for lunch, but not for dinner; and I eat 90% of my apples for lunch and only 10% for dinner. So, the randomness comes from missing information and we may want to add another feature that would capture when the apple is eaten. But short of having access to that feature, our target labels are not deterministic.
+ </paragraph>
+ <paragraph>
+  Coming back to the case of deterministic labels, P(Y=1|X=(A,red,medium,crunchy))=1 and P(Y=-1|x=(A,red,medium,crunchy))=0 is just translating f((A,red,medium,crunchy))=+1 into the probabilistic notation.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

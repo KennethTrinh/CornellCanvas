@@ -1,0 +1,37 @@
+<h1>
+ Title: perceptron() doesn't always pass test?
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-14T08:28:46.255143+11:00
+</h3>
+<h3>
+ Category: Projects
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Is it okay that my perceptron() function doesn't always pass the Perceptron test? It seems to fail sometimes because the data is random but I don't know if I should go on or try to fix it so that it always passes (I think it's because of the iteration restriction)
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Scott Bass (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  I think it's ok if it doesn't always pass the test that's in the cell following your implementation. However, it should always pass the tests that are graded because of the fact that the total number of updates that perceptron has to perform is bounded above by the maximum radius squared over the margin squared. So, I'm assuming for those tests the data sets picked have a known radius and margin so that the max number of iterations chosen will always guarantee convergence.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

@@ -1,0 +1,83 @@
+<h1>
+ Title: HW 3 Q 1
+</h1>
+<h3>
+ Author: Jacob Fernandez (student)
+</h3>
+<h3>
+ Date: 2023-02-21T08:54:52.631566+11:00
+</h3>
+<h3>
+ Category: Homework
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Problem #1
+ </paragraph>
+ <paragraph>
+  HW # 3
+ </paragraph>
+ <paragraph>
+  I wanted to make a query that groups Revenue into OrderID, so I can join from another view that has orderID, customerID, and CompanyName on the two OrderIDs mathing.
+ </paragraph>
+ <paragraph>
+  Select OrderID, ROUND(SUM(UnitPrice*Quantity*(1-Discount)),2) as Revenue
+ </paragraph>
+ <paragraph>
+  From OrderDetail
+ </paragraph>
+ <paragraph>
+  Group by OrderID
+ </paragraph>
+ <paragraph>
+  Anyone know why this code isn't working? Numbers come out to be a lot smaller than perceived
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Julia Vanputte (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  You can solve this question with just one query using 2 LEFT JOINs (because we need to match orders AND customers). It is much easier to just use one query, but if you want to use two, I think you should use a TOTAL() function rather than sum, because you are multiplying.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Jacob Fernandez (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If I do this in one query I'm pulling from three separate tables. Anytime I tried to do this I just got an error. So this is possible in one query with two left joins?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Julia Vanputte (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Yes
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

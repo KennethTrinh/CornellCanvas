@@ -1,0 +1,138 @@
+<h1>
+ Title: Expressing variables as functions of other variables
+</h1>
+<h3>
+ Author: Yehoshua Milman (student)
+</h3>
+<h3>
+ Date: 2022-11-08T08:19:08.185696+11:00
+</h3>
+<h3>
+ Category: Other
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  If I row reduce an $A$ and find its pivot variables and free variables, then I can express the pivot variables as a function of the free variables in the sense that, for any choice of values for the free variables, there are unique values for the pivot variables such that the corresponding vector is in the null space of $A$.
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  Is it possible for there also to be different set of variables which can be expressed as a function of the others in this sense? And if so, is there a good way of finding them?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Reyer Sjamaar (admin)
+</h3>
+<h3>
+ Vote Count: 2
+</h3>
+<document version="2.0">
+ <paragraph>
+  Which variables are pivot variables and which are free depends on the order of the variables.  Renumber the variables, i.e. permute the columns of your matrix, and you will wind up with different sets of free and pivot variables.
+ </paragraph>
+ <paragraph>
+  For "most" matrices of rank $r$,
+  <italic>
+   any
+  </italic>
+  $r$ out of the $n$ variables can serve as pivot variables.  In other words, for "most" matrices of rank $r$
+  <italic>
+   any
+  </italic>
+  $r$ of its columns will be independent.  The reason is that for an $r$-tuple of columns of $A$ to be dependent, $A$ must satisfy a number of algebraic equations, namely  the determinants of certain $r\times r$-submatrices of $A$ must be $0$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Yehoshua Milman (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Thank you! I also have a followup question:
+ </paragraph>
+ <paragraph>
+  Suppose $F:\mathbb R^n \to \mathbb R^m$ is a $C^1$ function and for every $\vec a \in F^{-1}(\vec 0)$, $DF(\vec a)$ has rank $m$. Then for each $\vec a \in F^{-1}(\vec 0)$, there's a neighborhood $V$ of $\vec a$ such that $F^{-1}(\vec 0)\cap V$ is the graph of a $C^1$ function $g$ of $k$ variables. And if the columns of $DF(\vec a)$ can be permuted such that the pivot columns correspond to $m$ particular variables, then we can find a $g$ that expresses those particular variables as a function of the others. But from what I understand, if it is impossible to permute the columns so that the pivot columns correspond to $m$ particular variables, then there still might be a way of expressing those $m$ variables as a function $g$ of the others, such that the graph of $g$ is $V\cap F^{-1}(\vec 0)$; it's just that $g$ can't be $C^1$. Is this correct? And if so, how can I show that some particular $m$ variables cannot be expressed as a function of the others?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Reyer Sjamaar (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  No, that's not quite correct.  The hypothesis of the ImpFT can fail, but the conclusion may still be valid.  One can easily produce $F$'s such that $DF(\mathbf{a})$ is the
+  <italic>
+   zero matrix
+  </italic>
+  for every $\mathbf{a}$ in the solution set $M=F^{-1}(\mathbf{0})$, and yet $M$ is a nice manifold.
+ </paragraph>
+ <paragraph>
+  Here's how to make such a function: start with an
+ </paragraph>
+ <paragraph>
+  $$F=\begin{pmatrix}F_1\\\vdots\\F_m\end{pmatrix}$$
+ </paragraph>
+ <paragraph>
+  such that $DF(\mathbf{a})$ has rank $m$ for every $\mathbf{a}\in M$ and replace it with
+ </paragraph>
+ <paragraph>
+  $$G=\begin{pmatrix}F_1^2\\\vdots\\F^2_m\end{pmatrix}.$$
+ </paragraph>
+ <paragraph>
+  Then  $M=G^{-1}(\mathbf{0})$ but $DG(\mathbf{a})=0$ for all $\mathbf{a}\in M$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Yehoshua Milman (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Suppose the hypothesis of the imFT fails for some particular $m$ variables (so it's impossible to make them pivot variables in $DF(\vec a)$). Is there a good way to determine if the conclusion nevertheless holds (that is, if it's possible to express them as a $C^1$ function of the other variables)?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+  And if the conclusion does not hold for them, is there a good way of determining whether they can nevertheless be expressed as a (non $C^1$) function of the other variables?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Reyer Sjamaar (admin)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  Not for general differentiable functions $F$.  For special types of equations there exist methods to get around the limitations of the implicit function theorem.  For example, if  $F(x,y)$ is a polynomial in $x$ and $y$ there is a method found by Newton (now known as Puiseux expansion) to express $y$ as a power series in fractional powers of $x$, or $x$ as a power series in fractional powers of $y$.  As a simple example, $x^3-y^2=0$ has solution $y=x^{3/2}$ or $x=y^{2/3}$.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

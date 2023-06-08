@@ -1,0 +1,142 @@
+<h1>
+ Title: Do question-comments make CMV discussions more comprehensive?
+</h1>
+<h3>
+ Author: Khonzoda Umarova (she/her) (student)
+</h3>
+<h3>
+ Date: 2021-09-23T07:17:32.60704+10:00
+</h3>
+<h3>
+ Category: A1_reflection
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Here are my presentation slides and the report file.
+ </paragraph>
+ <file filename="[khonzoda]_A1_presentation_slides.pdf" url="https://static.us.edusercontent.com/files/mFAMGtzR9MRX2ANCSPekxKaL">
+ </file>
+ <file filename="[khonzoda]_A1_project_report.pdf" url="https://static.us.edusercontent.com/files/XCB6K0ZNQMGoNzQopB0rGB0t">
+ </file>
+ <paragraph>
+  I commented on Remy's presentation.
+ </paragraph>
+</document>
+<h3>
+ Author: Khonzoda Umarova (she/her) (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  <bold>
+   What lesson(s) would you like to pass on from your A1 experience?
+  </bold>
+ </paragraph>
+ <paragraph>
+  Echoing others, indeed, I think the most important lesson is
+  <italic>
+   working closely with the raw data at almost all of the stages of the project
+  </italic>
+  . In the beginning, when I had no ideas for the topic of my project, reading through CMV posts helped me notice question-comments. Then reading raw utterance text informed my approach to data processing, sample selection criteria, and even the approach to selecting context. Finally, after getting negative results I again went back to raw data to try and make sense of what was happening.
+ </paragraph>
+ <paragraph>
+  Another lesson that this project taught is how critical it is to
+  <italic>
+   do a test run of the methodology in the beginning to get a sense of how long each step takes
+  </italic>
+  .  I haven't started any of my analyses until I fully processed and cleaned the text and prepared a sample of data for the experiment. However, a while after I started my computations (and after several crashes), I realized that one of the steps took too much time. Realizing that it is due to a huge number of utterances in the dataset, I had to go back to and sample another, much smaller, data sample for the experiments. If I did a test run of each step in advance (even with raw data) I would have realized this earlier and found a useful heuristic or perhaps even tried a different technique.
+ </paragraph>
+ <paragraph>
+  <bold>
+   What are you most proud of?
+  </bold>
+ </paragraph>
+ <paragraph>
+  Even if my results are negative, I am proud that I got them, and more importantly I think I have a potential hypothesis that explains them. This gives me ideas for what to try and explore next, which feels much better than being stuck :)
+ </paragraph>
+ <paragraph>
+  <bold>
+   What did you spend the most time on?
+  </bold>
+ </paragraph>
+ <paragraph>
+  I spent a large portion of time on pairing positive and negative examples of question-comments. In order to find a close match, I used cosine similarity. What I did not realize was how long it would take to do pairwise comparisons given the size of data. I unsuccessfully tried several things to speed up the process and in the end made a decision to reduce the size of my data sample. I think there must be some heuristic  so that I don't compute cosine similarity of each pair, but only the ones selected according to a certain heuristic. This is something I want to try and to check if it would affect my results.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Breanna Green (student)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  <bold>
+   What did you find most interesting in that team's project?
+  </bold>
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    I was fascinated with Khonzoda's point that certain styles of comments are able to shift conversation without necessarily meaning to be persuasive. The question-comment format, despite being short in sentence length, is an interesting communication method worth exploring because it can highlight flaws or assumptions in a person's view. Some people might become defensive when faced with these types of responses, while others might take them as an opportunity to reevaluate their opinions. While the results were not what Khonzoda might have expected -- question-comments did not seem to expand conversation breadth, specifically in this subset of r/ChangeMyView -- I am still new to this field and appreciated being able to see cross-entropy used in here!
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  <bold>
+   Imagine that you were added to the other team now. What would you suggest should be the next experiment for your new team to try?
+  </bold>
+  <break>
+  </break>
+ </paragraph>
+ <list style="bullet">
+  <list-item>
+   <paragraph>
+    For future research, I agree that medium length (which Khonzoda indicates as between 3-7 sentences) question-comments would be interesting to explore. However, in that instance, the bounds of a question-comment must be made clear.  They could be:
+   </paragraph>
+   <list style="bullet">
+    <list-item>
+     <paragraph>
+      Replies containing only sequential questions, without additional information (definitions, context, examples, etc. -- Khonzoda's original method "1.0 ratio of the number of questions to the overall number of sentences")
+     </paragraph>
+    </list-item>
+    <list-item>
+     <paragraph>
+      Replies containing only one question, plus additional information.
+     </paragraph>
+    </list-item>
+    <list-item>
+     <paragraph>
+      A ratio of question/non-question replies (ex. 2 questions/3 non questions out of 5 total sentences)
+     </paragraph>
+    </list-item>
+   </list>
+  </list-item>
+  <list-item>
+   <paragraph>
+    In that instance, you could examine if 1.) cross-entropy scores are different across the three styles of mid-length question-comments mentioned above, and 2.) if certain elements of question-comment structure are important for contributing to overall breadth in conversation.
+   </paragraph>
+   <list style="bullet">
+    <list-item>
+     <paragraph>
+      With longer replies, you might find more variation in tone, sentiment, voice, etc. which might contribute to the overall surprisal in later replies.
+     </paragraph>
+    </list-item>
+   </list>
+  </list-item>
+ </list>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>

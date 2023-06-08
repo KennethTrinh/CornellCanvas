@@ -1,0 +1,101 @@
+<h1>
+ Title: EvalExpTest
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-09-17T01:57:24.798663+10:00
+</h3>
+<h3>
+ Category: Assignments
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  For some reason when I run A3Test, even if I select the method, it passes with no errors even though I have only done one implementation.
+ </paragraph>
+ <paragraph>
+  In the JUnit Trace it says EvalExpTest with a check and below it testEval with a check. How do I fix this?
+ </paragraph>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  Also, EvalExpTest is a java file in another package in my package explorer, but it's not open.
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: David Gries (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  We need to see more, need more information. I don't know what you mean by
+ </paragraph>
+ <paragraph>
+  "In the JUnit Trace it says EvalExpTest with a check and below it testEval with a check."
+ </paragraph>
+ <paragraph>
+  Are A3.java and A3Test.java in the same package in your project?
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image height="442.36035313001605" src="https://static.us.edusercontent.com/files/HJF7Ygr70h6C8In7cqoHjuQh" width="683"/>
+ </figure>
+ <figure>
+  <image height="557.0892018779342" src="https://static.us.edusercontent.com/files/bkOvVj1bxTvKAzyaxHP8Mues" width="698"/>
+ </figure>
+</document>
+<h3>
+ ------------------------------------
+</h3>
+<h3>
+ Author: Curran Muhlberger (admin)
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <paragraph>
+  When you click "Run," there are often many pieces of code among your projects that Eclipse could run, and it needs to pick which one it thinks you mean.  Sometimes this corresponds to the editor last tab selected, but sometimes it could depend on selections in the project browser or on default settings you may have (accidentally) set up.
+ </paragraph>
+ <paragraph>
+  Based on your screenshots, it looks like you are always running tests from your "2111" project, rather than your "A3" project.  How are you attempting to run your test?  If you click the down arrow next to the green "Run" button, are you able to select "A3Test" instead of "EvalExpTest"?  Try selecting "A3Test.java" in both your Package Explorer and your editor pane and then look at the Run options again.  Hopefully this will clarify to Eclipse which code you actually want to be testing.
+ </paragraph>
+ <paragraph>
+  And as you've discovered here, seeing a green bar alone isn't enough - it always pays to look at exactly which tests Eclipse is trying to run :) .
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

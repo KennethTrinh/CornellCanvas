@@ -1,0 +1,49 @@
+<h1>
+ Title: Non critical process not terminating
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2022-03-22T15:31:51.961589+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="1.0">
+ <paragraph>
+  If we run 1, 2, A, B as the sequence of automatic actions, how is it possible that 2 ever gets ran after 1? If x2==0 it seems that 1 will never get terminated.
+ </paragraph>
+ <figure>
+  <image height="2307" src="https://static.us.edusercontent.com/files/f0TGHLm8aPj4dsRS54DVRsRT" width="3648"/>
+ </figure>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Aidan McNay (student)
+</h3>
+<h3>
+ Vote Count: 1
+</h3>
+<document version="2.0">
+ <paragraph>
+  1) Just because something never terminates doesn't mean that other actions can't be run in parallel (think back to Lab 2 - if you had an un-terminated process, other processes could still run in parallel with it)
+  <break>
+  </break>
+  <break>
+  </break>
+  2) If x
+  <sub>
+   2
+  </sub>
+  is 0, then Step #1 will terminate immediately (as the while loop will see 0 and immediately terminate)
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>

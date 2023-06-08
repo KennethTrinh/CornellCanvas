@@ -1,0 +1,131 @@
+<h1>
+ Title: Gradient descent update in SVM example
+</h1>
+<h3>
+ Author: Anonymous
+</h3>
+<h3>
+ Date: 2021-03-20T09:21:16.552781+11:00
+</h3>
+<h3>
+ Category: Lectures
+</h3>
+<h3>
+ Vote Count: 0
+</h3>
+<document version="2.0">
+ <figure>
+  <image/>
+ </figure>
+ <paragraph>
+  Would it be possible to see more details on how to get from this expression:
+ </paragraph>
+ <figure>
+  <image height="65" src="https://static.us.edusercontent.com/files/5uS6JdhK61abFymt9SXcdpH5" width="374"/>
+ </figure>
+ <paragraph>
+  To this one?
+ </paragraph>
+ <figure>
+  <image height="50.24777448071216" src="https://static.us.edusercontent.com/files/3JmIZD2gYVdzxK1RXJTEoQBT" width="639"/>
+ </figure>
+ <paragraph>
+  Is there a derivation I can reference somewhere?
+ </paragraph>
+</document>
+<h3>
+ ----------- REPLIES -----------
+</h3>
+<h3>
+ Author: Jane Du (staff)
+</h3>
+<h3>
+ Vote Count: 3
+</h3>
+<document version="2.0">
+ <paragraph>
+  Most of the derivation work is right there in that slide! Next time, it would help to point the TA directly to the slide. I can walk through some of it.
+ </paragraph>
+ <paragraph>
+  First off, we're talking about slide 4 of 12c_sgd, regularized linear model using the "primal SVM" loss function, i.e. $L(\vec x_i) = \max \left(1-y_{i}\left(\vec{w} \cdot \vec{x}_{i}+b\right), 0\right)$. (primal SVM loss is defined formally in the first slide, but you should recognize it from the SVM module, soft-margin)
+ </paragraph>
+ <paragraph>
+  If we're talking about the gradient of a loss function $\nabla \mathcal L(\vec w^(t))$ we're taking the derivative wrt $\vec w = (w_1, w_2, \dots, w_d)$. Slide 4 does this calculation for us. First note that
+ </paragraph>
+ <paragraph>
+  $$ \mathcal L_S (\vec w) = R_S(\vec w) + L_S(\vec w)$$
+ </paragraph>
+ <paragraph>
+  First we start off with the right term, the error: $L_S$:
+ </paragraph>
+ <figure>
+  <image height="92.8125" src="https://static.us.edusercontent.com/files/93JiLkDH1LN3RthWYSxrliNx" width="495"/>
+ </figure>
+ <paragraph>
+  How to interpret this? Well, for functions like max, we can break it down to 2 cases: Case 1 where the right side is bigger, Case 2 where left side is bigger.
+ </paragraph>
+ <list style="number">
+  <list-item>
+   <paragraph>
+    Case 1: $\max \left(1-y_{i}\left(\vec{w} \cdot \vec{x}_{i}\right), 0\right) = 0$. In which case, the gradient of 0 is 0! Yay, easy.
+   </paragraph>
+  </list-item>
+  <list-item>
+   <paragraph>
+    Case 2: $\max \left(1-y_{i}\left(\vec{w} \cdot \vec{x}_{i}\right), 0\right) = 1-y_{i}\left(\vec{w} \cdot \vec{x}_{i}\right)$. We take the derivative. We get $\frac{\delta}{\delta \vec w} (1-y_{i}\left(\vec{w} \cdot \vec{x}_{i}\right)) = -y_ix_i$.
+   </paragraph>
+  </list-item>
+ </list>
+ <paragraph>
+  How do we write this into one function? Well, Case 2 happens when $1-y_{i}(\vec{w} \cdot \vec{x}_{i}) &gt; 0$, which is to say $y_{i}(\vec{w} \cdot \vec{x}_{i}) \le 1$. Using an indicator function that is 1 when $y_{i}(\vec{w} \cdot \vec{x}_{i}) \le 1$ and 0 otherwise means we can capture those 2 cases in one expression:
+ </paragraph>
+ <figure>
+  <image height="55" src="https://static.us.edusercontent.com/files/STBbDLgWmUFLHzpjYiDir6DM" width="313"/>
+ </figure>
+ <paragraph>
+  So this is just the gradient of the error of one sample. Take the average over the $n$ points to get the gradient of the error over the sample.
+ </paragraph>
+ <figure>
+  <image height="67" src="https://static.us.edusercontent.com/files/7bYbsit8s5Gt9WUgkXd1QPVd" width="411"/>
+ </figure>
+ <paragraph>
+  And don't forget to multiply by $C$ to get $\del L_S(\vec w)$.
+ </paragraph>
+ <paragraph>
+  Next, we worry about the first term, the regularizer $R(\vec w)$. It's a bit more straightforward:
+ </paragraph>
+ <figure>
+  <image height="57" src="https://static.us.edusercontent.com/files/OBz3JH5I1UYPdZ2HDQUKbpoE" width="154"/>
+ </figure>
+ <paragraph>
+  So,
+ </paragraph>
+ <paragraph>
+  $$\nabla \mathcal L_S (\vec w) = \nabla R_S(\vec w) + \nabla L_S(\vec w)$$
+ </paragraph>
+ <paragraph>
+  Then, we substitute it into the first expression:
+ </paragraph>
+ <figure>
+  <image height="61" src="https://static.us.edusercontent.com/files/093KDgIOCfYzQRAGgysW1cCa" width="359"/>
+ </figure>
+ <paragraph>
+  Make sure not to forget the eta! $$  \vec w ^{t+1} \gets \vec w ^{t} - \eta_t \nabla R_S(\vec w) - \eta_t \nabla L_S(\vec w)$$
+ </paragraph>
+ <paragraph>
+  $$ =  \vec w ^{t} - \eta  \vec w ^{t} +  \frac{\eta_{t} C}{n} \sum_{i=1}^{n} y_{i} \overrightarrow{x_{i}} \mathbf{1}\left(y_{i}\left(\vec{w}^{(t)} \cdot \vec{x}_{i}\right) \leq 1\right)$$
+ </paragraph>
+ <paragraph>
+  and if you just simplify those first two terms you get
+ </paragraph>
+ <figure>
+  <image height="40.419463087248324" src="https://static.us.edusercontent.com/files/uKA744cxl2O1v5JnA4D30yqf" width="495.00000000000006"/>
+ </figure>
+ <paragraph>
+ </paragraph>
+ <paragraph>
+ </paragraph>
+</document>
+<h3>
+ ------------------------------------
+</h3>
