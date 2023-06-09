@@ -1,15 +1,24 @@
 import os
-import requests
+import pandas as pd
 from bs4 import BeautifulSoup
-import json
 
-from utils import (sanitize, cprint, extract_files, 
+from utils import (sanitize, NoQuizFound, 
                    write, ThrowsLambdaError, getCourse, 
                    getModules, getAssignments, getQuizzes)
 from canvasapi import Canvas
 from consts import API_KEY, API_URL
 from canvasDuoEdLogin import canvasDuoLogin
 
+@ThrowsLambdaError(NoQuizFound)
+def getBestSubmissionEndpoint(session, quiz_submission_versions_html_url):
+    r = session.get(quiz_submission_versions_html_url)
+    if not r.text:
+        raise NoQuizFound(f'No quiz found at {quiz_submission_versions_html_url}')
+    soup = BeautifulSoup(r.text, 'html.parser')
+    tr = soup.find('tr', class_='kept')
+    if not tr: # then only one submission
+        return soup.find('a')['href']
+    return tr.find('a')['href']
 
 def scrapeQuiz(course, folder, quizzes_downloaded, session, quiz_id):
     """
@@ -19,11 +28,14 @@ def scrapeQuiz(course, folder, quizzes_downloaded, session, quiz_id):
     https://canvas.cornell.edu/courses/<course-id>/quizzes/<quiz-id>
     """
     if quiz_id in quizzes_downloaded:
-        print('Quiz {quiz_id} already downloaded')
+        print(f'Quiz {quiz_id} already downloaded')
+        return
+    quiz = course.get_quiz(quiz_id)
+    bestQuizSubmissionEndpoint = getBestSubmissionEndpoint(session, quiz.quiz_submission_versions_html_url)
+    if not bestQuizSubmissionEndpoint:
         return
     os.makedirs(folder, exist_ok=True)
-    quiz = course.get_quiz(quiz_id)
-    r = session.get(quiz.html_url)
+    r = session.get(f'{API_URL}{bestQuizSubmissionEndpoint}')
     write(r.text, os.path.join(folder, sanitize(quiz.title)) + '.html')
     quizzes_downloaded.add(quiz_id)
 
@@ -68,7 +80,7 @@ def scrapeAssignmentQuizzes(course, folder, quizzes_downloaded, session):
             print('Assignment Quiz: ', assignment.name)
             scrapeAssignmentQuiz(course, folder, quizzes_downloaded, session, assignment)
 
-def scrapeQuizzesForCourse(canvas, course_id):
+def scrapeQuizzesForCourse(session, canvas, course_id):
     """
     TODO: take folder out of here and make param
     """
@@ -77,15 +89,36 @@ def scrapeQuizzesForCourse(canvas, course_id):
     if not course:
         print(f'Course not accessible for course: {course_id}')
         return
+    print(f'***** Course: {course.name} *****')
     course_name = sanitize(course.name) if hasattr(course, 'name') else f'MISC_{course.id}'
-    folder = os.path.join('data', course_name)
-    session = canvasDuoLogin()
+    folder = os.path.join('Quizzes', course_name)
     scrapeQuizzes(course, folder, quizzes_downloaded, session)
     scrapeModuleQuizzes(course, folder, quizzes_downloaded, session)
     scrapeAssignmentQuizzes(course, folder, quizzes_downloaded, session)
 
+def scrapeExistingQuizzes(personal_courses=False):
+    canvas = Canvas(API_URL, API_KEY)
+    # courses = list(canvas.get_courses()) # --> lists all courses you've taken
+    courses = list(canvas.get_courses()) if personal_courses else \
+                                        pd.read_csv('misc/courses.csv') 
+    courses = courses if personal_courses else \
+                    courses.id.tolist()
+    s = canvasDuoLogin()
+    for course in courses:
+        scrapeQuizzesForCourse(s, canvas, course.id if personal_courses else course)
 
+if __name__ == '__main__':
+    scrapeExistingQuizzes(True)
 
-canvas  = Canvas(API_URL, API_KEY)
-courses = list(canvas.get_courses()) # --> lists all courses you've taken
-scrapeQuizzesForCourse(canvas, 24870)
+# canvas  = Canvas(API_URL, API_KEY)
+# courses = list(canvas.get_courses()) # --> lists all courses you've taken
+# scrapeQuizzesForCourse(canvas, 24870)
+# course = getCourse(canvas, 24870)
+# quiz = course.get_quiz(47949)
+# quiz = course.get_quiz(47997)
+# s = canvasDuoLogin()
+# r = s.get(quiz.quiz_submission_versions_html_url)
+# soup = BeautifulSoup(r.text, 'html.parser')
+# # get the tr with class='kept'
+# href = soup.find('tr', class_='kept').find('a')['href']
+# r = s.get(f'{API_URL}{href}')

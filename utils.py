@@ -129,6 +129,10 @@ def getDiscussionTopics(course, only_announcements):
 def getReplies(reply):
     return list(reply.get_replies())
 
+class NoQuizFound(Exception):
+    """Exception raised when no quiz found"""
+    pass
+
 class MaxRetriesExceeded(Exception):
     """Exception raised when max retries exceeded"""
     pass
