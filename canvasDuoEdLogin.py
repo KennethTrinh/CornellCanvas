@@ -87,12 +87,12 @@ def EdLogin():
 
 if __name__ == '__main__':
     # test canvas login
-    # s = canvasDuoLogin()
+    s = canvasDuoLogin()
     # r = s.get('https://canvas.cornell.edu/courses/24870/quizzes/47980')
     # write(r.text, overwrite=True)
 
     # # test edstem login
-    xtoken = EdLogin()
-    r = requests.get('https://us.edstem.org/api/threads/960600', headers = {'x-token': xtoken}, params = {'view': 1})
-    r = requests.get('https://us.edstem.org/api/courses/7377/threads', headers = {'x-token': xtoken}, params = {'limit': 30, 'sort': 'new'})
-    write(r.text, overwrite=True)
+    # xtoken = EdLogin()
+    # r = requests.get('https://us.edstem.org/api/threads/960600', headers = {'x-token': xtoken}, params = {'view': 1})
+    # r = requests.get('https://us.edstem.org/api/courses/7377/threads', headers = {'x-token': xtoken}, params = {'limit': 30, 'sort': 'new'})
+    # write(r.text, overwrite=True)
