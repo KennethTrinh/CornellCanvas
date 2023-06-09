@@ -205,7 +205,7 @@ def scrapeEdPostsForCourse(canvasSession, canvas, course_id):
     if not ed_course_id:
         print(f'Edstem login failed for course {course_id}')
         return
-    folder = os.path.join('Ed Discussions', course_name, 'Ed_Posts')
+    folder = os.path.join('data', course_name, 'Ed Discussions')
     threads = requestAllThreads(ed_course_id, xtoken)
     for i, thread in enumerate(threads):
         if i%50 == 0:

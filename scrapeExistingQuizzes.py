@@ -91,7 +91,7 @@ def scrapeQuizzesForCourse(session, canvas, course_id):
         return
     print(f'***** Course: {course.name} *****')
     course_name = sanitize(course.name) if hasattr(course, 'name') else f'MISC_{course.id}'
-    folder = os.path.join('Quizzes', course_name)
+    folder = os.path.join('data', course_name)
     scrapeQuizzes(course, folder, quizzes_downloaded, session)
     scrapeModuleQuizzes(course, folder, quizzes_downloaded, session)
     scrapeAssignmentQuizzes(course, folder, quizzes_downloaded, session)
