@@ -13,35 +13,33 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <callout type="info">
-  Put in your question title the year, semester, and question.  Ideal would also be to include the topic.   Example: 2018SP Q2(b) - call frames
- </callout>
- <callout type="info">
-  Include a screenshot of the question, so readers/answerers don't have to go find the relevant pdf.
- </callout>
- <figure>
-  <image height="449.0986920332937" src="https://static.us.edusercontent.com/files/hdWW5ZNc8tdW4qMHAKmpKyjO" width="658"/>
- </figure>
- <paragraph>
-  For this question, I am confused why the second example returns 4? Since p1 has two children, and each p1's child has 2 children, shouldn't p1.count_the_kidless() return 7 (1+2+2+2)?
- </paragraph>
-</document>
+<callout type="info">
+ Put in your question title the year, semester, and question.  Ideal would also be to include the topic.   Example: 2018SP Q2(b) - call frames
+</callout>
+<callout type="info">
+ Include a screenshot of the question, so readers/answerers don't have to go find the relevant pdf.
+</callout>
+<figure>
+ <image height="449.0986920332937" src="https://static.us.edusercontent.com/files/hdWW5ZNc8tdW4qMHAKmpKyjO" width="658"/>
+</figure>
+<p>
+ For this question, I am confused why the second example returns 4? Since p1 has two children, and each p1's child has 2 children, shouldn't p1.count_the_kidless() return 7 (1+2+2+2)?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The question is to count those that have no children, not to count each of the people. WIth reference to the testing code we provided (be sure to check it out!  On the exams archive page..)
   <break>
   </break>
- </paragraph>
+ </p>
  <pre>grand = Person("grand", "parent") 
 parent1 = Person("parent", "1", [grand]) 
 parent2 = Person("parent", "2", [grand]) 
@@ -50,7 +48,7 @@ kids = [] for i in range(2):
 for i in range(2,4): 
     kids.append(Person("kid", str(i), [parent2]))
 </pre>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

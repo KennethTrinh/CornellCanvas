@@ -13,335 +13,336 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <heading level="2">
-  Overview
- </heading>
- <paragraph>
-  Some of the ideas for this project were inspired by the lecture on language coordination and alignment. The way that person’s language changes in response to other people in the context of an interaction is fascinating. For this project I am considering the setting of online therapy conversations, where there are two interlocutors - the patient and the therapist. I am interested in looking at how the language of a speaker adapts to their interlocutor as the therapy progresses and the two form a bond.
+<heading level="2">
+ Overview
+</heading>
+<p>
+ Some of the ideas for this project were inspired by the lecture on language coordination and alignment. The way that person’s language changes in response to other people in the context of an interaction is fascinating. For this project I am considering the setting of online therapy conversations, where there are two interlocutors - the patient and the therapist. I am interested in looking at how the language of a speaker adapts to their interlocutor as the therapy progresses and the two form a bond.
+ <break>
+ </break>
+</p>
+<heading level="2">
+ Broader context
+ <break>
+ </break>
+</heading>
+<p>
+ In general, I hope that the extent of the alignment would help me reason about the quality of a bond between the therapist and the patient. I plan for this to be an
+ <b>
+  individual
+ </b>
+ project as sub-part of the work that I am currently doing with Cristian Danescu-Niculescu-Mizil on trajectories in online therapy conversations.
+ <break>
+ </break>
+</p>
+<heading level="2">
+ Data
+ <break>
+ </break>
+</heading>
+<p>
+ I will be working with data provided by the online therapy platform called Talkspace. Data is in the form of transcripts between individual clients and their therapists. There are about 250,000 client-therapist interactions of varying lengths available. In addition to conversations, there is also information about clients and feedback they submit to Talkspace in the form of various surveys. Among such feedback are surveys that clients fill out when they request for a switch from their current therapist or when they ask for a cancellation of their Talkspace subscription. In these surveys clients are asked to indicate the reason for switching/cancelling, which I plan to use as a way to categorize different kinds of interactions.
+ <break>
+ </break>
+</p>
+<p>
+ With this data I am able to identify two kinds of conversations of interest: the ones where clients end their subscription upon meeting their therapy goal as well as the ones where clients cancel due to dissatisfaction with their therapist. As a third noteworthy category, I am planning to look at conversations that were abandoned by the client.
+ <break>
+ </break>
+</p>
+<heading level="2">
+ Language features
+</heading>
+<p>
+ I plan to consider alignment at two different levels:
+</p>
+<list style="unordered">
+ <li>
+  <p>
+   Lexical — words, phrases, or terminology that gets picked up
+  </p>
+ </li>
+ <li>
+  <p>
+   Syntactic — sentence structure that are adopted.
+   <break>
+   </break>
+  </p>
+ </li>
+</list>
+<heading level="2">
+ Hypotheses
+ <break>
+ </break>
+</heading>
+<p>
+ <b>
+  H1
+ </b>
+ . In conversations, where clients meet their goal there would be higher levels of language alignment between the two interlocutors.
+ <break>
+ </break>
+</p>
+<p>
+ <b>
+  H2
+ </b>
+ . Alignment in language is asymmetrical, with greater adaptation happening on the part of a therapist.
+ <break>
+ </break>
+</p>
+<p>
+ <b>
+  H3
+ </b>
+ . Alignment on the part of a client (as opposed to therapist) is a greater predictor of the conversation success (i.e. client meeting their therapy goals).
+</p>
+<heading level="2">
+ Feasibility test
+</heading>
+<p>
+ While I have many interactions in this dataset, many of them are abandoned conversations. In order to reason about language alignment I need therapy conversations that are long enough. So, first of all, I am going to determine an appropriate threshold for conversation length (in terms of the number of utterances and the length of time). From here, I will need to make sure that there is a sufficient number of interactions that satisfy this threshold.
+</p>
+<p>
+ In oder to make meaningful comparisons of language alignment in successful (where client' therapy goals are met) and unsuccessful interactions (where clients are dissatisfied with their therapist or abandon the platform) I need to account for various factors, including gender, differences in client conditions, and reasons for seeking therapy. My hope is to account for these factors by pairing successful and unsuccessful clients based on similarity in such factors. Hence, the second feasibility test is to make sure that after pairing I have a sufficient number of pairs of successful-unsuccessful interactions.
+</p>
+<heading level="2">
+ Related inspirational papers
+ <break>
+ </break>
+</heading>
+<p>
+ [1] Danescu-Niculescu-Mizil, Cristian, Lillian Lee, et al. “Echoes of Power: Language Effects and Power Differences in Social Interaction.”
+ <i>
+  Proceedings of the 21st International Conference on World Wide Web
+ </i>
+ , Association for Computing Machinery, 2012, pp. 699–708.
+ <i>
+  ACM Digital Library
+ </i>
+ ,
+ <a href="https://doi.org/10.1145/2187836.2187931">
+  https://doi.org/10.1145/2187836.2187931
+  .
   <break>
   </break>
- </paragraph>
- <heading level="2">
-  Broader context
-  <break>
-  </break>
- </heading>
- <paragraph>
-  In general, I hope that the extent of the alignment would help me reason about the quality of a bond between the therapist and the patient. I plan for this to be an
-  <bold>
-   individual
-  </bold>
-  project as sub-part of the work that I am currently doing with Cristian Danescu-Niculescu-Mizil on trajectories in online therapy conversations.
-  <break>
-  </break>
- </paragraph>
- <heading level="2">
-  Data
-  <break>
-  </break>
- </heading>
- <paragraph>
-  I will be working with data provided by the online therapy platform called Talkspace. Data is in the form of transcripts between individual clients and their therapists. There are about 250,000 client-therapist interactions of varying lengths available. In addition to conversations, there is also information about clients and feedback they submit to Talkspace in the form of various surveys. Among such feedback are surveys that clients fill out when they request for a switch from their current therapist or when they ask for a cancellation of their Talkspace subscription. In these surveys clients are asked to indicate the reason for switching/cancelling, which I plan to use as a way to categorize different kinds of interactions.
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  With this data I am able to identify two kinds of conversations of interest: the ones where clients end their subscription upon meeting their therapy goal as well as the ones where clients cancel due to dissatisfaction with their therapist. As a third noteworthy category, I am planning to look at conversations that were abandoned by the client.
-  <break>
-  </break>
- </paragraph>
- <heading level="2">
-  Language features
- </heading>
- <paragraph>
-  I plan to consider alignment at two different levels:
- </paragraph>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    Lexical — words, phrases, or terminology that gets picked up
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Syntactic — sentence structure that are adopted.
-    <break>
-    </break>
-   </paragraph>
-  </list-item>
- </list>
- <heading level="2">
-  Hypotheses
-  <break>
-  </break>
- </heading>
- <paragraph>
-  <bold>
-   H1
-  </bold>
-  . In conversations, where clients meet their goal there would be higher levels of language alignment between the two interlocutors.
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  <bold>
-   H2
-  </bold>
-  . Alignment in language is asymmetrical, with greater adaptation happening on the part of a therapist.
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  <bold>
-   H3
-  </bold>
-  . Alignment on the part of a client (as opposed to therapist) is a greater predictor of the conversation success (i.e. client meeting their therapy goals).
- </paragraph>
- <heading level="2">
-  Feasibility test
- </heading>
- <paragraph>
-  While I have many interactions in this dataset, many of them are abandoned conversations. In order to reason about language alignment I need therapy conversations that are long enough. So, first of all, I am going to determine an appropriate threshold for conversation length (in terms of the number of utterances and the length of time). From here, I will need to make sure that there is a sufficient number of interactions that satisfy this threshold.
- </paragraph>
- <paragraph>
-  In oder to make meaningful comparisons of language alignment in successful (where client' therapy goals are met) and unsuccessful interactions (where clients are dissatisfied with their therapist or abandon the platform) I need to account for various factors, including gender, differences in client conditions, and reasons for seeking therapy. My hope is to account for these factors by pairing successful and unsuccessful clients based on similarity in such factors. Hence, the second feasibility test is to make sure that after pairing I have a sufficient number of pairs of successful-unsuccessful interactions.
- </paragraph>
- <heading level="2">
-  Related inspirational papers
-  <break>
-  </break>
- </heading>
- <paragraph>
-  [1] Danescu-Niculescu-Mizil, Cristian, Lillian Lee, et al. “Echoes of Power: Language Effects and Power Differences in Social Interaction.”
-  <italic>
-   Proceedings of the 21st International Conference on World Wide Web
-  </italic>
-  , Association for Computing Machinery, 2012, pp. 699–708.
-  <italic>
-   ACM Digital Library
-  </italic>
-  ,
-  <link href="https://doi.org/10.1145/2187836.2187931"/>
-  https://doi.org/10.1145/2187836.2187931.
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  [2] Danescu-Niculescu-Mizil, Cristian, Robert West, et al. “No Country for Old Members: User Lifecycle and Linguistic Change in Online Communities.”
-  <italic>
-   Proceedings of the 22nd International Conference on World Wide Web
-  </italic>
-  , Association for Computing Machinery, 2013, pp. 307–18.
-  <italic>
-   ACM Digital Library
-  </italic>
-  ,
-  <link href="https://doi.org/10.1145/2488388.2488416"/>
-  https://doi.org/10.1145/2488388.2488416.
- </paragraph>
- <paragraph>
-  [3] Demszky, Dorottya, et al. “Measuring Conversational Uptake: A Case Study on Student-Teacher Interactions.”
-  <italic>
-   ArXiv:2106.03873 [Cs]
-  </italic>
-  , June 2021.
-  <italic>
-   arXiv.org
-  </italic>
-  ,
-  <link href="http://arxiv.org/abs/2106.03873"/>
-  http://arxiv.org/abs/2106.03873.
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  [4] Doyle, Gabriel, et al. “Alignment at Work: Using Language to Distinguish the Internalization and Self-Regulation Components of Cultural Fit in Organizations.”
-  <italic>
-   Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)
-  </italic>
-  , Association for Computational Linguistics, 2017, pp. 603–12.
-  <italic>
-   ACLWeb
-  </italic>
-  ,
-  <link href="https://doi.org/10.18653/v1/P17-1056"/>
-  https://doi.org/10.18653/v1/P17-1056.
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  [5] Pei, Jiaxin, and David Jurgens. “Quantifying Intimacy in Language.”
-  <italic>
-   Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)
-  </italic>
-  , Association for Computational Linguistics, 2020, pp. 5307–26.
-  <italic>
-   ACLWeb
-  </italic>
-  ,
-  <link href="https://doi.org/10.18653/v1/2020.emnlp-main.428"/>
-  https://doi.org/10.18653/v1/2020.emnlp-main.428.
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  [6] Ransom, Tailer G., et al. “How Do Different Types of Alignment Affect Perceived Entity Status?”
-  <italic>
-   Journal of Psycholinguistic Research
-  </italic>
-  , vol. 48, no. 5, Oct. 2019, pp. 961–85.
-  <italic>
-   DOI.org (Crossref)
-  </italic>
-  ,
-  <link href="https://doi.org/10.1007/s10936-019-09642-1"/>
-  https://doi.org/10.1007/s10936-019-09642-1.
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  [7] Sharma, Eva, and Munmun De Choudhury. “Mental Health Support and Its Relationship to Linguistic Accommodation in Online Communities.”
-  <italic>
-   Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems
-  </italic>
-  , Association for Computing Machinery, 2018, pp. 1–13.
-  <italic>
-   ACM Digital Library
-  </italic>
-  ,
-  <link href="https://doi.org/10.1145/3173574.3174215"/>
-  https://doi.org/10.1145/3173574.3174215.
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  [8] Xu, Yang;, et al.
-  <italic>
-   Linguistic Alignment Is Affected More by Lexical Surprisal Rather than Social Power
-  </italic>
-  . University of Massachusetts Amherst, 2019.
-  <italic>
-   DOI.org (Datacite)
-  </italic>
-  ,
-  <link href="https://doi.org/10.7275/VRHR-4936"/>
-  https://doi.org/10.7275/VRHR-4936.
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  [9] Zhang, Justine, and Cristian Danescu-Niculescu-Mizil. “Balancing Objectives in Counseling Conversations: Advancing Forwards or Looking Backwards.”
-  <italic>
-   Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics
-  </italic>
-  , Association for Computational Linguistics, 2020, pp. 5276–89.
-  <italic>
-   ACLWeb
-  </italic>
-  ,
-  <link href="https://doi.org/10.18653/v1/2020.acl-main.470"/>
-  https://doi.org/10.18653/v1/2020.acl-main.470.
- </paragraph>
-</document>
-<h3>
- Author: Khonzoda Umarova (she/her) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  As a first step I considered various kinds of thresholds for the conversation length, including overall utterance-length of the transcript, utterance-length of a therapy session, number of utterances by a client (or by a therapist) in the transcript, number of utterances by a client (or therapist) during therapy, length of therapy conversation in terms of days. In the end, I decided to settle on the number of utterances by a client during the therapy and just keep track of other metrics of conversation length.
- </paragraph>
- <paragraph>
-  In this feasibility test, for convenience I focused on a subset of transcripts based on the following criteria: transcript starts in 2019, the client has cancelled their subscription at least once, and during their first cancellation the client provides a reason for this cancellation. In this subset, there are 6977 conversations, where clients report meeting their goal in the first cancellation, 3439 where the client found their therapist not helpful, and 1045 where client found their therapist not responsive. The first category are therapy conversations that I define as "successful". The second and the third would be "unsuccessful" conversations. There is one more category (i.e. abandoned subscriptions) that makes "unsuccessful" conversations, which I did not include in this feasibility test.
- </paragraph>
- <paragraph>
-  For language coordination, I am currently focusing on interactions that happen prior to the first cancellation and am only including conversations that satisfy my length threshold requirement: where the client makes at least 50 utterances during therapy part of the transcript. With these criteria in mind I went ahead to match pairs of successful and unsuccessful conversations based on attributes of the client. In particular, using ConvoKit's
-  <link href="https://github.com/CornellNLP/Cornell-Conversational-Analysis-Toolkit/blob/master/convokit/paired_prediction/pairer.py"/>
-  pairing mechanism, I did the matching based on the reported gender and primary condition of the clients. Keeping in mind that it would be ideal to compare coordination between speakers, who proceeded to a similar degree in their respective conversations, I further restricted the pairing process by the number of utterances made by the client in their therapy. In the end this gave me 830 conversations in 415 distinct pairs. Given that I am currently working on a subset of the corpus, the number of resulting pairs is okay.
- </paragraph>
- <paragraph>
-  Using these pairs, I ran some comparative analyses between successful and unsuccessful conversations. Some of the comparison criteria were other metrics of conversation length that I mentioned above but did not end up using for my threshold. When I look at the total number of utterances in the transcript, even despite pairing based on client's # of utterances in therapy,  the successful conversations tend to be longer (\mu=110.86, \sigma=114.03) than unsuccessful ones (\mu=71.52, \sigma=74.11). I also observed a similar trend of duration (in days) length of conversations in successful (\mu=91.25, \sigma=64.15) and unsuccessful (\mu=75.63, \sigma=63.19) classes.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Out of curiosity, what do you get w/ fightin' words analysis of successful vs unsuccessful conversations?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Khonzoda Umarova (she/her) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+ </a>
+</p>
+<p>
+ [2] Danescu-Niculescu-Mizil, Cristian, Robert West, et al. “No Country for Old Members: User Lifecycle and Linguistic Change in Online Communities.”
+ <i>
+  Proceedings of the 22nd International Conference on World Wide Web
+ </i>
+ , Association for Computing Machinery, 2013, pp. 307–18.
+ <i>
+  ACM Digital Library
+ </i>
+ ,
+ <link href="https://doi.org/10.1145/2488388.2488416"/>
+ https://doi.org/10.1145/2488388.2488416.
+</p>
+<p>
+ [3] Demszky, Dorottya, et al. “Measuring Conversational Uptake: A Case Study on Student-Teacher Interactions.”
+ <i>
+  ArXiv:2106.03873 [Cs]
+ </i>
+ , June 2021.
+ <i>
+  arXiv.org
+ </i>
+ ,
+ <link href="http://arxiv.org/abs/2106.03873"/>
+ http://arxiv.org/abs/2106.03873.
+ <break>
+ </break>
+</p>
+<p>
+ [4] Doyle, Gabriel, et al. “Alignment at Work: Using Language to Distinguish the Internalization and Self-Regulation Components of Cultural Fit in Organizations.”
+ <i>
+  Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)
+ </i>
+ , Association for Computational Linguistics, 2017, pp. 603–12.
+ <i>
+  ACLWeb
+ </i>
+ ,
+ <link href="https://doi.org/10.18653/v1/P17-1056"/>
+ https://doi.org/10.18653/v1/P17-1056.
+ <break>
+ </break>
+</p>
+<p>
+ [5] Pei, Jiaxin, and David Jurgens. “Quantifying Intimacy in Language.”
+ <i>
+  Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)
+ </i>
+ , Association for Computational Linguistics, 2020, pp. 5307–26.
+ <i>
+  ACLWeb
+ </i>
+ ,
+ <link href="https://doi.org/10.18653/v1/2020.emnlp-main.428"/>
+ https://doi.org/10.18653/v1/2020.emnlp-main.428.
+ <break>
+ </break>
+</p>
+<p>
+ [6] Ransom, Tailer G., et al. “How Do Different Types of Alignment Affect Perceived Entity Status?”
+ <i>
+  Journal of Psycholinguistic Research
+ </i>
+ , vol. 48, no. 5, Oct. 2019, pp. 961–85.
+ <i>
+  DOI.org (Crossref)
+ </i>
+ ,
+ <link href="https://doi.org/10.1007/s10936-019-09642-1"/>
+ https://doi.org/10.1007/s10936-019-09642-1.
+ <break>
+ </break>
+</p>
+<p>
+ [7] Sharma, Eva, and Munmun De Choudhury. “Mental Health Support and Its Relationship to Linguistic Accommodation in Online Communities.”
+ <i>
+  Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems
+ </i>
+ , Association for Computing Machinery, 2018, pp. 1–13.
+ <i>
+  ACM Digital Library
+ </i>
+ ,
+ <link href="https://doi.org/10.1145/3173574.3174215"/>
+ https://doi.org/10.1145/3173574.3174215.
+ <break>
+ </break>
+</p>
+<p>
+ [8] Xu, Yang;, et al.
+ <i>
+  Linguistic Alignment Is Affected More by Lexical Surprisal Rather than Social Power
+ </i>
+ . University of Massachusetts Amherst, 2019.
+ <i>
+  DOI.org (Datacite)
+ </i>
+ ,
+ <link href="https://doi.org/10.7275/VRHR-4936"/>
+ https://doi.org/10.7275/VRHR-4936.
+ <break>
+ </break>
+</p>
+<p>
+ [9] Zhang, Justine, and Cristian Danescu-Niculescu-Mizil. “Balancing Objectives in Counseling Conversations: Advancing Forwards or Looking Backwards.”
+ <i>
+  Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics
+ </i>
+ , Association for Computational Linguistics, 2020, pp. 5276–89.
+ <i>
+  ACLWeb
+ </i>
+ ,
+ <link href="https://doi.org/10.18653/v1/2020.acl-main.470"/>
+ https://doi.org/10.18653/v1/2020.acl-main.470
+ .
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Khonzoda Umarova (she/her) (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Notes from my conversation with Lillian:
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     Given the context of these conversations, it is difficult to infer the reply-chain of utterances
-   </paragraph>
-  </list-item>
-  <list-item>
+   </p>
+  </li>
+  <li>
    <list style="bullet">
-    <list-item>
-     <paragraph>
+    <li>
+     <p>
       Window for
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
+     </p>
+    </li>
+    <li>
+     <p>
       Could potentially merge uninterrupted sequence of utterances by the same speaker together?
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
+     </p>
+    </li>
+    <li>
+     <p>
       Synchronous (real-time) vs asynchronous (delayed) interactions in the conversation...
-     </paragraph>
-    </list-item>
+     </p>
+    </li>
    </list>
-  </list-item>
-  <list-item>
-   <paragraph>
+  </li>
+  <li>
+   <p>
     Try to check accommodation in synchronous vs asynchronous setting
-   </paragraph>
+   </p>
    <list style="bullet">
-    <list-item>
-     <paragraph>
+    <li>
+     <p>
       Is accommodation influenced solely by stimulus or by live interaction + stimulus?
-     </paragraph>
-    </list-item>
+     </p>
+    </li>
    </list>
-  </list-item>
-  <list-item>
-   <paragraph>
+  </li>
+  <li>
+   <p>
     Ablation study after looking at the correlation between coordination and success in conversations.
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Khonzoda Umarova (she/her) (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   As a first step I considered various kinds of thresholds for the conversation length, including overall utterance-length of the transcript, utterance-length of a therapy session, number of utterances by a client (or by a therapist) in the transcript, number of utterances by a client (or therapist) during therapy, length of therapy conversation in terms of days. In the end, I decided to settle on the number of utterances by a client during the therapy and just keep track of other metrics of conversation length.
+  </p>
+  <p>
+   In this feasibility test, for convenience I focused on a subset of transcripts based on the following criteria: transcript starts in 2019, the client has cancelled their subscription at least once, and during their first cancellation the client provides a reason for this cancellation. In this subset, there are 6977 conversations, where clients report meeting their goal in the first cancellation, 3439 where the client found their therapist not helpful, and 1045 where client found their therapist not responsive. The first category are therapy conversations that I define as "successful". The second and the third would be "unsuccessful" conversations. There is one more category (i.e. abandoned subscriptions) that makes "unsuccessful" conversations, which I did not include in this feasibility test.
+  </p>
+  <p>
+   For language coordination, I am currently focusing on interactions that happen prior to the first cancellation and am only including conversations that satisfy my length threshold requirement: where the client makes at least 50 utterances during therapy part of the transcript. With these criteria in mind I went ahead to match pairs of successful and unsuccessful conversations based on attributes of the client. In particular, using ConvoKit's
+   <a href="https://github.com/CornellNLP/Cornell-Conversational-Analysis-Toolkit/blob/master/convokit/paired_prediction/pairer.py">
+    pairing mechanism
+   </a>
+   , I did the matching based on the reported gender and primary condition of the clients. Keeping in mind that it would be ideal to compare coordination between speakers, who proceeded to a similar degree in their respective conversations, I further restricted the pairing process by the number of utterances made by the client in their therapy. In the end this gave me 830 conversations in 415 distinct pairs. Given that I am currently working on a subset of the corpus, the number of resulting pairs is okay.
+  </p>
+  <p>
+   Using these pairs, I ran some comparative analyses between successful and unsuccessful conversations. Some of the comparison criteria were other metrics of conversation length that I mentioned above but did not end up using for my threshold. When I look at the total number of utterances in the transcript, even despite pairing based on client's # of utterances in therapy,  the successful conversations tend to be longer (\mu=110.86, \sigma=114.03) than unsuccessful ones (\mu=71.52, \sigma=74.11). I also observed a similar trend of duration (in days) length of conversations in successful (\mu=91.25, \sigma=64.15) and unsuccessful (\mu=75.63, \sigma=63.19) classes.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Out of curiosity, what do you get w/ fightin' words analysis of successful vs unsuccessful conversations?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

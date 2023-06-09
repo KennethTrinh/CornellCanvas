@@ -13,76 +13,74 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="1.0">
- <paragraph>
-  How do you determine the order by which nodes are added from the frontier set to the settled set when using djikstra’s algorithm, like in this question?
- </paragraph>
- <figure>
-  <image height="608" src="https://static.us.edusercontent.com/files/nzOXjoYejpAjmuD9Fv6gdCdI" width="1170"/>
- </figure>
-</document>
+<p>
+ How do you determine the order by which nodes are added from the frontier set to the settled set when using djikstra’s algorithm, like in this question?
+</p>
+<figure>
+ <image height="608" src="https://static.us.edusercontent.com/files/nzOXjoYejpAjmuD9Fv6gdCdI" width="1170"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  What does the theorem about the invariant say?
- </paragraph>
- <paragraph>
-  What did you do in your implementation in Assignment A7?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Ohhh — I reread my implementation and might have discovered the issue — is the next chosen node to travel to the one with the least distance from the original node we want to find the shortest path from? If so, that explains why my last two nodes were swapped when I tried solving this problem.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Erik Starling (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Erik Starling (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The settled is updated over time and all edges leaving it have to lead to the frontier set. That would mean that the order between the adjacent nodes to the current settled set shouldn't matter so long as each set is visited in sequence. Ithaca is first as its our starting, then the frontier contains Detroit, Philly, and NY, then the next frontier of Denver and LA (NY and Philly are connected but they have both been visited so we already know the shortest path to each), and the final which would only contain Seattle. Am I missing anything?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  the answer key is different than that — I had the same as the answer key except my seattle and denver were flipped
- </paragraph>
- <figure>
-  <image height="180" src="https://static.us.edusercontent.com/files/UmDMni8PPrYB4708CfqDgjBB" width="1170"/>
- </figure>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   the answer key is different than that — I had the same as the answer key except my seattle and denver were flipped
+  </p>
+  <figure>
+   <image height="180" src="https://static.us.edusercontent.com/files/UmDMni8PPrYB4708CfqDgjBB" width="1170"/>
+  </figure>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   What does the theorem about the invariant say?
+  </p>
+  <p>
+   What did you do in your implementation in Assignment A7?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Ohhh — I reread my implementation and might have discovered the issue — is the next chosen node to travel to the one with the least distance from the original node we want to find the shortest path from? If so, that explains why my last two nodes were swapped when I tried solving this problem.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

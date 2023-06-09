@@ -13,30 +13,26 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  1) Could the variable "next_week_increase_decrease" have any errors? For example, line 23 of train_baseline.csv should be 1 instead of 0 because all other 2020 week14 "next_week_increase_decrease" are 1's.
- </paragraph>
- <paragraph>
-  2) Should we use the variable "year_week" to understand the definition of the "week"? In other words, should we expect "next_week_increase_decrease" is the same for the same "year_week"?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ 1) Could the variable "next_week_increase_decrease" have any errors? For example, line 23 of train_baseline.csv should be 1 instead of 0 because all other 2020 week14 "next_week_increase_decrease" are 1's.
+</p>
+<p>
+ 2) Should we use the variable "year_week" to understand the definition of the "week"? In other words, should we expect "next_week_increase_decrease" is the same for the same "year_week"?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Brandon Guo (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Brandon Guo (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   To clarify, "next_week_increase_decrease" refers to the date exactly 1 week in the future. For line 23 4/5/2020 it is referring to 4/12/2020 which has a decrease in hospitalizations. year_week is just an additional variable that came in the dataset and in fact provides less specific information than the actual date, so you can choose whether or not to use it.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

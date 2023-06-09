@@ -13,75 +13,69 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  I understand that this file should make the red and green LEDs blink concurrently, however, in testing my partner and I were wondering if the fact that our interrupt period is relatively long (0xA50000) would mean that in concurrent execution both LEDs should never be on at the same time?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I understand that this file should make the red and green LEDs blink concurrently, however, in testing my partner and I were wondering if the fact that our interrupt period is relatively long (0xA50000) would mean that in concurrent execution both LEDs should never be on at the same time?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aidan McNay (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Your interrupt period should be sufficiently short to give the illusion of concurrency between the LED's. If your test_0.c results in a fairly noticeable difference between the LED's, then you should go back and change your interrupt load value to avoid this
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Correct, this means that your load value should be in the order of micro/milliseconds, not on the order of seconds.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Emily Speckhals (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  ok thank you. so just to clarify, should the LEDs be blinking together or at different rates?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  The LED's should appear (from a human perspective) to blink at the same time. They won't be
-  <italic>
-   exactly
-  </italic>
-  together (on the order of milliseconds), but the idea is that the processes switch off at a rate fast enough that the LED's toggling appears simultaneous to a human observer
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Harris Miller (None)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Correct, this means that your load value should be in the order of micro/milliseconds, not on the order of seconds.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Emily Speckhals (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    ok thank you. so just to clarify, should the LEDs be blinking together or at different rates?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Aidan McNay (student)
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     The LED's should appear (from a human perspective) to blink at the same time. They won't be
+     <i>
+      exactly
+     </i>
+     together (on the order of milliseconds), but the idea is that the processes switch off at a rate fast enough that the LED's toggling appears simultaneous to a human observer
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

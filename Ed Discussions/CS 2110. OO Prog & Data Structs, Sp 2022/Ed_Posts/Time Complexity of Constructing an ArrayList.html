@@ -13,51 +13,48 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I am wondering whether the new expression of constructing an ArrayList, new ArrayList(), is a constant time operation or a linear time operation.
- </paragraph>
- <paragraph>
-  I see it being a linear time operation because the ArrayList gets created based on its initial capacity, but I am not sure exactly whether this reasoning is correct.
- </paragraph>
-</document>
+<p>
+ I am wondering whether the new expression of constructing an ArrayList, new ArrayList(), is a constant time operation or a linear time operation.
+</p>
+<p>
+ I see it being a linear time operation because the ArrayList gets created based on its initial capacity, but I am not sure exactly whether this reasoning is correct.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jacob Kerr (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jacob Kerr (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The internals of an ArrayList in Java are essentially an array that the user can add items to, placed into the next open index of the array. If the capacity of the array is reached, a new one with higher capacity is created and the elements from the previous array are copied into it. This means that creating an empty ArrayList only involves initializing a new array with the length being the specified capacity (by default, the initial capacity is 10 unless specified). This is because initialization of an array in Java, by the JVM specification, requires all elements in the array to be initialized to their default values, which takes O(n) time. This means that overall, the time complexity of creating an empty ArrayList is O(n) with respect to the initial capacity.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You can see the constructors of the ArrayList class in Java 8 below. Notice how all that is done is create a new array of a specified capacity. The
   <code>
    super
   </code>
   constructor is empty and does not affect this method.
- </paragraph>
+ </p>
  <figure>
   <image height="520.7841726618705" src="https://static.us.edusercontent.com/files/8pbwboY6Z4kulXbFfKutNC43" width="758"/>
  </figure>
- <paragraph>
- </paragraph>
- <paragraph>
+ <p>
   Sources:
- </paragraph>
- <paragraph>
-  <link href="https://hg.openjdk.java.net/jdk8/jdk8/jdk/file/tip/src/share/classes/java/util/ArrayList.java"/>
-  https://hg.openjdk.java.net/jdk8/jdk8/jdk/file/tip/src/share/classes/java/util/ArrayList.java
- </paragraph>
- <paragraph>
+ </p>
+ <p>
+  <a href="https://hg.openjdk.java.net/jdk8/jdk8/jdk/file/tip/src/share/classes/java/util/ArrayList.java">
+   https://hg.openjdk.java.net/jdk8/jdk8/jdk/file/tip/src/share/classes/java/util/ArrayList.java
+  </a>
+ </p>
+ <p>
   <link href="https://stackoverflow.com/questions/5640850/java-whats-the-big-o-time-of-declaring-an-array-of-size-n"/>
   https://stackoverflow.com/questions/5640850/java-whats-the-big-o-time-of-declaring-an-array-of-size-n
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

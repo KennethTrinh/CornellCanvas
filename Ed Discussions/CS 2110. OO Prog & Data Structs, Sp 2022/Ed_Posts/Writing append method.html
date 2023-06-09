@@ -13,118 +13,114 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I am having trouble writing append. Running into a null pointer exception in the testAppendAndToStringRev() test for an empty string, I have tried to increment the size of the list, create a new node and assign head/tail values but nothing works. I'm lost on where to go from here. Appreciate any help.
- </paragraph>
-</document>
+<p>
+ I am having trouble writing append. Running into a null pointer exception in the testAppendAndToStringRev() test for an empty string, I have tried to increment the size of the list, create a new node and assign head/tail values but nothing works. I'm lost on where to go from here. Appreciate any help.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Do you mean empty string or empty list? If the latter, this is because you initially have no head or tail, so when you append a new node you must set a new head and tail. But you don’t want to always do this when you append but ONLY when the list is empty otherwise you just want to add a next to the tail and reassign the tail field.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thanks for the reply. Empty list*, I'm trying to set the head to a new node since its currently null but creating the node itself is confusing. There's no node constructor, so I think I'm missing something
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  You can create a new node inside of the append method, why not?
- </paragraph>
- <paragraph>
-  Also think about this you want to append a node, firstly we currently have no nodes in the list meaning the previous and next of this new node must be null, and the value must be the value given to you by the user, then set the head and tail to be that new node you created
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Oh wait I
-  <italic>
-   was
-  </italic>
-  completely missing setting the tail. Thanks so much.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  no problem! :)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  if this doesn’t work it’s really hard to debug without looking at code
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew Chen (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew Chen (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Marking as resolved.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Bahaa Kotb (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Do you mean empty string or empty list? If the latter, this is because you initially have no head or tail, so when you append a new node you must set a new head and tail. But you don’t want to always do this when you append but ONLY when the list is empty otherwise you just want to add a next to the tail and reassign the tail field.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Bahaa Kotb (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    if this doesn’t work it’s really hard to debug without looking at code
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 4em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Thanks for the reply. Empty list*, I'm trying to set the head to a new node since its currently null but creating the node itself is confusing. There's no node constructor, so I think I'm missing something
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 6em;">
+     <h3>
+      Author: Bahaa Kotb (student)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      You can create a new node inside of the append method, why not?
+     </p>
+     <p>
+      Also think about this you want to append a node, firstly we currently have no nodes in the list meaning the previous and next of this new node must be null, and the value must be the value given to you by the user, then set the head and tail to be that new node you created
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 8em;">
+      <h3>
+       Author: Anonymous
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       Oh wait I
+       <i>
+        was
+       </i>
+       completely missing setting the tail. Thanks so much.
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 10em;">
+       <h3>
+        Author: Bahaa Kotb (student)
+       </h3>
+       <h3>
+        Vote Count: 0
+       </h3>
+       <p>
+        no problem! :)
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

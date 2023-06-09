@@ -13,18 +13,18 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  <bold>
-   Overview
-  </bold>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  For this project I plan to examine reviews and rebuttals for available papers on
-  <link href="http://OpenReview.net"/>
-  OpenReview.net.
+<p>
+ <b>
+  Overview
+ </b>
+ <break>
+ </break>
+</p>
+<p>
+ For this project I plan to examine reviews and rebuttals for available papers on
+ <a href="http://OpenReview.net">
+  OpenReview.net
+  .
   <link href="http://OpenReview.net"/>
   OpenReview.net is a primary online hub for certain conference and workshops in the ML space. Depending on the conference, the site provides reviews, full text papers, authorship, reviewer ratings, and final decisions. Some amount of data vis and analysis occurs pretty regularly as results are released, but the phenomenal API has never been used for a large-scale NLP task as far as I can find (admittedly hard to search for “NLP on
   <link href="http://OpenReview.net"/>
@@ -33,613 +33,608 @@
   OpenReview.net").
   <break>
   </break>
- </paragraph>
- <paragraph>
-  I have two main interests in this dataset. The first is the persuasion aspect. Based on just topic areas and scores, what papers would we not expect to get accepted that (after the rebuttal) are, in fact, accepted? Conversely, are there papers that seem like they should be obvious accepts based on reviewer scores that are then rejected or accepted at a lower grade (eg all very strong accepts -&gt; poster instead of a talk)? I think this is probably one of the largest openly accessible datasets where expert users evaluate and persuade each other on technical topics. There is a wonderful structure to the data as many submissions are single-blind. Matching titles and author sets may also allow us to query arXiv for citation data, coauthorship structure across other conferences, and track general topic trends over time. Authors and reviewers are presumably good-faith participants, and are generally involved in a very deep persuasion task. Authors generally respond to specific reviews and are incentivized to make concessions and maintain an amicable tone that hopefully leads to high-quality discussion. Beyond this, referees often explain the reasoning behind their final decisions in a short summary.
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  My second interest is the role that changing populations have relative to social learning / memes / linguistic changes. I think using authorship data from this dataset will offer insight into this phenomena if I can successfully match topics with very similar meanings or observe label shifts over time.
- </paragraph>
- <paragraph>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  <bold>
-   Hypotheses
-  </bold>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  H1. Stylistic decision, politeness, and pronoun usage will have a negligible affect on reversal decisions
- </paragraph>
- <paragraph>
-  H2. Theoretical fields will be much more likely to overturn negative decisions than empirical
- </paragraph>
- <paragraph>
-  H3. Successful appeals will be more likely to match the stylistic and content choices of borderline reviewers than strongly positive or negative reviewers. I predict this would hold true even in direct responses to strongly positive or negative reviewers as long as there is an undecided reviewer in the thread.
- </paragraph>
- <paragraph>
-  H4. New topics and fields will arise primarily from the introduction of new authors and not via changes in topics among existing authors.
- </paragraph>
- <paragraph>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  <bold>
-   Language features
-  </bold>
- </paragraph>
- <paragraph>
-  I'm not 100% sure what features will be most relevant until I get a better idea of what the entries in the corpus will look like. My current (maybe unwieldy) plan would be something like:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    Matching with arXiv could allow for author-specified and generally unified topic labels.
-    <break>
-    </break>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Topic and ratings to predict acceptance (ie to identify unexpected reversals in author fortune)
-    <break>
-    </break>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Drawing feature inspiration from [3] and likely using the implemented class in [4] for features related to politeness, deference, etc.
-    <break>
-    </break>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Stylistic indicators drawn from cited work.
-    <break>
-    </break>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    tf-idf for predicting whether a paper will reverse its fortune (probably not the best feature set, but easy to generate)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    [7] for an initial qualitative analysis
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  <bold>
-   Feasibility test
-  </bold>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  As an initial feasibility test, can we predict whether marginal papers will be accepted with any high accuracy and do reversals of fortune occur enough to examine how they work? From that point on a more thorough analysis will be possible.
- </paragraph>
- <paragraph>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  <bold>
-   Dataset
-  </bold>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  The open review api for ICLR + a selection of other conferences / workshops, etc. This will require some manual labor to find compatible datasets so I’ll likely just start with ICLR. I’m hoping that matching titles with arXiv submissions will allow for additional topic labels.
- </paragraph>
- <paragraph>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  <bold>
-   Inspiration
-  </bold>
- </paragraph>
- <paragraph>
-  Important to my project will be considering how research topics change over time. [2] provides a framework for predicting paper topics using tf-idf under the demonstrated label shift on arXiv, but it is unclear what social mechanisms drive this shift. Obviously, some amount of variation must come from technical impact and opportunity, but it may be interesting to see what populations tend to shift between topics as in [5]. Topic and community-wise, I’m also curious if the findings in [6] will replicate to conferences or research topics. Obviously research areas have more upfront cost than online communities, but professors are encouraged to wander based on the interests of the graduate researchers under them.
- </paragraph>
- <paragraph>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  [1] Danescu-Niculescu-Mizil, Cristian, Robert West, Dan Jurafsky, Jure Leskovec, and Christopher Potts. 2013.
-  <link href="https://www.cs.cornell.edu/~cristian/Linguistic_change.html"/>
-  No country for old members: User lifecycle and linguistic change in online communities. WWW, pp. 307–318.
- </paragraph>
- <paragraph>
-  [2] Wu, Ruihan, et al. "Online Adaptation to Label Distribution Shift." arXiv preprint arXiv:2107.04520 (2021).
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  [3] Danescu-Niculescu-Mizil, Cristian, et al. "A computational approach to politeness with application to social factors." arXiv preprint arXiv:1306.6078 (2013).
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  [4] Chang, Jonathan P., et al. "Convokit: A toolkit for the analysis of conversations." arXiv preprint arXiv:2005.04246 (2020).
- </paragraph>
- <paragraph>
-  [5] Wang, Yichen, Jason Shuo Zhang, Xu Han, and Qin Lv. 2020. “Jump on the Bandwagon? – Characterizing Bandwagon Phenomenon in Online NBA Fan Communities.” In
-  <italic>
-   Social Informatics
-  </italic>
-  , edited by Samin Aref, Kalina Bontcheva, Marco Braghieri, Frank Dignum, Fosca Giannotti, Francesco Grisolia, and Dino Pedreschi, 410–26. Lecture Notes in Computer Science. Cham: Springer International Publishing.
-  <link href="https://doi.org/10.1007/978-3-030-60975-7_30"/>
-  https://doi.org/10.1007/978-3-030-60975-7_30.
- </paragraph>
- <paragraph>
-  [6] Tan, Chenhao, and Lillian Lee. "All who wander: On the prevalence and characteristics of multi-community engagement." Proceedings of the 24th International Conference on World Wide Web. 2015.
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  [7] Monroe, Burt L., Michael P. Colaresi, and Kevin M. Quinn. "Fightin'words: Lexical feature selection and evaluation for identifying the content of political conflict." Political Analysis 16.4 (2008): 372-403.
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  -edit- formatting
- </paragraph>
-</document>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Regarding item 2 on topic and author trends, there was a workshop:
-  <break>
-  </break>
-  <break>
-  </break>
-  <link href="https://aclanthology.org/volumes/W12-32/"/>
-  https://aclanthology.org/volumes/W12-32/
- </paragraph>
- <paragraph>
-  on the ACL anthology corpus itself:
-  <link href="https://aclanthology.org/W12-32.pdf"/>
-  Proceedings of the ACL-2012 Special Workshop on Rediscovering 50 Years of Discoveries .
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Aside: external shock to language expression leading to opinion change:
- </paragraph>
- <paragraph>
- </paragraph>
- <heading level="2">
-  Media Persuasion through Slanted Language: Evidence from the Coverage of Immigration
- </heading>
- <paragraph>
-  TypeJournal ArticleAuthorMilena DjourelovaAbstractCan the language used by mass media to cover policy relevant issues aﬀect readers’ policy preferences? I examine this question for the case of immigration, exploiting an abrupt ban on the term ”illegal immigrant” in wire content distributed to media outlets by the Associated Press (AP). Using text data on AP dispatches and the content of a large number of US print and online outlets, I ﬁnd that articles mentioning ”illegal immigrant” decline by 28% in outlets that rely on AP relative to others. This change in language appears to have had a tangible impact on readers’ views on immigration. Following AP’s ban, individuals exposed to outlets relying more heavily on AP tend to support less restrictive immigration and border security policies. The eﬀect is driven by frequent readers and does not apply to views on issues other than immigration.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  sort of related to "new" authors:
-  <break>
-  </break>
-  <link href="https://www.pnas.org/content/117/17/9284"/>
-  <break>
-  </break>
-  https://www.pnas.org/content/117/17/9284
- </paragraph>
- <heading level="1">
-  The Diversity–Innovation Paradox in Science
- </heading>
- <paragraph>
-  Bas Hofstra, Vivek V. Kulkarni, Sebastian Munoz-Najar Galvez, Bryan He, Dan Jurafsky, and Daniel A. McFarland
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  PNAS April 28, 2020 117 (17) 9284-9291; first published April 14, 2020;
-  <link href="https://doi.org/10.1073/pnas.1915378117"/>
-  https://doi.org/10.1073/pnas.1915378117
-  <break>
-  </break>
-  <break>
-  </break>
-  <break>
-  </break>
- </paragraph>
- <heading level="2">
-  Significance
- </heading>
- <paragraph>
-  By analyzing data from nearly all US PhD recipients and their dissertations across three decades, this paper finds demographically underrepresented students innovate at higher rates than majority students, but their novel contributions are discounted and less likely to earn them academic positions. The discounting of minorities’ innovations may partly explain their underrepresentation in influential positions of academia.
- </paragraph>
- <paragraph>
- </paragraph>
- <heading level="2">
-  Abstract
- </heading>
- <paragraph>
-  Prior work finds a diversity paradox: Diversity breeds innovation, yet underrepresented groups that diversify organizations have less successful careers within them. Does the diversity paradox hold for scientists as well? We study this by utilizing a near-complete population of ∼1.2 million US doctoral recipients from 1977 to 2015 and following their careers into publishing and faculty positions. We use text analysis and machine learning to answer a series of questions: How do we detect scientific innovations? Are underrepresented groups more likely to generate scientific innovations? And are the innovations of underrepresented groups adopted and rewarded? Our analyses show that underrepresented groups produce higher rates of scientific novelty. However, their novel contributions are devalued and discounted: For example, novel contributions by gender and racial minorities are taken up by other scholars at lower rates than novel contributions by gender and racial majorities, and equally impactful contributions of gender and racial minorities are less likely to result in successful scientific careers than for majority groups. These results suggest there may be unwarranted reproduction of stratification in academic careers that discounts diversity’s role in innovation and partly explains the underrepresentation of some groups in academia.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Richard Lp (he/they) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  <bold>
+ </a>
+</p>
+<p>
+ I have two main interests in this dataset. The first is the persuasion aspect. Based on just topic areas and scores, what papers would we not expect to get accepted that (after the rebuttal) are, in fact, accepted? Conversely, are there papers that seem like they should be obvious accepts based on reviewer scores that are then rejected or accepted at a lower grade (eg all very strong accepts -&gt; poster instead of a talk)? I think this is probably one of the largest openly accessible datasets where expert users evaluate and persuade each other on technical topics. There is a wonderful structure to the data as many submissions are single-blind. Matching titles and author sets may also allow us to query arXiv for citation data, coauthorship structure across other conferences, and track general topic trends over time. Authors and reviewers are presumably good-faith participants, and are generally involved in a very deep persuasion task. Authors generally respond to specific reviews and are incentivized to make concessions and maintain an amicable tone that hopefully leads to high-quality discussion. Beyond this, referees often explain the reasoning behind their final decisions in a short summary.
+ <break>
+ </break>
+</p>
+<p>
+ My second interest is the role that changing populations have relative to social learning / memes / linguistic changes. I think using authorship data from this dataset will offer insight into this phenomena if I can successfully match topics with very similar meanings or observe label shifts over time.
+</p>
+<p>
+ <break>
+ </break>
+</p>
+<p>
+ <b>
+  Hypotheses
+ </b>
+ <break>
+ </break>
+</p>
+<p>
+ H1. Stylistic decision, politeness, and pronoun usage will have a negligible affect on reversal decisions
+</p>
+<p>
+ H2. Theoretical fields will be much more likely to overturn negative decisions than empirical
+</p>
+<p>
+ H3. Successful appeals will be more likely to match the stylistic and content choices of borderline reviewers than strongly positive or negative reviewers. I predict this would hold true even in direct responses to strongly positive or negative reviewers as long as there is an undecided reviewer in the thread.
+</p>
+<p>
+ H4. New topics and fields will arise primarily from the introduction of new authors and not via changes in topics among existing authors.
+</p>
+<p>
+ <break>
+ </break>
+</p>
+<p>
+ <b>
+  Language features
+ </b>
+</p>
+<p>
+ I'm not 100% sure what features will be most relevant until I get a better idea of what the entries in the corpus will look like. My current (maybe unwieldy) plan would be something like:
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   Matching with arXiv could allow for author-specified and generally unified topic labels.
    <break>
    </break>
-  </bold>
- </paragraph>
- <paragraph>
+  </p>
+ </li>
+ <li>
+  <p>
+   Topic and ratings to predict acceptance (ie to identify unexpected reversals in author fortune)
+   <break>
+   </break>
+  </p>
+ </li>
+ <li>
+  <p>
+   Drawing feature inspiration from [3] and likely using the implemented class in [4] for features related to politeness, deference, etc.
+   <break>
+   </break>
+  </p>
+ </li>
+ <li>
+  <p>
+   Stylistic indicators drawn from cited work.
+   <break>
+   </break>
+  </p>
+ </li>
+ <li>
+  <p>
+   tf-idf for predicting whether a paper will reverse its fortune (probably not the best feature set, but easy to generate)
+  </p>
+ </li>
+ <li>
+  <p>
+   [7] for an initial qualitative analysis
+  </p>
+ </li>
+</list>
+<p>
+ <break>
+ </break>
+</p>
+<p>
+ <b>
+  Feasibility test
+ </b>
+ <break>
+ </break>
+</p>
+<p>
+ As an initial feasibility test, can we predict whether marginal papers will be accepted with any high accuracy and do reversals of fortune occur enough to examine how they work? From that point on a more thorough analysis will be possible.
+</p>
+<p>
+ <break>
+ </break>
+</p>
+<p>
+ <b>
+  Dataset
+ </b>
+ <break>
+ </break>
+</p>
+<p>
+ The open review api for ICLR + a selection of other conferences / workshops, etc. This will require some manual labor to find compatible datasets so I’ll likely just start with ICLR. I’m hoping that matching titles with arXiv submissions will allow for additional topic labels.
+</p>
+<p>
+ <break>
+ </break>
+</p>
+<p>
+ <b>
+  Inspiration
+ </b>
+</p>
+<p>
+ Important to my project will be considering how research topics change over time. [2] provides a framework for predicting paper topics using tf-idf under the demonstrated label shift on arXiv, but it is unclear what social mechanisms drive this shift. Obviously, some amount of variation must come from technical impact and opportunity, but it may be interesting to see what populations tend to shift between topics as in [5]. Topic and community-wise, I’m also curious if the findings in [6] will replicate to conferences or research topics. Obviously research areas have more upfront cost than online communities, but professors are encouraged to wander based on the interests of the graduate researchers under them.
+</p>
+<p>
+ <break>
+ </break>
+</p>
+<p>
+ <break>
+ </break>
+</p>
+<p>
+ [1] Danescu-Niculescu-Mizil, Cristian, Robert West, Dan Jurafsky, Jure Leskovec, and Christopher Potts. 2013.
+ <link href="https://www.cs.cornell.edu/~cristian/Linguistic_change.html"/>
+ No country for old members: User lifecycle and linguistic change in online communities. WWW, pp. 307–318.
+</p>
+<p>
+ [2] Wu, Ruihan, et al. "Online Adaptation to Label Distribution Shift." arXiv preprint arXiv:2107.04520 (2021).
+ <break>
+ </break>
+</p>
+<p>
+ [3] Danescu-Niculescu-Mizil, Cristian, et al. "A computational approach to politeness with application to social factors." arXiv preprint arXiv:1306.6078 (2013).
+ <break>
+ </break>
+</p>
+<p>
+ [4] Chang, Jonathan P., et al. "Convokit: A toolkit for the analysis of conversations." arXiv preprint arXiv:2005.04246 (2020).
+</p>
+<p>
+ [5] Wang, Yichen, Jason Shuo Zhang, Xu Han, and Qin Lv. 2020. “Jump on the Bandwagon? – Characterizing Bandwagon Phenomenon in Online NBA Fan Communities.” In
+ <i>
+  Social Informatics
+ </i>
+ , edited by Samin Aref, Kalina Bontcheva, Marco Braghieri, Frank Dignum, Fosca Giannotti, Francesco Grisolia, and Dino Pedreschi, 410–26. Lecture Notes in Computer Science. Cham: Springer International Publishing.
+ <link href="https://doi.org/10.1007/978-3-030-60975-7_30"/>
+ https://doi.org/10.1007/978-3-030-60975-7_30
+ .
+</p>
+<p>
+ [6] Tan, Chenhao, and Lillian Lee. "All who wander: On the prevalence and characteristics of multi-community engagement." Proceedings of the 24th International Conference on World Wide Web. 2015.
+ <break>
+ </break>
+</p>
+<p>
+ [7] Monroe, Burt L., Michael P. Colaresi, and Kevin M. Quinn. "Fightin'words: Lexical feature selection and evaluation for identifying the content of political conflict." Political Analysis 16.4 (2008): 372-403.
+ <break>
+ </break>
+</p>
+<p>
+ -edit- formatting
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Richard Lp (he/they) (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
+  <b>
+   <break>
+   </break>
+  </b>
+ </p>
+ <p>
   For my feasibility study, I wanted to make sure there was observable variation in topics after I removed all data that was overly-difficult to clean or otherwise unsuitable for my study.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   My work is initially based on [1]. Using their code and data cleaning pipeline, I was struggling to replicate their model. It is in an older version of tensorflow, too big to fit in memory on colab, and I don’t have a gpu I can use at the moment to re-train their model. The model training aspect of their paper was less important than the data cleaning portion, however, and it proved difficult to get their pipeline to work even in that small part. I ended up using the version that huggingface maintains and it all worked pretty quickly. Starting with all 11090 papers from the peer_read dataset, I dropped all paper entries that had no authors listed as well as all papers with no abstract text. This left me with 10195 papers (92% of the original count). I stripped symbols and expanded abbreviations in the abstraction and applied a stemming algorithm as the authors of [2] did. At this point, I attempted to do some network analysis but found that many of the names were hard to disambiguate. After applying a stop word filter based on the default english one in gensim and a list of common ML words I supplied, I trained a number of different-sized topic models. Most of them seemed less than insightful, however:
- </paragraph>
+ </p>
  <list style="ordered">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     “Neural deep agent generate game cluster”
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     “Image neural sequence deep generate cluster”
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     “Neural feature text generate event deep”
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     “Feature decision approximate search image dynamic”
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     “Measure generate stochastic estimate approximate”
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     “Feature rule multi neural”
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     “Neural policy plan feature generate decision”
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     “Generate feature neural policy example”
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     “Feature embed memory neural layer”
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     “Feature generate estimate program”
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     “Neural architecture generate feature text”
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     “Feature neural input user game”
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     “Cluster user feature depend tree”
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     “Translate similar ctor graph neural text”
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     “Neural feature topic classify”
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
+ <p>
   From this I looked at the remaining most common words and removed anything that didn’t seem too field-specific:
- </paragraph>
+ </p>
  <list style="ordered">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     Kernel, memory, document, rank
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Attention, stochastic, instance, dynamic
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Topic, query, practice, theory
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Dimension, argument, support, pattern
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Tree, encoding, size, visual
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
+ <p>
   Higher numbers of topics and more cut words seemed more coherent, but further consideration is deserved.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   From this point, I calculated changes in the incidences of topics over time to determine if there was, indeed, variation and found prototypical documents for each topic. Trends seemed generally intuitive, although I was still frustrated by the lack of clarity in my topic model. That there is major variation among topics was the key point of this check, however, and I think that this is a dataset that deserves much more work than has been done.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   [1]
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Kang, D. et al. 2018. A Dataset of Peer Reviews (PeerRead): Collection, Insights and NLP Applications.
-  <italic>
+  <i>
    arXiv:1804.09635 [cs]
-  </italic>
+  </i>
   . (Apr. 2018).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   [2]
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Big Peer Review Challenge:
-  <link href="https://humboldt-wi.github.io/blog/research/information_systems_1920/group11_peer_reviews//"/>
-  <italic>
-   <underline>
-    https://humboldt-wi.github.io/blog/research/information_systems_1920/group11_peer_reviews//
-   </underline>
-  </italic>
-  . Accessed: 2021-11-01.
- </paragraph>
- <paragraph>
+  <a href="https://humboldt-wi.github.io/blog/research/information_systems_1920/group11_peer_reviews//">
+   <i>
+    <underline>
+     https://humboldt-wi.github.io/blog/research/information_systems_1920/group11_peer_reviews//
+    </underline>
+   </i>
+   . Accessed: 2021-11-01.
+  </a>
+ </p>
+ <p>
   Further list of papers that influenced (or hopefully will) this project:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Hofstra, B. et al. 2020. The Diversity–Innovation Paradox in Science.
-  <italic>
+  <i>
    Proceedings of the National Academy of Sciences
-  </italic>
+  </i>
   . 117, 17 (Apr. 2020), 9284–9291. DOI:
   <link href="https://doi.org/10.1073/pnas.1915378117"/>
   <underline>
    https://doi.org/10.1073/pnas.1915378117
   </underline>
   .
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   [3]
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Manzoor, E. and Shah, N.B. 2020. Uncovering Latent Biases in Text: Method and Application to Peer Review.
-  <italic>
+  <i>
    arXiv:2010.15300 [cs]
-  </italic>
+  </i>
   . (Oct. 2020).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   [4]
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Media Persuasion through Slanted Language: Evidence from the Coverage of Immigration | Barcelona School of Economics Working Papers: 2020.
   <link href="https://bse.eu/research/working-papers/media-persuasion-through-slanted-language-evidence-coverage-immigration"/>
-  <italic>
+  <i>
    <underline>
     https://bse.eu/research/working-papers/media-persuasion-through-slanted-language-evidence-coverage-immigration
    </underline>
-  </italic>
+  </i>
   . Accessed: 2021-11-01.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   [5]
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Papers with Code - PeerRead Dataset:
   <link href="https://paperswithcode.com/dataset/peerread"/>
-  <italic>
+  <i>
    <underline>
     https://paperswithcode.com/dataset/peerread
    </underline>
-  </italic>
+  </i>
   . Accessed: 2021-11-01.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   [6]
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Ravichander, A. et al. 2021. Breaking Down Walls of Text: How Can NLP Benefit Consumer Privacy?
-  <italic>
+  <i>
    Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)
-  </italic>
+  </i>
   (Online, Aug. 2021), 4125–4140.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   [7]
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Rogers, A. and Augenstein, I. 2020. What Can We Do to Improve Peer Review in NLP?
-  <italic>
+  <i>
    arXiv:2010.03863 [cs]
-  </italic>
+  </i>
   . (Oct. 2020).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   [8]
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Sim, Y. et al. 2012. Discovering Factions in the Computational Linguistics Community.
-  <italic>
+  <i>
    Proceedings of the ACL-2012 Special Workshop on Rediscovering 50 Years of Discoveries
-  </italic>
+  </i>
   (Jeju Island, Korea, Jul. 2012), 22–32.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   [9]
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Singh, S. et al. 2021. COMPARE: A Taxonomy and Dataset of Comparison Discussions in Peer Reviews.
-  <italic>
+  <i>
    arXiv:2108.04366 [cs]
-  </italic>
+  </i>
   . (Aug. 2021).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   [10]
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Special Workshop on Rediscovering 50 Years of Discoveries, A. for C.L. et al. 2012.
-  <italic>
+  <i>
    50th Annual Meeting of the Association for Computational Linguistics: ACL 2012 : proceedings of the ACL-2012 Special Workshop on Rediscovering 50 Years of Discoveries : July 10, 2012, Jeju Island, Korea.
-  </italic>
- </paragraph>
- <paragraph>
+  </i>
+ </p>
+ <p>
   [11]
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Vogel, A. and Jurafsky, D. 2012. He Said, She Said: Gender in the ACL Anthology.
-  <italic>
+  <i>
    Proceedings of the ACL-2012 Special Workshop on Rediscovering 50 Years of Discoveries
-  </italic>
+  </i>
   (Jeju Island, Korea, Jul. 2012), 33–41.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   [12]
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   2021.
-  <italic>
+  <i>
    PeerRead
-  </italic>
+  </i>
   . AI2.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  About LDA "care and feeding", see Nov 18th post
-  <link href="https://edstem.org/us/courses/8208/discussion/755348?comment=1988276"/>
-  https://edstem.org/us/courses/8208/discussion/755348?comment=1988276
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   About LDA "care and feeding", see Nov 18th post
+   <a href="https://edstem.org/us/courses/8208/discussion/755348?comment=1988276">
+    https://edstem.org/us/courses/8208/discussion/755348?comment=1988276
+   </a>
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   sort of related to "new" authors:
+   <break>
+   </break>
+   <a href="https://www.pnas.org/content/117/17/9284">
+    <break>
+    </break>
+    https://www.pnas.org/content/117/17/9284
+   </a>
+  </p>
+  <heading level="1">
+   The Diversity–Innovation Paradox in Science
+  </heading>
+  <p>
+   Bas Hofstra, Vivek V. Kulkarni, Sebastian Munoz-Najar Galvez, Bryan He, Dan Jurafsky, and Daniel A. McFarland
+  </p>
+  <p>
+   PNAS April 28, 2020 117 (17) 9284-9291; first published April 14, 2020;
+   <link href="https://doi.org/10.1073/pnas.1915378117"/>
+   https://doi.org/10.1073/pnas.1915378117
+   <break>
+   </break>
+   <break>
+   </break>
+   <break>
+   </break>
+  </p>
+  <heading level="2">
+   Significance
+  </heading>
+  <p>
+   By analyzing data from nearly all US PhD recipients and their dissertations across three decades, this paper finds demographically underrepresented students innovate at higher rates than majority students, but their novel contributions are discounted and less likely to earn them academic positions. The discounting of minorities’ innovations may partly explain their underrepresentation in influential positions of academia.
+  </p>
+  <heading level="2">
+   Abstract
+  </heading>
+  <p>
+   Prior work finds a diversity paradox: Diversity breeds innovation, yet underrepresented groups that diversify organizations have less successful careers within them. Does the diversity paradox hold for scientists as well? We study this by utilizing a near-complete population of ∼1.2 million US doctoral recipients from 1977 to 2015 and following their careers into publishing and faculty positions. We use text analysis and machine learning to answer a series of questions: How do we detect scientific innovations? Are underrepresented groups more likely to generate scientific innovations? And are the innovations of underrepresented groups adopted and rewarded? Our analyses show that underrepresented groups produce higher rates of scientific novelty. However, their novel contributions are devalued and discounted: For example, novel contributions by gender and racial minorities are taken up by other scholars at lower rates than novel contributions by gender and racial majorities, and equally impactful contributions of gender and racial minorities are less likely to result in successful scientific careers than for majority groups. These results suggest there may be unwarranted reproduction of stratification in academic careers that discounts diversity’s role in innovation and partly explains the underrepresentation of some groups in academia.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Aside: external shock to language expression leading to opinion change:
+   </p>
+   <heading level="2">
+    Media Persuasion through Slanted Language: Evidence from the Coverage of Immigration
+   </heading>
+   <p>
+    TypeJournal ArticleAuthorMilena DjourelovaAbstractCan the language used by mass media to cover policy relevant issues aﬀect readers’ policy preferences? I examine this question for the case of immigration, exploiting an abrupt ban on the term ”illegal immigrant” in wire content distributed to media outlets by the Associated Press (AP). Using text data on AP dispatches and the content of a large number of US print and online outlets, I ﬁnd that articles mentioning ”illegal immigrant” decline by 28% in outlets that rely on AP relative to others. This change in language appears to have had a tangible impact on readers’ views on immigration. Following AP’s ban, individuals exposed to outlets relying more heavily on AP tend to support less restrictive immigration and border security policies. The eﬀect is driven by frequent readers and does not apply to views on issues other than immigration.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 2em;">
+    <h3>
+     Author: Prof. Lee (she/they) (admin)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Regarding item 2 on topic and author trends, there was a workshop:
+     <break>
+     </break>
+     <break>
+     </break>
+     <a href="https://aclanthology.org/volumes/W12-32/">
+      https://aclanthology.org/volumes/W12-32/
+     </a>
+    </p>
+    <p>
+     on the ACL anthology corpus itself:
+     <link href="https://aclanthology.org/W12-32.pdf"/>
+     Proceedings of the ACL-2012 Special Workshop on Rediscovering 50 Years of Discoveries
+     .
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   (forgive brevity, on the run)
-  <link href="https://paperswithcode.com/dataset/peerread"/>
-  https://paperswithcode.com/dataset/peerread
- </paragraph>
- <paragraph>
+  <a href="https://paperswithcode.com/dataset/peerread">
+   https://paperswithcode.com/dataset/peerread
+  </a>
+ </p>
+ <p>
   see refs and stuff on that page
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   .... top of page:
- </paragraph>
+ </p>
  <heading level="1">
   PeerRead
  </heading>
- <paragraph>
+ <p>
   Introduced by Kang et al. in
   <link href="https://paperswithcode.com/paper/a-dataset-of-peer-reviews-peerread-collection"/>
   A Dataset of Peer Reviews (PeerRead): Collection, Insights and NLP Applications
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   PearRead is a dataset of scientific peer reviews available to help researchers study this important artifact. The dataset consists of over 14K paper drafts and the corresponding accept/reject decisions in top-tier venues including ACL, NIPS and ICLR, as well as over 10K textual peer reviews written by experts for a subset of the papers.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

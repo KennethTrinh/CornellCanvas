@@ -13,72 +13,68 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  I wanted to clarify somethings. In the equation they give us it is saying it is a function of V_d correct? Is the reason its V_d and not V_ds because it's implied the source is tied to ground?  I guess I want to make sure there isn't a specific reason it was explicitly said to be a function of Vd
- </paragraph>
-</document>
+<p>
+ I wanted to clarify somethings. In the equation they give us it is saying it is a function of V_d correct? Is the reason its V_d and not V_ds because it's implied the source is tied to ground?  I guess I want to make sure there isn't a specific reason it was explicitly said to be a function of Vd
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Max McCarthy (staff)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Max McCarthy (staff)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   You don't have to worry about that. Usually, $V_D$ represents the voltage at the Drain with respect to GND. Drain current, $I_D$, is really a function of $V_{GS}$ and/or $V_{DS}$—which can be used to find expressions for $g_m$ and $\frac{1}{r_o}$ respectively—by taking the partial derivatives of $I_D$.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ariana Haghighi (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  If gm = dVDS/dID and ro = dID/dVDS, can you just say that their product is 1?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Isabella Siu (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <figure>
-  <image height="88" src="https://static.us.edusercontent.com/files/EMl22cNcq8nyGz0jzjVsnHmt" width="186"/>
- </figure>
- <paragraph>
-  I was using this formula for gm, so my product was not simplifying to 1. The question wants us to comment on how gm*ro varies with drain current though, and the expression I get doesn't contain ID because I differentiated it with respect to VGS or VDS... So I am also confused a bit by this question.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Karina Melgar (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  It should not simplify to 1. Make sure for gm you take the partial derivative of I_D with respect to V_GS and for ro with respect to V_DS (then invert that result). You can then see a change in I_D corresponds to a change in V_D, since we are given I_D is a function of V_D, and how that affects the gmro product
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Ariana Haghighi (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   If gm = dVDS/dID and ro = dID/dVDS, can you just say that their product is 1?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Isabella Siu (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <figure>
+    <image height="88" src="https://static.us.edusercontent.com/files/EMl22cNcq8nyGz0jzjVsnHmt" width="186"/>
+   </figure>
+   <p>
+    I was using this formula for gm, so my product was not simplifying to 1. The question wants us to comment on how gm*ro varies with drain current though, and the expression I get doesn't contain ID because I differentiated it with respect to VGS or VDS... So I am also confused a bit by this question.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Karina Melgar (None)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     It should not simplify to 1. Make sure for gm you take the partial derivative of I_D with respect to V_GS and for ro with respect to V_DS (then invert that result). You can then see a change in I_D corresponds to a change in V_D, since we are given I_D is a function of V_D, and how that affects the gmro product
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

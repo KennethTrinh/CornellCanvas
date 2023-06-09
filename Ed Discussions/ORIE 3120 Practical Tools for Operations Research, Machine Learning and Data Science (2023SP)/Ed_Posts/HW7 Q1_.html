@@ -13,168 +13,158 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  Problem # 1
- </paragraph>
- <paragraph>
-  HW # 7
- </paragraph>
- <paragraph>
-  I tried to create a model based on the instructions given in question 1.  But when I count and compute the fraction of the time that the confidence interval contains beta1 for part a, I always get a ratio of 1 instead of 0.95. It might be because of some confusion in the set up.
- </paragraph>
- <paragraph>
-  I already created X and epsilon using np.random.randn(100). My question is that when I create my Y, I have to add the array of X values, the epsilon array, and another array filled with 1's together to get Y right? And once I do that, I need to add a constant to the X array since this model contains an intercept?
- </paragraph>
-</document>
+<p>
+ Problem # 1
+</p>
+<p>
+ HW # 7
+</p>
+<p>
+ I tried to create a model based on the instructions given in question 1.  But when I count and compute the fraction of the time that the confidence interval contains beta1 for part a, I always get a ratio of 1 instead of 0.95. It might be because of some confusion in the set up.
+</p>
+<p>
+ I already created X and epsilon using np.random.randn(100). My question is that when I create my Y, I have to add the array of X values, the epsilon array, and another array filled with 1's together to get Y right? And once I do that, I need to add a constant to the X array since this model contains an intercept?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Samantha Klein (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Samantha Klein (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Yes, use np.random.randn(100) to generate x and epsilon!
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Define y, create your linear regression model, add a constant, and then evaluate the confidence intervals.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Amy Chitnumsab (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I tried doing that, and I already checked that the values I'm pulling from the model summary are correct. I'm still getting a ratio of 1 every time. Is that supposed to happen?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Lenhard Thomas (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  I'm running into the same issue. Did you ever figure out the issue?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Amy Chitnumsab (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I went to another TA's office hours and it turns out that we aren't supposed to add a constant to X once you add the ones to Y. Hope this helps!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Nicholas Varela (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Also running into the same issues, do you mean taht we should do
- </paragraph>
- <paragraph>
-  model = sm.OLS(yi, (xi)).fit()
-  <break>
-  </break>
-  instead of
- </paragraph>
- <paragraph>
-  model = sm.OLS(yi, sm.add_constant(xi)).fit()
-  <break>
-  </break>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Amy Chitnumsab (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes just use model = sm.OLS(yi, (xi)).fit().
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ivan Xie (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi. I am running into the same issue as well. Whether I add a constant or not as in both of these examples, my code still gives me a ratio of 1.0.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Amy Chitnumsab (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Also another issue that I had in my code was that the beta1 value that we should be checking with the confidence interval is 1.  This is based on the equation Y that we are given as Y = 1 + X + epsilon shows that the coefficient for X or beta1 is 1. But I'm not sure if you have the same issue though.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Samantha Klein (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  You should be getting a number that reflects a 95% CI.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Amy Chitnumsab (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I tried doing that, and I already checked that the values I'm pulling from the model summary are correct. I'm still getting a ratio of 1 every time. Is that supposed to happen?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Samantha Klein (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    You should be getting a number that reflects a 95% CI.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Lenhard Thomas (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     I'm running into the same issue. Did you ever figure out the issue?
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 8em;">
+     <h3>
+      Author: Amy Chitnumsab (student)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      I went to another TA's office hours and it turns out that we aren't supposed to add a constant to X once you add the ones to Y. Hope this helps!
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 10em;">
+      <h3>
+       Author: Nicholas Varela (student)
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       Also running into the same issues, do you mean taht we should do
+      </p>
+      <p>
+       model = sm.OLS(yi, (xi)).fit()
+       <break>
+       </break>
+       instead of
+      </p>
+      <p>
+       model = sm.OLS(yi, sm.add_constant(xi)).fit()
+       <break>
+       </break>
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 12em;">
+       <h3>
+        Author: Ivan Xie (student)
+       </h3>
+       <h3>
+        Vote Count: 0
+       </h3>
+       <p>
+        Hi. I am running into the same issue as well. Whether I add a constant or not as in both of these examples, my code still gives me a ratio of 1.0.
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+       <div style="text-indent: 14em;">
+        <h3>
+         Author: Amy Chitnumsab (student)
+        </h3>
+        <h3>
+         Vote Count: 0
+        </h3>
+        <p>
+         Also another issue that I had in my code was that the beta1 value that we should be checking with the confidence interval is 1.  This is based on the equation Y that we are given as Y = 1 + X + epsilon shows that the coefficient for X or beta1 is 1. But I'm not sure if you have the same issue though.
+        </p>
+        <h3>
+         ------------------------------------
+        </h3>
+       </div>
+       <div style="text-indent: 12em;">
+        <h3>
+         Author: Amy Chitnumsab (student)
+        </h3>
+        <h3>
+         Vote Count: 0
+        </h3>
+        <p>
+         Yes just use model = sm.OLS(yi, (xi)).fit().
+        </p>
+        <h3>
+         ------------------------------------
+        </h3>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

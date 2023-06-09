@@ -13,93 +13,91 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="281.6055944055944" src="https://static.us.edusercontent.com/files/5B8tV1uvf32ZfB4WlRILwa88" width="658"/>
- </figure>
- <paragraph>
-  why is h set to -1 and not 0?
- </paragraph>
-</document>
+<figure>
+ <image height="281.6055944055944" src="https://static.us.edusercontent.com/files/5B8tV1uvf32ZfB4WlRILwa88" width="658"/>
+</figure>
+<p>
+ why is h set to -1 and not 0?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bahaa Kotb (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   h is to the left of the line the precondition must satisfy that b[h+1...m] is the unknown region and in the precondition we want the whole array to be unknown so we want m = b.length-1 and h+1=0 so h=-1 to satisfy that b[0...b.length-1] is all unknown
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   We also know that b[m+1..t] must be the OSX segment so initially we want it empty so if m = b.length-1 and we want it empty so to make b[b.length...t] empty we make t be one less than the tail so t = b.length-1
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Chloe Qiu (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  If that's the case, why would this problem (from Spring 2019 5:30) has h=0 and t=b.length, not h=-1 and t=b.length-1, for initialization? I thought the logic for these two are the same.
- </paragraph>
- <figure>
-  <image height="233.87283236994222" src="https://static.us.edusercontent.com/files/kg36vqyp2YHLZcqVFAhPXoNw" width="560"/>
- </figure>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="1.0">
- <paragraph>
-  Here h is to the right of the line not left which is why it's 0 not -1.
- </paragraph>
- <paragraph>
-  <break>
-  </break>
-  so b[0..h-1] must be empty so by our handy rule! we know
- </paragraph>
- <paragraph>
-  h-1 +1 - 0 = 0 so h = 0
- </paragraph>
- <paragraph>
-  b[h...m-1] must be empty, again:
- </paragraph>
- <paragraph>
-  m-1+1 -h = 0
- </paragraph>
- <paragraph>
-  m = h (we know h = 0, so both works)
- </paragraph>
- <paragraph>
-  b[m...t-1] is the whole array and we know m = 0 so b[0...t-1] is whole length of whole array
- </paragraph>
- <paragraph>
-  t-1+1 - 0 = b.length
- </paragraph>
- <paragraph>
-  t = b.length, we can also use visual inspection and see for b[0...t-1] to be whole array t must be b.length
- </paragraph>
- <paragraph>
-  <break>
-  </break>
-  let me know if anything's confusing!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Chloe Qiu (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   If that's the case, why would this problem (from Spring 2019 5:30) has h=0 and t=b.length, not h=-1 and t=b.length-1, for initialization? I thought the logic for these two are the same.
+  </p>
+  <figure>
+   <image height="233.87283236994222" src="https://static.us.edusercontent.com/files/kg36vqyp2YHLZcqVFAhPXoNw" width="560"/>
+  </figure>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Bahaa Kotb (student)
+   </h3>
+   <h3>
+    Vote Count: 2
+   </h3>
+   <p>
+    Here h is to the right of the line not left which is why it's 0 not -1.
+   </p>
+   <p>
+    <break>
+    </break>
+    so b[0..h-1] must be empty so by our handy rule! we know
+   </p>
+   <p>
+    h-1 +1 - 0 = 0 so h = 0
+   </p>
+   <p>
+    b[h...m-1] must be empty, again:
+   </p>
+   <p>
+    m-1+1 -h = 0
+   </p>
+   <p>
+    m = h (we know h = 0, so both works)
+   </p>
+   <p>
+    b[m...t-1] is the whole array and we know m = 0 so b[0...t-1] is whole length of whole array
+   </p>
+   <p>
+    t-1+1 - 0 = b.length
+   </p>
+   <p>
+    t = b.length, we can also use visual inspection and see for b[0...t-1] to be whole array t must be b.length
+   </p>
+   <p>
+    <break>
+    </break>
+    let me know if anything's confusing!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

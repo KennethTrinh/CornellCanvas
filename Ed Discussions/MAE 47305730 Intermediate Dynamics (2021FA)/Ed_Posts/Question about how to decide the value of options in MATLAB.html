@@ -13,54 +13,52 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  When I am doing the HW4, I find that the "options" used in ode45 can help to make the trajectory more like the periodic motion. When I add "options" as below
- </paragraph>
- <pre>options = odeset('absTol',1e-9,'relTol',1e-9);
+<p>
+ When I am doing the HW4, I find that the "options" used in ode45 can help to make the trajectory more like the periodic motion. When I add "options" as below
+</p>
+<pre>options = odeset('absTol',1e-9,'relTol',1e-9);
 [t,z] = ode45(fdynamic,t,z0,options);
 </pre>
- <paragraph>
-  My trajectory changes from the first figure to the second figure.  I have a question about how to decide the value of "options". I find that sometimes the value is 1e-5 and sometimes it is 1e-9. I don't know how to choose the value of that. Are there any criteria that can help to decide that?
- </paragraph>
- <figure>
-  <image height="196" src="https://static.us.edusercontent.com/files/LUjZensYfKUfFa3TrpTxQ5DV" width="219"/>
- </figure>
- <figure>
-  <image height="164" src="https://static.us.edusercontent.com/files/ayHlp2gPJOvKpPfPXHFN6ZFA" width="217"/>
- </figure>
-</document>
+<p>
+ My trajectory changes from the first figure to the second figure.  I have a question about how to decide the value of "options". I find that sometimes the value is 1e-5 and sometimes it is 1e-9. I don't know how to choose the value of that. Are there any criteria that can help to decide that?
+</p>
+<figure>
+ <image height="196" src="https://static.us.edusercontent.com/files/LUjZensYfKUfFa3TrpTxQ5DV" width="219"/>
+</figure>
+<figure>
+ <image height="164" src="https://static.us.edusercontent.com/files/ayHlp2gPJOvKpPfPXHFN6ZFA" width="217"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andrew van Paridon (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew van Paridon (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   It is entirely context dependent.  As you can see, finding something that produces mathematically pure periodic motion will require a high degree of accuracy.  If you were trying to predict the flight of a ball, then your engineering judgement can be used to see how accurate the landing spot needs to be.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If you want to be more rigorous, you can also do a fidelity check, where you trial different levels of accuracy and record the progression towards the solution.  Such a check is often done in CFD simulations, where the granularity of the mesh needs to be resolved such that the solution is sufficiently accurate without requiring excessive computation time.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Cong Liu (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Thanks for reply！That helps me a lot！
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Cong Liu (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thanks for reply！That helps me a lot！
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

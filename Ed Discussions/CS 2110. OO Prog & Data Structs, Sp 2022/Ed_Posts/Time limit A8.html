@@ -13,36 +13,32 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hello, for the seed "-7398192653017001472" (which is the second example of "Seeds with lots of gold!" in the spreadsheet, my solution takes about 20 seconds. All the other seeds take less than 10 seconds. Should I try to make a change?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Hello, for the seed "-7398192653017001472" (which is the second example of "Seeds with lots of gold!" in the spreadsheet, my solution takes about 20 seconds. All the other seeds take less than 10 seconds. Should I try to make a change?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   Your problem may be that you are timing it based on running with the GUI.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Try it in Headless mode, running with only 1 seed. And fix code as shown below to print out the elapsed time for flee().
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   1.  Put this two items into class Pollack (you can leave them there):
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   private long startTime= 0; // start time in milliseconds
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   /** Return the time from start time till when this method is called, in milliseconds */
   <break>
   </break>
@@ -53,37 +49,31 @@
   <break>
   </break>
   }
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   2. Change your method flee() to put the first statement below as its first statement and the second statement below as its last statement. This will cause the elapsed time for flee to be printed. Be sure to comment out the println statement before you submit.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   startTime= System.currentTimeMillis();
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   System.out.println("Elapsed time: " + elapsedTime() / 1000.00 + " seconds");
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you professor!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Thank you professor!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

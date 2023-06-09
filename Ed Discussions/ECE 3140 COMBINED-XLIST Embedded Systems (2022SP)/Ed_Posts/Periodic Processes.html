@@ -13,62 +13,60 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  What should happen when the average execution time is greater than the period of a periodic RT process?
- </paragraph>
- <paragraph>
-  Should we consider periodic processes when updating deadlineMet and deadlineMissed?
- </paragraph>
-</document>
+<p>
+ What should happen when the average execution time is greater than the period of a periodic RT process?
+</p>
+<p>
+ Should we consider periodic processes when updating deadlineMet and deadlineMissed?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   1) Think about how delays may add up and what cases can / cannot your scheduler deal with (nice for your report).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   2) Yes.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  2) Why is the answer yes? Since the periodic process will repeat over and over we will never exit back to main() where we see the number of deadlineMet and deadlineMiss processes with the flashing LED's.
- </paragraph>
- <paragraph>
-  Unless there is another process that is supposed to be checking the deadlineMet and deadlineMiss values?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I mean you will never actually see the blinks at the end. The global variables are still present so we could go into the debugger and see the values of the counters.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   2) Why is the answer yes? Since the periodic process will repeat over and over we will never exit back to main() where we see the number of deadlineMet and deadlineMiss processes with the flashing LED's.
+  </p>
+  <p>
+   Unless there is another process that is supposed to be checking the deadlineMet and deadlineMiss values?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Harris Miller (None)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I mean you will never actually see the blinks at the end. The global variables are still present so we could go into the debugger and see the values of the counters.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

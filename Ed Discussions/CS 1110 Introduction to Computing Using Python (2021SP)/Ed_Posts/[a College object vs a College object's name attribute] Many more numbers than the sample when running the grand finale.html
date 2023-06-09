@@ -13,68 +13,66 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  When I run my code identically to the example, I get the same percentages for each one. But the example has far, far fewer student ids listed.
- </paragraph>
- <paragraph>
-  Was this cut short just for brevity reasons (and the real response IS long), or am I missing something?
- </paragraph>
- <paragraph>
-  Thank you
- </paragraph>
-</document>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ When I run my code identically to the example, I get the same percentages for each one. But the example has far, far fewer student ids listed.
+</p>
+<p>
+ Was this cut short just for brevity reasons (and the real response IS long), or am I missing something?
+</p>
+<p>
+ Thank you
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Sorry, i don't quite understand.  Do you have repeated student tags in your listings, for example, which make your lists of students longer?
   <break>
   </break>
   <break>
   </break>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  My internal data (lists of students for the out object) is exactly like the example in the assignment 3 pdf, but when I actually run the script, it prints out Rejected: and then like five hundred unique IDs. Is this supposed to happen? Is it just because the 3rd data set is so large?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   My internal data (lists of students for the out object) is exactly like the example in the assignment 3 pdf, but when I actually run the script, it prints out Rejected: and then like five hundred unique IDs. Is this supposed to happen? Is it just because the 3rd data set is so large?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   It seems like at some point your code is printing out a
-  <bold>
+  <b>
    College
-  </bold>
+  </b>
   (which would include who was rejected and stuff) when it should be printing a College's
-  <bold>
+  <b>
    name
-  </bold>
+  </b>
   (which would just be a string like "Cornell_U").
   <break>
   </break>
@@ -83,9 +81,7 @@
   Be careful to distinguish between these two!
   <break>
   </break>
- </paragraph>
- <paragraph>
- </paragraph>
+ </p>
  <pre>&gt;&gt;&gt; import showdown_time
 &gt;&gt;&gt; import sd_utilities as sd
 &gt;&gt;&gt; colleges = sd.colleges_from_file('a2c_census2020_processed.txt')
@@ -93,7 +89,7 @@
 
 
 
-&gt;&gt;&gt; <bold>print(colleges[28].name)</bold>
+&gt;&gt;&gt; <b>print(colleges[28].name)</b>
 UC-Davis
 &gt;&gt;&gt;  print(type(colleges[28].name))
 &lt;class 'str'&gt;
@@ -104,7 +100,7 @@ UC-Davis
 
 &gt;&gt;&gt; print(type(colleges[28]))
 &lt;class 'college.College'&gt;
-&gt;&gt;&gt; <bold>print(colleges[28])</bold>
+&gt;&gt;&gt; <b>print(colleges[28])</b>
 UC-Davis
 Accepted and enrolled:
     70,267,619,639,810,866,1189,1216,1382,1445,1447,1563,1620,1691,1913,1989,2334,2420,2772,2773,2845
@@ -116,21 +112,21 @@ Wait-listed:
     47,113,146,162,255,263,299,309,310,332,420,442,478,563,650,735,830,919,948,1087,1110,1111,1112,1113,1162,1167,1181,1204,1227,1276,1353,1364,1404,1416,1419,1433,1485,1486,1529,1536,1557,1599,1622,1634,1636,1673,1678,1701,1728,1737,1796,1887,1911,1986,1997,2048,2067,2091,2112,2202,2245,2257,2305,2309,2351,2358,2498,2568,2628,2645,2714,2732,2752,2753,2828,2836,2837,2853,2885,2887,2973,3036
 
 </pre>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Curse you, Ed Discussions; why have you not preserved my boldfacing in the code block above?!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Curse you, Ed Discussions; why have you not preserved my boldfacing in the code block above?!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

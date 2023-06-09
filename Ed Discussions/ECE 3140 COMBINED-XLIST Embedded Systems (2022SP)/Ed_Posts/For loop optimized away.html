@@ -13,53 +13,49 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <figure>
-  <image height="125.51445086705202" src="https://static.us.edusercontent.com/files/O024xanKrCvDPbbtfYWdP0i6" width="658"/>
- </figure>
- <paragraph>
-  When I build for release mode I have to explicitly put a NOP instruction in the delay for loop for the code to actually pause there regardless of how large I make the limit of j.  This is an issue because we are not supposed to modify utils.c
- </paragraph>
- <paragraph>
-  What should I do?
- </paragraph>
-</document>
+<figure>
+ <image height="125.51445086705202" src="https://static.us.edusercontent.com/files/O024xanKrCvDPbbtfYWdP0i6" width="658"/>
+</figure>
+<p>
+ When I build for release mode I have to explicitly put a NOP instruction in the delay for loop for the code to actually pause there regardless of how large I make the limit of j.  This is an issue because we are not supposed to modify utils.c
+</p>
+<p>
+ What should I do?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   You should not be building for release, only for debug.
- </paragraph>
+ </p>
  <figure>
   <image height="101" src="https://static.us.edusercontent.com/files/x6ogFWCy8GofgidUxduEw02M" width="338"/>
  </figure>
- <paragraph>
+ <p>
   Building for release will cause the compile (gcc) to use the flag -O which will attempt to 'optimize' our program. In our case, these 'optimizations' introduce errors as we want our C code to be directly translated into assembly.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Oh okay, thank you
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Oh okay, thank you
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

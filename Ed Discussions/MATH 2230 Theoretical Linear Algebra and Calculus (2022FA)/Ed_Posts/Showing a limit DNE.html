@@ -13,66 +13,64 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  To show that a limit doesn't exist, do we have to use their epsilon-delta definition? Or can we show that it yields different values when tending from the left and right and therefore mustn't exist?
- </paragraph>
-</document>
+<p>
+ To show that a limit doesn't exist, do we have to use their epsilon-delta definition? Or can we show that it yields different values when tending from the left and right and therefore mustn't exist?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bryan Lu (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bryan Lu (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Assuming you mean this on $\mathbb{R}$, showing that the function tends to different values from different directions is probably fine, but it depends on the level of formality that the problem wants from you. If this is the entire point of the problem, then you should do it formally, but if it's a small subpart, it's probably fine.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If you wanted to do this very formally, you can use the $\epsilon -\delta$ definition if you want, but you should show the negation of the statement. To be hyper-specific: supposing for the sake of contradiction that the limit of the function $f$ at $a$, $L$, did exist, you should show there is some $\epsilon &gt; 0$ such that for all $\delta &gt; 0$, there is some $x$ such that $|x - a| &lt; \delta$ implies $|f(x) - L| \geq \epsilon$. Note that this coincides with the idea of "if the limit approaches two different values from different directions, it doesn't exist" since you can pick one of the values as your "limit," and pick an $\epsilon$ smaller than the difference between the two values -- this just comes with more boilerplate, so to speak.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Reyer Sjamaar (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  To add to Bryan's answer, sometimes you can use a theorem to prove that $\lim_{\mathbf{x}\to\mathbf{x}_0}f(\mathbf{x})$ does not exist.  The following approach is especially useful with multivariable limits.
- </paragraph>
- <paragraph>
-  Let $f\colon U\to\R$ be a function defined on a domain $U\subseteq\R^n$ which contains the origin $\mathbf{0}$ in its closure.  Suppose $\gamma_1\colon(0,\eta)\to U$ and $\gamma_2\colon(0,\eta)\to U$ are two paths in $U$ with $\lim_{t\to0}\gamma_1(t)=\lim_{t\to0}\gamma_2(t)=\mathbf{0}$.  Suppose that $\lim_{t\to0}f(\gamma_1(t))=L_1$ and $\lim_{t\to0}f(\gamma_2(t))=L_2$, but $L_1\ne L_2$.  Then $\lim_{\mathbf{x}\to\mathbf{0}}f(\mathbf{x})$ does not exist.
- </paragraph>
- <paragraph>
-  <italic>
-   Proof
-  </italic>
-  .  Suppose $L=\lim_{\mathbf{x}\to\mathbf{0}}f(\mathbf{x})$ did exist.  Then by Theorem 1.5.22 (the "chain rule" for limits) we would have
- </paragraph>
- <paragraph>
-  $$L_1=\lim_{t\to0}f(\gamma_1(t))=\lim_{\mathbf{x}\to\mathbf{0}}f(\mathbf{x})=L$$
- </paragraph>
- <paragraph>
-  and also
- </paragraph>
- <paragraph>
-  $$L_2=\lim_{t\to0}f(\gamma_2(t))=\lim_{\mathbf{x}\to\mathbf{0}}f(\mathbf{x})=L,$$
- </paragraph>
- <paragraph>
-  and therefore $L_1=L_2$, which is not the case.  Therefore $\lim_{\mathbf{x}\to\mathbf{0}}f(\mathbf{x})$ does not exist.
-  <italic>
-   QED
-  </italic>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Reyer Sjamaar (admin)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   To add to Bryan's answer, sometimes you can use a theorem to prove that $\lim_{\mathbf{x}\to\mathbf{x}_0}f(\mathbf{x})$ does not exist.  The following approach is especially useful with multivariable limits.
+  </p>
+  <p>
+   Let $f\colon U\to\R$ be a function defined on a domain $U\subseteq\R^n$ which contains the origin $\mathbf{0}$ in its closure.  Suppose $\gamma_1\colon(0,\eta)\to U$ and $\gamma_2\colon(0,\eta)\to U$ are two paths in $U$ with $\lim_{t\to0}\gamma_1(t)=\lim_{t\to0}\gamma_2(t)=\mathbf{0}$.  Suppose that $\lim_{t\to0}f(\gamma_1(t))=L_1$ and $\lim_{t\to0}f(\gamma_2(t))=L_2$, but $L_1\ne L_2$.  Then $\lim_{\mathbf{x}\to\mathbf{0}}f(\mathbf{x})$ does not exist.
+  </p>
+  <p>
+   <i>
+    Proof
+   </i>
+   .  Suppose $L=\lim_{\mathbf{x}\to\mathbf{0}}f(\mathbf{x})$ did exist.  Then by Theorem 1.5.22 (the "chain rule" for limits) we would have
+  </p>
+  <p>
+   $$L_1=\lim_{t\to0}f(\gamma_1(t))=\lim_{\mathbf{x}\to\mathbf{0}}f(\mathbf{x})=L$$
+  </p>
+  <p>
+   and also
+  </p>
+  <p>
+   $$L_2=\lim_{t\to0}f(\gamma_2(t))=\lim_{\mathbf{x}\to\mathbf{0}}f(\mathbf{x})=L,$$
+  </p>
+  <p>
+   and therefore $L_1=L_2$, which is not the case.  Therefore $\lim_{\mathbf{x}\to\mathbf{0}}f(\mathbf{x})$ does not exist.
+   <i>
+    QED
+   </i>
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

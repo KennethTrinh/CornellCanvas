@@ -13,73 +13,71 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  We're having trouble figuring out how to delete the only node in a list.
- </paragraph>
- <paragraph>
-  The way we started this was by checking if n.prev was null and n.next is null. If this is true, then we assumed that n would be the only node in this list.
- </paragraph>
- <paragraph>
-  However, we're stuck on how to actually delete this. For cases in which there are more than 1 node in the list, we simply readjusted the node pointers and made it so that the next and prev of the node we want to delete point to null. But this doesn't seem to work in the case of a single node.
- </paragraph>
-</document>
+<p>
+ We're having trouble figuring out how to delete the only node in a list.
+</p>
+<p>
+ The way we started this was by checking if n.prev was null and n.next is null. If this is true, then we assumed that n would be the only node in this list.
+</p>
+<p>
+ However, we're stuck on how to actually delete this. For cases in which there are more than 1 node in the list, we simply readjusted the node pointers and made it so that the next and prev of the node we want to delete point to null. But this doesn't seem to work in the case of a single node.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andrew Chen (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew Chen (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   If there's only one node in the list, and that node is deleted, what does the list look like after that?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Then it's empty? But how do we make the list empty?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew Chen (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yep, and then the list has a head and tail. What should they both be pointing to if the list is empty?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Oh, figured it out now! Thanks!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Then it's empty? But how do we make the list empty?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Andrew Chen (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Yep, and then the list has a head and tail. What should they both be pointing to if the list is empty?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     Oh, figured it out now! Thanks!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

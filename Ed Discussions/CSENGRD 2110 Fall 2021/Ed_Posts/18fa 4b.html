@@ -13,37 +13,35 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Why don't we have to change the methods if we are using quadratic probing? Shouldn't k=k+1 be changed to something like k = k + h, with h ranging from values (1, 4, 9, ...)? How would we account for quadratic probing then if nothing is changed in the iterator?
- </paragraph>
- <figure>
-  <image height="704.0079155672823" src="https://static.us.edusercontent.com/files/8dZdddSECXEl5l8Bw0jjNsyj" width="658"/>
- </figure>
-</document>
+<p>
+ Why don't we have to change the methods if we are using quadratic probing? Shouldn't k=k+1 be changed to something like k = k + h, with h ranging from values (1, 4, 9, ...)? How would we account for quadratic probing then if nothing is changed in the iterator?
+</p>
+<figure>
+ <image height="704.0079155672823" src="https://static.us.edusercontent.com/files/8dZdddSECXEl5l8Bw0jjNsyj" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   All the array elements have to be checked:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   a. If b[k] contains null, the null is not enumerated.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   b. If b[k] contains something that it not null, it is enumerated.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Since this object is implementing a set, the order in which elements is up to the implementor. It has nothing to do with what kind of probing is used.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,65 +13,64 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="476.30709677419355" src="https://static.us.edusercontent.com/files/L9pXkLkrsBqBbBLsLmSZVS7Q" width="658"/>
- </figure>
- <paragraph>
-  Why is it true for 10 and false for 1000?
- </paragraph>
-</document>
+<figure>
+ <image height="476.30709677419355" src="https://static.us.edusercontent.com/files/L9pXkLkrsBqBbBLsLmSZVS7Q" width="658"/>
+</figure>
+<p>
+ Why is it true for 10 and false for 1000?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Caleb Chin (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Caleb Chin (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   I believe it has to do with Integer wrapper class caching. A bit of googling brought me here and it appears that the Integer cache only contains numbers between -128 and 127:
-  <link href="https://wiki.owasp.org/index.php/Java_gotchas#Immutable_Objects_.2F_Wrapper_Class_Caching"/>
-  https://wiki.owasp.org/index.php/Java_gotchas#Immutable_Objects_.2F_Wrapper_Class_Caching
- </paragraph>
- <paragraph>
+  <a href="https://wiki.owasp.org/index.php/Java_gotchas#Immutable_Objects_.2F_Wrapper_Class_Caching">
+   https://wiki.owasp.org/index.php/Java_gotchas#Immutable_Objects_.2F_Wrapper_Class_Caching
+  </a>
+ </p>
+ <p>
   I'm not too sure on this though, so if anyone has a more complete answer that would be cool.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  ohh, I see thank you! in the context of the == operator vs. equals() method, does this apply to other types such as strings?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Caleb Chin (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  For Strings in java, I think all string literals are cached (no numerical limit like for Integers), so if a String literal you are trying to use already exists in the String pool it will refer to the same object. However, I think when you use the constructor to make a new string (i.e. String s = new String("hello")), it makes a new object regardless of whether the argument passed into the constructor is a String literal that already exists in the String pool. I got most of this info from this site:
-  <link href="https://www.baeldung.com/java-string-pool"/>
-  https://www.baeldung.com/java-string-pool, but it's up to you whether or not you want to trust it. You can also try to run some the examples they have on the site in JShell to see if this is true.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   ohh, I see thank you! in the context of the == operator vs. equals() method, does this apply to other types such as strings?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Caleb Chin (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    For Strings in java, I think all string literals are cached (no numerical limit like for Integers), so if a String literal you are trying to use already exists in the String pool it will refer to the same object. However, I think when you use the constructor to make a new string (i.e. String s = new String("hello")), it makes a new object regardless of whether the argument passed into the constructor is a String literal that already exists in the String pool. I got most of this info from this site:
+    <a href="https://www.baeldung.com/java-string-pool">
+     https://www.baeldung.com/java-string-pool
+    </a>
+    , but it's up to you whether or not you want to trust it. You can also try to run some the examples they have on the site in JShell to see if this is true.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

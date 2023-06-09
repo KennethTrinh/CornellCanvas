@@ -13,79 +13,69 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
- </paragraph>
- <paragraph>
-  Here is the question:
- </paragraph>
- <figure>
-  <image height="298" src="https://static.us.edusercontent.com/files/Al0eTwwO17Kwo0O92j46kI9f" width="642"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
-  Is this also accepted? Especially for the repetend, since it worked for the test cases I tried with? Thanks:
- </paragraph>
- <figure>
-  <image height="240.12031249999998" src="https://static.us.edusercontent.com/files/HMnvf3xgqhHHpRusC7b8nDGW" width="643"/>
- </figure>
-</document>
+<p>
+ Here is the question:
+</p>
+<figure>
+ <image height="298" src="https://static.us.edusercontent.com/files/Al0eTwwO17Kwo0O92j46kI9f" width="642"/>
+</figure>
+<p>
+ Is this also accepted? Especially for the repetend, since it worked for the test cases I tried with? Thanks:
+</p>
+<figure>
+ <image height="240.12031249999998" src="https://static.us.edusercontent.com/files/HMnvf3xgqhHHpRusC7b8nDGW" width="643"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   The loop condition must be:  t &lt; j.
   <break>
   </break>
   If t = j, the    ? section is empty and nothing more should be done.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Look at the invariant. It says that b[h..t-1] contains B[h..j-1] with 0's removed. Therefore, during the iteration, ONLY b[j] should be looked at. And if it is not 0, it should be placed in b[t] and t should be incremented. Then, in all cases, in crease j by 1.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You are not looking carefully enough at the invariant and what it means. Sorry.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thanks. I get it!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  I am happy
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thanks. I get it!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: David Gries (admin)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    I am happy
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

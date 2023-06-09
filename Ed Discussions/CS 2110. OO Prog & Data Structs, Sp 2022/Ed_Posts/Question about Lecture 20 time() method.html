@@ -13,49 +13,47 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  In lecture 20, why is the total Time for method color() O(|V| + |E|), and not O(|V|*|E|)?
- </paragraph>
- <paragraph>
-  I thought that since the call to method find_color(), which is proportional to the number of neighbors of that vertex, is inside the foreach loop, then length of vertices and edges should be multiplied together for time complexity?
- </paragraph>
- <paragraph>
-  I have pasted the method below.
- </paragraph>
- <paragraph>
-  void color() {
- </paragraph>
- <paragraph>
-  for each node v in graph:
- </paragraph>
- <paragraph>
-  c= find_color(neighbors of v);
- </paragraph>
- <paragraph>
-  color v with c;
- </paragraph>
- <paragraph>
-  }
- </paragraph>
-</document>
+<p>
+ In lecture 20, why is the total Time for method color() O(|V| + |E|), and not O(|V|*|E|)?
+</p>
+<p>
+ I thought that since the call to method find_color(), which is proportional to the number of neighbors of that vertex, is inside the foreach loop, then length of vertices and edges should be multiplied together for time complexity?
+</p>
+<p>
+ I have pasted the method below.
+</p>
+<p>
+ void color() {
+</p>
+<p>
+ for each node v in graph:
+</p>
+<p>
+ c= find_color(neighbors of v);
+</p>
+<p>
+ color v with c;
+</p>
+<p>
+ }
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Explain why you think they should be multiplied.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   It doesn't make sense. They get added
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

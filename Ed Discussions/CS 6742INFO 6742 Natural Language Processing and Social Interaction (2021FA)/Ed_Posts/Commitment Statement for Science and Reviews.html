@@ -13,156 +13,150 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    Scrape arxiv topics and match to papers in dataset
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Do a fighting words style analysis of papers before a date and after
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Do some analysis that helps me determine whether or not authors can be well disambiguated
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
- </paragraph>
-</document>
+<list style="bullet">
+ <li>
+  <p>
+   Scrape arxiv topics and match to papers in dataset
+  </p>
+ </li>
+ <li>
+  <p>
+   Do a fighting words style analysis of papers before a date and after
+  </p>
+ </li>
+ <li>
+  <p>
+   Do some analysis that helps me determine whether or not authors can be well disambiguated
+  </p>
+ </li>
+</list>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Richard Lp (he/they) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Richard Lp (he/they) (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I parsed out additional info to get subcategories for arxiv. These are super valuable for tracking changes and will hopefully allow me to create more granular topics.
   <break>
   </break>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   For the fightin words analysis, I tried to use the implementation here ('
-  <link href="https://github.com/kenlimmj/fightin-words"/>
-  https://github.com/kenlimmj/fightin-words'), but couldn't initially get it working.
- </paragraph>
- <paragraph>
+  <a href="https://github.com/kenlimmj/fightin-words">
+   https://github.com/kenlimmj/fightin-words
+  </a>
+  '), but couldn't initially get it working.
+ </p>
+ <p>
   I tried to set up a convokit corpus, but found that my problem setup seemed not to map well to that datatype. I should spend some more time working out if I should try to connect these or not. I dumped my strings from my environment and read them in using the kenlimmj repo and python2. Splitting on the year 2015, I found these words to have high signficant:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Older papers
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     Diagonalize
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Studio
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Stumble
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Stupidity
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Diagonalisation
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Nonseperable
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Nonserial
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Nonstandardness
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
+ <p>
   Newer Papers
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     Networks
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Results
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Learning
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Method
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     System
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Performance
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Model
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Data
     <break>
     </break>
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
+ <p>
   Not entirely clear that these make sense, although on their face they seem intuitive. It would probably be good to use 2-grams or maybe to do some more thorough cleaning
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   <break>
   </break>
   <break>
   </break>
   Author disambiguation proved more challenging. Looking at the top authors we see:
- </paragraph>
- <paragraph>
- </paragraph>
+ </p>
  <pre>[('Zhang Y. ', 1835),
  ('Wang J. ', 1295),
  ('Wang Y. ', 1270),
@@ -173,14 +167,12 @@
  ('Liu X. ', 1025),
  ('Yang Z. ', 989),
  ('ATLAS Collaboration  ', 954)]</pre>
- <paragraph>
+ <p>
   It seemed like these paper counts probably constitute more than ten unique authors. Other researchers have tackled this problem "https://arxiv.org/abs/2103.07534" and it seems pretty difficult. I have worked out two current decent solutions that don't require an entirely separate research project. The first is to add the major category ( eg  'cs', 'dg-ga', 'econ', 'eess') to the author name to create a separate author for each instance of a name-field. This probably represents a way in which authors choose their own writing names, but doesn't reflect the fact that many will post in more than one major category. The second option is to add affiliations in. Using another data source, I was able to do this for a limited set relatively easily, but it seems like it would disadvantage grad students in my analysis (and the analysis is likely heavily dependent on them). I'm a little stuck on this part although I think the first option is workable. If I could use google scholar, I might be able to do a better job, but as far as I can tell making this many searches would get me IP banned or somehow otherwise get my requests rejected.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Leading candidate: field
- </paragraph>
+ </p>
  <pre>('Taniguchi Takashi  cond-mat', 1263),
  ('Watanabe Kenji  cond-mat', 1238),
  ('Zhang Y.  hep-ex', 1209),
@@ -193,66 +185,63 @@
  ('Li Y.  hep-ex', 878),
  ('Yang Z.  hep-ex', 863),
  ('Eidelman S.  hep-ex', 861)]</pre>
- <paragraph>
+ <p>
   These seem outrageous right? Well, maybe not so much:
- </paragraph>
- <paragraph>
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     Taniguchi Takashi
-    <link href="https://scholar.google.com/citations?user=rLUV2ToAAAAJ&amp;hl=en&amp;oi=sra"/>
-    https://scholar.google.com/citations?user=rLUV2ToAAAAJ&amp;hl=en&amp;oi=sra
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+    <a href="https://scholar.google.com/citations?user=rLUV2ToAAAAJ&amp;hl=en&amp;oi=sra">
+     https://scholar.google.com/citations?user=rLUV2ToAAAAJ&amp;hl=en&amp;oi=sra
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
     Watanabe Kenji
     <link href="https://scholar.google.com/citations?user=DsUCHdUAAAAJ&amp;hl=en&amp;oi=sra"/>
     https://scholar.google.com/citations?user=DsUCHdUAAAAJ&amp;hl=en&amp;oi=sra
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Shelah Saharon
     <link href="https://shelah.logic.at/paper-list/"/>
     https://shelah.logic.at/paper-list/
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
- </paragraph>
- <paragraph>
+ <p>
   This method still disadvantages people that cross categories, but I can potentially run a manual validation of them to try to determine the effect this actually has.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Name disambiguation: the google scholar option wouldn't see workable to me even if one had the network bandwidth: they are also not that great at disambiguating names (as is nobody, since it's hard.)
-  <break>
-  </break>
-  An option I think is fine for this class project and its hypotheses is to scrape a list of grad student  and faculty names names (say from some institution webpages) and select relatively unique names.  This is
-  <bold>
-   very obviously
-  </bold>
-  a highly biased sample, but you want to start somewhere with your hypothesis.  (If you saw anything promising, you would then say, "OK, it's worth trying to do name disambiguation"; if not, you saved yourself a lot of trouble.)
-  <break>
-  </break>
-  <break>
-  </break>
-  Re: fightin' words:  the "newer" words look surprisingly generic, and vice versa for the "old".  Might be good to do a first check on where 'stupidity' and 'stumble' and 'studio' are happening, and also do a fightin' words on two different (sub)categories, for debugging. (Also, is "nonseperable" a typo or is the mis-spelling apparently indicative of date?)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Name disambiguation: the google scholar option wouldn't see workable to me even if one had the network bandwidth: they are also not that great at disambiguating names (as is nobody, since it's hard.)
+   <break>
+   </break>
+   An option I think is fine for this class project and its hypotheses is to scrape a list of grad student  and faculty names names (say from some institution webpages) and select relatively unique names.  This is
+   <b>
+    very obviously
+   </b>
+   a highly biased sample, but you want to start somewhere with your hypothesis.  (If you saw anything promising, you would then say, "OK, it's worth trying to do name disambiguation"; if not, you saved yourself a lot of trouble.)
+   <break>
+   </break>
+   <break>
+   </break>
+   Re: fightin' words:  the "newer" words look surprisingly generic, and vice versa for the "old".  Might be good to do a first check on where 'stupidity' and 'stumble' and 'studio' are happening, and also do a fightin' words on two different (sub)categories, for debugging. (Also, is "nonseperable" a typo or is the mis-spelling apparently indicative of date?)
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

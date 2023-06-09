@@ -13,36 +13,32 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi,
- </paragraph>
- <paragraph>
-  I am having trouble getting the scores to print and save to the file. My save dialog pulls up the file chooser display but when I try to click on a file, all the options are in grey and when I select a file, the name of the file appears in the "Save As" input box but the file is still greyed out, as if it is not available. Not sure if that is the problem, but seems like a problem.
- </paragraph>
- <paragraph>
-  do we need to save the file again somehow after the println statement in the buffered PrintWriter or is it simply the println statement?
- </paragraph>
- <paragraph>
-  I am a little confused what else to try for this
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Thanks
- </paragraph>
-</document>
+<p>
+ Hi,
+</p>
+<p>
+ I am having trouble getting the scores to print and save to the file. My save dialog pulls up the file chooser display but when I try to click on a file, all the options are in grey and when I select a file, the name of the file appears in the "Save As" input box but the file is still greyed out, as if it is not available. Not sure if that is the problem, but seems like a problem.
+</p>
+<p>
+ do we need to save the file again somehow after the println statement in the buffered PrintWriter or is it simply the println statement?
+</p>
+<p>
+ I am a little confused what else to try for this
+</p>
+<p>
+ Thanks
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The
   <code>
    println()
@@ -52,11 +48,11 @@
    close()
   </code>
   when its body finishes executing) is sufficient to write data to the file.  You should be able to open the file in a text editor (like Eclipse) and see the string you wrote.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I'm afraid I don't know about your grey file options - different operating systems can behave differently, or perhaps the files in your folder all have some special property.  Consulting or office hours may provide better help in this area, since then they could see your screen and suggest different directories to browse to.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

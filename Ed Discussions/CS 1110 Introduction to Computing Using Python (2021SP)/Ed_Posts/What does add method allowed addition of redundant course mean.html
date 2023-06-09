@@ -13,41 +13,39 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi, saw this question in the queuemein queue.
-  <break>
-  </break>
-  <break>
-  </break>
-  The testing code that generates that message is this:
-  <break>
-  </break>
-  <break>
-  </break>
- </paragraph>
- <pre>    # Check that one can't add a redundant course (== course with same name, 
+<p>
+ Hi, saw this question in the queuemein queue.
+ <break>
+ </break>
+ <break>
+ </break>
+ The testing code that generates that message is this:
+ <break>
+ </break>
+ <break>
+ </break>
+</p>
+<pre>    # Check that one can't add a redundant course (== course with same name, 
     # even if time is different)
     redundant = Course("FAKER 0000 LEC 002", "M 3:00pm-4:00pm")
     roster.add(redundant)
     assert redundant not in roster.courses.values(), \
         "add method allowed addition of redundant course"</pre>
- <paragraph>
-  So, what the message means is that there was already a course in the Schedule called
-  <code>
-   roster
-  </code>
-  with the name "Faker 0000 LEC 002", and your
-  <code>
-   add()
-  </code>
-  method should have checked for that and not allowed the new course
-  <code>
-   redundant
-  </code>
-  with the same name to be added to the Schedule.
- </paragraph>
-</document>
+<p>
+ So, what the message means is that there was already a course in the Schedule called
+ <code>
+  roster
+ </code>
+ with the name "Faker 0000 LEC 002", and your
+ <code>
+  add()
+ </code>
+ method should have checked for that and not allowed the new course
+ <code>
+  redundant
+ </code>
+ with the same name to be added to the Schedule.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>

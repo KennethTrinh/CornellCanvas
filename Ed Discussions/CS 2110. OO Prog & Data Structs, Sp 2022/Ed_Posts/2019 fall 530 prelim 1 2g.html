@@ -13,117 +13,113 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="310.74822190611667" src="https://static.us.edusercontent.com/files/YBggEg69uD5rEH2PmYEYoTzp" width="658"/>
- </figure>
- <paragraph>
-  Why does toString() work on i1? I think I am just confused because interfaces don't extend Object right?
- </paragraph>
-</document>
+<figure>
+ <image height="310.74822190611667" src="https://static.us.edusercontent.com/files/YBggEg69uD5rEH2PmYEYoTzp" width="658"/>
+</figure>
+<p>
+ Why does toString() work on i1? I think I am just confused because interfaces don't extend Object right?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  toString is an Object method, it would work on anything (except null)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  So interfaces do extend class Object? I thought that interfaces aren't like classes in that regard
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  <break>
-  </break>
-  The
-  <bold>
-   Java Documentation says...
-  </bold>
- </paragraph>
- <paragraph>
-  <code>
-   When an interface has no direct SuperInterface, it will create abstract public method for all those public methods present in the Object class
-  </code>
-  .
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  I got this by simply typing into google interface.toString()
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you, One more followup, would you consider i1 to be an instance of an interface? Would that be the correct terminology?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  No, you can never have an instance of an interface.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   Interfaces do not extend class Object.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   However, they DO have all the methods of class Object as abstract methods. This is a special case.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Bahaa Kotb (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   toString is an Object method, it would work on anything (except null)
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    So interfaces do extend class Object? I thought that interfaces aren't like classes in that regard
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Bahaa Kotb (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     <break>
+     </break>
+     The
+     <b>
+      Java Documentation says...
+     </b>
+    </p>
+    <p>
+     <code>
+      When an interface has no direct SuperInterface, it will create abstract public method for all those public methods present in the Object class
+     </code>
+     .
+    </p>
+    <p>
+     I got this by simply typing into google interface.toString()
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 8em;">
+     <h3>
+      Author: Anonymous
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      Thank you, One more followup, would you consider i1 to be an instance of an interface? Would that be the correct terminology?
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 10em;">
+      <h3>
+       Author: Bahaa Kotb (student)
+      </h3>
+      <h3>
+       Vote Count: 1
+      </h3>
+      <p>
+       No, you can never have an instance of an interface.
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

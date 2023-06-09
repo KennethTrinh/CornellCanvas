@@ -13,56 +13,52 @@
 <h3>
  Vote Count: 6
 </h3>
-<document version="2.0">
- <paragraph>
-  Problem 2
- </paragraph>
- <paragraph>
-  HW 3
- </paragraph>
- <paragraph>
-  Problem 2 asked as to write a query that returns all customers from the customers table that have not placed an order.
- </paragraph>
- <paragraph>
-  I assumed that the we we check if the customer is placed an order is to see if the orderID under customers appears in Orders table. However, i noticed that on the example, CustomerID = Anton actually do appear in the orders, meaning that this ID has been placed an order. I guess I understand this question incorrectly. Do you mind letting me know which part i understood incorrectly (Or do you mind clarifying what does it mean by customers who have not placed an order)? Thank you!
- </paragraph>
-</document>
+<p>
+ Problem 2
+</p>
+<p>
+ HW 3
+</p>
+<p>
+ Problem 2 asked as to write a query that returns all customers from the customers table that have not placed an order.
+</p>
+<p>
+ I assumed that the we we check if the customer is placed an order is to see if the orderID under customers appears in Orders table. However, i noticed that on the example, CustomerID = Anton actually do appear in the orders, meaning that this ID has been placed an order. I guess I understand this question incorrectly. Do you mind letting me know which part i understood incorrectly (Or do you mind clarifying what does it mean by customers who have not placed an order)? Thank you!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Varun Gande (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Customers who have not placed an order will essentially never have a record matched to their CustomerID in the Orders table. This should give you a hint as to how you should join, if you want to ensure that customers who have not places an order appear with a revenue of 0.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Yuheng Wang (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Yuheng Wang (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Follow up on Varun's comment, double-check what you see is "ANTO" or "ANTON".
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I run this query, and it does return NULL on my end:
   <code>
    SELECT * FROM orders WHERE orders.CustomerID = "ANTON"
   </code>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Varun Gande (staff)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Customers who have not placed an order will essentially never have a record matched to their CustomerID in the Orders table. This should give you a hint as to how you should join, if you want to ensure that customers who have not places an order appear with a revenue of 0.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

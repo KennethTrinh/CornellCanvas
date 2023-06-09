@@ -13,78 +13,72 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hello!
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  What does it mean by memory alignment? Professor Napps mentions "shuffling" of bits but i'm still confused.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  This is slide 14 in Lecture 2.3
- </paragraph>
-</document>
+<p>
+ Hello!
+</p>
+<p>
+ What does it mean by memory alignment? Professor Napps mentions "shuffling" of bits but i'm still confused.
+</p>
+<p>
+ This is slide 14 in Lecture 2.3
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Nils Napp (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Nils Napp (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   By "shuffling" I mean changing the location of bits in the word.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   So lets say  I read a  32-bit memory line and the bus has the value:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   0b 0000 0000
-  <bold>
+  <b>
    0000 1111
-  </bold>
+  </b>
   0000 0000 0000 0000
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   or in hex
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   0x 00
-  <bold>
+  <b>
    0F
-  </bold>
+  </b>
   0000
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The layout in memory would be Byte3,
-  <bold>
+  <b>
    Byte2
-  </bold>
+  </b>
   ,Byte1,Byte0.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Where Byte2 = 0x0F (aka 15) and Byte3,Byte1, and Byte0 are 0x00
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If I wanted to read Byte 2 with LDRB, then I would need to read the word line (0x00
-  <bold>
+  <b>
    0F
-  </bold>
+  </b>
   0000) and then "shuffle" or move the bold bits to the least significant byte.  It means that for some types of memory access (the ones that are allowed by the ISA) I can read a single 32-bit line and then get the answer by just moving bits around. But for memory access that is not aligned, I would need to read two consecutive 32-bit words and get bits for each, i.e. you can't get the result by just shuffling/moving bits from a single 32-bit read instruction.
   <break>
   </break>
   <break>
   </break>
- </paragraph>
+ </p>
  <snippet language="py3" line-numbers="false" runnable="false">
  </snippet>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

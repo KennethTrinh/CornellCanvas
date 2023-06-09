@@ -13,72 +13,66 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  From lecture on 2/21, the emitter degeneration circuit has I_e approximately equal to I_c. Clearly, if this was true, then by KCL, I_b would be near zero. But that isn't the case in this problem. So when can we apply the I_e = I_c approximation?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ From lecture on 2/21, the emitter degeneration circuit has I_e approximately equal to I_c. Clearly, if this was true, then by KCL, I_b would be near zero. But that isn't the case in this problem. So when can we apply the I_e = I_c approximation?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  This case only applies when
- </paragraph>
- <math>
-  \beta\gg1
- </math>
- <paragraph>
-  In this problem, it might be intuitive to apply that; however, part (a) asks you to solve without using this approximation. You can note from the results, however, that:
- </paragraph>
- <math>
-  \beta\longrightarrow\infty;I_B\longrightarrow0A,V_B\longrightarrow\frac{R_2}{R_1+R_2}
- </math>
- <paragraph>
-  as you'd expect from this approximation (and the results you find in part (b) will be close to this)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ariana Haghighi (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you, that makes sense since its the ratio between I_b and I_c
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Clifford Pollock (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Clifford Pollock (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Whether or not the circuit has  an emitter resistor, I_c is always nearly equal to I_e.  This assumes beta is on the order of 100.  The only significant difference when an emitter resistor is added is that the base voltage V_b  rises by I_e R_r.  This is in addition to the V_be which is always present in the forward biased transistor.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The emitter resistor makes the transisor much less sensitive to changes in temperature.  As a transistor gets hotter, the currents tend to increase (due to I_s). But as the current through the emitter resistor increases, so does the voltage. If  V_b is fixed, V_be is reduced, which reduces the current increase.  So R_e acts like a negative feedback resistor.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Aidan McNay (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   This case only applies when
+  </p>
+  <math>
+   \beta\gg1
+  </math>
+  <p>
+   In this problem, it might be intuitive to apply that; however, part (a) asks you to solve without using this approximation. You can note from the results, however, that:
+  </p>
+  <math>
+   \beta\longrightarrow\infty;I_B\longrightarrow0A,V_B\longrightarrow\frac{R_2}{R_1+R_2}
+  </math>
+  <p>
+   as you'd expect from this approximation (and the results you find in part (b) will be close to this)
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Ariana Haghighi (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Thank you, that makes sense since its the ratio between I_b and I_c
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

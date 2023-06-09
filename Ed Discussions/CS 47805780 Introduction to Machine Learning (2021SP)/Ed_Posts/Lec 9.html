@@ -13,37 +13,35 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  don't understand why the question can be transformed to finding min max of Lagrange multipliers, is there material that I can read about this? the textbook doesn't get a reason why.
- </paragraph>
-</document>
+<p>
+ don't understand why the question can be transformed to finding min max of Lagrange multipliers, is there material that I can read about this? the textbook doesn't get a reason why.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Atul Ganju (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Atul Ganju (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You can think of the lagrange multipliers as variables that indicate constraints to the problem. At the end of the day, we want to classify the points using a separating hyperplane in such a way that as few as possible constraints are violated.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   By setting the different lagrange multipliers to values greater than or equal to $0$, we are saying two things:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   1) If a training example is classified correctly and doesn't affect the hyperplane then the lagrange multiplier for that point is 0 because that is the expectation.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   2) If a training example is a support vector, then a constraint is violated and the loss function should invoke a penalty by adding to the loss (this is done by giving value to the lagrange multiplier associated with that training example).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Now, we see why there are lagrange multipliers. To see why we take the min max, think of it in this way: Let $OPT$ be the optimal value of the problem of minimizing the primal. The Lagrangian dual function has the property that it will always be less tha $OPT$. It is a lower bound on the primal function. Instead of solving the primal problem, we are want to get the maximum lower bound on $OPT$ by maximizing the Lagrangian dual function. Then we take the min over all $w$ just like we did in the primal.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

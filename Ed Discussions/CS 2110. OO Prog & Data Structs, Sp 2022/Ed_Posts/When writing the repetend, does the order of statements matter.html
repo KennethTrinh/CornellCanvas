@@ -13,54 +13,52 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  On the CMS video there's these examples:
- </paragraph>
- <figure>
-  <image height="209.98095238095237" src="https://static.us.edusercontent.com/files/g4gbR5zTq9UgzsqbPUMEZauL" width="416"/>
- </figure>
- <paragraph>
-  and the answers:
- </paragraph>
- <blockquote>
-  s= s + k–1; k= k–1;
-  <bold>
-   OR
-  </bold>
-  k= k–1; s= s + k
- </blockquote>
- <blockquote>
-  v= Math.min(v, b[k+1]); k= k+1;
-  <bold>
-   OR
-  </bold>
-  k= k+1; v= Math.min(v, b[k])
- </blockquote>
- <paragraph>
-  1) Is the order of s and k being stated important?
- </paragraph>
- <paragraph>
-  2) how/why does the order of s and k being stated change the answer slightly?
- </paragraph>
-</document>
+<p>
+ On the CMS video there's these examples:
+</p>
+<figure>
+ <image height="209.98095238095237" src="https://static.us.edusercontent.com/files/g4gbR5zTq9UgzsqbPUMEZauL" width="416"/>
+</figure>
+<p>
+ and the answers:
+</p>
+<blockquote>
+ s= s + k–1; k= k–1;
+ <b>
+  OR
+ </b>
+ k= k–1; s= s + k
+</blockquote>
+<blockquote>
+ v= Math.min(v, b[k+1]); k= k+1;
+ <b>
+  OR
+ </b>
+ k= k+1; v= Math.min(v, b[k])
+</blockquote>
+<p>
+ 1) Is the order of s and k being stated important?
+</p>
+<p>
+ 2) how/why does the order of s and k being stated change the answer slightly?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Caleb Chin (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Caleb Chin (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Yes, the order of s and k matters. For example, let s = 0 and k = 1. If we had the order: s = s + k-1; k=k-1;, s would become 0 and k would become 0. If we reverse the order, and have k=k-1; s = s + k-1;, k becomes 0 and s becomes -1 as k has already been decremented in the previous statement.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Each assignment statement is one after the other, so any changes to one variable will remain for the second statement.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

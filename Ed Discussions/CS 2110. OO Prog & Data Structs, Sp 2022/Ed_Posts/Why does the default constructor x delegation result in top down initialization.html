@@ -13,61 +13,55 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  The default constructor is only inserted when a constructor is defined....
- </paragraph>
- <paragraph>
-  Super is inputted automatically with a default constructor
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  So why if there is a constructor implemented (that is not the default constructor) does initialization have to be top down?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ The default constructor is only inserted when a constructor is defined....
+</p>
+<p>
+ Super is inputted automatically with a default constructor
+</p>
+<p>
+ So why if there is a constructor implemented (that is not the default constructor) does initialization have to be top down?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   1. Every constructor you write must begin with either
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   this(...);    or   super(...);
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Constructors cannot be recursive.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Therefore, at least one constructor will have a call. super(...); at its beginning.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   2. The principle "Fill in superclass fields first" is the proper OO way to fill in fields.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you professor
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you professor
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

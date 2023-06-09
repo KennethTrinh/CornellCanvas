@@ -13,126 +13,117 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I've tried troubleshooting docker installation issues on my own, gone to office hours, used a different PC (windows &amp; Mac), and have tried using the remote lab computers. On the remote lab computers and my personal windows PC, I get the error "docker daemon not running" and have had no success with troubleshooting. I'm genuinely unsure of what next steps I should take to try and resolve this issue. Any help would be greatly appreciated
- </paragraph>
-</document>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ I've tried troubleshooting docker installation issues on my own, gone to office hours, used a different PC (windows &amp; Mac), and have tried using the remote lab computers. On the remote lab computers and my personal windows PC, I get the error "docker daemon not running" and have had no success with troubleshooting. I'm genuinely unsure of what next steps I should take to try and resolve this issue. Any help would be greatly appreciated
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Anonymous
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I was able to finally fix the issue. Thank you!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Kim (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  For the error "Docker daemon not running" could you make sure that Docker Desktop is open and try running docker commands again?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jenny Chen (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi, I am having this same issues, and I was wondering which docker commands are u referring to?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Kim (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  I meant any docker commands to verify that it is installed correctly. When you follow the instructions for installing Docker on their website (
-  <link href="https://docs.docker.com/desktop/install/mac-install/"/>
-  https://docs.docker.com/desktop/install/mac-install/), you can verify the installation on the command line by trying something like
-  <code>
-   docker --version
-  </code>
-  .
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Liu (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I'm having the same issue ^^
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I can run the version command but nothing else. For example, "docker run hello-world" doesn't work
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Kim (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  When you run
-  <code>
-   docker run hello-world
-  </code>
-  , what's the command line output?
- </paragraph>
- <paragraph>
-  For me, I see
- </paragraph>
- <pre>$ docker run hello-world
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kyle J. Harms (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
+  If you are unable to get Docker working on your computer, you will need to use the in-person Engineering labs or the virtual Engineering labs. I would suggest using the virtual labs, as you'll be able to access them from your laptop.
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Kim (staff)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   For the error "Docker daemon not running" could you make sure that Docker Desktop is open and try running docker commands again?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Jenny Chen (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Hi, I am having this same issues, and I was wondering which docker commands are u referring to?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: David Kim (staff)
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     I meant any docker commands to verify that it is installed correctly. When you follow the instructions for installing Docker on their website (
+     <a href="https://docs.docker.com/desktop/install/mac-install/">
+      https://docs.docker.com/desktop/install/mac-install/
+     </a>
+     ), you can verify the installation on the command line by trying something like
+     <code>
+      docker --version
+     </code>
+     .
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 8em;">
+     <h3>
+      Author: Anonymous
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      I can run the version command but nothing else. For example, "docker run hello-world" doesn't work
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 10em;">
+      <h3>
+       Author: David Kim (staff)
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       When you run
+       <code>
+        docker run hello-world
+       </code>
+       , what's the command line output?
+      </p>
+      <p>
+       For me, I see
+      </p>
+      <pre>$ docker run hello-world
 
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
@@ -156,26 +147,29 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 
 </pre>
- <paragraph>
-  If you see something like "Is the docker daemon runnning?" then you should check if Docker is open
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kyle J. Harms (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  If you are unable to get Docker working on your computer, you will need to use the in-person Engineering labs or the virtual Engineering labs. I would suggest using the virtual labs, as you'll be able to access them from your laptop.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+      <p>
+       If you see something like "Is the docker daemon runnning?" then you should check if Docker is open
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+     </div>
+     <div style="text-indent: 8em;">
+      <h3>
+       Author: Liu (None)
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       I'm having the same issue ^^
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

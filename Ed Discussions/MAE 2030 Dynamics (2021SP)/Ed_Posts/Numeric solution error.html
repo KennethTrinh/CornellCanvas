@@ -13,138 +13,41 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  <link href="https://canvas.cornell.edu/courses/25081/pages/homework-assignments"/>
-  <bold>
+<p>
+ <a href="https://canvas.cornell.edu/courses/25081/pages/homework-assignments">
+  <b>
    <underline>
     Link to Homework Assignments page on Canvas
    </underline>
-  </bold>
- </paragraph>
- <callout type="info">
-  Which problem are you working on? (ex. HW 1, Problem 3, 9.1.15)
- </callout>
- <paragraph>
-  HW 3, question 8
- </paragraph>
- <callout type="info">
-  What is your question?
- </callout>
- <paragraph>
-  Is there a method to estimate the error of a numerical solution without having to solve the differential equation? Or to find the error, do we need to solve the differential equation and then simply compare the points that the numeric solution found with the exact points from the analytical solution?
- </paragraph>
- <callout type="info">
-  Describe the solution attempts you've made thus far.
- </callout>
- <paragraph>
- </paragraph>
-</document>
+  </b>
+ </a>
+</p>
+<callout type="info">
+ Which problem are you working on? (ex. HW 1, Problem 3, 9.1.15)
+</callout>
+<p>
+ HW 3, question 8
+</p>
+<callout type="info">
+ What is your question?
+</callout>
+<p>
+ Is there a method to estimate the error of a numerical solution without having to solve the differential equation? Or to find the error, do we need to solve the differential equation and then simply compare the points that the numeric solution found with the exact points from the analytical solution?
+</p>
+<callout type="info">
+ Describe the solution attempts you've made thus far.
+</callout>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Arnaldo Rodriguez-Gonzalez (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  <bold>
-   1) Can you estimate the error of a numerical solution without actually solving the differential equation analytically or numerically?
-  </bold>
-  The answer is "sometimes, usually never"—the reason being that numerical error is heavily dependent on the specific solution of the ODE you're looking for, and there's rarely a way to unambiguously connect that to just the ODE unless the ODE is exceedingly simple.
- </paragraph>
- <paragraph>
-  (For completeness, an example of when you
-  <italic>
-   can
-  </italic>
-  do it is for $\dot{x} = x$—you could propose an initial condition $x(0)$ and some error $\epsilon$ in it, and get an analytical expression of how big the error term gets when performing an Euler's method approximation for every step without actually solving the ODE numerically. But that's beside your point, I think.)
- </paragraph>
- <paragraph>
-  <bold>
-   2) Do we need to solve the differential equation and then simply compare the points that the numeric solution found with the exact points from the analytical solution?
-  </bold>
-  That's my recommendation on how you can do it. Remember, since you can pick an ODE of your choice, you can pick one whose analytical solution you already know and then compare your simulations to those to save yourself some effort. (Challenge yourself if you want, though!)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andy Ruina (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Actually,  I disagree with Arnaldo here.   The point is that you do
-  <italic>
-   not
-  </italic>
-  need to know the analytical solution to estimate your error.
-  <break>
-  </break>
-  <break>
-  </break>
-  You can get a good-enough estimate of the error, which is quite robust in practice, by comparing you solution at two different step sizes.
- </paragraph>
- <paragraph>
-  Lets say the exact solution   is $z_e$ at, say the final time.  You don't know it, but it is there in concept.
- </paragraph>
- <paragraph>
-  Say your numerical solution with one step size is $h$ is  $z_h$ and the error, a thing you don't know is $e_h$.
- </paragraph>
- <paragraph>
-  <break>
-  </break>
-  Now, cut your step size in half and get a new solution $z_{h/2}$. The error $e_{h/2}$ will now be half as big (or less).  Thus $z_h - z_{h/2}$ is a pretty good estimate of the error when using $h/2$.  It's not exact, of course. But all you want is an estimate of the error. One can get more sophisticated, but this is the general idea:  The differences between successive approximations, is
-  <italic>
-   about
-  </italic>
-  the size of the error of one of the approximations.
-  <break>
-  </break>
-  <break>
-  </break>
-  This is, approximately, how Matlab handles errors with ODE45 (which you will learn about next week). And I wanted you to code it yourself so you get a sense of what ODE45 is doing.
-  <break>
-  </break>
-  <break>
-  </break>
-  I  explained this (perhaps too quickly)  in lecture on Friday and it is in the code that I posted for Friday's lecture.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Edith Liu (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  But isn't options.RelTol in the input of the new function that we write? How can that be put into the output? Also this time we are only inputting tspan with only the start time and end time, do we specify the steps inside the function&gt;
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andy Ruina (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andy Ruina (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   <code>
    options
   </code>
@@ -179,10 +82,100 @@
   You can see this all working in the code I posted for last Friday's lecture.
   <break>
   </break>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Arnaldo Rodriguez-Gonzalez (staff)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   <b>
+    1) Can you estimate the error of a numerical solution without actually solving the differential equation analytically or numerically?
+   </b>
+   The answer is "sometimes, usually never"—the reason being that numerical error is heavily dependent on the specific solution of the ODE you're looking for, and there's rarely a way to unambiguously connect that to just the ODE unless the ODE is exceedingly simple.
+  </p>
+  <p>
+   (For completeness, an example of when you
+   <i>
+    can
+   </i>
+   do it is for $\dot{x} = x$—you could propose an initial condition $x(0)$ and some error $\epsilon$ in it, and get an analytical expression of how big the error term gets when performing an Euler's method approximation for every step without actually solving the ODE numerically. But that's beside your point, I think.)
+  </p>
+  <p>
+   <b>
+    2) Do we need to solve the differential equation and then simply compare the points that the numeric solution found with the exact points from the analytical solution?
+   </b>
+   That's my recommendation on how you can do it. Remember, since you can pick an ODE of your choice, you can pick one whose analytical solution you already know and then compare your simulations to those to save yourself some effort. (Challenge yourself if you want, though!)
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Andy Ruina (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Actually,  I disagree with Arnaldo here.   The point is that you do
+    <i>
+     not
+    </i>
+    need to know the analytical solution to estimate your error.
+    <break>
+    </break>
+    <break>
+    </break>
+    You can get a good-enough estimate of the error, which is quite robust in practice, by comparing you solution at two different step sizes.
+   </p>
+   <p>
+    Lets say the exact solution   is $z_e$ at, say the final time.  You don't know it, but it is there in concept.
+   </p>
+   <p>
+    Say your numerical solution with one step size is $h$ is  $z_h$ and the error, a thing you don't know is $e_h$.
+   </p>
+   <p>
+    <break>
+    </break>
+    Now, cut your step size in half and get a new solution $z_{h/2}$. The error $e_{h/2}$ will now be half as big (or less).  Thus $z_h - z_{h/2}$ is a pretty good estimate of the error when using $h/2$.  It's not exact, of course. But all you want is an estimate of the error. One can get more sophisticated, but this is the general idea:  The differences between successive approximations, is
+    <i>
+     about
+    </i>
+    the size of the error of one of the approximations.
+    <break>
+    </break>
+    <break>
+    </break>
+    This is, approximately, how Matlab handles errors with ODE45 (which you will learn about next week). And I wanted you to code it yourself so you get a sense of what ODE45 is doing.
+    <break>
+    </break>
+    <break>
+    </break>
+    I  explained this (perhaps too quickly)  in lecture on Friday and it is in the code that I posted for Friday's lecture.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Edith Liu (None)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     But isn't options.RelTol in the input of the new function that we write? How can that be put into the output? Also this time we are only inputting tspan with only the start time and end time, do we specify the steps inside the function&gt;
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

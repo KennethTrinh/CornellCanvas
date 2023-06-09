@@ -13,124 +13,124 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Group members: Benjamin Laufer, Joyce Zhou
- </paragraph>
- <paragraph>
-  Report, presentation slides:
- </paragraph>
- <file filename="A1_Writeup.pdf" url="https://static.us.edusercontent.com/files/bF1sdSBVnia7eXsgpnGiafqX">
- </file>
- <file filename="A1_Presentation.pdf" url="https://static.us.edusercontent.com/files/F4zRLS0O6d7WPADjPRZuzrWF">
- </file>
- <paragraph>
+<p>
+ Group members: Benjamin Laufer, Joyce Zhou
+</p>
+<p>
+ Report, presentation slides:
+</p>
+<a filename="A1_Writeup.pdf" href="https://static.us.edusercontent.com/files/bF1sdSBVnia7eXsgpnGiafqX">
+</a>
+<file url="https://static.us.edusercontent.com/files/F4zRLS0O6d7WPADjPRZuzrWF">
+ A1_Presentation.pdf
+ <p>
   (Most of) the code we used:
-  <link href="https://github.com/cephcyn/cornell_cs6742"/>
-  https://github.com/cephcyn/cornell_cs6742
- </paragraph>
-</document>
-<h3>
- Author: Joyce Zhou (they/them) (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Reflection:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    At least for myself... I'd pass on the lesson that it's very worth thinking about what metrics are being used to measure things and why they might each be good/bad, or what kind of confounding might be happening. We each came up with a separate idea of "how many branches", which each had upsides and downsides... and then we realized that it was worth distinctly controlling for the number of comments that a user had. I don't know if all of that thought process deserves to be fully described in a writeup (although if that kind of discussion was frequently mentioned in papers that'd be pretty neat), but it's worth spending time on.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    I'm most proud of having went through and parsing the entire dataset into formats that were more convenient for our own purposes - although that doesn't sound all that impressive, it helped a lot with later analysis / metric measurement. I'm second most proud of our "branchiness" metric designs.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    See above: definitely spent the most time processing the dataset in a way that was easy to measure relevant metrics with, as well as trying to figure out how the Reddit API key/value pairs worked and why some things were misformatted the way they were.
-   </paragraph>
-  </list-item>
- </list>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Celine Lee (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi Joyce and Ben! Super interesting project question-- I was also intrigued by the tree structure of "motivated" conversations and whether there are correlations with certain tree patterns and progress of these conversations. I like that your team grounded your work in the findings of previous researchers, and particularly looked at challenging their claim(s) in a slightly modified environment. I was a bit surprised that your findings regarding breadth coverage contradicted with that of Tan et al. However, given the focus of your experiments on individual users, I suppose that your findings follow what I feel would be my intuition: that a user who engages in a single thread / line of argument is more likely to be rewarded a "delta" than one who hops around different threads.
- </paragraph>
- <paragraph>
-  This leads me to bring up a question I was thinking while watching your presentation: how do we know that a user hopping around different threads even has the same objective as a user following a single thread? A user hopping around may just be asking follow-up questions or making jokes for fun, while a user following a thread may be actually trying to convey a point a view. Therefore, inherently, that user hopping around is probably less likely to be awarded a "delta," and it's not because of their behavior on threads-- they are just both correlated with another factor. Therefore, another experiment I may suggest is exploring the differing behavior patterns on CMV threads, and seeing if each type of behavior pattern correlates with some possibly perceivable user objective.
- </paragraph>
- <paragraph>
-  I imagine the process may look like this:
- </paragraph>
- <paragraph>
-  (1) Collect posting information for each user in a thread:
-  <code>
-   user id
-  </code>
-  --&gt;
-  <code>
-   [(comment text, timestamp, depth into thread, number of other of their own comments in that given thread), ... for all comments in post comment section]
-  </code>
- </paragraph>
- <paragraph>
-  (2) Determine some comment structure clustering mechanism based on findings. Perhaps based around number of other of their own comments in that thread, or around distinct threads in which that user posts, or other, or some combination of the two.
- </paragraph>
- <paragraph>
-  (3) See if you can learn some decision tree or other classification mechanism to map some profile of user comments that represents user objective (likely a feature of the comment text, like presence of questions or anecdotes or jokes) to user comment structure profile.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Joyce Zhou (they/them) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thanks for this feedback!
- </paragraph>
- <paragraph>
-  One thing that we didn't directly mention in the presentation was that we only sampled users in posts where they had been top-level commenters (which automatically excludes top-level commenters who backed OP up directly, or otherwise neither attempted to earn a delta nor clarify on OP's point of view, since moderators delete those comments). Given that a user was a top-level commenter,  we assumed that they were there at least partially to try to convince OP to change their mind (in contrast to, for example, backing OP up or solely clarifying on others' argument points).
- </paragraph>
- <paragraph>
-  You're right though, it would be super interesting to try to find a relationship between overall comment tree stucture / buzziness and the content of those comments.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Celine Lee (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Ah, I see, that's a good consideration. Awesome, thanks for the follow-up!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- ----------- REPLIES -----------
-</h3>
+  <a href="https://github.com/cephcyn/cornell_cs6742">
+   https://github.com/cephcyn/cornell_cs6742
+  </a>
+ </p>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Celine Lee (student)
+  </h3>
+  <h3>
+   Vote Count: 2
+  </h3>
+  <p>
+   Hi Joyce and Ben! Super interesting project question-- I was also intrigued by the tree structure of "motivated" conversations and whether there are correlations with certain tree patterns and progress of these conversations. I like that your team grounded your work in the findings of previous researchers, and particularly looked at challenging their claim(s) in a slightly modified environment. I was a bit surprised that your findings regarding breadth coverage contradicted with that of Tan et al. However, given the focus of your experiments on individual users, I suppose that your findings follow what I feel would be my intuition: that a user who engages in a single thread / line of argument is more likely to be rewarded a "delta" than one who hops around different threads.
+  </p>
+  <p>
+   This leads me to bring up a question I was thinking while watching your presentation: how do we know that a user hopping around different threads even has the same objective as a user following a single thread? A user hopping around may just be asking follow-up questions or making jokes for fun, while a user following a thread may be actually trying to convey a point a view. Therefore, inherently, that user hopping around is probably less likely to be awarded a "delta," and it's not because of their behavior on threads-- they are just both correlated with another factor. Therefore, another experiment I may suggest is exploring the differing behavior patterns on CMV threads, and seeing if each type of behavior pattern correlates with some possibly perceivable user objective.
+  </p>
+  <p>
+   I imagine the process may look like this:
+  </p>
+  <p>
+   (1) Collect posting information for each user in a thread:
+   <code>
+    user id
+   </code>
+   --&gt;
+   <code>
+    [(comment text, timestamp, depth into thread, number of other of their own comments in that given thread), ... for all comments in post comment section]
+   </code>
+  </p>
+  <p>
+   (2) Determine some comment structure clustering mechanism based on findings. Perhaps based around number of other of their own comments in that thread, or around distinct threads in which that user posts, or other, or some combination of the two.
+  </p>
+  <p>
+   (3) See if you can learn some decision tree or other classification mechanism to map some profile of user comments that represents user objective (likely a feature of the comment text, like presence of questions or anecdotes or jokes) to user comment structure profile.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Joyce Zhou (they/them) (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Thanks for this feedback!
+   </p>
+   <p>
+    One thing that we didn't directly mention in the presentation was that we only sampled users in posts where they had been top-level commenters (which automatically excludes top-level commenters who backed OP up directly, or otherwise neither attempted to earn a delta nor clarify on OP's point of view, since moderators delete those comments). Given that a user was a top-level commenter,  we assumed that they were there at least partially to try to convince OP to change their mind (in contrast to, for example, backing OP up or solely clarifying on others' argument points).
+   </p>
+   <p>
+    You're right though, it would be super interesting to try to find a relationship between overall comment tree stucture / buzziness and the content of those comments.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Celine Lee (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Ah, I see, that's a good consideration. Awesome, thanks for the follow-up!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Joyce Zhou (they/them) (student)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Reflection:
+   </p>
+   <list style="bullet">
+    <li>
+     <p>
+      At least for myself... I'd pass on the lesson that it's very worth thinking about what metrics are being used to measure things and why they might each be good/bad, or what kind of confounding might be happening. We each came up with a separate idea of "how many branches", which each had upsides and downsides... and then we realized that it was worth distinctly controlling for the number of comments that a user had. I don't know if all of that thought process deserves to be fully described in a writeup (although if that kind of discussion was frequently mentioned in papers that'd be pretty neat), but it's worth spending time on.
+     </p>
+    </li>
+    <li>
+     <p>
+      I'm most proud of having went through and parsing the entire dataset into formats that were more convenient for our own purposes - although that doesn't sound all that impressive, it helped a lot with later analysis / metric measurement. I'm second most proud of our "branchiness" metric designs.
+     </p>
+    </li>
+    <li>
+     <p>
+      See above: definitely spent the most time processing the dataset in a way that was easy to measure relevant metrics with, as well as trying to figure out how the Reddit API key/value pairs worked and why some things were misformatted the way they were.
+     </p>
+    </li>
+   </list>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+ <h3>
+  ----------- REPLIES -----------
+ </h3>
+</file>

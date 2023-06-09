@@ -13,66 +13,41 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  While reviewing lecture 1 notes, I saw a bullet point saying "conversion from integer to floating-point type can change value (loss of precision)"
- </paragraph>
- <paragraph>
-  Just wondering if anybody could please clarify what that means? If floating-point types permit decimal digits but ints do not, shouldn't that aforementioned conversion result in
-  <italic>
-   increased
-  </italic>
-  precision rather than decreased precision?
- </paragraph>
-</document>
+<p>
+ While reviewing lecture 1 notes, I saw a bullet point saying "conversion from integer to floating-point type can change value (loss of precision)"
+</p>
+<p>
+ Just wondering if anybody could please clarify what that means? If floating-point types permit decimal digits but ints do not, shouldn't that aforementioned conversion result in
+ <i>
+  increased
+ </i>
+ precision rather than decreased precision?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 4
-</h3>
-<document version="2.0">
- <paragraph>
-  An int takes 32 bits. You can think of it as a 1-bit sign and a 31 bit integer (although it's slightly different).
- </paragraph>
- <paragraph>
-  A float take 32 bits. You can think of it as a 1-bit sign, and 8-bit exponent, and a 23 bit mantissa. Therefore, a 31-bit integer cannot fit exactly in a  float variable.
- </paragraph>
- <paragraph>
-  Remember, floating point numbers are only APPROXIMATIONS to real numbers, because a real number can have an unbounded number of bits in its mantissa while in type float, it is only 23 bits.
- </paragraph>
- <paragraph>
-  Don't concern yourself with this too much. How type float and double work in real problems, since they are only approximations, is a topic for the field of "numerical analysis".
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 4
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 4
+ </h3>
+ <p>
   Integer types have a fixed
-  <italic>
+  <i>
    absolute
-  </italic>
+  </i>
   precision - that is, the spacing between two adjacent values is always "1".
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Floating-point types have a characteristic
-  <italic>
+  <i>
    relative
-  </italic>
+  </i>
   precision - that is, the spacing between two adjacent values is a certain percentage of their magnitude.  In other words, they have a fixed number of "significant figures".
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   A
   <code>
    float
@@ -90,19 +65,42 @@
    float
   </code>
   , so if they are cast to that type, they will be rounded to the nearest value that
-  <italic>
+  <i>
    can
-  </italic>
+  </i>
   be represented, and information is lost in that rounding.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   This makes floating-point types very bad for counting things.  In production software, they should never be used for representing things like money (for example), and they're often a bad choice for tracking dates and times (which often count the number of seconds or nanoseconds since some "epoch" in the past).  The resulting bugs are very subtle, because everything seems to work perfectly up to a point (including in all test cases), and then all of a sudden things start to break.  The fact that Java will
-  <italic>
+  <i>
    implicitly
-  </italic>
+  </i>
   convert integers to floating-point types of the same bit-size makes accidents more likely than they need to be.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 4
+  </h3>
+  <p>
+   An int takes 32 bits. You can think of it as a 1-bit sign and a 31 bit integer (although it's slightly different).
+  </p>
+  <p>
+   A float take 32 bits. You can think of it as a 1-bit sign, and 8-bit exponent, and a 23 bit mantissa. Therefore, a 31-bit integer cannot fit exactly in a  float variable.
+  </p>
+  <p>
+   Remember, floating point numbers are only APPROXIMATIONS to real numbers, because a real number can have an unbounded number of bits in its mantissa while in type float, it is only 23 bits.
+  </p>
+  <p>
+   Don't concern yourself with this too much. How type float and double work in real problems, since they are only approximations, is a topic for the field of "numerical analysis".
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

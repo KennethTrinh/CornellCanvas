@@ -13,33 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="523.9908466819222" src="https://static.us.edusercontent.com/files/2OPyKFndEf06Se9l5ZjHSGYU" width="658"/>
- </figure>
- <paragraph>
-  When you run b(1,null) you will get an arithmeticexception in the first catch block... shouldn't that be caught by the Runtime exception block (because arrithmeticexceptions are subclasses of RuntimeExceptions? therefore ultimately allowing "J" to be printed?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<figure>
+ <image height="523.9908466819222" src="https://static.us.edusercontent.com/files/2OPyKFndEf06Se9l5ZjHSGYU" width="658"/>
+</figure>
+<p>
+ When you run b(1,null) you will get an arithmeticexception in the first catch block... shouldn't that be caught by the Runtime exception block (because arrithmeticexceptions are subclasses of RuntimeExceptions? therefore ultimately allowing "J" to be printed?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bahaa Kotb (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   You get a nullPointerException null.length() is not a valid method.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Then you go into that catch block which raises another error because of 1/0 which can't be caught since that's not in anther try catch block therefore throwing an arithmeticexceptions Exception
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

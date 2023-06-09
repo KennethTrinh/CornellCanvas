@@ -13,47 +13,43 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm trying to compute e^A for
- </paragraph>
- <math>
-  A=\begin{matrix}0&amp;a\\-a&amp;0\end{matrix}
- </math>
- <paragraph>
-  I found a formula for each of A^{4k}, A^{4k+1}, A^{4k+2}, A^{4k+3} so I want to find a formula for
-  <break>
-  </break>
- </paragraph>
- <math>
-  \sum_{_{k\ =\ 0}}^{\infty}\frac{1}{\left(4k+j\right)!}A^{4k+j},\qquad\qquad0\text{\leq j &lt;3}
- </math>
- <paragraph>
-  and then add these four formulas together. But how can I find a formula for these series? Intuitively, I want to do a variable substitution $m = 4k + j$, and use the formula for $e^x$, but then I'm summing over a fraction $(m-j)/4$, which doesn't seem right. What can I do here?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I'm trying to compute e^A for
+</p>
+<math>
+ A=\begin{matrix}0&amp;a\\-a&amp;0\end{matrix}
+</math>
+<p>
+ I found a formula for each of A^{4k}, A^{4k+1}, A^{4k+2}, A^{4k+3} so I want to find a formula for
+ <break>
+ </break>
+</p>
+<math>
+ \sum_{_{k\ =\ 0}}^{\infty}\frac{1}{\left(4k+j\right)!}A^{4k+j},\qquad\qquad0\text{\leq j &lt;3}
+</math>
+<p>
+ and then add these four formulas together. But how can I find a formula for these series? Intuitively, I want to do a variable substitution $m = 4k + j$, and use the formula for $e^x$, but then I'm summing over a fraction $(m-j)/4$, which doesn't seem right. What can I do here?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Reyer Sjamaar (admin)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Reyer Sjamaar (admin)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   Try to simplify your formulas for $A^n$.  You should be able to find a single formula for $A^{2m}$ and a single formula for $A^{2m+1}$.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Also have a look at the discussion of complex exponentials at the end of Section 1.5: it may give you some ideas.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

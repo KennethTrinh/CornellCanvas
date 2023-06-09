@@ -13,65 +13,63 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  The directions of routeTo() (which I am considering to be a searching function) state that we can't use a new expression to make a list in the recursive case. But if we don't make a new list, then how are we supposed to add elements to a list that doesn't exist? I'm not sure what I'm supposed to do.
- </paragraph>
-</document>
+<p>
+ The directions of routeTo() (which I am considering to be a searching function) state that we can't use a new expression to make a list in the recursive case. But if we don't make a new list, then how are we supposed to add elements to a list that doesn't exist? I'm not sure what I'm supposed to do.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  It does not say that you can't declare a List variable, it just say you don't need an expression like
- </paragraph>
- <paragraph>
-  new LinkedList&lt;Person&gt;
- </paragraph>
- <paragraph>
-  Suppose you have a recursive call on function H1N1RouteTo. What does it return?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The recursive call returns the path from root to the desired node.
- </paragraph>
- <paragraph>
-  So, would I be able to initially declare a variable like:         LinkedList&lt;Person&gt; thepath;
- </paragraph>
- <paragraph>
-  and then just append/prepend to it? Would that work?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Well, make that an assignment declaration --assign to it the results of a recursive call.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   It does not say that you can't declare a List variable, it just say you don't need an expression like
+  </p>
+  <p>
+   new LinkedList&lt;Person&gt;
+  </p>
+  <p>
+   Suppose you have a recursive call on function H1N1RouteTo. What does it return?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    The recursive call returns the path from root to the desired node.
+   </p>
+   <p>
+    So, would I be able to initially declare a variable like:         LinkedList&lt;Person&gt; thepath;
+   </p>
+   <p>
+    and then just append/prepend to it? Would that work?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

@@ -13,149 +13,141 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm currently reading the "cast" pdf in javahypertext, and it says that:
- </paragraph>
- <paragraph>
-  the cast (S) ob is OK if ob contains a pointer to an S object but is not ok if it contains a pointer to an object of class Object. In the latter case, at runtime, a ClassCastException will be thrown.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  I'm confused because if ob already contains a pointer to an S object, what is the point of casting ob to S? Isn't the purpose of making a cast on ob to cast a pointer to the Object ob to S?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I'm currently reading the "cast" pdf in javahypertext, and it says that:
+</p>
+<p>
+ the cast (S) ob is OK if ob contains a pointer to an S object but is not ok if it contains a pointer to an object of class Object. In the latter case, at runtime, a ClassCastException will be thrown.
+</p>
+<p>
+ I'm confused because if ob already contains a pointer to an S object, what is the point of casting ob to S? Isn't the purpose of making a cast on ob to cast a pointer to the Object ob to S?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bahaa Kotb (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   This is just for the compiler to know that if you do
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   S secret = (S) ob;
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   then you can use methods in class S using the secret variable without the compiler raising an error, let's assume method .cry() is in Class S.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   if you did ob.cry() you'd get a compiler error (compile time reference rule) Even though the dynamic type is an instance of Class S.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   but if you did ((S)ob).cry() you'd not get an error.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  What's the difference between casting S secret = (S) ob and then performing method cry() on it versus doing exactly that but in one step?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Nothing,
- </paragraph>
- <paragraph>
-  You can do ((S)ob).cry() and that would work in the compiler's eyes, note that if ob didn't have a partition of Class S you'd get an error in runtime.
- </paragraph>
- <paragraph>
-  ^I'm assuming this is what you meant in one step right?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Sorry I think I misworded my question. you said that the first method of casting S secret = (S) ob and then doing ob.cry() would not compile, but doing ((S)ob).cry() would compile. my question was why would  ((S)ob).cry()  compile and the other not compile when they're essentially the same thing?
- </paragraph>
- <paragraph>
-  Also my orignal post was basically asking
-  <italic>
-   why
-  </italic>
-  we would get an error in runtime if ob didn't have a pointer to Class S,  (because isn't the point of casting ob to MAKE it have a pointer to class S rather than that being a requirement)?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  For your first question, use javahypertext for "Compile-time reference rule"
- </paragraph>
- <paragraph>
-  2nd) Because if it didn't have a pointer to S and you tried to cast it to S you'd get an error.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Mohamed Cherchar (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Thanks! I understand it now!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  i don't think you're understanding my question but thank you for trying :)
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   What's the difference between casting S secret = (S) ob and then performing method cry() on it versus doing exactly that but in one step?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Bahaa Kotb (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Nothing,
+   </p>
+   <p>
+    You can do ((S)ob).cry() and that would work in the compiler's eyes, note that if ob didn't have a partition of Class S you'd get an error in runtime.
+   </p>
+   <p>
+    ^I'm assuming this is what you meant in one step right?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Sorry I think I misworded my question. you said that the first method of casting S secret = (S) ob and then doing ob.cry() would not compile, but doing ((S)ob).cry() would compile. my question was why would  ((S)ob).cry()  compile and the other not compile when they're essentially the same thing?
+    </p>
+    <p>
+     Also my orignal post was basically asking
+     <i>
+      why
+     </i>
+     we would get an error in runtime if ob didn't have a pointer to Class S,  (because isn't the point of casting ob to MAKE it have a pointer to class S rather than that being a requirement)?
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Bahaa Kotb (student)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      For your first question, use javahypertext for "Compile-time reference rule"
+     </p>
+     <p>
+      2nd) Because if it didn't have a pointer to S and you tried to cast it to S you'd get an error.
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 12em;">
+      <h3>
+       Author: Anonymous
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       i don't think you're understanding my question but thank you for trying :)
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 12em;">
+       <h3>
+        Author: Mohamed Cherchar (student)
+       </h3>
+       <h3>
+        Vote Count: 0
+       </h3>
+       <p>
+        Thanks! I understand it now!
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

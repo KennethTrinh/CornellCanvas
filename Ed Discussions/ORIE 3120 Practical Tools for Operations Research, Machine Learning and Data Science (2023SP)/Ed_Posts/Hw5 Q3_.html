@@ -13,121 +13,117 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Are we supposed to use the data from the original dataframe or should we keep working with the data we created on question 2? Also if we are supposed to divide the sum of trip distances by the sum of trip durations to find the velocity for this problem, wouldn't it be just a number instead of a whole column? Or should we find the velocities for those sums grouped by each specific day?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Hugo Mainguy (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ Are we supposed to use the data from the original dataframe or should we keep working with the data we created on question 2? Also if we are supposed to divide the sum of trip distances by the sum of trip durations to find the velocity for this problem, wouldn't it be just a number instead of a whole column? Or should we find the velocities for those sums grouped by each specific day?
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Hugo Mainguy (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Hi Julio,
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You should be working with the cleaned up dataframe you created in the previous question (for 2b). And yes, you should get just a number (well, two numbers, because there are two approaches that will give you slightly different results).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Helen Ma (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  If it's just one number, how do we get different values to plot?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Hugo Mainguy (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  You don't need to plot anything for this, just output the two numbers. Let me know if anything does not make sense!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Reid Fleishman (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The question shows an example of a plot of velocity v.s. hour of day.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Hugo Mainguy (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Oh, I was thinking about Q2, I'm really sorry. One second.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Hugo Mainguy (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  The general process is as follows:
- </paragraph>
- <paragraph>
-  Take the original dataframe
- </paragraph>
- <paragraph>
-  Filter out trips on the weekend and longer than an hour
- </paragraph>
- <paragraph>
-  Group by hour of the day
- </paragraph>
- <paragraph>
-  Sum over all trip durations and distances
- </paragraph>
- <paragraph>
-  Then for each hour, compute the average velocity (don't do this before the previous step).
- </paragraph>
- <paragraph>
-  And then plot.
- </paragraph>
- <paragraph>
-  Hope this helps - if not let me know, and very sorry about the earlier confusion.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Helen Ma (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   If it's just one number, how do we get different values to plot?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Hugo Mainguy (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    You don't need to plot anything for this, just output the two numbers. Let me know if anything does not make sense!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Reid Fleishman (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     The question shows an example of a plot of velocity v.s. hour of day.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Hugo Mainguy (staff)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      Oh, I was thinking about Q2, I'm really sorry. One second.
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 12em;">
+      <h3>
+       Author: Hugo Mainguy (staff)
+      </h3>
+      <h3>
+       Vote Count: 1
+      </h3>
+      <p>
+       The general process is as follows:
+      </p>
+      <p>
+       Take the original dataframe
+      </p>
+      <p>
+       Filter out trips on the weekend and longer than an hour
+      </p>
+      <p>
+       Group by hour of the day
+      </p>
+      <p>
+       Sum over all trip durations and distances
+      </p>
+      <p>
+       Then for each hour, compute the average velocity (don't do this before the previous step).
+      </p>
+      <p>
+       And then plot.
+      </p>
+      <p>
+       Hope this helps - if not let me know, and very sorry about the earlier confusion.
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

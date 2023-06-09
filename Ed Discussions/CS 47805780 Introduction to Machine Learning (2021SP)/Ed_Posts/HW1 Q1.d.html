@@ -13,30 +13,26 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Why is the version space equal to 2^(12-5)? Where did the 5 come from? Is it the number of training examples?
- </paragraph>
-</document>
+<p>
+ Why is the version space equal to 2^(12-5)? Where did the 5 come from? Is it the number of training examples?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Raahi Menon (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Raahi Menon (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   We know that the hypothesis space is size $2^{12}$. However, this includes many hypothesis which map the 5 instances in the table to the incorrect/inconsistent label. Since the version space is the set of all consistent hypotheses, we must remove all the hypotheses mapping these to the wrong label. There is a 2:1 ratio for each feature vector in the table from hypothesis space to version space - 2 in the hypothesis space since labels are binary, and 1 in the version space since only one is correct. Since there are 5, we must therefore divide by 2 five times (divide by $2^5$).
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Another way to think about this is that we have already decided the labels for these instances. Since we started with 12, there are 12-5= 7 remaining labels for which the label doesn't matter (there are two possible consistent labels for). So there are $2^7$ total consistent classifiers.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

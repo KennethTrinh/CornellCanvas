@@ -13,312 +13,313 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  For the final project of this course, I plan to examine discourse in comment threads for technical conversations, especially as it pertains to how natural language is used to communicate technical code concepts. The setting in which I would like to examine this is Stack Overflow, an online forum for asking and answering programming questions. I have two preliminary hypotheses that I am considering exploring:
- </paragraph>
- <paragraph>
-  <italic>
-   H1: Helpful information from follow-up comment chains on approved StackOverflow answers comes from multiple comments built atop each other rather than any single comment in isolation.
-  </italic>
-  The underlying motivation for this hypothesis is to examine thread discourse structure of unstructured follow-up comments. Understanding and prediction of comment structure may lend itself to summarization-adjacent projects that take the information learned from unstructured comment chains and generate it into a format that is useful for other StackOverflow users or other learning models. Before that, however, we examine what the structure of helpful comment threads look like.
- </paragraph>
- <paragraph>
-  Language features and processing techniques to test this hypothesis may include searching for certain keywords or question-answer token matching in comments, sentiment analysis to determine frustration or satisfaction in comments, and CRFs to learn and model structure in the thread. Feasibility tests for this hypothesis involve the following: Run initial experiments checking for usage of the word “thanks”-- does it indicate that a line of questions has been resolved? Run initial experiments checking for presence of questions or other key words, as well as presence of repeated users in follow-up comments-- these may indicate back-and-forth Q&amp;A. Read prior works for structure prediction (e.g.
-  <link href="https://ojs.aaai.org/index.php/ICWSM/article/view/14122"/>
-  https://ojs.aaai.org/index.php/ICWSM/article/view/14122,
+<p>
+ For the final project of this course, I plan to examine discourse in comment threads for technical conversations, especially as it pertains to how natural language is used to communicate technical code concepts. The setting in which I would like to examine this is Stack Overflow, an online forum for asking and answering programming questions. I have two preliminary hypotheses that I am considering exploring:
+</p>
+<p>
+ <i>
+  H1: Helpful information from follow-up comment chains on approved StackOverflow answers comes from multiple comments built atop each other rather than any single comment in isolation.
+ </i>
+ The underlying motivation for this hypothesis is to examine thread discourse structure of unstructured follow-up comments. Understanding and prediction of comment structure may lend itself to summarization-adjacent projects that take the information learned from unstructured comment chains and generate it into a format that is useful for other StackOverflow users or other learning models. Before that, however, we examine what the structure of helpful comment threads look like.
+</p>
+<p>
+ Language features and processing techniques to test this hypothesis may include searching for certain keywords or question-answer token matching in comments, sentiment analysis to determine frustration or satisfaction in comments, and CRFs to learn and model structure in the thread. Feasibility tests for this hypothesis involve the following: Run initial experiments checking for usage of the word “thanks”-- does it indicate that a line of questions has been resolved? Run initial experiments checking for presence of questions or other key words, as well as presence of repeated users in follow-up comments-- these may indicate back-and-forth Q&amp;A. Read prior works for structure prediction (e.g.
+ <a href="https://ojs.aaai.org/index.php/ICWSM/article/view/14122">
+  https://ojs.aaai.org/index.php/ICWSM/article/view/14122
+  ,
   <link href="https://arxiv.org/pdf/1707.07660.pdf"/>
   https://arxiv.org/pdf/1707.07660.pdf,
   <link href="https://www.aaai.org/Papers/ICWSM/2008/ICWSM08-026.pdf"/>
   https://www.aaai.org/Papers/ICWSM/2008/ICWSM08-026.pdf ), determine if any may be appropriate for this task, and perform necessary data preprocessing.
- </paragraph>
- <paragraph>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  <italic>
-   H2: When a StackOverflow answer has an explicit code snippet, there is a positive correlation between answer score and density of matched tokens between the code snippet and the natural language of the answer.
-  </italic>
-  This may imply that when a StackOverflow answer closely maps natural language explanation to programming language code, or in other words the NL is more clearly “ground”  in the PL, it is better understood by StackOverflow users. Further experiments from this hypothesis may explore grounding natural language in executable code, which would allow a model to represent and reason about both in conjunction. This has implications for powerful NL-to-PL and PL-to-NL models.
- </paragraph>
- <paragraph>
-  Language features and processing techniques to test this hypothesis may involve token matching and measures of relative token density, as well as sentiment analysis of follow-up comments to determine satisfaction of other users with the answer. One test for feasibility is an initial analysis determining the value of the `score` metric: is it a meaningful representation of answer quality? We can manually check the answers for current functionality, sentiment analysis of follow-up comments and whether the OP approved the answer.
- </paragraph>
- <paragraph>
-  <break>
-  </break>
-  Team: Celine
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  Data: StackExchange - StackOverflow section:
-  <link href="https://archive.org/details/stackexchange"/>
-  https://archive.org/details/stackexchange
- </paragraph>
- <paragraph>
-  Prior works that served as inspiration:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    <link href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=8906075"/>
-    Reading Answers on Stack Overflow: Not Enough!
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    <link href="https://arxiv.org/pdf/1707.07660.pdf"/>
-    Thread Reconstruction in Conversational Data using Neural Coherence Models
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    <link href="https://www.aaai.org/Papers/ICWSM/2008/ICWSM08-026.pdf"/>
-    Recovering Implicit Thread Structure in Newsgroup Style Conversations
-   </paragraph>
-  </list-item>
- </list>
-</document>
-<h3>
- Author: Celine Lee (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  A3 feasibility check results:
- </paragraph>
- <paragraph>
-  For my feasibility test, my goal was to determine the value of the
-  <code>
-   score
-  </code>
-  assigned to a StackOverflow answer. This is broken down into three main tasks:
- </paragraph>
- <list style="number">
-  <list-item>
-   <paragraph>
-    Obtain the data, write code to parse and combine the different components of the data: if they reference each other, combine question, answer, and user data from different files into one full data point.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Examine whether
-    <code>
-     score
-    </code>
-    correlates with certain other perceived measures of user or post quality such as
-    <code>
-     view count
-    </code>
-    or answerer
-    <code>
-     reputation
-    </code>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Manually examine high-scoring answers to see if there are some shared qualities or complications that need to be accounted for in the experiment.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Step (1) is complete. However, the data that I am working with is huge, and running the code to open the file, parse through it, create a data structure, and write the results back to another file takes a very long time. I will need to use some determined filter, determined with step (3), to either limit the amount of data or segment the data that I will use.
- </paragraph>
- <paragraph>
-  Step (2) produced the following results:
- </paragraph>
- <figure>
-  <image height="423.0267111853089" src="https://static.us.edusercontent.com/files/skq2l6hLCSLHxG8OKtl0Mb5q" width="683.0000000000001"/>
- </figure>
- <figure>
-  <image height="423.0267111853089" src="https://static.us.edusercontent.com/files/8aqbnfkZI4pKpe2Psobji3nk" width="683.0000000000001"/>
- </figure>
- <figure>
-  <image height="423.0267111853089" src="https://static.us.edusercontent.com/files/zXRzNhrecqb5XFLYcfd2H8pe" width="683.0000000000001"/>
- </figure>
- <paragraph>
-  Which is to say that I do not think there are strong correlations between score and these perceived metrics. Even comparing score to view count, there does not seem to be a strong correlation. This is partially disappointing because it would have been nice to see at least some indication that a high-reputation user is likely to leave a high-scoring response. That would mean that I can put some trust into the
-  <code>
-   score
-  </code>
-  metric. However, this is also reassuring because my hypothesis is really about the
-  <italic>
-   answer,
-  </italic>
-  not the
-  <italic>
-   user
-  </italic>
-  . This is partially discussed with Lillian today during our meeting, and I will post more notes about in the follow-up comment with notes from the meeting.
- </paragraph>
- <paragraph>
-  Step (3) is in the works. Preliminary findings are:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    the
-    <code>
-     &lt;code&gt;...&lt;/code&gt;
-    </code>
-    tag that I have been using to separate text from code in the posts includes single-word "code" that is embedded in the text and is not actually code. I would consider these to be text, so I need to fix my parsing.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    It seems that the highest-scoring answers use additional markdown information such as headers to assist their explanations.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    There is so much data, and I have been removing a subset to examine for the feasibility test, but I will need a better filter for the data I will use in the experiment. Perhaps use the
-    <code>
-     tags
-    </code>
-    information.
-   </paragraph>
-  </list-item>
- </list>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Celine Lee (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Notes from feasibility meeting with Lillian:
- </paragraph>
- <paragraph>
-  On selecting a subset of the data:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    perhaps toss out the data points with low view count (or are new) because they might not have enough time to "settle" into a score or helpful answers
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    perhaps only use answers given by low-reputation users. This might be more likely to give us "bad" and "good" answers, both of which we need for this project
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    perhaps select 1000 questions with the most answers, with hopes that among those many answers there are good and bad... and the common question serves as a control
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  On the
-  <code>
-   reputation
-  </code>
-  data: Is the reputation data collected the reputation of the user at the time of making the post? --&gt; No. This is a complication.
- </paragraph>
- <paragraph>
-  On parsing the data:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    does quoted text (from a previous comment or answer or question) count as part of the text in the answer?
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    what do we do when a special character is spelled out? e.g. if the code uses
-    <code>
-     ~
-    </code>
-    but the text spells out
-    <code>
-     tilde
-    </code>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    will need a lexer to process the code in order to do away with complications caused by unstandardized use of white spaces, parentheses, etc...
-   </paragraph>
-   <list style="bullet">
-    <list-item>
-     <paragraph>
-      subsequently will probably want to choose to work with a language for which I have a lexer
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      (alt: consider shell, which has strict standards for syntax)
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    I asked about "stop words" in code and whether I should remove them when doing my token density matching measurements. Lillian recommended against it, for the same reason as in the stop words lecture, which is that there is semantic value in common tokens, so we should keep them.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  On the feasibility test: it's actually reassuring that the user reputation does not correlate perfectly with the answer score, because if it did then that would mean the question is answered: good scores come from highly reputed users-- not necessarily some measure of matching between natural language and code in the written answers.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+ </a>
+</p>
+<p>
+ <break>
+ </break>
+</p>
+<p>
+ <i>
+  H2: When a StackOverflow answer has an explicit code snippet, there is a positive correlation between answer score and density of matched tokens between the code snippet and the natural language of the answer.
+ </i>
+ This may imply that when a StackOverflow answer closely maps natural language explanation to programming language code, or in other words the NL is more clearly “ground”  in the PL, it is better understood by StackOverflow users. Further experiments from this hypothesis may explore grounding natural language in executable code, which would allow a model to represent and reason about both in conjunction. This has implications for powerful NL-to-PL and PL-to-NL models.
+</p>
+<p>
+ Language features and processing techniques to test this hypothesis may involve token matching and measures of relative token density, as well as sentiment analysis of follow-up comments to determine satisfaction of other users with the answer. One test for feasibility is an initial analysis determining the value of the `score` metric: is it a meaningful representation of answer quality? We can manually check the answers for current functionality, sentiment analysis of follow-up comments and whether the OP approved the answer.
+</p>
+<p>
+ <break>
+ </break>
+ Team: Celine
+ <break>
+ </break>
+</p>
+<p>
+ Data: StackExchange - StackOverflow section:
+ <link href="https://archive.org/details/stackexchange"/>
+ https://archive.org/details/stackexchange
+</p>
+<p>
+ Prior works that served as inspiration:
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   <link href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=8906075"/>
+   Reading Answers on Stack Overflow: Not Enough!
+  </p>
+ </li>
+ <li>
+  <p>
+   <link href="https://arxiv.org/pdf/1707.07660.pdf"/>
+   Thread Reconstruction in Conversational Data using Neural Coherence Models
+  </p>
+ </li>
+ <li>
+  <p>
+   <link href="https://www.aaai.org/Papers/ICWSM/2008/ICWSM08-026.pdf"/>
+   Recovering Implicit Thread Structure in Newsgroup Style Conversations
+  </p>
+ </li>
+</list>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Just stumbled across this, as semi-related.
   <break>
   </break>
   <break>
   </break>
   Panthaplackel, S., Gligoric, M., Mooney, R. J., &amp; Li, J. J. (2020). Associating Natural Language Comment and Source Code Entities.
-  <italic>
+  <i>
    Proceedings of the AAAI Conference on Artificial Intelligence
-  </italic>
+  </i>
   ,
-  <italic>
+  <i>
    34
-  </italic>
+  </i>
   (05), 8592-8599.
-  <link href="Panthaplackel, S., Gligoric, M., Mooney, R. J., &amp; Li, J. J. (2020). Associating Natural Language Comment and Source Code Entities. Proceedings of the AAAI Conference on Artificial Intelligence, 34(05), 8592-8599. https://doi.org/10.1609/aaai.v34i05.6382"/>
-  https://doi.org/10.1609/aaai.v34i05.6382
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Celine Lee (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  This is great, thank you! It could be interesting to see whether their model could be applied in StackOverflow (SO)-- that is, if the model associates noun phrases (NPs) in a comment with code tokens in the code, would that same model associate NPs in SO text with code tokens in that same thread? I imagine there may be more complications, as there is probably more text in a SO post than in a code comment, and some SO text may not relate to the code at all... definitely something for me to look into. Thanks!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+  <a href="Panthaplackel, S., Gligoric, M., Mooney, R. J., &amp; Li, J. J. (2020). Associating Natural Language Comment and Source Code Entities. Proceedings of the AAAI Conference on Artificial Intelligence, 34(05), 8592-8599. https://doi.org/10.1609/aaai.v34i05.6382">
+   https://doi.org/10.1609/aaai.v34i05.6382
+  </a>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Celine Lee (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   This is great, thank you! It could be interesting to see whether their model could be applied in StackOverflow (SO)-- that is, if the model associates noun phrases (NPs) in a comment with code tokens in the code, would that same model associate NPs in SO text with code tokens in that same thread? I imagine there may be more complications, as there is probably more text in a SO post than in a code comment, and some SO text may not relate to the code at all... definitely something for me to look into. Thanks!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Celine Lee (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Notes from feasibility meeting with Lillian:
+  </p>
+  <p>
+   On selecting a subset of the data:
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     perhaps toss out the data points with low view count (or are new) because they might not have enough time to "settle" into a score or helpful answers
+    </p>
+   </li>
+   <li>
+    <p>
+     perhaps only use answers given by low-reputation users. This might be more likely to give us "bad" and "good" answers, both of which we need for this project
+    </p>
+   </li>
+   <li>
+    <p>
+     perhaps select 1000 questions with the most answers, with hopes that among those many answers there are good and bad... and the common question serves as a control
+    </p>
+   </li>
+  </list>
+  <p>
+   On the
+   <code>
+    reputation
+   </code>
+   data: Is the reputation data collected the reputation of the user at the time of making the post? --&gt; No. This is a complication.
+  </p>
+  <p>
+   On parsing the data:
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     does quoted text (from a previous comment or answer or question) count as part of the text in the answer?
+    </p>
+   </li>
+   <li>
+    <p>
+     what do we do when a special character is spelled out? e.g. if the code uses
+     <code>
+      ~
+     </code>
+     but the text spells out
+     <code>
+      tilde
+     </code>
+    </p>
+   </li>
+   <li>
+    <p>
+     will need a lexer to process the code in order to do away with complications caused by unstandardized use of white spaces, parentheses, etc...
+    </p>
+    <list style="bullet">
+     <li>
+      <p>
+       subsequently will probably want to choose to work with a language for which I have a lexer
+      </p>
+     </li>
+     <li>
+      <p>
+       (alt: consider shell, which has strict standards for syntax)
+      </p>
+     </li>
+    </list>
+   </li>
+   <li>
+    <p>
+     I asked about "stop words" in code and whether I should remove them when doing my token density matching measurements. Lillian recommended against it, for the same reason as in the stop words lecture, which is that there is semantic value in common tokens, so we should keep them.
+    </p>
+   </li>
+  </list>
+  <p>
+   On the feasibility test: it's actually reassuring that the user reputation does not correlate perfectly with the answer score, because if it did then that would mean the question is answered: good scores come from highly reputed users-- not necessarily some measure of matching between natural language and code in the written answers.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Celine Lee (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    A3 feasibility check results:
+   </p>
+   <p>
+    For my feasibility test, my goal was to determine the value of the
+    <code>
+     score
+    </code>
+    assigned to a StackOverflow answer. This is broken down into three main tasks:
+   </p>
+   <list style="number">
+    <li>
+     <p>
+      Obtain the data, write code to parse and combine the different components of the data: if they reference each other, combine question, answer, and user data from different files into one full data point.
+     </p>
+    </li>
+    <li>
+     <p>
+      Examine whether
+      <code>
+       score
+      </code>
+      correlates with certain other perceived measures of user or post quality such as
+      <code>
+       view count
+      </code>
+      or answerer
+      <code>
+       reputation
+      </code>
+     </p>
+    </li>
+    <li>
+     <p>
+      Manually examine high-scoring answers to see if there are some shared qualities or complications that need to be accounted for in the experiment.
+     </p>
+    </li>
+   </list>
+   <p>
+    Step (1) is complete. However, the data that I am working with is huge, and running the code to open the file, parse through it, create a data structure, and write the results back to another file takes a very long time. I will need to use some determined filter, determined with step (3), to either limit the amount of data or segment the data that I will use.
+   </p>
+   <p>
+    Step (2) produced the following results:
+   </p>
+   <figure>
+    <image height="423.0267111853089" src="https://static.us.edusercontent.com/files/skq2l6hLCSLHxG8OKtl0Mb5q" width="683.0000000000001"/>
+   </figure>
+   <figure>
+    <image height="423.0267111853089" src="https://static.us.edusercontent.com/files/8aqbnfkZI4pKpe2Psobji3nk" width="683.0000000000001"/>
+   </figure>
+   <figure>
+    <image height="423.0267111853089" src="https://static.us.edusercontent.com/files/zXRzNhrecqb5XFLYcfd2H8pe" width="683.0000000000001"/>
+   </figure>
+   <p>
+    Which is to say that I do not think there are strong correlations between score and these perceived metrics. Even comparing score to view count, there does not seem to be a strong correlation. This is partially disappointing because it would have been nice to see at least some indication that a high-reputation user is likely to leave a high-scoring response. That would mean that I can put some trust into the
+    <code>
+     score
+    </code>
+    metric. However, this is also reassuring because my hypothesis is really about the
+    <i>
+     answer,
+    </i>
+    not the
+    <i>
+     user
+    </i>
+    . This is partially discussed with Lillian today during our meeting, and I will post more notes about in the follow-up comment with notes from the meeting.
+   </p>
+   <p>
+    Step (3) is in the works. Preliminary findings are:
+   </p>
+   <list style="bullet">
+    <li>
+     <p>
+      the
+      <code>
+       &lt;code&gt;...&lt;/code&gt;
+      </code>
+      tag that I have been using to separate text from code in the posts includes single-word "code" that is embedded in the text and is not actually code. I would consider these to be text, so I need to fix my parsing.
+     </p>
+    </li>
+    <li>
+     <p>
+      It seems that the highest-scoring answers use additional markdown information such as headers to assist their explanations.
+     </p>
+    </li>
+    <li>
+     <p>
+      There is so much data, and I have been removing a subset to examine for the feasibility test, but I will need a better filter for the data I will use in the experiment. Perhaps use the
+      <code>
+       tags
+      </code>
+      information.
+     </p>
+    </li>
+   </list>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

@@ -13,31 +13,27 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I keep receiving this feedback from the autohelper about Elephant.java:
- </paragraph>
- <pre>Failure in testassert(): org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==&gt; expected: &lt;java.lang.AssertionError&gt; but was: &lt;java.lang.NullPointerException&gt;</pre>
- <paragraph>
-  I'm having trouble figuring out what my issue is. My understanding is that NullPointer is being thrown because thrown because null is being used in place of an object or one of my assert statements is wrong?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I keep receiving this feedback from the autohelper about Elephant.java:
+</p>
+<pre>Failure in testassert(): org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==&gt; expected: &lt;java.lang.AssertionError&gt; but was: &lt;java.lang.NullPointerException&gt;</pre>
+<p>
+ I'm having trouble figuring out what my issue is. My understanding is that NullPointer is being thrown because thrown because null is being used in place of an object or one of my assert statements is wrong?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Brian Jeong (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Brian Jeong (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   A NullPointerException is when an object is null and you are trying to perform some operations on it. Check that your code isn't handling a null object.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

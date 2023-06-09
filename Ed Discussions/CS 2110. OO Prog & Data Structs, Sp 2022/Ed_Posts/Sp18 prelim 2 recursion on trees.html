@@ -13,31 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hello, for this question, would writing the following statement inside the for-each loop also work? If not, could you please explain why? Thank you!
- </paragraph>
- <paragraph>
-  <bold>
-   mGen = 1 + Math.max (mGen, s.MaxGen());
-  </bold>
- </paragraph>
- <figure>
-  <image height="358.7022587268994" src="https://static.us.edusercontent.com/files/MnnUuEx7FSjNKplTKOfht3N9" width="424"/>
- </figure>
-</document>
+<p>
+ Hello, for this question, would writing the following statement inside the for-each loop also work? If not, could you please explain why? Thank you!
+</p>
+<p>
+ <b>
+  mGen = 1 + Math.max (mGen, s.MaxGen());
+ </b>
+</p>
+<figure>
+ <image height="358.7022587268994" src="https://static.us.edusercontent.com/files/MnnUuEx7FSjNKplTKOfht3N9" width="424"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Ori Ben Yossef (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  <bold>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Ori Ben Yossef (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
+  <b>
    mGen =
    <underline>
     1 +
@@ -47,22 +45,20 @@
     mGen
    </underline>
    , s.MaxGen());
-  </bold>
- </paragraph>
- <paragraph>
+  </b>
+ </p>
+ <p>
   The line you proposed sets mGen equal to 1 plus
-  <italic>
+  <i>
    at least
-  </italic>
+  </i>
   mGen (i.e., mGen, or else the other, larger, quantity). Equivalently, for each iteration in the loop, the line sets mGen equal to mGen plus
-  <italic>
+  <i>
    at least
-  </italic>
+  </i>
   1. So, by the end of the loop, you have incremented mGen for every immediate child, which is not what you intended to do. So, no, this line does not work.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

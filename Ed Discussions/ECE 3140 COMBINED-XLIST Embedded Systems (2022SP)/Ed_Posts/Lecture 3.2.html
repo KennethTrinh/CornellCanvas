@@ -13,36 +13,32 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  For page 8, I don't understand why ADR R14, cont1 and MOV PC, R14 do not allow "interworking". If the caller is in one mode and the callee is in the other mode, how can this not be "interworking"? Thank you so much in advance.
- </paragraph>
-</document>
+<p>
+ For page 8, I don't understand why ADR R14, cont1 and MOV PC, R14 do not allow "interworking". If the caller is in one mode and the callee is in the other mode, how can this not be "interworking"? Thank you so much in advance.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Nils Napp (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Nils Napp (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The problem is that ADR R14 does not set the last bit correctly. Say, the function is stored at 0x0464, and is written in Thumb (like everything we do). ADR will compute 0x0464 and put that into R14. But if you did a BX R14 after that the processor would crash, since the even address would specify a 32-bit ARM instruction. If you did B LABEL, then the assembler would correctly put 0x046
-  <bold>
+  <b>
    5
-  </bold>
+  </b>
   (i.e. the last bit set to indicate thumb mode) into the branch target to indicate the instruction mode. Similarly if you directly try to put an odd number into the PC, the processor might complain since it expects the PC to be word aligned.
   <break>
   </break>
   <break>
   </break>
   So to deal correctly with the execution modes, you should use the "interworking aware" functions, bl, bx, and pop{PC}.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

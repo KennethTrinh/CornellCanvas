@@ -13,62 +13,56 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi,
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  I was wondering how to interpet this error:
- </paragraph>
- <paragraph>
-  Failure in testAsserts(): java.lang.AssertionError: expected java.lang.AssertionError to be thrown, but nothing was thrown
- </paragraph>
- <paragraph>
-  Does this mean I'm missing a specific assertThrows? Or is one of my asserts incorrect (in one of the ways described in #150) in Elephant.java?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Thanks!
- </paragraph>
-</document>
+<p>
+ Hi,
+</p>
+<p>
+ I was wondering how to interpet this error:
+</p>
+<p>
+ Failure in testAsserts(): java.lang.AssertionError: expected java.lang.AssertionError to be thrown, but nothing was thrown
+</p>
+<p>
+ Does this mean I'm missing a specific assertThrows? Or is one of my asserts incorrect (in one of the ways described in #150) in Elephant.java?
+</p>
+<p>
+ Thanks!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Maximilian Griner (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes, this means that most likely you're missing an assert statement for a particular precondition, or one of your assert statements is wrong and therefore not triggered by the test case.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   If the AutoHelper feedback was for "ElephantTest.java", then the issue must be in that file (your "Elephant.java" is not used during that phase of our testing).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Let's consider the error message from that point of view: your
   <code>
    ElephantTest
   </code>
   expected an `AssertionError to be thrown, but our Elephant did not throw one under those conditions.  This suggests that your test procedure is expecting some behavior that is not required by the project description (i.e., you think some input is invalid, but it's actually okay).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Maximilian Griner (None)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Yes, this means that most likely you're missing an assert statement for a particular precondition, or one of your assert statements is wrong and therefore not triggered by the test case.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

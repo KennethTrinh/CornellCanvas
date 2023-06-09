@@ -13,83 +13,83 @@
 <h3>
  Vote Count: 6
 </h3>
-<document version="2.0">
- <paragraph>
-  Hello, after submitting our A4, we received the following message from Java Autohelper:
- </paragraph>
- <figure>
-  <image height="26.27755376344086" src="https://static.us.edusercontent.com/files/mRvKCzdROFjt4Th1qI9Keexr" width="641"/>
- </figure>
- <paragraph>
-  After removing the assert statements for getNode and resubmitting, we didn't receive an error. Would this be due to an issue on our end with the code, or with the evaluation system maybe not running the assert statements? Thank you!
- </paragraph>
-</document>
+<p>
+ Hello, after submitting our A4, we received the following message from Java Autohelper:
+</p>
+<figure>
+ <image height="26.27755376344086" src="https://static.us.edusercontent.com/files/mRvKCzdROFjt4Th1qI9Keexr" width="641"/>
+</figure>
+<p>
+ After removing the assert statements for getNode and resubmitting, we didn't receive an error. Would this be due to an issue on our end with the code, or with the evaluation system maybe not running the assert statements? Thank you!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Alan Han (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  I had a same problem, the assert statements are at constant time so I don't see an issue with using them
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I am assuming this feedback was for your version of
-  <code>
-   DListTest
-  </code>
-  .  What it is saying is that your test was expecting an AssertionError to be thrown under some conditions, but our reference implementation of
-  <code>
-   DList
-  </code>
-  did not throw such an error.
- </paragraph>
- <paragraph>
-  Look carefully at the specifications for
-  <code>
-   DList
-  </code>
-  - does it ever specify a situation in which it will throw an
-  <code>
-   AssertionError
-  </code>
-  ?  If not, then you should not be testing for such behavior.
- </paragraph>
- <paragraph>
-  We handled this a little differently for A1; see
-  <link href="https://edstem.org/us/courses/7377/discussion/646454"/>
-  #435 for a discussion.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Yingjia Zhang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Yingjia Zhang (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Same problem. Has anyone figured out why?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Curran Muhlberger (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I am assuming this feedback was for your version of
+   <code>
+    DListTest
+   </code>
+   .  What it is saying is that your test was expecting an AssertionError to be thrown under some conditions, but our reference implementation of
+   <code>
+    DList
+   </code>
+   did not throw such an error.
+  </p>
+  <p>
+   Look carefully at the specifications for
+   <code>
+    DList
+   </code>
+   - does it ever specify a situation in which it will throw an
+   <code>
+    AssertionError
+   </code>
+   ?  If not, then you should not be testing for such behavior.
+  </p>
+  <p>
+   We handled this a little differently for A1; see
+   <a href="https://edstem.org/us/courses/7377/discussion/646454">
+    #435
+   </a>
+   for a discussion.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Alan Han (student)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    I had a same problem, the assert statements are at constant time so I don't see an issue with using them
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

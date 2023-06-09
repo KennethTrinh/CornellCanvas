@@ -13,63 +13,57 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  In the definition of a general linear classifier (as defined using the concept of hyperplanes), what does the weight vector w represent intuitively? I understand that, geometrically, it is the vector that begins at the origin that is perpendicular to the hyperplane that makes up our decision boundary, but beyond that I'm not sure how to understand it intuitively.
- </paragraph>
-</document>
+<p>
+ In the definition of a general linear classifier (as defined using the concept of hyperplanes), what does the weight vector w represent intuitively? I understand that, geometrically, it is the vector that begins at the origin that is perpendicular to the hyperplane that makes up our decision boundary, but beyond that I'm not sure how to understand it intuitively.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andrew Dettmer (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew Dettmer (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Visually, I like to imagine the hyperplane as my open palm. If I stick out my left hand flat, then put my right hand on it with my thumb sticking straight out away from my palm, the weight vector would be my thumb.  Points lying on my palm are defined by the weight vector given by my thumb (with a dot product = 0), as well as the point in 3D space from which my thumb starts (bottom of my right hand laying on my left palm).  If the origin were at the floor directly below my hands, the negative of the bias term would be the distance from the floor to my hands.  Hope that helps ! (happy to dive into it further if there are more specific things that you are confused about or if the visual was not helpful)
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I see, thanks for giving the visual aid!
- </paragraph>
- <paragraph>
-  So can we basically understand the weight vector as defining the "angle" at which the hyperplane lies (i.e. whichever direction our weight vector is pointing, the hyperplane will be perpendicular to that), and then we can understand the bias term as defining the offset between the hyperplane and origin ?
- </paragraph>
- <paragraph>
-  Also, why is it called the "weight" vector? What exactly is its name supposed to denote?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Effectively, the weight vector decides how much weight is given to each feature in deciding the decision boundary. The higher w_i is, the more influence x_i has on the x's classification.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I see, thanks for giving the visual aid!
+  </p>
+  <p>
+   So can we basically understand the weight vector as defining the "angle" at which the hyperplane lies (i.e. whichever direction our weight vector is pointing, the hyperplane will be perpendicular to that), and then we can understand the bias term as defining the offset between the hyperplane and origin ?
+  </p>
+  <p>
+   Also, why is it called the "weight" vector? What exactly is its name supposed to denote?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Michael Noor (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Effectively, the weight vector decides how much weight is given to each feature in deciding the decision boundary. The higher w_i is, the more influence x_i has on the x's classification.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

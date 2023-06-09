@@ -13,32 +13,28 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi all,
- </paragraph>
- <paragraph>
-  There was a minor error in the provided switch_demo.c file.
- </paragraph>
- <snippet language="c" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   PORTC-&gt;PCR[SWITCH_1_PIN] |= PORT_PCR_IRQC(0b1011); // Set up the IRQC to interrupt when logic 0
-  </snippet-file>
- </snippet>
- <paragraph>
-  was changed to:
- </paragraph>
- <snippet language="c" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   PORTC-&gt;PCR[SWITCH_1_PIN] |= PORT_PCR_IRQC(0b1011); // Set up the IRQC to interrupt on either edge (i.e. from high to low or low to high)
-  </snippet-file>
- </snippet>
- <paragraph>
-  Setting IRQC to 1011 will set the interrupt to interrupt on either edge, whereas setting it to 1000 will interrupt when the logic is zero. The comment was changed to reflect the actual behavior as coded. As a reminder, you can look at page 194 of the KL46 sub-family reference manual to see the other IRQC options to choose the behavior you want for your project
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Hi all,
+</p>
+<p>
+ There was a minor error in the provided switch_demo.c file.
+</p>
+<snippet language="c" line-numbers="true" runnable="true">
+ <snippet-file id="code">
+  PORTC-&gt;PCR[SWITCH_1_PIN] |= PORT_PCR_IRQC(0b1011); // Set up the IRQC to interrupt when logic 0
+ </snippet-file>
+</snippet>
+<p>
+ was changed to:
+</p>
+<snippet language="c" line-numbers="true" runnable="true">
+ <snippet-file id="code">
+  PORTC-&gt;PCR[SWITCH_1_PIN] |= PORT_PCR_IRQC(0b1011); // Set up the IRQC to interrupt on either edge (i.e. from high to low or low to high)
+ </snippet-file>
+</snippet>
+<p>
+ Setting IRQC to 1011 will set the interrupt to interrupt on either edge, whereas setting it to 1000 will interrupt when the logic is zero. The comment was changed to reflect the actual behavior as coded. As a reminder, you can look at page 194 of the KL46 sub-family reference manual to see the other IRQC options to choose the behavior you want for your project
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>

@@ -13,64 +13,62 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm not sure what kinds of tests I should be writing for those methods. Should I test if it correctly appends nodes containing different data types. Or that it correctly appends nodes of a certain length.
- </paragraph>
-</document>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ I'm not sure what kinds of tests I should be writing for those methods. Should I test if it correctly appends nodes containing different data types. Or that it correctly appends nodes of a certain length.
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Anonymous
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   And approximately how many test cases should we write for each method
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bahaa Kotb (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You need to make sure you've gone through all branches you could possibly go through in your method, so lets say you have if(x==1){ do this} else{ } you need to test both when x == 1 and when it doesn't equal 1 so it depends on how you write your append method to know how many test cases you need. Think of edge cases too like, what if it's empty, what if it's not? etc... You should just test that it correctly appends the node to the end of the linked list so let's say we had [1,2] and you appended 3 it should be [1,2,3] but notice how the tail would vary and how the .next values etc would change (these would usually be accounted for in your toString method and the reverse). Think of [] and you append 2, same case. But these all depend on how you write your method so that's a general good rule of thumb. Also you can't store two different data types in one linked list that's why we have the generics next to the linked list, so once you set the array to only allow integers, you can't add strings etc.. Also appending nodes of certain length don't matter at all, let it be length 0, length 20 as long as it appends correctly that's all that matters. (I would still test length 0 and length&gt;0 in my test cases to be fully covered)
   <break>
   </break>
   <break>
   </break>
   For tostring rev it should be tested while you test your append methods and the rest of your methods.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  You had a recitation on testing. What did you learn from it?
- </paragraph>
- <paragraph>
-  Read again about white box (glass box) testing and blackbox testing in JavaHyperText.
- </paragraph>
- <paragraph>
-  The recitation was not just some academic exercise with no value. It covered everything you needed to know.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   You had a recitation on testing. What did you learn from it?
+  </p>
+  <p>
+   Read again about white box (glass box) testing and blackbox testing in JavaHyperText.
+  </p>
+  <p>
+   The recitation was not just some academic exercise with no value. It covered everything you needed to know.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

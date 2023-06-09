@@ -13,39 +13,35 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Our program stops at the right place when there is an Orb, but we keep getting the message "Your code errored during the hunt phase. Please see Console output."
-  <break>
-  </break>
-  In the Console we have
-  <break>
-  </break>
-  java.lang.IllegalArgumentException: moveTo: Node must be adjacent to position
-  <break>
-  </break>
-  We are wondering what might the problem be?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Our program stops at the right place when there is an Orb, but we keep getting the message "Your code errored during the hunt phase. Please see Console output."
+ <break>
+ </break>
+ In the Console we have
+ <break>
+ </break>
+ java.lang.IllegalArgumentException: moveTo: Node must be adjacent to position
+ <break>
+ </break>
+ We are wondering what might the problem be?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   We need to know more. But here is one issue.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Are you trying to traverse a path (p1, p2, p3, ... end), where Pres Pollack is standing on node p1? Trying to move to p1 would produce such an error, since Pres Pollack is already standing on it.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,157 +13,153 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <pre>        // Second, A child of one tree cannot equal more than one child of
+<pre>        // Second, A child of one tree cannot equal more than one child of
         // tree because the names of Human's are all unique; there are no duplicates.</pre>
- <paragraph>
-  Should our code account for this? Because I know that when writing test cases, we cannot insert one human twice so that indirectly accounts for this. So should we still be worried about this?
- </paragraph>
-</document>
+<p>
+ Should our code account for this? Because I know that when writing test cases, we cannot insert one human twice so that indirectly accounts for this. So should we still be worried about this?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  You do not need to worry about this with the way we implemented covidtree.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you. Also, I am running into an infinite loop with the test case provided for equals and I am guessing that it is because of my implementation of equals in the helper function. I don't know how to fix this.
- </paragraph>
- <pre>Note that this method is going to call equals, like this: s2.equals(...).
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
+  We need more info to help. What does your helper method look like? And also the code for method equals
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Bahaa Kotb (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   You do not need to worry about this with the way we implemented covidtree.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Thank you. Also, I am running into an infinite loop with the test case provided for equals and I am guessing that it is because of my implementation of equals in the helper function. I don't know how to fix this.
+   </p>
+   <pre>Note that this method is going to call equals, like this: s2.equals(...).
         // That is a call to the method you are trying to write! We have
         // mutual recursion: equals calls help, which calls equals, which call help ...
         // (But when thinking about what a call does, USE THE SPECIFICATION to understand
         // what it does.)</pre>
- <paragraph>
-  I tried but I do not really understand how to interpret the sentence in the bracket.
- </paragraph>
- <paragraph>
-  /** Return true iff t is in s. */
- </paragraph>
- <paragraph>
-  This is what the specification says so I assumed that I just need to use the set method 'contains' but it seems somehow that contains will still call equals which is the function we are trying to write. Please help. Thank you.
- </paragraph>
- <paragraph>
-  Edit: I just realized I'm not supposed to use set methods contains or equals, so now I'm stuck
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Essentially in this helper method you want to loop through s and see where t equals s, if any of the things in s equals t return true, otherwise after looping none of them are true (t is not in s) return false.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I thought of that too, but won't it just go back to call the equals function that we are trying to write? Also
- </paragraph>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    Do not use Set's functions equals, contains, or containsAll. */
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Was an instruction given in the specification. So it has me confused.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  You should not be using the set's equal function, I think I've given enough info to help you write the method.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I'm sorry lol my test cases just keep going into an infinite loop but I have my method already written with the info you've given me.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  hard to tell what's happening, this is a time for when a computer scientist
-  <italic>
-   debugs
-  </italic>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  We need more info to help. What does your helper method look like? And also the code for method equals
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+   <p>
+    I tried but I do not really understand how to interpret the sentence in the bracket.
+   </p>
+   <p>
+    /** Return true iff t is in s. */
+   </p>
+   <p>
+    This is what the specification says so I assumed that I just need to use the set method 'contains' but it seems somehow that contains will still call equals which is the function we are trying to write. Please help. Thank you.
+   </p>
+   <p>
+    Edit: I just realized I'm not supposed to use set methods contains or equals, so now I'm stuck
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Bahaa Kotb (student)
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     Essentially in this helper method you want to loop through s and see where t equals s, if any of the things in s equals t return true, otherwise after looping none of them are true (t is not in s) return false.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 8em;">
+     <h3>
+      Author: Anonymous
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      I thought of that too, but won't it just go back to call the equals function that we are trying to write? Also
+     </p>
+     <list style="unordered">
+      <li>
+       <p>
+        Do not use Set's functions equals, contains, or containsAll. */
+       </p>
+      </li>
+     </list>
+     <p>
+      Was an instruction given in the specification. So it has me confused.
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 10em;">
+      <h3>
+       Author: Bahaa Kotb (student)
+      </h3>
+      <h3>
+       Vote Count: 1
+      </h3>
+      <p>
+       You should not be using the set's equal function, I think I've given enough info to help you write the method.
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 12em;">
+       <h3>
+        Author: Anonymous
+       </h3>
+       <h3>
+        Vote Count: 0
+       </h3>
+       <p>
+        I'm sorry lol my test cases just keep going into an infinite loop but I have my method already written with the info you've given me.
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+       <div style="text-indent: 14em;">
+        <h3>
+         Author: Bahaa Kotb (student)
+        </h3>
+        <h3>
+         Vote Count: 1
+        </h3>
+        <p>
+         hard to tell what's happening, this is a time for when a computer scientist
+         <i>
+          debugs
+         </i>
+        </p>
+        <h3>
+         ------------------------------------
+        </h3>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

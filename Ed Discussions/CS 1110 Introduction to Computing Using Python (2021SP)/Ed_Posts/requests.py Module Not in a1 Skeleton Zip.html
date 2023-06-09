@@ -13,108 +13,108 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi, I've tried running query roster a few times as I've been developing my functions just to see what I would get, but I keep getting the same import error that tells me that requests.py doesn't exit.
- </paragraph>
- <paragraph>
-  Full Traceback:
- </paragraph>
- <paragraph>
-  LiamMuecke@dhcp-vl2041-755 a1 % python3 query_roster.py
- </paragraph>
- <paragraph>
-  Traceback (most recent call last):
- </paragraph>
- <paragraph>
-  File "query_roster.py", line 15, in &lt;module&gt;
- </paragraph>
- <paragraph>
-  import requests # For accessing webpages
- </paragraph>
- <paragraph>
-  ModuleNotFoundError: No module named 'requests'
- </paragraph>
-</document>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ Hi, I've tried running query roster a few times as I've been developing my functions just to see what I would get, but I keep getting the same import error that tells me that requests.py doesn't exit.
+</p>
+<p>
+ Full Traceback:
+</p>
+<p>
+ LiamMuecke@dhcp-vl2041-755 a1 % python3 query_roster.py
+</p>
+<p>
+ Traceback (most recent call last):
+</p>
+<p>
+ File "query_roster.py", line 15, in &lt;module&gt;
+</p>
+<p>
+ import requests # For accessing webpages
+</p>
+<p>
+ ModuleNotFoundError: No module named 'requests'
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Can you also paste in your Python banner?  I'm wondering if you are running Anaconda python or a different python.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Elisabeth Finkel (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  hm, try running
-  <code>
-   python -m pip install requests
-  </code>
-  in terminal?
- </paragraph>
- <paragraph>
-  (
-  <code>
-   requests
-  </code>
-  is a common python package; you can use
-  <code>
-   pip
-  </code>
-  like this to download &amp; install some of the common python packages)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Dylan Castillo (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  this should work, but i feel like the problem might have been that OP didn't install Anaconda.
- </paragraph>
- <paragraph>
-  OP, did you install python independently (
-  <link href="https://www.cs.cornell.edu/courses/cs1110/2021sp/materials/install-python-landing.html"/>
-  without looking at the instructions in the course website) or already had it installed? If so, you should try uninstalling python and re-installing it through the instructions in the course website so you will have Anaconda, which has some important libraries used throughout the course.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   (In offline conversation, indeed, the OP is not running python 3. I am consulting with them now about options, since they did receive advice about not making Anaconda Python 3 their default.)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Students: the main issue was not using Anaconda Python 3.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Elisabeth Finkel (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   hm, try running
+   <code>
+    python -m pip install requests
+   </code>
+   in terminal?
+  </p>
+  <p>
+   (
+   <code>
+    requests
+   </code>
+   is a common python package; you can use
+   <code>
+    pip
+   </code>
+   like this to download &amp; install some of the common python packages)
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Dylan Castillo (None)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    this should work, but i feel like the problem might have been that OP didn't install Anaconda.
+   </p>
+   <p>
+    OP, did you install python independently (
+    <a href="https://www.cs.cornell.edu/courses/cs1110/2021sp/materials/install-python-landing.html">
+     without looking at the instructions in the course website)
+    </a>
+    or already had it installed? If so, you should try uninstalling python and re-installing it through the instructions in the course website so you will have Anaconda, which has some important libraries used throughout the course.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

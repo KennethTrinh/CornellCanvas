@@ -13,73 +13,69 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi, I have a question regarding performance issues with Fusion 360.
- </paragraph>
- <paragraph>
-  I have been trying to create an automaton structure that moves with cam and stick, in which rotating cam connected to a rod will produce vertical motion by pushing the stick vertically. There was no problem building the bodies, but I am having issues running animations. I have used (1) slider joints for sticks (2) revolving joint for rod &amp; cam (3) contact sets for the two to interact with each other (4) edit joint limit and add rest point for the gravity effect of the sticks.
- </paragraph>
- <paragraph>
-  I am having two problems here:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    As soon as I try to animate model after adding the rest point for the sticks, Fusion 360 seriously lags and is almost unable to demonstrate the whole motion. I am seeing only one or two frame per rotation.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    The whole purpose of my automaton is to gradually push up a spherical object so that it can slide down to again be pushed up by platforms connected to sticks. However, when I tried rendering the sphere and putting it in an animated simulation, it seems like the computer processor cannot handle such heavy rendering.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Due to these two issues, it looks like it is virtually impossible to create a demo that seamlessly shows how my automaton works. Is it fine to submit the structure anyways?
- </paragraph>
- <figure>
-  <image height="370.125" src="https://static.us.edusercontent.com/files/aKHRjpIWHJzgu9q80kJjZafX" width="658"/>
- </figure>
-</document>
+<p>
+ Hi, I have a question regarding performance issues with Fusion 360.
+</p>
+<p>
+ I have been trying to create an automaton structure that moves with cam and stick, in which rotating cam connected to a rod will produce vertical motion by pushing the stick vertically. There was no problem building the bodies, but I am having issues running animations. I have used (1) slider joints for sticks (2) revolving joint for rod &amp; cam (3) contact sets for the two to interact with each other (4) edit joint limit and add rest point for the gravity effect of the sticks.
+</p>
+<p>
+ I am having two problems here:
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   As soon as I try to animate model after adding the rest point for the sticks, Fusion 360 seriously lags and is almost unable to demonstrate the whole motion. I am seeing only one or two frame per rotation.
+  </p>
+ </li>
+ <li>
+  <p>
+   The whole purpose of my automaton is to gradually push up a spherical object so that it can slide down to again be pushed up by platforms connected to sticks. However, when I tried rendering the sphere and putting it in an animated simulation, it seems like the computer processor cannot handle such heavy rendering.
+  </p>
+ </li>
+</list>
+<p>
+ Due to these two issues, it looks like it is virtually impossible to create a demo that seamlessly shows how my automaton works. Is it fine to submit the structure anyways?
+</p>
+<figure>
+ <image height="370.125" src="https://static.us.edusercontent.com/files/aKHRjpIWHJzgu9q80kJjZafX" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Francois Guimbretiere (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Francois Guimbretiere (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Like in the real world, Fusion 360 animation will have difficulty animating your model if the two surfaces in contact are at an odd angle. In practice from the picture of your model, this means:
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     Be sure to fillet the end of your rods so that they are round;
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Limit the eccentricity of your circular cam, or use a more traditional design like the one suggested page 240 (Figure 8-2) of "Making Things Move";
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
+ <p>
   Alternatively, you can use the crank design we presented in class but the type of motions is somewhat limited.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Francois.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   <break>
   </break>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,67 +13,63 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="153.55806087936867" src="https://static.us.edusercontent.com/files/zRwxEpEfowtxVS7BsUhuZz9U" width="658"/>
- </figure>
- <paragraph>
-  For this question, they solved for Y(z)/X(z) and said that was H(z), and then converted this back into h[n]. How come we couldn't just say h[n]=.9(h[n-1]-h[n-2])+delta[n-1]? I see that it wouldn't give you the same answer as finding H(z) and then converting, but I'm just confused as to why it wouldn't work
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  And just in general, if we are given an impulse response h[n], we can always get the y[n] by plugging in y[n] for h[n] and x[n] for delta[n], but I get it can't be the other way around when its recursive? I feel like in the past I've been given y[n] and plugged in h[n] and it worked, but doing chapter 10 problems, it seems this doesn't work?
- </paragraph>
-</document>
+<figure>
+ <image height="153.55806087936867" src="https://static.us.edusercontent.com/files/zRwxEpEfowtxVS7BsUhuZz9U" width="658"/>
+</figure>
+<p>
+ For this question, they solved for Y(z)/X(z) and said that was H(z), and then converted this back into h[n]. How come we couldn't just say h[n]=.9(h[n-1]-h[n-2])+delta[n-1]? I see that it wouldn't give you the same answer as finding H(z) and then converting, but I'm just confused as to why it wouldn't work
+</p>
+<p>
+ And just in general, if we are given an impulse response h[n], we can always get the y[n] by plugging in y[n] for h[n] and x[n] for delta[n], but I get it can't be the other way around when its recursive? I feel like in the past I've been given y[n] and plugged in h[n] and it worked, but doing chapter 10 problems, it seems this doesn't work?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   To your question in the first paragraph, Yes!  it would work.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   And unfortunately I don't understand the questions(s) in your second paragraph.  :-\
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  But when I plugged in h[n] for y[n] and delta[n] for x[n], it gave me a much different answer than when I used Y(z) and X(z) to get H(z)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  It should give the same answer.
- </paragraph>
- <paragraph>
-  Remember that the $z$-transform of $\delta [ n - 1]$ is $z ^ {-1}$.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   But when I plugged in h[n] for y[n] and delta[n] for x[n], it gave me a much different answer than when I used Y(z) and X(z) to get H(z)
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: David Delchamps (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    It should give the same answer.
+   </p>
+   <p>
+    Remember that the $z$-transform of $\delta [ n - 1]$ is $z ^ {-1}$.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

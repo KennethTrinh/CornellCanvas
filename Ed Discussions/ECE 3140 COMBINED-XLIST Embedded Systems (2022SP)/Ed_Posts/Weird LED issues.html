@@ -13,25 +13,23 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm having a really weird issue with my board. My program runs perfectly on debug mode. However, when I'm running it on my board, I'm having difficulty determining how long to leave the LED on. I'm using a loop to keep it on for a certain amount of time. What's strange is that when I run the loop at a too small number of iterations, the LED just flashes once and turns off. When I use too many iterations, though, the LED turns on, and never turns off. The main problem is that there is no in between. There is a specific value where, if I run one fewer iterations than it, the LED just flashes once and turns off, and if I run the same iterations as it, the LED just stays on. I am so confused by this. Does anyone have any guidance on how I could possibly debug this? The value is 2728, if that means anything 🤷‍♀️
- </paragraph>
-</document>
+<p>
+ I'm having a really weird issue with my board. My program runs perfectly on debug mode. However, when I'm running it on my board, I'm having difficulty determining how long to leave the LED on. I'm using a loop to keep it on for a certain amount of time. What's strange is that when I run the loop at a too small number of iterations, the LED just flashes once and turns off. When I use too many iterations, though, the LED turns on, and never turns off. The main problem is that there is no in between. There is a specific value where, if I run one fewer iterations than it, the LED just flashes once and turns off, and if I run the same iterations as it, the LED just stays on. I am so confused by this. Does anyone have any guidance on how I could possibly debug this? The value is 2728, if that means anything 🤷‍♀️
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aaron Wilhelm (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aaron Wilhelm (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Without seeing your code it's hard to say exactly, but if you're just changing the value by 1 and go from a quick blink to a never ending blink then I think it's a sign that you have a bug or a logic error in your code. Try to step through (using breakpoints and the continue button when necessary) to see why the execution between the two is different
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,91 +13,89 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  Can/does the Casorati Matrix skip k values?
- </paragraph>
- <paragraph>
-  For example, for HW8 4.8.6 where the difference equation is:
- </paragraph>
- <math>
-  y_{k+2}+25y_k=0
- </math>
- <paragraph>
-  Is the Casorati matrix this, where it has the same "k + n" as the difference equation:
- </paragraph>
- <math>
-  \left[\begin{matrix}5^k\cos\left(\frac{k\pi}{2}\right)&amp;5^k\sin\left(\frac{k\pi}{2}\right)\\5^{k+2}\cos\left(\frac{\left(k+2\right)\pi}{2}\right)&amp;5^{k+2}\sin\left(\frac{\left(k+2\right)\pi}{2}\right)\end{matrix}\right]
- </math>
- <paragraph>
-  Or is it this, where it goes from k, k + 1, etc.:
- </paragraph>
- <math>
-  \left[\begin{matrix}5^k\cos\left(\frac{k\pi}{2}\right)&amp;5^k\sin\left(\frac{k\pi}{2}\right)\\5^{k+1}\cos\left(\frac{\left(k+1\right)\pi}{2}\right)&amp;5^{k+1}\sin\left(\frac{\left(k+1\right)\pi}{2}\right)\end{matrix}\right]
- </math>
-</document>
+<p>
+ Can/does the Casorati Matrix skip k values?
+</p>
+<p>
+ For example, for HW8 4.8.6 where the difference equation is:
+</p>
+<math>
+ y_{k+2}+25y_k=0
+</math>
+<p>
+ Is the Casorati matrix this, where it has the same "k + n" as the difference equation:
+</p>
+<math>
+ \left[\begin{matrix}5^k\cos\left(\frac{k\pi}{2}\right)&amp;5^k\sin\left(\frac{k\pi}{2}\right)\\5^{k+2}\cos\left(\frac{\left(k+2\right)\pi}{2}\right)&amp;5^{k+2}\sin\left(\frac{\left(k+2\right)\pi}{2}\right)\end{matrix}\right]
+</math>
+<p>
+ Or is it this, where it goes from k, k + 1, etc.:
+</p>
+<math>
+ \left[\begin{matrix}5^k\cos\left(\frac{k\pi}{2}\right)&amp;5^k\sin\left(\frac{k\pi}{2}\right)\\5^{k+1}\cos\left(\frac{\left(k+1\right)\pi}{2}\right)&amp;5^{k+1}\sin\left(\frac{\left(k+1\right)\pi}{2}\right)\end{matrix}\right]
+</math>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Adrian Lewis (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The size of the Casorati matrix is the order of the difference equation - in this case 2.  It does not skip values of  k.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  So in this case, would the Casorati matrix be the 3 x 2 matrix:
- </paragraph>
- <math>
-  \left[\begin{matrix}5^k\cos\left(\frac{k\pi}{2}\right)&amp;5^k\sin\left(\frac{k\pi}{2}\right)\\5^{k+1}\cos\left(\frac{\left(k+1\right)\pi}{2}\right)&amp;5^{k+1}\sin\left(\frac{\left(k+1\right)\pi}{2}\right)\\5^{k+2}\cos\left(\frac{\left(k+2\right)\pi}{2}\right)&amp;5^{k+2}\sin\left(\frac{\left(k+2\right)\pi}{2}\right)\end{matrix}\right]
- </math>
- <paragraph>
-  Does this mean that the Casorati matrix is not necessarily a square matrix?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Adrian Lewis (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Adrian Lewis (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   My earlier answer had a typo - sorry - just to emphasize, the order of this difference equation is 2.  The Casorati matrix is always square.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Noel D'Antonio (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  so for this particular question it would have the k and k+2 values?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Noel D'Antonio (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   so for this particular question it would have the k and k+2 values?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Adrian Lewis (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   The size of the Casorati matrix is the order of the difference equation - in this case 2.  It does not skip values of  k.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    So in this case, would the Casorati matrix be the 3 x 2 matrix:
+   </p>
+   <math>
+    \left[\begin{matrix}5^k\cos\left(\frac{k\pi}{2}\right)&amp;5^k\sin\left(\frac{k\pi}{2}\right)\\5^{k+1}\cos\left(\frac{\left(k+1\right)\pi}{2}\right)&amp;5^{k+1}\sin\left(\frac{\left(k+1\right)\pi}{2}\right)\\5^{k+2}\cos\left(\frac{\left(k+2\right)\pi}{2}\right)&amp;5^{k+2}\sin\left(\frac{\left(k+2\right)\pi}{2}\right)\end{matrix}\right]
+   </math>
+   <p>
+    Does this mean that the Casorati matrix is not necessarily a square matrix?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

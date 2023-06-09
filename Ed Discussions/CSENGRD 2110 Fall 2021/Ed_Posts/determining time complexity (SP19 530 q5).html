@@ -13,28 +13,26 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="278" src="https://static.us.edusercontent.com/files/DgpgxMIymltvPwzuGwCAo1OO" width="556"/>
- </figure>
- <paragraph>
-  why is there a worst case complexity of n^2? what would a worst case be and how is it different from any other case?
- </paragraph>
-</document>
+<figure>
+ <image height="278" src="https://static.us.edusercontent.com/files/DgpgxMIymltvPwzuGwCAo1OO" width="556"/>
+</figure>
+<p>
+ why is there a worst case complexity of n^2? what would a worst case be and how is it different from any other case?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Vladia Trinh (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Vladia Trinh (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   This question may not be in scope since it depends on hashing. Basically, counts.put(s, in + 1) usually takes constant time, so since it's done n times the function is O(n). But, in the worse case you have to resize the hash array every single time you insert an element, which means rehashing every single key in the hash map. This takes linear time, so when performed n times, it is O(n^2).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,65 +13,57 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  For dfs, isn't it supposed to be as follows: for each neighbor w of node u, add w to the front of the list/stack?
- </paragraph>
- <paragraph>
-  In prelim 2 sp 2019 7:30pm for question 6d, the solutions say to add to the end of the list (addLast). I am confused as to why this is the case.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ For dfs, isn't it supposed to be as follows: for each neighbor w of node u, add w to the front of the list/stack?
+</p>
+<p>
+ In prelim 2 sp 2019 7:30pm for question 6d, the solutions say to add to the end of the list (addLast). I am confused as to why this is the case.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Vladia Trinh (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Vladia Trinh (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   When done recursively, I don't think it matters if you add w to the front or back of a list. You just need a set to distinguish which nodes have already been visited.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Hangyu Zhou (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <figure>
-  <image height="775.108538350217" src="https://static.us.edusercontent.com/files/BSjWDJQ1hmP5iDOiIZoPqpDk" width="650"/>
- </figure>
- <paragraph>
-  But it's iterative DFS. Is the solution wrong? I think we should use stack.addFirst(root); and stack.removeFirst(); here.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Hangyu Zhou (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I see. So can I use stack.addFirst(root); and stack.removeFirst(); here? They seems to have the same behavior as using stack.addLast(root); and stack.removeLast();
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Hangyu Zhou (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <figure>
+   <image height="775.108538350217" src="https://static.us.edusercontent.com/files/BSjWDJQ1hmP5iDOiIZoPqpDk" width="650"/>
+  </figure>
+  <p>
+   But it's iterative DFS. Is the solution wrong? I think we should use stack.addFirst(root); and stack.removeFirst(); here.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Hangyu Zhou (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I see. So can I use stack.addFirst(root); and stack.removeFirst(); here? They seems to have the same behavior as using stack.addLast(root); and stack.removeLast();
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

@@ -13,25 +13,23 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  When polling, do we need to configure NVIC and write an ISR, or are those steps only for interrupts?
- </paragraph>
-</document>
+<p>
+ When polling, do we need to configure NVIC and write an ISR, or are those steps only for interrupts?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aaron Wilhelm (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aaron Wilhelm (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Those steps are only for when you're implementing interrupts. Configuring the NVIC allows the interrupt to actually trigger. And if you were to have an interrupt then you would need to write the handler for the interrupt, i.e. the ISR. If you're just doing polling though then that's not necessary
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

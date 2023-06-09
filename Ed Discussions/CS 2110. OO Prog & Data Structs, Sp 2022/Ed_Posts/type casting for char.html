@@ -13,33 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  If char is more narrow than int, why does Java still implicitly cast an int to char?
- </paragraph>
- <paragraph>
-  for example, char c = 97 gives c the value 'a'
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ If char is more narrow than int, why does Java still implicitly cast an int to char?
+</p>
+<p>
+ for example, char c = 97 gives c the value 'a'
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andrew Chen (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew Chen (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   char is narrower than int, so casting to a char from an int could potentially result in data loss (for example, try char c = 100000). We convert here because the type is char, and every char corresponds to an integer value (its ASCII value to be exact).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

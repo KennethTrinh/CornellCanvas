@@ -13,103 +13,99 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="40.528985507246375" src="https://static.us.edusercontent.com/files/Kp4Pmw13tTMBKrF7RC5v1E36" width="658"/>
- </figure>
- <paragraph>
-  why does it return ORIE 3120, not ORIE?
- </paragraph>
-</document>
+<figure>
+ <image height="40.528985507246375" src="https://static.us.edusercontent.com/files/Kp4Pmw13tTMBKrF7RC5v1E36" width="658"/>
+</figure>
+<p>
+ why does it return ORIE 3120, not ORIE?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Julia Vanputte (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Julia Vanputte (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   LTRIM will remove the specified characters from the LEFT side of the string. Since the left side of the string is 'O...' and does not contain any characters in '3120', these characters will not be removed. Ltrim will trim all characters in the specified string to trim until another character on the left is seen.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jee Yoon Kim (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  If it was ORIE3120 without a space, would that remove?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Julia Vanputte (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  No. Only if it was '3120 Orie'
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jee Yoon Kim (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I still don't get why... cuz it says 'RO' would yield IE 3120. Why would RO work then if 3120 does not work..
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Varun Gande (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  You're going to trim characters on the left side as long as they are in the second argument. So if the second argument was 'RO', we would trim an O (since it's an O or R), then we trim the R (since it's an O or R), but we don't trim the I (since it's neither an O nor an R). Therefore, the trimmed string is IE 3120.
- </paragraph>
- <paragraph>
-  If the second argument of LTRIM was '3120', we keep trimming characters as long as they are a 0, 1, 2, or 3. The first character of 'ORIE 3120' (O) is neither a 0, 1, 2, nor a 3, so nothing gets trimmed in this case.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Julia Vanputte (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  3120 would need to be on the left side of the string for it to remove it
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Jee Yoon Kim (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   If it was ORIE3120 without a space, would that remove?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Julia Vanputte (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    No. Only if it was '3120 Orie'
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Julia Vanputte (admin)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     3120 would need to be on the left side of the string for it to remove it
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 8em;">
+     <h3>
+      Author: Jee Yoon Kim (student)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      I still don't get why... cuz it says 'RO' would yield IE 3120. Why would RO work then if 3120 does not work..
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 10em;">
+      <h3>
+       Author: Varun Gande (staff)
+      </h3>
+      <h3>
+       Vote Count: 1
+      </h3>
+      <p>
+       You're going to trim characters on the left side as long as they are in the second argument. So if the second argument was 'RO', we would trim an O (since it's an O or R), then we trim the R (since it's an O or R), but we don't trim the I (since it's neither an O nor an R). Therefore, the trimmed string is IE 3120.
+      </p>
+      <p>
+       If the second argument of LTRIM was '3120', we keep trimming characters as long as they are a 0, 1, 2, or 3. The first character of 'ORIE 3120' (O) is neither a 0, 1, 2, nor a 3, so nothing gets trimmed in this case.
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

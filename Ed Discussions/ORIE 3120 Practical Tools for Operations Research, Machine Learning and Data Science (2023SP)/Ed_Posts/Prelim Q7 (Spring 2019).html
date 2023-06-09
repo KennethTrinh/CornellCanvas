@@ -13,79 +13,72 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Is
- </paragraph>
- <paragraph>
-  SUM(CASE WHEN...)  ==  COUNT(CASE WHEN...)  as seen below?
- </paragraph>
- <paragraph>
- </paragraph>
- <file filename="IMG_4059.HEIC" url="https://static.us.edusercontent.com/files/JibPvP4XW5fGgn9kzs8mht0Q">
- </file>
-</document>
+<p>
+ Is
+</p>
+<p>
+ SUM(CASE WHEN...)  ==  COUNT(CASE WHEN...)  as seen below?
+</p>
+<a href="https://static.us.edusercontent.com/files/JibPvP4XW5fGgn9kzs8mht0Q">
+ IMG_4059.HEIC
+</a>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Julia Vanputte (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  no. Count(CASE WHEN x) is only equal to SUM(CASE WHEN x THEN 1 ELSE 0)
- </paragraph>
- <paragraph>
-  For example, SUM(CASE WHEN x THEN 2 ELSE 0) would return you 2*COUNT(CASE WHEN x)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Leah Valente (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes -- so only equal for this question because you are summing up 1s which is the same as counting.
- </paragraph>
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Brandon Huynh (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Brandon Huynh (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Is it okay if for this question I did a nested query?
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   My code looks like this:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   SELECT AVG(Interarrival_Time) as Avg_Interarrival_Time, ((SELECT COUNT(Interarrival_Time FROM Q01 WHERE Interarrivaltime &gt; 1) / (COUNT(interarrival_time)) AS Fraction_Above_1
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   FROM Q01;
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Julia Vanputte (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   no. Count(CASE WHEN x) is only equal to SUM(CASE WHEN x THEN 1 ELSE 0)
+  </p>
+  <p>
+   For example, SUM(CASE WHEN x THEN 2 ELSE 0) would return you 2*COUNT(CASE WHEN x)
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Leah Valente (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Yes -- so only equal for this question because you are summing up 1s which is the same as counting.
+   </p>
+   <p>
+    Thank you!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

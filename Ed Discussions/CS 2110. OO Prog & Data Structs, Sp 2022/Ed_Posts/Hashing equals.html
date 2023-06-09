@@ -13,70 +13,68 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I know that if e1.equals(e2) then e1.hashCode()==e2.hashCode().
- </paragraph>
- <paragraph>
-  But if e1.hashCode()==e2.hashCode(), does that mean that e1.equals(e2)?
- </paragraph>
-</document>
+<p>
+ I know that if e1.equals(e2) then e1.hashCode()==e2.hashCode().
+</p>
+<p>
+ But if e1.hashCode()==e2.hashCode(), does that mean that e1.equals(e2)?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Sara Yoo (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Sara Yoo (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Not necessarily... It is collision when e1.hashCode() == e2.hashCode() and e1.equals(e2) is false.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I thought that it's collision when they hash to the same place, but because of the mod, their hashCodes may be different even though they hash to the same place.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Sara Yoo (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Collision could happen when 1) their mod values are the same as you said or 2) their hashCodes are the same, which would result in the same mod value as well.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Got it, thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I thought that it's collision when they hash to the same place, but because of the mod, their hashCodes may be different even though they hash to the same place.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Sara Yoo (student)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Collision could happen when 1) their mod values are the same as you said or 2) their hashCodes are the same, which would result in the same mod value as well.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Got it, thank you!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

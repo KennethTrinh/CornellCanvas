@@ -13,59 +13,57 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  (The code snippet is from 3140.s, not our own code)
- </paragraph>
- <paragraph>
-  Our code hard faults after selecting the red LED process, executing it, selecting the green LED process, executing it, and then selecting the red LED process for the second time is when the fault occurs. Specifically stepping through our code, this line triggers the hard fault. What exactly is going on here? Is it the context switching? Does this mean PC has some bad address, and if so, what could that suggest about our code? We aren't sure what to look at.
- </paragraph>
- <figure>
-  <image height="254.76102088167053" src="https://static.us.edusercontent.com/files/Kj3PKWcDkvI6pjs2o6MGcqHt" width="644"/>
- </figure>
-</document>
+<p>
+ (The code snippet is from 3140.s, not our own code)
+</p>
+<p>
+ Our code hard faults after selecting the red LED process, executing it, selecting the green LED process, executing it, and then selecting the red LED process for the second time is when the fault occurs. Specifically stepping through our code, this line triggers the hard fault. What exactly is going on here? Is it the context switching? Does this mean PC has some bad address, and if so, what could that suggest about our code? We aren't sure what to look at.
+</p>
+<figure>
+ <image height="254.76102088167053" src="https://static.us.edusercontent.com/files/Kj3PKWcDkvI6pjs2o6MGcqHt" width="644"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Benjamin Kogan (None)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Benjamin Kogan (None)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   Maybe you are not updating the stack pointer after the red LED process stops for the first time?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Alma Thaler (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  OMG thank you! It was that!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Alma Thaler (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  We assumed that the process' stack pointer gets updated somewhere else, not that we had to mainly set it to cursp. Thanks!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Alma Thaler (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   OMG thank you! It was that!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Alma Thaler (student)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    We assumed that the process' stack pointer gets updated somewhere else, not that we had to mainly set it to cursp. Thanks!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

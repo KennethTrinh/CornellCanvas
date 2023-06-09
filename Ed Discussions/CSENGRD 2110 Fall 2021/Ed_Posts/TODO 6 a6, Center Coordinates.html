@@ -13,62 +13,58 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  In the field for x and y of the target, it says that the x and y are of the center, but the fillOval  method takes coordinates of the top left corner. Are we supposed to adjust the x and y before using them in the fillOval method?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ In the field for x and y of the target, it says that the x and y are of the center, but the fillOval  method takes coordinates of the top left corner. Are we supposed to adjust the x and y before using them in the fillOval method?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   No, don't adjust them. They are what they are, the center of the dot to be drawn.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   But in fillOval, you have to use what that method specifies.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Okay, so from what I understand. We should recalculate the points for fillOval in the paintDot method?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes, you may need to do some math in order to compute the appropriate inputs to whatever
-  <code>
-   Graphics
-  </code>
-  method(s) you choose to call.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Okay, so from what I understand. We should recalculate the points for fillOval in the paintDot method?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Curran Muhlberger (admin)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Yes, you may need to do some math in order to compute the appropriate inputs to whatever
+    <code>
+     Graphics
+    </code>
+    method(s) you choose to call.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

@@ -13,53 +13,51 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hello, I was wondering how to debug this issue. When I connect the red wire on the IR to the USB, the motor moves when it's not supposed to. It will do this as long as I specify the step pin, even if there's no code in the loop. I've tried moving the pins to the other side of the ESP32 and connecting to USB from a wire out on the breadboard. I'm not sure why this issue occurs or how to resolve it. Please let me know if anyone has encountered this issue and how they resolved it. Thank you!
- </paragraph>
-</document>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ Hello, I was wondering how to debug this issue. When I connect the red wire on the IR to the USB, the motor moves when it's not supposed to. It will do this as long as I specify the step pin, even if there's no code in the loop. I've tried moving the pins to the other side of the ESP32 and connecting to USB from a wire out on the breadboard. I'm not sure why this issue occurs or how to resolve it. Please let me know if anyone has encountered this issue and how they resolved it. Thank you!
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Anonymous
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Updates: I either can't read the multimeter or the step pin just never gets any voltage. Also it doesn't seem to be something like all output pins being set to high because the issue doesn't occur when I put the step pin wire in the specified direction pin. I am unsure of what the problem is
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  It worked when I moved the ground of the IR Range Sensor to the left of the Feather.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ruidong Zhang (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Ruidong Zhang (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Try connect the ground and power pins of the IR sensor directly to the microcontroller (not from the breadboard), or add a capacitor between the IR sensor's power and ground pin. It might be caused by interference on the ground line.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   It worked when I moved the ground of the IR Range Sensor to the left of the Feather.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

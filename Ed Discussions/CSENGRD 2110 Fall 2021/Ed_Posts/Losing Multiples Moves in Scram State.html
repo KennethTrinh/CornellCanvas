@@ -13,44 +13,38 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm currently working on A8 and ScramState, I have the shortest path working for it and working on improving the current method.
- </paragraph>
- <paragraph>
-  The current strategy is to move around and collect in a while loop and execute the shortest path after that.
- </paragraph>
- <paragraph>
-  My problem is that stepsToGo() method isn't using 1 every step and instead multiple steps for no reason between iterations of my shortest path.
- </paragraph>
- <figure>
-  <image height="141" src="https://static.us.edusercontent.com/files/zPMmcCg9I4wZwMzHTpSjGbCM" width="144"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I'm currently working on A8 and ScramState, I have the shortest path working for it and working on improving the current method.
+</p>
+<p>
+ The current strategy is to move around and collect in a while loop and execute the shortest path after that.
+</p>
+<p>
+ My problem is that stepsToGo() method isn't using 1 every step and instead multiple steps for no reason between iterations of my shortest path.
+</p>
+<figure>
+ <image height="141" src="https://static.us.edusercontent.com/files/zPMmcCg9I4wZwMzHTpSjGbCM" width="144"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Each time McDiver traverses an edge, the steps-to-go are decremented by the weight of that edge.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   So it doesn't decrement by 1 for each moveTo during the scram phase.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You can see this information in comments on abstract class graph/SewerDiver.java.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

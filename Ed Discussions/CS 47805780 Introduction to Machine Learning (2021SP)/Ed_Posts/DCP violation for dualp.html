@@ -13,129 +13,121 @@
 <h3>
  Vote Count: 3
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm really lost in trying to formulate an objective statement that is DCP compliant. I originally had a naive implementation for calculating the sum of all alpha(i)alpha(j)y(i)y(j)K(i,j) which obviously ran out of memory and now I'm trying to develop the same sum using matrix operations. However, all the statements I come up with involve taking an outer product of the alpha vector and this is not DCP compliant according to cvxpy. Can anyone give me some pointers for how to get past this issue? I'm open to trying alternate methods as well.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I'm really lost in trying to formulate an objective statement that is DCP compliant. I originally had a naive implementation for calculating the sum of all alpha(i)alpha(j)y(i)y(j)K(i,j) which obviously ran out of memory and now I'm trying to develop the same sum using matrix operations. However, all the statements I come up with involve taking an outer product of the alpha vector and this is not DCP compliant according to cvxpy. Can anyone give me some pointers for how to get past this issue? I'm open to trying alternate methods as well.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Sunwook Kim (student)
-</h3>
-<h3>
- Vote Count: 4
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Sunwook Kim (student)
+ </h3>
+ <h3>
+  Vote Count: 4
+ </h3>
+ <p>
   I had a similar issue, and using quadratic form (quad_form on cvxpy) on alpha helped for me.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Imaan Seraphine Islam Rahim (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I tried using quad_form with alpha and the identity matrix but I'm still getting an error that says it's not DCP compliant.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Sunwook Kim (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Try putting the y,K terms into the matrix instead of using the identity matrix.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Megan Yin (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  How were you able to incorporate alpha into the objective after quad_form(y, K)?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Sunwook Kim (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  I rather did quad_form(alpha,X), and have matrix X contain all the information for y,K. Apparently its harder to pass the DCP compliant condition if we build up our own expression using @, but quad_form(variant, constants) is judged as 'convex' and passes the DCP compliant condition.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Imaan Seraphine Islam Rahim (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
-  How do you construct X?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Scott Bass (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Can you expand on that?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Alexander Wang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  So from the documentation for cvxpy.quad_form(x, P), the function calculates x^T @ P @ x (I am using @ to denote matrix multiplication. Assume vectors are 1xd matrices), where the dimensions of x and P must work out for that matrix multiplication statement.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Scott Bass (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Can you expand on that?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Alexander Wang (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    So from the documentation for cvxpy.quad_form(x, P), the function calculates x^T @ P @ x (I am using @ to denote matrix multiplication. Assume vectors are 1xd matrices), where the dimensions of x and P must work out for that matrix multiplication statement.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Imaan Seraphine Islam Rahim (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I tried using quad_form with alpha and the identity matrix but I'm still getting an error that says it's not DCP compliant.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Sunwook Kim (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Try putting the y,K terms into the matrix instead of using the identity matrix.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 8em;">
+     <h3>
+      Author: Megan Yin (student)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      How were you able to incorporate alpha into the objective after quad_form(y, K)?
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 10em;">
+      <h3>
+       Author: Sunwook Kim (student)
+      </h3>
+      <h3>
+       Vote Count: 1
+      </h3>
+      <p>
+       I rather did quad_form(alpha,X), and have matrix X contain all the information for y,K. Apparently its harder to pass the DCP compliant condition if we build up our own expression using @, but quad_form(variant, constants) is judged as 'convex' and passes the DCP compliant condition.
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 12em;">
+       <h3>
+        Author: Imaan Seraphine Islam Rahim (student)
+       </h3>
+       <h3>
+        Vote Count: 2
+       </h3>
+       <p>
+        How do you construct X?
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

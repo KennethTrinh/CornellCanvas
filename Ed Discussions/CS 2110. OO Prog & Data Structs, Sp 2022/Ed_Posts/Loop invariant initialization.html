@@ -13,100 +13,96 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  when we have loop invariants and we have to initialize, how can you tell from looking at the diagram that you set int j = 0 or int j = -1 (for the variable j on the diagram such that everything to the left of it satisfies something)?
- </paragraph>
-</document>
+<p>
+ when we have loop invariants and we have to initialize, how can you tell from looking at the diagram that you set int j = 0 or int j = -1 (for the variable j on the diagram such that everything to the left of it satisfies something)?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bahaa Kotb (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Whether it's on the left or right of the line, right indicates 0, left indicates -1, however, I recommend using follower-first
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  so if the line is right of j, does that mean that the last thing in the range encompassed is b[j-1]? and thus j-1-0+1=0 and j=0?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  yes!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I'm confused then about why b[j] is not encompassed in the range if the line is to the right of j. In general, does the line corresponding to the jth element in array b lie to the left or to the right of it?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  If the line is to the right of j then b[j] is in that segment, why is it not?
-  <break>
-  </break>
-  If a line is to the right of j, b[j] is in the range, if a line is to the left of j b[j-1] is the last element in the segment before that.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  i see. thank you so much!!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   so if the line is right of j, does that mean that the last thing in the range encompassed is b[j-1]? and thus j-1-0+1=0 and j=0?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Bahaa Kotb (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    yes!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     I'm confused then about why b[j] is not encompassed in the range if the line is to the right of j. In general, does the line corresponding to the jth element in array b lie to the left or to the right of it?
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Bahaa Kotb (student)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      If the line is to the right of j then b[j] is in that segment, why is it not?
+      <break>
+      </break>
+      If a line is to the right of j, b[j] is in the range, if a line is to the left of j b[j-1] is the last element in the segment before that.
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 12em;">
+      <h3>
+       Author: Anonymous
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       i see. thank you so much!!
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

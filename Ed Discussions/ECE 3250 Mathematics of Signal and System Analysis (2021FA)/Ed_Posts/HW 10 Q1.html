@@ -13,70 +13,66 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I thiink the only k's to look at are 0 and -1 and so for each of those particular delta iintegrals i have the limit as (-pi to -pi+a/2) and (pi-a/2 to pi). The terms under the integrals respectively are
- </paragraph>
- <math>
-  \lim\left(a-&gt;0\right)\left[\int_{-\pi}^{-\pi+\frac{\alpha}{2}}2\pi p\left(w+\pi\right)e^{jnw}+\int_{\pi-\frac{\alpha}{2}}^{\pi}2\pi p\left(w-\pi\right)e^{jnw}\right]
- </math>
- <paragraph>
-  does this seem correct?
- </paragraph>
-</document>
+<p>
+ I thiink the only k's to look at are 0 and -1 and so for each of those particular delta iintegrals i have the limit as (-pi to -pi+a/2) and (pi-a/2 to pi). The terms under the integrals respectively are
+</p>
+<math>
+ \lim\left(a-&gt;0\right)\left[\int_{-\pi}^{-\pi+\frac{\alpha}{2}}2\pi p\left(w+\pi\right)e^{jnw}+\int_{\pi-\frac{\alpha}{2}}^{\pi}2\pi p\left(w-\pi\right)e^{jnw}\right]
+</math>
+<p>
+ does this seem correct?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   This seems almost correct, but remember that the $p$-terms under the integral signs are equal to 1 over the range of the integrals, and you need a $1 / a$ out in front of the brackets.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  am i supposed to be arriving at a sinc function when evaluating these integrals? I am getting something like
- </paragraph>
- <math>
-  \lim\left(a-&gt;0\right)\text{sinc}\left(n\text{a/2}\right)
- </math>
- <paragraph>
-  But i am nott sure where the power of -n is supposed to come from
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yean, and L'Hôpital tells you the value.
- </paragraph>
- <paragraph>
-  And somehow you're missing a $( - 1 ) ^ n$, which comes from $e ^ {\pm j n \pi} = ( - 1 ) ^ n$.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   am i supposed to be arriving at a sinc function when evaluating these integrals? I am getting something like
+  </p>
+  <math>
+   \lim\left(a-&gt;0\right)\text{sinc}\left(n\text{a/2}\right)
+  </math>
+  <p>
+   But i am nott sure where the power of -n is supposed to come from
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: David Delchamps (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Yean, and L'Hôpital tells you the value.
+   </p>
+   <p>
+    And somehow you're missing a $( - 1 ) ^ n$, which comes from $e ^ {\pm j n \pi} = ( - 1 ) ^ n$.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

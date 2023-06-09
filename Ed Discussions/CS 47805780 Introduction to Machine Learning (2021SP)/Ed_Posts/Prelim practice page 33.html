@@ -13,88 +13,78 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  For the second problem, we can't actually give a numerical answer without knowing
-  <italic>
-   𝛿,
-  </italic>
-  correct? Should we calculate
-  <italic>
-   |H|
-  </italic>
-  or just give the expression below?
- </paragraph>
- <paragraph>
-  <italic>
-   Consider the class of OR-functions over d binary (0/1 valued) features. How many examples are sufficient so that with probability at least 1-𝛿, only OR-functions of true error less than ε will have zero training error?
-  </italic>
- </paragraph>
- <paragraph>
- </paragraph>
- <figure>
-  <image height="155" src="https://static.us.edusercontent.com/files/tRb4brEZvJ2F82lUubZMa9e1" width="468"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ For the second problem, we can't actually give a numerical answer without knowing
+ <i>
+  𝛿,
+ </i>
+ correct? Should we calculate
+ <i>
+  |H|
+ </i>
+ or just give the expression below?
+</p>
+<p>
+ <i>
+  Consider the class of OR-functions over d binary (0/1 valued) features. How many examples are sufficient so that with probability at least 1-𝛿, only OR-functions of true error less than ε will have zero training error?
+ </i>
+</p>
+<figure>
+ <image height="155" src="https://static.us.edusercontent.com/files/tRb4brEZvJ2F82lUubZMa9e1" width="468"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Victor Butoi (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Victor Butoi (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Yep! This is correct, we leave it in terms of delta in this case.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Thanks for the clarification. Would
-  <italic>
-   |H|
-  </italic>
-  be calculated using a sum of combinations? I thought the size of all possible
-  <italic>
-   OR
-  </italic>
-  functions would be something like:
- </paragraph>
- <math>
-  \left|H\right|=\left(\begin{matrix}d\\d\end{matrix}\right)+\left(\begin{matrix}d\\d-1\end{matrix}\right)+...+\left(\begin{matrix}d\\2\end{matrix}\right)
- </math>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Victor Butoi (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I would say that you can count H in a different way, that is, we are including it, including its opposite, or don't include it from h in terms of positive labeling, further this is applied bitwise.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Thanks for the clarification. Would
+   <i>
+    |H|
+   </i>
+   be calculated using a sum of combinations? I thought the size of all possible
+   <i>
+    OR
+   </i>
+   functions would be something like:
+  </p>
+  <math>
+   \left|H\right|=\left(\begin{matrix}d\\d\end{matrix}\right)+\left(\begin{matrix}d\\d-1\end{matrix}\right)+...+\left(\begin{matrix}d\\2\end{matrix}\right)
+  </math>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Victor Butoi (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I would say that you can count H in a different way, that is, we are including it, including its opposite, or don't include it from h in terms of positive labeling, further this is applied bitwise.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

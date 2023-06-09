@@ -13,40 +13,38 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="391" src="https://static.us.edusercontent.com/files/T6ifeIUemMapAoqWH5Z1W0w5" width="561"/>
- </figure>
- <paragraph>
-  I have 2 questions:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    In lecture, it was said that, in generative modeling, we can procrastinate on committing to the input and output, because, in the joint probability distribution P(Y,X) that we are modeling, the P(X) and P(Y) could be swapped. Is this saying that, before training the model, we have to commit to the two random variables (RV's) that we are using as X and Y, BUT we can procrastinate on committing to which RV we're assigning as input and which as output? Or is it saying that, in generative modeling, we don't even need to commit to what our RV's X and Y are before training the model?
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Also, in lecture, it was said that finding the discriminative conditional model can be statistically inefficient when compared to ERM, whereas finding the generative model could actually be computationally easy -- how come finding the generative model can actually be computationally easy? What assumptions are we making that make this computationally easy?
-   </paragraph>
-  </list-item>
- </list>
-</document>
+<figure>
+ <image height="391" src="https://static.us.edusercontent.com/files/T6ifeIUemMapAoqWH5Z1W0w5" width="561"/>
+</figure>
+<p>
+ I have 2 questions:
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   In lecture, it was said that, in generative modeling, we can procrastinate on committing to the input and output, because, in the joint probability distribution P(Y,X) that we are modeling, the P(X) and P(Y) could be swapped. Is this saying that, before training the model, we have to commit to the two random variables (RV's) that we are using as X and Y, BUT we can procrastinate on committing to which RV we're assigning as input and which as output? Or is it saying that, in generative modeling, we don't even need to commit to what our RV's X and Y are before training the model?
+  </p>
+ </li>
+ <li>
+  <p>
+   Also, in lecture, it was said that finding the discriminative conditional model can be statistically inefficient when compared to ERM, whereas finding the generative model could actually be computationally easy -- how come finding the generative model can actually be computationally easy? What assumptions are we making that make this computationally easy?
+  </p>
+ </li>
+</list>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Noor (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Yes, before training you need to commit to the variables over which you want to model the joint distribution, but after you can pick any of those variables as input/output by changing which conditional probabilities you make use of in your calculation. The generative model is easy since you're only combining the probabilities you've calculated (P(X,Y), P(X),...) which are individual numbers.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

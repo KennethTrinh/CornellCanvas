@@ -13,44 +13,32 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I am asking this question on ED because no one showed up to consulting hours today during 6-7pm.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  The GUI handout states:
- </paragraph>
- <paragraph>
-  "Start with TODO 9 in GameMain for showing the score in the score label. As with TODO 3, the work to be performed should be specified in an anonymous function, which is passed to a method of the object that will be generating the events (in this case, the GameComponent game). Search the documentation for that object’s superclasses to find an appropriate method; look for an overload that will only listen for changes to the “GameScore” property."
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  By "object's super classes," does this mean GameComponent's superclass like Jpanel?
- </paragraph>
- <paragraph>
-  And for addPropertyChangeListener, would I have to add scoreLabel as one of the parameters?  I did not understand the documentation for said method very well.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I am asking this question on ED because no one showed up to consulting hours today during 6-7pm.
+</p>
+<p>
+ The GUI handout states:
+</p>
+<p>
+ "Start with TODO 9 in GameMain for showing the score in the score label. As with TODO 3, the work to be performed should be specified in an anonymous function, which is passed to a method of the object that will be generating the events (in this case, the GameComponent game). Search the documentation for that object’s superclasses to find an appropriate method; look for an overload that will only listen for changes to the “GameScore” property."
+</p>
+<p>
+ By "object's super classes," does this mean GameComponent's superclass like Jpanel?
+</p>
+<p>
+ And for addPropertyChangeListener, would I have to add scoreLabel as one of the parameters?  I did not understand the documentation for said method very well.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   If you plan on invoking a method on
   <code>
    game
@@ -72,8 +60,8 @@
    Component
   </code>
   , etc.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Re
   <code>
    addPropertyChangeListener()
@@ -83,29 +71,25 @@
    scoreLabel
   </code>
   's type a subtype of any of those?  In general, when registering a listener, one argument will be an anonymous function (or other implementation of the appropriate Listener interface).  If there are additional parameters, the documentation should clarify what they are (e.g. a property name to filter for).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I'm sorry to hear that no one appeared to be serving the consulting queue this evening; we've asked our consultants to double-check their calendar appointments to ensure that the calendar is accurate; I hope this doesn't happen again.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kenisha Stills-Ogburn (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you !
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Kenisha Stills-Ogburn (None)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you !
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

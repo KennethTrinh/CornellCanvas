@@ -13,38 +13,32 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I am confused about the update of weighe in Back-propagation:   Do we input one sample one time and hence the weights w have been updated for n times in one epoch(n is the number of the samples in a data set)?     Or do we input a matrix of n*m(or m*n, and m is the number of features) dimension and hence the weights w have been updated one time in one epoch?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I am confused about the update of weighe in Back-propagation:   Do we input one sample one time and hence the weights w have been updated for n times in one epoch(n is the number of the samples in a data set)?     Or do we input a matrix of n*m(or m*n, and m is the number of features) dimension and hence the weights w have been updated one time in one epoch?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Pengzhi Huang (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Pengzhi Huang (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   In practice usually, you would feed in a "batch" of samples, and then update the weights.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Say, you are having 1000 samples and decide to run the training for 100 epochs, and feed the data with batch size 100.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Then you are updating the model 1000/100=10 times per epoch, and a total of 100*10=1000 updates would happen in your training.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Of course, you can define the batch size to be 1, then this is what you described in the beginning.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,30 +13,26 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="449.2925045703839" src="https://static.us.edusercontent.com/files/06voYMt2OYAus7L28ccaqTem" width="658"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
-  Hello, I was confused about 2f, part 3, highlighted above. I want to make sure I understand correctly. Does this compile because the compiler sees c has type C1 and that C1 has a method f1, regardless of if that method is abstract? In other words, does the compiler accept an abstract method in compile-time for such a call as above?
- </paragraph>
-</document>
+<figure>
+ <image height="449.2925045703839" src="https://static.us.edusercontent.com/files/06voYMt2OYAus7L28ccaqTem" width="658"/>
+</figure>
+<p>
+ Hello, I was confused about 2f, part 3, highlighted above. I want to make sure I understand correctly. Does this compile because the compiler sees c has type C1 and that C1 has a method f1, regardless of if that method is abstract? In other words, does the compiler accept an abstract method in compile-time for such a call as above?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   Yes, an abstract method declaration is sufficient for the compile-time reference rule to conclude that the call is legal.  Because it is impossible to instantiate an abstract class or an interface on their own, the compiler is allowed to assume that whatever value is ultimately referenced by that variable at runtime will have a concrete implementation of the method.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

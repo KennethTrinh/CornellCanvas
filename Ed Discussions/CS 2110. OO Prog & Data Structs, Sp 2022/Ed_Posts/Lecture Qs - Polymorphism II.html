@@ -13,72 +13,68 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I was reviewing the slides for today's class about Polymorphism II. A few questions -
- </paragraph>
- <paragraph>
-  1. For the static type example,
-  <code>
-   Account b = new Account();
-  </code>
-  Why does b in the picture below points to
-  <code>
-   IAccount@1
-  </code>
-  address?
- </paragraph>
- <figure>
-  <image height="391.9567901234568" src="https://static.us.edusercontent.com/files/7nN6b0zhZ9n203ZWPZx7M5Lb" width="658"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
-  2. Continuing to the example b, I think
-  <code>
-   b.printStatement()
-  </code>
-  will call the printStatement() function in class
-  <code>
-   Account
-  </code>
-  . If so, how does the bottom-up rule come into play? Maybe I missed something in lecture.
- </paragraph>
- <figure>
-  <image height="413.71317829457365" src="https://static.us.edusercontent.com/files/WYcKVZqgnad5jgCPZAstxI9r" width="643"/>
- </figure>
-</document>
+<p>
+ I was reviewing the slides for today's class about Polymorphism II. A few questions -
+</p>
+<p>
+ 1. For the static type example,
+ <code>
+  Account b = new Account();
+ </code>
+ Why does b in the picture below points to
+ <code>
+  IAccount@1
+ </code>
+ address?
+</p>
+<figure>
+ <image height="391.9567901234568" src="https://static.us.edusercontent.com/files/7nN6b0zhZ9n203ZWPZx7M5Lb" width="658"/>
+</figure>
+<p>
+ 2. Continuing to the example b, I think
+ <code>
+  b.printStatement()
+ </code>
+ will call the printStatement() function in class
+ <code>
+  Account
+ </code>
+ . If so, how does the bottom-up rule come into play? Maybe I missed something in lecture.
+</p>
+<figure>
+ <image height="413.71317829457365" src="https://static.us.edusercontent.com/files/WYcKVZqgnad5jgCPZAstxI9r" width="643"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   1. the value in b could be a pointer to EITHER object; a compile time you have no idea what it will be.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   2. We keep saying: At runtime, use the bottom-up rule to determine what method will be called.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

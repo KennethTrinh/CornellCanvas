@@ -13,79 +13,71 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I was wondering if, generally speaking, there is a preference for using method calls such as head() and tail() over .head and .tail in general? Using methods would allow for more control in terms of expected post-conditions, both for others and ourselves. However, the given methods in DList almost all use direct access of fields. Is one considered more standard than the other?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
+<p>
+ I was wondering if, generally speaking, there is a preference for using method calls such as head() and tail() over .head and .tail in general? Using methods would allow for more control in terms of expected post-conditions, both for others and ourselves. However, the given methods in DList almost all use direct access of fields. Is one considered more standard than the other?
+</p>
+<p>
+ Thank you!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   In a class like linked list, it is FAR better to use fields rather than observer methods.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You want the method you write to be as fast a possible.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Here's what the handout says:
- </paragraph>
- <paragraph>
-  <bold>
+ </p>
+ <p>
+  <b>
    c
-  </bold>
+  </b>
   Class Node is declared as a component of class DList. It is called an
-  <italic>
+  <i>
    inner class
-  </italic>
+  </i>
   . Its fields are private, so they cannot be referenced outside the class —e
-  <italic>
+  <i>
    xcept that the methods in
-  </italic>
+  </i>
   DList
-  <italic>
+  <i>
    can and should
-  </italic>
+  </i>
   reference the fields of Node, even if they are private, because Node is a component of DList.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  There's a bit of nuance here.  There is likely no performance difference between direct field access and a trivial getter/setter - the compiler will almost certainly inline such method calls.  Using observers internally may make the code easier to refactor, and using private mutators could avoid bugs by ensuring that invariants are always maintained.  On the other hand, there could be unexpected performance pitfalls if the observer is non-trivial (possibly as a result of refactoring).
- </paragraph>
- <paragraph>
-  In general, when implementing a method, you are
-  <italic>
-   allowed
-  </italic>
-  to reference fields directly, and some methods (like observers and mutators) certainly must do so.  But as code gets larger and higher-level, there is an "art" to deciding when to invoke other methods vs. going straight to the fields.  You will get a feel for these tradeoffs through experience; for now, stick to the advice in the assignment prompts.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Curran Muhlberger (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   There's a bit of nuance here.  There is likely no performance difference between direct field access and a trivial getter/setter - the compiler will almost certainly inline such method calls.  Using observers internally may make the code easier to refactor, and using private mutators could avoid bugs by ensuring that invariants are always maintained.  On the other hand, there could be unexpected performance pitfalls if the observer is non-trivial (possibly as a result of refactoring).
+  </p>
+  <p>
+   In general, when implementing a method, you are
+   <i>
+    allowed
+   </i>
+   to reference fields directly, and some methods (like observers and mutators) certainly must do so.  But as code gets larger and higher-level, there is an "art" to deciding when to invoke other methods vs. going straight to the fields.  You will get a feel for these tradeoffs through experience; for now, stick to the advice in the assignment prompts.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

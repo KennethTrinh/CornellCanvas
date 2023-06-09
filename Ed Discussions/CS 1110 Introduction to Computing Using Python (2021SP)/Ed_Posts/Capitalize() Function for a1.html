@@ -13,142 +13,136 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Are we allowed to use the capitalize function for report_section() in assignment1? It seems like the easiest way to meet the specifications for capitalized strings.
- </paragraph>
-</document>
+<p>
+ Are we allowed to use the capitalize function for report_section() in assignment1? It seems like the easiest way to meet the specifications for capitalized strings.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Dylan Castillo (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Yes! I’m pretty sure there’s a comment under the function suggesting you use the capitalize function, so you’re actually encouraged to
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Got it!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Dylan Castillo (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Are you using it like this?
- </paragraph>
- <snippet language="py" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   x = "hello"
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Anonymous
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
+  I got it! Thanks.
+ </p>
+ <p>
+  I didn't see the comment until now, but pretty sure I am using it correctly.
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Dylan Castillo (None)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Yes! I’m pretty sure there’s a comment under the function suggesting you use the capitalize function, so you’re actually encouraged to
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Dylan Castillo (None)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Are you using it like this?
+    </p>
+    <snippet language="py" line-numbers="true" runnable="true">
+     <snippet-file id="code">
+      x = "hello"
 print(x)
 x_capitalized = x.capitalize()
 print(x_capitalized)
-  </snippet-file>
- </snippet>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kenan Clarke (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  yes, AttributeError: 'NoneType' object has no attribute 'capitalize'
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Dylan Castillo (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  That error should mean that the variable whose string you are trying to capitalize has not been initialized (it has no string inside it).
- </paragraph>
- <snippet language="py" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   def caps(x):
+     </snippet-file>
+    </snippet>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 8em;">
+     <h3>
+      Author: Kenan Clarke (student)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      yes, AttributeError: 'NoneType' object has no attribute 'capitalize'
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 10em;">
+      <h3>
+       Author: Dylan Castillo (None)
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       That error should mean that the variable whose string you are trying to capitalize has not been initialized (it has no string inside it).
+      </p>
+      <snippet language="py" line-numbers="true" runnable="true">
+       <snippet-file id="code">
+        def caps(x):
     return x.capitalize()
 
 print(caps("hello"))
 print(caps(None))
-  </snippet-file>
- </snippet>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kenan Clarke (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  It seems i've got it to work now but for words that are capitalized before calling capitalize(), it reverses the operation. Turning the caps to lowercase and it only changes the capitalization of the first word in the string it is called on
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Dylan Castillo (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yeah, .capitalize() will change the first letter of a string to uppercase and change the rest of the letters to lowercase. If you want to capitalize more parts of the string, you will either have to split it or have it split beforehand and call capitalize in each piece.
- </paragraph>
- <paragraph>
-  What I mean is something like this:
- </paragraph>
- <paragraph>
- </paragraph>
- <snippet language="py" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   # You want string "Hello World"
+       </snippet-file>
+      </snippet>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 12em;">
+       <h3>
+        Author: Kenan Clarke (student)
+       </h3>
+       <h3>
+        Vote Count: 0
+       </h3>
+       <p>
+        It seems i've got it to work now but for words that are capitalized before calling capitalize(), it reverses the operation. Turning the caps to lowercase and it only changes the capitalization of the first word in the string it is called on
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+       <div style="text-indent: 14em;">
+        <h3>
+         Author: Dylan Castillo (None)
+        </h3>
+        <h3>
+         Vote Count: 0
+        </h3>
+        <p>
+         Yeah, .capitalize() will change the first letter of a string to uppercase and change the rest of the letters to lowercase. If you want to capitalize more parts of the string, you will either have to split it or have it split beforehand and call capitalize in each piece.
+        </p>
+        <p>
+         What I mean is something like this:
+        </p>
+        <snippet language="py" line-numbers="true" runnable="true">
+         <snippet-file id="code">
+          # You want string "Hello World"
 x = "HelLo WorLd"
 print(x.capitalize())
 print("We don't want this! World is not capitalized.")
@@ -157,26 +151,30 @@ a = "HelLo "
 b = "WorLd"
 result = a.capitalize() + b.capitalize()
 print(result)
-  </snippet-file>
- </snippet>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I got it! Thanks.
- </paragraph>
- <paragraph>
-  I didn't see the comment until now, but pretty sure I am using it correctly.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+         </snippet-file>
+        </snippet>
+        <h3>
+         ------------------------------------
+        </h3>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div style="text-indent: 4em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     Got it!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

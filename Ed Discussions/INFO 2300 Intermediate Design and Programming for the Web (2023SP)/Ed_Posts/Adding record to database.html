@@ -13,79 +13,75 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi, for project 3, when adding a record to the database, if we used conditionals to check if each tag is selected and had a SQL query within each conditional, would this lead to too many queries?
- </paragraph>
-</document>
-<h3>
- Author: Kyle J. Harms (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ Hi, for project 3, when adding a record to the database, if we used conditionals to check if each tag is selected and had a SQL query within each conditional, would this lead to too many queries?
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kyle J. Harms (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I don't understand your question. Would you please elaborate and/or provide an example?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  For example, if I added a product to the database with the tags "red", "sweet", and "expensive", I wasn't sure what is the best way to add these as records into the product_tags table.
- </paragraph>
- <paragraph>
-  One way I thought of doing this was by using conditionals,
- </paragraph>
- <paragraph>
-  if (red tag radio button is selected) {
- </paragraph>
- <paragraph>
-  add id of product, id of red tag in new record of product_tags table
- </paragraph>
- <paragraph>
-  }
- </paragraph>
- <paragraph>
-  if (sweet tag radio button is selected) {
- </paragraph>
- <paragraph>
-  ....
- </paragraph>
- <paragraph>
-  }
- </paragraph>
- <paragraph>
-  etc.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  But, I was wondering whether this would lead to too many SQL queries.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   For example, if I added a product to the database with the tags "red", "sweet", and "expensive", I wasn't sure what is the best way to add these as records into the product_tags table.
+  </p>
+  <p>
+   One way I thought of doing this was by using conditionals,
+  </p>
+  <p>
+   if (red tag radio button is selected) {
+  </p>
+  <p>
+   add id of product, id of red tag in new record of product_tags table
+  </p>
+  <p>
+   }
+  </p>
+  <p>
+   if (sweet tag radio button is selected) {
+  </p>
+  <p>
+   ....
+  </p>
+  <p>
+   }
+  </p>
+  <p>
+   etc.
+  </p>
+  <p>
+   But, I was wondering whether this would lead to too many SQL queries.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Kyle J. Harms (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kyle J. Harms (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Generally, the issue with too many queries is
   <code>
    SELECT
@@ -95,8 +91,8 @@
    INSERT
   </code>
   queries. Using conditional statements to check which tag to insert, isn't too many queries. If I understand your question correctly, this all seems fine and very normal.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

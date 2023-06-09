@@ -13,90 +13,88 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm still pretty confused about how to calculate the number of MAC operations required to compute a sum. If y[n] is the convolution of h[n] and x[n], why does y[0] only require 1 operation and y[1] require 2? I think I'm thinking about this very wrong, but why would it not require (1024) * (the length of y[n]) MAC operations?
- </paragraph>
- <math>
-  y\left[n\right]\ =\ \sum_{k=0}^{1023}h\left[k\right]x\left[n-k\right]
- </math>
- <paragraph>
-  How would we go about solving question 7 on homework 8? None of my attempts bring me anywhere near a number on the order of 512.5*10^11. Thanks
- </paragraph>
-</document>
-<h3>
- Author: Karina Melgar (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ I'm still pretty confused about how to calculate the number of MAC operations required to compute a sum. If y[n] is the convolution of h[n] and x[n], why does y[0] only require 1 operation and y[1] require 2? I think I'm thinking about this very wrong, but why would it not require (1024) * (the length of y[n]) MAC operations?
+</p>
+<math>
+ y\left[n\right]\ =\ \sum_{k=0}^{1023}h\left[k\right]x\left[n-k\right]
+</math>
+<p>
+ How would we go about solving question 7 on homework 8? None of my attempts bring me anywhere near a number on the order of 512.5*10^11. Thanks
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Karina Melgar (student)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   Also just wanted to point out that it actually says 512.5*2^11 on the hw, not *10^11 (I made this same mistake reading the problem)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Ohhhh that makes way more sense, thanks so much! I was really wondering why I was like 7 orders of magnitude off
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Ohhhh that makes way more sense, thanks so much! I was really wondering why I was like 7 orders of magnitude off
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   When $n = 0$, that sum has only one nonzero term.  When $n = 1$, only two.  Etc.  Thus MAC ops required to compute a $y [ n ]$-value for some $n$ varies with $n$.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Oh I see. So why would the number of operations not just be 2*((1024*1025)/2) based on the suggestion at the end of the problem?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Work through it carefully and you'll see how it goes ...
- </paragraph>
- <paragraph>
-  It might help to work through the case where you're convolving a 4-point signal with a 5-point signal to get the ide.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Oh I see. So why would the number of operations not just be 2*((1024*1025)/2) based on the suggestion at the end of the problem?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: David Delchamps (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Work through it carefully and you'll see how it goes ...
+   </p>
+   <p>
+    It might help to work through the case where you're convolving a 4-point signal with a 5-point signal to get the ide.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

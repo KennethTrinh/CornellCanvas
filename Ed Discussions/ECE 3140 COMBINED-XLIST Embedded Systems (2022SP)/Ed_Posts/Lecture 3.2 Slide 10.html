@@ -13,28 +13,26 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="369.1038374717833" src="https://static.us.edusercontent.com/files/TanqGNqLLhXTGBFQD3hrtpwv" width="658"/>
- </figure>
- <paragraph>
-  So would the correct way to implement this be to add PUSH {LR} at the beginning of func, then pop {PC} instead of BX LR under the sum label? So you are never in ra2?
- </paragraph>
-</document>
+<figure>
+ <image height="369.1038374717833" src="https://static.us.edusercontent.com/files/TanqGNqLLhXTGBFQD3hrtpwv" width="658"/>
+</figure>
+<p>
+ So would the correct way to implement this be to add PUSH {LR} at the beginning of func, then pop {PC} instead of BX LR under the sum label? So you are never in ra2?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aaron Wilhelm (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aaron Wilhelm (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Yep that would be correct. If you put the POP {PC} after the ra2 label then you would be in ra2, but you could also put it the line before if you wanted (but then there would be no point to have the ra2 label)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

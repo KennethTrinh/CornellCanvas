@@ -13,37 +13,35 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  If R4-8, (R9), R10-11 are not used by the caller, why does the callee need to save them? Is it because another function could be called from here and the callee also becomes a caller in that case?
- </paragraph>
- <paragraph>
-  Also if R0-3 are used by the caller, and are not used by the callee, does that mean they don't need to be caller-saved?
- </paragraph>
- <paragraph>
-  I know it's possible that R0 is used by the callee to store results, does that mean it needs to be caller-saved?
- </paragraph>
-</document>
+<p>
+ If R4-8, (R9), R10-11 are not used by the caller, why does the callee need to save them? Is it because another function could be called from here and the callee also becomes a caller in that case?
+</p>
+<p>
+ Also if R0-3 are used by the caller, and are not used by the callee, does that mean they don't need to be caller-saved?
+</p>
+<p>
+ I know it's possible that R0 is used by the callee to store results, does that mean it needs to be caller-saved?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prithwish Dan (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prithwish Dan (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I think for your first question, the caller expects R4 and beyond to remain the same before and after any function calls.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   For the second question, I think it's similar in the sense that R0-R3 are essentially free reign and the callee is allowed to modify them, which is why the caller needs to save them before making the function call.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Not sure about the last question though.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

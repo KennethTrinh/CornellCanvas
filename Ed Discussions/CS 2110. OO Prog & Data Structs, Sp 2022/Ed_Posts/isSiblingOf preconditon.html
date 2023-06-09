@@ -13,56 +13,52 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  in the description for the isSiblingOf method, it says you have to check whether this object and p are the same object.  Should this be a precondition of using the method, or should the method just return false if the object and p are the same?
- </paragraph>
-</document>
+<p>
+ in the description for the isSiblingOf method, it says you have to check whether this object and p are the same object.  Should this be a precondition of using the method, or should the method just return false if the object and p are the same?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Tomer Shamir (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Specifications will explicitly say "Precondition" for preconditions. If it doesn't say "Precondition" in the specification before that part, then it shouldn't be considered a precondition. The specifications in assignments will have the preconditions listed at the end of the specification
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Let us reason this together. The spec says:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Return value of: "this PhD is an intellectual sibling of p".
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Put in the definition of "intellectual sibling":
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Return the value of: "(1) this PhD and p are not the same object and
   <break>
   </break>
   (2) this PhD and p have a non-null advisor in common"
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If you have to return the value of something of the form  "b and c", well, write a return statement that does that. Why does the notion of Precondition enter into it?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Tomer Shamir (staff)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Specifications will explicitly say "Precondition" for preconditions. If it doesn't say "Precondition" in the specification before that part, then it shouldn't be considered a precondition. The specifications in assignments will have the preconditions listed at the end of the specification
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

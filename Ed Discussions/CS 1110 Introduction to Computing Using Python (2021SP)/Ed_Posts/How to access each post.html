@@ -13,74 +13,20 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I am having trouble figuring out how to access each post, rather than just the replies of one post.  I read in a previous post that we can use main_dict, but I am unsure exactly how to use it.  I am trying to use it in the second task, and having trouble.  Is there another way to access the posts?
- </paragraph>
-</document>
+<p>
+ I am having trouble figuring out how to access each post, rather than just the replies of one post.  I read in a previous post that we can use main_dict, but I am unsure exactly how to use it.  I am trying to use it in the second task, and having trouble.  Is there another way to access the posts?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  If you've set the main tree up via
-  <break>
-  </break>
-  <break>
-  </break>
-  <code>
-   [main_tree, main_dict] = main_example_tree()
-  </code>
-  or
-  <code>
-   [main_tree, main_dict] = a4_test.main_example_tree()
-  </code>
- </paragraph>
- <paragraph>
-  then you can access a Post by mentioning its Gorn number:
-  <break>
-  </break>
-  main_dict["0.0.1"] will return that Post.
-  <break>
-  </break>
- </paragraph>
- <pre>&gt;&gt;&gt; import a4_test
-&gt;&gt;&gt; [main_tree, main_dict] = a4_test.main_example_tree()
-&gt;&gt;&gt; p010 = main_dict["0.1.0"]
-&gt;&gt;&gt; p010.author
-'B'
-&gt;&gt;&gt; print(p010)
-Post 010 by B:
-    Reply ids/authors (if any):
-&gt;&gt;&gt; print(type(p010))
-&lt;class 'post.Post'&gt;
-&gt;&gt;&gt; print(main_dict["0.0.0"])
-Post 000 by C:
-    Reply ids/authors (if any): 0000 by 'B'
-
-</pre>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   But I think I'm probably not understanding what you're actually asking.  Please follow up to help me answer your question better if I can!
   <break>
   </break>
@@ -112,46 +58,92 @@ Post 000 by C:
    post.tag
   </code>
   , and those will refer to the attributes of the input Post object.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  You answered my question, thank you!  I think the problem is that I am confused on how to return multiple strings inside of my user_paths list.   My thought process was to access each parent post via the dictionary, but I am sure there is a better way.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  yes, in terms of thinking about this recursively, you want to say, "OK, I have this Post
-  <code>
-   post,
-  </code>
-  and suppose I had, for each reply, a list of its paths; how would i get the answer for this
-  <code>
-   post
-  </code>
-  by incorporating the lists for each reply?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   You answered my question, thank you!  I think the problem is that I am confused on how to return multiple strings inside of my user_paths list.   My thought process was to access each parent post via the dictionary, but I am sure there is a better way.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    yes, in terms of thinking about this recursively, you want to say, "OK, I have this Post
+    <code>
+     post,
+    </code>
+    and suppose I had, for each reply, a list of its paths; how would i get the answer for this
+    <code>
+     post
+    </code>
+    by incorporating the lists for each reply?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   If you've set the main tree up via
+   <break>
+   </break>
+   <break>
+   </break>
+   <code>
+    [main_tree, main_dict] = main_example_tree()
+   </code>
+   or
+   <code>
+    [main_tree, main_dict] = a4_test.main_example_tree()
+   </code>
+  </p>
+  <p>
+   then you can access a Post by mentioning its Gorn number:
+   <break>
+   </break>
+   main_dict["0.0.1"] will return that Post.
+   <break>
+   </break>
+  </p>
+  <pre>&gt;&gt;&gt; import a4_test
+&gt;&gt;&gt; [main_tree, main_dict] = a4_test.main_example_tree()
+&gt;&gt;&gt; p010 = main_dict["0.1.0"]
+&gt;&gt;&gt; p010.author
+'B'
+&gt;&gt;&gt; print(p010)
+Post 010 by B:
+    Reply ids/authors (if any):
+&gt;&gt;&gt; print(type(p010))
+&lt;class 'post.Post'&gt;
+&gt;&gt;&gt; print(main_dict["0.0.0"])
+Post 000 by C:
+    Reply ids/authors (if any): 0000 by 'B'
+
+</pre>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

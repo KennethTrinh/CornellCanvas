@@ -16,110 +16,106 @@
 <h3>
  ENDORSED
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi all!
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  I was thinking about real-life implications of the code when I realize that my method for determining whether a class conflicts may not work if the class is overnight (i.e. the end time could be considered to be before the start time) - yes, there are
-  <link href="https://classes.cornell.edu/browse/roster/SP21/class/PE/1616"/>
-  overnight classes at Cornell :). When thinking about how to resolve this, I realized that the requested format for the time also doesn't really account for this. Should we be considering this case? Thanks!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Hi all!
+</p>
+<p>
+ I was thinking about real-life implications of the code when I realize that my method for determining whether a class conflicts may not work if the class is overnight (i.e. the end time could be considered to be before the start time) - yes, there are
+ <a href="https://classes.cornell.edu/browse/roster/SP21/class/PE/1616">
+  overnight classes at Cornell
+ </a>
+ :). When thinking about how to resolve this, I realized that the requested format for the time also doesn't really account for this. Should we be considering this case? Thanks!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Ben Rosenberg (admin)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Ben Rosenberg (admin)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   Good question! Definitely a niche case.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If you look at the site, you can see that the class dates are broken up over two days:
- </paragraph>
+ </p>
  <figure>
   <image height="129" src="https://static.us.edusercontent.com/files/cZ2idhroCSnWDN689avuuBe0" width="382"/>
  </figure>
- <paragraph>
+ <p>
   Since overnight courses are the tiny, tiny minority of courses offered at Cornell, I don't think an implementation of courses really needs to worry about this -- you
-  <italic>
+  <i>
    definitely
-  </italic>
+  </i>
   don't need to worry about it in your code for this assignment. Good on you for asking, though!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I confirm that you don't need to worry about overnight classes for this assignment.  And I also very pleased that you are thinking about the real-life implementation of this assignment!
-  <break>
-  </break>
-  <break>
-  </break>
-  ... and you can also see that the registrar had to treat these as a special case, as well!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  We also didn't include Sat or Sun courses, mostly just because I didn't have the energy to look up the code for "Sunday".  Is it U?  N?
-  <break>
-  </break>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Sunday is given as Su in the course roster in case you're interested, which would probably require more code to check, given that it's a two-letter string, though you could probably do it based on the case of the letter. Tempted to put in the preconditions of the code "Assumes roster only includes classes at reasonable times" :)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  I think you could use tuples for that situation because it is two letters
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I confirm that you don't need to worry about overnight classes for this assignment.  And I also very pleased that you are thinking about the real-life implementation of this assignment!
+   <break>
+   </break>
+   <break>
+   </break>
+   ... and you can also see that the registrar had to treat these as a special case, as well!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    We also didn't include Sat or Sun courses, mostly just because I didn't have the energy to look up the code for "Sunday".  Is it U?  N?
+    <break>
+    </break>
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Aidan McNay (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Sunday is given as Su in the course roster in case you're interested, which would probably require more code to check, given that it's a two-letter string, though you could probably do it based on the case of the letter. Tempted to put in the preconditions of the code "Assumes roster only includes classes at reasonable times" :)
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Troy Moslemi (he/him) (student)
+     </h3>
+     <h3>
+      Vote Count: 1
+     </h3>
+     <p>
+      I think you could use tuples for that situation because it is two letters
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

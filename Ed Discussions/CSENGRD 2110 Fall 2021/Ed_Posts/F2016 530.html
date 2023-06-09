@@ -13,36 +13,32 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="191.24137931034483" src="https://static.us.edusercontent.com/files/VdxXYhdvDcz7YrzqeAxTgTV3" width="658"/>
- </figure>
- <paragraph>
-  Isn't var an object of class C? If so, I thought casting it to D wouldn't be allowed since that would be a downcast.
- </paragraph>
-</document>
+<figure>
+ <image height="191.24137931034483" src="https://static.us.edusercontent.com/files/VdxXYhdvDcz7YrzqeAxTgTV3" width="658"/>
+</figure>
+<p>
+ Isn't var an object of class C? If so, I thought casting it to D wouldn't be allowed since that would be a downcast.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Vladia Trinh (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Vladia Trinh (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   In order for this to work, the D object must be cast to C.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   This cast will be inserted automatically because it is an upcast. It's as if it was written like this:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   C var= (C) (new D(...));
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

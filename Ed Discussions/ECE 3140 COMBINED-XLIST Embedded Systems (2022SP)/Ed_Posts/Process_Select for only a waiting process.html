@@ -13,73 +13,71 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  I was told during office hours to put a while loop in process_select to wait until a process is ready to start when that is the only process left.
- </paragraph>
- <paragraph>
-  Since interrupts are disabled in 3140.s this means that the
-  <bold>
-   PIT1_Service
-  </bold>
-  will never be called and the time will not increment. Thus making the polling loop useless.
- </paragraph>
- <paragraph>
-  What should I be doing instead? What should process_select return when no process is ready to start? Should we be enabling and then disabling interrupts in the polling loop?
- </paragraph>
-</document>
+<p>
+ I was told during office hours to put a while loop in process_select to wait until a process is ready to start when that is the only process left.
+</p>
+<p>
+ Since interrupts are disabled in 3140.s this means that the
+ <b>
+  PIT1_Service
+ </b>
+ will never be called and the time will not increment. Thus making the polling loop useless.
+</p>
+<p>
+ What should I be doing instead? What should process_select return when no process is ready to start? Should we be enabling and then disabling interrupts in the polling loop?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prithwish Dan (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prithwish Dan (student)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   Disabling interrupts != Disabling the timer from counting down. In lab 2 part 2 we managed to poll the PIT timer without generating interrupts, and you can do the same thing here
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<document version="2.0">
- <paragraph>
-  This is correct. You can poll PIT1 similar to how we did in Lab2, and on the event that PIT1 finishes you can call your
-  <code>
-   PIT1_Service
-  </code>
-  . Interrupts need not be modified for this method to work.
- </paragraph>
- <paragraph>
-  If nRT processes are available and RT processes are not ready (or do not exist), you must run the nRT processes. If no nRT processes are left and RT processes are not ready, you must wait for one to become ready. Otherwise you would be terminating execution with incomplete and un-free'd processes left in the queues. The only condition for terminating your scheduler is if there are no processes left anywhere.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you for your help! It works now!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Harris Miller (None)
+  </h3>
+  <h3>
+   Vote Count: 3
+  </h3>
+  <p>
+   This is correct. You can poll PIT1 similar to how we did in Lab2, and on the event that PIT1 finishes you can call your
+   <code>
+    PIT1_Service
+   </code>
+   . Interrupts need not be modified for this method to work.
+  </p>
+  <p>
+   If nRT processes are available and RT processes are not ready (or do not exist), you must run the nRT processes. If no nRT processes are left and RT processes are not ready, you must wait for one to become ready. Otherwise you would be terminating execution with incomplete and un-free'd processes left in the queues. The only condition for terminating your scheduler is if there are no processes left anywhere.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Thank you for your help! It works now!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

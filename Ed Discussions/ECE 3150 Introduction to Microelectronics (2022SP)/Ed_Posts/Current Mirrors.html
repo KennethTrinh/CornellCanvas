@@ -13,63 +13,61 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I think we said in class that if we construct an n-type bipolar current mirror to get I_copy, we must build a p-type common emitter circuit on top to use the I_copy:
- </paragraph>
- <figure>
-  <image height="293.2598099958695" src="https://static.us.edusercontent.com/files/WyL3kgTgvUehl6GnQCz3BWxT" width="658"/>
- </figure>
- <paragraph>
-  Why couldn't we connect an n-type circuit like this instead?
- </paragraph>
- <figure>
-  <image height="267.9608408903545" src="https://static.us.edusercontent.com/files/ojcUNakIjOY3tgBN0yZ7eiVZ" width="643"/>
- </figure>
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
+<p>
+ I think we said in class that if we construct an n-type bipolar current mirror to get I_copy, we must build a p-type common emitter circuit on top to use the I_copy:
+</p>
+<figure>
+ <image height="293.2598099958695" src="https://static.us.edusercontent.com/files/WyL3kgTgvUehl6GnQCz3BWxT" width="658"/>
+</figure>
+<p>
+ Why couldn't we connect an n-type circuit like this instead?
+</p>
+<figure>
+ <image height="267.9608408903545" src="https://static.us.edusercontent.com/files/ojcUNakIjOY3tgBN0yZ7eiVZ" width="643"/>
+</figure>
+<p>
+ Thank you!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Amal El-Ghazaly (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Amal El-Ghazaly (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   You can do that, but then instead of it being a common emitter amp with high gain of
- </paragraph>
+ </p>
  <math>
   -g_m\left(r_{o,n}\parallel r_{o,p}\right)
  </math>
- <paragraph>
+ <p>
   (assuming the ro,n of the current source is parallel to the ro,p of the pnp amp) you'll get a common emitter amp with emitter degeneration and lower gain of
- </paragraph>
+ </p>
  <math>
   \frac{-r_{o,n}}{\frac{1}{g_m}+r_{o,p}}
  </math>
- <paragraph>
+ <p>
   assuming 1/gm is much smaller than ro,p then this gain is nearly -1.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Amal El-Ghazaly (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Also, as you've drawn it now, vout is tied to Vdd, so would not be able to provide any small signal sensitivity to the input. You would need a resistor up top between the Vout and Vdd.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Amal El-Ghazaly (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Also, as you've drawn it now, vout is tied to Vdd, so would not be able to provide any small signal sensitivity to the input. You would need a resistor up top between the Vout and Vdd.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

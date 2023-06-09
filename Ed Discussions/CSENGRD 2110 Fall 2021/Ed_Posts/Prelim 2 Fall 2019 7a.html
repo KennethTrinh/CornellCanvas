@@ -13,98 +13,92 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="213.83281086729363" src="https://static.us.edusercontent.com/files/dzEeRzQJKlz3fac9t1nu1Mcc" width="658"/>
- </figure>
- <paragraph>
-  Why do we replace the first if statement with what's shown above? From what I remember we want to make sure that the array has more than two elements, or if(k+1-h &lt; 2) return;
- </paragraph>
-</document>
+<figure>
+ <image height="213.83281086729363" src="https://static.us.edusercontent.com/files/dzEeRzQJKlz3fac9t1nu1Mcc" width="658"/>
+</figure>
+<p>
+ Why do we replace the first if statement with what's shown above? From what I remember we want to make sure that the array has more than two elements, or if(k+1-h &lt; 2) return;
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andrew Chen (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  It would actually be more than 1 element(or greater than or equal to 2 elements). With two elements, consider the case where you have the partition as [6, 4]. That still needs to be sorted.
- </paragraph>
- <paragraph>
-  Also I think what you wrote
- </paragraph>
- <paragraph>
-  if(k+1-h &lt; 2) return;
- </paragraph>
- <paragraph>
-  corresponds with "wanting" greater than or equal to 2 elements, not more than two elements.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I mean greater than or equal to, sorry. But does the if statement that's given as the solution satisfy that?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew Chen (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  It does, so in that case you are correct, but the answer key is also correct(I believe). Because the answer key says that we won't attempt to sort any partition that's size 1 or lower. The algorithm from JavaHyperText says don't sort any partition size 0 or lower. Both would be correct, I think, since sorting a size 1 partition is just leaving it as is.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Troy Moslemi (he/him) (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   According to java hyper text, the first if statement would be:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   if (k + 1 - h &lt; 2)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   which would be simplified with algebraic manipulation:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   if (k &lt; h)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Although I am unsure why the sign is different but I think it would still be correct since k+1-h&lt;2 is straight from Java Hyper Text, which both say "Sort b[h...k]"
- </paragraph>
- <paragraph>
- </paragraph>
+ </p>
  <figure>
   <image height="131.98720682302772" src="https://static.us.edusercontent.com/files/328NDyB8NW2D92Wb2AyWdP40" width="684"/>
  </figure>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Andrew Chen (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   It would actually be more than 1 element(or greater than or equal to 2 elements). With two elements, consider the case where you have the partition as [6, 4]. That still needs to be sorted.
+  </p>
+  <p>
+   Also I think what you wrote
+  </p>
+  <p>
+   if(k+1-h &lt; 2) return;
+  </p>
+  <p>
+   corresponds with "wanting" greater than or equal to 2 elements, not more than two elements.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I mean greater than or equal to, sorry. But does the if statement that's given as the solution satisfy that?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Andrew Chen (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     It does, so in that case you are correct, but the answer key is also correct(I believe). Because the answer key says that we won't attempt to sort any partition that's size 1 or lower. The algorithm from JavaHyperText says don't sort any partition size 0 or lower. Both would be correct, I think, since sorting a size 1 partition is just leaving it as is.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

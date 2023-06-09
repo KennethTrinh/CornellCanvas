@@ -13,31 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  How was $h_1(t)$ determined in part a? I tried plugging in $\lim_{a -&gt; 0}\frac{1}{a}p_a(t)$ but was unable to simplify the integral. In general, how does one determine the impulse response given $S(x)$, for both strictly (and non strictly) convolutional systems?
- </paragraph>
-</document>
+<p>
+ How was $h_1(t)$ determined in part a? I tried plugging in $\lim_{a -&gt; 0}\frac{1}{a}p_a(t)$ but was unable to simplify the integral. In general, how does one determine the impulse response given $S(x)$, for both strictly (and non strictly) convolutional systems?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   You're supposed to look at it and know it's an averager.  You can do the $p _ a$ thing, as well, and you'll get essentially the same thing, as follows:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $\lim _ {a \rightarrow 0} \frac{1}{a} \int _ {t - 14} ^ t p _ a ( \tau ) d \tau = \left \{ \begin{array}{cl} 1 &amp; {\rm whem} \; t - 14 &lt; 0 &lt; t \\ 0 &amp; {\rm when} \; 0 &lt; t - 14 \; {\rm or} \; t &lt; 0 \end{array} \right .$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   and it comes out to $1 / 2$ when $t = 0$ or $t - 14 = 0$.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,35 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I get that Java inserts a default constructor in a class if another one isn't already define, but when super() is call where is super() found? Is it found in the Object class?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I get that Java inserts a default constructor in a class if another one isn't already define, but when super() is call where is super() found? Is it found in the Object class?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Suppose  B extends A.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Suppose B does not have a constructor, so Java inserts  super();
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   That calls a constructor with no parameters in A. A doesn't have such a constructor, it is a syntax error, and the program is not compiled.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

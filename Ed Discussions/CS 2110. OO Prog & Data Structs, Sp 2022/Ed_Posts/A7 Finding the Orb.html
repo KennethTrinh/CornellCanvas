@@ -13,51 +13,47 @@
 <h3>
  Vote Count: 3
 </h3>
-<document version="2.0">
- <paragraph>
-  Throughout 2110, we have emphasized developing programs in a systematic, careful way, doing one step at a time and testing incrementally. The videos in JavaHyperText on stepwise refinement give examples of this.
- </paragraph>
- <paragraph>
-  Stepwise refinement is especially important in developing the method for the Find-the-orb phase in A8. We have seen too many attempts to write this phase all at once, without real understanding, leading to a lot of wasted time. We hope that the suggested method of development shown below will be one more example to help you learn this strategy while making this assignment less difficult and more rewarding. Here's how we suggest proceeding.
- </paragraph>
- <list style="number">
-  <list-item>
-   <paragraph>
-    Implement a dfs-walk, making it look like the one in the tutorial. Look in JavaHyperText at the last video on DFS/BFS. This means implementing that fairly abstract algorithm, making changes to fit this environment. Pres Pollack will do the dfs of the whole graph but not stop at the Orb. That's OK! COPY THE SPEC FROM THAT ABSTRACT ALGORITHM AND CHANGE IT TO FIT THIS SITUATION! Don't just say "Do a DFS walk."
-    <break>
-    </break>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Change the method spec to take into account stopping when the Orb is found. Where should Pres Pollack be standing when a recursive call ends? Two possible cases: (1) The Orb was not found during this recursive call. (2) The Orb was found during this recursive call.
-    <break>
-    </break>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Change the method body to fit the new specifications. Look at the recursive calls, note what the changed specification says, and revise accordingly.
-    <break>
-    </break>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Figure out how to optimize. The optimization has to do with noting that the distance to the Orb from each node is known and visiting neighbors of a node in an order that reflects this knowledge. This should lead to a local, greedy choice; it should not result in rewriting the whole method!
-    <break>
-    </break>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    OTHER POINTS. Having a data structure to maintain info on what has been visited and figuring out a way to optimize are two totally different things. Don't confuse them.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Throughout 2110, we have emphasized developing programs in a systematic, careful way, doing one step at a time and testing incrementally. The videos in JavaHyperText on stepwise refinement give examples of this.
+</p>
+<p>
+ Stepwise refinement is especially important in developing the method for the Find-the-orb phase in A8. We have seen too many attempts to write this phase all at once, without real understanding, leading to a lot of wasted time. We hope that the suggested method of development shown below will be one more example to help you learn this strategy while making this assignment less difficult and more rewarding. Here's how we suggest proceeding.
+</p>
+<list style="number">
+ <li>
+  <p>
+   Implement a dfs-walk, making it look like the one in the tutorial. Look in JavaHyperText at the last video on DFS/BFS. This means implementing that fairly abstract algorithm, making changes to fit this environment. Pres Pollack will do the dfs of the whole graph but not stop at the Orb. That's OK! COPY THE SPEC FROM THAT ABSTRACT ALGORITHM AND CHANGE IT TO FIT THIS SITUATION! Don't just say "Do a DFS walk."
+   <break>
+   </break>
+  </p>
+ </li>
+ <li>
+  <p>
+   Change the method spec to take into account stopping when the Orb is found. Where should Pres Pollack be standing when a recursive call ends? Two possible cases: (1) The Orb was not found during this recursive call. (2) The Orb was found during this recursive call.
+   <break>
+   </break>
+  </p>
+ </li>
+ <li>
+  <p>
+   Change the method body to fit the new specifications. Look at the recursive calls, note what the changed specification says, and revise accordingly.
+   <break>
+   </break>
+  </p>
+ </li>
+ <li>
+  <p>
+   Figure out how to optimize. The optimization has to do with noting that the distance to the Orb from each node is known and visiting neighbors of a node in an order that reflects this knowledge. This should lead to a local, greedy choice; it should not result in rewriting the whole method!
+   <break>
+   </break>
+  </p>
+ </li>
+ <li>
+  <p>
+   OTHER POINTS. Having a data structure to maintain info on what has been visited and figuring out a way to optimize are two totally different things. Don't confuse them.
+  </p>
+ </li>
+</list>
 <h3>
  ----------- REPLIES -----------
 </h3>

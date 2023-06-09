@@ -13,29 +13,25 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  If we were able to write showdown_time without calling was_accepted or college_named, and it works, is that fine?
-  <break>
-  </break>
-  <break>
-  </break>
-  I didn't notice was_accepted being called in showdown_time.py, so I'm a bit confused if we needed to use it somehow, or is it sufficient to just pass the helper_tests?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ If we were able to write showdown_time without calling was_accepted or college_named, and it works, is that fine?
+ <break>
+ </break>
+ <break>
+ </break>
+ I didn't notice was_accepted being called in showdown_time.py, so I'm a bit confused if we needed to use it somehow, or is it sufficient to just pass the helper_tests?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Elisabeth Finkel (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Elisabeth Finkel (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   It's possible to write
   <code>
    showdown_time
@@ -57,40 +53,40 @@
    was_accepted
   </code>
   .
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  So, just to be perfectly clear: you must use
-  <code>
-   was_accepted()
-  </code>
-  because that's what the handout says, and the code part we gave you in
-  <code>
-   showdown_time()
-  </code>
-  already calls
-  <code>
-   college_named
-  </code>
-  , and you were NOT supposed to delete those lines:
-  <break>
-  </break>
- </paragraph>
- <pre><bold># STUDENTS: leave this code block alone!</bold> 
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   So, just to be perfectly clear: you must use
+   <code>
+    was_accepted()
+   </code>
+   because that's what the handout says, and the code part we gave you in
+   <code>
+    showdown_time()
+   </code>
+   already calls
+   <code>
+    college_named
+   </code>
+   , and you were NOT supposed to delete those lines:
+   <break>
+   </break>
+  </p>
+  <pre><b># STUDENTS: leave this code block alone!</b> 
 c1 = sdu.college_named(c1name, colleges) 
 c2 = sdu.college_named(c2name, colleges)
 </pre>
-</document>
-<h3>
- ------------------------------------
-</h3>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

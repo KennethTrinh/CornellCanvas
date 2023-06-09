@@ -13,126 +13,124 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  For example I have two tags for a film one is genre and the other is rating , should I have my sql as something like
- </paragraph>
- <paragraph>
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
- </paragraph>
- <paragraph>
-  name TEXT NOT NULL,
- </paragraph>
- <paragraph>
-  ('4', 1),  ('romance', 1),
- </paragraph>
- <paragraph>
-  or
- </paragraph>
- <paragraph>
-  id INTEGER PRIMARY KEY AUTOINCREMENT, rating INTEGER NOT NULL, genre TEXT NOT NULL,
- </paragraph>
- <paragraph>
-  ('4', 'romance', 1),
- </paragraph>
-</document>
+<p>
+ For example I have two tags for a film one is genre and the other is rating , should I have my sql as something like
+</p>
+<p>
+ id INTEGER PRIMARY KEY AUTOINCREMENT,
+</p>
+<p>
+ name TEXT NOT NULL,
+</p>
+<p>
+ ('4', 1),  ('romance', 1),
+</p>
+<p>
+ or
+</p>
+<p>
+ id INTEGER PRIMARY KEY AUTOINCREMENT, rating INTEGER NOT NULL, genre TEXT NOT NULL,
+</p>
+<p>
+ ('4', 'romance', 1),
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Kyle J. Harms (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kyle J. Harms (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   There is not enough information here for me to answer the question. No table is provided. Please feel free to ask this question during class office hours tomorrow.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  My seed table looks like  movies (
- </paragraph>
- <paragraph>
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
- </paragraph>
- <paragraph>
-  title TEXT NOT NULL,
- </paragraph>
- <paragraph>
-  director TEXT NOT NULL,
- </paragraph>
- <paragraph>
-  year INTEGER NOT NULL,
- </paragraph>
- <paragraph>
-  file_name TEXT NOT NULL,
- </paragraph>
- <paragraph>
-  file_ext TEXT NOT NULL,
- </paragraph>
- <paragraph>
-  source TEXT
- </paragraph>
- <paragraph>
-  );
- </paragraph>
- <paragraph>
-  I am wondering if I should have my tags table as CREATE TABLE details(
- </paragraph>
- <paragraph>
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
- </paragraph>
- <paragraph>
-  name TEXT NOT NULL,
- </paragraph>
- <paragraph>
-  movie_id INTEGER NOT NULL,
- </paragraph>
- <paragraph>
-  FOREIGN KEY (movie_id) REFERENCES movies(id)
- </paragraph>
- <paragraph>
-  );
- </paragraph>
- <paragraph>
-  Because in the class example, the tags table only have the fields and the name field can be different types of tags. In my circumstance, 'name' can be either the rating of a movie or the genre.
- </paragraph>
- <paragraph>
-  Or I should have my tags table as
- </paragraph>
- <paragraph>
-  details(
- </paragraph>
- <paragraph>
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
- </paragraph>
- <paragraph>
-  rating INTEGER NOT NULL,
- </paragraph>
- <paragraph>
-  genre TEXT NOT NULL,
- </paragraph>
- <paragraph>
-  movie_id INTEGER NOT NULL,
- </paragraph>
- <paragraph>
-  FOREIGN KEY (movie_id) REFERENCES movies(id)
- </paragraph>
- <paragraph>
-  );
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   My seed table looks like  movies (
+  </p>
+  <p>
+   id INTEGER PRIMARY KEY AUTOINCREMENT,
+  </p>
+  <p>
+   title TEXT NOT NULL,
+  </p>
+  <p>
+   director TEXT NOT NULL,
+  </p>
+  <p>
+   year INTEGER NOT NULL,
+  </p>
+  <p>
+   file_name TEXT NOT NULL,
+  </p>
+  <p>
+   file_ext TEXT NOT NULL,
+  </p>
+  <p>
+   source TEXT
+  </p>
+  <p>
+   );
+  </p>
+  <p>
+   I am wondering if I should have my tags table as CREATE TABLE details(
+  </p>
+  <p>
+   id INTEGER PRIMARY KEY AUTOINCREMENT,
+  </p>
+  <p>
+   name TEXT NOT NULL,
+  </p>
+  <p>
+   movie_id INTEGER NOT NULL,
+  </p>
+  <p>
+   FOREIGN KEY (movie_id) REFERENCES movies(id)
+  </p>
+  <p>
+   );
+  </p>
+  <p>
+   Because in the class example, the tags table only have the fields and the name field can be different types of tags. In my circumstance, 'name' can be either the rating of a movie or the genre.
+  </p>
+  <p>
+   Or I should have my tags table as
+  </p>
+  <p>
+   details(
+  </p>
+  <p>
+   id INTEGER PRIMARY KEY AUTOINCREMENT,
+  </p>
+  <p>
+   rating INTEGER NOT NULL,
+  </p>
+  <p>
+   genre TEXT NOT NULL,
+  </p>
+  <p>
+   movie_id INTEGER NOT NULL,
+  </p>
+  <p>
+   FOREIGN KEY (movie_id) REFERENCES movies(id)
+  </p>
+  <p>
+   );
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

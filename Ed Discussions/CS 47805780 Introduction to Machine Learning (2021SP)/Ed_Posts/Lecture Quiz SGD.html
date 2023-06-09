@@ -13,31 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="265.23424494649225" src="https://static.us.edusercontent.com/files/5zLPP2ahxbbKsZmI2TSxKu6T" width="658"/>
- </figure>
- <paragraph>
-  How do we know this is valid? Also what is the different between SGD choose g, and SGD for learning? I'm not entirely sure what choosing a gradient direction actually means.
- </paragraph>
-</document>
+<figure>
+ <image height="265.23424494649225" src="https://static.us.edusercontent.com/files/5zLPP2ahxbbKsZmI2TSxKu6T" width="658"/>
+</figure>
+<p>
+ How do we know this is valid? Also what is the different between SGD choose g, and SGD for learning? I'm not entirely sure what choosing a gradient direction actually means.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Scott Bass (student)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Scott Bass (student)
+ </h3>
+ <h3>
+  Vote Count: 3
+ </h3>
+ <p>
   The value you choose for the SGD update must be an unbiased estimator of the gradient. The gradient of of the loss function at timestep $t$ is $dL(x^{(t)}) = -2$ (take derivative of $L$ w.r.t. $x$ and plug in $-1$). So, we need $E[g^{(t)}] = -2$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $$E[g^{(t)}] = 0.5 * -3 + 0.5 * -1 = -2$$. Therefore it's a valid estimator.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

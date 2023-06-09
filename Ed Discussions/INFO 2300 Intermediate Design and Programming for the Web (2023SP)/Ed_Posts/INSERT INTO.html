@@ -13,52 +13,46 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  When using INSERT INTO when the form is valid,
- </paragraph>
- <paragraph>
-  how do we store data from one form into multiple databases?
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  also, if we are trying to store data into our table that connects the other two tables, how do we make sure that the foreign keys are not null? how do we get that value??
- </paragraph>
-</document>
+<p>
+ When using INSERT INTO when the form is valid,
+</p>
+<p>
+ how do we store data from one form into multiple databases?
+ <break>
+ </break>
+</p>
+<p>
+ also, if we are trying to store data into our table that connects the other two tables, how do we make sure that the foreign keys are not null? how do we get that value??
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Kyle J. Harms (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kyle J. Harms (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The assignments in this class only permit one database. You should only store data in one database for Project 3. However, to answer your question, you would need to connect to another database and store that connection in a different variable. For example, the connection to the second database could be called
   <code>
    $db2
   </code>
   , etc.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   After inserting a record into a table, you can use the
   <code>
    $db-&gt;lastInsertId('id');
   </code>
   to get the id of the last record you inserted and use this value to insert records into your
-  <italic>
+  <i>
    entry_tags
-  </italic>
+  </i>
   table.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,35 +13,33 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm trying to delete test data that I entered in my database, but I keep getting the following error message:
- </paragraph>
- <paragraph>
-  Error deleting record: FOREIGN KEY constraint failed (DELETE FROM "main"."products" WHERE rowid IN ('21', '20', '19', '18', '17', '16', '15');)
- </paragraph>
- <paragraph>
-  Does anyone know how to fix this?
- </paragraph>
-</document>
+<p>
+ I'm trying to delete test data that I entered in my database, but I keep getting the following error message:
+</p>
+<p>
+ Error deleting record: FOREIGN KEY constraint failed (DELETE FROM "main"."products" WHERE rowid IN ('21', '20', '19', '18', '17', '16', '15');)
+</p>
+<p>
+ Does anyone know how to fix this?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Kyle J. Harms (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kyle J. Harms (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   This means you need to delete all records with the same entry id in your
   <code>
    entry_tags
   </code>
   table.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

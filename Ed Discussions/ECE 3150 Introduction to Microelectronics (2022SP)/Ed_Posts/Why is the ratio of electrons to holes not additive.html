@@ -13,62 +13,52 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  In lecture, you take the intrinsic concentration n_i^2 and divide it by N_D to get p, the number of holes. Why is this a division and not a subtraction? My understanding is that each extra electron fills one of the holes that would otherwise exist, therefore the number of holes should be the intrinsic number minus the number of extra electrons.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ In lecture, you take the intrinsic concentration n_i^2 and divide it by N_D to get p, the number of holes. Why is this a division and not a subtraction? My understanding is that each extra electron fills one of the holes that would otherwise exist, therefore the number of holes should be the intrinsic number minus the number of extra electrons.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Hyunjea Lee (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  You will get a much better idea about why ni^2 = n0*p0 once you learn about energy band digram, Fermi level, density of states etc, so hold on for a moment. By the way Professor El-Ghazaly briefly explained this concept by drawing the energy band digram together with density of states function today.
- </paragraph>
- <paragraph>
-  Let me try to explain why the number of holes is NOT the intrinsic number minus the number of extra electrons, not using the energy band digram concept. You have silicon lattice, and if the temperature is not 0 K, some electrons can be thermally agitated and break free. Now you have one free electron that contributes to current conduction, and you also have one broken bond (=hole) that contributes to the current as well. This is called EHP generation, electron hole pair. When a valence electron gets excited, you get both FREE electron and hole, so the subtraction is not true.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Clifford Pollock (admin)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Clifford Pollock (admin)
+ </h3>
+ <h3>
+  Vote Count: 3
+ </h3>
+ <p>
   This is a good question!  Hyunjea's answer is correct,  but let me elaborate.  Electrons get excited in the conduction band by thermal energy, creating a free electron and a hole.  The average thermal energy is 27 meV, and the bandgap is about 1 eV, so statistically very few electrons ever get enough energy to jump the band, but there are 10^22 electrons/cm^3, so even a low probability leads to a finite rate.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   These electrons and holes roam around awhile and eventually bump into each other and recombine, effectively coming back down out of the conduction band.  We characterize them with an average lifetime, it depends on the material, but its less than a microsecond.   So there is this constant flux of new electrons going up to the conduction band, and a flux of electrons recombining.  It is a constant churn.  The average value of holes is the generation rate times the lifetime,
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Now, if you dope the semiconductor with a donor, these electrons are not thermally generated, they are instantly in the conduction band and they stay there.  Imagine we add enough donors to boost the number of free electrons by a factor of ten.  Now there are ten times as many electrons than before, and the probability that a hole runs into an electron is 10 times greater, so the holes have only 1/10th their normal lifetime.   So the  number of holes decreases by a factor of ten.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If the crystal is doped by 10^6 times the intrinsic value, there will be 10^6 more electrons, and the thermally generated holes will run into electrons and recombine at 10^6 times faster, so the hole population is decreased by 10^6.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   This is why it is multiplicative.  The holes are thermally generated at a finite rate and reach a steady state of population through recombination. The dopants are not thermally generated but just simply exist in the band. The more electrons there are, the shorter the lifetime of the hole.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Hyunjea Lee (staff)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   You will get a much better idea about why ni^2 = n0*p0 once you learn about energy band digram, Fermi level, density of states etc, so hold on for a moment. By the way Professor El-Ghazaly briefly explained this concept by drawing the energy band digram together with density of states function today.
+  </p>
+  <p>
+   Let me try to explain why the number of holes is NOT the intrinsic number minus the number of extra electrons, not using the energy band digram concept. You have silicon lattice, and if the temperature is not 0 K, some electrons can be thermally agitated and break free. Now you have one free electron that contributes to current conduction, and you also have one broken bond (=hole) that contributes to the current as well. This is called EHP generation, electron hole pair. When a valence electron gets excited, you get both FREE electron and hole, so the subtraction is not true.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

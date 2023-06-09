@@ -13,51 +13,50 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  <link href="https://canvas.cornell.edu/courses/25081/pages/homework-assignments"/>
-  <bold>
+<p>
+ <a href="https://canvas.cornell.edu/courses/25081/pages/homework-assignments">
+  <b>
    <underline>
     Link to Homework Assignments page on Canvas
    </underline>
-  </bold>
- </paragraph>
- <callout type="info">
-  Which problem are you working on? (ex. HW 1, Problem 3, 9.1.15)
- </callout>
- <paragraph>
-  HW3 Q8
- </paragraph>
- <callout type="info">
-  What is your question?
- </callout>
- <paragraph>
-  What is the difference between the p (for parameter) we used for Euler method and options we have this time?
- </paragraph>
- <callout type="info">
-  Describe the solution attempts you've made thus far.
- </callout>
- <paragraph>
-  1. The p we used was to hold parameters that need to be passed into function "myrhs" to solve for the slope. However, in the description this time there is no p as an input to the new "myEulerSolver" function, there is only a option. Should we add p as an input?
- </paragraph>
- <paragraph>
-  2. Also what is option.maxtime exactly mean here? Does that mean we need to setup a timer inside the function, and if the run time of the script is over this maxtime, we terminate the function and print some warning?
- </paragraph>
- <paragraph>
-  3. How do we solve for relative error if that is an input of function instead of output?
- </paragraph>
-</document>
+  </b>
+ </a>
+</p>
+<callout type="info">
+ Which problem are you working on? (ex. HW 1, Problem 3, 9.1.15)
+</callout>
+<p>
+ HW3 Q8
+</p>
+<callout type="info">
+ What is your question?
+</callout>
+<p>
+ What is the difference between the p (for parameter) we used for Euler method and options we have this time?
+</p>
+<callout type="info">
+ Describe the solution attempts you've made thus far.
+</callout>
+<p>
+ 1. The p we used was to hold parameters that need to be passed into function "myrhs" to solve for the slope. However, in the description this time there is no p as an input to the new "myEulerSolver" function, there is only a option. Should we add p as an input?
+</p>
+<p>
+ 2. Also what is option.maxtime exactly mean here? Does that mean we need to setup a timer inside the function, and if the run time of the script is over this maxtime, we terminate the function and print some warning?
+</p>
+<p>
+ 3. How do we solve for relative error if that is an input of function instead of output?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andy Ruina (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andy Ruina (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   <code>
    p
   </code>
@@ -112,10 +111,10 @@
   .
   <break>
   </break>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Here is a code snippet that should work for the harmonic oscillator
- </paragraph>
+ </p>
  <pre>tspan = ...
 z0    = ...
 p.k = 1;  p.m = 2;               % set parameters
@@ -124,10 +123,10 @@ options.maxtime = 10;            % set maximimum amount of try for accuracy
 eqn = @(t,z)   myrhs(t,z,p);     % define "anonymous" function eqn
 {tarray zarray} = ODE1(eqn, tspan, z0, options);  % call the solver
 </pre>
- <paragraph>
+ <p>
   If this isn't clear enough, please use one or two of our 40 some office hours.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

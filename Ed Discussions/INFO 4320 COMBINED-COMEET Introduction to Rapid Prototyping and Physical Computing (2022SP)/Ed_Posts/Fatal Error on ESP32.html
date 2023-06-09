@@ -13,151 +13,147 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I keep getting this error on my ESP32 when I try to upload code that was just working before
- </paragraph>
- <figure>
-  <image height="162.10204081632654" src="https://static.us.edusercontent.com/files/lL6TPWDYwZPq6dVkmtITh14H" width="658"/>
- </figure>
- <paragraph>
-  I read online that this could be fixed using a 10 micro Farad capacitor between the EN and GND pins but I've never had this issue before. How can I fix this?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Update: the capacitor trick didn't work :(
- </paragraph>
-</document>
-<h3>
- Author: Cheng Zhang (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ I keep getting this error on my ESP32 when I try to upload code that was just working before
+</p>
+<figure>
+ <image height="162.10204081632654" src="https://static.us.edusercontent.com/files/lL6TPWDYwZPq6dVkmtITh14H" width="658"/>
+</figure>
+<p>
+ I read online that this could be fixed using a 10 micro Farad capacitor between the EN and GND pins but I've never had this issue before. How can I fix this?
+</p>
+<p>
+ Update: the capacitor trick didn't work :(
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Cheng Zhang (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I usually just restart the computer and try differnet USB port.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I only have one USB port tho rip
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I only have one USB port tho rip
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Nathaniel Chin (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I am also getting this error and I tried restarting laptop and arduino as well as different usb ports
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Cheng Zhang (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  It is possible that the microcontroller is burned out. You can try with another microcontroller and see how that works.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Like a different board type? Or a different ESP32? Also, if I can't get this fixed soon, can I use a different board (like an Arduino) to complete the design project? :((
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Cheng Zhang (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes. if you have another board, you can use it to finish the assignment.
- </paragraph>
- <paragraph>
-  Did you see any TA or OH in person to take a look at the error?  We can try to help you solve this issue in person.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I was able to figure out the issue! So I'm using the humidity and temp sensor that came in the box sensor kit, and for some reason, the code won't upload to my board as long as the signal cable is connected on the breadboard to the ESP32 to the temp sensor. But once I upload the code, when I reconnect the signal cable, the sensor works perfectly fine and outputs data on the serial monitor. It just won't upload code to the board as long as the signa is plugged in.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ruidong Zhang (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Certain pins cannot be used during downloading, they will be used by the system. You can also try switching the sensor to a different pin.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: James Lepone (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: James Lepone (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Whenever I see this, I unplug the ESP 32, plug it back in, and reupload. It has always worked.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Nathaniel Chin (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I am also getting this error and I tried restarting laptop and arduino as well as different usb ports
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Cheng Zhang (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    It is possible that the microcontroller is burned out. You can try with another microcontroller and see how that works.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Like a different board type? Or a different ESP32? Also, if I can't get this fixed soon, can I use a different board (like an Arduino) to complete the design project? :((
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 8em;">
+     <h3>
+      Author: Cheng Zhang (admin)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      Yes. if you have another board, you can use it to finish the assignment.
+     </p>
+     <p>
+      Did you see any TA or OH in person to take a look at the error?  We can try to help you solve this issue in person.
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 10em;">
+      <h3>
+       Author: Anonymous
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       I was able to figure out the issue! So I'm using the humidity and temp sensor that came in the box sensor kit, and for some reason, the code won't upload to my board as long as the signal cable is connected on the breadboard to the ESP32 to the temp sensor. But once I upload the code, when I reconnect the signal cable, the sensor works perfectly fine and outputs data on the serial monitor. It just won't upload code to the board as long as the signa is plugged in.
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 12em;">
+       <h3>
+        Author: Ruidong Zhang (admin)
+       </h3>
+       <h3>
+        Vote Count: 1
+       </h3>
+       <p>
+        Certain pins cannot be used during downloading, they will be used by the system. You can also try switching the sensor to a different pin.
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

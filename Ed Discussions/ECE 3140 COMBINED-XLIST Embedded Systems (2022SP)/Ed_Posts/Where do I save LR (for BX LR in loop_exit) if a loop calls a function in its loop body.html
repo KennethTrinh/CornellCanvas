@@ -13,88 +13,82 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I have a loop
-  <code>
-   some_loop
-  </code>
-  that calls a function (say
-  <code>
-   dot
-  </code>
-  function to flash the LED for a dot) and that loop is called by
-  <code>
-   main
-  </code>
-  by
-  <code>
-   BL some_loop.
-  </code>
-  <break>
-  </break>
-  Where do I save the LR so that when I do
-  <code>
-   BX LR
-  </code>
-  in my
-  <code>
-   loop_exit
-  </code>
-  , the LR points to the line in
-  <code>
-   main
-  </code>
-  after the loop was called?
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  Do I push LR on the stack before I call the loop? If I push inside the loop body, I would end up pushing LR multiple times to the stack which is not what I want.
- </paragraph>
- <paragraph>
-  Is BL to a loop a caller-callee structure? Or is that only for functions? Does caller-callee apply to recursive functions (they are almost similar to loops)?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I have a loop
+ <code>
+  some_loop
+ </code>
+ that calls a function (say
+ <code>
+  dot
+ </code>
+ function to flash the LED for a dot) and that loop is called by
+ <code>
+  main
+ </code>
+ by
+ <code>
+  BL some_loop.
+ </code>
+ <break>
+ </break>
+ Where do I save the LR so that when I do
+ <code>
+  BX LR
+ </code>
+ in my
+ <code>
+  loop_exit
+ </code>
+ , the LR points to the line in
+ <code>
+  main
+ </code>
+ after the loop was called?
+ <break>
+ </break>
+</p>
+<p>
+ Do I push LR on the stack before I call the loop? If I push inside the loop body, I would end up pushing LR multiple times to the stack which is not what I want.
+</p>
+<p>
+ Is BL to a loop a caller-callee structure? Or is that only for functions? Does caller-callee apply to recursive functions (they are almost similar to loops)?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aaron Wilhelm (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  <bold>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aaron Wilhelm (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
+  <b>
    Do I push LR on the stack before I call the loop?
-  </bold>
- </paragraph>
- <paragraph>
+  </b>
+ </p>
+ <p>
   Yes, because otherwise as you said you would push it in for each iteration of the loop.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  <bold>
+ </p>
+ <p>
+  <b>
    Is BL to a loop a caller-callee structure? Or is that only for functions? Does caller-callee apply to recursive functions (they are almost similar to loops)?
-  </bold>
- </paragraph>
- <paragraph>
+  </b>
+ </p>
+ <p>
   You should only be using the BL instruction for subroutines since it branches and links (i.e. it jumps to that point for execution and moves the address of the instruction after the BL instruction into the LR). The ARM calling convention applies to subroutines, but that being said if you had a loop within a subroutine that overwrote registers it wasn't supposed to then that could cause your subroutine to not follow the ARM calling convention
- </paragraph>
- <paragraph>
-  <bold>
+ </p>
+ <p>
+  <b>
    Does caller-callee apply to recursive functions (they are almost similar to loops)?
-  </bold>
- </paragraph>
- <paragraph>
+  </b>
+ </p>
+ <p>
   Yes! See the factorial video I made. If you don't follow the calling convention you are almost guaranteed to have values in registers overwritten that you needed
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

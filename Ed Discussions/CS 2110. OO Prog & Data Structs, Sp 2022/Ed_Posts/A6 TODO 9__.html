@@ -13,57 +13,51 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  So far, I understand how to set the text on a jlabel, but I don't think I'm implementing PropertyChangeListener correctly since my score always shows Score: 0 and doesn't update correctly. Trying to learn about PropertyChangeListener on the java tutorials website, I'm confused. These examples don't use anonymous functions and use several if statements. How does one establish a property as the bound property? Should this be done outside or inside the anonymous function? Most examples I see use addPropertyChangeListener(String, PropertyChangeListener).
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ So far, I understand how to set the text on a jlabel, but I don't think I'm implementing PropertyChangeListener correctly since my score always shows Score: 0 and doesn't update correctly. Trying to learn about PropertyChangeListener on the java tutorials website, I'm confused. These examples don't use anonymous functions and use several if statements. How does one establish a property as the bound property? Should this be done outside or inside the anonymous function? Most examples I see use addPropertyChangeListener(String, PropertyChangeListener).
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="1.0">
- <paragraph>
-  Basically when GameScore has some sort of change, what property are you trying to change? Put that into an anonymous function
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<document version="2.0">
- <paragraph>
-  I am trying to change the scoreLabel when GameScore changes but I don't understand how to use propertychangelistener with anonymous functions and how to indicate a property that is changing.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Clarkson (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Clarkson (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Conceptually there is no difference between PropertyChangeListeners and any other kinds of Listeners.  For example, TODO 9 is right below TODO 3 in the code.  In TODO 3 you added an ActionListener using an anonymous function.  You do the same thing for a PropertyChangeListener in TODO 9.  Just as the anonymous function in TODO 3 takes an argument of type ActionEvent, the anonymous function in TODO 9 can take an argument of type PropertyChangeEvent.  TL;DR: use what you did for TODO 3 as a model, rather than something more complicated.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Bahaa Kotb (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Basically when GameScore has some sort of change, what property are you trying to change? Put that into an anonymous function
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 3
+   </h3>
+   <p>
+    I am trying to change the scoreLabel when GameScore changes but I don't understand how to use propertychangelistener with anonymous functions and how to indicate a property that is changing.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

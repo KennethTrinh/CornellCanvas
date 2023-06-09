@@ -13,80 +13,76 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I get the following error:  ValueError: shapes (100,2) and (1,2) not aligned: 2 (dim 1) != 1 (dim 0)
- </paragraph>
- <paragraph>
-  when the test case assert (all(np.sign(ys*(xs.dot(w)+b))==1.0))  # yw'x should be +1.0 for every input
- </paragraph>
- <paragraph>
-  tries to dot a nxd matrix xs with the 1xd matrix w  - xs.dot(w)
- </paragraph>
- <paragraph>
-  Is this an issue with the test case or should w be a length d array and not a 1xd matrix?
- </paragraph>
-</document>
+<p>
+ I get the following error:  ValueError: shapes (100,2) and (1,2) not aligned: 2 (dim 1) != 1 (dim 0)
+</p>
+<p>
+ when the test case assert (all(np.sign(ys*(xs.dot(w)+b))==1.0))  # yw'x should be +1.0 for every input
+</p>
+<p>
+ tries to dot a nxd matrix xs with the 1xd matrix w  - xs.dot(w)
+</p>
+<p>
+ Is this an issue with the test case or should w be a length d array and not a 1xd matrix?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Atul Ganju (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The non-commutative operation $X\times Y$ only works if given $X$'s dimensions are $(n,d)$ and $Y$'s dimensions are $(d,m)$ for some arbitrary $n,d,m \in \mathbb{Z}^+$. I hope this clears up the error you are having, otherwise please feel free to follow up.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I'm aware - my question is whether the specifications:
- </paragraph>
- <paragraph>
-  w : weight vector (1xd)
- </paragraph>
- <paragraph>
-  xs : n input vectors of d dimensions (nxd)
- </paragraph>
- <paragraph>
-  are correct, since the test case  xs.dot(w) is destined to throw an error
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Anonymous
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Update: The specification "w : weight vector (1xd)" is incorrect.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The function perception should output an array of length d, not a 1xd matrix.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   <break>
   </break>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Atul Ganju (staff)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   The non-commutative operation $X\times Y$ only works if given $X$'s dimensions are $(n,d)$ and $Y$'s dimensions are $(d,m)$ for some arbitrary $n,d,m \in \mathbb{Z}^+$. I hope this clears up the error you are having, otherwise please feel free to follow up.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I'm aware - my question is whether the specifications:
+   </p>
+   <p>
+    w : weight vector (1xd)
+   </p>
+   <p>
+    xs : n input vectors of d dimensions (nxd)
+   </p>
+   <p>
+    are correct, since the test case  xs.dot(w) is destined to throw an error
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

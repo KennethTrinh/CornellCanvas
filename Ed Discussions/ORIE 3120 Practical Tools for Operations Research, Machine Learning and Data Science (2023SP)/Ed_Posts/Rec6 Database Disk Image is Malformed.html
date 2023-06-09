@@ -13,69 +13,63 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Recitation #6
- </paragraph>
- <paragraph>
-  When I try to run and call the Wildfires.sqlite with the command:
- </paragraph>
- <paragraph>
-  pd.read_sql_query("select count(*) from fires where state IS NULL",conn)
- </paragraph>
- <paragraph>
-  It gives me an error message. I have already tried downloading Wildfires.sqlite again and uploading it but it still gives me the same error even though it worked yesterday. Is there any way to fix this?
- </paragraph>
- <figure>
-  <image height="237.6243654822335" src="https://static.us.edusercontent.com/files/wWq7HPcupMDTIiIVgqlVxdDi" width="658"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Recitation #6
+</p>
+<p>
+ When I try to run and call the Wildfires.sqlite with the command:
+</p>
+<p>
+ pd.read_sql_query("select count(*) from fires where state IS NULL",conn)
+</p>
+<p>
+ It gives me an error message. I have already tried downloading Wildfires.sqlite again and uploading it but it still gives me the same error even though it worked yesterday. Is there any way to fix this?
+</p>
+<figure>
+ <image height="237.6243654822335" src="https://static.us.edusercontent.com/files/wWq7HPcupMDTIiIVgqlVxdDi" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Julia Vanputte (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Julia Vanputte (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   This is an odd error. It seems your database is corrupt? (per me googling the error). I would try redownloading Wildfires.sqlite, reuploading, restarting kernel and rerunning all cells. If this doesn't work post again.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Serena Yang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I redownloaded, reuploaded, restarted the kernel, and reran the cells. It is still returning the same error.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Taha Jafry (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  You may be running the connection command too early? Make sure that the Wildfires file finished fully uploading. It takes a little while since it's a pretty big file.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Serena Yang (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I redownloaded, reuploaded, restarted the kernel, and reran the cells. It is still returning the same error.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Taha Jafry (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    You may be running the connection command too early? Make sure that the Wildfires file finished fully uploading. It takes a little while since it's a pretty big file.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

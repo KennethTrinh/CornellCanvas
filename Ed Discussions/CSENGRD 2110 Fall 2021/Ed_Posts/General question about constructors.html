@@ -13,56 +13,54 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hello! I just want to make sure I understand correctly. When we have a constructor, we MUST start with a call to this(...) or super(...) as the first line. If we do not do this, then Java inserts the default constructor call (e.g. C() {}). My question is, if you are writing the first constructor of a class that does not implement any other classes, we just start the constructor with assigning fields and Java will insert that C() {} call to actually create the object itself? Thank you!
- </paragraph>
-</document>
+<p>
+ Hello! I just want to make sure I understand correctly. When we have a constructor, we MUST start with a call to this(...) or super(...) as the first line. If we do not do this, then Java inserts the default constructor call (e.g. C() {}). My question is, if you are writing the first constructor of a class that does not implement any other classes, we just start the constructor with assigning fields and Java will insert that C() {} call to actually create the object itself? Thank you!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Every class you write implements the superset class of them all,  Object, if it does not
- </paragraph>
- <paragraph>
-  explicitly implement another class.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  So is it correct that after calling the Object constructor in the first line of the method body, you can still write something like this.name = name; as the second line and that will still be executed?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Why not? Haven't we done things like that?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Every class you write implements the superset class of them all,  Object, if it does not
+  </p>
+  <p>
+   explicitly implement another class.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    So is it correct that after calling the Object constructor in the first line of the method body, you can still write something like this.name = name; as the second line and that will still be executed?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

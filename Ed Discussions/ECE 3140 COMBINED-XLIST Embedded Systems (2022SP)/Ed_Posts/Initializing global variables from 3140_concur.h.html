@@ -13,27 +13,23 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  My partner and I are getting errors when trying to use the global variables process_queue and current_process defined in 3140_concur.h. In particular, the error is at each function and is "undefined reference to process_queue" or "current_process". We then tried initializing them at the start of the process.c file and received new errors, and were wondering how to use the global variables defined in the given file to keep track of our queue?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ My partner and I are getting errors when trying to use the global variables process_queue and current_process defined in 3140_concur.h. In particular, the error is at each function and is "undefined reference to process_queue" or "current_process". We then tried initializing them at the start of the process.c file and received new errors, and were wondering how to use the global variables defined in the given file to keep track of our queue?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
  <pre>extern process_t* current_process; 
 extern process_t* process_queue;
 </pre>
- <paragraph>
+ <p>
   The
   <code>
    extern
@@ -43,29 +39,29 @@ extern process_t* process_queue;
    process.c
   </code>
   .
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The following is an example of using
   <code>
    extern
   </code>
   :
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   lib.h
- </paragraph>
+ </p>
  <pre>extern int global_var;
 </pre>
- <paragraph>
+ <p>
   main.c
- </paragraph>
+ </p>
  <pre>#include "lib.h"
 int global_var;
 
 int main(void) {
     global_var = 1;
 }</pre>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

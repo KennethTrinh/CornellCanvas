@@ -13,25 +13,23 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  In the discussion slides for ProcessStart, it mentions not to start the timer. Does this mean not to bitwise-OR with TEN_MASK for TCTRL or something else?
- </paragraph>
-</document>
+<p>
+ In the discussion slides for ProcessStart, it mentions not to start the timer. Does this mean not to bitwise-OR with TEN_MASK for TCTRL or something else?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aidan McNay (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Looking at the assembly, it looks as though this will only be true if you enable timing in process_select. The assembly only stores the current value of TCTRL and restores it later. That being said, you should be able to start the timer in process_start and have it work fine - the process timer should be sufficiently long enough that the time spent starting the first process is significantly small in comparison, so when the interrupt comes from the timer, we will be in the process, not the setup
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

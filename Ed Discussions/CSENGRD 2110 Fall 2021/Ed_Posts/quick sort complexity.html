@@ -13,84 +13,74 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi! I am a little confused about  why does the quick sort's worst case time complexity is O(n^2) instead of O(n) and why the averaged time is O(n logn)?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Thank you so much for your help!
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Hi! I am a little confused about  why does the quick sort's worst case time complexity is O(n^2) instead of O(n) and why the averaged time is O(n logn)?
+</p>
+<p>
+ Thank you so much for your help!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Varun Gande (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Varun Gande (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   In the worst case, the array is already sorted, and it performs the partition a total of n times because the pivot value is the smallest value so the leftmost section to be sorted is empty.. The partitioning algorithm itself is O(n) regardless of what the array is: we're always going to swap elements for each iteration in the partition algorithm. Combining this with the recursion depth O(n) makes the worst-case complexity O(n^2).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I don't think we covered the proof of the expected case in lecture and the calculations involved are a bit difficult, so maybe take Prof. Gries' word for it? Hopefully the worst-case scenario made sense though! The proof of average time was worth a PhD back 40-50 years ago!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  thanks!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Joshua Caplan (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  While this is true if you always pick your pivot to be the beginning or the end of the array, you can also have a worst case scenario if you pick the lowest or highest value in the array. This would give you only 1 group to sort, and so you will have n groups to be iterated over n times, which gives you O(n^2) complexity.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  thanks!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Joshua Caplan (None)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   While this is true if you always pick your pivot to be the beginning or the end of the array, you can also have a worst case scenario if you pick the lowest or highest value in the array. This would give you only 1 group to sort, and so you will have n groups to be iterated over n times, which gives you O(n^2) complexity.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    thanks!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    thanks!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

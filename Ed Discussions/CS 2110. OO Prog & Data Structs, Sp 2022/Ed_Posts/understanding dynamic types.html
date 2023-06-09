@@ -13,79 +13,77 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Just to make sure I am understanding dynamic types, in a partition of classes in subclasses, the dynamic type of an object is the "lowest" partition (using the bottom up rule)?
- </paragraph>
- <paragraph>
-  But the object always points to the superclass?
- </paragraph>
-</document>
+<p>
+ Just to make sure I am understanding dynamic types, in a partition of classes in subclasses, the dynamic type of an object is the "lowest" partition (using the bottom up rule)?
+</p>
+<p>
+ But the object always points to the superclass?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Yes, the dynamic type is the name of the lowest partition.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   No, an object doesn't point anywhere.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Suppose you have.  an.  of static type Animal,   ca   of static type Cat, and   siam of static type SiameseCat.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Suppose they all contain a pointer to the same object, which has partitions for Object, Animal, Cat, and SiameseCat. That pointer points at the OBJECT, not at any particular partition.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bella Besuud (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  What has a pointer to the same object? Are an, ca, and siam all objects?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  So the static types of each of these objects is different (Animal, Cat and Siamese) but the dynamic types are all the same (Siamese)?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   So the static types of each of these objects is different (Animal, Cat and Siamese) but the dynamic types are all the same (Siamese)?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: David Gries (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Yes
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Bella Besuud (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    What has a pointer to the same object? Are an, ca, and siam all objects?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

@@ -13,57 +13,55 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="1.0">
- <paragraph>
-  For the second part of this question would;
- </paragraph>
- <paragraph>
-  if (hasTradePost) {return True;}
-  <break>
-  </break>
-  return leftFork.isTradeRoute() || rightFork.isTradeRoute();
- </paragraph>
- <paragraph>
-  Work?
- </paragraph>
- <paragraph>
-  I don’t understand why the answer says we have to check if the fork is not equal to null. Isn’t it impossible for a null fork to return true by the base case?
- </paragraph>
- <paragraph>
-  Thanks I’m advanced.
- </paragraph>
- <figure>
-  <image height="2732" src="https://static.us.edusercontent.com/files/jcvGoaeY3y3DrQaMfMLigtXd" width="2048"/>
- </figure>
-</document>
+<p>
+ For the second part of this question would;
+</p>
+<p>
+ if (hasTradePost) {return True;}
+ <break>
+ </break>
+ return leftFork.isTradeRoute() || rightFork.isTradeRoute();
+</p>
+<p>
+ Work?
+</p>
+<p>
+ I don’t understand why the answer says we have to check if the fork is not equal to null. Isn’t it impossible for a null fork to return true by the base case?
+</p>
+<p>
+ Thanks I’m advanced.
+</p>
+<figure>
+ <image height="2732" src="https://static.us.edusercontent.com/files/jcvGoaeY3y3DrQaMfMLigtXd" width="2048"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bahaa Kotb (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   what if it doesn’t have a trade post and there’s no left fork? (it’s null) Your code raises a null pointer exception
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Your code executes the line null.isTradeRoute();, even though left is null your code still calls this line.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Bahaa Kotb (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Your code executes the line null.isTradeRoute();, even though left is null your code still calls this line.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

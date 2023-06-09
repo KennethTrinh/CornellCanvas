@@ -13,72 +13,64 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Can someone please explain what is going on here. How did they get the answer for the mechanical impedance? And also about what the ma = -kx, and bv = F0 cos(t) equation helps us. Is it just to show that all the driving force has to be dedicated to counteracting the damping?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
- <figure>
-  <image height="405" src="https://static.us.edusercontent.com/files/fUtO58RgcikJTbdsrsP23sHf" width="649"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Can someone please explain what is going on here. How did they get the answer for the mechanical impedance? And also about what the ma = -kx, and bv = F0 cos(t) equation helps us. Is it just to show that all the driving force has to be dedicated to counteracting the damping?
+</p>
+<figure>
+ <image height="405" src="https://static.us.edusercontent.com/files/fUtO58RgcikJTbdsrsP23sHf" width="649"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Dan Ralph (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Dan Ralph (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   This discussion follows from using complex notation to solve the resonance problem.  To begin, you can use that for a linear differential equation the response should be at the same frequency as the driving force, so you can look for a complex solution of the form
- </paragraph>
+ </p>
  <math>
   x\left(t\right)=Ae^{i\omega_Dt}
  </math>
- <paragraph>
+ <p>
   where
-  <italic>
+  <i>
    A
-  </italic>
+  </i>
   is a complex number denoting both amplitude and phase.  (We will take the real part at the end.)  If you use this ansatz for the solution, the velocity and acceleration are
- </paragraph>
+ </p>
  <math>
   \frac{dx}{dt}=i\omega_DAe^{i\omega_Dt};\ \ \frac{d^2x}{dt^2}=-\omega_D^2Ae^{i\omega_Dt}
  </math>
- <paragraph>
+ <p>
   so when you substitute into the equation of motion, you get
- </paragraph>
+ </p>
  <math>
   A\left(-\omega_D^2m+i\omega_Db+k\right)=F_0
  </math>
- <paragraph>
+ <p>
   (The exponential factors cancel.)  Therefore
- </paragraph>
+ </p>
  <math>
   A=\frac{F_0}{i\omega_Db\ -m\omega_D^2+k}
  </math>
- <paragraph>
+ <p>
   and
- </paragraph>
+ </p>
  <math>
   \frac{F\left(\omega_D,t\right)}{v\left(\omega_D,t\right)}=\frac{F_0e^{i\omega_Dt}}{i\omega_DAe^{i\omega_Dt}}=\frac{i\omega_Db-m\omega_D^2+k}{i\omega_D}=b+i\left(m\omega_D-\frac{k}{\omega_D}\right).
  </math>
- <paragraph>
+ <p>
   At resonance, the quantities inside the parentheses cancel, so the impedance is just the positive real-valued quantity
-  <italic>
+  <i>
    b
-  </italic>
+  </i>
   .  The fact that it is real-valued and positive is significant in that it means the velocity has the same phase and direction as the force.  This means that the force always acts to increase the speed of motion, and this is the condition needed so that the oscillator absorbs the maximum amount of energy from the external force, and this goes together with why you get the largest amplitude of oscillations at resonance.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

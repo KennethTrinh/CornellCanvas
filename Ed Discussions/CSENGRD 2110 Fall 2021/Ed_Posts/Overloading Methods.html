@@ -13,112 +13,106 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  When overloading a methods it's the order, type, and number of parameters that matters, right?
- </paragraph>
-</document>
+<p>
+ When overloading a methods it's the order, type, and number of parameters that matters, right?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Also the return type
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kenisha Stills-Ogburn (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Java HyperText doesn't mention anything about the return type when it comes to overloading, just the signatures...
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  For over
-  <bold>
-   loading
-  </bold>
-  , the names of the methods must match, but their parameters
-  <italic>
-   must
-  </italic>
-  be different (in order, number, type, etc.).  Their return types may be different, but that alone is insufficient (since overloaded dispatch is determined based on argument static types).
- </paragraph>
- <paragraph>
-  For over
-  <bold>
-   riding
-  </bold>
-  , the names of the methods must match, the parameter types must match, and the return type must be a subtype of the original.  Use the
-  <code>
-   @Override
-  </code>
-  annotation to catch mistakes.  (An override's parameter types must be
-  <italic>
-   equivalent
-  </italic>
-  to the originals, not just supertypes, because they affect static dispatch resolution for over
-  <italic>
-   loads
-  </italic>
-  ).
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kenisha Stills-Ogburn (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  What does it mean to for "the return type to be a subtype of the original". This would only be true for classes, not primitive types?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Correct - if the return type is a class and not a primitive, then an overriding implementation may declare itself as returning a subtype of that class.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Kenisha Stills-Ogburn (None)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Java HyperText doesn't mention anything about the return type when it comes to overloading, just the signatures...
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Curran Muhlberger (admin)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    For over
+    <b>
+     loading
+    </b>
+    , the names of the methods must match, but their parameters
+    <i>
+     must
+    </i>
+    be different (in order, number, type, etc.).  Their return types may be different, but that alone is insufficient (since overloaded dispatch is determined based on argument static types).
+   </p>
+   <p>
+    For over
+    <b>
+     riding
+    </b>
+    , the names of the methods must match, the parameter types must match, and the return type must be a subtype of the original.  Use the
+    <code>
+     @Override
+    </code>
+    annotation to catch mistakes.  (An override's parameter types must be
+    <i>
+     equivalent
+    </i>
+    to the originals, not just supertypes, because they affect static dispatch resolution for over
+    <i>
+     loads
+    </i>
+    ).
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Kenisha Stills-Ogburn (None)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     What does it mean to for "the return type to be a subtype of the original". This would only be true for classes, not primitive types?
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Curran Muhlberger (admin)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      Correct - if the return type is a class and not a primitive, then an overriding implementation may declare itself as returning a subtype of that class.
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

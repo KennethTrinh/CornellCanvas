@@ -13,77 +13,73 @@
 <h3>
  Vote Count: 5
 </h3>
-<document version="2.0">
- <paragraph>
-  I know this is addressed in P-1, but I am still confused on when to use:
- </paragraph>
- <paragraph>
-  A.dot(B)
- </paragraph>
- <paragraph>
-  A@B
- </paragraph>
- <paragraph>
-  A*B
- </paragraph>
- <paragraph>
-  multiply(A,B)
- </paragraph>
- <paragraph>
-  Any insight would be appreciated.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I know this is addressed in P-1, but I am still confused on when to use:
+</p>
+<p>
+ A.dot(B)
+</p>
+<p>
+ A@B
+</p>
+<p>
+ A*B
+</p>
+<p>
+ multiply(A,B)
+</p>
+<p>
+ Any insight would be appreciated.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Alexander Wang (student)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Alexander Wang (student)
+ </h3>
+ <h3>
+  Vote Count: 3
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   I assume A and B are numpy arrays or scalars here.
   <break>
   </break>
   <break>
   </break>
   np.dot(A,B) infers what to do based on the dimensions of A and B. Here is what the numpy documentation says about np.dot(A,B):
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     If both A and B are 1-D arrays, it is the inner product of vectors (without complex conjugation).
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     If both A and B are 2-D arrays, it is matrix multiplication, but using numpy.matmul or A @ B is preferred.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     If either A or B is 0-D (scalar), it is equivalent to multiply and using numpy.multiply(A, B) or A * B is preferred.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     If A is an N-D array and B is a 1-D array, it is a sum product over the last axis of A and B.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     If A is an N-D array and B is an M-D array (where M&gt;=2), it is a sum product over the last axis of A and the second-to-last axis of B
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
+ <p>
   <break>
   </break>
   A @ B will be conventional matrix multiplication. It is semantically equivalent to numpy.matmul(A, B). Make sure A has dimensions m x n and B has dimensions n x p. The result will have dimensions m x p.
@@ -94,16 +90,16 @@
   np.multiply(A,B) is element-wise multiplication if A and B are same size matrices, and a scalar-matrix product if either A or B is a scalar, with the other being a matrix. (i.e. the scalar A is multiplied to every element of B).
   <break>
   </break>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   A * B is semantically equivalent to numpy.multiply(A,B)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   <break>
   </break>
   Hope this clarifies things a bit.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

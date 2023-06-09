@@ -13,13 +13,12 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  If I have this code:
- </paragraph>
- <snippet language="java" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   void bfs(Node start){
+<p>
+ If I have this code:
+</p>
+<snippet language="java" line-numbers="true" runnable="true">
+ <snippet-file id="code">
+  void bfs(Node start){
     instantiate Queue named queue;
     queue.add(node);
     while(queue is not empty){
@@ -31,32 +30,31 @@
     }
     return false;
 }
-  </snippet-file>
- </snippet>
- <paragraph>
-  Where I check whether or not a node was visited inside the for loop instead of before the for loop, would it still be correct?
- </paragraph>
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
+ </snippet-file>
+</snippet>
+<p>
+ Where I check whether or not a node was visited inside the for loop instead of before the for loop, would it still be correct?
+</p>
+<p>
+ Thank you!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   This loop is not correct.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   After removing n from the queue, one must check whether n.visited is true, and if no, do nothing; only if it is not visited should one proceed to set its visited status and put its neighbors on the queue.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

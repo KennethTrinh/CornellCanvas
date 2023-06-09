@@ -13,103 +13,90 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  <link href="https://canvas.cornell.edu/courses/25081/pages/homework-assignments"/>
-  <bold>
+<p>
+ <a href="https://canvas.cornell.edu/courses/25081/pages/homework-assignments">
+  <b>
    <underline>
     Link to Homework Assignments page on Canvas
    </underline>
-  </bold>
- </paragraph>
- <callout type="info">
-  Which problem are you working on? (ex. HW 1, Problem 3, 9.1.15)
- </callout>
- <paragraph>
-  HW3 Q8
- </paragraph>
- <callout type="info">
-  What is your question?
- </callout>
- <paragraph>
-  In the directions, we are told to write a function
- </paragraph>
- <paragraph>
-  [tarray zarray]  = myEulerSolver(eqn, tspan, z0,options)
- </paragraph>
- <paragraph>
-  Do we need to use this format exactly? My solution to ensuring that the solver does not run over time and does not exceed a certain error involves modifications to the inputs and outputs of this function. Is that ok?
- </paragraph>
- <callout type="info">
-  Describe the solution attempts you've made thus far.
- </callout>
- <paragraph>
- </paragraph>
-</document>
+  </b>
+ </a>
+</p>
+<callout type="info">
+ Which problem are you working on? (ex. HW 1, Problem 3, 9.1.15)
+</callout>
+<p>
+ HW3 Q8
+</p>
+<callout type="info">
+ What is your question?
+</callout>
+<p>
+ In the directions, we are told to write a function
+</p>
+<p>
+ [tarray zarray]  = myEulerSolver(eqn, tspan, z0,options)
+</p>
+<p>
+ Do we need to use this format exactly? My solution to ensuring that the solver does not run over time and does not exceed a certain error involves modifications to the inputs and outputs of this function. Is that ok?
+</p>
+<callout type="info">
+ Describe the solution attempts you've made thus far.
+</callout>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andy Ruina (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I don't understand what your approach is to be able to tell if you are going off track
-  <break>
-  </break>
-  To be safe, it is best if you pass the things you are interested in through the struct called options.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Gabe Mitchell (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I added one variable, too_long, to the outputs, which returns either true or false. If returned true, then a midpoint approximation was not complete in the desired amount of time, at which point my code tells the user to increase either the desired tolerance or the max wait time.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  I also am inputting two structs (as opposed to one). The first struct is titled options, which contains the user defined tolerance and wait time, and the second struct is titled p, which contains relevant constants. Splitting these two structs up seems more intuitive to me, as opposed to only using one struct.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Are these slight variations ok?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andy Ruina (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andy Ruina (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Most important is that you are engaged and thinking about the relevant things.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   What you are doing is close enough to be educational.  And if you work harder because you like doing it your own way, that way is better.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Andy Ruina (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I don't understand what your approach is to be able to tell if you are going off track
+   <break>
+   </break>
+   To be safe, it is best if you pass the things you are interested in through the struct called options.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Gabe Mitchell (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I added one variable, too_long, to the outputs, which returns either true or false. If returned true, then a midpoint approximation was not complete in the desired amount of time, at which point my code tells the user to increase either the desired tolerance or the max wait time.
+   </p>
+   <p>
+    I also am inputting two structs (as opposed to one). The first struct is titled options, which contains the user defined tolerance and wait time, and the second struct is titled p, which contains relevant constants. Splitting these two structs up seems more intuitive to me, as opposed to only using one struct.
+   </p>
+   <p>
+    Are these slight variations ok?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

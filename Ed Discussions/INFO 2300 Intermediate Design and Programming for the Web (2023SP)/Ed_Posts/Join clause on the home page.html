@@ -13,43 +13,41 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Im confused about the query we need on our home page, do we need to include a join clause or is that just in the details page?
- </paragraph>
-</document>
+<p>
+ Im confused about the query we need on our home page, do we need to include a join clause or is that just in the details page?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Kyle J. Harms (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kyle J. Harms (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The answer depends on your design.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If you display the tags for
-  <italic>
+  <i>
    each
-  </italic>
+  </i>
   entry on the view all page, then you will need a separate query
-  <italic>
+  <i>
    for each entry
-  </italic>
+  </i>
   with a JOIN to get the tags. If you're not displaying the tags for each entry on the view all page, then no JOIN is needed.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You are required to list the tags on the details page. Retrieving the tags will require a
-  <italic>
+  <i>
    separate
-  </italic>
+  </i>
   query with a JOIN clause.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

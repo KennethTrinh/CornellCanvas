@@ -13,33 +13,31 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  If we have P(sunny|yes), P(sunny|no),....P(hot|yes),P(hot|no),...P(weak|yes),P(weak|no)
- </paragraph>
- <paragraph>
-  The total # probabilities we need to calculate is 20
- </paragraph>
- <paragraph>
-  10(sunny, overcast,rain,cold,mild,hot,high,normal,weak,strong)*2=20
- </paragraph>
- <paragraph>
-  Why only twelve?
- </paragraph>
-</document>
+<p>
+ If we have P(sunny|yes), P(sunny|no),....P(hot|yes),P(hot|no),...P(weak|yes),P(weak|no)
+</p>
+<p>
+ The total # probabilities we need to calculate is 20
+</p>
+<p>
+ 10(sunny, overcast,rain,cold,mild,hot,high,normal,weak,strong)*2=20
+</p>
+<p>
+ Why only twelve?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jayadev Acharya (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jayadev Acharya (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   You are correct and the question is also correct.
- </paragraph>
+ </p>
  <math>
   P(sunny|yes)+P(rainy|yes)+P(overcast|yes)=1,
  </math>
@@ -49,15 +47,13 @@
  <math>
   P(strong|no)+P(weak|no)=1
  </math>
- <paragraph>
+ <p>
   Now with these dependencies you should compute one fewer number per attribute (4) per label (2) which gives 8 fewer computations.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Computing 12 things sounds easier than computing 20, so we put this.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

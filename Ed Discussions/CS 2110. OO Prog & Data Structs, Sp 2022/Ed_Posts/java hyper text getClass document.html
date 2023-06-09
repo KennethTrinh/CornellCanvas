@@ -13,48 +13,46 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  why is s.getClass() == t.getClass() true if s and t point to different objects? I get that if we wrote our own unique equals function, then we could define the equivalence  of these objects as having the same fields, but we haven't done that here.
- </paragraph>
- <figure>
-  <image height="280.41037204058625" src="https://static.us.edusercontent.com/files/vgUlIGUhKwMBZ0sOdce4NU5c" width="658"/>
- </figure>
-</document>
+<p>
+ why is s.getClass() == t.getClass() true if s and t point to different objects? I get that if we wrote our own unique equals function, then we could define the equivalence  of these objects as having the same fields, but we haven't done that here.
+</p>
+<figure>
+ <image height="280.41037204058625" src="https://static.us.edusercontent.com/files/vgUlIGUhKwMBZ0sOdce4NU5c" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="1.0">
- <paragraph>
-  Because they have the same class, getClass method checks the class and then the equals checks if the class names are equal that returns True
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Please look at the slides and also JavaHyperText.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   p.getClass(). gives you an  object that describes the class given by the bottom partition of object p.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If p and q were created using the same kind of new-expression, like new Dog(...), then p.getCLass() and q.getClass() are the same object.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Bahaa Kotb (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Because they have the same class, getClass method checks the class and then the equals checks if the class names are equal that returns True
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

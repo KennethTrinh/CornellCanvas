@@ -13,53 +13,49 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Can the return type of an overriden method in the subclass differ from the return type of the same method in the super class?
- </paragraph>
- <paragraph>
-  Do co-variant return types apply to method overriding?
- </paragraph>
-</document>
+<p>
+ Can the return type of an overriden method in the subclass differ from the return type of the same method in the super class?
+</p>
+<p>
+ Do co-variant return types apply to method overriding?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   This is such a simple thing for you to test yourself, and you would gain so much more by learning the answer yourself.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   In ANY class in any project that you have a toString() method, make sure you have @Override before the method. Now, temporarily comment out the body, put in
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   return 0;
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   and change the return type in the header to   int . Does it compile? If not, what is the error?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Once you've determined the answer for unrelated types (like String vs. int), consider what the rules might be regarding subtypes.  Can an overridden method declare a return type that is a subtype of the inherited method?  A supertype?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Curran Muhlberger (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Once you've determined the answer for unrelated types (like String vs. int), consider what the rules might be regarding subtypes.  Can an overridden method declare a return type that is a subtype of the inherited method?  A supertype?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

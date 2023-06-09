@@ -13,96 +13,94 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  Since the return type is List, how can I keep using it as a linked list during the recursion?
- </paragraph>
- <paragraph>
-  Also, I am confused about the spec "But List is an interface, so use something that implements it."
- </paragraph>
-</document>
+<p>
+ Since the return type is List, how can I keep using it as a linked list during the recursion?
+</p>
+<p>
+ Also, I am confused about the spec "But List is an interface, so use something that implements it."
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Why are you confused about it?
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You know that List is a interface. What implements it? There are two that we use all the time. Look them up in the API document for List.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Hao Zhuo (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I mean, are we supposed to cast the return object of H1N1RouteTo into LinkedList&lt;Person&gt; in the recursive case so that we can keep using it as a LinkedList ( esp using addFirst() method )?
- </paragraph>
- <paragraph>
-  This is what I do but I find it weird.
- </paragraph>
- <paragraph>
-  Thanks.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  You can't cast a person into a list, but you can add a person to a list.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Hao Zhuo (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  To clarify, in the recursive case, the return value of calling H1N1RouteTo is a List type. In order to use methods like addFirst(), I have to cast that List into LinkedList. It that correct?
- </paragraph>
- <paragraph>
-  Thanks.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Tianjiao Li (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes you need to cast to ensure correct compile time behavior.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Hao Zhuo (None)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I mean, are we supposed to cast the return object of H1N1RouteTo into LinkedList&lt;Person&gt; in the recursive case so that we can keep using it as a LinkedList ( esp using addFirst() method )?
+  </p>
+  <p>
+   This is what I do but I find it weird.
+  </p>
+  <p>
+   Thanks.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Troy Moslemi (he/him) (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    You can't cast a person into a list, but you can add a person to a list.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Hao Zhuo (None)
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     To clarify, in the recursive case, the return value of calling H1N1RouteTo is a List type. In order to use methods like addFirst(), I have to cast that List into LinkedList. It that correct?
+    </p>
+    <p>
+     Thanks.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Tianjiao Li (student)
+     </h3>
+     <h3>
+      Vote Count: 1
+     </h3>
+     <p>
+      Yes you need to cast to ensure correct compile time behavior.
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

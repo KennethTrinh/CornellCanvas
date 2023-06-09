@@ -13,37 +13,33 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Currently two of the tests are failing with errors like this one
-  <code>
-   java.lang.AssertionError: expected:&lt;76&gt; but was:&lt;90&gt;
-  </code>
-  . I followed the abstract algorithm and tried going through my own examples, but I am confused what could be going wrong. Is there any particular place in the algorithm I should double check that could be causing the shortest distance to be incorrect?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Currently two of the tests are failing with errors like this one
+ <code>
+  java.lang.AssertionError: expected:&lt;76&gt; but was:&lt;90&gt;
+ </code>
+ . I followed the abstract algorithm and tried going through my own examples, but I am confused what could be going wrong. Is there any particular place in the algorithm I should double check that could be causing the shortest distance to be incorrect?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Atulya Lohani (student)
-</h3>
-<h3>
- Vote Count: 4
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Atulya Lohani (student)
+ </h3>
+ <h3>
+  Vote Count: 4
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   If it's the last two test cases failing then you likely forgot to change priority in the heap in your last if statement.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   #1925
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

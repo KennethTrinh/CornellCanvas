@@ -13,109 +13,105 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  <bold>
-   QUESTIONS AND ISSUES
-  </bold>
- </paragraph>
- <list style="ordered">
-  <list-item>
-   <paragraph>
-    Why does it say my Elephant won't compile?
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    What does it mean when it says "Code-under-test wrote
-    <italic>
-     N
-    </italic>
-    bytes of extraneous output?"
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    What does it mean when it says "WARNING: The autograder encountered an error while running your submission. Your results may not be complete."
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    What does it mean when it says "Failure in testName(): null" (when checking your ElephantTest test suite)?
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
- </paragraph>
- <paragraph>
-  <bold>
-   ANSWERS
-  </bold>
- </paragraph>
- <list style="ordered">
-  <list-item>
-   <paragraph>
-    Your class in Elephant.java must compile on our submission server. In most cases, if it compiles in Eclipse for you, it will compile for us, but there are a few mistakes that your Eclipse might not catch. In particular,
-   </paragraph>
-   <list style="unordered">
-    <list-item>
-     <paragraph>
-      Your class must be in the package a1
-      <break>
-      </break>
-      (Note: because of how the AutoHelper is implemented, wrong packages may actually show up as errors in the AutoHelper itself; see question 3.)
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      Your class must be named Elephant (if you had to rename your file to upload it to CMS, then something is wrong)
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      Your class must use the exact names of the methods given in the A1 handout. Check carefully for typos. In addition, the number of parameters and their types must be as given in the A1 handout.
-      <break>
-      </break>
-      (Note: because of how the AutoHelper is implemented, wrong method names will actually show up as test errors for Elephant, but for ElephantTest they will indeed lead to a compile error.)
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      Your source code must be encoded as UTF-8 (you should have already done this, but double-check "Setting up Java and Eclipse" on our Canvas home page). If you changed it to UTF-8, be sure to restart Eclipse. Then, check the specification of isOlder(). If it has a weird question-mark character symbol, remove it and search for other occurrences of this character in anything you copied and pasted directly from the pdf handout.
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      You must not attempt to import JUnitTest functions in your Elephant class; those should only be used in your ElephantTest.
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Your code should not print any output to the console unless it is part of the assignment specifications. A program's console output (System.out, System.err) is part of its interface, and good interfaces conform to precise specifications. Make sure your code does not contain any println() calls unless we ask for them.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Check that your classes are both in the package a1. We will try to make this error signature clearer in the future.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Your test procedure named "testName" unintentionally threw an exception (violating an assertion results in a test case
-    <italic>
-     failure
-    </italic>
-    , with a helpful error message; throwing an exception results in a test case
-    <italic>
-     error
-    </italic>
-    , which currently is not accompanied by a useful message). You likely violated a precondition as part of your test case. Additionally, if your test suite was green when testing your own code, this further implies that your Elephant implementation is likely not enforcing its preconditions correctly (or that you don't have assertions enabled in Eclipse; see A0).
-   </paragraph>
-  </list-item>
- </list>
-</document>
+<p>
+ <b>
+  QUESTIONS AND ISSUES
+ </b>
+</p>
+<list style="ordered">
+ <li>
+  <p>
+   Why does it say my Elephant won't compile?
+  </p>
+ </li>
+ <li>
+  <p>
+   What does it mean when it says "Code-under-test wrote
+   <i>
+    N
+   </i>
+   bytes of extraneous output?"
+  </p>
+ </li>
+ <li>
+  <p>
+   What does it mean when it says "WARNING: The autograder encountered an error while running your submission. Your results may not be complete."
+  </p>
+ </li>
+ <li>
+  <p>
+   What does it mean when it says "Failure in testName(): null" (when checking your ElephantTest test suite)?
+  </p>
+ </li>
+</list>
+<p>
+ <b>
+  ANSWERS
+ </b>
+</p>
+<list style="ordered">
+ <li>
+  <p>
+   Your class in Elephant.java must compile on our submission server. In most cases, if it compiles in Eclipse for you, it will compile for us, but there are a few mistakes that your Eclipse might not catch. In particular,
+  </p>
+  <list style="unordered">
+   <li>
+    <p>
+     Your class must be in the package a1
+     <break>
+     </break>
+     (Note: because of how the AutoHelper is implemented, wrong packages may actually show up as errors in the AutoHelper itself; see question 3.)
+    </p>
+   </li>
+   <li>
+    <p>
+     Your class must be named Elephant (if you had to rename your file to upload it to CMS, then something is wrong)
+    </p>
+   </li>
+   <li>
+    <p>
+     Your class must use the exact names of the methods given in the A1 handout. Check carefully for typos. In addition, the number of parameters and their types must be as given in the A1 handout.
+     <break>
+     </break>
+     (Note: because of how the AutoHelper is implemented, wrong method names will actually show up as test errors for Elephant, but for ElephantTest they will indeed lead to a compile error.)
+    </p>
+   </li>
+   <li>
+    <p>
+     Your source code must be encoded as UTF-8 (you should have already done this, but double-check "Setting up Java and Eclipse" on our Canvas home page). If you changed it to UTF-8, be sure to restart Eclipse. Then, check the specification of isOlder(). If it has a weird question-mark character symbol, remove it and search for other occurrences of this character in anything you copied and pasted directly from the pdf handout.
+    </p>
+   </li>
+   <li>
+    <p>
+     You must not attempt to import JUnitTest functions in your Elephant class; those should only be used in your ElephantTest.
+    </p>
+   </li>
+  </list>
+ </li>
+ <li>
+  <p>
+   Your code should not print any output to the console unless it is part of the assignment specifications. A program's console output (System.out, System.err) is part of its interface, and good interfaces conform to precise specifications. Make sure your code does not contain any println() calls unless we ask for them.
+  </p>
+ </li>
+ <li>
+  <p>
+   Check that your classes are both in the package a1. We will try to make this error signature clearer in the future.
+  </p>
+ </li>
+ <li>
+  <p>
+   Your test procedure named "testName" unintentionally threw an exception (violating an assertion results in a test case
+   <i>
+    failure
+   </i>
+   , with a helpful error message; throwing an exception results in a test case
+   <i>
+    error
+   </i>
+   , which currently is not accompanied by a useful message). You likely violated a precondition as part of your test case. Additionally, if your test suite was green when testing your own code, this further implies that your Elephant implementation is likely not enforcing its preconditions correctly (or that you don't have assertions enabled in Eclipse; see A0).
+  </p>
+ </li>
+</list>
 <h3>
  ----------- REPLIES -----------
 </h3>

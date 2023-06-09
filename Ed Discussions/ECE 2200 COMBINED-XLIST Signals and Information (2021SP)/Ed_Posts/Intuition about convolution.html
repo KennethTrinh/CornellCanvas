@@ -13,56 +13,52 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  I am having trouble developing an intuition about what the convolution operator does to signals and what the result of a convolution of two signals should look like. For example, in the S4 portion of Lab 4, one of the questions says:
- </paragraph>
- <figure>
-  <image height="71.6470588235294" src="https://static.us.edusercontent.com/files/4ThxffzF2eWimL50S54Rki1k" width="658"/>
- </figure>
- <paragraph>
-  Should we be able to get an idea of what the resulting pulse should look like for a problem like this before using any tools to find out? I'm not sure where to start in creating a mental picture of what happens here
- </paragraph>
-</document>
+<p>
+ I am having trouble developing an intuition about what the convolution operator does to signals and what the result of a convolution of two signals should look like. For example, in the S4 portion of Lab 4, one of the questions says:
+</p>
+<figure>
+ <image height="71.6470588235294" src="https://static.us.edusercontent.com/files/4ThxffzF2eWimL50S54Rki1k" width="658"/>
+</figure>
+<p>
+ Should we be able to get an idea of what the resulting pulse should look like for a problem like this before using any tools to find out? I'm not sure where to start in creating a mental picture of what happens here
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jiangnan Cheng (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I am not sure why you need to be restricted from using tools, because I think this `dconvdemo` GUI visualizes the convolution with the exact details you needed (which you call `intuition`).
- </paragraph>
- <paragraph>
-  When you move the flipped signal in the first window, you can see how the convolution is computed in the second window, which results in the convolution result in the third window.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Two of my intuition-type thoughts about convolution are:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   = Convolution tends to smooth things out.  I.e., $h * x$ will generally be smoother than either $h$ or $x$.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   = If both $h$ and $x$ have finite duration, and their support intervals have length $P$ and $L$ respectively, then $h * x$ will also have finite duration, and its support interval will generally have length $P + L - 1$.  Thus convolution tends to spread things out over time --- $h * x$ will generally be "more spread out" than either $h$ or $x$.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Jiangnan Cheng (staff)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I am not sure why you need to be restricted from using tools, because I think this `dconvdemo` GUI visualizes the convolution with the exact details you needed (which you call `intuition`).
+  </p>
+  <p>
+   When you move the flipped signal in the first window, you can see how the convolution is computed in the second window, which results in the convolution result in the third window.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

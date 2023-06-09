@@ -13,83 +13,81 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  The discussion slides say that start is an absolute time. If start were an absolute time, wouldn't a process only be ready when current_time is later than start?
- </paragraph>
- <figure>
-  <image height="97.85292047853623" src="https://static.us.edusercontent.com/files/2kNgk8DBb6OmLTwTZT284K8D" width="659"/>
- </figure>
- <paragraph>
-  The lab handout implies that start is relative to current_time.
- </paragraph>
- <figure>
-  <image height="128.72186836518046" src="https://static.us.edusercontent.com/files/xIcKomS4faLJny4vghGTaJ5Y" width="659"/>
- </figure>
- <paragraph>
-  Which is correct?
- </paragraph>
-</document>
+<p>
+ The discussion slides say that start is an absolute time. If start were an absolute time, wouldn't a process only be ready when current_time is later than start?
+</p>
+<figure>
+ <image height="97.85292047853623" src="https://static.us.edusercontent.com/files/2kNgk8DBb6OmLTwTZT284K8D" width="659"/>
+</figure>
+<p>
+ The lab handout implies that start is relative to current_time.
+</p>
+<figure>
+ <image height="128.72186836518046" src="https://static.us.edusercontent.com/files/xIcKomS4faLJny4vghGTaJ5Y" width="659"/>
+</figure>
+<p>
+ Which is correct?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  There is no contradiction.
-  <code>
-   start
-  </code>
-  is always a measure of absolute time (which is expressed by the first image and the first line of the second image).
-  <code>
-   deadline
-  </code>
-  is a measure of relative time with respect to
-  <code>
-   start
-  </code>
-  .
-  <break>
-  </break>
-  <break>
-  </break>
-  If a process is created using
-  <code>
-   {1000, 500}
-  </code>
-  , it starts at 1 second and has relative deadline of 0.5 seconds after it starts. This means its deadline (in absolute time) is at 1.5 seconds.
- </paragraph>
- <paragraph>
-  The wording about being relative to
-  <code>
-   start
-  </code>
-  and not
-  <code>
-   current_time
-  </code>
-  means that if your scheduler does not actually begin running this process until 1.25 seconds, its deadline would still be at 1.5 seconds and not at 1.75 seconds.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Luke Forsman (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Luke Forsman (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   The wording in this slide is a little confusing. Say your start time is 1 second, the process would not be ready if the current time was 0.5 sec.  But if current time is &gt;= 1sec then the process is ready and could actually begin processing any time (not necessarily at 1 second).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Harris Miller (None)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   There is no contradiction.
+   <code>
+    start
+   </code>
+   is always a measure of absolute time (which is expressed by the first image and the first line of the second image).
+   <code>
+    deadline
+   </code>
+   is a measure of relative time with respect to
+   <code>
+    start
+   </code>
+   .
+   <break>
+   </break>
+   <break>
+   </break>
+   If a process is created using
+   <code>
+    {1000, 500}
+   </code>
+   , it starts at 1 second and has relative deadline of 0.5 seconds after it starts. This means its deadline (in absolute time) is at 1.5 seconds.
+  </p>
+  <p>
+   The wording about being relative to
+   <code>
+    start
+   </code>
+   and not
+   <code>
+    current_time
+   </code>
+   means that if your scheduler does not actually begin running this process until 1.25 seconds, its deadline would still be at 1.5 seconds and not at 1.75 seconds.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

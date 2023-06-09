@@ -13,31 +13,29 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  In the example given in the slides, the hypothesis space H was easy to prune because it was constrained to functions that are AND of the features. But we cannot apply this strategy to problem 1c in the homework, where the hypothesis can take any form. How do we narrow down the hypotheses that are part of the version space?
- </paragraph>
-</document>
+<p>
+ In the example given in the slides, the hypothesis space H was easy to prune because it was constrained to functions that are AND of the features. But we cannot apply this strategy to problem 1c in the homework, where the hypothesis can take any form. How do we narrow down the hypotheses that are part of the version space?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jane Du (staff)
-</h3>
-<h3>
- Vote Count: 4
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jane Du (staff)
+ </h3>
+ <h3>
+  Vote Count: 4
+ </h3>
+ <p>
   Not 100% sure if I got your question, so please follow up if I'm missing something.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Problem 1c) has one concrete hypothesis! As discussed in lecture, a hypothesis $h$ that is consistent with table $T$ would at least predict the corret labels (Mammal column) for all rows of $T$. You should be able to run through $T$ and check each point against Marlene's hypothesis.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If you're talking about 1d), in which you have a hypothesis space as defined in 1b), then it can be a very large hypothesis space indeed. A hypothesis is a full mapping from any input (any combination of values for features F, E, and A) to the label space. You don't need to enumerate all of them; you can use a similar combinatorial argument to part b) to "count" the consistent hypotheses. For example, any hypothesis that contains the mapping of [an animal that doesn't fly, doesn't lay eggs, and is not aquatic] to [is not a mammal] would be inconsistent! Any hypothesis in the version space must make at least 5 predictions correctly -- the ones given in $T$.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

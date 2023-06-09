@@ -13,54 +13,52 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="437.59255631733595" src="https://static.us.edusercontent.com/files/NfmcAvymsrcdD1ely2C5BRfp" width="658"/>
- </figure>
- <paragraph>
-  Why doesn't the constructor of OfferedCourse set numS to 0?
- </paragraph>
- <paragraph>
-  Also, why is numS not compared in the method equals?
- </paragraph>
- <paragraph>
-  Thank you.
- </paragraph>
-</document>
+<figure>
+ <image height="437.59255631733595" src="https://static.us.edusercontent.com/files/NfmcAvymsrcdD1ely2C5BRfp" width="658"/>
+</figure>
+<p>
+ Why doesn't the constructor of OfferedCourse set numS to 0?
+</p>
+<p>
+ Also, why is numS not compared in the method equals?
+</p>
+<p>
+ Thank you.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="1.0">
- <paragraph>
-  ints default values are already 0.
-  <break>
-  </break>
-  numS isn’t compared because checking the array is equal does that for you internally search up the Arrays equals method
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew Chen (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew Chen (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Yes for default values. Arrays.equals() checks if two arrays are equal, which would only be true if their lengths were equal. And numS IS the length of students.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Bahaa Kotb (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <h3>
+   ENDORSED
+  </h3>
+  <p>
+   ints default values are already 0.
+   <break>
+   </break>
+   numS isn’t compared because checking the array is equal does that for you internally search up the Arrays equals method
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

@@ -13,65 +13,38 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  In preparing for the final, I came across this statement: To make several instances of a class execute concurrently, it is sufficient to implement interface Runnable.
- </paragraph>
- <paragraph>
-  My understanding after reading the Javadocs for Thread is that the class must also implement method run(). Is this understanding correct?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
+<p>
+ In preparing for the final, I came across this statement: To make several instances of a class execute concurrently, it is sufficient to implement interface Runnable.
+</p>
+<p>
+ My understanding after reading the Javadocs for Thread is that the class must also implement method run(). Is this understanding correct?
+</p>
+<p>
+ Thank you!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Interface Runnable has one abstract method, run().
-  <break>
-  </break>
-  Therefore, if a class implements Runnable, it must override method run().
- </paragraph>
- <paragraph>
-  Thus, you are right; run() must be declared in the class.
- </paragraph>
- <paragraph>
-  However, we don't have to mention it because if a class implements an interface, it must override all methods declared in that interface.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   One thing that might be confusing you is that, if you write a class containing instructions that you want to execute concurrently, and you decide to
-  <italic>
+  <i>
    extend
-  </italic>
+  </i>
   class
   <code>
    Thread
   </code>
   , then you must
-  <italic>
+  <i>
    override
-  </italic>
+  </i>
   <code>
    Thread
   </code>
@@ -80,8 +53,8 @@
    run()
   </code>
   method and put your instructions there.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   However, the more flexible way to do this is to write a class that implements
   <code>
    Runnable
@@ -95,8 +68,31 @@
    Thread
   </code>
   objects.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Interface Runnable has one abstract method, run().
+   <break>
+   </break>
+   Therefore, if a class implements Runnable, it must override method run().
+  </p>
+  <p>
+   Thus, you are right; run() must be declared in the class.
+  </p>
+  <p>
+   However, we don't have to mention it because if a class implements an interface, it must override all methods declared in that interface.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

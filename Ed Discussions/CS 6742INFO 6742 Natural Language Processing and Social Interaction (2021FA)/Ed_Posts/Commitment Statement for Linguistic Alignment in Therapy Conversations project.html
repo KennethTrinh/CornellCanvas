@@ -13,289 +13,290 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  There are several things I would like to do in the upcoming week:
- </paragraph>
- <list style="number">
-  <list-item>
-   <paragraph>
-    Analyze and interpret results from the test-run of ConvoKit's Coordination transformer I have done on my current pairs of successful and unsuccessful conversations. In particular, I am interested in results for
-   </paragraph>
-   <list style="bullet">
-    <list-item>
-     <paragraph>
-      Therapists
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      Successful clients
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      Unsuccessful  clients
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Based on what we discussed with Lillian during the check-in meeting, partition the data into live vs delayed conversation fragments and rerun the above analysis on these two kinds of interactions.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Time permitting: try other metrics of language alignment. In particular, I am curious about applying language uptake measure from the following
-    <link href="https://arxiv.org/pdf/2106.03873.pdf"/>
-    paper.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Khonzoda Umarova (she/her) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ There are several things I would like to do in the upcoming week:
+</p>
+<list style="number">
+ <li>
+  <p>
+   Analyze and interpret results from the test-run of ConvoKit's Coordination transformer I have done on my current pairs of successful and unsuccessful conversations. In particular, I am interested in results for
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     Therapists
+    </p>
+   </li>
+   <li>
+    <p>
+     Successful clients
+    </p>
+   </li>
+   <li>
+    <p>
+     Unsuccessful  clients
+    </p>
+   </li>
+  </list>
+ </li>
+ <li>
+  <p>
+   Based on what we discussed with Lillian during the check-in meeting, partition the data into live vs delayed conversation fragments and rerun the above analysis on these two kinds of interactions.
+  </p>
+ </li>
+ <li>
+  <p>
+   Time permitting: try other metrics of language alignment. In particular, I am curious about applying language uptake measure from the following
+   <a href="https://arxiv.org/pdf/2106.03873.pdf">
+    paper
+   </a>
+   .
+  </p>
+ </li>
+</list>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Khonzoda Umarova (she/her) (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Before looking at coordination, I used FightingWords to explore differences in the language of two classes of conversations: class1 - successful conversations, and class2 - unsuccessful ones. In particular, I considered the following segments of conversations:
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     [
-    <link href="https://drive.google.com/file/d/1h5n2AphKlDMrIhBsGbU5AS3NzoKCbqLo/view?usp=sharing"/>
-    screenshot] client's last utterance before cancellation
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+    <a href="https://drive.google.com/file/d/1h5n2AphKlDMrIhBsGbU5AS3NzoKCbqLo/view?usp=sharing">
+     screenshot
+     ] client's last utterance before cancellation
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
     [
     <link href="https://drive.google.com/file/d/16AtBrS4sk2LQ_100lLOzCON8-5_-F3Ar/view?usp=sharing"/>
     screenshot] client's last 5 utterances before cancellation
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     [
     <link href="https://drive.google.com/file/d/1tlq5PSbWx3XMoiy3m-ntnrTNGJ2QNbeN/view?usp=sharing"/>
     screenshot] all therapy utterances
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     [
     <link href="https://drive.google.com/file/d/1peQwEdqYKman7i54lKTesfJj6p5sTPO_/view?usp=sharing"/>
     screenshot] all consultation utterances
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
+ <p>
   The very first iteration of my analyses is computing coordination scores on overall, data. Currently, I have considered both kinds of interactions (therapy and consultation) in my computations. However, based on results, I decided to focus only on utterances from the therapy. After obtaining scores, I studied three groups of speakers: therapists, successful clients, and unsuccessful clients. In particular I was interested in coordination scores of:
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     therapists towards all clients
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     therapists towards successful clients vs therapists towards unsuccessful clients
-   </paragraph>
+   </p>
    <list style="bullet">
-    <list-item>
-     <paragraph>
+    <li>
+     <p>
       [
       <link href="https://drive.google.com/file/d/1XNW94ONpJMkAM4lVmgg7xgkiO3mXFwSw/view?usp=sharing"/>
       screenshot] scatter plot of scores
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
+     </p>
+    </li>
+    <li>
+     <p>
       [
       <link href="https://drive.google.com/file/d/1qq8FoYNLe0DEQMO9IufoyCBCo7rywd6A/view?usp=sharing"/>
       html] box plot of scores
-     </paragraph>
-    </list-item>
+     </p>
+    </li>
    </list>
-  </list-item>
-  <list-item>
-   <paragraph>
+  </li>
+  <li>
+   <p>
     successful clients towards therapists vs unsuccessful clients towards therapists
-   </paragraph>
-  </list-item>
-  <list-item>
+   </p>
+  </li>
+  <li>
    <list style="bullet">
-    <list-item>
-     <paragraph>
+    <li>
+     <p>
       [
       <link href="https://drive.google.com/file/d/14WCmNgHr3FnhLIaF8K9BwRgTPUdrqA0r/view?usp=sharing"/>
       screenshot] scatter plot of scores
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
+     </p>
+    </li>
+    <li>
+     <p>
       [
       <link href="https://drive.google.com/file/d/1FPFuGdA6_tDYtupyBFBFmFH-ZCcg-sxr/view?usp=sharing"/>
       html] box plot of scores
-     </paragraph>
-    </list-item>
+     </p>
+    </li>
    </list>
-  </list-item>
+  </li>
  </list>
- <paragraph>
+ <p>
   I finalized the mechanism of dividing conversations into live vs asynchronous utterances. Currently, "live" is defined to be a sequence of utterances, such that they are not more than 5 minutes apart from one another. On the other hand, "asynchronous" utterances are all other utterances of kind="therapy". I am still trying to decide if "border" utterances (i.e. staring and ending utterances of each "live" sequence) need to have a special treatment. With those new categories of utterances, I looked at coordination scores in:
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     live vs async therapist utterances towards clients
-   </paragraph>
-  </list-item>
-  <list-item>
+   </p>
+  </li>
+  <li>
    <list style="bullet">
-    <list-item>
-     <paragraph>
+    <li>
+     <p>
       [
       <link href="https://drive.google.com/file/d/1soPWQNEEDdWQ2KKJ5oROUxN6S1H76jw3/view?usp=sharing"/>
       screenshot] scatter plot of scores
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
+     </p>
+    </li>
+    <li>
+     <p>
       [
       <link href="https://drive.google.com/file/d/1PNJQBIJ0AEVgakzbGr-CJYV5fxSbDIcw/view?usp=sharing"/>
       html] box plot of scores
-     </paragraph>
-    </list-item>
+     </p>
+    </li>
    </list>
-  </list-item>
-  <list-item>
-   <paragraph>
+  </li>
+  <li>
+   <p>
     live therapist utterances towards successful clients vs towards unsuccessful ones
-   </paragraph>
-  </list-item>
-  <list-item>
+   </p>
+  </li>
+  <li>
    <list style="bullet">
-    <list-item>
-     <paragraph>
+    <li>
+     <p>
       [
       <link href="https://drive.google.com/file/d/1S7TknYhXQ6AKiy1OV3AmGe-QWwtadInY/view?usp=sharing"/>
       screenshot] scatter plot of scores
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
+     </p>
+    </li>
+    <li>
+     <p>
       [
       <link href="https://drive.google.com/file/d/1ke_FJHflFOjC0pGMiSQUweVFOCTGOlTF/view?usp=sharing"/>
       html] box plot of scores
-     </paragraph>
-    </list-item>
+     </p>
+    </li>
    </list>
-  </list-item>
-  <list-item>
-   <paragraph>
+  </li>
+  <li>
+   <p>
     async therapist utterances towards successful vs unsuccessful clients
-   </paragraph>
-  </list-item>
-  <list-item>
+   </p>
+  </li>
+  <li>
    <list style="bullet">
-    <list-item>
-     <paragraph>
+    <li>
+     <p>
       [
       <link href="https://drive.google.com/file/d/1N5QnZIrlqTVHPYzCUoPwm5xJjUyM09_z/view?usp=sharing"/>
       screenshot] scatter plot of scores
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
+     </p>
+    </li>
+    <li>
+     <p>
       [
       <link href="https://drive.google.com/file/d/1270HPkj52tDIQ29Ezg5bFnK1ADN-_eW4/view?usp=sharing"/>
       html] box plot of scores
-     </paragraph>
-    </list-item>
+     </p>
+    </li>
    </list>
-  </list-item>
-  <list-item>
-   <paragraph>
+  </li>
+  <li>
+   <p>
     live successful vs unsuccessful client utterances towards therapists
-   </paragraph>
-  </list-item>
-  <list-item>
+   </p>
+  </li>
+  <li>
    <list style="bullet">
-    <list-item>
-     <paragraph>
+    <li>
+     <p>
       [
       <link href="https://drive.google.com/file/d/1iT19Qw_ltAkerYR_Jn2WsSwS1wXj3-g3/view?usp=sharing"/>
       screenshot] scatter plot of scores
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
+     </p>
+    </li>
+    <li>
+     <p>
       [
       <link href="https://drive.google.com/file/d/1Z7DCRExgF1IJAFbI3B2MXFKmhwOJiPPj/view?usp=sharing"/>
       html] box plot of scores
-     </paragraph>
-    </list-item>
+     </p>
+    </li>
    </list>
-  </list-item>
-  <list-item>
-   <paragraph>
+  </li>
+  <li>
+   <p>
     async successful vs unsuccessful client utterances towards therapists
-   </paragraph>
-  </list-item>
-  <list-item>
+   </p>
+  </li>
+  <li>
    <list style="bullet">
-    <list-item>
-     <paragraph>
+    <li>
+     <p>
       [
       <link href="https://drive.google.com/file/d/1kxAGDojgXdtyeBw3lyzhVrAu83rcuew7/view?usp=sharing"/>
       screenshot] scatter plot of scores
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
+     </p>
+    </li>
+    <li>
+     <p>
       [
       <link href="https://drive.google.com/file/d/1hzP13hKMbRB1gB6Xr7Yxwi6SU9Jw46Hj/view?usp=sharing"/>
-      html] box plot of scores
-     </paragraph>
-    </list-item>
+      html
+      ] box plot of scores
+     </p>
+    </li>
    </list>
-  </list-item>
+  </li>
  </list>
- <paragraph>
+ <p>
   I still need to compare live vs async for coordination in successful and unsuccessful conversations. As for the language uptake metric (from 3. above), I found GitHub code supplied with the paper, but did not get a chance to apply it to the data.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  It looks like for the second group of screenshots, there's very little difference in coordination medians for successful vs unsuccessful, but successful has more "large" values?
-  <break>
-  </break>
-  <break>
-  </break>
-  The live-vs-async boxplot (live_vs_async_therapists_to_everyone_box.html) is quite striking, exhibiting the above "more large values" behavior to what seems like a clear degree.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   It looks like for the second group of screenshots, there's very little difference in coordination medians for successful vs unsuccessful, but successful has more "large" values?
+   <break>
+   </break>
+   <break>
+   </break>
+   The live-vs-async boxplot (live_vs_async_therapists_to_everyone_box.html) is quite striking, exhibiting the above "more large values" behavior to what seems like a clear degree.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

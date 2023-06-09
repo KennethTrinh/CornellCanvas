@@ -13,179 +13,177 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  python schedule_tests.py
- </paragraph>
- <paragraph>
-  Starting tests
- </paragraph>
- <paragraph>
-  Running test_schedule_add
- </paragraph>
- <paragraph>
-  Finished running test_schedule_add
- </paragraph>
- <paragraph>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  Running test_studentschedule_add_noconflicts
- </paragraph>
- <paragraph>
-  Finished running test_studentschedule_add_noconflicts
- </paragraph>
- <paragraph>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  Running test_course_conflictswith
- </paragraph>
- <paragraph>
-  Finished running test_course_conflictswith
- </paragraph>
- <paragraph>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  Running test_studentschedule_add_conflicts
- </paragraph>
- <paragraph>
-  Finished running test_studentschedule_add_conflicts
- </paragraph>
- <paragraph>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  Running test_course_gettime
- </paragraph>
- <paragraph>
-  Finished running test_course_gettime
- </paragraph>
- <paragraph>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  Running test_course_changetime
- </paragraph>
- <paragraph>
-  isinstance
- </paragraph>
- <paragraph>
-  looping
- </paragraph>
- <paragraph>
-  looping
- </paragraph>
- <paragraph>
-  looping
- </paragraph>
- <paragraph>
-  looping
- </paragraph>
- <paragraph>
-  Traceback (most recent call last):
- </paragraph>
- <paragraph>
-  File "schedule_tests.py", line 297, in &lt;module&gt;
- </paragraph>
- <paragraph>
-  testfn() # Adding the parentheses calls whatever testfn is
- </paragraph>
- <paragraph>
-  File "schedule_tests.py", line 249, in test_course_changetime
- </paragraph>
- <paragraph>
-  assert my_schedule.warnings == temp_exp_warnings, \
- </paragraph>
- <paragraph>
-  AssertionError: my_schedule warnings list should be ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm', 'ARCH 1120 STU 520: time change causes conflict with AEP 3560 LEC 001', 'ARCH 1120 STU 520: time change causes conflict with FAKER 0000 LEC 002'], but is ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm']
- </paragraph>
-</document>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ python schedule_tests.py
+</p>
+<p>
+ Starting tests
+</p>
+<p>
+ Running test_schedule_add
+</p>
+<p>
+ Finished running test_schedule_add
+</p>
+<p>
+ <break>
+ </break>
+</p>
+<p>
+ Running test_studentschedule_add_noconflicts
+</p>
+<p>
+ Finished running test_studentschedule_add_noconflicts
+</p>
+<p>
+ <break>
+ </break>
+</p>
+<p>
+ Running test_course_conflictswith
+</p>
+<p>
+ Finished running test_course_conflictswith
+</p>
+<p>
+ <break>
+ </break>
+</p>
+<p>
+ Running test_studentschedule_add_conflicts
+</p>
+<p>
+ Finished running test_studentschedule_add_conflicts
+</p>
+<p>
+ <break>
+ </break>
+</p>
+<p>
+ Running test_course_gettime
+</p>
+<p>
+ Finished running test_course_gettime
+</p>
+<p>
+ <break>
+ </break>
+</p>
+<p>
+ Running test_course_changetime
+</p>
+<p>
+ isinstance
+</p>
+<p>
+ looping
+</p>
+<p>
+ looping
+</p>
+<p>
+ looping
+</p>
+<p>
+ looping
+</p>
+<p>
+ Traceback (most recent call last):
+</p>
+<p>
+ File "schedule_tests.py", line 297, in &lt;module&gt;
+</p>
+<p>
+ testfn() # Adding the parentheses calls whatever testfn is
+</p>
+<p>
+ File "schedule_tests.py", line 249, in test_course_changetime
+</p>
+<p>
+ assert my_schedule.warnings == temp_exp_warnings, \
+</p>
+<p>
+ AssertionError: my_schedule warnings list should be ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm', 'ARCH 1120 STU 520: time change causes conflict with AEP 3560 LEC 001', 'ARCH 1120 STU 520: time change causes conflict with FAKER 0000 LEC 002'], but is ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm']
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Troy Moslemi (he/him) (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Hi, i will be reading over your question now
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Troy Moslemi (he/him) (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Hi,
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   It seems that you are not appending the conflict warnings to student schedules.  The first schedule is the roster, right?  So if you append to the first schedule, you are appending to the roster.  And every schedule after the roster is a student schedule.  You should be appending only the time change warnings to the roster while appending both the time change warning and the conflict warnings to the schedules after the roster which is the student schedules.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Best,
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Troy
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Would it be appropriate to do so in changetime function?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  you can also use isinstance to check if a schedule is the roster
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Would it be appropriate to do so in changetime function?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Troy Moslemi (he/him) (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Yes
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Troy Moslemi (he/him) (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     you can also use isinstance to check if a schedule is the roster
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

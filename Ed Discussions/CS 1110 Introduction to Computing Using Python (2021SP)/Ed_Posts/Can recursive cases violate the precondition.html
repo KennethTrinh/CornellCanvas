@@ -13,13 +13,12 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I was looking back at the optional recursion problems and I noticed this would be useful in the function remove_first. I'm not sure if I could post all of my code for this but my recursive case was:
- </paragraph>
- <snippet language="py" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   def remove_first(thelist, v):
+<p>
+ I was looking back at the optional recursion problems and I noticed this would be useful in the function remove_first. I'm not sure if I could post all of my code for this but my recursive case was:
+</p>
+<snippet language="py" line-numbers="true" runnable="true">
+ <snippet-file id="code">
+  def remove_first(thelist, v):
     """Returns: a COPY of thelist but with the FIRST occurrence of v
     removed (if present).
 
@@ -30,26 +29,25 @@
     for x in remove_first(thelist[1:], ''):
         copy.append(x)
     ...
-  </snippet-file>
- </snippet>
- <paragraph>
-  Prior to the recursive case I deleted v if v was in thelist. The function worked properly, but I'm not sure if this would be acceptable as the recursive call violates the precondition. Thanks!
- </paragraph>
-</document>
+ </snippet-file>
+</snippet>
+<p>
+ Prior to the recursive case I deleted v if v was in thelist. The function worked properly, but I'm not sure if this would be acceptable as the recursive call violates the precondition. Thanks!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Elisabeth Finkel (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Elisabeth Finkel (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You are not allowed to make recursive calls like this, that violate preconditions. Think of it as  treating the function as a black box when calling it, and assuming you only know what's in the specs; the outcome will not be well-defined here. In the context of CS 1110, we give you the specification, and your code must match it. Sometimes that poses an additional challenge. In other contexts where you write the skeleton yourself, you can theoretically change the specifications to match the implementation.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   In the recursive case for this problem, there's a sub-case where you've already seen
   <code>
    v
@@ -63,8 +61,8 @@
    v
   </code>
   has a recursive call, that qualifies as "solving the problem with recursion".
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

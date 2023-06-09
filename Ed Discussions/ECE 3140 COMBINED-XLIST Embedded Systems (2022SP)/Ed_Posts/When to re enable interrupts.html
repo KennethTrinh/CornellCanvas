@@ -13,32 +13,26 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="138" src="https://static.us.edusercontent.com/files/bsVImgHGTFbKoZBoW1WLkchB" width="579"/>
- </figure>
- <paragraph>
- </paragraph>
- <figure>
-  <image height="136.37305699481863" src="https://static.us.edusercontent.com/files/lNgfId8SJtRHED8VH6zOb0Wb" width="657.9999999999999"/>
- </figure>
- <paragraph>
-  In our lock function, if a lock isn't available and we need to call process_blocked within l_lock, do we need to re enable interrupts prior to calling process blocked? It seems like we don't but the discussion slides talk about always renabling at the exit.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<figure>
+ <image height="138" src="https://static.us.edusercontent.com/files/bsVImgHGTFbKoZBoW1WLkchB" width="579"/>
+</figure>
+<figure>
+ <image height="136.37305699481863" src="https://static.us.edusercontent.com/files/lNgfId8SJtRHED8VH6zOb0Wb" width="657.9999999999999"/>
+</figure>
+<p>
+ In our lock function, if a lock isn't available and we need to call process_blocked within l_lock, do we need to re enable interrupts prior to calling process blocked? It seems like we don't but the discussion slides talk about always renabling at the exit.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   As per the comment above the
   <code>
    extern
@@ -52,8 +46,8 @@
    process_blocked
   </code>
   (see image 2).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Please not that
   <code>
    l_lock
@@ -71,8 +65,8 @@
    l_lock
   </code>
   (see image 1).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

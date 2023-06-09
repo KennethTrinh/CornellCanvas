@@ -13,72 +13,68 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  What is this test case testing for? I'm not hard faulting, but only the red LED lights up at the beginning then the green one stays on and doesn't blink. I'm not too sure where in my code the error could be. Any suggestions?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ What is this test case testing for? I'm not hard faulting, but only the red LED lights up at the beginning then the green one stays on and doesn't blink. I'm not too sure where in my code the error could be. Any suggestions?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aidan McNay (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   The green light staying on indicates that the processes are finished (you can pause the code to see where it is). The purpose is to demonstrate that "reading" (toggling the green LED) shouldn't happen at the same time as "writing" (toggling the red LED)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   It's hard to debug from just saying "My code doesn't work". Does it work on other tests? You might step through and see what happens (it sounds like you are losing the "reading" processes)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thanks Aiden! My code worked for lab4_I0, but not lab4_I1 and I think your right that I'm losing the "reading" processes, but I guess where could this happen? Could It be my l_unlock?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Hmm...it seems weird that it would work for one test and not the other. What was the behavior for l0? It toggled both LED's 6 times each?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yeah, I'll continue debugging. Thanks for the input though, very helpful!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thanks Aiden! My code worked for lab4_I0, but not lab4_I1 and I think your right that I'm losing the "reading" processes, but I guess where could this happen? Could It be my l_unlock?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Aidan McNay (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Hmm...it seems weird that it would work for one test and not the other. What was the behavior for l0? It toggled both LED's 6 times each?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Yeah, I'll continue debugging. Thanks for the input though, very helpful!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

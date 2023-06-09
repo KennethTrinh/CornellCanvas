@@ -13,30 +13,26 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  The serializable class GameComponent does not declare a static final serialVersionUID field of type long
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Not sure what this means?
- </paragraph>
-</document>
+<p>
+ The serializable class GameComponent does not declare a static final serialVersionUID field of type long
+</p>
+<p>
+ Not sure what this means?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Clarkson (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Clarkson (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   It is not a warning you need to worry about.  Google it if you want to learn more.  It occurs because of extending JPanel, which itself transitively extends Component, which is marked as Serializable.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

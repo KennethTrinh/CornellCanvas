@@ -13,46 +13,44 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  At the end of lecture 15e, we conclude:
- </paragraph>
- <figure>
-  <image height="226.2687747035573" src="https://static.us.edusercontent.com/files/qB8IEeeySt7XUUacB8uvaJU0" width="658"/>
- </figure>
- <paragraph>
-  However, the general sample complexity theorem is stated as:
- </paragraph>
- <figure>
-  <image height="146.98181818181817" src="https://static.us.edusercontent.com/files/78UEK9pay8qn4atGYjtfedgT" width="658"/>
- </figure>
- <paragraph>
-  It seems to me that the general sample complexity theory says "the probability that the difference between the true and sample errors of a hypothesis is big is less than $2|H|e^{-\epsilon^2 m / 2}$." This seems pretty different from what we wanted to prove -- that the difference between $h_s = argmin(err_S(h_i))$ and $h^* = argmin(err_P(h_i))$ is probably small.
- </paragraph>
- <paragraph>
-  How are these two statements related?
- </paragraph>
-</document>
+<p>
+ At the end of lecture 15e, we conclude:
+</p>
+<figure>
+ <image height="226.2687747035573" src="https://static.us.edusercontent.com/files/qB8IEeeySt7XUUacB8uvaJU0" width="658"/>
+</figure>
+<p>
+ However, the general sample complexity theorem is stated as:
+</p>
+<figure>
+ <image height="146.98181818181817" src="https://static.us.edusercontent.com/files/78UEK9pay8qn4atGYjtfedgT" width="658"/>
+</figure>
+<p>
+ It seems to me that the general sample complexity theory says "the probability that the difference between the true and sample errors of a hypothesis is big is less than $2|H|e^{-\epsilon^2 m / 2}$." This seems pretty different from what we wanted to prove -- that the difference between $h_s = argmin(err_S(h_i))$ and $h^* = argmin(err_P(h_i))$ is probably small.
+</p>
+<p>
+ How are these two statements related?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Christopher Vincens (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Christopher Vincens (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   We know that if $err_{s}(h_{s})$ - $err_{p}(h_{s})$ $\leq$ $\epsilon /2$, and $err_{s}(h^{*})$ - $err_{p}(h^{*})$ $\leq$ $\epsilon /2$, then $err_{p}(h_{s})$ - $err_{p}(h^{*})$ $\leq$ $\epsilon$ (see the 2 slides before).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   When $err_{s}(h_{s})$ - $err_{p}(h_{s})$ $&gt;$ $\epsilon /2$, then we know the conditions in the previous sentence are false, and the probability of that happening is upper bounded by Pr($err_{s}(h_{s})$ - $err_{p}(h_{s})$ $&gt;$ $\epsilon /2$), which is itself upper bounded by Hoeffding inequality on the RHS.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   So we know that RHS bounds  Pr($err_{p}(h_{s})$ - $err_{p}(h^{*})$ $&gt;$ $\epsilon$), i.e. the probability that the difference between $err_{p}(h_{s})$ and $err_{p}(h^{*})$ is large is small.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

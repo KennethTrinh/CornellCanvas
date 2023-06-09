@@ -13,218 +13,217 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  <bold>
-   Related Work &amp; Inspiration:
-  </bold>
- </paragraph>
- <paragraph>
-  This proposal was written by Linda Wang and Kiran Tomlinson. Initial inspiration was taken from conversations with Lillian and the papers she brought up:
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  [1] Mayfield, Elijah, and Alan W. Black. "Analyzing Wikipedia Deletion Debates with a Group Decision-Making Forecast Model." Proceedings of the ACM on Human-Computer Interaction 3.CSCW (2019): 1-26.
- </paragraph>
- <paragraph>
-  [2] Taraborelli, Dario, and Giovanni Luca Ciampaglia. "Beyond notability. Collective deliberation on content inclusion in Wikipedia." 2010 Fourth IEEE International Conference on Self-Adaptive and Self-Organizing Systems Workshop. IEEE, 2010.
- </paragraph>
- <paragraph>
-  [3] Leskovec, Jure, Daniel Huttenlocher, and Jon Kleinberg. "Governance in social media: A case study of the Wikipedia promotion process." Fourth International AAAI Conference on Weblogs and Social Media. 2010.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  [1] develops a BERT-based model that can predict the outcomes of Wikipedia Articles for Deletion (AfD) debates better than just by using vote counts. However, they only try to predict the overall outcome (i.e., the admin’s decision to actually keep or delete the article). Our focus will be on predicting individual votes
- </paragraph>
- <paragraph>
-  [2] claims to present evidence of herding behavior (i.e., the tendency of voters to follow the crowd) in AfD debates. However, their first piece of evidence is that longer discussions result in a lower-than-expected number of “Delete” votes and a higher-than-expected number of “Keep” votes--this seems like it could be due to a confounding factor (e.g. articles worth “Keep”-ing being particularly noteworthy and therefore capable of eliciting longer conversations) rather than herding. They also look at vote counts in prefixes and suffixes, but their use of counts rather than proportions seems to make their results confounded by length. Our plan is to measure herding behavior in a way that controls for length.
- </paragraph>
- <paragraph>
-  [3] looks at Wikipedia Requests for Adminship (RfA) instead of AfD. Among other results, they find that debates that start with (support, oppose) have a lower success rate (12.7%) than do debates that start with (oppose, support) (19.2%) and suggest this is because a candidate’s close supporters tend to vote earlier.
- </paragraph>
- <paragraph>
-  We use the (length k)
-  <italic>
-   prefix
-  </italic>
-  of a Wikipedia discussion to refer to its first k votes.
- </paragraph>
- <paragraph>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  <bold>
-   Hypotheses:
-  </bold>
-  <break>
-  </break>
- </paragraph>
- <list style="ordered">
-  <list-item>
-   <paragraph>
-    H1: Herding behavior exists in the dataset. Moreover, there should exist a threshold prefix length by which a herd forms in a discussion. Please see Feasibility Tests #1 and #2 for details.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    H2: Herding behavior occurs more often when the majority of previous votes fall under any type other than “Delete”. Please see Feasibility Test #1 for details.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <list style="unordered">
-    <list-item>
-     <paragraph>
-      We expect this to be the case because “Delete” is the only vote type that materially changes a part of Wikipedia; the other vote types have less substantial outcomes in comparison.
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    H3: Previous voters’ comments that are long, specific, and or refer to the article title predict subsequent individual votes more accurately than comments that are short, vague, and or do not refer to the article title.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    H4: Previous voters’ comments that contain higher counts of Wikipedia specific language are more likely to predict votes than comments with lower counts of said language.
-   </paragraph>
-   <list style="ordered">
-    <list-item>
-     <paragraph>
-      The motivation for H3 and H4 is to see whether herding behavior is actually detrimental to Wikipedia deletion decisions. Ideally, the language features in H3 would indicate genuine knowledge drives herding, and the social norms implicit in the domain-specific language mentioned in H4 would play a lesser role.
-      <break>
-      </break>
-      <break>
-      </break>
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
- </list>
- <paragraph>
-  <bold>
-   Data:
-  </bold>
- </paragraph>
- <paragraph>
-  We plan to start by looking at the Wikipedia Articles for Deletion corpus (included in ConvoKit:
-  <link href="https://convokit.cornell.edu/documentation/wiki-articles-for-deletion-corpus.html"/>
-  https://convokit.cornell.edu/documentation/wiki-articles-for-deletion-corpus.html). This dataset includes text from the initial nomination, votes (including text), non-vote comments, and outcomes for over 400k different debates. We will also refer to the Wikipedia Glossary (
+<p>
+ <b>
+  Related Work &amp; Inspiration:
+ </b>
+</p>
+<p>
+ This proposal was written by Linda Wang and Kiran Tomlinson. Initial inspiration was taken from conversations with Lillian and the papers she brought up:
+ <break>
+ </break>
+</p>
+<p>
+ [1] Mayfield, Elijah, and Alan W. Black. "Analyzing Wikipedia Deletion Debates with a Group Decision-Making Forecast Model." Proceedings of the ACM on Human-Computer Interaction 3.CSCW (2019): 1-26.
+</p>
+<p>
+ [2] Taraborelli, Dario, and Giovanni Luca Ciampaglia. "Beyond notability. Collective deliberation on content inclusion in Wikipedia." 2010 Fourth IEEE International Conference on Self-Adaptive and Self-Organizing Systems Workshop. IEEE, 2010.
+</p>
+<p>
+ [3] Leskovec, Jure, Daniel Huttenlocher, and Jon Kleinberg. "Governance in social media: A case study of the Wikipedia promotion process." Fourth International AAAI Conference on Weblogs and Social Media. 2010.
+</p>
+<p>
+ [1] develops a BERT-based model that can predict the outcomes of Wikipedia Articles for Deletion (AfD) debates better than just by using vote counts. However, they only try to predict the overall outcome (i.e., the admin’s decision to actually keep or delete the article). Our focus will be on predicting individual votes
+</p>
+<p>
+ [2] claims to present evidence of herding behavior (i.e., the tendency of voters to follow the crowd) in AfD debates. However, their first piece of evidence is that longer discussions result in a lower-than-expected number of “Delete” votes and a higher-than-expected number of “Keep” votes--this seems like it could be due to a confounding factor (e.g. articles worth “Keep”-ing being particularly noteworthy and therefore capable of eliciting longer conversations) rather than herding. They also look at vote counts in prefixes and suffixes, but their use of counts rather than proportions seems to make their results confounded by length. Our plan is to measure herding behavior in a way that controls for length.
+</p>
+<p>
+ [3] looks at Wikipedia Requests for Adminship (RfA) instead of AfD. Among other results, they find that debates that start with (support, oppose) have a lower success rate (12.7%) than do debates that start with (oppose, support) (19.2%) and suggest this is because a candidate’s close supporters tend to vote earlier.
+</p>
+<p>
+ We use the (length k)
+ <i>
+  prefix
+ </i>
+ of a Wikipedia discussion to refer to its first k votes.
+</p>
+<p>
+ <break>
+ </break>
+</p>
+<p>
+ <b>
+  Hypotheses:
+ </b>
+ <break>
+ </break>
+</p>
+<list style="ordered">
+ <li>
+  <p>
+   H1: Herding behavior exists in the dataset. Moreover, there should exist a threshold prefix length by which a herd forms in a discussion. Please see Feasibility Tests #1 and #2 for details.
+  </p>
+ </li>
+ <li>
+  <p>
+   H2: Herding behavior occurs more often when the majority of previous votes fall under any type other than “Delete”. Please see Feasibility Test #1 for details.
+  </p>
+ </li>
+ <li>
+  <list style="unordered">
+   <li>
+    <p>
+     We expect this to be the case because “Delete” is the only vote type that materially changes a part of Wikipedia; the other vote types have less substantial outcomes in comparison.
+    </p>
+   </li>
+  </list>
+ </li>
+ <li>
+  <p>
+   H3: Previous voters’ comments that are long, specific, and or refer to the article title predict subsequent individual votes more accurately than comments that are short, vague, and or do not refer to the article title.
+  </p>
+ </li>
+ <li>
+  <p>
+   H4: Previous voters’ comments that contain higher counts of Wikipedia specific language are more likely to predict votes than comments with lower counts of said language.
+  </p>
+  <list style="ordered">
+   <li>
+    <p>
+     The motivation for H3 and H4 is to see whether herding behavior is actually detrimental to Wikipedia deletion decisions. Ideally, the language features in H3 would indicate genuine knowledge drives herding, and the social norms implicit in the domain-specific language mentioned in H4 would play a lesser role.
+     <break>
+     </break>
+     <break>
+     </break>
+    </p>
+   </li>
+  </list>
+ </li>
+</list>
+<p>
+ <b>
+  Data:
+ </b>
+</p>
+<p>
+ We plan to start by looking at the Wikipedia Articles for Deletion corpus (included in ConvoKit:
+ <a href="https://convokit.cornell.edu/documentation/wiki-articles-for-deletion-corpus.html">
+  https://convokit.cornell.edu/documentation/wiki-articles-for-deletion-corpus.html
+  ). This dataset includes text from the initial nomination, votes (including text), non-vote comments, and outcomes for over 400k different debates. We will also refer to the Wikipedia Glossary (
   <link href="https://en.wikipedia.org/wiki/Wikipedia:Glossary"/>
   https://en.wikipedia.org/wiki/Wikipedia:Glossary) to identify Wikipedia-specific language. If we have time, it could also be interesting to look at the Requests for Adminship corpus (
   <link href="https://snap.stanford.edu/data/wiki-RfA.html"/>
-  https://snap.stanford.edu/data/wiki-RfA.html), which contains vote text but not the initial candidate Q&amp;A.
- </paragraph>
- <paragraph>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  <bold>
-   Language Features:
-  </bold>
- </paragraph>
- <paragraph>
-  We plan to include the following features in a model for predicting the next user's vote (the features will be computed on previous votes)
- </paragraph>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    Topical relevance (i.e. references to keywords in the article title in comments)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Length of comments
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Specificity/complexity (e.g. inverse document frequency)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Use of domain specific language (i.e. Wikipedia glossary)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Sentiment
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Politeness
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  <bold>
-   Feasibility Tests:
-  </bold>
- </paragraph>
- <paragraph>
-  1. To check for the presence of herding behavior, we’ll look at the probability of each vote type as a function of the fraction of previous votes of its type in the same discussion. For instance, if herding is taking place, we would expect that low fractions of previous “Keep” vote would bias the subsequent voter’s “Keep” probability toward 0 and high fractions of previous “Keep” vote would bias the subsequent voter’s “Keep” probability toward 1.
- </paragraph>
- <paragraph>
-  2. To see if there is a workable number of discussions exhibiting herding behavior, we’ll check whether there is some prefix length by which a herd is formed in a given conversation. We’ll do this by calculating, for each x, the probability that the (x+1)th voter agrees with the prefix majority. We may restrict this analysis to discussions containing at least 20 votes.
- </paragraph>
- <paragraph>
-  3. We will also count the frequency of the terms “sheep vote” and “wolf vote” in the dataset to ensure there is a reasonable distribution of these two terms across article types and time.
- </paragraph>
- <list style="ordered">
-  <list-item>
-   <list style="ordered">
-    <list-item>
-     <paragraph>
-      This will be a type of internal check in the spirit of Feasibility Test #1, since, according to Wikipedia’s Glossary, a “sheep vote” is a vote that simply goes along with the flow of the discussion, while a “wolf vote” deliberately goes against the flow.
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
- </list>
-</document>
+  https://snap.stanford.edu/data/wiki-RfA.html
+ </a>
+ ), which contains vote text but not the initial candidate Q&amp;A.
+</p>
+<p>
+ <break>
+ </break>
+</p>
+<p>
+ <b>
+  Language Features:
+ </b>
+</p>
+<p>
+ We plan to include the following features in a model for predicting the next user's vote (the features will be computed on previous votes)
+</p>
+<list style="unordered">
+ <li>
+  <p>
+   Topical relevance (i.e. references to keywords in the article title in comments)
+  </p>
+ </li>
+ <li>
+  <p>
+   Length of comments
+  </p>
+ </li>
+ <li>
+  <p>
+   Specificity/complexity (e.g. inverse document frequency)
+  </p>
+ </li>
+ <li>
+  <p>
+   Use of domain specific language (i.e. Wikipedia glossary)
+  </p>
+ </li>
+ <li>
+  <p>
+   Sentiment
+  </p>
+ </li>
+ <li>
+  <p>
+   Politeness
+  </p>
+ </li>
+</list>
+<p>
+ <break>
+ </break>
+</p>
+<p>
+ <b>
+  Feasibility Tests:
+ </b>
+</p>
+<p>
+ 1. To check for the presence of herding behavior, we’ll look at the probability of each vote type as a function of the fraction of previous votes of its type in the same discussion. For instance, if herding is taking place, we would expect that low fractions of previous “Keep” vote would bias the subsequent voter’s “Keep” probability toward 0 and high fractions of previous “Keep” vote would bias the subsequent voter’s “Keep” probability toward 1.
+</p>
+<p>
+ 2. To see if there is a workable number of discussions exhibiting herding behavior, we’ll check whether there is some prefix length by which a herd is formed in a given conversation. We’ll do this by calculating, for each x, the probability that the (x+1)th voter agrees with the prefix majority. We may restrict this analysis to discussions containing at least 20 votes.
+</p>
+<p>
+ 3. We will also count the frequency of the terms “sheep vote” and “wolf vote” in the dataset to ensure there is a reasonable distribution of these two terms across article types and time.
+</p>
+<list style="ordered">
+ <li>
+  <list style="ordered">
+   <li>
+    <p>
+     This will be a type of internal check in the spirit of Feasibility Test #1, since, according to Wikipedia’s Glossary, a “sheep vote” is a vote that simply goes along with the flow of the discussion, while a “wolf vote” deliberately goes against the flow.
+    </p>
+   </li>
+  </list>
+ </li>
+</list>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Linda Wang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  <bold>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Linda Wang (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
+  <b>
    <underline>
     Feasibility Check-In
    </underline>
-  </bold>
- </paragraph>
- <paragraph>
-  <bold>
+  </b>
+ </p>
+ <p>
+  <b>
    Feasibility test 1:
-  </bold>
- </paragraph>
- <paragraph>
+  </b>
+ </p>
+ <p>
   As we expected, herding behavior can be observed at the level of individual votes. However, this behavior appears stronger for shorter prefix lengths and for "delete" votes.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   For this check, we chose arbitrary prefix lengths of 20, 40 and 60 votes (and therefore focused on the probabilities for the 21st, 41st, and 61st votes). When the proportion (but not necessarily the majority) of "keep" votes in the prefix rises, the probability that the subsequent (i.e. (k+1)th) vote is "keep" also rises.  Likewise, when the proportion of "delete" votes in the prefix rises, the probability that the subsequent vote is "delete" also rises. However, as we increase the prefix length to 60 votes, the relationship becomes noisier, particularly when we focus on "delete" votes.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   It is possible that articles with a higher likelihood of being deleted evoke more involved debates, thereby increasing discussion length and lessening the influence of herds. More granular prefix thresholds and an analysis of language features related to contentiousness (or lack thereof) could help us investigate further; we may include these as next steps.
- </paragraph>
- <file filename="test_1_k20.pdf" url="https://static.us.edusercontent.com/files/GkHpIFEwA7ToMy0DKhVsncPS">
- </file>
+ </p>
+ <a filename="test_1_k20.pdf" href="https://static.us.edusercontent.com/files/GkHpIFEwA7ToMy0DKhVsncPS">
+ </a>
  <file filename="test_1_k40.pdf" url="https://static.us.edusercontent.com/files/d3SlJLb89jEXEkjIf40b733S">
  </file>
  <file filename="test_1_k60.pdf" url="https://static.us.edusercontent.com/files/l3gaSBAJrg2vhzrE76Jo8QPD">
@@ -235,141 +234,140 @@
  </file>
  <file filename="test_1_d60.pdf" url="https://static.us.edusercontent.com/files/vvxcnDv1yVs1ycabkpp1NGrk">
  </file>
- <paragraph>
-  <bold>
+ <p>
+  <b>
    Feasibility test 2:
-  </bold>
- </paragraph>
- <paragraph>
+  </b>
+ </p>
+ <p>
   Surprisingly, we found that the probability of agreement of the (k+1)st vote with the majority of the first k votes actually decreased with k. We ignored votes other than “keep” and “delete” and considered discussions of all lengths. The probability of agreement decreases from 0.8 at k = 1 to 0.5 at k ~ 10 and then leveling off at 0.4. This is interesting: the second vote almost always agrees with the first, but in long discussions, new votes tend to go against the previous consensus. One possible explanation is that discussions with more consensus tend to terminate sooner—there’s no need for further debate if the existing discussion has settled the matter. There are several ways to address this, including batching discussions by length. We plan to do this as a next step (as well as starting on the language component).
- </paragraph>
+ </p>
  <file filename="feasibility-test-2.pdf" url="https://static.us.edusercontent.com/files/8BYb474pAvS8hqlvXSfESVeN">
  </file>
  <file filename="feasibility-test-2-to-100.pdf" url="https://static.us.edusercontent.com/files/Y7spJmT5p73if2cU9K6gflc5">
  </file>
- <file filename="feasibility-test-2-log.pdf" url="https://static.us.edusercontent.com/files/Vopd95ulDZPZ6xRB4Brg8mK9">
+ <file url="https://static.us.edusercontent.com/files/Vopd95ulDZPZ6xRB4Brg8mK9">
+  feasibility-test-2-log.pdf
+  <p>
+   <b>
+    Feasibility test 3:
+   </b>
+  </p>
+  <p>
+   The string “sheep vote” only appears in three votes across the whole ConvoKit AfD dataset, and “wolf vote” never showed up, so we can't use that as an indicator of social influence. A possible alternative is to use pointers to other users (e.g., a lot of votes say “Keep, as per [other user]”) as a signal of influence.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Kiran Tomlinson (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Notes from meeting with Lillian:
+   </p>
+   <p>
+    how many of the comments are long enough to be interesting?
+   </p>
+   <list style="unordered">
+    <li>
+     <p>
+      Distribution of comment lengths
+     </p>
+    </li>
+   </list>
+   <p>
+    Look at “per [user]”
+   </p>
+   <p>
+    Look at the data directly
+   </p>
+   <p>
+    Are comments for contrary votes longer?
+   </p>
+   <p>
+    Check that non-contentious discussions terminate sooner
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Linda Wang (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Notes from meeting with Lillian (cont.):
+    </p>
+    <list style="bullet">
+     <li>
+      <p>
+       One possible, follow-up feasibility test: How many comments are long enough to have something interesting in them?
+      </p>
+      <list style="bullet">
+       <li>
+        <p>
+         Alternatively: How many of the comments just refer to previous stuff (vs. being out-of-the-blue)?
+        </p>
+       </li>
+       <li>
+        <p>
+         Use comment length, references to previous users (e.g. "per", "I also think...")
+        </p>
+       </li>
+       <li>
+        <p>
+         We'd expect that the comments whose lengths/content are sufficient will be less likely to exhibit herding behavior.
+        </p>
+       </li>
+      </list>
+     </li>
+     <li>
+      <p>
+       Also check whether agreeable conversations terminate soner.
+      </p>
+     </li>
+     <li>
+      <p>
+       Distinguish between herding behavior and "being right"?
+      </p>
+      <list style="bullet">
+       <li>
+        <p>
+         E.g. Build language model from previous keep and delete comments, then see whether the language of the (k+1)th comment is more like that of the keep rather than the delete comments
+        </p>
+        <list style="bullet">
+         <li>
+          <p>
+           Data concerns with this approach (may have to look into word overlap)
+          </p>
+         </li>
+        </list>
+       </li>
+      </list>
+     </li>
+     <li>
+      <p>
+       Similarity vs. Reference?
+      </p>
+      <list style="bullet">
+       <li>
+        <p>
+         It would be notable if keep or delete have different properties of similarity vs reference
+        </p>
+       </li>
+      </list>
+     </li>
+    </list>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
  </file>
- <paragraph>
- </paragraph>
- <paragraph>
-  <bold>
-   Feasibility test 3:
-  </bold>
- </paragraph>
- <paragraph>
-  The string “sheep vote” only appears in three votes across the whole ConvoKit AfD dataset, and “wolf vote” never showed up, so we can't use that as an indicator of social influence. A possible alternative is to use pointers to other users (e.g., a lot of votes say “Keep, as per [other user]”) as a signal of influence.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kiran Tomlinson (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Notes from meeting with Lillian:
- </paragraph>
- <paragraph>
-  how many of the comments are long enough to be interesting?
- </paragraph>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    Distribution of comment lengths
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Look at “per [user]”
- </paragraph>
- <paragraph>
-  Look at the data directly
- </paragraph>
- <paragraph>
-  Are comments for contrary votes longer?
- </paragraph>
- <paragraph>
-  Check that non-contentious discussions terminate sooner
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Linda Wang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Notes from meeting with Lillian (cont.):
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    One possible, follow-up feasibility test: How many comments are long enough to have something interesting in them?
-   </paragraph>
-   <list style="bullet">
-    <list-item>
-     <paragraph>
-      Alternatively: How many of the comments just refer to previous stuff (vs. being out-of-the-blue)?
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      Use comment length, references to previous users (e.g. "per", "I also think...")
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      We'd expect that the comments whose lengths/content are sufficient will be less likely to exhibit herding behavior.
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Also check whether agreeable conversations terminate soner.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Distinguish between herding behavior and "being right"?
-   </paragraph>
-   <list style="bullet">
-    <list-item>
-     <paragraph>
-      E.g. Build language model from previous keep and delete comments, then see whether the language of the (k+1)th comment is more like that of the keep rather than the delete comments
-     </paragraph>
-     <list style="bullet">
-      <list-item>
-       <paragraph>
-        Data concerns with this approach (may have to look into word overlap)
-       </paragraph>
-      </list-item>
-     </list>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Similarity vs. Reference?
-   </paragraph>
-   <list style="bullet">
-    <list-item>
-     <paragraph>
-      It would be notable if keep or delete have different properties of similarity vs reference
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
- </list>
-</document>
-<h3>
- ------------------------------------
-</h3>
+</div>

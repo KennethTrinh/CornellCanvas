@@ -13,62 +13,60 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  All,
- </paragraph>
- <paragraph>
-  I just posted this answer to a private question on Ed,  posting it publicly here for all to benefit from:
- </paragraph>
- <paragraph>
-  You may assume that the commit message is contained on exactly one line. In fact, if you just use "git log" as your source of information (and not additional switches that may limit the output), you will find that git returns exactly 6 lines for each commit:
- </paragraph>
- <list style="ordered">
-  <list-item>
-   <paragraph>
-    commit [hash information] [branch information]
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Author:
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Date:
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    blank line
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    commit message
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    blank line
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  which means if you are using process substitution to take the output of git log and send it to a for loop that is reading lines, it's reasonable to expect that you'll have the entire commit message in some sort of shell variable.
- </paragraph>
- <paragraph>
-  Once you have the commit message in a variable, you can use the following special syntax to get the number of characters in the commit message (and we should use number of characters and not number of words to determine which commit message is the longest):
- </paragraph>
- <paragraph>
-  Below... if I have a string in a variable named "somevar", I can get the length of the string as follows:
- </paragraph>
- <pre>ron@Sandcrater-MBAir-2 ~ % somevar="This is a test" 
+<p>
+ All,
+</p>
+<p>
+ I just posted this answer to a private question on Ed,  posting it publicly here for all to benefit from:
+</p>
+<p>
+ You may assume that the commit message is contained on exactly one line. In fact, if you just use "git log" as your source of information (and not additional switches that may limit the output), you will find that git returns exactly 6 lines for each commit:
+</p>
+<list style="ordered">
+ <li>
+  <p>
+   commit [hash information] [branch information]
+  </p>
+ </li>
+ <li>
+  <p>
+   Author:
+  </p>
+ </li>
+ <li>
+  <p>
+   Date:
+  </p>
+ </li>
+ <li>
+  <p>
+   blank line
+  </p>
+ </li>
+ <li>
+  <p>
+   commit message
+  </p>
+ </li>
+ <li>
+  <p>
+   blank line
+  </p>
+ </li>
+</list>
+<p>
+ which means if you are using process substitution to take the output of git log and send it to a for loop that is reading lines, it's reasonable to expect that you'll have the entire commit message in some sort of shell variable.
+</p>
+<p>
+ Once you have the commit message in a variable, you can use the following special syntax to get the number of characters in the commit message (and we should use number of characters and not number of words to determine which commit message is the longest):
+</p>
+<p>
+ Below... if I have a string in a variable named "somevar", I can get the length of the string as follows:
+</p>
+<pre>ron@Sandcrater-MBAir-2 ~ % somevar="This is a test" 
 ron@Sandcrater-MBAir-2 ~ % echo ${#somevar} 
 14
 </pre>
-</document>
 <h3>
  ----------- REPLIES -----------
 </h3>

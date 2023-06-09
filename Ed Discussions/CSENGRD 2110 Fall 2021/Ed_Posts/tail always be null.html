@@ -13,36 +13,32 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  as I am writing toStringR(), I used tail, but then I found the value of the tail is always null, I didn't change anything, why I keep get null for the tail?
- </paragraph>
- <paragraph>
-  I tried to write some test, here is it
- </paragraph>
- <figure>
-  <image height="109" src="https://static.us.edusercontent.com/files/9b1Sx9xMftW4noOe2XmxXWyc" width="350"/>
- </figure>
- <paragraph>
-  but I get null for tail
- </paragraph>
- <figure>
-  <image height="205.2835112692764" src="https://static.us.edusercontent.com/files/XAJfKaToqoG6eNCp7HgDKX5R" width="658"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ as I am writing toStringR(), I used tail, but then I found the value of the tail is always null, I didn't change anything, why I keep get null for the tail?
+</p>
+<p>
+ I tried to write some test, here is it
+</p>
+<figure>
+ <image height="109" src="https://static.us.edusercontent.com/files/9b1Sx9xMftW4noOe2XmxXWyc" width="350"/>
+</figure>
+<p>
+ but I get null for tail
+</p>
+<figure>
+ <image height="205.2835112692764" src="https://static.us.edusercontent.com/files/XAJfKaToqoG6eNCp7HgDKX5R" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   This suggests that your implementation of
   <code>
    prepend()
@@ -60,28 +56,26 @@
    tail
   </code>
   correctly maintained when you do this?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Separately, look carefully at the arguments you are passing to
-  <code>
-   assertEquals()
-  </code>
-  .  What are their types?  If their (dynamic) types are not the same, can they ever be considered equal?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Curran Muhlberger (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Separately, look carefully at the arguments you are passing to
+   <code>
+    assertEquals()
+   </code>
+   .  What are their types?  If their (dynamic) types are not the same, can they ever be considered equal?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

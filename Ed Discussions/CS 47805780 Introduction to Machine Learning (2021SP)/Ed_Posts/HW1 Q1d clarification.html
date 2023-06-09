@@ -13,33 +13,29 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <figure>
-  <image height="89.78201634877384" src="https://static.us.edusercontent.com/files/QDG5Ec7bO6SsGdod6phHudDP" width="659"/>
- </figure>
- <paragraph>
-  Now that the solutions are out, can someone explain why this is 2^12 / 2^5? If only 5 potential inputs are being ruled out, how does that translate to 2^5 hypothesis being ruled out?
- </paragraph>
-</document>
+<figure>
+ <image height="89.78201634877384" src="https://static.us.edusercontent.com/files/QDG5Ec7bO6SsGdod6phHudDP" width="659"/>
+</figure>
+<p>
+ Now that the solutions are out, can someone explain why this is 2^12 / 2^5? If only 5 potential inputs are being ruled out, how does that translate to 2^5 hypothesis being ruled out?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Victor Butoi (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Victor Butoi (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Essentially, I like to think of our 2^12 as the amount of different ways we can draw arrows from a vector of 12 things to a vector of 2, where this describes all of the possible functions we can draw between two sets.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   For each of these arrows corresponds to an input, and for each input, we multiply the amount of hypothesis we can have by 2 since there exists a subset of all hypotheses where that label is 0 and that label is 1 (to discretize the label into a binary number). Now, for those 5 inputs, we cannot draw two arrows we can only draw one, therefore, since they can only provide one mapping, the size of our version space is from how many different mappings we can do for the inputs which don't matter. Hope that helps :-)
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,46 +13,44 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <callout type="info">
-  Put in your question title the year, semester, and question.  Ideal would also be to include the topic.   Example: 2018SP Q2(b) - call frames
- </callout>
- <callout type="info">
-  Include a screenshot of the question, so readers/answerers don't have to go find the relevant pdf.
- </callout>
- <figure>
-  <image height="732.3662374821173" src="https://static.us.edusercontent.com/files/MG1jsi2Vqgme1pvKe17WobqU" width="658"/>
- </figure>
- <paragraph>
-  I tried drawing folders to better understand this question, but I'm still confused about the relationship between holdings, Players, and which folder holds the indices of players. I thought that the holdings attribute held indices, but I'm not sure that's true. Could someone explain the reasoning behind how t1.plist[i1].holdings is written? Thanks!
- </paragraph>
-</document>
+<callout type="info">
+ Put in your question title the year, semester, and question.  Ideal would also be to include the topic.   Example: 2018SP Q2(b) - call frames
+</callout>
+<callout type="info">
+ Include a screenshot of the question, so readers/answerers don't have to go find the relevant pdf.
+</callout>
+<figure>
+ <image height="732.3662374821173" src="https://static.us.edusercontent.com/files/MG1jsi2Vqgme1pvKe17WobqU" width="658"/>
+</figure>
+<p>
+ I tried drawing folders to better understand this question, but I'm still confused about the relationship between holdings, Players, and which folder holds the indices of players. I thought that the holdings attribute held indices, but I'm not sure that's true. Could someone explain the reasoning behind how t1.plist[i1].holdings is written? Thanks!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Brynn Szczesniak (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Brynn Szczesniak (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Each folder for a Team object has a pList attribute that is a list of ids, each id representing a Player object.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Each folder for a Player has a holdings attribute which is an int.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   t1.plist is therefore a list of player objects
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   t1.plist[i2] is the i2'th player in t1.plist
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   t1.plist[i2].holdings is the value of the holdings attribute for that particular player.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

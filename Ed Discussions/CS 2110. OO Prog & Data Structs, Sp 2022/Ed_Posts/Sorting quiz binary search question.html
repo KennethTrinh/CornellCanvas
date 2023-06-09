@@ -13,51 +13,45 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm a little confused about this statement on the quiz:
- </paragraph>
- <paragraph>
-  This example may help. Consider searching array is c[0..4] for the value that is in c[0].
-  <break>
-  </break>
-  Binary search checks the midpoint at 2 and moves to the lower half of the list. The midpoint of [0, 1] rounds down to 0, and binary search finds the target in 2 comparisons.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Looking at the algorithm in Java HyperText, it says:
- </paragraph>
- <paragraph>
-  k= -1; t= b.length;
- </paragraph>
- <paragraph>
-  // inv: -1 ≤ k &lt; t ≤ b.length and
- </paragraph>
- <paragraph>
-  // b[0..k] ≤ v &lt; b[t..].
- </paragraph>
- <paragraph>
-  while (k != t-1)
- </paragraph>
- <paragraph>
-  { int e= (k+t)/2;
- </paragraph>
- <paragraph>
-  // k &lt; e &lt; t --needed for progress
- </paragraph>
- <paragraph>
-  if (b[e] &lt;= v) k= e;
- </paragraph>
- <paragraph>
-  else t= e; }
- </paragraph>
- <paragraph>
-  So we start with k=-1 and t=5. Then, since the loop condition is true, we have e = (-1 + 5)/2 = 2. We check b[2] with v (which is b[0]), our first comparison, and since b[2] &lt;= b[0] is false, we have t=e, or t=2. Now, we have k=-1 and t=2. Then, since the loop condition is true, we have e = (-1 + 2)/2 = 0. Now, we check b[0] &lt;= v, which is true (they're the same), our second comparison. Thus, we set k = e. Then, we have k=0 and t=2. Since the loop condition is still true, we should be executing the loop again, which makes for at least a third comparison, but the sorting quiz says this is 2. Where am I going wrong here?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I'm a little confused about this statement on the quiz:
+</p>
+<p>
+ This example may help. Consider searching array is c[0..4] for the value that is in c[0].
+ <break>
+ </break>
+ Binary search checks the midpoint at 2 and moves to the lower half of the list. The midpoint of [0, 1] rounds down to 0, and binary search finds the target in 2 comparisons.
+</p>
+<p>
+ Looking at the algorithm in Java HyperText, it says:
+</p>
+<p>
+ k= -1; t= b.length;
+</p>
+<p>
+ // inv: -1 ≤ k &lt; t ≤ b.length and
+</p>
+<p>
+ // b[0..k] ≤ v &lt; b[t..].
+</p>
+<p>
+ while (k != t-1)
+</p>
+<p>
+ { int e= (k+t)/2;
+</p>
+<p>
+ // k &lt; e &lt; t --needed for progress
+</p>
+<p>
+ if (b[e] &lt;= v) k= e;
+</p>
+<p>
+ else t= e; }
+</p>
+<p>
+ So we start with k=-1 and t=5. Then, since the loop condition is true, we have e = (-1 + 5)/2 = 2. We check b[2] with v (which is b[0]), our first comparison, and since b[2] &lt;= b[0] is false, we have t=e, or t=2. Now, we have k=-1 and t=2. Then, since the loop condition is true, we have e = (-1 + 2)/2 = 0. Now, we check b[0] &lt;= v, which is true (they're the same), our second comparison. Thus, we set k = e. Then, we have k=0 and t=2. Since the loop condition is still true, we should be executing the loop again, which makes for at least a third comparison, but the sorting quiz says this is 2. Where am I going wrong here?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>

@@ -13,53 +13,51 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  In greedy best search, when we are about to put a new node into the queue but that node already exists in the queue, do we still enqueue this node (we don't have to worry about updating the existing f(n) because f(n) is fixed. but whether to enqueue the new node will make a difference when we try to find its predecessor later)? This question is important because it determines the actual path we get when we encounter such situations.
- </paragraph>
-</document>
+<p>
+ In greedy best search, when we are about to put a new node into the queue but that node already exists in the queue, do we still enqueue this node (we don't have to worry about updating the existing f(n) because f(n) is fixed. but whether to enqueue the new node will make a difference when we try to find its predecessor later)? This question is important because it determines the actual path we get when we encounter such situations.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Niko Grupen (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Niko Grupen (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   In this case, expanding based on the heuristic values of a node's children (as in the example from class) should be sufficient for finding the actual path. Can you provide an example where enqueuing a node a second time would change the actual path for Q3 b?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Chenrui Gu (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  In Q3b, we will have two chances to enqueue E, once when we expand C, once when we expand F, which are all supposed to happen before we expand E. We're supposed to enqueue E when we expand C at the first place, and in this case E's predecessor will be marked as C, but when we expand F, do we still enqueue E and mark/update its predecessor to F? This will make a difference in the final path where we try to find the predecessor for each node along the path.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Niko Grupen (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  This is a great call out -- though the heuristic value will tell you when it is time to expand E's children, it is the case the either C or F could be considered E's predecessor. For the purposes of this assignment we will accept either predecessor as correct, as long as the rest of the path is correct.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Chenrui Gu (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   In Q3b, we will have two chances to enqueue E, once when we expand C, once when we expand F, which are all supposed to happen before we expand E. We're supposed to enqueue E when we expand C at the first place, and in this case E's predecessor will be marked as C, but when we expand F, do we still enqueue E and mark/update its predecessor to F? This will make a difference in the final path where we try to find the predecessor for each node along the path.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Niko Grupen (staff)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    This is a great call out -- though the heuristic value will tell you when it is time to expand E's children, it is the case the either C or F could be considered E's predecessor. For the purposes of this assignment we will accept either predecessor as correct, as long as the rest of the path is correct.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

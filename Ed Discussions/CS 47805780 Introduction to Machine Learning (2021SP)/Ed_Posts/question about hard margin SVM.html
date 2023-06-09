@@ -13,132 +13,126 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I have the following questions about hard margin SVM:
- </paragraph>
- <paragraph>
-  1. Is the hyperplane has functional margin equal to 1 always achieves the largest hard margin?
- </paragraph>
- <paragraph>
-  2. For HW3 Q1 (c) part (ii):
- </paragraph>
- <figure>
-  <image height="145.85666666666665" src="https://static.us.edusercontent.com/files/4U7al2Evo1ruTWWdk2i2ugtX" width="658"/>
- </figure>
- <paragraph>
-  should w100001 = 1?
- </paragraph>
- <paragraph>
-  3. For HW3 Q1 (c) part (iii):
- </paragraph>
- <figure>
-  <image height="377.799043062201" src="https://static.us.edusercontent.com/files/HucY8r1dKGH3x9KiJpU2E0se" width="658"/>
- </figure>
- <paragraph>
-  if w100001 = 0.5, should ||w|| = square root of (20+(0.5)^2) instead of square root of (20.5)?
- </paragraph>
-</document>
+<p>
+ I have the following questions about hard margin SVM:
+</p>
+<p>
+ 1. Is the hyperplane has functional margin equal to 1 always achieves the largest hard margin?
+</p>
+<p>
+ 2. For HW3 Q1 (c) part (ii):
+</p>
+<figure>
+ <image height="145.85666666666665" src="https://static.us.edusercontent.com/files/4U7al2Evo1ruTWWdk2i2ugtX" width="658"/>
+</figure>
+<p>
+ should w100001 = 1?
+</p>
+<p>
+ 3. For HW3 Q1 (c) part (iii):
+</p>
+<figure>
+ <image height="377.799043062201" src="https://static.us.edusercontent.com/files/HucY8r1dKGH3x9KiJpU2E0se" width="658"/>
+</figure>
+<p>
+ if w100001 = 0.5, should ||w|| = square root of (20+(0.5)^2) instead of square root of (20.5)?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jane Du (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  <bold>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jane Du (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
+  <b>
    1. Is the hyperplane has functional margin equal to 1 always achieves the largest hard margin?
-  </bold>
- </paragraph>
- <paragraph>
+  </b>
+ </p>
+ <p>
   No. The functional margin changes with the dataset; for example, normalizing the dataset will change the absolute distances from point to point (while preserving the "relative" distance). The functional margin is geometrically the distance from the closest point (any of the support vectors) to the line (like, take-a-ruler-and-measure-it)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The geometric margin is just the functional margin divided by ||w||. The best hyperplane can still take a bunch of different possible values of geometric margin as well.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   In both cases, being equal to 1 doesn't necessarily mean that you've found the best margin.
- </paragraph>
- <paragraph>
-  <bold>
+ </p>
+ <p>
+  <b>
    2. For HW3 Q1 (c) part (ii):
-  </bold>
- </paragraph>
- <paragraph>
+  </b>
+ </p>
+ <p>
   First of all, which variant? If you double check the classification rule itself sgn(wx + b) on the points as defined, you'll find that it classifies all x correctly, for both points. For Variant 2, it additionally guarantees that the closest points on one side of the hyperplane are just as far from it as those on the other side of the plane. So look at "worst case" points on both sides of the plane.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Although, the sentence above is a little unclear. The feature we add to $x$ is set to 1 automatically, so "we add a feature $x_{10001} =1$ for all examples" instead.
- </paragraph>
- <paragraph>
-  <bold>
+ </p>
+ <p>
+  <b>
    3. For HW3 Q1 (c) part (iii):
-  </bold>
- </paragraph>
- <paragraph>
+  </b>
+ </p>
+ <p>
   Ah, you're correct. Should be $\sqrt{20.25}$.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  <bold>
-   1. Is the hyperplane has functional margin equal to 1 always achieves the largest hard margin?
-  </bold>
- </paragraph>
- <paragraph>
-  The for HW3 Q1(a) part (i) (asking hyperplane
-  <bold>
-   achieves the largest hard margin)
-  </bold>
-  , the hyperplane is the same as HW3 Q1(b) part (i) (asking hyperplane
-  <bold>
-   has functional margin equal to 1)
-  </bold>
-  , is this just a coincidence?
- </paragraph>
- <paragraph>
-  <bold>
-   2. For HW3 Q1 (c) part (ii):
-  </bold>
- </paragraph>
- <paragraph>
-  My question is about variant 2. The last sentence says that "add a feature x_{100001} =1 for all examples", so we then change all 1 added to 0.5?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jane Du (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  1. It's more of a specification than a coincidence! This was our way of forcing you to write w scaled the way we want. Notice that if we had said w = -2 for L elements, 2 for G elements for variant 1, it would actually be the same line, still with the largest (geometric) margin.
- </paragraph>
- <paragraph>
-  2. Not 100% sure what you mean, but the new feature x_100001 is 1 for all examples. Then w increases in dimension too -- so you have to assign w_100001, which, recall, is the way of making a nonhomogeneous problem homogeneous -- so we set w_100001 = 0.5.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   <b>
+    1. Is the hyperplane has functional margin equal to 1 always achieves the largest hard margin?
+   </b>
+  </p>
+  <p>
+   The for HW3 Q1(a) part (i) (asking hyperplane
+   <b>
+    achieves the largest hard margin)
+   </b>
+   , the hyperplane is the same as HW3 Q1(b) part (i) (asking hyperplane
+   <b>
+    has functional margin equal to 1)
+   </b>
+   , is this just a coincidence?
+  </p>
+  <p>
+   <b>
+    2. For HW3 Q1 (c) part (ii):
+   </b>
+  </p>
+  <p>
+   My question is about variant 2. The last sentence says that "add a feature x_{100001} =1 for all examples", so we then change all 1 added to 0.5?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Jane Du (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    1. It's more of a specification than a coincidence! This was our way of forcing you to write w scaled the way we want. Notice that if we had said w = -2 for L elements, 2 for G elements for variant 1, it would actually be the same line, still with the largest (geometric) margin.
+   </p>
+   <p>
+    2. Not 100% sure what you mean, but the new feature x_100001 is 1 for all examples. Then w increases in dimension too -- so you have to assign w_100001, which, recall, is the way of making a nonhomogeneous problem homogeneous -- so we set w_100001 = 0.5.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

@@ -13,63 +13,61 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  Is EDF for this lab pre-emptive, and is there a possibility that processes will be created AFTER process_start() is called?
- </paragraph>
-</document>
+<p>
+ Is EDF for this lab pre-emptive, and is there a possibility that processes will be created AFTER process_start() is called?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   EDF is pre-emptive, otherwise the scheduler would not be optimal.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   All processes will be created before
   <code>
    process_start
   </code>
   is called.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  If you know when the deadlines of every process are, when would a realtime process ever be pre-empted? Not sure if I'm misunderstanding the idea of pre-emption in RT
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="1.0">
- <paragraph>
-  We are acting as if the scheduler is not aware of all of the processes at play. It only knows when a process becomes available due to its start time, and schedules accordingly.
- </paragraph>
- <paragraph>
-  We could technically analyze all processes in advance and perform EDD, but that is not the goal of this lab.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   If you know when the deadlines of every process are, when would a realtime process ever be pre-empted? Not sure if I'm misunderstanding the idea of pre-emption in RT
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Harris Miller (None)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    We are acting as if the scheduler is not aware of all of the processes at play. It only knows when a process becomes available due to its start time, and schedules accordingly.
+   </p>
+   <p>
+    We could technically analyze all processes in advance and perform EDD, but that is not the goal of this lab.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

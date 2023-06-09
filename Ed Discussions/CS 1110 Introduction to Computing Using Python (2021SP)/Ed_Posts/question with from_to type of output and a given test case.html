@@ -13,101 +13,97 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  My code for
-  <bold>
-   from_to
-  </bold>
-  selects the
-  <bold>
-   string
-  </bold>
-  inside the given text, as instructed to do. However, for the test case , from_to('(', ')', 'good job :) good example foo(0) ') --&gt; '0', instead of returning 0, my code returns  ' ', which I am assuming is because 0 is a
-  <bold>
-   number
-  </bold>
-  and not a string. What happens if I want my code to return a number inside of this string?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Gisselle Washington (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ My code for
+ <b>
+  from_to
+ </b>
+ selects the
+ <b>
+  string
+ </b>
+ inside the given text, as instructed to do. However, for the test case , from_to('(', ')', 'good job :) good example foo(0) ') --&gt; '0', instead of returning 0, my code returns  ' ', which I am assuming is because 0 is a
+ <b>
+  number
+ </b>
+ and not a string. What happens if I want my code to return a number inside of this string?
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Gisselle Washington (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I'm having the same error.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  (see response below)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   (see response below)
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Dylan Castillo (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Dylan Castillo (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Your assumption isn't right. Unless you convert a string to an int after string slicing, when you are string slicing (even if the string you are supposed to get back is a number), you will get back a string, not an int.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   In the example you gave, nowhere in the test is zero an integer. Zero is either a string by itself, or part of a string.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi OP, just so you can see what consultant Dylan is saying  for yourself, try running the following code by pressing the blue "Run" button:
-  <break>
-  </break>
-  <break>
-  </break>
-  <break>
-  </break>
-  <break>
-  </break>
- </paragraph>
- <snippet language="py" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   x = "foo(0)"
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Hi OP, just so you can see what consultant Dylan is saying  for yourself, try running the following code by pressing the blue "Run" button:
+   <break>
+   </break>
+   <break>
+   </break>
+   <break>
+   </break>
+   <break>
+   </break>
+  </p>
+  <snippet language="py" line-numbers="true" runnable="true">
+   <snippet-file id="code">
+    x = "foo(0)"
 extracted = x[4]
 print("extracted is " + extracted)
 print("the type of extracted is ....")
 print(type(extracted))
-  </snippet-file>
- </snippet>
-</document>
-<h3>
- ------------------------------------
-</h3>
+   </snippet-file>
+  </snippet>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

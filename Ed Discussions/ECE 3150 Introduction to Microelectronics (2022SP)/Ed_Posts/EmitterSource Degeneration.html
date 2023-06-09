@@ -13,37 +13,33 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  When motivating the use of cascodes in lecture, we said that the major drawback of using emitter/source degeneration to try to increase output resistance (and therefore gain) had to do with the fact that as R_E increases, the emitter voltage also increases. We said that this means there is less voltage headroom, and that somehow limits gain.
- </paragraph>
- <paragraph>
-  How does increasing the emitter voltage give us less voltage headroom? My thinking so far is that perhaps when we increase V_E, we also have to increase V_B to stay in forward active. It seems like V_C would stay the same since we are not changing I_C or R_C, so that would bring V_B and V_C closer together, thus pushing the transistor toward saturation? I'm not sure that this is the same as decreasing voltage headroom though.
- </paragraph>
-</document>
+<p>
+ When motivating the use of cascodes in lecture, we said that the major drawback of using emitter/source degeneration to try to increase output resistance (and therefore gain) had to do with the fact that as R_E increases, the emitter voltage also increases. We said that this means there is less voltage headroom, and that somehow limits gain.
+</p>
+<p>
+ How does increasing the emitter voltage give us less voltage headroom? My thinking so far is that perhaps when we increase V_E, we also have to increase V_B to stay in forward active. It seems like V_C would stay the same since we are not changing I_C or R_C, so that would bring V_B and V_C closer together, thus pushing the transistor toward saturation? I'm not sure that this is the same as decreasing voltage headroom though.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Amal El-Ghazaly (admin)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Amal El-Ghazaly (admin)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   The best way to think about it is to break it up into two steps. You have the DC bias levels, where V_B, V_C, and V_E are set so that the transistor is in forward active. At this point, due to emitter degeneration, V_E is at a higher DC level than ground (for an npn) or lower than Vcc (for a pnp) and has a value that specifically depends on the degeneration resistance.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Now, when an AC small signal is applied, the small oscillation at V_B is converted into a large current variation through the output branch. (Recall that this is a voltage controlled current source.) That
-  <italic>
+  <i>
    upward
-  </italic>
+  </i>
   swing, or increase, in output current goes through Rc and reduces the voltage level of V_C. At the same, it also goes through R_E and increases the voltage level of V_E. Since V_C and V_E are starting to come closer together, the transistor may end up going into saturation for some oscillation amplitudes at V_B. Therefore, we say that the "voltage swing" is limited by degeneration. The small signal at the input yields the expected amplified voltage swing at the output only when the transistor remains in forward active.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

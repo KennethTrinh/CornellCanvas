@@ -13,80 +13,72 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Why is (e) the correct answer for q1? What makes that hash function good? I don't entirely understand the reasoning. Also, what does XOR mean? Is that a typo?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Why is (e) the correct answer for q1? What makes that hash function good? I don't entirely understand the reasoning. Also, what does XOR mean? Is that a typo?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   XOR is "Exclusive or". Look it up in JavaHyperText.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I don't see the question and answer, so I can't comment. Put the question here.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <figure>
-  <image height="167.67880794701986" src="https://static.us.edusercontent.com/files/KpdqW4VfVZOoPS8codOlCtha" width="641"/>
- </figure>
- <paragraph>
-  Ahh ok. Here's the question ^
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ryan Tay (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  For a hash function to be good, it should do a couple of things. As the problem says, it should return values distributed over the entire range of ints, even for inputs that look very similar. It should also give the same output given the same input. It should also try to avoid collisions.
- </paragraph>
- <paragraph>
-  option a is bad because it doesn't give the same output given the same input.
- </paragraph>
- <paragraph>
-  option b is bad because it doesn't return values distributed over the entire range of ints, even for inputs that look very similar. (similar length strings have similar hash values)
- </paragraph>
- <paragraph>
-  option c is bad because it doesn't return values distributed over the entire range of ints, even for inputs that look very similar. (strings that ends in the same letter have the same hash values, and the range of Unicode codepoints does not span the integers)
- </paragraph>
- <paragraph>
-  option d is bad because it doesn't return values distributed over the entire range of ints, even for inputs that look very similar. (output values only range from 0 - 42)
- </paragraph>
- <paragraph>
-  So from process of elimination alone, e must be the answer. As for what particularly makes e good, it's a property of XOR that xor-ing a uniformly random bitstring (the arbitrary constant) with another bitstring (the input int) is also uniformly random. You can see that XOR and multiplication is also deterministic, meaning we will get the same output from the same input. Multiplying by a large prime somewhat helps with the distributed over the entire range of ints.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <figure>
+   <image height="167.67880794701986" src="https://static.us.edusercontent.com/files/KpdqW4VfVZOoPS8codOlCtha" width="641"/>
+  </figure>
+  <p>
+   Ahh ok. Here's the question ^
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Ryan Tay (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    For a hash function to be good, it should do a couple of things. As the problem says, it should return values distributed over the entire range of ints, even for inputs that look very similar. It should also give the same output given the same input. It should also try to avoid collisions.
+   </p>
+   <p>
+    option a is bad because it doesn't give the same output given the same input.
+   </p>
+   <p>
+    option b is bad because it doesn't return values distributed over the entire range of ints, even for inputs that look very similar. (similar length strings have similar hash values)
+   </p>
+   <p>
+    option c is bad because it doesn't return values distributed over the entire range of ints, even for inputs that look very similar. (strings that ends in the same letter have the same hash values, and the range of Unicode codepoints does not span the integers)
+   </p>
+   <p>
+    option d is bad because it doesn't return values distributed over the entire range of ints, even for inputs that look very similar. (output values only range from 0 - 42)
+   </p>
+   <p>
+    So from process of elimination alone, e must be the answer. As for what particularly makes e good, it's a property of XOR that xor-ing a uniformly random bitstring (the arbitrary constant) with another bitstring (the input int) is also uniformly random. You can see that XOR and multiplication is also deterministic, meaning we will get the same output from the same input. Multiplying by a large prime somewhat helps with the distributed over the entire range of ints.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

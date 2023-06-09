@@ -13,107 +13,97 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I was following the abstract algorithm for A7 and came across a little trouble here:
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  f= node in F with minimum d value;
- </paragraph>
- <paragraph>
-  Remove f from F, add it to S;
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  After removing f from F (the frontier minheap), I was not able to figure out a way to add its Item to S (the hashmap) as I am not sure where to find values for the fields backpointer or distance from the start node in the item class. This means I know the key for the hashmap, but not what item to assign to the associated value for the key.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Does anyone have suggestions?
- </paragraph>
-</document>
+<p>
+ I was following the abstract algorithm for A7 and came across a little trouble here:
+</p>
+<p>
+ f= node in F with minimum d value;
+</p>
+<p>
+ Remove f from F, add it to S;
+</p>
+<p>
+ After removing f from F (the frontier minheap), I was not able to figure out a way to add its Item to S (the hashmap) as I am not sure where to find values for the fields backpointer or distance from the start node in the item class. This means I know the key for the hashmap, but not what item to assign to the associated value for the key.
+</p>
+<p>
+ Does anyone have suggestions?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Please remember that S, the d-array, and the back pointer array are replaced by a HashMap.
- </paragraph>
- <paragraph>
-  Exactly what nodes are in that HashMap? Once you understand that thoroughly --and place a suitable comment on the Hashmap-- you should be able to determine what, if anything, has to be done about "add it to S".
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The HashMap should contain an entry for each node in S and F. However, I still don't understand how to add f's associated "Item" to the HashMap after removing it from the frontier min heap. As in, I don't know where to find the values for the distance and backpointer fields to add these Items.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Again, what nodes are in the HashMap, and for a node in the HashMap, what is the corresponding value in the HashMap?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The nodes in the hashmap are nodes from S and F.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  For a node in the HashMap, the corresponding value is an Item which contains information about the distance from the start node to this node and a backpointer on the shortest path from start node to this one.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Then, if the node is already in the HashMap, why are your trying to add it again?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Again, what nodes are in the HashMap, and for a node in the HashMap, what is the corresponding value in the HashMap?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    The nodes in the hashmap are nodes from S and F.
+   </p>
+   <p>
+    For a node in the HashMap, the corresponding value is an Item which contains information about the distance from the start node to this node and a backpointer on the shortest path from start node to this one.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: David Gries (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Please remember that S, the d-array, and the back pointer array are replaced by a HashMap.
+   </p>
+   <p>
+    Exactly what nodes are in that HashMap? Once you understand that thoroughly --and place a suitable comment on the Hashmap-- you should be able to determine what, if anything, has to be done about "add it to S".
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 4em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     The HashMap should contain an entry for each node in S and F. However, I still don't understand how to add f's associated "Item" to the HashMap after removing it from the frontier min heap. As in, I don't know where to find the values for the distance and backpointer fields to add these Items.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

@@ -13,65 +13,61 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi, I'm a bit confused about adding listeners in GUI. In the first picture for example, we are adding this IncrementButton as the ActionListener for the button. But when we use anonymous functions, the things passed into the parenthesis is the code to execute when the event happens. Could someone please explain why there are these two circumstances? Why the anonymous function is also an ActionListener?
- </paragraph>
- <paragraph>
-  Thanks a lot
- </paragraph>
- <figure>
-  <image height="87.10112359550561" src="https://static.us.edusercontent.com/files/PmLsizj2Hs39psbYs3tHnTPy" width="608"/>
- </figure>
- <figure>
-  <image height="65" src="https://static.us.edusercontent.com/files/miWaSdbAwpxmNDtVPhUdNA3d" width="199"/>
- </figure>
-</document>
+<p>
+ Hi, I'm a bit confused about adding listeners in GUI. In the first picture for example, we are adding this IncrementButton as the ActionListener for the button. But when we use anonymous functions, the things passed into the parenthesis is the code to execute when the event happens. Could someone please explain why there are these two circumstances? Why the anonymous function is also an ActionListener?
+</p>
+<p>
+ Thanks a lot
+</p>
+<figure>
+ <image height="87.10112359550561" src="https://static.us.edusercontent.com/files/PmLsizj2Hs39psbYs3tHnTPy" width="608"/>
+</figure>
+<figure>
+ <image height="65" src="https://static.us.edusercontent.com/files/miWaSdbAwpxmNDtVPhUdNA3d" width="199"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Richard Gu (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Richard Gu (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   I would need to see the class header, but in general, when we have "addActionListener(this)" the frame itself implements interface ActionListener. So that's why we're able to add "this" (an object of a class implementing ActionListener) as an ActionListener for the button. Then, somewhere else, that class would need to implement actionPerformed (the only abstract method in the interface).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The anonymous function is a shorthand for implementing the ActionListener interface. Since the interface has only one abstract method, that's when we can have an anonymous function with code to be executed. So what's inside parentheses automatically becomes the implementation of the actionPerformed method.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Here's what the anonymous function does:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   1. use the code inside the parentheses to implement method actionPerformed, which is the only abstract method of interface ActionListener.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   2. By implementing the interface, we have thus created class C. We return an object of class C as the value of the expression, which is then added as the ActionListener.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Sorry if this was a bit long. This process is summarized in the answer key for SP18 (I think) more concisely than how I put it.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
-  got it thank you so much!!! :)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 2
+  </h3>
+  <p>
+   got it thank you so much!!! :)
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

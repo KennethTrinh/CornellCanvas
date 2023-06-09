@@ -13,174 +13,164 @@
 <h3>
  Vote Count: 5
 </h3>
-<document version="2.0">
- <paragraph>
-  Hello,
- </paragraph>
- <paragraph>
-  First off I wanted to say that this was a great assignment, lots of discussion about it was held with other students taking the course and it was a lot of fun.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  I was hoping that now that A8 has been submitted, some discussion could be held regarding methods of optimization for both seek and scram.
- </paragraph>
- <paragraph>
-  I think that many people naturally gravitated towards a form of A* for the seek method, where the neighbor closest to the ring is chosen preferentially over further away neighbors. But I have a feeling there may be more sophisticated algorithms and optimizations to be made for seek.
- </paragraph>
- <paragraph>
-  I think the really tricky one was scram. I found that the best simply algorithm just went directly to the closest coin using Dijkstra until running out of steps left to reach the exit. Unfortunately I didn't have too much explore other algorithms. I'd love to hear the cool things people came up with (especially course staff!).
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Thanks!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Hello,
+</p>
+<p>
+ First off I wanted to say that this was a great assignment, lots of discussion about it was held with other students taking the course and it was a lot of fun.
+</p>
+<p>
+ I was hoping that now that A8 has been submitted, some discussion could be held regarding methods of optimization for both seek and scram.
+</p>
+<p>
+ I think that many people naturally gravitated towards a form of A* for the seek method, where the neighbor closest to the ring is chosen preferentially over further away neighbors. But I have a feeling there may be more sophisticated algorithms and optimizations to be made for seek.
+</p>
+<p>
+ I think the really tricky one was scram. I found that the best simply algorithm just went directly to the closest coin using Dijkstra until running out of steps left to reach the exit. Unfortunately I didn't have too much explore other algorithms. I'd love to hear the cool things people came up with (especially course staff!).
+</p>
+<p>
+ Thanks!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 5
-</h3>
-<document version="2.0">
- <paragraph>
-  I had a couple of algorithms I tested for scram.
- </paragraph>
- <paragraph>
-  1.) McDiver will seek out the node with the richest coin; and if the distance from the richest coin to the exit is greater than the steps to go, McDiver will go straight to the exit.
- </paragraph>
- <paragraph>
-  2.) This is a further optimized version of 1.  While seeking out the tile with the richest amount coin, McDiver will collect coins in neighboring tiles along the way.  Although this version was very prone to bugs and was hard to debug, which made me use try-except blocks.
- </paragraph>
- <paragraph>
-  3.) I used Dijkstra on every tile on a given map to calculate a path from the current tile to every other tile to find the path with the most amount of coins.  After McDiver collected all the coins along that path, my code would calculate another path that had the most amount of coins.  McDiver would head to the exit when going to the exit from a node they are about to move to is greater than steps to go.  Although this version is not that efficient since it calls Dijkstra and A7.sumOfPath so many times.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 7
-</h3>
-<document version="2.0">
- <heading level="1">
-  Seek
- </heading>
- <paragraph>
-  For "seek", there are two classes of optimization that I considered:
- </paragraph>
- <heading level="2">
-  Arbitrary graph
- </heading>
- <paragraph>
-  Without making any assumptions about the layout of the maze, I was about to get an average seek bonus of about 1.245. Optimizations included:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    Construct a graph remembering where you've been and what you've seen
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Use the graph to take the shortest path back when backtracking
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Backtrack to the most promising previously-observed node, not just the node that's on the top of the stack (DFS)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Turn around early if your current path is taking you farther and farther away from the ring. There are many heuristics for doing this. Mine was to compare my current tile's distance to previous tiles' distances plus HALF of the distance required to backtrack to them. If a previous tile looks "closer" by that metric, then immediately backtrack to it. This seemed to work well.
-   </paragraph>
-  </list-item>
- </list>
- <heading level="2">
-  Grid
- </heading>
- <paragraph>
-  We know from the GUI that the sewers form a grid, where every node has up to 4 neighbors obeying a known geometry. While not part of the specifications, it is possible to infer which direction each neighbor is in from your current tile (this is not the kind of thing you should assume when writing robust software, but since this is just a fun classroom competition, I thought I'd explore this option). Using the grid, more optimizations become available:
- </paragraph>
- <paragraph>
-  You can determine the exact coordinates of the ring based on the "Manhattan distances" you observe while exploring. It takes a while to converge to a single point, but even when there's uncertainty, you can still choose a "median" point within the range of possibilities. Given the coordinates of the ring, you can compute the Cartesian distance to it. This helps you approach it more uniformly in x and y, which seems to help. I used an average of the Manhattan distance and the Cartesian distance, weighted by my uncertainty in the latter. Given coordinates of neighbors, you can actually infer edges between two unvisited neighbors if you know they're adjacent to each other. This lets you find shorter paths when backtracking, even prioritizing exploring new tiles. With these, I was able to get my average bonus up to 1.254, but it's possible to do even better. One optimization I did not have time to explore was the following:
- </paragraph>
- <paragraph>
-  Fill your graph representing your knowledge of the maze with "unknown" tiles, and give them higher edge weights to penalize the uncertainty of moving through them. Replace them with "known" tiles as you explore. Then, rather than using the Cartesian distance to the ring location, use the shortest-path distance through these unknown tiles. The advantage here is that, if you find a "wall" when exploring, the algorithm will know that it shouldn't backtrack towards the wall, since there's no path through it. In the end, though, the difference between an average seek bonus of 1.24 and 1.26 won't make a huge impact on your final score. There's more room for improvement in scram optimizations, as well as more room for creativity.
- </paragraph>
- <heading level="1">
-  Scram
- </heading>
- <paragraph>
-  For "scram", I eventually converged on two approaches, one analogous to DFS (v4), and the other analogous to BFS (v5).  These searches are done before requesting any actual movement (though in some cases the search is truncated before McDiver runs out of steps; in that case, it performs that partial result, then searches again after he reaches the end of the previous path).  The core idea of both approaches is the same: consider all tiles that might be visited next, downselect based on which ones look most promising, and repeat.
- </paragraph>
- <paragraph>
-  My DFS-like approach was recursive and was parameterized by a "depth" and a "breadth".  The depth controlled the depth of recursion, while the breadth determined how many new recursive calls were spwaned at each level.  This algorithm runs in exponential time (O(2^depth)), which is asymptotically as bad as an exhaustive search.  However, by bounding the breadth, the base of exponentiation for the number of calls is kept small (2-3, rather than nCoins), which allows for more interesting depths (~14).  This isn't quite enough to exhaust all steps for most maps, but it still works pretty well.
- </paragraph>
- <paragraph>
-  In order to truncate the breadth, we need a heuristic for which "next" coin looks most promising.  As others have discussed, you might divide the coin's value by the distance of the path to it, or you might compute a local coin density in the area of the coin, etc.  Both of my approaches were very sensitive to this heuristic, so experimentation was crucial.  I ended up settling on something that looks pretty funny, but it effectively penalizes choices that take McDiver too close to the exit too early.  I also included data about the shortest exit path from each choice, to give it a more "global" perspective.  For my DFS approach, each "parent" path picks the top B(=breadth) next coins according to this metric and recurses.  At the end, the total coin values of all paths (including a path to the exit tacked on at the end) are compared, and the best one is chosen for execution.
- </paragraph>
- <paragraph>
-  For my BFS approach, instead of picking the top B candidates from each parent path in isolation, all of the candidates from all of the parents are pooled together and sorted, and then the top M(~few hundred) are chosen for continuation.  The sorting metric is the same heuristic used for the DFS approach (after lots of experimentation, the same formula worked best for both searches).  This algorithm is actually linear in depth, not exponential, so it can go much deeper; it generally charts the complete path, using all steps, in one iteration.  This algorithm is iterative, not recursive, since all path extensions are pooled at each level (analogous to the queue in graph BFS).
- </paragraph>
- <paragraph>
-  My DFS approach seemed to work better on average.  By keeping the breadth small, reasonable depths could be achieved.  Increasing breadth led to better solutions but was MUCH slower.  Increasing depth had diminishing returns for small breadths.  In contrast, my BFS approach was less consistent in its performance.  A good long-term solution will only be kept if it also looks good in the short-term relative to its M siblings; increasing breadth could actually drown out good solutions early on, making the solution both slower and less good.  On a few maps it got lucky and found excellent solutions, but tuning the parameters was just too finicky.
- </paragraph>
- <paragraph>
-  As for optimizations, both solutions started by finding the shortest distance from every coin (as well as the start and exit) to every other coin; as others have mentioned, tiles with no coins aren't considered at all.  The shortest-path algorithm was modified to also accumulate coins along the way (and break ties in favor of more total coins).  Since this is done only once, all distance and coin queries were cheap - O(1) - from that point on.  Subtracting coins already picked up was trickier, however; an immutable set (CS 3110) would have been very efficient, since child paths share all the acquired coins of their parents, but Java's standard collections are mutable, so this got costly (linear-time iteration through lists and/or lots of linear-time+space copies).
- </paragraph>
- <paragraph>
-  In the end, though, while these approaches allowed for easy speed/quality tradeoffs, students' solutions found better paths than mine ever did.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ming DeMers (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Ming DeMers (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   As for Scram, my partner and I tested many algorithms and methods of optimization.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Originally, we looked through the topic of combinatorial optimization. I came upon the "knapsack problem," which I believed would be a good start to building scram. Unfortunately, I failed to consider that McDiver's dynamically changing position and coins on the map will not work well with my implemented Knapsack algorithm.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   We then considered implementing methods of heuristic trees or decision tree pruning. Although it was a promising approach, we didn't have the time to debug the many issues that arose.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Ultimately we settled on a similar solution to Troy's.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Simply, we find all the values of coins on the map and calculate the distance. We also considered the number of coins along the path. Thus, we assign a value to each coin tile, calculated as a sort of ratio of value, distance, and a number of coins, and go to the greatest valued tile. Tinkering with the formula, we eventually optimized to a high-scoring and generally consistent scram phase.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Given more time, there are many other approaches left unexplored that we would like to play with. Alas, we had finals to study for.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I'm curious what other teams who started
-  <italic>
+  <i>
    before
-  </italic>
+  </i>
   the break were able to come up with!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Curran Muhlberger (admin)
+  </h3>
+  <h3>
+   Vote Count: 7
+  </h3>
+  <heading level="1">
+   Seek
+  </heading>
+  <p>
+   For "seek", there are two classes of optimization that I considered:
+  </p>
+  <heading level="2">
+   Arbitrary graph
+  </heading>
+  <p>
+   Without making any assumptions about the layout of the maze, I was about to get an average seek bonus of about 1.245. Optimizations included:
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     Construct a graph remembering where you've been and what you've seen
+    </p>
+   </li>
+   <li>
+    <p>
+     Use the graph to take the shortest path back when backtracking
+    </p>
+   </li>
+   <li>
+    <p>
+     Backtrack to the most promising previously-observed node, not just the node that's on the top of the stack (DFS)
+    </p>
+   </li>
+   <li>
+    <p>
+     Turn around early if your current path is taking you farther and farther away from the ring. There are many heuristics for doing this. Mine was to compare my current tile's distance to previous tiles' distances plus HALF of the distance required to backtrack to them. If a previous tile looks "closer" by that metric, then immediately backtrack to it. This seemed to work well.
+    </p>
+   </li>
+  </list>
+  <heading level="2">
+   Grid
+  </heading>
+  <p>
+   We know from the GUI that the sewers form a grid, where every node has up to 4 neighbors obeying a known geometry. While not part of the specifications, it is possible to infer which direction each neighbor is in from your current tile (this is not the kind of thing you should assume when writing robust software, but since this is just a fun classroom competition, I thought I'd explore this option). Using the grid, more optimizations become available:
+  </p>
+  <p>
+   You can determine the exact coordinates of the ring based on the "Manhattan distances" you observe while exploring. It takes a while to converge to a single point, but even when there's uncertainty, you can still choose a "median" point within the range of possibilities. Given the coordinates of the ring, you can compute the Cartesian distance to it. This helps you approach it more uniformly in x and y, which seems to help. I used an average of the Manhattan distance and the Cartesian distance, weighted by my uncertainty in the latter. Given coordinates of neighbors, you can actually infer edges between two unvisited neighbors if you know they're adjacent to each other. This lets you find shorter paths when backtracking, even prioritizing exploring new tiles. With these, I was able to get my average bonus up to 1.254, but it's possible to do even better. One optimization I did not have time to explore was the following:
+  </p>
+  <p>
+   Fill your graph representing your knowledge of the maze with "unknown" tiles, and give them higher edge weights to penalize the uncertainty of moving through them. Replace them with "known" tiles as you explore. Then, rather than using the Cartesian distance to the ring location, use the shortest-path distance through these unknown tiles. The advantage here is that, if you find a "wall" when exploring, the algorithm will know that it shouldn't backtrack towards the wall, since there's no path through it. In the end, though, the difference between an average seek bonus of 1.24 and 1.26 won't make a huge impact on your final score. There's more room for improvement in scram optimizations, as well as more room for creativity.
+  </p>
+  <heading level="1">
+   Scram
+  </heading>
+  <p>
+   For "scram", I eventually converged on two approaches, one analogous to DFS (v4), and the other analogous to BFS (v5).  These searches are done before requesting any actual movement (though in some cases the search is truncated before McDiver runs out of steps; in that case, it performs that partial result, then searches again after he reaches the end of the previous path).  The core idea of both approaches is the same: consider all tiles that might be visited next, downselect based on which ones look most promising, and repeat.
+  </p>
+  <p>
+   My DFS-like approach was recursive and was parameterized by a "depth" and a "breadth".  The depth controlled the depth of recursion, while the breadth determined how many new recursive calls were spwaned at each level.  This algorithm runs in exponential time (O(2^depth)), which is asymptotically as bad as an exhaustive search.  However, by bounding the breadth, the base of exponentiation for the number of calls is kept small (2-3, rather than nCoins), which allows for more interesting depths (~14).  This isn't quite enough to exhaust all steps for most maps, but it still works pretty well.
+  </p>
+  <p>
+   In order to truncate the breadth, we need a heuristic for which "next" coin looks most promising.  As others have discussed, you might divide the coin's value by the distance of the path to it, or you might compute a local coin density in the area of the coin, etc.  Both of my approaches were very sensitive to this heuristic, so experimentation was crucial.  I ended up settling on something that looks pretty funny, but it effectively penalizes choices that take McDiver too close to the exit too early.  I also included data about the shortest exit path from each choice, to give it a more "global" perspective.  For my DFS approach, each "parent" path picks the top B(=breadth) next coins according to this metric and recurses.  At the end, the total coin values of all paths (including a path to the exit tacked on at the end) are compared, and the best one is chosen for execution.
+  </p>
+  <p>
+   For my BFS approach, instead of picking the top B candidates from each parent path in isolation, all of the candidates from all of the parents are pooled together and sorted, and then the top M(~few hundred) are chosen for continuation.  The sorting metric is the same heuristic used for the DFS approach (after lots of experimentation, the same formula worked best for both searches).  This algorithm is actually linear in depth, not exponential, so it can go much deeper; it generally charts the complete path, using all steps, in one iteration.  This algorithm is iterative, not recursive, since all path extensions are pooled at each level (analogous to the queue in graph BFS).
+  </p>
+  <p>
+   My DFS approach seemed to work better on average.  By keeping the breadth small, reasonable depths could be achieved.  Increasing breadth led to better solutions but was MUCH slower.  Increasing depth had diminishing returns for small breadths.  In contrast, my BFS approach was less consistent in its performance.  A good long-term solution will only be kept if it also looks good in the short-term relative to its M siblings; increasing breadth could actually drown out good solutions early on, making the solution both slower and less good.  On a few maps it got lucky and found excellent solutions, but tuning the parameters was just too finicky.
+  </p>
+  <p>
+   As for optimizations, both solutions started by finding the shortest distance from every coin (as well as the start and exit) to every other coin; as others have mentioned, tiles with no coins aren't considered at all.  The shortest-path algorithm was modified to also accumulate coins along the way (and break ties in favor of more total coins).  Since this is done only once, all distance and coin queries were cheap - O(1) - from that point on.  Subtracting coins already picked up was trickier, however; an immutable set (CS 3110) would have been very efficient, since child paths share all the acquired coins of their parents, but Java's standard collections are mutable, so this got costly (linear-time iteration through lists and/or lots of linear-time+space copies).
+  </p>
+  <p>
+   In the end, though, while these approaches allowed for easy speed/quality tradeoffs, students' solutions found better paths than mine ever did.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Troy Moslemi (he/him) (student)
+   </h3>
+   <h3>
+    Vote Count: 5
+   </h3>
+   <p>
+    I had a couple of algorithms I tested for scram.
+   </p>
+   <p>
+    1.) McDiver will seek out the node with the richest coin; and if the distance from the richest coin to the exit is greater than the steps to go, McDiver will go straight to the exit.
+   </p>
+   <p>
+    2.) This is a further optimized version of 1.  While seeking out the tile with the richest amount coin, McDiver will collect coins in neighboring tiles along the way.  Although this version was very prone to bugs and was hard to debug, which made me use try-except blocks.
+   </p>
+   <p>
+    3.) I used Dijkstra on every tile on a given map to calculate a path from the current tile to every other tile to find the path with the most amount of coins.  After McDiver collected all the coins along that path, my code would calculate another path that had the most amount of coins.  McDiver would head to the exit when going to the exit from a node they are about to move to is greater than steps to go.  Although this version is not that efficient since it calls Dijkstra and A7.sumOfPath so many times.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

@@ -13,97 +13,89 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="153.36293007769146" src="https://static.us.edusercontent.com/files/HE0rPkDSJkdL0t9VT5quYFRC" width="658"/>
- </figure>
- <paragraph>
-  Regarding this section of the monograph, to find the principle continuous time alias, what comes out as xr, would you find k such that:
- </paragraph>
- <math>
-  \Omega_0+\frac{k2\pi}{T}&lt;\frac{\pi}{T}
- </math>
- <paragraph>
-  or k such that the above phrase is less that $\pi$ as it says in third line in the paragraph.  I think I am getting my units confused because I thought $\Omega_0&lt;\pi/T$ is the sampling theorem condition.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Thank you!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<figure>
+ <image height="153.36293007769146" src="https://static.us.edusercontent.com/files/HE0rPkDSJkdL0t9VT5quYFRC" width="658"/>
+</figure>
+<p>
+ Regarding this section of the monograph, to find the principle continuous time alias, what comes out as xr, would you find k such that:
+</p>
+<math>
+ \Omega_0+\frac{k2\pi}{T}&lt;\frac{\pi}{T}
+</math>
+<p>
+ or k such that the above phrase is less that $\pi$ as it says in third line in the paragraph.  I think I am getting my units confused because I thought $\Omega_0&lt;\pi/T$ is the sampling theorem condition.
+</p>
+<p>
+ Thank you!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Thanks for finding that --- a typo for sure!  You want $\left | \Omega _ o + k \frac{2 \pi}{T} \right | &lt; \frac{\pi}{T}$.  Note the absolute value signs --- the frequency of the principal continuous-time alias could be negative.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  in 6 on HW IX, for the pure sinusoid, since the given frequency is a multiple of 2pi, could we technically write that as xc(t) = (1)^t ?  I know that doesn't make a lot of sense, but I don't know what Euler math rule prevents that.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Turns out that's prohibited.  Only integer powers of complex numbers make unambiguous sense.  Obviously this $x _ c$ is not identically equal to 1, so your proposal can't be right --- -what goes wrong?
- </paragraph>
- <paragraph>
-  If $z _ o = R e ^ {j \theta}$, it's tempting to say $z _ o ^ {1 / 2} = \sqrt{R} e ^ {j \theta / 2}$, but that's only one of two possible answers.  Things get even weirder when the powers aren't rational, but here's and example the kind of error that arises when you don't obey the integer-powers-only rule.
- </paragraph>
- <paragraph>
-  We know that $e ^ {j 4 \pi ^ 2} \neq 1$.  But how come, since $\left ( e ^ {j 2 \pi} \right ) ^ { 2 \pi} = 1 ^ {2 \pi} = 1$?
- </paragraph>
- <paragraph>
-  Complex logs give rise to the difficulties.  Like, with real numbers, we can say, $x ^ t = e ^ {t \ln x}$ when $x &gt; 0$.  But when $z _ o$ is complex, it has many logs, like the $z _ o$ above has the following ones, among others: $\ln R + j \theta$, $\ln R + j ( \theta + 2 \pi )$, $\ln R + j ( \theta + 4 \pi )$, etc.  And if you wanted to calculate $z _ o ^ t$ by using logs, you'd get a different answer for each
- </paragraph>
- <paragraph>
-  $e ^ {t ( {\rm one \; of \;  those} )}$.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   in 6 on HW IX, for the pure sinusoid, since the given frequency is a multiple of 2pi, could we technically write that as xc(t) = (1)^t ?  I know that doesn't make a lot of sense, but I don't know what Euler math rule prevents that.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: David Delchamps (admin)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Turns out that's prohibited.  Only integer powers of complex numbers make unambiguous sense.  Obviously this $x _ c$ is not identically equal to 1, so your proposal can't be right --- -what goes wrong?
+   </p>
+   <p>
+    If $z _ o = R e ^ {j \theta}$, it's tempting to say $z _ o ^ {1 / 2} = \sqrt{R} e ^ {j \theta / 2}$, but that's only one of two possible answers.  Things get even weirder when the powers aren't rational, but here's and example the kind of error that arises when you don't obey the integer-powers-only rule.
+   </p>
+   <p>
+    We know that $e ^ {j 4 \pi ^ 2} \neq 1$.  But how come, since $\left ( e ^ {j 2 \pi} \right ) ^ { 2 \pi} = 1 ^ {2 \pi} = 1$?
+   </p>
+   <p>
+    Complex logs give rise to the difficulties.  Like, with real numbers, we can say, $x ^ t = e ^ {t \ln x}$ when $x &gt; 0$.  But when $z _ o$ is complex, it has many logs, like the $z _ o$ above has the following ones, among others: $\ln R + j \theta$, $\ln R + j ( \theta + 2 \pi )$, $\ln R + j ( \theta + 4 \pi )$, etc.  And if you wanted to calculate $z _ o ^ t$ by using logs, you'd get a different answer for each
+   </p>
+   <p>
+    $e ^ {t ( {\rm one \; of \;  those} )}$.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Thank you!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

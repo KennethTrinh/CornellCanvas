@@ -13,59 +13,55 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Are we allowed to declare an object like:
- </paragraph>
- <paragraph>
-  Abstract-Class obj1 = Implementation-Class obj2? As an example,
- </paragraph>
- <paragraph>
-  <bold>
-   Shape
-  </bold>
-  Triangle =
-  <bold>
-   Triangle
-  </bold>
-  t1;
- </paragraph>
- <paragraph>
-  Where
-  <bold>
-   Triangle
-  </bold>
-  is an implementation of abstract class
-  <bold>
-   Shape
-  </bold>
-  .
- </paragraph>
- <paragraph>
-  If so, why is this allowed? Is it because the dynamic type of the variable Triangle will always be
-  <bold>
-   Triangle
-  </bold>
-  rather than
-  <bold>
-   Shape
-  </bold>
-  ?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Are we allowed to declare an object like:
+</p>
+<p>
+ Abstract-Class obj1 = Implementation-Class obj2? As an example,
+</p>
+<p>
+ <b>
+  Shape
+ </b>
+ Triangle =
+ <b>
+  Triangle
+ </b>
+ t1;
+</p>
+<p>
+ Where
+ <b>
+  Triangle
+ </b>
+ is an implementation of abstract class
+ <b>
+  Shape
+ </b>
+ .
+</p>
+<p>
+ If so, why is this allowed? Is it because the dynamic type of the variable Triangle will always be
+ <b>
+  Triangle
+ </b>
+ rather than
+ <b>
+  Shape
+ </b>
+ ?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bahaa Kotb (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   the dynamic type of Triangle will be Triangle which is an extends the Abstract class Shape (subclass) so you are allowed to do that, also to initialize the variable Triangle you can just do
   <break>
   </break>
@@ -76,36 +72,36 @@
   <break>
   </break>
   However this limits you do only perform methods from the class Shape when using the variable Triangle, so if the class triangle has new methods that aren’t in class Shape you can’t do Triangle.mm(); assuming mm is a method in class triangle and not shape. This would violate the compile time reference rule
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  got it, thanks! do you by any chance remember which lecture covers the compile time reference rule?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  sorry, i dont. but use java hyper text
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   got it, thanks! do you by any chance remember which lecture covers the compile time reference rule?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Bahaa Kotb (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    sorry, i dont. but use java hyper text
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

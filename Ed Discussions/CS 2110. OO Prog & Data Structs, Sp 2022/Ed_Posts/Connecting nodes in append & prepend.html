@@ -13,104 +13,102 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I am having trouble adding another node if the String is not null. If I have one node in it already, and i use append() or prepend(), toString() does not work. toStringRev() does work and even though I wrote it in a similar way to toString(). I saw in a previous question on here if toString() does not work, the nodes are not connecting, can someone give more guidance on what this means? I am confused!
- </paragraph>
- <paragraph>
-  Thanks
- </paragraph>
-</document>
+<p>
+ I am having trouble adding another node if the String is not null. If I have one node in it already, and i use append() or prepend(), toString() does not work. toStringRev() does work and even though I wrote it in a similar way to toString(). I saw in a previous question on here if toString() does not work, the nodes are not connecting, can someone give more guidance on what this means? I am confused!
+</p>
+<p>
+ Thanks
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Atulya Lohani (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  If your toString doesn’t work but toStringRev does work then that means your head isn’t assigned right or your .next fields are not assigned correctly.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ruth Epstein (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Nevermind! I figured it out!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ruth Epstein (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  If it is length of 1, I have to assign the next node to be the node i just created? I do next and it says I cannot because the original string is null. I put a condition if string == null then assign the head to be the new node.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Hard to say anything from what you say.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You shouldn't be writing/using prepend before FULLY testing append and toStringRev together --doing also prepend before testing append/toStringRev is just wasting your time.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If toString is not working when appending to a list of length 1 (so you end up with a list of length 2), that simply means that append has not been written correctly.  We need to know more to be able to help.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ruth Epstein (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi Dr. Gries thanks for your response. I fully wrote append, prepend &amp; toStringRev(). toString() does not work correctly when appending to a list of length 1; for append, I assign the new node as the tail and for prepend, I assign the new node as head. I increase the size before doing both. Please let me know if this is enough information!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ruth Epstein (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  So i need to add a condition if size = 1?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Ruth Epstein (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Hi Dr. Gries thanks for your response. I fully wrote append, prepend &amp; toStringRev(). toString() does not work correctly when appending to a list of length 1; for append, I assign the new node as the tail and for prepend, I assign the new node as head. I increase the size before doing both. Please let me know if this is enough information!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Ruth Epstein (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    So i need to add a condition if size = 1?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Atulya Lohani (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   If your toString doesn’t work but toStringRev does work then that means your head isn’t assigned right or your .next fields are not assigned correctly.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Ruth Epstein (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    If it is length of 1, I have to assign the next node to be the node i just created? I do next and it says I cannot because the original string is null. I put a condition if string == null then assign the head to be the new node.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 4em;">
+    <h3>
+     Author: Ruth Epstein (student)
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     Nevermind! I figured it out!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

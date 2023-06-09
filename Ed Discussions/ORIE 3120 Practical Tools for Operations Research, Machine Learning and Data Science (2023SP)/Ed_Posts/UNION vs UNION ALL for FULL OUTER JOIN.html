@@ -13,49 +13,47 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Lecture 6 slide 25:
- </paragraph>
- <paragraph>
-  I'm not understanding why
- </paragraph>
- <paragraph>
-  <italic>
-   A full outer join B
-  </italic>
- </paragraph>
- <paragraph>
-  is equivalent to
- </paragraph>
- <paragraph>
-  <italic>
-   [A left join B] UNION ALL [A right join B]
-  </italic>
- </paragraph>
- <paragraph>
-  instead of
- </paragraph>
- <paragraph>
-  <italic>
-   [A left join B] UNION [A right join B]
-  </italic>
- </paragraph>
- <paragraph>
-  since it is stated that UNION ALL does not remove the duplicates.
- </paragraph>
-</document>
+<p>
+ Lecture 6 slide 25:
+</p>
+<p>
+ I'm not understanding why
+</p>
+<p>
+ <i>
+  A full outer join B
+ </i>
+</p>
+<p>
+ is equivalent to
+</p>
+<p>
+ <i>
+  [A left join B] UNION ALL [A right join B]
+ </i>
+</p>
+<p>
+ instead of
+</p>
+<p>
+ <i>
+  [A left join B] UNION [A right join B]
+ </i>
+</p>
+<p>
+ since it is stated that UNION ALL does not remove the duplicates.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Yuheng Wang (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Yuheng Wang (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Good question.  I think the case that you are referring to is that  B table has two exactly the same records. In that case, when you do the union after you right-join or left-join, you will have some duplicate records. But in that case, the
   <code>
    Full Outer Join
@@ -69,10 +67,8 @@
    Union All
   </code>
   is still needed.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

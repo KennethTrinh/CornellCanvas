@@ -13,50 +13,41 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi,
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  This error occurs in my getTime when I call the method in my changeTime. I understand that the error means the value in the bracket is "W", which could not be converted into an integer. But my getTime method passes all test cases so this shouldn't be happening. Can you please explain more to me?
- </paragraph>
- <paragraph>
-  <italic>
-   ValueError: invalid literal for int() with base 10: 'W'
-  </italic>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Thank you!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ Hi,
+</p>
+<p>
+ This error occurs in my getTime when I call the method in my changeTime. I understand that the error means the value in the bracket is "W", which could not be converted into an integer. But my getTime method passes all test cases so this shouldn't be happening. Can you please explain more to me?
+</p>
+<p>
+ <i>
+  ValueError: invalid literal for int() with base 10: 'W'
+ </i>
+</p>
+<p>
+ Thank you!
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Hi, can you post the entire error message, not just the last line? (It's OK that we'll get tiny snippets of  your code)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <pre>Running test_course_changetime
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <pre>Running test_course_changetime
 Traceback (most recent call last):
   File "schedule_tests.py", line 297, in &lt;module&gt;
     testfn() # Adding the parentheses calls whatever testfn is
@@ -66,30 +57,31 @@ Traceback (most recent call last):
     if int(starthour) &gt;= 12:
 ValueError: invalid literal for int() with base 10: 'W'
 PS C:\Users\Yuji Zhao\Desktop\A6&gt;</pre>
- <paragraph>
-  Hi Professor,
- </paragraph>
- <paragraph>
-  Here's the entire error message. Thanks for helping!
- </paragraph>
- <paragraph>
-  I try printing self.getTime() before any coding in changeTime() and the result is "TBA". But when I try to call getTime() again to write the warning message, the error occurs.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+  <p>
+   Hi Professor,
+  </p>
+  <p>
+   Here's the entire error message. Thanks for helping!
+  </p>
+  <p>
+   I try printing self.getTime() before any coding in changeTime() and the result is "TBA". But when I try to call getTime() again to write the warning message, the error occurs.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   OK, looking at the testing code for
   <code>
    test_course_changetime
@@ -99,7 +91,7 @@ PS C:\Users\Yuji Zhao\Desktop\A6&gt;</pre>
   </break>
   <break>
   </break>
- </paragraph>
+ </p>
  <snippet language="py" line-numbers="true" runnable="false">
   <snippet-file id="code">
    initial_courses_to_add = roster_creation.make_initial_course_list()
@@ -122,7 +114,7 @@ PS C:\Users\Yuji Zhao\Desktop\A6&gt;</pre>
         _assert_msg("Time of ARCH 1120", new_time, arch1120.getTime())
   </snippet-file>
  </snippet>
- <paragraph>
+ <p>
   Now, line 18 is checking whether line 16 caused the time of arch1120 to change correctly.
   <break>
   </break>
@@ -138,92 +130,92 @@ PS C:\Users\Yuji Zhao\Desktop\A6&gt;</pre>
   that isn't going right --- i.e., is changing things in a way so that the getTime method no longer works!
   <break>
   </break>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi Professor,
- </paragraph>
- <paragraph>
-  Thanks for the explanation! I now realize that the getTime() is no longer working possibly due to a change in the
-  <italic>
-   self.
-  </italic>
-  But what I've been doing in my coding was just calling
-  <italic>
-   self.getTime()
-  </italic>
-  and I couldn't find out when did the
-  <italic>
-   self
-  </italic>
-  change. Can you please tell me that in what situation is the
-  <italic>
-   self
-  </italic>
-  likely to be replaced?
- </paragraph>
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Note that changeTime() (not getTime, but changeTime)
-  <italic>
-   should
-  </italic>
-  be changing attributes of self, because its purpose is to change the time of its "embedding" object (a Course).
-  <break>
-  </break>
-  <break>
-  </break>
-  Whatever changetime is doing is altering whatever getTime will
-  <italic>
-   later
-  </italic>
-  pull its information from.
-  <break>
-  </break>
-  <break>
-  </break>
-  So, changeTime is supposed to change its self object, but it is not doing so correctly ---- according to the error message, the variable
-  <code>
-   starthour
-  </code>
-  is a string 'W', so seems like changeTime is altering wrongly whatever is the information that
-  <code>
-   starthour
-  </code>
-  is coming from.
-  <break>
-  </break>
-  <break>
-  </break>
-  <break>
-  </break>
-  <break>
-  </break>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Hi Professor,
+  </p>
+  <p>
+   Thanks for the explanation! I now realize that the getTime() is no longer working possibly due to a change in the
+   <i>
+    self.
+   </i>
+   But what I've been doing in my coding was just calling
+   <i>
+    self.getTime()
+   </i>
+   and I couldn't find out when did the
+   <i>
+    self
+   </i>
+   change. Can you please tell me that in what situation is the
+   <i>
+    self
+   </i>
+   likely to be replaced?
+  </p>
+  <p>
+   Thank you!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Note that changeTime() (not getTime, but changeTime)
+    <i>
+     should
+    </i>
+    be changing attributes of self, because its purpose is to change the time of its "embedding" object (a Course).
+    <break>
+    </break>
+    <break>
+    </break>
+    Whatever changetime is doing is altering whatever getTime will
+    <i>
+     later
+    </i>
+    pull its information from.
+    <break>
+    </break>
+    <break>
+    </break>
+    So, changeTime is supposed to change its self object, but it is not doing so correctly ---- according to the error message, the variable
+    <code>
+     starthour
+    </code>
+    is a string 'W', so seems like changeTime is altering wrongly whatever is the information that
+    <code>
+     starthour
+    </code>
+    is coming from.
+    <break>
+    </break>
+    <break>
+    </break>
+    <break>
+    </break>
+    <break>
+    </break>
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

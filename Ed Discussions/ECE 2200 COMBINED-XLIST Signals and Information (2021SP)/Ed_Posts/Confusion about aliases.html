@@ -13,111 +13,107 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  So I have been thinking about aliases and something is confusing me. Lets say I have an oscilloscope and want to an analyze a signal of frequency f0 and the scope samples at fs. If I measure the signal the scope will sample and display f0 on the screen. However, what if I measured a signal whos frequency happened to be f0+fs. The oscilloscope would display a signal of frequency f0 since it samples the same. This is not the frequency I wanted to see. Isn't this a problem? Doesn't every signal in existence technically have an alias which would make all oscilloscope measurements wrong?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ So I have been thinking about aliases and something is confusing me. Lets say I have an oscilloscope and want to an analyze a signal of frequency f0 and the scope samples at fs. If I measure the signal the scope will sample and display f0 on the screen. However, what if I measured a signal whos frequency happened to be f0+fs. The oscilloscope would display a signal of frequency f0 since it samples the same. This is not the frequency I wanted to see. Isn't this a problem? Doesn't every signal in existence technically have an alias which would make all oscilloscope measurements wrong?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I'm embarrassed not to know more about how scopes work.  :-\
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Ok then let me take this out of the context of scopes. Doesn't every signal technically have an alias so when you sample it and put it back in the interpolator you wont get the exact one you are analyzing?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  If $f _ s$ is a sampling frequency, every sinusoid of frequency $f _ o$ has infinitely many continuous-time aliases wrt $f _ s$ --- this is true for any $f _ o$.  If you want to (a) $f _ s$-sample a sinusoid $x ( t )$ of frequency $f _ o$, then (b) put the resulting discrete-time signal through an ideal $T _ s$-interpolator, and finally (c) have the original sinusoid $x ( t )$ emerge, you have to make sure $f _ s &gt; 2 f _ o$.  The interpolator always puts out the principal continuous-time alias of $x ( t )$ wrt $f _ s$, and you need to make sure that $x ( t )$ itself is its own principal continuous-time alias wrt $f _ s$, and that's what the inequality $f _ s &lt; 2 f _ o$, equivalently $f _ o &lt; f _ s / 2$, ensures.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Juliet DeNapoli (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  When we say fs​&lt;2fo, is fo technically fmax? Like if we were to have a sum of sinusoids, we would use the largest frequency for this inequality right?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Correct.  And when you have only one sinusoid of frequency $f _ o$, $f _ {\rm max} = f _ o$.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Juliet DeNapoli (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Ok cool thanks! Also, if we have a sum of two sinusoids for a signal x(t), and one of them satisfies the Nyquiste sample rate but the other doesn't, we only change the one that doesn't right? But even with this aliasing only happening for one of the terms of x(t), since aliasing occurred at all, the y(t) would be different from x(t) right?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The way I think of it is, you handle the terms one at a time and add the results.  And Yes to your final question.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Ok then let me take this out of the context of scopes. Doesn't every signal technically have an alias so when you sample it and put it back in the interpolator you wont get the exact one you are analyzing?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: David Delchamps (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    If $f _ s$ is a sampling frequency, every sinusoid of frequency $f _ o$ has infinitely many continuous-time aliases wrt $f _ s$ --- this is true for any $f _ o$.  If you want to (a) $f _ s$-sample a sinusoid $x ( t )$ of frequency $f _ o$, then (b) put the resulting discrete-time signal through an ideal $T _ s$-interpolator, and finally (c) have the original sinusoid $x ( t )$ emerge, you have to make sure $f _ s &gt; 2 f _ o$.  The interpolator always puts out the principal continuous-time alias of $x ( t )$ wrt $f _ s$, and you need to make sure that $x ( t )$ itself is its own principal continuous-time alias wrt $f _ s$, and that's what the inequality $f _ s &lt; 2 f _ o$, equivalently $f _ o &lt; f _ s / 2$, ensures.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Juliet DeNapoli (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     When we say fs​&lt;2fo, is fo technically fmax? Like if we were to have a sum of sinusoids, we would use the largest frequency for this inequality right?
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: David Delchamps (admin)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      Correct.  And when you have only one sinusoid of frequency $f _ o$, $f _ {\rm max} = f _ o$.
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 12em;">
+      <h3>
+       Author: Juliet DeNapoli (student)
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       Ok cool thanks! Also, if we have a sum of two sinusoids for a signal x(t), and one of them satisfies the Nyquiste sample rate but the other doesn't, we only change the one that doesn't right? But even with this aliasing only happening for one of the terms of x(t), since aliasing occurred at all, the y(t) would be different from x(t) right?
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 14em;">
+       <h3>
+        Author: David Delchamps (admin)
+       </h3>
+       <h3>
+        Vote Count: 0
+       </h3>
+       <p>
+        The way I think of it is, you handle the terms one at a time and add the results.  And Yes to your final question.
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

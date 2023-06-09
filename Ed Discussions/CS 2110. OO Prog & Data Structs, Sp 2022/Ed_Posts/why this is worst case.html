@@ -13,49 +13,43 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="387.0588235294117" src="https://static.us.edusercontent.com/files/1bmePYd5aNBxHhfN5cOj057U" width="657.9999999999999"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
-  In this case, if j is the smallest value, what's the next step? We can't do QS(b, h , j-1) anymore, since that would be out of range?
- </paragraph>
-</document>
+<figure>
+ <image height="387.0588235294117" src="https://static.us.edusercontent.com/files/1bmePYd5aNBxHhfN5cOj057U" width="657.9999999999999"/>
+</figure>
+<p>
+ In this case, if j is the smallest value, what's the next step? We can't do QS(b, h , j-1) anymore, since that would be out of range?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You CAN "do" QS(b, h , j-1). In this case, b[h..j-1] is the empty segment, with 0 values, and that's a base case --the recursive call terminates immediately.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   THEN the call QS(b, j+1 , k) is executed.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  thank you!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   thank you!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

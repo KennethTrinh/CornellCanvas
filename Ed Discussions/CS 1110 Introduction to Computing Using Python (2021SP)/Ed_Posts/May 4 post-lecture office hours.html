@@ -13,66 +13,163 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  like it says in the title
- </paragraph>
-</document>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Q1: what's a non-hashable object?.
-  <break>
-  </break>
-  A1:  For dictionaries, rule -of-thumb is that the
-  <italic>
-   keys
-  </italic>
-  should be strings or ints, not lists or arbitrary objects.
-  <break>
-  </break>
-  <break>
-  </break>
-  Q2: how to create a dictionary entry with an empty list as value?
- </paragraph>
- <paragraph>
-  A2: see line 4 below.
- </paragraph>
- <paragraph>
- </paragraph>
+<p>
+ like it says in the title
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
+  How to access attributes of an object that's a value in a dictionary?
+ </p>
  <snippet language="py" line-numbers="true" runnable="true">
   <snippet-file id="code">
-   mydict = {}
-mydict["awesome"] = "Kenny"
-# mydict[["here", "is", "a", "list"]] = "yep" # &lt;-- causes an error
-mydict["whatever key, say it's a college name"] = []
-print("success if you see this line!")
+   class Account:
+    def __init__(self, d, p="temp"):
+        self.amount = d # d is initial deposit.
+        self.passwords = [p]
+all_accounts = {}  # keys: names, values: accounts
+all_accounts["Prof. Lee"] = Account(1001)
+all_accounts["Prof. Fan"] = Account(50000000)
+# let's donate 500 dollars to charity from Prof. Lee
+all_accounts["Prof. Lee"].amount -= 500
+print(all_accounts["Prof. Lee"].amount)
+
+# all_accounts["Prof. Lee"].self.amount  # &lt;--- no such attribute self
+
+# add a password to Prof. Fan's 
+all_accounts["Prof. Fan"]  # &lt;--- that's an Account object
+all_accounts["Prof. Fan"].passwords # &lt;--- list
+all_accounts["Prof. Fan"].passwords.append('12345')
+
+print(all_accounts["Prof. Fan"].passwords)
   </snippet-file>
  </snippet>
- <paragraph>
-  If you tried to make a College as a key in dictionary, you'll get this error.
-  <break>
-  </break>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <pre># menu_listing has a for-loop: can we keep it?
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   About A5 Q2: "" Is there any function in sd_utilities_list.py that would be better to convert to a method of class Showdown or College?"  How to think about this?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    So what's the diff?
+    <break>
+    </break>
+    1. how you write them (indented in a class or not, whether you have the self parameter)
+   </p>
+   <p>
+    2. how a user calls them.
+    <break>
+    </break>
+    Example:
+    <code>
+     len
+    </code>
+    is a non-method function.  Call via
+    <code>
+     len(" abc ")
+    </code>
+    <break>
+    </break>
+    <code>
+     strip()
+    </code>
+    is a method.  Call as
+    <code>
+     "  abc  ".strip()
+    </code>
+   </p>
+   <snippet language="py" line-numbers="true" runnable="true">
+    <snippet-file id="code">
+     x = 5
+print(len(x)) # x doesn't have a length, no type-checking of the arugment
+    </snippet-file>
+   </snippet>
+   <p>
+    Method only exists for the type it's defined for.
+    <break>
+    </break>
+    <break>
+    </break>
+    "semantics" looks nice.
+    <break>
+    </break>
+    If eat were a non-method function: call would be like
+    <code>
+     eat(&lt;animal&gt;, &lt;grass&gt;)
+    </code>
+    .
+    <break>
+    </break>
+    If it were a method: it would be
+    <code>
+     &lt;animal&gt;.eat(&lt;grass&gt;)
+    </code>
+    , which is arguably more sensible --- one is the actor and one is the input.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Prof. Lee (she/they) (admin)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Contrariwise, a function should probably not be a method if:
+     <break>
+     </break>
+     <break>
+     </break>
+     (a) it doesn't have any special "association" with a particular object.  Like,
+     <code>
+      len()
+     </code>
+     can work on both strings and lists, so it's hard to see why one would define it as a method of strings and a method of lists.
+     <break>
+     </break>
+    </p>
+    <p>
+     (b) none of its arguments would have a special "actor" or "subject" status.
+     <break>
+     </break>
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <pre># menu_listing has a for-loop: can we keep it?
 # Answer: yes!
 
 def menu_listing(colleges):
@@ -97,158 +194,55 @@ def menu_listing(colleges):
 
 
 </pre>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  About A5 Q2: "" Is there any function in sd_utilities_list.py that would be better to convert to a method of class Showdown or College?"  How to think about this?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  So what's the diff?
-  <break>
-  </break>
-  1. how you write them (indented in a class or not, whether you have the self parameter)
- </paragraph>
- <paragraph>
-  2. how a user calls them.
-  <break>
-  </break>
-  Example:
-  <code>
-   len
-  </code>
-  is a non-method function.  Call via
-  <code>
-   len(" abc ")
-  </code>
-  <break>
-  </break>
-  <code>
-   strip()
-  </code>
-  is a method.  Call as
-  <code>
-   "  abc  ".strip()
-  </code>
- </paragraph>
- <snippet language="py" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   x = 5
-print(len(x)) # x doesn't have a length, no type-checking of the arugment
-  </snippet-file>
- </snippet>
- <paragraph>
-  Method only exists for the type it's defined for.
-  <break>
-  </break>
-  <break>
-  </break>
-  "semantics" looks nice.
-  <break>
-  </break>
-  If eat were a non-method function: call would be like
-  <code>
-   eat(&lt;animal&gt;, &lt;grass&gt;)
-  </code>
-  .
-  <break>
-  </break>
-  If it were a method: it would be
-  <code>
-   &lt;animal&gt;.eat(&lt;grass&gt;)
-  </code>
-  , which is arguably more sensible --- one is the actor and one is the input.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Contrariwise, a function should probably not be a method if:
-  <break>
-  </break>
-  <break>
-  </break>
-  (a) it doesn't have any special "association" with a particular object.  Like,
-  <code>
-   len()
-  </code>
-  can work on both strings and lists, so it's hard to see why one would define it as a method of strings and a method of lists.
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  (b) none of its arguments would have a special "actor" or "subject" status.
-  <break>
-  </break>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  How to access attributes of an object that's a value in a dictionary?
- </paragraph>
- <snippet language="py" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   class Account:
-    def __init__(self, d, p="temp"):
-        self.amount = d # d is initial deposit.
-        self.passwords = [p]
-all_accounts = {}  # keys: names, values: accounts
-all_accounts["Prof. Lee"] = Account(1001)
-all_accounts["Prof. Fan"] = Account(50000000)
-# let's donate 500 dollars to charity from Prof. Lee
-all_accounts["Prof. Lee"].amount -= 500
-print(all_accounts["Prof. Lee"].amount)
-
-# all_accounts["Prof. Lee"].self.amount  # &lt;--- no such attribute self
-
-# add a password to Prof. Fan's 
-all_accounts["Prof. Fan"]  # &lt;--- that's an Account object
-all_accounts["Prof. Fan"].passwords # &lt;--- list
-all_accounts["Prof. Fan"].passwords.append('12345')
-
-print(all_accounts["Prof. Fan"].passwords)
-  </snippet-file>
- </snippet>
-</document>
-<h3>
- ------------------------------------
-</h3>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 2em;">
+    <h3>
+     Author: Prof. Lee (she/they) (admin)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Q1: what's a non-hashable object?.
+     <break>
+     </break>
+     A1:  For dictionaries, rule -of-thumb is that the
+     <i>
+      keys
+     </i>
+     should be strings or ints, not lists or arbitrary objects.
+     <break>
+     </break>
+     <break>
+     </break>
+     Q2: how to create a dictionary entry with an empty list as value?
+    </p>
+    <p>
+     A2: see line 4 below.
+    </p>
+    <snippet language="py" line-numbers="true" runnable="true">
+     <snippet-file id="code">
+      mydict = {}
+mydict["awesome"] = "Kenny"
+# mydict[["here", "is", "a", "list"]] = "yep" # &lt;-- causes an error
+mydict["whatever key, say it's a college name"] = []
+print("success if you see this line!")
+     </snippet-file>
+    </snippet>
+    <p>
+     If you tried to make a College as a key in dictionary, you'll get this error.
+     <break>
+     </break>
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

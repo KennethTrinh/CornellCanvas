@@ -13,36 +13,34 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi, I am stuck on this part. I have looked through the slides, but I am unsure about
-  <bold>
-   PIT_IRQHandler
-  </bold>
-  (
-  <bold>
-   void
-  </bold>
-  ). I know it handles the interrupt, but I am confused on what it should do? Just clear the interrupt flag?
- </paragraph>
-</document>
+<p>
+ Hi, I am stuck on this part. I have looked through the slides, but I am unsure about
+ <b>
+  PIT_IRQHandler
+ </b>
+ (
+ <b>
+  void
+ </b>
+ ). I know it handles the interrupt, but I am confused on what it should do? Just clear the interrupt flag?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aaron Wilhelm (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aaron Wilhelm (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Yes, it needs to clear the interrupt flag but it should also do your application specific code. For example, if we had a robot that had a sensor interrupt the execution then in the interrupt handler we might do a quick calculation and save that value somewhere. For your lab you'll need to determine what you want to do in your IRQHandler to get the appropriate behavior.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If you haven't looked at it yet, take a look at the switch demo from this week's discussion. There's an example in the code for how to implement the handler (but for a GPIO input instead of the PIT)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

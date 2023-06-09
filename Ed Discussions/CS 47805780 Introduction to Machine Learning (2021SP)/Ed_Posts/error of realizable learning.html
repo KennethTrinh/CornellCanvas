@@ -13,48 +13,44 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="462" src="https://static.us.edusercontent.com/files/nm73iEfynjLSw7KCf3zSDPgO" width="653"/>
- </figure>
- <figure>
-  <image height="463" src="https://static.us.edusercontent.com/files/Bghsx707y0StJiWml2fPssPq" width="627"/>
- </figure>
- <paragraph>
-  In the above two slides, it was mentioned that, in the first slide, we looked at the probability that a random hypothesis h1 would have zero sample error but have a prediction error greater than epsilon; but in the second slide, we looked at the probability that a certain hypothesis h_s (that we already know has zero sample error) would have zero sample error but have a prediction error greater than epsilon.
- </paragraph>
- <paragraph>
-  I understand that, in the second case, our learning algorithm already chose the hypothesis h_s based on the fact that it has zero sample error, and so there is no randomness left there.
- </paragraph>
- <paragraph>
-  However, I don't understand why this difference in randomness results in the difference in the way we compute and bound these two probabilities in the above two slides.
- </paragraph>
- <paragraph>
-  Why is it that, in the first slide, we bound the probability using the conditional probability and then the product of complementary probabilities, whereas, in the second slide, we use the union bound over all the hypotheses? I don't understand how I would know which method to use.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<figure>
+ <image height="462" src="https://static.us.edusercontent.com/files/nm73iEfynjLSw7KCf3zSDPgO" width="653"/>
+</figure>
+<figure>
+ <image height="463" src="https://static.us.edusercontent.com/files/Bghsx707y0StJiWml2fPssPq" width="627"/>
+</figure>
+<p>
+ In the above two slides, it was mentioned that, in the first slide, we looked at the probability that a random hypothesis h1 would have zero sample error but have a prediction error greater than epsilon; but in the second slide, we looked at the probability that a certain hypothesis h_s (that we already know has zero sample error) would have zero sample error but have a prediction error greater than epsilon.
+</p>
+<p>
+ I understand that, in the second case, our learning algorithm already chose the hypothesis h_s based on the fact that it has zero sample error, and so there is no randomness left there.
+</p>
+<p>
+ However, I don't understand why this difference in randomness results in the difference in the way we compute and bound these two probabilities in the above two slides.
+</p>
+<p>
+ Why is it that, in the first slide, we bound the probability using the conditional probability and then the product of complementary probabilities, whereas, in the second slide, we use the union bound over all the hypotheses? I don't understand how I would know which method to use.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Scott Bass (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Scott Bass (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The first slide is computing the bound $Pr[err_{S}(h_{i}) = 0 \land err_{P}(h_{i}) \gt \epsilon] \leq exp^{-\epsilon m}$ using the steps shown (i.e. joint probability is less than conditional which is equal to product of complementary probabilities etc).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Since $h_{S}$ isn't random, you can't use the bound you computed in the first slide to bound $h_{S}$ (because if you think about it, $P(err_{S}(h_{S}) = 0 | err_{P}(h_{S}) \gt \epsilon) = 1$ always since by definition, $h_{S}$ is picked to have 0 training error).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   So instead, you use the union bound over all hypotheses which will include $h_{S}$. Once you get to the second to last line (the summation over each $h_{i}$) you're back to the random case so you can use the bound from the first slide (because at this point, you've made no assumptions about $h_{i}$ so it's a RV).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

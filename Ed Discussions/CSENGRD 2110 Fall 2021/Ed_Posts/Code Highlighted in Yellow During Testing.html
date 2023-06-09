@@ -13,35 +13,33 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  While running our test code, when we click the button that highlights code red and green, some of our code highlights in yellow. When hovering over the little square that pops up, we get a message like "1 of 4 branches missed." This probably has something to do with not having enough test cases. Do we need to add more assertThrows until the line is no longer highlighted in yellow? This is happening for code testing the assert statements.
- </paragraph>
- <paragraph>
-  I also noticed this when running the test code on A2. Is it okay that some of the "branches were missed"?
- </paragraph>
-</document>
+<p>
+ While running our test code, when we click the button that highlights code red and green, some of our code highlights in yellow. When hovering over the little square that pops up, we get a message like "1 of 4 branches missed." This probably has something to do with not having enough test cases. Do we need to add more assertThrows until the line is no longer highlighted in yellow? This is happening for code testing the assert statements.
+</p>
+<p>
+ I also noticed this when running the test code on A2. Is it okay that some of the "branches were missed"?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   That color highlighting represents a "code coverage" analysis.  There are various degrees of code coverage, including:
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     Line coverage (every line is green or yellow; no red lines)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Branch coverage (every if-statement or conditional expression is executed with both a
     <code>
      true
@@ -51,10 +49,10 @@
      false
     </code>
     argument across the test suite; may consider short-circuit clauses as well)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Condition coverage (every clause in a Boolean expression is evaluated to both a
     <code>
      true
@@ -64,18 +62,18 @@
      false
     </code>
     across the test suite)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Path coverage (every combination of all the conditional expressions in the program is tested) - impractical in practice
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
+ <p>
   Eclipse is most likely indicating branch coverage, which is a reasonable metric to target (the cost/benefit ratio is rather poor past that, though condition coverage is required in some safety-critical domains).  If you can make your yellow lines green by adding additional tests that make any if-statements true in some tests and false in others, that is a good thing to aim for.  But if you get stuck or it starts to get overly tedious (maybe Eclipse is actually measuring condition coverage), then just make sure you at least don't have any red lines.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

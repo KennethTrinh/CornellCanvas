@@ -13,31 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  The spec of human( ) says it "returns the human at the root of this CovidTree". I was confused why in the test1Insert( ) method here, calling dtC.human( ) returns humanC and not the root humanB.
- </paragraph>
- <figure>
-  <image height="121" src="https://static.us.edusercontent.com/files/hLxstS7pk0FydHVs2eyKvdCB" width="480"/>
- </figure>
-</document>
+<p>
+ The spec of human( ) says it "returns the human at the root of this CovidTree". I was confused why in the test1Insert( ) method here, calling dtC.human( ) returns humanC and not the root humanB.
+</p>
+<figure>
+ <image height="121" src="https://static.us.edusercontent.com/files/hLxstS7pk0FydHVs2eyKvdCB" width="480"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Naman Madan (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Naman Madan (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   See the spec of insert(p,c). It says "Give p a new child, a node with Human c. Return the newly created node."
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   We set dtC to st.insert(humanB,humanC), so dtC should be node with humanC at its root.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,91 +13,85 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Why does (Integer) ob get accepted by the compiler? I understand that it doesn't have the partiiton of integer so it fails at runtime, but why wouldn't it fail at compile time? If this doesn't fail at compile time, would every object cast succeed at compile time either for an Object class object.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  For example would
-  <bold>
-   (Animal) ob
-  </bold>
-  also get accepted by the compiler? But then get rejected at runtime because there's no Animal partition?
- </paragraph>
- <figure>
-  <image height="467.78823529411767" src="https://static.us.edusercontent.com/files/dTAVzYodEz0O9KD4vaOO2wf7" width="658"/>
- </figure>
-</document>
+<p>
+ Why does (Integer) ob get accepted by the compiler? I understand that it doesn't have the partiiton of integer so it fails at runtime, but why wouldn't it fail at compile time? If this doesn't fail at compile time, would every object cast succeed at compile time either for an Object class object.
+</p>
+<p>
+ For example would
+ <b>
+  (Animal) ob
+ </b>
+ also get accepted by the compiler? But then get rejected at runtime because there's no Animal partition?
+</p>
+<figure>
+ <image height="467.78823529411767" src="https://static.us.edusercontent.com/files/dTAVzYodEz0O9KD4vaOO2wf7" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andrew Chen (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew Chen (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Yes, because all classes are subclasses of Object. So at compile-time the compiler will allow downcasting of any parent class to a child class.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Isabella Zhi (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  if down cast would fail at runtime, how is this working?
- </paragraph>
- <figure>
-  <image height="185.46594982078852" src="https://static.us.edusercontent.com/files/IDn4xt3q66Nb8NcFm3Arkg1E" width="655"/>
- </figure>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew Chen (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  It fails if Animal is not a subclass of Object. In this case Animal IS a subclass of Object, so it will not fail at runtime. However, if you have two classes that have a parent-child relationship with each other, but one of them has compile-type that is not compatible with the type we're casting to, then you will fail at runtime, for example:
- </paragraph>
- <paragraph>
-  class A {
- </paragraph>
- <paragraph>
-  }
- </paragraph>
- <paragraph>
-  class B {
- </paragraph>
- <paragraph>
-  }
- </paragraph>
- <paragraph>
-  Object o = new B();
- </paragraph>
- <paragraph>
-  A a = (A) o;
- </paragraph>
- <paragraph>
-  Compiles because Object and A, and Object and B have a parent-child relationship. However, B and A do not, and this will fail at runtime with a ClassCastException.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Isabella Zhi (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   if down cast would fail at runtime, how is this working?
+  </p>
+  <figure>
+   <image height="185.46594982078852" src="https://static.us.edusercontent.com/files/IDn4xt3q66Nb8NcFm3Arkg1E" width="655"/>
+  </figure>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Andrew Chen (staff)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    It fails if Animal is not a subclass of Object. In this case Animal IS a subclass of Object, so it will not fail at runtime. However, if you have two classes that have a parent-child relationship with each other, but one of them has compile-type that is not compatible with the type we're casting to, then you will fail at runtime, for example:
+   </p>
+   <p>
+    class A {
+   </p>
+   <p>
+    }
+   </p>
+   <p>
+    class B {
+   </p>
+   <p>
+    }
+   </p>
+   <p>
+    Object o = new B();
+   </p>
+   <p>
+    A a = (A) o;
+   </p>
+   <p>
+    Compiles because Object and A, and Object and B have a parent-child relationship. However, B and A do not, and this will fail at runtime with a ClassCastException.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

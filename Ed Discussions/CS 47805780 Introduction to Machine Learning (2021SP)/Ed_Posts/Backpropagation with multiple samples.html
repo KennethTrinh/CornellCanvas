@@ -13,123 +13,119 @@
 <h3>
  Vote Count: 11
 </h3>
-<document version="2.0">
- <paragraph>
-  In lecture, we were only told how to do backpropagation for a single training sample; however, now $S_i$ and $V_i$ aren't vectors but matrices instead, so the algorithm given in class doesn't work anymore. How do we produce a gradient matrix given more than 1 training sample?
- </paragraph>
-</document>
+<p>
+ In lecture, we were only told how to do backpropagation for a single training sample; however, now $S_i$ and $V_i$ aren't vectors but matrices instead, so the algorithm given in class doesn't work anymore. How do we produce a gradient matrix given more than 1 training sample?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  You can perform an average over the gradients of the vectors in the sample; there's a way to do a sum cleanly with matrix multiplication.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Scott Bass (student)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<document version="2.0">
- <paragraph>
-  Is this equivalent? I would not have guessed that averaging all the sample vectors first and then computing the gradient is equivalent to computing the gradient on each sample vector and averaging the results.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="1.0">
- <paragraph>
-  Wait no calculate the gradients and THEN average
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Out of curiosity, is this how it would be done in the real NN? The training samples averaged and then gradients computed? I thought that each x_i is loaded and backpropagation is calculated, and after the weights are tuned the next training sample x_i+1 is fed into the network.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  To clarify my previous statement, you calculate the individual gradients first and then average
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Rishi Malhotra (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I spent so much time debugging my network because I was averaging and then calculating the gradients....
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Han Shu (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Han Shu (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   You can still do backpropagation for multiple samples using matrix multiplication. The formulas in the lecture notes work in general. But you need to replace
- </paragraph>
+ </p>
  <math>
   \text{diag}\left(\sigma^'\left(s_l\right)\right)
  </math>
- <paragraph>
+ <p>
   with element wise multiplication (make sure D_l*W^T are the same size as \sigma ^'(s_l) .
- </paragraph>
+ </p>
  <math>
   D_l*W^T
  </math>
  <math>
   \sigma^'\left(s_l\right)
  </math>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Michael Noor (staff)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   You can perform an average over the gradients of the vectors in the sample; there's a way to do a sum cleanly with matrix multiplication.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Out of curiosity, is this how it would be done in the real NN? The training samples averaged and then gradients computed? I thought that each x_i is loaded and backpropagation is calculated, and after the weights are tuned the next training sample x_i+1 is fed into the network.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Michael Noor (staff)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     To clarify my previous statement, you calculate the individual gradients first and then average
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 8em;">
+     <h3>
+      Author: Rishi Malhotra (student)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      I spent so much time debugging my network because I was averaging and then calculating the gradients....
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+   <div style="text-indent: 4em;">
+    <h3>
+     Author: Scott Bass (student)
+    </h3>
+    <h3>
+     Vote Count: 3
+    </h3>
+    <p>
+     Is this equivalent? I would not have guessed that averaging all the sample vectors first and then computing the gradient is equivalent to computing the gradient on each sample vector and averaging the results.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 6em;">
+     <h3>
+      Author: Michael Noor (staff)
+     </h3>
+     <h3>
+      Vote Count: 1
+     </h3>
+     <p>
+      Wait no calculate the gradients and THEN average
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

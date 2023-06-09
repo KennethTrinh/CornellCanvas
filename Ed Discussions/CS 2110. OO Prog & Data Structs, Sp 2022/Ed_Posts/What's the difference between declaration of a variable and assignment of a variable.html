@@ -13,169 +13,165 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  What's the difference between declaration of a variable and assignment of a variable?
- </paragraph>
-</document>
+<p>
+ What's the difference between declaration of a variable and assignment of a variable?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andrew Chen (staff)
-</h3>
-<h3>
- Vote Count: 4
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew Chen (staff)
+ </h3>
+ <h3>
+  Vote Count: 4
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   Yes, and I will add onto that with this example:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   int x;
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   This is a
-  <bold>
+  <b>
    declaration
-  </bold>
+  </b>
   of variable x, indicating that it can hold a value of type int.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   --------
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   x= 25 + 1;
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   This is an
-  <bold>
+  <b>
    assignment statement
-  </bold>
+  </b>
   . Its execution evaluates the expression 25+1 to yield the value 26 and stores that value in x.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   -------
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   int x= 25+1;
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   One can combine a declaration and an initial assignment to it, as shown here. The "int x" part
-  <bold>
+  <b>
    declares
-  </bold>
+  </b>
   variable x of type int.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The "x= 25+1" part
-  <bold>
+  <b>
    assigns
-  </bold>
+  </b>
   it the initial value 26.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   From JHT: "[A variable declaration] has the form &lt;
-  <italic>
+  <i>
    type
-  </italic>
+  </i>
   &gt; &lt;
-  <italic>
+  <i>
    variable-name
-  </italic>
+  </i>
   &gt;."
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Fengyu Li (staff)
-</h3>
-<h3>
- Vote Count: 4
-</h3>
-<document version="2.0">
- <paragraph>
-  Declaring a variable allocates a new piece of memory for storing that variable.
- </paragraph>
- <paragraph>
-  Assigning value to a variable just replaces the value on that variable and doesn't require new memory spaces.
- </paragraph>
- <paragraph>
-  In Java, declaring a variable often gives it a default value though.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  What's the difference between the declaration of an array and the creation of an array? Is it similar to this?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew Chen (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Declaring a variable is the same no matter the type. Arrays themselves are also types. Just like you have int, float, double, you also have int[], float[], double[].
- </paragraph>
- <paragraph>
-  -------
- </paragraph>
- <paragraph>
-  So the
-  <bold>
-   declaration
-  </bold>
-  of an array of ints would be just:
- </paragraph>
- <paragraph>
-  int[] x;
- </paragraph>
- <paragraph>
-  ---------
- </paragraph>
- <paragraph>
-  We can create an array, with its elements set to their default values, and then assign it to variable x:
- </paragraph>
- <paragraph>
-  x= new int[3];
- </paragraph>
- <paragraph>
-  ---------
- </paragraph>
- <paragraph>
-  Combined declaration, creating and then assignment of new array to variable x:
- </paragraph>
- <paragraph>
-  int[] x= new int[3];
- </paragraph>
- <paragraph>
-  ---------
- </paragraph>
- <paragraph>
-  I think you'll benefit from reading this as well! It goes more into depth about creating/initializing the elements of an array, and also array initializers. https://www.cs.cornell.edu/courses/JavaAndDS/files/arrays.pdf
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   What's the difference between the declaration of an array and the creation of an array? Is it similar to this?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Andrew Chen (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Declaring a variable is the same no matter the type. Arrays themselves are also types. Just like you have int, float, double, you also have int[], float[], double[].
+   </p>
+   <p>
+    -------
+   </p>
+   <p>
+    So the
+    <b>
+     declaration
+    </b>
+    of an array of ints would be just:
+   </p>
+   <p>
+    int[] x;
+   </p>
+   <p>
+    ---------
+   </p>
+   <p>
+    We can create an array, with its elements set to their default values, and then assign it to variable x:
+   </p>
+   <p>
+    x= new int[3];
+   </p>
+   <p>
+    ---------
+   </p>
+   <p>
+    Combined declaration, creating and then assignment of new array to variable x:
+   </p>
+   <p>
+    int[] x= new int[3];
+   </p>
+   <p>
+    ---------
+   </p>
+   <p>
+    I think you'll benefit from reading this as well! It goes more into depth about creating/initializing the elements of an array, and also array initializers. https://www.cs.cornell.edu/courses/JavaAndDS/files/arrays.pdf
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Fengyu Li (staff)
+  </h3>
+  <h3>
+   Vote Count: 4
+  </h3>
+  <p>
+   Declaring a variable allocates a new piece of memory for storing that variable.
+  </p>
+  <p>
+   Assigning value to a variable just replaces the value on that variable and doesn't require new memory spaces.
+  </p>
+  <p>
+   In Java, declaring a variable often gives it a default value though.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

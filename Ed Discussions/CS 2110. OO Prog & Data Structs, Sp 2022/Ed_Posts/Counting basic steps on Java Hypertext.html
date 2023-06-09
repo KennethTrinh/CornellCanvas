@@ -13,38 +13,32 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi, I don't understand why k&lt; s.length is executed m+1 times ( i think that include m times ture, and 1 time false) , but s.charAt(k) == 'c' can be executed m+1 times. Thank you!
- </paragraph>
- <paragraph>
- </paragraph>
- <figure>
-  <image height="196" src="https://static.us.edusercontent.com/files/eaMF8Iny9ybeNv9pa1o27plF" width="663"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Hi, I don't understand why k&lt; s.length is executed m+1 times ( i think that include m times ture, and 1 time false) , but s.charAt(k) == 'c' can be executed m+1 times. Thank you!
+</p>
+<figure>
+ <image height="196" src="https://static.us.edusercontent.com/files/eaMF8Iny9ybeNv9pa1o27plF" width="663"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Caleb Chin (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Caleb Chin (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Suppose s[2] is the first occurrence of c and that s.length() &gt; 2. Then from the photo you posted, k &lt; s.length() is executed 3 times and s.charAt(k) == 'c' is also executed 3 times.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Let's run through the loop to test this. The first iteration runs with k = 0 (k &lt; s.length() execution 1). We execute the comparison with c, but we don't find it yet as s[0] is not c (s.charAt(k) == 'c' execution 1). We do the same with the next iteration with k = 1. We have: k &lt; s.length() execution 2 and s.charAt(k) == 'c' execution 2. We don't find c in this iteration either because s[1] is not c. We run the next iteration. We execute k &lt; s.length() for the third time and increment with k so that k = 2. We then execute s.charAt(k) == 'c' a third time. This time, we find c, because s[2] is the first occurrence of c. Based on the body of the if statement, we then return k. This means that we do not continue to the next iteration.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   We have executed k &lt; s.length() 3 times and s.charAt(k) == 'c' 3 times. Hope this example helps!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,70 +13,66 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  We noticed that our current_time is not being updated fast enough. PIT1_Service is only being called a few times during each delay() call. The load value is not causing the expected behavior. We have the same setup for PIT channels 0 and 1 and give PIT_IRQn priority over SVCall_IRQn.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Trenton Lyke (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ We noticed that our current_time is not being updated fast enough. PIT1_Service is only being called a few times during each delay() call. The load value is not causing the expected behavior. We have the same setup for PIT channels 0 and 1 and give PIT_IRQn priority over SVCall_IRQn.
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Trenton Lyke (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Did you calculate the load value by doing:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Load_value = 0.001*clock_frequency_in_Hertz
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Notes:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   0.001
-  <bold>
+  <b>
    second
-  </bold>
+  </b>
   = 1
-  <bold>
+  <b>
    millisecond
-  </bold>
- </paragraph>
- <paragraph>
+  </b>
+ </p>
+ <p>
   1
-  <bold>
+  <b>
    Hertz
-  </bold>
+  </b>
   = 1
-  <bold>
+  <b>
    1/second
-  </bold>
- </paragraph>
- <paragraph>
+  </b>
+ </p>
+ <p>
   Also, finding out the clock frequency can be a little tricky after some suggestions and a little testing I found mine was around 10.8 MHz (i.e. 10,800,000 Hz)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes, we used this formula to calculate the load value. We also confirmed the clock speed.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Yes, we used this formula to calculate the load value. We also confirmed the clock speed.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

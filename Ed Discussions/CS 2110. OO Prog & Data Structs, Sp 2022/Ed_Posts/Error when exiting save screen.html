@@ -13,62 +13,60 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <pre>Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+<pre>Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
 </pre>
- <paragraph>
-  This doesn't have to do with gameplay, but when I exit the "save score" screen without actually saving, I get this message in the console (the game continues to function). Is this an issue i should be looking into?
- </paragraph>
-</document>
+<p>
+ This doesn't have to do with gameplay, but when I exit the "save score" screen without actually saving, I get this message in the console (the game continues to function). Is this an issue i should be looking into?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Clarkson (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Clarkson (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Yep.  Are you checking the return value from the save dialog?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I was confused about this. I have an
-  <bold>
-   int
-  </bold>
-  saving the return value like the example from the java documentation (similar to this int returnVal = fc.showOpenDialog(FileChooserDemo.this);), but I dont know what to do with the return value.
- </paragraph>
- <paragraph>
-  To be clear, the saving works, and I get the proper error when it fails, but the console message when I get out of the Save screen (not press exit, but rather press "Save", then decide to cancel), i get a console message i dont fully understand.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Clarkson (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  There is a URL provided in the release code for TODO 15.  It is to the File Chooser section of the Swing Tutorial.  Please take a look at it.  It shows you what to do.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I was confused about this. I have an
+   <b>
+    int
+   </b>
+   saving the return value like the example from the java documentation (similar to this int returnVal = fc.showOpenDialog(FileChooserDemo.this);), but I dont know what to do with the return value.
+  </p>
+  <p>
+   To be clear, the saving works, and I get the proper error when it fails, but the console message when I get out of the Save screen (not press exit, but rather press "Save", then decide to cancel), i get a console message i dont fully understand.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Michael Clarkson (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    There is a URL provided in the release code for TODO 15.  It is to the File Chooser section of the Swing Tutorial.  Please take a look at it.  It shows you what to do.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

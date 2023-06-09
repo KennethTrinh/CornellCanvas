@@ -13,58 +13,52 @@
 <h3>
  Vote Count: 4
 </h3>
-<document version="2.0">
- <paragraph>
-  I've found the wording for this question relatively ambiguous. I'm unsure of the following:
- </paragraph>
- <paragraph>
-  1. What does it mean by how many parameters do you need to classify an example? Is it asking how many parameters to classify one specific example, say X = (1,1,1) or how many parameters so that you have all the information you need to to classify ANY possible example?
- </paragraph>
- <paragraph>
-  2. What level of analysis constitutes a parameter? I could say that P(Y=1|X=(1,1,1) is all I need to know to classify X=(1,1,1) and that would be one parameter. I could also say to find the same value we need P(Y=1), P(X1=1 | Y=1), P(X2=1 | Y=1), P(X3=1 | Y=1), and P(X=(1,1,1)) which I can use to find the same value using 5 parameters.
- </paragraph>
- <paragraph>
-  3. What is the "final event" referenced in the last sentence of the problem statement?
- </paragraph>
-</document>
+<p>
+ I've found the wording for this question relatively ambiguous. I'm unsure of the following:
+</p>
+<p>
+ 1. What does it mean by how many parameters do you need to classify an example? Is it asking how many parameters to classify one specific example, say X = (1,1,1) or how many parameters so that you have all the information you need to to classify ANY possible example?
+</p>
+<p>
+ 2. What level of analysis constitutes a parameter? I could say that P(Y=1|X=(1,1,1) is all I need to know to classify X=(1,1,1) and that would be one parameter. I could also say to find the same value we need P(Y=1), P(X1=1 | Y=1), P(X2=1 | Y=1), P(X3=1 | Y=1), and P(X=(1,1,1)) which I can use to find the same value using 5 parameters.
+</p>
+<p>
+ 3. What is the "final event" referenced in the last sentence of the problem statement?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  1. It's asking for the number of values you need to store to calculate any classification; i.e. however many parameters you need to completely specify the naive bayes model.
- </paragraph>
- <paragraph>
-  2. A parameter is anything used in the naive bayes model, i.e. NB doesn't directly have a P(Y=1|X=(1,1,1)), but rather calculates it using information it has from the training data.
- </paragraph>
- <paragraph>
-  2. The "final event" is talking about the one unknown event described in the statement "knowing the probability of all events except one event."
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bixin Zhang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bixin Zhang (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   the first subquestion in 1b helped me understand what this question is asking for.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Michael Noor (staff)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   1. It's asking for the number of values you need to store to calculate any classification; i.e. however many parameters you need to completely specify the naive bayes model.
+  </p>
+  <p>
+   2. A parameter is anything used in the naive bayes model, i.e. NB doesn't directly have a P(Y=1|X=(1,1,1)), but rather calculates it using information it has from the training data.
+  </p>
+  <p>
+   2. The "final event" is talking about the one unknown event described in the statement "knowing the probability of all events except one event."
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

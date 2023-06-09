@@ -13,79 +13,73 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Several questions for the final project:
- </paragraph>
- <list style="number">
-  <list-item>
-   <paragraph>
-    The handout says we are not allowed to directly use the hospitalization numbers of past dates. We can understand that we cannot use the hospitalization numbers for the dates we want to predict. But why we cannot use the hospitalization numbers of past dates which we should easily know during data acquisition? Or do we misunderstanding the question? Could you clarify again what can we use and what we cannot use for the data in train_baseline.csv?
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Does it mean when we do the prediction, the only input is the date we want to predict?
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Thank you very much!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Several questions for the final project:
+</p>
+<list style="number">
+ <li>
+  <p>
+   The handout says we are not allowed to directly use the hospitalization numbers of past dates. We can understand that we cannot use the hospitalization numbers for the dates we want to predict. But why we cannot use the hospitalization numbers of past dates which we should easily know during data acquisition? Or do we misunderstanding the question? Could you clarify again what can we use and what we cannot use for the data in train_baseline.csv?
+  </p>
+ </li>
+ <li>
+  <p>
+   Does it mean when we do the prediction, the only input is the date we want to predict?
+  </p>
+ </li>
+</list>
+<p>
+ Thank you very much!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Brandon Guo (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Brandon Guo (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   For clarification, you are not allowed to "look up" the exact hospitalization numbers of the date you are trying to predict. For example, you are not allowed to use the t-values from a date one month from now to predict the cases today, but you are allowed to use the data one month in the past to predict cases today. This actually doesn't apply to train_baseline.csv because there are no t-values in that file.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   This means you can use any of the features provided in a example to predict the value of that example.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Lucy Lu (student)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<document version="2.0">
- <paragraph>
-  Does this mean we can use all the information in the
-  <italic>
-   baseline
-  </italic>
-  training set to train our model? For example, the test data have date September, can we use examples in October (for the same country) in training our model? If so, isn't that using future information to predict the past?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Brandon Guo (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes, you should use the whole baseline dataset. In your training, you would be treating the different dates as independent examples which is fine.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Lucy Lu (student)
+  </h3>
+  <h3>
+   Vote Count: 3
+  </h3>
+  <p>
+   Does this mean we can use all the information in the
+   <i>
+    baseline
+   </i>
+   training set to train our model? For example, the test data have date September, can we use examples in October (for the same country) in training our model? If so, isn't that using future information to predict the past?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Brandon Guo (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Yes, you should use the whole baseline dataset. In your training, you would be treating the different dates as independent examples which is fine.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

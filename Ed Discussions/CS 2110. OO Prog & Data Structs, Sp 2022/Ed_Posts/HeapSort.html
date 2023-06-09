@@ -13,36 +13,32 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi,
- </paragraph>
- <paragraph>
-  Why is the call to bubbleDown not bubbleDown(b, 0) after you swap values in position 0 and k in b? I thought since b[0..k] is the maxHeap, b[0] is not the right value, so if you bubble it down, it will be a Max heap again.
- </paragraph>
- <figure>
-  <image height="386.97025171624716" src="https://static.us.edusercontent.com/files/RkDG2uuDJTkZhtGsxAAffeRI" width="658"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Hi,
+</p>
+<p>
+ Why is the call to bubbleDown not bubbleDown(b, 0) after you swap values in position 0 and k in b? I thought since b[0..k] is the maxHeap, b[0] is not the right value, so if you bubble it down, it will be a Max heap again.
+</p>
+<figure>
+ <image height="386.97025171624716" src="https://static.us.edusercontent.com/files/RkDG2uuDJTkZhtGsxAAffeRI" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You want it to be a max-heap!
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Note the k= k-1;  between the swap and the bubbledown.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   It starts with b[0..k] a heap;
   <break>
   </break>
@@ -56,10 +52,8 @@
   <break>
   </break>
   Bubbles down, making it into a heap.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

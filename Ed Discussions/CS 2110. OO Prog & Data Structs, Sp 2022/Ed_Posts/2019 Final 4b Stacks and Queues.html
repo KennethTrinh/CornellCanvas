@@ -13,74 +13,68 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I don't understand how the sequence of Q is anything other than D, if the stack pushes values A,B,C,D,E to get (E,D,C,B,A) for the stack.
- </paragraph>
- <figure>
-  <image height="204.22025912838632" src="https://static.us.edusercontent.com/files/4Jdgzbj9mZAqXGnr522amsoa" width="658"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I don't understand how the sequence of Q is anything other than D, if the stack pushes values A,B,C,D,E to get (E,D,C,B,A) for the stack.
+</p>
+<figure>
+ <image height="204.22025912838632" src="https://static.us.edusercontent.com/files/4Jdgzbj9mZAqXGnr522amsoa" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Neha Sunkara (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
-  I believe that D could work. If you put just A into the Stack and then pop it out and push it to Q, A is added to the queue. Remember that an element can be popped from S at any time. Following this method, if you add just B into the empty Stack (since A was popped out) and then pop B out and push B to Q, then the queue is (A,B). If you keep going with this method, you will get that D does in fact work and will give you (A,B,C,D,E). Please let me know if this makes sense! :)
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Charlie Wright (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Charlie Wright (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   A stack pops off the top value (the most recently added) so D would be the case if all values are popped off as soon as they are added to the stack. If the values are only popped off after all have been added, S[A,B,C,D,E], then Q would have them in the opposite order, which is choice A, since E gets popped off, then D, then C.... Choice B can occur if D and E are popped off immediately after being added, then A, B and C are left on the stack, S[C,B,A], then popped off top to bottom (C then B then A). C is not possible because when E is added to the queue, B is still in the stack, so there is no way A will be popped off first if B is still above it. Hope this helps!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Richard Gu (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi Charlie
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Charlie Wright (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  thank you richard
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Richard Gu (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Hi Charlie
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Charlie Wright (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    thank you richard
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Neha Sunkara (student)
+  </h3>
+  <h3>
+   Vote Count: 2
+  </h3>
+  <p>
+   I believe that D could work. If you put just A into the Stack and then pop it out and push it to Q, A is added to the queue. Remember that an element can be popped from S at any time. Following this method, if you add just B into the empty Stack (since A was popped out) and then pop B out and push B to Q, then the queue is (A,B). If you keep going with this method, you will get that D does in fact work and will give you (A,B,C,D,E). Please let me know if this makes sense! :)
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

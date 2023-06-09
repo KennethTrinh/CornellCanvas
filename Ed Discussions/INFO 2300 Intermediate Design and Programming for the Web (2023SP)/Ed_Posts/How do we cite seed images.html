@@ -13,17 +13,16 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I know we are supposed to cite external resources for all of our images. Do we need to make a comment cite like this above all images
- </paragraph>
- <pre>&lt;!-- Source: https://www.example.com/image.png --&gt;
+<p>
+ I know we are supposed to cite external resources for all of our images. Do we need to make a comment cite like this above all images
+</p>
+<pre>&lt;!-- Source: https://www.example.com/image.png --&gt;
 &lt;img src="/public/uploads/clipart/&lt;?= htmlspecialchars($record["id"]) . '.' . 'jpeg' ?&gt;"&gt;
 </pre>
- <paragraph>
-  Since I have it that I loop over all records for my images would I need to make 10 comment citations like this?
- </paragraph>
- <pre>foreach...
+<p>
+ Since I have it that I loop over all records for my images would I need to make 10 comment citations like this?
+</p>
+<pre>foreach...
 &lt;!-- Source: https://www.example.com/image.png --&gt;
 &lt;!-- Source: https://www.example.com/image.png --&gt;
 &lt;!-- Source: https://www.example.com/image.png --&gt;
@@ -32,74 +31,71 @@
 &lt;!-- Source: https://www.example.com/image.png --&gt;
 &lt;img src="/public/uploads/clipart/&lt;?= htmlspecialchars($record["id"]) . '.' . 'jpeg' ?&gt;"&gt;
 </pre>
- <paragraph>
-  Would I also need to do this on the details page in addition to the view all entries page?
- </paragraph>
-</document>
+<p>
+ Would I also need to do this on the details page in addition to the view all entries page?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Kyle J. Harms (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kyle J. Harms (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You're close. Each comment should be above the HTML element. So change the code so that the citation comments are above each
   <code>
    &lt;img&gt;
   </code>
   element.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I only have 1 &lt;img&gt; element since I am looping through all records as record. So would I just do it all over that 1 HTML element
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Is this a way I can do it?
- </paragraph>
- <pre> &lt;!--Source: &lt;?php echo htmlspecialchars($record['source']); ?&gt; --&gt;
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I only have 1 &lt;img&gt; element since I am looping through all records as record. So would I just do it all over that 1 HTML element
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Is this a way I can do it?
+   </p>
+   <pre> &lt;!--Source: &lt;?php echo htmlspecialchars($record['source']); ?&gt; --&gt;
 </pre>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kyle J. Harms (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes, this is one way to do this.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Kyle J. Harms (admin)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Yes, this is one way to do this.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

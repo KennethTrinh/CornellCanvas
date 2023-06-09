@@ -13,30 +13,26 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi; I'm using the LCD library given by the course; I have had no build errors and correctly have the fsl_slcd driver files in my project. However when running the lcd demo, the digits aren't showing on the board, other than a couple quick flashes of certain numbers appearing.
- </paragraph>
- <paragraph>
-  Is there some sort of hardware/power setup that needs to be done?
- </paragraph>
-</document>
+<p>
+ Hi; I'm using the LCD library given by the course; I have had no build errors and correctly have the fsl_slcd driver files in my project. However when running the lcd demo, the digits aren't showing on the board, other than a couple quick flashes of certain numbers appearing.
+</p>
+<p>
+ Is there some sort of hardware/power setup that needs to be done?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aaron Wilhelm (admin)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aaron Wilhelm (admin)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   I saw another problem like this with a group earlier. There are some files that have the same name between demos but have different functionality within the methods (believe the files in the board directory are an example of this). If your project only needs to use the LCD I recommend just putting your source code into that sdk demo. Otherwise you'll need to make sure that you add any differences between the files as well. See #795  for a command that can help
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

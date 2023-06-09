@@ -13,37 +13,35 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi! In the description for the areSibs() method, it says the method will, "Return value of "this elephant and e are siblings." (note: if e is null they can't be siblings, so false is returned)." I understand that "e" can be null, so if this is true, the two elephants cannot be siblings. However, is it possible for "this" to be null? Would the method even run if "this" was null or would a throw an error message? Thank you!
- </paragraph>
-</document>
+<p>
+ Hi! In the description for the areSibs() method, it says the method will, "Return value of "this elephant and e are siblings." (note: if e is null they can't be siblings, so false is returned)." I understand that "e" can be null, so if this is true, the two elephants cannot be siblings. However, is it possible for "this" to be null? Would the method even run if "this" was null or would a throw an error message? Thank you!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   "this" can never be null. Look that up in JavaHperText and you will see that it is defined as follows:
- </paragraph>
- <paragraph>
-  <bold>
+ </p>
+ <p>
+  <b>
    this
-  </bold>
+  </b>
   is an expression; it evaluates to the name of (pointer to) the object in which it appears.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Thus, if it appears in an object, that object must exist, so there is a pointer to it.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Try putting something like "this.name" in a place where it is not in an object (example, in a static method; you will learn about "static" VERY soon), and you will see that it gives a syntax error and the class will not be compiled.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

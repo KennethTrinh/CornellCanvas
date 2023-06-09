@@ -13,82 +13,80 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Should fib() call morseDigit() directly, or in main should we have something like
- </paragraph>
- <paragraph>
-  'MOV R0, #0
- </paragraph>
- <paragraph>
-  BL fib
- </paragraph>
- <paragraph>
-  BL morsedigit'
- </paragraph>
- <paragraph>
-  for each test case?
- </paragraph>
- <paragraph>
-  If it's the former, I don't know how you would be able to say that fib() has fully finished executing. For example how would you differentiate between R0=0 as the original input and R0=3 where R0=0 in the recursive case? Because in the first case you would want to branch to morse digit and in the second case you wouldn't. So how would you differentiate?
- </paragraph>
-</document>
+<p>
+ Should fib() call morseDigit() directly, or in main should we have something like
+</p>
+<p>
+ 'MOV R0, #0
+</p>
+<p>
+ BL fib
+</p>
+<p>
+ BL morsedigit'
+</p>
+<p>
+ for each test case?
+</p>
+<p>
+ If it's the former, I don't know how you would be able to say that fib() has fully finished executing. For example how would you differentiate between R0=0 as the original input and R0=3 where R0=0 in the recursive case? Because in the first case you would want to branch to morse digit and in the second case you wouldn't. So how would you differentiate?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Vedant Singh (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  I think it's the way you wrote above. Once you complete BL fib, R0 should store the result and then BL morsedigit will use that value and manipulate the LED from there.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Nils Napp (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Nils Napp (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Yes, there should be two separate function calls, like you wrote.  The first BL returns the result in R0, and the second BL uses R0 as an input.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jaehong Min (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Just an additional question about this, should we copy and paste our morseDigit function into our file for part 3 (the Fibonacci stuff)?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Nils Napp (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes. You should put all the code that you need to run into each part.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Jaehong Min (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Just an additional question about this, should we copy and paste our morseDigit function into our file for part 3 (the Fibonacci stuff)?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Nils Napp (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Yes. You should put all the code that you need to run into each part.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Vedant Singh (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   I think it's the way you wrote above. Once you complete BL fib, R0 should store the result and then BL morsedigit will use that value and manipulate the LED from there.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

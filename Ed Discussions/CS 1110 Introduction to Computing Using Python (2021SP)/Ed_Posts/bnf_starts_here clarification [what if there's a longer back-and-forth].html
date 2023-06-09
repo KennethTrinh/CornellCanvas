@@ -13,33 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  For bnf_starts_here, should we always be returning a list whose length is equal to K, or should we write the code such that the length of the interaction (back-and-forth) is independent of K and we analyze its relation to k afterwards. For example, one of the back and forths between A and D has a total length of four. If we were given the call to bnf of (0,A,D,2), should our function return a list that is the full length of the interaction (a list of the length four) and then have the code consequently return False (since the length of the list is not equal to K), or should the code create a list that in only of length 2 (to match K) even though the interaction is actually longer?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ For bnf_starts_here, should we always be returning a list whose length is equal to K, or should we write the code such that the length of the interaction (back-and-forth) is independent of K and we analyze its relation to k afterwards. For example, one of the back and forths between A and D has a total length of four. If we were given the call to bnf of (0,A,D,2), should our function return a list that is the full length of the interaction (a list of the length four) and then have the code consequently return False (since the length of the list is not equal to K), or should the code create a list that in only of length 2 (to match K) even though the interaction is actually longer?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Please see pg 7 of the handout:
- </paragraph>
+ </p>
  <blockquote>
   But we don’t want to say that there is a length-3 back-and-forth starting at 0 between “A” and “D”. This is because the “ADA”-labeled sequence 0 → 0.1 → 0.1.1 can be continued with the “D”-authored post 0.1.1.0; so we’d rather say instead that there is a length-4 back-and-forth starting at 0 between “A” and “D”.
  </blockquote>
- <paragraph>
+ <p>
   So, for 0, A, D, k=2, return False.  (Nothing else.)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

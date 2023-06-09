@@ -13,38 +13,30 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  If a node violates STC for one triangle but satisfies it for another, do we say that the node violates it? For instance, given nodes A, B, C, D, E. Assume A has strong ties with B, C, D, and E. B and C have a tie between them but D and E do not. In the triangle of nodes of ABC, node A would satisfy the STC but in the case of ADE, node A does not.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ If a node violates STC for one triangle but satisfies it for another, do we say that the node violates it? For instance, given nodes A, B, C, D, E. Assume A has strong ties with B, C, D, and E. B and C have a tie between them but D and E do not. In the triangle of nodes of ABC, node A would satisfy the STC but in the case of ADE, node A does not.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Brandon Man (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Brandon Man (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Node A will not satisfy STC. Your reasoning is slightly incorrect. You're considering the two triangles (ABC and ADE) independently of one another, which isn't the right way to think about STC. If node A has strong ties with the nodes above, to satisfy STC,
-  <bold>
+  <b>
    all those nodes must have weak ties with each other
-  </bold>
+  </b>
   . In other words, if node A wants to satisfy STCP, then for any pair of nodes with strong ties to A, they MUST have at least a weak tie.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Let's revisit your example and check whether node A satisfies STC. A pair of nodes that are connected to A and have strong ties are B and D. However, this pair of nodes does not have tie between each other, and thus A does not satisfy STCP. In order for A to satisfy STC, nodes B, C, D and E must have either a weak tie or a strong tie between each other.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

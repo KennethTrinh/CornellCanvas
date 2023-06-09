@@ -13,62 +13,60 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Can you explain your reasoning for this question? I am having a hard time reading the answers in the margins so I am not sure where I went wrong.
- </paragraph>
- <paragraph>
-  Far a), I found the z-transform $X(z)$ of the input signal $x(n) = -5^nu(-n-1)$, then calculated $Y_1(z) = H(z)X(z)$.
- </paragraph>
- <paragraph>
-  For b), I am not sure how to proceed since the z-transform of $x(n) = 7$ does not seem to converge for any z.
- </paragraph>
-</document>
+<p>
+ Can you explain your reasoning for this question? I am having a hard time reading the answers in the margins so I am not sure where I went wrong.
+</p>
+<p>
+ Far a), I found the z-transform $X(z)$ of the input signal $x(n) = -5^nu(-n-1)$, then calculated $Y_1(z) = H(z)X(z)$.
+</p>
+<p>
+ For b), I am not sure how to proceed since the z-transform of $x(n) = 7$ does not seem to converge for any z.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 3
+ </h3>
+ <p>
   It should be $X ( z ) = \frac{z}{z - 5}$ with ROC $0 &lt; | z | &lt; 5$, and indeed $Y ( z ) = H ( z ) X ( z )$ and the ROC for that is the intersection of those of $X ( z )$ and $H ( z )$, namely $0.3 &lt; | z | &lt; 5$.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   In (b), $x$ has no $z$-transform --- it's a constant input signal --- specifically, $x ( n ) = 7 ( 1 ^ n )$ for all $n$, and since $1$ is in the ROC for $H ( z )$, we have $y _ 2 ( n ) = 7 H ( 1 ) ( 1 ^ n ) = 7 H ( 1 )$.  Many people opted to compute the convolution of $h$ with $x$ instead, which is also okay but more time-consuming.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kingsley O. (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  for part a X(z) should be z/(z+5) because the z transformation of the unit step is z/(z-a) where a = -5
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  It's $- 5 ^ n u ( - n - 1 )$ rather than $- ( - 5 ) ^ n u ( - n - 1 )$.  The latter would go with $\frac{z}{z + 5}$ and ROC  $0  &lt; | z | &lt; 5$.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Kingsley O. (None)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   for part a X(z) should be z/(z+5) because the z transformation of the unit step is z/(z-a) where a = -5
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: David Delchamps (admin)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    It's $- 5 ^ n u ( - n - 1 )$ rather than $- ( - 5 ) ^ n u ( - n - 1 )$.  The latter would go with $\frac{z}{z + 5}$ and ROC  $0  &lt; | z | &lt; 5$.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

@@ -13,94 +13,91 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  We understand that we are not allowed to use the t-values in future data to do an explicit "look-up" when making predictions.
- </paragraph>
- <paragraph>
-  However, are we allowed to have future data be a part of the training data? i.e. say we're trying to predict the "next_week_hospitalizations" of "Belgium 09/15/2020", is it allowed if our training set includes "Belgium 10/05/2020"?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ We understand that we are not allowed to use the t-values in future data to do an explicit "look-up" when making predictions.
+</p>
+<p>
+ However, are we allowed to have future data be a part of the training data? i.e. say we're trying to predict the "next_week_hospitalizations" of "Belgium 09/15/2020", is it allowed if our training set includes "Belgium 10/05/2020"?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Noor (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   No; see
-  <link href="https://edstem.org/us/courses/4342/discussion/419140"/>
-  #1355
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
-  does that mean we can't use the full dataset to train our model in the creative part?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Just verified, yes you can train on the full training set.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  This is referring to this section of the pdf:
- </paragraph>
- <paragraph>
-  "In the dataset, we give you the hospitalization numbers of past dates as extra features and they are also included in the test points. However, you are not allowed to directly use that data to predict values for other dates. (i.e. you are not allowed to use the past numbers from tomorrow’s data point to get hospitalizations today). More generally, you are not allowed to use any information from future timepoints as features, since in a real application this information would not be known."
- </paragraph>
- <paragraph>
-  What this is effectively addressing is that the dataset contains information about past dates in the features, and you're forbidden from just looking up the information from the table and using it directly, since that would unrealistic if this were a real model you planned on using in the world, and because that's not wholly an ML model. I'll double check with the other TAs but I believe you should be fine to use future datasets to train the model.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Weilin Xu (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I wonder if there is any update on this question?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+  <a href="https://edstem.org/us/courses/4342/discussion/419140">
+   #1355
+  </a>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 2
+  </h3>
+  <p>
+   does that mean we can't use the full dataset to train our model in the creative part?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Michael Noor (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    This is referring to this section of the pdf:
+   </p>
+   <p>
+    "In the dataset, we give you the hospitalization numbers of past dates as extra features and they are also included in the test points. However, you are not allowed to directly use that data to predict values for other dates. (i.e. you are not allowed to use the past numbers from tomorrow’s data point to get hospitalizations today). More generally, you are not allowed to use any information from future timepoints as features, since in a real application this information would not be known."
+   </p>
+   <p>
+    What this is effectively addressing is that the dataset contains information about past dates in the features, and you're forbidden from just looking up the information from the table and using it directly, since that would unrealistic if this were a real model you planned on using in the world, and because that's not wholly an ML model. I'll double check with the other TAs but I believe you should be fine to use future datasets to train the model.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Weilin Xu (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     I wonder if there is any update on this question?
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Michael Noor (staff)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Just verified, yes you can train on the full training set.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

@@ -13,53 +13,49 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  when testing node, if we want to return the third node the linked list,
- </paragraph>
- <paragraph>
-  would we have to  do d3 (being the linked list)
- </paragraph>
- <paragraph>
-  assertEquals(d3.head().next().next().next(), d3.node(3)),  is there a faster way to do this?
- </paragraph>
- <paragraph>
-  also just too make sure node(0) is supposed to return the head?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ when testing node, if we want to return the third node the linked list,
+</p>
+<p>
+ would we have to  do d3 (being the linked list)
+</p>
+<p>
+ assertEquals(d3.head().next().next().next(), d3.node(3)),  is there a faster way to do this?
+</p>
+<p>
+ also just too make sure node(0) is supposed to return the head?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bahaa Kotb (student)
+ </h3>
+ <h3>
+  Vote Count: 3
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   Yes node(0) should return the head, also you can test for values instead rather than doing d3.head().next().next().next() so let's say at index 3 you stored the unique value '2110' you can do d3.node(3).value() and check if that equals 2110. By unique value I mean no other node except node 3 has the value '2110' and that's a valid way to test, however, I think your way of testing is valid too but that just might take long
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   thank you!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

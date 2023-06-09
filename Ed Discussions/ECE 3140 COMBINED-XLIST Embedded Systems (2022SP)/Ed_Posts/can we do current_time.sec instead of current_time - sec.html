@@ -13,41 +13,35 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  can we do current_time.sec instead of current_time -&gt; sec?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ can we do current_time.sec instead of current_time -&gt; sec?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Trenton Lyke (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Trenton Lyke (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   Yes, you actually have to do current_time.sec since current_time is
-  <bold>
+  <b>
    not
-  </bold>
+  </b>
   a pointer to a struct with a
-  <italic>
+  <i>
    sec
-  </italic>
+  </i>
   property. It is just the struct itself with a
-  <italic>
+  <i>
    sec
-  </italic>
+  </i>
   property.
   <code>
    pointer_name -&gt; property
@@ -57,10 +51,8 @@
    (*pointer_name).property
   </code>
   so you only really need to use -&gt; when you are trying to access the property of a struct that a pointer is pointing to.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

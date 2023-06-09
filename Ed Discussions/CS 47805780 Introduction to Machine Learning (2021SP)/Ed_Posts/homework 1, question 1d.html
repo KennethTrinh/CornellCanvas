@@ -13,41 +13,37 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  For question 1d, we are thinking it will take to long to do the list-then-eliminate method by hand.  Does anyone know of a more efficient way to calculate it the version space?  Are we to write a Python function to do so?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ For question 1d, we are thinking it will take to long to do the list-then-eliminate method by hand.  Does anyone know of a more efficient way to calculate it the version space?  Are we to write a Python function to do so?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Atul Ganju (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  There is some hypothesis $h^*$ in the hypothesis space such that every instance in the instance space is mapped to the correct label. A version space is a subset of the hypothesis space. In particular, the version space  contains every hypothesis that may still be $h^*$ given our constraints (where our constraints are the instances for which we know the correct label). Try and think of a way to represent instances of the hypothesis space and then use the representation as a way to determine what elements of the hypothesis space are in your version space after factoring in each known instance.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Eric Kahn (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Eric Kahn (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   If you look at the table above, all of the rows have a unique feature vector. These five specific feature vectors must always result in their given label, so you only need to focus on the other possible feature vectors in your instance space.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Atul Ganju (staff)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   There is some hypothesis $h^*$ in the hypothesis space such that every instance in the instance space is mapped to the correct label. A version space is a subset of the hypothesis space. In particular, the version space  contains every hypothesis that may still be $h^*$ given our constraints (where our constraints are the instances for which we know the correct label). Try and think of a way to represent instances of the hypothesis space and then use the representation as a way to determine what elements of the hypothesis space are in your version space after factoring in each known instance.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

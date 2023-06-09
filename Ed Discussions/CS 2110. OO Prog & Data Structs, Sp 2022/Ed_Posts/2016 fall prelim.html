@@ -13,111 +13,107 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  for the loop body, is it acceptable to have the elt at h be the elt we are looking at and sorting the array with instead of k? I understand that this is less efficent because there are more swaps, but would it be an acceptable answer?
- </paragraph>
- <paragraph>
-  I wrote the loop body like this:
- </paragraph>
- <paragraph>
-  if (b[h]==0) h=h+1;
- </paragraph>
- <paragraph>
-  else if (b[h]&lt;0) {
- </paragraph>
- <paragraph>
-  swap b[h] and b[k-1]
- </paragraph>
- <paragraph>
-  k=k-1;
- </paragraph>
- <paragraph>
-  else
- </paragraph>
- <paragraph>
-  swap b[h] and b[k-1]
- </paragraph>
- <paragraph>
-  k=k-1;
- </paragraph>
- <paragraph>
-  swap b[k] and b[t-1]
- </paragraph>
- <paragraph>
-  t=t-1;
- </paragraph>
- <figure>
-  <image height="507.9455411844792" src="https://static.us.edusercontent.com/files/UoANq2cyhCu0pjn27hf98cN6" width="658"/>
- </figure>
-</document>
-<h3>
- Author: Jason Wang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ for the loop body, is it acceptable to have the elt at h be the elt we are looking at and sorting the array with instead of k? I understand that this is less efficent because there are more swaps, but would it be an acceptable answer?
+</p>
+<p>
+ I wrote the loop body like this:
+</p>
+<p>
+ if (b[h]==0) h=h+1;
+</p>
+<p>
+ else if (b[h]&lt;0) {
+</p>
+<p>
+ swap b[h] and b[k-1]
+</p>
+<p>
+ k=k-1;
+</p>
+<p>
+ else
+</p>
+<p>
+ swap b[h] and b[k-1]
+</p>
+<p>
+ k=k-1;
+</p>
+<p>
+ swap b[k] and b[t-1]
+</p>
+<p>
+ t=t-1;
+</p>
+<figure>
+ <image height="507.9455411844792" src="https://static.us.edusercontent.com/files/UoANq2cyhCu0pjn27hf98cN6" width="658"/>
+</figure>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jason Wang (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   using b[h] should work, but your else statement doesn't seem to properly sort the b[h] elements. the "swap b[k] and b[t-1]" does not do anything; it is switching an element  with unknown with an element with a value &lt;0. The previous swap also doesnt properly work: "swap b[h] and b[k-1]; k=k-1;". This swaps an unknown element with another unknown element. And makes the previous b[h] or now b[k] into a value &lt;0 when you didn't confirm that it is a value &lt;0.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   tldr; may have analyzed ur else statement wrong, but is very confusing and does not seem to work.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Menglin Wang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Menglin Wang (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
  <figure>
   <image height="31.715481171548117" src="https://static.us.edusercontent.com/files/TtznMDYyTiynxaLugQPKT8eY" width="758"/>
  </figure>
- <paragraph>
+ <p>
   Also a question about this problem. Should this write a  k = k -1 ;  into this part? if you do not update k, b[k-1] always equal 0.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Is it correct?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jason Wang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  nah, you cant decrement k because otherwise u are assuming that the new b[h] which is now an unknown element is &lt;0 when you didn't confirm/check that.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I think that's a typo and should be b[k-1]==0
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Bahaa Kotb (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I think that's a typo and should be b[k-1]==0
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Jason Wang (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    nah, you cant decrement k because otherwise u are assuming that the new b[h] which is now an unknown element is &lt;0 when you didn't confirm/check that.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

@@ -13,52 +13,50 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="42.619273301737756" src="https://static.us.edusercontent.com/files/hVvxFAOyPxDTK2rhCwYuRae6" width="658"/>
- </figure>
- <paragraph>
-  I understand that Quicksort can have worst-case complexity if the array is already sorted, or the pivot that is picked every time is at the extremes (largest or smallest value). Can someone provide a case when Quicksort would take up worst-case space? Thank you!
- </paragraph>
-</document>
+<figure>
+ <image height="42.619273301737756" src="https://static.us.edusercontent.com/files/hVvxFAOyPxDTK2rhCwYuRae6" width="658"/>
+</figure>
+<p>
+ I understand that Quicksort can have worst-case complexity if the array is already sorted, or the pivot that is picked every time is at the extremes (largest or smallest value). Can someone provide a case when Quicksort would take up worst-case space? Thank you!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Varun Gande (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Varun Gande (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   Essentially, the way we learned quicksort is with an O(n) space complexity. However, we’re able to modify quick sort such that we insertion sort the smaller array, and quicksort the larger array, which is how we get the space complexity to O(log n). I wouldn’t worry about the specifics too much, but just know that it can be done.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  The logarithmic-space algorithm doesn't actually run Insertion Sort on the smaller array (that is a practical speed operation when arrays sizes are less than ~7, but doing so for half of a large array would make the overall algorithm O(n^2)).  It still uses QuickSort, but it does so as the next iteration of a loop, rather than as a recursive call.  By using a loop, the same stack frame can be reused, and by doing this for the
-  <italic>
-   larger
-  </italic>
-  half, the recursive call used for the smaller half won't degenerate to the worst case.
- </paragraph>
- <paragraph>
-  See the last slide of the Sorting lecture for details.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Curran Muhlberger (admin)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   The logarithmic-space algorithm doesn't actually run Insertion Sort on the smaller array (that is a practical speed operation when arrays sizes are less than ~7, but doing so for half of a large array would make the overall algorithm O(n^2)).  It still uses QuickSort, but it does so as the next iteration of a loop, rather than as a recursive call.  By using a loop, the same stack frame can be reused, and by doing this for the
+   <i>
+    larger
+   </i>
+   half, the recursive call used for the smaller half won't degenerate to the worst case.
+  </p>
+  <p>
+   See the last slide of the Sorting lecture for details.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

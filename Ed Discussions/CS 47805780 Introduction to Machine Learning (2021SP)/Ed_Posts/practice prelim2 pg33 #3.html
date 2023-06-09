@@ -13,97 +13,91 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <figure>
-  <image height="118.7645739910314" src="https://static.us.edusercontent.com/files/y2c0bKgtObiI37rWAzn4LUuW" width="658"/>
- </figure>
- <paragraph>
-  I'm confused how to approach this question?
- </paragraph>
- <paragraph>
-  I know that we want to find a hypothesis space H that has M parameters that can only produce ALL possible labelings of a sample set that has at most 1 point.
- </paragraph>
- <paragraph>
-  However, I don't understand what the hint is saying about encoding several parameters with just one parameter?
- </paragraph>
-</document>
+<figure>
+ <image height="118.7645739910314" src="https://static.us.edusercontent.com/files/y2c0bKgtObiI37rWAzn4LUuW" width="658"/>
+</figure>
+<p>
+ I'm confused how to approach this question?
+</p>
+<p>
+ I know that we want to find a hypothesis space H that has M parameters that can only produce ALL possible labelings of a sample set that has at most 1 point.
+</p>
+<p>
+ However, I don't understand what the hint is saying about encoding several parameters with just one parameter?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Anna Effenberger (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  My thought was to make the hypothesis class a set of functions that labels a point +1 if it is equal to some point
-  <italic>
-   a
-  </italic>
-  in M-dimensional space (so then this point
-  <italic>
-   a
-  </italic>
-  needs to be specified by M parameters, one for each dimension) and -1 otherwise (so the indicator function h(x) when x=a). So, this hypothesis class can shatter a set of one point, but cannot shatter a set of 2 points (since it cannot label both points +1)
- </paragraph>
- <paragraph>
-  Not sure if this is the correct approach, though
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jane Du (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jane Du (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The answer above is great!
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   There are many correct answers. The hint refers to another one -- consider a hypothesis class that has one parameter (like a threshold, or the radius of a circle centered on the origin). And, this one parameter is determined by "merging" M parameters -- like taking the largest of the M parameters, or taking their sum or their average etc.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   e.g. a circle centered on the origin whose radius is the largest of M parameters
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  How would VC dimension only be 1 here though?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jane Du (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  If you have 2 points in 2d space, either they're equally far from the origin, or one is farther away. In the first case, you cannot include one point in the circle and exclude the other, so you cannot shatter a set of 2 points. In the second case, you cannot shatter either -- you cannot include the farther point inside the circle without also including the first.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   How would VC dimension only be 1 here though?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Jane Du (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    If you have 2 points in 2d space, either they're equally far from the origin, or one is farther away. In the first case, you cannot include one point in the circle and exclude the other, so you cannot shatter a set of 2 points. In the second case, you cannot shatter either -- you cannot include the farther point inside the circle without also including the first.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Anna Effenberger (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   My thought was to make the hypothesis class a set of functions that labels a point +1 if it is equal to some point
+   <i>
+    a
+   </i>
+   in M-dimensional space (so then this point
+   <i>
+    a
+   </i>
+   needs to be specified by M parameters, one for each dimension) and -1 otherwise (so the indicator function h(x) when x=a). So, this hypothesis class can shatter a set of one point, but cannot shatter a set of 2 points (since it cannot label both points +1)
+  </p>
+  <p>
+   Not sure if this is the correct approach, though
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

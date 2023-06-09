@@ -13,35 +13,33 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I have been doing all of the reading in JHT on implementing Runnable vs extending Thread, but I find myself confused on why we have to do this in the first place? What is the purpose or motivation behind having a class implement Runnable or extend Thread? I under the 1st pdf under concurrency details
-  <italic>
-   what
-  </italic>
-  it is, and the SyncIntro.pdf shows examples of thread conflicts and deadlocks, but I don't really understand why we have to create a distinct class for it.
- </paragraph>
- <paragraph>
-  My personal interpretation is that we do this for the purpose of multithreading. However, I'm not quite sure if this encapsulates the entire reasoning?
- </paragraph>
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
+<p>
+ I have been doing all of the reading in JHT on implementing Runnable vs extending Thread, but I find myself confused on why we have to do this in the first place? What is the purpose or motivation behind having a class implement Runnable or extend Thread? I under the 1st pdf under concurrency details
+ <i>
+  what
+ </i>
+ it is, and the SyncIntro.pdf shows examples of thread conflicts and deadlocks, but I don't really understand why we have to create a distinct class for it.
+</p>
+<p>
+ My personal interpretation is that we do this for the purpose of multithreading. However, I'm not quite sure if this encapsulates the entire reasoning?
+</p>
+<p>
+ Thank you!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   A
   <code>
    Thread
@@ -63,8 +61,8 @@
    Runnable
   </code>
   , you're telling Java to run a particular piece of code on its own dedicated thread.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   These two concepts (a thread, and the code that it should run) really are distinct, so representing them with two different types is a good example of "separation of concerns".  The easiest way to see the advantage  of this is to think about "thread pools" - threads are operating system resources that can be scheduled on CPUs; starting, stopping, and maintaining threads has an overhead cost associated with it.  But once a thread has been created, it could be used for many different tasks, and tasks generally don't care what thread they are running on.  Therefore, you could imagine a handful of threads executing a sequence of tasks drawn from a list of
   <code>
    Runnable
@@ -74,8 +72,8 @@
    Thread
   </code>
   it runs on.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   That being said, there are many ways people might want to use a piece of reusable utility code like
   <code>
    Thread
@@ -93,8 +91,8 @@
    Runnable
   </code>
   , just for convenience.  However, separating the two concepts tends to result in more flexible and reusable code, which is why this year's lecture slides emphasize that usage.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

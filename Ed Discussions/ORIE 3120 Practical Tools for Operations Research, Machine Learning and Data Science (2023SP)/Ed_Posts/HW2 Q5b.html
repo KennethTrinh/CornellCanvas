@@ -13,87 +13,83 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  Problem # 5b
- </paragraph>
- <paragraph>
-  HW #2
- </paragraph>
- <paragraph>
-  Here the bracket on the right is round bracket, which means we should exclude the value 5 when we are counting for the interval with center 0. However, for the picture in part b, there are two points for interval with center 0. Is this some typo?
- </paragraph>
- <paragraph>
-  This problem also happens to 35 when I calculated in SQL, so it seems like a general problem with whether we should consider 5 as in the interval or not.
- </paragraph>
- <figure>
-  <image height="81.7493670886076" src="https://static.us.edusercontent.com/files/GmGkBztSrxNr6tVlYtgwWNcW" width="659"/>
- </figure>
- <figure>
-  <image height="312" src="https://static.us.edusercontent.com/files/9XrvDrWcmjgYTBM7yYdNHneT" width="310"/>
- </figure>
- <figure>
-  <image height="439" src="https://static.us.edusercontent.com/files/iAG7fuRWC4YB2ByZAeEehp3o" width="253"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Problem # 5b
+</p>
+<p>
+ HW #2
+</p>
+<p>
+ Here the bracket on the right is round bracket, which means we should exclude the value 5 when we are counting for the interval with center 0. However, for the picture in part b, there are two points for interval with center 0. Is this some typo?
+</p>
+<p>
+ This problem also happens to 35 when I calculated in SQL, so it seems like a general problem with whether we should consider 5 as in the interval or not.
+</p>
+<figure>
+ <image height="81.7493670886076" src="https://static.us.edusercontent.com/files/GmGkBztSrxNr6tVlYtgwWNcW" width="659"/>
+</figure>
+<figure>
+ <image height="312" src="https://static.us.edusercontent.com/files/9XrvDrWcmjgYTBM7yYdNHneT" width="310"/>
+</figure>
+<figure>
+ <image height="439" src="https://static.us.edusercontent.com/files/iAG7fuRWC4YB2ByZAeEehp3o" width="253"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Ethan Igel (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Ethan Igel (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Yes, you seem to be right. based on the example provided you should include points on the "upper bound" of the interval. I would go by the query that matches up with the example image.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Varun Gande (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  To add to this, be careful that you don't bin the rounded unit prices, you should only bin the unit prices. For example, the occurrence of the roundedunitprice of 5 has a unit price of 4.5, which should be in bin center 0. But the occurrence of the roundedunitprice of 55 has a unit price of 55, which should be in bin center 60 (according to the original binning scheme).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jess Hensel (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  How can we make sql round .5 down to get the result given in the example image?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Selina Xiao (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Thanks a lot for answering my question! Just to make sure, does that mean we need to include the number on the upper bound as the example image shows?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Selina Xiao (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Thanks a lot for answering my question! Just to make sure, does that mean we need to include the number on the upper bound as the example image shows?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Jess Hensel (student)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    How can we make sql round .5 down to get the result given in the example image?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 4em;">
+    <h3>
+     Author: Varun Gande (staff)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     To add to this, be careful that you don't bin the rounded unit prices, you should only bin the unit prices. For example, the occurrence of the roundedunitprice of 5 has a unit price of 4.5, which should be in bin center 0. But the occurrence of the roundedunitprice of 55 has a unit price of 55, which should be in bin center 60 (according to the original binning scheme).
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

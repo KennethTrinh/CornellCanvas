@@ -13,42 +13,40 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  Insight into feature selection. Presence of certain words in the corpus seems to be the only feature I can think of, does anyone have any insights into other features I can use?
- </paragraph>
-</document>
-<h3>
- Author: Thorsten Joachims (admin)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="1.0">
- <paragraph>
+<p>
+ Insight into feature selection. Presence of certain words in the corpus seems to be the only feature I can think of, does anyone have any insights into other features I can use?
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Thorsten Joachims (admin)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   Right, it comes down to words, or more generally how you translate the presence of strings in the text into features. If you stick with words, there is still a question which words to use: the most frequently used ones? The ones with the highest Information Gain? Should we filter out "stop words" like 'the', 'and, 'or '?
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You could also consider whether words are really the right unit for features. Maybe use word pairs? Or maybe chop off word endings like 'ing' and 's' so that 'eating' and 'eats' become the same word (this is called stemming, since we are reducing words to their stem)?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Ruiqi Zhu (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Ruiqi Zhu (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   One thing you can try is the bag of word representation of the emails
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

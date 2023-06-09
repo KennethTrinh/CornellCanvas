@@ -13,140 +13,136 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  When I save score to a non-document type file like .txt, a document type file is created with the same name as the original file and the score is stored there instead. I copied the try statement from the handout so is it maybe my saveDialog doing something wrong?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Michael Clarkson (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ When I save score to a non-document type file like .txt, a document type file is created with the same name as the original file and the score is stored there instead. I copied the try statement from the handout so is it maybe my saveDialog doing something wrong?
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Clarkson (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I don't know what "document type" means here.  Certainly a plain text file (.txt extension) can be considered a document.  I think we're going to need more information to help with this issue.  Maybe you could spell out in more detail exactly what is happening?  It would help to answer the following prompt with more details that you might suspect are necessary:
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
-    <italic>
+  <li>
+   <p>
+    <i>
      When I do ...
-    </italic>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    <italic>
+    </i>
+   </p>
+  </li>
+  <li>
+   <p>
+    <i>
      I expect ...
-    </italic>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    <italic>
+    </i>
+   </p>
+  </li>
+  <li>
+   <p>
+    <i>
      But instead ...
-    </italic>
-   </paragraph>
-  </list-item>
+    </i>
+   </p>
+  </li>
  </list>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <figure>
-  <image height="157.25390625" src="https://static.us.edusercontent.com/files/OSgQatWFDzjMeXM3kYNgeS0q" width="497"/>
- </figure>
- <paragraph>
-  Sorry about the messy image, I did more testing and I'll explain below.
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    Saving to scores.rtf does nothing: it doesn't create a duplicate file nor appends score to it
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    scores.txt works perfectly: scores are appended to it without a new file being created
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    scoresDocumentType and scoresDocumentType.aaa also work perfectly
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    the rest just show that if the file I'm saving to doesn't end in .txt, then my problem arises
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  My problem being that when I save score to a a file that doesn't end in .txt and isn't a document type file, I expect the score to be appended to that file. But instead, the file is untouched and another file with the same name is created and the score is appended to this new file with type Document instead. Subsequent save scores to either the original or new file will always append the score to the new file.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Clarkson (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Now I understand what you mean by "Document" type.  That's just what the Mac Finder application is showing as the file kind when it doesn't recognize the file extension, or when there isn't a file extension.  It doesn't mean much.
- </paragraph>
- <paragraph>
-  I cannot recreate the behavior you describe with scores.rtf.  When I save to that file, it appends the score each time.  BUT (and this is a big one) you can't double-click the file to open it with the default RTF editor because you aren't writing RTF contents to that file from your Java game.  You're writing plain text.  If I directly open scores.rtf in a plain text editor (BBEdit in my case) it works just fine.
- </paragraph>
- <paragraph>
-  I suspect the problem you're having is therefore not a problem with your Java code, but the way in which you are opening the files.  Perhaps you can see about that?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yep, opening scores.rtf as plain text shows that the scores were indeed being appended. Thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <figure>
+   <image height="157.25390625" src="https://static.us.edusercontent.com/files/OSgQatWFDzjMeXM3kYNgeS0q" width="497"/>
+  </figure>
+  <p>
+   Sorry about the messy image, I did more testing and I'll explain below.
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     Saving to scores.rtf does nothing: it doesn't create a duplicate file nor appends score to it
+    </p>
+   </li>
+   <li>
+    <p>
+     scores.txt works perfectly: scores are appended to it without a new file being created
+    </p>
+   </li>
+   <li>
+    <p>
+     scoresDocumentType and scoresDocumentType.aaa also work perfectly
+    </p>
+   </li>
+   <li>
+    <p>
+     the rest just show that if the file I'm saving to doesn't end in .txt, then my problem arises
+    </p>
+   </li>
+  </list>
+  <p>
+   My problem being that when I save score to a a file that doesn't end in .txt and isn't a document type file, I expect the score to be appended to that file. But instead, the file is untouched and another file with the same name is created and the score is appended to this new file with type Document instead. Subsequent save scores to either the original or new file will always append the score to the new file.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Michael Clarkson (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Now I understand what you mean by "Document" type.  That's just what the Mac Finder application is showing as the file kind when it doesn't recognize the file extension, or when there isn't a file extension.  It doesn't mean much.
+   </p>
+   <p>
+    I cannot recreate the behavior you describe with scores.rtf.  When I save to that file, it appends the score each time.  BUT (and this is a big one) you can't double-click the file to open it with the default RTF editor because you aren't writing RTF contents to that file from your Java game.  You're writing plain text.  If I directly open scores.rtf in a plain text editor (BBEdit in my case) it works just fine.
+   </p>
+   <p>
+    I suspect the problem you're having is therefore not a problem with your Java code, but the way in which you are opening the files.  Perhaps you can see about that?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Yep, opening scores.rtf as plain text shows that the scores were indeed being appended. Thank you!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Clarkson (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Clarkson (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Marking resolved
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

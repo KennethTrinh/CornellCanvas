@@ -13,22 +13,20 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi, we are trying to modify the PIT_IRQHandler function for lab 5. For this lab, in which file should we implement this function to handle interrupts?
- </paragraph>
-</document>
+<p>
+ Hi, we are trying to modify the PIT_IRQHandler function for lab 5. For this lab, in which file should we implement this function to handle interrupts?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 3
+ </h3>
+ <p>
   The IRQ handler should be written within
   <code>
    process.c
@@ -38,11 +36,11 @@
    3140.s
   </code>
   carefully as to understand how you are supposed to implement the "
-  <italic>
+  <i>
    handler
-  </italic>
+  </i>
   ".
- </paragraph>
+ </p>
  <pre>...
 30: //Function to service PIT Chanel 1 Routine
 31: //Export this so you can write C-function
@@ -52,7 +50,7 @@
 112: .type  PIT_IRQHandler, %function
 113: PIT_IRQHandler: // Timer Interrupt
 ...</pre>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

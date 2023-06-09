@@ -13,58 +13,56 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Running test_course_changetime
- </paragraph>
- <paragraph>
-  []
- </paragraph>
- <paragraph>
-  []
- </paragraph>
- <paragraph>
-  []
- </paragraph>
- <paragraph>
-  []
- </paragraph>
- <paragraph>
-  ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm']
- </paragraph>
- <paragraph>
-  Traceback (most recent call last):
- </paragraph>
- <paragraph>
-  File "schedule_tests.py", line 297, in &lt;module&gt;
- </paragraph>
- <paragraph>
-  testfn() # Adding the parentheses calls whatever testfn is
- </paragraph>
- <paragraph>
-  File "schedule_tests.py", line 249, in test_course_changetime
- </paragraph>
- <paragraph>
-  assert my_schedule.warnings == temp_exp_warnings, \
- </paragraph>
- <paragraph>
-  AssertionError: my_schedule warnings list should be ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm', 'ARCH 1120 STU 520: time change causes conflict with AEP 3560 LEC 001', 'ARCH 1120 STU 520: time change causes conflict with FAKER 0000 LEC 002'], but is []
- </paragraph>
- <paragraph>
-  nancyzhang@dhcp-vl2041-2753 a6 %
- </paragraph>
-</document>
+<p>
+ Running test_course_changetime
+</p>
+<p>
+ []
+</p>
+<p>
+ []
+</p>
+<p>
+ []
+</p>
+<p>
+ []
+</p>
+<p>
+ ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm']
+</p>
+<p>
+ Traceback (most recent call last):
+</p>
+<p>
+ File "schedule_tests.py", line 297, in &lt;module&gt;
+</p>
+<p>
+ testfn() # Adding the parentheses calls whatever testfn is
+</p>
+<p>
+ File "schedule_tests.py", line 249, in test_course_changetime
+</p>
+<p>
+ assert my_schedule.warnings == temp_exp_warnings, \
+</p>
+<p>
+ AssertionError: my_schedule warnings list should be ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm', 'ARCH 1120 STU 520: time change causes conflict with AEP 3560 LEC 001', 'ARCH 1120 STU 520: time change causes conflict with FAKER 0000 LEC 002'], but is []
+</p>
+<p>
+ nancyzhang@dhcp-vl2041-2753 a6 %
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Huh, so it looks like a Schedule, the roster, is getting a warning added to it, but for my_schedule, which is a StudentSchedule, no warnings are being added.
   <break>
   </break>
@@ -78,141 +76,139 @@
   <break>
   </break>
   warnings += &lt;whatever&gt;
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   instead of
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   self.warnings += &lt;whatever&gt;
   <break>
   </break>
   ?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you so much for your response!! I did use self.warnings in the StudentSchedule's add method... For the add method, I get an error message like this:
- </paragraph>
- <paragraph>
-  Running test_studentschedule_add_noconflicts
- </paragraph>
- <paragraph>
-  []
- </paragraph>
- <paragraph>
-  []
- </paragraph>
- <paragraph>
-  []
- </paragraph>
- <paragraph>
-  Traceback (most recent call last):
- </paragraph>
- <paragraph>
-  File "schedule_tests.py", line 297, in &lt;module&gt;
- </paragraph>
- <paragraph>
-  testfn() # Adding the parentheses calls whatever testfn is
- </paragraph>
- <paragraph>
-  File "schedule_tests.py", line 102, in test_studentschedule_add_noconflicts
- </paragraph>
- <paragraph>
-  assert set(c.in_schedules) == set([my_schedule, roster]), \
- </paragraph>
- <paragraph>
-  AssertionError: CS 1110 LEC 001.in_schedules should be ['Cornell Fall 21 roster', 'My Plan A'], but is ['Cornell Fall 21 roster']
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi,
- </paragraph>
- <paragraph>
-  You are appending CS 1110 LEC 1 to the roster, and not the student schedules as well.  So, in the supper class method, you should be appending the schedule (roster) to the in_schedules attribute of CS 1110 LEC 1.  So in the student schedule sub class add method, you should properly be using the super class add method function with super().  Perhaps you are not doing this?
- </paragraph>
- <paragraph>
-  Best,
- </paragraph>
- <paragraph>
-  Troy
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thanks! I was able to do so and pass the noconflict. However, for add with conflict, here is the error message:
- </paragraph>
- <paragraph>
-  Running test_studentschedule_add_conflicts
- </paragraph>
- <paragraph>
-  Traceback (most recent call last):
- </paragraph>
- <paragraph>
-  File "schedule_tests.py", line 298, in &lt;module&gt;
- </paragraph>
- <paragraph>
-  testfn() # Adding the parentheses calls whatever testfn is
- </paragraph>
- <paragraph>
-  File "schedule_tests.py", line 196, in test_studentschedule_add_conflicts
- </paragraph>
- <paragraph>
-  _assert_courses_match(my_schedule, test_courses) # So, should be no change
- </paragraph>
- <paragraph>
-  File "schedule_tests.py", line 274, in _assert_courses_match
- </paragraph>
- <paragraph>
-  assert set(sched.courses.values()) == set(exp_courses_list), \
- </paragraph>
- <paragraph>
-  AssertionError: Unexpected set of courses in schedule My Plan B: CS 1110 LEC 001, AEP 3560 LEC 001, FAKER 0000 LEC 002, INFO 2450 LEC 001, BIOG 1140 DIS 201, AEM 2010 LEC 001
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Maybe your add function isn’t working properly
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you so much for your response!! I did use self.warnings in the StudentSchedule's add method... For the add method, I get an error message like this:
+  </p>
+  <p>
+   Running test_studentschedule_add_noconflicts
+  </p>
+  <p>
+   []
+  </p>
+  <p>
+   []
+  </p>
+  <p>
+   []
+  </p>
+  <p>
+   Traceback (most recent call last):
+  </p>
+  <p>
+   File "schedule_tests.py", line 297, in &lt;module&gt;
+  </p>
+  <p>
+   testfn() # Adding the parentheses calls whatever testfn is
+  </p>
+  <p>
+   File "schedule_tests.py", line 102, in test_studentschedule_add_noconflicts
+  </p>
+  <p>
+   assert set(c.in_schedules) == set([my_schedule, roster]), \
+  </p>
+  <p>
+   AssertionError: CS 1110 LEC 001.in_schedules should be ['Cornell Fall 21 roster', 'My Plan A'], but is ['Cornell Fall 21 roster']
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Troy Moslemi (he/him) (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Hi,
+   </p>
+   <p>
+    You are appending CS 1110 LEC 1 to the roster, and not the student schedules as well.  So, in the supper class method, you should be appending the schedule (roster) to the in_schedules attribute of CS 1110 LEC 1.  So in the student schedule sub class add method, you should properly be using the super class add method function with super().  Perhaps you are not doing this?
+   </p>
+   <p>
+    Best,
+   </p>
+   <p>
+    Troy
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Thanks! I was able to do so and pass the noconflict. However, for add with conflict, here is the error message:
+    </p>
+    <p>
+     Running test_studentschedule_add_conflicts
+    </p>
+    <p>
+     Traceback (most recent call last):
+    </p>
+    <p>
+     File "schedule_tests.py", line 298, in &lt;module&gt;
+    </p>
+    <p>
+     testfn() # Adding the parentheses calls whatever testfn is
+    </p>
+    <p>
+     File "schedule_tests.py", line 196, in test_studentschedule_add_conflicts
+    </p>
+    <p>
+     _assert_courses_match(my_schedule, test_courses) # So, should be no change
+    </p>
+    <p>
+     File "schedule_tests.py", line 274, in _assert_courses_match
+    </p>
+    <p>
+     assert set(sched.courses.values()) == set(exp_courses_list), \
+    </p>
+    <p>
+     AssertionError: Unexpected set of courses in schedule My Plan B: CS 1110 LEC 001, AEP 3560 LEC 001, FAKER 0000 LEC 002, INFO 2450 LEC 001, BIOG 1140 DIS 201, AEM 2010 LEC 001
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Troy Moslemi (he/him) (student)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      Maybe your add function isn’t working properly
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

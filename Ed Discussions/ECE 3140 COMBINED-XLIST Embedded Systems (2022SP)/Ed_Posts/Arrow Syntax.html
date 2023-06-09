@@ -13,45 +13,43 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm a little confused on the arrow (-&gt;) syntax for pointers to structs. Given a pointer to a pointer of a struct (end), I wrote two versions of code. One errors, the other doesn't.
- </paragraph>
- <figure>
-  <image height="60" src="https://static.us.edusercontent.com/files/j5A9cvTwUN2bMdQheyKRD4j6" width="314"/>
- </figure>
- <paragraph>
-  It's my understanding that these should do the same thing - what am I missing?
- </paragraph>
-</document>
+<p>
+ I'm a little confused on the arrow (-&gt;) syntax for pointers to structs. Given a pointer to a pointer of a struct (end), I wrote two versions of code. One errors, the other doesn't.
+</p>
+<figure>
+ <image height="60" src="https://static.us.edusercontent.com/files/j5A9cvTwUN2bMdQheyKRD4j6" width="314"/>
+</figure>
+<p>
+ It's my understanding that these should do the same thing - what am I missing?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Benjamin Kogan (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Benjamin Kogan (None)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   You have to surround the first dereference in parentheses. So it should be (*end)-&gt;next.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thaaaaaaank youuuuuuu
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thaaaaaaank youuuuuuu
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

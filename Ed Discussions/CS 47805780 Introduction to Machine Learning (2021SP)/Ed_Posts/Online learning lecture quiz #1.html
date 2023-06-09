@@ -13,117 +13,103 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="349.72154696132594" src="https://static.us.edusercontent.com/files/jaqbwh4Dvkh2NaDxkAV4JBs2" width="658"/>
- </figure>
- <paragraph>
-  I was unclear on why the mistake bound can be 1 in this question. If you have an instance space X with n points in it, isn't it always possible to force the learner to make n-1 mistakes (since this hypothesis class is one that labels only one of the points positively and everything else negatively)? So I thought the best mistake bound would be n.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<figure>
+ <image height="349.72154696132594" src="https://static.us.edusercontent.com/files/jaqbwh4Dvkh2NaDxkAV4JBs2" width="658"/>
+</figure>
+<p>
+ I was unclear on why the mistake bound can be 1 in this question. If you have an instance space X with n points in it, isn't it always possible to force the learner to make n-1 mistakes (since this hypothesis class is one that labels only one of the points positively and everything else negatively)? So I thought the best mistake bound would be n.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Scott Bass (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Scott Bass (student)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   It's true as you point out that a
-  <italic>
+  <i>
    single
-  </italic>
-  <italic>
+  </i>
+  <i>
    hypothesis
-  </italic>
+  </i>
   can be forced to make $n-1$ mistakes. But the
-  <italic>
+  <i>
    learner
-  </italic>
+  </i>
   is the algorithm that considers all of $H$. A learner, in this case, can after seeing only one example where $y=1$ can rule out all hypotheses from the hypothesis space except one. So the learner can learn the hypothesis class while making at most 1 mistake (see explanation in comments).
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Patrick Yuan (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Suppose that n=5, and the adversary gives us the training example x=1, y=0. Wouldn't the learner only be able to rule out one hypothesis (h_1), and there would be four possible hypotheses left?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
-  I think the learner would always predict a label of y=0 until it makes a mistake. Once it makes that mistake (it labels it y=0 but the true label is y=1), then it knows exactly what
-  <italic>
-   a
-  </italic>
-  is.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Patrick Yuan (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  But doesn't the learner have to choose a hypothesis h in H, and upon seeing an example, predict then update to a new hypothesis? I don't think there is a way for the learner to consistently choose an h that guarantees a prediction of y=0 until we seen an example where y=1. In the example I gave, if the learner starts off with h_i, then we can give (i, 0) as the first example, forcing a mistake. Then when the learner updates to h_j, we can give (j, 0) as the second example, and so on. Since the data has to be consistent with some hypothesis, we can do this up to n-1 times.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Edit: never mind, the learner does not have to choose a single hypothesis in H at every time-step
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Scott Bass (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  I see what you mean. The thing to realize is that if the adversary produces a negative example, the learner can always produce the correct prediction by just taking a majority vote (since every hypothesis will predict $Y=0$ except for one).
- </paragraph>
- <paragraph>
-  So, as long as the adversary produces negative examples, the learner will make no mistakes. After the adversary produces a single positive example, the learner will be able to rule out all remaining hypotheses besides $h_{*}$.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Patrick Yuan (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Suppose that n=5, and the adversary gives us the training example x=1, y=0. Wouldn't the learner only be able to rule out one hypothesis (h_1), and there would be four possible hypotheses left?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 2
+   </h3>
+   <p>
+    I think the learner would always predict a label of y=0 until it makes a mistake. Once it makes that mistake (it labels it y=0 but the true label is y=1), then it knows exactly what
+    <i>
+     a
+    </i>
+    is.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Patrick Yuan (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     But doesn't the learner have to choose a hypothesis h in H, and upon seeing an example, predict then update to a new hypothesis? I don't think there is a way for the learner to consistently choose an h that guarantees a prediction of y=0 until we seen an example where y=1. In the example I gave, if the learner starts off with h_i, then we can give (i, 0) as the first example, forcing a mistake. Then when the learner updates to h_j, we can give (j, 0) as the second example, and so on. Since the data has to be consistent with some hypothesis, we can do this up to n-1 times.
+    </p>
+    <p>
+     Edit: never mind, the learner does not have to choose a single hypothesis in H at every time-step
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Scott Bass (student)
+     </h3>
+     <h3>
+      Vote Count: 1
+     </h3>
+     <p>
+      I see what you mean. The thing to realize is that if the adversary produces a negative example, the learner can always produce the correct prediction by just taking a majority vote (since every hypothesis will predict $Y=0$ except for one).
+     </p>
+     <p>
+      So, as long as the adversary produces negative examples, the learner will make no mistakes. After the adversary produces a single positive example, the learner will be able to rule out all remaining hypotheses besides $h_{*}$.
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

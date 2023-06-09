@@ -13,25 +13,23 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I noticed that there is the precondition that p is not null for isSiblingOf but not for gotBefore. Should we check whether p is null in the method body rather than using assert for gotBefore? And  should we make test classes public? Thank you.
- </paragraph>
-</document>
+<p>
+ I noticed that there is the precondition that p is not null for isSiblingOf but not for gotBefore. Should we check whether p is null in the method body rather than using assert for gotBefore? And  should we make test classes public? Thank you.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bahaa Kotb (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Yes check in the method body for gotbefore , if it is null return false, for issiblingof it is a precondition so that needs an assertion.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

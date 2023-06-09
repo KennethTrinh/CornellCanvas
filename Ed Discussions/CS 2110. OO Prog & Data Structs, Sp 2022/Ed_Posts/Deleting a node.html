@@ -13,70 +13,68 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  When we delete a node, should we also nullify the deleted node's references? So if we're removing node n, do we need to set n.next and n.prev to null? Or does it not matter since the DLList can no longer access n anyways, so it's effectively not part of the DLList anymore?
- </paragraph>
-</document>
+<p>
+ When we delete a node, should we also nullify the deleted node's references? So if we're removing node n, do we need to set n.next and n.prev to null? Or does it not matter since the DLList can no longer access n anyways, so it's effectively not part of the DLList anymore?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Atulya Lohani (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="1.0">
- <paragraph>
-  I think you have to make DLList effectively not be able to access it and then you can set n to null. It will be eventually deleted by garbage collector after that. Also you have to adjust pointers that pointed to n.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Thanks!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Yes, it is best to set the pointes in the deleted node to null so that that node can't be used to change the list.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   However, in this assignment, we don't require it and if you don't it's ok.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Ok, that makes sense. Thanks!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Ok, that makes sense. Thanks!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Atulya Lohani (student)
+  </h3>
+  <h3>
+   Vote Count: 2
+  </h3>
+  <p>
+   I think you have to make DLList effectively not be able to access it and then you can set n to null. It will be eventually deleted by garbage collector after that. Also you have to adjust pointers that pointed to n.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Thanks!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

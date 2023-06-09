@@ -13,53 +13,49 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm having an issue with the tostringbrief representation of my tree for the test cases of my insert method. For example, when I assertEquals for the creation of Tree 1, I compare it to "A[B[D E F[G[H[I] J]]] C]" and this passes. When I assertEquals for Tree 2, since the only difference is the replacement of personH with personK, I would expect the code "A[B[D E F[G[K[I] J]]] C]". However, if i compare to this representation, an error is returned and the program states that it returned "A[B[D E F[G[J K[I]]]] C]". These two trees are the same when done out, however because the string representations are different the asserts keep failing. I'm not entirely sure why this is happening and was wondering if I could receive some guidance.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I'm having an issue with the tostringbrief representation of my tree for the test cases of my insert method. For example, when I assertEquals for the creation of Tree 1, I compare it to "A[B[D E F[G[H[I] J]]] C]" and this passes. When I assertEquals for Tree 2, since the only difference is the replacement of personH with personK, I would expect the code "A[B[D E F[G[K[I] J]]] C]". However, if i compare to this representation, an error is returned and the program states that it returned "A[B[D E F[G[J K[I]]]] C]". These two trees are the same when done out, however because the string representations are different the asserts keep failing. I'm not entirely sure why this is happening and was wondering if I could receive some guidance.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Rebecca Liu (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Rebecca Liu (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   <code>
    toStringBrief
   </code>
   includes the call
-  <italic>
+  <i>
    <code>
     selectionSort1
    </code>
-  </italic>
+  </i>
   <code>
    (childs)
   </code>
   to sort the children by name before iterating through them (in this case, it would be in alphabetical order). That is why H[I] appears before J in the case of using makeTree1(), while K[I] appears after J in the case of makeTree2().
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Benjamin Shwartzman (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Ah that makes so much more sense now. Thank you so much!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Benjamin Shwartzman (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Ah that makes so much more sense now. Thank you so much!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

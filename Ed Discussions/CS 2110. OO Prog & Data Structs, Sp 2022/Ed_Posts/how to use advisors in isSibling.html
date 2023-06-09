@@ -13,51 +13,49 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I am confused on how to test isSiblings(). I understand the different test cases but I am having trouble setting it up. I create new PhD() objects; some with the same first/second advisors and some not. To specify the advisors I need to create PhD() objects for them too? Then I can test if they are siblings? I want to call the first PhD constructor to initialize the possible advisors and the second constructor to actually test if two PhDs have the same advisors or not.
- </paragraph>
-</document>
+<p>
+ I am confused on how to test isSiblings(). I understand the different test cases but I am having trouble setting it up. I create new PhD() objects; some with the same first/second advisors and some not. To specify the advisors I need to create PhD() objects for them too? Then I can test if they are siblings? I want to call the first PhD constructor to initialize the possible advisors and the second constructor to actually test if two PhDs have the same advisors or not.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   To test whether two PhDs are siblings because their first advisors are the same,
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   1. Create a PhD named AD that will be the advisor.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   2. Create a PHD p1 and make AD its first advisor.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   3. Create a PHD p2 and make AD its first advisor.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Now do an assertEquals with first argument true and second argument p1.isSiblings(p2).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ruth Epstein (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Okay thanks for the clarification!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Ruth Epstein (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Okay thanks for the clarification!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

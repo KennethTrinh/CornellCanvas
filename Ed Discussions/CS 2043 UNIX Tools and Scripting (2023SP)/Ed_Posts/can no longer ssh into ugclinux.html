@@ -13,63 +13,60 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  So I went through the whole assignment and found the last file. I then tried to scp it to my computer and couldn't and ended up closing my laptop and doing something else. Now when I try to ssh back into ugclinux I can no longer do it (even though I was able to before). The terminal becomes unresponsive like the photo attached.
- </paragraph>
- <file filename="Screenshot 2023-01-25 at 8.34.27 PM.png" url="https://static.us.edusercontent.com/files/79Iqc60TwcMZuMdfKJlQfKdJ">
- </file>
-</document>
-<h3>
- Author: Joshua Caplan (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ So I went through the whole assignment and found the last file. I then tried to scp it to my computer and couldn't and ended up closing my laptop and doing something else. Now when I try to ssh back into ugclinux I can no longer do it (even though I was able to before). The terminal becomes unresponsive like the photo attached.
+</p>
+<a href="https://static.us.edusercontent.com/files/79Iqc60TwcMZuMdfKJlQfKdJ">
+ Screenshot 2023-01-25 at 8.34.27 PM.png
+</a>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Joshua Caplan (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Are you on Cornell Wi-Fi? Maybe try to restart your computer?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Ronald Dinapoli (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Ronald Dinapoli (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Try using the DNS name to ssh into it.    As you may have already determined, ugclinux is a cluster of separate machines to help balance the load of all the students using it.    Each separate machine has its own IP address.   When you use "ugclinux.cs.cornell.edu" with ssh, that name might resolve to any of the IP addresses used for each of the physical machines the make up the ugclinux cluster.      If when using the IP addresses directly that particular machine becomes unavailable or it's IP address changes, you can see the behavior shown by the screenshot you posted.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Regardless of which physical machine you end up connecting to, your home directory will be accessible as it is shared across all machines.   However, the /tmp directory is not which is why the homework instructed you to ssh into a particular IP address so that you can retrieve the .zip file to start the assignment.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Let me know if ssh'ing into ugclinux.cs.cornell.edu doesn't work for you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Zane Blood (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I think the problem was I changed locations and so I was not on Cornell wifi. Regardless, I downloaded the file from cms and did it on a machine that I was able to dual boot linux on. So no longer a problem. Thanks!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Zane Blood (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I think the problem was I changed locations and so I was not on Cornell wifi. Regardless, I downloaded the file from cms and did it on a machine that I was able to dual boot linux on. So no longer a problem. Thanks!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

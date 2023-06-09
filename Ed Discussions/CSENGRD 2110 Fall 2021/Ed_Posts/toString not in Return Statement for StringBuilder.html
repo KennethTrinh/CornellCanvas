@@ -13,54 +13,52 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I noticed that the code doesn't invoke a toString() function during the return statement of the toString() method.
- </paragraph>
- <paragraph>
-  What I mean is the return statement is: return res + "]"
- </paragraph>
- <paragraph>
-  Instead of:  return res.toString() + "]"
- </paragraph>
- <paragraph>
-  Why is toString() not necessary in this case to convert back to a string? Is toString() called implicitly in the return statement or does the concatenation of a StringBuilder with a string cause it to be turned back into a string?
- </paragraph>
-</document>
+<p>
+ I noticed that the code doesn't invoke a toString() function during the return statement of the toString() method.
+</p>
+<p>
+ What I mean is the return statement is: return res + "]"
+</p>
+<p>
+ Instead of:  return res.toString() + "]"
+</p>
+<p>
+ Why is toString() not necessary in this case to convert back to a string? Is toString() called implicitly in the return statement or does the concatenation of a StringBuilder with a string cause it to be turned back into a string?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   When s is a String and b is something else:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   b + s
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   then + is then string catenation. What does Java then do with b?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Ahhh I see! Java would turn StringBuilder back into a String due to string catenation. Thank you
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Ahhh I see! Java would turn StringBuilder back into a String due to string catenation. Thank you
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

@@ -13,72 +13,70 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  We've had many students have hard faults when working on their labs. Here's how to debug them:
- </paragraph>
- <list style="ordered">
-  <list-item>
-   <paragraph>
-    After the hard fault occurs, take a look at the stack trace (Window-&gt;Show View-&gt;Other...-&gt;Debug)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Find the last line of code that you wrote that called the function. Something is wrong with this line.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Then look at
-    <bold>
-     each
-    </bold>
-    variable for that line. Chances are at least one of them is a pointer that is NULL (aka 0x0). If the line is using the PIT, then chances are the PIT was not set up properly (which causes a hard fault). Review proper set up of the PIT from lab 2
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    For the pointer that is NULL, use CTRL+F to find
-    <bold>
-     each
-    </bold>
-    reference to that variable in your code. Double check that you never set it to zero, it doesn't go out of scope, and that you didn't already free that pointer (or that section of memory) beforehand
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  As this is a common problem that is time consuming to solve,
-  <bold>
-   if you are going to ask for help in trying to find a hard fault we would like to see the following
-  </bold>
-  :
- </paragraph>
- <list style="ordered">
-  <list-item>
-   <paragraph>
-    A screenshot of the stack trace when the hard fault occurs
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    The function that contains the line of code that is causing the hard fault
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    A screenshot of all variables that are used at that line of code
-    <bold>
-     right before
-    </bold>
-    the hard fault is triggered. Recall that you can see local and global variables by opening their views if they're not already visible
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  This will help us a lot to answer your questions quicker (and you may very well find your problem doing this process anyways!) so we greatly appreciate it.
- </paragraph>
-</document>
+<p>
+ We've had many students have hard faults when working on their labs. Here's how to debug them:
+</p>
+<list style="ordered">
+ <li>
+  <p>
+   After the hard fault occurs, take a look at the stack trace (Window-&gt;Show View-&gt;Other...-&gt;Debug)
+  </p>
+ </li>
+ <li>
+  <p>
+   Find the last line of code that you wrote that called the function. Something is wrong with this line.
+  </p>
+ </li>
+ <li>
+  <p>
+   Then look at
+   <b>
+    each
+   </b>
+   variable for that line. Chances are at least one of them is a pointer that is NULL (aka 0x0). If the line is using the PIT, then chances are the PIT was not set up properly (which causes a hard fault). Review proper set up of the PIT from lab 2
+  </p>
+ </li>
+ <li>
+  <p>
+   For the pointer that is NULL, use CTRL+F to find
+   <b>
+    each
+   </b>
+   reference to that variable in your code. Double check that you never set it to zero, it doesn't go out of scope, and that you didn't already free that pointer (or that section of memory) beforehand
+  </p>
+ </li>
+</list>
+<p>
+ As this is a common problem that is time consuming to solve,
+ <b>
+  if you are going to ask for help in trying to find a hard fault we would like to see the following
+ </b>
+ :
+</p>
+<list style="ordered">
+ <li>
+  <p>
+   A screenshot of the stack trace when the hard fault occurs
+  </p>
+ </li>
+ <li>
+  <p>
+   The function that contains the line of code that is causing the hard fault
+  </p>
+ </li>
+ <li>
+  <p>
+   A screenshot of all variables that are used at that line of code
+   <b>
+    right before
+   </b>
+   the hard fault is triggered. Recall that you can see local and global variables by opening their views if they're not already visible
+  </p>
+ </li>
+</list>
+<p>
+ This will help us a lot to answer your questions quicker (and you may very well find your problem doing this process anyways!) so we greatly appreciate it.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>

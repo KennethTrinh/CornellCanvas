@@ -13,82 +13,74 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  When accessing memory, we use a 32-bit address to specify the byte. But, doesn't a typical load instruction access all 32 bits of the word? In other words, if we are only specifying the address of the byte, how do we get the other 3 bytes in the word?
- </paragraph>
- <paragraph>
-  I assume how this is done is we specify a base address and it is implied that we want the entire word? If this is the case, does the base address depend on whether it is little or big endian?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ When accessing memory, we use a 32-bit address to specify the byte. But, doesn't a typical load instruction access all 32 bits of the word? In other words, if we are only specifying the address of the byte, how do we get the other 3 bytes in the word?
+</p>
+<p>
+ I assume how this is done is we specify a base address and it is implied that we want the entire word? If this is the case, does the base address depend on whether it is little or big endian?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aaron Wilhelm (admin)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aaron Wilhelm (admin)
+ </h3>
+ <h3>
+  Vote Count: 3
+ </h3>
+ <p>
   When accessing memory we need to specify which address we want read data from in memory. To specify a memory address we need 32 bits since we're using 32 bit addressable memory. For the load instruction we provide the memory address of the byte of our data at the lowest address. To answer your question explicitly: this is independent of whether the system is using big endian or little endian. In our case, since we're using little endian the base address happens to also be the address of the least significant byte of the data that we want.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Now, we have several different load instructions that we can use in Thumb ARM. We have LDR which allows us to load a whole word (i.e. 32 bits) at once into a register and this is the one we'll use most commonly. However, ARM also has instructions that allow us to load half words or single bytes into a register. See below for the complete list of loads we can perform:
- </paragraph>
+ </p>
  <figure>
   <image height="219" src="https://static.us.edusercontent.com/files/dGCZvZCcQB5p1cKm7Q3LR4IA" width="510"/>
  </figure>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  I see. And when we use the LDR instruction on a little endian word, the bytes are correctly loaded in so the least significant byte is still the least significant (i.e. it isn't loaded into the register as it appears in memory from the base address)? The actual loading of the bytes depends on if it is little or big endian, right?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Aaron Wilhelm (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes, it does depend on the endianness. The Application Interrupt and Reset Control Register (AIRCR) states the endianness of the system so the bytes are automatically loaded in properly assuming you're accessing memory that is the same endianness as the processor. If not, there are load instructions that reverse the byte order that you can use.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Ok, makes sense. Thanks!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I see. And when we use the LDR instruction on a little endian word, the bytes are correctly loaded in so the least significant byte is still the least significant (i.e. it isn't loaded into the register as it appears in memory from the base address)? The actual loading of the bytes depends on if it is little or big endian, right?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Aaron Wilhelm (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Yes, it does depend on the endianness. The Application Interrupt and Reset Control Register (AIRCR) states the endianness of the system so the bytes are automatically loaded in properly assuming you're accessing memory that is the same endianness as the processor. If not, there are load instructions that reverse the byte order that you can use.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Ok, makes sense. Thanks!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

@@ -13,33 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  When we run perceptron, do we only make one update per iteration? Or does "each iteration" of perceptron mean running through the whole training vector set and making an update for each vector that is incorrectly classified?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  I guess what I am trying to ask here if whether I should move on to the next iteration after I make an update or if I should check the rest of the training vectors before moving on to the next iteration.
- </paragraph>
-</document>
+<p>
+ When we run perceptron, do we only make one update per iteration? Or does "each iteration" of perceptron mean running through the whole training vector set and making an update for each vector that is incorrectly classified?
+</p>
+<p>
+ I guess what I am trying to ask here if whether I should move on to the next iteration after I make an update or if I should check the rest of the training vectors before moving on to the next iteration.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aaron Zhang (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aaron Zhang (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   If you are limiting the number of iterations you want (for the sake of guaranteeing timely termination), you should loop through the entire dataset per each loop.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Theoretically, I believe the two variations are both fine.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

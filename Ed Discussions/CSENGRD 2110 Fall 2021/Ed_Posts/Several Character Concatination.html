@@ -13,47 +13,45 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  <break>
-  </break>
-  I understand the process of string concatenation and why it takes time proportional to string length, but what if we decide to concatenate a several character string to a several character string instead, of a one-character string to a several character string?
- </paragraph>
- <paragraph>
-  Does the process of concatenation loop through each character in the appended string, doing single character concatenation on each successive character of the appended string until none are left? Thereby making (I think) time n^2.
- </paragraph>
- <paragraph>
-  Or does multiple character concatenation work in a different, more time-effective way?
- </paragraph>
-</document>
+<p>
+ <break>
+ </break>
+ I understand the process of string concatenation and why it takes time proportional to string length, but what if we decide to concatenate a several character string to a several character string instead, of a one-character string to a several character string?
+</p>
+<p>
+ Does the process of concatenation loop through each character in the appended string, doing single character concatenation on each successive character of the appended string until none are left? Thereby making (I think) time n^2.
+</p>
+<p>
+ Or does multiple character concatenation work in a different, more time-effective way?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   When two strings are catenated,  s1 + s2, a new String object is created with an array big enough to hold both strings. The string in s1 is copied, then the string in s2 is copied.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Oh okay, thanks!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Oh okay, thanks!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

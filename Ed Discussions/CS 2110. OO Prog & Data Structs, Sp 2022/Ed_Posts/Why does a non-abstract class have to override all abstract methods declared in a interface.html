@@ -13,45 +13,43 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Why does a non-abstract class have to override all abstract methods declared in a interface?
- </paragraph>
-</document>
+<p>
+ Why does a non-abstract class have to override all abstract methods declared in a interface?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 3
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   Answer 1. Because that is a rule of the language.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Answer 2. It is a rule of the language because, if it did not override an abstract method, then the method would not exist at runtime and any call would fail. Java wants to GUARANTEE that a method exists at runtime; hence the rule.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="1.0">
- <paragraph>
-  It doesn't have to override but lets say your variable is of type list like the example in lecture today, but you want to call a method that's an arraylist method, in compile time because of the compile time rule it'll raise an error since the list class doesn't have any method with such name, but if you add an abstract method with the name of that method you want to call (from arraylist) you won't get an error message and your arraylist will override the method so it can actually perform what you want it to perform.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Bahaa Kotb (student)
+  </h3>
+  <h3>
+   Vote Count: 2
+  </h3>
+  <p>
+   It doesn't have to override but lets say your variable is of type list like the example in lecture today, but you want to call a method that's an arraylist method, in compile time because of the compile time rule it'll raise an error since the list class doesn't have any method with such name, but if you add an abstract method with the name of that method you want to call (from arraylist) you won't get an error message and your arraylist will override the method so it can actually perform what you want it to perform.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

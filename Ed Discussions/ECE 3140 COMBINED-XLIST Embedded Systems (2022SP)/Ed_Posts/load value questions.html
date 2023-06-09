@@ -13,37 +13,35 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  <bold>
-   Is there a recommended load value to use?
-  </bold>
-  As we were testing the lab_l0, our load value was small (1000) visually the LEDs look like they blink 4 times each. When our load value was larger (100000000) the test case seemed to work as expected with red blinking then green blinking 6 times the green holding. But if we have a load value somewhere in the middle (10000000) it blinks r g r r g g r g r g r g and then holding on green.
- </paragraph>
- <paragraph>
-  <bold>
-   Would having too high of a load value negate the usage of our locks?
-  </bold>
-  When testing lab_l0 with a load value of 100000000 it acts the same as if we comment out our lock and unlock functions.
- </paragraph>
-</document>
+<p>
+ <b>
+  Is there a recommended load value to use?
+ </b>
+ As we were testing the lab_l0, our load value was small (1000) visually the LEDs look like they blink 4 times each. When our load value was larger (100000000) the test case seemed to work as expected with red blinking then green blinking 6 times the green holding. But if we have a load value somewhere in the middle (10000000) it blinks r g r r g g r g r g r g and then holding on green.
+</p>
+<p>
+ <b>
+  Would having too high of a load value negate the usage of our locks?
+ </b>
+ When testing lab_l0 with a load value of 100000000 it acts the same as if we comment out our lock and unlock functions.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The whole goal of labs 3 through 5 is to support concurrent processes. If your load value is too high, there will be human visible differences between the processes. If your load value is too low, you spend too much time in context switches and you lose real execution time.
   <break>
   </break>
   Just as a hint, your load value should be closer in magnitude to lower value you tested than the higher value.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

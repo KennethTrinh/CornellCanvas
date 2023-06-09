@@ -13,98 +13,96 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  It seems like our "PIT1_Service" function is never called. We have this line of code to enable the IRQ handler for PIT:
- </paragraph>
- <pre>NVIC_EnableIRQ(PIT_IRQn);
+<p>
+ It seems like our "PIT1_Service" function is never called. We have this line of code to enable the IRQ handler for PIT:
+</p>
+<pre>NVIC_EnableIRQ(PIT_IRQn);
 </pre>
- <paragraph>
-  But since we have two PIT channels in use, it seems like we should enable them separately, but we're not sure how. We think that this is why our PIT1_Service function is never called and so why our current_time doesn't updated. Does anyone else have this sort of problem?
- </paragraph>
- <paragraph>
-  How we found this is that on the provided test the LED for missed deadline doesn't flash -- so no deadlines are caught as missed -- because the time doesn't work
- </paragraph>
-</document>
-<h3>
- Author: Trenton Lyke (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ But since we have two PIT channels in use, it seems like we should enable them separately, but we're not sure how. We think that this is why our PIT1_Service function is never called and so why our current_time doesn't updated. Does anyone else have this sort of problem?
+</p>
+<p>
+ How we found this is that on the provided test the LED for missed deadline doesn't flash -- so no deadlines are caught as missed -- because the time doesn't work
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Trenton Lyke (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Did you look in the debugger and specifically see that the current_time was not increasing or try putting a breakpoint somewhere in your PIT1_Service function? Also you can use Lab 2 as a good reference for enabling both PIT channels and PIT interrupts. One point of confusion I had originally was forgetting to actually start the second PIT channels timer since their code doesn't do it for you like they did for the first channel. Also, checkout the pages around 579 of the KL46P121M48SF4RM-Reference.pdf file as they could be helpful.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Rochelle Barsz (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  having the same problem as above -- how &amp; where do we start the second PIT channel's timer
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Trenton Lyke (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Start the timer in the process_start function and review Lab 2 on how to adjust the
-  <code>
-   TCTRL
-  </code>
-  property of
-  <code>
-   PIT-&gt;CHANNEL[1]
-  </code>
-  in order to start the timer there for the second channel.
-  <code>
-   PIT_TCTRL_TEN_MASK
-  </code>
-  and/or information on page 579 of KL46P121M48SF4RM-Reference.pdf will probably be helpful.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  You should set up PIT1 just as we have set up PIT0 in prior labs. TEN and TIE should be enabled for both right before you begin scheduling processes.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Rochelle Barsz (None)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   having the same problem as above -- how &amp; where do we start the second PIT channel's timer
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Harris Miller (None)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    You should set up PIT1 just as we have set up PIT0 in prior labs. TEN and TIE should be enabled for both right before you begin scheduling processes.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Trenton Lyke (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Start the timer in the process_start function and review Lab 2 on how to adjust the
+     <code>
+      TCTRL
+     </code>
+     property of
+     <code>
+      PIT-&gt;CHANNEL[1]
+     </code>
+     in order to start the timer there for the second channel.
+     <code>
+      PIT_TCTRL_TEN_MASK
+     </code>
+     and/or information on page 579 of KL46P121M48SF4RM-Reference.pdf will probably be helpful.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Do you have
   <code>
    TCTRL
@@ -118,8 +116,8 @@
    PIT-&gt;CHANNEL[1]
   </code>
   to make sure TIE and TEN are both set properly
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

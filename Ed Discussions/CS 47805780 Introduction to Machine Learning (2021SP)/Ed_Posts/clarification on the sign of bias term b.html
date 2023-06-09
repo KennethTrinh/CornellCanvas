@@ -13,47 +13,41 @@
 <h3>
  Vote Count: 3
 </h3>
-<document version="2.0">
- <figure>
-  <image height="179.54" src="https://static.us.edusercontent.com/files/0sDryc19QCFBlIEpV3EcEIeB" width="658"/>
- </figure>
- <figure>
-  <image height="137" src="https://static.us.edusercontent.com/files/dgkNEMmnFvcokesVqnctn2jp" width="462"/>
- </figure>
- <figure>
-  <image height="78.34984193888303" src="https://static.us.edusercontent.com/files/97WCNT4T41kddUH21kISSc3u" width="658"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
-  I have a question about the equation for the d-dimensional hyperplane that represents our decision boundary.
- </paragraph>
- <paragraph>
-  In the first two screenshots above, we see the definition of a linear classifier which is dependent on the two inequalities implied by the hyperplane equation, and then we see the equation for the hyperplane itself. In both of these cases, we have the vector w, the vector x, and the bias term b all on the left-hand-side of the equation or inequality.
- </paragraph>
- <paragraph>
-  However, in Assignment #2 Problem #2(b) (i.e. third screenshot above), the instructions asks us to give the equation of the desired hyperplane in the form w1x1 + w2x2 = b; in this case, we have the vector w and the vector x on the left-hand-side (LHS) of the equation, BUT the bias term b is on the right-hand-side (RHS) of the equation.
- </paragraph>
- <paragraph>
-  What I'm confused about is that, whether or not the bias term b appears on the LHS or RHS doesn't seem to affect the sign of b. In the case of the equation in Assignment #2 Problem #2(b), shouldn't the bias term b on the RHS of the equation be negative (since we moved it from the LHS to the RHS)? Or how is the right way to understand this? I'm asking because I believe it affects what the sign of our bias term b will be in our solutions to Assignment #2 Problem #2(c), #2(d), and #2(e). Thank you!
- </paragraph>
-</document>
+<figure>
+ <image height="179.54" src="https://static.us.edusercontent.com/files/0sDryc19QCFBlIEpV3EcEIeB" width="658"/>
+</figure>
+<figure>
+ <image height="137" src="https://static.us.edusercontent.com/files/dgkNEMmnFvcokesVqnctn2jp" width="462"/>
+</figure>
+<figure>
+ <image height="78.34984193888303" src="https://static.us.edusercontent.com/files/97WCNT4T41kddUH21kISSc3u" width="658"/>
+</figure>
+<p>
+ I have a question about the equation for the d-dimensional hyperplane that represents our decision boundary.
+</p>
+<p>
+ In the first two screenshots above, we see the definition of a linear classifier which is dependent on the two inequalities implied by the hyperplane equation, and then we see the equation for the hyperplane itself. In both of these cases, we have the vector w, the vector x, and the bias term b all on the left-hand-side of the equation or inequality.
+</p>
+<p>
+ However, in Assignment #2 Problem #2(b) (i.e. third screenshot above), the instructions asks us to give the equation of the desired hyperplane in the form w1x1 + w2x2 = b; in this case, we have the vector w and the vector x on the left-hand-side (LHS) of the equation, BUT the bias term b is on the right-hand-side (RHS) of the equation.
+</p>
+<p>
+ What I'm confused about is that, whether or not the bias term b appears on the LHS or RHS doesn't seem to affect the sign of b. In the case of the equation in Assignment #2 Problem #2(b), shouldn't the bias term b on the RHS of the equation be negative (since we moved it from the LHS to the RHS)? Or how is the right way to understand this? I'm asking because I believe it affects what the sign of our bias term b will be in our solutions to Assignment #2 Problem #2(c), #2(d), and #2(e). Thank you!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andrew Dettmer (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew Dettmer (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   The b of the equation w1x1 + w2x2 = b is not necessarily the same as the bias term b for the linear classifier definition (just as w1 and w2 do not necessarily mean the same thing as the weight vector w).  It could also have been written as "give its equation in the form yx1 + zx2 = c".  This equation is simply the "standard form" for the equation of a line (vs slope-intercept, point-slope etc.).  Part of your task for this question is to relate the standard form of the line back to the parameters of the linear classifier.  b in the equation is just part of expressing its format and, as you pointed out, is not meant to be exactly the same as the bias term (but how might the two be related?)
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,134 +13,129 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi there! I'm trying to use the big sound sensor's analogRead function, but I keep getting 0 when I do
-  <code>
-   analogRead(A0)
-  </code>
-  . Here is my setup for the big sound sensor:
- </paragraph>
- <file filename="IMG_5541.heic" url="https://static.us.edusercontent.com/files/MFvKRUjKzzLPu7Tgbd4aPvNl">
- </file>
- <paragraph>
-  The code is as follows:
- </paragraph>
- <pre>const int AudioPin = A0;
+<p>
+ Hi there! I'm trying to use the big sound sensor's analogRead function, but I keep getting 0 when I do
+ <code>
+  analogRead(A0)
+ </code>
+ . Here is my setup for the big sound sensor:
+</p>
+<a href="https://static.us.edusercontent.com/files/MFvKRUjKzzLPu7Tgbd4aPvNl">
+ IMG_5541.heic
+</a>
+<p>
+ The code is as follows:
+</p>
+<pre>const int AudioPin = A0;
 ....
 float audioLevel = analogRead(AudioPin);
 Serial.println(audioLevel);</pre>
- <paragraph>
-  this might be something small but I can't seem to get the print to output anything other than 0. Wha might be the issue here?
- </paragraph>
-</document>
+<p>
+ this might be something small but I can't seem to get the print to output anything other than 0. Wha might be the issue here?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Mose Sakashita (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi,
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Did you try adjusting the potentiometer (golden color) on your big sound sensor? You can change sensitivity of your sensor.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Best,
- </paragraph>
- <paragraph>
-  Mose
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I did, although it still kept giving me 0
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I turned it clockwise a decent amount
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Francois Guimbretiere (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Francois Guimbretiere (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   If you are using A0 on the sensor (analog output) the blue potentiometer will not change the result.
   <break>
   </break>
   Could you show us the complete program?
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Francois.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Ah, I figured out the issue. It turns out, analogRead isn't perfectly functional when WiFi is in use (https://github.com/espressif/arduino-esp32/issues/102
- </paragraph>
- . Changing pins solved my issue.. .
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Francois Guimbretiere (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you for letting us know. I updated the slides accordingly.
- </paragraph>
- <paragraph>
-  Francois.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Ah, I figured out the issue. It turns out, analogRead isn't perfectly functional when WiFi is in use (https://github.com/espressif/arduino-esp32/issues/102
+  </p>
+  . Changing pins solved my issue.. .
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Francois Guimbretiere (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Thank you for letting us know. I updated the slides accordingly.
+   </p>
+   <p>
+    Francois.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Mose Sakashita (staff)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Hi,
+  </p>
+  <p>
+   Did you try adjusting the potentiometer (golden color) on your big sound sensor? You can change sensitivity of your sensor.
+  </p>
+  <p>
+   Best,
+  </p>
+  <p>
+   Mose
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I did, although it still kept giving me 0
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     I turned it clockwise a decent amount
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

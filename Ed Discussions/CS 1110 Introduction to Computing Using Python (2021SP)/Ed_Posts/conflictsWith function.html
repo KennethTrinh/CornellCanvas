@@ -13,53 +13,53 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I have no idea how to even approach fixing this error.
- </paragraph>
- <paragraph>
-  Thank you in advance for all of your help.
- </paragraph>
- <paragraph>
-  Traceback (most recent call last):
- </paragraph>
- <paragraph>
-  File "schedule_tests.py", line 297, in &lt;module&gt;
- </paragraph>
- <paragraph>
-  testfn() # Adding the parentheses calls whatever testfn is
- </paragraph>
- <paragraph>
-  File "schedule_tests.py", line 157, in test_course_conflictswith
- </paragraph>
- <paragraph>
-  assert result == expected, \
- </paragraph>
- <paragraph>
-  AssertionError: CS1110 v. CS1110 should be True, but is False
- </paragraph>
-</document>
+<p>
+ I have no idea how to even approach fixing this error.
+</p>
+<p>
+ Thank you in advance for all of your help.
+</p>
+<p>
+ Traceback (most recent call last):
+</p>
+<p>
+ File "schedule_tests.py", line 297, in &lt;module&gt;
+</p>
+<p>
+ testfn() # Adding the parentheses calls whatever testfn is
+</p>
+<p>
+ File "schedule_tests.py", line 157, in test_course_conflictswith
+</p>
+<p>
+ assert result == expected, \
+</p>
+<p>
+ AssertionError: CS1110 v. CS1110 should be True, but is False
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Elisabeth Finkel (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Elisabeth Finkel (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   conflictsWith is comparing the same course to itself (CS 1110), so both courses have identical times, so it should be finding a conflict. Make sure that your conflictsWith logic can handle this case, in addition to other cases. Thinking about the cases, the different ways a "conflict" can occur, is part of the exercise.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You can debug with guidance from
-  <link href="https://edstem.org/us/courses/3933/discussion/434623"/>
-  https://edstem.org/us/courses/3933/discussion/434623 and
-  <link href="https://edstem.org/us/courses/3933/discussion/430987?answer=1009083"/>
-  https://edstem.org/us/courses/3933/discussion/430987?answer=1009083
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+  <a href="https://edstem.org/us/courses/3933/discussion/434623">
+   https://edstem.org/us/courses/3933/discussion/434623
+   and
+   <link href="https://edstem.org/us/courses/3933/discussion/430987?answer=1009083"/>
+   https://edstem.org/us/courses/3933/discussion/430987?answer=1009083
+  </a>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

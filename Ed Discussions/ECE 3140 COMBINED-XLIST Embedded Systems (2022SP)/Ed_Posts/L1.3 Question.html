@@ -13,73 +13,69 @@
 <h3>
  Vote Count: 3
 </h3>
-<document version="2.0">
- <paragraph>
-  I had a quick question about this question in lecture 1.3.
- </paragraph>
- <figure>
-  <image height="176" src="https://static.us.edusercontent.com/files/Y2M8qSyXo2GU5W3zOOPwqIfh" width="234"/>
- </figure>
- <figure>
-  <image height="198" src="https://static.us.edusercontent.com/files/cRgod4sMeicB2fAC0S86cLdm" width="264"/>
- </figure>
- <paragraph>
-  Why is the offset given as -1 in this case? If -1 represents going back 1 instruction (so applying SE(-1, 0) = -2 to go 2 bytes backwards ? or rather this should be shift left as well), then the dedicated adder would take in +2 and -2, giving a value of 0 back to the PC if MP = 1. Wouldn't this stay at the branch instruction, rather than go back to the subtraction instruction, meaning an offset of -2 (and therefore sign extending to -4 bytes) would be the correct way to go about looping?
- </paragraph>
-</document>
+<p>
+ I had a quick question about this question in lecture 1.3.
+</p>
+<figure>
+ <image height="176" src="https://static.us.edusercontent.com/files/Y2M8qSyXo2GU5W3zOOPwqIfh" width="234"/>
+</figure>
+<figure>
+ <image height="198" src="https://static.us.edusercontent.com/files/cRgod4sMeicB2fAC0S86cLdm" width="264"/>
+</figure>
+<p>
+ Why is the offset given as -1 in this case? If -1 represents going back 1 instruction (so applying SE(-1, 0) = -2 to go 2 bytes backwards ? or rather this should be shift left as well), then the dedicated adder would take in +2 and -2, giving a value of 0 back to the PC if MP = 1. Wouldn't this stay at the branch instruction, rather than go back to the subtraction instruction, meaning an offset of -2 (and therefore sign extending to -4 bytes) would be the correct way to go about looping?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Nils Napp (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Nils Napp (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Frist, just for folks watching this thread, the BS question does not really relate to the value of the PC but what mux input should be used to select the right  MP value.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Secondly, I also find this diagram somewhat confusing (for the exact reason you point out)! And the best way to think of it is that  how the value of 'OFF' is computed is not shown, and it should both correct for the fact that the operands are in instructions (as opposed to bytes) and that 'OFF' is added to (PC+2) instead of PC.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   As a minor picking point SE(-1,0) = -1 as opposed to -2.
-  <bold>
+  <b>
    S
-  </bold>
+  </b>
   igned
-  <bold>
+  <b>
    E
-  </bold>
+  </b>
   xtend just changes a bit encoding, so that a negative 8-bit int corresponds to the correct 16-bit int. Otherwise, the 8-bit -1 would be interpreted as a +255 16-bit number.
   <break>
   </break>
   <break>
   </break>
   Any suggestions for the update formula for 'OFF' ?
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   <break>
   </break>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Nils Napp (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  EDIT: So I don't think my previous answer is quite right. I was reading SE() as function application with two arguments. However,  sign extending to 0 bits makes no sense. In that case -1,0 should be read as concatenation, so that the added zero is essentially a multiply by two. Then the original post SE(-1,0) is indeed -2. But I think it should read SE(-1:0, 16), i.e. LHS by 1 and then extend to the data width of the address space.  You still need to undo the PC increment, though. Sorry for the confusion.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Nils Napp (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   EDIT: So I don't think my previous answer is quite right. I was reading SE() as function application with two arguments. However,  sign extending to 0 bits makes no sense. In that case -1,0 should be read as concatenation, so that the added zero is essentially a multiply by two. Then the original post SE(-1,0) is indeed -2. But I think it should read SE(-1:0, 16), i.e. LHS by 1 and then extend to the data width of the address space.  You still need to undo the PC increment, though. Sorry for the confusion.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

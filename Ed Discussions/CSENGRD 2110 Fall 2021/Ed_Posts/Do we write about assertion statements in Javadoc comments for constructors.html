@@ -13,85 +13,85 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I noticed that the javadoc comment for the Fraction4.java file in today's lecture has the following code that mentions throwing an exception if d is 0.
- </paragraph>
- <snippet language="java" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   /** Constructor: a fraction with numerator n and denominator d. &lt;br&gt; 
+<p>
+ I noticed that the javadoc comment for the Fraction4.java file in today's lecture has the following code that mentions throwing an exception if d is 0.
+</p>
+<snippet language="java" line-numbers="true" runnable="true">
+ <snippet-file id="code">
+  /** Constructor: a fraction with numerator n and denominator d. &lt;br&gt; 
 * Throw an IllegalArgumentException if d is 0. */
-  </snippet-file>
- </snippet>
- <paragraph>
-  Do we mention anything about assertion errors in the javadoc comment for a constructor if we have assertion statements for it?
- </paragraph>
- <paragraph>
-  Thanks in advance :)
- </paragraph>
-</document>
+ </snippet-file>
+</snippet>
+<p>
+ Do we mention anything about assertion errors in the javadoc comment for a constructor if we have assertion statements for it?
+</p>
+<p>
+ Thanks in advance :)
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
-  Assert statements are a little awkward, especially the way we use them in A1 (see also
-  <link href="https://edstem.org/us/courses/7377/discussion/583503"/>
-  #80).  Here is the advice I would give (some of this goes a bit beyond what was covered in lecture, but details can still be found in JHT):
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    All "checked" exceptions must be declared as part of the method declaration (via a
-    <code>
-     throws
-    </code>
-    clause).  These should be documented in the function specification to clarify under what conditions they might be thrown.  Users will rely on these exceptions being thrown as appropriate and must be prepared to handle them.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Unchecked exceptions are generally associated with violating preconditions.  The compiler will not assist you in ensuring that they are caught, making any specification associated with them difficult to enforce.  By definition, a program's behavior in response to a true precondition violation is undefined, so documenting such a response effectively demotes it from a "precondition" to part of the contract - "if we don't like your input, we guarantee we will do this instead."  But some unchecked exceptions are very natural to use as part of such a contract (
-    <code>
-     IllegalArgumentException
-    </code>
-    ,
-    <code>
-     NullPointerException
-    </code>
-    ), and other JVM languages actually don't distinguish between checked and unchecked exceptions, so whether or not to document these exceptions comes down to whether you want the behavior to be part of the contract or whether you consider it a true precondition.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    A program's specified behavior must not depend on whether or not assert statements are enabled at runtime.  Therefore, assertion errors should never be part of a method specification.  The exception (no pun intended) is our assignment A1 - because we want you to get practice both with assert statements (which are a great way to catch bugs due to accidental precondition violations) and with testing exceptions in JUnit tests, we make AssertionErrors part of the specification (and we ask you to complete A0 so we know that everyone's assertions are enabled).
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  So for A1, go ahead and document when AssertionErrors will be thrown.  But for future work (especially if other people might use your code), don't mention AssertionErrors in your specifications.  But do still document any preconditions on the paramters, and do still add assert statements when it's cheap to verify them.  If you want to guarantee a particular response to being called with bad arguments, choose another exception type and throw it explicitly, rather than relying on asserts.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   In this course, for errors thrown by assert statement introduced because of Preconditions in method spec, there is no need to mention in the spec that an AssertionError is thrown.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Curran Muhlberger (admin)
+  </h3>
+  <h3>
+   Vote Count: 2
+  </h3>
+  <p>
+   Assert statements are a little awkward, especially the way we use them in A1 (see also
+   <a href="https://edstem.org/us/courses/7377/discussion/583503">
+    #80
+   </a>
+   ).  Here is the advice I would give (some of this goes a bit beyond what was covered in lecture, but details can still be found in JHT):
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     All "checked" exceptions must be declared as part of the method declaration (via a
+     <code>
+      throws
+     </code>
+     clause).  These should be documented in the function specification to clarify under what conditions they might be thrown.  Users will rely on these exceptions being thrown as appropriate and must be prepared to handle them.
+    </p>
+   </li>
+   <li>
+    <p>
+     Unchecked exceptions are generally associated with violating preconditions.  The compiler will not assist you in ensuring that they are caught, making any specification associated with them difficult to enforce.  By definition, a program's behavior in response to a true precondition violation is undefined, so documenting such a response effectively demotes it from a "precondition" to part of the contract - "if we don't like your input, we guarantee we will do this instead."  But some unchecked exceptions are very natural to use as part of such a contract (
+     <code>
+      IllegalArgumentException
+     </code>
+     ,
+     <code>
+      NullPointerException
+     </code>
+     ), and other JVM languages actually don't distinguish between checked and unchecked exceptions, so whether or not to document these exceptions comes down to whether you want the behavior to be part of the contract or whether you consider it a true precondition.
+    </p>
+   </li>
+   <li>
+    <p>
+     A program's specified behavior must not depend on whether or not assert statements are enabled at runtime.  Therefore, assertion errors should never be part of a method specification.  The exception (no pun intended) is our assignment A1 - because we want you to get practice both with assert statements (which are a great way to catch bugs due to accidental precondition violations) and with testing exceptions in JUnit tests, we make AssertionErrors part of the specification (and we ask you to complete A0 so we know that everyone's assertions are enabled).
+    </p>
+   </li>
+  </list>
+  <p>
+   So for A1, go ahead and document when AssertionErrors will be thrown.  But for future work (especially if other people might use your code), don't mention AssertionErrors in your specifications.  But do still document any preconditions on the paramters, and do still add assert statements when it's cheap to verify them.  If you want to guarantee a particular response to being called with bad arguments, choose another exception type and throw it explicitly, rather than relying on asserts.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

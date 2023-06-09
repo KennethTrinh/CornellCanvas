@@ -13,82 +13,80 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Why don't we create another array? I dont understand how you can modify b as you poll at the same time.
- </paragraph>
- <figure>
-  <image height="230.04627249357324" src="https://static.us.edusercontent.com/files/wmEYNYP0kxrk0lhn2eff137D" width="657.9999999999999"/>
- </figure>
-</document>
+<p>
+ Why don't we create another array? I dont understand how you can modify b as you poll at the same time.
+</p>
+<figure>
+ <image height="230.04627249357324" src="https://static.us.edusercontent.com/files/wmEYNYP0kxrk0lhn2eff137D" width="657.9999999999999"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  We don't create another array because that is not needed.
- </paragraph>
- <paragraph>
-  Suppose the heap is in b[0..i]. The typical way one polls is to
- </paragraph>
- <paragraph>
-  1.Swap b[0] and b[i]. That puts the largest value in the heap in b[i]
- </paragraph>
- <paragraph>
-  2. i= i-1. That take b[i] out of the heap, and it is in its final position.
- </paragraph>
- <paragraph>
-  3. Bubble b[0] down in b[0..i]
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I think I am having a difficult time understanding because poll changes the length of the array, but we're also trying to put the max value into b[I].
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Poll does not change the length of the array. It changes the part of the array that is being used for the heap.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Ohh, I see now. Thank you for the help!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Ohh, I see now. Thank you for the help!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   We don't create another array because that is not needed.
+  </p>
+  <p>
+   Suppose the heap is in b[0..i]. The typical way one polls is to
+  </p>
+  <p>
+   1.Swap b[0] and b[i]. That puts the largest value in the heap in b[i]
+  </p>
+  <p>
+   2. i= i-1. That take b[i] out of the heap, and it is in its final position.
+  </p>
+  <p>
+   3. Bubble b[0] down in b[0..i]
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I think I am having a difficult time understanding because poll changes the length of the array, but we're also trying to put the max value into b[I].
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

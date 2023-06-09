@@ -13,85 +13,81 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="60.648989898989896" src="https://static.us.edusercontent.com/files/ds89hQuPSR2xKynpr8hsU5rl" width="658"/>
- </figure>
- <paragraph>
-  Would a valid answer to this be to do reduced-error post-pruning?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  If yes, then my follow-up question would be about this T/F question on pg.14:
- </paragraph>
- <figure>
-  <image height="57" src="https://static.us.edusercontent.com/files/7T7NXYgrVJFc12ArmSSV1Bgu" width="596"/>
- </figure>
- <paragraph>
-  I know this is false, because it is not necessarily true that decreasing the depth of a decision tree through pruning will reduce test error. However, then, why would reduced-error post-pruning be a valid answer to the first problem above?
- </paragraph>
-</document>
+<figure>
+ <image height="60.648989898989896" src="https://static.us.edusercontent.com/files/ds89hQuPSR2xKynpr8hsU5rl" width="658"/>
+</figure>
+<p>
+ Would a valid answer to this be to do reduced-error post-pruning?
+</p>
+<p>
+ If yes, then my follow-up question would be about this T/F question on pg.14:
+</p>
+<figure>
+ <image height="57" src="https://static.us.edusercontent.com/files/7T7NXYgrVJFc12ArmSSV1Bgu" width="596"/>
+</figure>
+<p>
+ I know this is false, because it is not necessarily true that decreasing the depth of a decision tree through pruning will reduce test error. However, then, why would reduced-error post-pruning be a valid answer to the first problem above?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Atul Ganju (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  On average reducing the depth through pruning will reduce your test error. This is because there may have been subtleties in the sample you trained on that don't exist in the overall dataset. The first question's answer would then be post-pruning and the second and the second question's answer would be true.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I see, that makes sense, but in the review session it was said that the second question's answer was False ? So is it true or false?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Rebecca Helling (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  In the review session he said it was more like "maybe" and then inserted an
-  <italic>
-   always
-  </italic>
-  in to the question to make it false. It won't always reduce test error.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Thorsten Joachims (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Thorsten Joachims (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Reduced error pruning definitely reduces the chance of overfitting, but it might not improve test error. For example, reduced error pruning may get you to underfit, which also gives your worse test error.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Atul Ganju (staff)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   On average reducing the depth through pruning will reduce your test error. This is because there may have been subtleties in the sample you trained on that don't exist in the overall dataset. The first question's answer would then be post-pruning and the second and the second question's answer would be true.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I see, that makes sense, but in the review session it was said that the second question's answer was False ? So is it true or false?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Rebecca Helling (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     In the review session he said it was more like "maybe" and then inserted an
+     <i>
+      always
+     </i>
+     in to the question to make it false. It won't always reduce test error.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

@@ -13,67 +13,62 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  <link href="https://canvas.cornell.edu/courses/25081/pages/homework-assignments"/>
-  <bold>
+<p>
+ <a href="https://canvas.cornell.edu/courses/25081/pages/homework-assignments">
+  <b>
    <underline>
     Link to Homework Assignments page on Canvas
    </underline>
-  </bold>
- </paragraph>
- <callout type="info">
-  Which problem are you working on? (ex. HW 1, Problem 3, 9.1.15)
- </callout>
- <paragraph>
-  Question 16, 11.3.7
- </paragraph>
- <callout type="info">
-  What is your question?
- </callout>
- <paragraph>
-  The inputs for ODE45 include a vector with initial conditions (zo) and an equation that outputs a vector containing the instantaneous rates of change of relevant state variables at any moment in time (zdot). When these vectors contain information for multiple bodies (like in question 16, where 3 bodies are being analyzed), how should the vectors be formatted?
- </paragraph>
- <paragraph>
-  [x1 x2 x3 v1 v2 v3]'?
- </paragraph>
- <paragraph>
-  [x1 v1 x2 v2 x3 v3]'?
- </paragraph>
- <paragraph>
-  Or something else?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Or does the format not matter, so long as the columns in zo and z correspond correctly with the columns in zdot.
- </paragraph>
- <paragraph>
-  Meaning z could be [x1 x2 x3 v1 v2 v3]' if zdot were [v1 v2 v3 a1 a2 a3]'.
- </paragraph>
- <paragraph>
-  Or z could be [x1 v1 x2 v2 x3 v3]' if zdot were [v1 a1 v2 a2 v3 a3]'.
- </paragraph>
- <callout type="info">
-  Describe the solution attempts you've made thus far.
- </callout>
- <paragraph>
- </paragraph>
-</document>
+  </b>
+ </a>
+</p>
+<callout type="info">
+ Which problem are you working on? (ex. HW 1, Problem 3, 9.1.15)
+</callout>
+<p>
+ Question 16, 11.3.7
+</p>
+<callout type="info">
+ What is your question?
+</callout>
+<p>
+ The inputs for ODE45 include a vector with initial conditions (zo) and an equation that outputs a vector containing the instantaneous rates of change of relevant state variables at any moment in time (zdot). When these vectors contain information for multiple bodies (like in question 16, where 3 bodies are being analyzed), how should the vectors be formatted?
+</p>
+<p>
+ [x1 x2 x3 v1 v2 v3]'?
+</p>
+<p>
+ [x1 v1 x2 v2 x3 v3]'?
+</p>
+<p>
+ Or something else?
+</p>
+<p>
+ Or does the format not matter, so long as the columns in zo and z correspond correctly with the columns in zdot.
+</p>
+<p>
+ Meaning z could be [x1 x2 x3 v1 v2 v3]' if zdot were [v1 v2 v3 a1 a2 a3]'.
+</p>
+<p>
+ Or z could be [x1 v1 x2 v2 x3 v3]' if zdot were [v1 a1 v2 a2 v3 a3]'.
+</p>
+<callout type="info">
+ Describe the solution attempts you've made thus far.
+</callout>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andy Ruina (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andy Ruina (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   All positions then all velocities. It’s not a rule but it often makes coding of the rhs file cleaner.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

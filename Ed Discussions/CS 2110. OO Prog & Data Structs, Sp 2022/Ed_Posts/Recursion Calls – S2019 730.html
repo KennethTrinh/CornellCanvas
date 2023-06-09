@@ -13,63 +13,61 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="229.43542435424357" src="https://static.us.edusercontent.com/files/MyLgiE166BhKK98I5G3jpiEH" width="641"/>
- </figure>
- <paragraph>
-  I'm having trouble fully understanding why these calls are made, especially with the return statements.
- </paragraph>
- <paragraph>
-  Would anyone be willing to go through the calls step-by-step?
- </paragraph>
- <paragraph>
-  Thank you.
- </paragraph>
-</document>
+<figure>
+ <image height="229.43542435424357" src="https://static.us.edusercontent.com/files/MyLgiE166BhKK98I5G3jpiEH" width="641"/>
+</figure>
+<p>
+ I'm having trouble fully understanding why these calls are made, especially with the return statements.
+</p>
+<p>
+ Would anyone be willing to go through the calls step-by-step?
+</p>
+<p>
+ Thank you.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Naman Madan (staff)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Naman Madan (staff)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   Start with calling M(2). We're going to add this to our frame stack, so our stack looks like this: [M(2)]. We know that since n = 2, we will return 2 - F(M(1)). Since we can't evaluate M(1) yet, we call it.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Now we have called M(1). Let's add this to our frame stack, so now it looks like this: [M(1), M(2)]. We know that since n = 1, we will return 1 - F(M(0)). Since we can't evaluate M(0), we call it.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Now we have called M(0). Let's add this to our frame stack, so now it looks like this: [M(0), M(1), M(2)]. We know that since n = 0, we return 0. We pop M(0) off the stack. Our stack looks like this: [M(1),M(2)]. Now we can come back to M(1). Recall that we return 1 - F(M(0). Since M(0) = 0, we return 1 - F(0). Now we call F(0) since we can't evaluate it. Push it onto the stack: [F(0), M(1), M(2)].
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Now we have called F(0). Since n = 0, we return 1. Pop F(0) off the stack: [M(1),M(2)]. We come back to M(1). Recall that we return 1 - F(0). Since F(0) = 1, we return 1 - 1, or return 0. Now we know M(1) = 0. We pop M(1) from the frame stack and we have [M(2)] on the stack. We come back to M(2). Recall that we return 2 - F(M(1)), or return 2 - F(0). We call F(0) again since we can't evaluate it. Push it onto the stack: [F(0), M(2)].
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Now we have called F(0). Again, since n = 0, we return 1. Pop F(0) off the stack: [M(2)]. We come back to M(2). Recall that we return 2 - F(0), and with F(0) = 1, we return 2 - 1 or return 1. We pop M(2) off the stack, and we have finished our function calls.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   So, going in order of paragraph, we called M(2), M(1), M(0), F(0), F(0)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you for the detailed response!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you for the detailed response!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

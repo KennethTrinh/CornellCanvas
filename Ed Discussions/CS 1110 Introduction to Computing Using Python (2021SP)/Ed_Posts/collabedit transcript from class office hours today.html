@@ -13,281 +13,275 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  <link href="http://collabedit.com/4bqrp"/>
-  <break>
-  </break>
-  <break>
-  </break>
-  # Q: how do we diagram a call frame for a loop?
- </paragraph>
- <paragraph>
-  # A1: call frames are only for function calls.
- </paragraph>
- <paragraph>
-  # A2:  example:
-  <break>
-  </break>
-  #
- </paragraph>
- <paragraph>
-  <break>
-  </break>
-  def make_more_sense():
-  <break>
-  </break>
-  for i in range(4):   # range(4): 0, 1, 2, 3 .
-  <break>
-  </break>
-  x = i+1
-  <break>
-  </break>
-  # print("more sense")
-  <break>
-  </break>
-  <break>
-  </break>
-  print("done!!!! ")
-  <break>
-  </break>
-  make_more_sense()
-  <break>
-  </break>
-  .........
- </paragraph>
- <paragraph>
-  stack:
- </paragraph>
- <paragraph>
-  [call frame make_more_sense
-  <break>
-  </break>
-  inst. counter 14-&gt;15-&gt;14-&gt;15_&gt;...-&gt;14s
- </paragraph>
- <paragraph>
-  i: 0-&gt;1 ... -&gt;3
-  <break>
-  </break>
-  x: 1-&gt;2 ...&gt; 4
- </paragraph>
- <paragraph>
-  ]
- </paragraph>
- <paragraph>
-  <break>
-  </break>
-  tone#   if we said "append()" for strings, that should have been for lists.
- </paragraph>
- <paragraph>
-  #Q how to handwrite an empty string vs one with a space
-  <break>
-  </break>
-  #A: a "square U" (like a "[" but on its side)
- </paragraph>
- <paragraph>
-  <break>
-  </break>
-  # q: x=1; y=2; x=y
-  <break>
-  </break>
-  # A: for an assignment statement, righthand side is ALWAYS evaluated first, and the value goes into the variable on the left hand side .
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  <break>
-  </break>
-  # how to turn an into a string?
-  <break>
-  </break>
-  str(4) -&gt; "4"
-  <break>
-  </break>
-  # what is a function that requires an str and not an int?
- </paragraph>
- <paragraph>
-  print("x is: " + 4)
-  <break>
-  </break>
-  Traceback (most recent call last):
-  <break>
-  </break>
-  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
-  <break>
-  </break>
-  TypeError: can only concatenate str (not "int") to str
- </paragraph>
- <paragraph>
-  <break>
-  </break>
-  #Q for loop vs for-each loop
- </paragraph>
- <paragraph>
-  # here is a for loop that is also a for-each loop
-  <break>
-  </break>
-  # "for each" loops go through a list (or string)
-  <break>
-  </break>
-  for x in ["oh", "my", "goodness"]:
-  <break>
-  </break>
-  print(x)
-  <break>
-  </break>
-  <break>
-  </break>
-  # here is a for loop that is not a for-each loop
-  <break>
-  </break>
-  for i in range(len(["oh", "my", "goodness"])):
-  <break>
-  </break>
-  print(i)
- </paragraph>
- <paragraph>
-  # Q: parameter vs argument
-  <break>
-  </break>
-  # parameter is variable that is declared in a function definition header, an argument is a value that is stored in a parameter/is given to the function as input
-  <break>
-  </break>
-  2 cannot be a parameter
- </paragraph>
- <paragraph>
-  def help_us_all(me, you, everyone_else):
-  <break>
-  </break>
-  ...
-  <break>
-  </break>
-  <break>
-  </break>
-  help_us_all("Prof, Lee", "Prof Fan", "cs1110 captive students")
- </paragraph>
- <paragraph>
-  me, you, everyone_else &lt;- parameters ,drawn as boxes in a diagram
-  <break>
-  </break>
-  the strings "Prof, Lee"  &lt;- placed in the boxes in a diagram.
- </paragraph>
- <paragraph>
-  If p = "Prof Lee"
-  <break>
-  </break>
-  help_us_all(p, "prof fan", "poor cs1110 students"
-  <break>
-  </break>
-  me, you are parameters,
-  <break>
-  </break>
-  argument would be the value of p (or "Prof Lee")
- </paragraph>
- <paragraph>
-  #Q when do you do a foreach loop vs a range one
-  <break>
-  </break>
-  #A: use range when you need to use the indices (the numbers) to access something or compute something
-  <break>
-  </break>
-  #  use a for-each loop when it's more convenient.
- </paragraph>
- <paragraph>
-  # see lab 12 (or the last one) --- could not do it with a for-each loop.
- </paragraph>
- <paragraph>
-  # here is a loop that fails to change a input list
- </paragraph>
- <paragraph>
-  <break>
-  </break>
-  &gt;&gt;&gt; thelist =  ["this", "that"]
-  <break>
-  </break>
-  &gt;&gt;&gt; for s in thelist:  # foreach
-  <break>
-  </break>
-  # we have a variable s
-  <break>
-  </break>
-  ...     print(s)
-  <break>
-  </break>
-  ...     s = "done"   # what is being changed is that variable x
-  <break>
-  </break>
-  ...
-  <break>
-  </break>
-  this
-  <break>
-  </break>
-  that
-  <break>
-  </break>
-  &gt;&gt;&gt; thelist
-  <break>
-  </break>
-  ['this', 'that']
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  &gt;&gt;&gt; thelist
-  <break>
-  </break>
-  ['this', 'that']
-  <break>
-  </break>
-  &gt;&gt;&gt; for i in range(len(thelist)):
-  <break>
-  </break>
-  ...     print(i)
-  <break>
-  </break>
-  ...     print(thelist[i])
-  <break>
-  </break>
-  ...     thelist[i] = "done"  # you are directly accessing the ith item in thelist and changing it.
-  <break>
-  </break>
-  ...
-  <break>
-  </break>
-  0
-  <break>
-  </break>
-  this
-  <break>
-  </break>
-  1
-  <break>
-  </break>
-  that
-  <break>
-  </break>
-  &gt;&gt;&gt; thelist
-  <break>
-  </break>
-  ['done', 'done']
- </paragraph>
- <paragraph>
-  #Q: can't I use for-each with indexing.
-  <break>
-  </break>
-  # why that might not always work - this was an example of trying to use a for-each loop but still be able to change/access items in a list.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  <bold>
-   if you want to work directly with positions, use "for .i.. range (...)", because that directly gives you index numbers; if you just want to work with the values in a list, just iterate through the values, which are give be "for x in whatever_list"
-  </bold>
- </paragraph>
- <snippet language="py" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   # this doesn't work (the way you expect)
+<p>
+ <a href="http://collabedit.com/4bqrp">
+  <break>
+  </break>
+ </a>
+ <break>
+ </break>
+ # Q: how do we diagram a call frame for a loop?
+</p>
+<p>
+ # A1: call frames are only for function calls.
+</p>
+<p>
+ # A2:  example:
+ <break>
+ </break>
+ #
+</p>
+<p>
+ <break>
+ </break>
+ def make_more_sense():
+ <break>
+ </break>
+ for i in range(4):   # range(4): 0, 1, 2, 3 .
+ <break>
+ </break>
+ x = i+1
+ <break>
+ </break>
+ # print("more sense")
+ <break>
+ </break>
+ <break>
+ </break>
+ print("done!!!! ")
+ <break>
+ </break>
+ make_more_sense()
+ <break>
+ </break>
+ .........
+</p>
+<p>
+ stack:
+</p>
+<p>
+ [call frame make_more_sense
+ <break>
+ </break>
+ inst. counter 14-&gt;15-&gt;14-&gt;15_&gt;...-&gt;14s
+</p>
+<p>
+ i: 0-&gt;1 ... -&gt;3
+ <break>
+ </break>
+ x: 1-&gt;2 ...&gt; 4
+</p>
+<p>
+ ]
+</p>
+<p>
+ <break>
+ </break>
+ tone#   if we said "append()" for strings, that should have been for lists.
+</p>
+<p>
+ #Q how to handwrite an empty string vs one with a space
+ <break>
+ </break>
+ #A: a "square U" (like a "[" but on its side)
+</p>
+<p>
+ <break>
+ </break>
+ # q: x=1; y=2; x=y
+ <break>
+ </break>
+ # A: for an assignment statement, righthand side is ALWAYS evaluated first, and the value goes into the variable on the left hand side .
+</p>
+<p>
+ <break>
+ </break>
+ # how to turn an into a string?
+ <break>
+ </break>
+ str(4) -&gt; "4"
+ <break>
+ </break>
+ # what is a function that requires an str and not an int?
+</p>
+<p>
+ print("x is: " + 4)
+ <break>
+ </break>
+ Traceback (most recent call last):
+ <break>
+ </break>
+ File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+ <break>
+ </break>
+ TypeError: can only concatenate str (not "int") to str
+</p>
+<p>
+ <break>
+ </break>
+ #Q for loop vs for-each loop
+</p>
+<p>
+ # here is a for loop that is also a for-each loop
+ <break>
+ </break>
+ # "for each" loops go through a list (or string)
+ <break>
+ </break>
+ for x in ["oh", "my", "goodness"]:
+ <break>
+ </break>
+ print(x)
+ <break>
+ </break>
+ <break>
+ </break>
+ # here is a for loop that is not a for-each loop
+ <break>
+ </break>
+ for i in range(len(["oh", "my", "goodness"])):
+ <break>
+ </break>
+ print(i)
+</p>
+<p>
+ # Q: parameter vs argument
+ <break>
+ </break>
+ # parameter is variable that is declared in a function definition header, an argument is a value that is stored in a parameter/is given to the function as input
+ <break>
+ </break>
+ 2 cannot be a parameter
+</p>
+<p>
+ def help_us_all(me, you, everyone_else):
+ <break>
+ </break>
+ ...
+ <break>
+ </break>
+ <break>
+ </break>
+ help_us_all("Prof, Lee", "Prof Fan", "cs1110 captive students")
+</p>
+<p>
+ me, you, everyone_else &lt;- parameters ,drawn as boxes in a diagram
+ <break>
+ </break>
+ the strings "Prof, Lee"  &lt;- placed in the boxes in a diagram.
+</p>
+<p>
+ If p = "Prof Lee"
+ <break>
+ </break>
+ help_us_all(p, "prof fan", "poor cs1110 students"
+ <break>
+ </break>
+ me, you are parameters,
+ <break>
+ </break>
+ argument would be the value of p (or "Prof Lee")
+</p>
+<p>
+ #Q when do you do a foreach loop vs a range one
+ <break>
+ </break>
+ #A: use range when you need to use the indices (the numbers) to access something or compute something
+ <break>
+ </break>
+ #  use a for-each loop when it's more convenient.
+</p>
+<p>
+ # see lab 12 (or the last one) --- could not do it with a for-each loop.
+</p>
+<p>
+ # here is a loop that fails to change a input list
+</p>
+<p>
+ <break>
+ </break>
+ &gt;&gt;&gt; thelist =  ["this", "that"]
+ <break>
+ </break>
+ &gt;&gt;&gt; for s in thelist:  # foreach
+ <break>
+ </break>
+ # we have a variable s
+ <break>
+ </break>
+ ...     print(s)
+ <break>
+ </break>
+ ...     s = "done"   # what is being changed is that variable x
+ <break>
+ </break>
+ ...
+ <break>
+ </break>
+ this
+ <break>
+ </break>
+ that
+ <break>
+ </break>
+ &gt;&gt;&gt; thelist
+ <break>
+ </break>
+ ['this', 'that']
+</p>
+<p>
+ &gt;&gt;&gt; thelist
+ <break>
+ </break>
+ ['this', 'that']
+ <break>
+ </break>
+ &gt;&gt;&gt; for i in range(len(thelist)):
+ <break>
+ </break>
+ ...     print(i)
+ <break>
+ </break>
+ ...     print(thelist[i])
+ <break>
+ </break>
+ ...     thelist[i] = "done"  # you are directly accessing the ith item in thelist and changing it.
+ <break>
+ </break>
+ ...
+ <break>
+ </break>
+ 0
+ <break>
+ </break>
+ this
+ <break>
+ </break>
+ 1
+ <break>
+ </break>
+ that
+ <break>
+ </break>
+ &gt;&gt;&gt; thelist
+ <break>
+ </break>
+ ['done', 'done']
+</p>
+<p>
+ #Q: can't I use for-each with indexing.
+ <break>
+ </break>
+ # why that might not always work - this was an example of trying to use a for-each loop but still be able to change/access items in a list.
+</p>
+<p>
+ <b>
+  if you want to work directly with positions, use "for .i.. range (...)", because that directly gives you index numbers; if you just want to work with the values in a list, just iterate through the values, which are give be "for x in whatever_list"
+ </b>
+</p>
+<snippet language="py" line-numbers="true" runnable="true">
+ <snippet-file id="code">
+  # this doesn't work (the way you expect)
 print("the attempt to use a for-each loop")
 thelist = ['hi', 'hi', 'hi']
 list2 = ['nothing', 'nothing', 'nothing']
@@ -306,162 +300,156 @@ for i in range(len(thelist)):
     print(thelist[i])
     list2[i] = 'done'
 print(list2)
-  </snippet-file>
- </snippet>
- <paragraph>
-  Q: so in a call frame, the line with the actual function call is not included in the instruction counter?
-  <break>
-  </break>
-  A: that's right.
- </paragraph>
- <paragraph>
-  Q: I have a question regarding returning lists-- do we return the ID of the folder or the list
-  <break>
-  </break>
-  A: if you're asking what to
-  <italic>
-   diagram,
-  </italic>
-  return the id of the folder that is the list.
-  <break>
-  </break>
-  In
-  <italic>
-   code
-  </italic>
-  , this looks like this
- </paragraph>
- <pre>def do_the_thing():
+ </snippet-file>
+</snippet>
+<p>
+ Q: so in a call frame, the line with the actual function call is not included in the instruction counter?
+ <break>
+ </break>
+ A: that's right.
+</p>
+<p>
+ Q: I have a question regarding returning lists-- do we return the ID of the folder or the list
+ <break>
+ </break>
+ A: if you're asking what to
+ <i>
+  diagram,
+ </i>
+ return the id of the folder that is the list.
+ <break>
+ </break>
+ In
+ <i>
+  code
+ </i>
+ , this looks like this
+</p>
+<pre>def do_the_thing():
 
     x = [1,2,3,4,5]
     return x   # you can't say, "return id1"</pre>
- <paragraph>
-  (see also
-  <link href="https://edstem.org/us/courses/3933/discussion/338568"/>
-  https://edstem.org/us/courses/3933/discussion/338568)
-  <break>
-  </break>
-  <break>
-  </break>
-  Q: can you type cast between str &lt;--&gt; int &lt;--&gt; float interchangeably? (am i missing any types that would work that we've learned in class?)
-  <break>
-  </break>
-  A: types: str, int, float, boolean, list,
-  <break>
-  </break>
-  not quite interchangeable: float(int(4.5)), you don't get 4.5 back.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Q: Do we add the if statement line in the call frame even if the argument doesn’t qualify for the if
-  <break>
-  </break>
-  A: yes.
- </paragraph>
- <paragraph>
-  if ("today" == "great day"): # even though false, the expression was evaluated; so write down the number.
- </paragraph>
- <paragraph>
-  Q: is there a difference between writing if x == 5: or if x is 5: ?
- </paragraph>
- <paragraph>
-  A: right now in CS1110, we don't have the background to understand a full answer.
- </paragraph>
- <paragraph>
-  Pragmatically, for now, don't use "is", except for "is None".
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Q: what functions/methods can be used on ranges? can we treat them like lists?
-  <break>
-  </break>
-  A: they are not technically lists. For CS1110 now, you probably shouldn't be treating them like lists (even though there are strong similarities).
- </paragraph>
- <paragraph>
-  Q: do we write the line for a print statement? very confused if there is a print statement in a function, should that line be in call frame
- </paragraph>
- <paragraph>
-  A: yes, the line number should be in the instructor counter --- the
-  <italic>
-   output
-  </italic>
-  of the print statement should not be in the frame, but somewhere else (draw a box that says "screen " or "output", like Python Tutor does. )
- </paragraph>
- <paragraph>
-  Q: what to memorize
- </paragraph>
- <paragraph>
-  A: see announcement.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Q: What does % do/how do you do it by hand?
- </paragraph>
- <paragraph>
-  A: it's the integer remainder, and you just have to calculate.
- </paragraph>
- <paragraph>
-  20 divided by 10:    the answer is 2, and the remainder is 0. So, 20 % 10 is 0.
- </paragraph>
- <paragraph>
-  9 divided by 2: the answer is 4, with remainder 1.  9 % 2 is 1.
- </paragraph>
- <snippet language="py" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   x = 10
+<p>
+ (see also
+ <a href="https://edstem.org/us/courses/3933/discussion/338568">
+  https://edstem.org/us/courses/3933/discussion/338568
+ </a>
+ )
+ <break>
+ </break>
+ <break>
+ </break>
+ Q: can you type cast between str &lt;--&gt; int &lt;--&gt; float interchangeably? (am i missing any types that would work that we've learned in class?)
+ <break>
+ </break>
+ A: types: str, int, float, boolean, list,
+ <break>
+ </break>
+ not quite interchangeable: float(int(4.5)), you don't get 4.5 back.
+</p>
+<p>
+ Q: Do we add the if statement line in the call frame even if the argument doesn’t qualify for the if
+ <break>
+ </break>
+ A: yes.
+</p>
+<p>
+ if ("today" == "great day"): # even though false, the expression was evaluated; so write down the number.
+</p>
+<p>
+ Q: is there a difference between writing if x == 5: or if x is 5: ?
+</p>
+<p>
+ A: right now in CS1110, we don't have the background to understand a full answer.
+</p>
+<p>
+ Pragmatically, for now, don't use "is", except for "is None".
+</p>
+<p>
+ Q: what functions/methods can be used on ranges? can we treat them like lists?
+ <break>
+ </break>
+ A: they are not technically lists. For CS1110 now, you probably shouldn't be treating them like lists (even though there are strong similarities).
+</p>
+<p>
+ Q: do we write the line for a print statement? very confused if there is a print statement in a function, should that line be in call frame
+</p>
+<p>
+ A: yes, the line number should be in the instructor counter --- the
+ <i>
+  output
+ </i>
+ of the print statement should not be in the frame, but somewhere else (draw a box that says "screen " or "output", like Python Tutor does. )
+</p>
+<p>
+ Q: what to memorize
+</p>
+<p>
+ A: see announcement.
+</p>
+<p>
+ Q: What does % do/how do you do it by hand?
+</p>
+<p>
+ A: it's the integer remainder, and you just have to calculate.
+</p>
+<p>
+ 20 divided by 10:    the answer is 2, and the remainder is 0. So, 20 % 10 is 0.
+</p>
+<p>
+ 9 divided by 2: the answer is 4, with remainder 1.  9 % 2 is 1.
+</p>
+<snippet language="py" line-numbers="true" runnable="true">
+ <snippet-file id="code">
+  x = 10
 for i in range(1,11):
     print("i is: " + str(i) + " and 10 % i is:"  + str(10 % i))
-  </snippet-file>
- </snippet>
- <paragraph>
-  Q: How do you write on the exam if a line of code continues but needs to go on another line on the paper?
- </paragraph>
- <paragraph>
-  A: draw an arrow to the continuation
-  <break>
-  </break>
-  <break>
-  </break>
-  Q: What do you do in a call frame or on a diagram for methods?
- </paragraph>
- <paragraph>
-  A: for prelim 1, we're not going to ask you to do this; but the answer: it's like a function call.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Q: methods vs functions:
-  <break>
-  </break>
-  A: a method is a function associated with a particular type of object.  And it's called by &lt;name of object&gt;.&lt;name of function&gt;.
-  <break>
-  </break>
-  Example: strip():   a call looks like "asdasd".strip()
-  <break>
-  </break>
-  <break>
-  </break>
-  Q: Can we use assert type(s) == int to check for precondition?
- </paragraph>
- <paragraph>
-  A: that's not Prelim 1 material. In practice, yes, often a good idea!
-  <break>
-  </break>
-  <break>
-  </break>
-  Q: Within a function, can you call another function with a different parameter than the one in the original function?
- </paragraph>
- <paragraph>
-  A: functions each have their own scratch space, which is their call frame!
-  <break>
-  </break>
- </paragraph>
- <snippet language="py" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   def fn1(y):  # you can change the parameter name as you like!
+ </snippet-file>
+</snippet>
+<p>
+ Q: How do you write on the exam if a line of code continues but needs to go on another line on the paper?
+</p>
+<p>
+ A: draw an arrow to the continuation
+ <break>
+ </break>
+ <break>
+ </break>
+ Q: What do you do in a call frame or on a diagram for methods?
+</p>
+<p>
+ A: for prelim 1, we're not going to ask you to do this; but the answer: it's like a function call.
+</p>
+<p>
+ Q: methods vs functions:
+ <break>
+ </break>
+ A: a method is a function associated with a particular type of object.  And it's called by &lt;name of object&gt;.&lt;name of function&gt;.
+ <break>
+ </break>
+ Example: strip():   a call looks like "asdasd".strip()
+ <break>
+ </break>
+ <break>
+ </break>
+ Q: Can we use assert type(s) == int to check for precondition?
+</p>
+<p>
+ A: that's not Prelim 1 material. In practice, yes, often a good idea!
+ <break>
+ </break>
+ <break>
+ </break>
+ Q: Within a function, can you call another function with a different parameter than the one in the original function?
+</p>
+<p>
+ A: functions each have their own scratch space, which is their call frame!
+ <break>
+ </break>
+</p>
+<snippet language="py" line-numbers="true" runnable="true">
+ <snippet-file id="code">
+  def fn1(y):  # you can change the parameter name as you like!
     print("fn1, here is my argument: " + str(y))
 
 def fn2(y):
@@ -469,13 +457,11 @@ def fn2(y):
     print("fn2, here is my argment: " + str(s))
 
 fn2("hey hey")
-  </snippet-file>
- </snippet>
- <paragraph>
- </paragraph>
- <snippet language="py" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   # change when there is a "hi" to a "bye"
+ </snippet-file>
+</snippet>
+<snippet language="py" line-numbers="true" runnable="true">
+ <snippet-file id="code">
+  # change when there is a "hi" to a "bye"
 thelist =["hi", "rats", "hi"]
 list2 = ["not", "not", "not"]
 # what you want is list2 to be this ["done", "not", "done"]
@@ -484,9 +470,8 @@ for i in range(len(thelist)):
     if thelist[i] == "hi":
         list2[i] = "done"
 print(list2)
-  </snippet-file>
- </snippet>
-</document>
+ </snippet-file>
+</snippet>
 <h3>
  ----------- REPLIES -----------
 </h3>

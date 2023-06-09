@@ -13,49 +13,47 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="67.5625" src="https://static.us.edusercontent.com/files/6TEmJHfkZX6fjVbjY0dqV9Qa" width="658"/>
- </figure>
- <paragraph>
-  I am confused as to why l1.add(e) has a worst-case time complexity of O(1). The Javadocs documentation for LinkedList states that the .add() method
-  <italic>
-   *appends*
-  </italic>
-  to the end of the list, which means the add method must traverse through all n-1 pointers before reaching the end. If this is the case, why is the worse-case complexity O(1)?
- </paragraph>
-</document>
+<figure>
+ <image height="67.5625" src="https://static.us.edusercontent.com/files/6TEmJHfkZX6fjVbjY0dqV9Qa" width="658"/>
+</figure>
+<p>
+ I am confused as to why l1.add(e) has a worst-case time complexity of O(1). The Javadocs documentation for LinkedList states that the .add() method
+ <i>
+  *appends*
+ </i>
+ to the end of the list, which means the add method must traverse through all n-1 pointers before reaching the end. If this is the case, why is the worse-case complexity O(1)?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="1.0">
- <paragraph>
-  You just need to change the back and front pointers of nodes which takes O(1).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Varun Gande (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Varun Gande (student)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   I believe a linkedlist has a reference to the head and tail (if you look back to A5), meaning appending will take constant time even in the worst case.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Troy Moslemi (he/him) (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <h3>
+   ENDORSED
+  </h3>
+  <p>
+   You just need to change the back and front pointers of nodes which takes O(1).
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

@@ -16,27 +16,23 @@
 <h3>
  ENDORSED
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi all,
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  I encountered a result that confused me when testing bnf_starts_here for A4. When testing my function, a4_test told me "Wrongly found back-and-forth for users A and B at Post 0000 for k=1". When looking at the post in question, it had no replies. According to the instructions for A4, there is a back-and-forth of length 1 if "there is no reply to P written by u2. (This includes the case where P has no replies at all)." (which is the case here). Am I missing something, or should there be a back-and-forth of length 1 here? Thanks!
- </paragraph>
-</document>
+<p>
+ Hi all,
+</p>
+<p>
+ I encountered a result that confused me when testing bnf_starts_here for A4. When testing my function, a4_test told me "Wrongly found back-and-forth for users A and B at Post 0000 for k=1". When looking at the post in question, it had no replies. According to the instructions for A4, there is a back-and-forth of length 1 if "there is no reply to P written by u2. (This includes the case where P has no replies at all)." (which is the case here). Am I missing something, or should there be a back-and-forth of length 1 here? Thanks!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Hi! 0.0.0.0 is authored by B, and so can't be a back-and-forth for A and B.
   <break>
   </break>
@@ -48,142 +44,140 @@
   <break>
   </break>
   A back-and-forth of length k between user u1 and (different) user u2 starts at a post P if (and only if)
-  <bold>
+  <b>
    P was written by u1, and ...
-  </bold>
- </paragraph>
- <paragraph>
+  </b>
+ </p>
+ <p>
   • Case: k = 1: ... there is no reply to P written by u2. (This includes the case where P has no replies at all).
   <break>
   </break>
-  <bold>
+  <b>
    [footnote 14: Contrariwise, no back-and-forth of length k = 1 between u1 and u2 starts at P if P wasn’t written by u1 or if there’s a reply to P written by u2.]
-  </bold>
+  </b>
   <break>
   </break>
   • Case: k ≥ 2: ... there is a back-and-forth of length k − 1 between u2 and u1 starting at some reply to P .
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you so much for the clarification! I revised it and ran it again, taking into account that it needs to be authored by u1. However, I got a similar error "Wrongly found back-and-forth for users A and B at Post 0010 for k=1". Post 0010 is authored by A, and has no replies (meaning none from B), so shouldn't this be a back-and-forth or 1? Is there something else I'm not getting?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Edit: I was trying to fix some issues in the code, and now I get an error "Wrongly found back-and-forth for users A and B at Post 0 for k=3", which was one of the given back-and-forths in the problem statement.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  I suspect what is happening is that one needs to be careful about return types.
-  <break>
-  </break>
-  <break>
-  </break>
-  Specifically, in the testing code, note that the "Wrongly found" message is triggered by the following:
-  <break>
-  </break>
- </paragraph>
- <pre>                    result = a4.bnf_starts_here(post, u1, u2, k)
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Aidan McNay (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you so much for the clarification! I revised it and ran it again, taking into account that it needs to be authored by u1. However, I got a similar error "Wrongly found back-and-forth for users A and B at Post 0010 for k=1". Post 0010 is authored by A, and has no replies (meaning none from B), so shouldn't this be a back-and-forth or 1? Is there something else I'm not getting?
+  </p>
+  <p>
+   Edit: I was trying to fix some issues in the code, and now I get an error "Wrongly found back-and-forth for users A and B at Post 0 for k=3", which was one of the given back-and-forths in the problem statement.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    I suspect what is happening is that one needs to be careful about return types.
+    <break>
+    </break>
+    <break>
+    </break>
+    Specifically, in the testing code, note that the "Wrongly found" message is triggered by the following:
+    <break>
+    </break>
+   </p>
+   <pre>                    result = a4.bnf_starts_here(post, u1, u2, k)
                     if result != False and not [u1, u2, result] in true_list:
                         errormsg = "Wrongly found back-and-forth for users " + \
                                u1 + " and " + u2 + \
                                " at Post " + post.tag  + \
                                " for k=" + str(k)
                         raise RuntimeError(errormsg)</pre>
- <paragraph>
-  If the return type is wrong in some way, the error is tripped.
-  <break>
-  </break>
-  I wrote the error message anticipating a certain kind of error students might make (as in, too many or too few Posts); but you should check whether what you're returning is has the right type to begin with (a list), and then whether it contains the right number of items, and whether those are the right items.
-  <break>
-  </break>
-  <break>
-  </break>
-  In the test suite, this command:
- </paragraph>
- <pre>for u2 in set(unames) - set(["A"]): 
+   <p>
+    If the return type is wrong in some way, the error is tripped.
+    <break>
+    </break>
+    I wrote the error message anticipating a certain kind of error students might make (as in, too many or too few Posts); but you should check whether what you're returning is has the right type to begin with (a list), and then whether it contains the right number of items, and whether those are the right items.
+    <break>
+    </break>
+    <break>
+    </break>
+    In the test suite, this command:
+   </p>
+   <pre>for u2 in set(unames) - set(["A"]): 
     true_list.append(["A", u2, gnlist2plist(["0.0.1.0"], main_dict)])
 </pre>
- <paragraph>
-  means that for every (A, &lt;something else&gt;) user pair, the correct answer for k=1 is
-  <code>
-   gnlist2plist(["0.0.1.0"])
-  </code>
-  , the list of length 1 that is just the Post that is at 0.0.1.0.
-  <break>
-  </break>
-  <break>
-  </break>
-  The line adding the following to
-  <code>
-   true_list
-  </code>
-  :
- </paragraph>
- <paragraph>
-  <code>
-   ["A", "B", gnlist2plist(["0", "0.0", "0.0.1"], main_dict)]
-  </code>
-  ,
-  <break>
-  </break>
-  <break>
-  </break>
-  means that the correct answer should be
-  <code>
-   gnlist2plist(["0", "0.0", "0.0.1"]
-  </code>
-  , the list of 3 Posts corresponding to 0, 0.0, 0.0.1.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Cool, thank you so much! (I thought that error meant that I had correctly returned the route when there wasn't supposed to be one, but didn't account that the route could have incorrect syntax - turns out I was nesting lists when I shouldn't have been :) )
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Indeed, that turns out to be another way one can "wrongly find"! @_@
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+   <p>
+    means that for every (A, &lt;something else&gt;) user pair, the correct answer for k=1 is
+    <code>
+     gnlist2plist(["0.0.1.0"])
+    </code>
+    , the list of length 1 that is just the Post that is at 0.0.1.0.
+    <break>
+    </break>
+    <break>
+    </break>
+    The line adding the following to
+    <code>
+     true_list
+    </code>
+    :
+   </p>
+   <p>
+    <code>
+     ["A", "B", gnlist2plist(["0", "0.0", "0.0.1"], main_dict)]
+    </code>
+    ,
+    <break>
+    </break>
+    <break>
+    </break>
+    means that the correct answer should be
+    <code>
+     gnlist2plist(["0", "0.0", "0.0.1"]
+    </code>
+    , the list of 3 Posts corresponding to 0, 0.0, 0.0.1.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Aidan McNay (student)
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     Cool, thank you so much! (I thought that error meant that I had correctly returned the route when there wasn't supposed to be one, but didn't account that the route could have incorrect syntax - turns out I was nesting lists when I shouldn't have been :) )
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Prof. Lee (she/they) (admin)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      Indeed, that turns out to be another way one can "wrongly find"! @_@
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

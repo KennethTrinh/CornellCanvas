@@ -13,38 +13,32 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  According to the slides, $W^{t+1} \leq (1/2) * W^{t} + 0.5(1/2)W^{t} = (3/4)W^{t}$. How does this make sense? Let's say that on a timestep 2, all algorithms except the first one predict correctly.
- </paragraph>
- <paragraph>
-  So $(W_{h1})^2 = 1/2 * (W_{h1})^2$ and for all other hypotheses $(W_h)^2 = (W_{h})^1$.
- </paragraph>
- <paragraph>
-  If there were 10 hypotheses then, $W^{2} = ((10-0.5)/10) W^1$. The fraction occurs since the total weight was only reduced by 1/2.  which is greater than (3/4)W(t). Where is the mistake in my understanding?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
- <figure>
-  <image height="487.09090909090907" src="https://static.us.edusercontent.com/files/SJuBX08sITKVCQnBrxIvVraX" width="658"/>
- </figure>
-</document>
+<p>
+ According to the slides, $W^{t+1} \leq (1/2) * W^{t} + 0.5(1/2)W^{t} = (3/4)W^{t}$. How does this make sense? Let's say that on a timestep 2, all algorithms except the first one predict correctly.
+</p>
+<p>
+ So $(W_{h1})^2 = 1/2 * (W_{h1})^2$ and for all other hypotheses $(W_h)^2 = (W_{h})^1$.
+</p>
+<p>
+ If there were 10 hypotheses then, $W^{2} = ((10-0.5)/10) W^1$. The fraction occurs since the total weight was only reduced by 1/2.  which is greater than (3/4)W(t). Where is the mistake in my understanding?
+</p>
+<figure>
+ <image height="487.09090909090907" src="https://static.us.edusercontent.com/files/SJuBX08sITKVCQnBrxIvVraX" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Christopher Vincens (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Christopher Vincens (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   The part you're missing is the 3rd bullet of the slide: "on every MISTAKE". In the example you gave, each hypothesis had equal weight, and only one was wrong, so the majority vote was correct (not a mistake).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

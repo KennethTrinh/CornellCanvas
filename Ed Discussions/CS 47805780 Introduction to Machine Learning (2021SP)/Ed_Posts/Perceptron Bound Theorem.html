@@ -13,59 +13,53 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="106.1634844868735" src="https://static.us.edusercontent.com/files/pFTn7ynjYC6QCAZYd72Zg5wM" width="659"/>
- </figure>
- <paragraph>
-  It seems like B = 1/margin but can someone explain what B is geometrically?
- </paragraph>
-</document>
+<figure>
+ <image height="106.1634844868735" src="https://static.us.edusercontent.com/files/pFTn7ynjYC6QCAZYd72Zg5wM" width="659"/>
+</figure>
+<p>
+ It seems like B = 1/margin but can someone explain what B is geometrically?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andrew Dettmer (staff)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew Dettmer (staff)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   Yes, B corresponds to 1 / margin in the version of the bound given in the notes. From the proof further on that page:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   "Let w*
-  <italic>
+  <i>
    be a vector that achieves the minimum in the definition of B. That is, yi&lt;w* , xi&gt; ≥ 1 for all i, and among all vectors that satisfy these constraints, w
-  </italic>
+  </i>
   is of minimal norm."
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   In terms of geometry, we have the line that separates our data, which is defined by some weight (or normal) vector w. B here corresponds to the length/norm of the smallest such w that defines a line that correctly separates all of the data
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jane Du (staff)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<document version="2.0">
- <paragraph>
-  The answer above is correct! I wanted to add a sort of handwavy geometric approach -- you can think of $B$ as a measure of "resolution". Note that in $B$'s definition, we claim that $y_i\langle \mathbf w, \mathbf x_i \rangle \ge 1$. The 1 in the inequality is kind of arbitrary here! It's one unit of distance, but really doesn't mean a whole lot on its own. But if you imagine increasing the "resolution" of the space, there are more angles that $\mathbf w$ can take, allowing it to get closer to the points. And that unit can get smaller this way.
- </paragraph>
- <paragraph>
-  Of course, when you consider that the one unit of distance is the margin -- the minimum nonzero distance between the boundary and any one point -- it makes sense that the resolution and the margin are inversely related. And with higher resolution, there are more options in the whole space for perceptron to flip through, which increases the time it takes for the algorithm to converge.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Jane Du (staff)
+  </h3>
+  <h3>
+   Vote Count: 3
+  </h3>
+  <p>
+   The answer above is correct! I wanted to add a sort of handwavy geometric approach -- you can think of $B$ as a measure of "resolution". Note that in $B$'s definition, we claim that $y_i\langle \mathbf w, \mathbf x_i \rangle \ge 1$. The 1 in the inequality is kind of arbitrary here! It's one unit of distance, but really doesn't mean a whole lot on its own. But if you imagine increasing the "resolution" of the space, there are more angles that $\mathbf w$ can take, allowing it to get closer to the points. And that unit can get smaller this way.
+  </p>
+  <p>
+   Of course, when you consider that the one unit of distance is the margin -- the minimum nonzero distance between the boundary and any one point -- it makes sense that the resolution and the margin are inversely related. And with higher resolution, there are more options in the whole space for perceptron to flip through, which increases the time it takes for the algorithm to converge.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

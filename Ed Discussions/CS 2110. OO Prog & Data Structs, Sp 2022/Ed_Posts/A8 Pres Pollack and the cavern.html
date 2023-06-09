@@ -13,174 +13,171 @@
 <h3>
  Vote Count: 5
 </h3>
-<document version="2.0">
- <paragraph>
-  This note will contain information on assignment A8, in which Pres Pollack hunts for the Orb in the cavern underneath Gates Hall and then, when she picks it up, flees before the cavern walls cave in, picking up as much gold as possible.
- </paragraph>
- <list style="number">
-  <list-item>
-   <paragraph>
-    <bold>
-     Advice on the Find phase
-    </bold>
-    . See note #1987.
-    <break>
-    </break>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    <bold>
-     Advice on the Flee phase
-    </bold>
-    . See note #2024.
-    <break>
-    </break>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    <bold>
-     Scores
-    </bold>
-    . Post scores on this googledoc
-    <break>
-    </break>
-    <link href="https://docs.google.com/spreadsheets/d/16WVhqvvFEmzyj-JQnzBq404DPqPVkiXpesN5ngMoGuA/edit?usp=sharing"/>
+<p>
+ This note will contain information on assignment A8, in which Pres Pollack hunts for the Orb in the cavern underneath Gates Hall and then, when she picks it up, flees before the cavern walls cave in, picking up as much gold as possible.
+</p>
+<list style="number">
+ <li>
+  <p>
+   <b>
+    Advice on the Find phase
+   </b>
+   . See note #1987.
+   <break>
+   </break>
+  </p>
+ </li>
+ <li>
+  <p>
+   <b>
+    Advice on the Flee phase
+   </b>
+   . See note #2024.
+   <break>
+   </break>
+  </p>
+ </li>
+ <li>
+  <p>
+   <b>
+    Scores
+   </b>
+   . Post scores on this googledoc
+   <break>
+   </break>
+   <a href="https://docs.google.com/spreadsheets/d/16WVhqvvFEmzyj-JQnzBq404DPqPVkiXpesN5ngMoGuA/edit?usp=sharing">
     https://docs.google.com/spreadsheets/d/16WVhqvvFEmzyj-JQnzBq404DPqPVkiXpesN5ngMoGuA/edit?usp=sharing
-    <break>
-    </break>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    <bold>
-     What you can and cannot do in writing your program
-    </bold>
-    . See Below.
-    <break>
-    </break>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    <bold>
-     Special caverns
-    </bold>
-    --check them out, make sure your program works successfully on them. See Below.
-    <break>
-    </break>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    <bold>
-     Worried about how much time Pres Pollack takes to flee a certain cavern
-    </bold>
-    ? Look below to find out how much time she takes.
-   </paragraph>
-  </list-item>
- </list>
- <heading level="2">
-  ANSWERS
- </heading>
- <paragraph>
-  <bold>
-   4. What you can and cannot do
-  </bold>
-  :
- </paragraph>
- <paragraph>
-  4A. Do NOT use static fields (unless they are constants, which never change). Our grading program could run several caverns simultaneously, using different threads, and having a static field that can change will be disastrous
- </paragraph>
- <paragraph>
-  4B. Declare as many fields as you want. Write as many methods, static or non-static, as you wish. We suggest commenting fields appropriately and specifying method carefully. The staff is instructed not to help with fields or methods that are not appropriately defined (specified).
- </paragraph>
- <paragraph>
-  4C. We told you not to make the two main methods, find() and flee(), recursive for the following reason. For maximum flexibility, write a dfs walk (or code for flee) in a separate method. Then, call that method from find() (or flee()). Why? First, you may need some initialization of fields or other things to record the actual dfs walk that takes place. Second, you may be writing two dfs walks. The first is the basic one, the second is an optimized one. If you don't get the optimized one working properly, just before submitting, fix find() to call the first one, which works. You should always be programming to provide yourself with maximum flexibility, especially in a program like this, where you may be trying several different strategies.
- </paragraph>
- <paragraph>
-  <bold>
-   5. Special caverns --check them out
-  </bold>
- </paragraph>
- <paragraph>
-  5A. No backtracking to find the orb (no optimization): -280019746129361794
- </paragraph>
- <paragraph>
-  5B.Backtracking to find the orb (no optimization): 1908492650781828577
- </paragraph>
- <paragraph>
-  5C. The cavern built with this seed has no reachable gold: -3026730162232494481
- </paragraph>
- <paragraph>
-  5D. The only gold is on the Orb and it is picked up automatically as soon as flee() starts: -4004310660161599891
- </paragraph>
- <paragraph>
-  5E. A special one: 8035820871068432943
- </paragraph>
- <paragraph>
-  <bold>
-   6.
-  </bold>
-  <bold>
-   Worried about how much time Pres Pollack takes to flee a certain cavern
-  </bold>
-  ?
- </paragraph>
- <paragraph>
-  Watching Pres Pollack in GUI mode is not a good way to figure out the time she is taking to flee. It all depends on the speed slider, and you can't speed it up enough.
- </paragraph>
- <paragraph>
-  Instead, do the following to calculate and print the elapsed time of flee in the headless mode.
- </paragraph>
- <paragraph>
-  A. Put this field and method into class Pollack (you can leave them there):
- </paragraph>
- <paragraph>
-  private long startTime= 0; // start time in milliseconds
- </paragraph>
- <paragraph>
-  /** Return the time from start time till when this method is called, in milliseconds */
-  <break>
-  </break>
-  public long elapsedTime() {
-  <break>
-  </break>
-  return System.currentTimeMillis() - startTime;
-  <break>
-  </break>
-  }
- </paragraph>
- <paragraph>
-  B. Insert the following statement as the
-  <italic>
-   first
-  </italic>
-  statement of method flee(...):
- </paragraph>
- <paragraph>
-  startTime= System.currentTimeMillis();
- </paragraph>
- <paragraph>
-  C. Insert the following statement as the
-  <italic>
-   last
-  </italic>
-  statement of method flee(...):
- </paragraph>
- <paragraph>
-  System.out.println("Elapsed time: " + elapsedTime() / 1000.00 + " seconds");
- </paragraph>
- <paragraph>
-  D.Then run in headless mode with whichever seed you are worried about.
- </paragraph>
- <paragraph>
-  Be sure to comment it out before you submit.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+   </a>
+   <break>
+   </break>
+  </p>
+ </li>
+ <li>
+  <p>
+   <b>
+    What you can and cannot do in writing your program
+   </b>
+   . See Below.
+   <break>
+   </break>
+  </p>
+ </li>
+ <li>
+  <p>
+   <b>
+    Special caverns
+   </b>
+   --check them out, make sure your program works successfully on them. See Below.
+   <break>
+   </break>
+  </p>
+ </li>
+ <li>
+  <p>
+   <b>
+    Worried about how much time Pres Pollack takes to flee a certain cavern
+   </b>
+   ? Look below to find out how much time she takes.
+  </p>
+ </li>
+</list>
+<heading level="2">
+ ANSWERS
+</heading>
+<p>
+ <b>
+  4. What you can and cannot do
+ </b>
+ :
+</p>
+<p>
+ 4A. Do NOT use static fields (unless they are constants, which never change). Our grading program could run several caverns simultaneously, using different threads, and having a static field that can change will be disastrous
+</p>
+<p>
+ 4B. Declare as many fields as you want. Write as many methods, static or non-static, as you wish. We suggest commenting fields appropriately and specifying method carefully. The staff is instructed not to help with fields or methods that are not appropriately defined (specified).
+</p>
+<p>
+ 4C. We told you not to make the two main methods, find() and flee(), recursive for the following reason. For maximum flexibility, write a dfs walk (or code for flee) in a separate method. Then, call that method from find() (or flee()). Why? First, you may need some initialization of fields or other things to record the actual dfs walk that takes place. Second, you may be writing two dfs walks. The first is the basic one, the second is an optimized one. If you don't get the optimized one working properly, just before submitting, fix find() to call the first one, which works. You should always be programming to provide yourself with maximum flexibility, especially in a program like this, where you may be trying several different strategies.
+</p>
+<p>
+ <b>
+  5. Special caverns --check them out
+ </b>
+</p>
+<p>
+ 5A. No backtracking to find the orb (no optimization): -280019746129361794
+</p>
+<p>
+ 5B.Backtracking to find the orb (no optimization): 1908492650781828577
+</p>
+<p>
+ 5C. The cavern built with this seed has no reachable gold: -3026730162232494481
+</p>
+<p>
+ 5D. The only gold is on the Orb and it is picked up automatically as soon as flee() starts: -4004310660161599891
+</p>
+<p>
+ 5E. A special one: 8035820871068432943
+</p>
+<p>
+ <b>
+  6.
+ </b>
+ <b>
+  Worried about how much time Pres Pollack takes to flee a certain cavern
+ </b>
+ ?
+</p>
+<p>
+ Watching Pres Pollack in GUI mode is not a good way to figure out the time she is taking to flee. It all depends on the speed slider, and you can't speed it up enough.
+</p>
+<p>
+ Instead, do the following to calculate and print the elapsed time of flee in the headless mode.
+</p>
+<p>
+ A. Put this field and method into class Pollack (you can leave them there):
+</p>
+<p>
+ private long startTime= 0; // start time in milliseconds
+</p>
+<p>
+ /** Return the time from start time till when this method is called, in milliseconds */
+ <break>
+ </break>
+ public long elapsedTime() {
+ <break>
+ </break>
+ return System.currentTimeMillis() - startTime;
+ <break>
+ </break>
+ }
+</p>
+<p>
+ B. Insert the following statement as the
+ <i>
+  first
+ </i>
+ statement of method flee(...):
+</p>
+<p>
+ startTime= System.currentTimeMillis();
+</p>
+<p>
+ C. Insert the following statement as the
+ <i>
+  last
+ </i>
+ statement of method flee(...):
+</p>
+<p>
+ System.out.println("Elapsed time: " + elapsedTime() / 1000.00 + " seconds");
+</p>
+<p>
+ D.Then run in headless mode with whichever seed you are worried about.
+</p>
+<p>
+ Be sure to comment it out before you submit.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>

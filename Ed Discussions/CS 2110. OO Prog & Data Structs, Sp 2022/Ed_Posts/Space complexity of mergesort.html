@@ -13,41 +13,35 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hello! I noticed that Quicksort takes space O(logn) because the recursive depth at the expected case is log n. If that is true then why does mergesort take O(n) instead of O(nlogn)? Since it will also need logn space for recursive call and n to copy the array?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Hello! I noticed that Quicksort takes space O(logn) because the recursive depth at the expected case is log n. If that is true then why does mergesort take O(n) instead of O(nlogn)? Since it will also need logn space for recursive call and n to copy the array?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   1. The original Quicksort we show you takes worst-case space O(n).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   2. Later in the lecture slides we show you how to use a mixture of iteration and recursion to make it take worst-case space O(log n).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The difference between the two is the depth of recursion. In implementation 2, we show that the depth of recursion is at most log n.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   3. In merge sort, the depth of recursion is ALWAYS log n, so the extra space required by in the call stack is O(log n). However, at each level of recursion, an array of half the size of the array segment being sorted is needed --copy half the array into a new array so the merge can be done efficiently.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   This extra space is needed ONLY during the merge of the two segments into one. As soon as that merge is over, the space is no longer needed. It doesn't need to stay around as the recursion goes on. That is why the extra space requires is only O(n).
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,50 +13,48 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm currently working on the extra cerdit part of the lab, and I'm getting a hard fault in this line. (It executes a dequeue function). I used break point and checked the execution of my dequeue function, which is correct. But after dequeue and returning the current process stack pointer, the code goes in the 3140.s file and execute a branch to resume_process which causes error. I'm not sure what happening there, any guidance is appreciated!
- </paragraph>
- <figure>
-  <image height="100.38829787234042" src="https://static.us.edusercontent.com/files/3Kp5o6wghevFoPNCtI4YiDM8" width="466"/>
- </figure>
-</document>
+<p>
+ I'm currently working on the extra cerdit part of the lab, and I'm getting a hard fault in this line. (It executes a dequeue function). I used break point and checked the execution of my dequeue function, which is correct. But after dequeue and returning the current process stack pointer, the code goes in the 3140.s file and execute a branch to resume_process which causes error. I'm not sure what happening there, any guidance is appreciated!
+</p>
+<figure>
+ <image height="100.38829787234042" src="https://static.us.edusercontent.com/files/3Kp5o6wghevFoPNCtI4YiDM8" width="466"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Resolved in OH
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     0xf4240 = 1 million (iteration amount for delay() in utils.c)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Somehow value from inside process is being popped in PC
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Since issue occurs second time periodic process runs, issue must be with process stack reinitialization
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Resolved by properly free'ing and then re-allocing stack for process
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

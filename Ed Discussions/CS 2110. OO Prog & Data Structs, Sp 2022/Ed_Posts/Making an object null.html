@@ -13,89 +13,85 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I am currently writing test cases for Group C and am unsure on how to initialize an object as null for one of my test cases.
- </paragraph>
-</document>
+<p>
+ I am currently writing test cases for Group C and am unsure on how to initialize an object as null for one of my test cases.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Atulya Lohani (student)
-</h3>
-<h3>
- Vote Count: 4
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
-  If you are trying to test if the constructor throws an assertion error when null arguments are given as advisors then just put them in as null, you don't have to create a null object.
- </paragraph>
- <paragraph>
-  Example test:
- </paragraph>
- <paragraph>
-  <italic>
-   assertThrows
-  </italic>
-  (AssertionError.class, () -&gt; new PhD("Null advisors", 2022, 2,
-  <bold>
-   null
-  </bold>
-  ,
-  <bold>
-   null
-  </bold>
-  ));
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="1.0">
- <paragraph>
-  PhD example = null;
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Tomer Shamir (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Tomer Shamir (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   It's important to note that null doesn't have a type. It is the lack of an object, so it can't have a type and you don't actually have to assign a variable equal to the value null. Instead you can just use the keyword null.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Atulya Lohani (student)
+  </h3>
+  <h3>
+   Vote Count: 4
+  </h3>
+  <h3>
+   ENDORSED
+  </h3>
+  <p>
+   If you are trying to test if the constructor throws an assertion error when null arguments are given as advisors then just put them in as null, you don't have to create a null object.
+  </p>
+  <p>
+   Example test:
+  </p>
+  <p>
+   <i>
+    assertThrows
+   </i>
+   (AssertionError.class, () -&gt; new PhD("Null advisors", 2022, 2,
+   <b>
+    null
+   </b>
+   ,
+   <b>
+    null
+   </b>
+   ));
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Bahaa Kotb (student)
+   </h3>
+   <h3>
+    Vote Count: 2
+   </h3>
+   <p>
+    PhD example = null;
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 4em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Thank you!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

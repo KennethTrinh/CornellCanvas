@@ -13,24 +13,22 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  What does it mean when Autohelper says that there's an initializationError: java.security.AccessControlException: access denied ("java.lang.RuntimePermission""accessDeclaredMembers") for my ElephantTest.java?
-  <break>
-  </break>
- </paragraph>
-</document>
+<p>
+ What does it mean when Autohelper says that there's an initializationError: java.security.AccessControlException: access denied ("java.lang.RuntimePermission""accessDeclaredMembers") for my ElephantTest.java?
+ <break>
+ </break>
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   This can happen if you try to use the old JUnit 4
   <code>
    Test
@@ -48,15 +46,15 @@
    import
   </code>
   statements to what you currently have.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   At a lower level, the error is telling you that, when we try to run your
   <code>
    ElephantTest
   </code>
   , your code tries to use Java's "reflection" features to query all of an object's members (both public and private).  But we run your code in a "sandbox" (implemented using Java's SecurityManager), and such behavior is disallowed.  Since you presumably aren't trying to use reflection yourself, this must be coming from the JUnit infrastructure.  We allow this for JUnit5 classes, so if access is being denied, you must be using something other than JUnit5.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

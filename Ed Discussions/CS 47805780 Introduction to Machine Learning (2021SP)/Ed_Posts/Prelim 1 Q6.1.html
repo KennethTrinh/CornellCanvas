@@ -13,42 +13,40 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="170.33639947437584" src="https://static.us.edusercontent.com/files/ph9FFcu4qWMJJOhBtpQjZX97" width="658"/>
- </figure>
- <figure>
-  <image height="127.76699029126213" src="https://static.us.edusercontent.com/files/feK30RVX64M34Le85wcB79aI" width="658"/>
- </figure>
- <paragraph>
-  Why should we decrease C? Doesn't increasing C make it more like a hard-margin SVM and hence fewer training errors?
- </paragraph>
- <paragraph>
-  How does C affect the sum of the slack variables and the norm of the weight vector?
- </paragraph>
-</document>
+<figure>
+ <image height="170.33639947437584" src="https://static.us.edusercontent.com/files/ph9FFcu4qWMJJOhBtpQjZX97" width="658"/>
+</figure>
+<figure>
+ <image height="127.76699029126213" src="https://static.us.edusercontent.com/files/feK30RVX64M34Le85wcB79aI" width="658"/>
+</figure>
+<p>
+ Why should we decrease C? Doesn't increasing C make it more like a hard-margin SVM and hence fewer training errors?
+</p>
+<p>
+ How does C affect the sum of the slack variables and the norm of the weight vector?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Ignacio Arevalo (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Ignacio Arevalo (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   The problem you are given has 0 training error and the validation error is bad so you're overfitting. You're trying to improve the validation error. Right now it is essentially a hard-margin SVM, it has 0 training errors but you need to make it softer to allow some errors so that it can test better.
   <break>
   </break>
   <break>
   </break>
   Higher C -&gt; lower slack error &amp; increased norm of weight vector, lower C -&gt; higher slack error &amp; decreased norm of weight vector
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If C were say 0 then we don't care how many errors we get and so weight vector would be 0-vector just as intuition about why this is.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

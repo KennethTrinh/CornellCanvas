@@ -13,51 +13,49 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  In the Spring 2015 finals, the T/F question, can you explain why this is the case?
- </paragraph>
- <paragraph>
-  I understand that for non-primitive types, why False would be the correct answer, and a String is a non-primitive type.  However, when I run this in Jshell, it tells me b == c is true.
- </paragraph>
- <figure>
-  <image height="27.289473684210527" src="https://static.us.edusercontent.com/files/wDsIZy1E3b0ud6SRw0ODv1Mq" width="646"/>
- </figure>
- <paragraph>
-  Similarly, say b and c were Integers, would the answer be T or F on the exam?  Because Jshell would automatically unwrap them when comparing b and c, giving me true.
- </paragraph>
- <paragraph>
-  Thanks!!
- </paragraph>
-</document>
+<p>
+ In the Spring 2015 finals, the T/F question, can you explain why this is the case?
+</p>
+<p>
+ I understand that for non-primitive types, why False would be the correct answer, and a String is a non-primitive type.  However, when I run this in Jshell, it tells me b == c is true.
+</p>
+<figure>
+ <image height="27.289473684210527" src="https://static.us.edusercontent.com/files/wDsIZy1E3b0ud6SRw0ODv1Mq" width="646"/>
+</figure>
+<p>
+ Similarly, say b and c were Integers, would the answer be T or F on the exam?  Because Jshell would automatically unwrap them when comparing b and c, giving me true.
+</p>
+<p>
+ Thanks!!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Atulya Lohani (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Atulya Lohani (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   It depends on how you declare the variables. If you're not using the
-  <bold>
+  <b>
    new
-  </bold>
+  </b>
   keyword and if the Strings or Integers are "equal" then I think Java will make both variables point to the same place in memory for optimization purposes. Look at how the output is different when I use the
-  <bold>
+  <b>
    new
-  </bold>
+  </b>
   keyword.
- </paragraph>
+ </p>
  <figure>
   <image height="582.744874715262" src="https://static.us.edusercontent.com/files/3hmGQ4tHYcm7491mpc4p5VAD" width="758"/>
  </figure>
- <paragraph>
+ <p>
   Also, don't mind me using the deprecated constructor of Integer and the syntactical mistake.  Hope this helped.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

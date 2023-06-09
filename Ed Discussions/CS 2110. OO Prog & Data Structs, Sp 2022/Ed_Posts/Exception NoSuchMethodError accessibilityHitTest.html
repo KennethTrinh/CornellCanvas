@@ -13,8 +13,7 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <pre>2022-04-12 15:50:12.828 java[88126:4145841] Bad JNI lookup accessibilityHitTest
+<pre>2022-04-12 15:50:12.828 java[88126:4145841] Bad JNI lookup accessibilityHitTest
 2022-04-12 15:50:12.856 java[88126:4145841] (
     0   libawt_lwawt.dylib                  0x0000000127c44ee9 -[JavaComponentAccessibility accessibilityHitTest:withEnv:] + 153
     1   libawt_lwawt.dylib                  0x0000000127beeef6 -[AWTView accessibilityHitTest:] + 182
@@ -51,82 +50,77 @@
     32  dyld                                0x0000000200ca6000 dyld + 0
 )
 Exception in thread "AppKit Thread" java.lang.NoSuchMethodError: accessibilityHitTest</pre>
- <paragraph>
-  I have this exception popping up every time I input a mouse click and I have no idea how to debug it. My GUI works fine, despite the exception, and I'm getting all the info I need from the mouse click.
-  <break>
-  </break>
-  <break>
-  </break>
-  I think this has something to do with MacOS because I believe we didn't have this issue when working on my partner's windows computer.
- </paragraph>
-</document>
-<h3>
- Author: Michael Clarkson (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ I have this exception popping up every time I input a mouse click and I have no idea how to debug it. My GUI works fine, despite the exception, and I'm getting all the info I need from the mouse click.
+ <break>
+ </break>
+ <break>
+ </break>
+ I think this has something to do with MacOS because I believe we didn't have this issue when working on my partner's windows computer.
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Clarkson (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Can you go to menu Eclipse-&gt;Preferences-&gt;Java-&gt;Installed JREs, and post a screenshot of what you see there?
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   (One possibility is your JDK is too old and has
-  <link href="https://bugs.openjdk.java.net/browse/JDK-8274326"/>
-  this bug.)
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <figure>
-  <image height="390" src="https://static.us.edusercontent.com/files/Sza9ZB56rjrnWUMICncDUNJ9" width="624"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Clarkson (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yeah that confirms my suspicion.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+  <a href="https://bugs.openjdk.java.net/browse/JDK-8274326">
+   this bug
+  </a>
+  .)
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <figure>
+   <image height="390" src="https://static.us.edusercontent.com/files/Sza9ZB56rjrnWUMICncDUNJ9" width="624"/>
+  </figure>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Michael Clarkson (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Yeah that confirms my suspicion.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Clarkson (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Clarkson (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   You have 17.0.1 but the bug was fixed in 17.0.2 according to the page I linked above.  Installing the most recent version of Eclipse should fix this.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

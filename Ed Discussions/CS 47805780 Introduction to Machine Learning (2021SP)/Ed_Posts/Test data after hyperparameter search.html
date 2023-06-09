@@ -13,56 +13,54 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="1.0">
- <paragraph>
-  I'm a bit confused on this, after we find our hyperparameters from our training and validation set, do we retrain including the test data (the one split off from train not the no label one) or leave it as is?
- </paragraph>
-</document>
+<p>
+ I'm a bit confused on this, after we find our hyperparameters from our training and validation set, do we retrain including the test data (the one split off from train not the no label one) or leave it as is?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Victor Butoi (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Victor Butoi (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You can't train on test data because you have no labels (otherwise wouldn't be much of a test), once you get the hyper-parameters that allow you to generalize best from your validation set, then you use those to predict on your test set.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The test set I mean is the one I created by splitting the training data into train, valid, and test, not the actual testing data with no labels. this testing data actually has labels.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Samar Khanna (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Why do you want to split your train data into train/val/test as opposed to just train/val?
- </paragraph>
- <paragraph>
-  In this project we already have the hold-out test set (i.e. which is used for your Kaggle scores), so you don't need an extra test-set during your model selection procedure as it offers no advantages but only detracts from the available data you have for training.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   The test set I mean is the one I created by splitting the training data into train, valid, and test, not the actual testing data with no labels. this testing data actually has labels.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Samar Khanna (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Why do you want to split your train data into train/val/test as opposed to just train/val?
+   </p>
+   <p>
+    In this project we already have the hold-out test set (i.e. which is used for your Kaggle scores), so you don't need an extra test-set during your model selection procedure as it offers no advantages but only detracts from the available data you have for training.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

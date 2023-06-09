@@ -13,33 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  i was watching the 2.1 prep and had a question about the mental model for partials
- </paragraph>
- <paragraph>
-  its said in the video that as the interpreter is interpreting the original php file that has links to the partials php file, it eventually hits the partials code and it "sucks it in". does this mean that the partials code is interpreted at that moment or is it stored somewhere and then later interpreted at the end, with the html chunk loading?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ i was watching the 2.1 prep and had a question about the mental model for partials
+</p>
+<p>
+ its said in the video that as the interpreter is interpreting the original php file that has links to the partials php file, it eventually hits the partials code and it "sucks it in". does this mean that the partials code is interpreted at that moment or is it stored somewhere and then later interpreted at the end, with the html chunk loading?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Kyle J. Harms (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kyle J. Harms (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Good question!
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The partials code is interpreted at that exact moment like it's part of the original PHP file. (This means you can reference or create variables in the partials, and they will be available in the original PHP file, etc.)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

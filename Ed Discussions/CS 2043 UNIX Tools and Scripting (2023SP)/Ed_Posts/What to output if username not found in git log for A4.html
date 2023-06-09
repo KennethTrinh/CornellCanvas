@@ -13,41 +13,37 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  In the instructions for Assignment 4, it tells us that the shell script should error if (1) the email address is specified but not a second argument containing the path to the git repository and (2) if the email address is specified, but the second argument is a directory that doesn't exist.
- </paragraph>
- <paragraph>
-  However, what should we do if both arguments are correctly provided, and the email address is not found -- ie, has 0 commits in the repository? Should this also be an error condition, or should we output the following:
- </paragraph>
- <pre>User &lt;email&gt; has made 0 commits
+<p>
+ In the instructions for Assignment 4, it tells us that the shell script should error if (1) the email address is specified but not a second argument containing the path to the git repository and (2) if the email address is specified, but the second argument is a directory that doesn't exist.
+</p>
+<p>
+ However, what should we do if both arguments are correctly provided, and the email address is not found -- ie, has 0 commits in the repository? Should this also be an error condition, or should we output the following:
+</p>
+<pre>User &lt;email&gt; has made 0 commits
 Longest message:
 
 </pre>
- <paragraph>
- </paragraph>
- <paragraph>
-  Finally, when we issue errors, should we be using
-  <code>
-   exit 1
-  </code>
-  to exit with status code 1 and immediately terminate the script?
- </paragraph>
-</document>
+<p>
+ Finally, when we issue errors, should we be using
+ <code>
+  exit 1
+ </code>
+ to exit with status code 1 and immediately terminate the script?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Ronald Dinapoli (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Ronald Dinapoli (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   No, you don't need to handle that situation.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

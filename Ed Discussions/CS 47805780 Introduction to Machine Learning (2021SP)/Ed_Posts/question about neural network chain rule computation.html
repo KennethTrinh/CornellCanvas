@@ -13,71 +13,65 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="492.1176470588235" src="https://static.us.edusercontent.com/files/MkYI8Zi7bia8Jio2lql65N3h" width="658"/>
- </figure>
- <paragraph>
-  I don't quite understand how we computed the last term in the Jacobian (when we apply the chain rule).
- </paragraph>
- <paragraph>
-  I understand that the transpose of W_{d-2} has dimension {k_(d-1)} x {k_(d-2)}, and that the vector v_{d-2} has dimension {k_(d-2)} x 1, so the vector s_{d-1} has dimension {k_(d-1)} x 1.
- </paragraph>
- <paragraph>
-  However, when we take the Jacobian of the vector s_{d-1}, we only take the Jacobian wrt w_{d-2,j}, which is the j^th column of the matrix W_{d-2} (which is also the j^th row of
-  <italic>
-   the transpose of
-  </italic>
-  the matrix W_{d-2}).
- </paragraph>
- <paragraph>
-  But I don't understand how we get that the Jacobian contains
-  <italic>
-   the transpose of
-  </italic>
-  v_{d-2}.
- </paragraph>
- <paragraph>
-  s_{d-1} is expressed in terms of
-  <italic>
-   the transpose of
-  </italic>
-  <bold>
-   <italic>
-    the matrix W_{d-2}
-   </italic>
-  </bold>
-  and the vector v_{d-2}, but then the Jacobian is expressed in terms of
-  <italic>
-   the transpose of
-   <bold>
-    the vector v_{d-2}
-   </bold>
-  </italic>
-  , so I'm a little confused at the connection there. How did we switch from having
-  <italic>
-   the transpose of
-   <bold>
-    the matrix W_{d-2}
-   </bold>
-  </italic>
-  to having
-  <italic>
-   the transpose of
-   <bold>
-    the vector v_{d-2}
-   </bold>
-  </italic>
-  ?
- </paragraph>
- <paragraph>
-  And then why are all the rows of the resulting matrix just the zero vector except for the j^th row?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<figure>
+ <image height="492.1176470588235" src="https://static.us.edusercontent.com/files/MkYI8Zi7bia8Jio2lql65N3h" width="658"/>
+</figure>
+<p>
+ I don't quite understand how we computed the last term in the Jacobian (when we apply the chain rule).
+</p>
+<p>
+ I understand that the transpose of W_{d-2} has dimension {k_(d-1)} x {k_(d-2)}, and that the vector v_{d-2} has dimension {k_(d-2)} x 1, so the vector s_{d-1} has dimension {k_(d-1)} x 1.
+</p>
+<p>
+ However, when we take the Jacobian of the vector s_{d-1}, we only take the Jacobian wrt w_{d-2,j}, which is the j^th column of the matrix W_{d-2} (which is also the j^th row of
+ <i>
+  the transpose of
+ </i>
+ the matrix W_{d-2}).
+</p>
+<p>
+ But I don't understand how we get that the Jacobian contains
+ <i>
+  the transpose of
+ </i>
+ v_{d-2}.
+</p>
+<p>
+ s_{d-1} is expressed in terms of
+ <i>
+  the transpose of
+ </i>
+ <b>
+  <i>
+   the matrix W_{d-2}
+  </i>
+ </b>
+ and the vector v_{d-2}, but then the Jacobian is expressed in terms of
+ <i>
+  the transpose of
+  <b>
+   the vector v_{d-2}
+  </b>
+ </i>
+ , so I'm a little confused at the connection there. How did we switch from having
+ <i>
+  the transpose of
+  <b>
+   the matrix W_{d-2}
+  </b>
+ </i>
+ to having
+ <i>
+  the transpose of
+  <b>
+   the vector v_{d-2}
+  </b>
+ </i>
+ ?
+</p>
+<p>
+ And then why are all the rows of the resulting matrix just the zero vector except for the j^th row?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>

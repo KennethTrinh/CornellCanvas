@@ -13,22 +13,21 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  (extracted from today's office hours transcript)
-  <break>
-  </break>
-  <break>
-  </break>
-  <bold>
-   if you want to work directly with positions, use "for .i.. range (...)", because that directly gives you index numbers; if you just want to work with the values in a list, just iterate through the values, which are give be "for x in whatever_list"
-  </bold>
-  <break>
-  </break>
- </paragraph>
- <snippet language="py" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   # this doesn't work (the way you expect)
+<p>
+ (extracted from today's office hours transcript)
+ <break>
+ </break>
+ <break>
+ </break>
+ <b>
+  if you want to work directly with positions, use "for .i.. range (...)", because that directly gives you index numbers; if you just want to work with the values in a list, just iterate through the values, which are give be "for x in whatever_list"
+ </b>
+ <break>
+ </break>
+</p>
+<snippet language="py" line-numbers="true" runnable="true">
+ <snippet-file id="code">
+  # this doesn't work (the way you expect)
 print("the attempt to use a for-each loop")
 thelist = ['hi', 'hi', 'hi']
 list2 = ['nothing', 'nothing', 'nothing']
@@ -47,9 +46,8 @@ for i in range(len(thelist)):
     print("i is: " + str(i))
     list2[i] = 'done'
 print(list2)
-  </snippet-file>
- </snippet>
-</document>
+ </snippet-file>
+</snippet>
 <h3>
  ----------- REPLIES -----------
 </h3>

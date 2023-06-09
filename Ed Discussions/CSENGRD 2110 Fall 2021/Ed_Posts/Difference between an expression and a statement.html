@@ -13,66 +13,64 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Someone asked a similar question a few weeks ago but I'm still not clear. I looked at HyperText and the notes and still am confused about what the difference between an expression and a statement is in Java. It seems that many things are both expressions AND statements. Is a statement something that doesn't return something, but an expression has to? And what are some examples of things that are ONLY expressions, only statements, or both?
- </paragraph>
-</document>
+<p>
+ Someone asked a similar question a few weeks ago but I'm still not clear. I looked at HyperText and the notes and still am confused about what the difference between an expression and a statement is in Java. It seems that many things are both expressions AND statements. Is a statement something that doesn't return something, but an expression has to? And what are some examples of things that are ONLY expressions, only statements, or both?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   An expression is evaluated to yield a value.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   A statement doesn't yield a value.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The statement
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   System.output.println(5);
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   does not give a value, although it prints something out. Therefore, this is not a legal expression:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   4 + System.output.println(5);
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   A while-loop is a statement to be executed:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   while (x &lt; 5) { s= s + x; x= x+1};
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The distinction get blurred in Java because the assignment statement
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   x=  x+1;
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   written without the semicolon, is actually defined to be an expression; its value is the value assigned to x. Therefore, one can write this:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   y= 5 + (x= x+1);
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   This adds 1 to x and then stores in y the sum of 5 and the new value of x.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   We NEVER writes such things because it is easy to misunderstand.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <p>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,35 +13,34 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I looked at the slides again and Java Hypertext, and it says implementer specification should be used when fields are private and that they should explain the meaning of them and any constraints on them. It doesn't specify how client specification should be written (other than that it's used when public), so I'm confused on whether it's different?
- </paragraph>
-</document>
+<p>
+ I looked at the slides again and Java Hypertext, and it says implementer specification should be used when fields are private and that they should explain the meaning of them and any constraints on them. It doesn't specify how client specification should be written (other than that it's used when public), so I'm confused on whether it's different?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Consider a specification of a public method. A  "client" will see it ---someone who wants to USE your class but doesn't get to see the code. Therefore, that specification should not mention anything by name that is private, because they don't know what it means. That is all.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Consider class String. You can see its specification here:
- </paragraph>
- <paragraph>
-  <link href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html"/>
-  https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
- </paragraph>
- <paragraph>
+ </p>
+ <p>
+  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">
+   https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
+  </a>
+ </p>
+ <p>
   You don't see any code, just the specifications of methods. Here is one constructor:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   /** Coonstructor: a new
   <code>
    String
@@ -54,33 +53,34 @@
   </break>
   <code>
    <link href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#String-char:A-"/>
-   String(char[] value)
+   String
+   (char[] value)
   </code>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Now, the new String of chars has to be stored SOMEWHERE within the object, but the spec doesn't say where. For example, it doesn't say
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   "Store the string of values in field c."
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   That would be giving away unnecessary information.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Got it. Thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Got it. Thank you!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

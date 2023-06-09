@@ -13,45 +13,43 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I don't really get what the code is supposed to be doing for things like "gap year" or "college outside the US," why does the code need to add it to the list (or dictionary)? Colleges only have attributes for Accepted Enrolled, Accepted Not Enrolled, Regected, and Waitlisted, so when you add a college with this name and add a student who went to this college you are going to put it in a random  one list. In the case of line 41 on the handout (new_c.add_student(tag, decision, senrolled_cn)), you are just going to put it into whatever the last college in outcomes goes into. Then when you run it and compare something with one such "college" you are going to get nonsense answers. It isn't even clear to me what you would want to get, so I am not sure how I would fix it. If our class College isn't built to support those options, why leave them as possible options at all?
- </paragraph>
-</document>
+<p>
+ I don't really get what the code is supposed to be doing for things like "gap year" or "college outside the US," why does the code need to add it to the list (or dictionary)? Colleges only have attributes for Accepted Enrolled, Accepted Not Enrolled, Regected, and Waitlisted, so when you add a college with this name and add a student who went to this college you are going to put it in a random  one list. In the case of line 41 on the handout (new_c.add_student(tag, decision, senrolled_cn)), you are just going to put it into whatever the last college in outcomes goes into. Then when you run it and compare something with one such "college" you are going to get nonsense answers. It isn't even clear to me what you would want to get, so I am not sure how I would fix it. If our class College isn't built to support those options, why leave them as possible options at all?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Hi, the short answer is: Your task here is to rewrite code so it reproduces the behavior of the previous version as far as possible. So have your code essentially do with such cases what it would have done before.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   In real life,
-  <italic>
+  <i>
    if
-  </italic>
+  </i>
   you knew who
-  <italic>
+  <i>
    all
-  </italic>
+  </i>
   the end users would be, you would ask them if this is really what they wanted.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   But if you don't, then you don't know whether people will want to use process_line() for purposes other than computing showdowns --- maybe they would in fact want a list of all who decided to take a gap year, so they could send them a follow-up survey or something --- then what else can you do but try not to break any user assumptions?
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   And the longest answer is: I wrote process_line() early on in the A3 development process, before the showdowns-between-pairs-of-Colleges idea had fully solidified in my head, as a way of exploring the data myself.  So it's written to be agnostic about what purposes College objects would be put to.  And then when it came to the final version of the showdown idea, I decided to use the process_line() I already had rather than build a special-purpose one.  (I expect the experience of using a tool that's available in a way that it wasn't completely explicitly designed for is not new for people, which perhaps explains the existence of phrases like "35+ Genius Uses for Binder Clips At Home."
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You have vaguely tempted me to have part of A6 be to use subclassing to handle these special kinds of "not-applied-to" "colleges" ... can you imagine how one might do it? (I should say that I don't think we'll end up revisiting A3 again in A6, but who knows right now....)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

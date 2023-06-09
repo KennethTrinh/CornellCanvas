@@ -13,37 +13,35 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Is it common practice to overload or override the equals method when we normally code? I understand that overriding requires for the parameter to remain of class Object, which makes me believe that it is less often overridden since we would prefer to compare this class to an object of the same class. However, after working through some of the prelim problems and reading through JavaHyperText, I get the impression that it is more common to override the .equals() method. Could someone please explain why? Thank you in advance.
- </paragraph>
-</document>
+<p>
+ Is it common practice to overload or override the equals method when we normally code? I understand that overriding requires for the parameter to remain of class Object, which makes me believe that it is less often overridden since we would prefer to compare this class to an object of the same class. However, after working through some of the prelim problems and reading through JavaHyperText, I get the impression that it is more common to override the .equals() method. Could someone please explain why? Thank you in advance.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   If it makes sense to talk about two objects of a class being equal, then define equals; if not, don't.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Consider a class
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Point
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   whose objects are points (x, y) in a plane. Two different objects of class Point could have the same (x, y) values, and it makes sense to write a function equals in this class.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Consider a class Student, each object of which is supposed to represent a different, unique student at Cornell. The idea is that one object would be created for each student. If it is implemented that way, then there is no need to override equals: s1 == s2 it true iff s1 and s2 point at the same object.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

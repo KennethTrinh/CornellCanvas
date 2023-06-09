@@ -13,39 +13,33 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  This question is purely based on curiosity, but why does mousePressed(MouseEvent e) not change the scorelabel on our screen or notify us? It changes the target to red, so why doesn't it change the scorelabel too?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  In the handout it does mention that these are things we change in TODO 9. But if the other parts of setscore() work in TODO 8, why doesn't setScore() do what we'd expect?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ This question is purely based on curiosity, but why does mousePressed(MouseEvent e) not change the scorelabel on our screen or notify us? It changes the target to red, so why doesn't it change the scorelabel too?
+</p>
+<p>
+ In the handout it does mention that these are things we change in TODO 9. But if the other parts of setscore() work in TODO 8, why doesn't setScore() do what we'd expect?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The score label will not change until TODO 9 (I recommend skimming the whole handout so you know what functionality is still to come).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You say you are not calling
   <code>
    setScore()
   </code>
-  <italic>
+  <i>
    on
-  </italic>
+  </i>
   anything, but consider this: what is the difference between executing
   <code>
    setScore(0)
@@ -55,61 +49,61 @@
    this.setScore(0)
   </code>
   ?  Non-static methods are always invoked on an instance of an object, but sometimes the target object is implicit.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I'm so sorry I just edited the question after realizing this! Sorry to have you to respond to my initial question
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Regarding your revised question, computers don't magically do what you expect; they only do what you tell them to do.
- </paragraph>
- <paragraph>
-  <code>
-   GameComponent
-  </code>
-  knows nothing about the score label, which is constructed by
-  <code>
-   GameMain
-  </code>
-  and never shared with
-  <code>
-   game
-  </code>
-  .  It could have been shared with
-  <code>
-   game
-  </code>
-  , but that would have been a different design (which is discussed briefly in the handout).  Instead of having the game update the label directly, we use the "observer pattern" to have the label's owner listen for and react to changes to the score.
- </paragraph>
- <paragraph>
-  When designing larger computer programs, there are often many different ways to accomplish the same task, often with different tradeoffs.  Our goal is to expose you to various design patterns throughout the assignments so you get a taste of what the options and their consequences are.  Some designs seem much less straightforward (like not updating the score label in the same method that updates the score), but they often reduce
-  <italic>
-   coupling
-  </italic>
-  , which makes components more reusable (for example, you could add the gameboard to a different window that didn't use a JLabel for the score and instead presented it in a different way).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I'm so sorry I just edited the question after realizing this! Sorry to have you to respond to my initial question
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Curran Muhlberger (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Regarding your revised question, computers don't magically do what you expect; they only do what you tell them to do.
+   </p>
+   <p>
+    <code>
+     GameComponent
+    </code>
+    knows nothing about the score label, which is constructed by
+    <code>
+     GameMain
+    </code>
+    and never shared with
+    <code>
+     game
+    </code>
+    .  It could have been shared with
+    <code>
+     game
+    </code>
+    , but that would have been a different design (which is discussed briefly in the handout).  Instead of having the game update the label directly, we use the "observer pattern" to have the label's owner listen for and react to changes to the score.
+   </p>
+   <p>
+    When designing larger computer programs, there are often many different ways to accomplish the same task, often with different tradeoffs.  Our goal is to expose you to various design patterns throughout the assignments so you get a taste of what the options and their consequences are.  Some designs seem much less straightforward (like not updating the score label in the same method that updates the score), but they often reduce
+    <i>
+     coupling
+    </i>
+    , which makes components more reusable (for example, you could add the gameboard to a different window that didn't use a JLabel for the score and instead presented it in a different way).
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

@@ -13,34 +13,30 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  why is this a valid kernel. It is not necessarily semi-definite.
- </paragraph>
-</document>
+<p>
+ why is this a valid kernel. It is not necessarily semi-definite.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jane Du (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jane Du (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Do you mean "positive semi-definite"? But, it is. By definition, if a kernel function k can be written $$k(x,z) = \phi(x)^T\phi(z)$$ then k is a kernel.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Consider also that the kernel matrix K made with the entries $K_{ij} = k(x_i, x_j)$
-  <italic>
+  <i>
    is
-  </italic>
+  </i>
   a positive semidefinite matrix. If you had a vector $p$ such that $p_i = f(x_i)$ then $K = pp^T$, and from there you can see that K must satisfy the definition of positive semidefinite: $x^TKx \ge 0\ \forall x$ since $x^TKx = x^Tpp^Tx = (p^Tx)^Tp^Tx \ge 0$.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

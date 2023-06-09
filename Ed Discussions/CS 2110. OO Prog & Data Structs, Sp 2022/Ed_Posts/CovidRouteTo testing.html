@@ -13,52 +13,48 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Confused on how to call this method in the testing file because it has two arguments (for the parent and child nodes):
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  this was the example given to us: A.CovidRouteTo(E) returns the list [A,C,E].
- </paragraph>
- <paragraph>
-  I tried calling it like this in the test which is clearly wrong: var route1= st.humanA.CovidRouteTo(
-  <italic>
-   humanB
-  </italic>
-  );
- </paragraph>
- <paragraph>
-  Where would humanA argument go?
- </paragraph>
-</document>
+<p>
+ Confused on how to call this method in the testing file because it has two arguments (for the parent and child nodes):
+</p>
+<p>
+ this was the example given to us: A.CovidRouteTo(E) returns the list [A,C,E].
+</p>
+<p>
+ I tried calling it like this in the test which is clearly wrong: var route1= st.humanA.CovidRouteTo(
+ <i>
+  humanB
+ </i>
+ );
+</p>
+<p>
+ Where would humanA argument go?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   humanA is st.humanA.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Method covidRouteTo is in a node. It's looking for the covid route from that node to the argument.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Here's the specification:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   /** Return the route Covid took to get from "here" (the root of &lt;br&gt;
   <break>
   </break>
   * this CovidTree) to descendent c. If there is no such route, return null.&lt;br&gt;
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,85 +13,81 @@
 <h3>
  Vote Count: 5
 </h3>
-<document version="2.0">
- <paragraph>
-  Here is the specification for the method insert before:
- </paragraph>
- <paragraph>
-  /** Insert value v in a new node after node n. &lt;br&gt;
- </paragraph>
- <paragraph>
-  * This operation takes constant time. &lt;br&gt;
- </paragraph>
- <paragraph>
-  * Precondition: n must be a node of this list; it may not be null.&lt;br&gt;
- </paragraph>
- <paragraph>
-  * E.g. if the list is [3, 8, 2] and n points to the node with 8 in it, &lt;br&gt;
- </paragraph>
- <paragraph>
-  * and v is 1, the list is changed to [3, 1, 8, 2] */
- </paragraph>
- <paragraph>
-  <bold>
-   public
-  </bold>
-  <bold>
-   void
-  </bold>
-  insertBefore(Node n, E v) {}
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  The spec says to "insert value v in a new node after node n," but in the example 1 (value v) was inserted before 8 (node n).
- </paragraph>
- <paragraph>
-  I mean I think the spec is supposed to say insert value v in a new node before node n right? since the method name is insertbefore.
- </paragraph>
-</document>
+<p>
+ Here is the specification for the method insert before:
+</p>
+<p>
+ /** Insert value v in a new node after node n. &lt;br&gt;
+</p>
+<p>
+ * This operation takes constant time. &lt;br&gt;
+</p>
+<p>
+ * Precondition: n must be a node of this list; it may not be null.&lt;br&gt;
+</p>
+<p>
+ * E.g. if the list is [3, 8, 2] and n points to the node with 8 in it, &lt;br&gt;
+</p>
+<p>
+ * and v is 1, the list is changed to [3, 1, 8, 2] */
+</p>
+<p>
+ <b>
+  public
+ </b>
+ <b>
+  void
+ </b>
+ insertBefore(Node n, E v) {}
+</p>
+<p>
+ The spec says to "insert value v in a new node after node n," but in the example 1 (value v) was inserted before 8 (node n).
+</p>
+<p>
+ I mean I think the spec is supposed to say insert value v in a new node before node n right? since the method name is insertbefore.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes, sorry about that ...
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ben Mun (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  It's okay!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Emily Wang (student)
-</h3>
-<h3>
- Vote Count: 4
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Emily Wang (student)
+ </h3>
+ <h3>
+  Vote Count: 4
+ </h3>
+ <p>
   can we pin this so students know about the typo? thanks!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 3
+  </h3>
+  <p>
+   Yes, sorry about that ...
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Ben Mun (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    It's okay!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

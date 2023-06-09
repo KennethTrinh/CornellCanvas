@@ -13,151 +13,150 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm trying to get started on the final project, and I want to use SPI to send/receive data from my board to my computer. Does anyone know how I might go about this, or are there any resources which discuss how to do this?
- </paragraph>
-</document>
+<p>
+ I'm trying to get started on the final project, and I want to use SPI to send/receive data from my board to my computer. Does anyone know how I might go about this, or are there any resources which discuss how to do this?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   While SPI is a "serial" data protocol, I believe you mean to use UART so you could utilize a USB connection with a computer.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  No. While I was originally thinking of UART, our project wants to involve 1: many master/ slave communication, where UART can only do 1:1. SPI fits this specification, so I wanted to figure out how to use that.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  SPI also supports one to one, many slave devices are not necessarily needed. Your laptop or desktop computer is unlikely to have an SPI bus (well one that would be user accessible).
-  <break>
-  </break>
-  If you are trying to communicate between microcontrollers (multiple KL46Zs, Arduinos, etc.) then you could use SPI, I2C, or UART!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  That's what I was thinking; have multiple kl46z be in communication with each other. I thought that direct board-to-board communication was basically impossible, so I thought to use the computer as a middleman.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Direct communication is possible! Otherwise the interfaces would be useless for things that are trying to communicate on PCBs.
- </paragraph>
- <paragraph>
-  Chapter 37 in the processor manual details the SPI module on the KL46Z. I would recommend starting with the block diagrams in 37.1 and functional descriptions in 37.4. 37.5 provides short pseudocode examples for using the module in different cofigurations. (Please make sure you read 5.7.7 to understand how the clocks are hooked up).
- </paragraph>
- <paragraph>
-  You will need to see the pin out table (10.3.1) to see which pins can be mapped to the different SPI functions (similar method as to how we selected ALT1 (001) to get the LEDs working as GPIO).
- </paragraph>
- <paragraph>
-  If you have an Arduino laying around, it would likely be helpful if you start off by setting your KL46Z as master and an Arduino as slave to make sure you can send binary data correctly. From there you can flip the roles and make sure you can receive data correctly. Lastly, you can set one KL46Z as master and one or more KL46Z as slaves and hopefully it all works!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  That would be good, but I don't think I have the correct hardware. Do you know where I could install or find it? I haven't used arduino before.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  If you don't have an Arduino for testing, you can just use two KL46Zs. Just it will be hard to debug since it requires the master and slave to be mostly functional before you will see data properly transmitted between the boards.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  We can't figure out how to get the boards connected with spi. We're just using the example code from MCUExpresso for now, but even that can't seem to work. We're getting desperate; no one at office hours seems to know how SPI works better than we do. Is there anything we can do?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I replied to
-  <link href="https://edstem.org/us/courses/19442/discussion/1515260"/>
-  #809
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   No. While I was originally thinking of UART, our project wants to involve 1: many master/ slave communication, where UART can only do 1:1. SPI fits this specification, so I wanted to figure out how to use that.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Harris Miller (None)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    SPI also supports one to one, many slave devices are not necessarily needed. Your laptop or desktop computer is unlikely to have an SPI bus (well one that would be user accessible).
+    <break>
+    </break>
+    If you are trying to communicate between microcontrollers (multiple KL46Zs, Arduinos, etc.) then you could use SPI, I2C, or UART!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     That's what I was thinking; have multiple kl46z be in communication with each other. I thought that direct board-to-board communication was basically impossible, so I thought to use the computer as a middleman.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Harris Miller (None)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      Direct communication is possible! Otherwise the interfaces would be useless for things that are trying to communicate on PCBs.
+     </p>
+     <p>
+      Chapter 37 in the processor manual details the SPI module on the KL46Z. I would recommend starting with the block diagrams in 37.1 and functional descriptions in 37.4. 37.5 provides short pseudocode examples for using the module in different cofigurations. (Please make sure you read 5.7.7 to understand how the clocks are hooked up).
+     </p>
+     <p>
+      You will need to see the pin out table (10.3.1) to see which pins can be mapped to the different SPI functions (similar method as to how we selected ALT1 (001) to get the LEDs working as GPIO).
+     </p>
+     <p>
+      If you have an Arduino laying around, it would likely be helpful if you start off by setting your KL46Z as master and an Arduino as slave to make sure you can send binary data correctly. From there you can flip the roles and make sure you can receive data correctly. Lastly, you can set one KL46Z as master and one or more KL46Z as slaves and hopefully it all works!
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 12em;">
+      <h3>
+       Author: Anonymous
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       That would be good, but I don't think I have the correct hardware. Do you know where I could install or find it? I haven't used arduino before.
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 14em;">
+       <h3>
+        Author: Harris Miller (None)
+       </h3>
+       <h3>
+        Vote Count: 0
+       </h3>
+       <p>
+        If you don't have an Arduino for testing, you can just use two KL46Zs. Just it will be hard to debug since it requires the master and slave to be mostly functional before you will see data properly transmitted between the boards.
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+       <div style="text-indent: 16em;">
+        <h3>
+         Author: Anonymous
+        </h3>
+        <h3>
+         Vote Count: 0
+        </h3>
+        <p>
+         We can't figure out how to get the boards connected with spi. We're just using the example code from MCUExpresso for now, but even that can't seem to work. We're getting desperate; no one at office hours seems to know how SPI works better than we do. Is there anything we can do?
+        </p>
+        <h3>
+         ------------------------------------
+        </h3>
+        <div style="text-indent: 18em;">
+         <h3>
+          Author: Harris Miller (None)
+         </h3>
+         <h3>
+          Vote Count: 0
+         </h3>
+         <p>
+          I replied to
+          <a href="https://edstem.org/us/courses/19442/discussion/1515260">
+           #809
+          </a>
+         </p>
+         <h3>
+          ------------------------------------
+         </h3>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

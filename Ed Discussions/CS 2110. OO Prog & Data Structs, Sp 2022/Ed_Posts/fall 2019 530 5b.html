@@ -13,56 +13,54 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  The question asks to find the tightest bound on worst-case time complexity for binary search on a doubly linkedlist of size n — why is this O(n) and not O(log(n))? I thought that O(log(n)) was generally the worst-case time complexity for binary searches
- </paragraph>
-</document>
+<p>
+ The question asks to find the tightest bound on worst-case time complexity for binary search on a doubly linkedlist of size n — why is this O(n) and not O(log(n))? I thought that O(log(n)) was generally the worst-case time complexity for binary searches
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Richard Gu (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Richard Gu (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   How would you implement binary search on a doubly linked list? There's no efficient way to know which "half" of the list contains the element you're searching for as with sorted arrays, so you would need to traverse each node. Hence, O(n).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Even if you somehow knew which part of the DLList to start your search from, element lookup time in LinkedLists is not O(1) as with arrays. So you can't "jump" to a particular node here to save time.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  makes sense, thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Richard Gu (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  np
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   makes sense, thank you!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Richard Gu (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    np
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

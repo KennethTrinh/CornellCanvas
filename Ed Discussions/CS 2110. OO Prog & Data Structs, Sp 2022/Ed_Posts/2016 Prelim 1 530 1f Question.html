@@ -13,76 +13,74 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  "If class Dog extends class Animal, and variable Animal pet contains a pointer to a Dog object, then the statement Dog spike= pet; is legal."
- </paragraph>
- <paragraph>
-  I'm having trouble understanding why this statement is false. I believe both pet and spike should be referring to matching classes (something about subclassing?). Could someone please explain?
- </paragraph>
-</document>
+<p>
+ "If class Dog extends class Animal, and variable Animal pet contains a pointer to a Dog object, then the statement Dog spike= pet; is legal."
+</p>
+<p>
+ I'm having trouble understanding why this statement is false. I believe both pet and spike should be referring to matching classes (something about subclassing?). Could someone please explain?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  This requires a downward cast from the type of pet (which is Animal) to Dog. Downward casts are not done automatically; An explicit cast is required
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  So it doesn't matter that the pointer is already pointing to a Dog object, as long as the class of the pet object itself is Animal, then it isn't possible?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Yes, look at the example in lecture Polymorphism II we do this with interest account being a dynamic type of Account at the time so trying to use it as an interest account would be illegal (EVEN though there’s a pointer to an IAccount object)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Please get on JavaHyperText and memorize the compile-time reference rule.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You should be able to answer such a question yourself, but you are not using the rules of Java that you have been taught.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   It does not good simply for us to answer yes or no. You learn nothing by that.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   This requires a downward cast from the type of pet (which is Animal) to Dog. Downward casts are not done automatically; An explicit cast is required
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    So it doesn't matter that the pointer is already pointing to a Dog object, as long as the class of the pet object itself is Animal, then it isn't possible?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Bahaa Kotb (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Yes, look at the example in lecture Polymorphism II we do this with interest account being a dynamic type of Account at the time so trying to use it as an interest account would be illegal (EVEN though there’s a pointer to an IAccount object)
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

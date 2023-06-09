@@ -13,47 +13,43 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Could you please explain this example? i.e., what the \1 and \2 are doing and why it outputs "world say hello back"; why is world printed before hello? Thank you!!
- </paragraph>
- <paragraph>
-  Also, why is there a \ before sed? Thanks!
- </paragraph>
- <figure>
-  <image height="185.84668192219678" src="https://static.us.edusercontent.com/files/W6BdNShDWAqGk6yt2G0IonzB" width="439"/>
- </figure>
-</document>
+<p>
+ Could you please explain this example? i.e., what the \1 and \2 are doing and why it outputs "world say hello back"; why is world printed before hello? Thank you!!
+</p>
+<p>
+ Also, why is there a \ before sed? Thanks!
+</p>
+<figure>
+ <image height="185.84668192219678" src="https://static.us.edusercontent.com/files/W6BdNShDWAqGk6yt2G0IonzB" width="439"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Ronald Dinapoli (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Ronald Dinapoli (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   When we wrap parts of the pattern we are matching with sed in parenthesis (and the parenthesis need to escaped so that they aren't interpreted as regular data) , each set of parenthesis identifies a "capture group".     The first set of parenthesis is capture group #1, the second set is capture group #2, and so on.   Then, in the text we are substituting for the found text, we can reference those capture groups by their number preceded by a backslash.   So the text "hello" is capture group #1, and the text "world" is capture group #2.     So when we have the following replacement text:
   <break>
   </break>
   <break>
   </break>
   \2 say \1 back
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   we get
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   world say hello back
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The "\" before sed is just a line continuation.   If you were typing this in a terminal window the backslash by itself would signal to the shell that you are not done entering the command and will do so on the next line.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

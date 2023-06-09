@@ -13,31 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="1.0">
- <paragraph>
-  Hi! I have read the JHT, but i am still quite confused on what is the difference between Synchronized (this) and synchronized ( one field). I noticed that “this” refers to the whole object, so does it mean we synchronize all fields within the class?
- </paragraph>
- <paragraph>
-  Thanks!
- </paragraph>
-</document>
+<p>
+ Hi! I have read the JHT, but i am still quite confused on what is the difference between Synchronized (this) and synchronized ( one field). I noticed that “this” refers to the whole object, so does it mean we synchronize all fields within the class?
+</p>
+<p>
+ Thanks!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   Every Object in Java has an associated "monitor", which is the infrastructure needed for locking and waiting.  Synchronizing on an object synchronizes on that object's monitor, and nothing more.  It implies nothing about any of the fields in that object.  It enables coordination only between threads who synchronize on the exact same object at runtime.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

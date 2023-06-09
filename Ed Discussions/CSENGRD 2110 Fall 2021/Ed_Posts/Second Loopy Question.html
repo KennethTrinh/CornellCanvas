@@ -13,77 +13,75 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  For the second loopy question, for the example below, how are we able to write k&lt;n by looking at the restrictions on k in the invariant P? Where does the "k&lt;n" come from ?
- </paragraph>
- <figure>
-  <image height="212.4742081447964" src="https://static.us.edusercontent.com/files/8Rpcsrc9zp9dN8h766yz1XbQ" width="464"/>
- </figure>
-</document>
+<p>
+ For the second loopy question, for the example below, how are we able to write k&lt;n by looking at the restrictions on k in the invariant P? Where does the "k&lt;n" come from ?
+</p>
+<figure>
+ <image height="212.4742081447964" src="https://static.us.edusercontent.com/files/8Rpcsrc9zp9dN8h766yz1XbQ" width="464"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  You can see from P and R that when the loop terminates, k = n makes sense. For
- </paragraph>
- <paragraph>
-  k = n and P implies  s is the sum of m..n-1, which is what we want.
- </paragraph>
- <paragraph>
-  Therefore, the loop should continue as long as k != n.
- </paragraph>
- <paragraph>
-  We know that k is increasing, therefore, instead of k != n we can use k &lt; n.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kenisha Stills-Ogburn (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I still don't quit understand why k = n makes sense by pattern matching. What's the question to ask when trying to figure out the  k = n makes sense in terms of the sum or is there something else that you're considering?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You know that P is true:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   s = sum of b[0..k-1]  and m &lt;= k &lt;= n
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You want to stop when R is true:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   s = sum of b[0..n-1]  and m &lt;= k &lt;= n
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Compare what is true, P, with what you want, R. If k = n, they say the same thing.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   You can see from P and R that when the loop terminates, k = n makes sense. For
+  </p>
+  <p>
+   k = n and P implies  s is the sum of m..n-1, which is what we want.
+  </p>
+  <p>
+   Therefore, the loop should continue as long as k != n.
+  </p>
+  <p>
+   We know that k is increasing, therefore, instead of k != n we can use k &lt; n.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Kenisha Stills-Ogburn (None)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I still don't quit understand why k = n makes sense by pattern matching. What's the question to ask when trying to figure out the  k = n makes sense in terms of the sum or is there something else that you're considering?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

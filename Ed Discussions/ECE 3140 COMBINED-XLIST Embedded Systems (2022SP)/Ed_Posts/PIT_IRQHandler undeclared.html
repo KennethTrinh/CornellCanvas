@@ -13,46 +13,42 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm trying to call NVIC_EnableIRQ(PIT_IRQHandelr) in process_start, but for some reason, I am getting an "'PIT_IRQHandler' undeclared (first use in this function); did you mean 'LPTimer_IRQHandler'?" error. I thought it was declared in the 3140.s file, but I am unable to use it.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I'm trying to call NVIC_EnableIRQ(PIT_IRQHandelr) in process_start, but for some reason, I am getting an "'PIT_IRQHandler' undeclared (first use in this function); did you mean 'LPTimer_IRQHandler'?" error. I thought it was declared in the 3140.s file, but I am unable to use it.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prithwish Dan (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <blockquote>
-  NVIC_EnableIRQ(PIT_IRQHandelr)
- </blockquote>
- <paragraph>
-  Assuming you copy and pasted this, maybe it's just a typo in the Handler?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aidan McNay (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   The correct code is
- </paragraph>
+ </p>
  <pre>NVIC_EnableIRQ(PIT_IRQn);
 </pre>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Prithwish Dan (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <blockquote>
+   NVIC_EnableIRQ(PIT_IRQHandelr)
+  </blockquote>
+  <p>
+   Assuming you copy and pasted this, maybe it's just a typo in the Handler?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

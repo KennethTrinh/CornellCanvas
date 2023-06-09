@@ -13,52 +13,46 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  Hello, I'm a bit confused about the meaning of the second if statement. Based on the algorithm, if the first if statement isn't true (w is not in S or F), doesn't that mean w has to be in F for the second if statement to be true (d[f] + wgt(f, w) &lt; d[w])? Would it be safe to assume that w is always in F when the code enters that the second if statement block?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Hello, I'm a bit confused about the meaning of the second if statement. Based on the algorithm, if the first if statement isn't true (w is not in S or F), doesn't that mean w has to be in F for the second if statement to be true (d[f] + wgt(f, w) &lt; d[w])? Would it be safe to assume that w is always in F when the code enters that the second if statement block?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   YES.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The first if-condition is "w is not in S or F".
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If it is false, then "w IS in S or F". It could be in F, it could be in S.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   It doesn't matter which. But yes, if
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   d[f] + wgt(f, w) &lt; d[w]
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   that tells you a shorter path to w has been found.
   <break>
   </break>
   That cannot be if w is in S because the shortest path to w is already known.
   <break>
   </break>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Therefore, if d[f] + wgt(f, w) &lt; d[w], you know that w is in F.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,71 +13,69 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  How would we make current_time a global variable in process.c?
- </paragraph>
- <paragraph>
-  We tried copying and pasting this line of code from realtime.h but it seems not to work:
- </paragraph>
- <paragraph>
-  volatile extern realtime_t current_time;
- </paragraph>
- <paragraph>
-  We also received conflicting types errors.
- </paragraph>
- <paragraph>
-  When we don't include any global variable line we then receive an error for undefined reference to 'current_time'.
- </paragraph>
-</document>
-<h3>
- Author: Trenton Lyke (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ How would we make current_time a global variable in process.c?
+</p>
+<p>
+ We tried copying and pasting this line of code from realtime.h but it seems not to work:
+</p>
+<p>
+ volatile extern realtime_t current_time;
+</p>
+<p>
+ We also received conflicting types errors.
+</p>
+<p>
+ When we don't include any global variable line we then receive an error for undefined reference to 'current_time'.
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Trenton Lyke (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Did you add
-  <bold>
+  <b>
    #include "realtime.h"
-  </bold>
+  </b>
   to the top of your process.c file? Also could you post the exact errors you are getting?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Xinyi Huang (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Xinyi Huang (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Try
- </paragraph>
+ </p>
  <pre> volatile realtime_t current_time;
 </pre>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

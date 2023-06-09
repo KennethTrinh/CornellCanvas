@@ -13,59 +13,55 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  ^
- </paragraph>
-</document>
+<p>
+ ^
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Hyunjea Lee (staff)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Hyunjea Lee (staff)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   Hello,
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I guess you are talking about the following equation that relates the charge of the MOSFET channel with the applied gate bias.
- </paragraph>
+ </p>
  <math>
   Q_{MOS}=C_{ox}\cdot\left(V_{GS}-V_{th}\right)\ \left[\frac{C}{cm^2}\right]
  </math>
- <paragraph>
+ <p>
   So why do we use (V_GS - V_th) instead of just V_GS? If you look at the capacitance term, it's the oxide capacitance, which can be represented as follows.
- </paragraph>
+ </p>
  <math>
   C_{ox}=\frac{\varepsilon_0\varepsilon_{ox}}{t_{ox}}\ \left[\frac{F}{cm^2}\right]
  </math>
- <paragraph>
+ <p>
   The capacitance of the MOS capacitor, which is the gate stack of a MOSFET, goes to C_ox only when a MOSFET is in either inversion or accumulation. Otherwise, the effective capacitance of a MOSFET is smaller than C_ox. (So called quantum capacitance of silicon is in series with the oxide capacitance in this case) In the first equation, we assume that the MOSFET capacitance is same with C_ox. To make this assumption valid and have the inversion channel charge, we need to make sure the device is in the inversion mode. That's why we use (V_GS - V_th) instead of just V_GS; V_GS should be larger than V_th to be in the inversion mode. We don't want to run in the accumulation mode since there's no current flowing in the channel.
- </paragraph>
+ </p>
  <figure>
   <image height="367" src="https://static.us.edusercontent.com/files/7I9c3wr9aCtmKoId7lLV5NTw" width="611"/>
  </figure>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ariana Haghighi (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Ariana Haghighi (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

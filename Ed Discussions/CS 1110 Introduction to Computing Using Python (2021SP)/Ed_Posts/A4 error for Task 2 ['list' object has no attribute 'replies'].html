@@ -13,73 +13,67 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  error message. we are confused as to why it says list object. We were accessing the post attribute replies, not a list for our base case (post with no replies)
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Starting test_user_paths
- </paragraph>
- <paragraph>
-  Testing on '0.1.2', a Post with no replies
- </paragraph>
- <paragraph>
-  Testing on '0.1.1.0', just a single reply with no replies to it
- </paragraph>
- <paragraph>
-  Traceback (most recent call last):
- </paragraph>
- <paragraph>
-  File "a4_test.py", line 340, in &lt;module&gt;
- </paragraph>
- <paragraph>
-  test_user_paths()
- </paragraph>
- <paragraph>
-  File "a4_test.py", line 148, in test_user_paths
- </paragraph>
- <paragraph>
-  result = a4.user_paths(main_dict["0.1.1.0"])
- </paragraph>
- <paragraph>
-  File "/Users/vbalte/A4/a4.py", line 57, in user_paths
- </paragraph>
- <paragraph>
-  path = response.author + ', ' + user_paths(response.replies)
- </paragraph>
- <paragraph>
-  File "/Users/vbalte/A4/a4.py", line 53, in user_paths
- </paragraph>
- <paragraph>
-  if post.replies == []:
- </paragraph>
- <paragraph>
-  AttributeError: 'list' object has no attribute 'replies'
- </paragraph>
-</document>
+<p>
+ error message. we are confused as to why it says list object. We were accessing the post attribute replies, not a list for our base case (post with no replies)
+</p>
+<p>
+ Starting test_user_paths
+</p>
+<p>
+ Testing on '0.1.2', a Post with no replies
+</p>
+<p>
+ Testing on '0.1.1.0', just a single reply with no replies to it
+</p>
+<p>
+ Traceback (most recent call last):
+</p>
+<p>
+ File "a4_test.py", line 340, in &lt;module&gt;
+</p>
+<p>
+ test_user_paths()
+</p>
+<p>
+ File "a4_test.py", line 148, in test_user_paths
+</p>
+<p>
+ result = a4.user_paths(main_dict["0.1.1.0"])
+</p>
+<p>
+ File "/Users/vbalte/A4/a4.py", line 57, in user_paths
+</p>
+<p>
+ path = response.author + ', ' + user_paths(response.replies)
+</p>
+<p>
+ File "/Users/vbalte/A4/a4.py", line 53, in user_paths
+</p>
+<p>
+ if post.replies == []:
+</p>
+<p>
+ AttributeError: 'list' object has no attribute 'replies'
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Lenhard Thomas (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Lenhard Thomas (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The error says that you're doing the following
- </paragraph>
+ </p>
  <pre> path = response.author + ', ' + user_paths(response.replies)
 </pre>
- <paragraph>
+ <p>
   Note that the precondition for user_paths is that whatever you pass in must be a Post object. However, you're passing in a list object, because 'response' is likely your Post object and so 'response.replies' would be the list of post objects.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,33 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Why is dynamic dispatch better than downcasting? Could I get an example of dynamic dispatch vs. downcasting?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Why is dynamic dispatch better than downcasting? Could I get an example of dynamic dispatch vs. downcasting?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Suppose we have classes Dog, Cat, Pig, etc. Each is a subclass of Animal. Suppose animal does not have method mm but all the others do. Then, for a variable
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Animal c;
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   to call a possible method mm in that object you have to write:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   if (c instanceof Dog)   { ((Dog)c).mm(); }
   <break>
   </break>
@@ -50,62 +46,62 @@
   <break>
   </break>
   ...
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   and whenever you add a new subclass (example Bat) you have to add another else-clause.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If you don't have OO in your language, then you are almost FORCED to write code similar to the above.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   However, add method mm to class Animal. Then, instead of that if-else sequence, write simply
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   c.mm();
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   and the Overriding/Bottom-up rule, which is dynamic dispatch takes over and works.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  To my understanding, when method mm is in class Animal then any of the subclasses can also use mm according to
-  <italic>
-   <bold>
-    inheritance
-   </bold>
-  </italic>
-  .
- </paragraph>
- <paragraph>
-  So, if method mm is in class Animal and c is of type Dog, when c.mm() is called, method mm in
-  <bold>
-   the Dog subclass is used
-  </bold>
-  by
-  <italic>
-   <bold>
-    dynamic
-   </bold>
-   <bold>
-    dispatch
-   </bold>
-  </italic>
-  (AKA overriding/bottom-up rule). Is this correct?
- </paragraph>
- <paragraph>
-  Also, in this case, what is the static type of Dog and what is the dynamic type? Is the static type Animal, and the dynamic type is Dog?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   To my understanding, when method mm is in class Animal then any of the subclasses can also use mm according to
+   <i>
+    <b>
+     inheritance
+    </b>
+   </i>
+   .
+  </p>
+  <p>
+   So, if method mm is in class Animal and c is of type Dog, when c.mm() is called, method mm in
+   <b>
+    the Dog subclass is used
+   </b>
+   by
+   <i>
+    <b>
+     dynamic
+    </b>
+    <b>
+     dispatch
+    </b>
+   </i>
+   (AKA overriding/bottom-up rule). Is this correct?
+  </p>
+  <p>
+   Also, in this case, what is the static type of Dog and what is the dynamic type? Is the static type Animal, and the dynamic type is Dog?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

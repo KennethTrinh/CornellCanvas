@@ -13,96 +13,92 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Suppose I write:
- </paragraph>
- <paragraph>
-  H1N1Tree myTree = null;
- </paragraph>
- <paragraph>
-  Is there anything stopping the user from calling:
- </paragraph>
- <paragraph>
-  myTree.size();
- </paragraph>
- <paragraph>
-  When I try to handle this, by writing if(this == null) {return 0;}, it says the code in the brackets is unreachable.
- </paragraph>
- <paragraph>
-  What should I do?
- </paragraph>
-</document>
+<p>
+ Suppose I write:
+</p>
+<p>
+ H1N1Tree myTree = null;
+</p>
+<p>
+ Is there anything stopping the user from calling:
+</p>
+<p>
+ myTree.size();
+</p>
+<p>
+ When I try to handle this, by writing if(this == null) {return 0;}, it says the code in the brackets is unreachable.
+</p>
+<p>
+ What should I do?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  "this" can never be null.
- </paragraph>
- <paragraph>
-  It evaluates to a pointer to the object in which it appears.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  How would I check if the object I am calling size() on is null?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   If you execute
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   H1N1Tree myTree = null;
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   then myTree contains null, and any call myTree.size() will cause a null pointer exception.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I don't know what problem you are trying to solve. What is the problem?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I understand now; this was very helpful. Thank you, and sorry for the confusion.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I understand now; this was very helpful. Thank you, and sorry for the confusion.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   "this" can never be null.
+  </p>
+  <p>
+   It evaluates to a pointer to the object in which it appears.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    How would I check if the object I am calling size() on is null?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

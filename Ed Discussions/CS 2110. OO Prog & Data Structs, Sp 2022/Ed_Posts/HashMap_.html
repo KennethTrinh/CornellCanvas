@@ -13,51 +13,49 @@
 <h3>
  Vote Count: 4
 </h3>
-<document version="2.0">
- <paragraph>
-  After looking at A7 for a while now and trying my best to figure it out on my own, there were 2 things I wanted to ask about:
- </paragraph>
- <paragraph>
-  1) For the abstract algorithm portion [f = node in F with minimum d value], can this be found by looking at the heap (F) alone? I had an idea of simply using
-  <bold>
-   peek()
-  </bold>
-  or
-  <bold>
-   poll()
-  </bold>
-  , and my idea with this was that the minimum value should be at the top of the min heap. However, I wasn't sure if this would be enough to find the d value.
- </paragraph>
- <paragraph>
-  2) For adding elements to the HashMap and specifically regarding class
-  <bold>
-   Info
-  </bold>
-  , should we be finding the values that we have to input as
-  <bold>
-   Info
-  </bold>
-  's parameters? For example, I can assume that the new-expression for
-  <bold>
-   v
-  </bold>
-  's info would look something like this:
- </paragraph>
- <paragraph>
-  Info someVariable = new Info(0, null);
- </paragraph>
- <paragraph>
-  But do we have to find the respective values of
-  <bold>
-   dist
-  </bold>
-  and
-  <bold>
-   bkptr
-  </bold>
-  when adding other elements to the HashMap? If so, where should we start with finding these values?
- </paragraph>
-</document>
+<p>
+ After looking at A7 for a while now and trying my best to figure it out on my own, there were 2 things I wanted to ask about:
+</p>
+<p>
+ 1) For the abstract algorithm portion [f = node in F with minimum d value], can this be found by looking at the heap (F) alone? I had an idea of simply using
+ <b>
+  peek()
+ </b>
+ or
+ <b>
+  poll()
+ </b>
+ , and my idea with this was that the minimum value should be at the top of the min heap. However, I wasn't sure if this would be enough to find the d value.
+</p>
+<p>
+ 2) For adding elements to the HashMap and specifically regarding class
+ <b>
+  Info
+ </b>
+ , should we be finding the values that we have to input as
+ <b>
+  Info
+ </b>
+ 's parameters? For example, I can assume that the new-expression for
+ <b>
+  v
+ </b>
+ 's info would look something like this:
+</p>
+<p>
+ Info someVariable = new Info(0, null);
+</p>
+<p>
+ But do we have to find the respective values of
+ <b>
+  dist
+ </b>
+ and
+ <b>
+  bkptr
+ </b>
+ when adding other elements to the HashMap? If so, where should we start with finding these values?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>

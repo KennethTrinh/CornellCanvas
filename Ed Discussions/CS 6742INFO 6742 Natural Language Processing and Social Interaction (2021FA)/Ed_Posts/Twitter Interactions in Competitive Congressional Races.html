@@ -13,234 +13,222 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Motivation/Hypotheses:
- </paragraph>
- <paragraph>
-  Social media has become increasingly important in congressional elections. While only 22% of the American public uses Twitter, it's role in politics cannot be understated. Politicians may use Twitter to make official statements or engage with news outlets while activists may use Twitter to galvanize bystanders or interact with politicians. Unfortunately, not all of these interactions are positive and can have significant impact on the public discourse. Toxicity and online abuse may be used to scare potential candidates and may even translate to violent attacks as seen with the 2021 capitol insurrection. While Hua et. al have studied adversarial twitter interactions, there is no mention of the candidate's races and how competitive they are.
- </paragraph>
- <paragraph>
-  H1: Candidates in competitive congressional races will receive more abusive comments than those in non-competitive races
- </paragraph>
- <paragraph>
-  H2: Comments in competitive races where there was a partisan change will have higher arousal and dominance, regardless if the comment is abusive or not
- </paragraph>
- <paragraph>
-  H3: Majority of the tweets will have a neutral sentiment
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Data:
- </paragraph>
- <paragraph>
-  I will use the U.S. Midterm Election Twitter dataset 2018 and the Midterm 2018 candidates dataset. The election Twitter dataset has 1.7 million tweets involving candidates from Sept 17th, 2018 to Nov 6th, 2018. The candidates dataset includes all primary candidates for the House and Senate along with the gubernatorial candidates.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Language Features:
- </paragraph>
- <list style="ordered">
-  <list-item>
-   <paragraph>
-    Length
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Topical relevance
-   </paragraph>
-  </list-item>
-  <list-item>
-   <list style="ordered">
-    <list-item>
-     <paragraph>
-      Check to see if specific key words in candidates tweets appear in the commenters tweet
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Lexical diversity
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Sentiment
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Feasibility Tests
- </paragraph>
- <paragraph>
-  H1:
- </paragraph>
- <list style="ordered">
-  <list-item>
-   <paragraph>
-    Determine a close congressional race (a race that is won by a &lt;5% margin) using Ballotpedia and the New York Times
-   </paragraph>
-  </list-item>
-  <list-item>
-   <list style="ordered">
-    <list-item>
-     <paragraph>
-      Determine both candidates twitter
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    For each candidate's twitter, gather all tweets that have mentioned them, retweeted them, or replied to them. Use the Perspective API to determine the likelihood of it being toxic.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  H2:
- </paragraph>
- <list style="ordered">
-  <list-item>
-   <paragraph>
-    Determine a close congressional race (a race that is won by a &lt;5% margin) where there was a partisan change using Ballotpedia and the New York Times
-   </paragraph>
-  </list-item>
-  <list-item>
-   <list style="ordered">
-    <list-item>
-     <paragraph>
-      Determine both candidates twitter
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    For each candidate's twitter, gather all tweets that have mentioned them, retweeted them, or replied to them. Scan the words to see if they appear in the list of arousal words or dominant words. Count the number of words that appear on the list and normalize the value.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
- </paragraph>
- <paragraph>
-  Team Members:
- </paragraph>
- <paragraph>
-  Kowe Kadoma
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Related Work &amp; Inspiration:
- </paragraph>
- <paragraph>
-  [1] Hua, Y., Ristenpart, T. and Naaman, M. 2020. Towards Measuring Adversarial Twitter Interactions against Candidates in the US Midterm Elections. Proceedings of the International AAAI Conference on Web and Social Media. 14, 1 (May 2020), 272-282.
- </paragraph>
- <paragraph>
-  [2] Hua, Y., Naaman, M. and Ristenpart, T. 2020. Characterizing Twitter Users Who Engage in Adversarial Interactions against Political Candidates. In Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems (CHI '20). Association for Computing Machinery, New York, NY, USA, 1–13. DOI:https://doi.org/10.1145/3313831.3376548
- </paragraph>
- <paragraph>
-  [3] Chenhao Tan, Vlad Niculae, Cristian Danescu-Niculescu-Mizil, and Lillian Lee. 2016. Winning Arguments: Interaction Dynamics and Persuasion Strategies in Good-faith Online Discussions. In Proceedings of the 25th International Conference on World Wide Web (WWW '16). International World Wide Web Conferences Steering Committee, Republic and Canton of Geneva, CHE, 613–624. DOI:https://doi.org/10.1145/2872427.2883081
- </paragraph>
-</document>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  by searching "language elections social media" in SSRN, found
-  <link href="https://papers.ssrn.com/sol3/Results.cfm?RequestTimeout=50000000"/>
-  https://papers.ssrn.com/sol3/Results.cfm?RequestTimeout=50000000 which has some stuff like:
-  <break>
-  </break>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  <break>
-  </break>
-  Running While Female: Using AI to Track how Twitter Commentary Disadvantages Women in the 2020 U.S. Primaries
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  32 Pages Posted: 17 Sep 2019
- </paragraph>
- <paragraph>
- </paragraph>
- <heading level="2">
-  <link href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=1529240"/>
-  Sarah Oates
- </heading>
- <paragraph>
-  Philip Merrill College of Journalism, University of Maryland
- </paragraph>
- <heading level="2">
-  <link href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3681723"/>
-  Olya Gurevich
- </heading>
- <paragraph>
-  Marvelous AI
- </paragraph>
- <heading level="2">
-  <link href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3693433"/>
-  Christopher Walker
- </heading>
- <paragraph>
-  MarvelousAI
- </paragraph>
- <heading level="2">
-  <link href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3688855"/>
-  Lucina Di Meco
- </heading>
- <paragraph>
-  The Wilson Center
- </paragraph>
- <paragraph>
-  Date Written: August 28, 2019
-  <break>
-  </break>
-  <break>
-  </break>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Joyce Zhou (they/them) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ Motivation/Hypotheses:
+</p>
+<p>
+ Social media has become increasingly important in congressional elections. While only 22% of the American public uses Twitter, it's role in politics cannot be understated. Politicians may use Twitter to make official statements or engage with news outlets while activists may use Twitter to galvanize bystanders or interact with politicians. Unfortunately, not all of these interactions are positive and can have significant impact on the public discourse. Toxicity and online abuse may be used to scare potential candidates and may even translate to violent attacks as seen with the 2021 capitol insurrection. While Hua et. al have studied adversarial twitter interactions, there is no mention of the candidate's races and how competitive they are.
+</p>
+<p>
+ H1: Candidates in competitive congressional races will receive more abusive comments than those in non-competitive races
+</p>
+<p>
+ H2: Comments in competitive races where there was a partisan change will have higher arousal and dominance, regardless if the comment is abusive or not
+</p>
+<p>
+ H3: Majority of the tweets will have a neutral sentiment
+</p>
+<p>
+</p>
+<p>
+ Data:
+</p>
+<p>
+ I will use the U.S. Midterm Election Twitter dataset 2018 and the Midterm 2018 candidates dataset. The election Twitter dataset has 1.7 million tweets involving candidates from Sept 17th, 2018 to Nov 6th, 2018. The candidates dataset includes all primary candidates for the House and Senate along with the gubernatorial candidates.
+</p>
+<p>
+ Language Features:
+</p>
+<list style="ordered">
+ <li>
+  <p>
+   Length
+  </p>
+ </li>
+ <li>
+  <p>
+   Topical relevance
+  </p>
+ </li>
+ <li>
+  <list style="ordered">
+   <li>
+    <p>
+     Check to see if specific key words in candidates tweets appear in the commenters tweet
+    </p>
+   </li>
+  </list>
+ </li>
+ <li>
+  <p>
+   Lexical diversity
+  </p>
+ </li>
+ <li>
+  <p>
+   Sentiment
+  </p>
+ </li>
+</list>
+<p>
+</p>
+<p>
+</p>
+<p>
+ Feasibility Tests
+</p>
+<p>
+ H1:
+</p>
+<list style="ordered">
+ <li>
+  <p>
+   Determine a close congressional race (a race that is won by a &lt;5% margin) using Ballotpedia and the New York Times
+  </p>
+ </li>
+ <li>
+  <list style="ordered">
+   <li>
+    <p>
+     Determine both candidates twitter
+    </p>
+   </li>
+  </list>
+ </li>
+ <li>
+  <p>
+   For each candidate's twitter, gather all tweets that have mentioned them, retweeted them, or replied to them. Use the Perspective API to determine the likelihood of it being toxic.
+  </p>
+ </li>
+</list>
+<p>
+ H2:
+</p>
+<list style="ordered">
+ <li>
+  <p>
+   Determine a close congressional race (a race that is won by a &lt;5% margin) where there was a partisan change using Ballotpedia and the New York Times
+  </p>
+ </li>
+ <li>
+  <list style="ordered">
+   <li>
+    <p>
+     Determine both candidates twitter
+    </p>
+   </li>
+  </list>
+ </li>
+ <li>
+  <p>
+   For each candidate's twitter, gather all tweets that have mentioned them, retweeted them, or replied to them. Scan the words to see if they appear in the list of arousal words or dominant words. Count the number of words that appear on the list and normalize the value.
+  </p>
+ </li>
+</list>
+<p>
+</p>
+<p>
+ Team Members:
+</p>
+<p>
+ Kowe Kadoma
+</p>
+<p>
+</p>
+<p>
+ Related Work &amp; Inspiration:
+</p>
+<p>
+ [1] Hua, Y., Ristenpart, T. and Naaman, M. 2020. Towards Measuring Adversarial Twitter Interactions against Candidates in the US Midterm Elections. Proceedings of the International AAAI Conference on Web and Social Media. 14, 1 (May 2020), 272-282.
+</p>
+<p>
+ [2] Hua, Y., Naaman, M. and Ristenpart, T. 2020. Characterizing Twitter Users Who Engage in Adversarial Interactions against Political Candidates. In Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems (CHI '20). Association for Computing Machinery, New York, NY, USA, 1–13. DOI:https://doi.org/10.1145/3313831.3376548
+</p>
+<p>
+ [3] Chenhao Tan, Vlad Niculae, Cristian Danescu-Niculescu-Mizil, and Lillian Lee. 2016. Winning Arguments: Interaction Dynamics and Persuasion Strategies in Good-faith Online Discussions. In Proceedings of the 25th International Conference on World Wide Web (WWW '16). International World Wide Web Conferences Steering Committee, Republic and Canton of Geneva, CHE, 613–624. DOI:https://doi.org/10.1145/2872427.2883081
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Joyce Zhou (they/them) (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I'm curious if we could collab or somehow cross-reference each others' ideas? Seems like you're looking more at post content and I'm more interested in post authorship
   <break>
   </break>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   my post: https://edstem.org/us/courses/8208/discussion/752914
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   by searching "language elections social media" in SSRN, found
+   <a href="https://papers.ssrn.com/sol3/Results.cfm?RequestTimeout=50000000">
+    https://papers.ssrn.com/sol3/Results.cfm?RequestTimeout=50000000
+    which has some stuff like:
+    <break>
+    </break>
+   </a>
+  </p>
+  <p>
+   <break>
+   </break>
+   Running While Female: Using AI to Track how Twitter Commentary Disadvantages Women in the 2020 U.S. Primaries
+  </p>
+  <p>
+   32 Pages Posted: 17 Sep 2019
+  </p>
+  <heading level="2">
+   <link href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=1529240"/>
+   Sarah Oates
+  </heading>
+  <p>
+   Philip Merrill College of Journalism, University of Maryland
+  </p>
+  <heading level="2">
+   <link href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3681723"/>
+   Olya Gurevich
+  </heading>
+  <p>
+   Marvelous AI
+  </p>
+  <heading level="2">
+   <link href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3693433"/>
+   Christopher Walker
+  </heading>
+  <p>
+   MarvelousAI
+  </p>
+  <heading level="2">
+   <link href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3688855"/>
+   Lucina Di Meco
+  </heading>
+  <p>
+   The Wilson Center
+  </p>
+  <p>
+   Date Written: August 28, 2019
+   <break>
+   </break>
+   <break>
+   </break>
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

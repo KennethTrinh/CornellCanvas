@@ -13,39 +13,35 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi!
- </paragraph>
- <paragraph>
-  We are doing feature selection using train/test splits and I was just wondering if that is sufficient for the causality analysis method or if we need to do all three of the causality analysis methods mentioned in the causality lecture? (checking overfitting, unclear directionality, AND confounding variables)
- </paragraph>
- <paragraph>
-  We have quite a large number of predictors and other pieces of data and I'm not sure how to go about identifying all of the potential confounders if thats the case. Would I need to go through every predictor and check their correlations with one another? Or every predictor and every possible predictor we have already eliminated using the train/test splits? We have nearly 60 columns of data so Im a bit overwhelmed. And how do we determine what benchmark of correlation would constitute a confounding pair if that is the case?
- </paragraph>
- <paragraph>
-  No need to explain the second group of questions if the train test splits are sufficient to satisfy the method.
- </paragraph>
- <paragraph>
-  Thank you for your help!
- </paragraph>
-</document>
+<p>
+ Hi!
+</p>
+<p>
+ We are doing feature selection using train/test splits and I was just wondering if that is sufficient for the causality analysis method or if we need to do all three of the causality analysis methods mentioned in the causality lecture? (checking overfitting, unclear directionality, AND confounding variables)
+</p>
+<p>
+ We have quite a large number of predictors and other pieces of data and I'm not sure how to go about identifying all of the potential confounders if thats the case. Would I need to go through every predictor and check their correlations with one another? Or every predictor and every possible predictor we have already eliminated using the train/test splits? We have nearly 60 columns of data so Im a bit overwhelmed. And how do we determine what benchmark of correlation would constitute a confounding pair if that is the case?
+</p>
+<p>
+ No need to explain the second group of questions if the train test splits are sufficient to satisfy the method.
+</p>
+<p>
+ Thank you for your help!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Yuheng Wang (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Yuheng Wang (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   It is very tricky to do causal analysis for the dataset, and it is hard to identify all potential confounders. Using train/test splits will help you find a model possibly without overfitting, but it does not necessarily tell any information about the causal relationship. My suggestion is you can try to do the train/test split, and then comment on the result critically. For example, you can hypothesize some causal relationship that might happen, and maybe use that to interpret your result.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

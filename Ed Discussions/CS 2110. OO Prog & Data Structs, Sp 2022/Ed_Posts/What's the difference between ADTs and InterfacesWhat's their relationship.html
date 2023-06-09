@@ -16,57 +16,53 @@
 <h3>
  ENDORSED
 </h3>
-<document version="2.0">
- <paragraph>
-  What's the difference between ADTs and Interfaces? What's their relationship?
- </paragraph>
- <paragraph>
-  I know that Array, List, Map, Queue, Set, Stack, Table, Tree, and Vector are ADTs. And class ArrayList implements type List.
- </paragraph>
- <paragraph>
-  So does this mean that List is an ADT
-  <bold>
-   and
-  </bold>
-  an interface? I'm getting confused by this...
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Richard Gu (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ What's the difference between ADTs and Interfaces? What's their relationship?
+</p>
+<p>
+ I know that Array, List, Map, Queue, Set, Stack, Table, Tree, and Vector are ADTs. And class ArrayList implements type List.
+</p>
+<p>
+ So does this mean that List is an ADT
+ <b>
+  and
+ </b>
+ an interface? I'm getting confused by this...
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Richard Gu (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   I believe all ADTs (as a model for useful data types) are interfaces. But interfaces are broader and serve as an abstraction for other non-data type classes that we saw in Prelim 1. So all (or at least almost all) ADTs are interfaces, but only some interfaces are ADTs.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   List is an ADT and an interface, since you can't implement List directly and need to instead instantiate ArrayList or LinkedList.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Hope this helps.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 3
+ </h3>
+ <p>
   When we show you an ADT --abstract data type-- we tell you what the set of values are and its behavior: what operations there are on it. For example:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Stack of integers.
   <break>
   </break>
@@ -74,25 +70,23 @@
   <break>
   </break>
   Operations:  size, push value onto the stack, pop a value from the stack
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   This definition has nothing to do with Java! It's just a definition.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   It CAN be implemented in Java, but it can be implemented in lots of other language too --Python, Matlab, Pascal, Ruby, Lisp, ...
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   -------------------------
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   We can use the Java interface to define this ADT for use in Java, as shown below. Here, the interface declares the operations as methods, giving you information about how to call them. Comments define the behavior --what the methods do. Other languages may have their way of defining this ADT. Many do not.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Then, in Java, one writes a class that implements this ADT.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   /** A stack is a bunch of integers, with a LIFO behavior,
   <break>
   </break>
@@ -106,14 +100,14 @@
   <break>
   </break>
   int size();
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   /** Push e onto the top of the stack. */
   <break>
   </break>
   void push(int e);
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   /** Pop (and return) the value at the top of the stack. */
   <break>
   </break>
@@ -121,14 +115,12 @@
   <break>
   </break>
   }
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   <break>
   </break>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

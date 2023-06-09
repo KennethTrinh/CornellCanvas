@@ -13,24 +13,20 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Char can't be converted to string, but we can add a string and a char together (even an int). Why is that?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Char can't be converted to string, but we can add a string and a char together (even an int). Why is that?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Ryan Tay (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Ryan Tay (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You can convert char to String using
   <code>
    Character.toString(char)
@@ -44,12 +40,12 @@
    Integer.parseInt(string)
   </code>
   . The reason that this doesn't work is just because the method was created to expect a string argument. If you wanted to, you could write a method or overload this method to take a char argument, and then do something like this:
- </paragraph>
+ </p>
  <pre>public static int parseInt(char c) {
     return Integer.parseInt(String.valueOf(c));
 }
 </pre>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

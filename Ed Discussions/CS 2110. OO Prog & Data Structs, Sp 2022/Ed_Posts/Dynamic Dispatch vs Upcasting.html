@@ -13,43 +13,41 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  From my understanding, dynamic dispatch happens when the compiler choses which method to run at runtime if the methods are overloaded, from parent to subclasses.  Upcasting also happens automatically, when the compiler automatically casts an object up its hierarchy.  Do they both use the bottom up rule? Are they kind of the same thing or two very different concepts?
- </paragraph>
- <paragraph>
-  Thanks!!
- </paragraph>
-</document>
+<p>
+ From my understanding, dynamic dispatch happens when the compiler choses which method to run at runtime if the methods are overloaded, from parent to subclasses.  Upcasting also happens automatically, when the compiler automatically casts an object up its hierarchy.  Do they both use the bottom up rule? Are they kind of the same thing or two very different concepts?
+</p>
+<p>
+ Thanks!!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   At runtime, in order to see what method a call  m(...) refers to, ALWAYS use the bottom up rule.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If the call starts with super.m(...), then use the bottom up rule starting at the partition above the one in which the call appears.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The above has NOTHING to do with casting or coercion, which is automatic upcasting by Java. They just determine the (static) type of an expression a compiletime.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   SEPARATE COMPILE TIME FROM RUNTIME IN YOUR MIND
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The static type of the expression   new CAT(...)  is Cat
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The static type of the expression  (Animal)(new Cat())   is Animal.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

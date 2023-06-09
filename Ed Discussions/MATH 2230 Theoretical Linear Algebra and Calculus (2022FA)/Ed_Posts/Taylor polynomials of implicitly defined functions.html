@@ -13,60 +13,56 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Suppose $F(x, y) = 0$ defines $x$ as a function $g(y)$ of $y$ near $y = a$. Then (i) for small $h$, $F(g(a+h),a+h) = 0$ and (ii) by taylor's theorem, $|T^k_{g,a}(a+h) - g(a+h)| = o(|h^k|)$. In class, we said that
- </paragraph>
- <paragraph>
-  $$F(T^k_{g,a}(a+h), a+h) = o(|h^k|)$$
- </paragraph>
- <paragraph>
-  Does this follow from (i) and (ii)? And if so, how?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Suppose $F(x, y) = 0$ defines $x$ as a function $g(y)$ of $y$ near $y = a$. Then (i) for small $h$, $F(g(a+h),a+h) = 0$ and (ii) by taylor's theorem, $|T^k_{g,a}(a+h) - g(a+h)| = o(|h^k|)$. In class, we said that
+</p>
+<p>
+ $$F(T^k_{g,a}(a+h), a+h) = o(|h^k|)$$
+</p>
+<p>
+ Does this follow from (i) and (ii)? And if so, how?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Reyer Sjamaar (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Reyer Sjamaar (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Better write $o(|\mathbf{h}|^k)$, because $\mathbf{h}$ is a vector.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The answer to your question is "yes", and here is the reason.  I'll replace your $k$ with an $m$ because I will use $\mathbf{k}$ for something else.  Let $T_F$ be the $m$th order Taylor polynomial for $F$ at $(\mathbf{b},\mathbf{a})$.  Then
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $$F(\mathbf{b}+\mathbf{k},\mathbf{a}+\mathbf{h})=T_F(\mathbf{b}+\mathbf{k},\mathbf{a}+\mathbf{h})+o\biggl(\biggl|\begin{pmatrix}\mathbf{k}\\\mathbf{h}\end{pmatrix}\biggr|^m\biggr).$$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Let $T_g$ be the $m$th order Taylor polynomial for the implicitly defined function $g$ at $\mathbf{a}$.  We know that $F(g(\mathbf{y}),\mathbf{y})=\mathbf{0}$ for all $\mathbf{y}$, so from the chain rule for Taylor polynomials it follows that, up to terms of order $&gt;m$, $T_F(T_g(\mathbf{a}+\mathbf{h}),\mathbf{a}+\mathbf{h})$ is the Taylor polynomial of the constant function $\mathbf{0}$, so
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $$T_F(T_g(\mathbf{a}+\mathbf{h}),\mathbf{a}+\mathbf{h})=o(|\mathbf{h}|^m).$$ Now we plug $\mathbf{b}+\mathbf{k}=T_g(\mathbf{a}+\mathbf{h})$ into the first equation, i.e. $\mathbf{k}=T_g(\mathbf{a}+\mathbf{h})-\mathbf{b}=O(|\mathbf{h}|)$.  (Here we use big O notation:  $f=O(g)$ means $|f(x)|\le Mg(x)$ for some $M\ge0$.)  We get
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $$F(T_g(\mathbf{a}+\mathbf{h}),\mathbf{a}+\mathbf{h})=T_F(T_g(\mathbf{a}+\mathbf{h}),\mathbf{a}+\mathbf{h})+o(|\mathbf{h}|^m),$$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   because
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $$o\biggl(\biggl|\begin{pmatrix}\mathbf{k}\\\mathbf{h}\end{pmatrix}\biggr|^m\biggr)=o\bigl(|\mathbf{k}|^m+|\mathbf{h}|^m\bigr)=o\bigl(O(|\mathbf{h}|)^m+|\mathbf{h}|^m\bigr)=o(|\mathbf{h}|^m).$$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Combining this with the second equation we get
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $$F(T_g(\mathbf{a}+\mathbf{h}),\mathbf{a}+\mathbf{h})=o(|\mathbf{h}|^m)+o(|\mathbf{h}|^m)=o(|\mathbf{h}|^m).$$
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

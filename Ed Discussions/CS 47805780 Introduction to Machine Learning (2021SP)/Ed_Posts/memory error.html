@@ -13,59 +13,57 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Whenever I attempt to run "K=computeK("linear",xTr,xTr)" to test my code I get a memory error that an array of size (100,100) cannot be allocated. I only multiply two matrices for this function and I do not know how I would further simplify this. This array also seems too small to use up the available memory. Is there something that I am missing here / can someone help me get an idea of what may be going wrong?
- </paragraph>
-</document>
+<p>
+ Whenever I attempt to run "K=computeK("linear",xTr,xTr)" to test my code I get a memory error that an array of size (100,100) cannot be allocated. I only multiply two matrices for this function and I do not know how I would further simplify this. This array also seems too small to use up the available memory. Is there something that I am missing here / can someone help me get an idea of what may be going wrong?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Anna Effenberger (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Anna Effenberger (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You can use
-  <bold>
+  <b>
    <code>
     l2distance
    </code>
-  </bold>
+  </b>
   from l2distance.py as a helper
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I see how this wouldbe used for the radial basis function kernel, but why would it be used for the linear kernel?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew Dettmer (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Are you using a numpy function to compute the matrix product?  (also feel free to make a private post with code if you want more specific feedback)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I see how this wouldbe used for the radial basis function kernel, but why would it be used for the linear kernel?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Andrew Dettmer (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Are you using a numpy function to compute the matrix product?  (also feel free to make a private post with code if you want more specific feedback)
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

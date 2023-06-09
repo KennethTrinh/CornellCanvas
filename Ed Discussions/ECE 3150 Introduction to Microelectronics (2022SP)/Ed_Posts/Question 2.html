@@ -13,54 +13,52 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I am trying find the I_C_1 and R_C_1 for the the initial stage of the question 2 design. But, I'm getting a somewhat circular relationship. I have Ic_1 * Rc_1 = V_cc - V_out - V_be. I also already have the CC stage gain, so I get the CE stage gain by 50/(CC gain). This then should equal g_m * R_C1.
- </paragraph>
- <paragraph>
-  This then becomes Ic_1 * Rc_1 = (gain of the CE stage) * V_t since gm = I_c/V_t. As you can see I have the same expression Ic_1 * Rc_1 equalling two different values. Are there any suggestions on how to get around this.
- </paragraph>
-</document>
+<p>
+ I am trying find the I_C_1 and R_C_1 for the the initial stage of the question 2 design. But, I'm getting a somewhat circular relationship. I have Ic_1 * Rc_1 = V_cc - V_out - V_be. I also already have the CC stage gain, so I get the CE stage gain by 50/(CC gain). This then should equal g_m * R_C1.
+</p>
+<p>
+ This then becomes Ic_1 * Rc_1 = (gain of the CE stage) * V_t since gm = I_c/V_t. As you can see I have the same expression Ic_1 * Rc_1 equalling two different values. Are there any suggestions on how to get around this.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Sounak Maji (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The gain of 1st stage is not gm*Rc1, but rather gm*(Rc1||impedance looking into the CC stage).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Clifford Pollock (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Clifford Pollock (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The collector sees both R_c and the input impedance of the next stage, so that is why the second stage common collector was needed, so the 8 ohm load looked a lot larger to the common emitter stage.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You might have noticed a circular relation between gm and R_c. Gain increases with R_c, so choosing a smaller I_c lets you make R_c larger and still not bring V-c below saturation.  But lower current reduced gm directly, so reducing I_c to boost R_c turns out to be a complete wash.  Any current I_c you choose will result in the same gain if you set Vc to be identical in each case.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   But design is always a set of trade-offs. Choosing a higher Ic means a lower Rc, and when it get paralleled with the input impedance of the next stage, it is not loaded as much, so you might actually achieve a higher net gain by raising Ic in the first stage.  I emphasize 'you might"....
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   There is, naturally, a trade-off if you elect to increase I_c.  Higher I_c reduced r_pi, so the input impedance of the first stage is reduced, and so there is an increased loss of input signal in the 100 resistance of the microphone.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   All design involves trading one parameter for another. Often you can find an optimum between all the trade-offs, but as you can see that the process is usually iterative, and there will be many reasonable solutions to the same problem.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Sounak Maji (staff)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   The gain of 1st stage is not gm*Rc1, but rather gm*(Rc1||impedance looking into the CC stage).
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

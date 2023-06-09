@@ -13,11 +13,10 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  so in Jshell i created a classe and sublcass with the same field and method.
- </paragraph>
- <pre>jshell&gt; public class First{
+<p>
+ so in Jshell i created a classe and sublcass with the same field and method.
+</p>
+<pre>jshell&gt; public class First{
    ...&gt; int x = 0;
    ...&gt; public int num(){
    ...&gt; return 0;}
@@ -44,33 +43,34 @@ $6 ==&gt; 1
 jshell&gt; ((First)a).num();
 $7 ==&gt; 1
 </pre>
- <paragraph>
-  I have 2 questions.
- </paragraph>
- <paragraph>
-  1) Why is it that when I access the field x for object a the default is from the class First, and I need to cast to Second to access the Second class field x?
- </paragraph>
- <paragraph>
-  2) it appears as though the default method num() for object a is from Second class and that I cannot access First's num() by casting? Are fields and methods treated differently with casting?
- </paragraph>
-</document>
+<p>
+ I have 2 questions.
+</p>
+<p>
+ 1) Why is it that when I access the field x for object a the default is from the class First, and I need to cast to Second to access the Second class field x?
+</p>
+<p>
+ 2) it appears as though the default method num() for object a is from Second class and that I cannot access First's num() by casting? Are fields and methods treated differently with casting?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: CJ Lee (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: CJ Lee (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   1. I think the answer is summed up in this JavaHyperText pdf regarding
-  <link href="https://www.cs.cornell.edu/courses/JavaAndDS/files/fieldHiding.pdf"/>
-  "Hiding a field". Basically, Java treats overridden fields and methods differently when you call them at runtime. Whereas methods work bottom-up based on the dynamic type of the object from which the method is called, fields are accessed bottom-up based on the
-  <italic>
+  <a href="https://www.cs.cornell.edu/courses/JavaAndDS/files/fieldHiding.pdf">
+   "Hiding a field"
+  </a>
+  . Basically, Java treats overridden fields and methods differently when you call them at runtime. Whereas methods work bottom-up based on the dynamic type of the object from which the method is called, fields are accessed bottom-up based on the
+  <i>
    compile-time
-  </italic>
+  </i>
   type of the object. That's why
   <code>
    a.x == 0
@@ -88,8 +88,8 @@ $7 ==&gt; 1
    First
   </code>
   class. (Note that overriding fields is generally discouraged, so this shouldn't be a common occurrence you should be running into!)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   2. Remember that casting between classes does not change anything about the object itself at runtime; it merely provides a different perspective to the compiler. Casting
   <code>
    a
@@ -119,10 +119,8 @@ $7 ==&gt; 1
    Second
   </code>
   . But, because field accesses are dependent on the compile-time type, casting will indeed make a difference there.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

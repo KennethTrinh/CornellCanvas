@@ -13,28 +13,26 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Part of the three steps to overriding equals is to cast an object ob down to a class C so that its fields can be accessed. Why is this? Shouldn't the initial conditional where getClass() is called on ob mean that a downcast is not needed?
- </paragraph>
- <paragraph>
-  I'm referring to this JHT entry: https://www.cs.cornell.edu/courses/JavaAndDS/files/equals.pdf
- </paragraph>
-</document>
+<p>
+ Part of the three steps to overriding equals is to cast an object ob down to a class C so that its fields can be accessed. Why is this? Shouldn't the initial conditional where getClass() is called on ob mean that a downcast is not needed?
+</p>
+<p>
+ I'm referring to this JHT entry: https://www.cs.cornell.edu/courses/JavaAndDS/files/equals.pdf
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You are forgetting the Compile-Time reference rule! Consider class C below. ob has (static) type Object. Does class Object have a field named x? No. Therefore ob.x is illegal and will not compile.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   public class C {
   <break>
   </break>
@@ -54,8 +52,8 @@
   <break>
   </break>
   }
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

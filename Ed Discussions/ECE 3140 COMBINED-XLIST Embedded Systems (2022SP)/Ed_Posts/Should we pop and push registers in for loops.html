@@ -13,27 +13,23 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  In the Control flow: for section of Lecture 3.1, we don't push or pop registers on the slides. I'm wondering if we should for our functions that are both caller and callee?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ In the Control flow: for section of Lecture 3.1, we don't push or pop registers on the slides. I'm wondering if we should for our functions that are both caller and callee?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aaron Wilhelm (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aaron Wilhelm (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The same conventions still apply even if you're in a for loop. If you're using caller saved registers and are going to call a subroutine then you need to PUSH the registers you need to save and then POP them after the subroutine call. If this loop is inside a subroutine and you're using callee saved registers then you'll need to PUSH the registers that you are using before you overwrite them. Most likely you won't want to do this in a loop though since once you save them once you can overwrite them as many times as you like as long as you POP the appropriate values back into the respective registers when you return from the subroutine
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

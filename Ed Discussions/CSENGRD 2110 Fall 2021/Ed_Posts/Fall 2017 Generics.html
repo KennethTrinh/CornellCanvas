@@ -13,39 +13,37 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="143.21176470588236" src="https://static.us.edusercontent.com/files/eROpk92gnSJA15DnKlGya1c4" width="658"/>
- </figure>
- <paragraph>
-  I just want to confirm if my understanding is correct: These two statements result in a compile-time error not because of the ArrayList&lt;&gt;(), which would normally be allowed, but because the generic type specifications don't match? I'm unsure if there are any factors of inheritance at play here?
- </paragraph>
-</document>
+<figure>
+ <image height="143.21176470588236" src="https://static.us.edusercontent.com/files/eROpk92gnSJA15DnKlGya1c4" width="658"/>
+</figure>
+<p>
+ I just want to confirm if my understanding is correct: These two statements result in a compile-time error not because of the ArrayList&lt;&gt;(), which would normally be allowed, but because the generic type specifications don't match? I'm unsure if there are any factors of inheritance at play here?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andrew Chen (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew Chen (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   This should help:
-  <link href="https://www.cs.cornell.edu/courses/JavaAndDS/files/genericSub.pdf"/>
-  https://www.cs.cornell.edu/courses/JavaAndDS/files/genericSub.pdf. Most important takeaway is that there are
-  <bold>
+  <a href="https://www.cs.cornell.edu/courses/JavaAndDS/files/genericSub.pdf">
+   https://www.cs.cornell.edu/courses/JavaAndDS/files/genericSub.pdf
+  </a>
+  . Most important takeaway is that there are
+  <b>
    no
-  </bold>
+  </b>
   factors of inheritance when you're talking about ArrayList&lt;ParentClass&gt; and ArrayList&lt;ChildClass&gt; because the designers of Java chose not to allow it.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

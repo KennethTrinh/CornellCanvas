@@ -13,28 +13,26 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Why is the statement "Space for a local variable declared within a loop body is allocated each time the loop body is executed and deallocated when the loop body finishes" false? Aren't local variables stored in the stack space when called and removed once the function is fully called?
- </paragraph>
-</document>
+<p>
+ Why is the statement "Space for a local variable declared within a loop body is allocated each time the loop body is executed and deallocated when the loop body finishes" false? Aren't local variables stored in the stack space when called and removed once the function is fully called?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Space is allocated for the local variables during the first step of execution of the call: Push a frame for the all onto the call stack.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Therefore it is NOT allocated and deallocated each time the lop body is executed.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

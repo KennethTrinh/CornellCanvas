@@ -13,68 +13,66 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  when using the anonymous function to test the asserts, I see error "The method assertThrows(Class&lt;AssertionError&gt;, ThrowingRunnable) is ambiguous for the type PhDTest"
- </paragraph>
- <paragraph>
-  how can I fix this?
- </paragraph>
-</document>
+<p>
+ when using the anonymous function to test the asserts, I see error "The method assertThrows(Class&lt;AssertionError&gt;, ThrowingRunnable) is ambiguous for the type PhDTest"
+</p>
+<p>
+ how can I fix this?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bahaa Kotb (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   where you have Throwingrunnable replace it with the call that violates the precondition as an anonymous function like how we were told in recitation 2.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I did, I even copied this version from JavaHyperText, and replaced it with PhD constructor, and still the same error.
- </paragraph>
- <paragraph>
-  assertThrows(AssertionError.class, () -&gt; {new P(null);});
- </paragraph>
- <paragraph>
-  this being p:
-  <break>
-  </break>
-  public P(P p) { assert p != null;}
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  refer to #233
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I did, I even copied this version from JavaHyperText, and replaced it with PhD constructor, and still the same error.
+  </p>
+  <p>
+   assertThrows(AssertionError.class, () -&gt; {new P(null);});
+  </p>
+  <p>
+   this being p:
+   <break>
+   </break>
+   public P(P p) { assert p != null;}
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Bahaa Kotb (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    refer to #233
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

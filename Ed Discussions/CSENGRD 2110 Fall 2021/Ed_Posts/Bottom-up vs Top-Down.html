@@ -13,83 +13,20 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I was a little confused by what the lecture meant when it said "Initialization order: delegate bottom-up, then resolve top-down." I remember Prof. Gries's example of methods being call from subclass to superclass, but I don't really understand what the computer is doing when it is initializing constructors from superclass to subclass.
- </paragraph>
-</document>
+<p>
+ I was a little confused by what the lecture meant when it said "Initialization order: delegate bottom-up, then resolve top-down." I remember Prof. Gries's example of methods being call from subclass to superclass, but I don't really understand what the computer is doing when it is initializing constructors from superclass to subclass.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  We never said "then resolve top-down".
- </paragraph>
- <paragraph>
-  The best thing you can do for yourself at this point is to look up terms in JavaHyperText and use that "book" to read and study. Don't just go by the ppt slides.
- </paragraph>
- <paragraph>
-  The bottom-up rule is this: if you want to find a particular field f or method m(...) in an object, start at the bottom or the object and search upward until you find it. This is also called the "overriding rule", because, if a method is declared in a class and its subclass, the bottom-up rule gives you the overriding method in the subclass.
- </paragraph>
- <paragraph>
-  Consider the case today.
- </paragraph>
- <paragraph>
-  class Account ...
-  <break>
-  </break>
-  has fields balance and accountNumber
- </paragraph>
- <paragraph>
-  class InterestAccount extends Account ...
-  <break>
-  </break>
-  has fields interestRate
- </paragraph>
- <paragraph>
-  Well, in the constructor in InterestAccount looks like this:
- </paragraph>
- <paragraph>
-  public  InterestAccount(int b, String s, int r) {...}
- </paragraph>
- <paragraph>
-  The first thing this method should do is initialize fields balance and accountNumber to b and s, respectively. To do this write call on the superclass constructor  like this:
- </paragraph>
- <paragraph>
-  super(b, s).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I copied this line from the note taking guide for today's lecture. I tried looking on JavaHyperText prior to asking, but was only able to find information regarding the bottom-up rule.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Because a subclass inherits abilities from its superclass, the superclass must be fully constructed (its invariant truthified) before the subclass attempts to do anything (otherwise the inherited abilities might not work right).  Therefore, when constructing a subclass, the first thing that happens is that the superclass constructor is executed (you may either call
   <code>
    super(...)
@@ -103,8 +40,69 @@
    Object
   </code>
   .  Once a superclass constructor finishes, execution resumes from the point where it was invoked, which would be the second line of the subclass constructor.  In this sense, the constructors are effectively resolved (executed) "top-down", because they were invoked on the first line of subclass constructors deferring to their supers in a bottom-up fashion.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   We never said "then resolve top-down".
+  </p>
+  <p>
+   The best thing you can do for yourself at this point is to look up terms in JavaHyperText and use that "book" to read and study. Don't just go by the ppt slides.
+  </p>
+  <p>
+   The bottom-up rule is this: if you want to find a particular field f or method m(...) in an object, start at the bottom or the object and search upward until you find it. This is also called the "overriding rule", because, if a method is declared in a class and its subclass, the bottom-up rule gives you the overriding method in the subclass.
+  </p>
+  <p>
+   Consider the case today.
+  </p>
+  <p>
+   class Account ...
+   <break>
+   </break>
+   has fields balance and accountNumber
+  </p>
+  <p>
+   class InterestAccount extends Account ...
+   <break>
+   </break>
+   has fields interestRate
+  </p>
+  <p>
+   Well, in the constructor in InterestAccount looks like this:
+  </p>
+  <p>
+   public  InterestAccount(int b, String s, int r) {...}
+  </p>
+  <p>
+   The first thing this method should do is initialize fields balance and accountNumber to b and s, respectively. To do this write call on the superclass constructor  like this:
+  </p>
+  <p>
+   super(b, s).
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I copied this line from the note taking guide for today's lecture. I tried looking on JavaHyperText prior to asking, but was only able to find information regarding the bottom-up rule.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

@@ -13,59 +13,57 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="49.58165829145729" src="https://static.us.edusercontent.com/files/eRgvU99NuRJp9BcDj4WGacw3" width="647"/>
- </figure>
- <paragraph>
-  Hello!
- </paragraph>
- <paragraph>
-  I was wondering why this doesn't give an exception. Here the part after is a bool and since k is an int type, I was confused as to how it will allow during compile time to compare an int and bool
- </paragraph>
-</document>
+<figure>
+ <image height="49.58165829145729" src="https://static.us.edusercontent.com/files/eRgvU99NuRJp9BcDj4WGacw3" width="647"/>
+</figure>
+<p>
+ Hello!
+</p>
+<p>
+ I was wondering why this doesn't give an exception. Here the part after is a bool and since k is an int type, I was confused as to how it will allow during compile time to compare an int and bool
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="1.0">
- <paragraph>
-  k == -1 is also a bool
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew Chen (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew Chen (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The expressions are evaluated before the || is evaluated. So k == -1 evaluates to true/false, then 3 / (k + 1) is evaluated to some integer, and then 3 / (k + 1) != 4 is evaluated to some boolean value. And Then the || is evaluated on two boolean values.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  That makes sense! I got confused with the = sign. Thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   That makes sense! I got confused with the = sign. Thank you!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Bahaa Kotb (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   k == -1 is also a bool
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

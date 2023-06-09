@@ -13,32 +13,27 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <callout type="info">
-  Put in your question title the year, semester, and question.  Ideal would also be to include the topic.   Example: 2018SP Q2(b) - call frames
- </callout>
- <callout type="info">
-  Include a screenshot of the question, so readers/answerers don't have to go find the relevant pdf.
- </callout>
- <figure>
-  <image height="706.5748663101604" src="https://static.us.edusercontent.com/files/Wa6VcTF5TseeM0tYcfqSN5XZ" width="659"/>
- </figure>
- <paragraph>
-  Is the question only doable with a range loop?  I did this question with a normal for loop, and I could not past the testing code withing modifying my for loop to a range loop.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  If so, why use a for range loop in this instance?  I thought a normal for loop would be justifiable because I need to modify the items in the list the_menu.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  This was my code for the question using a normal for loop:
- </paragraph>
- <snippet language="py" line-numbers="true" runnable="false">
-  <snippet-file id="code">
-   if len(the_menu)==0:
+<callout type="info">
+ Put in your question title the year, semester, and question.  Ideal would also be to include the topic.   Example: 2018SP Q2(b) - call frames
+</callout>
+<callout type="info">
+ Include a screenshot of the question, so readers/answerers don't have to go find the relevant pdf.
+</callout>
+<figure>
+ <image height="706.5748663101604" src="https://static.us.edusercontent.com/files/Wa6VcTF5TseeM0tYcfqSN5XZ" width="659"/>
+</figure>
+<p>
+ Is the question only doable with a range loop?  I did this question with a normal for loop, and I could not past the testing code withing modifying my for loop to a range loop.
+</p>
+<p>
+ If so, why use a for range loop in this instance?  I thought a normal for loop would be justifiable because I need to modify the items in the list the_menu.
+</p>
+<p>
+ This was my code for the question using a normal for loop:
+</p>
+<snippet language="py" line-numbers="true" runnable="false">
+ <snippet-file id="code">
+  if len(the_menu)==0:
         return None
     for item in the_menu:
         if type(item) == LunchItem:
@@ -46,43 +41,42 @@
                 item.lunch_price = 9
             elif item.lunch_price &gt; 11:
                 item = MenuItem(item.name, item.is_veggie, item.price)
-  </snippet-file>
- </snippet>
- <paragraph>
-  edit: fixed code
- </paragraph>
-</document>
+ </snippet-file>
+</snippet>
+<p>
+ edit: fixed code
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aidan McNay (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   This goes back to that whenever you are editing something in an iterable, you want to use a range loop. In this case, when you redefine item in line 8, you are re-defining the loop variable item, not the element in the_menu (as such, this change will be lost as soon as you loop away from that item, and won't have any lasting impact on the_menu)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   (Sometimes it won't matter, such as if you're editing only attributes of what you're looping over, and not the actual items themselves. However, it's usually safer to loop over the range - conceptually, it's a bad idea to loop over something that you're editing at the same time)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  That makes sense, thank you.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   That makes sense, thank you.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

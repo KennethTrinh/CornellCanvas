@@ -13,111 +13,95 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi,
- </paragraph>
- <paragraph>
-  Two quick questions on Q4(ii):
- </paragraph>
- <paragraph>
-  Why are there no coefficients in the eigenvector decomposition (i.e. the coordinates of v in the eigenbasis of A)?
- </paragraph>
- <paragraph>
-  How does a sum from 1 to k correspond to a subspace of C^n? Why doesn't the sum go to n?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Hi,
+</p>
+<p>
+ Two quick questions on Q4(ii):
+</p>
+<p>
+ Why are there no coefficients in the eigenvector decomposition (i.e. the coordinates of v in the eigenbasis of A)?
+</p>
+<p>
+ How does a sum from 1 to k correspond to a subspace of C^n? Why doesn't the sum go to n?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Reyer Sjamaar (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Reyer Sjamaar (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   The eigenvector decomposition of $v$ is not exactly the same as the coordinates of $v$ in an eigenbasis.  Here is a simple example, where $A$ is a diagonal matrix.  Let
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $$A=\begin{pmatrix}2&amp;&amp;&amp;&amp;\\&amp;2&amp;&amp;&amp;\\&amp;&amp;-7&amp;&amp;\\&amp;&amp;&amp;-7&amp;\\&amp;&amp;&amp;&amp;-7\end{pmatrix},\qquad v=\begin{pmatrix}1\\2\\3\\4\\5\end{pmatrix}.$$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Then $A$ has two
-  <italic>
+  <i>
    distinct
-  </italic>
+  </i>
   eigenvalues, namely $\lambda_1=2$ (of multiplicity $2$) and $\lambda_2=-7$ (of multiplicity $3$).  So $k=2$, while $n=5$.  The eigenspace for the eigenvalue $\lambda_1$ is
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $$V_1=\mathrm{span}(e_1,e_2).$$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The eigenspace for the eigenvalue $\lambda_2$ is
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $$V_2=\mathrm{span}(e_3,e_4,e_5).$$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The vector $v$ has eigenvector decomposition $v=v_1+v_2$, where
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $$v_1=\begin{pmatrix}1\\2\\0\\0\\0\end{pmatrix}\in V_1,\qquad v_2=\begin{pmatrix}0\\0\\3\\4\\5\end{pmatrix}\in V_2.$$
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thanks for clarifying.
- </paragraph>
- <paragraph>
-  Does the existence of a unique eigenvector decomposition follow from the fact that the eigenspaces together partition the main space (e.g. $\textbf{R}^5$ in your example)?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Reyer Sjamaar (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes.  The technical term is that $\mathbf{R}^5$ is the
-  <italic>
-   direct sum
-  </italic>
-  of the eigenspaces of $A$.
- </paragraph>
- <paragraph>
-  Whenever you have a vector space $V$ and a diagonal linear transformation $A$ from $V$ to itself, $V$ is the direct sum of all the eigenspaces $E_\lambda$ of $A$.  Here $E_\lambda$ is defined as the set of all $v\in V$ with $Av=\lambda v$.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thanks for clarifying.
+  </p>
+  <p>
+   Does the existence of a unique eigenvector decomposition follow from the fact that the eigenspaces together partition the main space (e.g. $\textbf{R}^5$ in your example)?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Reyer Sjamaar (admin)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Yes.  The technical term is that $\mathbf{R}^5$ is the
+    <i>
+     direct sum
+    </i>
+    of the eigenspaces of $A$.
+   </p>
+   <p>
+    Whenever you have a vector space $V$ and a diagonal linear transformation $A$ from $V$ to itself, $V$ is the direct sum of all the eigenspaces $E_\lambda$ of $A$.  Here $E_\lambda$ is defined as the set of all $v\in V$ with $Av=\lambda v$.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

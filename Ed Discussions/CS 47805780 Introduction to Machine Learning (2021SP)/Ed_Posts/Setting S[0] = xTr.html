@@ -13,72 +13,66 @@
 <h3>
  Vote Count: 8
 </h3>
-<document version="2.0">
- <paragraph>
-  In the provided code for forward_pass, it says that we should initialize S[0] and V[0] to xTr. However, wouldn't that essentially make S_i (and V_i) into a 2-dimensional matrix, making the construction of the diagonal matrix (shown below) impossible for the gradient?
- </paragraph>
- <math>
-  diag(σ′(s_l​))
- </math>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ In the provided code for forward_pass, it says that we should initialize S[0] and V[0] to xTr. However, wouldn't that essentially make S_i (and V_i) into a 2-dimensional matrix, making the construction of the diagonal matrix (shown below) impossible for the gradient?
+</p>
+<math>
+ diag(σ′(s_l​))
+</math>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Sunwook Kim (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  For me it helped to observe that for 1xn vector
-  <italic>
-   x
-  </italic>
-  and n x 1 vector
-  <italic>
-   y,
-  </italic>
-  <italic>
-   x
-  </italic>
-  diag (
-  <italic>
-   y
-  </italic>
-  ) =
-  <italic>
-   x
-  </italic>
-  *
-  <italic>
-   y
-  </italic>
-  , where * is the element-wise multiplication that is not much used in mathematics, but is supported in numpy.
-  <break>
-  </break>
-  With this in mind, the operations of several row/column vectors for each instance can be done at once with several matrices.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Han Shu (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Han Shu (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Diagonal matrix only works for vectors. In the lecture notes, it is implemented for a single training sample x to match dimensions. The purpose is to perform element wise  multiplication. If the s_l is a matrix, then you can ignore drag and just use element wise  multiplication provided in Numpy.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Sunwook Kim (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   For me it helped to observe that for 1xn vector
+   <i>
+    x
+   </i>
+   and n x 1 vector
+   <i>
+    y,
+   </i>
+   <i>
+    x
+   </i>
+   diag (
+   <i>
+    y
+   </i>
+   ) =
+   <i>
+    x
+   </i>
+   *
+   <i>
+    y
+   </i>
+   , where * is the element-wise multiplication that is not much used in mathematics, but is supported in numpy.
+   <break>
+   </break>
+   With this in mind, the operations of several row/column vectors for each instance can be done at once with several matrices.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

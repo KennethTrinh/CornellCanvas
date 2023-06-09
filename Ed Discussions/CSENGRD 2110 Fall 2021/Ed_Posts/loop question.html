@@ -13,74 +13,68 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
- </paragraph>
- <figure>
-  <image height="529.7457627118645" src="https://static.us.edusercontent.com/files/Tw6Vt7FhOdSJYdaVnF16sDcg" width="658"/>
- </figure>
- <paragraph>
-  for (b3), how come in the else{} statement, we don't also decrease t by 1? Won't t skip over what got swapped to it in the while loop?
- </paragraph>
-</document>
+<figure>
+ <image height="529.7457627118645" src="https://static.us.edusercontent.com/files/Tw6Vt7FhOdSJYdaVnF16sDcg" width="658"/>
+</figure>
+<p>
+ for (b3), how come in the else{} statement, we don't also decrease t by 1? Won't t skip over what got swapped to it in the while loop?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Because the unknown element in b[j] is being placed in b[t], so b[t] is still unknown.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  so wouldn't that mean we should add t = t-1? Since if not, t will get skipped over?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Varun Gande (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="1.0">
- <paragraph>
-  No you don’t want to change t at all. What is now in b[t] was originally in b[j] (which we don’t know anything about). We shouldn’t worry about t in the else case, and it won’t get skipped over. You only worry about t when the element b[t] &lt;= x, then you add 1 to t to shift the line over by one.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  ohh sorry yes, I forgot it was a while loop and not a for loop
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   so wouldn't that mean we should add t = t-1? Since if not, t will get skipped over?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Varun Gande (student)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    No you don’t want to change t at all. What is now in b[t] was originally in b[j] (which we don’t know anything about). We shouldn’t worry about t in the else case, and it won’t get skipped over. You only worry about t when the element b[t] &lt;= x, then you add 1 to t to shift the line over by one.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     ohh sorry yes, I forgot it was a while loop and not a for loop
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

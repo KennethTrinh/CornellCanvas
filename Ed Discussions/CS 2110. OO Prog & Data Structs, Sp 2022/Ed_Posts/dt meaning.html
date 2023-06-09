@@ -13,47 +13,45 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  In the already written methods, I see the line
- </paragraph>
- <pre>CovidTree dt 
+<p>
+ In the already written methods, I see the line
+</p>
+<pre>CovidTree dt 
 </pre>
- <paragraph>
-  used several times.  Is "dt" a local variable, or is it another way of saying "this" in the method body?
- </paragraph>
- <paragraph>
-  thanks!
- </paragraph>
-</document>
+<p>
+ used several times.  Is "dt" a local variable, or is it another way of saying "this" in the method body?
+</p>
+<p>
+ thanks!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Atulya Lohani (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Atulya Lohani (student)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   It’s not a way to say “this”. The only way to say "this" is by using the keyword. dt is just a local variable that points to a CovidTree. “dt” is just a name, there’s nothing special about it. It’s often used as  loop variable. Often, it’s like this: for(CovidTree dt:children){…} This is just iterating over the children. Since children is a Set, you can’t loop over indices, so you have to loop this way. The dt points to one child in one iteration, and then it points to the next child. It does that until there are no children left.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you so much!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Thank you so much!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

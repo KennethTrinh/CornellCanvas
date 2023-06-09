@@ -13,125 +13,119 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I don't really understand how you arrived at the stem plot for 1b. Could you explain that in more detail ?
- </paragraph>
-</document>
+<p>
+ I don't really understand how you arrived at the stem plot for 1b. Could you explain that in more detail ?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   $x [ n ]$ has value 1 at $n = 1$ and $n = 1$ and is zero everywhere else.  Given $n$, the system computes $y [ n ]$ by summing values $x [ n ]$, $x [ n - 1 ]$, $x [ n - 2 ]$, and $x [ n - 3 ]$.  See how it goes now?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Chidera Wokonko (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  x[n] = u[n] - u[n-2] so wouldn't it have value 1 at n = 0 and 2 ?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  You might be confusing unit step with unit impulse.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Chidera Wokonko (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <figure>
-  <image height="215.57762557077626" src="https://static.us.edusercontent.com/files/PvhpjmsfC3wwWn6ndqicmPZc" width="658"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Right, $u [ n ] = 1$ for all $n \geq 0$.  $u [ n - 2 ] = 1$ for all $n \geq 2$.  Subtract the second from the first and you get 1 for $n = 0$ and $n = 1$ and zero otherwise.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Chidera Wokonko (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Ahh I see... Also follow up question: Can I assume that for questions like this the upper bound of the summation(M)  will be determined by the upper limit of the range for h[n] ?
- </paragraph>
- <math>
-  \sum_{\left\{k\ =\ 0\right\}}^M
- </math>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The impulse response of an FIR system with governing equation
- </paragraph>
- <paragraph>
-  $y [ n ] = \sum _ {k = 0} ^ M b _ k x [ n - k ]$
- </paragraph>
- <paragraph>
-  is always given by
- </paragraph>
- <paragraph>
-  $h [ n ] = \left \{ \begin{array}{cl} b _ n &amp; {\rm when} \; 0 \leq n \leq M \\ 0 &amp; {\rm otherwise.} \end{array} \right .$
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Chidera Wokonko (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   x[n] = u[n] - u[n-2] so wouldn't it have value 1 at n = 0 and 2 ?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: David Delchamps (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    You might be confusing unit step with unit impulse.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Chidera Wokonko (student)
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <figure>
+     <image height="215.57762557077626" src="https://static.us.edusercontent.com/files/PvhpjmsfC3wwWn6ndqicmPZc" width="658"/>
+    </figure>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: David Delchamps (admin)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      Right, $u [ n ] = 1$ for all $n \geq 0$.  $u [ n - 2 ] = 1$ for all $n \geq 2$.  Subtract the second from the first and you get 1 for $n = 0$ and $n = 1$ and zero otherwise.
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 12em;">
+      <h3>
+       Author: Chidera Wokonko (student)
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       Ahh I see... Also follow up question: Can I assume that for questions like this the upper bound of the summation(M)  will be determined by the upper limit of the range for h[n] ?
+      </p>
+      <math>
+       \sum_{\left\{k\ =\ 0\right\}}^M
+      </math>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 14em;">
+       <h3>
+        Author: David Delchamps (admin)
+       </h3>
+       <h3>
+        Vote Count: 0
+       </h3>
+       <p>
+        The impulse response of an FIR system with governing equation
+       </p>
+       <p>
+        $y [ n ] = \sum _ {k = 0} ^ M b _ k x [ n - k ]$
+       </p>
+       <p>
+        is always given by
+       </p>
+       <p>
+        $h [ n ] = \left \{ \begin{array}{cl} b _ n &amp; {\rm when} \; 0 \leq n \leq M \\ 0 &amp; {\rm otherwise.} \end{array} \right .$
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

@@ -13,89 +13,81 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  The read() function in our python code will block other functions when there is no input. However, we want our function to keep running when there is no input and change its behavior as soon as a specific input is detected. Any suggestions? Thank you so much in advance.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ The read() function in our python code will block other functions when there is no input. However, we want our function to keep running when there is no input and change its behavior as soon as a specific input is detected. Any suggestions? Thank you so much in advance.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Benjamin Kogan (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Benjamin Kogan (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You can set a timeout in seconds when initializing the serial.Serial, for example:
- </paragraph>
+ </p>
  <pre>ser = serial.Serial("COM3", 115200, timeout=0.016)
 </pre>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prithwish Dan (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  To add on, the timeout being set to 0 is equivalent to a non-blocking read action
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I have tried that and this will make the decoded_bytes=struct.unpack('B',some_bytes) return an error. What will be stored in some_bytes if some_bytes = ser.read() runs out of time?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Benjamin Kogan (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  You can print out whatever is in some_bytes in this case and check for it in the code. I just throw the entire thing in a try/except block because I only need it for input and an error won't affect the rest of the code.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I see. Thank you so much for your help!!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I have tried that and this will make the decoded_bytes=struct.unpack('B',some_bytes) return an error. What will be stored in some_bytes if some_bytes = ser.read() runs out of time?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Benjamin Kogan (None)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    You can print out whatever is in some_bytes in this case and check for it in the code. I just throw the entire thing in a try/except block because I only need it for input and an error won't affect the rest of the code.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     I see. Thank you so much for your help!!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Prithwish Dan (student)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    To add on, the timeout being set to 0 is equivalent to a non-blocking read action
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

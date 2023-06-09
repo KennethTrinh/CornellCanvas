@@ -16,54 +16,52 @@
 <h3>
  ENDORSED
 </h3>
-<document version="2.0">
- <paragraph>
-  I cannot seem to figure a way to test the new process_line function.
- </paragraph>
- <paragraph>
-  I already changed the names of the imports in the provided helper_tests.py:
- </paragraph>
- <paragraph>
-  import cornellasserts
- </paragraph>
- <paragraph>
-  import
-  <bold>
-   college_a5
-  </bold>
-  as college_module # minimize name confusion
- </paragraph>
- <paragraph>
-  import
-  <bold>
-   sd_utilities_list
-  </bold>
-  as sdu
- </paragraph>
- <paragraph>
-  import inspect # to print the name of a (test) function that is running import copy
- </paragraph>
- <paragraph>
-  However, even after fixing the import statements, the tests cannot run because college_a5 does not have "was_accepted" attribute.
- </paragraph>
- <paragraph>
-  How can I test my code?
- </paragraph>
- <paragraph>
-  I tried to modify the A3 code to run my new process_line but the process_line code is inherently different now since we are using add_student().
- </paragraph>
-</document>
+<p>
+ I cannot seem to figure a way to test the new process_line function.
+</p>
+<p>
+ I already changed the names of the imports in the provided helper_tests.py:
+</p>
+<p>
+ import cornellasserts
+</p>
+<p>
+ import
+ <b>
+  college_a5
+ </b>
+ as college_module # minimize name confusion
+</p>
+<p>
+ import
+ <b>
+  sd_utilities_list
+ </b>
+ as sdu
+</p>
+<p>
+ import inspect # to print the name of a (test) function that is running import copy
+</p>
+<p>
+ However, even after fixing the import statements, the tests cannot run because college_a5 does not have "was_accepted" attribute.
+</p>
+<p>
+ How can I test my code?
+</p>
+<p>
+ I tried to modify the A3 code to run my new process_line but the process_line code is inherently different now since we are using add_student().
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Hi!
   <break>
   </break>
@@ -79,31 +77,31 @@
   </break>
   <break>
   </break>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  If you
-  <italic>
-   do
-  </italic>
-  want to use helper_tests.py, you are on the right track --- modifying it to take into account the changes.  So I am very pleased that you were working on it, even though you didn't have to ...
-  <break>
-  </break>
-  <break>
-  </break>
-  You would indeed have to adjust for the fact that the function was_accepted() was changed into the College method accepted().  You can look inside showdown_time_a5.py's script code (at the bottom) to see how I changed it (in comparison to the A3 code) to handle this adjustement.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   If you
+   <i>
+    do
+   </i>
+   want to use helper_tests.py, you are on the right track --- modifying it to take into account the changes.  So I am very pleased that you were working on it, even though you didn't have to ...
+   <break>
+   </break>
+   <break>
+   </break>
+   You would indeed have to adjust for the fact that the function was_accepted() was changed into the College method accepted().  You can look inside showdown_time_a5.py's script code (at the bottom) to see how I changed it (in comparison to the A3 code) to handle this adjustement.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

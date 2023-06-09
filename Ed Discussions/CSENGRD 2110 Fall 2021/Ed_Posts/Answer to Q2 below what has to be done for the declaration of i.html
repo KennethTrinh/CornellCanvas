@@ -13,50 +13,46 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="363.7312859884837" src="https://static.us.edusercontent.com/files/aasKKBqLHxKRoOjLHfCgogiP" width="658"/>
- </figure>
- <paragraph>
-  Given that space of i is allocated before execution (not sure how to describe exactly when) and local variable will not be automatically initialized, I am confused about the answer.
- </paragraph>
- <paragraph>
-  Is it "store a pointer to the space allocated in local variable i"? Which I still feel wrong since this should also be done before execution...
- </paragraph>
-</document>
+<figure>
+ <image height="363.7312859884837" src="https://static.us.edusercontent.com/files/aasKKBqLHxKRoOjLHfCgogiP" width="658"/>
+</figure>
+<p>
+ Given that space of i is allocated before execution (not sure how to describe exactly when) and local variable will not be automatically initialized, I am confused about the answer.
+</p>
+<p>
+ Is it "store a pointer to the space allocated in local variable i"? Which I still feel wrong since this should also be done before execution...
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   1. Do you remember the steps in executing a method call? The first is to push a frame for the call onto the call stack. It contains space for all local variables and parameters. THAT is when space is allocated.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Therefore, during execution of the method body, NOTHING has to be done for the declaration of i.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Hao Zhuo (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you!!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Hao Zhuo (None)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you!!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

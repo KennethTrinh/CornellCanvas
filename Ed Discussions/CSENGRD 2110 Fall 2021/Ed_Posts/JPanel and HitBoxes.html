@@ -13,52 +13,50 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm on TODO 13.
- </paragraph>
- <paragraph>
-  If I've understood the description for this assignment correctly then I'm pretty sure that it's HEAVILY implied that we should just use JPanels for the return type of makeSliderPanel (in fact I can't really think of any other thing we should return.
- </paragraph>
- <paragraph>
-  However, when I type
- </paragraph>
- <paragraph>
-  JPanel out = new JPanel();
- </paragraph>
- <paragraph>
-  into an otherwise empty makeSliderPanel function (save the return statement) I get a red line saying JPanel isn't imported.
- </paragraph>
- <paragraph>
-  Was this intentional? Or did I just somehow accidentally delete the import statement for JPanel?
- </paragraph>
- <paragraph>
-  Sub-question:
- </paragraph>
- <paragraph>
-  The hitbox for my circular targets were squares, meaning the hitbox of each target actually extends a bit farther out than the actual bounds of the target display.
- </paragraph>
- <paragraph>
-  I don't remember this being addressed in the documentation, but do you want a circular hitbox that EXACTLY fits the display area of the target? Or is the square hitbox approximation ok?
- </paragraph>
-</document>
+<p>
+ I'm on TODO 13.
+</p>
+<p>
+ If I've understood the description for this assignment correctly then I'm pretty sure that it's HEAVILY implied that we should just use JPanels for the return type of makeSliderPanel (in fact I can't really think of any other thing we should return.
+</p>
+<p>
+ However, when I type
+</p>
+<p>
+ JPanel out = new JPanel();
+</p>
+<p>
+ into an otherwise empty makeSliderPanel function (save the return statement) I get a red line saying JPanel isn't imported.
+</p>
+<p>
+ Was this intentional? Or did I just somehow accidentally delete the import statement for JPanel?
+</p>
+<p>
+ Sub-question:
+</p>
+<p>
+ The hitbox for my circular targets were squares, meaning the hitbox of each target actually extends a bit farther out than the actual bounds of the target display.
+</p>
+<p>
+ I don't remember this being addressed in the documentation, but do you want a circular hitbox that EXACTLY fits the display area of the target? Or is the square hitbox approximation ok?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   import JPanel if necessary. If you press your mouse over the red x on the left of the line, you should get a pop-up with several alternatives to fix this issue; use the import one.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   We call the "hitbox" the BOUNDING RECTANGLE of the circle. Yes, the circle may extend outside the target display area, so you don't see it all. This is normal.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

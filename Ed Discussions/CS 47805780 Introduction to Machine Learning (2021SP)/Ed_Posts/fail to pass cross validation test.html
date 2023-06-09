@@ -13,47 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I passed the tests except for the cross validation one. I got a similar pic in Cross validation but it seems the error rate is bit high. The Error Matrix is
- </paragraph>
- <paragraph>
-  [[0.5  0.5  0.5  0.43 0.37] [0.5  0.5  0.28 0.12 0.06] [0.5  0.49 0.11 0.03 0.  ] [0.5  0.38 0.02 0.   0.  ] [0.5  0.11 0.   0.   0.  ] [0.47 0.02 0.   0.   0.  ] [0.44 0.02 0.   0.   0.  ]]
- </paragraph>
- <paragraph>
-  What is the possible reason?
- </paragraph>
- <figure>
-  <image height="418.1955555555556" src="https://static.us.edusercontent.com/files/gDbgeqncWvcymAJ2HWZ1Pkqp" width="658"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I passed the tests except for the cross validation one. I got a similar pic in Cross validation but it seems the error rate is bit high. The Error Matrix is
+</p>
+<p>
+ [[0.5  0.5  0.5  0.43 0.37] [0.5  0.5  0.28 0.12 0.06] [0.5  0.49 0.11 0.03 0.  ] [0.5  0.38 0.02 0.   0.  ] [0.5  0.11 0.   0.   0.  ] [0.47 0.02 0.   0.   0.  ] [0.44 0.02 0.   0.   0.  ]]
+</p>
+<p>
+ What is the possible reason?
+</p>
+<figure>
+ <image height="418.1955555555556" src="https://static.us.edusercontent.com/files/gDbgeqncWvcymAJ2HWZ1Pkqp" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Tianxing Jiang (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Could you make a private post and share your code?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Tenzin Wangyal (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Tenzin Wangyal (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   I had the same looking output, check for 2 things:
   <break>
   </break>
@@ -61,52 +43,64 @@
   <break>
   </break>
   2. Check your recoverbias function, it may not be the alpha closest to C/2. There's np.absolute() if you need it.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Solved!!! Thank you
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bingjie Huang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you soooooo much! I was confused for a long long time, and didn't figure out! Finally, I found that I used the abs() instead of np.absolute(), even though I still don't know the difference (np.absolute() and abs()) now.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Tenzin Wangyal (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  You're welcome! They used to be different on earlier versions. Should be the same now on the latest versions but I once had to learn a painful debugging lesson about their differences so I stick to np.func if a similar func exists for both inbuilt-python and numpy.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Bingjie Huang (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you soooooo much! I was confused for a long long time, and didn't figure out! Finally, I found that I used the abs() instead of np.absolute(), even though I still don't know the difference (np.absolute() and abs()) now.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Tenzin Wangyal (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    You're welcome! They used to be different on earlier versions. Should be the same now on the latest versions but I once had to learn a painful debugging lesson about their differences so I stick to np.func if a similar func exists for both inbuilt-python and numpy.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Solved!!! Thank you
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Tianxing Jiang (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Could you make a private post and share your code?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

@@ -13,104 +13,101 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  My commitment statement for my project next week is to do the action items that Lillian and I discussed during my feasibility check-in, as well as some additional exploration of my full unlabeled dataset of r/sanfrancisco comments inspired by today’s lecture.
- </paragraph>
- <paragraph>
-  I’ll first run some initial descriptive analysis to see if there are any distinct relationships between word length and specific policy frames in my labeled dataset. I’ll perform adjustments as needed on the data such as truncating word lengths if I find any noticeable trends. From there, I will run comparisons of the one category versus all other categories binary classification models instead of the multiclass models I had tested for my feasibility check. This will allow me to design sample weights to place emphasis within training on my labeled Reddit records over the Media Frames Corpus data instead of having to prioritize adjusting for my multiclass frame imbalances. I plan on comparing the individual class accuracy for each of the seven frames with a SVM, baseline neural net, and LSTM neural net specification. My primary goal is to finalize my model of choice to prepare for predicting the frames of my complete Reddit data set.
- </paragraph>
- <paragraph>
-  Additionally, I’d like to perform “Fightin’ Words” comparisons between the four specific housing topics I performed keyword searches to obtain comments on from the Pushshift API. These include renter/landlord contract regulations such as rent control and Ellis Act evictions, homelessness, NIMBY/YIMBY discourse related to construction and zoning, and neighborhood gentrification. I think I’ll take a similar approach to my classifier models of operationalizing my Fightin’ Words checks as comments that mention each topic versus all other posts. I’m particularly interested in seeing if words associated with specific policy frame concepts will emerge for defining each group and if I’ll find any words that are surprising and/or unexpected. This will be helpful for grounding word differences by topics on their own before investigating the frames used within the discussions themselves.
- </paragraph>
-</document>
-<h3>
- Author: Remy Stewart (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ My commitment statement for my project next week is to do the action items that Lillian and I discussed during my feasibility check-in, as well as some additional exploration of my full unlabeled dataset of r/sanfrancisco comments inspired by today’s lecture.
+</p>
+<p>
+ I’ll first run some initial descriptive analysis to see if there are any distinct relationships between word length and specific policy frames in my labeled dataset. I’ll perform adjustments as needed on the data such as truncating word lengths if I find any noticeable trends. From there, I will run comparisons of the one category versus all other categories binary classification models instead of the multiclass models I had tested for my feasibility check. This will allow me to design sample weights to place emphasis within training on my labeled Reddit records over the Media Frames Corpus data instead of having to prioritize adjusting for my multiclass frame imbalances. I plan on comparing the individual class accuracy for each of the seven frames with a SVM, baseline neural net, and LSTM neural net specification. My primary goal is to finalize my model of choice to prepare for predicting the frames of my complete Reddit data set.
+</p>
+<p>
+ Additionally, I’d like to perform “Fightin’ Words” comparisons between the four specific housing topics I performed keyword searches to obtain comments on from the Pushshift API. These include renter/landlord contract regulations such as rent control and Ellis Act evictions, homelessness, NIMBY/YIMBY discourse related to construction and zoning, and neighborhood gentrification. I think I’ll take a similar approach to my classifier models of operationalizing my Fightin’ Words checks as comments that mention each topic versus all other posts. I’m particularly interested in seeing if words associated with specific policy frame concepts will emerge for defining each group and if I’ll find any words that are surprising and/or unexpected. This will be helpful for grounding word differences by topics on their own before investigating the frames used within the discussions themselves.
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Remy Stewart (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Here’s the synopsis of my findings from my commitment statement action items from last week. I first inspected the word count across the frame categories to ensure there was no significant relationship between any of the frames and their length that may lead to a classifier equating frames with post length. Running descriptive statistics made me realize that it’s much more a matter of outlier posts that are much longer than the others overall than an issue of one frame being disproportionately longer. Here’s the length distribution and box plots for my full dataset of the combined Reddit and Media Frames labeled records divided by policy frames 1 through 7:
- </paragraph>
+ </p>
  <figure>
   <image height="259" src="https://static.us.edusercontent.com/files/K9uHCexsR8LqDXaOqhOtn1fF" width="433"/>
  </figure>
  <figure>
   <image height="285" src="https://static.us.edusercontent.com/files/9i5jkznN2Vz8JdiWvpqbTYnh" width="441"/>
  </figure>
- <paragraph>
+ <p>
   You can see that counts are generally equivalently distributed across frames for the total labeled sample. Here’s the equivalent metric when I just consider the 500 labeled Reddit comments:
- </paragraph>
+ </p>
  <figure>
   <image height="255" src="https://static.us.edusercontent.com/files/cb3Gdk0I8l025Bkfco7lQ29e" width="415"/>
  </figure>
  <figure>
   <image height="288" src="https://static.us.edusercontent.com/files/LwcYwJexvhkWxNKX1j53qpcD" width="433"/>
  </figure>
- <paragraph>
+ <p>
   I had a bit of concern towards my Cultural Frame 6 in my Reddit label set being shorter than the others, but its high variation and the over 2,000 additional records from the Media Frames corpus made me less worried regarding whatever implications this may have on my classifier. I thought it would be best to move with truncating my posts to up to 300 words to prevent undue influence of the outlier records that both box plots clearly indicate towards. I think it’s a fair argument having looked through these records qualitatively that each post or article’s frame is apparent within 300 words into the text.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I then performed a Fightin’ Words analysis on posts that explicitly discuss one of my primary policy subjects- rental/landlord regulations, NIMBYism, homelessness, and gentrification- compared to non-subject-specific posts. I first attempted to do a given policy topic versus all posts that don’t explicitly mention one of these policy subjects review, but the requested computation was too large to perform across my 1.7 million comments. I therefore conducted the review on a randomly sampled 10% of the comments. I included my Fightin’ Words results as a separate PDF given the multiple produced graphs and relevant tokens by policy topic.
- </paragraph>
- <file filename="Fightin' Words Test Results.pdf" url="https://static.us.edusercontent.com/files/WMvtnXclPxerX59XHJRFLR7I">
- </file>
- <paragraph>
+ </p>
+ <a href="https://static.us.edusercontent.com/files/WMvtnXclPxerX59XHJRFLR7I">
+  Fightin' Words Test Results.pdf
+ </a>
+ <p>
   I believe there are two relevant takeaways from these findings for seeing if specific words associated with a topic are either unexpected and/or potentially correlated with a policy frame. First, I believe that renter/landlord, NIMBYism, and gentrification discourse are all relevant to their specific issue but not necessarily to one policy frame over another. Phrases such as “tenants”, “construction”, and “communities” for the three policy topics respectively are both predictable and not overwhelmingly associated with one policy frame.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I don’t think this holds for the discourse associated with homelessness. “Mentally” and “drug” as the most associated terms directly reflects the Health &amp; Safety policy frame in a way that isn’t inherent to the phenomenon of homelessness itself as the state of not having one’s own stable housing. The prevalence of these terms to define homelessness discourse suggests that the Health &amp; Safety frame will be particularly predictive towards conversation around homelessness in a form that doesn’t hold for other policy topics. I’ll have to consider how to navigate this within my model design, as I don’t want my classifier to learn that any mention of homelessness means that the Health &amp; Safety policy frame is automatically being referenced by a given Reddit comment.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Finally, I moved to testing out a one frame versus all other frame policy classification design across three model specifications- a baseline single-hidden-layer neural net, a Long Short-Term Memory neural net, and a Support Vector Machine with a linear kernel. I computed sample weights for the training set to place an emphasis on correctly classifying the records sourced from Reddit over the Media Frames corpus. I performed all 21 model runs and received promising results generally around the 0.7 range of accuracy for each frame. Shortly after though, I realized I hadn’t looked at the associated precision/recall results. When I did, I found that all the models were essentially predicting only the “rest” class over the particular frame class which due to the sizable class imbalance produced seemingly promising results.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I’ve since spent this past weekend trying to figure out the best means to have the models stop predicting only the majority class combining class weights, oversampling with SMOTE, under-sampling the largest class, and tuning hyperparameters. The overall lack of success of these debugging attempts made me realize that I needed to seek out other modeling options that would do a better job learning what characterizes the minority frame text for each one vs. all task. Mendelsohn et al. (2021) recently studied policy frames on Twitter with the Media Frames corpus and used a RoBERTA transformer for classification that received SOTA results on a one vs. all framework. I’m therefore now tinkering with an equivalent DistilBERT transformer and have seen promising improvements so far. My F1 for a single epoch on the Economics and Resources one vs. all test was in the 0.7 range
-  <italic>
+  <i>
    without
-  </italic>
+  </i>
   only predicting the majority class versus the 0.3 range I reached with LSTM after a whole lot of imbalance adjustment experiments. Transformers take quite some time to run so I’ll be spending this week finalizing these models for all 7 of my classes, but it seems that DistilBERT should be able to solve my problem and will therefore be my classifier of choice.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Reference
- </paragraph>
- <pre>Mendelsohn, Julia, Ceren Budak, and David Jurgens. 2021. “Modeling Framing in Immigrant Discourse on Social Media.” <italic>Annual Conference of the North American Chapter of the Association for Computational Linguistics.</italic> arXiv.2104.06443.</pre>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  For the class imbalance problem: I don't remember, but if the classifiers you are running have a way to optimize for F-measure (a tradeoff between precision and recall) with respect to the minority class, that could help?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Remy Stewart (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you for the suggestion! I've actually been basing all of my class imbalance tests on the F1 scores for that exact reason. Honestly what I think the fundamental problem was my methods being based on tf-idf versus contextual embeddings, since policy frames are all about nuance. DistilBERT has since been getting me to comparable F1 scores to publications also studying policy frames which makes sense since BERT comes pre-trained with prior contextual knowledge that I'm able to fine-tune to my use case.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <pre>Mendelsohn, Julia, Ceren Budak, and David Jurgens. 2021. “Modeling Framing in Immigrant Discourse on Social Media.” <i>Annual Conference of the North American Chapter of the Association for Computational Linguistics.</i> arXiv.2104.06443.</pre>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   For the class imbalance problem: I don't remember, but if the classifiers you are running have a way to optimize for F-measure (a tradeoff between precision and recall) with respect to the minority class, that could help?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Remy Stewart (student)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Thank you for the suggestion! I've actually been basing all of my class imbalance tests on the F1 scores for that exact reason. Honestly what I think the fundamental problem was my methods being based on tf-idf versus contextual embeddings, since policy frames are all about nuance. DistilBERT has since been getting me to comparable F1 scores to publications also studying policy frames which makes sense since BERT comes pre-trained with prior contextual knowledge that I'm able to fine-tune to my use case.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

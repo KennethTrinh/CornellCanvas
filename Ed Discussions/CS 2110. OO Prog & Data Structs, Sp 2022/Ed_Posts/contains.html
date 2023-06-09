@@ -13,154 +13,152 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  This is for the method contains in A5:
- </paragraph>
- <paragraph>
-  Test case:
- </paragraph>
- <paragraph>
-  <bold>
-   var
-  </bold>
-  dt=
-  <bold>
-   new
-  </bold>
-  CovidTree(
-  <italic>
-   humanA
-  </italic>
-  );
- </paragraph>
- <paragraph>
-  dt.insert(
-  <italic>
-   humanA
-  </italic>
-  ,
-  <italic>
-   humanB
-  </italic>
-  );
- </paragraph>
- <paragraph>
-  dt.insert(
-  <italic>
-   humanA
-  </italic>
-  ,
-  <italic>
-   humanC
-  </italic>
-  );
- </paragraph>
- <paragraph>
-  <italic>
-   assertEquals
-  </italic>
-  (
-  <bold>
-   true
-  </bold>
-  , dt.contains(
-  <italic>
-   humanC
-  </italic>
-  ));
- </paragraph>
- <paragraph>
-  It is returning false, even when the human equals p. I put print statements to debug:
- </paragraph>
- <paragraph>
-  comparing
- </paragraph>
- <paragraph>
+<p>
+ This is for the method contains in A5:
+</p>
+<p>
+ Test case:
+</p>
+<p>
+ <b>
+  var
+ </b>
+ dt=
+ <b>
+  new
+ </b>
+ CovidTree(
+ <i>
+  humanA
+ </i>
+ );
+</p>
+<p>
+ dt.insert(
+ <i>
+  humanA
+ </i>
+ ,
+ <i>
+  humanB
+ </i>
+ );
+</p>
+<p>
+ dt.insert(
+ <i>
+  humanA
+ </i>
+ ,
+ <i>
+  humanC
+ </i>
+ );
+</p>
+<p>
+ <i>
+  assertEquals
+ </i>
+ (
+ <b>
+  true
+ </b>
+ , dt.contains(
+ <i>
+  humanC
+ </i>
+ ));
+</p>
+<p>
+ It is returning false, even when the human equals p. I put print statements to debug:
+</p>
+<p>
+ comparing
+</p>
+<p>
+ (C) - HEALTHY
+</p>
+<p>
+ (A) - HEALTHY
+</p>
+<p>
+ false
+</p>
+<p>
+ now looking at(C) - HEALTHY
+</p>
+<p>
+ comparing
+</p>
+<p>
+ <b>
   (C) - HEALTHY
- </paragraph>
- <paragraph>
-  (A) - HEALTHY
- </paragraph>
- <paragraph>
-  false
- </paragraph>
- <paragraph>
-  now looking at(C) - HEALTHY
- </paragraph>
- <paragraph>
-  comparing
- </paragraph>
- <paragraph>
-  <bold>
-   (C) - HEALTHY
-  </bold>
- </paragraph>
- <paragraph>
-  <bold>
-   (C) - HEALTHY
-  </bold>
- </paragraph>
- <paragraph>
-  <bold>
-   true
-  </bold>
- </paragraph>
- <paragraph>
-  now looking at(B) - HEALTHY
- </paragraph>
- <paragraph>
-  comparing
- </paragraph>
- <paragraph>
+ </b>
+</p>
+<p>
+ <b>
   (C) - HEALTHY
- </paragraph>
- <paragraph>
-  (B) - HEALTHY
- </paragraph>
- <paragraph>
-  false
- </paragraph>
- <paragraph>
-  I dont understand why when it identifies that the node is the same, it doesnt return true even if my code says:
- </paragraph>
- <paragraph>
-  <bold>
-   if
-  </bold>
-  (p.equals(human)) {
-  <bold>
-   return
-  </bold>
-  <bold>
-   true
-  </bold>
-  ; }
- </paragraph>
- <paragraph>
-  Even if the expression is true, does return true and stop the recursion
- </paragraph>
-</document>
+ </b>
+</p>
+<p>
+ <b>
+  true
+ </b>
+</p>
+<p>
+ now looking at(B) - HEALTHY
+</p>
+<p>
+ comparing
+</p>
+<p>
+ (C) - HEALTHY
+</p>
+<p>
+ (B) - HEALTHY
+</p>
+<p>
+ false
+</p>
+<p>
+ I dont understand why when it identifies that the node is the same, it doesnt return true even if my code says:
+</p>
+<p>
+ <b>
+  if
+ </b>
+ (p.equals(human)) {
+ <b>
+  return
+ </b>
+ <b>
+  true
+ </b>
+ ; }
+</p>
+<p>
+ Even if the expression is true, does return true and stop the recursion
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Without seeing your method contains, we cannot help.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Post it in a private window,
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Also, the error could be in your method insert.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

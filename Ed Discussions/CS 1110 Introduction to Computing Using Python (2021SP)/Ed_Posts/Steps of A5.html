@@ -16,120 +16,116 @@
 <h3>
  ENDORSED
 </h3>
-<document version="2.0">
- <paragraph>
-  Just to make sure I'm understanding the assignment, we modify the function process_line() in both sd_utilities_list.py and sd_utilities_dict.py, but for showdown_time_a5.py, we should be using sd_utiliities_dict.py? And the only other functions we implement are college_named() and menu_list() in sd_utilities_dict.py?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Just to make sure I'm understanding the assignment, we modify the function process_line() in both sd_utilities_list.py and sd_utilities_dict.py, but for showdown_time_a5.py, we should be using sd_utiliities_dict.py? And the only other functions we implement are college_named() and menu_list() in sd_utilities_dict.py?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi!
- </paragraph>
- <paragraph>
-  Yes to modifying function process_line()  in sd_utilities_list.py and sd_utilities_dict.py.
-  <break>
-  </break>
-  <break>
-  </break>
-  For showdown_time_a5.py, you should try it both with sd_utilities_list
-  <bold>
-   and
-  </bold>
-  with sd_utilities_dict as the modules that showdown_time_a5.py imports, to see if they work.  When you submit it, have the import statement use sd_utilities_dict (but it won't actually matter to our autograder if we set things up correctly.)
-  <break>
-  </break>
-  <break>
-  </break>
-  For sd_utilities_dict.py,  the
-  <bold>
-   three
-  </bold>
-  functions you should implement are:
-  <break>
-  </break>
-  * process_line()
-  <break>
-  </break>
-  * college_named()
-  <break>
-  </break>
-  * menu_listing()
-  <break>
-  </break>
-  <break>
-  </break>
-  ... and I just realized I forgot to mention menu_listing() in the handout --- will fix that pronto!
-  <break>
-  </break>
-  <break>
-  </break>
-  So
-  <bold>
-   thanks for asking,
-  </bold>
-  OP!!!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  By the way, one thing you're supposed to marvel at, in terms of the design of the code, is the fact that you can just swap module sd_utilities_dict.py for sd_utilities_list.py.  This is modular design!
- </paragraph>
- <paragraph>
-  In other words, the showdown functionality doesn't need to know how the showdown utilities are implemented, just how they are supposed to be called and what they are supposed to do.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Although to be completely honest, this modularity does depend on the fact that the contents of variable
-  <code>
-   colleges
-  </code>
-  in the showdown_time code is never accessed directly, but just fed as an argument to the utility functions.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   (Don't forget to also answer the design questions, too.)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Hi!
+  </p>
+  <p>
+   Yes to modifying function process_line()  in sd_utilities_list.py and sd_utilities_dict.py.
+   <break>
+   </break>
+   <break>
+   </break>
+   For showdown_time_a5.py, you should try it both with sd_utilities_list
+   <b>
+    and
+   </b>
+   with sd_utilities_dict as the modules that showdown_time_a5.py imports, to see if they work.  When you submit it, have the import statement use sd_utilities_dict (but it won't actually matter to our autograder if we set things up correctly.)
+   <break>
+   </break>
+   <break>
+   </break>
+   For sd_utilities_dict.py,  the
+   <b>
+    three
+   </b>
+   functions you should implement are:
+   <break>
+   </break>
+   * process_line()
+   <break>
+   </break>
+   * college_named()
+   <break>
+   </break>
+   * menu_listing()
+   <break>
+   </break>
+   <break>
+   </break>
+   ... and I just realized I forgot to mention menu_listing() in the handout --- will fix that pronto!
+   <break>
+   </break>
+   <break>
+   </break>
+   So
+   <b>
+    thanks for asking,
+   </b>
+   OP!!!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    By the way, one thing you're supposed to marvel at, in terms of the design of the code, is the fact that you can just swap module sd_utilities_dict.py for sd_utilities_list.py.  This is modular design!
+   </p>
+   <p>
+    In other words, the showdown functionality doesn't need to know how the showdown utilities are implemented, just how they are supposed to be called and what they are supposed to do.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Prof. Lee (she/they) (admin)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Although to be completely honest, this modularity does depend on the fact that the contents of variable
+     <code>
+      colleges
+     </code>
+     in the showdown_time code is never accessed directly, but just fed as an argument to the utility functions.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

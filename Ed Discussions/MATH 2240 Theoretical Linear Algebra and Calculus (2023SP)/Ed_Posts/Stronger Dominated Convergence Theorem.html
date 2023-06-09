@@ -13,89 +13,85 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  If $f_1, f_2, f_3, \dots$ is a sequence of L-integrable functions from $\mathbb R^n$ to $\mathbb R$, $f:\mathbb R^n\to \mathbb R$ such that
- </paragraph>
- <paragraph>
-  $$
- </paragraph>
- <paragraph>
-  \lim_{k\to \infty}f_k(\vec x) = f(\vec x)
- </paragraph>
- <paragraph>
-  $$
- </paragraph>
- <paragraph>
-  almost everywhere, and there is an L-integrable function $F:\mathbb R^n\to \mathbb R$ such that for almost all $\vec x$, there exists $K$ such that for $k \geq K$,
- </paragraph>
- <paragraph>
-  $$
- </paragraph>
- <paragraph>
-  |f_k(\vec x)| \leq F(\vec x)|
- </paragraph>
- <paragraph>
-  $$
- </paragraph>
- <paragraph>
-  then does it follow that $f$ is L-integrable and
- </paragraph>
- <paragraph>
-  $$
- </paragraph>
- <paragraph>
-  \int_{\mathbb R^n}f(\vec x)|d^n\vec x| = \lim_{k\to \infty}\int_{\mathbb R^n}f_k(\vec x)|d^n\vec x|
- </paragraph>
- <paragraph>
-  $$
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ If $f_1, f_2, f_3, \dots$ is a sequence of L-integrable functions from $\mathbb R^n$ to $\mathbb R$, $f:\mathbb R^n\to \mathbb R$ such that
+</p>
+<p>
+ $$
+</p>
+<p>
+ \lim_{k\to \infty}f_k(\vec x) = f(\vec x)
+</p>
+<p>
+ $$
+</p>
+<p>
+ almost everywhere, and there is an L-integrable function $F:\mathbb R^n\to \mathbb R$ such that for almost all $\vec x$, there exists $K$ such that for $k \geq K$,
+</p>
+<p>
+ $$
+</p>
+<p>
+ |f_k(\vec x)| \leq F(\vec x)|
+</p>
+<p>
+ $$
+</p>
+<p>
+ then does it follow that $f$ is L-integrable and
+</p>
+<p>
+ $$
+</p>
+<p>
+ \int_{\mathbb R^n}f(\vec x)|d^n\vec x| = \lim_{k\to \infty}\int_{\mathbb R^n}f_k(\vec x)|d^n\vec x|
+</p>
+<p>
+ $$
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Reyer Sjamaar (admin)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Reyer Sjamaar (admin)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   No.  Your $K$ may depend on $x$, which invalidates the conclusion.
- </paragraph>
- <paragraph>
-  <bold>
+ </p>
+ <p>
+  <b>
    Counterexample.
-  </bold>
+  </b>
   Let $f_k=k\boldsymbol{1}_{(0,1/k]}$ and $f=F=0$.  Then $f_k$ and $F$ are L-integrable.  Also $\lim_{k\to\infty}f_k(x)=f(x)$ for all $x$.  In fact, for each $x$ there is a $K$ such that $f_k(x)=0$ for $k\ge K$.  (Namely $K=\lceil1/x\rceil$ works for $x\in(0,1]$ and any $K$ works for $x\not\in(0,1]$.)  Thus $|f_k(x)|\le F(x)$ for $k\ge K$.  But $\lim_{k\to\infty}\int f_k=1$ and $\int\lim_{k\to\infty}f_k=0$ (see Example 4.11.3 case 2).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   However, if you replace "for almost all $x$, there exists $K$ such that for $k\ge K\dots$" with "there exists $K$ such that for almost all $x$ and for all $k\ge K\dots$", then you get a true statement, as you can see by applying the Dominated Convergence Theorem to the tail $(f_k)_{k\ge K}$ of the sequence.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bryan Lu (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  I think the answer is yes, only because you can simply truncate the first $K$ terms of your sequence and apply Dominated Convergence to the remaining sequence. However, I am generally skittish about weakening hypotheses because we may allow new counterexamples to appear, but it seems like there's a pretty tame transformation/argument you can make to fit whatever sequence of functions you want to to the Theorem 4.11.19 as stated.
- </paragraph>
- <paragraph>
-  EDIT: this is incorrect, see Prof. Sjamaar's answer above.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Bryan Lu (admin)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   I think the answer is yes, only because you can simply truncate the first $K$ terms of your sequence and apply Dominated Convergence to the remaining sequence. However, I am generally skittish about weakening hypotheses because we may allow new counterexamples to appear, but it seems like there's a pretty tame transformation/argument you can make to fit whatever sequence of functions you want to to the Theorem 4.11.19 as stated.
+  </p>
+  <p>
+   EDIT: this is incorrect, see Prof. Sjamaar's answer above.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

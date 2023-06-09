@@ -13,137 +13,131 @@
 <h3>
  Vote Count: 6
 </h3>
-<document version="2.0">
- <paragraph>
-  I had a little snafu in my calculation of the decision boundary of the network on page 26 in the review session this morning. So, here is a cleaner solution.
- </paragraph>
- <paragraph>
-  First, note that the network computes the following function that can be decomposed in the following steps:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    $h_1 = x_1-x_2+1$ (activation of first neuron in hidden layer)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    $h_2 = -x_1 - x_2 + 1$ (activation of second neuron in hidden layer)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    $z=1*ReLU(h_1) - 1*ReLU(h_2) -2$ (network output)
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Given that the ReLU function (called f in the question) has two cases (i.e. it is the identity function if the input is positive, and it is zero if the input is negative), we need to consider 4 different cases of activations in the hidden layer.
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    $h_1 \ge 0$ and $h_2 \ge 0$
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    $h_1 \ge 0$ and $h_2 &lt; 0$
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    $h_1 &lt; 0$ and $h_2 \ge 0$
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    $h_1 &lt; 0$ and $h_2 &lt; 0$
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  In either of these cases we have a different closed form function for the output $z$ of the network:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    $h_1 \ge 0$ and $h_2 \ge 0$ --&gt; $z=2*x_1-2$
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    $h_1 \ge 0$ and $h_2 &lt; 0$ --&gt; $z=x_1-x_2-1$
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    $h_1 &lt; 0$ and $h_2 \ge 0$ --&gt; $z=x_1+x_2-3$
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    $h_1 &lt; 0$ and $h_2 &lt; 0$ --&gt; $z=-2$
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  So, we can now reason about the decisions for each of the cases. In the following two cases, the value of $z$ is always negative and thus the network always predicts "negative" in these regions.
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    $h_1 &lt; 0$ and $h_2 \ge 0$ --&gt; $z=x_1+x_2-3$ --&gt; always negative
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    $h_1 &lt; 0$ and $h_2 &lt; 0$ --&gt; $z=-2$ --&gt; always negative
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  The decision boundaries for the other two cases are linear in their respective regions, and thus  we can plot the decision boundary by solving $z$ for zero.
- </paragraph>
- <paragraph>
-  The following is a graphical representation of the decision boundary:
- </paragraph>
- <figure>
-  <image height="563.5446224256293" src="https://static.us.edusercontent.com/files/tXYhLJ4MzhcWNUO0cfq2et3N" width="643"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Jeremy Freedman (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ I had a little snafu in my calculation of the decision boundary of the network on page 26 in the review session this morning. So, here is a cleaner solution.
+</p>
+<p>
+ First, note that the network computes the following function that can be decomposed in the following steps:
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   $h_1 = x_1-x_2+1$ (activation of first neuron in hidden layer)
+  </p>
+ </li>
+ <li>
+  <p>
+   $h_2 = -x_1 - x_2 + 1$ (activation of second neuron in hidden layer)
+  </p>
+ </li>
+ <li>
+  <p>
+   $z=1*ReLU(h_1) - 1*ReLU(h_2) -2$ (network output)
+  </p>
+ </li>
+</list>
+<p>
+ Given that the ReLU function (called f in the question) has two cases (i.e. it is the identity function if the input is positive, and it is zero if the input is negative), we need to consider 4 different cases of activations in the hidden layer.
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   $h_1 \ge 0$ and $h_2 \ge 0$
+  </p>
+ </li>
+ <li>
+  <p>
+   $h_1 \ge 0$ and $h_2 &lt; 0$
+  </p>
+ </li>
+ <li>
+  <p>
+   $h_1 &lt; 0$ and $h_2 \ge 0$
+  </p>
+ </li>
+ <li>
+  <p>
+   $h_1 &lt; 0$ and $h_2 &lt; 0$
+  </p>
+ </li>
+</list>
+<p>
+ In either of these cases we have a different closed form function for the output $z$ of the network:
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   $h_1 \ge 0$ and $h_2 \ge 0$ --&gt; $z=2*x_1-2$
+  </p>
+ </li>
+ <li>
+  <p>
+   $h_1 \ge 0$ and $h_2 &lt; 0$ --&gt; $z=x_1-x_2-1$
+  </p>
+ </li>
+ <li>
+  <p>
+   $h_1 &lt; 0$ and $h_2 \ge 0$ --&gt; $z=x_1+x_2-3$
+  </p>
+ </li>
+ <li>
+  <p>
+   $h_1 &lt; 0$ and $h_2 &lt; 0$ --&gt; $z=-2$
+  </p>
+ </li>
+</list>
+<p>
+ So, we can now reason about the decisions for each of the cases. In the following two cases, the value of $z$ is always negative and thus the network always predicts "negative" in these regions.
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   $h_1 &lt; 0$ and $h_2 \ge 0$ --&gt; $z=x_1+x_2-3$ --&gt; always negative
+  </p>
+ </li>
+ <li>
+  <p>
+   $h_1 &lt; 0$ and $h_2 &lt; 0$ --&gt; $z=-2$ --&gt; always negative
+  </p>
+ </li>
+</list>
+<p>
+ The decision boundaries for the other two cases are linear in their respective regions, and thus  we can plot the decision boundary by solving $z$ for zero.
+</p>
+<p>
+ The following is a graphical representation of the decision boundary:
+</p>
+<figure>
+ <image height="563.5446224256293" src="https://static.us.edusercontent.com/files/tXYhLJ4MzhcWNUO0cfq2et3N" width="643"/>
+</figure>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jeremy Freedman (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   How did you know that z is always negative in the case of h_1&lt;0 and h_2&gt;=0? I don't see the intuition behind it.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jenny Wen (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  If you choose points in that region you'll find that the output will always be negative. Alternatively, if you plot the boundary z = x1 + x2 - 3 = 0, you'll find that it classifies that whole region as negative
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Jenny Wen (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   If you choose points in that region you'll find that the output will always be negative. Alternatively, if you plot the boundary z = x1 + x2 - 3 = 0, you'll find that it classifies that whole region as negative
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

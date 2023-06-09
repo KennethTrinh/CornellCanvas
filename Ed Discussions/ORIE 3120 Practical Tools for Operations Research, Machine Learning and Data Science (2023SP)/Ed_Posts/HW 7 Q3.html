@@ -13,81 +13,77 @@
 <h3>
  Vote Count: 3
 </h3>
-<document version="2.0">
- <paragraph>
-  Problem #3
- </paragraph>
- <paragraph>
-  HW #7
- </paragraph>
- <paragraph>
-  I'm wondering if we have to include a constant (intercept) in our model to maximize the R-squared value? I've found my value to be much higher when there is none, but I'm not sure what the statistical implication of this is.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Problem #3
+</p>
+<p>
+ HW #7
+</p>
+<p>
+ I'm wondering if we have to include a constant (intercept) in our model to maximize the R-squared value? I've found my value to be much higher when there is none, but I'm not sure what the statistical implication of this is.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Samantha Klein (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Samantha Klein (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   There are many ways to go about this problem.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Typically with linear regression, you should add a constant.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Instead of getting rid of your constant to maximize R-squared value, I would recommend looking to your features and seeing which features you could incorporate to make this model better and maximize R-squared in that way.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Josh De Leeuw (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Somewhat related question, as I was getting the same results, a smaller R^2 coefficient when adding a constant. How does this make statistical sense? Couldn't any model including a constant just set the B_0 coefficient to 0 and get the same model as without the constant added? I find it counterintuitive that adding more features could ever cause a decrease in R^2
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Hugo Mainguy (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Disclaimer: the text below is not my own, but explains better than I probably could (happy to give the source, which has some more explanation, if you cannot find it).
-  <break>
-  </break>
-  <break>
-  </break>
-  R^2 follows a different definition depending on whether there is a constant in the model or not.
- </paragraph>
- <paragraph>
-  R^2 in a linear model with a constant is the standard definition that uses a comparison with a mean only model as reference. Total sum of squares is demeaned.
- </paragraph>
- <paragraph>
-  R^2 in a linear model without a constant compares with a model that has no regressors at all, or the effect of the constant is zero. In this case the R^2 calculation uses a total sum of squares that does not demean.
- </paragraph>
- <paragraph>
-  Since the definition changes if we add or drop a constant, the R^2 can go either way. The actual explained sum of squares will always increase if we add additional explanatory variables, or stay unchanged if the new variable doesn't contribute anything.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Josh De Leeuw (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Somewhat related question, as I was getting the same results, a smaller R^2 coefficient when adding a constant. How does this make statistical sense? Couldn't any model including a constant just set the B_0 coefficient to 0 and get the same model as without the constant added? I find it counterintuitive that adding more features could ever cause a decrease in R^2
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Hugo Mainguy (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Disclaimer: the text below is not my own, but explains better than I probably could (happy to give the source, which has some more explanation, if you cannot find it).
+    <break>
+    </break>
+    <break>
+    </break>
+    R^2 follows a different definition depending on whether there is a constant in the model or not.
+   </p>
+   <p>
+    R^2 in a linear model with a constant is the standard definition that uses a comparison with a mean only model as reference. Total sum of squares is demeaned.
+   </p>
+   <p>
+    R^2 in a linear model without a constant compares with a model that has no regressors at all, or the effect of the constant is zero. In this case the R^2 calculation uses a total sum of squares that does not demean.
+   </p>
+   <p>
+    Since the definition changes if we add or drop a constant, the R^2 can go either way. The actual explained sum of squares will always increase if we add additional explanatory variables, or stay unchanged if the new variable doesn't contribute anything.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

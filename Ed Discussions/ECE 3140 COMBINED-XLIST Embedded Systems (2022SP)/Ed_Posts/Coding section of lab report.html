@@ -13,54 +13,48 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  Include any specific details involved in implementing your design. Did you
-  <break>
-  </break>
-  have to make any assumptions, i.e. number of processes, maximum stack use
-  <break>
-  </break>
-  by each process
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  I'm a little confused what should be included here if the design goes through most of this? I'm unsure if we were supposed to know the max number of processes our code can handle or stack. How do we find this out?
-  <break>
-  </break>
- </paragraph>
-</document>
+<p>
+ Include any specific details involved in implementing your design. Did you
+ <break>
+ </break>
+ have to make any assumptions, i.e. number of processes, maximum stack use
+ <break>
+ </break>
+ by each process
+</p>
+<p>
+ I'm a little confused what should be included here if the design goes through most of this? I'm unsure if we were supposed to know the max number of processes our code can handle or stack. How do we find this out?
+ <break>
+ </break>
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aaron Wilhelm (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  You can talk about the information that you needed to store in the PCB. For the number of processes you could experimentally determine how many processes you could create given a stack size and the default heap size
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Vedant Singh (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Vedant Singh (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I usually talk about the overarching processes in the design section. Then, in the code section, I talk about how different lines of code accomplish these processes. For example, for process_create, I would say I allocated space, initialized the stack, initialized the process_state etc. in the design section. Then, in the code section, I would say line 3-8 are used to initialize the process_state by assigning values to these fields, etc.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Aaron Wilhelm (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   You can talk about the information that you needed to store in the PCB. For the number of processes you could experimentally determine how many processes you could create given a stack size and the default heap size
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

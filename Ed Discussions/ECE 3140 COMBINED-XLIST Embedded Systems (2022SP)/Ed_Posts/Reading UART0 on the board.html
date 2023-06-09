@@ -13,55 +13,51 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  When the player wins the game, we want our Python program to tell this to the board using the serial UART connection. We are having trouble reading values on the board though. We are using ser.write() on the Python side and then just reading the UART0-&gt;D register on the board side, but not getting any good data. Is there an example that we could use for this functionality? Or maybe there is some way to disconnect on the Python side and the board can detect this? We are thinking of just keeping the board running and only displaying through Python.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Rhia Malhotra (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ When the player wins the game, we want our Python program to tell this to the board using the serial UART connection. We are having trouble reading values on the board though. We are using ser.write() on the Python side and then just reading the UART0-&gt;D register on the board side, but not getting any good data. Is there an example that we could use for this functionality? Or maybe there is some way to disconnect on the Python side and the board can detect this? We are thinking of just keeping the board running and only displaying through Python.
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Rhia Malhotra (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   ^^^
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   My group is trying to do the same exact thing except we wanted to use the SCANF function in C. This isn't working either. Any examples for data transfer from python to the board would be much appreciated.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Also, my net id is rm722 if you'd like to swap ideas
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Anonymous
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   So here is the best solution I could come up with:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   We only ever write to the UART when we are done with the game, so we can leverage the receive data register to do this. When we reach game over, Python sends a number on the UART. This will set the receive data register to 1, and we can detect it in the C code with this:
- </paragraph>
+ </p>
  <pre>UART0-&gt;S1 &amp; UART_S1_RDRF_MASK
 </pre>
- <paragraph>
+ <p>
   Which is 1 when there is something to receive, and 0 otherwise. Whenever this becomes 1, we know to stop the game. We don't ever read the actual value, although I don't think that matters because we only need the first signal.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

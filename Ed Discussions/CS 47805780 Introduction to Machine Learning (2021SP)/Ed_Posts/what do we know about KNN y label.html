@@ -13,34 +13,30 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  When classifying y labels for test cases, do we assume that Y labels of both test cases and training cases only contain (0,1)?
- </paragraph>
-</document>
+<p>
+ When classifying y labels for test cases, do we assume that Y labels of both test cases and training cases only contain (0,1)?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Tianxing Jiang (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Tianxing Jiang (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   We don't have such an assumption.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Using
   <code>
    print(np.unique(yTr))
   </code>
   on the faces dataset, you can see there are 40 training labels. Your KNN implementation should work with any amount of training labels.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

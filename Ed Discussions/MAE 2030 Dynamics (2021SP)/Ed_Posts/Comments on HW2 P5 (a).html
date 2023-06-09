@@ -16,21 +16,17 @@
 <h3>
  ENDORSED
 </h3>
-<document version="2.0">
- <paragraph>
-  A lot of students in my office hours encountered the same issue: With the correct myEulerSolver function and the correct myrhs function, they got a really weird plot with the position going to negative infinity. The solution is to decrease your time interval by a lot (at least 10000 steps per second) to increase the numerical accuracy. The reason is that your initial acceleration is extremely large (~$10^6 m/s^2$), so in order to keep track of the velocity that is drastically changing over time, you need to have a very small time interval.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Andy Ruina (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ A lot of students in my office hours encountered the same issue: With the correct myEulerSolver function and the correct myrhs function, they got a really weird plot with the position going to negative infinity. The solution is to decrease your time interval by a lot (at least 10000 steps per second) to increase the numerical accuracy. The reason is that your initial acceleration is extremely large (~$10^6 m/s^2$), so in order to keep track of the velocity that is drastically changing over time, you need to have a very small time interval.
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andy Ruina (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Expanding a bit on what Duan Li wrote above, all of which I agree with.
   <break>
   </break>
@@ -69,15 +65,15 @@
   </break>
   <break>
   </break>
-  <bold>
+  <b>
    Moral 1:
-  </bold>
+  </b>
   The ODE has a natural time scale, it's the relaxation time of the exponential.  In this example ($\dot x = -1$) that  is one time unit.  For Euler's method not to go bananas, the time step has to be smaller than the characteristic time.
- </paragraph>
- <paragraph>
-  <bold>
+ </p>
+ <p>
+  <b>
    But it's worse than that.
-  </bold>
+  </b>
   The ODE you are solving for homework is  this (with $c&gt;0$):
   <break>
   </break>
@@ -94,12 +90,12 @@
   <break>
   </break>
   $$\ddot x = - c x^2$$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   which is the same thing,
-  <italic>
+  <i>
    if
-  </italic>
+  </i>
   $x&gt;0$. On the other hand, if $x&lt;0$  and you use $\dot x = -c x^2$ instead of $\ddot x = -cx|x|$, then you have a bullet that is, incorrectly, being sped up by drag,  and this is faster than exponential growth, going to infinity in finite time.
   <break>
   </break>
@@ -110,17 +106,17 @@
   </break>
   <break>
   </break>
-  <bold>
+  <b>
    Moral 2:
-  </bold>
+  </b>
   If things go bad in your numerics,  simplify and break down until you can see the problem.  In ODE solutions, for example, it is good to look at the first one or two time steps and see if they look sensible.
   <break>
   </break>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

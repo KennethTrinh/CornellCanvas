@@ -13,113 +13,109 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  What's fundamentally different when we write
- </paragraph>
- <paragraph>
-  <bold>
-   public class T2 extends T1 {
-  </bold>
- </paragraph>
- <paragraph>
-  <bold>
-   public void y() {
-  </bold>
- </paragraph>
- <paragraph>
-  <bold>
-   super.y();
-  </bold>
- </paragraph>
- <paragraph>
-  <bold>
-   static int b = 2*b;
-  </bold>
- </paragraph>
- <paragraph>
-  <bold>
-   }
-  </bold>
-  <break>
-  </break>
-  <break>
-  </break>
-  When I tried it in Java it screamed "only final is allowed!" Why is that?
- </paragraph>
- <paragraph>
-  Is it also true to say that writing static int b= 2*b inside public void y() is just repeatedly declaring and initializing a new static variable b?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  What about when it's outside of public void y() as in...
- </paragraph>
- <paragraph>
-  <bold>
-   public class T2 extends T1 {
-  </bold>
- </paragraph>
- <paragraph>
-  <bold>
-   public static int b;
-  </bold>
- </paragraph>
- <paragraph>
-  <bold>
-   public void y() {
-  </bold>
- </paragraph>
- <paragraph>
-  <bold>
-   super.y();
-  </bold>
- </paragraph>
- <paragraph>
-  <bold>
-   b = 2*b;
-  </bold>
- </paragraph>
- <paragraph>
-  <bold>
-   }
-  </bold>
- </paragraph>
- <paragraph>
-  Every time a new T2 is created isn't public static int b being declared again? I know that every time a T2 is created there's just one solitary "copy" of the static variable that's shared between it and the other instances of T2.
- </paragraph>
-</document>
+<p>
+ What's fundamentally different when we write
+</p>
+<p>
+ <b>
+  public class T2 extends T1 {
+ </b>
+</p>
+<p>
+ <b>
+  public void y() {
+ </b>
+</p>
+<p>
+ <b>
+  super.y();
+ </b>
+</p>
+<p>
+ <b>
+  static int b = 2*b;
+ </b>
+</p>
+<p>
+ <b>
+  }
+ </b>
+ <break>
+ </break>
+ <break>
+ </break>
+ When I tried it in Java it screamed "only final is allowed!" Why is that?
+</p>
+<p>
+ Is it also true to say that writing static int b= 2*b inside public void y() is just repeatedly declaring and initializing a new static variable b?
+</p>
+<p>
+ What about when it's outside of public void y() as in...
+</p>
+<p>
+ <b>
+  public class T2 extends T1 {
+ </b>
+</p>
+<p>
+ <b>
+  public static int b;
+ </b>
+</p>
+<p>
+ <b>
+  public void y() {
+ </b>
+</p>
+<p>
+ <b>
+  super.y();
+ </b>
+</p>
+<p>
+ <b>
+  b = 2*b;
+ </b>
+</p>
+<p>
+ <b>
+  }
+ </b>
+</p>
+<p>
+ Every time a new T2 is created isn't public static int b being declared again? I know that every time a T2 is created there's just one solitary "copy" of the static variable that's shared between it and the other instances of T2.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Local variables cannot have the modifier "static".
   <break>
   </break>
   "static" is used only for fields and methods.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Cool. Thank you
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Cool. Thank you
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

@@ -13,98 +13,96 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  If a process calls unlock on a lock without currently having access to the lock, should the lock unlock and give ownership to the next waiting process? Is this how we 'force' infinite processes to give up a lock?
- </paragraph>
-</document>
+<p>
+ If a process calls unlock on a lock without currently having access to the lock, should the lock unlock and give ownership to the next waiting process? Is this how we 'force' infinite processes to give up a lock?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Chris Martin (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I believe we can assume unlock(l) is only called by processes that currently hold the lock.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  are you sure? the behavior of lab4_l1.c changes for me when I check this case
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Chris Martin (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I mean you can implement unlock(l) with that assumption, but you have to ensure that unlock is only called by a process that has the lock wherever you use it.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  I don't think that's possible - consider a process that does nothing but unlock the lock (without first obtaining it).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Chris Martin (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  thats what i mean by you have to ensure unlock is only called by a process that has a lock "wherever you use it", like correct usage of unlock() is guaranteed by the user/client, not the implementer
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   If a process tries to acquire a lock that is already in use, it is blocked and should be added to the associated blocked queue.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   An infinite process that acquires a lock and never releases can never be compelled to release that lock.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Chris Martin (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I believe we can assume unlock(l) is only called by processes that currently hold the lock.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    are you sure? the behavior of lab4_l1.c changes for me when I check this case
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Chris Martin (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     I mean you can implement unlock(l) with that assumption, but you have to ensure that unlock is only called by a process that has the lock wherever you use it.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 8em;">
+     <h3>
+      Author: Anonymous
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      I don't think that's possible - consider a process that does nothing but unlock the lock (without first obtaining it).
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 10em;">
+      <h3>
+       Author: Chris Martin (student)
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       thats what i mean by you have to ensure unlock is only called by a process that has a lock "wherever you use it", like correct usage of unlock() is guaranteed by the user/client, not the implementer
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

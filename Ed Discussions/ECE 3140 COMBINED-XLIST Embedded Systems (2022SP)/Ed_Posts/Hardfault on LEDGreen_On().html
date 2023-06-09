@@ -13,87 +13,83 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi,
- </paragraph>
- <paragraph>
-  when we run the given test case with our code it hardfaults. When we looked into the debugger we found that it hard faults within
-  <code>
-   LEDGreen_On();
-  </code>
-  , however, when we go to enter the function to look deeper into the code, the debugger immediately hard faults. I'm not sure what function within our code could be causing an issue within
-  <code>
-   LEDGreen_On()
-  </code>
-  ?
- </paragraph>
-</document>
+<p>
+ Hi,
+</p>
+<p>
+ when we run the given test case with our code it hardfaults. When we looked into the debugger we found that it hard faults within
+ <code>
+  LEDGreen_On();
+ </code>
+ , however, when we go to enter the function to look deeper into the code, the debugger immediately hard faults. I'm not sure what function within our code could be causing an issue within
+ <code>
+  LEDGreen_On()
+ </code>
+ ?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Benjamin Kogan (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Benjamin Kogan (None)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   There might be a PIT interrupt that occurs before it runs LEDGreen_On, and the hard fault might be due to that. After the hard fault in the debug window, does the stack trace last show LEDGreen_On, or something else?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  It says it hard faults on line 131 of
-  <code>
-   3140.s
-  </code>
-  :
- </paragraph>
- <figure>
-  <image height="436.19040697674416" src="https://static.us.edusercontent.com/files/X4JXqyJgBgEpXhKy5SKy26Dj" width="599"/>
- </figure>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<document version="1.0">
- <paragraph>
-  Are you using the latest release of 3140.s?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I updated the 3140.s code and it worked, thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   It says it hard faults on line 131 of
+   <code>
+    3140.s
+   </code>
+   :
+  </p>
+  <figure>
+   <image height="436.19040697674416" src="https://static.us.edusercontent.com/files/X4JXqyJgBgEpXhKy5SKy26Dj" width="599"/>
+  </figure>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Harris Miller (None)
+   </h3>
+   <h3>
+    Vote Count: 3
+   </h3>
+   <p>
+    Are you using the latest release of 3140.s?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     I updated the 3140.s code and it worked, thank you!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

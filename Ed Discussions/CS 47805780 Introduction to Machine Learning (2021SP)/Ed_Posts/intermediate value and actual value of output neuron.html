@@ -13,34 +13,32 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="490.976290097629" src="https://static.us.edusercontent.com/files/ekd5KZk2DAlHHdON3orXZmAa" width="658"/>
- </figure>
- <paragraph>
-  In this slide, it looks like the intermediate value s_{d,1} of the output neuron and the actual value v_{d,1} of the output neuron are different.
- </paragraph>
- <paragraph>
-  However, I remember that, in P4, we saw that the intermediate value and actual value of the output neuron were equal.
- </paragraph>
- <paragraph>
-  So, is it always the case that they are equal, or do we only see this in some cases?
- </paragraph>
-</document>
+<figure>
+ <image height="490.976290097629" src="https://static.us.edusercontent.com/files/ekd5KZk2DAlHHdON3orXZmAa" width="658"/>
+</figure>
+<p>
+ In this slide, it looks like the intermediate value s_{d,1} of the output neuron and the actual value v_{d,1} of the output neuron are different.
+</p>
+<p>
+ However, I remember that, in P4, we saw that the intermediate value and actual value of the output neuron were equal.
+</p>
+<p>
+ So, is it always the case that they are equal, or do we only see this in some cases?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Noor (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Whether or not they are equal depends on the use case; for example, if we're trying to approximate a real-valued function you might not want to apply a non-identity activation function to the last layer, but if you're looking for probabilities you'll need to apply a softmax.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

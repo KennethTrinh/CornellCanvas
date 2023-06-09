@@ -13,51 +13,47 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm getting a key error for the dictionaries. How would we write statement if a key doesn't exist?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Starting the tests in this module. Starting test_was_accepted Testing with small_test1.txt Traceback (most recent call last): File "helper_tests.py", line 209, in  test_was_accepted() File "helper_tests.py", line 77, in test_was_accepted colleges = sdu.colleges_from_file(fname) File "/Users/student/Desktop/CS/A5/skeleton-3/sd_utilities_dict.py", line 43, in colleges_from_file process_line(studentline.strip(), unordered_colleges) File "/Users/student/Desktop/CS/A5/skeleton-3/sd_utilities_dict.py", line 107, in process_line if cdict[scname] != {}: KeyError: 'B'
- </paragraph>
-</document>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="1.0">
- <paragraph>
+<p>
+ I'm getting a key error for the dictionaries. How would we write statement if a key doesn't exist?
+</p>
+<p>
+ Starting the tests in this module. Starting test_was_accepted Testing with small_test1.txt Traceback (most recent call last): File "helper_tests.py", line 209, in  test_was_accepted() File "helper_tests.py", line 77, in test_was_accepted colleges = sdu.colleges_from_file(fname) File "/Users/student/Desktop/CS/A5/skeleton-3/sd_utilities_dict.py", line 43, in colleges_from_file process_line(studentline.strip(), unordered_colleges) File "/Users/student/Desktop/CS/A5/skeleton-3/sd_utilities_dict.py", line 107, in process_line if cdict[scname] != {}: KeyError: 'B'
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Troy Moslemi (he/him) (student)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   Here’s an example:
   <break>
   </break>
   dictionary = {“you are a cool person”: “I know”}
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   When you type dictionary[“this is a good question”], it would return in a key error, because “this is a good question” is not in dictionary.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   So, you would do the following:
   <break>
   </break>
   dictionary{“this is a good question”} = “indeed”
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Now, dictionary = {“you are a cool person”: “I know”, “this is a good question”: “indeed”}
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Hope this helps!!!’
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Also since values for cdict are only college objects, you need to need to create college objects for colleges not already in cdict.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

@@ -13,106 +13,100 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  My lab partner and I are both working on the lab on separate computers and have the same code. On my computer, the first dot disappears and changes to the second dot super quickly, whereas on his computer the first dot stays for the same amount of time. We have the same slider times and I can't quite figure out if it is a matter of a missing specification. If it helps, I'm using a Mac and my lab partner is using windows.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ My lab partner and I are both working on the lab on separate computers and have the same code. On my computer, the first dot disappears and changes to the second dot super quickly, whereas on his computer the first dot stays for the same amount of time. We have the same slider times and I can't quite figure out if it is a matter of a missing specification. If it helps, I'm using a Mac and my lab partner is using windows.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Without seeing your code, there are a few possibilities I can think of:
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     You are calling methods on
     <code>
      timer
     </code>
     beyond what's required in the specification
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     You are manually calling
     <code>
      timeout()
     </code>
     somewhere
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     You are respawning the target outside of
     <code>
      timeout()
     </code>
     (in a paint method, for instance)
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
+ <p>
   I recommend checking for these possibilities and adding debugging prints to figure out what is triggering your early respawn.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  As an update, it seems that my partner's computer only shows 9 dots (for maxTargets = 10) while mine actually shows 10 dots, with the first being very quick. Could it have something to do with the initial delay being very short?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Nevermind, I seemed to have figured out the number of dots problem but I still have a super-fast first dot.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I checked for these possibilities and I'm not sure I have any of these problems, doing a Command+F search for those terms don't show anything I've coded in the TODO portions, would it be better if I made a private post and shared my code there? What I'm puzzled about is that the same problem doesn't seem to happen on my partner's windows computer
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I recommend attending office or consulting hours - it is beneficial for you to see how others approach diagnosing an issue like this.  That being said, platform-specific misbehavior like this can be very tricky to track down.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I checked for these possibilities and I'm not sure I have any of these problems, doing a Command+F search for those terms don't show anything I've coded in the TODO portions, would it be better if I made a private post and shared my code there? What I'm puzzled about is that the same problem doesn't seem to happen on my partner's windows computer
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Curran Muhlberger (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I recommend attending office or consulting hours - it is beneficial for you to see how others approach diagnosing an issue like this.  That being said, platform-specific misbehavior like this can be very tricky to track down.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    As an update, it seems that my partner's computer only shows 9 dots (for maxTargets = 10) while mine actually shows 10 dots, with the first being very quick. Could it have something to do with the initial delay being very short?
+   </p>
+   <p>
+    Nevermind, I seemed to have figured out the number of dots problem but I still have a super-fast first dot.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

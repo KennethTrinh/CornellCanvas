@@ -13,42 +13,40 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="424.7290969899666" src="https://static.us.edusercontent.com/files/pdMaFfpkv7g4rrNP4Eg1OCgJ" width="658"/>
- </figure>
- <paragraph>
-  The lecture mentioned that we have to be careful about how many times we repeat the training+validation process because we don't want to generate too many h_hat's and make the secondary hypothesis space too large. Does this mean that we would not want to train+validate for all possible values of our parameter? (For example, we would not want to generate a h_hat for each possible # of nodes in a decision tree or for each possible # for k in the KNN algo?) If this is the case, then how do we go about choosing which values of our parameter we want to train+validate on?
- </paragraph>
-</document>
+<figure>
+ <image height="424.7290969899666" src="https://static.us.edusercontent.com/files/pdMaFfpkv7g4rrNP4Eg1OCgJ" width="658"/>
+</figure>
+<p>
+ The lecture mentioned that we have to be careful about how many times we repeat the training+validation process because we don't want to generate too many h_hat's and make the secondary hypothesis space too large. Does this mean that we would not want to train+validate for all possible values of our parameter? (For example, we would not want to generate a h_hat for each possible # of nodes in a decision tree or for each possible # for k in the KNN algo?) If this is the case, then how do we go about choosing which values of our parameter we want to train+validate on?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Kaishuo Cheng (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kaishuo Cheng (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Yeah do not try every possible value. Pick some symbolic values. For example, maybe 1,2,3, 5,10 for k if you have dozens of points.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Thorsten Joachims (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes, you typically try to cover the space of possible parameter values with a few representative points. More generally, there is no easy answer to how many different parameters of the learning algorithm one should try. On the one hand, you may find a much better model, on the other hand you are running the risk of overfitting in that secondary learning problem -- as you point out. A practical rule of thumb is to try on the order of dozens, but on the go nuts...
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Thorsten Joachims (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Yes, you typically try to cover the space of possible parameter values with a few representative points. More generally, there is no easy answer to how many different parameters of the learning algorithm one should try. On the one hand, you may find a much better model, on the other hand you are running the risk of overfitting in that secondary learning problem -- as you point out. A practical rule of thumb is to try on the order of dozens, but on the go nuts...
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

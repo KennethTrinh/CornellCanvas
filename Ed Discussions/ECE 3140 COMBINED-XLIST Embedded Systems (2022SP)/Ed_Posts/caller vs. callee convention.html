@@ -13,62 +13,56 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I think I'm a little unclear on how calling convention works in programs.
- </paragraph>
- <paragraph>
-  Say I have a function that takes in 3 or less arguments. Can I choose to use exclusively a caller-saved structure (ie only use R0-R4 and push those with my caller)? or exclusively callee-saved (so my function pushes and pops everything it needs, and the caller doesn't need to do anything)?
- </paragraph>
- <paragraph>
-  Also, is the calling convention of using R0-R3 for callers and the rest for callees something that is enforced in, say, an IDE, or is it just something that developers collectively agree to use?
- </paragraph>
- <paragraph>
-  Thanks in advance!
- </paragraph>
-</document>
+<p>
+ I think I'm a little unclear on how calling convention works in programs.
+</p>
+<p>
+ Say I have a function that takes in 3 or less arguments. Can I choose to use exclusively a caller-saved structure (ie only use R0-R4 and push those with my caller)? or exclusively callee-saved (so my function pushes and pops everything it needs, and the caller doesn't need to do anything)?
+</p>
+<p>
+ Also, is the calling convention of using R0-R3 for callers and the rest for callees something that is enforced in, say, an IDE, or is it just something that developers collectively agree to use?
+</p>
+<p>
+ Thanks in advance!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aaron Wilhelm (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  <bold>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aaron Wilhelm (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
+  <b>
    Can I choose to use exclusively a caller-saved structure (ie only use R0-R4 and push those with my caller)?
-  </bold>
- </paragraph>
- <paragraph>
+  </b>
+ </p>
+ <p>
   Yes
- </paragraph>
- <paragraph>
-  <bold>
+ </p>
+ <p>
+  <b>
    or exclusively callee-saved (so my function pushes and pops everything it needs, and the caller doesn't need to do anything)?
-  </bold>
- </paragraph>
- <paragraph>
+  </b>
+ </p>
+ <p>
   Yes
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The above two answers are both yes when you have few enough arguments where you can make all the registers you use either callee or caller saved. See my factorial demo for an example of how we can choose how to implement subroutines that we write ourselves
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  <bold>
+ </p>
+ <p>
+  <b>
    Also, is the calling convention of using R0-R3 for callers and the rest for callees something that is enforced in, say, an IDE, or is it just something that developers collectively agree to use?
-  </bold>
- </paragraph>
- <paragraph>
+  </b>
+ </p>
+ <p>
   Something that developers collectively agree to use (since we are agreeing to follow by the ARM standards)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

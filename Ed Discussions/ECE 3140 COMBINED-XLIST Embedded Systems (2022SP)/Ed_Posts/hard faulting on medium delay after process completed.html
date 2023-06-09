@@ -13,31 +13,29 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  When we run test0 and finish a the process, when it calls the last mediumdelay(), our program hard faults. At first we thought this occurred because we might not have the most up to date 3140.s, but we updated it to be sure and this still occurred. We believe that this might be an error with the interrupts, but it seems like we've set all pins correctly, so we're not sure what is causing the hard faults.
- </paragraph>
-</document>
+<p>
+ When we run test0 and finish a the process, when it calls the last mediumdelay(), our program hard faults. At first we thought this occurred because we might not have the most up to date 3140.s, but we updated it to be sure and this still occurred. We believe that this might be an error with the interrupts, but it seems like we've set all pins correctly, so we're not sure what is causing the hard faults.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Trenton Lyke (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Trenton Lyke (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   I would check that you are returning the correct stack pointer (sp) in your process_select() function when you switch from one process to the next (or specifically from a real time process to a non real time process depending on your code structure).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You should try placing a breakpoint in the conditional branch for when your realtime process ends in your process_select() function and step through to the return statement monitoring the values of key variables.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   At least that's what my best guess would be. If that doesn’t help and nobody else responds, using a slip day and getting help at the help sessions tomorrow might be the moves. The TAs are really helpful with these types of issues. Trust me I live in those sessions 😅.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

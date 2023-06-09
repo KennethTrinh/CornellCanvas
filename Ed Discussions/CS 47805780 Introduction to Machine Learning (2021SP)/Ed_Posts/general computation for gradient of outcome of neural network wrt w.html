@@ -13,53 +13,51 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="469" src="https://static.us.edusercontent.com/files/u3NsRsB9dBGv2kfNblctCxDs" width="626"/>
- </figure>
- <paragraph>
-  Above, we are given the general formula for computing D_{l+1}.
- </paragraph>
- <paragraph>
-  When we're computing D_d, are we just setting {l+1} equal to d? Because, in that case, I don't understand how we got D_d = sigma'(s_d) from using the given formula for D_{l+1}?
- </paragraph>
- <paragraph>
-  Also, I don't quite understand how we got the expression for D_l using the given formula for D_{l+1}?
- </paragraph>
-</document>
+<figure>
+ <image height="469" src="https://static.us.edusercontent.com/files/u3NsRsB9dBGv2kfNblctCxDs" width="626"/>
+</figure>
+<p>
+ Above, we are given the general formula for computing D_{l+1}.
+</p>
+<p>
+ When we're computing D_d, are we just setting {l+1} equal to d? Because, in that case, I don't understand how we got D_d = sigma'(s_d) from using the given formula for D_{l+1}?
+</p>
+<p>
+ Also, I don't quite understand how we got the expression for D_l using the given formula for D_{l+1}?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Scott Bass (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Scott Bass (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   So the update rule for D_d is:
- </paragraph>
+ </p>
  <math>
   D_{\left(d-1\right)+1}=D_d=J_{s_d}\left(v_d\right)\ \Pi_{i=d-1}^dJ_{v_i}\left(s_{i+1}\right)J_{s_i}\left(v_i\right)
  </math>
- <paragraph>
+ <p>
   The Pi product doesn't do anything because in the way the formula is presented, i is a
-  <italic>
+  <i>
    decreasing
-  </italic>
+  </i>
   variable starting at d-1 and going to dl+1=d But, because d &gt; d-1, there are no terms in the product.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   So, we have:
- </paragraph>
+ </p>
  <math>
   D_d=J_{s_d}\left(v_d\right)=\sigma'\left(s_d\right)
  </math>
- <paragraph>
+ <p>
   Assuming there is only one output neuron in the final layer (otherwise we would need a diagonal matrix).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

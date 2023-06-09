@@ -13,87 +13,81 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Could somebody help me find the jacobian in the last part of Q3?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  A general approached shared would be appreciated.
- </paragraph>
-</document>
+<p>
+ Could somebody help me find the jacobian in the last part of Q3?
+</p>
+<p>
+ A general approached shared would be appreciated.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Hanyu Zhang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
-  So for a general system the Jacobian is defined as:
- </paragraph>
- <math>
-  J_{ij} = \frac{\partial f_i}{\partial x_j}
- </math>
- <paragraph>
-  where f_i are the functions and x_j are the variables. In the 2D dynamics case, f_i is going to be the 4 time derivatives -- so x-dot, y-dot, vx-dot, and vy-dot, and x_j is the 4 variables, so x, y, vx, and vy. This will be a 4-by-4 matrix:
- </paragraph>
- <math>
-  J = \begin{bmatrix}
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew van Paridon (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
+  I will go over this on Wednesday this week too.
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Hanyu Zhang (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <h3>
+   ENDORSED
+  </h3>
+  <p>
+   So for a general system the Jacobian is defined as:
+  </p>
+  <math>
+   J_{ij} = \frac{\partial f_i}{\partial x_j}
+  </math>
+  <p>
+   where f_i are the functions and x_j are the variables. In the 2D dynamics case, f_i is going to be the 4 time derivatives -- so x-dot, y-dot, vx-dot, and vy-dot, and x_j is the 4 variables, so x, y, vx, and vy. This will be a 4-by-4 matrix:
+  </p>
+  <math>
+   J = \begin{bmatrix}
 \frac{\partial \dot{x}}{\partial x} &amp; \frac{\partial \dot{x}}{\partial y} &amp; \frac{\partial \dot{x}}{\partial v_x} &amp; \frac{\partial \dot{x}}{\partial v_y}\\
 \frac{\partial \dot{y}}{\partial x} &amp; \frac{\partial \dot{y}}{\partial y} &amp; \frac{\partial \dot{y}}{\partial v_x} &amp; \frac{\partial \dot{y}}{\partial v_y}\\\frac{\partial \dot{v_x}}{\partial x} &amp; \frac{\partial \dot{v_x}}{\partial y} &amp; \frac{\partial \dot{v_x}}{\partial v_x} &amp; \frac{\partial \dot{v_x}}{\partial v_y}\\\frac{\partial \dot{v_y}}{\partial x} &amp; \frac{\partial \dot{v_y}}{\partial y} &amp; \frac{\partial \dot{v_y}}{\partial v_x} &amp; \frac{\partial \dot{v_y}}{\partial v_y}
 \end{bmatrix}
- </math>
- <paragraph>
-  After finding the derivatives, evaluate the 16 functions (the 8 in the first 2 rows are simple) at the stable state [x,y,0,0] to get the final numerical value for the derivative. This should yield the 4 by 4 matrix with no variables that MatLab calculates with fsolve. When you have that, all that's left is to do a "simple" (or at least a single..) calculation to find the eigenvalues with det[J-λI] = 0, where λ are the eigenvalues to check for positivity to see if they're stable.
- </paragraph>
- <paragraph>
-  In the general case this calculation's a mess, so I'd recommend choosing the system carefully or using some analytical analysis tool.
- </paragraph>
- <paragraph>
-  Hope this helped and that it's not too late for the homework...
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  This helps.
- </paragraph>
- <paragraph>
-  Thanks a lot, Hanyu!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew van Paridon (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I will go over this on Wednesday this week too.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+  </math>
+  <p>
+   After finding the derivatives, evaluate the 16 functions (the 8 in the first 2 rows are simple) at the stable state [x,y,0,0] to get the final numerical value for the derivative. This should yield the 4 by 4 matrix with no variables that MatLab calculates with fsolve. When you have that, all that's left is to do a "simple" (or at least a single..) calculation to find the eigenvalues with det[J-λI] = 0, where λ are the eigenvalues to check for positivity to see if they're stable.
+  </p>
+  <p>
+   In the general case this calculation's a mess, so I'd recommend choosing the system carefully or using some analytical analysis tool.
+  </p>
+  <p>
+   Hope this helped and that it's not too late for the homework...
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    This helps.
+   </p>
+   <p>
+    Thanks a lot, Hanyu!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

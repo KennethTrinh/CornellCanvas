@@ -13,68 +13,58 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I see different instructions for testing toStringR.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  In the a4 pdf:
- </paragraph>
- <figure>
-  <image height="55.25433526011561" src="https://static.us.edusercontent.com/files/osxdPYdalSsJQ4xaizfn6LZH" width="605"/>
- </figure>
- <figure>
-  <image height="45.10650887573964" src="https://static.us.edusercontent.com/files/0jh4UFjG3SCC9YzMgdlYidDV" width="605"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
-  So, am I supposed to create test procedures for both append and prepend and use toStringR in both?
- </paragraph>
-</document>
+<p>
+ I see different instructions for testing toStringR.
+</p>
+<p>
+ In the a4 pdf:
+</p>
+<figure>
+ <image height="55.25433526011561" src="https://static.us.edusercontent.com/files/osxdPYdalSsJQ4xaizfn6LZH" width="605"/>
+</figure>
+<figure>
+ <image height="45.10650887573964" src="https://static.us.edusercontent.com/files/0jh4UFjG3SCC9YzMgdlYidDV" width="605"/>
+</figure>
+<p>
+ So, am I supposed to create test procedures for both append and prepend and use toStringR in both?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   They are not contradictory. Do what makes sense:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   1. toStringR has to be tested. But it can't be tested until you can create nonempty lists. So, test Prepend and toStringR together, in ONE testing procedure with @Test before it.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   In A1, you wrote one testing procedure for the first constructor. To get at the fields, it had to use the observer functions. So, as a byproduct of testing the first constructor, you also tested the observer functions.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   In A4, you write one testing procedure for prepend. Aa a byproduct, it also tests toStringR.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Oh I see. So, I am supposed to test toStringR in both prepend and append which will be their own test procedures? Also, I saw in the A4 pdf you had testConstructor and tested toStringR there as well. Am I supposed to test the Constructor in its own test procedure for other things too like the fields?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Oh I see. So, I am supposed to test toStringR in both prepend and append which will be their own test procedures? Also, I saw in the A4 pdf you had testConstructor and tested toStringR there as well. Am I supposed to test the Constructor in its own test procedure for other things too like the fields?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

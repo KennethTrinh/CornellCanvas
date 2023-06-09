@@ -13,155 +13,129 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  How many areas can a user feasibly discuss from the first person? Do long-term users adopt first-person statements to make stronger arguments, because they're more likely to participate in areas where they have personal expertise, or, like in the Danescu-Niculescu-Mizil membership paper, do long-term users instead tend to stop using first-person pronouns over time as they align with community identity? I plan to work with the (unpaired) CMV dataset to try to characterize how and why challengers use first-person language over time.
- </paragraph>
- <paragraph>
-  This might also address the open question in the Tan et al paper of whether users develop a taste for more intrinsically 'difficult' debate topics and / or posts. If users change topics over time, they may be more likely to abandon first-person pronouns as they naturally drift from their initial topic selection and into less personal or higher-level debate topics. Thus, the difficulty gradient may be in the arguments challengers choose to accept over time and their ability to communicate from experience in those realms vs the idea that users choose more intrinsically difficult topics.
- </paragraph>
- <paragraph>
-  Instead, I posit that long-term users may be those that have a unique expertise to offer or are otherwise strong in debating a given topic. This would imply that these users would continue to use first-person pronouns and would partially explain why such words are so associated with success. It would also give clues as to why users don't seem to get better at debating over their lifespans (ie figure 10b), but instead frequent posters are successful because they've found a strong niche. To test this, I plan to first examine the Jaccard similarity of user posts over time. If they remain relatively similar, I can then try to disentangle whether this is due to topic selection effects or more general stylistic choices. Then, I can compare topic selection (either via basic similarity measure or more advanced topic modeling) over time vs first-person pronoun usage.
- </paragraph>
- <paragraph>
-  Sorry for the late post everyone! I joined a little late and I'm still working on catching up. I'll go through everyone else's posts now and I'd appreciate any feedback you all have! Also definitely open to collaborating.
- </paragraph>
- <paragraph>
-  Tangentially, I am curious in existing work in a) survivorship effects and b) what gets users to actually take the step of joining a community to begin with. I'm not sure about reddit, but it seems like the beer communities went from being relatively niche to a much more casual hobby enjoyed by many more people. This would create pretty significant differences in demographics, first beer posts,  etc.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Richard Lp (he/they) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ How many areas can a user feasibly discuss from the first person? Do long-term users adopt first-person statements to make stronger arguments, because they're more likely to participate in areas where they have personal expertise, or, like in the Danescu-Niculescu-Mizil membership paper, do long-term users instead tend to stop using first-person pronouns over time as they align with community identity? I plan to work with the (unpaired) CMV dataset to try to characterize how and why challengers use first-person language over time.
+</p>
+<p>
+ This might also address the open question in the Tan et al paper of whether users develop a taste for more intrinsically 'difficult' debate topics and / or posts. If users change topics over time, they may be more likely to abandon first-person pronouns as they naturally drift from their initial topic selection and into less personal or higher-level debate topics. Thus, the difficulty gradient may be in the arguments challengers choose to accept over time and their ability to communicate from experience in those realms vs the idea that users choose more intrinsically difficult topics.
+</p>
+<p>
+ Instead, I posit that long-term users may be those that have a unique expertise to offer or are otherwise strong in debating a given topic. This would imply that these users would continue to use first-person pronouns and would partially explain why such words are so associated with success. It would also give clues as to why users don't seem to get better at debating over their lifespans (ie figure 10b), but instead frequent posters are successful because they've found a strong niche. To test this, I plan to first examine the Jaccard similarity of user posts over time. If they remain relatively similar, I can then try to disentangle whether this is due to topic selection effects or more general stylistic choices. Then, I can compare topic selection (either via basic similarity measure or more advanced topic modeling) over time vs first-person pronoun usage.
+</p>
+<p>
+ Sorry for the late post everyone! I joined a little late and I'm still working on catching up. I'll go through everyone else's posts now and I'd appreciate any feedback you all have! Also definitely open to collaborating.
+</p>
+<p>
+ Tangentially, I am curious in existing work in a) survivorship effects and b) what gets users to actually take the step of joining a community to begin with. I'm not sure about reddit, but it seems like the beer communities went from being relatively niche to a much more casual hobby enjoyed by many more people. This would create pretty significant differences in demographics, first beer posts,  etc.
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Richard Lp (he/they) (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I downloaded the CMV data from the Tan 2016 paper using the 'all' split. I created dataframes that represent individual comments, users, and OP CMV posts. Getting whether a particular comment was awarded a delta was a little more challenging than anticipated. I ended up settling on finding comments where the DeltaBot bot/user awards a delta then found the parent of the parent (ie the comment awarded a delta). Other strategies had noticeable false positives. I originally did this with some less than careful loops are searches and my code took &gt;6 hours to run. Doing things a little more carefully brings the cleaning to ~5 minutes. For my analysis so far, I've been counting whether any comment a user made on a post was awarded a delta as a sign of success. Even though we know that delta likelihood goes down with argument depth, those initial comments must have some influence for chains that eventually end up in a succesful CMV so I think this is resonable. Helpfully, it seems like user flairs are from the time the comment was made (someone pls lmk if this is wrong), and so the feature deltas_at_time_of_comment was super easy to engineer. Obviously, this method could backfire if people make challenges in rapid succesion relative to how long it takes the OPs to respond and award, but the median time between a user challenging different OPs is much longer than the community norm / mod enforced (according to the paper) response time. I've (re-)engineered some of the simple features related to 1st person pronoun useage, fraction of the text that is first-person, first-person plurals. My results are similar to what Kiran reported. What remains is to do the actual plotting and analysis of the effects of community membership over time. I've uncarefully done a little with the simple features I've got, but I wanted to get a chance to read through the related papers before I dive too deep into my current hypothesis. Also, topic modeling has gone...less than stellarly. I've used LDA for longer documents before, but I didn't realize it was kind of overkill/wouldn't work well to simply apply them to the titles. I did a little bit of cleaning for the bodies of the posts, but I want to check back in with the papers before I go too far down the rabbit hole.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  checkin appointment:
-  <break>
-  </break>
-  <break>
-  </break>
-  topic modeling on original posts (not just titles) makes sense: watch out for edits:
-  <link href="https://www.reddit.com/r/changemyview/comments/poqszc/cmv_industry_standards_for_plussized_beauty_only/"/>
-  https://www.reddit.com/r/changemyview/comments/poqszc/cmv_industry_standards_for_plussized_beauty_only/
- </paragraph>
- <paragraph>
-  try? doing experiments both on all data, but also where there's no "edit" marking in the OP.
-  <break>
-  </break>
-  <break>
-  </break>
-  Topic markings:
-  <link href="https://www.reddit.com/r/changemyview/wiki/popular"/>
-  https://www.reddit.com/r/changemyview/wiki/popular
- </paragraph>
- <paragraph>
-  <break>
-  </break>
-  And the topic "characterization" that the bot is using is encoded as a regexp, if you look at the links in the above page.
-  <break>
-  </break>
-  <break>
-  </break>
-  <link href="https://www.reddit.com/r/DeltaLog/search?q=abortion+OR+abort+OR+pro-life+OR+pro-choice&amp;restrict_sr=on&amp;sort=relevance&amp;t=all"/>
-  https://www.reddit.com/r/DeltaLog/search?q=abortion+OR+abort+OR+pro-life+OR+pro-choice&amp;restrict_sr=on&amp;sort=relevance&amp;t=all
- </paragraph>
- <paragraph>
-  <break>
-  </break>
-  <break>
-  </break>
-  Fresh topic fridays - for new topics.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Richard Lp (he/they) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Using one of the other splits would have solved the delta issues, but I think I had to do it myself to use the full dataset iirk
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Richard Lp (he/they) (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Using one of the other splits would have solved the delta issues, but I think I had to do it myself to use the full dataset iirk
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    checkin appointment:
+    <break>
+    </break>
+    <break>
+    </break>
+    topic modeling on original posts (not just titles) makes sense: watch out for edits:
+    <a href="https://www.reddit.com/r/changemyview/comments/poqszc/cmv_industry_standards_for_plussized_beauty_only/">
+     https://www.reddit.com/r/changemyview/comments/poqszc/cmv_industry_standards_for_plussized_beauty_only/
+    </a>
+   </p>
+   <p>
+    try? doing experiments both on all data, but also where there's no "edit" marking in the OP.
+    <break>
+    </break>
+    <break>
+    </break>
+    Topic markings:
+    <link href="https://www.reddit.com/r/changemyview/wiki/popular"/>
+    https://www.reddit.com/r/changemyview/wiki/popular
+   </p>
+   <p>
+    <break>
+    </break>
+    And the topic "characterization" that the bot is using is encoded as a regexp, if you look at the links in the above page.
+    <break>
+    </break>
+    <break>
+    </break>
+    <link href="https://www.reddit.com/r/DeltaLog/search?q=abortion+OR+abort+OR+pro-life+OR+pro-choice&amp;restrict_sr=on&amp;sort=relevance&amp;t=all"/>
+    https://www.reddit.com/r/DeltaLog/search?q=abortion+OR+abort+OR+pro-life+OR+pro-choice&amp;restrict_sr=on&amp;sort=relevance&amp;t=all
+   </p>
+   <p>
+    <break>
+    </break>
+    <break>
+    </break>
+    Fresh topic fridays - for new topics.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  This looks interesting, and perhaps there could be a combined effort with Kiran (
-  <link href="https://edstem.org/us/courses/8208/discussion/591145"/>
-  https://edstem.org/us/courses/8208/discussion/591145), what with the 1st person pronouns?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   On the tangent of people entering --- and leaving  ---- communities, some refs that might be of interest:
   <break>
   </break>
   <break>
   </break>
   Wang, Yichen, Jason Shuo Zhang, Xu Han, and Qin Lv. 2020. “Jump on the Bandwagon? – Characterizing Bandwagon Phenomenon in Online NBA Fan Communities.” In
-  <italic>
+  <i>
    Social Informatics
-  </italic>
+  </i>
   , edited by Samin Aref, Kalina Bontcheva, Marco Braghieri, Frank Dignum, Fosca Giannotti, Francesco Grisolia, and Dino Pedreschi, 410–26. Lecture Notes in Computer Science. Cham: Springer International Publishing.
-  <link href="https://doi.org/10.1007/978-3-030-60975-7_30"/>
-  https://doi.org/10.1007/978-3-030-60975-7_30.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+  <a href="https://doi.org/10.1007/978-3-030-60975-7_30">
+   https://doi.org/10.1007/978-3-030-60975-7_30.
+  </a>
+ </p>
+ <p>
   Zhang, Justine, William Hamilton, Cristian Danescu-Niculescu-Mizil, Dan Jurafsky, and Jure Leskovec. 2017. “Community Identity and User Engagement in a Multi-Community Landscape.”
-  <italic>
+  <i>
    Proceedings of the International AAAI Conference on Web and Social Media
-  </italic>
+  </i>
   11 (1): 377–86.
   <link href="https://ojs.aaai.org/index.php/ICWSM/article/view/14904"/>
   https://ojs.aaai.org/index.php/ICWSM/article/view/14904
@@ -169,17 +143,36 @@
   </break>
   <break>
   </break>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Tan, Chenhao, and Lillian Lee. 2015. “All Who Wander: On the Prevalence and Characteristics of Multi-Community Engagement.” In
-  <italic>
+  <i>
    Proceedings of the 24th International Conference on World Wide Web
-  </italic>
+  </i>
   , 1056–66. WWW ’15. Republic and Canton of Geneva, CHE: International World Wide Web Conferences Steering Committee.
   <link href="https://doi.org/10.1145/2736277.2741661"/>
-  https://doi.org/10.1145/2736277.2741661.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+  https://doi.org/10.1145/2736277.2741661
+  .
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   This looks interesting, and perhaps there could be a combined effort with Kiran (
+   <a href="https://edstem.org/us/courses/8208/discussion/591145">
+    https://edstem.org/us/courses/8208/discussion/591145
+   </a>
+   ), what with the 1st person pronouns?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

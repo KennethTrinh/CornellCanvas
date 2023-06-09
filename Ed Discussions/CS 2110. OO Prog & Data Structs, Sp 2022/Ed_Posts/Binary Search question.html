@@ -13,38 +13,34 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  In the sorting homework there was an example where they first checked the midpoint at 2. Why do they check it at 2 and not 1? My understanding is that the length of the list is 4 so (4+ -1)/2 is 1.5 which rounds down to 1 and not up to 5?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
- <figure>
-  <image height="60" src="https://static.us.edusercontent.com/files/5FOgdAh9k0XaaNNM3vTUimh4" width="372"/>
- </figure>
-</document>
+<p>
+ In the sorting homework there was an example where they first checked the midpoint at 2. Why do they check it at 2 and not 1? My understanding is that the length of the list is 4 so (4+ -1)/2 is 1.5 which rounds down to 1 and not up to 5?
+</p>
+<p>
+</p>
+<figure>
+ <image height="60" src="https://static.us.edusercontent.com/files/5FOgdAh9k0XaaNNM3vTUimh4" width="372"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Aah. It's array segment c[0..4]. Therefore, c.length, the length of the list, is 5.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   But read on.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Note that our loop invariant puts the two boundaries markers outside the ? section, something like shown below. Here's a reason for this: It makes proving termination --making progress within the repetend-- easier to see.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   With this invariant, let b.length = 5, so initially k = -1 and t = 5.
   <break>
   </break>
@@ -52,14 +48,12 @@
   <break>
   </break>
   That's e = (5 -1)/2 = 2.
- </paragraph>
- <paragraph>
- </paragraph>
+ </p>
  <pre>    0         k               t           b.length
    ---------------------------------------
 b |    &lt;= v    |      ?      |    &gt; v    |
 </pre>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

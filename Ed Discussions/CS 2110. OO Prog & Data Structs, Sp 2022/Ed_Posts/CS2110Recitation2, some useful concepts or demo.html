@@ -13,54 +13,53 @@
 <h3>
  Vote Count: 3
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi everyone,
- </paragraph>
- <paragraph>
-  Except for the materials in the slides in recitation 2, I also want to include some general questions and concepts that may be helpful
- </paragraph>
- <heading level="2">
-  <bold>
-   Annotations:
-  </bold>
- </heading>
- <paragraph>
-  There are three purposes of annotations, for further detail please refer to http://tutorials.jenkov.com/java/annotations.html
- </paragraph>
- <paragraph>
-  <bold>
-   1) Instructions to the compiler:
-  </bold>
-  There are three built-in annotations available in Java (`@Deprecated`, `@Override` &amp; `@SuppressWarnings`) that can be used for giving certain instructions to the compiler. For example the @override annotation is used for instructing compiler that the annotated method is overriding the method. More about these built-in annotations with example is discussed in the next sections of this article.
- </paragraph>
- <paragraph>
-  <bold>
-   2) Compile-time instructors:
-  </bold>
-  Annotations can provide compile-time instructions to the compiler that can be further used by sofware build tools for generating code, XML files etc.
- </paragraph>
- <paragraph>
-  <bold>
-   3) Runtime instructions:
-  </bold>
-  We can define annotations to be available at runtime which we can access using **[java reflection](https://docs.oracle.com/javase/tutorial/reflect/)** and can be used to give instructions to the program at runtime. We will discuss this with the help of an example, later in this same post.
- </paragraph>
- <heading level="2">
-  <bold>
-   Call by Value —when the value is a reference/pointer:
-  </bold>
- </heading>
- <paragraph>
-  In Java, parameters are "call by value", so in a call like m(x, 5+x), the arguments  x  and  5+x  are evaluated and their values are stored in the parameters.
- </paragraph>
- <paragraph>
-  If the parameter is a PhD object, String object, or even an array, the value is a pointer to the object, or a reference. It is still call-by-value, the value just happens to be a pointer. Therefore, unless the object is immutable (e.g. a String object), it can be changed.
- </paragraph>
- <paragraph>
-  Here's an example:
- </paragraph>
- <pre>    public static void main(String[] args) {
+<p>
+ Hi everyone,
+</p>
+<p>
+ Except for the materials in the slides in recitation 2, I also want to include some general questions and concepts that may be helpful
+</p>
+<heading level="2">
+ <b>
+  Annotations:
+ </b>
+</heading>
+<p>
+ There are three purposes of annotations, for further detail please refer to http://tutorials.jenkov.com/java/annotations.html
+</p>
+<p>
+ <b>
+  1) Instructions to the compiler:
+ </b>
+ There are three built-in annotations available in Java (`@Deprecated`, `@Override` &amp; `@SuppressWarnings`) that can be used for giving certain instructions to the compiler. For example the @override annotation is used for instructing compiler that the annotated method is overriding the method. More about these built-in annotations with example is discussed in the next sections of this article.
+</p>
+<p>
+ <b>
+  2) Compile-time instructors:
+ </b>
+ Annotations can provide compile-time instructions to the compiler that can be further used by sofware build tools for generating code, XML files etc.
+</p>
+<p>
+ <b>
+  3) Runtime instructions:
+ </b>
+ We can define annotations to be available at runtime which we can access using **[java reflection](https://docs.oracle.com/javase/tutorial/reflect/)** and can be used to give instructions to the program at runtime. We will discuss this with the help of an example, later in this same post.
+</p>
+<heading level="2">
+ <b>
+  Call by Value —when the value is a reference/pointer:
+ </b>
+</heading>
+<p>
+ In Java, parameters are "call by value", so in a call like m(x, 5+x), the arguments  x  and  5+x  are evaluated and their values are stored in the parameters.
+</p>
+<p>
+ If the parameter is a PhD object, String object, or even an array, the value is a pointer to the object, or a reference. It is still call-by-value, the value just happens to be a pointer. Therefore, unless the object is immutable (e.g. a String object), it can be changed.
+</p>
+<p>
+ Here's an example:
+</p>
+<pre>    public static void main(String[] args) {
         int[] b= new int[] { 1, 2, 3 };
         modify(b);
         
@@ -70,21 +69,21 @@
     }
     
 </pre>
- <paragraph>
-  Here, the value stored in parameter arr is a pointer to the object that contains array. Therefore, b[1] will be changed to -1.
- </paragraph>
- <heading level="2">
-  <bold>
-   Lambda Function &amp; anonymous function
-  </bold>
- </heading>
- <paragraph>
-  Here are some other examples in the write anonymous function:
- </paragraph>
- <paragraph>
-  Example 1, to sort the 2-d array by the second value in ascending order,
- </paragraph>
- <pre>        int[][] arr2= new int[][] {
+<p>
+ Here, the value stored in parameter arr is a pointer to the object that contains array. Therefore, b[1] will be changed to -1.
+</p>
+<heading level="2">
+ <b>
+  Lambda Function &amp; anonymous function
+ </b>
+</heading>
+<p>
+ Here are some other examples in the write anonymous function:
+</p>
+<p>
+ Example 1, to sort the 2-d array by the second value in ascending order,
+</p>
+<pre>        int[][] arr2= new int[][] {
                 { 5, 3 },
                 { 0, 1 },
                 { 1, 2 }
@@ -100,18 +99,18 @@
         });
         
 </pre>
- <paragraph>
-  the output should be
- </paragraph>
- <pre>        { 0, <bold>1</bold> },
-        { 1, <bold>2</bold> },
-        { 5, <bold>3</bold> }
+<p>
+ the output should be
+</p>
+<pre>        { 0, <b>1</b> },
+        { 1, <b>2</b> },
+        { 5, <b>3</b> }
         // 1 &lt; 2 &lt; 3
 </pre>
- <paragraph>
-  Example 2, lambda function can also write in another form
- </paragraph>
- <pre>        public interface MyComparator {
+<p>
+ Example 2, lambda function can also write in another form
+</p>
+<pre>        public interface MyComparator {
             boolean compare(int a, int b);
         }
         MyComparator mc1= (a, b) -&gt; (a &gt; b);
@@ -124,19 +123,18 @@
         System.out.println(mc1.compare(1, 2));//false
         System.out.println(mc2.compare(1, 2));//false
 </pre>
- <paragraph>
-  <bold>
-   PS
-  </bold>
-  :
- </paragraph>
- <paragraph>
-  Many of you may encounter the problem of “why I followed every step of the demo, but my program has an error, why I imported the Time.java but the JUnit testing does not recognize it”. At this time, it may be the problems from eclipse, so you could refresh in the package explorer, or restart the eclipse;
- </paragraph>
- <paragraph>
-  Happy Weekend!!!
- </paragraph>
-</document>
+<p>
+ <b>
+  PS
+ </b>
+ :
+</p>
+<p>
+ Many of you may encounter the problem of “why I followed every step of the demo, but my program has an error, why I imported the Time.java but the JUnit testing does not recognize it”. At this time, it may be the problems from eclipse, so you could refresh in the package explorer, or restart the eclipse;
+</p>
+<p>
+ Happy Weekend!!!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>

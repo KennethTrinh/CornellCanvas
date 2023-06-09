@@ -13,87 +13,77 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  hello,
- </paragraph>
- <paragraph>
-  besides using a condition expression for the recursive case to get either one for 0(depending on if the first index is 'e' or not)
- </paragraph>
- <paragraph>
-  I originally had 2 base cases, return 0 if empty and 1 if first index is 'e', how would I be able to write my recursive case, if I approached it this way instead of a conditional expression.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ hello,
+</p>
+<p>
+ besides using a condition expression for the recursive case to get either one for 0(depending on if the first index is 'e' or not)
+</p>
+<p>
+ I originally had 2 base cases, return 0 if empty and 1 if first index is 'e', how would I be able to write my recursive case, if I approached it this way instead of a conditional expression.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
-  You don't need a conditional expression.
- </paragraph>
- <paragraph>
-  Instead, use an if-statement instead, handling the two cases.
- </paragraph>
- <paragraph>
-  You don't need the special case of a string of length 1.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  I see, I was returning 0 or 1 based off the if statements, which caused it not to work. Instead creating the variable to store those values to worked. Thanks
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Atulya Lohani (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Atulya Lohani (student)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   If I pass a string such as "elephant" to the method that you are writing. Your second base case that returns 1 if the first index is 'e' will essentially make your recursive case unreachable. The method will return 1 before getting to the part of the function that will call itself on the substring of "elephant".
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Thank you!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 2
+  </h3>
+  <p>
+   You don't need a conditional expression.
+  </p>
+  <p>
+   Instead, use an if-statement instead, handling the two cases.
+  </p>
+  <p>
+   You don't need the special case of a string of length 1.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    I see, I was returning 0 or 1 based off the if statements, which caused it not to work. Instead creating the variable to store those values to worked. Thanks
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

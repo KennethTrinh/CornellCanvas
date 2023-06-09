@@ -13,43 +13,41 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  For part a, how is
- </paragraph>
- <math>
-  D\hat{X}\ \left(\Omega\right)=-\Omega\hat{X}\left(\Omega\right)
- </math>
- <paragraph>
-  true if equation F is
- </paragraph>
- <math>
-  \hat{X}\left(\Omega\right)=\int_{-\infty}^{\infty}x(t)e^{-j\Omega t}dt
- </math>
- <paragraph>
-  and
- </paragraph>
- <math>
-  \frac{\partial}{\partial\Omega}\int_{-\infty}^{\infty}x(t)e^{-j\Omega t}dt\ =\int_{-\infty}^{\infty}\left(-jt\right)x(t)e^{-j\Omega t}dt=-jt\hat{X}\left(\Omega\right)
- </math>
- <paragraph>
-  I'm not sure how to see where the flaw in my logic is or how $-j t = \Omega$
- </paragraph>
-</document>
+<p>
+ For part a, how is
+</p>
+<math>
+ D\hat{X}\ \left(\Omega\right)=-\Omega\hat{X}\left(\Omega\right)
+</math>
+<p>
+ true if equation F is
+</p>
+<math>
+ \hat{X}\left(\Omega\right)=\int_{-\infty}^{\infty}x(t)e^{-j\Omega t}dt
+</math>
+<p>
+ and
+</p>
+<math>
+ \frac{\partial}{\partial\Omega}\int_{-\infty}^{\infty}x(t)e^{-j\Omega t}dt\ =\int_{-\infty}^{\infty}\left(-jt\right)x(t)e^{-j\Omega t}dt=-jt\hat{X}\left(\Omega\right)
+</math>
+<p>
+ I'm not sure how to see where the flaw in my logic is or how $-j t = \Omega$
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   You can't factor the $j t$ out of an integral with respect to $t$.  You need to integrate by parts.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,38 +13,32 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Why is F(0) called twice?
- </paragraph>
- <figure>
-  <image height="245.8634730538922" src="https://static.us.edusercontent.com/files/OGqTiFso6h1BOlajZfiFabwV" width="658"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Why is F(0) called twice?
+</p>
+<figure>
+ <image height="245.8634730538922" src="https://static.us.edusercontent.com/files/OGqTiFso6h1BOlajZfiFabwV" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bahaa Kotb (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Let's go through it, first we call M(2) which enters the return n - F(M(n-1)) call
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   that will first call  M(n-1) which is M(1) and same concept, it'll enter M(0) then M(0) enters the base case and returns 0, so we go back down the stack to the M(1) call and then do F(0), that then enters base case and returns 1 then 1-1 =0 , we then go back to the M(2) call which would run F(0) since the return statement of the M(1) call returns 0.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   This is not really easy to explain through writing though and I recommend drawing the call stack in this case.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

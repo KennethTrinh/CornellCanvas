@@ -13,126 +13,119 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  Welcome to Ed Discussion!
- </paragraph>
- <paragraph>
-  Here are some tips for effective posts:
- </paragraph>
- <paragraph>
- </paragraph>
- <heading level="2">
-  Uploading images
- </heading>
- <figure>
-  <image height="46.16612903225806" src="https://static.us.edusercontent.com/files/igThfGo9hyJVMbm5utHR4u9Z" width="658"/>
- </figure>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    highly encouraged for explaining work
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    <bold>
-     always check
-    </bold>
-    to make sure the image is
-    <bold>
-     legible
-    </bold>
-    after upload
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    when trying to share code, consider using a different option (see "Code snippets" below)
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
- </paragraph>
- <heading level="2">
-  Annotating images
- </heading>
- <figure>
-  <image height="45.11370967741936" src="https://static.us.edusercontent.com/files/fTZD43uvmcMhkqzaspG5t43b" width="643"/>
- </figure>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    in-house annotation feature (neat!)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    will automatically pull up existing images in the thread (no need to download, reupload)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    resolution might be compromised, so test it out
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    play around with it!
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
- </paragraph>
- <heading level="2">
-  Code snippets
- </heading>
- <figure>
-  <image height="45.11370967741936" src="https://static.us.edusercontent.com/files/E7IQL4XWjeiNaGq4L3GVz04C" width="643"/>
- </figure>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    use the highlighted code insert button (the crossed-out feature isn't interactive)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    highly encouraged for explaining/debugging code
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    will actually execute! so cool
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    no MATLAB option;
-    <bold>
-     however, Octave (default) is similar
-    </bold>
-    <bold>
-     and will run most MATLAB scripts
-    </bold>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    not a substitute for using MATLAB; just a useful feature for sharing purposes
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    <underline>
-     see example below for outputting a plot
-    </underline>
-   </paragraph>
-  </list-item>
- </list>
- <snippet language="m" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   tarray = linspace(1,100);
+<p>
+ Welcome to Ed Discussion!
+</p>
+<p>
+ Here are some tips for effective posts:
+</p>
+<heading level="2">
+ Uploading images
+</heading>
+<figure>
+ <image height="46.16612903225806" src="https://static.us.edusercontent.com/files/igThfGo9hyJVMbm5utHR4u9Z" width="658"/>
+</figure>
+<list style="bullet">
+ <li>
+  <p>
+   highly encouraged for explaining work
+  </p>
+ </li>
+ <li>
+  <p>
+   <b>
+    always check
+   </b>
+   to make sure the image is
+   <b>
+    legible
+   </b>
+   after upload
+  </p>
+ </li>
+ <li>
+  <p>
+   when trying to share code, consider using a different option (see "Code snippets" below)
+  </p>
+ </li>
+</list>
+<heading level="2">
+ Annotating images
+</heading>
+<figure>
+ <image height="45.11370967741936" src="https://static.us.edusercontent.com/files/fTZD43uvmcMhkqzaspG5t43b" width="643"/>
+</figure>
+<list style="bullet">
+ <li>
+  <p>
+   in-house annotation feature (neat!)
+  </p>
+ </li>
+ <li>
+  <p>
+   will automatically pull up existing images in the thread (no need to download, reupload)
+  </p>
+ </li>
+ <li>
+  <p>
+   resolution might be compromised, so test it out
+  </p>
+ </li>
+ <li>
+  <p>
+   play around with it!
+  </p>
+ </li>
+</list>
+<heading level="2">
+ Code snippets
+</heading>
+<figure>
+ <image height="45.11370967741936" src="https://static.us.edusercontent.com/files/E7IQL4XWjeiNaGq4L3GVz04C" width="643"/>
+</figure>
+<list style="bullet">
+ <li>
+  <p>
+   use the highlighted code insert button (the crossed-out feature isn't interactive)
+  </p>
+ </li>
+ <li>
+  <p>
+   highly encouraged for explaining/debugging code
+  </p>
+ </li>
+ <li>
+  <p>
+   will actually execute! so cool
+  </p>
+ </li>
+ <li>
+  <p>
+   no MATLAB option;
+   <b>
+    however, Octave (default) is similar
+   </b>
+   <b>
+    and will run most MATLAB scripts
+   </b>
+  </p>
+ </li>
+ <li>
+  <p>
+   not a substitute for using MATLAB; just a useful feature for sharing purposes
+  </p>
+ </li>
+ <li>
+  <p>
+   <underline>
+    see example below for outputting a plot
+   </underline>
+  </p>
+ </li>
+</list>
+<snippet language="m" line-numbers="true" runnable="true">
+ <snippet-file id="code">
+  tarray = linspace(1,100);
 x1 = 1*cos(0.3*tarray);  % x1 position vector over time
 x2 = 2*cos(0.1*tarray);  
 x3 = 3*cos(3*tarray);
@@ -155,13 +148,8 @@ hold off
 
 % IF YOU ARE PLOTTING, THIS LAST STEP WILL ALLOW YOU TO SEE PLOTS HERE IN ED DISCUSSION 
 saveas(f, 'f.png')
-  </snippet-file>
- </snippet>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+ </snippet-file>
+</snippet>
 <h3>
  ----------- REPLIES -----------
 </h3>

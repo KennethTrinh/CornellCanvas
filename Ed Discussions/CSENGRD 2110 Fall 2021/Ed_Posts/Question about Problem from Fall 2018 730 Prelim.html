@@ -13,81 +13,75 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="86.23853211009175" src="https://static.us.edusercontent.com/files/kqYX8W0aF3VbeNbOttKJLyGs" width="658"/>
- </figure>
- <paragraph>
-  I was wondering how I would go about finding what function f(n, m) is in in this problem.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<figure>
+ <image height="86.23853211009175" src="https://static.us.edusercontent.com/files/kqYX8W0aF3VbeNbOttKJLyGs" width="658"/>
+</figure>
+<p>
+ I was wondering how I would go about finding what function f(n, m) is in in this problem.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Simon Huang (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Simon Huang (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   f(n,m) is just a function that has two parameters.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   f(n,m) is:
- </paragraph>
+ </p>
  <math>
   \sum_{h=0}^n\log\left(m^{\left(h\right)}\right)
  </math>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Then, how is the time complexity of the function determined?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Simon Huang (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  so this function is basically:
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  = log(m^0) + log(m^1) + ... + log(m^n)
- </paragraph>
- <paragraph>
-  = 0 logm + 1 logm + 2 logm + ... n logm
- </paragraph>
- <paragraph>
-  = (1 + 2 + ... + n) logm
- </paragraph>
- <paragraph>
-  = (1 + n) n / 2 * logm
- </paragraph>
- <paragraph>
-  which is O(n^2 logm)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Then, how is the time complexity of the function determined?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Simon Huang (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    so this function is basically:
+   </p>
+   <p>
+    = log(m^0) + log(m^1) + ... + log(m^n)
+   </p>
+   <p>
+    = 0 logm + 1 logm + 2 logm + ... n logm
+   </p>
+   <p>
+    = (1 + 2 + ... + n) logm
+   </p>
+   <p>
+    = (1 + n) n / 2 * logm
+   </p>
+   <p>
+    which is O(n^2 logm)
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

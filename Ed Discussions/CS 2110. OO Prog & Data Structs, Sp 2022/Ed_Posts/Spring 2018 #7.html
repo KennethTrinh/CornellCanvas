@@ -13,70 +13,66 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <figure>
-  <image height="507.99764982373677" src="https://static.us.edusercontent.com/files/SAaWjRhfbqyK1GOCl4Xn2Z41" width="658"/>
- </figure>
- <paragraph>
-  Would someone be able to explain how these values were found?
- </paragraph>
-</document>
+<figure>
+ <image height="507.99764982373677" src="https://static.us.edusercontent.com/files/SAaWjRhfbqyK1GOCl4Xn2Z41" width="658"/>
+</figure>
+<p>
+ Would someone be able to explain how these values were found?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Vladia Trinh (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Vladia Trinh (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   This is the same as the Dijkstra algorithm you implemented in A7.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Iteration 1: a -&gt; b is 9
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Iteration 2: d is what you poll from F, so loop through its neighbors. We find a smaller d[b] now: a -&gt; d -&gt; b, so 8
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Iteration 3: e is what you poll from F. (not important because not a neighbor of b, so it is still 8)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Iteration 4: c is what you poll from F, so loop through its neighbors. We find a smaller d[b] now: a -&gt; e -&gt; c -&gt; b, so 7
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Hannah Zollner (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  why would you poll e instead of f for iteration 3? Since the path to f from a settled node is 3, while the the path to e is 5, wouldn't you go to f then e?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Vladia Trinh (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Think about the algorithm you implemented. The value associated with each node in your F heap is d[f] = 7, since the value is the distance from a to f. d[e] is 5, so it should be added to the settled set.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Hannah Zollner (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   why would you poll e instead of f for iteration 3? Since the path to f from a settled node is 3, while the the path to e is 5, wouldn't you go to f then e?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Vladia Trinh (staff)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Think about the algorithm you implemented. The value associated with each node in your F heap is d[f] = 7, since the value is the distance from a to f. d[e] is 5, so it should be added to the settled set.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

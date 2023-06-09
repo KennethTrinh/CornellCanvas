@@ -13,97 +13,85 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="352.9895833333333" src="https://static.us.edusercontent.com/files/2sWDP9IISesyYOxXWcira66x" width="658"/>
- </figure>
- <figure>
-  <image height="361.6875" src="https://static.us.edusercontent.com/files/fLSZjwaaEr7BXywxEQUdSCk4" width="643"/>
- </figure>
- <figure>
-  <image height="361.6875" src="https://static.us.edusercontent.com/files/QlmAHPYCM5WQTALwNI69WNd9" width="643"/>
- </figure>
- <figure>
-  <image height="361.6875" src="https://static.us.edusercontent.com/files/i6RUGYMMuDMEhqbBsV64EbUo" width="643"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Kenisha Stills-Ogburn (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<figure>
+ <image height="352.9895833333333" src="https://static.us.edusercontent.com/files/2sWDP9IISesyYOxXWcira66x" width="658"/>
+</figure>
+<figure>
+ <image height="361.6875" src="https://static.us.edusercontent.com/files/fLSZjwaaEr7BXywxEQUdSCk4" width="643"/>
+</figure>
+<figure>
+ <image height="361.6875" src="https://static.us.edusercontent.com/files/QlmAHPYCM5WQTALwNI69WNd9" width="643"/>
+</figure>
+<figure>
+ <image height="361.6875" src="https://static.us.edusercontent.com/files/i6RUGYMMuDMEhqbBsV64EbUo" width="643"/>
+</figure>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kenisha Stills-Ogburn (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I have 3 classes: Canidae, Dog, and Wolf.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Canidae is the superclass of Wolf.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Wolf is the superclass of Dog.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I wanted to check out what
   <code>
    if (!super.equals(ob))
   </code>
   does. I thought that it would compare
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   the incoming object of type Object with Canidae first before checking if it was a Wolf, but it doesn't seem to be doing that.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   It's not going to do anything for which you don't have any code.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Your method says to
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   return getClass() == ob.getClass();
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   so that is all it does.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kenisha Stills-Ogburn (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I think I see what it's doing. It is is comparing new Wolf() with Wolf. The equals method in Canidae is generic and not specific to Canidae. Any subclass can borrow it and used to check another object's type against itself.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Kenisha Stills-Ogburn (None)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I think I see what it's doing. It is is comparing new Wolf() with Wolf. The equals method in Canidae is generic and not specific to Canidae. Any subclass can borrow it and used to check another object's type against itself.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

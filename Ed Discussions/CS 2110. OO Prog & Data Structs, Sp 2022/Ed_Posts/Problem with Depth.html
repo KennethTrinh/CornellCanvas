@@ -13,41 +13,37 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  When I try to test depth I realize that the depth is not incrementing and traversing the tree correctly after using print statements. When the spec tells us that 'root = (1 + depth of p in c)' does that mean we are doing depth + 1? Then how are we incrementing with sum?
- </paragraph>
-</document>
+<p>
+ When I try to test depth I realize that the depth is not incrementing and traversing the tree correctly after using print statements. When the spec tells us that 'root = (1 + depth of p in c)' does that mean we are doing depth + 1? Then how are we incrementing with sum?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="1.0">
- <paragraph>
-  Yes depth + 1, but keep in mind if it’s not in the tree you want to return -1, so if it’s your base case you want to return -1 + 1 (0) and etc..
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   If you are thinking about "how are we incrementing sum" then you are not thinking properly. Your trying to think how execution of recursive calls proceeds instead of think about the recursive case in terms of WHAT a recursive call does based on the specification.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Bahaa Kotb (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Yes depth + 1, but keep in mind if it’s not in the tree you want to return -1, so if it’s your base case you want to return -1 + 1 (0) and etc..
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

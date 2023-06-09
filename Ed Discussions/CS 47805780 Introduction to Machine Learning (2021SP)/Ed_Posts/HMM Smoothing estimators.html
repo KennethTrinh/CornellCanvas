@@ -13,48 +13,46 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  The lecture slides for HMM (18b-hmm) say to use smoothing of the estimators like we do in Naive Bayes for text classification:
- </paragraph>
- <figure>
-  <image height="318.63235294117646" src="https://static.us.edusercontent.com/files/Sri9gdXakaWLMcUYmf5ZAeW1" width="658"/>
- </figure>
- <paragraph>
-  Would these be the appropriate "smoothed" versions of the estimators?
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    $P(Y_1 = a)$ = $\frac{\text{\# of examples that start with state } a}{\text{\# of training examples} }$, aka no smoothing similar to how $P(Y = y)$ isn't smoothed in Naive Bayes?
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    $P(Y_i = a | Y_{i-1} = b)$ = $\frac{\text{\# of times state } a \text{ follows state } b \textbf{ + 1}}{\text{\# of times state } b \text{ occurs } \textbf{ + \# of possible tags}}$
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    $P(X_i = a | Y_{i-1} = b)$ = $\frac{\text{\# of times output } a \text{ is observed in state } b \textbf{ + 1}}{\text{\# of times state } b \text{ occurs } \textbf{ + vocab size}}$
-   </paragraph>
-  </list-item>
- </list>
-</document>
+<p>
+ The lecture slides for HMM (18b-hmm) say to use smoothing of the estimators like we do in Naive Bayes for text classification:
+</p>
+<figure>
+ <image height="318.63235294117646" src="https://static.us.edusercontent.com/files/Sri9gdXakaWLMcUYmf5ZAeW1" width="658"/>
+</figure>
+<p>
+ Would these be the appropriate "smoothed" versions of the estimators?
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   $P(Y_1 = a)$ = $\frac{\text{\# of examples that start with state } a}{\text{\# of training examples} }$, aka no smoothing similar to how $P(Y = y)$ isn't smoothed in Naive Bayes?
+  </p>
+ </li>
+ <li>
+  <p>
+   $P(Y_i = a | Y_{i-1} = b)$ = $\frac{\text{\# of times state } a \text{ follows state } b \textbf{ + 1}}{\text{\# of times state } b \text{ occurs } \textbf{ + \# of possible tags}}$
+  </p>
+ </li>
+ <li>
+  <p>
+   $P(X_i = a | Y_{i-1} = b)$ = $\frac{\text{\# of times output } a \text{ is observed in state } b \textbf{ + 1}}{\text{\# of times state } b \text{ occurs } \textbf{ + vocab size}}$
+  </p>
+ </li>
+</list>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Noor (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Yes, in smoothing those conditional probabilities you're just adding however many choices you had for Y or X to the denominator, to preserve the status of probability distribution.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

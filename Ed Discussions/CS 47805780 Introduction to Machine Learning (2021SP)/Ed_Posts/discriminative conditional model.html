@@ -13,70 +13,66 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <figure>
-  <image height="413.1839557399723" src="https://static.us.edusercontent.com/files/KPuL6weehelNvae7uCROZ2eu" width="658"/>
- </figure>
- <paragraph>
-  For the discriminative conditional model, I don't understand why we said we don't need to commit to a loss during training? I thought both regularized logistic regression and ridge regression have a specific loss function they use?
- </paragraph>
-</document>
+<figure>
+ <image height="413.1839557399723" src="https://static.us.edusercontent.com/files/KPuL6weehelNvae7uCROZ2eu" width="658"/>
+</figure>
+<p>
+ For the discriminative conditional model, I don't understand why we said we don't need to commit to a loss during training? I thought both regularized logistic regression and ridge regression have a specific loss function they use?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Sam Hinson (student)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Sam Hinson (student)
+ </h3>
+ <h3>
+  Vote Count: 3
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   I think loss is being used in two different places here. There is a loss function involved in our objective function and yes we are committing to that. However examine the prediction rule we derive after we've learned our conditional distribution.
- </paragraph>
+ </p>
  <figure>
   <image height="135.8679245283019" src="https://static.us.edusercontent.com/files/Xa4s9gQ5ISBDelUeo1DZFnnh" width="758"/>
  </figure>
- <paragraph>
+ <p>
   This just says pick the label that minimizes the expected loss in the cases in which we turned out to have misclassified. Here we are using a 0 1 loss function but there is nothing stopping us from exchanging this for something else. So the loss function that dictates what label we ultimately select is independent of the training we are doing to learn the conditional distribution. So we aren't committing to the 0 1 loss here and can always exchange it for something later.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If I am misunderstanding this hopefully a TA can correct me but I believe this is what the professor was referring to when he said we aren't committed to a loss function.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ruiqi Zhu (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  My understanding is that the goal of discriminative conditional models is not to minimize some loss, but rather to pick a weight vector that maximizes the probability of the event "the training data is the result of some random experiments". I think you can argue that committing to different probability models is kind of like committing to different loss functions. After all, by flipping the max and min of the training objective ERM and DCM are pretty similar.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Thorsten Joachims (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Nice explanation!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Thorsten Joachims (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Nice explanation!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Ruiqi Zhu (None)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   My understanding is that the goal of discriminative conditional models is not to minimize some loss, but rather to pick a weight vector that maximizes the probability of the event "the training data is the result of some random experiments". I think you can argue that committing to different probability models is kind of like committing to different loss functions. After all, by flipping the max and min of the training objective ERM and DCM are pretty similar.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

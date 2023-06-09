@@ -13,61 +13,59 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  How do we get from the second line to the last line in this set of equations?
- </paragraph>
- <figure>
-  <image height="261.6857142857143" src="https://static.us.edusercontent.com/files/pz3Rd8A6lYAvL5a31jqcUQHc" width="645"/>
- </figure>
- <paragraph>
-  I tried working it out using the
- </paragraph>
- <math>
-  p_a\left(t\right)
- </math>
- <paragraph>
-  definition of
- </paragraph>
- <math>
-  \delta\left(t\right)
- </math>
- <paragraph>
-  but I'm not sure how to take anything out of the argument of either of those functions and I'm confused as to how the
- </paragraph>
- <math>
-  \omega_0+2\pi k^{\ast}
- </math>
- <paragraph>
-  ends up in the exponent.
- </paragraph>
-</document>
+<p>
+ How do we get from the second line to the last line in this set of equations?
+</p>
+<figure>
+ <image height="261.6857142857143" src="https://static.us.edusercontent.com/files/pz3Rd8A6lYAvL5a31jqcUQHc" width="645"/>
+</figure>
+<p>
+ I tried working it out using the
+</p>
+<math>
+ p_a\left(t\right)
+</math>
+<p>
+ definition of
+</p>
+<math>
+ \delta\left(t\right)
+</math>
+<p>
+ but I'm not sure how to take anything out of the argument of either of those functions and I'm confused as to how the
+</p>
+<math>
+ \omega_0+2\pi k^{\ast}
+</math>
+<p>
+ ends up in the exponent.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   When $f$ is a continuous function of $t$ and $b &lt; t _ 1 &lt; c$ , $\int _ b ^ c \delta ( t - t _ 1 ) f ( t ) d t = f ( t _ 1)$.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Same thing works for functions of $\omega$.  I.e. when $f$ is a continuous function of $\omega$ and $b &lt; \omega _ 1 &lt; c$, then $\int _ b ^ c \delta ( \omega - \omega _ 1 ) f ( \omega ) d \omega = f ( \omega _ 1 )$.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   This follows from doing the $p _ a$-thing --- let's do it for $t$-functions:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   for $a$ small enough, $\frac{1}{a} \int _ b ^ c p _ a ( t - t _ 1  ) f ( t ) d t = \frac{1}{a} \int _ {t _ 1 - a / 2} ^ {t _ 1 + a / 2} f ( t ) d t$, which equals the average value of $f ( t )$ over the interval $t _ 1 - a / 2 \leq t \leq t _ 1 + a / 2$, which converges to $f ( t _ 1 )$ as $a \rightarrow 0$.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   In the case you cite, $b = - \pi$, $c = \pi$, $f ( \omega ) = e ^ {j n \omega}$, and $\omega _ 1 = \omega _ o - 2 \pi k ^ *$.  The monograph has a little mistake that doesn't change the answer, i.e. it has $+ 2 \pi k ^ *$ instead of $- 2 \pi k ^ *$.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

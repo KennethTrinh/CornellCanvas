@@ -13,121 +13,112 @@
 <h3>
  Vote Count: 8
 </h3>
-<document version="2.0">
- <paragraph>
-  I've been looking around at potential dataset sources, and I think this one bears a striking resemblance to the AI datasets, but I have been poking around at it and it also seems really rich and interesting.  I recall a few comments/conversations about Stack Exchange yesterday during class, so I thought I'd share it with the class in case it hasn't been shared already.
- </paragraph>
- <paragraph>
-  The Internet Archive has these periodic data dumps from Stack Exchange (years 2014-2021). If you click on 'Show all files', you will see a bunch of
-  <code>
-   .7z
-  </code>
-  files corresponding to different Stack Exchange communities (e.g. astronomy, beer, cs, economics... it's a long list).
- </paragraph>
- <paragraph>
-  <link href="https://archive.org/details/stackexchange"/>
+<p>
+ I've been looking around at potential dataset sources, and I think this one bears a striking resemblance to the AI datasets, but I have been poking around at it and it also seems really rich and interesting.  I recall a few comments/conversations about Stack Exchange yesterday during class, so I thought I'd share it with the class in case it hasn't been shared already.
+</p>
+<p>
+ The Internet Archive has these periodic data dumps from Stack Exchange (years 2014-2021). If you click on 'Show all files', you will see a bunch of
+ <code>
+  .7z
+ </code>
+ files corresponding to different Stack Exchange communities (e.g. astronomy, beer, cs, economics... it's a long list).
+</p>
+<p>
+ <a href="https://archive.org/details/stackexchange">
   https://archive.org/details/stackexchange
- </paragraph>
- <paragraph>
-  The readme that explains the files of each
-  <code>
-   .7z
-  </code>
-  file is here:
- </paragraph>
- <paragraph>
-  <link href="https://ia800107.us.archive.org/27/items/stackexchange/readme.txt"/>
-  https://ia800107.us.archive.org/27/items/stackexchange/readme.txt
- </paragraph>
- <paragraph>
-  It looks like you can get:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    user data (reputation, id, activity, etc.)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    vote data (vote type, user, etc.)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    post edit history (edits, rollbacks, votes to close/reopen/delete/etc., etc.)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    post links (linked or duplicate)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    post (tag, user poster, score, text, title, etc.)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    comment (parent post, score, text, etc.)
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  + some more information.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Hope this might be helpful!
- </paragraph>
-</document>
-<h3>
- Author: Kiran Tomlinson (student)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<document version="2.0">
- <paragraph>
+ </a>
+</p>
+<p>
+ The readme that explains the files of each
+ <code>
+  .7z
+ </code>
+ file is here:
+</p>
+<p>
+ <link href="https://ia800107.us.archive.org/27/items/stackexchange/readme.txt"/>
+ https://ia800107.us.archive.org/27/items/stackexchange/readme.txt
+</p>
+<p>
+ It looks like you can get:
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   user data (reputation, id, activity, etc.)
+  </p>
+ </li>
+ <li>
+  <p>
+   vote data (vote type, user, etc.)
+  </p>
+ </li>
+ <li>
+  <p>
+   post edit history (edits, rollbacks, votes to close/reopen/delete/etc., etc.)
+  </p>
+ </li>
+ <li>
+  <p>
+   post links (linked or duplicate)
+  </p>
+ </li>
+ <li>
+  <p>
+   post (tag, user poster, score, text, title, etc.)
+  </p>
+ </li>
+ <li>
+  <p>
+   comment (parent post, score, text, etc.)
+  </p>
+ </li>
+</list>
+<p>
+ + some more information.
+</p>
+<p>
+ Hope this might be helpful!
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kiran Tomlinson (student)
+ </h3>
+ <h3>
+  Vote Count: 3
+ </h3>
+ <p>
   I used this data recently for a research project--it is great. However, the archive.org downloads were **very** slow. I have all the data (76GB compressed) downloaded on my desktop in Gates. If anyone wants to use the data, I'd be happy to help them transfer it from there (which will be much faster). I'd also be happy to share my parsing code, although I only looked at the user-question interaction network (who replied to/commented on every question).
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Celine Lee (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Awesome, thanks Kiran! I’d be curious to check out your parsing code, if you are happy to share. :)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kiran Tomlinson (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes! Sorry for the delay. Here's the code I used to preprocess the user-question networks:
- </paragraph>
- <paragraph>
- </paragraph>
- <snippet language="py" line-numbers="true" runnable="false">
-  <snippet-file id="code">
-   from lxml import etree
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Celine Lee (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Awesome, thanks Kiran! I’d be curious to check out your parsing code, if you are happy to share. :)
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Kiran Tomlinson (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Yes! Sorry for the delay. Here's the code I used to preprocess the user-question networks:
+   </p>
+   <snippet language="py" line-numbers="true" runnable="false">
+    <snippet-file id="code">
+     from lxml import etree
 from py7zr import SevenZipFile
 import pandas as pd
 
@@ -198,12 +189,14 @@ def preprocess_stack_exchange():
 
     df = get_post_df(posts)
     df.to_csv(f'stack-exchange/stackoverflow.com-df.csv', index=False)
-  </snippet-file>
- </snippet>
-</document>
-<h3>
- ------------------------------------
-</h3>
+    </snippet-file>
+   </snippet>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

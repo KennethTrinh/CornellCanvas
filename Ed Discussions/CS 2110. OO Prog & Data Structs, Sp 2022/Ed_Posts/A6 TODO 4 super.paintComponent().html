@@ -13,55 +13,49 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  What is the super. doing? I reviewed the slide but still confused.
- </paragraph>
- <paragraph>
-  in slide it said:
- </paragraph>
- <paragraph>
-  ¨paintComponent(): Preferred method to override when extending Swing components
- </paragraph>
- <paragraph>
-  Start with super.paintComponent()
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  also, when I call paintComponent(), because I have super.paintComponent() in first line, I feel I am calling the method body again and again and never stop, but in fact it just run once, why?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ What is the super. doing? I reviewed the slide but still confused.
+</p>
+<p>
+ in slide it said:
+</p>
+<p>
+ ¨paintComponent(): Preferred method to override when extending Swing components
+</p>
+<p>
+ Start with super.paintComponent()
+</p>
+<p>
+ also, when I call paintComponent(), because I have super.paintComponent() in first line, I feel I am calling the method body again and again and never stop, but in fact it just run once, why?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Clarkson (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Clarkson (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   First, let's note that
   <code>
    super.
   </code>
   is something independent of Swing.  It's a Java feature.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Second, please search for "super" in JavaHyperText.  You'll find keyword
   <code>
    super
   </code>
   and two descriptions of it.  The first describes what is going on here.  It mentions "bottom-up" and "override". Search for both of those in JHT, too.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Third, as for why it's useful in this specific case, please review the A6 handout, step 2, paragraph 2 (page 5).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

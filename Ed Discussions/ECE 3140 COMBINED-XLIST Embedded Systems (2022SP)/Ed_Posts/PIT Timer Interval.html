@@ -13,63 +13,60 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  How precise does the interval have to be? My LEDS are blinking, but not synchronously, the green LED turns on a tiny bit after the red. I can't tell if this is due to my PIT timer interval, or just issues with my process_select. I've also tested several values for the PIT timer
- </paragraph>
-</document>
+<p>
+ How precise does the interval have to be? My LEDS are blinking, but not synchronously, the green LED turns on a tiny bit after the red. I can't tell if this is due to my PIT timer interval, or just issues with my process_select. I've also tested several values for the PIT timer
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  <link href="https://edstem.org/us/courses/19442/discussion/1269461"/>
-  #372
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  What if you're like 100,000 off in decimal, would that affect it a lot?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Due to the limitations of human vision, there is a wide range of valid time intervals. While running
-  <code>
-   test_0.c
-  </code>
-  , the processes should look concurrent.
- </paragraph>
- <paragraph>
-  If you can see that they are not running concurrently, you should probably change your interval.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
+  <a href="https://edstem.org/us/courses/19442/discussion/1269461">
+   #372
+  </a>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   What if you're like 100,000 off in decimal, would that affect it a lot?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Harris Miller (None)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Due to the limitations of human vision, there is a wide range of valid time intervals. While running
+    <code>
+     test_0.c
+    </code>
+    , the processes should look concurrent.
+   </p>
+   <p>
+    If you can see that they are not running concurrently, you should probably change your interval.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

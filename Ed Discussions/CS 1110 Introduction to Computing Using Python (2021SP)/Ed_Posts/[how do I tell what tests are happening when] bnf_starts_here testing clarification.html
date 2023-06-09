@@ -16,28 +16,24 @@
 <h3>
  ENDORSED
 </h3>
-<document version="2.0">
- <paragraph>
-  When testing bnf_starts_here, is it supposed to have text stating what case is being tested as in num_user_posts and user_paths? I'm just confused if I'm editing my code in the right direction since the cases listed in the error messages are changing but I don't know where in the testing order it is.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ When testing bnf_starts_here, is it supposed to have text stating what case is being tested as in num_user_posts and user_paths? I'm just confused if I'm editing my code in the right direction since the cases listed in the error messages are changing but I don't know where in the testing order it is.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   We did not include such printouts for everything being tested,  because there are a
-  <italic>
+  <i>
    lot
-  </italic>
+  </i>
   of tests in
   <code>
    test_bnf_starts_here()
@@ -62,9 +58,7 @@
    test_bnf_starts_here()
   </code>
   , for how to do that and to understand the testing order:  looking at lines 298 through 332, you can see that the testing code is running through some nested for-loops:
- </paragraph>
- <paragraph>
- </paragraph>
+ </p>
  <pre>for u1 in unames:   # possible u1 users
     for u2 in unames: # possible u2 users
         if u1 == u2:
@@ -72,20 +66,20 @@
          for k in [1, 2, 3, 4, 5]: # check values of k from 1 to 5 inclusive
              for post in main_posts:  # for every Post in the main example tree
                  result = a4.bnf_starts_here(post, u1, u2, k) ### &lt;-- where we call your code</pre>
- <paragraph>
+ <p>
   So notice that for each user pair u1 and u2, we first, for k =1, check the results for all the Posts in the main example tree; then, for k=2, check the results for all the Posts in the main example tree, and so on.
   <break>
   </break>
   <break>
   </break>
   Note that our error messages have a form like:
- </paragraph>
+ </p>
  <pre>                        errormsg = "Wrongly found back-and-forth for users " + \
                                u1 + " and " + u2 + \
                                " at Post " + post.tag  + \
                                " for k=" + str(k)
 </pre>
- <paragraph>
+ <p>
   You could create a similar string and print it right before the line
   <code>
    result = a4.bnf_starts_here(...)
@@ -113,8 +107,8 @@
   <code>
    for k in [1]: #@ change back to: [1, 2, 3, 4, 5]:
   </code>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   That "#@" is my own personal marker for "something I commented out that I need to remember to change back".  When I think I'm done with a debugging edit like the above, I undo it.  And I search for any "#@" markers to make sure I didn't forget to undo any other changes.  You can pick your own special marker.
   <break>
   </break>
@@ -128,82 +122,78 @@
   <code>
    for post in gnlist2plist(["0.0.1"], main_dict): #@  change back to: main_posts:
   </code>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you so much for the tips! I just have another question. When I try to print the result or add it to the error message, it gives me a list like
- </paragraph>
- <snippet language="py" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   RuntimeError: Wrongly found back-and-forth for users A and B at Post 0 for k=1[&lt;post.Post object at 0x000001E69C42BD00&gt;]
-  </snippet-file>
- </snippet>
- <paragraph>
-  How should I make it so it's just the post object, or is this a problem with how I wrote my code?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I think it's an issue with your code; there shouldn't be a k=1 b-n-f for A and B at Post 0, but your code seems to be returning a list of length 1.
-  <break>
-  </break>
-  <break>
-  </break>
-  (No b-n-f there for k=1 because it would be enclosed in a longer b-n-f starting at the same Post at 0)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jamie Cashman (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  is there any way to decipher the post object at the id given by running the test (where it says [&lt;post.Post obejct at ...&gt;]?
- </paragraph>
- <paragraph>
-  Looking at the test case for post 0 from A to B at k=3, I return a list of three post objects with that format, but I can't tell what those posts are and i am getting the "wrongly found" error. I'm fairly certain I am supposed to get a list of 3 objects with this case, but I don't know where to go from here since I'm not sure which posts its returning if not the right ones.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes!  Take a look at the body of function we suggest you might want to use in section 7.1.3 for running a small test.  You can loop through the result, and for each item in the result, print its tag attribute:
-  <break>
-  </break>
- </paragraph>
- <pre>def my_own_private_testfn():
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you so much for the tips! I just have another question. When I try to print the result or add it to the error message, it gives me a list like
+  </p>
+  <snippet language="py" line-numbers="true" runnable="true">
+   <snippet-file id="code">
+    RuntimeError: Wrongly found back-and-forth for users A and B at Post 0 for k=1[&lt;post.Post object at 0x000001E69C42BD00&gt;]
+   </snippet-file>
+  </snippet>
+  <p>
+   How should I make it so it's just the post object, or is this a problem with how I wrote my code?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I think it's an issue with your code; there shouldn't be a k=1 b-n-f for A and B at Post 0, but your code seems to be returning a list of length 1.
+    <break>
+    </break>
+    <break>
+    </break>
+    (No b-n-f there for k=1 because it would be enclosed in a longer b-n-f starting at the same Post at 0)
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Jamie Cashman (None)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     is there any way to decipher the post object at the id given by running the test (where it says [&lt;post.Post obejct at ...&gt;]?
+    </p>
+    <p>
+     Looking at the test case for post 0 from A to B at k=3, I return a list of three post objects with that format, but I can't tell what those posts are and i am getting the "wrongly found" error. I'm fairly certain I am supposed to get a list of 3 objects with this case, but I don't know where to go from here since I'm not sure which posts its returning if not the right ones.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Prof. Lee (she/they) (admin)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      Yes!  Take a look at the body of function we suggest you might want to use in section 7.1.3 for running a small test.  You can loop through the result, and for each item in the result, print its tag attribute:
+      <break>
+      </break>
+     </p>
+     <pre>def my_own_private_testfn():
     print("**** Running my own private test function!")
     [main_tree, main_dict] = main_example_tree()
     result = bnf_starts_here(main_dict["0"], "A", "D", 2) # replace with whatever test you like
@@ -215,7 +205,11 @@
         print("No such back-and-forth here!")
 print("**** Done with my own private test function!")
 </pre>
-</document>
-<h3>
- ------------------------------------
-</h3>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

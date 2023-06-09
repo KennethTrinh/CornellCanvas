@@ -13,96 +13,92 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <figure>
-  <image height="467.7647058823529" src="https://static.us.edusercontent.com/files/2PRRmVdoHvmYgCrw2QpCTqDa" width="658"/>
- </figure>
- <paragraph>
-  Why is the immediate value incremented by "# 4"? In the question it says that each character in a C string is one byte. Wouldn't that mean in order to get our next memory location we would need to offset R7 by "# 8"?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Thanks.
- </paragraph>
-</document>
+<figure>
+ <image height="467.7647058823529" src="https://static.us.edusercontent.com/files/2PRRmVdoHvmYgCrw2QpCTqDa" width="658"/>
+</figure>
+<p>
+ Why is the immediate value incremented by "# 4"? In the question it says that each character in a C string is one byte. Wouldn't that mean in order to get our next memory location we would need to offset R7 by "# 8"?
+</p>
+<p>
+ Thanks.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   When you offset an address by an immediate value, you are moving that number of
-  <italic>
+  <i>
    bytes
-  </italic>
+  </i>
   not
-  <italic>
+  <i>
    bits
-  </italic>
+  </i>
   . When you increment by 4, the address in moves by a word (4 bytes).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   With this in mind, make sure you think about the
-  <italic>
+  <i>
    sections
-  </italic>
+  </i>
   of each string that are being moved.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew Cheng (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  I’m still pretty confused on how we are alternating characters between strings. When we add our current address by “4” what does that even mean?  I don’t really see how moving 4 bytes would allow us to get the next character in a string of a character is 1 byte. After each iteration we are adding the base address by 4. Would that mean we would be going from address 0 to 4 or something like that. I just don’t really get how the numbers work in regards to the offsets.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I think the issue is in the assumption that you are alternating between characters in each string. LDR and STR operate on words, not bytes. Knowing this, what is in R4 after performing LDR R4, [R1, 0]? Then think about what would be in R4 after performing LDR R4, [R1, 4].
- </paragraph>
- <paragraph>
-  [Looking at Panopto, there may be an issue with the provided answer. I will follow up to this later.]
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Nils Napp (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yeah, we went over this during lecture today. Thanks for catching this. The question and the code are not consistent. For the answer to be correct with the provided code each character would need to be a 32-bit word, which is NOT the definition of a c-string.
- </paragraph>
- <paragraph>
-  To be consistent the #4 literals should be #1 and STR and LDR should be replaced by STRB and LDRB.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Andrew Cheng (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I’m still pretty confused on how we are alternating characters between strings. When we add our current address by “4” what does that even mean?  I don’t really see how moving 4 bytes would allow us to get the next character in a string of a character is 1 byte. After each iteration we are adding the base address by 4. Would that mean we would be going from address 0 to 4 or something like that. I just don’t really get how the numbers work in regards to the offsets.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Harris Miller (None)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I think the issue is in the assumption that you are alternating between characters in each string. LDR and STR operate on words, not bytes. Knowing this, what is in R4 after performing LDR R4, [R1, 0]? Then think about what would be in R4 after performing LDR R4, [R1, 4].
+   </p>
+   <p>
+    [Looking at Panopto, there may be an issue with the provided answer. I will follow up to this later.]
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Nils Napp (admin)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Yeah, we went over this during lecture today. Thanks for catching this. The question and the code are not consistent. For the answer to be correct with the provided code each character would need to be a 32-bit word, which is NOT the definition of a c-string.
+    </p>
+    <p>
+     To be consistent the #4 literals should be #1 and STR and LDR should be replaced by STRB and LDRB.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

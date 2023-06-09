@@ -13,55 +13,51 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm confused about how sum (y_i alpha_i) = 0 is derived from the non-homogeneity, also the constraint on alpha_i &lt;= C.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I'm confused about how sum (y_i alpha_i) = 0 is derived from the non-homogeneity, also the constraint on alpha_i &lt;= C.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Artem Streltsov (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Artem Streltsov (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   First, alpha_i&lt;=C comes from the definition of duality. By complementary slackness if a constraint is slack in primal, its dual is positive. C constitutes our trade-off between slackness and classification loss. I recommend this as reference for converting primal linear programs into dual and back:
-  <link href="http://web.mit.edu/15.053/www/AMP-Chapter-04.pdf"/>
-  AMP-Chapter-04.pdf (mit.edu) See, in particular, page 141. In our setup the primal is the dual in that definition. C is the coefficient for each epsilon and alpha_i is the corresponding dual variable for each constraint.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+  <a href="http://web.mit.edu/15.053/www/AMP-Chapter-04.pdf">
+   AMP-Chapter-04.pdf (mit.edu)
+  </a>
+  See, in particular, page 141. In our setup the primal is the dual in that definition. C is the coefficient for each epsilon and alpha_i is the corresponding dual variable for each constraint.
+ </p>
+ <p>
   As for sum(y_i alpha_i)=0, see below.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Denote our primal problem in a Lagrangian form with a bias as before (see lecture 09b, for instance)
- </paragraph>
+ </p>
  <math>
   L\left(\alpha,w,b\right)=\frac{1}{2}w\cdot w+\sum_i^{ }\alpha_{i\ }\left(1-y_iw\cdot x_{i\ }-y_{i\ }b\right)
  </math>
- <paragraph>
+ <p>
   Take first order conditions:
- </paragraph>
+ </p>
  <math>
   \frac{\partial L\left(\alpha,\ w,\ b\right)}{\partial w}=w-\sum_i^{ }\alpha_iy_ix_i=0
  </math>
  <math>
   \frac{\partial L\left(\alpha,\ w,\ b\right)}{\partial b}=-\sum_i^{ }\alpha_iy_i=0
  </math>
- <paragraph>
+ <p>
   Therefore
- </paragraph>
+ </p>
  <math>
   \sum_i^{n}y_i \alpha_i =0
  </math>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

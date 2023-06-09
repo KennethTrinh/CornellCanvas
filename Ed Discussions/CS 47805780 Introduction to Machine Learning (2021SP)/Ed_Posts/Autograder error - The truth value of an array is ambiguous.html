@@ -13,52 +13,44 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I keep failing all 3 dualSVM() tests with the error shown below that refers to the other files in the folder. Though my dualSVM() produces a nice plot and low training &amp; test error for the spiral data (the cell right after dualSVM). Is this a bug in my code or is there a problem in the autograder?
- </paragraph>
- <figure>
-  <image height="136.90742438130155" src="https://static.us.edusercontent.com/files/DfCGQvSqeLfhYsJIpuxVAHyB" width="658"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I keep failing all 3 dualSVM() tests with the error shown below that refers to the other files in the folder. Though my dualSVM() produces a nice plot and low training &amp; test error for the spiral data (the cell right after dualSVM). Is this a bug in my code or is there a problem in the autograder?
+</p>
+<figure>
+ <image height="136.90742438130155" src="https://static.us.edusercontent.com/files/DfCGQvSqeLfhYsJIpuxVAHyB" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Tianxing Jiang (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Tianxing Jiang (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Your
   <code>
    dualSVM
   </code>
   is not returning the correct shape. Try to use np.flatten() to convert the matrix into a vector.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thanks! That helped
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thanks! That helped
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

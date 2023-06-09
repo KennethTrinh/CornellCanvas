@@ -13,46 +13,42 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm a little confused with the how I'm supposed to handle leaf 0010. With one minor change to my code, I can achieve both of the seemingly contradictory outputs:
- </paragraph>
- <pre>Wrongly found back-and-forth for users A and B at Post 0010 for k=1
+<p>
+ I'm a little confused with the how I'm supposed to handle leaf 0010. With one minor change to my code, I can achieve both of the seemingly contradictory outputs:
+</p>
+<pre>Wrongly found back-and-forth for users A and B at Post 0010 for k=1
 </pre>
- <pre>Missed back-and-forth for users A and B at Post 0010 for k=1
+<pre>Missed back-and-forth for users A and B at Post 0010 for k=1
 </pre>
- <paragraph>
-  Is there something I'm fundamentally misunderstanding about this part of the assignment? I was under the impression that by the k = 1 case in the recursive definition, this should be an instance where False is
-  <italic>
-   not
-  </italic>
-  returned (and in the case where I try false, I get the latter of my two outputs, while returning an output yields the former).
- </paragraph>
- <paragraph>
-  Thanks!
- </paragraph>
-</document>
+<p>
+ Is there something I'm fundamentally misunderstanding about this part of the assignment? I was under the impression that by the k = 1 case in the recursive definition, this should be an instance where False is
+ <i>
+  not
+ </i>
+ returned (and in the case where I try false, I get the latter of my two outputs, while returning an output yields the former).
+</p>
+<p>
+ Thanks!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Lenhard Thomas (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Lenhard Thomas (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Let me first clear something up. For the k = 1 case, there are times where you would like to return False. I found the footnote on page 8 to be rather useful for figuring out these cases when I did the assignment myself.
   <break>
   </break>
   <break>
   </break>
   For the back-and-forth between users A and B at Post 0010 where k = 1, we should return a single element list containing just post 0010. The first error would occur if you returned a list that isn't as specified above, and the second error would occur if you returned false as there is a back-and-forth.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

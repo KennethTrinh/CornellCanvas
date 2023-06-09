@@ -13,33 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I am trying to optimize my find by iterating through an array list of NodeStatus objects, but I want to sort them by their distance to the Orb. I'm not sure how to do this because I don't know how to sort a list of objects by a certain method. Let me know if I am missing something here!
- </paragraph>
-</document>
+<p>
+ I am trying to optimize my find by iterating through an array list of NodeStatus objects, but I want to sort them by their distance to the Orb. I'm not sure how to do this because I don't know how to sort a list of objects by a certain method. Let me know if I am missing something here!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You can do it manually. Some people have put the nodes into a min-heap with priority being the distance to the Orb.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   But its easier to use some method that automatically uses some sort algorithm. Look at class NodeStatus. It implements comparable&lt;NodeStatus&gt;! And if you look at its method compareTo, you see that it compares two objects based on their distance to the orb.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   So you can make a collection of the neighbors and sort them using some Collections method.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,35 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Since there are often several ways to produce the same result in SQL, I was wondering if my answer to 1G was another correct way to solve it:
- </paragraph>
- <paragraph>
-  SELECT T1.StudentID, T1.Day, (T2.Day - T1.Day) AS Gap FROM Tests AS T1 INNER JOIN Tests AS T2 ON T1.StudentID = T2.StudentID WHERE T1.Day &lt; T2.Day
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Thanks!
- </paragraph>
-</document>
+<p>
+ Since there are often several ways to produce the same result in SQL, I was wondering if my answer to 1G was another correct way to solve it:
+</p>
+<p>
+ SELECT T1.StudentID, T1.Day, (T2.Day - T1.Day) AS Gap FROM Tests AS T1 INNER JOIN Tests AS T2 ON T1.StudentID = T2.StudentID WHERE T1.Day &lt; T2.Day
+</p>
+<p>
+ Thanks!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Qian Xie (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Qian Xie (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I don't think so since it may also return (Day, Gap) = (2, 8), (2, 10), (5, 7).
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

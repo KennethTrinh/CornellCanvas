@@ -13,75 +13,71 @@
 <h3>
  Vote Count: 6
 </h3>
-<document version="2.0">
- <paragraph>
-  Problem #5c
- </paragraph>
- <paragraph>
-  HW #8
- </paragraph>
- <paragraph>
-  <bold>
-   Question Asks: Calculate the covariance between εi and εj in terms of σ2 for two individuals i and j in the same city.
-  </bold>
- </paragraph>
- <paragraph>
-  Users i and j in the same city share a common source of randomness (Zc), but I would think individual randomness is still independent.
- </paragraph>
- <paragraph>
-  Using Cov[A + B,C] = Cov[A,C] + Cov[B,C],
- </paragraph>
- <paragraph>
-  Cov[εi, εj] = Cov[Zc(i) + Wi, Zc(j) + Wj] = Cov[Zi, Zj] + Cov[Zi, wj] + Cov[Wi, Zj] + Cov[Wi, Wj]
- </paragraph>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    Cov[Zi, Zj] = 1 because the city randomness is correlated with itself.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    City randomness (Z) with user randomness (W) is not correlated, so Cov[Zi, wj] + Cov[Wi, Zj] = 0
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    <bold>
-     **What would Cov[Wi, Wj] = ? Other individuals may face the same randomness in same city more likely?
-    </bold>
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Because if Cov[Wi, Wj] =0 then Cov[εi, εj] = 1 which does not seem right. I got Cov[εi, εj] =0 for the part above.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Leah Valente (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ Problem #5c
+</p>
+<p>
+ HW #8
+</p>
+<p>
+ <b>
+  Question Asks: Calculate the covariance between εi and εj in terms of σ2 for two individuals i and j in the same city.
+ </b>
+</p>
+<p>
+ Users i and j in the same city share a common source of randomness (Zc), but I would think individual randomness is still independent.
+</p>
+<p>
+ Using Cov[A + B,C] = Cov[A,C] + Cov[B,C],
+</p>
+<p>
+ Cov[εi, εj] = Cov[Zc(i) + Wi, Zc(j) + Wj] = Cov[Zi, Zj] + Cov[Zi, wj] + Cov[Wi, Zj] + Cov[Wi, Wj]
+</p>
+<list style="unordered">
+ <li>
+  <p>
+   Cov[Zi, Zj] = 1 because the city randomness is correlated with itself.
+  </p>
+ </li>
+ <li>
+  <p>
+   City randomness (Z) with user randomness (W) is not correlated, so Cov[Zi, wj] + Cov[Wi, Zj] = 0
+  </p>
+ </li>
+ <li>
+  <p>
+   <b>
+    **What would Cov[Wi, Wj] = ? Other individuals may face the same randomness in same city more likely?
+   </b>
+  </p>
+ </li>
+</list>
+<p>
+ Because if Cov[Wi, Wj] =0 then Cov[εi, εj] = 1 which does not seem right. I got Cov[εi, εj] =0 for the part above.
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Leah Valente (student)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   Also for part d, would
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   is the
-  <bold>
+  <b>
    sqrt( Var(eps[i]) Var(eps[j]) =
-  </bold>
- </paragraph>
- <paragraph>
+  </b>
+ </p>
+ <p>
   SQRT[(1+σ^2)^2] because the variance of eps = (1+σ^2)^2 from part a
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

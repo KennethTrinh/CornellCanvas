@@ -13,201 +13,193 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Since some subreddits in Convokit don’t contain easier data, I am going to check if Chenhao’s page includes the earlier data or re-scraping the data from
-  <link href="http://Pushshift.io"/>
-  Pushshift.io.
- </paragraph>
- <paragraph>
-  By the observation from the feasibility check, the lexical innovation generated is more meaningful when the community size is larger. I am going to find several Reddit highly related community pairs that have big data sizes.
- </paragraph>
- <paragraph>
-  I am going to compare the following things of different communities to check if they are highly related.
- </paragraph>
- <list style="ordered">
-  <list-item>
-   <paragraph>
-    Jaccard similarity between the set of links to capture similarity based on links
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Jensen-Shannon divergence between topic distributions
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Fightin' words
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  If I have additional time, I want to check if the frequency of lexical innovation is related to if the word is easily accessible.
- </paragraph>
-</document>
-<h3>
- Author: Heather Zheng (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ Since some subreddits in Convokit don’t contain easier data, I am going to check if Chenhao’s page includes the earlier data or re-scraping the data from
+ <a href="http://Pushshift.io">
+  Pushshift.io
+ </a>
+ .
+</p>
+<p>
+ By the observation from the feasibility check, the lexical innovation generated is more meaningful when the community size is larger. I am going to find several Reddit highly related community pairs that have big data sizes.
+</p>
+<p>
+ I am going to compare the following things of different communities to check if they are highly related.
+</p>
+<list style="ordered">
+ <li>
+  <p>
+   Jaccard similarity between the set of links to capture similarity based on links
+  </p>
+ </li>
+ <li>
+  <p>
+   Jensen-Shannon divergence between topic distributions
+  </p>
+ </li>
+ <li>
+  <p>
+   Fightin' words
+  </p>
+ </li>
+</list>
+<p>
+ If I have additional time, I want to check if the frequency of lexical innovation is related to if the word is easily accessible.
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Heather Zheng (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   1.  i emailed Jack Hessel, and got topic similarity and link similarity score from his paper "Science, AskScience, and BadScience." But since this paper only focused on the highly related communities based on the affix, I wrote the code to get link similarity score. For the topic score, it needs to build topic model based on the whole Reddit Dataset which needs too much computational resources, I decided to not get the score just for now.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   2.
- </paragraph>
+ </p>
  <figure>
   <image height="280.2230971128609" src="https://static.us.edusercontent.com/files/VmM6WNaNkvggYmBzLqejCcO6" width="655"/>
  </figure>
- <paragraph>
+ <p>
   I compared two sub-communities pairs:
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     From fighting words, we can see electronics and AskElectronics have more words in common. However, AskMen and AskWomen shares more lexical innovation.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     electronics vs AskElectronics
-   </paragraph>
+   </p>
    <list style="bullet">
-    <list-item>
-     <paragraph>
+    <li>
+     <p>
       Observation: Though AskElectronics has 98% topic similarity with Electronics(statistics from Jack). By the community rules of Electronics: "Do not post questions on designing, repairing or troubleshooting electronic circuits (including questions on tools, equipment and parts sourcing) - these go in /r/AskElectronics." The function of these two subreddit is totally separate.
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
+     </p>
+    </li>
+    <li>
+     <p>
       Fighting words:
-     </paragraph>
+     </p>
      <list style="bullet">
-      <list-item>
-       <paragraph>
+      <li>
+       <p>
         top words in electronics: link, below, please, instead, do, contact, not, click, moderators, report
-       </paragraph>
-      </list-item>
-      <list-item>
-       <paragraph>
+       </p>
+      </li>
+      <li>
+       <p>
         top words in AskElectronics: voltage, current, is, to, power, output, input, resistor, supply, battery
-       </paragraph>
-      </list-item>
+       </p>
+      </li>
      </list>
-    </list-item>
+    </li>
    </list>
-  </list-item>
+  </li>
  </list>
- <paragraph>
- </paragraph>
  <figure>
   <image height="410.470782800441" src="https://static.us.edusercontent.com/files/ItazLqjdP2rhQzEEfhr3pTUy" width="643"/>
  </figure>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     AskMen vs AskWomen
-   </paragraph>
-  </list-item>
-  <list-item>
+   </p>
+  </li>
+  <li>
    <list style="bullet">
-    <list-item>
-     <paragraph>
+    <li>
+     <p>
       Fighting Words:
-     </paragraph>
+     </p>
      <list style="bullet">
-      <list-item>
-       <paragraph>
+      <li>
+       <p>
         top words in AskMen: you, her, your, she, girl, is, gt
-       </paragraph>
-      </list-item>
-      <list-item>
-       <paragraph>
+       </p>
+      </li>
+      <li>
+       <p>
         top words in AskWomen: i, my, was, askwomen, me
-       </paragraph>
-      </list-item>
+       </p>
+      </li>
      </list>
-    </list-item>
+    </li>
    </list>
-  </list-item>
+  </li>
  </list>
  <figure>
   <image height="455.94545454545454" src="https://static.us.edusercontent.com/files/vIecl92JYa9xnA7IE1C0532N" width="643"/>
  </figure>
- <paragraph>
- </paragraph>
- <paragraph>
+ <p>
   Questions:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   1. Possible next step to do is to explore what kinds words will be widely accepted. But is it enough to just look at several related subreddit community instead of the whole Reddit?
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   2. How to define highly related community? Do I need to rerun the topic model and see if two communities have the similar topic distribution?  For the example above, is electronics and AskElectronics more related or AskMen and Askwomen more related?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  1. It is totally fine to just look at several related subreddits --- pilot study first, "all" of one's data later!
-  <break>
-  </break>
-  <break>
-  </break>
-  2. I think it would be too expensive to create topic models for many communities for too little bang for the buck and you can go by the suffix/prefixes in the "Badscience" paper; that is, I think it's fine to treat both the Ask/Electronics pair as highly related, and the AskWo/Men pair as highly related.  (Contrast this with the pair Electronics  and AskMen).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Heather Zheng (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi Lillian, thank you so much for your suggestions. I just have one more question related to how to analyze the observation from maybe the sociological or linguistics side. For example, askscience and science talk about similar topics but with different perspectives; askmen and askwomen are different in the topic but have similar lexical innovation.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Let's see; this question is in relation to your hypothesis "Hypothesis 2: Lexical innovation of highly related communities evolves together.", is that right?
-  <break>
-  </break>
-  <break>
-  </break>
-  From the perspective of that hypothesis, what kind of related community were you thinking of?  Topic (like askscience and science) or "format" (open Q&amp;A like askmen and askwomen vs, say, CMV)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   1. It is totally fine to just look at several related subreddits --- pilot study first, "all" of one's data later!
+   <break>
+   </break>
+   <break>
+   </break>
+   2. I think it would be too expensive to create topic models for many communities for too little bang for the buck and you can go by the suffix/prefixes in the "Badscience" paper; that is, I think it's fine to treat both the Ask/Electronics pair as highly related, and the AskWo/Men pair as highly related.  (Contrast this with the pair Electronics  and AskMen).
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Heather Zheng (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Hi Lillian, thank you so much for your suggestions. I just have one more question related to how to analyze the observation from maybe the sociological or linguistics side. For example, askscience and science talk about similar topics but with different perspectives; askmen and askwomen are different in the topic but have similar lexical innovation.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Prof. Lee (she/they) (admin)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Let's see; this question is in relation to your hypothesis "Hypothesis 2: Lexical innovation of highly related communities evolves together.", is that right?
+     <break>
+     </break>
+     <break>
+     </break>
+     From the perspective of that hypothesis, what kind of related community were you thinking of?  Topic (like askscience and science) or "format" (open Q&amp;A like askmen and askwomen vs, say, CMV)
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

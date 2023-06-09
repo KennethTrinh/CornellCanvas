@@ -13,44 +13,42 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Seeing multiple posts on assertion throw in the last couple of hours, I was curious do we MUST test for assertion error scenarios?
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  I have only tested this way assertEquals(expected, method insert) and I already have 4/5 test scenarios for the methods. So, do I need to add the assertion error cases too?
- </paragraph>
-</document>
+<p>
+ Seeing multiple posts on assertion throw in the last couple of hours, I was curious do we MUST test for assertion error scenarios?
+ <break>
+ </break>
+</p>
+<p>
+ I have only tested this way assertEquals(expected, method insert) and I already have 4/5 test scenarios for the methods. So, do I need to add the assertion error cases too?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jessica Tweneboah (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jessica Tweneboah (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Yes you need to add assertion error cases as well.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   For instance, given for the following function (from the recitation 2 handout):
- </paragraph>
+ </p>
  <pre>boolean equals(Time t) {
     assert t != null;
     return …;
 }
 </pre>
- <paragraph>
+ <p>
   The test looks like this:
- </paragraph>
+ </p>
  <pre>Time t= new Time(3, 30); 
 assertThrows(AssertionError.class, t.equals(null)); 
 </pre>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

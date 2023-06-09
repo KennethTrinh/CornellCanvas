@@ -13,70 +13,68 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="321.24271844660194" src="https://static.us.edusercontent.com/files/Kji8JWPu5TjsKUyqXxb1u5ku" width="658"/>
- </figure>
- <paragraph>
-  Can someone explain why u=k here?
- </paragraph>
-</document>
+<figure>
+ <image height="321.24271844660194" src="https://static.us.edusercontent.com/files/Kji8JWPu5TjsKUyqXxb1u5ku" width="658"/>
+</figure>
+<p>
+ Can someone explain why u=k here?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bahaa Kotb (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   u is to the left of the line, k is to the left of the line, the unknown region is decreasing in size (think of this as a sliding window) and we keep decreasing u by 1 until there’s no more unknown and the b[h..u] region represents the unknown region, we know this from the invariant, so to satisfy the precondition u must = k
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Why is it okay for t to be like "beyond the boundary"?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  t is on the right of the line and you want b[t…k] to be empty initially so t must be k+1 so that your precondition is b[k+1..k] which is an empty array since it has 0 elements (k+1 - (k+1) elements)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  thank you so much!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Why is it okay for t to be like "beyond the boundary"?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Bahaa Kotb (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    t is on the right of the line and you want b[t…k] to be empty initially so t must be k+1 so that your precondition is b[k+1..k] which is an empty array since it has 0 elements (k+1 - (k+1) elements)
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     thank you so much!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

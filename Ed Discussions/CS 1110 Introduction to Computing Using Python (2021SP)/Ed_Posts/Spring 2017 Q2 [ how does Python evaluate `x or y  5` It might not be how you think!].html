@@ -13,33 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <callout type="info">
-  Put in your question title the year, semester, and question.  Ideal would also be to include the topic.   Example: 2018SP Q2(b) - call frames
- </callout>
- <callout type="info">
-  Include a screenshot of the question, so readers/answerers don't have to go find the relevant pdf.
- </callout>
- <figure>
-  <image height="373.0555990602976" src="https://static.us.edusercontent.com/files/H8NCy84pQqjaeZwY1MFUOPl9" width="658"/>
- </figure>
- <paragraph>
-  Why would Python enter the "if" statement in line 15 in this case? Doesn't self.topDisk() return 1, isEmpty evaluate to True which is mathematically equal to 1, and to.topDisk() return None because to.disks is an empty list? How are isEmpty or to.topDisk() greater than self.topDisk() ?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<callout type="info">
+ Put in your question title the year, semester, and question.  Ideal would also be to include the topic.   Example: 2018SP Q2(b) - call frames
+</callout>
+<callout type="info">
+ Include a screenshot of the question, so readers/answerers don't have to go find the relevant pdf.
+</callout>
+<figure>
+ <image height="373.0555990602976" src="https://static.us.edusercontent.com/files/H8NCy84pQqjaeZwY1MFUOPl9" width="658"/>
+</figure>
+<p>
+ Why would Python enter the "if" statement in line 15 in this case? Doesn't self.topDisk() return 1, isEmpty evaluate to True which is mathematically equal to 1, and to.topDisk() return None because to.disks is an empty list? How are isEmpty or to.topDisk() greater than self.topDisk() ?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   <break>
   </break>
   Ah!  I understand your question:
@@ -66,8 +62,8 @@
   ( A &lt; 5) or (B &lt; 5)
   <break>
   </break>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   So,  since isEmpty is True (in the
   <code>
    move()
@@ -75,8 +71,8 @@
   call frame), the condition "isEmpty or ..." short-circuits to True (Python doesn't have to evaluate topDisk()), and so line 16 is entered.
   <break>
   </break>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

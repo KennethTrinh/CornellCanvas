@@ -13,136 +13,130 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Here's what I'll do in the following week:
- </paragraph>
- <list style="number">
-  <list-item>
-   <paragraph>
-    Extend feasibility test 2 by grouping discussions by length. This will control for the correlation between debate length and "divisiveness," allowing us to determine whether herd votes are present without this confounder.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Set up a binary classification pipeline for predicting whether the next vote will be "keep" or "delete" based on the existing votes. Measuring the importance of various language features will tell us what the most important factors are in determining someone's vote.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Compute the following features for previous votes to feed into the classifier (Linda will work on computing others):
-   </paragraph>
-   <list style="number">
-    <list-item>
-     <paragraph>
-      Simple features:
-     </paragraph>
-     <list style="bullet">
-      <list-item>
-       <paragraph>
-        Proportion of previous votes that are deletes
-       </paragraph>
-      </list-item>
-      <list-item>
-       <paragraph>
-        Total number of previous votes
-       </paragraph>
-      </list-item>
-      <list-item>
-       <paragraph>
-        Average length of previous keep &amp; delete votes
-       </paragraph>
-      </list-item>
-     </list>
-    </list-item>
-    <list-item>
-     <paragraph>
-      Average sentiment score (from VADER in nltk) of previous keep &amp; delete votes
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      Frequency of "per [user]" votes in keep &amp; delete votes
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
- </list>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Kiran Tomlinson (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ Here's what I'll do in the following week:
+</p>
+<list style="number">
+ <li>
+  <p>
+   Extend feasibility test 2 by grouping discussions by length. This will control for the correlation between debate length and "divisiveness," allowing us to determine whether herd votes are present without this confounder.
+  </p>
+ </li>
+ <li>
+  <p>
+   Set up a binary classification pipeline for predicting whether the next vote will be "keep" or "delete" based on the existing votes. Measuring the importance of various language features will tell us what the most important factors are in determining someone's vote.
+  </p>
+ </li>
+ <li>
+  <p>
+   Compute the following features for previous votes to feed into the classifier (Linda will work on computing others):
+  </p>
+  <list style="number">
+   <li>
+    <p>
+     Simple features:
+    </p>
+    <list style="bullet">
+     <li>
+      <p>
+       Proportion of previous votes that are deletes
+      </p>
+     </li>
+     <li>
+      <p>
+       Total number of previous votes
+      </p>
+     </li>
+     <li>
+      <p>
+       Average length of previous keep &amp; delete votes
+      </p>
+     </li>
+    </list>
+   </li>
+   <li>
+    <p>
+     Average sentiment score (from VADER in nltk) of previous keep &amp; delete votes
+    </p>
+   </li>
+   <li>
+    <p>
+     Frequency of "per [user]" votes in keep &amp; delete votes
+    </p>
+   </li>
+  </list>
+ </li>
+</list>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kiran Tomlinson (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   1. I corrected for length by averaging vote-with-majority curves across vote lengths. Specifically, I first grouped debates by vote count and computed the fraction of times a vote in position
-  <italic>
+  <i>
    i
-  </italic>
+  </i>
   agrees with the majority vote before position
-  <italic>
+  <i>
    i
-  </italic>
+  </i>
   . Then, I averaged rates for each position across vote lengths. This isolates the differences in agreement rates across debate lengths. This correction dramatically reduced the effect observed in the initial feasibility check: agreement rate gradually drops from 50% at position 2 to 40% at position 50. This indicates that most of the observed signal in the original finding was driven by the large amount of consensus in shorter debates.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   2. I implemented binary classification using statsmodels Logit(), which makes computing significance of regression coefficients very convenient.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   3. I computed the features listed above, although identifying "per [user]"  was trickier than I expected: the "per [x]" construction is used in at least three ways in the data:
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     "Per nom": per the nomination--i.e., the voter agrees with the rationale for deletion in the nomination
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     "Per [wikipedia policy]": the voter is citing a policy to support or oppose deletion
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     "Per [user]": the name of the user references may be in the form of a wikipedia link, the plaintext of a username, or even a shortening of a username.
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
+ <p>
   Since distinguishing between these is tricky (especially when voters use a shortening of a policy or username), I decided just to count instances of "per nom", which is much more consistent.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   With the features I implemented, the binary classifier gets 70-75% vote prediction accuracy on a held-out set using the previous vote features. Unsurprisingly, the fraction of prior "delete' votes is the strongest predictor, but all other features also had statistically significant coefficients.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I like the correction described in point 1.
-  <break>
-  </break>
-  <break>
-  </break>
-  About the "Per [wikipedia policy]" issue": some can be caught by the explicit "WP" (that abbreviation) mention, perhaps.  I also have a suspicion that someone in the world, perhaps even as a page on Wikipedia, may have a list of common/important policies.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I like the correction described in point 1.
+   <break>
+   </break>
+   <break>
+   </break>
+   About the "Per [wikipedia policy]" issue": some can be caught by the explicit "WP" (that abbreviation) mention, perhaps.  I also have a suspicion that someone in the world, perhaps even as a page on Wikipedia, may have a list of common/important policies.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

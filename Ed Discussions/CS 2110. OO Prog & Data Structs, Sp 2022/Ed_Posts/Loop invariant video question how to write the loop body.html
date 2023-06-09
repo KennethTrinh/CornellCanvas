@@ -13,130 +13,122 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I was watching the 1st video for the third/fourth loopy questions on CMS. On exercise 1, I'm confused why we need to add a value to s to keep invariant P true. How does adding to s work to keep the invariant P true? And how do we determine what to add to s to keep invariant P true?
- </paragraph>
- <figure>
-  <image height="130.79905437352247" src="https://static.us.edusercontent.com/files/5Y8rCieavgrN3wWHr42qXnd6" width="416"/>
- </figure>
- <figure>
-  <image height="40.75675675675676" src="https://static.us.edusercontent.com/files/KcsopUM1ad1fyc5hf7xGn7aH" width="416"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I was watching the 1st video for the third/fourth loopy questions on CMS. On exercise 1, I'm confused why we need to add a value to s to keep invariant P true. How does adding to s work to keep the invariant P true? And how do we determine what to add to s to keep invariant P true?
+</p>
+<figure>
+ <image height="130.79905437352247" src="https://static.us.edusercontent.com/files/5Y8rCieavgrN3wWHr42qXnd6" width="416"/>
+</figure>
+<figure>
+ <image height="40.75675675675676" src="https://static.us.edusercontent.com/files/KcsopUM1ad1fyc5hf7xGn7aH" width="416"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Suppose k = K.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   P is: s = sum of k..n-1, which is s= sum of K..n-1.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Now decrease k by 1. Then should equal sum of K-1..n-1.
   <break>
   </break>
   But it doesn't, it equals sum of K..n-1
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   sum of K-1..n-1
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   =
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   K-1 + sum of K..n-1
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I'm still confused... by this part:
- </paragraph>
- <paragraph>
-  <italic>
-   But it doesn't, it equals sum of K..n-1
-  </italic>
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    So, we need to fix it so that the sum is K..n-1? from my understanding?
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  <italic>
-   sum of K-1..n-1
-  </italic>
- </paragraph>
- <paragraph>
-  <italic>
-   =
-  </italic>
- </paragraph>
- <paragraph>
-  <italic>
-   K-1 + sum of K..n-1
-  </italic>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Does s have to be the same at the beginning and end of the execution? So, we have to adjust s to be correct?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes, if you change k, you have to change s because this assertion must be kept true:
- </paragraph>
- <paragraph>
-  s = sum of k..n-
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  But how does adding K-1 to sum of K..n-1 "fix" the invariant and make it true? I don't get it.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I'm still confused... by this part:
+  </p>
+  <p>
+   <i>
+    But it doesn't, it equals sum of K..n-1
+   </i>
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     So, we need to fix it so that the sum is K..n-1? from my understanding?
+    </p>
+   </li>
+  </list>
+  <p>
+   <i>
+    sum of K-1..n-1
+   </i>
+  </p>
+  <p>
+   <i>
+    =
+   </i>
+  </p>
+  <p>
+   <i>
+    K-1 + sum of K..n-1
+   </i>
+  </p>
+  <p>
+   Does s have to be the same at the beginning and end of the execution? So, we have to adjust s to be correct?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: David Gries (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Yes, if you change k, you have to change s because this assertion must be kept true:
+   </p>
+   <p>
+    s = sum of k..n-
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     But how does adding K-1 to sum of K..n-1 "fix" the invariant and make it true? I don't get it.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

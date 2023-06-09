@@ -13,97 +13,89 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hello!
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  According to the test case print, ARCH 1120 MWF 8am-8pm is not supposed to conflict with anything but our code finds a conflict with AEP 3567 MWF 9:05-9:55am which we thought is supposed to be a conflict.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Are we not supposed to put these time conflicts within the roster warning list?
- </paragraph>
-</document>
+<p>
+ Hello!
+</p>
+<p>
+ According to the test case print, ARCH 1120 MWF 8am-8pm is not supposed to conflict with anything but our code finds a conflict with AEP 3567 MWF 9:05-9:55am which we thought is supposed to be a conflict.
+</p>
+<p>
+ Are we not supposed to put these time conflicts within the roster warning list?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Elisabeth Finkel (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Elisabeth Finkel (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   If the assert that is failing is the one on line 256, it might be because (copied from test file) -
- </paragraph>
+ </p>
  <pre>    # `roster` should only have a warning that the time changed, because it is a
     # Schedule and so doesn't need warnings about time conflicts
 </pre>
- <paragraph>
+ <p>
   so StudentSchedules and normal Schedules should have different behavior in this case.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If your code is failing in a different test case, let us know which
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi! So does that mean we have to add the warning to the student Schedule list of warnings not the normal schedule?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The Course.in_schedule is student schedules right?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Regular Schedules don't care if there's course conflicts; StudentSchedules do and so warnings of course conflicts should be placed in StudentSchedules, but not Schedules.
-  <break>
-  </break>
-  <break>
-  </break>
-  See the a6_in_action results in the A6 handout: there are fewer warnings in the StudentSchedule "My Plan A" than there are in the Schedule "Cornell Fall 21 roster"
-  <break>
-  </break>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Hi! So does that mean we have to add the warning to the student Schedule list of warnings not the normal schedule?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    The Course.in_schedule is student schedules right?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Prof. Lee (she/they) (admin)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Regular Schedules don't care if there's course conflicts; StudentSchedules do and so warnings of course conflicts should be placed in StudentSchedules, but not Schedules.
+     <break>
+     </break>
+     <break>
+     </break>
+     See the a6_in_action results in the A6 handout: there are fewer warnings in the StudentSchedule "My Plan A" than there are in the Schedule "Cornell Fall 21 roster"
+     <break>
+     </break>
+     <break>
+     </break>
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

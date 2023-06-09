@@ -13,28 +13,26 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  In general, what is the difference between a test set and a validation set?
- </paragraph>
-</document>
+<p>
+ In general, what is the difference between a test set and a validation set?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Victor Butoi (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Victor Butoi (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Test set is a portion of your data that is set aside until the very end of your training cycle, that you never see until you need to know how well your model generalizes to the real distribution.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Validation set is something that you do not train on, ie doesn't update model weights or parameters, but you evaluate trained models on so that you can tune hyperparameters- because the implicit belief is that there exists a best set of hyperparameters for you given problem, but that if you were to find these using your test set, then the hyperparameters would overfit that test data and it wouldn't represent accuractly how well the model generalizes.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

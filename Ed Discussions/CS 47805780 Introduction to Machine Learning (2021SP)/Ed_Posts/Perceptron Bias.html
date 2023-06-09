@@ -13,25 +13,23 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  Because the perceptron function outputs the weight vector and bias term, I'm assuming that we are not looking for a homogeneous linear classifier. My question is how are we supposed to calculate the bias? Are we supposed to find the margin and calculate the bias from that?
- </paragraph>
-</document>
+<p>
+ Because the perceptron function outputs the weight vector and bias term, I'm assuming that we are not looking for a homogeneous linear classifier. My question is how are we supposed to calculate the bias? Are we supposed to find the margin and calculate the bias from that?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Scott Bass (student)
-</h3>
-<h3>
- Vote Count: 11
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Scott Bass (student)
+ </h3>
+ <h3>
+  Vote Count: 11
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   You have to add an extra dimension to the training examples and to your weight vector to turn the non-homogenous problem into a homogenous one. So,
   <code>
    w' = (w, b)
@@ -65,52 +63,50 @@
    b = w'[d]
   </code>
   .
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jun Chang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Why does w have to be 1x(d+1) and not 0x(d+1). I thought the perceptron algorithm started w as a 0 vector.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Richard Wang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Could you elaborate on this? What does it mean for bias to be the last element of the weight vector?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Yana Sang (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
-  I think this means that in the final weight vector, the last element is the value for the b. Since we extend the dimensions by 1, there's no "real" feature that the last element in the weight vector corresponds to -- we just take it as the value of b.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Richard Wang (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Could you elaborate on this? What does it mean for bias to be the last element of the weight vector?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Yana Sang (student)
+   </h3>
+   <h3>
+    Vote Count: 2
+   </h3>
+   <p>
+    I think this means that in the final weight vector, the last element is the value for the b. Since we extend the dimensions by 1, there's no "real" feature that the last element in the weight vector corresponds to -- we just take it as the value of b.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Jun Chang (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Why does w have to be 1x(d+1) and not 0x(d+1). I thought the perceptron algorithm started w as a 0 vector.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

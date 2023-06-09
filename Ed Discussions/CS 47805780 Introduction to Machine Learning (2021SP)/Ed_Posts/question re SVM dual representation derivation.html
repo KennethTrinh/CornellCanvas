@@ -13,75 +13,75 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <figure>
-  <image height="368.7387640449438" src="https://static.us.edusercontent.com/files/R3mVIAXPLTix351KhTILRrKJ" width="658"/>
- </figure>
- <paragraph>
-  Our optimization problem started as a minimization of our objective function, but then, once we introduced our Lagrange multipliers, we ended up adding a maximization to our objective function (now summed up with the constraints). How do we know that we want to maximize this resulting objective function?
- </paragraph>
-</document>
+<figure>
+ <image height="368.7387640449438" src="https://static.us.edusercontent.com/files/R3mVIAXPLTix351KhTILRrKJ" width="658"/>
+</figure>
+<p>
+ Our optimization problem started as a minimization of our objective function, but then, once we introduced our Lagrange multipliers, we ended up adding a maximization to our objective function (now summed up with the constraints). How do we know that we want to maximize this resulting objective function?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Basically what's going on here is that the outer min is choosing a w such that (1-y_i(w*x_i)) &lt;= 0 for all i, else you could pick an infinitely large alpha_i for the corresponding point i; effectively a_i is just encoding an enforcement of the linear constraint without the use of a s.t. term.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Wait, so do we want to choose a small or large alpha_i?
- </paragraph>
- <paragraph>
-  Also, why do we add the "max" into the optimization problem?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The max will either choose infinite or 0 alpha, depending on the value of the rest of the term, which is what forces the min to choose a good w. The max is effectively just the algorithm's way of encoding the y(wx+b)&gt;=... constraint implicitly.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Thorsten Joachims (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Thorsten Joachims (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You might also take a look at 7.2 of
-  <link href="https://mml-book.github.io/book/mml-book.pdf"/>
-  https://mml-book.github.io/book/mml-book.pdf, which provides a nice intro to Lagrange multipliers.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+  <a href="https://mml-book.github.io/book/mml-book.pdf">
+   https://mml-book.github.io/book/mml-book.pdf
+  </a>
+  , which provides a nice intro to Lagrange multipliers.
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Michael Noor (staff)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Basically what's going on here is that the outer min is choosing a w such that (1-y_i(w*x_i)) &lt;= 0 for all i, else you could pick an infinitely large alpha_i for the corresponding point i; effectively a_i is just encoding an enforcement of the linear constraint without the use of a s.t. term.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Wait, so do we want to choose a small or large alpha_i?
+   </p>
+   <p>
+    Also, why do we add the "max" into the optimization problem?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Michael Noor (staff)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     The max will either choose infinite or 0 alpha, depending on the value of the rest of the term, which is what forces the min to choose a good w. The max is effectively just the algorithm's way of encoding the y(wx+b)&gt;=... constraint implicitly.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

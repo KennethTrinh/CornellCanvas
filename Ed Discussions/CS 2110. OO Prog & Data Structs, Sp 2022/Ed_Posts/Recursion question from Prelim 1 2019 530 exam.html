@@ -13,155 +13,145 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Could someone explain why F(0) was called?
- </paragraph>
- <paragraph>
-  Below is my thought process..
- </paragraph>
- <paragraph>
-  n is 3 starting with function call 3
- </paragraph>
- <paragraph>
-  then because n is 3 which is not 0 or 1, F(2) is called
- </paragraph>
- <paragraph>
-  then because n is 2 which is not 0 or 1, F(1) is called
- </paragraph>
- <paragraph>
-  now because n is 1, the value 1 is returned and F(n-2) now needs to get evaluated.
- </paragraph>
- <paragraph>
-  This means F(1) is called again.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  ^^ this is my thinking.. I'm not sure where F(0) comes from?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
- <figure>
-  <image height="163.3846153846154" src="https://static.us.edusercontent.com/files/wNUSDkMiWqvvdrGVP704CDrV" width="531"/>
- </figure>
-</document>
+<p>
+ Could someone explain why F(0) was called?
+</p>
+<p>
+ Below is my thought process..
+</p>
+<p>
+ n is 3 starting with function call 3
+</p>
+<p>
+ then because n is 3 which is not 0 or 1, F(2) is called
+</p>
+<p>
+ then because n is 2 which is not 0 or 1, F(1) is called
+</p>
+<p>
+ now because n is 1, the value 1 is returned and F(n-2) now needs to get evaluated.
+</p>
+<p>
+ This means F(1) is called again.
+</p>
+<p>
+ ^^ this is my thinking.. I'm not sure where F(0) comes from?
+</p>
+<figure>
+ <image height="163.3846153846154" src="https://static.us.edusercontent.com/files/wNUSDkMiWqvvdrGVP704CDrV" width="531"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bahaa Kotb (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   F(3) results in F(2) and F(1) (this is the last F(1) in the chain in the solution) being called, F(2) results in F(1) and F(0) being called
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Could you explain further?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="1.0">
- <paragraph>
-  Sure, so F(3) doesn’t enter our base case so instead goes into the F(n-1) call, which would call F(2) which doesn’t go into any of the base cases, so this calls F(n-1) =  F(1) which does enter a base case, then the second part of the return statement is executed for the F(2) call which is F(n-2) = F(0) which enters a base case, then we go back to F(3) and do the call on F(n-2) = F(1) which enters a base case so we’re done.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  In the second part of the return statement, why is n=2?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Because it’s the call of F(2) and our argument is n so n=2 (at least I think this is what you’re asking)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Why is the call F(2) at this point?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="1.0">
- <paragraph>
-  if you remember call frames from 1110 i highly recommend you use it here, makes it way clearer if you cant picture it
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="1.0">
- <paragraph>
-  because F(n-1) = F(1) finished executing so we pop the F(1) call off the stack and continue our call on F(2) which still has F(n-2)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Could you explain further?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Bahaa Kotb (student)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Sure, so F(3) doesn’t enter our base case so instead goes into the F(n-1) call, which would call F(2) which doesn’t go into any of the base cases, so this calls F(n-1) =  F(1) which does enter a base case, then the second part of the return statement is executed for the F(2) call which is F(n-2) = F(0) which enters a base case, then we go back to F(3) and do the call on F(n-2) = F(1) which enters a base case so we’re done.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     In the second part of the return statement, why is n=2?
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Bahaa Kotb (student)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      Because it’s the call of F(2) and our argument is n so n=2 (at least I think this is what you’re asking)
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 12em;">
+      <h3>
+       Author: Anonymous
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       Why is the call F(2) at this point?
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 14em;">
+       <h3>
+        Author: Bahaa Kotb (student)
+       </h3>
+       <h3>
+        Vote Count: 1
+       </h3>
+       <p>
+        because F(n-1) = F(1) finished executing so we pop the F(1) call off the stack and continue our call on F(2) which still has F(n-2)
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+       <div style="text-indent: 14em;">
+        <h3>
+         Author: Bahaa Kotb (student)
+        </h3>
+        <h3>
+         Vote Count: 1
+        </h3>
+        <p>
+         if you remember call frames from 1110 i highly recommend you use it here, makes it way clearer if you cant picture it
+        </p>
+        <h3>
+         ------------------------------------
+        </h3>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

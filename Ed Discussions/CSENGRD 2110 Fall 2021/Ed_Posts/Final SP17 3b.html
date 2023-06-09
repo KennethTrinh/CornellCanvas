@@ -13,163 +13,151 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Does anyone know how to get the result they have here?
-  <break>
-  </break>
-  I keep getting 26, 16, 12, 7, 18, 19, 23, 24
- </paragraph>
- <figure>
-  <image height="267.9532577903683" src="https://static.us.edusercontent.com/files/6Kv1jdKPgXX4YRgIuzPsLK61" width="658"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Does anyone know how to get the result they have here?
+ <break>
+ </break>
+ I keep getting 26, 16, 12, 7, 18, 19, 23, 24
+</p>
+<figure>
+ <image height="267.9532577903683" src="https://static.us.edusercontent.com/files/6Kv1jdKPgXX4YRgIuzPsLK61" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andrew Chen (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew Chen (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   First, sanity check. Values after the partition should be &gt;= to pivot value. Values before the partition should be &lt;= to pivot value.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Sounds like you're going off the implementation here:
-  <link href="https://www.cs.cornell.edu/courses/JavaAndDS/files/sort2partition.pdf"/>
-  https://www.cs.cornell.edu/courses/JavaAndDS/files/sort2partition.pdf. I believe your error lies in misinterpreting the post condition. Remember that we loop until the condition (t &lt;= j) is no longer true(meaning we stop when t &gt; j). I'll reference it in my answer, and put how the variables progress throughout. Maybe that will help you find your mistake:
- </paragraph>
- <paragraph>
+  <a href="https://www.cs.cornell.edu/courses/JavaAndDS/files/sort2partition.pdf">
+   https://www.cs.cornell.edu/courses/JavaAndDS/files/sort2partition.pdf
+  </a>
+  . I believe your error lies in misinterpreting the post condition. Remember that we loop until the condition (t &lt;= j) is no longer true(meaning we stop when t &gt; j). I'll reference it in my answer, and put how the variables progress throughout. Maybe that will help you find your mistake:
+ </p>
+ <p>
   {18, 23, 12, 7, 26, 19, 16, 24}
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   b[h] = 18; t = 1; j = 7;
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Steps:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   ----begin loop
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   (j = 6)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   swap b[t] and b[j]; (t = 2, j = 5)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   (t = 3, j = 5)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   (t = 4, j = 5)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   (t = 4, j = 4)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   (t = 4, j = 3)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   ----end of loop
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   swap b[h] and b[j]
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   End up with
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   {7, 16, 12,
-  <bold>
+  <b>
    18
-  </bold>
+  </b>
   , 26, 19, 23, 24}
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  For the 2nd part of the question, are they counting the call stacks for the partition process above and then counting the call stacks for the larger partition to maximize the recursive count?
- </paragraph>
- <paragraph>
-  Or does the whole process above count as one call stack?
- </paragraph>
- <paragraph>
-  Thanks
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew Chen (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The partition process is iterative and is included within each recursive call to quicksort (call 1, call 2, call 3, call 4), so you wouldn't count it separately from the quickSort() calls.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Right, but wasn't call one for the partition?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew Chen (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Not
-  <italic>
-   just
-  </italic>
-  the partition algorithm. Call1 is the initial call to quickSort(), and the function body here includes the partition algorithm and a recursive call to quickSort() again, this time with a smaller partition(call2).
- </paragraph>
- <paragraph>
-  Think about it like someone else had to call quickSort() first. And that initial call was call1, where we pushed a frame onto the call stack for this call. Call1 included a partition algorithm + recursive calls, therefore invoking call2, which repeats this process again and so on...
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   For the 2nd part of the question, are they counting the call stacks for the partition process above and then counting the call stacks for the larger partition to maximize the recursive count?
+  </p>
+  <p>
+   Or does the whole process above count as one call stack?
+  </p>
+  <p>
+   Thanks
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Andrew Chen (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    The partition process is iterative and is included within each recursive call to quicksort (call 1, call 2, call 3, call 4), so you wouldn't count it separately from the quickSort() calls.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Right, but wasn't call one for the partition?
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Andrew Chen (student)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      Not
+      <i>
+       just
+      </i>
+      the partition algorithm. Call1 is the initial call to quickSort(), and the function body here includes the partition algorithm and a recursive call to quickSort() again, this time with a smaller partition(call2).
+     </p>
+     <p>
+      Think about it like someone else had to call quickSort() first. And that initial call was call1, where we pushed a frame onto the call stack for this call. Call1 included a partition algorithm + recursive calls, therefore invoking call2, which repeats this process again and so on...
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

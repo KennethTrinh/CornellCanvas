@@ -13,60 +13,56 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  If A is similar to B,  is ||A-I||=||B-I|| ?  Why?
- </paragraph>
- <paragraph>
-  If not, what about when B is diagonal?
- </paragraph>
-</document>
+<p>
+ If A is similar to B,  is ||A-I||=||B-I|| ?  Why?
+</p>
+<p>
+ If not, what about when B is diagonal?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Reyer Sjamaar (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Reyer Sjamaar (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   No: $A=SBS^{-1}$ does not imply $\|A\|=\|B\|$ (Hilbert-Schmidt norm).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Recall $\|A\|^2=\operatorname{trace}(A^*A)$. If $A=SBS^{-1}$, then $A^*A=(S^{-1})^*B^*S^*SBS^{-1}$, so using $\operatorname{trace}(AB)=\operatorname{trace}(BA)$ we get
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $$\|A\|^2=\operatorname{trace}(A^*A)=\operatorname{trace}((S^{-1})^*B^*S^*SBS^{-1})= \operatorname{trace}(B^*S^*
-  <italic>
+  <i>
    SB(S^*S
-  </italic>
+  </i>
   )^{-1}).$$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   So $\|A\|=\|B\|$ if $S$ is unitary ($S^*S=I$), but not for general invertible $S$, not even if $B$ is diagonal.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   For instance, if $B=\begin{pmatrix}\lambda_1&amp;\\&amp;\lambda_2\end{pmatrix}$ and $S=\begin{pmatrix}1&amp;1\\&amp;1\end{pmatrix}$, then $A=\begin{pmatrix}\lambda_1&amp;-\lambda_1+\lambda_2\\&amp;\lambda_2\end{pmatrix}$, so $\|B\|^2=|\lambda_1|^2+|\lambda_2|^2$, whereas $\|A\|^2=|\lambda_1|^2+|\lambda_1-\lambda_2|^2+|\lambda_2|^2$.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you, Professor. I really appreciate it.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you, Professor. I really appreciate it.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

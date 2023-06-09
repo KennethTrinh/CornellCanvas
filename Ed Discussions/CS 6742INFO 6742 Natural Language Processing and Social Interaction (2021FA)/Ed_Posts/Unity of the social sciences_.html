@@ -13,206 +13,196 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  <underline>
-   Unity of the Social Sciences?
-  </underline>
- </paragraph>
- <paragraph>
-  Benjamin Rosche – Assignment 2
- </paragraph>
- <paragraph>
-  Economics and sociology are often described as two fundamentally different social sciences. Economics is often described as the study of rational action, focusing on the efficient allocation of scarce resources. Sociology, by contrast, is often described as the study of nonrational behavior, focusing on topics, such as norms and biases.
- </paragraph>
- <paragraph>
-  In this project, I would like to use data from the digital library JSTOR to study how research topics in economics and sociology are co-evolving over time. The main language features used in this analysis would be the co-occurrence of keywords in the research articles in economics and sociology.
- </paragraph>
- <paragraph>
-  <bold>
-   Data
-  </bold>
- </paragraph>
- <paragraph>
-  The digital library JSTOR allows text-mining their data for research (
-  <link href="https://about.jstor.org/whats-in-jstor/text-mining-support/"/>
-  data for research; dfr).
- </paragraph>
- <paragraph>
-  They offer more than 12 Mio. documents going back until 1700 (
-  <link href="https://constellate.org/docs/data-sources/#jstor"/>
-  Source):
- </paragraph>
- <figure>
-  <image height="150" src="https://static.us.edusercontent.com/files/lOXBcsfKgv4SeXkhhbzXDHsI" width="267"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
-  For sociology and economics, however, most data are from 1960 onward.
- </paragraph>
- <paragraph>
-  The available content varies by type: early journal content, open access books, and research reports are available in full text. For all other types, the documents’ metadata are available, which includes date published, title, author, abstract, journal, and publisher.
- </paragraph>
- <figure>
-  <image height="158" src="https://static.us.edusercontent.com/files/JtSygluxNRwUje4wIPbmUu3s" width="340"/>
- </figure>
- <paragraph>
-  (
-  <link href="https://constellate.org/docs/data-sources/#jstor"/>
-  Source)
- </paragraph>
- <paragraph>
-  I still need to determine whether it will be possible to use the full text of each document for both disciplines over a reasonable timeframe or whether this is only possible for abstracts.
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  <bold>
-   Methodological strategies and preliminary objectives
-  </bold>
- </paragraph>
- <paragraph>
-  I have not fully fleshed out which of the following analyses will make the most sense as doing them all might not be feasible.
- </paragraph>
- <paragraph>
-  1. Building on Prabhakaran et al. (2016), I will identify key topics in each of the two disciplines using topic modeling (LDA). Then, using the K-spectral centroid algorithm (Yang and Leskovec 2011), I will group the popularity trajectories of those topics into 3-5 clusters (growing, declining, stagnating, …).
- </paragraph>
- <paragraph>
-  <italic>
-   This analysis would allow me to descriptively understand the rise and fall of topics in both disciplines and whether there are conspicuous similarities between the developments in the two fields
-  </italic>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  <italic>
-   2.
-  </italic>
-  I will then analyze the semantic change of keywords highly associated with the topics identified in (1.). I will do this by estimating word embeddings w_{i}^{(t)} of keyword i at time t, such as with SGNS (Mikolov et al. 2013), and then analyzing the cosine distance of those word vectors over time: cos-dist(w_{i}^{(t)},w_{i}^{(t+1)})
- </paragraph>
- <paragraph>
-  <italic>
-   This analysis would allow me to understand how keywords in each field change their meaning over time.
-  </italic>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  3. I will use a similar strategy, which is similar but not identical to Hamilton et al. (2016a), to measure the co-evolution of keywords in economics and sociology. First, I will identify important keywords that appear both in economics and sociology. Then, for such words, I will first calculate the word vector of that word in economics at time t, w_{i}^{(t)}, then calculate the word vector of that word in sociology at time t, w_{j}^{(t)}, and finally, calculate their cosine similarity at time t: s_{ij}^{(t)} = cos-dist(w_{i}^{(t)},w_{j}^{(t)}). I will then cluster trajectories of s_{ij}^{(t)} over time using the K-spectral centroid algorithm (Yang and Leskovec 2011).
- </paragraph>
- <paragraph>
-  <italic>
-   This strategy allows me to understand which topics in economics and sociology become more and which become less similar over time.
-  </italic>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  4. The analysis in (3.) could be combined with the approach by Tan et al (2017) who measure both the co-occurrence of words as well as the correlation of their prevalence.
-  <break>
-  </break>
-  <italic>
-   This analysis would give a more in-depth understanding of the relationship between keywords in sociology and economics.
-  </italic>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  5. Finally, calculating changes over time of a word’s local clustering coefficient in its co-occurrence network (e.g., Watts and Strogatz 1998), would measure changes in the relative isolation of words. This idea could be extended to using a multilayer network, in which words that appear both in economics and sociology are displayed with the words they co-occur in economics (relation type 1) and co-occur in sociology (relation type 2). Then a sort of second-order similarity of the neighbors could be calculated, which is similar but not identical to the approach taken by Hamilton et al (2016b).
- </paragraph>
- <paragraph>
-  <italic>
-   This analysis would allow understanding changes in the similarity of local neighborhoods of words.
-  </italic>
- </paragraph>
- <paragraph>
-  <bold>
-   Feasibility test
-  </bold>
- </paragraph>
- <paragraph>
-  My feasibility test will consist of
- </paragraph>
- <list style="number">
-  <list-item>
-   <paragraph>
-    downloading the data and recoding it
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    taking a smaller subsample from just one discipline, such as 1000 documents per year over 10 years, and conducting the descriptive analyses (method 1 +2 )
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  <bold>
-   More resources
-  </bold>
- </paragraph>
- <paragraph>
-  There are several Python and R packages that facilitate working with these data, such as
-  <link href="https://github.com/arthurbnetto/tidyJSTOR"/>
-  https://github.com/arthurbnetto/tidyJSTOR
- </paragraph>
- <paragraph>
-  Tutorial on how to use them:
-  <link href="https://bcds.gitbook.io/learn/tutorials/text-analysis/text-analysis-in-jstor"/>
-  https://bcds.gitbook.io/learn/tutorials/text-analysis/text-analysis-in-jstor
- </paragraph>
+<p>
+ <underline>
+  Unity of the Social Sciences?
+ </underline>
+</p>
+<p>
+ Benjamin Rosche – Assignment 2
+</p>
+<p>
+ Economics and sociology are often described as two fundamentally different social sciences. Economics is often described as the study of rational action, focusing on the efficient allocation of scarce resources. Sociology, by contrast, is often described as the study of nonrational behavior, focusing on topics, such as norms and biases.
+</p>
+<p>
+ In this project, I would like to use data from the digital library JSTOR to study how research topics in economics and sociology are co-evolving over time. The main language features used in this analysis would be the co-occurrence of keywords in the research articles in economics and sociology.
+</p>
+<p>
+ <b>
+  Data
+ </b>
+</p>
+<p>
+ The digital library JSTOR allows text-mining their data for research (
+ <a href="https://about.jstor.org/whats-in-jstor/text-mining-support/">
+  data for research
+  ; dfr).
+ </a>
+</p>
+<p>
+ They offer more than 12 Mio. documents going back until 1700 (
+ <link href="https://constellate.org/docs/data-sources/#jstor"/>
+ Source):
+</p>
+<figure>
+ <image height="150" src="https://static.us.edusercontent.com/files/lOXBcsfKgv4SeXkhhbzXDHsI" width="267"/>
+</figure>
+<p>
+ For sociology and economics, however, most data are from 1960 onward.
+</p>
+<p>
+ The available content varies by type: early journal content, open access books, and research reports are available in full text. For all other types, the documents’ metadata are available, which includes date published, title, author, abstract, journal, and publisher.
+</p>
+<figure>
+ <image height="158" src="https://static.us.edusercontent.com/files/JtSygluxNRwUje4wIPbmUu3s" width="340"/>
+</figure>
+<p>
+ (
+ <link href="https://constellate.org/docs/data-sources/#jstor"/>
+ Source)
+</p>
+<p>
+ I still need to determine whether it will be possible to use the full text of each document for both disciplines over a reasonable timeframe or whether this is only possible for abstracts.
+ <break>
+ </break>
+</p>
+<p>
+ <b>
+  Methodological strategies and preliminary objectives
+ </b>
+</p>
+<p>
+ I have not fully fleshed out which of the following analyses will make the most sense as doing them all might not be feasible.
+</p>
+<p>
+ 1. Building on Prabhakaran et al. (2016), I will identify key topics in each of the two disciplines using topic modeling (LDA). Then, using the K-spectral centroid algorithm (Yang and Leskovec 2011), I will group the popularity trajectories of those topics into 3-5 clusters (growing, declining, stagnating, …).
+</p>
+<p>
+ <i>
+  This analysis would allow me to descriptively understand the rise and fall of topics in both disciplines and whether there are conspicuous similarities between the developments in the two fields
+ </i>
+</p>
+<p>
+ <i>
+  2.
+ </i>
+ I will then analyze the semantic change of keywords highly associated with the topics identified in (1.). I will do this by estimating word embeddings w_{i}^{(t)} of keyword i at time t, such as with SGNS (Mikolov et al. 2013), and then analyzing the cosine distance of those word vectors over time: cos-dist(w_{i}^{(t)},w_{i}^{(t+1)})
+</p>
+<p>
+ <i>
+  This analysis would allow me to understand how keywords in each field change their meaning over time.
+ </i>
+</p>
+<p>
+ 3. I will use a similar strategy, which is similar but not identical to Hamilton et al. (2016a), to measure the co-evolution of keywords in economics and sociology. First, I will identify important keywords that appear both in economics and sociology. Then, for such words, I will first calculate the word vector of that word in economics at time t, w_{i}^{(t)}, then calculate the word vector of that word in sociology at time t, w_{j}^{(t)}, and finally, calculate their cosine similarity at time t: s_{ij}^{(t)} = cos-dist(w_{i}^{(t)},w_{j}^{(t)}). I will then cluster trajectories of s_{ij}^{(t)} over time using the K-spectral centroid algorithm (Yang and Leskovec 2011).
+</p>
+<p>
+ <i>
+  This strategy allows me to understand which topics in economics and sociology become more and which become less similar over time.
+ </i>
+</p>
+<p>
+ 4. The analysis in (3.) could be combined with the approach by Tan et al (2017) who measure both the co-occurrence of words as well as the correlation of their prevalence.
+ <break>
+ </break>
+ <i>
+  This analysis would give a more in-depth understanding of the relationship between keywords in sociology and economics.
+ </i>
+</p>
+<p>
+ 5. Finally, calculating changes over time of a word’s local clustering coefficient in its co-occurrence network (e.g., Watts and Strogatz 1998), would measure changes in the relative isolation of words. This idea could be extended to using a multilayer network, in which words that appear both in economics and sociology are displayed with the words they co-occur in economics (relation type 1) and co-occur in sociology (relation type 2). Then a sort of second-order similarity of the neighbors could be calculated, which is similar but not identical to the approach taken by Hamilton et al (2016b).
+</p>
+<p>
+ <i>
+  This analysis would allow understanding changes in the similarity of local neighborhoods of words.
+ </i>
+</p>
+<p>
+ <b>
+  Feasibility test
+ </b>
+</p>
+<p>
+ My feasibility test will consist of
+</p>
+<list style="number">
+ <li>
+  <p>
+   downloading the data and recoding it
+  </p>
+ </li>
+ <li>
+  <p>
+   taking a smaller subsample from just one discipline, such as 1000 documents per year over 10 years, and conducting the descriptive analyses (method 1 +2 )
+  </p>
+ </li>
+</list>
+<p>
+ <b>
+  More resources
+ </b>
+</p>
+<p>
+ There are several Python and R packages that facilitate working with these data, such as
+ <link href="https://github.com/arthurbnetto/tidyJSTOR"/>
+ https://github.com/arthurbnetto/tidyJSTOR
+</p>
+<p>
+ Tutorial on how to use them:
+ <link href="https://bcds.gitbook.io/learn/tutorials/text-analysis/text-analysis-in-jstor"/>
+ https://bcds.gitbook.io/learn/tutorials/text-analysis/text-analysis-in-jstor
+</p>
+<heading level="1">
+ References
+</heading>
+<p>
+ Hamilton, W. L., Leskovec, J., &amp; Jurafsky, D. (2016a). Diachronic word embeddings reveal statistical laws of semantic change. arXiv preprint arXiv:1605.09096.
+</p>
+<p>
+ Hamilton, W. L., Leskovec, J., &amp; Jurafsky, D. (2016b). Cultural shift or linguistic drift? comparing two computational measures of semantic change. In Proceedings of the Conference on Empirical Methods in Natural Language Processing. Conference on Empirical Methods in Natural Language Processing (Vol. 2016, p. 2116). NIH Public Access.
+</p>
+<p>
+ Mikolov, T., Chen, K., Corrado, G., &amp; Dean, J. (2013). Efficient estimation of word representations in vector space. arXiv preprint arXiv:1301.3781.
+</p>
+<p>
+ Prabhakaran, V., Hamilton, W. L., McFarland, D., &amp; Jurafsky, D. (2016, August). Predicting the rise and fall of scientific topics from trends in their rhetorical framing. In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers) (pp. 1170-1180).
+</p>
+<p>
+ Tan, C., Card, D., &amp; Smith, N. A. (2017). Friendships, rivalries, and trysts: Characterizing relations between ideas in texts. arXiv preprint arXiv:1704.07828.
+</p>
+<p>
+ Watts, D. J., &amp; Strogatz, S. H. (1998). Collective dynamics of ‘small-world’networks. nature, 393(6684), 440-442.
+</p>
+<p>
+ Yang, J., &amp; Leskovec, J. (2011, February). Patterns of temporal variation in online media. In Proceedings of the fourth ACM international conference on Web search and data mining (pp. 177-186).
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Benjamin Rosche (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
  <heading level="1">
-  References
- </heading>
- <paragraph>
-  Hamilton, W. L., Leskovec, J., &amp; Jurafsky, D. (2016a). Diachronic word embeddings reveal statistical laws of semantic change. arXiv preprint arXiv:1605.09096.
- </paragraph>
- <paragraph>
-  Hamilton, W. L., Leskovec, J., &amp; Jurafsky, D. (2016b). Cultural shift or linguistic drift? comparing two computational measures of semantic change. In Proceedings of the Conference on Empirical Methods in Natural Language Processing. Conference on Empirical Methods in Natural Language Processing (Vol. 2016, p. 2116). NIH Public Access.
- </paragraph>
- <paragraph>
-  Mikolov, T., Chen, K., Corrado, G., &amp; Dean, J. (2013). Efficient estimation of word representations in vector space. arXiv preprint arXiv:1301.3781.
- </paragraph>
- <paragraph>
-  Prabhakaran, V., Hamilton, W. L., McFarland, D., &amp; Jurafsky, D. (2016, August). Predicting the rise and fall of scientific topics from trends in their rhetorical framing. In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers) (pp. 1170-1180).
- </paragraph>
- <paragraph>
-  Tan, C., Card, D., &amp; Smith, N. A. (2017). Friendships, rivalries, and trysts: Characterizing relations between ideas in texts. arXiv preprint arXiv:1704.07828.
- </paragraph>
- <paragraph>
-  Watts, D. J., &amp; Strogatz, S. H. (1998). Collective dynamics of ‘small-world’networks. nature, 393(6684), 440-442.
- </paragraph>
- <paragraph>
-  Yang, J., &amp; Leskovec, J. (2011, February). Patterns of temporal variation in online media. In Proceedings of the fourth ACM international conference on Web search and data mining (pp. 177-186).
- </paragraph>
-</document>
-<h3>
- Author: Benjamin Rosche (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <heading level="1">
-  <bold>
+  <b>
    A3:  Feasibility-check
-  </bold>
+  </b>
  </heading>
  <heading level="2">
   1. Downloading the JSTOR sociology corpus
  </heading>
- <paragraph>
+ <p>
   Thanks to JSTOR's digital library, this step was straightforward. However, so far I am using the entire text incl. author affiliations etc, which makes the data very noisy. I would like to focus on abstracts only in next steps.
- </paragraph>
+ </p>
  <heading level="2">
   2. Loading the data
  </heading>
- <paragraph>
+ <p>
   It took me some time to find a way to load the data iteratively without keeping the entire documents in storage. I do this now using generators and the yield command.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Then, I preprocess the text (remove numbers and punctuation, remove stopwords, lowercase, remove words with fewer than 3 letters).
- </paragraph>
+ </p>
  <heading level="2">
   3. Overall counts across time
  </heading>
@@ -222,22 +212,22 @@
  <heading level="2">
   4. Terms across time
  </heading>
- <paragraph>
+ <p>
   The 10 most frequently used words in sociological research articles are: ['social', 'women', 'work', 'american', 'model', 'life', 'state', 'class', 'health', 'men'].
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   One of the words that increased its relative count over time is the word "model" as can be seen here:
- </paragraph>
+ </p>
  <figure>
   <image height="264" src="https://static.us.edusercontent.com/files/CvGvgS9bgpZ3UJBecgZbVBVr" width="614"/>
  </figure>
  <heading level="2">
   5. LDA
  </heading>
- <paragraph>
+ <p>
   LDA produces strange results. Using the same dictionary, I get the following 10 topics:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   0: data social research study theory effects family differences analysis studies
   <break>
   </break>
@@ -266,200 +256,195 @@
   <break>
   </break>
   9: rockefeller social bulmer research ruml martin philanthropy council ssrc evidence
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I think this is because of the way I train the model - this looks like model nonconvergence. I need to look more into this.
- </paragraph>
+ </p>
  <heading level="2">
   6. Clustering of time-series
  </heading>
- <paragraph>
+ <p>
   I have started implementing the k-shape algorithm to cluster time-series into groups with similar trends. I will need to do more fine-tuning, I found some pointers
-  <link href="https://towardsdatascience.com/time-series-clustering-deriving-trends-and-archetypes-from-sequential-data-bb87783312b4"/>
-  here.
- </paragraph>
- <paragraph>
+  <a href="https://towardsdatascience.com/time-series-clustering-deriving-trends-and-archetypes-from-sequential-data-bb87783312b4">
+   here
+  </a>
+  .
+ </p>
+ <p>
   Here is an example of a group:
- </paragraph>
+ </p>
  <figure>
   <image height="915.1632016632016" src="https://static.us.edusercontent.com/files/b1RLwz4SLoZcJ4V7Kj6XcQwg" width="683"/>
  </figure>
- <paragraph>
+ <p>
   Since the LDA is not working yet, I have not been able to take the main words in each topic to then run a time-series grouping over those words rather than all the words. The second example from the left in the top row, labor, for instance, shows that this approach is able to elicit very interesting results. Labor sociology has indeed declined in recent decades. However, too many words are relatively random  ("beer").
- </paragraph>
+ </p>
  <heading level="2">
   6. Next steps
  </heading>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     In next steps, I want to finalize this descriptive analysis. That is, get the LDA to work and try to have more informative time-series clusters.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Then I would like to add economics into the picture. First by just doing the same descriptive analysis for economics.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     But then, I would like to take methodological strategy No. 5 and create co-occurrence networks. Basically, I take words that appear both in the corpus in economics and sociology and then identify words they co-occur with (neighbors) and then analyze whether the neighbors in sociology and the neighbors in economics become more similar over time.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     I still have to work out a concept of "more similar over time" but I am thinking of a Granger causality test to assess whether the neighbors in economics at time point t are more predictive of the neighbors in sociology at time t+1 or the other way around
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  About LDA "care and feeding", see Nov 18th post
-  <link href="https://edstem.org/us/courses/8208/discussion/755348?comment=1988276"/>
-  https://edstem.org/us/courses/8208/discussion/755348?comment=1988276
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Benjamin Rosche (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  <bold>
-   A4: Commitment
-  </bold>
- </paragraph>
- <paragraph>
-  I solemnly swear that I am up to no good!
- </paragraph>
- <paragraph>
-  In particular, I will
- </paragraph>
- <list style="number">
-  <list-item>
-   <paragraph>
-    Load both sociology and economics JSTOR data
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Extract abstracts from the data
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Do the fighting words analysis
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Create the co-occurrence networks of words in each discipline
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi, can you post this as a new post with topic/category label "A4"? (like other people did.) Thanks! Helps me keep organized!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Out of curiosity, what do you get w/ fightin' words analysis of sociology vs economics abstracts?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Benjamin Rosche (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  From the discussion with Prof. Lee:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    LDA might not be necessary
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    An alternative idea by Prof. Lee:
-   </paragraph>
-   <list style="bullet">
-    <list-item>
-     <paragraph>
-      Take intersection between sociology and economics on highly frequent words.
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      Identify substantively meaningful/interesting words.
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      Then look at k-nearest neighbors of those words in each field and
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      analyze the correlation between them over time (t -&gt; t+1)
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
- </list>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Benjamin Rosche (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   From the discussion with Prof. Lee:
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     LDA might not be necessary
+    </p>
+   </li>
+   <li>
+    <p>
+     An alternative idea by Prof. Lee:
+    </p>
+    <list style="bullet">
+     <li>
+      <p>
+       Take intersection between sociology and economics on highly frequent words.
+      </p>
+     </li>
+     <li>
+      <p>
+       Identify substantively meaningful/interesting words.
+      </p>
+     </li>
+     <li>
+      <p>
+       Then look at k-nearest neighbors of those words in each field and
+      </p>
+     </li>
+     <li>
+      <p>
+       analyze the correlation between them over time (t -&gt; t+1)
+      </p>
+     </li>
+    </list>
+   </li>
+  </list>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Out of curiosity, what do you get w/ fightin' words analysis of sociology vs economics abstracts?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 4em;">
+    <h3>
+     Author: Benjamin Rosche (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     <b>
+      A4: Commitment
+     </b>
+    </p>
+    <p>
+     I solemnly swear that I am up to no good!
+    </p>
+    <p>
+     In particular, I will
+    </p>
+    <list style="number">
+     <li>
+      <p>
+       Load both sociology and economics JSTOR data
+      </p>
+     </li>
+     <li>
+      <p>
+       Extract abstracts from the data
+      </p>
+     </li>
+     <li>
+      <p>
+       Do the fighting words analysis
+      </p>
+     </li>
+     <li>
+      <p>
+       Create the co-occurrence networks of words in each discipline
+      </p>
+     </li>
+    </list>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 6em;">
+     <h3>
+      Author: Prof. Lee (she/they) (admin)
+     </h3>
+     <h3>
+      Vote Count: 1
+     </h3>
+     <p>
+      Hi, can you post this as a new post with topic/category label "A4"? (like other people did.) Thanks! Helps me keep organized!
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+    <div style="text-indent: 4em;">
+     <h3>
+      Author: Prof. Lee (she/they) (admin)
+     </h3>
+     <h3>
+      Vote Count: 1
+     </h3>
+     <p>
+      About LDA "care and feeding", see Nov 18th post
+      <a href="https://edstem.org/us/courses/8208/discussion/755348?comment=1988276">
+       https://edstem.org/us/courses/8208/discussion/755348?comment=1988276
+      </a>
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

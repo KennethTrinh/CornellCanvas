@@ -13,139 +13,138 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <heading level="1">
-  <bold>
-   INTRODUCTION
-  </bold>
- </heading>
- <paragraph>
-  People who have trouble with widthAtDepth are probably thinking too much about how recursion works and not about how we said to understand recursive functions or develop them.
- </paragraph>
- <paragraph>
-  Secondly, too many people are not using what we call
-  <italic>
-   stepwise refinement
-  </italic>
-  in developing these A5 methods. Were you taught stepwise refinement in your first programming class? It's a pity if you were not. It is a fairly obvious methodology, which was first explained in a paper by Niklaus Wirth in about 1972 and Edsger Dijkstra 3 years before that. Everyone sort of uses it, but being more aware of what one is doing and using it consciously can be a big help.
- </paragraph>
- <paragraph>
-  We have three videos on stepwise refinement in the JavaHyperText —look in the top horizontal navigation bars.
- </paragraph>
- <paragraph>
-  We have two videos on recursion in trees. If you have not watched them, stop what you are doing and watch them!
- </paragraph>
- <paragraph>
-  Here, also, we try to get these ideas across to you using two examples and then discussing widthAtDepth. You should use the ideas expressed below in developing ALL your recursive methods.
-  <break>
-  </break>
-  Please read slowly and carefully.
-  <break>
-  </break>
-  <break>
-  </break>
-  <bold>
-   AN EXAMPLE OF STEPWISE REFINEMENT
-  </bold>
-  <break>
-  </break>
-  <break>
-  </break>
-  Suppose I ask you to write this method.
-  <break>
-  </break>
-  <break>
-  </break>
-  /** Print the names of the children of t. */
-  <break>
-  </break>
-  public void printChildren(H1N1Tree t) { ... }
-  <break>
-  </break>
-  <break>
-  </break>
-  I do this in stepwise fashion by writing the method body like this:
-  <break>
-  </break>
-  <break>
-  </break>
-  for (H1N1Tree child : t.children) {
-  <break>
-  </break>
-  Print the name of child
-  <break>
-  </break>
-  }
-  <break>
-  </break>
-  <break>
-  </break>
-  I concentrated on getting the loop right, and to be able to focus on that, I wrote the loop body in English. Now, I see how to implement the loop body. I end up with this:
-  <break>
-  </break>
-  <break>
-  </break>
-  for (H1N1Tree child : t.children) {
-  <break>
-  </break>
-  // Print the name of child
-  <break>
-  </break>
-  System.out.println(child.root.name());
-  <break>
-  </break>
-  }
-  <break>
-  </break>
-  <break>
-  </break>
-  I cannot emphasize this method of stepwise refinement too much, of doing one thing
-  <break>
-  </break>
-  at a time, writing all but what one is concentrating on in English. We may not need it
-  <break>
-  </break>
-  in this simple example, but in many cases, being methodical and careful like this will
-  <break>
-  </break>
-  lead you to a correct solution, and with much less trouble than simply hacking around.
- </paragraph>
- <paragraph>
-  <bold>
-   A SECOND EXAMPLE OF STEPWISE REFINEMENT
-  </bold>
-  <break>
-  </break>
-  <break>
-  </break>
-  Now consider writing the method below, assuming that we can't use children.size.
-  <break>
-  </break>
-  <break>
-  </break>
-  /** Print the number of children of t. */
-  <break>
-  </break>
-  public void printNumberOfChildren(H1N1Tree t)
-  <break>
-  </break>
-  <break>
-  </break>
-  Since we can't use children.size, we have to write a loop to count the number of children.
-  <break>
-  </break>
-  So we write the following. Look! The loop body is in English. Get used to writing what the
-  <break>
-  </break>
-  loop body is supposed to do in English! Until you have more experience programming and
-  <break>
-  </break>
-  things go easier.
- </paragraph>
- <paragraph>
-  I did one more step; I put in the line to print after the loop ended.
- </paragraph>
- <pre>     int sum= 0;
+<heading level="1">
+ <b>
+  INTRODUCTION
+ </b>
+</heading>
+<p>
+ People who have trouble with widthAtDepth are probably thinking too much about how recursion works and not about how we said to understand recursive functions or develop them.
+</p>
+<p>
+ Secondly, too many people are not using what we call
+ <i>
+  stepwise refinement
+ </i>
+ in developing these A5 methods. Were you taught stepwise refinement in your first programming class? It's a pity if you were not. It is a fairly obvious methodology, which was first explained in a paper by Niklaus Wirth in about 1972 and Edsger Dijkstra 3 years before that. Everyone sort of uses it, but being more aware of what one is doing and using it consciously can be a big help.
+</p>
+<p>
+ We have three videos on stepwise refinement in the JavaHyperText —look in the top horizontal navigation bars.
+</p>
+<p>
+ We have two videos on recursion in trees. If you have not watched them, stop what you are doing and watch them!
+</p>
+<p>
+ Here, also, we try to get these ideas across to you using two examples and then discussing widthAtDepth. You should use the ideas expressed below in developing ALL your recursive methods.
+ <break>
+ </break>
+ Please read slowly and carefully.
+ <break>
+ </break>
+ <break>
+ </break>
+ <b>
+  AN EXAMPLE OF STEPWISE REFINEMENT
+ </b>
+ <break>
+ </break>
+ <break>
+ </break>
+ Suppose I ask you to write this method.
+ <break>
+ </break>
+ <break>
+ </break>
+ /** Print the names of the children of t. */
+ <break>
+ </break>
+ public void printChildren(H1N1Tree t) { ... }
+ <break>
+ </break>
+ <break>
+ </break>
+ I do this in stepwise fashion by writing the method body like this:
+ <break>
+ </break>
+ <break>
+ </break>
+ for (H1N1Tree child : t.children) {
+ <break>
+ </break>
+ Print the name of child
+ <break>
+ </break>
+ }
+ <break>
+ </break>
+ <break>
+ </break>
+ I concentrated on getting the loop right, and to be able to focus on that, I wrote the loop body in English. Now, I see how to implement the loop body. I end up with this:
+ <break>
+ </break>
+ <break>
+ </break>
+ for (H1N1Tree child : t.children) {
+ <break>
+ </break>
+ // Print the name of child
+ <break>
+ </break>
+ System.out.println(child.root.name());
+ <break>
+ </break>
+ }
+ <break>
+ </break>
+ <break>
+ </break>
+ I cannot emphasize this method of stepwise refinement too much, of doing one thing
+ <break>
+ </break>
+ at a time, writing all but what one is concentrating on in English. We may not need it
+ <break>
+ </break>
+ in this simple example, but in many cases, being methodical and careful like this will
+ <break>
+ </break>
+ lead you to a correct solution, and with much less trouble than simply hacking around.
+</p>
+<p>
+ <b>
+  A SECOND EXAMPLE OF STEPWISE REFINEMENT
+ </b>
+ <break>
+ </break>
+ <break>
+ </break>
+ Now consider writing the method below, assuming that we can't use children.size.
+ <break>
+ </break>
+ <break>
+ </break>
+ /** Print the number of children of t. */
+ <break>
+ </break>
+ public void printNumberOfChildren(H1N1Tree t)
+ <break>
+ </break>
+ <break>
+ </break>
+ Since we can't use children.size, we have to write a loop to count the number of children.
+ <break>
+ </break>
+ So we write the following. Look! The loop body is in English. Get used to writing what the
+ <break>
+ </break>
+ loop body is supposed to do in English! Until you have more experience programming and
+ <break>
+ </break>
+ things go easier.
+</p>
+<p>
+ I did one more step; I put in the line to print after the loop ended.
+</p>
+<pre>     int sum= 0;
      //invariant: sum contains the number of iterations executed so far.
      for (H1N1Tree child : t.children) {
          // Add 1 to sum
@@ -154,95 +153,94 @@
 
 Now we have to implement the loop body --put in sum= sum + 1; .
 
-<bold>NOW ABOUT WIDTH AT DEPTH</bold>
+<b>NOW ABOUT WIDTH AT DEPTH</b>
 </pre>
- <paragraph>
-  Now consider writing this method.
-  <break>
-  </break>
-  <break>
-  </break>
-  /** Return the width of this tree at depth d */
-  <break>
-  </break>
-  public int widthAtDepth(int d)
-  <break>
-  </break>
-  <break>
-  </break>
-  There is a hint in the body:
-  <break>
-  </break>
-  <break>
-  </break>
-  // If d &gt; 0, the answer is: sum of widths of the children at depth d-1.
-  <break>
-  </break>
-  <break>
-  </break>
-  <bold>
-   Read the line above carefully!
-  </bold>
-  <break>
-  </break>
-  It gives you a recursive definition of width of the tree at depth d.
-  <break>
-  </break>
-  All you have to do is translate that definition into Java!
-  <break>
-  </break>
-  All you have to do is translate that definition into Java!
-  <break>
-  </break>
-  <break>
-  </break>
-  Once more, for emphasis: All you have to do is translate that definition into Java!
-  <break>
-  </break>
-  <break>
-  </break>
-  Now, use stepwise refinement to implement the recursive case, just as
-  <break>
-  </break>
-  we did in the two above examples. Write the loop body in English. Pay attention
-  <break>
-  </break>
-  to the similarity of this example with the second example above.
-  <break>
-  </break>
-  <break>
-  </break>
-  After you do that, you have to implement the loop body. Here is where recursion
-  <break>
-  </break>
-  come in. Do NOT think about how recursion works. That will only confuse you.
-  <break>
-  </break>
-  Instead: Compare what has to be done --your English in the loop body--
-  <break>
-  </break>
-  with the specification of function widthAtDepth and write a recursive call.
-  <break>
-  </break>
-  <break>
-  </break>
-  It would be nice to get feedback in follow-up to see whether this helped.
- </paragraph>
-</document>
-<h3>
- Author: Kenisha Stills-Ogburn (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ Now consider writing this method.
+ <break>
+ </break>
+ <break>
+ </break>
+ /** Return the width of this tree at depth d */
+ <break>
+ </break>
+ public int widthAtDepth(int d)
+ <break>
+ </break>
+ <break>
+ </break>
+ There is a hint in the body:
+ <break>
+ </break>
+ <break>
+ </break>
+ // If d &gt; 0, the answer is: sum of widths of the children at depth d-1.
+ <break>
+ </break>
+ <break>
+ </break>
+ <b>
+  Read the line above carefully!
+ </b>
+ <break>
+ </break>
+ It gives you a recursive definition of width of the tree at depth d.
+ <break>
+ </break>
+ All you have to do is translate that definition into Java!
+ <break>
+ </break>
+ All you have to do is translate that definition into Java!
+ <break>
+ </break>
+ <break>
+ </break>
+ Once more, for emphasis: All you have to do is translate that definition into Java!
+ <break>
+ </break>
+ <break>
+ </break>
+ Now, use stepwise refinement to implement the recursive case, just as
+ <break>
+ </break>
+ we did in the two above examples. Write the loop body in English. Pay attention
+ <break>
+ </break>
+ to the similarity of this example with the second example above.
+ <break>
+ </break>
+ <break>
+ </break>
+ After you do that, you have to implement the loop body. Here is where recursion
+ <break>
+ </break>
+ come in. Do NOT think about how recursion works. That will only confuse you.
+ <break>
+ </break>
+ Instead: Compare what has to be done --your English in the loop body--
+ <break>
+ </break>
+ with the specification of function widthAtDepth and write a recursive call.
+ <break>
+ </break>
+ <break>
+ </break>
+ It would be nice to get feedback in follow-up to see whether this helped.
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kenisha Stills-Ogburn (None)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   why  d -1 and not just d in "the sum of widths of the children at depth d-1"?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

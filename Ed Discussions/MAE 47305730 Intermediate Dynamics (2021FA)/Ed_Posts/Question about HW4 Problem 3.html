@@ -13,39 +13,35 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi,
- </paragraph>
- <paragraph>
-  I notice that in the scripts of L9, we use the command 'fsolve' with the value 'fstatic', but in L10, switch to 'fperiodic'. I just get confused about when should we use fstatic and when fperiodic. My understanding is that we use fstatic for solving the equilibrium points, and fperiodic for periodic motion, so I apply fstatic for this particular problem. Am I on the right track?
- </paragraph>
- <paragraph>
-  Also, I notice that I can only find one point no matter what IC I use. Thus, I wonder if there is a possibility that there is only one equilibrium point since the mass is too large.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Hi,
+</p>
+<p>
+ I notice that in the scripts of L9, we use the command 'fsolve' with the value 'fstatic', but in L10, switch to 'fperiodic'. I just get confused about when should we use fstatic and when fperiodic. My understanding is that we use fstatic for solving the equilibrium points, and fperiodic for periodic motion, so I apply fstatic for this particular problem. Am I on the right track?
+</p>
+<p>
+ Also, I notice that I can only find one point no matter what IC I use. Thus, I wonder if there is a possibility that there is only one equilibrium point since the mass is too large.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andrew van Paridon (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew van Paridon (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   So in this context, 'fsolve' is a matlab command.  'fstatic' and 'fperiodic' are my own handles (names) for the functions that I want to solve.  I have chosen names that reflect their desired output, but you could call them equally 'tweedledee' and 'tweedledum'.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The fstatic approach is appropriate for question 3 on homework 4.   The fperiodic approach is useful for question 1.   A general hint is that you should not simply copy these codes, but actually retype them yourself, so that you truly read them line by line, make mistakes, and understand what is going on.  Then you will find you improve your understanding overall.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   It is very possible that you need to play with the spring constants and rest-lengths of the springs in order to generate more than one solution.  Or just reduce the mass
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

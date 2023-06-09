@@ -13,22 +13,20 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  My lab partner and I defined our process_state to have a stack pointer, as well as an original stack pointer, as suggested in the discussion slides. When writing process_create, I was wondering what differentiates the original stack pointer from the normal stack pointer. I know calling process_stack_init returns a pointer to a stack, but we assumed that this was the pointer to the stack of the process that was just created. How do we initialize the original stack pointer without accessing any register values?
- </paragraph>
-</document>
+<p>
+ My lab partner and I defined our process_state to have a stack pointer, as well as an original stack pointer, as suggested in the discussion slides. When writing process_create, I was wondering what differentiates the original stack pointer from the normal stack pointer. I know calling process_stack_init returns a pointer to a stack, but we assumed that this was the pointer to the stack of the process that was just created. How do we initialize the original stack pointer without accessing any register values?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You are correct,
   <code>
    process_stack_init
@@ -38,8 +36,8 @@
    process_stack_free
   </code>
   (see the description above the function definition).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Let's assume the condition that you have a single process running. After you execute a single time slot and get sent to
   <code>
    process_select
@@ -49,10 +47,8 @@
    cursp
   </code>
   will now differ from the original stack pointer. If you just returned the original stack pointer and the processor tried to resume context, you are going to have a bad time as you are no longer pointed at the correct point in the stack.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

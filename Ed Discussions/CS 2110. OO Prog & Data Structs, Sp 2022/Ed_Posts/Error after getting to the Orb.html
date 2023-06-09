@@ -13,72 +13,66 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I got to the Orb but after that, i keep getting this error:
- </paragraph>
- <paragraph>
-  java.lang.IllegalArgumentException: moveTo: Node must be adjacent to position
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  is that supposed to happen? i think it's preventing me from moving to flee state
- </paragraph>
-</document>
+<p>
+ I got to the Orb but after that, i keep getting this error:
+</p>
+<p>
+ java.lang.IllegalArgumentException: moveTo: Node must be adjacent to position
+</p>
+<p>
+ is that supposed to happen? i think it's preventing me from moving to flee state
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Melissa Ginaldi (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  You cannot move to a Node that you are already standing on. If you call shortestPath from current location to the exit, the first node in the list is your current location, which you are already standing on and so you cannot move to it.
- </paragraph>
- <paragraph>
-  What node do you want to move too? How can you avoid this but still use the list?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  how can I use shortestPath inside Find() if I don't know where the Orb is?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Find should not be calling shortestPath. That is for flee().
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   We can't tell what your problem is without seeing your recursive dfsWalk, INCLUDING IT'S SPECIFICATION.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Look at our instructions/suggestions for the dfs walk in the pinned Assignment A8 note.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Melissa Ginaldi (staff)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   You cannot move to a Node that you are already standing on. If you call shortestPath from current location to the exit, the first node in the list is your current location, which you are already standing on and so you cannot move to it.
+  </p>
+  <p>
+   What node do you want to move too? How can you avoid this but still use the list?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    how can I use shortestPath inside Find() if I don't know where the Orb is?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

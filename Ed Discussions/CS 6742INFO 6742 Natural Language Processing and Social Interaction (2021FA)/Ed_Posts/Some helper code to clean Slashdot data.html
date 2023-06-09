@@ -13,20 +13,19 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <file filename="remove_htmltext.py" url="https://static.us.edusercontent.com/files/QWT26QZVPhiWDgkWkAbhYGmZ">
- </file>
- <paragraph>
-  Hi! My group and I are working with the Slashdot data and wrote some clean-up code so that we could use Python's XML parser (xml.etree). Attaching code &amp; instructions, if it might help you as well:
- </paragraph>
- <file filename="clean_data.sh" url="https://static.us.edusercontent.com/files/HTW6sXPESDwjZgZ1GFafHqlX">
- </file>
- <paragraph>
+<a filename="remove_htmltext.py" href="https://static.us.edusercontent.com/files/QWT26QZVPhiWDgkWkAbhYGmZ">
+</a>
+<p>
+ Hi! My group and I are working with the Slashdot data and wrote some clean-up code so that we could use Python's XML parser (xml.etree). Attaching code &amp; instructions, if it might help you as well:
+</p>
+<file url="https://static.us.edusercontent.com/files/HTW6sXPESDwjZgZ1GFafHqlX">
+ clean_data.sh
+ <p>
   What the script does:
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     Fixes the
     <code>
      &lt;tokenext&gt;
@@ -36,10 +35,10 @@
      &lt;tokentext&gt;
     </code>
     .
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Places a parent
     <code>
      &lt;root&gt;
@@ -53,34 +52,34 @@
      &lt;/root&gt;
     </code>
     at the end).
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Removes all
     <code>
      &lt;htmltext&gt; ... &lt;/htmltext&gt;
     </code>
     tags. (We did this because we didn't need the information included in it, and it was complicating the XML parsing because html formatting within it were not always consistent.)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Removes all non-UTF8 characters.
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
+ <p>
   To use:
- </paragraph>
+ </p>
  <list style="number">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     Download the slashdot data
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Download the attached files and copy them into the data folder you want to clean up (e.g. into
     <code>
      slashdot_part_1
@@ -98,35 +97,33 @@
      remove_htmltext.py
     </code>
     files.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Run the script:
     <code>
      . ./clean_data.sh
     </code>
     on Mac.
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  This was great to post, Celine and group!!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- ----------- REPLIES -----------
-</h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   This was great to post, Celine and group!!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <h3>
+  ----------- REPLIES -----------
+ </h3>
+</file>

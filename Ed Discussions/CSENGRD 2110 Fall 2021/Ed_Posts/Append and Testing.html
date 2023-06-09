@@ -13,35 +13,33 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  When testing getNode, I want to append 10 nodes so I can test different positions of the node.  I know on the bottom of the A4 PDF it says that you must test
-  <italic>
-   every
-  </italic>
-  method call that changes the linked list.  So, if I want to append 10 nodes, does that mean I need to write 30 assertEquals expressions, or can I just use  3 at the end to test the final appended string, reversed string, and size?
- </paragraph>
-</document>
+<p>
+ When testing getNode, I want to append 10 nodes so I can test different positions of the node.  I know on the bottom of the A4 PDF it says that you must test
+ <i>
+  every
+ </i>
+ method call that changes the linked list.  So, if I want to append 10 nodes, does that mean I need to write 30 assertEquals expressions, or can I just use  3 at the end to test the final appended string, reversed string, and size?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   If you are testing getNode, that means that prepend and append are already tested and working.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Therefore, in testing getNode, you don't need ANY tests for append and prepend.
   <break>
   </break>
   To require testing of append and prepend when testing getNode makes no sense.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

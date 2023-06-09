@@ -13,73 +13,67 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="455.4852941176471" src="https://static.us.edusercontent.com/files/9HsmB2FwD8HQYYVWHVyjo8hk" width="658"/>
- </figure>
- <paragraph>
-  I noticed that, for McNemar's Test, we only need to check whether or not
- </paragraph>
- <paragraph>
-  P(W &lt;= w | p=0.5,n=w+1)&lt;0.025
- </paragraph>
- <paragraph>
-  OR
- </paragraph>
- <paragraph>
-  P(W &lt;= w | p=0.5,n=w+1)&lt;0.025
- </paragraph>
- <paragraph>
-  but we don't have to check both.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  However, I don't understand why this is the case. If we are doing a two-sided test (i.e. we only care about whether or not the two error rates are
-  <italic>
-   different
-  </italic>
-  , but we're not addressing which one is actually greater than the other), don't we need to check the probability at both tails and make sure that the total probability is &lt;0.05? How do we know that it is sufficient to only check one tail?
- </paragraph>
-</document>
+<figure>
+ <image height="455.4852941176471" src="https://static.us.edusercontent.com/files/9HsmB2FwD8HQYYVWHVyjo8hk" width="658"/>
+</figure>
+<p>
+ I noticed that, for McNemar's Test, we only need to check whether or not
+</p>
+<p>
+ P(W &lt;= w | p=0.5,n=w+1)&lt;0.025
+</p>
+<p>
+ OR
+</p>
+<p>
+ P(W &lt;= w | p=0.5,n=w+1)&lt;0.025
+</p>
+<p>
+ but we don't have to check both.
+</p>
+<p>
+ However, I don't understand why this is the case. If we are doing a two-sided test (i.e. we only care about whether or not the two error rates are
+ <i>
+  different
+ </i>
+ , but we're not addressing which one is actually greater than the other), don't we need to check the probability at both tails and make sure that the total probability is &lt;0.05? How do we know that it is sufficient to only check one tail?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Scott Bass (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  It's not that the total probability has to be &lt; 0.05. You're checking that your sample value is not extreme on
-  <italic>
-   either
-  </italic>
-  tail of the distribution. Alternatively, you can think about it as you're checking if your sample value falls
-  <italic>
-   outside
-  </italic>
-  of the middle 95% of the distribution (i.e. in the bottom 2.5% or the top 2.5%).
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bonnie Akhavan (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bonnie Akhavan (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   For this class, it's sufficient to only test one side as long as you choose the more extreme side to test. It's implied that if the more extreme side fails to reject the hypothesis that their errors are similar, then the less extreme side will do so as well.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Scott Bass (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   It's not that the total probability has to be &lt; 0.05. You're checking that your sample value is not extreme on
+   <i>
+    either
+   </i>
+   tail of the distribution. Alternatively, you can think about it as you're checking if your sample value falls
+   <i>
+    outside
+   </i>
+   of the middle 95% of the distribution (i.e. in the bottom 2.5% or the top 2.5%).
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

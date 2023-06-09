@@ -13,33 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Every time I restart my laptop and I try to open the IDE, they say workspace cannot be created and is already in-use or something. Is anyone else having this issue and have solved it?
- </paragraph>
- <paragraph>
-  Idk why this happening. I have to create a new workspace every time I load restart and open the IDE
- </paragraph>
-</document>
+<p>
+ Every time I restart my laptop and I try to open the IDE, they say workspace cannot be created and is already in-use or something. Is anyone else having this issue and have solved it?
+</p>
+<p>
+ Idk why this happening. I have to create a new workspace every time I load restart and open the IDE
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aaron Wilhelm (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aaron Wilhelm (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You shouldn't have to recreate a new workspace every time you open the IDE -- something is not working quite right. My guess is that there is a ghost process of MCUXpresso (left behind when you last opened the program) that is still hogging the workspace in the background even though it is not visible.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   First, make sure you close out of MCUXpresso before you restart or turn off you computer. If the problem is happening and you're on Windows then open up the Task Manager and terminate MCUXpresso if you see it. That should end the process and hopefully relinquish the workspace, allowing you to work on it
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

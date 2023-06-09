@@ -13,57 +13,47 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  Hello! My partner and I have been getting this error when we run showdown even though our was_accepted function was working
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Traceback (most recent call last):
- </paragraph>
- <paragraph>
-  File "showdown_time.py", line 180, in &lt;module&gt;
- </paragraph>
- <paragraph>
-  sd = showdown_time(cnames[cnum1], cnames[cnum2], colleges)
- </paragraph>
- <paragraph>
-  File "showdown_time.py", line 42, in showdown_time
- </paragraph>
- <paragraph>
-  if was_accepted(tag, c1name) == was_accepted(tag,c2name):
- </paragraph>
- <paragraph>
-  File "/Users/leodavies/A3/skeleton/college.py", line 113, in was_accepted
- </paragraph>
- <paragraph>
-  print(c.accepted_enrolled)
- </paragraph>
- <paragraph>
-  AttributeError: 'str' object has no attribute 'accepted_enrolled'
- </paragraph>
-</document>
+<p>
+ Hello! My partner and I have been getting this error when we run showdown even though our was_accepted function was working
+</p>
+<p>
+ Traceback (most recent call last):
+</p>
+<p>
+ File "showdown_time.py", line 180, in &lt;module&gt;
+</p>
+<p>
+ sd = showdown_time(cnames[cnum1], cnames[cnum2], colleges)
+</p>
+<p>
+ File "showdown_time.py", line 42, in showdown_time
+</p>
+<p>
+ if was_accepted(tag, c1name) == was_accepted(tag,c2name):
+</p>
+<p>
+ File "/Users/leodavies/A3/skeleton/college.py", line 113, in was_accepted
+</p>
+<p>
+ print(c.accepted_enrolled)
+</p>
+<p>
+ AttributeError: 'str' object has no attribute 'accepted_enrolled'
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Lenhard Thomas (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Lenhard Thomas (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Your was_accepted function may be completely correct, but you're currently breaking the precondition for was_accepted that the paramater 'c' must be a College object. You're calling was_accepted with c1name and c2name as the second paramter, but c1name and c2name are strings instead of College objects.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,76 +13,66 @@
 <h3>
  Vote Count: 6
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi!
- </paragraph>
- <paragraph>
-  I think the solution to this question is wrong. The tightest complexity should be $O(n)$ in my opinion. Please let me know if I miss anything.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  The main issue of the current solution is that the complexity bound(O(n)) of inner loop is loose. So for any $n$, let's suppose $ 2^{k} \le n &lt; 2^{k+1}$. Then, we have $k+1$ outer loops. For $i$-th outer loop(i starting from $0$), the complexity of corresponding inner loop is $2^{i}$.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  So the total complexity is $\sum_{i=0}^{k}2^{i} = O(2^k) = O(n)$. This is the tighter bound I found.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Thanks!
- </paragraph>
-</document>
-<h3>
- Author: Sikai Shen (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
-  I'm taking the Prelim 2 7:30 and I think it's the same 2(a) 2.
- </paragraph>
- <paragraph>
-  I always write O(n) and I believe his argument is correct
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ori Ben Yossef (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ Hi!
+</p>
+<p>
+ I think the solution to this question is wrong. The tightest complexity should be $O(n)$ in my opinion. Please let me know if I miss anything.
+</p>
+<p>
+ The main issue of the current solution is that the complexity bound(O(n)) of inner loop is loose. So for any $n$, let's suppose $ 2^{k} \le n &lt; 2^{k+1}$. Then, we have $k+1$ outer loops. For $i$-th outer loop(i starting from $0$), the complexity of corresponding inner loop is $2^{i}$.
+</p>
+<p>
+ So the total complexity is $\sum_{i=0}^{k}2^{i} = O(2^k) = O(n)$. This is the tighter bound I found.
+</p>
+<p>
+ Thanks!
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Ori Ben Yossef (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   I had the same thought. In the last iteration of the outer loop, sum++ runs at most n times. In each iteration of the outer loop, sum++ runs twice as many times as the previous iteration, totaling at most n+(n/2)+(n/4)+(n/8)+...+1, which is never more than 2n.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Sikai Shen (student)
+  </h3>
+  <h3>
+   Vote Count: 2
+  </h3>
+  <p>
+   I'm taking the Prelim 2 7:30 and I think it's the same 2(a) 2.
+  </p>
+  <p>
+   I always write O(n) and I believe his argument is correct
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The question on the prelim has been regraded.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

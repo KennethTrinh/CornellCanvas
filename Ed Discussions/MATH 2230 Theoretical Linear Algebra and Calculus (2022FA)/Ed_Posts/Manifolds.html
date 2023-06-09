@@ -13,58 +13,52 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  If $M\subseteq \mathbb R^n$ and each $\vec a \in M$ has an open neighborhood $V$ such that $V\cap M$ is the image of a $C^1$, one-to-one function $\gamma :U\subseteq \mathbb R^k \to \mathbb R^n$, and $U$ is open and $D\gamma (\vec u)$ is one-to-one for all $u\in U$, does it follow that $M$ is a $k$ dimensional manifold?
- </paragraph>
- <paragraph>
-  If so, how can I show this? I tried defining a function $F:V\to \mathbb R^{n-k}$ by $F(\gamma(\vec u)) = \vec 0$ for $\vec u \in U$, so that $M\cap V = F^{-1}(\vec 0)$, but I don't know if $DF(\gamma(\vec u))$ will be onto, and I don't know how to define $F(\vec x)$ for $\vec x \in V\backslash M$ in such a way that $F$ is $C^1$.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ If $M\subseteq \mathbb R^n$ and each $\vec a \in M$ has an open neighborhood $V$ such that $V\cap M$ is the image of a $C^1$, one-to-one function $\gamma :U\subseteq \mathbb R^k \to \mathbb R^n$, and $U$ is open and $D\gamma (\vec u)$ is one-to-one for all $u\in U$, does it follow that $M$ is a $k$ dimensional manifold?
+</p>
+<p>
+ If so, how can I show this? I tried defining a function $F:V\to \mathbb R^{n-k}$ by $F(\gamma(\vec u)) = \vec 0$ for $\vec u \in U$, so that $M\cap V = F^{-1}(\vec 0)$, but I don't know if $DF(\gamma(\vec u))$ will be onto, and I don't know how to define $F(\vec x)$ for $\vec x \in V\backslash M$ in such a way that $F$ is $C^1$.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Reyer Sjamaar (admin)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Reyer Sjamaar (admin)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   No, it does not.  Here is a counterexample.  Let $k=1$, $U=(0,3\pi/2)$,
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $$\gamma(u)=\begin{pmatrix}\cos u\\\cos u\sin u\end{pmatrix}.$$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You can verify that this map satisfies all your conditions.  Is the image $\gamma(U)$ a manifold?  You can plot the curve using software such as wolframalpha.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   But the situation can be fixed by adding the following requirement to your maps $\gamma$.   Viewed as a map from $U$ onto $\gamma(U)$, $\gamma$ is bijective, and therefore has an inverse $\gamma^{-1}\colon\gamma(U)\to U$.  We require $\gamma^{-1}$ to be continuous.  Under this extra condition the answer to your question is “yes”.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bryan Lu (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Please ignore my comment above -- this fact (with the additional stipulation that the maps $\gamma$ are bijections) was given to me on a take-home prelim, so it does not seem like this is the easiest thing to show.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Bryan Lu (admin)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Please ignore my comment above -- this fact (with the additional stipulation that the maps $\gamma$ are bijections) was given to me on a take-home prelim, so it does not seem like this is the easiest thing to show.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

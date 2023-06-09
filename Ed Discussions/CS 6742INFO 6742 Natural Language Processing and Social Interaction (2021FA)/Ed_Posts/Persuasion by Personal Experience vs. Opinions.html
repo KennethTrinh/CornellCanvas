@@ -13,100 +13,97 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  My proposed project builds from the Reddit Change My View data, specifically with the paired successful/unsuccessful replies to a post data subset. I was intrigued by the finding in Tan et al. (2016) that the use of first-person pronouns in the replies to a CMV post was strongly predictive of the reply receiving a delta. Given this finding, I wonder which (if any) would be more persuasive- references to having a personal experience relevant to the topic of discussion compared to expressing one’s general personal beliefs and opinions?
- </paragraph>
- <paragraph>
-  My thinking towards the first category centers around persuasion being linked to the respondent’s allusion of applied expertise and first-hand knowledge to back the validity of their argument. I’m thinking of measuring the prevalence of phrases such as “I worked as a…”, “I lived in…”, and “I’ve tried once…” to operationalize this. Regarding the second category, I believe the persuasive power lies in the respondent explaining their own thought process to attempt to change the OP’s opinion by having them consider their provided personal reasoning when questioning the validity of their own opinion. I’m thinking that phrases such as “I think that…”, “I once believed…”, and “I don’t agree…” would effectively capture this persuasion technique.
- </paragraph>
- <paragraph>
-  I’d be super open to having one or two additional people join in on this project. I’d say one of the first steps will be planning data exploration to identify a list of phrases to generate the experience versus opinion categories. I doubt we’d be able to identify every possible phrase combination in the dataset, but I’m thinking some keyword in context extraction could at least provide good working coverage for the sake of this pilot study. I’d also love to discuss whether we’d like to go for an indicator approach (does/does not include one of the phrases) for the two categories over a count of the amount occurring for each category- or maybe both as a validity check of the overall findings.
- </paragraph>
- <paragraph>
-  Let’s connect if you’re interested in the idea and I’m super open to feedback and suggestions! My email is rps256@cornell.edu as well.
- </paragraph>
-</document>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I think the suggested approach of starting with data exploration to identify the desired phrase list is spot on!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Sort of semi-tangentially, , it strikes me that there's also the trope of "As a(n) [X]" as an exaggeration of or mocking of someone stating their positionality (which may not be the same thing as expertise) but in a potentially non-productive way.  It might be interesting to do a sampling of such occurrences to see whether the phrase occurs, and if so, is sometimes being used ironically, and whether there's a trend in whether that kind of phrasing increasing or decreasing.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Remy Stewart (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ My proposed project builds from the Reddit Change My View data, specifically with the paired successful/unsuccessful replies to a post data subset. I was intrigued by the finding in Tan et al. (2016) that the use of first-person pronouns in the replies to a CMV post was strongly predictive of the reply receiving a delta. Given this finding, I wonder which (if any) would be more persuasive- references to having a personal experience relevant to the topic of discussion compared to expressing one’s general personal beliefs and opinions?
+</p>
+<p>
+ My thinking towards the first category centers around persuasion being linked to the respondent’s allusion of applied expertise and first-hand knowledge to back the validity of their argument. I’m thinking of measuring the prevalence of phrases such as “I worked as a…”, “I lived in…”, and “I’ve tried once…” to operationalize this. Regarding the second category, I believe the persuasive power lies in the respondent explaining their own thought process to attempt to change the OP’s opinion by having them consider their provided personal reasoning when questioning the validity of their own opinion. I’m thinking that phrases such as “I think that…”, “I once believed…”, and “I don’t agree…” would effectively capture this persuasion technique.
+</p>
+<p>
+ I’d be super open to having one or two additional people join in on this project. I’d say one of the first steps will be planning data exploration to identify a list of phrases to generate the experience versus opinion categories. I doubt we’d be able to identify every possible phrase combination in the dataset, but I’m thinking some keyword in context extraction could at least provide good working coverage for the sake of this pilot study. I’d also love to discuss whether we’d like to go for an indicator approach (does/does not include one of the phrases) for the two categories over a count of the amount occurring for each category- or maybe both as a validity check of the overall findings.
+</p>
+<p>
+ Let’s connect if you’re interested in the idea and I’m super open to feedback and suggestions! My email is rps256@cornell.edu as well.
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Remy Stewart (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Here’s my update on my project progress so far. I obtained the CMV data from Convokit and kept all post comments with a non-missing “success” variable for whether the post received a delta. After preprocessing for non-alphanumeric values within the listing’s text, I computed normalized skipgram probabilities (a pre-step to word embeddings) to identify the most associated words with “I”, “I’m”, “my”, and so forth within a length of 5 tokens. I then looked through the most associated terms for each of the first-person pronouns and have produced a working list for both the experience-oriented terms as well as the belief-oriented terms. You’ll find it attached for reference below.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   For the variables in the logistic regression model I plan on using to predict the probability of a comment receiving a delta, I was originally thinking of producing a count of the experience and belief phrases through stripping matching strings such as “I worked” and “I’ve argued” directly. However, reading through the text made me realize that quite a few of these instances have several additional words between the pronoun and the indicator such as adverbs and negators, with examples such as “I completely agree with the belief” or “I wouldn’t have ever encountered”. Therefore, I’m thinking of moving forward with operationalizing my variables as a count of all the personal experience terms that occur within the text on their own and a count of the personal beliefs terms to avoid the issue of full-phrase extraction. It’s a rough proxy since some of the occurrences of the phrases within my generated lists likely don’t substantively match my actual research interest, but I think this mirrors wider challenges in NLP around measuring word context that could be a future direction for this project beyond this pilot study.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Regarding the suggestion of investigating the “as a…” phrase, I ran a similar skip-gram analysis and found it to both occur throughout the dataset as well as be associated with identity and/or positionality phrases such as “feminist” or “scientist”. Do you (as in Lillian or anyone else interested in contributing) think I should consider incorporating this additional phrase typology into my model? It’s a bit of a different subject than my divide between experiences over beliefs, but I’m open to it if you think it would be another factor worth considering.
- </paragraph>
- <file filename="A1 Experiences vs Beliefs Working Term List.docx" url="https://static.us.edusercontent.com/files/HZxceAG40sy0tzEgOZbXmbnK">
- </file>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  From checkin meeting:
- </paragraph>
- <paragraph>
-  0. Can you post some examples of URLS where we see some of these experiences claims.
-  <break>
-  </break>
-  <break>
-  </break>
-  1. split some of the lists into "core" (smaller) + "maybes" (ambiguous), report results with both.
- </paragraph>
- <paragraph>
-  2. using counts first makes a lot of sense.  Post-hoc analysis of examples, looking for negation and change-of-mind "I used to think X, but ...".
- </paragraph>
- <paragraph>
-  3. might be useful to get counts for each individual word in a list, checking for outliers in frequency, just in case.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <a href="https://static.us.edusercontent.com/files/HZxceAG40sy0tzEgOZbXmbnK">
+  A1 Experiences vs Beliefs Working Term List.docx
+ </a>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   From checkin meeting:
+  </p>
+  <p>
+   0. Can you post some examples of URLS where we see some of these experiences claims.
+   <break>
+   </break>
+   <break>
+   </break>
+   1. split some of the lists into "core" (smaller) + "maybes" (ambiguous), report results with both.
+  </p>
+  <p>
+   2. using counts first makes a lot of sense.  Post-hoc analysis of examples, looking for negation and change-of-mind "I used to think X, but ...".
+  </p>
+  <p>
+   3. might be useful to get counts for each individual word in a list, checking for outliers in frequency, just in case.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Sort of semi-tangentially, , it strikes me that there's also the trope of "As a(n) [X]" as an exaggeration of or mocking of someone stating their positionality (which may not be the same thing as expertise) but in a potentially non-productive way.  It might be interesting to do a sampling of such occurrences to see whether the phrase occurs, and if so, is sometimes being used ironically, and whether there's a trend in whether that kind of phrasing increasing or decreasing.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I think the suggested approach of starting with data exploration to identify the desired phrase list is spot on!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

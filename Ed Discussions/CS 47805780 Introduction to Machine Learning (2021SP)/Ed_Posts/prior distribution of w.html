@@ -13,31 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="367" src="https://static.us.edusercontent.com/files/dfNFcyDBrI8kdZE46a2Kkmy5" width="613"/>
- </figure>
- <paragraph>
-  How does this prior distribution on the weight vector ensure that the weight vector will stay short in length? From what I understand, we are modeling the weight vector as normally distributed, but are we saying that the weight vector itself is a RV? If we were to draw this normal distribution, I understand the y-axis would represent the probabilities, but would the x-axis represent the weight vector itself? So would the x-axis be incremented by vector values? I'm a bit confused on how exactly the prior distribution represents the fact that we want the weight vector to stay short in length.
- </paragraph>
-</document>
+<figure>
+ <image height="367" src="https://static.us.edusercontent.com/files/dfNFcyDBrI8kdZE46a2Kkmy5" width="613"/>
+</figure>
+<p>
+ How does this prior distribution on the weight vector ensure that the weight vector will stay short in length? From what I understand, we are modeling the weight vector as normally distributed, but are we saying that the weight vector itself is a RV? If we were to draw this normal distribution, I understand the y-axis would represent the probabilities, but would the x-axis represent the weight vector itself? So would the x-axis be incremented by vector values? I'm a bit confused on how exactly the prior distribution represents the fact that we want the weight vector to stay short in length.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Noor (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The way I like to think about this is that given no knowledge at all about the data we would think of w as some random vector close to zero. Each data point gives us a little more information about the size and direction of w. Since ws far from 0 are extremely unlikely given our initial assumption about w, it won't be made large unless the data REALLY wants us to.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If you were to draw the probability as a function of w there would be a single f axis and an "x-axis" for each entry in w, and it would look like a multi-dimensional generalization of a bell curve (which is difficult to picture for w of length more than 2).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

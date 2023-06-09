@@ -13,98 +13,88 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  When are the following equations true for NMOS? Especially the first one (gm) as I understand the second one is for saturation.
- </paragraph>
- <figure>
-  <image height="179.45454545454547" src="https://static.us.edusercontent.com/files/EFKR1UFBAa3jysXhmSCEOD7e" width="658"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  In part c they use and I am confused when to use each of these equations for ro and gm
- </paragraph>
- <figure>
-  <image height="213" src="https://static.us.edusercontent.com/files/aYv7Yc0ekwQ02K2XamDuh9tV" width="309"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Sorry if this is confusing and a bit all over the place. Thanks!
- </paragraph>
-</document>
-<h3>
- Author: Elizabeth Garner (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ When are the following equations true for NMOS? Especially the first one (gm) as I understand the second one is for saturation.
+</p>
+<figure>
+ <image height="179.45454545454547" src="https://static.us.edusercontent.com/files/EFKR1UFBAa3jysXhmSCEOD7e" width="658"/>
+</figure>
+<p>
+ In part c they use and I am confused when to use each of these equations for ro and gm
+</p>
+<figure>
+ <image height="213" src="https://static.us.edusercontent.com/files/aYv7Yc0ekwQ02K2XamDuh9tV" width="309"/>
+</figure>
+<p>
+ Sorry if this is confusing and a bit all over the place. Thanks!
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Elizabeth Garner (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   As a follow up, the formula sheet says ro=Va/Ic. Is Va=0 here?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Amal El-Ghazaly (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Amal El-Ghazaly (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   The three forms of gm for a mosfet you can pretty much use anytime:
- </paragraph>
+ </p>
  <figure>
   <image height="100" src="https://static.us.edusercontent.com/files/mTbiJ4OBLIpRcI4QudGSKhKf" width="540"/>
  </figure>
- <paragraph>
+ <p>
   the output impedance ro is really only valid during saturation because in triode, we evaluate an on resistance R_on separately.
- </paragraph>
+ </p>
  <figure>
   <image height="100" src="https://static.us.edusercontent.com/files/HMKOQAxislG1iTOCMllBQjSB" width="294"/>
  </figure>
- <paragraph>
+ <p>
   The equations are very similar. The only difference is that ro has the additional lambda (channel length modulation parameter) factor in the denominator. Since lambda is less than 1, this makes ro larger and tending towards infinity (which is the ideal case when there is no channel length modulation).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The version of the expression
- </paragraph>
+ </p>
  <math>
   r_o\approx\frac{1}{\lambda I_D}
  </math>
- <paragraph>
+ <p>
   is valid only for "small" lambda (let's say approximately 0.1 or around there).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   All of the above expressions are for MOSFETs only.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   ______________
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   For BJTs only, you have a different set of expressions
- </paragraph>
+ </p>
  <math>
   g_m=\frac{I_c}{V_T}
  </math>
- <paragraph>
+ <p>
   and
- </paragraph>
+ </p>
  <math>
   r_o=\frac{V_A}{I_c}
  </math>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

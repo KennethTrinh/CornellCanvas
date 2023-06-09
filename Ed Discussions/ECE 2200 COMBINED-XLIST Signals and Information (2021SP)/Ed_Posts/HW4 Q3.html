@@ -13,112 +13,106 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  For this question, I was wondering how one alias was:
- </paragraph>
- <figure>
-  <image height="68.50568678915135" src="https://static.us.edusercontent.com/files/DxOlT0vN9i2y7hIBNp9I9vi0" width="658"/>
- </figure>
- <paragraph>
-  Since it is in the alpha case, shouldn't the equation being used be 3 cos(2π(-2800 + 8000*k)t + π/3)? I'm a little confused by why 2800 positive and π/3 is negative
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ For this question, I was wondering how one alias was:
+</p>
+<figure>
+ <image height="68.50568678915135" src="https://static.us.edusercontent.com/files/DxOlT0vN9i2y7hIBNp9I9vi0" width="658"/>
+</figure>
+<p>
+ Since it is in the alpha case, shouldn't the equation being used be 3 cos(2π(-2800 + 8000*k)t + π/3)? I'm a little confused by why 2800 positive and π/3 is negative
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Zoltan Csaki (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Zoltan Csaki (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I was wondering the same thing ^
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Victor Butoi (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  2800 is positive just because 0.7 is already the normalized discrete-time omega so you convert it to fprin = omega * 4000 = 2800; π/3 is negative precisely because it started as negative and you're in the alpha case.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Zoltan Csaki (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yeah so 2800 is positive, and the equation we were given in class is if fprin is between 0, ts/2 then the formula for the aliases is given by
- </paragraph>
- <math>
-  A\cos\left(2\pi\left(-f_{prin}+kf_s\right)t+\phi\right)
- </math>
- <paragraph>
-  But in the solutions they use +2800 - 8000 which would be
- </paragraph>
- <math>
-  A\cos\left(2\pi\left(f_{prin}-kf_s\right)t+\phi\right)
- </math>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Victor Butoi (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Oh my bad, didn't even notice they had the negative sign on the kfs term instead of fprin, but also I was under the impression that the two sets of aliases were given by
- </paragraph>
- <paragraph>
-  Acos(2π(fprin​+kfs​)t+ϕ)
- </paragraph>
- <paragraph>
-  Acos(2π(−fprin​+kfs​)t-ϕ)
- </paragraph>
- <paragraph>
-  That is to say, when you do the -fprin business you have to flip the sign of the phase shift
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Zoltan Csaki (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <figure>
-  <image height="196.16844919786095" src="https://static.us.edusercontent.com/files/bFqVXcX3NdxYE1ksen80AvRV" width="658"/>
- </figure>
- <paragraph>
-  I see where the phase shift sign flip comes from now!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Victor Butoi (None)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   2800 is positive just because 0.7 is already the normalized discrete-time omega so you convert it to fprin = omega * 4000 = 2800; π/3 is negative precisely because it started as negative and you're in the alpha case.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Zoltan Csaki (None)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Yeah so 2800 is positive, and the equation we were given in class is if fprin is between 0, ts/2 then the formula for the aliases is given by
+   </p>
+   <math>
+    A\cos\left(2\pi\left(-f_{prin}+kf_s\right)t+\phi\right)
+   </math>
+   <p>
+    But in the solutions they use +2800 - 8000 which would be
+   </p>
+   <math>
+    A\cos\left(2\pi\left(f_{prin}-kf_s\right)t+\phi\right)
+   </math>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Victor Butoi (None)
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     Oh my bad, didn't even notice they had the negative sign on the kfs term instead of fprin, but also I was under the impression that the two sets of aliases were given by
+    </p>
+    <p>
+     Acos(2π(fprin​+kfs​)t+ϕ)
+    </p>
+    <p>
+     Acos(2π(−fprin​+kfs​)t-ϕ)
+    </p>
+    <p>
+     That is to say, when you do the -fprin business you have to flip the sign of the phase shift
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Zoltan Csaki (None)
+     </h3>
+     <h3>
+      Vote Count: 1
+     </h3>
+     <figure>
+      <image height="196.16844919786095" src="https://static.us.edusercontent.com/files/bFqVXcX3NdxYE1ksen80AvRV" width="658"/>
+     </figure>
+     <p>
+      I see where the phase shift sign flip comes from now!
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

@@ -13,27 +13,23 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  My understanding of the kernel trick is that it allows the inner product to be computed efficiently in high-dimensional feature space without explicitly computing the mapping. But there is supposed to be some connect to the lower-dimensional instance space, where does that fit in? Is the inner product actually computed in the lower-dimensional instance space and transformed into high-dimensional feature space by the kernel?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ My understanding of the kernel trick is that it allows the inner product to be computed efficiently in high-dimensional feature space without explicitly computing the mapping. But there is supposed to be some connect to the lower-dimensional instance space, where does that fit in? Is the inner product actually computed in the lower-dimensional instance space and transformed into high-dimensional feature space by the kernel?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Thorsten Joachims (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Thorsten Joachims (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The trick is that many Kernels can be computed from operations in the low dimensional space. An example is the polynomial Kernel, where you can compute the inner product in the high-dimensional space from the inner product in the low-dimensional space. More generally, though, a Kernel is merely an efficient algorithm/formula for computing the high-dimensional inner product (e.g. some kernels can be computed via dynamic programming).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

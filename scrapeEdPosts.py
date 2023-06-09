@@ -4,7 +4,7 @@ import os
 import pandas as pd
 
 from bs4 import BeautifulSoup
-from utils import (sanitize, cprint, 
+from utils import (sanitize, xmlToHtml, 
                    write, writeJson, retry,
                    getCourse)
 from canvasapi import Canvas
@@ -115,45 +115,52 @@ class Thread:
                     f' ({self.users[user_id]["course_role"]})'
             )
         return 'Anonymous'
+    
+    def formatReply(self, reply):
+        return (
+            f"<h3>Author: {self.getUser(reply['user_id']) }</h3>"
+            f"<h3> Vote Count: {reply['vote_count']} </h3>"
+            f"{'<h3>ENDORSED</h3>' if reply['is_endorsed'] else ''}"
+            f"{xmlToHtml(reply['content'])}"
+            '<h3> ------------------------------------ </h3>'
+        )
 
     def bfsRepliesStructure(self, replies):
         """
         We want a structure like this:
         REPLY # 1
         |   COMMENT # 1
-            |    COMMENT # 1
+            |    COMMENT # 11
         |   COMMENT # 2
         REPLY # 2
         |   COMMENT # 1
         """
-        ordering  = []
+        getDepth = lambda reply: 1 if 'depth' not in reply else reply['depth']
+        ordering  = [] # list of html strings
+        prevDepths = [] # stack of depths for enclosing divs
+        replies = replies[::-1]
         while replies:
             reply = replies.pop(0)
             ordering.insert(
-                0 if reply['is_endorsed'] else len(ordering),
-                {
-                    'user_id': reply['user_id'],
-                    'content': reply['content'],
-                    'is_endorsed': reply['is_endorsed'],
-                    'depth': 0 if 'depth' not in reply else reply['depth'],
-                    'vote_count': reply['vote_count'],
-                }
+                len(ordering),
+                f'<div style="text-indent: {getDepth(reply)*2}em;">'  + self.formatReply(reply)
+                # depth': 0 if 'depth' not in reply else reply['depth'],
             )
-            if 'comments' in reply:
-                for comment in reply['comments']:
-                    comment['depth'] = reply.get('depth', 0) + 1
-                    replies.insert(0, comment)
+            prevDepths.insert(0, getDepth(reply))
+            for comment in reply['comments'][::-1]:
+                comment['depth'] = reply.get('depth', 1) + 1
+                replies.insert(0, comment)
+            # add closing divs
+            nextDepth = getDepth(replies[0]) if replies else -1
+            while prevDepths and prevDepths[0] > nextDepth:
+                prevDepths.pop(0)
+                ordering.insert(len(ordering), '</div>')
         return ordering
     def bfsReplies(self, html, replies):
         if not replies:
             return html
-        for reply in self.bfsRepliesStructure(replies):
-            html += (f"<h3>Author: {self.getUser(reply['user_id']) }</h3>"
-                     f"<h3>Vote Count: {reply['vote_count']}</h3>"
-                    f"{'<h3>ENDORSED</h3>' if reply['is_endorsed'] else ''}"
-                    f"{reply['content']}"
-                    '<h3> ------------------------------------ </h3>'
-            )
+        for replyHTML in self.bfsRepliesStructure(replies):
+            html += replyHTML
         return html
                         
     def format(self):
@@ -163,7 +170,7 @@ class Thread:
                 f"<h3>Category: {self.category}</h3>"
                 f"<h3>Vote Count: {self.vote_count}</h3>"
                 f"{'<h3>ENDORSED</h3>' if self.is_endorsed else ''}"
-                f'{self.content}'
+                f'{xmlToHtml(self.content)}'
         )
         html = self.bfsReplies(html, self.comments)
         html += '<h3> ----------- REPLIES ----------- </h3>'
@@ -230,6 +237,7 @@ if __name__ == '__main__':
 # ed_course_id, xtoken = EdCourseAuthenticationThroughCanvas(s, course.id)
 
 # xtoken = EdLogin()
+# thread_id = 2810766
 # thread_id = 3032849
 # scrapeEdPostForCourse('testing', xtoken, thread_id)
 # r = requests.get(f'{ED_URL}/api/threads/{thread_id}',
@@ -240,3 +248,6 @@ if __name__ == '__main__':
 
 # r = requests.get(f'{ED_URL}/api/threads/{1859828}',
 #                     headers = {'x-token': xtoken})
+
+# xml = xmlToHtml(r.json()['thread']['answers'][1]['content'])
+# write(xml, 'testing.html', overwrite=True)

@@ -13,71 +13,69 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="219.13901345291478" src="https://static.us.edusercontent.com/files/SAdYMUenv2g7oDc6hVCCU38a" width="643"/>
- </figure>
- <figure>
-  <image height="467" src="https://static.us.edusercontent.com/files/C7VGIse4k11eM7M9aM5iYUoH" width="604"/>
- </figure>
- <figure>
-  <image height="195" src="https://static.us.edusercontent.com/files/oRJlb3yLHTPfaWDE80H09pT8" width="462"/>
- </figure>
- <paragraph>
-  I understand that the problem is asking us to create a neural network from the decision boundary given, but I don't understand how we got to the solutions, and how the neural network given in the solutions represents the min and max functions (ie. we are given that y1(x)=min(x1,x2) and y2(x)=max(x1,x2)).
- </paragraph>
- <paragraph>
-  Could someone please walk me through step by step how the solutions got to the answer?
- </paragraph>
-</document>
+<figure>
+ <image height="219.13901345291478" src="https://static.us.edusercontent.com/files/SAdYMUenv2g7oDc6hVCCU38a" width="643"/>
+</figure>
+<figure>
+ <image height="467" src="https://static.us.edusercontent.com/files/C7VGIse4k11eM7M9aM5iYUoH" width="604"/>
+</figure>
+<figure>
+ <image height="195" src="https://static.us.edusercontent.com/files/oRJlb3yLHTPfaWDE80H09pT8" width="462"/>
+</figure>
+<p>
+ I understand that the problem is asking us to create a neural network from the decision boundary given, but I don't understand how we got to the solutions, and how the neural network given in the solutions represents the min and max functions (ie. we are given that y1(x)=min(x1,x2) and y2(x)=max(x1,x2)).
+</p>
+<p>
+ Could someone please walk me through step by step how the solutions got to the answer?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Noor (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The way I think of this is that effectively, the solution thought of every simple way of combining the x1 and x2 in the layer and then combined them, making use of the ReLU's definition that the output is only nonzero if the input was positive. So, ReLU(x1-x2) is only positive if x1 was bigger, ReLU(x2-x1) is only positive if x2 was bigger, ReLU(x1+x2) is only positive if the sum was, and ReLU(x1+x2) is only positive if the value inside was negative. Then, given those cases it reasoned about how to combine them to get the ax or min. To verify that they worked, you can simply go by cases.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Ohh I see. Thank you!
- </paragraph>
- <figure>
-  <image height="125" src="https://static.us.edusercontent.com/files/QB53RM8RcIgXh3UlTQutggsu" width="377"/>
- </figure>
- <paragraph>
-  Also, I don't understand what the solutions is doing above when computing the output values y1 and y2? I thought y1 and y2 were defined by the min and max functions, but this doesn't seem to be doing min and max? Also, what is "a_i" in this case?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Min and max are not permitted activation functions, so it's getting them from the z_is, which leveraged ReLU. If you work through this by cases you will see that it works. The a_i is the weight in the neural network from z_i to y_j, in this case always +/- .5
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Ohh I see. Thank you!
+  </p>
+  <figure>
+   <image height="125" src="https://static.us.edusercontent.com/files/QB53RM8RcIgXh3UlTQutggsu" width="377"/>
+  </figure>
+  <p>
+   Also, I don't understand what the solutions is doing above when computing the output values y1 and y2? I thought y1 and y2 were defined by the min and max functions, but this doesn't seem to be doing min and max? Also, what is "a_i" in this case?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Michael Noor (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Min and max are not permitted activation functions, so it's getting them from the z_is, which leveraged ReLU. If you work through this by cases you will see that it works. The a_i is the weight in the neural network from z_i to y_j, in this case always +/- .5
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

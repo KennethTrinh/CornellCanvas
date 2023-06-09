@@ -13,34 +13,32 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="1.0">
- <paragraph>
-  On the quicksort PDF, for a sorted array, why is the partition on the left of size 0? Is this because for the recursive call QS(b,j+1, k) decreases size of array to b[j+1..k] (only include elts to right of pivot) ?
-  <break>
-  </break>
-  Say the first argument call is QS(b,h,k). During execution of recursive call QS(b,j+1,k) now the array looked at is b[j+1..k] which means the call QS(b,h,j-1) looks at a segment that is empty?
- </paragraph>
- <figure>
-  <image height="473" src="https://static.us.edusercontent.com/files/aVUY43SzBJALQbBFKJN6iI3H" width="2197"/>
- </figure>
-</document>
+<p>
+ On the quicksort PDF, for a sorted array, why is the partition on the left of size 0? Is this because for the recursive call QS(b,j+1, k) decreases size of array to b[j+1..k] (only include elts to right of pivot) ?
+ <break>
+ </break>
+ Say the first argument call is QS(b,h,k). During execution of recursive call QS(b,j+1,k) now the array looked at is b[j+1..k] which means the call QS(b,h,j-1) looks at a segment that is empty?
+</p>
+<figure>
+ <image height="473" src="https://static.us.edusercontent.com/files/aVUY43SzBJALQbBFKJN6iI3H" width="2197"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bahaa Kotb (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   The whole point of quicksort is so that the numbers to the left of the pivot is less than the pivot and the numbers to the right or the pivot is greater than the pivot, so if your array is already sorted and you choose your pivot point to be the first number (this should be the smallest since it’s already sorted) to the left of the pivot you’ll have no numbers that are less than the pivot since it’s already the smallest
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

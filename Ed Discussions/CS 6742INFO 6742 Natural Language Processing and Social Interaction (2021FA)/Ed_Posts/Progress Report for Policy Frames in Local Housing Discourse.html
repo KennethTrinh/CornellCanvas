@@ -13,156 +13,150 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I developed my project preliminary results into three sections and respective methods that each considers a component of my guiding research questions. As a quick recap, my project is investigating how users in the r/sanfrancisco subreddit discuss regional housing through the use of policy frames, how frames are associated with expressed emotional sentiment within comments, and how community reactions to comments as measured by the number of score upvotes interacts with expressed frames and sentiment.
- </paragraph>
- <paragraph>
-  I designed a series of DistillBERT classifiers models to achieve my first goal of predicting frame use within r/sanfrancisco comments. DistilBERT served as an ideal classifier model for multiple reasons. DistilBERT features the pretraining rigor of transformer language models that accounts for words in document context that is key to the subjective distinctions between policy frames that non-deep learning algorithms struggled to capture within my experiments. My training dataset featured 26 thousand records from the Media Frames Corpus with 500 additional labeled r/sanfrancisco comments. My one-versus-all approach of classifying whether a frame is present in a comment allowed me to accommodate for comments that employ multiple frames as well as irrelevant comments without any expressed frames. I ran multiple experiments for each frame classifier with a different number of epochs, batch size, class weights, majority class undersampling, and dropout layer probabilities. I then produced predictions on my full dataset of 1.1 million comments with each classifier’s model specification that obtained the highest F1 score on the test set.
- </paragraph>
- <figure>
-  <image height="176" src="https://static.us.edusercontent.com/files/pBzc0lyUFxi6iBMKIzY6xRCD" width="422"/>
- </figure>
- <paragraph>
-  I ran both logistic regression models as well as random forests to serve as comparative baselines to DistilBERT. This demonstrates just how sizably DistilBERT improves model performance over alternative classifiers. The range of F1 scores are all aligned with previous study results also investigating frames with the Media Frames Corpus. The model consistently performed better with frames that had more labeled instances.
- </paragraph>
- <figure>
-  <image height="294" src="https://static.us.edusercontent.com/files/7Njno3zDBgZc5vwoaAhTc2O7" width="662"/>
- </figure>
- <paragraph>
-  This histogram shows the distribution of frames after all seven classifiers are applied to the full comments set. You can see that cultural references dominate as the most employed frame, with quality of life, economics, and morality frames all comparable to each other for the next tier of used frames. 46% of the comments express two or more frames, with the three most frequently occurring combinations being culture &amp; quality of life frames, culture &amp; equality frames, and economics &amp; quality of life frames.
- </paragraph>
- <paragraph>
-  Relatively few comments are irrelevant with no expressed frame. The politics frame being the least common frame I unfortunately suspect is more of an outcome of my limited Reddit training data rather than a lack of politically framed discourse within the subreddit itself. Political frames oftentimes referred to name entities such as politicians or districts that the classifier would have limited records to learn from.
- </paragraph>
- <paragraph>
-  To build intuition regarding how each frame is commonly referred to within Reddit housing discourse, here are examples of classified comments for each frame.
- </paragraph>
- <figure>
-  <image height="438" src="https://static.us.edusercontent.com/files/XTQlreSaGH9KEMOSU7C85vYz" width="455"/>
- </figure>
- <paragraph>
-  While I do believe the predicted frames are generally well-aligned with the comment, you can see the subjectivity inherent within this process. For example, I could hear the argument for the comment expressing the quality-of-life frame also being labeled as using an economic frame given the user is grounding their argument around job loss.
- </paragraph>
- <paragraph>
-  With my full dataset now classified by frames, I then ran multinomial logit models for the probability of expressing either a negative, positive, or neutral sentiment within each comment. I then follow with negative binomial regression for fitting comment scores given the overdispersion of score variance over the mean that violates standard Poisson count model assumptions.
- </paragraph>
- <paragraph>
-  These models control for the hour, day of the week, and month the comment was posted as well as the post’s word length. I used the Holm-Bonferroni correction method to adjust the p-value results for multiple hypothesis tests following previous computational policy frame studies. I’m a bit uncertain how the large sample size for each group may contribute to inflated p-values and am very open to any feedback regarding adjustment methods for large datasets you’ve come across. The neutral category serves as the reference group for the sentiment outcome variable within the multinomial model, while each policy frame category term is compared to comments that express no identified frame. I additionally convert each logit model coefficient to odds ratios for easier interpretation.
- </paragraph>
- <figure>
-  <image height="306" src="https://static.us.edusercontent.com/files/crS6FKOONYSsmCKdkh7B90yx" width="389"/>
- </figure>
- <paragraph>
-  We’re able to interpret the odds ratio results for the Economic frame term in the negative sentiment model as a 0.542 lower odds of expressing a negative sentiment over a neutral sentiment in comparison to non-framed comments. This is the equivalent to an approximately 46% reduction in the relative probability of an economically framed comment having a negative sentiment.
- </paragraph>
- <paragraph>
-  Here’s my synopsis of the key takeaways of this model’s results. The economics and cultural frames are most associated with a neutral sentiment while equality frames are linked with both sentiment polarities but have a stronger association with negative sentiments. Furthermore, law &amp; crime and health &amp; safety frames are associated with negative sentiments while quality of life framed comments with positive sentiment. Politically framed comments demonstrate no strong association towards one sentiment over another.
- </paragraph>
- <figure>
-  <image height="420" src="https://static.us.edusercontent.com/files/XqBdcGG25qDhHlQYAbPmFKmr" width="425"/>
- </figure>
- <paragraph>
-  From there, my next research question is centered around exploring the relationship between comment scores and expressed sentiment. All these terms are also converted to odds ratios, with the equivalent interpretation of the baseline economics frame term being a 6.3% (1-0.937) decrease in odds of receiving comment upvotes for an economically framed comment over a non-framed comment
- </paragraph>
- <paragraph>
-  The baseline score negative binomial model results imply that the frames most associated with more comment upvotes are comments framed around law &amp; crime and/or politics. Comments that receive fewer upvotes than comparable non-framed comments are those employing the economics and/or cultural frames.
- </paragraph>
- <paragraph>
-  When expressed sentiment is incorporated with the used frames within comment discourse in the second model, a general trend emerges across frames where positively valanced comments receive more community validation through upvotes. It’s interesting to see that political framing’s association with higher comment scores is lower scoring than non-framed comments for either sentiment polarity, implying that neutral political commentary is the most well-received within the r/sanfrancisco community.
- </paragraph>
- <paragraph>
-  I’d say I don’t have any glaring issues preventing me from answering my research questions at this point of my project, but I certainly believe I could further hone my model accuracy and design choices further. I’d very much appreciate any general feedback on these results so far!
- </paragraph>
-</document>
-<h3>
- Author: Heather Zheng (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I really like the idea of the research and a lot of excellent experiments here.
- </paragraph>
- <paragraph>
-  For the frame classification, I have the following questions:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    What's the test data? Maybe only includes some comments from r/sanfrancisco as test data?
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Since the model is trained on 26 thousand records from the Media Frames Corpus and 500 additional labeled r/sanfrancisco, will the score be different without comments from r/sanfrancisco? Also, you can compare DistilBERT Model trained on using Media Frames Corpus and 500 comments from r/sanfranciscotogether together as training datasets and DistilBERT Model train on Media Frames Corpus first and then fine-tuning on r/sanfrancisco.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Maybe qualitatively analyze the error from DistilBERT of the frame with F1&lt;0.7.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Also, can you give some examples of non-framed comments? Since they don't belong to any of the other frames, what characteristics do they have? Except comparing to the non-frame comments, you can also compare to the average of all comments.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ I developed my project preliminary results into three sections and respective methods that each considers a component of my guiding research questions. As a quick recap, my project is investigating how users in the r/sanfrancisco subreddit discuss regional housing through the use of policy frames, how frames are associated with expressed emotional sentiment within comments, and how community reactions to comments as measured by the number of score upvotes interacts with expressed frames and sentiment.
+</p>
+<p>
+ I designed a series of DistillBERT classifiers models to achieve my first goal of predicting frame use within r/sanfrancisco comments. DistilBERT served as an ideal classifier model for multiple reasons. DistilBERT features the pretraining rigor of transformer language models that accounts for words in document context that is key to the subjective distinctions between policy frames that non-deep learning algorithms struggled to capture within my experiments. My training dataset featured 26 thousand records from the Media Frames Corpus with 500 additional labeled r/sanfrancisco comments. My one-versus-all approach of classifying whether a frame is present in a comment allowed me to accommodate for comments that employ multiple frames as well as irrelevant comments without any expressed frames. I ran multiple experiments for each frame classifier with a different number of epochs, batch size, class weights, majority class undersampling, and dropout layer probabilities. I then produced predictions on my full dataset of 1.1 million comments with each classifier’s model specification that obtained the highest F1 score on the test set.
+</p>
+<figure>
+ <image height="176" src="https://static.us.edusercontent.com/files/pBzc0lyUFxi6iBMKIzY6xRCD" width="422"/>
+</figure>
+<p>
+ I ran both logistic regression models as well as random forests to serve as comparative baselines to DistilBERT. This demonstrates just how sizably DistilBERT improves model performance over alternative classifiers. The range of F1 scores are all aligned with previous study results also investigating frames with the Media Frames Corpus. The model consistently performed better with frames that had more labeled instances.
+</p>
+<figure>
+ <image height="294" src="https://static.us.edusercontent.com/files/7Njno3zDBgZc5vwoaAhTc2O7" width="662"/>
+</figure>
+<p>
+ This histogram shows the distribution of frames after all seven classifiers are applied to the full comments set. You can see that cultural references dominate as the most employed frame, with quality of life, economics, and morality frames all comparable to each other for the next tier of used frames. 46% of the comments express two or more frames, with the three most frequently occurring combinations being culture &amp; quality of life frames, culture &amp; equality frames, and economics &amp; quality of life frames.
+</p>
+<p>
+ Relatively few comments are irrelevant with no expressed frame. The politics frame being the least common frame I unfortunately suspect is more of an outcome of my limited Reddit training data rather than a lack of politically framed discourse within the subreddit itself. Political frames oftentimes referred to name entities such as politicians or districts that the classifier would have limited records to learn from.
+</p>
+<p>
+ To build intuition regarding how each frame is commonly referred to within Reddit housing discourse, here are examples of classified comments for each frame.
+</p>
+<figure>
+ <image height="438" src="https://static.us.edusercontent.com/files/XTQlreSaGH9KEMOSU7C85vYz" width="455"/>
+</figure>
+<p>
+ While I do believe the predicted frames are generally well-aligned with the comment, you can see the subjectivity inherent within this process. For example, I could hear the argument for the comment expressing the quality-of-life frame also being labeled as using an economic frame given the user is grounding their argument around job loss.
+</p>
+<p>
+ With my full dataset now classified by frames, I then ran multinomial logit models for the probability of expressing either a negative, positive, or neutral sentiment within each comment. I then follow with negative binomial regression for fitting comment scores given the overdispersion of score variance over the mean that violates standard Poisson count model assumptions.
+</p>
+<p>
+ These models control for the hour, day of the week, and month the comment was posted as well as the post’s word length. I used the Holm-Bonferroni correction method to adjust the p-value results for multiple hypothesis tests following previous computational policy frame studies. I’m a bit uncertain how the large sample size for each group may contribute to inflated p-values and am very open to any feedback regarding adjustment methods for large datasets you’ve come across. The neutral category serves as the reference group for the sentiment outcome variable within the multinomial model, while each policy frame category term is compared to comments that express no identified frame. I additionally convert each logit model coefficient to odds ratios for easier interpretation.
+</p>
+<figure>
+ <image height="306" src="https://static.us.edusercontent.com/files/crS6FKOONYSsmCKdkh7B90yx" width="389"/>
+</figure>
+<p>
+ We’re able to interpret the odds ratio results for the Economic frame term in the negative sentiment model as a 0.542 lower odds of expressing a negative sentiment over a neutral sentiment in comparison to non-framed comments. This is the equivalent to an approximately 46% reduction in the relative probability of an economically framed comment having a negative sentiment.
+</p>
+<p>
+ Here’s my synopsis of the key takeaways of this model’s results. The economics and cultural frames are most associated with a neutral sentiment while equality frames are linked with both sentiment polarities but have a stronger association with negative sentiments. Furthermore, law &amp; crime and health &amp; safety frames are associated with negative sentiments while quality of life framed comments with positive sentiment. Politically framed comments demonstrate no strong association towards one sentiment over another.
+</p>
+<figure>
+ <image height="420" src="https://static.us.edusercontent.com/files/XqBdcGG25qDhHlQYAbPmFKmr" width="425"/>
+</figure>
+<p>
+ From there, my next research question is centered around exploring the relationship between comment scores and expressed sentiment. All these terms are also converted to odds ratios, with the equivalent interpretation of the baseline economics frame term being a 6.3% (1-0.937) decrease in odds of receiving comment upvotes for an economically framed comment over a non-framed comment
+</p>
+<p>
+ The baseline score negative binomial model results imply that the frames most associated with more comment upvotes are comments framed around law &amp; crime and/or politics. Comments that receive fewer upvotes than comparable non-framed comments are those employing the economics and/or cultural frames.
+</p>
+<p>
+ When expressed sentiment is incorporated with the used frames within comment discourse in the second model, a general trend emerges across frames where positively valanced comments receive more community validation through upvotes. It’s interesting to see that political framing’s association with higher comment scores is lower scoring than non-framed comments for either sentiment polarity, implying that neutral political commentary is the most well-received within the r/sanfrancisco community.
+</p>
+<p>
+ I’d say I don’t have any glaring issues preventing me from answering my research questions at this point of my project, but I certainly believe I could further hone my model accuracy and design choices further. I’d very much appreciate any general feedback on these results so far!
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I wanted to check in about "I then produced predictions on my full dataset of 1.1 million comments with each classifier’s model specification that obtained the highest F1 score on the test set."
   <break>
   </break>
   <break>
   </break>
   You may have already covered this in discussion with Heather, but general the procedure is to find which parameter values give you the best result on some validation set, and then report the performance that those values give you when run on a held-out (= distinct from your training or validation) test set.  If you used this recommended regimen instead, what would the F1-score table look like? (Or if this recommended regiment was what you actually did and the description of the F1 table is a little off, that would be good to know.)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Remy Stewart (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Oh yes, good point! I think this is indeed just me being too vague with the description for the table- the F1 scores are for the test set for each one-vs-all model after training and validation. The table itself doesn't include any values referring towards the generated predictions on the full dataset.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  (there was a  70/10/20 train/validation/test split)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Remy Stewart (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Oh yes, good point! I think this is indeed just me being too vague with the description for the table- the F1 scores are for the test set for each one-vs-all model after training and validation. The table itself doesn't include any values referring towards the generated predictions on the full dataset.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    (there was a  70/10/20 train/validation/test split)
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Heather Zheng (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I really like the idea of the research and a lot of excellent experiments here.
+  </p>
+  <p>
+   For the frame classification, I have the following questions:
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     What's the test data? Maybe only includes some comments from r/sanfrancisco as test data?
+    </p>
+   </li>
+   <li>
+    <p>
+     Since the model is trained on 26 thousand records from the Media Frames Corpus and 500 additional labeled r/sanfrancisco, will the score be different without comments from r/sanfrancisco? Also, you can compare DistilBERT Model trained on using Media Frames Corpus and 500 comments from r/sanfranciscotogether together as training datasets and DistilBERT Model train on Media Frames Corpus first and then fine-tuning on r/sanfrancisco.
+    </p>
+   </li>
+   <li>
+    <p>
+     Maybe qualitatively analyze the error from DistilBERT of the frame with F1&lt;0.7.
+    </p>
+   </li>
+  </list>
+  <p>
+   Also, can you give some examples of non-framed comments? Since they don't belong to any of the other frames, what characteristics do they have? Except comparing to the non-frame comments, you can also compare to the average of all comments.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

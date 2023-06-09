@@ -13,30 +13,26 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  i just had a question about a1 because my partner couldn't explain it to me well when we worked on it:
- </paragraph>
- <paragraph>
-  if the precondition for addAdvisor1 is the first advisor is unknown, how can i test this assert statement with assert throws if you can't access advisor1 in the testing class since it's private and there's no setter for it?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ i just had a question about a1 because my partner couldn't explain it to me well when we worked on it:
+</p>
+<p>
+ if the precondition for addAdvisor1 is the first advisor is unknown, how can i test this assert statement with assert throws if you can't access advisor1 in the testing class since it's private and there's no setter for it?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Tomer Shamir (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Tomer Shamir (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The way that we test assert statements is to pass some argument or use some value that violates the precondition. In this case it is a PhD with a known first advisor, so you need to create a PhD and give it a known first advisor and then try to call the method with that PhD object.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

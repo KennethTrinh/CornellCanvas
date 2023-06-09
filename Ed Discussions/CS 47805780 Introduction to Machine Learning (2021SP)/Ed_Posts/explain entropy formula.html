@@ -13,86 +13,85 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  How does this formula work? What effect does taking the log have? How does this represent infromation gain?
- </paragraph>
- <paragraph>
-  Generally too, what are the advantages of the entropy computation over the error computation  (shown below)?
- </paragraph>
- <math>
-  \sum_{a_i}^{ }Err\left(S_i\right)
- </math>
- <figure>
-  <image height="180.34633027522935" src="https://static.us.edusercontent.com/files/daYo4MlD7hRbszbUqLZOyFJu" width="658"/>
- </figure>
-</document>
+<p>
+ How does this formula work? What effect does taking the log have? How does this represent infromation gain?
+</p>
+<p>
+ Generally too, what are the advantages of the entropy computation over the error computation  (shown below)?
+</p>
+<math>
+ \sum_{a_i}^{ }Err\left(S_i\right)
+</math>
+<figure>
+ <image height="180.34633027522935" src="https://static.us.edusercontent.com/files/daYo4MlD7hRbszbUqLZOyFJu" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Ji Won Kim (student)
-</h3>
-<h3>
- Vote Count: 4
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Ji Won Kim (student)
+ </h3>
+ <h3>
+  Vote Count: 4
+ </h3>
+ <p>
   So, not sure if this is the answer you're looking for, but I was always curious as to why we define entropy in this way. And reading a couple of stackoverflow posts helped me understand intuitively why we define entropy in this way.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Let's look at entropy from the information theory perspective. Imagine I'm sending bits over some channel to another person. The basic idea of information theory is that information is dependent on how surprising the message is. Let's say I flip a coin and I want to send the results of the flip to someone else. I would need 1 bit to transmit this information because intuitively there are two possible outcomes of equal probability. On the other hand, if an event happens with probability p=1, then I would never need to send any bits over the channel because both people know that the event will always occur. More generally, if each event has probability p to occur, then we will need log(1/p) bits to transmit our message b/c there will be 1/p possible outcomes (notice that log(1/p) = -log(p)). We denote -log(p) as "information" or "surprisal."
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Now look at the formula for entropy
- </paragraph>
+ </p>
  <math>
   H\left(S\right)\ =-\sum_{y\ \in Y}^{ }p_s\left(y\right)\log_2\left(p_S\left(y\right)\right)
  </math>
- <paragraph>
+ <p>
   All entropy measures is the expected value of Information of a given probability distribution (by definition of expected value). You can think of entropy as the average number of bits required to encode the results of a sample of a probability distribution. Consider the weighted coin. If the coin always flipped to heads, then H(S) = 0. If the coin was fair, then H(S) = log_2(1/0.5) = log_2(2) = 1. In other words, entropy is maximized when the probability distribution is uniform (because you don't really know what's going to happen), and it's minimized when all the probability rests on one outcome. If you think about entropy in chemistry terms, in a sense this is a measure of "disorder."
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   So let's bring this discussion back to decision trees. Remember in DTs, we are minimizing entropy (which is our cost function). Intuitively, this means that we want to create a probability distribution that has all its probability on one outcome. In other words, our leaf nodes should all have the same class, which means that our DT is accurately splitting the full distribution of data into homogenous nodes (not homogenous like SVMs but that we partition our data into similar groups). This minimizes the error for our decision tree because the DT assigns only one label to the leaf nodes.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The reason why we utilize logs in entropy is simply due to the properties of "surprisal" or "information."
- </paragraph>
+ </p>
  <figure>
   <image height="97.39332365747461" src="https://static.us.edusercontent.com/files/qwrCrRgiVcyRIAKbpK59ljZ2" width="466"/>
  </figure>
- <paragraph>
+ <p>
   Logarithms are simply the function that matches these properties of "information" that we'd like to mathematically capture, which is why it's utilized to define entropy.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Not sure if this exactly answers your question, but it was a pretty interesting rabbit hole I went down a couple years ago when I was curious about what exactly entropy was, so I hope it was helpful. Here are some links talking going into more detail:
- </paragraph>
- <paragraph>
-  <link href="https://stats.stackexchange.com/questions/87182/what-is-the-role-of-the-logarithm-in-shannons-entropy"/>
-  https://stats.stackexchange.com/questions/87182/what-is-the-role-of-the-logarithm-in-shannons-entropy
- </paragraph>
- <paragraph>
+ </p>
+ <p>
+  <a href="https://stats.stackexchange.com/questions/87182/what-is-the-role-of-the-logarithm-in-shannons-entropy">
+   https://stats.stackexchange.com/questions/87182/what-is-the-role-of-the-logarithm-in-shannons-entropy
+  </a>
+ </p>
+ <p>
   <link href="https://mathoverflow.net/questions/146463/what-is-entropy-really"/>
   https://mathoverflow.net/questions/146463/what-is-entropy-really
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   https://en.wikipedia.org/wiki/Entropy_(information_theory)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Do you also know in which cases entropy would be better to use compared to the mean error
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Do you also know in which cases entropy would be better to use compared to the mean error
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

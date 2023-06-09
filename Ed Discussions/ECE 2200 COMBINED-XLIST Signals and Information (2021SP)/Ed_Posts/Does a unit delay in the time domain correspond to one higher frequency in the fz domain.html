@@ -13,61 +13,57 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Since the DTFT of a signal x[n] = 5ẟ[n-1] + 4ẟ[n-3] is 5e^-jw +4e^-3jw, does something like a unit delay in a block diagram affect one higher frequency in the frequency domain?
- </paragraph>
- <paragraph>
-  Additionally, since the DTFT of a time delayed signal x[n-n0] is e^iwn0, does that also show that time delaying affects a higher frequency sinusoid
- </paragraph>
-</document>
+<p>
+ Since the DTFT of a signal x[n] = 5ẟ[n-1] + 4ẟ[n-3] is 5e^-jw +4e^-3jw, does something like a unit delay in a block diagram affect one higher frequency in the frequency domain?
+</p>
+<p>
+ Additionally, since the DTFT of a time delayed signal x[n-n0] is e^iwn0, does that also show that time delaying affects a higher frequency sinusoid
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   A unit delay in a block diagram corresponds to multiplication by a factor of $e ^ {- j \widehat{\omega}}$ in the frequency domain.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I don't understand your second question as you've phrased it.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I guess I was trying to conceptually understand what the X(w) spectra represents. If time shifting is multiplying by e^-jw, that means the spectra to the right increases. I was wondering if increasing spectra to the right meant magnifying higher frequency sinusoids.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  I don't think it means the "spectra to the right increases."  What the multiplicative factor does is introduce a phase change in the spectrum --- it has no effect on the spectral magnitude because $e ^ {- j \widehat{\omega}}$ has magnitude 1.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I guess I was trying to conceptually understand what the X(w) spectra represents. If time shifting is multiplying by e^-jw, that means the spectra to the right increases. I was wondering if increasing spectra to the right meant magnifying higher frequency sinusoids.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: David Delchamps (admin)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    I don't think it means the "spectra to the right increases."  What the multiplicative factor does is introduce a phase change in the spectrum --- it has no effect on the spectral magnitude because $e ^ {- j \widehat{\omega}}$ has magnitude 1.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

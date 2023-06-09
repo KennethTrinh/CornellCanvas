@@ -13,45 +13,43 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Can someone explain how 8, 6, 2 is obtained?
- </paragraph>
- <figure>
-  <image height="376.70346117867166" src="https://static.us.edusercontent.com/files/cDek0RXd6nYFMuzaIko1onST" width="658"/>
- </figure>
-</document>
+<p>
+ Can someone explain how 8, 6, 2 is obtained?
+</p>
+<figure>
+ <image height="376.70346117867166" src="https://static.us.edusercontent.com/files/cDek0RXd6nYFMuzaIko1onST" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Tomer Shamir (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Tomer Shamir (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   There are a few things to look out for here. The first is that field q is static. The second is that the argument of m2 is called q. And finally, we have a local variable in the main method also called q. In the first print statement, since the local variable q is declared after that print statement, the q in that print statement is the field. Then in the second print statement, the q we're referring to is the local variable since it comes after that local variable is declared. Then we have to look at the value for c.p, which is assigned the value of 1 at first. Then when m2 is called, it's assigned the value q + 1, where q is the argument. c.p is not changed afterwards so it remains as 6. However, argument q is changed by adding 3 to it and then we return its value, 8.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Hopefully that all makes sense. If you want another explanation, just let us know in this post.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Abby Langer (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Can you further explain I am still confused
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Abby Langer (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Can you further explain I am still confused
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

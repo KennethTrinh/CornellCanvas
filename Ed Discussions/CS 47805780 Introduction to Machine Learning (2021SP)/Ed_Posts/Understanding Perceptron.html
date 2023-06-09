@@ -13,48 +13,44 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Given one point
- </paragraph>
- <math>
-  y_i(\vec{w}^{(t)}\cdot\vec{x_i})\le0
- </math>
- <paragraph>
-  would the new plane learn something? In other words, would
- </paragraph>
- <math>
-  y_i(\vec{w}^{(t+1)}\cdot\vec{x_i})&gt;0\ ?
- </math>
- <paragraph>
-  I tried to work out that myself but to make that true, it has to satisfy
- </paragraph>
- <paragraph>
-  cos(theta)|w|&lt;|xi|. whereas theta is angle between w and xi. which is not always true. Am I doing it correctly? If so, why would this step help at all if it doesn't even correct the point it makes mistakes on. In general, Also I know it will eventually converge as we proved, I don't understand why it goes towards the right direction each step.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Given one point
+</p>
+<math>
+ y_i(\vec{w}^{(t)}\cdot\vec{x_i})\le0
+</math>
+<p>
+ would the new plane learn something? In other words, would
+</p>
+<math>
+ y_i(\vec{w}^{(t+1)}\cdot\vec{x_i})&gt;0\ ?
+</math>
+<p>
+ I tried to work out that myself but to make that true, it has to satisfy
+</p>
+<p>
+ cos(theta)|w|&lt;|xi|. whereas theta is angle between w and xi. which is not always true. Am I doing it correctly? If so, why would this step help at all if it doesn't even correct the point it makes mistakes on. In general, Also I know it will eventually converge as we proved, I don't understand why it goes towards the right direction each step.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Noor (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   It won't necessarily go from negative to positive in a single iteration, but it will most certainly become less negative after the update. This is because
- </paragraph>
+ </p>
  <math>
   y_i\left(\vec{w}^{\left(t+1\right)}\cdot\vec{x_i}\right)=y_i\left(\left(\vec{w}^{\left(t\right)}+y_i\vec{x_i}\right)\cdot\vec{x_i}\right)=y_i\left(\vec{w}^{\left(t+1\right)}\cdot\vec{x_i}\right)+\vec{\left|\left|x_i\right|\right|}
  </math>
- <paragraph>
+ <p>
   Tldr it won't necessarily make it not misclassified after one iteration, but it will make it closer to correctly classified.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

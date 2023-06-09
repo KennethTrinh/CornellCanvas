@@ -16,84 +16,79 @@
 <h3>
  ENDORSED
 </h3>
-<document version="2.0">
- <paragraph>
-  Due to the precision, Rn can not equal to R exactly, that will cause this line incorrect from time to time. The axis will rotate in opposite direction.
- </paragraph>
- <figure>
-  <image height="136" src="https://static.us.edusercontent.com/files/gh6mrXaIMhIyTuYUaYciZ7Rz" width="337"/>
- </figure>
- <paragraph>
-  We can change this line into
- </paragraph>
- <paragraph>
-  if abs(Rn-R)&lt;=0.0001%this is the precision, you can choose any number you prefer.
- </paragraph>
- <paragraph>
-  else
- </paragraph>
- <paragraph>
-  theta=-theta;
- </paragraph>
- <paragraph>
-  end
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Due to the precision, Rn can not equal to R exactly, that will cause this line incorrect from time to time. The axis will rotate in opposite direction.
+</p>
+<figure>
+ <image height="136" src="https://static.us.edusercontent.com/files/gh6mrXaIMhIyTuYUaYciZ7Rz" width="337"/>
+</figure>
+<p>
+ We can change this line into
+</p>
+<p>
+ if abs(Rn-R)&lt;=0.0001%this is the precision, you can choose any number you prefer.
+</p>
+<p>
+ else
+</p>
+<p>
+ theta=-theta;
+</p>
+<p>
+ end
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andrew van Paridon (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thanks Suming! Bonus point heading your way
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Hanyu Zhang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Hanyu Zhang (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Does MatLab have a equivalent to
-  <link href="https://numpy.org/doc/stable/reference/generated/numpy.allclose.html"/>
-  Numpy's "allclose"? I did some Googling but can't find anything. It seems like a massive oversight on MatLab's part to not have such a useful numerical function...
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Josephine Monica (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  A simple google search gave me this
-  <link href="https://www.mathworks.com/help/matlab/ref/ismembertol.html"/>
-  https://www.mathworks.com/help/matlab/ref/ismembertol.html
- </paragraph>
- <paragraph>
-  It works for just a value or also array (does pairwise comparison). For arr,it returns logical array that you can just check if its sum equals to the length of arr.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+  <a href="https://numpy.org/doc/stable/reference/generated/numpy.allclose.html">
+   Numpy's "allclose"
+  </a>
+  ? I did some Googling but can't find anything. It seems like a massive oversight on MatLab's part to not have such a useful numerical function...
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Josephine Monica (staff)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   A simple google search gave me this
+   <a href="https://www.mathworks.com/help/matlab/ref/ismembertol.html">
+    https://www.mathworks.com/help/matlab/ref/ismembertol.html
+   </a>
+  </p>
+  <p>
+   It works for just a value or also array (does pairwise comparison). For arr,it returns logical array that you can just check if its sum equals to the length of arr.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Andrew van Paridon (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thanks Suming! Bonus point heading your way
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

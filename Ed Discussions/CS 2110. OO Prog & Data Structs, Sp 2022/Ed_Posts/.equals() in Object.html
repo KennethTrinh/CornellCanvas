@@ -13,161 +13,160 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  the .equals() in Object is the same as ==. So if I have an Integer a = 3, if I do (Object)a.equals(3), why is it true?
- </paragraph>
- <figure>
-  <image height="354" src="https://static.us.edusercontent.com/files/OH0vWBhfPy1PNJChcVlKaMyS" width="428"/>
- </figure>
- <paragraph>
-  like this, why?
- </paragraph>
-</document>
+<p>
+ the .equals() in Object is the same as ==. So if I have an Integer a = 3, if I do (Object)a.equals(3), why is it true?
+</p>
+<figure>
+ <image height="354" src="https://static.us.edusercontent.com/files/OH0vWBhfPy1PNJChcVlKaMyS" width="428"/>
+</figure>
+<p>
+ like this, why?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bahaa Kotb (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Because a == 3 is true
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  look at my example. a==b is false, and (Object) a==b is false. But (Object)a.equals(b) is true
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  a and b are pointers to objects of type Integer (this is the wrapper class of primitive type int), so when you do a==b it's false because they don't point to the same object, but a.equals(b) because they have the same value.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes but when I make a into an Object, here it should be using the .equals method in Object right? Or does it still use the method in Integer?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Bottom up rule
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  But when I make it into Object, it should start with the methods in Object, right?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  java hyper text bottom up rule
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  <link href="https://edstem.org/us/courses/16589/discussion/1236873?comment=2807948"/>
-  https://edstem.org/us/courses/16589/discussion/1236873
- </paragraph>
- <paragraph>
-  If you read this question, you will see where my confusion is. I know bottom up rule, but when I declare a variable as an Object rather than Integer, then should it be limited to the methods in Object?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Andrew’s comment refers to the compile time reference rule, please use java hyper text
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  not if it’s dynamic type is an Integer, by the bottom up rule.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   look at my example. a==b is false, and (Object) a==b is false. But (Object)a.equals(b) is true
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Bahaa Kotb (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    a and b are pointers to objects of type Integer (this is the wrapper class of primitive type int), so when you do a==b it's false because they don't point to the same object, but a.equals(b) because they have the same value.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Yes but when I make a into an Object, here it should be using the .equals method in Object right? Or does it still use the method in Integer?
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Bahaa Kotb (student)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      Bottom up rule
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 12em;">
+      <h3>
+       Author: Anonymous
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       But when I make it into Object, it should start with the methods in Object, right?
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 14em;">
+       <h3>
+        Author: Bahaa Kotb (student)
+       </h3>
+       <h3>
+        Vote Count: 0
+       </h3>
+       <p>
+        java hyper text bottom up rule
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+       <div style="text-indent: 16em;">
+        <h3>
+         Author: Anonymous
+        </h3>
+        <h3>
+         Vote Count: 0
+        </h3>
+        <p>
+         <a href="https://edstem.org/us/courses/16589/discussion/1236873?comment=2807948">
+          https://edstem.org/us/courses/16589/discussion/1236873
+         </a>
+        </p>
+        <p>
+         If you read this question, you will see where my confusion is. I know bottom up rule, but when I declare a variable as an Object rather than Integer, then should it be limited to the methods in Object?
+        </p>
+        <h3>
+         ------------------------------------
+        </h3>
+        <div style="text-indent: 18em;">
+         <h3>
+          Author: Bahaa Kotb (student)
+         </h3>
+         <h3>
+          Vote Count: 0
+         </h3>
+         <p>
+          not if it’s dynamic type is an Integer, by the bottom up rule.
+         </p>
+         <h3>
+          ------------------------------------
+         </h3>
+         <div style="text-indent: 18em;">
+          <h3>
+           Author: Bahaa Kotb (student)
+          </h3>
+          <h3>
+           Vote Count: 0
+          </h3>
+          <p>
+           Andrew’s comment refers to the compile time reference rule, please use java hyper text
+          </p>
+          <h3>
+           ------------------------------------
+          </h3>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

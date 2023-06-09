@@ -13,80 +13,72 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Problem #2
- </paragraph>
- <paragraph>
-  HW #2
- </paragraph>
- <paragraph>
-  The direction in the HW said: compute the ratio of the two, without rounding
- </paragraph>
- <paragraph>
-  The solution used
- </paragraph>
- <paragraph>
-  <bold>
-   CAST(SUM(Discount*Quantity*UnitPrice) AS Real) / SUM(Quantity*UnitPrice) AS AvgDiscount
-  </bold>
- </paragraph>
- <paragraph>
-  What is the purpose of using cast here? I believe without casting you would still get the same output as the given screenshot. The OrderDetail table from the NorthWind database already has UnitPrice as a type DECIMAL and Discount as a type DOUBLE by default.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Problem #2
+</p>
+<p>
+ HW #2
+</p>
+<p>
+ The direction in the HW said: compute the ratio of the two, without rounding
+</p>
+<p>
+ The solution used
+</p>
+<p>
+ <b>
+  CAST(SUM(Discount*Quantity*UnitPrice) AS Real) / SUM(Quantity*UnitPrice) AS AvgDiscount
+ </b>
+</p>
+<p>
+ What is the purpose of using cast here? I believe without casting you would still get the same output as the given screenshot. The OrderDetail table from the NorthWind database already has UnitPrice as a type DECIMAL and Discount as a type DOUBLE by default.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Caroline Ryu (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Caroline Ryu (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You are correct that without casting, the query would still produce the same result. However, it's worth noting that the purpose of using the CAST function in the provided query is to ensure that the result of the division operation is explicitly converted to the REAL data type. This may be useful in cases where you want to ensure consistent data types or when you want to perform additional calculations on the result.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Cao (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I understand, but does this justify a 3-point deduction on Q2? The explanation on the solution says it is to
-  <italic>
-   avoid rounding the ratio to an integer when both the numerator and denominator are integers
-  </italic>
-  , but we know that this scenario would never happen since neither the numerator nor denominator would be integers given the data types of these variables.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ashley Zeng (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  While the number inside the SUM functions in both the numerator and denominator is a decimal, the actual numerator or denominator (the SUM value) could still be an integer. For example, if you add 0.2 and 0.8 together, you get 1. This may cause issues, as if both the numerator and denominator are integers, SQL will automatically round that result to an integer. Note that in the HW, AvgDiscount was asked to be calculated without rounding.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Michael Cao (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I understand, but does this justify a 3-point deduction on Q2? The explanation on the solution says it is to
+   <i>
+    avoid rounding the ratio to an integer when both the numerator and denominator are integers
+   </i>
+   , but we know that this scenario would never happen since neither the numerator nor denominator would be integers given the data types of these variables.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Ashley Zeng (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    While the number inside the SUM functions in both the numerator and denominator is a decimal, the actual numerator or denominator (the SUM value) could still be an integer. For example, if you add 0.2 and 0.8 together, you get 1. This may cause issues, as if both the numerator and denominator are integers, SQL will automatically round that result to an integer. Note that in the HW, AvgDiscount was asked to be calculated without rounding.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

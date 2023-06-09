@@ -13,139 +13,137 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi, I am working on delete(Node n) and it seems like I am not removing the node from the list completely. To give an example, I created a list and appended nodes to get [2110, 2220, 3330]. After implementing my delete call to delete node 1, when I call
- </paragraph>
- <pre>        System.out.println(dl.node(1).value());
+<p>
+ Hi, I am working on delete(Node n) and it seems like I am not removing the node from the list completely. To give an example, I created a list and appended nodes to get [2110, 2220, 3330]. After implementing my delete call to delete node 1, when I call
+</p>
+<pre>        System.out.println(dl.node(1).value());
 </pre>
- <paragraph>
-  it returns 3330, which is correct. But when I print my entire list using
- </paragraph>
- <pre>        System.out.println(dl); 
+<p>
+ it returns 3330, which is correct. But when I print my entire list using
+</p>
+<pre>        System.out.println(dl); 
 </pre>
- <paragraph>
-  it returns [2110, 2220, 3330]. I am not sure what I am doing wrong as I reassigned the values of the nodes, but the node itself is still in there.
- </paragraph>
-</document>
+<p>
+ it returns [2110, 2220, 3330]. I am not sure what I am doing wrong as I reassigned the values of the nodes, but the node itself is still in there.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Did you make sure to reassign the 2110 node’s new next value and 3330’s node new previous value?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  yes, that's why my node(1) is returning 3330 I'm assuming. Both my print statements were after the delete call
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  make sure to set the node your deleting’s next and previous values to null
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  yes i did that as well :,)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  what does the tostring method print? If it prints the wrong list then you’re not assigning your next and previous values correctly
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  org.opentest4j.AssertionFailedError: expected: &lt;[2110, 3330]&gt; but was: &lt;[2110, 2220, 3330]&gt;
- </paragraph>
- <paragraph>
-  But my node(1) returning 3330.
- </paragraph>
- <paragraph>
-  I will double check my code
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  yep you're not doing your next and prev values correctly then :(
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew Chen (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew Chen (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I'll mark this as resolved. If you're not sure where your mistake is and want someone to help debug your code, please either go to consulting/office hours or make a private post.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Bahaa Kotb (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Did you make sure to reassign the 2110 node’s new next value and 3330’s node new previous value?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    yes, that's why my node(1) is returning 3330 I'm assuming. Both my print statements were after the delete call
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Bahaa Kotb (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     make sure to set the node your deleting’s next and previous values to null
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 8em;">
+     <h3>
+      Author: Anonymous
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      yes i did that as well :,)
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 10em;">
+      <h3>
+       Author: Bahaa Kotb (student)
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       what does the tostring method print? If it prints the wrong list then you’re not assigning your next and previous values correctly
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 12em;">
+       <h3>
+        Author: Anonymous
+       </h3>
+       <h3>
+        Vote Count: 0
+       </h3>
+       <p>
+        org.opentest4j.AssertionFailedError: expected: &lt;[2110, 3330]&gt; but was: &lt;[2110, 2220, 3330]&gt;
+       </p>
+       <p>
+        But my node(1) returning 3330.
+       </p>
+       <p>
+        I will double check my code
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+       <div style="text-indent: 14em;">
+        <h3>
+         Author: Bahaa Kotb (student)
+        </h3>
+        <h3>
+         Vote Count: 0
+        </h3>
+        <p>
+         yep you're not doing your next and prev values correctly then :(
+        </p>
+        <h3>
+         ------------------------------------
+        </h3>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

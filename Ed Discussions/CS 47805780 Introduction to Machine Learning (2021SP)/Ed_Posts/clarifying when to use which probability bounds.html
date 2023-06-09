@@ -13,165 +13,159 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi, I just want to clarify when we would use which probability bounds.
- </paragraph>
- <paragraph>
-  This is what I understand:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    We use Hoeffding's inequality if
-   </paragraph>
-   <list style="bullet">
-    <list-item>
-     <paragraph>
-      we don't know what sample S or distribution P is
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
- </list>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    We use the statistical learning theory generalization error bounds if
-   </paragraph>
-   <list style="bullet">
-    <list-item>
-     <paragraph>
-      we know what sample S and distribution P are
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      we are looking at a random hypothesis from H
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
- </list>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    We use union bound with our generalization error bounds if
-   </paragraph>
-   <list style="bullet">
-    <list-item>
-     <paragraph>
-      we are looking at one hypothesis that is no longer random (perhaps bc we chose that one hypothesis for some reason, or bc a learning algorithm chose that hypothesis), and so we need to use the union bound over all hypotheses in order to re-introduce randomness so that we can create a valid probability bound
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
- </list>
- <paragraph>
-  <bold>
-   <italic>
-    My first question: Is my above understanding correct? Is there anything I got wrong, and/or is there anything I could add?
-   </italic>
-  </bold>
- </paragraph>
- <paragraph>
-  Also, in the review session, Prof Joachims mentioned that
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    we use Hoeffding's inequality if we're talking about error on an independent test set (that the learning algorithm was not trained on)
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  <bold>
-   <italic>
-    My second question:
-   </italic>
-  </bold>
-  I don't understand what he means by "an independent test set"?
- </paragraph>
- <paragraph>
-  <bold>
-   <italic>
-    My third question:
-   </italic>
-  </bold>
-  Also, I understand that we can use Hoeffding's inequality for hypotheses that the learning algorithm was not trained on,  but can't we use generalization error bounds (without union bound) to do that as well? Is the only difference between Hoeffding's and generalization error bounds that we use the former when we don't know sample S and distribution P, and we use the latter if we do know these things?
- </paragraph>
-</document>
+<p>
+ Hi, I just want to clarify when we would use which probability bounds.
+</p>
+<p>
+ This is what I understand:
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   We use Hoeffding's inequality if
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     we don't know what sample S or distribution P is
+    </p>
+   </li>
+  </list>
+ </li>
+</list>
+<list style="bullet">
+ <li>
+  <p>
+   We use the statistical learning theory generalization error bounds if
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     we know what sample S and distribution P are
+    </p>
+   </li>
+   <li>
+    <p>
+     we are looking at a random hypothesis from H
+    </p>
+   </li>
+  </list>
+ </li>
+</list>
+<list style="bullet">
+ <li>
+  <p>
+   We use union bound with our generalization error bounds if
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     we are looking at one hypothesis that is no longer random (perhaps bc we chose that one hypothesis for some reason, or bc a learning algorithm chose that hypothesis), and so we need to use the union bound over all hypotheses in order to re-introduce randomness so that we can create a valid probability bound
+    </p>
+   </li>
+  </list>
+ </li>
+</list>
+<p>
+ <b>
+  <i>
+   My first question: Is my above understanding correct? Is there anything I got wrong, and/or is there anything I could add?
+  </i>
+ </b>
+</p>
+<p>
+ Also, in the review session, Prof Joachims mentioned that
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   we use Hoeffding's inequality if we're talking about error on an independent test set (that the learning algorithm was not trained on)
+  </p>
+ </li>
+</list>
+<p>
+ <b>
+  <i>
+   My second question:
+  </i>
+ </b>
+ I don't understand what he means by "an independent test set"?
+</p>
+<p>
+ <b>
+  <i>
+   My third question:
+  </i>
+ </b>
+ Also, I understand that we can use Hoeffding's inequality for hypotheses that the learning algorithm was not trained on,  but can't we use generalization error bounds (without union bound) to do that as well? Is the only difference between Hoeffding's and generalization error bounds that we use the former when we don't know sample S and distribution P, and we use the latter if we do know these things?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Scott Bass (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Scott Bass (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Everything looks good except what you have for SLT. In particular, you say "we know what sample S and distribution P are". This is not necessary as the bounds found in SLT are for any distribution P and set S with i.i.d. samples from P (check the theorems we found). Further, the bounds found in SLT are
-  <italic>
+  <i>
    not
-  </italic>
+  </i>
   talking about any random hypothesis $h$, but rather the hypothesis $h_S$ found using ERM (in the realizable case, any $h$ s.t. $err_{S}(h) = 0$ and in the general case $h_{S} = \argmin_{h \in H} err_{S}(h)$).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Independent test set means any set of samples that your algorithm has
-  <italic>
+  <i>
    no knowledge
-  </italic>
+  </i>
   of during training. If you do
-  <italic>
+  <i>
    any
-  </italic>
+  </i>
   loss minimization on test samples, then you lose the randomness of the test samples and as a result you lose your bounds (i.e. Hoeffding won't apply anymore). Typically this means setting aside a proportion of samples for testing that are only used to assess how good your model is but not used to change/improve your model.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Hoeffding's bound can be used in any scenario where you want to bound the difference between the sum of independent random variables and the expected value of that sum. If you pick a hypothesis using ERM, then $err_{S}(h_{S}) = \frac{1}{m} \sum_{i=1}^{m} \Delta(h_{S}(x_{i}), y_{i})$ is no longer a sum of random independent variables, so Hoeffding's doesn't apply. However, if you just take a random hypothesis $h_{i}$, then that sum is random and you can use Hoeffding's. By taking a union bound, you reintroduce the randomness again, allowing you to use Hoeffding.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Ohh I see. Thank you so much for the clear explanation! This makes more sense.
- </paragraph>
- <paragraph>
-  So does this mean that we usually only use the union bound with hoeffding's bound? Do we ever use union bound with the SLT generalization error bounds?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Scott Bass (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  The SLT generalization error bounds are usually a result of using union bound + Hoeffding's bound (i.e. union over all possible hypotheses and apply Hoeffding's bound to each hypothesis). So I don't think you would be taking union bounds
-  <italic>
-   over
-  </italic>
-  the SLT generalization bounds (because they're already a union bound).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Ohh I see. Thank you so much for the clear explanation! This makes more sense.
+  </p>
+  <p>
+   So does this mean that we usually only use the union bound with hoeffding's bound? Do we ever use union bound with the SLT generalization error bounds?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Scott Bass (student)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    The SLT generalization error bounds are usually a result of using union bound + Hoeffding's bound (i.e. union over all possible hypotheses and apply Hoeffding's bound to each hypothesis). So I don't think you would be taking union bounds
+    <i>
+     over
+    </i>
+    the SLT generalization bounds (because they're already a union bound).
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

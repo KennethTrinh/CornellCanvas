@@ -13,118 +13,114 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Here is my presentation, write up, and also some of the initial cleaning code I used to get the delta values. -Richard
- </paragraph>
- <file filename="6742 Presentation.pdf" url="https://static.us.edusercontent.com/files/s8xiaFzL1TRg8yiIiVLVBYar">
- </file>
- <file filename="richardlp_A1_report.pdf" url="https://static.us.edusercontent.com/files/JDIIcFdHLTr1pOoXapsTS2bF">
- </file>
- <paragraph>
-  <link href="https://colab.research.google.com/drive/143TrUh2O_bB1nZt741yhadAKvaYBuDfd?usp=sharing"/>
-  Preliminary cleaning code here!
- </paragraph>
- <paragraph>
+<p>
+ Here is my presentation, write up, and also some of the initial cleaning code I used to get the delta values. -Richard
+</p>
+<a filename="6742 Presentation.pdf" href="https://static.us.edusercontent.com/files/s8xiaFzL1TRg8yiIiVLVBYar">
+</a>
+<file url="https://static.us.edusercontent.com/files/JDIIcFdHLTr1pOoXapsTS2bF">
+ richardlp_A1_report.pdf
+ <p>
+  <a href="https://colab.research.google.com/drive/143TrUh2O_bB1nZt741yhadAKvaYBuDfd?usp=sharing">
+   Preliminary cleaning code here!
+  </a>
+ </p>
+ <p>
   If I had realized other people were also stuck on the delta thing I would have tried to share sooner!
- </paragraph>
-</document>
-<h3>
- Author: Richard Lp (he/they) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  I think the main lesson from this project is the difficulty of cleaning the data in a way that doesn’t undermine the results. Specifically, I looked at people who consistently posted in controversial topics. This left me with relatively few people in the pool and with a relatively weird cohort. I’m super proud of some of the clever cleaning things I chained together in the analysis &amp; model fitting. Its hard to ask interesting questions on really big data sets without hitting some computational ceiling, and I actually had to make efficient use of database queries and data structures to make some of the questions answerable. This took up a lot of my time, however, and I think in the future it’d be better to split up more of the mechanical design.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Fengyang Lin (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi Richard! I really like how you proposed your research questions based on the intuition of experts' replies, as I also found that experts are usually more confident and concise when they talk.  It is also really great to see the background notes, which helps us understand the logic and motivation of your pilot study. Although most of the results seem to be negative, I think the problem still worths digging into, and I also learned from the way you layered your analysis. Conditioning on ever being successful challengers after testing on the overall users is quite inspiring for me, which also shows a slightly more obvious predictivity.  And I was also surprised to see that more successful single-issue users used "I" less frequently - I was thinking a more confident challenger would use "I" more frequently. But the interpretation could also be different, if we say that experts will use a more subjective tone and avoid revealing too much personal opinion or emotion. This also leads to my further questions as suggested below.
- </paragraph>
- <paragraph>
-  More practically, for the current exploration, I will
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    Condition the number of deltas (or set up some category for numbers of deltas) of challengers to see the correlation, and compare among challengers groups for different categories of received deltas.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    As you also state in the drawbacks, maybe consider topics that are less popular but more academic? Like some topics in economics or regulations.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  I would also consider the following directions and questions to further the study:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    Where did the challenger use the "I" pronouns, i.e. at the beginning, middle, or at the end of the statement? Does using more "I" in certain section contributes to a more successful persuasion?
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    More complicated(maybe too complicated ^^), if we could classify sentences into different categories (facts, methods, conclusion, etc.), what are the differences of the proportion of first-person pronouns among these different sections/context groups? Is there any correlation between using more "I" in a certain group of sentences and the success of persuasion? (Or maybe this direction is not feasible on the CMV dataset compared with on academic papers.)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Does using more "I" pronouns mean that the challenger is more confident? And does this confidence shows predictivity for a successful persuasion?
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Or does using more "I" pronouns mean that the challenge is less subjective in their statement because it reveals their opinion in a more obvious way? Similarly, is there a correlation between it and the success of persuasion?
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Roz Thalken (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi Richard! Thank you for sharing your work with us through the presentation and report (plus the cleaning code for the delta!). I found your research question about the relationship between conversational success and expertise really intriguing given what the results can show about how CMV operates. It’s intuitive that expertise would (hopefully) help convince people to change their minds, but the difficult part of your project seems to be identifying a proxy for expertise. I appreciated your discussion about high mobility vs. single-issue users, given that it’s unlikely a person could be an expert about too many things at once. It’s a useful framework that I’m glad to know about. Put in connection with personal pronouns, I think it’s a good method toward getting at a fuzzy concept like expertise.
- </paragraph>
- <paragraph>
-  I also see some overlap between your project and the one that I worked on, with looking at how open-mindedness related to subject matter. If there was a part 2 to this project, I’d recommend merging our projects. You might topic model the issues rather than identify them with keywords, and then find users who consistently post within a single topic and use personal pronouns often. Then, I wonder if there might be a way to assess the quality of the comment, since (as you mentioned) experts
-  <italic>
-   should
-  </italic>
-  post high-quality, evidence-based comments. I’m not sure about a good way of assessing this—maybe readability scores or external references?
- </paragraph>
- <paragraph>
-  You might even add an additional step to this pipeline, and identify words that are more indicative of expertise (e.g. learned, studied, saw) and find bigrams that include a [personal pronoun] + [experience word] (e.g. “I learned”). What might be complicated—but seems really intriguing—would be to also divide expertise into multiple categories. There might be a “personal experience” expertise category and another “professional” expertise category. Then, you could perform the same type of analysis as what you did here and find the correlation between different types of expertise. Are CMV subredditers convinced more by personal experiences or professional expertise? I’d bet that it depends on the topic!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- ----------- REPLIES -----------
-</h3>
+ </p>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Roz Thalken (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Hi Richard! Thank you for sharing your work with us through the presentation and report (plus the cleaning code for the delta!). I found your research question about the relationship between conversational success and expertise really intriguing given what the results can show about how CMV operates. It’s intuitive that expertise would (hopefully) help convince people to change their minds, but the difficult part of your project seems to be identifying a proxy for expertise. I appreciated your discussion about high mobility vs. single-issue users, given that it’s unlikely a person could be an expert about too many things at once. It’s a useful framework that I’m glad to know about. Put in connection with personal pronouns, I think it’s a good method toward getting at a fuzzy concept like expertise.
+  </p>
+  <p>
+   I also see some overlap between your project and the one that I worked on, with looking at how open-mindedness related to subject matter. If there was a part 2 to this project, I’d recommend merging our projects. You might topic model the issues rather than identify them with keywords, and then find users who consistently post within a single topic and use personal pronouns often. Then, I wonder if there might be a way to assess the quality of the comment, since (as you mentioned) experts
+   <i>
+    should
+   </i>
+   post high-quality, evidence-based comments. I’m not sure about a good way of assessing this—maybe readability scores or external references?
+  </p>
+  <p>
+   You might even add an additional step to this pipeline, and identify words that are more indicative of expertise (e.g. learned, studied, saw) and find bigrams that include a [personal pronoun] + [experience word] (e.g. “I learned”). What might be complicated—but seems really intriguing—would be to also divide expertise into multiple categories. There might be a “personal experience” expertise category and another “professional” expertise category. Then, you could perform the same type of analysis as what you did here and find the correlation between different types of expertise. Are CMV subredditers convinced more by personal experiences or professional expertise? I’d bet that it depends on the topic!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Fengyang Lin (student)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Hi Richard! I really like how you proposed your research questions based on the intuition of experts' replies, as I also found that experts are usually more confident and concise when they talk.  It is also really great to see the background notes, which helps us understand the logic and motivation of your pilot study. Although most of the results seem to be negative, I think the problem still worths digging into, and I also learned from the way you layered your analysis. Conditioning on ever being successful challengers after testing on the overall users is quite inspiring for me, which also shows a slightly more obvious predictivity.  And I was also surprised to see that more successful single-issue users used "I" less frequently - I was thinking a more confident challenger would use "I" more frequently. But the interpretation could also be different, if we say that experts will use a more subjective tone and avoid revealing too much personal opinion or emotion. This also leads to my further questions as suggested below.
+   </p>
+   <p>
+    More practically, for the current exploration, I will
+   </p>
+   <list style="bullet">
+    <li>
+     <p>
+      Condition the number of deltas (or set up some category for numbers of deltas) of challengers to see the correlation, and compare among challengers groups for different categories of received deltas.
+     </p>
+    </li>
+    <li>
+     <p>
+      As you also state in the drawbacks, maybe consider topics that are less popular but more academic? Like some topics in economics or regulations.
+     </p>
+    </li>
+   </list>
+   <p>
+    I would also consider the following directions and questions to further the study:
+   </p>
+   <list style="bullet">
+    <li>
+     <p>
+      Where did the challenger use the "I" pronouns, i.e. at the beginning, middle, or at the end of the statement? Does using more "I" in certain section contributes to a more successful persuasion?
+     </p>
+    </li>
+    <li>
+     <p>
+      More complicated(maybe too complicated ^^), if we could classify sentences into different categories (facts, methods, conclusion, etc.), what are the differences of the proportion of first-person pronouns among these different sections/context groups? Is there any correlation between using more "I" in a certain group of sentences and the success of persuasion? (Or maybe this direction is not feasible on the CMV dataset compared with on academic papers.)
+     </p>
+    </li>
+    <li>
+     <p>
+      Does using more "I" pronouns mean that the challenger is more confident? And does this confidence shows predictivity for a successful persuasion?
+     </p>
+    </li>
+    <li>
+     <p>
+      Or does using more "I" pronouns mean that the challenge is less subjective in their statement because it reveals their opinion in a more obvious way? Similarly, is there a correlation between it and the success of persuasion?
+     </p>
+    </li>
+   </list>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 2em;">
+    <h3>
+     Author: Richard Lp (he/they) (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     I think the main lesson from this project is the difficulty of cleaning the data in a way that doesn’t undermine the results. Specifically, I looked at people who consistently posted in controversial topics. This left me with relatively few people in the pool and with a relatively weird cohort. I’m super proud of some of the clever cleaning things I chained together in the analysis &amp; model fitting. Its hard to ask interesting questions on really big data sets without hitting some computational ceiling, and I actually had to make efficient use of database queries and data structures to make some of the questions answerable. This took up a lot of my time, however, and I think in the future it’d be better to split up more of the mechanical design.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+ <h3>
+  ----------- REPLIES -----------
+ </h3>
+</file>

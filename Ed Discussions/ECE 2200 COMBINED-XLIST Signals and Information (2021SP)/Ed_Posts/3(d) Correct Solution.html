@@ -13,74 +13,70 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  After scratching my head about this problem for a while I feel like the correct solution also has errors with it: Copy-pasting for reference
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Solution to a version of the problem that works as planned:
- </paragraph>
- <paragraph>
-  Change the 9 to 3 — i.e. set Ts = 1/(7π − 3), so you form x[n] by sampling x(t) at frequency fs = 7π − 3 Hz. When you pass x[n] through the D-to-C, what emerges is the sum of three terms. Each term will be the principal continuous-time alias of the corresponding term in x(t) w.r.t. the sampling frequency fs. To compute those, proceed as follows:
- </paragraph>
- <paragraph>
-  – The −5 is its own principal continuous-time alias w.r.t. fs.
- </paragraph>
- <paragraph>
-  <bold>
-   This one is fine
-  </bold>
- </paragraph>
- <paragraph>
-  – The 4 cos(2π(t)t) is also its own principal continuous-time alias w.r.t. fs because fs = 7π − 3 &gt; 2 × 4 = 8. Alternatively, since you sampled the 4 cos(2π(6)t) faster than its Nyquist rate, when you put those samples through the D-to-C, the original signal will come out.
- </paragraph>
- <paragraph>
-  <bold>
-   4 cos(2π(t)t) should be  4 cos(2π(6)t - π/2), thus the our fs calculation should be 7π − 3 &gt; 2 × 6 = 12
-  </bold>
- </paragraph>
- <paragraph>
-  – The term of frequency 7π is not its own principal continuous-time alias w.r.t. fs — fs &lt; 7π, so we’ve sampled this term nowhere near its Nyquist rate. To find the principal continuous-time alias of this term w.r.t. fs, step its frequency down by integer multiples of fs until you land in the interval (−fs/2, fs/2). It takes only one step —you land at 7π − fs = 3. Thus the principal continuous-time alias of this term w.r.t. fs is 2√ 2 cos(2π(3)r+π/4).
- </paragraph>
- <paragraph>
-  <bold>
-   This seems fine as well
-  </bold>
- </paragraph>
- <paragraph>
-  The signal that exits the D-to-C is therefore
- </paragraph>
- <paragraph>
-  q(t) = −5 + 4 cos(2π(6)t) + 2√ 2 cos(2π(3)t + π/4) .
- </paragraph>
- <paragraph>
-  This signal is periodic because its terms’ frequencies are harmonically related, and its fundamental frequency is the greatest common integer divisor of 3 and 6, namely 6.
- </paragraph>
- <paragraph>
-  <bold>
-   The greatest common integer divisor of 3 and 6 is 3 not 6, so f = 3.
-  </bold>
- </paragraph>
- <paragraph>
-  I could be completely wrong about the above but some issues I noticed with the correct solution.
- </paragraph>
-</document>
+<p>
+ After scratching my head about this problem for a while I feel like the correct solution also has errors with it: Copy-pasting for reference
+</p>
+<p>
+ Solution to a version of the problem that works as planned:
+</p>
+<p>
+ Change the 9 to 3 — i.e. set Ts = 1/(7π − 3), so you form x[n] by sampling x(t) at frequency fs = 7π − 3 Hz. When you pass x[n] through the D-to-C, what emerges is the sum of three terms. Each term will be the principal continuous-time alias of the corresponding term in x(t) w.r.t. the sampling frequency fs. To compute those, proceed as follows:
+</p>
+<p>
+ – The −5 is its own principal continuous-time alias w.r.t. fs.
+</p>
+<p>
+ <b>
+  This one is fine
+ </b>
+</p>
+<p>
+ – The 4 cos(2π(t)t) is also its own principal continuous-time alias w.r.t. fs because fs = 7π − 3 &gt; 2 × 4 = 8. Alternatively, since you sampled the 4 cos(2π(6)t) faster than its Nyquist rate, when you put those samples through the D-to-C, the original signal will come out.
+</p>
+<p>
+ <b>
+  4 cos(2π(t)t) should be  4 cos(2π(6)t - π/2), thus the our fs calculation should be 7π − 3 &gt; 2 × 6 = 12
+ </b>
+</p>
+<p>
+ – The term of frequency 7π is not its own principal continuous-time alias w.r.t. fs — fs &lt; 7π, so we’ve sampled this term nowhere near its Nyquist rate. To find the principal continuous-time alias of this term w.r.t. fs, step its frequency down by integer multiples of fs until you land in the interval (−fs/2, fs/2). It takes only one step —you land at 7π − fs = 3. Thus the principal continuous-time alias of this term w.r.t. fs is 2√ 2 cos(2π(3)r+π/4).
+</p>
+<p>
+ <b>
+  This seems fine as well
+ </b>
+</p>
+<p>
+ The signal that exits the D-to-C is therefore
+</p>
+<p>
+ q(t) = −5 + 4 cos(2π(6)t) + 2√ 2 cos(2π(3)t + π/4) .
+</p>
+<p>
+ This signal is periodic because its terms’ frequencies are harmonically related, and its fundamental frequency is the greatest common integer divisor of 3 and 6, namely 6.
+</p>
+<p>
+ <b>
+  The greatest common integer divisor of 3 and 6 is 3 not 6, so f = 3.
+ </b>
+</p>
+<p>
+ I could be completely wrong about the above but some issues I noticed with the correct solution.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Victor Butoi (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Victor Butoi (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Using this as a thread for other answer key weirdness, I don't know if this was posted on ed already but 3c the phasor amplitude should be 4e^−jπ/2 not ee−jπ/2
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,33 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <callout type="info">
-  Put in your question title the year, semester, and question.  Ideal would also be to include the topic.   Example: 2018SP Q2(b) - call frames
- </callout>
- <callout type="info">
-  Include a screenshot of the question, so readers/answerers don't have to go find the relevant pdf.
- </callout>
- <figure>
-  <image height="628.2885462555066" src="https://static.us.edusercontent.com/files/yVzzh2DsA3TVtwQAnCGLR48c" width="658"/>
- </figure>
- <paragraph>
-  In the 4th call frame there is the parameter is_female and True is assigned to it. I don't understand where the True came from. Is it from line 9? If so, I'm confused how if is_female: would evaluate to anything because it's not being operated/compared to anything. I originally thought it would just store is_female as the parameter is_female. Can I get a breakdown of what happens in the execution of this call frame?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<callout type="info">
+ Put in your question title the year, semester, and question.  Ideal would also be to include the topic.   Example: 2018SP Q2(b) - call frames
+</callout>
+<callout type="info">
+ Include a screenshot of the question, so readers/answerers don't have to go find the relevant pdf.
+</callout>
+<figure>
+ <image height="628.2885462555066" src="https://static.us.edusercontent.com/files/yVzzh2DsA3TVtwQAnCGLR48c" width="658"/>
+</figure>
+<p>
+ In the 4th call frame there is the parameter is_female and True is assigned to it. I don't understand where the True came from. Is it from line 9? If so, I'm confused how if is_female: would evaluate to anything because it's not being operated/compared to anything. I originally thought it would just store is_female as the parameter is_female. Can I get a breakdown of what happens in the execution of this call frame?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You know, when you asked your question, I looked and also panicked, "Where is is_female coming from?".  So, happens to the best of us!  (Or at least also to me.)
   <break>
   </break>
@@ -66,9 +62,9 @@
   </break>
   <break>
   </break>
-  <bold>
+  <b>
    One explanation
-  </bold>
+  </b>
   <break>
   </break>
   Line 25 takes the value
@@ -93,8 +89,8 @@
   .
   <break>
   </break>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Line 21, when we get to it, hands the value of
   <code>
    is_female
@@ -136,15 +132,13 @@
    True
   </code>
   .
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   <break>
   </break>
-  <bold>
+  <b>
    Another explanation
-  </bold>
+  </b>
   <break>
   </break>
   <break>
@@ -152,8 +146,8 @@
   What is happening when Python sees the code 1-25 is:
   <break>
   </break>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   It reads all the function definitions in lines 1-23, nods its head sagely and says, "I got it", but doesn't actually do anything but remember those definitions.
   <break>
   </break>
@@ -246,8 +240,8 @@
    live_long()
   </code>
   frame.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

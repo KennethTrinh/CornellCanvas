@@ -13,97 +13,91 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi just do not understand how a deadlock could happen in this case:
- </paragraph>
- <figure>
-  <image height="489.9974126778784" src="https://static.us.edusercontent.com/files/WtWwDKflBv6NFji3PCN3RFOv" width="607"/>
- </figure>
-</document>
+<p>
+ Hi just do not understand how a deadlock could happen in this case:
+</p>
+<figure>
+ <image height="489.9974126778784" src="https://static.us.edusercontent.com/files/WtWwDKflBv6NFji3PCN3RFOv" width="607"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Nils Napp (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Nils Napp (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   As written lock is safe (deadlock is not the issue).  The statements in the lecture are about why you need the lock/unlock structure inside loop.  The pattern looks a little odd , since when you break out of the inner loop  nw=0 and the you grab the lock and check the
-  <italic>
+  <i>
    exact same thing again
-  </italic>
+  </i>
   in the outer loop.
   <break>
   </break>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The issue is if you somehow did not grab the lock then two waiting processes that were spinning in the inner loop could break out of the inner loop, then both check the out loop, and then both proceed into the critical section, i.e. be unsafe.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   <break>
   </break>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Caroline Huang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Sorry, I am still a little bit confused. Are you saying that the enter_r above is correct and would not yield any issue? And if the lock/unlock structure doesn't present, there might be a safety problem?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Nils Napp (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes. The code as printed is correct. The issues are related to the leaving out some of the lock/unlock calls.
-  <break>
-  </break>
-  <break>
-  </break>
-  It's a mistake one might be tempted into making since you just checked the variable that you are trying to acquire the lock for in the inner while loop.
-  <break>
-  </break>
-  <break>
-  </break>
-  Sorry, I meant this to be helpful about why the different parts of the code need to be there, but it seems to be more confusing as stated : /
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Caroline Huang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  That makes sense! Thank you for the clarificaiton!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Caroline Huang (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Sorry, I am still a little bit confused. Are you saying that the enter_r above is correct and would not yield any issue? And if the lock/unlock structure doesn't present, there might be a safety problem?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Nils Napp (admin)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Yes. The code as printed is correct. The issues are related to the leaving out some of the lock/unlock calls.
+    <break>
+    </break>
+    <break>
+    </break>
+    It's a mistake one might be tempted into making since you just checked the variable that you are trying to acquire the lock for in the inner while loop.
+    <break>
+    </break>
+    <break>
+    </break>
+    Sorry, I meant this to be helpful about why the different parts of the code need to be there, but it seems to be more confusing as stated : /
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Caroline Huang (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     That makes sense! Thank you for the clarificaiton!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

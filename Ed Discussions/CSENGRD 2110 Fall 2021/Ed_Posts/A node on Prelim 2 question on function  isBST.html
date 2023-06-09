@@ -13,49 +13,45 @@
 <h3>
  Vote Count: 3
 </h3>
-<document version="2.0">
- <paragraph>
-  Prelim 2 had a question with the spec and method header given below (note: this was on one of the prelims; the other prelim had a similar question, but slightly different; what we say here applies to both):
- </paragraph>
- <paragraph>
-  /** Return true if the tree rooted at this node is a binary search tree (BST)
-  <break>
-  </break>
-  and all its values are in the range h..k. */
-  <break>
-  </break>
-  public boolean isBST(int h, int k)
- </paragraph>
- <paragraph>
-  PART of several incorrect solutions were similar to the following:
- </paragraph>
- <paragraph>
-  if ( left.val &gt;= val  || val &gt;= rite.val  ) return false;
-  <break>
-  </break>
-  return left.isBST(h, k)  &amp;&amp;  rite.isBST(h, k)
- </paragraph>
- <paragraph>
-  This attempt to test whether the values satisfy the BST properties is fundamentally flawed. It does not work. To see this, look at the 4-node tree shown below.  It is not a BST because not every value in the left subtree is smaller than 5. Yet, the incorrect solution, with h = 0 and k = 10, would say it is a BST.
- </paragraph>
- <paragraph>
-  Instead, this PART of the solution has to be written to test that every value in the left subtree is &lt; val and every value in the right subtree is &gt; val. Since the values are ints, we write this PART as follows.
- </paragraph>
- <paragraph>
-  return left.isBST(h, val-1)  &amp;&amp;  rite.isBST(val+1, k)
- </paragraph>
- <paragraph>
-  This mistake turned  to be a 4-point deduction, meted out consistently to all who made this mistake.
- </paragraph>
- <pre>        5
+<p>
+ Prelim 2 had a question with the spec and method header given below (note: this was on one of the prelims; the other prelim had a similar question, but slightly different; what we say here applies to both):
+</p>
+<p>
+ /** Return true if the tree rooted at this node is a binary search tree (BST)
+ <break>
+ </break>
+ and all its values are in the range h..k. */
+ <break>
+ </break>
+ public boolean isBST(int h, int k)
+</p>
+<p>
+ PART of several incorrect solutions were similar to the following:
+</p>
+<p>
+ if ( left.val &gt;= val  || val &gt;= rite.val  ) return false;
+ <break>
+ </break>
+ return left.isBST(h, k)  &amp;&amp;  rite.isBST(h, k)
+</p>
+<p>
+ This attempt to test whether the values satisfy the BST properties is fundamentally flawed. It does not work. To see this, look at the 4-node tree shown below.  It is not a BST because not every value in the left subtree is smaller than 5. Yet, the incorrect solution, with h = 0 and k = 10, would say it is a BST.
+</p>
+<p>
+ Instead, this PART of the solution has to be written to test that every value in the left subtree is &lt; val and every value in the right subtree is &gt; val. Since the values are ints, we write this PART as follows.
+</p>
+<p>
+ return left.isBST(h, val-1)  &amp;&amp;  rite.isBST(val+1, k)
+</p>
+<p>
+ This mistake turned  to be a 4-point deduction, meted out consistently to all who made this mistake.
+</p>
+<pre>        5
        / \
       3   8
        \
         6
 </pre>
- <paragraph>
- </paragraph>
-</document>
 <h3>
  ----------- REPLIES -----------
 </h3>

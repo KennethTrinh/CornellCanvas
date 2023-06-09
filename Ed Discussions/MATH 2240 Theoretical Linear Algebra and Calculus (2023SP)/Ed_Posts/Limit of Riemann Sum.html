@@ -13,46 +13,44 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="112" src="https://static.us.edusercontent.com/files/BhCfiEGzc0IGNPMqs4sViQHL" width="223"/>
- </figure>
- <paragraph>
-  How could we show that the above limit is a Riemann sum if it does not use a nested partition? I see that it would be the integral of f(x) from 0 to 1, but the partition when N = 3 is not nested inside the partition when N = 2 (the interval [1/3, 2/3] straddles [0, 1/2] and [1/2, 1]).
- </paragraph>
-</document>
+<figure>
+ <image height="112" src="https://static.us.edusercontent.com/files/BhCfiEGzc0IGNPMqs4sViQHL" width="223"/>
+</figure>
+<p>
+ How could we show that the above limit is a Riemann sum if it does not use a nested partition? I see that it would be the integral of f(x) from 0 to 1, but the partition when N = 3 is not nested inside the partition when N = 2 (the interval [1/3, 2/3] straddles [0, 1/2] and [1/2, 1]).
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Reyer Sjamaar (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Reyer Sjamaar (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Let $\mathcal{P}_N$ be the paving of the unit interval $[0,1]$ into subintervals $[k/N,(k+1)/N]$.  You observe correctly that the sequence of pavings $\mathcal{P}_N$ is not nested.  But it has a property that is almost as good, namely that for each $N_1$ and $N_2$ there exists $N$ such that $\mathcal{P}_N$ is a common refinement of $\mathcal{P}_{N_1}$ and $\mathcal{P}_{N_2}$.  (Take $N$ to be the least common multiple of $N_1$ and $N_2$.)  We say that $\mathcal{P}_N$ is a
-  <italic>
+  <i>
    directed system
-  </italic>
+  </i>
   of pavings.  You can use this to show that the above limit exists and is equal to the Riemann integral if $f$ is Riemann integrable.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Reyer Sjamaar (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Homework problems 4.7.1 and 4.7.2 involve Riemann sums for directed systems of pavings.  You  may use that Theorem 4.7.4 is valid for directed systems of pavings.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Reyer Sjamaar (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Homework problems 4.7.1 and 4.7.2 involve Riemann sums for directed systems of pavings.  You  may use that Theorem 4.7.4 is valid for directed systems of pavings.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

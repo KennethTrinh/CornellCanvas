@@ -13,30 +13,26 @@
 <h3>
  Vote Count: 3
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi all,
- </paragraph>
- <paragraph>
-  This week's discussion material was posted, including a recording of today's discussion. This week's discussion reviews bitwise operators, the PIT, and introduces how to setup and read input from switch 1 (SW1). The live demo shows how to use polling vs interrupts and shows how the executing state is saved and restored when an interrupt occurs. It's recommended to go through the demo slides since they include additional information than what can be covered during the discussion time.
- </paragraph>
- <paragraph>
-  Aaron
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Rhia Malhotra (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ Hi all,
+</p>
+<p>
+ This week's discussion material was posted, including a recording of today's discussion. This week's discussion reviews bitwise operators, the PIT, and introduces how to setup and read input from switch 1 (SW1). The live demo shows how to use polling vs interrupts and shows how the executing state is saved and restored when an interrupt occurs. It's recommended to go through the demo slides since they include additional information than what can be covered during the discussion time.
+</p>
+<p>
+ Aaron
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Rhia Malhotra (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I'm having issues with running the switch_demo.c code. I keep getting the error:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   "collect2.exe: error: ld returned 1 exit status
   <break>
   </break>
@@ -47,130 +43,126 @@
   <break>
   </break>
   "make -r -j8 all" terminated with exit code 2. Build might be incomplete.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   18:58:25 Build Failed. 6 errors, 0 warnings. (took 577ms)"
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Aaron Wilhelm (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  It says that there were 6 build errors. Can you post the errors?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Rhia Malhotra (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <figure>
-  <image height="272.8907922912205" src="https://static.us.edusercontent.com/files/4TB4gRNOg3gKsVlgO7nkwYOs" width="590"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Aaron Wilhelm (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The errors are still cut off (they continue to the right past the end of your screenshot --  you may need to scroll). Do you realize you're building a project called Lab 2? Is that where the switch_demo.c code is? And you don't have two mains, correct?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Rhia Malhotra (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  This is in my Lab 2 project source code, but I stopped the build for any other files with main functions in it, so I'm not sure why I am having an issue with this build.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Rhia Malhotra (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Oh wait, I think the issue is that my LED.c file, which defines some of the same things as the demo code, was also being built.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Aaron Wilhelm (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Yep that's correct. Make a new project or exclude the other project from the build and it should work
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Rhia Malhotra (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  19:13:41 **** Incremental Build of configuration Debug for project Lab 2 **** make -r -j8 all Building target: Lab 2.axf Invoking: MCU Linker arm-none-eabi-gcc -nostdlib -Xlinker -Map="Lab 2.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m0plus -mthumb -T Lab_2_Debug.ld -o "Lab 2.axf" ./utilities/fsl_debug_console.o ./utilities/fsl_io.o ./utilities/fsl_log.o ./utilities/fsl_str.o ./startup/startup_mkl46z4.o ./source/LED.o ./source/switch_demo.o ./drivers/fsl_clock.o ./drivers/fsl_common.o ./drivers/fsl_ftfx_cache.o ./drivers/fsl_ftfx_controller.o ./drivers/fsl_ftfx_flash.o ./drivers/fsl_ftfx_flexnvm.o ./drivers/fsl_gpio.o ./drivers/fsl_i2c.o ./drivers/fsl_lpsci.o ./drivers/fsl_smc.o ./drivers/fsl_uart.o ./board/board.o ./board/clock_config.o ./board/peripherals.o ./board/pin_mux.o ./CMSIS/system_MKL46Z4.o
-  <break>
-  </break>
-  c:/nxp/mcuxpressoide_11.5.0_7232/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.0.202107051138/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./source/switch_demo.o:C:\Users\rhiam\Documents\MCUXpressoIDE_11.5.0_7232\workspace\Lab 2\Debug/../source/switch_demo.c:10: multiple definition of
-  <code>
-   RED_LED_PIN'; ./source/LED.o:C:\Users\rhiam\Documents\MCUXpressoIDE_11.5.0_7232\workspace\Lab 2\Debug/../source/LED.c:9: first defined here c:/nxp/mcuxpressoide_11.5.0_7232/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.0.202107051138/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./source/switch_demo.o:C:\Users\rhiam\Documents\MCUXpressoIDE_11.5.0_7232\workspace\Lab 2\Debug/../source/switch_demo.c:12: multiple definition of
-  </code>
-  global_SIM'; ./source/LED.o:C:\Users\rhiam\Documents\MCUXpressoIDE_11.5.0_7232\workspace\Lab 2\Debug/../source/LED.c:11: first defined here c:/nxp/mcuxpressoide_11.5.0_7232/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.0.202107051138/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./source/switch_demo.o:C:\Users\rhiam\Documents\MCUXpressoIDE_11.5.0_7232\workspace\Lab 2\Debug/../source/switch_demo.c:13: multiple definition of
-  <code>
-   global_PORTE'; ./source/LED.o:C:\Users\rhiam\Documents\MCUXpressoIDE_11.5.0_7232\workspace\Lab 2\Debug/../source/LED.c:12: first defined here c:/nxp/mcuxpressoide_11.5.0_7232/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.0.202107051138/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./source/switch_demo.o:C:\Users\rhiam\Documents\MCUXpressoIDE_11.5.0_7232\workspace\Lab 2\Debug/../source/switch_demo.c:14: multiple definition of
-  </code>
-  global_PTE'; ./source/LED.o:C:\Users\rhiam\Documents\MCUXpressoIDE_11.5.0_7232\workspace\Lab 2\Debug/../source/LED.c:13: first defined here Memory region Used Size Region Size %age Used PROGRAM_FLASH: 3244 B 256 KB 1.24% SRAM: 4340 B 32 KB 13.24% collect2.exe: error: ld returned 1 exit status make[1]: *** [makefile:52: Lab 2.axf] Error 1 make: *** [makefile:43: all] Error 2 "make -r -j8 all" terminated with exit code 2. Build might be incomplete.
- </paragraph>
- <paragraph>
-  19:13:41 Build Failed. 6 errors, 0 warnings. (took 465ms)
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Aaron Wilhelm (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   It says that there were 6 build errors. Can you post the errors?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Rhia Malhotra (None)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <figure>
+    <image height="272.8907922912205" src="https://static.us.edusercontent.com/files/4TB4gRNOg3gKsVlgO7nkwYOs" width="590"/>
+   </figure>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Aaron Wilhelm (admin)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     The errors are still cut off (they continue to the right past the end of your screenshot --  you may need to scroll). Do you realize you're building a project called Lab 2? Is that where the switch_demo.c code is? And you don't have two mains, correct?
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Rhia Malhotra (None)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      19:13:41 **** Incremental Build of configuration Debug for project Lab 2 **** make -r -j8 all Building target: Lab 2.axf Invoking: MCU Linker arm-none-eabi-gcc -nostdlib -Xlinker -Map="Lab 2.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m0plus -mthumb -T Lab_2_Debug.ld -o "Lab 2.axf" ./utilities/fsl_debug_console.o ./utilities/fsl_io.o ./utilities/fsl_log.o ./utilities/fsl_str.o ./startup/startup_mkl46z4.o ./source/LED.o ./source/switch_demo.o ./drivers/fsl_clock.o ./drivers/fsl_common.o ./drivers/fsl_ftfx_cache.o ./drivers/fsl_ftfx_controller.o ./drivers/fsl_ftfx_flash.o ./drivers/fsl_ftfx_flexnvm.o ./drivers/fsl_gpio.o ./drivers/fsl_i2c.o ./drivers/fsl_lpsci.o ./drivers/fsl_smc.o ./drivers/fsl_uart.o ./board/board.o ./board/clock_config.o ./board/peripherals.o ./board/pin_mux.o ./CMSIS/system_MKL46Z4.o
+      <break>
+      </break>
+      c:/nxp/mcuxpressoide_11.5.0_7232/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.0.202107051138/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./source/switch_demo.o:C:\Users\rhiam\Documents\MCUXpressoIDE_11.5.0_7232\workspace\Lab 2\Debug/../source/switch_demo.c:10: multiple definition of
+      <code>
+       RED_LED_PIN'; ./source/LED.o:C:\Users\rhiam\Documents\MCUXpressoIDE_11.5.0_7232\workspace\Lab 2\Debug/../source/LED.c:9: first defined here c:/nxp/mcuxpressoide_11.5.0_7232/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.0.202107051138/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./source/switch_demo.o:C:\Users\rhiam\Documents\MCUXpressoIDE_11.5.0_7232\workspace\Lab 2\Debug/../source/switch_demo.c:12: multiple definition of
+      </code>
+      global_SIM'; ./source/LED.o:C:\Users\rhiam\Documents\MCUXpressoIDE_11.5.0_7232\workspace\Lab 2\Debug/../source/LED.c:11: first defined here c:/nxp/mcuxpressoide_11.5.0_7232/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.0.202107051138/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./source/switch_demo.o:C:\Users\rhiam\Documents\MCUXpressoIDE_11.5.0_7232\workspace\Lab 2\Debug/../source/switch_demo.c:13: multiple definition of
+      <code>
+       global_PORTE'; ./source/LED.o:C:\Users\rhiam\Documents\MCUXpressoIDE_11.5.0_7232\workspace\Lab 2\Debug/../source/LED.c:12: first defined here c:/nxp/mcuxpressoide_11.5.0_7232/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.0.202107051138/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./source/switch_demo.o:C:\Users\rhiam\Documents\MCUXpressoIDE_11.5.0_7232\workspace\Lab 2\Debug/../source/switch_demo.c:14: multiple definition of
+      </code>
+      global_PTE'; ./source/LED.o:C:\Users\rhiam\Documents\MCUXpressoIDE_11.5.0_7232\workspace\Lab 2\Debug/../source/LED.c:13: first defined here Memory region Used Size Region Size %age Used PROGRAM_FLASH: 3244 B 256 KB 1.24% SRAM: 4340 B 32 KB 13.24% collect2.exe: error: ld returned 1 exit status make[1]: *** [makefile:52: Lab 2.axf] Error 1 make: *** [makefile:43: all] Error 2 "make -r -j8 all" terminated with exit code 2. Build might be incomplete.
+     </p>
+     <p>
+      19:13:41 Build Failed. 6 errors, 0 warnings. (took 465ms)
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 10em;">
+      <h3>
+       Author: Rhia Malhotra (None)
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       This is in my Lab 2 project source code, but I stopped the build for any other files with main functions in it, so I'm not sure why I am having an issue with this build.
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 12em;">
+       <h3>
+        Author: Rhia Malhotra (None)
+       </h3>
+       <h3>
+        Vote Count: 0
+       </h3>
+       <p>
+        Oh wait, I think the issue is that my LED.c file, which defines some of the same things as the demo code, was also being built.
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+       <div style="text-indent: 14em;">
+        <h3>
+         Author: Aaron Wilhelm (admin)
+        </h3>
+        <h3>
+         Vote Count: 1
+        </h3>
+        <p>
+         Yep that's correct. Make a new project or exclude the other project from the build and it should work
+        </p>
+        <h3>
+         ------------------------------------
+        </h3>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

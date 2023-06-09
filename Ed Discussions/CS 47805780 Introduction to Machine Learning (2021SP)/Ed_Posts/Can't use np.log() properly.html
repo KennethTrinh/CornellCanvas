@@ -13,41 +13,41 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I did something like np.log(posprob/negprob) in Project 5 using posprob and negprob from function naivebayesPXY_mle(), but it gave me an error message saying that "loop of ufunc does not support argument 0 of type DivExpression which has no callable log method". But when I do np.log(pos/neg) that's fine. (pos/neg are outputs from naivebayesPY()). Why does this happen? How should I fix it?
- </paragraph>
-</document>
-<h3>
- Author: Jack Defay (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ I did something like np.log(posprob/negprob) in Project 5 using posprob and negprob from function naivebayesPXY_mle(), but it gave me an error message saying that "loop of ufunc does not support argument 0 of type DivExpression which has no callable log method". But when I do np.log(pos/neg) that's fine. (pos/neg are outputs from naivebayesPY()). Why does this happen? How should I fix it?
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jack Defay (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Is it a divide by zero issue? I had to filter out zero values before calling np.log
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jane Du (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jane Du (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Not 100% sure if this will do it but does this help?
-  <link href="https://stackoverflow.com/a/66845659"/>
-  https://stackoverflow.com/a/66845659 (type error, try using .astype(float) somewhere)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+  <a href="https://stackoverflow.com/a/66845659">
+   https://stackoverflow.com/a/66845659
+  </a>
+  (type error, try using .astype(float) somewhere)
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

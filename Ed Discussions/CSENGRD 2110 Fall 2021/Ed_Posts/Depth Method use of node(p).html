@@ -13,84 +13,80 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I know the directions say that we can't use method contains(p) in method depth, but can we use method node(p)?
- </paragraph>
-</document>
+<p>
+ I know the directions say that we can't use method contains(p) in method depth, but can we use method node(p)?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  No, that too is an unnecessary traversal.
- </paragraph>
- <paragraph>
-  Have you figured out what kind of method this is --counting or searching?
- </paragraph>
- <paragraph>
-  What is it? Once you determine that, make you method have that pattern.
- </paragraph>
- <paragraph>
-  What does calling depth(p) recursively on a child give you?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Reid Fleishman (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I think that it is a counting method.  I have tried making the method with that pattern but I am running into issues.  Calling depth(p) recursively on a child gives you the depth of p in that child.
- </paragraph>
- <paragraph>
-  I am just having trouble getting the sum to not accumulate for children that do not have p in any of its children.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   WHY do you think it is a counting method? When figuring it out, do NOT look at the return type. that has nothing to do with it.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Should this method look at all nodes? Or is it looking for a particular node and stopping when it finds it?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Reid Fleishman (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I took a look at the PDFs again and I realize now that it is a searching method because it looks for a particular node and stops when it finds it.  I have figured the method out; thanks for helping me!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Reid Fleishman (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I took a look at the PDFs again and I realize now that it is a searching method because it looks for a particular node and stops when it finds it.  I have figured the method out; thanks for helping me!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   No, that too is an unnecessary traversal.
+  </p>
+  <p>
+   Have you figured out what kind of method this is --counting or searching?
+  </p>
+  <p>
+   What is it? Once you determine that, make you method have that pattern.
+  </p>
+  <p>
+   What does calling depth(p) recursively on a child give you?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Reid Fleishman (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I think that it is a counting method.  I have tried making the method with that pattern but I am running into issues.  Calling depth(p) recursively on a child gives you the depth of p in that child.
+   </p>
+   <p>
+    I am just having trouble getting the sum to not accumulate for children that do not have p in any of its children.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

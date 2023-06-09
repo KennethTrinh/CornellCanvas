@@ -13,66 +13,62 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Why the dynamic type of b.get() is a wrapper class instead of Object? I tried in jshell and it gives me Object as the type evaluation.
- </paragraph>
- <figure>
-  <image height="399" src="https://static.us.edusercontent.com/files/nwz6nhpvkMv7vTbeuzTHaAhP" width="456"/>
- </figure>
- <figure>
-  <image height="470.5247058823529" src="https://static.us.edusercontent.com/files/MMyGmCRAYOKUM7n3bwFiSEv4" width="643"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Why the dynamic type of b.get() is a wrapper class instead of Object? I tried in jshell and it gives me Object as the type evaluation.
+</p>
+<figure>
+ <image height="399" src="https://static.us.edusercontent.com/files/nwz6nhpvkMv7vTbeuzTHaAhP" width="456"/>
+</figure>
+<figure>
+ <image height="470.5247058823529" src="https://static.us.edusercontent.com/files/MMyGmCRAYOKUM7n3bwFiSEv4" width="643"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Tianjiao Li (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Tianjiao Li (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   Better use getClass() to check the runtime class.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The types shown in JShell are the
-  <italic>
-   static
-  </italic>
-  types of the expressions, as would be seen by a compiler.  And the value of the expression shown is simply the result of invoking
-  <code>
-   toString()
-  </code>
-  .  So yes, to see the
-  <italic>
-   dynamic
-  </italic>
-  type,
-  <code>
-   getClass()
-  </code>
-  should be used.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Curran Muhlberger (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   The types shown in JShell are the
+   <i>
+    static
+   </i>
+   types of the expressions, as would be seen by a compiler.  And the value of the expression shown is simply the result of invoking
+   <code>
+    toString()
+   </code>
+   .  So yes, to see the
+   <i>
+    dynamic
+   </i>
+   type,
+   <code>
+    getClass()
+   </code>
+   should be used.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

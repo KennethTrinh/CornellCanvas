@@ -13,71 +13,69 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  for concurrency, if you are executing two processes, does process 1 have to finish before process 2 if it starts first? so for example, could you do the following:
- </paragraph>
- <paragraph>
-  load x to registerA
- </paragraph>
- <paragraph>
-  add one to registerA
- </paragraph>
- <paragraph>
-  load x to registerB
- </paragraph>
- <paragraph>
-  add 2 to registerB
- </paragraph>
- <paragraph>
-  store registerB in x
- </paragraph>
- <paragraph>
-  store registerA in x
- </paragraph>
-</document>
+<p>
+ for concurrency, if you are executing two processes, does process 1 have to finish before process 2 if it starts first? so for example, could you do the following:
+</p>
+<p>
+ load x to registerA
+</p>
+<p>
+ add one to registerA
+</p>
+<p>
+ load x to registerB
+</p>
+<p>
+ add 2 to registerB
+</p>
+<p>
+ store registerB in x
+</p>
+<p>
+ store registerA in x
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes, a process may be spotted at any time and another one started.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Savannah Jeffries (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  thank you! but does it matter what order they finish in?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   NO. Where do you see something talking about an order in which they have to finish?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Yes, a process may be spotted at any time and another one started.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Savannah Jeffries (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    thank you! but does it matter what order they finish in?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

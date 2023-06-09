@@ -13,41 +13,37 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  When I log out from some pages (ex the home page or tags pages), the "logout_ur()" function works properly however if I logout from other pages, it doesn't work properly.
- </paragraph>
- <paragraph>
-  Are we required to edit sessions.php so that users can log out from any page?
- </paragraph>
-</document>
+<p>
+ When I log out from some pages (ex the home page or tags pages), the "logout_ur()" function works properly however if I logout from other pages, it doesn't work properly.
+</p>
+<p>
+ Are we required to edit sessions.php so that users can log out from any page?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Kyle J. Harms (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kyle J. Harms (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Please do not edit sessions.php. The answer to your problem is to simply add a
   <code>
    logout=
   </code>
   query string parameter to the URLs you want to use instead.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Note: the logout query string parameter should have no value:
   <code>
    logout=
   </code>
   .
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

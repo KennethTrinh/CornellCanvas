@@ -13,27 +13,23 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="171" src="https://static.us.edusercontent.com/files/f5jWI6FQgbImUCRkCLWOmAjB" width="580"/>
- </figure>
- <paragraph>
-  What is g_pfnVectors? is that anything meaningful? It says we hardfault in process select but when stepping through we hardfault right when we step into green LED on
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<figure>
+ <image height="171" src="https://static.us.edusercontent.com/files/f5jWI6FQgbImUCRkCLWOmAjB" width="580"/>
+</figure>
+<p>
+ What is g_pfnVectors? is that anything meaningful? It says we hardfault in process select but when stepping through we hardfault right when we step into green LED on
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Olive Faber (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Olive Faber (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   <code>
    g_pfnVectors
   </code>
@@ -42,8 +38,8 @@
    NULL
   </code>
   means.  So, this stack trace likely means you're dereferencing a null pointer on line 320 of your process.c.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

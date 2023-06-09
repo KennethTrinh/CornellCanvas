@@ -13,24 +13,21 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  We're given the advice:
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  "So, for a function
-  <code>
-   f(x,param2, param3, ..., paramn)
-  </code>
-  on a potentially nested list
-  <code>
-   x
-  </code>
-  , the following code structure is common.
- </paragraph>
- <pre>        if x is empty or isn't a list or is otherwise un-separable:
+<p>
+ We're given the advice:
+</p>
+<p>
+ "So, for a function
+ <code>
+  f(x,param2, param3, ..., paramn)
+ </code>
+ on a potentially nested list
+ <code>
+  x
+ </code>
+ , the following code structure is common.
+</p>
+<pre>        if x is empty or isn't a list or is otherwise un-separable:
             return the right results for base cases
         else:
             accum = some initial value
@@ -38,27 +35,26 @@
                 incorporate f(sublist, param2, param3, ..., paramn) into accum
             return accum
            </pre>
- <paragraph>
-  However, I'm not sure how to "incorporate f(sublist, param2, param3, ..., paramn) into accum" using recursion. I know that we have to sum each element and accumulate this sum, but I do not see how we can do this recursively.
- </paragraph>
-</document>
+<p>
+ However, I'm not sure how to "incorporate f(sublist, param2, param3, ..., paramn) into accum" using recursion. I know that we have to sum each element and accumulate this sum, but I do not see how we can do this recursively.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Rachel Brotherton (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Rachel Brotherton (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   By calling f(sublist, param2, param3, .....) you are using recursion.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Consider calling sum_it on the nested list [[1, 2], [3, 4]]. We know that the sum of that function call must be the result of sum_it([1, 2]) plus the result of sum_it([3, 4]). By calling sum_it on the sublists we are using recursion, and by adding them we are accumulating the sum.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

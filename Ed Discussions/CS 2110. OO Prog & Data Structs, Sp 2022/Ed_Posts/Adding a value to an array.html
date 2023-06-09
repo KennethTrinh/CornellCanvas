@@ -13,31 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="1.0">
- <paragraph>
-  How does this schedule[numC] = c; add c to the array schedule? Is it because in the next line, numC is incremented and the array becomes 1 size larger?
- </paragraph>
- <paragraph>
-  I don’t understand how this code adds something  to the array. In general, how do you add something to an array?
- </paragraph>
- <figure>
-  <image height="1731" src="https://static.us.edusercontent.com/files/CymSUeDjVoP7oUpA0GaJBc7K" width="1347"/>
- </figure>
-</document>
+<p>
+ How does this schedule[numC] = c; add c to the array schedule? Is it because in the next line, numC is incremented and the array becomes 1 size larger?
+</p>
+<p>
+ I don’t understand how this code adds something  to the array. In general, how do you add something to an array?
+</p>
+<figure>
+ <image height="1731" src="https://static.us.edusercontent.com/files/CymSUeDjVoP7oUpA0GaJBc7K" width="1347"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Tomer Shamir (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Tomer Shamir (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The idea here is outlined in the class invariant. In this case we have a large array and we're only using the front portion of it to represent the schedule while the remaining portion of the array starting at index numC is unused. So by assigning the value of the first unused element of the array to a course that you're adding to the schedule and then adding one to numC, you're effectively adding c to the schedule.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

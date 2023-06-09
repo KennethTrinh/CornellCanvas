@@ -13,31 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="199.14199759326112" src="https://static.us.edusercontent.com/files/hHX5e0to1LdqngN4PNkqbqLs" width="658"/>
- </figure>
- <paragraph>
-  I was confused as to why F(0) is called here? I thought that when F(1) is called, F(1) would just return zero, and then the code moves on to executing the F(n-2). Thanks
- </paragraph>
-</document>
+<figure>
+ <image height="199.14199759326112" src="https://static.us.edusercontent.com/files/hHX5e0to1LdqngN4PNkqbqLs" width="658"/>
+</figure>
+<p>
+ I was confused as to why F(0) is called here? I thought that when F(1) is called, F(1) would just return zero, and then the code moves on to executing the F(n-2). Thanks
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Rebecca Liu (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Rebecca Liu (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   F(0) is called because when F(2) is called, it will call F(2-1)=F(1) and then F(2-2)=F(0)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If it helps you could visualize the calls in the structure below (this doesn't show the order, just the calls):
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   F(3)
   <break>
   </break>
@@ -53,16 +51,16 @@
   F(1).   F(0)
   <break>
   </break>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   F(1) would not return zero, it should return 1 in the base case:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   <code>
    if (n==0 || n==1) return 1;
   </code>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

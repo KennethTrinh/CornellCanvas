@@ -13,25 +13,23 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Wasn't sure if we had to also keep track of the process state memory allocation. Thanks!
- </paragraph>
-</document>
+<p>
+ Wasn't sure if we had to also keep track of the process state memory allocation. Thanks!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aidan McNay (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   No it isn't! You need to make sure to free not only the process stack, but the process_t struct as well. In general, whenever there is a malloc(), you should think about where the corresponding free() will be (no memory should be left allocated at the end of runtime)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

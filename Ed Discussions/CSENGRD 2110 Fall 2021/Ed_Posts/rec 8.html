@@ -13,31 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  When we are writing the inner class DListIterator, do we need a private field for the array itself? One example on javaypertext includes an Integer[] b; declaration. However, the stack inner class example does not include one, saying that it already exists in the stack class. So, do we need one for our Dlistiterator inner class? If so, should it be a Node[] type, or an Integer[] type? Thank you.
- </paragraph>
-</document>
+<p>
+ When we are writing the inner class DListIterator, do we need a private field for the array itself? One example on javaypertext includes an Integer[] b; declaration. However, the stack inner class example does not include one, saying that it already exists in the stack class. So, do we need one for our Dlistiterator inner class? If so, should it be a Node[] type, or an Integer[] type? Thank you.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   You do not need a private field.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Do not copy the linked list into an array. Why do that.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Just reference the linked list itself --in the outer class. Your code should be traversing the linked list, enumerating one value at a time. You will need a field to help you keep track of what has been enumerated and what node to enumerate next. Be sure to put a good comment on that field (the class invariant) to state exactly what has been enumerated thus far.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

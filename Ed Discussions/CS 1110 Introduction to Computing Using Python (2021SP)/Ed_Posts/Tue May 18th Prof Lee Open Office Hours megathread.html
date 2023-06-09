@@ -13,144 +13,161 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  ^like it says on the tin
- </paragraph>
-</document>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  <link href="https://www.cs.cornell.edu/courses/cs1110/2021sp/exams/final/2018-spring-final-answers.pdf"/>
-  2018 2d solutions
- </paragraph>
- <paragraph>
-  is the "list" in
-  <code>
-   for i in list(range(...)):
-  </code>
-  necessary?
+<p>
+ ^like it says on the tin
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Anonymous
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
+  2018 Q1, what is the deal with line 6?
   <break>
   </break>
-  <break>
-  </break>
-  Answer: no!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Melanie Gao (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  what is the password for the meeting?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  https://edstem.org/us/courses/3933/discussion/449188
- </paragraph>
- <paragraph>
-  it is 913432
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  <link href="https://www.cs.cornell.edu/courses/cs1110/2021sp/exams/final/2018-spring-final-answers.pdf"/>
-  spring 2018 1b/c are there no "return None" in the call frames because these are methods?
-  <break>
-  </break>
-  <break>
-  </break>
-  A: there should be "return Nones", I just didn't bother to draw them in because the question didn't require the diagrams, actually.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  <link href="https://www.cs.cornell.edu/courses/cs1110/2021sp/exams/final/2019-fall-final.pdf"/>
-  Fall 2019 Q4
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Observations:
- </paragraph>
- <paragraph>
-  1: it's OK for upper-triangular matrices to have 0s above the diagonal, and for lower-triangular to have 0s below the diagonal.  Having a 0 on the diagonal does not disqualify.
-  <break>
-  </break>
-  <italic>
-   Don't be too focused on the examples --- make sure to read the exact specifications.
-  </italic>
-  <break>
-  </break>
-  <break>
-  </break>
-  2.  matrix[i][j], then: if j &gt; i, I'm in the "northeast" part, and if j &lt;i, I'm in the "southwest" part
-  <break>
-  </break>
-  <break>
-  </break>
-  3. Probably the question should have said: a diagonal matrix is both an upper-triangular and a lower-triangular matrix.
-  <break>
-  </break>
-  =&gt; have booleans for the upperness and the lowerness.
-  <break>
-  </break>
-  <break>
-  </break>
- </paragraph>
+  It involves a class variable; Run the following in Python tutor [
+  <a href="http://www.pythontutor.com/visualize.html#code=class%20A%3A%0A%20%20%20%20number_of_As%20%3D%200%0A%0A%20%20%20%20def%20__init__%28self%29%3A%0A%20%20%20%20%20%20%20%20A.number_of_As%20%2B%3D%201%0A%0Aprint%28A.number_of_As%29%0Aa%20%3D%20A%28%29%0Aprint%28A.number_of_As%29%0Aa1%20%3D%20A%28%29%0Aprint%28A.number_of_As%29&amp;cumulative=false&amp;curInstr=6&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=true">
+   link with code
+  </a>
+  ]
+ </p>
  <snippet language="py" line-numbers="true" runnable="true">
   <snippet-file id="code">
-   NORMAL_MATRIX = -1 # Non-zeroes in both upper and lower triangle
+   class A:
+    number_of_As = 0
+
+    def __init__(self):
+        A.number_of_As += 1
+
+print(A.number_of_As)
+a = A()
+print(A.number_of_As)
+a1 = A()
+print(A.number_of_As)
+  </snippet-file>
+ </snippet>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Tracy Wei (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   what is the context for using the sorting/searching algorithms? for instance, will we be expected to use them in another function? is it just being able to understand how they work?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Becky Lee (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    This may be helpful in answering your question.
+   </p>
+   <p>
+    https://edstem.org/us/courses/3933/discussion/448283
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 4em;">
+    <h3>
+     Author: Prof. Lee (she/they) (admin)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     For efficiency purposes: it speeds search up to have a sorted list.
+     <break>
+     </break>
+     <break>
+     </break>
+     ex: you have a list of targets, and a list
+     <code>
+      goods
+     </code>
+     of where those targets might be, and for every t in target, you have to check if it's in
+     <code>
+      goods
+     </code>
+     ,
+    </p>
+    <p>
+     it would be more efficient to search in
+     <code>
+      goods
+     </code>
+     if it were sorted first.  (Or make a copy of it, and sort the copy.)
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    <a href="https://www.cs.cornell.edu/courses/cs1110/2021sp/exams/final/2019-fall-final.pdf">
+     Fall 2019 Q4
+    </a>
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 4em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Observations:
+    </p>
+    <p>
+     1: it's OK for upper-triangular matrices to have 0s above the diagonal, and for lower-triangular to have 0s below the diagonal.  Having a 0 on the diagonal does not disqualify.
+     <break>
+     </break>
+     <i>
+      Don't be too focused on the examples --- make sure to read the exact specifications.
+     </i>
+     <break>
+     </break>
+     <break>
+     </break>
+     2.  matrix[i][j], then: if j &gt; i, I'm in the "northeast" part, and if j &lt;i, I'm in the "southwest" part
+     <break>
+     </break>
+     <break>
+     </break>
+     3. Probably the question should have said: a diagonal matrix is both an upper-triangular and a lower-triangular matrix.
+     <break>
+     </break>
+     =&gt; have booleans for the upperness and the lowerness.
+     <break>
+     </break>
+     <break>
+     </break>
+    </p>
+    <snippet language="py" line-numbers="true" runnable="true">
+     <snippet-file id="code">
+      NORMAL_MATRIX = -1 # Non-zeroes in both upper and lower triangle
 UPPER_TRIANGULAR = 0 # Zeroes only in lower triangle
 LOWER_TRIANGULAR = 1 # Zeroes only in upper triangle
 PURE_DIAGONAL = 2 # Zeroes only off the diagonal
@@ -159,26 +176,23 @@ def checkmatrix(matrix):
 Value returned is one of NORMAL_MATRIX, UPPER_TRIANGULAR, LOWER_TRIANGULAR,
 or PURE_DIAGONAL. It should return the highest value describing the matrix.
 Precondition: matrix is a non-empty square 2d list of numbers."""
-  </snippet-file>
- </snippet>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <pre>
+     </snippet-file>
+    </snippet>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 6em;">
+     <h3>
+      Author: Aidan McNay (student)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <pre>
 </pre>
- <snippet language="py" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   NORMAL_MATRIX = -1 # Non-zeroes in both upper and lower triangle
+     <snippet language="py" line-numbers="true" runnable="true">
+      <snippet-file id="code">
+       NORMAL_MATRIX = -1 # Non-zeroes in both upper and lower triangle
 UPPER_TRIANGULAR = 0 # Zeroes only in lower triangle
 LOWER_TRIANGULAR = 1 # Zeroes only in upper triangle
 PURE_DIAGONAL = 2 # Zeroes only off the diagonal
@@ -254,25 +268,24 @@ for item in exp_answers:
     assert result == expected,\
         assert_msg("checkmatrix result for " + label, expected, result)
     print(label+": " + str(result))
-  </snippet-file>
- </snippet>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Tiffany Sarver (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Alternative solution to the problem (with testing code):
- </paragraph>
- <snippet language="py" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   NORMAL_MATRIX = -1 # Non-zeroes in both upper and lower triangle
+      </snippet-file>
+     </snippet>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 8em;">
+      <h3>
+       Author: Tiffany Sarver (student)
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       Alternative solution to the problem (with testing code):
+      </p>
+      <snippet language="py" line-numbers="true" runnable="true">
+       <snippet-file id="code">
+        NORMAL_MATRIX = -1 # Non-zeroes in both upper and lower triangle
 UPPER_TRIANGULAR = 0 # Zeroes only in lower triangle
 LOWER_TRIANGULAR = 1 # Zeroes only in upper triangle
 PURE_DIAGONAL = 2 # Zeroes only off the diagonal
@@ -349,127 +362,112 @@ for item in exp_answers:
     assert result == expected,\
         assert_msg("checkmatrix result for " + label, expected, result)
     print(label+": " + str(result))
-  </snippet-file>
- </snippet>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thanks for this alt solution! I'm going to add it to the study guide for posterity!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Tracy Wei (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  what is the context for using the sorting/searching algorithms? for instance, will we be expected to use them in another function? is it just being able to understand how they work?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  For efficiency purposes: it speeds search up to have a sorted list.
-  <break>
-  </break>
-  <break>
-  </break>
-  ex: you have a list of targets, and a list
-  <code>
-   goods
-  </code>
-  of where those targets might be, and for every t in target, you have to check if it's in
-  <code>
-   goods
-  </code>
-  ,
- </paragraph>
- <paragraph>
-  it would be more efficient to search in
-  <code>
-   goods
-  </code>
-  if it were sorted first.  (Or make a copy of it, and sort the copy.)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Becky Lee (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  This may be helpful in answering your question.
- </paragraph>
- <paragraph>
-  https://edstem.org/us/courses/3933/discussion/448283
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  2018 Q1, what is the deal with line 6?
-  <break>
-  </break>
-  It involves a class variable; Run the following in Python tutor [
-  <link href="http://www.pythontutor.com/visualize.html#code=class%20A%3A%0A%20%20%20%20number_of_As%20%3D%200%0A%0A%20%20%20%20def%20__init__%28self%29%3A%0A%20%20%20%20%20%20%20%20A.number_of_As%20%2B%3D%201%0A%0Aprint%28A.number_of_As%29%0Aa%20%3D%20A%28%29%0Aprint%28A.number_of_As%29%0Aa1%20%3D%20A%28%29%0Aprint%28A.number_of_As%29&amp;cumulative=false&amp;curInstr=6&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=true"/>
-  link with code]
- </paragraph>
- <snippet language="py" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   class A:
-    number_of_As = 0
-
-    def __init__(self):
-        A.number_of_As += 1
-
-print(A.number_of_As)
-a = A()
-print(A.number_of_As)
-a1 = A()
-print(A.number_of_As)
-  </snippet-file>
- </snippet>
-</document>
-<h3>
- ------------------------------------
-</h3>
+       </snippet-file>
+      </snippet>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 10em;">
+       <h3>
+        Author: Prof. Lee (she/they) (admin)
+       </h3>
+       <h3>
+        Vote Count: 0
+       </h3>
+       <p>
+        Thanks for this alt solution! I'm going to add it to the study guide for posterity!
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div style="text-indent: 2em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     <a href="https://www.cs.cornell.edu/courses/cs1110/2021sp/exams/final/2018-spring-final-answers.pdf">
+      spring 2018 1b/c
+     </a>
+     are there no "return None" in the call frames because these are methods?
+     <break>
+     </break>
+     <break>
+     </break>
+     A: there should be "return Nones", I just didn't bother to draw them in because the question didn't require the diagrams, actually.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 2em;">
+     <h3>
+      Author: Melanie Gao (student)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      what is the password for the meeting?
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 4em;">
+      <h3>
+       Author: Anonymous
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       https://edstem.org/us/courses/3933/discussion/449188
+      </p>
+      <p>
+       it is 913432
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+     </div>
+     <div style="text-indent: 2em;">
+      <h3>
+       Author: Prof. Lee (she/they) (admin)
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       <a href="https://www.cs.cornell.edu/courses/cs1110/2021sp/exams/final/2018-spring-final-answers.pdf">
+        2018 2d solutions
+       </a>
+      </p>
+      <p>
+       is the "list" in
+       <code>
+        for i in list(range(...)):
+       </code>
+       necessary?
+       <break>
+       </break>
+       <break>
+       </break>
+       Answer: no!
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

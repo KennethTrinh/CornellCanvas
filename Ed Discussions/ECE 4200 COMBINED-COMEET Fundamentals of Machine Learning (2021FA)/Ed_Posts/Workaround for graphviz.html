@@ -13,35 +13,31 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  If you have trouble installing graphviz, you can try the following code instead.
- </paragraph>
- <pre>tree.plot_tree(clf)  #clf is the decision tree you have learned
+<p>
+ If you have trouble installing graphviz, you can try the following code instead.
+</p>
+<pre>tree.plot_tree(clf)  #clf is the decision tree you have learned
 </pre>
- <paragraph>
-  Replace
-  <code>
-   clf
-  </code>
-  by the name of your decision tree. The output would look something like this:
- </paragraph>
- <pre>Text(22.32, 141.336, 'X[16] &lt;= 0.5\ngini = 0.456\nsamples = 111\nvalue = [39, 72]'),
+<p>
+ Replace
+ <code>
+  clf
+ </code>
+ by the name of your decision tree. The output would look something like this:
+</p>
+<pre>Text(22.32, 141.336, 'X[16] &lt;= 0.5\ngini = 0.456\nsamples = 111\nvalue = [39, 72]'),
  Text(8.928, 119.592, 'X[0] &lt;= 0.5\ngini = 0.353\nsamples = 70\nvalue = [16, 54]'),
  Text(4.464, 97.848, 'gini = 0.0\nsamples = 40\nvalue = [0, 40]'),
 </pre>
- <paragraph>
-  The first line corresponds to the root node, where you could read the splitting criteria by feature index.
-  <break>
-  </break>
-  Keep in mind that features are indexed from 0 to 17.
-  <break>
-  </break>
-  In this example, X[16] corresponds to the feature with index 16, which is “btm_right_sqr_o”.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ The first line corresponds to the root node, where you could read the splitting criteria by feature index.
+ <break>
+ </break>
+ Keep in mind that features are indexed from 0 to 17.
+ <break>
+ </break>
+ In this example, X[16] corresponds to the feature with index 16, which is “btm_right_sqr_o”.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>

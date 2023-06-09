@@ -13,34 +13,32 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hello!
- </paragraph>
- <paragraph>
-  We are trying to develop test cases for common ancestor but we do not know how to test the null cases present in the specification i.e we are confused about calling the method from a subtree or a different root.
- </paragraph>
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
+<p>
+ Hello!
+</p>
+<p>
+ We are trying to develop test cases for common ancestor but we do not know how to test the null cases present in the specification i.e we are confused about calling the method from a subtree or a different root.
+</p>
+<p>
+ Thank you!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Atulya Lohani (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Atulya Lohani (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   If the CovidRoute for child1 or CovidRoute for child2 is null then you know one of the children doesn't exist in the tree. So your commonAncestor method would return a null in that case since the two humans aren't in the same tree. All you have to do to test this is just make a CovidTree, and insert some humans. Then make a variable and store the return of CommonAncestor(human1,human2) in a variable.  One of the humans passed in shouldn't be in the CovidTree since you want to get a null return. Then you just do assertEquals(null,variable that you created). Also, you can use makeTree1() that is provided, which lets you create a tree easily.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

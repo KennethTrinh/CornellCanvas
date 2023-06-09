@@ -13,37 +13,33 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Do we need to test precondition assertions, as in A1, or just the method we write for A4?
- </paragraph>
-</document>
+<p>
+ Do we need to test precondition assertions, as in A1, or just the method we write for A4?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   A1 was unique in that we asked you to "assert your asserts" by writing tests that checked for an assertion error when preconditions were violated.  This was to give you practice with asserts.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   In general, though, a true "precondition" is something that should never be violated, and the behavior when violating it is unspecified.  It is still good programming practice to add assert statements to check preconditions, as this helps catches lots of bugs.  However, you should not test for the presence of such assertions because that goes beyond the specification of the method (unless its JavaDoc says "throws AssertionError under X conditions", you don't have a requirement to base your test on).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   This hints at the broader topic of "user input validation" vs. "code bugs".  If a method's specification suggests that it validates its inputs, then tests should be written with invalid inputs in order to check that behavior.  But if a method just states a precondition, then no unit test should be written that violates it (if that precondition is violated in a real program, then the bug would be in the
-  <italic>
+  <i>
    calling
-  </italic>
+  </i>
   code, which should be covered by its own tests).
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

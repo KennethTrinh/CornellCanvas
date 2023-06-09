@@ -13,120 +13,117 @@
 <h3>
  Vote Count: 3
 </h3>
-<document version="2.0">
- <paragraph>
-  Hello,
- </paragraph>
- <paragraph>
-  I think that in prelim 2 5:30 2(a)(2) the answer should be O(N). Think about it: suppose n=log m (base 2), then the operations number in total would be 1+2+4+...+2^m=2^(m+1)-1=2n-1. so it is O(n).
- </paragraph>
- <paragraph>
-  I also think that in prelim 2 5:30 4(b) 3, the time complexity for ln.add(i, e) should be O(min(i, n-i)). Moreover, since it is clearly stated in the formal documentation
-  <link href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/LinkedList.html"/>
+<p>
+ Hello,
+</p>
+<p>
+ I think that in prelim 2 5:30 2(a)(2) the answer should be O(N). Think about it: suppose n=log m (base 2), then the operations number in total would be 1+2+4+...+2^m=2^(m+1)-1=2n-1. so it is O(n).
+</p>
+<p>
+ I also think that in prelim 2 5:30 4(b) 3, the time complexity for ln.add(i, e) should be O(min(i, n-i)). Moreover, since it is clearly stated in the formal documentation
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/LinkedList.html">
   https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/LinkedList.html
- </paragraph>
- <paragraph>
-  that "All of the operations perform as could be expected for a doubly-linked list." So I think it's more reasonable for us to assume LinkedList to be a doubly linked one (also there's no specification in our reviewing material that we should assume the opposite).
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+ </a>
+</p>
+<p>
+ that "All of the operations perform as could be expected for a doubly-linked list." So I think it's more reasonable for us to assume LinkedList to be a doubly linked one (also there's no specification in our reviewing material that we should assume the opposite).
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Caleb Schlissel (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  1) I found a Big-O Notation calculator online, which agrees with the O(nlog(n)) solution provided. Not sure how reliable it is, but here's a snapshot:
- </paragraph>
- <figure>
-  <image height="411.93839383938393" src="https://static.us.edusercontent.com/files/RS2xzTo6iZIblK7Oc6TFH1M8" width="758"/>
- </figure>
- <paragraph>
-  2) Assuming ln is a singly linked list, I believe we can only traverse from the beginning of the list, making the tightest time complexity O(i).
- </paragraph>
- <figure>
-  <image height="400" src="https://static.us.edusercontent.com/files/oXk66QGhcc8532tGfhkz7Ys8" width="508"/>
- </figure>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="1.0">
- <paragraph>
-  For answer 1 I would like to see a convincing mathematical proof like I did. Thank you!
-  <break>
-  </break>
-  For answer 2, what I want to say is actually it is reasonable for us to assume LinkedList to be doubly linked, given that it is clearly stated in Java’s doc.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Caleb Schlissel (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  My guess is that the translation of O(i) to O(n) regarding the inner loop's time complexity comes from the fact that the inner loop will run at most n times during the last iteration of the outer loop (i.e. when i = n, in the worst case).
- </paragraph>
- <paragraph>
-  I believe the documentation you are referencing simply states that all methods defined in class LinkedList&lt;E&gt; perform similarly when used by either singly-linked or doubly-linked lists. The major difference regards traversal, as you state. Given that course staff instructed us to assume any LinkedLists to be singly-linked unless stated otherwise, the complication of doubly-linked traversal becomes irrelevant in the context of the question. With that said, I still understand where you are coming from, as there was no clear specification on the exam itself.
- </paragraph>
- <paragraph>
-  Granted, I am also a student and might be mistaken in my understanding of these issues. If you're seeking in-depth explanations, it might be a good idea to contact Professor Gries or other course staff, as mentioned in the Gradescope email earlier today: "The Ed Discussion board is not the place to ask questions about the grading of the prelim. In the rare case that you think you are being mistreated during the regrade process, email Gries."
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="1.0">
- <paragraph>
-  moreover, in your answer 1 the calculator you are using is giving a wrong answer: based on the external for loop, the inside loop’s time complexity can be tightened more than o(n).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The second part, 4(b) 3 should be O(min(i, n-i)), has been taken care of and the question regraded. See #1938
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You are correct about 2(a)(2): the answer should be O(n). Our mistake, which we and proofreaders did not catch.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   <break>
   </break>
   However, the math involved, including logs, is too much to assume from students in this course. Therefore, we have changed the rubric and accepted for an answer O(n), O(n log n), and O(n^2). We have regraded accordingly.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Caleb Schlissel (None)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   1) I found a Big-O Notation calculator online, which agrees with the O(nlog(n)) solution provided. Not sure how reliable it is, but here's a snapshot:
+  </p>
+  <figure>
+   <image height="411.93839383938393" src="https://static.us.edusercontent.com/files/RS2xzTo6iZIblK7Oc6TFH1M8" width="758"/>
+  </figure>
+  <p>
+   2) Assuming ln is a singly linked list, I believe we can only traverse from the beginning of the list, making the tightest time complexity O(i).
+  </p>
+  <figure>
+   <image height="400" src="https://static.us.edusercontent.com/files/oXk66QGhcc8532tGfhkz7Ys8" width="508"/>
+  </figure>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    moreover, in your answer 1 the calculator you are using is giving a wrong answer: based on the external for loop, the inside loop’s time complexity can be tightened more than o(n).
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 4em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     For answer 1 I would like to see a convincing mathematical proof like I did. Thank you!
+     <break>
+     </break>
+     For answer 2, what I want to say is actually it is reasonable for us to assume LinkedList to be doubly linked, given that it is clearly stated in Java’s doc.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 6em;">
+     <h3>
+      Author: Caleb Schlissel (None)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      My guess is that the translation of O(i) to O(n) regarding the inner loop's time complexity comes from the fact that the inner loop will run at most n times during the last iteration of the outer loop (i.e. when i = n, in the worst case).
+     </p>
+     <p>
+      I believe the documentation you are referencing simply states that all methods defined in class LinkedList&lt;E&gt; perform similarly when used by either singly-linked or doubly-linked lists. The major difference regards traversal, as you state. Given that course staff instructed us to assume any LinkedLists to be singly-linked unless stated otherwise, the complication of doubly-linked traversal becomes irrelevant in the context of the question. With that said, I still understand where you are coming from, as there was no clear specification on the exam itself.
+     </p>
+     <p>
+      Granted, I am also a student and might be mistaken in my understanding of these issues. If you're seeking in-depth explanations, it might be a good idea to contact Professor Gries or other course staff, as mentioned in the Gradescope email earlier today: "The Ed Discussion board is not the place to ask questions about the grading of the prelim. In the rare case that you think you are being mistreated during the regrade process, email Gries."
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

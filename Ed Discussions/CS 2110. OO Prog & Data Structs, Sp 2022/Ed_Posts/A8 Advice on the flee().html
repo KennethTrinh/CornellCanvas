@@ -13,139 +13,137 @@
 <h3>
  Vote Count: 4
 </h3>
-<document version="2.0">
- <paragraph>
-  We introduce the methods that can be used in writing method flee(). Then, we give some hints and suggestions.
- </paragraph>
- <paragraph>
-  ===================
- </paragraph>
- <paragraph>
-  Method flee()’s parameter state, of type FleeState, describes Pres Pollack's environment. Every time she makes a move, this object automatically changes to reflect her new location.
- </paragraph>
- <paragraph>
-  This object includes the following methods:
- </paragraph>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    Node currentNode(): Return the Node corresponding to Pres Pollack's location.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Node exit(): Return the Node corresponding to the exit from the Cavern.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Collection&lt;Node&gt; allNodes(): Return a collection of all traversable nodes in the graph.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    int stepsLeft(): Return the number of steps that are left for Pres Pollack to get to the exit.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    void moveTo(Node n): Move Pres Pollack to node n and pick up all gold on that node. Also, reduce the steps left by the weight of the edge from Pres Pollack's current location to n. This fails if n is not adjacent to the current location.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    grabGold(). Do NOT call this method! No need to do so. Gold on a node is automatically picked up when Pres Pollack movesTo() that node.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  ===================
- </paragraph>
- <paragraph>
-  <bold>
-   1.
-  </bold>
-  There is no single way to write method flee() that works well on
-  <italic>
-   all
-  </italic>
-  caverns (maps/graphs).
- </paragraph>
- <paragraph>
-  Some of you may find better ways than we did and get higher scores —more coins.
- </paragraph>
- <paragraph>
-  So, get innovative, try various things, post your best scores on Ed Discussion note for scores.
- </paragraph>
- <paragraph>
-  Here are some points to consider.
- </paragraph>
- <paragraph>
-  <bold>
-   2.
-  </bold>
-  When fleet() is called, following the shortest path to the exit is guaranteed to get Pres Pollack out within the prescribed number of steps.
- </paragraph>
- <paragraph>
-  Therefore, your first order of business is to make that simple solution work: Find the shortest path and traverse it.
- </paragraph>
- <paragraph>
-  Write a method that given a path starting on  Pres Pollack's current position, has her traverse that path and end up on exit node. It can be useful in lots of situations.
- </paragraph>
- <paragraph>
-  Remember, when Pres Pollack moves to a new node, gold on the node are picked up automatically. You don't have to be concerned with picking them up.
- </paragraph>
- <paragraph>
-  <bold>
-   3. TRY DIFFERENT APPROACHES
-  </bold>
-  . Write a new method for each new approach you take, and
-  <italic>
-   always
-  </italic>
-  have a solution that works to fall back on.
- </paragraph>
- <paragraph>
-  Remember, it is better to have a solution that
-  <italic>
-   always
-  </italic>
-  gets out in the prescribed number of steps than one that sometimes fails.
- </paragraph>
- <paragraph>
-  <bold>
-   4. TIME LIMIT
-  </bold>
-  . There is an elapsed time limit of about 10-12 seconds on any map. We need that so that it doesn't take hours to grade your submission. We will run on our faster computers, so if yours is a bit slow and old, perhaps 12-14 seconds will be OK.
- </paragraph>
- <paragraph>
-  <bold>
-   5. HELPER METHODS
-  </bold>
-  . Write as many helper methods as you want. It is in your best interests to
-  <italic>
-   specify them carefully
-  </italic>
-  . The staff cannot help you if there are methods without specifications --how can they help when they can't tell what the methods are supposed to do? How do
-  <italic>
-   you
-  </italic>
-  remember what they are supposed to do? We have instructed the staff not to answer questions when methods are not properly specified.
- </paragraph>
- <paragraph>
-  <bold>
-   6. CHANGE SHORTEST PATH ALGORITHM
-  </bold>
-  . Right now, the shortest path algorithm gives you a path from the current position to any one of your choosing. But you may want to change it or make a copy and alter the copy. For example, one version could find the shortest path to
-  <italic>
-   all
-  </italic>
-  nodes and return the HashMap that gives all the information. The best solutions often do this.
- </paragraph>
- <paragraph>
-  Comment Edit Delete Endorse
- </paragraph>
-</document>
+<p>
+ We introduce the methods that can be used in writing method flee(). Then, we give some hints and suggestions.
+</p>
+<p>
+ ===================
+</p>
+<p>
+ Method flee()’s parameter state, of type FleeState, describes Pres Pollack's environment. Every time she makes a move, this object automatically changes to reflect her new location.
+</p>
+<p>
+ This object includes the following methods:
+</p>
+<list style="unordered">
+ <li>
+  <p>
+   Node currentNode(): Return the Node corresponding to Pres Pollack's location.
+  </p>
+ </li>
+ <li>
+  <p>
+   Node exit(): Return the Node corresponding to the exit from the Cavern.
+  </p>
+ </li>
+ <li>
+  <p>
+   Collection&lt;Node&gt; allNodes(): Return a collection of all traversable nodes in the graph.
+  </p>
+ </li>
+ <li>
+  <p>
+   int stepsLeft(): Return the number of steps that are left for Pres Pollack to get to the exit.
+  </p>
+ </li>
+ <li>
+  <p>
+   void moveTo(Node n): Move Pres Pollack to node n and pick up all gold on that node. Also, reduce the steps left by the weight of the edge from Pres Pollack's current location to n. This fails if n is not adjacent to the current location.
+  </p>
+ </li>
+ <li>
+  <p>
+   grabGold(). Do NOT call this method! No need to do so. Gold on a node is automatically picked up when Pres Pollack movesTo() that node.
+  </p>
+ </li>
+</list>
+<p>
+ ===================
+</p>
+<p>
+ <b>
+  1.
+ </b>
+ There is no single way to write method flee() that works well on
+ <i>
+  all
+ </i>
+ caverns (maps/graphs).
+</p>
+<p>
+ Some of you may find better ways than we did and get higher scores —more coins.
+</p>
+<p>
+ So, get innovative, try various things, post your best scores on Ed Discussion note for scores.
+</p>
+<p>
+ Here are some points to consider.
+</p>
+<p>
+ <b>
+  2.
+ </b>
+ When fleet() is called, following the shortest path to the exit is guaranteed to get Pres Pollack out within the prescribed number of steps.
+</p>
+<p>
+ Therefore, your first order of business is to make that simple solution work: Find the shortest path and traverse it.
+</p>
+<p>
+ Write a method that given a path starting on  Pres Pollack's current position, has her traverse that path and end up on exit node. It can be useful in lots of situations.
+</p>
+<p>
+ Remember, when Pres Pollack moves to a new node, gold on the node are picked up automatically. You don't have to be concerned with picking them up.
+</p>
+<p>
+ <b>
+  3. TRY DIFFERENT APPROACHES
+ </b>
+ . Write a new method for each new approach you take, and
+ <i>
+  always
+ </i>
+ have a solution that works to fall back on.
+</p>
+<p>
+ Remember, it is better to have a solution that
+ <i>
+  always
+ </i>
+ gets out in the prescribed number of steps than one that sometimes fails.
+</p>
+<p>
+ <b>
+  4. TIME LIMIT
+ </b>
+ . There is an elapsed time limit of about 10-12 seconds on any map. We need that so that it doesn't take hours to grade your submission. We will run on our faster computers, so if yours is a bit slow and old, perhaps 12-14 seconds will be OK.
+</p>
+<p>
+ <b>
+  5. HELPER METHODS
+ </b>
+ . Write as many helper methods as you want. It is in your best interests to
+ <i>
+  specify them carefully
+ </i>
+ . The staff cannot help you if there are methods without specifications --how can they help when they can't tell what the methods are supposed to do? How do
+ <i>
+  you
+ </i>
+ remember what they are supposed to do? We have instructed the staff not to answer questions when methods are not properly specified.
+</p>
+<p>
+ <b>
+  6. CHANGE SHORTEST PATH ALGORITHM
+ </b>
+ . Right now, the shortest path algorithm gives you a path from the current position to any one of your choosing. But you may want to change it or make a copy and alter the copy. For example, one version could find the shortest path to
+ <i>
+  all
+ </i>
+ nodes and return the HashMap that gives all the information. The best solutions often do this.
+</p>
+<p>
+ Comment Edit Delete Endorse
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>

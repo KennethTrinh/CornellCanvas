@@ -13,42 +13,38 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I take it that the Heap class only contains a Node and it's priority. I need to put the start node into F, but I'm not sure what to do for it's priority, which is 0. I'm not sure if I can just drop 0 in as the second parameter or if I need to use something else like Item (but the HashMap should only be using Item...).
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Thanks
- </paragraph>
-</document>
+<p>
+ I take it that the Heap class only contains a Node and it's priority. I need to put the start node into F, but I'm not sure what to do for it's priority, which is 0. I'm not sure if I can just drop 0 in as the second parameter or if I need to use something else like Item (but the HashMap should only be using Item...).
+</p>
+<p>
+ Thanks
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   If its priority is 0, then use 0 for the second argument.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Did you look at the spec of Heap at the top of Heap.java?
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   /** An instance is a max-heap or a min-heap of distinct values of type T &lt;br&gt;
   <break>
   </break>
   * with priorities of type double. */
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Did you look at the specification and signature of method insert?
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   /** Insert v with priority p to the heap. &lt;br&gt;
   <break>
   </break>
@@ -62,8 +58,8 @@
   <break>
   </break>
   public void insert(T v, double p) throws IllegalArgumentException
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

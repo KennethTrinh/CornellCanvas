@@ -13,37 +13,33 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  If we are not returning to the original subroutine that called another subroutine (for example branching by B or BEQ rather than BL), then do we still have to PUSH and POP the caller-saved registers according to the convention? If so, where should the POP be placed?
- </paragraph>
- <paragraph>
-  e.g. if sbr1 calls sbr2, which calls sbr3, which eventually terminates the program, and each sbr manipulates the R0-R3 registers, then where should the PUSHes and POPs be placed?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ If we are not returning to the original subroutine that called another subroutine (for example branching by B or BEQ rather than BL), then do we still have to PUSH and POP the caller-saved registers according to the convention? If so, where should the POP be placed?
+</p>
+<p>
+ e.g. if sbr1 calls sbr2, which calls sbr3, which eventually terminates the program, and each sbr manipulates the R0-R3 registers, then where should the PUSHes and POPs be placed?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aaron Wilhelm (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aaron Wilhelm (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   When implementing a subroutine you
-  <bold>
+  <b>
    have
-  </bold>
+  </b>
   to return to the section of code that called you. You can equivalently think of this when you call a function in Python/Java; if you called a function and returned to another section of your code that would be unexpected/unpredictable/undesirable behavior.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I think you may have a confusion with the what it means to call a subroutine vs just branching to another section of code. To call a subroutine you have to use the BL instruction since you want to return to the next instruction right after the BL instruction (hence why you want to branch and link, i.e. you want to branch to the subroutine code and then link back to the code you were just now executing). If you just branch (without linking) you aren't calling a new subroutine. Instead, you are just going to a new section of code that is technically part of the same subroutine. At the thread level you are still at the same level of the call stack, i.e. you haven't called a new subroutine.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

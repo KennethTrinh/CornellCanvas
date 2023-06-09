@@ -13,193 +13,181 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hello!
- </paragraph>
- <paragraph>
-  <break>
-  </break>
-  I am trying to code process_line(sline, cdict) in sd_utilities_dict.py but I'm hitting some uh dead ends in my though process.
- </paragraph>
- <paragraph>
-  For example, process_line requires us to "Add the tag of sline to the appropriate list (accepted_enrolled, ..., or waitlist)"
- </paragraph>
- <paragraph>
-  however, sline is only broken up so that senrolled_cn is given. In this case would I need to code something to find swaitlist (college(s) that the student is waitlisted in?). And do the same for saccepted(list of colleges student is accepted in?)
- </paragraph>
- <paragraph>
-  Another thing I am unsure of is the case where "sline names a college not already represented in cdict, a corresponding College is added to cdict."
- </paragraph>
- <paragraph>
-  I would assume that I need to make a new value in cdict, but I don't know how I would assign it to a "corresponding" College. Where is the college coming from? Does it need to be instantiated?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
+<p>
+ Hello!
+</p>
+<p>
+ <break>
+ </break>
+ I am trying to code process_line(sline, cdict) in sd_utilities_dict.py but I'm hitting some uh dead ends in my though process.
+</p>
+<p>
+ For example, process_line requires us to "Add the tag of sline to the appropriate list (accepted_enrolled, ..., or waitlist)"
+</p>
+<p>
+ however, sline is only broken up so that senrolled_cn is given. In this case would I need to code something to find swaitlist (college(s) that the student is waitlisted in?). And do the same for saccepted(list of colleges student is accepted in?)
+</p>
+<p>
+ Another thing I am unsure of is the case where "sline names a college not already represented in cdict, a corresponding College is added to cdict."
+</p>
+<p>
+ I would assume that I need to make a new value in cdict, but I don't know how I would assign it to a "corresponding" College. Where is the college coming from? Does it need to be instantiated?
+</p>
+<p>
+ Thank you!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Troy Moslemi (he/him) (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Hey!! So, because sline is broken up for you already, you do not have to do anything with the sline variable.  You do not need to create a dictionary, as the second parameter for the function is a dictionary.  What you need to do is append the tag to the proper attribute of each college object in cdict.  So, in the body of the for loop provided, you need to access the college object of each outcome and append the tag to the proper college object attribute.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   For example, cdict["cornell_u"] returns the college object associated with Cornell University, which you can access the attributes of. In the for loop provided, each outcome has a college name, which is scname.  So think about how to code the function with this information.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   -Hope this helps!! :)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Can you explain more about what outcomes is, and what is scname and decision?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Each outcome has a college name and decision for that college.  scname is the variable for the college name, and the decision variable (which is either “Rejected”, “Wait-listed”, or “Accepted” [these are strings, by the way]) is the decision associated with that college.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Okay, thank you very much! I would like to check - if my code has an error " m = sdu.menu_listing(colleges)" does it mean I have completed process_line?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  I’m not sure, why don’t you try fixing menu_listing first to see if process_line completely works.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Ah nevermind ;-; I don't think my code works, I'll just camp office hours tomorrow
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Btw, if you don’t get a chance to hop on Office hours, I can give u my Instagram and I can help you on ur error messages, but don’t ask me for unauthorized help.  Besides that, best of luck ^-^
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  What’s not working ; - ;
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  YEET !!!! It's okay 0:
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  I was testing showdown on 2 and 3 and panicked because I started getting lots of print statements (I made the program print every time a tag was appended) and I was like ;-; what's going on I don't even have a while loop why is it behaving like a indefinite while loop BUT I realized it just because there's more colleges in 2/3 than in 1 so it'd print more statements!
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Thank you for all the help!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Okay, if you need anything else please let me know :DDD
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Can you explain more about what outcomes is, and what is scname and decision?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Troy Moslemi (he/him) (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Each outcome has a college name and decision for that college.  scname is the variable for the college name, and the decision variable (which is either “Rejected”, “Wait-listed”, or “Accepted” [these are strings, by the way]) is the decision associated with that college.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Okay, thank you very much! I would like to check - if my code has an error " m = sdu.menu_listing(colleges)" does it mean I have completed process_line?
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Troy Moslemi (he/him) (student)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      I’m not sure, why don’t you try fixing menu_listing first to see if process_line completely works.
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 12em;">
+      <h3>
+       Author: Anonymous
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       Ah nevermind ;-; I don't think my code works, I'll just camp office hours tomorrow
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 14em;">
+       <h3>
+        Author: Troy Moslemi (he/him) (student)
+       </h3>
+       <h3>
+        Vote Count: 0
+       </h3>
+       <p>
+        What’s not working ; - ;
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+       <div style="text-indent: 16em;">
+        <h3>
+         Author: Anonymous
+        </h3>
+        <h3>
+         Vote Count: 1
+        </h3>
+        <p>
+         YEET !!!! It's okay 0:
+        </p>
+        <p>
+         I was testing showdown on 2 and 3 and panicked because I started getting lots of print statements (I made the program print every time a tag was appended) and I was like ;-; what's going on I don't even have a while loop why is it behaving like a indefinite while loop BUT I realized it just because there's more colleges in 2/3 than in 1 so it'd print more statements!
+        </p>
+        <p>
+         Thank you for all the help!
+        </p>
+        <h3>
+         ------------------------------------
+        </h3>
+        <div style="text-indent: 18em;">
+         <h3>
+          Author: Troy Moslemi (he/him) (student)
+         </h3>
+         <h3>
+          Vote Count: 0
+         </h3>
+         <p>
+          Okay, if you need anything else please let me know :DDD
+         </p>
+         <h3>
+          ------------------------------------
+         </h3>
+        </div>
+       </div>
+       <div style="text-indent: 14em;">
+        <h3>
+         Author: Troy Moslemi (he/him) (student)
+        </h3>
+        <h3>
+         Vote Count: 0
+        </h3>
+        <p>
+         Btw, if you don’t get a chance to hop on Office hours, I can give u my Instagram and I can help you on ur error messages, but don’t ask me for unauthorized help.  Besides that, best of luck ^-^
+        </p>
+        <h3>
+         ------------------------------------
+        </h3>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

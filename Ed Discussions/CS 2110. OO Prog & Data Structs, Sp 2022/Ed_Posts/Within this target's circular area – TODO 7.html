@@ -13,86 +13,86 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  Just wanted to double check the literal meaning of "within" in TODO 7 before submitting:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    only coordinates INSIDE the target's circular area should be valid, in which case the formula would be (...) &lt; (...)
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  OR
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    coordinates INSIDE the target's circular area and ON the circle should be valid, in which case the formula would be (...) &lt;= (...)
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Which one is the correct interpretation? Thank you.
- </paragraph>
-</document>
+<p>
+ Just wanted to double check the literal meaning of "within" in TODO 7 before submitting:
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   only coordinates INSIDE the target's circular area should be valid, in which case the formula would be (...) &lt; (...)
+  </p>
+ </li>
+</list>
+<p>
+ OR
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   coordinates INSIDE the target's circular area and ON the circle should be valid, in which case the formula would be (...) &lt;= (...)
+  </p>
+ </li>
+</list>
+<p>
+ Which one is the correct interpretation? Thank you.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: CJ Lee (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
-  Either interpretation works; the difference is almost imperceptible when playing in either case!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Makes sense. Thank you.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Clarkson (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Clarkson (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   To be very technical, it depends on OP's meaning of "ON".  Are the pixels at the very edge of the circle (furthest away from the center) "on"?  I.e. are
-  <italic>
+  <i>
    they
-  </italic>
+  </i>
   the border?  Or is the border the infinitely thin line just past them?  Actually Swing adopts the latter stance:  the border is the
-  <link href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Graphics.html"/>
-  infinitely thin line (3rd paragraph).  So I guess I would say
+  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Graphics.html">
+   infinitely thin line
+  </a>
+  (3rd paragraph).  So I guess I would say
   <code>
    &lt;=
   </code>
   is actually the right answer.  But as the other staff answer points out, it won't really matter.  We'll accept either answer.  Probably only gamers with pixel-level accuracy would ever file a bug report about this.  ;)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: CJ Lee (staff)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <h3>
+   ENDORSED
+  </h3>
+  <p>
+   Either interpretation works; the difference is almost imperceptible when playing in either case!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Makes sense. Thank you.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

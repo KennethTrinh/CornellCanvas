@@ -13,48 +13,46 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hello,
- </paragraph>
- <paragraph>
-  This was what I got for the changetime test:
- </paragraph>
- <paragraph>
-  Traceback (most recent call last): File ".\schedule_tests.py", line 297, in  testfn() # Adding the parentheses calls whatever testfn is File ".\schedule_tests.py", line 249, in test_course_changetime assert my_schedule.warnings == temp_exp_warnings,
-  <break>
-  </break>
-  AssertionError: my_schedule warnings list should be ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm', 'ARCH 1120 STU 520: time change causes conflict with AEP 3560 LEC 001', 'ARCH 1120 STU 520: time change causes conflict with FAKER 0000 LEC 002'], but is []
- </paragraph>
-</document>
+<p>
+ Hello,
+</p>
+<p>
+ This was what I got for the changetime test:
+</p>
+<p>
+ Traceback (most recent call last): File ".\schedule_tests.py", line 297, in  testfn() # Adding the parentheses calls whatever testfn is File ".\schedule_tests.py", line 249, in test_course_changetime assert my_schedule.warnings == temp_exp_warnings,
+ <break>
+ </break>
+ AssertionError: my_schedule warnings list should be ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm', 'ARCH 1120 STU 520: time change causes conflict with AEP 3560 LEC 001', 'ARCH 1120 STU 520: time change causes conflict with FAKER 0000 LEC 002'], but is []
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Chris Desir (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Chris Desir (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   It says that you are producing an empty list, make sure you are adding onto the warnings list of the various schedules if applicable / double check where you could be producing an empty list.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi. I looped over in_schedules, and append the warning to "warnings". I'm wonderin gif this is the correct way of thinking about this?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Hi. I looped over in_schedules, and append the warning to "warnings". I'm wonderin gif this is the correct way of thinking about this?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

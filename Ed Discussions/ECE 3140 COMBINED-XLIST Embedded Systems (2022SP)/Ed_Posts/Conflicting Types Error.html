@@ -13,77 +13,71 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
- </paragraph>
- <figure>
-  <image height="62" src="https://static.us.edusercontent.com/files/iZprKpMkFWpkGbo7UA8Xe01y" width="506"/>
- </figure>
- <paragraph>
-  This is my function enqueue. I'm calling it by "enqueue(&amp;process)" where process is a process_t , but I'm getting a conflicting types error.
- </paragraph>
- <paragraph>
-  Does anyone know the issue?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<figure>
+ <image height="62" src="https://static.us.edusercontent.com/files/iZprKpMkFWpkGbo7UA8Xe01y" width="506"/>
+</figure>
+<p>
+ This is my function enqueue. I'm calling it by "enqueue(&amp;process)" where process is a process_t , but I'm getting a conflicting types error.
+</p>
+<p>
+ Does anyone know the issue?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Benjamin Kogan (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Benjamin Kogan (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Maybe process is a process_t*? What's the type error?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  It just says "conflicting types for enqueue" next to my function enqueue.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Benjamin Kogan (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  I think it might be that you are using the function before defining it. So you either have to move the function definition above the line of code that you use it, or write a header definition at the top of the file (like in a header file).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you so much!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   It just says "conflicting types for enqueue" next to my function enqueue.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Benjamin Kogan (None)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    I think it might be that you are using the function before defining it. So you either have to move the function definition above the line of code that you use it, or write a header definition at the top of the file (like in a header file).
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     Thank you so much!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

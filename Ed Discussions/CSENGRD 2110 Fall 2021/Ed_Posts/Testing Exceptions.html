@@ -13,31 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Some of the methods ask us to throw the IllegalArgumentException. Do we assume that these exception throwing cases are excluded in the preconditions or should we test for these exceptions?
- </paragraph>
-</document>
+<p>
+ Some of the methods ask us to throw the IllegalArgumentException. Do we assume that these exception throwing cases are excluded in the preconditions or should we test for these exceptions?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   If an exception is explicitly mentioned as part of a method's specification, then it is reasonable and wise to test that it is thrown when required.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If a method just says "precondition", then no tests should be written that violate that precondition.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

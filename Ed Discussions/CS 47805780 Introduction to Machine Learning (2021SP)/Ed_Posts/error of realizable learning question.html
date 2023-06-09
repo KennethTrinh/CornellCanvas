@@ -13,37 +13,35 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="492.01801801801804" src="https://static.us.edusercontent.com/files/PfjtqAMUwE6EH5i3WxX1kNkd" width="658"/>
- </figure>
- <paragraph>
-  How do we know that the above probability on the LHS can be upper-bounded by the probability on the RHS?
- </paragraph>
-</document>
+<figure>
+ <image height="492.01801801801804" src="https://static.us.edusercontent.com/files/PfjtqAMUwE6EH5i3WxX1kNkd" width="658"/>
+</figure>
+<p>
+ How do we know that the above probability on the LHS can be upper-bounded by the probability on the RHS?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Scott Bass (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Scott Bass (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Because $$P(err_{S}(h_{1}) = 0 \land err_{P}(h_{1}) \gt \epsilon) = P(err_{S}(h_{1}) = 0 | err_{P}(h_{1}) \gt \epsilon)P(err_{P}(h_{1}) \gt \epsilon)$$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Since $P(err_{P}(h_{1}) \gt \epsilon) \leq 1$, that added term can only decrease the joint probability value. So, by removing it, you obtain an upper bound.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   In general,
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $$P(A \land B) = P(A | B)P(B) \leq P(A | B)$$
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

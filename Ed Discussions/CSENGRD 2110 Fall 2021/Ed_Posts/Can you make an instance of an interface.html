@@ -13,53 +13,49 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I am lookin at problem 8 in part 2 of the F19 5:30 exam, and I am confused how I1 i1 = b; compiles. I thought you are not able to make an instance of an interface, or does this only apply to abstract classes?
- </paragraph>
- <figure>
-  <image height="293.2175226586103" src="https://static.us.edusercontent.com/files/1fjqrj7TKlPz107DOcCtUg91" width="658"/>
- </figure>
-</document>
+<p>
+ I am lookin at problem 8 in part 2 of the F19 5:30 exam, and I am confused how I1 i1 = b; compiles. I thought you are not able to make an instance of an interface, or does this only apply to abstract classes?
+</p>
+<figure>
+ <image height="293.2175226586103" src="https://static.us.edusercontent.com/files/1fjqrj7TKlPz107DOcCtUg91" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Ibrahim Ismail (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Ibrahim Ismail (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   I1 i1 = b; is not creating a new instance of interface, it points to b. i1.getClass() would return class B. I2 i2 = (I2) i1; would allow you to use methods in I2 in i2 even though you can't use them in i1. It's all still that same object that b points to. They're not interface objects.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
-  #595
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Creating a new instance of an interface would be like "new I1();" but that is illegal.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Troy Moslemi (he/him) (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <h3>
+   ENDORSED
+  </h3>
+  <p>
+   #595
+  </p>
+  <p>
+   Creating a new instance of an interface would be like "new I1();" but that is illegal.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

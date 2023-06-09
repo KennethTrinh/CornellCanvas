@@ -13,61 +13,59 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  is the assertion of isinstance() the same as the assertion of type()?
- </paragraph>
- <paragraph>
-  eg
- </paragraph>
- <paragraph>
-  is
-  <bold>
-   assert isinstance(n, str)
-  </bold>
-  the same as
-  <bold>
-   assert type(n) == str
-  </bold>
-  ?
- </paragraph>
-</document>
+<p>
+ is the assertion of isinstance() the same as the assertion of type()?
+</p>
+<p>
+ eg
+</p>
+<p>
+ is
+ <b>
+  assert isinstance(n, str)
+ </b>
+ the same as
+ <b>
+  assert type(n) == str
+ </b>
+ ?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Priya Malla (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Priya Malla (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Yes, isinstance(n, type) will return a boolean so you can use it in assert statements the same way you can have boolean expressions like type(n) == str in an assert statement.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Elisabeth Finkel (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I'll add that
-  <code>
-   type
-  </code>
-  and
-  <code>
-   isinstance
-  </code>
-  can act differently when you have subclasses, but you haven't learned subclasses yet, so you don't have to worry about that for today.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Elisabeth Finkel (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I'll add that
+   <code>
+    type
+   </code>
+   and
+   <code>
+    isinstance
+   </code>
+   can act differently when you have subclasses, but you haven't learned subclasses yet, so you don't have to worry about that for today.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

@@ -13,81 +13,79 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi there! I understand that when calling a method, the first argument is passed prior to the period: as in x.method(y). However, in the method header for its definition, why are there not two arguments in the parentheses, like method(x, y). Otherwise, how are we supposed to compare d1 and d2 for example, when the header only gives us one PhD object. I might be thinking of how methods were defined in Python, just wondering how we should write this body. Thank you:)
- </paragraph>
-</document>
+<p>
+ Hi there! I understand that when calling a method, the first argument is passed prior to the period: as in x.method(y). However, in the method header for its definition, why are there not two arguments in the parentheses, like method(x, y). Otherwise, how are we supposed to compare d1 and d2 for example, when the header only gives us one PhD object. I might be thinking of how methods were defined in Python, just wondering how we should write this body. Thank you:)
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Tomer Shamir (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  This is because the value you are calling the method on with the dot operator isn't an argument. That is an object of the class that the method is in.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thanks, I understand that. I'm still a bit confused on accessing the month/year since the only public method we have to do so returns a String value. Since the month and year fields are private, we cannot access these in a public method, correct? Or can we since they are in the same class?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Tomer Shamir (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  You can always access private fields in any method in the same class regardless of if it's public or private. A method being public just dictates that anyone can use that method outside the class.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   In the JUnit testing class, you cannot refer to the month and year fields. You HAVE to use the method that returns the date in a particular form.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Okay great, thank you! I'll be using some string processing:)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Okay great, thank you! I'll be using some string processing:)
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Tomer Shamir (staff)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   This is because the value you are calling the method on with the dot operator isn't an argument. That is an object of the class that the method is in.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Thanks, I understand that. I'm still a bit confused on accessing the month/year since the only public method we have to do so returns a String value. Since the month and year fields are private, we cannot access these in a public method, correct? Or can we since they are in the same class?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Tomer Shamir (staff)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     You can always access private fields in any method in the same class regardless of if it's public or private. A method being public just dictates that anyone can use that method outside the class.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

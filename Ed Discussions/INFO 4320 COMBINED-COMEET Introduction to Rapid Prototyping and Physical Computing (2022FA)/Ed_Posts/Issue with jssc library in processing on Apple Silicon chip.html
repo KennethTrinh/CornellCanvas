@@ -13,78 +13,77 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I am getting this error when I'm trying to run the SonarV2_1 file.
- </paragraph>
- <pre>A library used by this sketch relies on native code that is not available.
+<p>
+ I am getting this error when I'm trying to run the SonarV2_1 file.
+</p>
+<pre>A library used by this sketch relies on native code that is not available.
 UnsatisfiedLinkError: Could not load the jssc library: Couldn't load library library jssc
 UnsatisfiedLinkError: Could not load the jssc library: Couldn't load library library jssc
 </pre>
- <paragraph>
-  Apparently, this is an issue of the jssc library with the Apple Silicon M1 / M2 chip
-  <link href="https://github.com/processing/processing4/issues/525"/>
+<p>
+ Apparently, this is an issue of the jssc library with the Apple Silicon M1 / M2 chip
+ <a href="https://github.com/processing/processing4/issues/525">
   https://github.com/processing/processing4/issues/525
- </paragraph>
- <paragraph>
-  It will be of great help if any workaround for this is posted.
- </paragraph>
-</document>
-<h3>
- Author: Saif Mahmud (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Weird solution: Installing the
-  <link href="https://processing.org/download#:~:text=9%2C%202022)-,MacOS(Intel%2064%2Dbit),-Linux(Intel%2064"/>
-  Intel 64-bit version on Apple Silicon fixes the issue.
- </paragraph>
- <paragraph>
-  Ref:
-  <link href="https://discourse.processing.org/t/serial-list-error-unsatisfiedlinkerror-could-not-load-the-jssc-library-couldn-t-load-library-library-jssc/37780"/>
-  https://discourse.processing.org/t/serial-list-error-unsatisfiedlinkerror-could-not-load-the-jssc-library-couldn-t-load-library-library-jssc/37780
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Cheng Zhang (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The solution below provided by Saif should solve this problem.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ruidong Zhang (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+ </a>
+</p>
+<p>
+ It will be of great help if any workaround for this is posted.
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Ruidong Zhang (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Another option is using the solution specified in your link - using the
   <code>
    jssc.jar
   </code>
   from https://github.com/java-native/jssc/releases to replace your local file.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Cheng Zhang (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   The solution below provided by Saif should solve this problem.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Saif Mahmud (student)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Weird solution: Installing the
+    <a href="https://processing.org/download#:~:text=9%2C%202022)-,MacOS(Intel%2064%2Dbit),-Linux(Intel%2064">
+     Intel 64-bit
+     version on Apple Silicon fixes the issue.
+    </a>
+   </p>
+   <p>
+    Ref:
+    <link href="https://discourse.processing.org/t/serial-list-error-unsatisfiedlinkerror-could-not-load-the-jssc-library-couldn-t-load-library-library-jssc/37780"/>
+    https://discourse.processing.org/t/serial-list-error-unsatisfiedlinkerror-could-not-load-the-jssc-library-couldn-t-load-library-library-jssc/37780
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

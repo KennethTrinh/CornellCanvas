@@ -13,58 +13,54 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  While growing a decision tree, if we already use a feature in one branch, is it automatically eliminated from consideration from the other branches? I am getting a
- </paragraph>
- <paragraph>
-  decision tree where I use up all the features but till dont get a Yes/No in 3.b.1
- </paragraph>
-</document>
+<p>
+ While growing a decision tree, if we already use a feature in one branch, is it automatically eliminated from consideration from the other branches? I am getting a
+</p>
+<p>
+ decision tree where I use up all the features but till dont get a Yes/No in 3.b.1
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andrew Dettmer (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew Dettmer (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Yes, the same feature could appear in separate branches (but some things to consider - is the tree still deterministic? is it consistent with the samples?)
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Maitreyi Chatterjee (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  by deterministic, do you mean if it can accurately converge? My tree uses the same feature in diff branches, but it can converge properly and does not have conflicts. For example you split on feature A and for both children, you split on feature B. But then everything is different for all the children henceforth.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew Dettmer (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  By deterministic I meant that on one input you get only one label (i.e. can't trace multiple paths through the tree on same input).  And yes, if you split on feature A you can split on feature B on both of the children of that split.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Maitreyi Chatterjee (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   by deterministic, do you mean if it can accurately converge? My tree uses the same feature in diff branches, but it can converge properly and does not have conflicts. For example you split on feature A and for both children, you split on feature B. But then everything is different for all the children henceforth.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Andrew Dettmer (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    By deterministic I meant that on one input you get only one label (i.e. can't trace multiple paths through the tree on same input).  And yes, if you split on feature A you can split on feature B on both of the children of that split.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

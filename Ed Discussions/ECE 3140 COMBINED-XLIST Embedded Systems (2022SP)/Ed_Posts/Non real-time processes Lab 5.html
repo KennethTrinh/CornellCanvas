@@ -13,83 +13,79 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  When only dealing with non real-time processes, do we implement round robin scheduling or run each to completion?
- </paragraph>
-</document>
+<p>
+ When only dealing with non real-time processes, do we implement round robin scheduling or run each to completion?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Round robin.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Lauren Greenhill (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  To clarify, does this mean that real-time processes are non-preemptive and should run to completion?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<document version="2.0">
- <paragraph>
-  Any RT task pre-empts any NRT task. RT tasks that arrive with earlier deadlines pre-empt RT tasks with later deadlines. (lec11.2)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kevin Huang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  If we preempt all NRT tasks with RT tasks do we disregard the possibility of starving NRT tasks (under the justification that they don't have a deadline and are essentially optional without considering blocking/locking requirements)?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Lauren Greenhill (None)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   To clarify, does this mean that real-time processes are non-preemptive and should run to completion?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Harris Miller (None)
+   </h3>
+   <h3>
+    Vote Count: 3
+   </h3>
+   <p>
+    Any RT task pre-empts any NRT task. RT tasks that arrive with earlier deadlines pre-empt RT tasks with later deadlines. (lec11.2)
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Kevin Huang (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     If we preempt all NRT tasks with RT tasks do we disregard the possibility of starving NRT tasks (under the justification that they don't have a deadline and are essentially optional without considering blocking/locking requirements)?
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Harris Miller (None)
+     </h3>
+     <h3>
+      Vote Count: 2
+     </h3>
+     <p>
+      Yes.
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

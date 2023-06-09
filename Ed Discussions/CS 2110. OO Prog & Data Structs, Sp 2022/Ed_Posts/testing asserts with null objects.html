@@ -13,75 +13,71 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  it says that we have to test assert statements, and in some of them, we have to assert a PhD object isn't null, so to test this, it seems logical to create a null PhD object and then to call the method. but by our own preconditions on the constructor, can we even create a null PhD object?
- </paragraph>
-</document>
+<p>
+ it says that we have to test assert statements, and in some of them, we have to assert a PhD object isn't null, so to test this, it seems logical to create a null PhD object and then to call the method. but by our own preconditions on the constructor, can we even create a null PhD object?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Tomer Shamir (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Tomer Shamir (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   null is the lack of an object so it doesn't have a type. You can just use the keyword null. There should be no call on the constructor.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I see. when I test the assert though, I get this error:
- </paragraph>
- <paragraph>
-  Unexpected exception type thrown ==&gt; expected: &lt;java.lang.AssertionError&gt; but was: &lt;java.lang.NullPointerException&gt;
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  this happens when I do something like "PhD object = null;" and then try to call one of the methods that involves the assert statement "assert object != null". any suggestions as to why this doesn't return an assertion error but a null pointer one?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Tomer Shamir (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  If you are trying to call something on the variable with value null using the dot operator, this throws a NullPointerException. You should only test null arguments.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  got it, thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I see. when I test the assert though, I get this error:
+  </p>
+  <p>
+   Unexpected exception type thrown ==&gt; expected: &lt;java.lang.AssertionError&gt; but was: &lt;java.lang.NullPointerException&gt;
+  </p>
+  <p>
+   this happens when I do something like "PhD object = null;" and then try to call one of the methods that involves the assert statement "assert object != null". any suggestions as to why this doesn't return an assertion error but a null pointer one?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Tomer Shamir (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    If you are trying to call something on the variable with value null using the dot operator, this throws a NullPointerException. You should only test null arguments.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     got it, thank you!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

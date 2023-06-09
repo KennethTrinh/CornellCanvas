@@ -13,47 +13,43 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I created an integer DLList with elements 3, 420 and I deleted the first node (420). When I print out the doubly linked list, I get [3], but when I assertEquals with toStringRev(), it returned [420]. However, toString() returns [3] as expected.
- </paragraph>
- <paragraph>
-  Any pointers? I set the previous node's next value accordingly as well as the next node's previous value accordingly, making sure to account for the cases where the next node or prev node might be null.
- </paragraph>
- <paragraph>
-  I also set the node to be deleted's prev and next value accordingly.
- </paragraph>
-</document>
+<p>
+ I created an integer DLList with elements 3, 420 and I deleted the first node (420). When I print out the doubly linked list, I get [3], but when I assertEquals with toStringRev(), it returned [420]. However, toString() returns [3] as expected.
+</p>
+<p>
+ Any pointers? I set the previous node's next value accordingly as well as the next node's previous value accordingly, making sure to account for the cases where the next node or prev node might be null.
+</p>
+<p>
+ I also set the node to be deleted's prev and next value accordingly.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bahaa Kotb (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   That means your tail is wrong, when you delete a tail, you need to assign a new tail to the list.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yep, that fixed it. Thanks!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Yep, that fixed it. Thanks!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

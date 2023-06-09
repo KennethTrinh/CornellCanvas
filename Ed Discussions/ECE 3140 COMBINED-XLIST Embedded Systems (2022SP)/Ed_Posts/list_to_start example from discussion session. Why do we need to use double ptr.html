@@ -13,52 +13,46 @@
 <h3>
  Vote Count: 3
 </h3>
-<document version="2.0">
- <paragraph>
-  I explained this poorly in discussion session, so let me try again...
- </paragraph>
- <paragraph>
-  For any parameter that we pass into a fucntion, the function actually makes a copy of that parameter in the stack. Here is an example in the MCUXpresso, I created a second addNode function that simply passes the pointer to the node (instead of pointer to pointer to node). You can see that in the variables monitor, the address of list_start is 0x20005d4 but the head (which is suppose to be the same pointer) is in 0x2000f8c (which I believe is on the stack of that function). This means that while we are pointing to the same address, there are two references. Now, normally this isn't an issue if our linked_list is guaranteed
-  <bold>
-   NOT empty.
-  </bold>
- </paragraph>
- <paragraph>
-  A quick aside, I was asked if there is a printf similar method of checking whether the addNodes are being done correctly. Not sure about printf but if you type the variable name in the "global variables" monitoring panel, you can verify the values as shown. Not sure if the window is there by default but you can navigate to
-  <bold>
-   Windows &gt;&gt; show view &gt;&gt; global variables
-  </bold>
- </paragraph>
- <figure>
-  <image height="261.80584354382654" src="https://static.us.edusercontent.com/files/vb04wGQ2wC6m6P9cxtUeXbk9" width="643"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
-  And.. back to the regular scheduled program...
- </paragraph>
- <paragraph>
-  The
-  <bold>
-   tricky part
-  </bold>
-  lies in we want to design the function such that it can address all edge cases (i.e. when the head ptr is null in the beginning). You can imagine that we've set this head pointer now to point to the new node but once we return it, we lose that reference!
- </paragraph>
- <paragraph>
-  By using a ptr to a ptr to the node, when we dereference via *ptr_to_list_start, we are able then link the new_node onto the list node ptr that we instantiated in main.
- </paragraph>
- <paragraph>
-  Hopefully this helps :)
- </paragraph>
- <figure>
-  <image height="278.4561983471075" src="https://static.us.edusercontent.com/files/9nMilFERjREeHKUR7TuPB0Wc" width="643.0000000000001"/>
- </figure>
- <figure>
-  <image height="281.74605809128633" src="https://static.us.edusercontent.com/files/aJFzKiwfWkjkpb8rKxR5BcsM" width="643"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I explained this poorly in discussion session, so let me try again...
+</p>
+<p>
+ For any parameter that we pass into a fucntion, the function actually makes a copy of that parameter in the stack. Here is an example in the MCUXpresso, I created a second addNode function that simply passes the pointer to the node (instead of pointer to pointer to node). You can see that in the variables monitor, the address of list_start is 0x20005d4 but the head (which is suppose to be the same pointer) is in 0x2000f8c (which I believe is on the stack of that function). This means that while we are pointing to the same address, there are two references. Now, normally this isn't an issue if our linked_list is guaranteed
+ <b>
+  NOT empty.
+ </b>
+</p>
+<p>
+ A quick aside, I was asked if there is a printf similar method of checking whether the addNodes are being done correctly. Not sure about printf but if you type the variable name in the "global variables" monitoring panel, you can verify the values as shown. Not sure if the window is there by default but you can navigate to
+ <b>
+  Windows &gt;&gt; show view &gt;&gt; global variables
+ </b>
+</p>
+<figure>
+ <image height="261.80584354382654" src="https://static.us.edusercontent.com/files/vb04wGQ2wC6m6P9cxtUeXbk9" width="643"/>
+</figure>
+<p>
+ And.. back to the regular scheduled program...
+</p>
+<p>
+ The
+ <b>
+  tricky part
+ </b>
+ lies in we want to design the function such that it can address all edge cases (i.e. when the head ptr is null in the beginning). You can imagine that we've set this head pointer now to point to the new node but once we return it, we lose that reference!
+</p>
+<p>
+ By using a ptr to a ptr to the node, when we dereference via *ptr_to_list_start, we are able then link the new_node onto the list node ptr that we instantiated in main.
+</p>
+<p>
+ Hopefully this helps :)
+</p>
+<figure>
+ <image height="278.4561983471075" src="https://static.us.edusercontent.com/files/9nMilFERjREeHKUR7TuPB0Wc" width="643.0000000000001"/>
+</figure>
+<figure>
+ <image height="281.74605809128633" src="https://static.us.edusercontent.com/files/aJFzKiwfWkjkpb8rKxR5BcsM" width="643"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>

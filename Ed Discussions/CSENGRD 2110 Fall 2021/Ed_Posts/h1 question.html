@@ -13,62 +13,60 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Write below a similar rule for determining when an if-statement is correct:
- </paragraph>
- <paragraph>
-  <bold>
-   Hoare triple for the if-statement
-  </bold>
-  :
- </paragraph>
- <paragraph>
-  If{Q &amp;&amp; B} S1{R}
-  <bold>
-   andQ &amp;&amp; !B =&gt; R
-  </bold>
-  <underline>
-   <code>
-    // I'm having trouble understanding the second part of the solution.
-   </code>
-  </underline>
- </paragraph>
- <paragraph>
-  then {Q}
-  <bold>
-   if
-  </bold>
-  (B) S1 {R}
- </paragraph>
- <figure>
-  <image height="90" src="https://static.us.edusercontent.com/files/PBuw8zAb9LDlMlSCQ1Qtkxke" width="468"/>
- </figure>
-</document>
+<p>
+ Write below a similar rule for determining when an if-statement is correct:
+</p>
+<p>
+ <b>
+  Hoare triple for the if-statement
+ </b>
+ :
+</p>
+<p>
+ If{Q &amp;&amp; B} S1{R}
+ <b>
+  andQ &amp;&amp; !B =&gt; R
+ </b>
+ <underline>
+  <code>
+   // I'm having trouble understanding the second part of the solution.
+  </code>
+ </underline>
+</p>
+<p>
+ then {Q}
+ <b>
+  if
+ </b>
+ (B) S1 {R}
+</p>
+<figure>
+ <image height="90" src="https://static.us.edusercontent.com/files/PBuw8zAb9LDlMlSCQ1Qtkxke" width="468"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Consider the Hoare triple    {Q}
-  <bold>
+  <b>
    if
-  </bold>
+  </b>
   (B) S1 {R}
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If B is false, then nothing is executed, and yet R should be true.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   This is the case only if Q implies R.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

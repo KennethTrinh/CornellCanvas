@@ -13,126 +13,118 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="1.0">
- <paragraph>
-  Hello, I’m having difficulty with the JUnit testing of assert statements. The assert statements are on and I used the same format as shown in the recitation
- </paragraph>
- <paragraph>
-  assertThrows(AssertionError.class, () -&gt; t1.equals(null));
- </paragraph>
- <paragraph>
-  But when I run the JUnit none of my assert statements are executed (they are all highlighted in yellow) I am using test cases that are supposed to throw an assertion error but nothing is changing.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Hello, I’m having difficulty with the JUnit testing of assert statements. The assert statements are on and I used the same format as shown in the recitation
+</p>
+<p>
+ assertThrows(AssertionError.class, () -&gt; t1.equals(null));
+</p>
+<p>
+ But when I run the JUnit none of my assert statements are executed (they are all highlighted in yellow) I am using test cases that are supposed to throw an assertion error but nothing is changing.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Did you make sure to instantiate an object of PhD such that you can do PhD.method() with the anonymous function ?
- </paragraph>
- <paragraph>
-  Also this is a better question for consulting/office hours
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   What is t1? Which assert statement are you trying to test?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  That is the example in the recitation.
- </paragraph>
- <paragraph>
-  To test the assertion on the constructors, I used:
- </paragraph>
- <paragraph>
-  <italic>
-   assertThrows
-  </italic>
-  (AssertionError.
-  <bold>
-   class
-  </bold>
-  , () -&gt; {
-  <bold>
-   new
-  </bold>
-  PhD("", 1920, 0); });
- </paragraph>
- <paragraph>
-  To test the methods, I first initialized a few different PhD objects and used:
- </paragraph>
- <paragraph>
-  <italic>
-   assertThrows
-  </italic>
-  (AssertionError.
-  <bold>
-   class
-  </bold>
-  , () -&gt; t1.addAdvisor2(a1));
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  -- I recommend testing for each precondition for the constructor on its own, not both in one case for purposes of structural reinforcement of your code
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  theyre showing the layout they followed (this is from recitation)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Bahaa Kotb (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   theyre showing the layout they followed (this is from recitation)
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    That is the example in the recitation.
+   </p>
+   <p>
+    To test the assertion on the constructors, I used:
+   </p>
+   <p>
+    <i>
+     assertThrows
+    </i>
+    (AssertionError.
+    <b>
+     class
+    </b>
+    , () -&gt; {
+    <b>
+     new
+    </b>
+    PhD("", 1920, 0); });
+   </p>
+   <p>
+    To test the methods, I first initialized a few different PhD objects and used:
+   </p>
+   <p>
+    <i>
+     assertThrows
+    </i>
+    (AssertionError.
+    <b>
+     class
+    </b>
+    , () -&gt; t1.addAdvisor2(a1));
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Bahaa Kotb (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     -- I recommend testing for each precondition for the constructor on its own, not both in one case for purposes of structural reinforcement of your code
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Bahaa Kotb (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Did you make sure to instantiate an object of PhD such that you can do PhD.method() with the anonymous function ?
+  </p>
+  <p>
+   Also this is a better question for consulting/office hours
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

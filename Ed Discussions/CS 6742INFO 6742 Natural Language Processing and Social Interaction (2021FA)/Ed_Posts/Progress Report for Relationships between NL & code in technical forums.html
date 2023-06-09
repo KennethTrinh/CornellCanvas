@@ -13,254 +13,255 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <heading level="2">
-  Hypothesis:
- </heading>
- <paragraph>
-  <italic>
-   When a StackOverflow answer has an explicit code snippet, there is a positive correlation between answer score and density of matched tokens between the code snippet and the natural language of the answer.
-  </italic>
-  This may imply that when a StackOverflow answer closely maps natural language explanation to programming language code, or in other words the NL is more clearly “ground” in the PL, it is better understood by StackOverflow users.
- </paragraph>
- <heading level="2">
-  Project status overview:
- </heading>
- <paragraph>
-  <underline>
-   Data
-  </underline>
-  : Fortunately StackOverflow data is periodically archived into a downloadable data file (
-  <link href="https://archive.org/details/stackexchange"/>
-  https://archive.org/details/stackexchange). The first thing I did was download the data and write pre-processing code to filter the data to my specifications and put it in a format useful for my project.
- </paragraph>
- <paragraph>
-  <underline>
-   First experiment: counting bag of words
-  </underline>
-  . In my first experiment, for each answer I computed counting-bag-of-words (CBOW) individually for the code in the answer and for the natural language in the answer. Results can be found in the follow-up comments of my commitment statement thread:
-  <link href="https://edstem.org/us/courses/8208/discussion/813768"/>
-  https://edstem.org/us/courses/8208/discussion/813768. The results of this first experiment are inconclusive, and analysis of the results brought up a couple of weak points in the process:
- </paragraph>
- <paragraph>
-  (1) counting bag of words is likely to unfairly penalize words that appear multiple times but at different counts between text and code --&gt; instead, in the next experiment, use binary-bag-of-words.
- </paragraph>
- <paragraph>
-  (2) we need some mathematical notation to map the relationship between the metrics we found --&gt; in the next experiment, use Spearman correlation coefficient (
-  <link href="https://towardsdatascience.com/clearly-explained-pearson-v-s-spearman-correlation-coefficient-ada2f473b8"/>
-  https://towardsdatascience.com/clearly-explained-pearson-v-s-spearman-correlation-coefficient-ada2f473b8) as a measure of relationship between the variables at play.
- </paragraph>
- <paragraph>
-  (3) just mapping relation between answer code and text may not be enough information --&gt; in the next experiment, map relations between all combinations of question code, question text, answer code, and answer text.
- </paragraph>
- <paragraph>
-  (4)  answer score has too many factors that make raw score an unfair measure of quality --&gt; in the next experiment, use a normalized answer score: score - avg(all scores of answers in thread)
- </paragraph>
- <paragraph>
-  <underline>
-   Second experiment: binary bag of words + Spearman correlation coefficient
-  </underline>
-  . In the second experiment, we address all the weak points brought up in the first experiment. Findings are as follows:
- </paragraph>
- <figure>
-  <image height="396.10517529215355" src="https://static.us.edusercontent.com/files/CS535Sla1zOjmeG3RWs59gnw" width="643"/>
- </figure>
- <figure>
-  <image height="396.10517529215355" src="https://static.us.edusercontent.com/files/ADz1PIC9SZbFXi8P16svqheh" width="643"/>
- </figure>
- <figure>
-  <image height="396.10517529215355" src="https://static.us.edusercontent.com/files/OWgoqHvTIVr0adRSToAt0Ri6" width="643"/>
- </figure>
- <paragraph>
-  As we can see, the correlation coefficient indicates statistically insignificant results. Upon examining the individual data points more, I found that there are many instances of tokens not matching perfectly but still being somewhat obviously connected (see example in followup of "problems I'm having"
-  <link href="https://edstem.org/us/courses/8208/discussion/755348"/>
-  https://edstem.org/us/courses/8208/discussion/755348). To address this, in the next experiment I use word embeddings to capture token similarity.
- </paragraph>
- <paragraph>
-  <underline>
-   Third experiment: word embeddings
-  </underline>
-  . I use the Spacy
-  <code>
-   en_core_web_lg
-  </code>
-  model for its pre-trained word embeddings and compute word embedding similarity between the BBOW combinations found in the second experiment. Findings, in combination with the findings from the second experiment, are as follows:
- </paragraph>
- <figure>
-  <image height="396.10517529215355" src="https://static.us.edusercontent.com/files/kj5IFepqq7VtRddBLjOJmFAa" width="643"/>
- </figure>
- <figure>
-  <image height="396.10517529215355" src="https://static.us.edusercontent.com/files/oOpbhdPrYucsGsYek1xlpXnP" width="643"/>
- </figure>
- <figure>
-  <image height="396.10517529215355" src="https://static.us.edusercontent.com/files/ZLnmgtmx08zzapTbS83eC02J" width="643"/>
- </figure>
- <figure>
-  <image height="396.10517529215355" src="https://static.us.edusercontent.com/files/wOdSoQxN0vY2ASq0NTbb1BB8" width="643"/>
- </figure>
- <figure>
-  <image height="396.10517529215355" src="https://static.us.edusercontent.com/files/7Nddj2CEAZtZjzaesa47Jpg3" width="643"/>
- </figure>
- <paragraph>
-  Again, we can see that there does not seem to be a statistically significant relationship between text and code token similarity and answer score.
- </paragraph>
- <paragraph>
-  <underline>
-   Next steps?
-  </underline>
-  It would seem that the findings so far simply indicate that my hypothesis is incorrect. However, it may be worth further consideration. I can think of a couple factors that might be complicating my findings:
- </paragraph>
- <paragraph>
-  (1) Score is an imperfect measure of quality. Can we use another better metric?
- </paragraph>
- <paragraph>
-  (2) Should I have trained another word embedding model that uses "code language" in addition to natural language, or is this Spacy one sufficient?
- </paragraph>
- <paragraph>
-  (3) Should I have filtered out my data more? even out the distribution of relative score? remove old posts? remove posts high-reputation users? other?
- </paragraph>
- <paragraph>
-  (4) Are there other correlation statistics I could have used other than plots + Spearman coefficient scores? Suggestions?
- </paragraph>
-</document>
-<h3>
- Author: Khonzoda Umarova (she/her) (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  You hypothesis is very interesting and I like how you gradually moved from one language representation to another. Especially the transition from experiment 1 to experiment 2 is clever. For the word embeddings I wonder if they distinguish between different kinds of meanings of words in these posts. For example, the token "for" could have a meaning as preposition and also as a PL specific token (as in for loop).
- </paragraph>
- <paragraph>
-  In response to your question (1): I wonder if the layout of content on StackOverflow and especially ranking of answers could be influencing the score each answer receives? Could it be that answers with higher scores are more likely to be viewed? In that sense, would it be possible to adjust answer scores by their ordering/position?
- </paragraph>
- <paragraph>
-  I like how you did the comparisons between groups of answers and questions. It might be interesting to see if controlling some features of these posts would yield different results? Could different topics require different "grounding" in the language of answers? Could it be that different posters (both the ones who ask and the ones who answer questions) have different styles in formulating their replies? For example, I imagine beginners in programming might not know how to formulate their question (NL) and end up pasting a lot of code. I also imagine that poster who answer may use general variable names and not variable names specified by the poster.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  With respect to score distortions due to layout, Thorsten Joachims, Laura Granka, Bing Pan, Helene Hembrooke, and Geri Gay (SIGIR 2005) is an amazing (and test-of-time-award winning)
-  <link href="https://www.cs.cornell.edu/people/tj/publications/joachims_etal_05a.pdf"/>
-  paper. The brilliant idea is that you don't necessarily trust a comparison of item 1 over item 2 if item 1 is "higher up in the page", since there's a bias of people to scan from top to bottom, and so they might not have seen item 2.
-  <bold>
-   BUT,
-   <italic>
-    if item 2 is given a better score than item 1
-   </italic>
-  </bold>
-  <italic>
-   ,
-  </italic>
-  that's strong evidence that item 2 actually deserves its higher score!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Joyce Zhou (they/them) (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  I'd just like to add... now I'm thinking about how something like a word embedding would even look for a given programming language. Could you cluster languages based on what embedding similarities you can observe? Would languages like Java, C++, Ruby have more similar embedding similarities compared to Python, JavaScript, Haskell? What tokens would end up being important in the vocabularies?
- </paragraph>
- <paragraph>
-  ... I guess this is something that a project like the recent GitHub Copilot release might've thought about, haha.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Celine Lee (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Oh yeah, I agree with you that type of language would probably have a big difference on embedding similarities. Consider the
-  <code>
-   &amp;
-  </code>
-  symbol. In Python,
-  <code>
-   &amp;
-  </code>
-  pretty much always means "and", so I would expect its embedding to "and" the natural language token to be very high. However, in C and C++,
-  <code>
-   &amp;
-  </code>
-  is also a dereference operator, so it doesn't necessarily imply "and". It should also have a high similarity to "dereference" or "memory address" or related.
- </paragraph>
- <paragraph>
-  I think it's super fascinating, and yeah definitely models like Copilot and Codex seem to be on it-- Khonzoda and I were also discussing in class how it would be interesting to see how I might be able to use those models (or some smaller version maybe haha) to come up with "better" word embeddings that I could use for this project.
- </paragraph>
- <paragraph>
-  And also thinking in the vice versa, I came up with the topic for this project because I was hoping that studying grounding language in code could lead to insights for such code-text co-reasoning models. So it's a bit of circular usage at this point, but still interesting case studies.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Celine Lee (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<heading level="2">
+ Hypothesis:
+</heading>
+<p>
+ <i>
+  When a StackOverflow answer has an explicit code snippet, there is a positive correlation between answer score and density of matched tokens between the code snippet and the natural language of the answer.
+ </i>
+ This may imply that when a StackOverflow answer closely maps natural language explanation to programming language code, or in other words the NL is more clearly “ground” in the PL, it is better understood by StackOverflow users.
+</p>
+<heading level="2">
+ Project status overview:
+</heading>
+<p>
+ <underline>
+  Data
+ </underline>
+ : Fortunately StackOverflow data is periodically archived into a downloadable data file (
+ <a href="https://archive.org/details/stackexchange">
+  https://archive.org/details/stackexchange
+  ). The first thing I did was download the data and write pre-processing code to filter the data to my specifications and put it in a format useful for my project.
+ </a>
+</p>
+<p>
+ <underline>
+  First experiment: counting bag of words
+ </underline>
+ . In my first experiment, for each answer I computed counting-bag-of-words (CBOW) individually for the code in the answer and for the natural language in the answer. Results can be found in the follow-up comments of my commitment statement thread:
+ <link href="https://edstem.org/us/courses/8208/discussion/813768"/>
+ https://edstem.org/us/courses/8208/discussion/813768. The results of this first experiment are inconclusive, and analysis of the results brought up a couple of weak points in the process:
+</p>
+<p>
+ (1) counting bag of words is likely to unfairly penalize words that appear multiple times but at different counts between text and code --&gt; instead, in the next experiment, use binary-bag-of-words.
+</p>
+<p>
+ (2) we need some mathematical notation to map the relationship between the metrics we found --&gt; in the next experiment, use Spearman correlation coefficient (
+ <link href="https://towardsdatascience.com/clearly-explained-pearson-v-s-spearman-correlation-coefficient-ada2f473b8"/>
+ https://towardsdatascience.com/clearly-explained-pearson-v-s-spearman-correlation-coefficient-ada2f473b8) as a measure of relationship between the variables at play.
+</p>
+<p>
+ (3) just mapping relation between answer code and text may not be enough information --&gt; in the next experiment, map relations between all combinations of question code, question text, answer code, and answer text.
+</p>
+<p>
+ (4)  answer score has too many factors that make raw score an unfair measure of quality --&gt; in the next experiment, use a normalized answer score: score - avg(all scores of answers in thread)
+</p>
+<p>
+ <underline>
+  Second experiment: binary bag of words + Spearman correlation coefficient
+ </underline>
+ . In the second experiment, we address all the weak points brought up in the first experiment. Findings are as follows:
+</p>
+<figure>
+ <image height="396.10517529215355" src="https://static.us.edusercontent.com/files/CS535Sla1zOjmeG3RWs59gnw" width="643"/>
+</figure>
+<figure>
+ <image height="396.10517529215355" src="https://static.us.edusercontent.com/files/ADz1PIC9SZbFXi8P16svqheh" width="643"/>
+</figure>
+<figure>
+ <image height="396.10517529215355" src="https://static.us.edusercontent.com/files/OWgoqHvTIVr0adRSToAt0Ri6" width="643"/>
+</figure>
+<p>
+ As we can see, the correlation coefficient indicates statistically insignificant results. Upon examining the individual data points more, I found that there are many instances of tokens not matching perfectly but still being somewhat obviously connected (see example in followup of "problems I'm having"
+ <link href="https://edstem.org/us/courses/8208/discussion/755348"/>
+ https://edstem.org/us/courses/8208/discussion/755348
+ ). To address this, in the next experiment I use word embeddings to capture token similarity.
+</p>
+<p>
+ <underline>
+  Third experiment: word embeddings
+ </underline>
+ . I use the Spacy
+ <code>
+  en_core_web_lg
+ </code>
+ model for its pre-trained word embeddings and compute word embedding similarity between the BBOW combinations found in the second experiment. Findings, in combination with the findings from the second experiment, are as follows:
+</p>
+<figure>
+ <image height="396.10517529215355" src="https://static.us.edusercontent.com/files/kj5IFepqq7VtRddBLjOJmFAa" width="643"/>
+</figure>
+<figure>
+ <image height="396.10517529215355" src="https://static.us.edusercontent.com/files/oOpbhdPrYucsGsYek1xlpXnP" width="643"/>
+</figure>
+<figure>
+ <image height="396.10517529215355" src="https://static.us.edusercontent.com/files/ZLnmgtmx08zzapTbS83eC02J" width="643"/>
+</figure>
+<figure>
+ <image height="396.10517529215355" src="https://static.us.edusercontent.com/files/wOdSoQxN0vY2ASq0NTbb1BB8" width="643"/>
+</figure>
+<figure>
+ <image height="396.10517529215355" src="https://static.us.edusercontent.com/files/7Nddj2CEAZtZjzaesa47Jpg3" width="643"/>
+</figure>
+<p>
+ Again, we can see that there does not seem to be a statistically significant relationship between text and code token similarity and answer score.
+</p>
+<p>
+ <underline>
+  Next steps?
+ </underline>
+ It would seem that the findings so far simply indicate that my hypothesis is incorrect. However, it may be worth further consideration. I can think of a couple factors that might be complicating my findings:
+</p>
+<p>
+ (1) Score is an imperfect measure of quality. Can we use another better metric?
+</p>
+<p>
+ (2) Should I have trained another word embedding model that uses "code language" in addition to natural language, or is this Spacy one sufficient?
+</p>
+<p>
+ (3) Should I have filtered out my data more? even out the distribution of relative score? remove old posts? remove posts high-reputation users? other?
+</p>
+<p>
+ (4) Are there other correlation statistics I could have used other than plots + Spearman coefficient scores? Suggestions?
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Celine Lee (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Notes for potential next steps, from meeting with Lillian 12/7:
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     Go back into the data and look at specific examples. What is a good answer? What are some cases in which the text and code are closely grounded but do not have a good score? What about when it does have a good score? What is happening?
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     What is happening in the outlier data points?
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     What do we do about answers where the code snippet is just super short? Super long? Can / should we filter the data further to consider only when answers are of a certain length?
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     How might comments and edits play into scoring? Look at any time stamp data for votes. If we can, only consider the votes before comments or edits.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     How might link based answers be "corrupting" the results?
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Joyce Zhou (they/them) (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   I'd just like to add... now I'm thinking about how something like a word embedding would even look for a given programming language. Could you cluster languages based on what embedding similarities you can observe? Would languages like Java, C++, Ruby have more similar embedding similarities compared to Python, JavaScript, Haskell? What tokens would end up being important in the vocabularies?
+  </p>
+  <p>
+   ... I guess this is something that a project like the recent GitHub Copilot release might've thought about, haha.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Celine Lee (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Oh yeah, I agree with you that type of language would probably have a big difference on embedding similarities. Consider the
+    <code>
+     &amp;
+    </code>
+    symbol. In Python,
+    <code>
+     &amp;
+    </code>
+    pretty much always means "and", so I would expect its embedding to "and" the natural language token to be very high. However, in C and C++,
+    <code>
+     &amp;
+    </code>
+    is also a dereference operator, so it doesn't necessarily imply "and". It should also have a high similarity to "dereference" or "memory address" or related.
+   </p>
+   <p>
+    I think it's super fascinating, and yeah definitely models like Copilot and Codex seem to be on it-- Khonzoda and I were also discussing in class how it would be interesting to see how I might be able to use those models (or some smaller version maybe haha) to come up with "better" word embeddings that I could use for this project.
+   </p>
+   <p>
+    And also thinking in the vice versa, I came up with the topic for this project because I was hoping that studying grounding language in code could lead to insights for such code-text co-reasoning models. So it's a bit of circular usage at this point, but still interesting case studies.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Khonzoda Umarova (she/her) (student)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    You hypothesis is very interesting and I like how you gradually moved from one language representation to another. Especially the transition from experiment 1 to experiment 2 is clever. For the word embeddings I wonder if they distinguish between different kinds of meanings of words in these posts. For example, the token "for" could have a meaning as preposition and also as a PL specific token (as in for loop).
+   </p>
+   <p>
+    In response to your question (1): I wonder if the layout of content on StackOverflow and especially ranking of answers could be influencing the score each answer receives? Could it be that answers with higher scores are more likely to be viewed? In that sense, would it be possible to adjust answer scores by their ordering/position?
+   </p>
+   <p>
+    I like how you did the comparisons between groups of answers and questions. It might be interesting to see if controlling some features of these posts would yield different results? Could different topics require different "grounding" in the language of answers? Could it be that different posters (both the ones who ask and the ones who answer questions) have different styles in formulating their replies? For example, I imagine beginners in programming might not know how to formulate their question (NL) and end up pasting a lot of code. I also imagine that poster who answer may use general variable names and not variable names specified by the poster.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 4em;">
+    <h3>
+     Author: Prof. Lee (she/they) (admin)
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     With respect to score distortions due to layout, Thorsten Joachims, Laura Granka, Bing Pan, Helene Hembrooke, and Geri Gay (SIGIR 2005) is an amazing (and test-of-time-award winning)
+     <a href="https://www.cs.cornell.edu/people/tj/publications/joachims_etal_05a.pdf">
+      paper
+     </a>
+     . The brilliant idea is that you don't necessarily trust a comparison of item 1 over item 2 if item 1 is "higher up in the page", since there's a bias of people to scan from top to bottom, and so they might not have seen item 2.
+     <b>
+      BUT,
+      <i>
+       if item 2 is given a better score than item 1
+      </i>
+     </b>
+     <i>
+      ,
+     </i>
+     that's strong evidence that item 2 actually deserves its higher score!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

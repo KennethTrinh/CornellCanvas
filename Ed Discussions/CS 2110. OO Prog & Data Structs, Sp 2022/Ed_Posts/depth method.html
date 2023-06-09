@@ -13,40 +13,38 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  I am trying to figure out how to return -1 if p is not in the tree without using any if statement, do you have any hints? I am not sure how the variable that stores depth will ever equal -1 if we only need one base case for if human equals p.
- </paragraph>
-</document>
+<p>
+ I am trying to figure out how to return -1 if p is not in the tree without using any if statement, do you have any hints? I am not sure how the variable that stores depth will ever equal -1 if we only need one base case for if human equals p.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 4
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bahaa Kotb (student)
+ </h3>
+ <h3>
+  Vote Count: 4
+ </h3>
+ <p>
   There is a base case, right? the root contains p.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   That is the only base case you need.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   In the recursive case, you have a loop that iterates through the children, right?
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   This is a searching method. And the body of the loop will return under certain conditions.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   After the loop, return -1, because none of the iterations for each child returned.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   LOOK AT THE PATTERN WE GAVE YOU FOR A SEARCHING METHOD.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

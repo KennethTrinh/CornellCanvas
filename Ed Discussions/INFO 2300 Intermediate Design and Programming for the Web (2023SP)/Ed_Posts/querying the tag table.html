@@ -13,70 +13,64 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  Could you please explain what this means?
- </paragraph>
- <paragraph>
-  [ ] The tag filter HTML elements are created by querying the
-  <bold>
-   tag
-  </bold>
-  table. - i.e. for each record in
-  <code>
-   SELECT * FROM tags;
-  </code>
-  -
-  <bold>
-   Note:
-  </bold>
-  Hard coded tag values in the HTML do not meet this requirement.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Could you please explain what this means?
+</p>
+<p>
+ [ ] The tag filter HTML elements are created by querying the
+ <b>
+  tag
+ </b>
+ table. - i.e. for each record in
+ <code>
+  SELECT * FROM tags;
+ </code>
+ -
+ <b>
+  Note:
+ </b>
+ Hard coded tag values in the HTML do not meet this requirement.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jordyn Vu (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jordyn Vu (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   You may, for example, have your tag filters showing up on the page as
   <code>
    &lt;a&gt;
   </code>
   tags or radio buttons within a form. What we
-  <bold>
+  <b>
    don't
-  </bold>
+  </b>
   want to see is a hard-coded
   <code>
    &lt;a&gt;
   </code>
   for each tag (or, in the case of the form, a hard-coded radio button for each tag). Instead, you should
-  <italic>
+  <i>
    retrieve
-  </italic>
+  </i>
   all tags, then
-  <italic>
+  <i>
    loop
-  </italic>
+  </i>
   through what you retrieved and echo the content you want (such as id or tag name) accordingly.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Does that make sense?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,62 +13,60 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  For method append, I think I know the right procedure/pseudocode to write, but I'm not sure about some of the syntax.
- </paragraph>
- <paragraph>
-  For example, I wanted to change the next value of the previous tail before the new tail is added, so I tried tail.next=t where t is some new Node I previously defined, but this doesn't seem to be working.
- </paragraph>
- <paragraph>
-  How can we modify the next/prev or tail/head fields, or can we not do this?
- </paragraph>
-</document>
+<p>
+ For method append, I think I know the right procedure/pseudocode to write, but I'm not sure about some of the syntax.
+</p>
+<p>
+ For example, I wanted to change the next value of the previous tail before the new tail is added, so I tried tail.next=t where t is some new Node I previously defined, but this doesn't seem to be working.
+</p>
+<p>
+ How can we modify the next/prev or tail/head fields, or can we not do this?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bahaa Kotb (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You can do this, I think this should be fine. What’s the error message you’re getting to make you think it doesn’t work?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Ok, then maybe it's a problem with the way I defined the new node? I get a "Null Pointer Exception".
- </paragraph>
- <paragraph>
-  I defined the new tail "t" to be added as having tail as it's prev, v as its value, and null as its next.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  oh I see the issue, what if the list is empty? then what would be the tail? It’d be null, you need an if statement to account for this, because in an empty list the head and tail are null so when you append something the new head and tail should be that thing you append.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Ok, then maybe it's a problem with the way I defined the new node? I get a "Null Pointer Exception".
+  </p>
+  <p>
+   I defined the new tail "t" to be added as having tail as it's prev, v as its value, and null as its next.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Bahaa Kotb (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    oh I see the issue, what if the list is empty? then what would be the tail? It’d be null, you need an if statement to account for this, because in an empty list the head and tail are null so when you append something the new head and tail should be that thing you append.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

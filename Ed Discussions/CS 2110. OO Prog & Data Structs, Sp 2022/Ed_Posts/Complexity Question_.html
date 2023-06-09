@@ -13,48 +13,44 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="319.0027624309392" src="https://static.us.edusercontent.com/files/0hr2E843JWZ0WMFn5fMhjcg1" width="658"/>
- </figure>
- <paragraph>
-  For this question I thought it would be O(n*k).  I am confused why it would only be m or k because searching could lead to at worst case n paths being followed.  I am confused why n doesn't come into play for the answer.
- </paragraph>
-</document>
+<figure>
+ <image height="319.0027624309392" src="https://static.us.edusercontent.com/files/0hr2E843JWZ0WMFn5fMhjcg1" width="658"/>
+</figure>
+<p>
+ For this question I thought it would be O(n*k).  I am confused why it would only be m or k because searching could lead to at worst case n paths being followed.  I am confused why n doesn't come into play for the answer.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Think of what happens at each iteration.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   At the first iteration, in constant time, you find out whether the letter the word starts with is a child of the root. If so,
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   At the second iteration, in constant time, you find out whether the second letter the word starts with a child of a child of the root. And so on.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Progressing down to one more level of the takes constant time.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   How far down the tree do you have to go? Well,
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   (1) No more than the number k of letters in the word your searching for,  and
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   (2) No more than the depth of the tree, which is m.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

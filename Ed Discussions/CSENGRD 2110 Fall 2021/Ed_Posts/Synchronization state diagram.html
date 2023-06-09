@@ -13,29 +13,28 @@
 <h3>
  Vote Count: 4
 </h3>
-<document version="2.0">
- <paragraph>
-  During office hours this afternoon, we drew the following state diagram on the whiteboard to illustrate how concurrency works in Java:
- </paragraph>
- <figure>
-  <image height="370.125" src="https://static.us.edusercontent.com/files/Mu497v7LpF48bPAKog5VI4Jk" width="658"/>
- </figure>
- <paragraph>
-  A thread can execute code while in the green state (as well as before and after the diagram), but a thread is
-  <italic>
-   blocked
-  </italic>
-  while in an orange state.
- </paragraph>
- <paragraph>
-  Using the wait list (the "condition variable" side of monitors) is optional - its purpose is to improve efficiency (and reduce bugs) when one thread needs to wait for another to do something before it can proceed.  Lots of concurrent code only makes use of the lock list (the "mutex" side of monitors).
- </paragraph>
- <paragraph>
-  When using the wait list, the general pattern is as follows:
- </paragraph>
- <snippet language="java" line-numbers="false" runnable="false">
-  <snippet-file id="code">
-   synchronized (guard) {
+<p>
+ During office hours this afternoon, we drew the following state diagram on the whiteboard to illustrate how concurrency works in Java:
+</p>
+<figure>
+ <image height="370.125" src="https://static.us.edusercontent.com/files/Mu497v7LpF48bPAKog5VI4Jk" width="658"/>
+</figure>
+<p>
+ A thread can execute code while in the green state (as well as before and after the diagram), but a thread is
+ <i>
+  blocked
+ </i>
+ while in an orange state.
+</p>
+<p>
+ Using the wait list (the "condition variable" side of monitors) is optional - its purpose is to improve efficiency (and reduce bugs) when one thread needs to wait for another to do something before it can proceed.  Lots of concurrent code only makes use of the lock list (the "mutex" side of monitors).
+</p>
+<p>
+ When using the wait list, the general pattern is as follows:
+</p>
+<snippet language="java" line-numbers="false" runnable="false">
+ <snippet-file id="code">
+  synchronized (guard) {
     // ... evaluate condition
     while (!condition) {
         guard.wait();
@@ -43,12 +42,11 @@
     }
     // ... do stuff
 }
-  </snippet-file>
- </snippet>
- <paragraph>
-  Hopefully visualizing things this way helps you make sense of the various synchronization features.
- </paragraph>
-</document>
+ </snippet-file>
+</snippet>
+<p>
+ Hopefully visualizing things this way helps you make sense of the various synchronization features.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>

@@ -13,48 +13,44 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <pre>Submarine obR = (Submarine) ob;
+<pre>Submarine obR = (Submarine) ob;
 if(obR.maxDepth == this.maxDepth &amp;&amp; super.equals(ob)) return true;
 
 </pre>
- <paragraph>
-  Above is the code I wrote for this question. I'm not sure if it works.
- </paragraph>
- <paragraph>
-  Why does the solution use equals()? How/why is that legal? Wouldn't you use ==? Isn't equals() a String method OR another self-defined method (but in this case equals() is not defined in any way for an int type.) Is equals() being called recursively? i don't see how equals() can be used for an int.
-  <break>
-  </break>
- </paragraph>
- <figure>
-  <image height="599.655172413793" src="https://static.us.edusercontent.com/files/2YYEGlGULRn5Vi7sIohhrebT" width="658"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Above is the code I wrote for this question. I'm not sure if it works.
+</p>
+<p>
+ Why does the solution use equals()? How/why is that legal? Wouldn't you use ==? Isn't equals() a String method OR another self-defined method (but in this case equals() is not defined in any way for an int type.) Is equals() being called recursively? i don't see how equals() can be used for an int.
+ <break>
+ </break>
+</p>
+<figure>
+ <image height="599.655172413793" src="https://static.us.edusercontent.com/files/2YYEGlGULRn5Vi7sIohhrebT" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andrew Chen (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew Chen (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   You are right. The return statement should be changed to obR.maxDepth == maxDepth. It is a primitive int and has no methods, let alone the equals() method.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   For what it's worth, I'll correct the code you wrote as well:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Submarine obR = (Submarine) ob; if(obR.maxDepth == this.maxDepth &amp;&amp; super.equals(ob)) return true;
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The first line could lead to a ClassCastException because we don't know whether or not ob is actually a Submarine. All we know is that ob is just of Object type. Therefore, we call the parent class's equals() method first, which checks to make sure ob is of Submarine type and makes those other field checks.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

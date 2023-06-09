@@ -13,13 +13,10 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi! Can someone help me understand this error? Is it on my part or the testing helper functions? I ran my function on python tutor and it seemed to work just fine. Thanks for the help!
- </paragraph>
- <paragraph>
- </paragraph>
- <pre>Starting test_college_named
+<p>
+ Hi! Can someone help me understand this error? Is it on my part or the testing helper functions? I ran my function on python tutor and it seemed to work just fine. Thanks for the help!
+</p>
+<pre>Starting test_college_named
         Testing known valid name A
 Traceback (most recent call last):
   File ".\helper_tests.py", line 210, in &lt;module&gt;
@@ -27,68 +24,65 @@ Traceback (most recent call last):
   File ".\helper_tests.py", line 122, in test_college_named
     cornellasserts.assert_equals(name, result.name)
 AttributeError: 'NoneType' object has no attribute 'name'</pre>
- <paragraph>
- </paragraph>
-</document>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Dylan Castillo (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Dylan Castillo (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The error message is pointing you to line 122 in helper_tests, and the error is basically saying you are trying to access the attribute “name” for an object that is type None. You can see this access attempt when you’re doing “result.name”; result is a “None”, meaning that you can’t access its attribute name (it has not attributes).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Lauren Parrott (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I'm having the same problem, but in the precondition for college_named it says that clist is a list of College objects, so wouldn't this test case be violating the preconditions if clist has objects that are type None?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Could the error be pointing to this? This line was written for us as part of cornellasserts, and Atom shows the .name part as red. I have no clue what is wrong with my code because it works fine in Python tutor.
- </paragraph>
- <paragraph>
-  cornellasserts.assert_equals(name, result.name)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Dylan Castillo (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Yeah, sorry, that’s what i meant in the answer. Basically, the error message is saying that the result in that line whose name you’re trying to get is a “None”, not an object with attribute “name”.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Could the error be pointing to this? This line was written for us as part of cornellasserts, and Atom shows the .name part as red. I have no clue what is wrong with my code because it works fine in Python tutor.
+  </p>
+  <p>
+   cornellasserts.assert_equals(name, result.name)
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Dylan Castillo (None)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Yeah, sorry, that’s what i meant in the answer. Basically, the error message is saying that the result in that line whose name you’re trying to get is a “None”, not an object with attribute “name”.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Lauren Parrott (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I'm having the same problem, but in the precondition for college_named it says that clist is a list of College objects, so wouldn't this test case be violating the preconditions if clist has objects that are type None?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

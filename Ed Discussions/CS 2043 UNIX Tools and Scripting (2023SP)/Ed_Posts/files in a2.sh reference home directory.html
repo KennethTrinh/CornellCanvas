@@ -13,57 +13,55 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  In my VMware, I have A2 and a2.sh in my home directory. While writing the commands to put inside a2.sh, I reference "
-  <strike>
-   /A2/sentence.txt" and "
-  </strike>
-  /A2/nouns" and things like that instead of using "./A2/nouns".
- </paragraph>
- <paragraph>
-  Is this ok? I was able to produce my desired output this way,but I do not if the autograder will be able to run this since i do not know where the A2 folder is located in that
- </paragraph>
-</document>
+<p>
+ In my VMware, I have A2 and a2.sh in my home directory. While writing the commands to put inside a2.sh, I reference "
+ <strike>
+  /A2/sentence.txt" and "
+ </strike>
+ /A2/nouns" and things like that instead of using "./A2/nouns".
+</p>
+<p>
+ Is this ok? I was able to produce my desired output this way,but I do not if the autograder will be able to run this since i do not know where the A2 folder is located in that
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Woosang Kang (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Woosang Kang (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Not really.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Without the dot notation, you're specifying an
-  <bold>
+  <b>
    absolute
-  </bold>
+  </b>
   path. This means that your script won't work unless the required files (nouns, sentence.txt, etc.) are located in the VM's base directory (/).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   By adding the dot notation, you are indicating that the path is
-  <bold>
+  <b>
    relative
-  </bold>
+  </b>
   , meaning that the starting point of whatever filename or directory following the dot is the current directory that the script is being run.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The relative path notation makes more sense here since the script should work by running
   <code>
    ./a2.sh
   </code>
   whenever the required files or directories are in the same directory as the script.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   So
-  <bold>
+  <b>
    a)
-  </bold>
+  </b>
   make sure you don't have all your files in the base directory (
   <code>
    /A2/adverbs/...
@@ -73,9 +71,9 @@
    ~/A2/adverbs/...
   </code>
   for example), and
-  <bold>
+  <b>
    b)
-  </bold>
+  </b>
   you're running the script as
   <code>
    ./a2.sh
@@ -85,134 +83,130 @@
    ~/A2
   </code>
   ).
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I dont understand where I'm supposed to ptut sentence.txt if it is not inside the A2 folder?
- </paragraph>
- <paragraph>
-  Also, since sentence.txt does not exist inside the adjective/noun/adverb folder, but i need to cd into thee to access the random words, how do I get a word from inside that but put it in sentence txt which is outside of that folder?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Woosang Kang (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Just to clarify, I wasn't saying that you shouldn't put sentence.txt inside the A2 folder. I wanted to suggest that it's good practice to refrain from putting the scripts and folders in the root directory (/).
- </paragraph>
- <paragraph>
-  Also, you can address the outer directories by the double dot (..) notation. For example, if you're in
-  <code>
-   ~/A2/adjectives
-  </code>
-  , you can
-  <code>
-   cd ../adverbs
-  </code>
-  to access the
-  <code>
-   ~/A2/adverbs
-  </code>
-  directory.
- </paragraph>
- <paragraph>
-  Feel free to visit my OH today if you have any other issues!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Esther Yu (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  But how do we echo sth. to a file that is not in a same directory?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  In regards to files inside A2, if I am inside A2 should I be referencing them as
- </paragraph>
- <paragraph>
-  adjectives or ~/A2/adjectives?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Woosang Kang (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The former should work!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Esther Yu (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I got it! Thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Esther Yu (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I tried &gt;&gt; cd ../sentence.txt and it just create a cd and create a sentence txt file.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I dont understand where I'm supposed to ptut sentence.txt if it is not inside the A2 folder?
+  </p>
+  <p>
+   Also, since sentence.txt does not exist inside the adjective/noun/adverb folder, but i need to cd into thee to access the random words, how do I get a word from inside that but put it in sentence txt which is outside of that folder?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Woosang Kang (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Just to clarify, I wasn't saying that you shouldn't put sentence.txt inside the A2 folder. I wanted to suggest that it's good practice to refrain from putting the scripts and folders in the root directory (/).
+   </p>
+   <p>
+    Also, you can address the outer directories by the double dot (..) notation. For example, if you're in
+    <code>
+     ~/A2/adjectives
+    </code>
+    , you can
+    <code>
+     cd ../adverbs
+    </code>
+    to access the
+    <code>
+     ~/A2/adverbs
+    </code>
+    directory.
+   </p>
+   <p>
+    Feel free to visit my OH today if you have any other issues!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     In regards to files inside A2, if I am inside A2 should I be referencing them as
+    </p>
+    <p>
+     adjectives or ~/A2/adjectives?
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Woosang Kang (staff)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      The former should work!
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 12em;">
+      <h3>
+       Author: Esther Yu (None)
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       I tried &gt;&gt; cd ../sentence.txt and it just create a cd and create a sentence txt file.
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 12em;">
+       <h3>
+        Author: Esther Yu (None)
+       </h3>
+       <h3>
+        Vote Count: 0
+       </h3>
+       <p>
+        I got it! Thank you!
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+      </div>
+     </div>
+    </div>
+    <div style="text-indent: 8em;">
+     <h3>
+      Author: Esther Yu (None)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      But how do we echo sth. to a file that is not in a same directory?
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

@@ -13,95 +13,92 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I am confused why nextInt() should have the parameter size() rather than size() - 1. The size() method returns the number of elements in the set, so wouldn't the last index have to be the number of elements minus 1?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I am confused why nextInt() should have the parameter size() rather than size() - 1. The size() method returns the number of elements in the set, so wouldn't the last index have to be the number of elements minus 1?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Please type the following into google to get to class Random
- </paragraph>
- <paragraph>
-  java 8 random nextInt
- </paragraph>
- <paragraph>
-  You'll get this page:
-  <link href="https://docs.oracle.com/javase/8/docs/api/java/util/Random.html"/>
-  https://docs.oracle.com/javase/8/docs/api/java/util/Random.html
- </paragraph>
- <paragraph>
-  On that page, search for method nextInt and read its specification.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  For anyone else looking at this thread, the reason why it needs to be made on size() is because nextInt() considers numbers between 0 and the specified values (
-  <italic>
-   exclusive).
-  </italic>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Okay, thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   We were not being ornery of mean in asking the student to find the answer himself concerning method Random.nextInt, by looking at the Java API documentation. There's a saying,
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Don't give a person a fish,
   <break>
   </break>
   teach them how to fish.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   We were attempting get that student in the habit of fishing for answers themselves.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   This course ends pretty soon, and after that, we will not be there to answer all questions. The sooner everyone learns to fish for themselves in simply situations like this, the better. If that fishing doesn't succeed, we are HAPPY to answer questions.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Please type the following into google to get to class Random
+  </p>
+  <p>
+   java 8 random nextInt
+  </p>
+  <p>
+   You'll get this page:
+   <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Random.html">
+    https://docs.oracle.com/javase/8/docs/api/java/util/Random.html
+   </a>
+  </p>
+  <p>
+   On that page, search for method nextInt and read its specification.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Okay, thank you!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 4em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     For anyone else looking at this thread, the reason why it needs to be made on size() is because nextInt() considers numbers between 0 and the specified values (
+     <i>
+      exclusive).
+     </i>
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

@@ -13,58 +13,53 @@
 <h3>
  Vote Count: 3
 </h3>
-<document version="2.0">
- <paragraph>
-  What is SVCall_IRQn?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Do we need it for NVIC_EnableIRQ() ?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ What is SVCall_IRQn?
+</p>
+<p>
+ Do we need it for NVIC_EnableIRQ() ?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Trenton Lyke (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Trenton Lyke (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I'm not qualified enough to answer that question, but I think it is the same type as
   <code>
    PIT_IRQn
   </code>
   and kind of the
-  <link href="https://en.wikipedia.org/wiki/Supervisor_Call_instruction"/>
-  Supervisor Call instruction's equivalent of
-  <code>
-   PIT_IRQn
-  </code>
-  . So it can be used in the
-  <code>
-   NVIC_EnableIRQ()
-  </code>
-  and
-  <code>
-   NVIC_SetPriority()
-  </code>
-  functions just as
-  <code>
-   PIT_IRQn
-  </code>
-  . Regardless, you don't have to use that in your code if you use the polling method for the issue discussed in
-  <link href="https://edstem.org/us/courses/19442/discussion/1426580"/>
-  #641.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+  <a href="https://en.wikipedia.org/wiki/Supervisor_Call_instruction">
+   Supervisor Call instruction's
+   equivalent of
+   <code>
+    PIT_IRQn
+   </code>
+   . So it can be used in the
+   <code>
+    NVIC_EnableIRQ()
+   </code>
+   and
+   <code>
+    NVIC_SetPriority()
+   </code>
+   functions just as
+   <code>
+    PIT_IRQn
+   </code>
+   . Regardless, you don't have to use that in your code if you use the polling method for the issue discussed in
+   <link href="https://edstem.org/us/courses/19442/discussion/1426580"/>
+   #641
+  </a>
+  .
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

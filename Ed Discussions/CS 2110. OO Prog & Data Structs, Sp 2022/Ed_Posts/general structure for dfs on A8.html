@@ -13,25 +13,23 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi, for the Find state in A8, the instructions encourage us to use DFS to find the orb, but they also discourage recursion. How are we meant to implement DFS in the find phase without calling find(state) or other recursive methods?
- </paragraph>
-</document>
+<p>
+ Hi, for the Find state in A8, the instructions encourage us to use DFS to find the orb, but they also discourage recursion. How are we meant to implement DFS in the find phase without calling find(state) or other recursive methods?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   We do NOT discourage recursion. We WANT you to use recursion. You are not reading carefully enough, not reading our reasons for doing what we say. We want you to do this:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   public void find(FindState state) {
   <break>
   </break>
@@ -39,8 +37,8 @@
   <break>
   </break>
   dfsWalk(state, ...);
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   }
   <break>
   </break>
@@ -50,49 +48,47 @@
   <break>
   </break>
   public void dfWal(FindState state, ... (if necessary, more parameters) ) {
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   //TODO write the recursive dfswalk here.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   }
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  my apologies. I was confused by the directions under section 5 in the handout
- </paragraph>
- <figure>
-  <image height="96.8626198083067" src="https://static.us.edusercontent.com/files/QNeNvtenKLNHgucBcsGClEaW" width="558"/>
- </figure>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Tony Chen (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  find() and flee() are just methods that contain your calls to recursive helper methods. By doing this, it allows for more versatility and you can just comment out the recursive helper methods in find() or flee() to test them. So don't write your dfs code in find().
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <p>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   my apologies. I was confused by the directions under section 5 in the handout
+  </p>
+  <figure>
+   <image height="96.8626198083067" src="https://static.us.edusercontent.com/files/QNeNvtenKLNHgucBcsGClEaW" width="558"/>
+  </figure>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Tony Chen (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    find() and flee() are just methods that contain your calls to recursive helper methods. By doing this, it allows for more versatility and you can just comment out the recursive helper methods in find() or flee() to test them. So don't write your dfs code in find().
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

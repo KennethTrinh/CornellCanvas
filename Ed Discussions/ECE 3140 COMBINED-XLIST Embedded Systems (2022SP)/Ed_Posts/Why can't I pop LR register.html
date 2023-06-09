@@ -13,89 +13,81 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Not sure why this is giving an error but I assume its address is too high? How do I get around this?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Not sure why this is giving an error but I assume its address is too high? How do I get around this?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Anushka Mukherjee (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  pop PC?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Nils Napp (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  In both PUSH and POP There are only 8+1 bits to specify the registers in a one-hot encoding scheme, see:
- </paragraph>
- <paragraph>
-  A6.7.49 POP (p. A6-165) in the ARMv6-M reference.
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  So you can freely use any subset of R0-R7 in both instructions.  The extra bit is used in PUSH to specify if LR should be pushed, and in POP if PC should be popped. This asymmetric behavior is because of how function calls are implemented.
- </paragraph>
- <paragraph>
-  You need to PUSH LR all the time, and the only reason to POP LR is to use BX LR, but since BX LR essentially just moves LR into the PC, you get equivalent behavior by using POP {PC}.
-  <break>
-  </break>
-  <break>
-  </break>
-  If for some reason to need to modify the value that was pushed onto the stack from LR before returning (and I really can't think of a reason why you'd ever want to), you could always use a low register, e.g. R2,  and do POP {R2} BX R2. LR is not special except that BL stores the return address there.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew Cheng (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  I think the thumb instruction set doesn't support Popping the LR register. Therefore, I think we have to pop the PC register.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ariana Haghighi (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Ariana Haghighi (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Yeah, the issue isn't that the LR is too high. Instead of POP {LR} you use POP {PC} which pops LR off of the stack and stores it in the program counter, so it branches to the right spot
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Andrew Cheng (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   I think the thumb instruction set doesn't support Popping the LR register. Therefore, I think we have to pop the PC register.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Anushka Mukherjee (None)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    pop PC?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 4em;">
+    <h3>
+     Author: Nils Napp (admin)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     In both PUSH and POP There are only 8+1 bits to specify the registers in a one-hot encoding scheme, see:
+    </p>
+    <p>
+     A6.7.49 POP (p. A6-165) in the ARMv6-M reference.
+     <break>
+     </break>
+    </p>
+    <p>
+     So you can freely use any subset of R0-R7 in both instructions.  The extra bit is used in PUSH to specify if LR should be pushed, and in POP if PC should be popped. This asymmetric behavior is because of how function calls are implemented.
+    </p>
+    <p>
+     You need to PUSH LR all the time, and the only reason to POP LR is to use BX LR, but since BX LR essentially just moves LR into the PC, you get equivalent behavior by using POP {PC}.
+     <break>
+     </break>
+     <break>
+     </break>
+     If for some reason to need to modify the value that was pushed onto the stack from LR before returning (and I really can't think of a reason why you'd ever want to), you could always use a low register, e.g. R2,  and do POP {R2} BX R2. LR is not special except that BL stores the return address there.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

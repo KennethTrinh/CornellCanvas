@@ -13,88 +13,84 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm having trouble with exception handling problems. Could someone explain the solution to C.me(0) and C.me(1)?
- </paragraph>
- <figure>
-  <image height="632.3636363636364" src="https://static.us.edusercontent.com/files/c4uRESQlRehJFaz1EHuzVGna" width="658"/>
- </figure>
-</document>
+<p>
+ I'm having trouble with exception handling problems. Could someone explain the solution to C.me(0) and C.me(1)?
+</p>
+<figure>
+ <image height="632.3636363636364" src="https://static.us.edusercontent.com/files/c4uRESQlRehJFaz1EHuzVGna" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Vladia Trinh (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Vladia Trinh (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   For C.m(0)...
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     print 8
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     y is assigned to 0
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     print 7
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     if statement evaluates to true, so runtime exception is thrown
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     runtime exception is caught in catch branch so print 2
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     lastly print 1
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
+ <p>
   So, you end up printing 8 7 2 1
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   For C.m(1)...
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     print 8
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     evaluating expression to assign y divides by 0, since this is not in the try statement it cannot be caught
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     program crashes
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
+ <p>
   So, you end up just printing 8
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

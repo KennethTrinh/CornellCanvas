@@ -13,110 +13,49 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  It says "The method assertEquals(Object, Object) is ambiguous for the type ElephantTest" on every line where I use assertEquals. I have the correct import statements. Why is it saying this and how do I fix it?
- </paragraph>
- <paragraph>
-  assertEquals(false, e3.isFemale()); is one example of lines that are flagged for this reason.
- </paragraph>
- <paragraph>
-  <break>
-  </break>
- </paragraph>
-</document>
+<p>
+ It says "The method assertEquals(Object, Object) is ambiguous for the type ElephantTest" on every line where I use assertEquals. I have the correct import statements. Why is it saying this and how do I fix it?
+</p>
+<p>
+ assertEquals(false, e3.isFemale()); is one example of lines that are flagged for this reason.
+</p>
+<p>
+ <break>
+ </break>
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Please put the offending statement into your above question so that we can see what is going on.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  assertEquals(false, e3.isFemale()); is one example of lines that are flagged for this reason.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Do you have a field field declared as Boolean or a method with return type Boolean? If so, that could cause it. Don't use class Boolean, use only primitive type boolean
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  No, they all are return type boolean (lowercase)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I have this in the test for Cnstructor1:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   assertEquals(true, a.isFemale());
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   It gives now such message as you indicate.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Show me your COMPLETE testing procedure ,,,
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <pre>public void testConstructor2() {
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <pre>public void testConstructor2() {
         Elephant e3= new Elephant("Michael", 'M', 2002, 3, new Elephant("molly", 'F', 2000, 1),
             new Elephant("joe", 'M', 2000, 2));
         Elephant e4= new Elephant("Sandy", 'F', 2001, 4, new Elephant("Roberta", 'F', 2000, 5),
@@ -130,9 +69,64 @@
         assertEquals(true, e4.isFemale());
     }
 </pre>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Do you have a field field declared as Boolean or a method with return type Boolean? If so, that could cause it. Don't use class Boolean, use only primitive type boolean
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    No, they all are return type boolean (lowercase)
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: David Gries (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Please put the offending statement into your above question so that we can see what is going on.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 4em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     assertEquals(false, e3.isFemale()); is one example of lines that are flagged for this reason.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

@@ -13,63 +13,22 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  i would like to change the function of an interrupt handler based on an external condition. is there any way to access external information from inside an interrupt handler? if there is no way to pass in a parameter to the handler function, all I can think of is creating some kind of global variable which seems like bad programming practice.
- </paragraph>
-</document>
+<p>
+ i would like to change the function of an interrupt handler based on an external condition. is there any way to access external information from inside an interrupt handler? if there is no way to pass in a parameter to the handler function, all I can think of is creating some kind of global variable which seems like bad programming practice.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  You cannot pass parameters into interrupt handlers (think back to lecture: IRQ's can happen at any time, but passing in parameters requires setup, not to mention the fact that the function is already declared in the header file to have no parameters). However, IRQ's (like other functions) can know about information from the larger scope. Since you're going to be calling the IRQ from inside main (when it gets interrupted), it can know about anything that main knows about. This can hopefully fix the scenario you're talking about; you can set a variable in main to reflect information about something (presumably the state of an LED), and when
-  <bold>
-   void
-  </bold>
-  <bold>
-   PIT_IRQHandler
-  </bold>
-  (
-  <bold>
-   void
-  </bold>
-  ) gets called, it will be able to access that variable.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  You are correct in thinking about using a global variable. Any variables created within main will not be in the scope of the IRQ handler and any variables declared within the handler will be lost when the function returns. A variable declared globally can be accessed by the IRQ handler (or any function due to its scope), all while retaining its data even when the handler returns.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Evan Williams (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Evan Williams (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   If you don't want to use a global variable you can also use a static variable, which will allow you to preserve the value of a variable even when the variable is out of scope. See the following example:
- </paragraph>
+ </p>
  <pre>#include&lt;stdio.h&gt;
 
 int fun(void) {
@@ -83,12 +42,51 @@ int main() {
     return 0;
 }
 </pre>
- <paragraph>
+ <p>
   The output will be the following:
- </paragraph>
+ </p>
  <pre>1
 2</pre>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Harris Miller (None)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   You are correct in thinking about using a global variable. Any variables created within main will not be in the scope of the IRQ handler and any variables declared within the handler will be lost when the function returns. A variable declared globally can be accessed by the IRQ handler (or any function due to its scope), all while retaining its data even when the handler returns.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Aidan McNay (student)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    You cannot pass parameters into interrupt handlers (think back to lecture: IRQ's can happen at any time, but passing in parameters requires setup, not to mention the fact that the function is already declared in the header file to have no parameters). However, IRQ's (like other functions) can know about information from the larger scope. Since you're going to be calling the IRQ from inside main (when it gets interrupted), it can know about anything that main knows about. This can hopefully fix the scenario you're talking about; you can set a variable in main to reflect information about something (presumably the state of an LED), and when
+    <b>
+     void
+    </b>
+    <b>
+     PIT_IRQHandler
+    </b>
+    (
+    <b>
+     void
+    </b>
+    ) gets called, it will be able to access that variable.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

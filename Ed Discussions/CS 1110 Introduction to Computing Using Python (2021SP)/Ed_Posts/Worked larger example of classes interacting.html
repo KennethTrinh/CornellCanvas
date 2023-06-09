@@ -13,51 +13,50 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi all, for a larger (but prelim-sized!) worked example of classes interacting, look at problem 5 of Spring 2014 Prelim2:
-  <link href="https://www.cs.cornell.edu/courses/cs1110/2021sp/exams/prelim2/2014-spring-prelim2.pdf"/>
-  exam itself,
+<p>
+ Hi all, for a larger (but prelim-sized!) worked example of classes interacting, look at problem 5 of Spring 2014 Prelim2:
+ <a href="https://www.cs.cornell.edu/courses/cs1110/2021sp/exams/prelim2/2014-spring-prelim2.pdf">
+  exam itself
+  ,
   <link href="https://www.cs.cornell.edu/courses/cs1110/2021sp/exams/prelim2/2014-spring-prelim2-answers.pdf"/>
   solutions
- </paragraph>
- <paragraph>
-  Yes, that example also involved courses, schedules, and students, but they are
-  <italic>
-   different
-  </italic>
-  classes than what you are working with in A6.
-  <break>
-  </break>
-  <break>
-  </break>
-  For example, 2014-Courses have an attribute
-  <code>
-   students
-  </code>
-  which is the list of students enrolled in that course.
-  <break>
-  </break>
-  <break>
-  </break>
-  For a 2014-student, a semester Schedule on that 2014 prelim had an attribute
-  <code>
-   courses
-  </code>
-  tracking which Courses a Student is taking.
-  <break>
-  </break>
-  <break>
-  </break>
-  So method
-  <code>
-   add_course
-  </code>
-  for a 2014-Student looks like this:
- </paragraph>
- <paragraph>
- </paragraph>
- <pre>class Student:
+ </a>
+</p>
+<p>
+ Yes, that example also involved courses, schedules, and students, but they are
+ <i>
+  different
+ </i>
+ classes than what you are working with in A6.
+ <break>
+ </break>
+ <break>
+ </break>
+ For example, 2014-Courses have an attribute
+ <code>
+  students
+ </code>
+ which is the list of students enrolled in that course.
+ <break>
+ </break>
+ <break>
+ </break>
+ For a 2014-student, a semester Schedule on that 2014 prelim had an attribute
+ <code>
+  courses
+ </code>
+ tracking which Courses a Student is taking.
+ <break>
+ </break>
+ <break>
+ </break>
+ So method
+ <code>
+  add_course
+ </code>
+ for a 2014-Student looks like this:
+</p>
+<pre>class Student:
 
     """attribute schedules: list of schedules from all semester, in reverse 
     chronological order, with the schedule for the current semester being at 
@@ -74,9 +73,6 @@
         
         
         </pre>
- <paragraph>
- </paragraph>
-</document>
 <h3>
  ----------- REPLIES -----------
 </h3>

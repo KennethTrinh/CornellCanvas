@@ -13,82 +13,78 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  Also, are assert statements only put in constructor bodies? Or can they be used in the same place as variable declarations as well?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  What's the point of putting assert statements inside a constructor body if they can just be used right next to the variable declaration?
- </paragraph>
-</document>
+<p>
+ Also, are assert statements only put in constructor bodies? Or can they be used in the same place as variable declarations as well?
+</p>
+<p>
+ What's the point of putting assert statements inside a constructor body if they can just be used right next to the variable declaration?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Assert statements are executable code - they can go in constructor and method bodies, but not with field declarations.  Unlike in some languages, they do not enforce constraints on a field whenever that field is changed; they only perform their check when they are executed.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Additionally, assert statements should not be relied upon for validating user input.  Remember - they are completely disabled by default, so
-  <bold>
+  <b>
    a function's behavior must not rely on them
-  </bold>
+  </b>
   (we violate this principle in assignment A1 for pedagogical reasons, but after that, assert statements take on a much more narrow role).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Assert statements are most helpful for finding logic errors in the implementation of a class or library - an implementer uses them to confirm that things they think should always be true really are.  Since a precondition is something that an implementer assumes to be true, assert statements are a great fit for verifying preconditions during development.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  So helpful; thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  You're welcome!  I noticed that this question is marked "private", but I expect other students are wondering the same thing and would benefit from this discussion.  I encourage you to make your posts public as long as they don't contain assignment code (you can still make your name anonymous if you like).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Fixed! Thanks for letting me know
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   So helpful; thank you!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Curran Muhlberger (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    You're welcome!  I noticed that this question is marked "private", but I expect other students are wondering the same thing and would benefit from this discussion.  I encourage you to make your posts public as long as they don't contain assignment code (you can still make your name anonymous if you like).
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Fixed! Thanks for letting me know
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

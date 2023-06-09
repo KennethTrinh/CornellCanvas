@@ -13,33 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  This might be a silly question on something I missed, but in a loop like this:
- </paragraph>
- <paragraph>
-  for (H1N1Tree tree : children)
- </paragraph>
- <paragraph>
-  how do you access the person at each child? I tried children.person() and it had an error so I'm assuming it's something else.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ This might be a silly question on something I missed, but in a loop like this:
+</p>
+<p>
+ for (H1N1Tree tree : children)
+</p>
+<p>
+ how do you access the person at each child? I tried children.person() and it had an error so I'm assuming it's something else.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   children is a set, not an H1N1Tree. Instead of declaring variable tree in that for-each statement, I suggest you use   child   , which give more meaning
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,244 +13,240 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I first give a summary of the project and then report on the progress since A4.
- </paragraph>
- <paragraph>
-  <underline>
-   Project summary
-  </underline>
- </paragraph>
- <paragraph>
-  Economics and sociology are often described as two fundamentally different social sciences. Economics is characterized as the study of rational action, focusing on the efficient allocation of scarce resources. Sociology, by contrast, is characterized as the study of nonrational behavior, focusing on topics, such as norms and biases.
- </paragraph>
- <paragraph>
-  In this project, I would like to use data from the digital library JSTOR to study how research topics in economics and sociology are co-evolving over time. The main language features used in this analysis would be the co-occurrence of keywords in the research articles in economics and sociology.
- </paragraph>
- <paragraph>
-  Through the
-  <link href="https://constellate.org/"/>
-  Constellate service, I am able to download metadata of most articles that JSTOR offers in sociology and economics between1900 to 2020. The metadata consists of the title, abstract, author, journal, and publication year of an article. For most articles, the full text is also available. Here I plot the number of articles over time:
- </paragraph>
- <figure>
-  <image height="248" src="https://static.us.edusercontent.com/files/U2vZKDyJhbritZVpDecTKIAE" width="402"/>
- </figure>
- <paragraph>
-  We can see that publications have been growing disproportionally since 1960 and that econ is the bigger discipline. Open question: why this drop in data from 2015 on?
- </paragraph>
- <paragraph>
-  <underline>
-   Progress report
-  </underline>
- </paragraph>
- <paragraph>
-  I encountered two dead ends in this project:
- </paragraph>
- <list style="number">
-  <list-item>
-   <paragraph>
-    Initially, I wanted to analyze abstracts. As it turns out, however, separate abstracts became more common in sociology and economics only since the 1980s. Therefore, I decided to instead analyze titles as a proof of concept. Once the analysis is fully established, I will switch to analyzing the full text, which is computationally more intensive. In particular, I will focus on the introduction and conclusion as other parts of papers (e.g., methods section) are highly standardized and may blur important differences between soc and econ articles.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    I initially ran topic models, which did not produce much insight, and I, therefore, abandoned this strategy
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  For A4, I (i) implemented a fighting word analysis over the entire corpora, and I (ii) set up the co-occurrence analysis.
- </paragraph>
- <paragraph>
-  To count how often words co-occur, I first limited the overall number of words I consider as otherwise, the co-occurrence matrix explodes. I decided to take the top 1000 words in each discipline (removing stopwords and small words) and count for each combination of words how often they co-occur.
- </paragraph>
- <paragraph>
-  Since then, I have included the time dimension. That is, rather than analyzing the entire corpora, I run the analysis decade by decade to explore changes over time. These are my initial results.
- </paragraph>
- <paragraph>
-  <underline>
-   Intersection of sociology and economics
-  </underline>
- </paragraph>
- <paragraph>
-  These are highly frequent words that appear both in soc and econ:
- </paragraph>
- <paragraph>
-  ['american', 'care', 'case', 'change', 'development', 'economic', 'education', 'effects', 'employment', 'family', 'health', 'impact', 'income', 'international', 'labor', 'life', 'market', 'model', 'national', 'policy', 'political', 'problems', 'public', 'role', 'rural', 'social', 'state', 'states', 'structure', 'theory', 'united', 'urban', 'welfare', 'women', 'work', 'world']
- </paragraph>
- <paragraph>
-  <underline>
-   Fighting word analysis
-  </underline>
- </paragraph>
- <paragraph>
-  The fighting words analysis basically measures whether a word is occurring more frequently in sociology or economics relative to the overall size of the corpora. This tendency is expressed a z-score, which, if positive, indicates that the words appear more in sociology, and, if negative, appear more in economics.
- </paragraph>
- <figure>
-  <image height="264" src="https://static.us.edusercontent.com/files/q1DDM1JWv1zSEUlqtg7HlG6X" width="384"/>
- </figure>
- <figure>
-  <image height="264" src="https://static.us.edusercontent.com/files/2KulKNbNPOm70OwYSkUyNRnK" width="384"/>
- </figure>
- <figure>
-  <image height="264" src="https://static.us.edusercontent.com/files/lNnUDZsSmRhf5IcrDSy331rN" width="384"/>
- </figure>
- <paragraph>
-  These are some examples. I tried many more. My general impression is that words associated with economic development and stratification are losing traction in sociology. Words, such as development, welfare, inequality,  poverty become more strongly associated with economics over time. However, economics seems to lose its position as a "theoretical discipline" as the word "theory" is appearing more frequently in sociology nowadays.
- </paragraph>
- <paragraph>
-  <underline>
-   Co-occurrence analysis
-  </underline>
- </paragraph>
- <paragraph>
-  I first calculate the surprisingness of terms co-occurring given their overall frequency. If terms are independent, their joint probability is P(AB) = P(A)P(B). The ratio P(AB) / (P(A)P(B)) is therefore a good measure of surprisingness. A value of 1 = occurs as often as we would expect. A value &gt; 1 = occurs more often. A value &lt; 1 = occurs less often.
- </paragraph>
- <paragraph>
-  For each of the 1000 terms I consider, I take those words that the focal term co-occurs most frequently (surprisingness ratio &gt; 3) as its neighbors to create a neighborhood for each focal term.
- </paragraph>
- <figure>
-  <image height="252" src="https://static.us.edusercontent.com/files/SEXlCQBDydmaLHRIfkdDcg0h" width="389"/>
- </figure>
- <paragraph>
-  Here we can see that the egonet sizes increase over time because the sample increases over time.
- </paragraph>
- <paragraph>
-  I then calculate the Jaccard similarity of the neighbors of a chosen term over time:
- </paragraph>
- <figure>
-  <image height="264" src="https://static.us.edusercontent.com/files/EyojJsdCkFPAJYEQGCLe84TS" width="386"/>
- </figure>
- <paragraph>
-  Here we see the similarity of the neighborhoods of the word "theory" from time t to t+1. The green and red lines are the similarities of the neighborhoods in sociology and economics, respectively. We can see that econ uses the word theory more consistently over time but both in soc and econ the neighbors of the term theory are becoming increasingly similar.
- </paragraph>
- <paragraph>
-  The orange line, by contrast, shows the similarity of the neighbors of "theory" in sociology at time t to the neighbors of "theory" in economics at time t+1. The blue line shows the similarity of the neighbors of "theory" in economics at time t to the neighbors of "theory" in sociology at time t+1. We can see that the similarity of soc and econ to itself is higher than to each other. Moreover, there has been a phase of convergence of those disciplines between 1960 and 1970 but this convergence has stopped since.
- </paragraph>
- <paragraph>
-  <underline>
-   Next steps
-  </underline>
- </paragraph>
- <paragraph>
-  I am just getting started with the co-occurrence analysis. There are a number of open questions in this project:
- </paragraph>
- <list style="number">
-  <list-item>
-   <paragraph>
-    Why is sim(soc_t, econ_t+1) and sim(econ_t, soc_t+1) always almost identical?
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    I need to think about other ways of describing similarity than just counts
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    The samples of soc and econ are very different. I think I need to take the full data from soc but then sample from the data in econ to achieve comparability
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Better ways to assess predictive power than Jaccard similarity. I need to look up Granger causality analyses.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Switch to full-text analysis
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Richard Lp (he/they) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  This is really strong and interesting!
- </paragraph>
- <paragraph>
-  I wonder if you think there is anything discounted by removing the small words (eg as we found could be the case with fighting words analyses). Or, similarly, I wonder if 2-grams would make a notable difference. Looking at some of the 1-grams it seems like several of the words [‘labor’, ‘theory’, 'model’, ‘structure’, ‘income’] would form very separate 2-grams. Specifically, your analysis of the word “theory” seems like it could be quite opaque. It may be the case that economics is losing its edge as a ‘theoretical discipline,’ but, from the outside at least, it seems like other explanations might fit just as well. For instance, maybe economics has just come to assume discussion of models is a theoretical basis, whereas sociologists still discuss multiple regression models in theoretical terms to try to justify potentially uncovered causal relationships. Both fields would be doing the same work, estimating the same quantities, and building fundamental models of the social world, but the simple model in economics is already understood by the reader to be a theoretical one. Totally not sure about either field so I could be way off base! But a 2-gram analysis would be interesting. Also, it seems very intuitive that sociology has lost so much interest in development. Reassuring that that is recovered here.
- </paragraph>
- <paragraph>
-  The surprisal calculations seems really interesting. How common are the words at the lower end of the 1000? The lagging Jacquard similarity is really cool. It isn’t 100% clear to me what the time steps were. Would it be possible to use some kind of kernel method to compare a smoother notion of similarity over time vs binning? I feel like people discuss how economics kind of ignores existing work in sociology all the time, but this seems to indicate not. In your analysis, this would be represented by the orange bar, correct? That is, if econ really was just lagging behind sociology we would have expected that bar to be higher than the blue bar (soc_t+1, econ_t). Does this apply for other words as well?
- </paragraph>
- <paragraph>
-  In terms of next steps, it does seem like larger blocks of text or potentially transformer model embeddings would be interesting feature sets to compare based on. If I fed in pairs of paper representations to a binary soc/econ classifier, which pairs are harder to tell between? This could form an implicit similarity measure, in which case you could try to analyze what topics are substantially similar in economics and sociology and which are easily disentangled from one another.
- </paragraph>
- <paragraph>
-  <break>
-  </break>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Richard Lp (he/they) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Also can I ask what Constellate is? I had remembered you mentioned using JSTOR, but I can't work out what difference using Constellate makes. They've already scraped it into an accessible format?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kiran Tomlinson (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  This is a super interesting project! I really like the fighting word z-score plots over time.
- </paragraph>
- <paragraph>
-  Is the convergence in the egonets of "theory" between sociology and economics from 1950-1970  unique to that word, or is it a broader trend? Maybe averaging those curves over the shared keywords between the corpora would reveal something interesting.
- </paragraph>
- <paragraph>
-  Is there a reason you used sim(soc_t, econ_t+1) and sim(econ_t, soc_t+1) rather than sim(econ_t, soc_t)? That seems like the more natural measure to me. I wonder how much of the small jaccard similarity between soc_t and soc_t+1 (and econ) in early years is due to the small sample size, resulting in "noisy" egonets that change a lot year to year.
- </paragraph>
- <paragraph>
-  I also think it would be nice to find a way of measuring the usage similarity of a term across the corpora that's less binary than an egonet. Maybe you can compare the vectors of surprisingess ratios of a term with every other term in econ and soc? L2 distance between the vectors (or something) could then be a measure of the similarity of usage of a term between the domains.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ I first give a summary of the project and then report on the progress since A4.
+</p>
+<p>
+ <underline>
+  Project summary
+ </underline>
+</p>
+<p>
+ Economics and sociology are often described as two fundamentally different social sciences. Economics is characterized as the study of rational action, focusing on the efficient allocation of scarce resources. Sociology, by contrast, is characterized as the study of nonrational behavior, focusing on topics, such as norms and biases.
+</p>
+<p>
+ In this project, I would like to use data from the digital library JSTOR to study how research topics in economics and sociology are co-evolving over time. The main language features used in this analysis would be the co-occurrence of keywords in the research articles in economics and sociology.
+</p>
+<p>
+ Through the
+ <a href="https://constellate.org/">
+  Constellate
+ </a>
+ service, I am able to download metadata of most articles that JSTOR offers in sociology and economics between1900 to 2020. The metadata consists of the title, abstract, author, journal, and publication year of an article. For most articles, the full text is also available. Here I plot the number of articles over time:
+</p>
+<figure>
+ <image height="248" src="https://static.us.edusercontent.com/files/U2vZKDyJhbritZVpDecTKIAE" width="402"/>
+</figure>
+<p>
+ We can see that publications have been growing disproportionally since 1960 and that econ is the bigger discipline. Open question: why this drop in data from 2015 on?
+</p>
+<p>
+ <underline>
+  Progress report
+ </underline>
+</p>
+<p>
+ I encountered two dead ends in this project:
+</p>
+<list style="number">
+ <li>
+  <p>
+   Initially, I wanted to analyze abstracts. As it turns out, however, separate abstracts became more common in sociology and economics only since the 1980s. Therefore, I decided to instead analyze titles as a proof of concept. Once the analysis is fully established, I will switch to analyzing the full text, which is computationally more intensive. In particular, I will focus on the introduction and conclusion as other parts of papers (e.g., methods section) are highly standardized and may blur important differences between soc and econ articles.
+  </p>
+ </li>
+ <li>
+  <p>
+   I initially ran topic models, which did not produce much insight, and I, therefore, abandoned this strategy
+  </p>
+ </li>
+</list>
+<p>
+ For A4, I (i) implemented a fighting word analysis over the entire corpora, and I (ii) set up the co-occurrence analysis.
+</p>
+<p>
+ To count how often words co-occur, I first limited the overall number of words I consider as otherwise, the co-occurrence matrix explodes. I decided to take the top 1000 words in each discipline (removing stopwords and small words) and count for each combination of words how often they co-occur.
+</p>
+<p>
+ Since then, I have included the time dimension. That is, rather than analyzing the entire corpora, I run the analysis decade by decade to explore changes over time. These are my initial results.
+</p>
+<p>
+ <underline>
+  Intersection of sociology and economics
+ </underline>
+</p>
+<p>
+ These are highly frequent words that appear both in soc and econ:
+</p>
+<p>
+ ['american', 'care', 'case', 'change', 'development', 'economic', 'education', 'effects', 'employment', 'family', 'health', 'impact', 'income', 'international', 'labor', 'life', 'market', 'model', 'national', 'policy', 'political', 'problems', 'public', 'role', 'rural', 'social', 'state', 'states', 'structure', 'theory', 'united', 'urban', 'welfare', 'women', 'work', 'world']
+</p>
+<p>
+ <underline>
+  Fighting word analysis
+ </underline>
+</p>
+<p>
+ The fighting words analysis basically measures whether a word is occurring more frequently in sociology or economics relative to the overall size of the corpora. This tendency is expressed a z-score, which, if positive, indicates that the words appear more in sociology, and, if negative, appear more in economics.
+</p>
+<figure>
+ <image height="264" src="https://static.us.edusercontent.com/files/q1DDM1JWv1zSEUlqtg7HlG6X" width="384"/>
+</figure>
+<figure>
+ <image height="264" src="https://static.us.edusercontent.com/files/2KulKNbNPOm70OwYSkUyNRnK" width="384"/>
+</figure>
+<figure>
+ <image height="264" src="https://static.us.edusercontent.com/files/lNnUDZsSmRhf5IcrDSy331rN" width="384"/>
+</figure>
+<p>
+ These are some examples. I tried many more. My general impression is that words associated with economic development and stratification are losing traction in sociology. Words, such as development, welfare, inequality,  poverty become more strongly associated with economics over time. However, economics seems to lose its position as a "theoretical discipline" as the word "theory" is appearing more frequently in sociology nowadays.
+</p>
+<p>
+ <underline>
+  Co-occurrence analysis
+ </underline>
+</p>
+<p>
+ I first calculate the surprisingness of terms co-occurring given their overall frequency. If terms are independent, their joint probability is P(AB) = P(A)P(B). The ratio P(AB) / (P(A)P(B)) is therefore a good measure of surprisingness. A value of 1 = occurs as often as we would expect. A value &gt; 1 = occurs more often. A value &lt; 1 = occurs less often.
+</p>
+<p>
+ For each of the 1000 terms I consider, I take those words that the focal term co-occurs most frequently (surprisingness ratio &gt; 3) as its neighbors to create a neighborhood for each focal term.
+</p>
+<figure>
+ <image height="252" src="https://static.us.edusercontent.com/files/SEXlCQBDydmaLHRIfkdDcg0h" width="389"/>
+</figure>
+<p>
+ Here we can see that the egonet sizes increase over time because the sample increases over time.
+</p>
+<p>
+ I then calculate the Jaccard similarity of the neighbors of a chosen term over time:
+</p>
+<figure>
+ <image height="264" src="https://static.us.edusercontent.com/files/EyojJsdCkFPAJYEQGCLe84TS" width="386"/>
+</figure>
+<p>
+ Here we see the similarity of the neighborhoods of the word "theory" from time t to t+1. The green and red lines are the similarities of the neighborhoods in sociology and economics, respectively. We can see that econ uses the word theory more consistently over time but both in soc and econ the neighbors of the term theory are becoming increasingly similar.
+</p>
+<p>
+ The orange line, by contrast, shows the similarity of the neighbors of "theory" in sociology at time t to the neighbors of "theory" in economics at time t+1. The blue line shows the similarity of the neighbors of "theory" in economics at time t to the neighbors of "theory" in sociology at time t+1. We can see that the similarity of soc and econ to itself is higher than to each other. Moreover, there has been a phase of convergence of those disciplines between 1960 and 1970 but this convergence has stopped since.
+</p>
+<p>
+ <underline>
+  Next steps
+ </underline>
+</p>
+<p>
+ I am just getting started with the co-occurrence analysis. There are a number of open questions in this project:
+</p>
+<list style="number">
+ <li>
+  <p>
+   Why is sim(soc_t, econ_t+1) and sim(econ_t, soc_t+1) always almost identical?
+  </p>
+ </li>
+ <li>
+  <p>
+   I need to think about other ways of describing similarity than just counts
+  </p>
+ </li>
+ <li>
+  <p>
+   The samples of soc and econ are very different. I think I need to take the full data from soc but then sample from the data in econ to achieve comparability
+  </p>
+ </li>
+ <li>
+  <p>
+   Better ways to assess predictive power than Jaccard similarity. I need to look up Granger causality analyses.
+  </p>
+ </li>
+ <li>
+  <p>
+   Switch to full-text analysis
+  </p>
+ </li>
+</list>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   For other readers, just want to point out the Pointwise Mutual Information:
- </paragraph>
+ </p>
  <math>
   \log\frac{p(a,b) }{p(a)p(b) }
  </math>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Kiran Tomlinson (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   This is a super interesting project! I really like the fighting word z-score plots over time.
+  </p>
+  <p>
+   Is the convergence in the egonets of "theory" between sociology and economics from 1950-1970  unique to that word, or is it a broader trend? Maybe averaging those curves over the shared keywords between the corpora would reveal something interesting.
+  </p>
+  <p>
+   Is there a reason you used sim(soc_t, econ_t+1) and sim(econ_t, soc_t+1) rather than sim(econ_t, soc_t)? That seems like the more natural measure to me. I wonder how much of the small jaccard similarity between soc_t and soc_t+1 (and econ) in early years is due to the small sample size, resulting in "noisy" egonets that change a lot year to year.
+  </p>
+  <p>
+   I also think it would be nice to find a way of measuring the usage similarity of a term across the corpora that's less binary than an egonet. Maybe you can compare the vectors of surprisingess ratios of a term with every other term in econ and soc? L2 distance between the vectors (or something) could then be a measure of the similarity of usage of a term between the domains.
+  </p>
+  <p>
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Richard Lp (he/they) (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    This is really strong and interesting!
+   </p>
+   <p>
+    I wonder if you think there is anything discounted by removing the small words (eg as we found could be the case with fighting words analyses). Or, similarly, I wonder if 2-grams would make a notable difference. Looking at some of the 1-grams it seems like several of the words [‘labor’, ‘theory’, 'model’, ‘structure’, ‘income’] would form very separate 2-grams. Specifically, your analysis of the word “theory” seems like it could be quite opaque. It may be the case that economics is losing its edge as a ‘theoretical discipline,’ but, from the outside at least, it seems like other explanations might fit just as well. For instance, maybe economics has just come to assume discussion of models is a theoretical basis, whereas sociologists still discuss multiple regression models in theoretical terms to try to justify potentially uncovered causal relationships. Both fields would be doing the same work, estimating the same quantities, and building fundamental models of the social world, but the simple model in economics is already understood by the reader to be a theoretical one. Totally not sure about either field so I could be way off base! But a 2-gram analysis would be interesting. Also, it seems very intuitive that sociology has lost so much interest in development. Reassuring that that is recovered here.
+   </p>
+   <p>
+    The surprisal calculations seems really interesting. How common are the words at the lower end of the 1000? The lagging Jacquard similarity is really cool. It isn’t 100% clear to me what the time steps were. Would it be possible to use some kind of kernel method to compare a smoother notion of similarity over time vs binning? I feel like people discuss how economics kind of ignores existing work in sociology all the time, but this seems to indicate not. In your analysis, this would be represented by the orange bar, correct? That is, if econ really was just lagging behind sociology we would have expected that bar to be higher than the blue bar (soc_t+1, econ_t). Does this apply for other words as well?
+   </p>
+   <p>
+    In terms of next steps, it does seem like larger blocks of text or potentially transformer model embeddings would be interesting feature sets to compare based on. If I fed in pairs of paper representations to a binary soc/econ classifier, which pairs are harder to tell between? This could form an implicit similarity measure, in which case you could try to analyze what topics are substantially similar in economics and sociology and which are easily disentangled from one another.
+   </p>
+   <p>
+    <break>
+    </break>
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 4em;">
+    <h3>
+     Author: Richard Lp (he/they) (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Also can I ask what Constellate is? I had remembered you mentioned using JSTOR, but I can't work out what difference using Constellate makes. They've already scraped it into an accessible format?
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

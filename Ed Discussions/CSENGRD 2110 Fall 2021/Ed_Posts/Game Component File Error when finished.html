@@ -13,25 +13,23 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  The serializable class GameComponent does not declare a static final serialVersionUID field of type long
- </paragraph>
-</document>
+<p>
+ The serializable class GameComponent does not declare a static final serialVersionUID field of type long
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   That is a warning that may show up in Eclipse, but it is not an error.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Java made a decision early on that it should be very easy to "serialize" objects - that is, save them to a file or send them over a network, so that an entire application's state could be recovered on another computer or at a future time.  They were so keen on the idea that all Swing components were made serializable, so you could checkpoint and restore an entire GUI application without inventing your own file format. However, serialization turned out to have complications, especially if classes could be extended in the future.  They realized that class authors needed to provide additional information - like a
   <code>
    serialVersionUID
@@ -45,11 +43,11 @@
    JFrame
   </code>
   , it is bound by this contract.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   However, we're not discussing serialization in this class, nor do we expect anyone to try to serialize their Click-a-Dot game.  So you can ignore this warning.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,99 +13,93 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  <bold>
-   <underline>
-    4A
-   </underline>
-  </bold>
-  : Just to make sure I'm understanding the normalization process correctly, the steps are as such: (1) calculate authority scores (2) calculate hub scores (3) normalize authority scores and hub scores. Let's say the sum of the authority scores is 20 and the sub of hub scores is 30. We normalize authority scores by dividing each authority score by 20. Then we normalize hub scores and divide each hub score by 30. Is this correct?
- </paragraph>
- <paragraph>
-  <bold>
-   <underline>
-    4C
-   </underline>
-  </bold>
-  : Can page X be tied with another page for 2nd place? And can a page point to itself?
- </paragraph>
-</document>
+<p>
+ <b>
+  <underline>
+   4A
+  </underline>
+ </b>
+ : Just to make sure I'm understanding the normalization process correctly, the steps are as such: (1) calculate authority scores (2) calculate hub scores (3) normalize authority scores and hub scores. Let's say the sum of the authority scores is 20 and the sub of hub scores is 30. We normalize authority scores by dividing each authority score by 20. Then we normalize hub scores and divide each hub score by 30. Is this correct?
+</p>
+<p>
+ <b>
+  <underline>
+   4C
+  </underline>
+ </b>
+ : Can page X be tied with another page for 2nd place? And can a page point to itself?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Caleb Chin (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Caleb Chin (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Your process for 4a seems correct, aside from your last sentence about hub scores. We normalize hub scores by dividing by 30 (as you noted for the auth scores). Your explanation would have us dividing twice.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   There is a configuration such that page X is strictly in 2nd place. The self-reference is a good question. I think the answer is no, but if anyone else has a better answer feel free to correct me.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  4A: We should be dividing twice, right? Once for the authority scores, then again for the hub scores. So, for example: Authority score = 5. Normalized authority score = 5/20. Hub score = 6. Normalized hub score = 6/30. To clarify, non-normalized hub scores are not calculated based on the
-  <italic>
-   <underline>
-    normalized
-   </underline>
-  </italic>
-  authority scores. Or do the values end up the same even if we do calculate non-normalized hub scores with normalized authority scores?
- </paragraph>
- <paragraph>
-  4C: Can two pages be tied for 1st place?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Caleb Chin (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  My clarification was regarding the wording of your statement, where you mention normalizing the hub scores and then dividing by 30, which is the same process twice. The example you provide is correct. You normalize after completing the updates for both the authority and the hub scores.
- </paragraph>
- <paragraph>
-  4C: In general, possibly, I haven't looked at all the possible configurations. But in the context of the question, X is strictly second, not t-first.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Got it. Thank you very much!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   4A: We should be dividing twice, right? Once for the authority scores, then again for the hub scores. So, for example: Authority score = 5. Normalized authority score = 5/20. Hub score = 6. Normalized hub score = 6/30. To clarify, non-normalized hub scores are not calculated based on the
+   <i>
+    <underline>
+     normalized
+    </underline>
+   </i>
+   authority scores. Or do the values end up the same even if we do calculate non-normalized hub scores with normalized authority scores?
+  </p>
+  <p>
+   4C: Can two pages be tied for 1st place?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Caleb Chin (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    My clarification was regarding the wording of your statement, where you mention normalizing the hub scores and then dividing by 30, which is the same process twice. The example you provide is correct. You normalize after completing the updates for both the authority and the hub scores.
+   </p>
+   <p>
+    4C: In general, possibly, I haven't looked at all the possible configurations. But in the context of the question, X is strictly second, not t-first.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     Got it. Thank you very much!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

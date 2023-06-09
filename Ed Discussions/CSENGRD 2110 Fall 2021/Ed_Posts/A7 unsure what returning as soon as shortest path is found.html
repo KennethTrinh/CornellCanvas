@@ -13,34 +13,32 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I have implemented A7, and when I run the GUI and experiment with it shows one red path between the start and end nodes. Is this what is meant by "method dijkstra must return as soon as the shortest path from node v to node end has been determined. In that case, do not continue to find shortest paths" ? I am asking this question because in Section 6 point 2, it mentions we have to put a case at the beginning of the method that returns the result if the test is met, but I don't believe I have done this in my implementation yet it still returns only one path.
- </paragraph>
- <figure>
-  <image height="407.1808596918086" src="https://static.us.edusercontent.com/files/vUA8HFdAiEEQcb36KyMTdSxa" width="658.0000000000001"/>
- </figure>
-</document>
+<p>
+ I have implemented A7, and when I run the GUI and experiment with it shows one red path between the start and end nodes. Is this what is meant by "method dijkstra must return as soon as the shortest path from node v to node end has been determined. In that case, do not continue to find shortest paths" ? I am asking this question because in Section 6 point 2, it mentions we have to put a case at the beginning of the method that returns the result if the test is met, but I don't believe I have done this in my implementation yet it still returns only one path.
+</p>
+<figure>
+ <image height="407.1808596918086" src="https://static.us.edusercontent.com/files/vUA8HFdAiEEQcb36KyMTdSxa" width="658.0000000000001"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I cannot answer your question based on what you write.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Your method, after polling, should test and immediately return when possible.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   There should be no break statement. There should not be a return statement anywhere except as mentioned above and the given return statement at the end of the method, which should not be changed.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,258 +13,257 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  As indicated in Hovy et al.'s (2021) paper, speaker's attribute such as tone and style can vary according to different situations and tasks, while the relation between speaker and receiver can introduce variation into the resulting text. Do people's emotions and tones change over the persuasion? Do people with different communicative styles and tones differ in their attitude to change their minds? If the OP and the commenter have interacted before, is the OP more likely to be persuaded?
- </paragraph>
- <paragraph>
-  As an extension to the work on language indicators of persuasive arguments by Tan et al. (2016), the project aims to understand the role and change of emotion, style, relation of OPs and commenters during the persuasion task. It should start with using a similar setup in the paper and include the argument-only features. Then sentiment analysis and emotion detection should be conducted for different quarters in the path, and see if the emotion and style will change over the conversation.
- </paragraph>
- <paragraph>
-  The second part of the project is more speaking-style-wise or cluster-wise. A naive way to do so is to divide OPs and commenters into binary groups with arousal and valence based on their overall speaking style and compare the ratio of success in persuasion.  It is said that calmer languages are more likely to succeed in persuasion, then what kind of OPs are more easily to be persuaded? Particularly, I noticed that in some of the conversions, people used emoticons like ":)" to express their feelings and attitude. I am interested in learning if people with a more casual speaking style (using emoji, emoticons, text abbreviation, "-" and "()" to add explanation) would behave differently in the persuasion task. Moreover, as emoticons/emojis represent some kind of emotion, does a reply from OP with ":)" serve as a signal for success in persuasion? Given the pilot study, the number of posts and comments with emoticons/emojis is relatively small, but I think it worths taking a look into this attribute. Lastly, I am interested in how the relation (if any) between OPs and commenters will affect the task. If possible, a test will be performed on whether the CP and commenter have interacted before would affect the success of persuasion. Though, I doubt if there will be enough samples for this particular test. Still, I list the hypothesis here and will definitely try to see if it is feasible.
- </paragraph>
- <paragraph>
-  Any comments and suggestions are welcome! If you are also interested in these topics, I am very happy to cooperate. Thanks ^^
- </paragraph>
-</document>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi!  I think I would suggest narrowing this set of possible directions to the question of whether there is any correlation between "casual style" (concretely represented with emojis is fine. Maybe also looking at abbreviations, or contractions vs. not using them, perhaps?) and persuasion, and perhaps also/instead/even whether there a correlation between matching in casualness between OP and challenger and delta.
-  <break>
-  </break>
-  (I think it would be OK to look at sentiment trends --- using VADER seems to be a popular way to measure sentiment --- but I like what feels to me the novelty of looking at casualness.)
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  I agree that there might not be enough data to see anything, but that's the pilot study!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Fengyang Lin (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  <bold>
-   Updates:
-  </bold>
- </paragraph>
- <paragraph>
-  <bold>
-   Topic: Is there any correlation between the casualness (using Emojis or Emoticons) of OP and commenters and persuasion?
-  </bold>
- </paragraph>
- <paragraph>
-  If possible, I will include using abbreviations and contractions in the definition of "casualness" for this specific project. Will also try to see whether there is a correlation between matching in casualness between OP and commenters and delta, if time permits.
- </paragraph>
- <paragraph>
-  <underline>
-   Progress by now:
-  </underline>
- </paragraph>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    Downloaded CMV data and went through Vlad’s tutorials (For downloading, I am using the link from Chenhao’s page for the original paper that the data was introduced.)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Working on extracting posts and comments with Emojis and Emoticons using the Emot package. Currently, I am working on data in the pair-task folder.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  <underline>
-   Problems that I encountered and next steps:
-  </underline>
- </paragraph>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    The way that I cleaned the data seems to be too naive. After preprocessing, there are still HTML character entities or tags remaining and sometimes it makes it hard to detect the true Emoticons. Examples are as below:
-   </paragraph>
-  </list-item>
-  <list-item>
-   <list style="unordered">
-    <list-item>
-     <paragraph>
-      For the string
-      <code>
-       [... (**Some text in bold **) ... ]
-      </code>
-      or
-      <code>
-       [... (*** Some text with Hyperlink ***)]
-      </code>
-      , the current process will treat
-      <code>
-       *)
-      </code>
-      as an Emoticon, and it happens several times. I was trying to exclude such kinds of cases, but it seems like I could not always cover everything.
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      Issues with
-      <italic>
-       “d: / d; / D: / D;”
-      </italic>
-      . Consider two sentences.
-      <code>
-       “Something I liked:…”
-      </code>
-      and
-      <code>
-       “I love it:D”
-      </code>
-      . Sometimes Emoticons hide in the sentence - using whitespace tokenization will lead to missing them. But if not using whitespace tokenization, it will be hard to tell whether it is a true Emoticon or it is just a combination of
-      <code>
-       [a word ends with "d"] + [“;” or “:”]
-      </code>
-      .
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      <bold>
-       Tentative solution
-      </bold>
-      : Perform text normalization and tokenization based on Chris’s tutorial, which I found is super inspiring and useful! Maybe also manually exclude some cases or adding extra preprocessing steps.
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    The set of OP posts with Emojis is too small - in fact, I could only found two. I was wondering if I am using the wrong dictionary for checking Emoji, or if it is just the case. Similar situation for Emoticons. For the 3456 training dataset, only 192 OP posts contain Emoticons, including some false positive cases. I haven’t done with comments, wish there will be more.
-   </paragraph>
-   <list style="unordered">
-    <list-item>
-     <paragraph>
-      <bold>
-       Tentative solution
-      </bold>
-      : For Emojis, I need to check if there is something that went wrong with my process. Also, I could Include more data - I am only using the data for the paired task and should be able to include more from the whole dataset.
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
- </list>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  checkin appointment:
-  <break>
-  </break>
-  <break>
-  </break>
-  the emoticons are rare, which may suggest changing direction .... or, consider, if it's the case that smileys are a sign of a happy OP change-of-mind, then compare with other OPs that changed their mind but did not give a delta (or more deltas), and see if there's any difference between the conversations leading up to that.
- </paragraph>
- <paragraph>
-  <break>
-  </break>
-  An example where OP gave delta, no smiley, but the challenger did:
-  <link href="https://old.reddit.com/r/changemyview/comments/ppdz79/cmv_ronald_reagan_was_a_racist_and_the_fact_some/hd2xspw/"/>
-  https://old.reddit.com/r/changemyview/comments/ppdz79/cmv_ronald_reagan_was_a_racist_and_the_fact_some/hd2xspw/
- </paragraph>
- <paragraph>
-  Or look for subsets that might be more rich in emoticons: like "fresh topic fridays" (which CMV just happens to have).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Just ran across a paper talking about how laughter can be used to infer communicative intent, and smileys might be a written version of laughter ...
- </paragraph>
- <paragraph>
-  Maraev, Vladislav, Bill Noble, Chiara Mazzocconi, and Christine Howes. 2021. “Dialogue Act Classiﬁcation Is a Laughing Matter.” In
-  <italic>
-   Proceedings of SemDial
-  </italic>
-  , 12.
-  <break>
-  </break>
-  <link href="https://semdial2021.ling.uni-potsdam.de/assets/papers/Z21-Maraev_semdial_0015.pdf"/>
-  https://semdial2021.ling.uni-potsdam.de/assets/papers/Z21-Maraev_semdial_0015.pdf
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Fengyang Lin (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  It looks interesting. Thanks Lillian!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Fengyang Lin (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ As indicated in Hovy et al.'s (2021) paper, speaker's attribute such as tone and style can vary according to different situations and tasks, while the relation between speaker and receiver can introduce variation into the resulting text. Do people's emotions and tones change over the persuasion? Do people with different communicative styles and tones differ in their attitude to change their minds? If the OP and the commenter have interacted before, is the OP more likely to be persuaded?
+</p>
+<p>
+ As an extension to the work on language indicators of persuasive arguments by Tan et al. (2016), the project aims to understand the role and change of emotion, style, relation of OPs and commenters during the persuasion task. It should start with using a similar setup in the paper and include the argument-only features. Then sentiment analysis and emotion detection should be conducted for different quarters in the path, and see if the emotion and style will change over the conversation.
+</p>
+<p>
+ The second part of the project is more speaking-style-wise or cluster-wise. A naive way to do so is to divide OPs and commenters into binary groups with arousal and valence based on their overall speaking style and compare the ratio of success in persuasion.  It is said that calmer languages are more likely to succeed in persuasion, then what kind of OPs are more easily to be persuaded? Particularly, I noticed that in some of the conversions, people used emoticons like ":)" to express their feelings and attitude. I am interested in learning if people with a more casual speaking style (using emoji, emoticons, text abbreviation, "-" and "()" to add explanation) would behave differently in the persuasion task. Moreover, as emoticons/emojis represent some kind of emotion, does a reply from OP with ":)" serve as a signal for success in persuasion? Given the pilot study, the number of posts and comments with emoticons/emojis is relatively small, but I think it worths taking a look into this attribute. Lastly, I am interested in how the relation (if any) between OPs and commenters will affect the task. If possible, a test will be performed on whether the CP and commenter have interacted before would affect the success of persuasion. Though, I doubt if there will be enough samples for this particular test. Still, I list the hypothesis here and will definitely try to see if it is feasible.
+</p>
+<p>
+ Any comments and suggestions are welcome! If you are also interested in these topics, I am very happy to cooperate. Thanks ^^
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Fengyang Lin (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Here is the slides for today's presentation about Emoticons. I also include a
-  <link href="https://docs.google.com/presentation/d/1a5aMN_9cf10e2osQxWwDCsHajHOn5BlL/edit?usp=sharing&amp;ouid=110970487868058926082&amp;rtpof=true&amp;sd=true"/>
-  link here in case you want to see it via Google slides.
- </paragraph>
- <paragraph>
+  <a href="https://docs.google.com/presentation/d/1a5aMN_9cf10e2osQxWwDCsHajHOn5BlL/edit?usp=sharing&amp;ouid=110970487868058926082&amp;rtpof=true&amp;sd=true">
+   link
+  </a>
+  here in case you want to see it via Google slides.
+ </p>
+ <p>
   <break>
   </break>
- </paragraph>
- <file filename="Fengyang_emoticons_A1_pre_Sept21.pptx" url="https://static.us.edusercontent.com/files/dVCSyrjBDLECkU3w2q7z4gFf">
- </file>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <a href="https://static.us.edusercontent.com/files/dVCSyrjBDLECkU3w2q7z4gFf">
+  Fengyang_emoticons_A1_pre_Sept21.pptx
+ </a>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Just ran across a paper talking about how laughter can be used to infer communicative intent, and smileys might be a written version of laughter ...
+  </p>
+  <p>
+   Maraev, Vladislav, Bill Noble, Chiara Mazzocconi, and Christine Howes. 2021. “Dialogue Act Classiﬁcation Is a Laughing Matter.” In
+   <i>
+    Proceedings of SemDial
+   </i>
+   , 12.
+   <break>
+   </break>
+   <a href="https://semdial2021.ling.uni-potsdam.de/assets/papers/Z21-Maraev_semdial_0015.pdf">
+    https://semdial2021.ling.uni-potsdam.de/assets/papers/Z21-Maraev_semdial_0015.pdf
+   </a>
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Fengyang Lin (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    It looks interesting. Thanks Lillian!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Fengyang Lin (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    <b>
+     Updates:
+    </b>
+   </p>
+   <p>
+    <b>
+     Topic: Is there any correlation between the casualness (using Emojis or Emoticons) of OP and commenters and persuasion?
+    </b>
+   </p>
+   <p>
+    If possible, I will include using abbreviations and contractions in the definition of "casualness" for this specific project. Will also try to see whether there is a correlation between matching in casualness between OP and commenters and delta, if time permits.
+   </p>
+   <p>
+    <underline>
+     Progress by now:
+    </underline>
+   </p>
+   <list style="unordered">
+    <li>
+     <p>
+      Downloaded CMV data and went through Vlad’s tutorials (For downloading, I am using the link from Chenhao’s page for the original paper that the data was introduced.)
+     </p>
+    </li>
+    <li>
+     <p>
+      Working on extracting posts and comments with Emojis and Emoticons using the Emot package. Currently, I am working on data in the pair-task folder.
+     </p>
+    </li>
+   </list>
+   <p>
+    <break>
+    </break>
+   </p>
+   <p>
+    <underline>
+     Problems that I encountered and next steps:
+    </underline>
+   </p>
+   <list style="unordered">
+    <li>
+     <p>
+      The way that I cleaned the data seems to be too naive. After preprocessing, there are still HTML character entities or tags remaining and sometimes it makes it hard to detect the true Emoticons. Examples are as below:
+     </p>
+    </li>
+    <li>
+     <list style="unordered">
+      <li>
+       <p>
+        For the string
+        <code>
+         [... (**Some text in bold **) ... ]
+        </code>
+        or
+        <code>
+         [... (*** Some text with Hyperlink ***)]
+        </code>
+        , the current process will treat
+        <code>
+         *)
+        </code>
+        as an Emoticon, and it happens several times. I was trying to exclude such kinds of cases, but it seems like I could not always cover everything.
+       </p>
+      </li>
+      <li>
+       <p>
+        Issues with
+        <i>
+         “d: / d; / D: / D;”
+        </i>
+        . Consider two sentences.
+        <code>
+         “Something I liked:…”
+        </code>
+        and
+        <code>
+         “I love it:D”
+        </code>
+        . Sometimes Emoticons hide in the sentence - using whitespace tokenization will lead to missing them. But if not using whitespace tokenization, it will be hard to tell whether it is a true Emoticon or it is just a combination of
+        <code>
+         [a word ends with "d"] + [“;” or “:”]
+        </code>
+        .
+       </p>
+      </li>
+      <li>
+       <p>
+        <b>
+         Tentative solution
+        </b>
+        : Perform text normalization and tokenization based on Chris’s tutorial, which I found is super inspiring and useful! Maybe also manually exclude some cases or adding extra preprocessing steps.
+       </p>
+      </li>
+     </list>
+    </li>
+    <li>
+     <p>
+      The set of OP posts with Emojis is too small - in fact, I could only found two. I was wondering if I am using the wrong dictionary for checking Emoji, or if it is just the case. Similar situation for Emoticons. For the 3456 training dataset, only 192 OP posts contain Emoticons, including some false positive cases. I haven’t done with comments, wish there will be more.
+     </p>
+     <list style="unordered">
+      <li>
+       <p>
+        <b>
+         Tentative solution
+        </b>
+        : For Emojis, I need to check if there is something that went wrong with my process. Also, I could Include more data - I am only using the data for the paired task and should be able to include more from the whole dataset.
+       </p>
+      </li>
+     </list>
+    </li>
+   </list>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 4em;">
+    <h3>
+     Author: Prof. Lee (she/they) (admin)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     checkin appointment:
+     <break>
+     </break>
+     <break>
+     </break>
+     the emoticons are rare, which may suggest changing direction .... or, consider, if it's the case that smileys are a sign of a happy OP change-of-mind, then compare with other OPs that changed their mind but did not give a delta (or more deltas), and see if there's any difference between the conversations leading up to that.
+    </p>
+    <p>
+     <break>
+     </break>
+     An example where OP gave delta, no smiley, but the challenger did:
+     <a href="https://old.reddit.com/r/changemyview/comments/ppdz79/cmv_ronald_reagan_was_a_racist_and_the_fact_some/hd2xspw/">
+      https://old.reddit.com/r/changemyview/comments/ppdz79/cmv_ronald_reagan_was_a_racist_and_the_fact_some/hd2xspw/
+     </a>
+    </p>
+    <p>
+     Or look for subsets that might be more rich in emoticons: like "fresh topic fridays" (which CMV just happens to have).
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+   <div style="text-indent: 2em;">
+    <h3>
+     Author: Prof. Lee (she/they) (admin)
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     Hi!  I think I would suggest narrowing this set of possible directions to the question of whether there is any correlation between "casual style" (concretely represented with emojis is fine. Maybe also looking at abbreviations, or contractions vs. not using them, perhaps?) and persuasion, and perhaps also/instead/even whether there a correlation between matching in casualness between OP and challenger and delta.
+     <break>
+     </break>
+     (I think it would be OK to look at sentiment trends --- using VADER seems to be a popular way to measure sentiment --- but I like what feels to me the novelty of looking at casualness.)
+     <break>
+     </break>
+    </p>
+    <p>
+     I agree that there might not be enough data to see anything, but that's the pilot study!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

@@ -13,60 +13,58 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hello!
- </paragraph>
- <paragraph>
-  In todo 8, the function mousepressed specification needs us to modify the observers once the target is hit. I am confused about what exactly that means and why do we need to update listeners, as I thought they are always active?
- </paragraph>
-</document>
+<p>
+ Hello!
+</p>
+<p>
+ In todo 8, the function mousepressed specification needs us to modify the observers once the target is hit. I am confused about what exactly that means and why do we need to update listeners, as I thought they are always active?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Clarkson (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Clarkson (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Listeners certainly are listening. But an event has to occur for them to have anything to hear.  So the question is: what event needs to occur?  The answer is hinted at by the comment in TODO 8.  It tells you to call a method.  What is the specification of that method?  How does it relate to your question?  That is what you should investigate next.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Oluebube Chukwubuikem (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Hello, I have read through this but I am still confused as to what it means to notify observers. A little more explanation, please? Thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Clarkson (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  TODO 8 tells you to call
-  <code>
-   setScore
-  </code>
-  .  That method was provided for you.  Its specification says it notifies observers.  Only one line of it, the last, is at all interesting.  That is the line that notifies observers.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Oluebube Chukwubuikem (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Hello, I have read through this but I am still confused as to what it means to notify observers. A little more explanation, please? Thank you!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Michael Clarkson (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    TODO 8 tells you to call
+    <code>
+     setScore
+    </code>
+    .  That method was provided for you.  Its specification says it notifies observers.  Only one line of it, the last, is at all interesting.  That is the line that notifies observers.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

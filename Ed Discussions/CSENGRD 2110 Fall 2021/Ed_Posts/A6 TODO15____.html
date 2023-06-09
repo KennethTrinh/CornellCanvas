@@ -13,56 +13,54 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm a little bit confused. If I change the file to read-only and try to save the score, will it automatically throw an exception or do I need to throw one myself? How can it successfully save the score even in read-only txt files without throwing an error?
- </paragraph>
-</document>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ I'm a little bit confused. If I change the file to read-only and try to save the score, will it automatically throw an exception or do I need to throw one myself? How can it successfully save the score even in read-only txt files without throwing an error?
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Anonymous
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Oh, but it worked if I lock the file. I don't think this is good enough though.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   If you attempt to open a read-only file for writing, Java will throw an exception (you don't need to check for this and throw one yourself - your operating system and Java's standard libraries take care of this for you).  The score cannot be successfully saved to a read-only file, which is why you want to display an error dialog telling the user that their attempt to save failed.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   There are other conditions that will also lead to an exception when trying to write to a file (out of disk space, some kinds of file locking, etc.).  This is why the dialog should show the message from the exception that was thrown - that way, the message will accurately reflect any number of underlying issues, even ones that you didn't anticipate (this is polymorphism at work).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Farkouh (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I had a similar problem to the person above. It does not throw an error when I make the text file read only.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Michael Farkouh (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I had a similar problem to the person above. It does not throw an error when I make the text file read only.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

@@ -13,57 +13,55 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  For todo 15, I am confused about how to create a file that has the score in it. When I read the instruction pdf for A6 I saw this code.
- </paragraph>
- <paragraph>
-  try (PrintWriter out= new PrintWriter(new BufferedWriter(new FileWriter(file, true)))) {
- </paragraph>
- <paragraph>
-  // Write data to file with 'out.println()'
- </paragraph>
- <paragraph>
-  } catch (IOException e) { // Handle exception `e`
- </paragraph>
- <paragraph>
-  }
- </paragraph>
- <paragraph>
-  I am also not sure what is the use for this code. Is it for to save the score in the file or for the error message?
- </paragraph>
-</document>
+<p>
+ For todo 15, I am confused about how to create a file that has the score in it. When I read the instruction pdf for A6 I saw this code.
+</p>
+<p>
+ try (PrintWriter out= new PrintWriter(new BufferedWriter(new FileWriter(file, true)))) {
+</p>
+<p>
+ // Write data to file with 'out.println()'
+</p>
+<p>
+ } catch (IOException e) { // Handle exception `e`
+</p>
+<p>
+ }
+</p>
+<p>
+ I am also not sure what is the use for this code. Is it for to save the score in the file or for the error message?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Tony Chen (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Tony Chen (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   The try block is to save your score into the file using 'out.println()'. Your next step is to find out what you need to print.
   <break>
   </break>
   The catch block is for your error, specifically when the file you are trying to save your score to is read-only. The specification will instruct you on how to show the error message window.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

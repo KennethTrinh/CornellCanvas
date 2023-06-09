@@ -13,148 +13,142 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="1.0">
- <paragraph>
-  In lecture, we talked about K(x,y)=xy a kernel function, why is that’s case? What if his negative and x is positive
-  <break>
-  </break>
- </paragraph>
-</document>
+<p>
+ In lecture, we talked about K(x,y)=xy a kernel function, why is that’s case? What if his negative and x is positive
+ <break>
+ </break>
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jayadev Acharya (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jayadev Acharya (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   So, the definition of a kernel is that
- </paragraph>
+ </p>
  <math>
   K\left(X,Y\right)=\ \Phi\left(X\right)\cdot\Phi\left(Y\right)
  </math>
- <paragraph>
+ <p>
   for a Phi. Here we have Phi(X)=X then we are done.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If x is +ve and y is -ve, then K(x,y) is negative. The kernel can take negative values. That does not violate the definition of kernels.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Thank you! But if a kernel has negative value doesn’t it make the function not positive definite? I just have this question in the back of my head
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jayadev Acharya (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  No. Take any Phi. By definition Phi(X)Phi(Y) is a kernel function. Phi(X) can be +ve and Phi(Y) can indeed be negative and their product can be negative.
- </paragraph>
- <paragraph>
-  Check the definition of PSD and our proof that any kernel function must be PSD. I just uploaded the lectures.
- </paragraph>
- <paragraph>
-  I am happy you asked this question. This is confusing many times and I would suggest going over last lectures and seeing why PSD holds. In particular, look at the following part for Phi(X) = X.
- </paragraph>
- <figure>
-  <image height="689.5613126079447" src="https://static.us.edusercontent.com/files/e3nIqewEdoz8I3Bx7IgOx9rG" width="698"/>
- </figure>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Follow up questions:
- </paragraph>
- <paragraph>
-  1. why would K(x,y) = -xy not a kernel function? we can still find Phi(X) = -x and Phi(y) = y?
- </paragraph>
- <paragraph>
-  2. Could we make Phi(x) = 0 in general?
- </paragraph>
- <paragraph>
-  3. Is any non-negative constant number a kernel function where K(x,y) = c and c &gt;= 0, in general?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jayadev Acharya (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  1. Phi(x)=x is the identity function, so for all x, Phi(x)=x. That means that Phi(y)=y for all y. You must have the same Phi for both arguments of K.
- </paragraph>
- <paragraph>
-  2. Yes, any function Phi:R^d-&gt;R^m is ok! Phi(X)=0 is a valid function.
- </paragraph>
- <paragraph>
-  3. Yes. Take the function Phi(X)=sqrt{c} with m=1.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I see! Thank you so much again!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Thank you for the clarification professor!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you! But if a kernel has negative value doesn’t it make the function not positive definite? I just have this question in the back of my head
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Jayadev Acharya (admin)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    No. Take any Phi. By definition Phi(X)Phi(Y) is a kernel function. Phi(X) can be +ve and Phi(Y) can indeed be negative and their product can be negative.
+   </p>
+   <p>
+    Check the definition of PSD and our proof that any kernel function must be PSD. I just uploaded the lectures.
+   </p>
+   <p>
+    I am happy you asked this question. This is confusing many times and I would suggest going over last lectures and seeing why PSD holds. In particular, look at the following part for Phi(X) = X.
+   </p>
+   <figure>
+    <image height="689.5613126079447" src="https://static.us.edusercontent.com/files/e3nIqewEdoz8I3Bx7IgOx9rG" width="698"/>
+   </figure>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Thank you for the clarification professor!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 8em;">
+     <h3>
+      Author: Anonymous
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      Follow up questions:
+     </p>
+     <p>
+      1. why would K(x,y) = -xy not a kernel function? we can still find Phi(X) = -x and Phi(y) = y?
+     </p>
+     <p>
+      2. Could we make Phi(x) = 0 in general?
+     </p>
+     <p>
+      3. Is any non-negative constant number a kernel function where K(x,y) = c and c &gt;= 0, in general?
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 10em;">
+      <h3>
+       Author: Jayadev Acharya (admin)
+      </h3>
+      <h3>
+       Vote Count: 1
+      </h3>
+      <p>
+       1. Phi(x)=x is the identity function, so for all x, Phi(x)=x. That means that Phi(y)=y for all y. You must have the same Phi for both arguments of K.
+      </p>
+      <p>
+       2. Yes, any function Phi:R^d-&gt;R^m is ok! Phi(X)=0 is a valid function.
+      </p>
+      <p>
+       3. Yes. Take the function Phi(X)=sqrt{c} with m=1.
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 12em;">
+       <h3>
+        Author: Anonymous
+       </h3>
+       <h3>
+        Vote Count: 0
+       </h3>
+       <p>
+        I see! Thank you so much again!
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

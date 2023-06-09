@@ -13,22 +13,20 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I am reading the document about method getClass() and I cannot find out what JFrame is. I assume it's a class, but I'm confused what JFrame.class would even tell us?
- </paragraph>
-</document>
+<p>
+ I am reading the document about method getClass() and I cannot find out what JFrame is. I assume it's a class, but I'm confused what JFrame.class would even tell us?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   <code>
    javax.swing.JFrame
   </code>
@@ -41,8 +39,8 @@
    JFrame
   </code>
   was used as a visual example in some early lectures, and as you saw, it is also used as an example in some JavaHyperText documents.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The expression
   <code>
    JFrame.class
@@ -52,8 +50,8 @@
    Class
   </code>
   object is more robust and has additional properties  related to Java's "Reflection" features (so beyond just storing the name of a class, it also lists what public methods are defined, etc.; it lets other code learn about the classes being used in a program and their features).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   For our purposes, we typically only use
   <code>
    Class
@@ -71,20 +69,20 @@
    JFrame
   </code>
   , you would write this expression:
- </paragraph>
+ </p>
  <pre>if (ob.getClass() == JFrame.class) { // ob is a JFrame }</pre>
- <paragraph>
+ <p>
   If you're more comfortable thinking about names and strings, you could write something like this:
- </paragraph>
+ </p>
  <pre>if (ob.getClass().getName().equals("javax.swing.JFrame")) { // ob is a JFrame }</pre>
- <paragraph>
+ <p>
   However, comparing
   <code>
    Class
   </code>
   objects directly is more efficient and more robust than comparing class name strings.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

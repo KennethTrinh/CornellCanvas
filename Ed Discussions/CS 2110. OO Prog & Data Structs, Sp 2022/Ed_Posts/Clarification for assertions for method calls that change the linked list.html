@@ -13,109 +13,105 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  In the a4 assignment pdf, it is emphasized that:
- </paragraph>
- <figure>
-  <image height="46.3864229765013" src="https://static.us.edusercontent.com/files/idLNhjSm76MI9q4v5CrLtKYX" width="658"/>
- </figure>
- <paragraph>
-  In the next paragraph, it is restated in this way:
- </paragraph>
- <figure>
-  <image height="43.105973025048165" src="https://static.us.edusercontent.com/files/xhTR5uO6RANXqOYmEF9b3Jby" width="658"/>
- </figure>
- <paragraph>
-  I just wanted to clarify which method calls we should use the three assert equals after as there is a little ambiguity. I understand that every time we test a method that changes the list we should use the three assert equals, but do we need to do this as well when we call these methods in the process of testing other methods (those that do not change the list). I'm not sure if this is good practice (for extra assurance) or redundant (because we already tested those methods in their own test procedure).
- </paragraph>
-</document>
+<p>
+ In the a4 assignment pdf, it is emphasized that:
+</p>
+<figure>
+ <image height="46.3864229765013" src="https://static.us.edusercontent.com/files/idLNhjSm76MI9q4v5CrLtKYX" width="658"/>
+</figure>
+<p>
+ In the next paragraph, it is restated in this way:
+</p>
+<figure>
+ <image height="43.105973025048165" src="https://static.us.edusercontent.com/files/xhTR5uO6RANXqOYmEF9b3Jby" width="658"/>
+</figure>
+<p>
+ I just wanted to clarify which method calls we should use the three assert equals after as there is a little ambiguity. I understand that every time we test a method that changes the list we should use the three assert equals, but do we need to do this as well when we call these methods in the process of testing other methods (those that do not change the list). I'm not sure if this is good practice (for extra assurance) or redundant (because we already tested those methods in their own test procedure).
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andrew Chen (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew Chen (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   toString(), toStringRev(), and size() do not change the list, so you wouldn't be chaining on more assertEquals() calls for those. Only for methods that change the list
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Right, so if we were to use append in a test procedure for the node() method (for example), we wouldn't need to chain assertEquals after the append?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew Chen (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Well if you are using append(), then you would need 3 assertEquals statements because you made changes to the list.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Ok, thanks for the clarification
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew Chen (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Oh, do you mean to create your list before testing that node() with that list? In that case, no you wouldn't need to use 3 assertEquals.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  yeah, that's what I meant. thanks!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Right, so if we were to use append in a test procedure for the node() method (for example), we wouldn't need to chain assertEquals after the append?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Andrew Chen (staff)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Well if you are using append(), then you would need 3 assertEquals statements because you made changes to the list.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Ok, thanks for the clarification
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Andrew Chen (staff)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      Oh, do you mean to create your list before testing that node() with that list? In that case, no you wouldn't need to use 3 assertEquals.
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 12em;">
+      <h3>
+       Author: Anonymous
+      </h3>
+      <h3>
+       Vote Count: 1
+      </h3>
+      <p>
+       yeah, that's what I meant. thanks!
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

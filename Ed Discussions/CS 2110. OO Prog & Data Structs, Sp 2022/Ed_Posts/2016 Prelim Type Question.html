@@ -13,52 +13,46 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  The expression 'a' == (int) 'a' evaluates to true. But 'a' evaluates to 'a', and (int) 'a' evaluates 97. Why is 'a' == 97 ?
- </paragraph>
- <paragraph>
-  Is Java automatically widening the cast of 'a'?
- </paragraph>
- <paragraph>
-  For example, why then wouldn't (int) 3.2 == 3.2 be true?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ The expression 'a' == (int) 'a' evaluates to true. But 'a' evaluates to 'a', and (int) 'a' evaluates 97. Why is 'a' == 97 ?
+</p>
+<p>
+ Is Java automatically widening the cast of 'a'?
+</p>
+<p>
+ For example, why then wouldn't (int) 3.2 == 3.2 be true?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bahaa Kotb (student)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   Yes Java automatically widens 'a' to 97, doing (int) 'a' is just saying 'a' == 97 and then the LHS 'a' is widened to '97', this relates to what you had to do in A3.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   int(3.2) == 3.2 is false because 3 != 3.2 these are 2 different types and not 2 different representations of the same thing whereas another representation of 'a' in ASCII value is 97.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

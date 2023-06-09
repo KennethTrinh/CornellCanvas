@@ -13,72 +13,66 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  The specification states
- </paragraph>
- <paragraph>
-  /*You have a problem of writing this loop efficiently. You can't use a foreach loop
- </paragraph>
- <paragraph>
-  * on both lists simultaneously. The simplest thing to do is to use List's
- </paragraph>
- <paragraph>
-  * function toArray and work with the array representations of the lists. */
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Do we have to worry about loop efficiency here? I have a working implementation with a nested for loop. Will I lose points if there is a more efficient algorithm?
- </paragraph>
-</document>
+<p>
+ The specification states
+</p>
+<p>
+ /*You have a problem of writing this loop efficiently. You can't use a foreach loop
+</p>
+<p>
+ * on both lists simultaneously. The simplest thing to do is to use List's
+</p>
+<p>
+ * function toArray and work with the array representations of the lists. */
+</p>
+<p>
+ Do we have to worry about loop efficiency here? I have a working implementation with a nested for loop. Will I lose points if there is a more efficient algorithm?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Atulya Lohani (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  My loop was a while loop that had 1 line in its repetend that just added 1 to the loop variable. It's always nice to implement things in a simple manner rather than not.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Remove the nested loop. Keep things simple
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Alex Godfrey (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Alex Godfrey (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Atulya is right. By paying attention to this part of the spec I realized a nested loop wasn't necessary
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   (2) the answer l1[i] is the largest i such that l1[0..i] = l2[0..i].
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Atulya Lohani (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   My loop was a while loop that had 1 line in its repetend that just added 1 to the loop variable. It's always nice to implement things in a simple manner rather than not.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: David Gries (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Remove the nested loop. Keep things simple
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

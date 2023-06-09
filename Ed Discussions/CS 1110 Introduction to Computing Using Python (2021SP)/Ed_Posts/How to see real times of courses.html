@@ -13,109 +13,103 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  My code has been running well, but gives me :
-  <break>
-  </break>
-  <break>
-  </break>
-  Running test_course_conflictswith
-  <break>
-  </break>
-  Traceback (most recent call last):
-  <break>
-  </break>
-  File "schedule_tests.py", line 297, in &lt;module&gt;
-  <break>
-  </break>
-  testfn() # Adding the parentheses calls whatever testfn is
-  <break>
-  </break>
-  File "schedule_tests.py", line 158, in test_course_conflictswith
-  <break>
-  </break>
-  _assert_msg(codename1 + " v. " + codename2, expected, result)
-  <break>
-  </break>
-  AssertionError: CS1110 v. CS1110 should be True, but is False
- </paragraph>
- <paragraph>
-  How can I see what the listed times for both instances of CS110 are to fix my code?
-  <break>
-  </break>
-  I inserted print statements, but it lists the times for every class and I can't tell which is for what Course Name.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ My code has been running well, but gives me :
+ <break>
+ </break>
+ <break>
+ </break>
+ Running test_course_conflictswith
+ <break>
+ </break>
+ Traceback (most recent call last):
+ <break>
+ </break>
+ File "schedule_tests.py", line 297, in &lt;module&gt;
+ <break>
+ </break>
+ testfn() # Adding the parentheses calls whatever testfn is
+ <break>
+ </break>
+ File "schedule_tests.py", line 158, in test_course_conflictswith
+ <break>
+ </break>
+ _assert_msg(codename1 + " v. " + codename2, expected, result)
+ <break>
+ </break>
+ AssertionError: CS1110 v. CS1110 should be True, but is False
+</p>
+<p>
+ How can I see what the listed times for both instances of CS110 are to fix my code?
+ <break>
+ </break>
+ I inserted print statements, but it lists the times for every class and I can't tell which is for what Course Name.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi,
- </paragraph>
- <paragraph>
-  Please run a6_in_action.  I recommend passing everything in a6_in_action before running the test file.  This is what I did, and it helped me pass all the test cases in the test file.
- </paragraph>
- <paragraph>
-  You will also see the time for CS1110 in a6_in_action.
- </paragraph>
- <paragraph>
-  Best,
- </paragraph>
- <paragraph>
-  Troy
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Elisabeth Finkel (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The file roster_creation.py has the list of courses that are used in testing. The list entry
-  <code>
-   "CS1110": Course("CS 1110 LEC 001", "TR 9:05am-9:55am")
-  </code>
-  tells you that CS 1110 occurs during that time (for both instances).
- </paragraph>
- <paragraph>
-  (Note that once you start testing
-  <code>
-   test_course_changetime
-  </code>
-  , some of the course times will no longer be the same as in roster_creation.py)
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Also, incidentally, every course should always conflict with itself.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Elisabeth Finkel (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   The file roster_creation.py has the list of courses that are used in testing. The list entry
+   <code>
+    "CS1110": Course("CS 1110 LEC 001", "TR 9:05am-9:55am")
+   </code>
+   tells you that CS 1110 occurs during that time (for both instances).
+  </p>
+  <p>
+   (Note that once you start testing
+   <code>
+    test_course_changetime
+   </code>
+   , some of the course times will no longer be the same as in roster_creation.py)
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Troy Moslemi (he/him) (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Hi,
+   </p>
+   <p>
+    Please run a6_in_action.  I recommend passing everything in a6_in_action before running the test file.  This is what I did, and it helped me pass all the test cases in the test file.
+   </p>
+   <p>
+    You will also see the time for CS1110 in a6_in_action.
+   </p>
+   <p>
+    Best,
+   </p>
+   <p>
+    Troy
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

@@ -13,72 +13,68 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  In part d, why isn't the RuntimeException caught by the Throwable catch?
- </paragraph>
- <figure>
-  <image height="355.0745920745921" src="https://static.us.edusercontent.com/files/0gmHOoDRD1tV3821Ko0TfCZq" width="658"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ In part d, why isn't the RuntimeException caught by the Throwable catch?
+</p>
+<figure>
+ <image height="355.0745920745921" src="https://static.us.edusercontent.com/files/0gmHOoDRD1tV3821Ko0TfCZq" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bahaa Kotb (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   RuntimeException is a subclass of throwable, review them lecture where we talked about the class hierarchy for errors and exceptions (subclass lecture)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  so a catch does not catch its subclasses? For a error catch to work they must be the exact same class?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="1.0">
- <paragraph>
-  it does catch its subclasses, but one try block can only catch one error, the first error caught was the numberformatexception since you tried to convert the string ‘’cs2110’’ to an integer when it had letters
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  and once you’ve entered one catch block you cant enter another one of the same try block, refer to the quiz we had on the class hierarchy for more information
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   so a catch does not catch its subclasses? For a error catch to work they must be the exact same class?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Bahaa Kotb (student)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    it does catch its subclasses, but one try block can only catch one error, the first error caught was the numberformatexception since you tried to convert the string ‘’cs2110’’ to an integer when it had letters
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Bahaa Kotb (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     and once you’ve entered one catch block you cant enter another one of the same try block, refer to the quiz we had on the class hierarchy for more information
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

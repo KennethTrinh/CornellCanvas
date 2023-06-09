@@ -13,75 +13,69 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="477.54515050167225" src="https://static.us.edusercontent.com/files/PbRMwPhnabzp03p96ARWbmTh" width="658"/>
- </figure>
- <paragraph>
-  For this problem, for the impedances to match you must look at both the impedance looking into the emitters of  npn and the pnp correct. Also I am bit confused on how to visualize the small signal model of the self-biased transistor.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Additionally, if both impedances must be considered, how is it possible to know the I_c when the impedance for the self-biased is going to involve the unknown resistor variables.
- </paragraph>
-</document>
+<figure>
+ <image height="477.54515050167225" src="https://static.us.edusercontent.com/files/PbRMwPhnabzp03p96ARWbmTh" width="658"/>
+</figure>
+<p>
+ For this problem, for the impedances to match you must look at both the impedance looking into the emitters of  npn and the pnp correct. Also I am bit confused on how to visualize the small signal model of the self-biased transistor.
+</p>
+<p>
+ Additionally, if both impedances must be considered, how is it possible to know the I_c when the impedance for the self-biased is going to involve the unknown resistor variables.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Max McCarthy (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Max McCarthy (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   The impedance looking into the emitter of a BJT can be approximated as $\frac{1}{g_m}$.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If you draw a small signal model, you have two impedances at the Emitter node (3 if you consider $r_0$ from the Early Effect). One is $r_{\pi}$ going to the Base, and the other goes to the Collector, $\frac{1}{g_m}$.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You can also further treat the Base and Collector nodes as "AC ground". This means you can treat DC voltages as ground in AC analysis.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Since $ r_{\pi} = \frac{\beta}{g_m}$, and we assume that $\beta$ is large, the parallel combination formed be these two impedances simplifies to just $\frac{1}{g_m}$ (because $\frac{1}{g_m} &lt;&lt; \frac{\beta}{g_m}$)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Note that this corresponds to just one of the two BJTs; consider how you might combine the impedances of both devices to derive an expression for the total input impedance.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Nikhil Satheesh Pillai (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="1.0">
- <paragraph>
-  I understand that; however I am talking specifically about the self-biased stage. I don't think looking into the emitter of a self biased stage would still be 1/gm
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Amal El-Ghazaly (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  That will depend on your choice of R_B2 and R_C2. Go ahead and evaluate the input impedance looking into the bottom transistor (self-biased stage). You should be able to set their values to make your design easier.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Nikhil Satheesh Pillai (student)
+  </h3>
+  <h3>
+   Vote Count: 2
+  </h3>
+  <p>
+   I understand that; however I am talking specifically about the self-biased stage. I don't think looking into the emitter of a self biased stage would still be 1/gm
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Amal El-Ghazaly (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    That will depend on your choice of R_B2 and R_C2. Go ahead and evaluate the input impedance looking into the bottom transistor (self-biased stage). You should be able to set their values to make your design easier.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

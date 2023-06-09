@@ -13,47 +13,45 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="157.57619738751814" src="https://static.us.edusercontent.com/files/HAmQ4Uk1CZXoRn4Z5IAbcZoY" width="658"/>
- </figure>
- <paragraph>
-  How is this order of calls determined?
- </paragraph>
-</document>
+<figure>
+ <image height="157.57619738751814" src="https://static.us.edusercontent.com/files/HAmQ4Uk1CZXoRn4Z5IAbcZoY" width="658"/>
+</figure>
+<p>
+ How is this order of calls determined?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Tomer Shamir (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  <bold>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Tomer Shamir (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
+  <b>
    F(3)
-  </bold>
+  </b>
   is called first. Since 3 is not equal to 0 or 1 you evaluate F(n-1) + F(n-2). Call F(n-1) where n = 3, which is
-  <bold>
+  <b>
    F(2)
-  </bold>
+  </b>
   , first. Since 2 is not equal to 0 or 1, then evaluate F(n - 1) where n = 2 first, which is
-  <bold>
+  <b>
    F(1)
-  </bold>
+  </b>
   . 1 equals 1, so F(1) returns 1. Then you evaluate F(n - 2) where n = 2 which is
-  <bold>
+  <b>
    F(0)
-  </bold>
+  </b>
   . F(0) returns 1. Then 1+1 is returned by the call of F(2). Now call F(n-2), where n = 3, which is
-  <bold>
+  <b>
    F(1)
-  </bold>
+  </b>
   . That returns 1, so F(3) returns 2 + 1, which is 3.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

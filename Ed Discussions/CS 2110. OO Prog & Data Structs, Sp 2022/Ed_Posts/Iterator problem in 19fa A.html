@@ -13,36 +13,32 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
- </paragraph>
- <figure>
-  <image height="192.9135802469136" src="https://static.us.edusercontent.com/files/vLPuZooIyvaQi48EzFcRw53f" width="601"/>
- </figure>
- <paragraph>
-  Could someone explain why it is idx &lt; size rather than idx &lt; size -1 ?
- </paragraph>
- <paragraph>
-  for b[size-1], the last item in the array, i thought there isn't a next item?
- </paragraph>
-</document>
+<figure>
+ <image height="192.9135802469136" src="https://static.us.edusercontent.com/files/vLPuZooIyvaQi48EzFcRw53f" width="601"/>
+</figure>
+<p>
+ Could someone explain why it is idx &lt; size rather than idx &lt; size -1 ?
+</p>
+<p>
+ for b[size-1], the last item in the array, i thought there isn't a next item?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bahaa Kotb (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   your invariant is idx… size-1 is the stuff remaining to be enumerated. So when do you have nothing left to be enumerated
   <break>
   </break>
   when size -1 + 1 - idx = 0, in other words idx == size so your return statement is idx &lt; size (you continue while idx is still less than size)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

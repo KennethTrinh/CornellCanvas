@@ -13,39 +13,35 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="314.3085250338295" src="https://static.us.edusercontent.com/files/rS6ixP0Gj3QedfSgtHqS6aUT" width="658"/>
- </figure>
- <paragraph>
-  How did we get from the argmax of the logs to the sign function? That is, how did we know to turn the probabilities into those specific ratios of probabilities?
- </paragraph>
-</document>
+<figure>
+ <image height="314.3085250338295" src="https://static.us.edusercontent.com/files/rS6ixP0Gj3QedfSgtHqS6aUT" width="658"/>
+</figure>
+<p>
+ How did we get from the argmax of the logs to the sign function? That is, how did we know to turn the probabilities into those specific ratios of probabilities?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Scott Bass (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Scott Bass (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   If you think about the ratio of the probabilities, if $P(Y = 1 | X = x)$ is greater than $P(Y = -1 | X = x)$, then the ratio $\frac{P(Y = 1 | X = x)}{P(Y = -1 | X = x)}$ will be &gt; 1. That means that the log ratio will be greater than 0 (since log of values greater than 1 is positive and less than 1 is negative).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   So, instead of doing an argmax over both y values, you can just look at the sign of the log ratio. To derive it yourself, I would start with:
- </paragraph>
+ </p>
  <math>
   \frac{P\left(Y=1\right)\prod_{i=1}^NP\left(X_i=x_i\left|Y=1\right|\right)}{P\left(Y=-1\right)\prod_{i=1}^NP\left(X_i=x_i\left|Y=-1\right|\right)}
  </math>
- <paragraph>
+ <p>
   Then take the log using the log rule that $log(ab) = log(a) + log(b)$ to get the final result (note that you could take the log ratios and separate them out using the identity $log(\frac{a}{b}) = log(a) - log(b)$ if you wanted to).
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

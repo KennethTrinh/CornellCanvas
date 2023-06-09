@@ -13,56 +13,54 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  At what point do exceptions are errors actually cause termination? For example if we have a call that throws an exception (with no try-catch block implemented, the exception gets thrown out of that method call to where it was called. At what point does this actually terminate the process? Similarly, if we have a method call throw an error, does that instantly terminate or also get thrown out of the method call and terminate later? Thank you!
- </paragraph>
-</document>
+<p>
+ At what point do exceptions are errors actually cause termination? For example if we have a call that throws an exception (with no try-catch block implemented, the exception gets thrown out of that method call to where it was called. At what point does this actually terminate the process? Similarly, if we have a method call throw an error, does that instantly terminate or also get thrown out of the method call and terminate later? Thank you!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Tomer Shamir (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Tomer Shamir (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   If an exception is thrown and not caught, the program halts.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <figure>
-  <image height="621.0775510204081" src="https://static.us.edusercontent.com/files/PqtBl4alOkiZ0hrXesHIFKCX" width="698"/>
- </figure>
- <paragraph>
-  So in this case, is it thrown out of the call of foo in p, and THEN the program halts?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Tomer Shamir (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  If foo() doesn't catch the exception, then it is thrown all the way up to until it is either caught by a method in the call stack or not caught by any of them at which point the program halts
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <figure>
+   <image height="621.0775510204081" src="https://static.us.edusercontent.com/files/PqtBl4alOkiZ0hrXesHIFKCX" width="698"/>
+  </figure>
+  <p>
+   So in this case, is it thrown out of the call of foo in p, and THEN the program halts?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Tomer Shamir (admin)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    If foo() doesn't catch the exception, then it is thrown all the way up to until it is either caught by a method in the call stack or not caught by any of them at which point the program halts
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

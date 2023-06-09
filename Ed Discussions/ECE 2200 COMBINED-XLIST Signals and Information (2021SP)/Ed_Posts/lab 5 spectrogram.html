@@ -13,29 +13,28 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  My spectrogram function is giving me a had time.
- </paragraph>
- <paragraph>
-  I have the line of code
-  <code>
-   [S,F,T] = spectrogram(resampledSong,window,noverlap,nfft,Fs);
-  </code>
- </paragraph>
- <paragraph>
-  where
- </paragraph>
- <pre>resampledSong = resample(y, 8000, 44100);
+<p>
+ My spectrogram function is giving me a had time.
+</p>
+<p>
+ I have the line of code
+ <code>
+  [S,F,T] = spectrogram(resampledSong,window,noverlap,nfft,Fs);
+ </code>
+</p>
+<p>
+ where
+</p>
+<pre>resampledSong = resample(y, 8000, 44100);
 window = 64; 
 nfft = 64;  
 Fs = 8000;  
 noverlap = floor( (window * Fs) /2);
 </pre>
- <paragraph>
-  Specifically the error that I am getting is:
- </paragraph>
- <pre>Error using pspectrogram&gt;chkinput (line 158)
+<p>
+ Specifically the error that I am getting is:
+</p>
+<pre>Error using pspectrogram&gt;chkinput (line 158)
 X must be a vector (either row or column).
 
 Error in pspectrogram (line 33)
@@ -44,18 +43,17 @@ chkinput(xw,'X');
 Error in spectrogram (line 191)
   [varargout{1:nargout}] = pspectrogram({x},'spect',inpArgs{:});
  </pre>
-</document>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Alexandra Roberts (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Alexandra Roberts (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Try using the new sampling frequency,
   <code>
    new_Fs
@@ -65,50 +63,50 @@ Error in spectrogram (line 191)
    Fs
   </code>
   in:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   <code>
    [S,F,T] = spectrogram(resampledSong,window,noverlap,nfft,Fs);
   </code>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Also make sure you are scaling window, nfft, and noverlap correctly. The lab instructions should help with this.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes I did all of that. I added my code above, does any of it seem wrong?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Alexandra Roberts (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  In the code above, the values you are using are not the same as what the lab instructions specify. From page 3 of Shazam_Part_I_2020.pdf:
- </paragraph>
- <figure>
-  <image height="94.0144546649146" src="https://static.us.edusercontent.com/files/TclhCF64680a6winmx5bZ0YF" width="698"/>
- </figure>
- <paragraph>
-  How can you scale these values to get integers? Another way to think about it is, how can you get rid of the units of "s", and get a unit-less value that you would expect for each of these?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Yes I did all of that. I added my code above, does any of it seem wrong?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Alexandra Roberts (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    In the code above, the values you are using are not the same as what the lab instructions specify. From page 3 of Shazam_Part_I_2020.pdf:
+   </p>
+   <figure>
+    <image height="94.0144546649146" src="https://static.us.edusercontent.com/files/TclhCF64680a6winmx5bZ0YF" width="698"/>
+   </figure>
+   <p>
+    How can you scale these values to get integers? Another way to think about it is, how can you get rid of the units of "s", and get a unit-less value that you would expect for each of these?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

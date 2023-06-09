@@ -13,380 +13,372 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  The goal of our project is to investigate social voting behavior in Wikipedia Articles for Deletion debates. We’re primarily interested in peer-influence in votes. For instance, do people tend to vote with the crowd? (This phenomenon is known as “herding.”) What textual features of existing votes are correlated with keep or delete votes? How do social factors evolve over the length of a debate? We started with the ConvoKit Wikipedia AfD dataset, but have done some of our own preprocessing on the text (e.g., replacing URLs with the string "link" and removing HTML tags). We've also constructed a binary prediction task from the data (is the next vote keep or delete even the prior votes?) to examine the factors influencing voting behavior.
- </paragraph>
- <paragraph>
-  We’ve also done some more general data exploration (for instance, see the fightin’ words plot below comparing the content of keep vs delete votes).
- </paragraph>
- <figure>
-  <image height="413.20372526193245" src="https://static.us.edusercontent.com/files/gMzsBmOUGq7Wsen9JXBClcby" width="626"/>
- </figure>
- <paragraph>
-  Notice links are more common in keep votes (we replace all URLs with marker string “link”); keep votes are more likely to cite external sources as evidence for why an article should be kept (e.g., to counter a claim that the article subject is not notable). Unsurprisingly, “passes” is more common in keep votes, while “fails” is more common in delete votes. Delete votes also tend to refer more to Wikipedia policies (WP) and to concur with previous votes or with the nomination: “per nom,” “vote as,” “vote per.”
- </paragraph>
- <paragraph>
-  One of the main tools we’re using for the analysis is a logistic regression model using textual and numerical features of the preceding votes (e.g., current fraction of delete votes, avg length of keep &amp; delete votes, frequency of Wikipedia slang in keep &amp; delete votes). For each vote in the dataset, we compute features of its preceding votes in the debate and predict the current votes’ label. Here are the logistic regression results (predicting delete votes; i.e. positive coefficient = more likely for the vote to be “delete”):
- </paragraph>
- <figure>
-  <image height="393.4576802507837" src="https://static.us.edusercontent.com/files/gWRqEjIDQ4tU9JYeMQbl1AtZ" width="626"/>
- </figure>
- <paragraph>
-  Regression results interpretation:
- </paragraph>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    Unsurprisingly, the most important predictor is the fraction of prior delete votes
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Length of keep and delete votes seems to have no effect on subsequent votes
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    High rates of “Per nom” usage are correlated with higher delete probability (perhaps “per nom” is used more in clear-cut deletion cases
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Interestingly, higher sentiment score in both keep and delete votes (i.e., more positive conversations overall) results in lower deletion rates
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Use of wikipedia slang in the prior keep votes (and to a much lesser degree, delete votes) has a strong effect on lowering delete vote probability; perhaps the us of wikipedia slang in keep votes indicates that knowledgeable/experienced Wikipedians are taking the keep side
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Current Status of hypotheses:
- </paragraph>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    <italic>
-     H1: Herding behavior exists in the dataset. Moreover, there should exist a threshold prefix length by which a herd forms in a discussion.
-    </italic>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <list style="unordered">
-    <list-item>
-     <paragraph>
-      Possible--feasibility check 1 found that new votes are more likely to be deletes (resp. keeps)  when there are more previous deletes (resp. keeps), but this could be because some articles inherently give rise to “60% delete” or “80% delete” rates and new votes are just obeying the base rate. On the other hand, it seems like there tend to be more dissenting votes from the majority as the conversation gets longer (although we need to adjust for the confounder that controversial articles spur longer debate).
-     </paragraph>
-    </list-item>
-    <list-item>
-     <list style="unordered">
-      <list-item>
-       <paragraph>
-        Check 1: For this check, we chose arbitrary prefix lengths (k) of 20, 40 and 60 votes (and therefore focused on the probabilities for the 21st, 41st, and 61st votes).
-        <bold>
-         When the proportion (but not necessarily the majority) of "keep" votes in the prefix rises, the probability that the subsequent (i.e. (k+1)th) vote is "keep" also rises.
-        </bold>
-        Likewise, when the proportion of "delete" votes in the prefix rises, the probability that the subsequent vote is "delete" also rises. However, as we increase the prefix length to 60 votes, the relationship becomes noisier, particularly when we focus on "delete" votes.
-       </paragraph>
-      </list-item>
-      <list-item>
-       <paragraph>
-        Check 2: This check showed that
-        <bold>
-         the probability of agreement of the (k+1)st vote with the majority of the first k votes actually decreased with k
-        </bold>
-        . Agreement rate gradually drops from 50% at position 2 to 40% at position 50.
-       </paragraph>
-      </list-item>
-     </list>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    <italic>
-     H2: Herding behavior occurs more often when the majority of previous votes fall under any type other than “Delete”.
-    </italic>
-   </paragraph>
-   <list style="unordered">
-    <list-item>
-     <paragraph>
-      <bold>
-       No
-      </bold>
-      , as shown by the classifier’s results, where the fraction of prior "delete' votes and the presence of prior “delete” votes were the strongest predictors of subsequent votes (though the majority of the other features were statistically significant as well.
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
- </list>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    <italic>
-     H3: Previous voters’ comments that are long, specific, and or refer to the article title predict subsequent individual votes more accurately than comments that are short, vague, and or do not refer to the article title.
-    </italic>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <list style="unordered">
-    <list-item>
-     <paragraph>
-      <bold>
-       No
-      </bold>
-      , though the results are slightly mixed.
-     </paragraph>
-    </list-item>
-    <list-item>
-     <list style="unordered">
-      <list-item>
-       <paragraph>
-        Feasibility Checks: The conversation length correction to feasibility check #2 indicated that herding behavior was more likely to occur in shorter conversations.
-       </paragraph>
-      </list-item>
-      <list-item>
-       <paragraph>
-        Fighting Words [on full dataset]: Overall, delete votes tended to refer to other users’ comments and or Wikipedia policies, whereas keep votes tended to refer to online resources (via URLs to Wikipedia and or other websites). Based on previous results showing that prior delete votes may have a stronger effect on the probability of herding behavior in the subsequent vote, this analysis indicates that language focusing on the content of the conversation may play a part in producing herding behavior.
-       </paragraph>
-      </list-item>
-      <list-item>
-       <paragraph>
-        Politeness [on full dataset]: Delete votes (below, left) and keep votes (below, right) exhibit similar distributions over occurrences of politeness (and impoliteness) strategies. However, keep votes seem to exhibit more politeness overall compared to delete votes. This is especially interesting because strategies like positive politeness strategies are meant to induce social connection; it is intuitive to think that such strategies would therefore induce herding behavior. However, such strategies are more evident in keep votes, which, according to our previous results, may be less likely to predict herding.
-       </paragraph>
-      </list-item>
-     </list>
-    </list-item>
-   </list>
-  </list-item>
- </list>
- <figure>
-  <image height="240.93169793169793" src="https://static.us.edusercontent.com/files/bkQl5t1CfWwKNgKW8WV8vvLP" width="643"/>
- </figure>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    <italic>
-     H4: Previous voters’ comments that contain higher counts of Wikipedia specific language are more likely to predict votes than comments with lower counts of said language.
-    </italic>
-   </paragraph>
-   <list style="bullet">
-    <list-item>
-     <paragraph>
-      The regression results indicate that slang is a relevant predictor, but we haven’t addressed this exact question yet. We’d need to look at the likelihood under the model of votes that follow low-slang prefixes vs high-slang prefixes.
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
- </list>
- <paragraph>
-  To-Do’s:
- </paragraph>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    Generate a meaningful politeness feature for our regression model that aggregates over some subset of strategies.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    To distinguish between the social influence of recent votes vs older votes, we’re planning to split up the prefix into first and second halves and compute regression features separately on the two halves. It seems plausible that either early votes or recent votes would have a stronger predictive effect--and maybe different features are important at different phases of the conversation (e.g., maybe only recent votes matter in terms of sentiment).
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Questions:
- </paragraph>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    Would it make sense to run fighting words on sets of subsequent votes (e.g. all the 2nd votes that follow a prior delete vote vs keep vote) as opposed to sets of vote types (i.e. all keep votes versus all delete votes)?
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Is there a way to make the topic model results make more sense? For context, we used a topic model on both votes and article titles, but both gave relatively non-intuitive answers. (Please see the topic model results for delete votes and delete article titles below.) This could be understandable due to the wide range of Wikipedia articles nominated for deletion over the time the dataset was collected; however, it is possible that the implementation was incorrect .
-   </paragraph>
-  </list-item>
- </list>
- <list style="unordered">
-  <list-item>
-   <list style="unordered">
-    <list-item>
-     <paragraph>
-      To generate the plots, we cleaned and parsed the delete votes (or article titles) using ConvoKit. We then ran a modified version of ConvoKit’s BoW transformer (which includes lemmatization) before using the following LDA model from sklearn: lda = LatentDirichletAllocation(n_components=10, max_iter=5, learning_method = 'online', learning_offset = 50., random_state = 0)
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
- </list>
- <paragraph>
-  <bold>
-   Delete Vote topics:
-  </bold>
- </paragraph>
- <figure>
-  <image height="367.42857142857144" src="https://static.us.edusercontent.com/files/OBjXQceDgICOzyYot5CI9XRe" width="643"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
-  <bold>
-   Article titles:
-  </bold>
-  <break>
-  </break>
- </paragraph>
- <figure>
-  <image height="362.86054054054057" src="https://static.us.edusercontent.com/files/8qbVRKfNEt11lO7Jam9Zq4vt" width="643"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The notification I received claimed that this post was anonymous.  I can see your name, OP, but if you set it to be anonymous, can you please de-anonymize it? (The commenting-assignment announcement requires that people know whose posts are whose.)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kiran Tomlinson (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes--it was anonymous by default but I changed to visible after I posted and noticed.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Benjamin Rosche (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Comment on another project by Ben:
- </paragraph>
- <paragraph>
-  I really like this project! It seems very important to me to figure out the degree to which the fate of a Wikipedia article depends on a social process rather than its quality.
- </paragraph>
- <paragraph>
-  My main concern with the analysis, however, is that, in order to provide evidence of social influence or herding, selection effects must be accounted for. If I understand the main argument correctly, the logistic regression model is supposed to show that the probability to vote "delete" increases with the number of other people voting the same thing (and vice versa). As you say yourself, of course, this probability likely depends on the quality of the article and how controversial it is.
- </paragraph>
- <paragraph>
-  For instance, if we assume for a second that there is no social influence whatsoever - controversial and low-quality articles just receive more "delete" votes, then this logistic regression model will still find that each "delete" vote depends on the number of prior "delete" votes. Analyzing a proportion (rather than absolute number) or a random subset of votes would, as far as I can see it, not change anything. The problem is that selection and influence look like the same thing with a cross-sectional analysis like this.
- </paragraph>
- <paragraph>
-  I have two ideas:
- </paragraph>
- <paragraph>
-  1. Quality and controversiality controls need to be added. The logistic regression model must compare apples with apples, i.e., articles of similar quality and controversiality, so that the evidence can be interpreted as social influence.
- </paragraph>
- <paragraph>
-  2. Add a time dimension more explicitly to do a doubly-lagged test. You could argue that the number of "delete" votes within the first-month captures differences among articles in their quality and controversiality. Then, the effect of the number of prior "delete" votes on the probability of voting "delete" would be without this "initial" selection effect.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Fengyang Lin (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Hi Kiran and Linda, I really like your project and you have presented very detailed and convincing results so far. I think your hypotheses are well-defined and the methodologies are well-designed, especially for H1 and H3.
- </paragraph>
- <paragraph>
-  Still, for Check 2 of H1,
- </paragraph>
- <paragraph>
-  Check 2: This check showed that the probability of agreement of the (k+1)st vote with the majority of the first k votes actually decreased with k.
- </paragraph>
- <paragraph>
-  I have a concern that the result may have other confounders - a longer conversation somehow indicates a more controversial topic - so the probability of agreement will not increase as the conversation goes deeper, even people will have a stronger belief in their own statement as shown debate is more thorough. (So we might not conclude this into the effect of herding.)
- </paragraph>
- <paragraph>
-  I agree that it would be meaningful to include politeness features into the models. Additionally, I think you could also consider including the "URL" features as shown in Fightin's words result.
- </paragraph>
- <paragraph>
-  I also agree that taking a look at the recent vs older votes would help. I was wondering if it also has something to do with H1 Check 1 - or develop it into a new hypothesis. Instead of looking into prefix lengths of 20, 40, 60, looking into the recent 10,20,30 votes and see how they could predict the upcoming votes.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kowe Kadoma (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi Kiran and Linda! I like your project and I was pleasantly surprised how similar it is to mine and Joyce's. I agree with the previous comments so far- integrating politeness into the model and developing a metric to measure the quality of the article would make your arguments stronger. Regarding, some of the questions you asked, my answers are below.
- </paragraph>
- <paragraph>
-  Questions:
- </paragraph>
- <paragraph>
-  Q1: Would it make sense to run fighting words on sets of subsequent votes (e.g. all the 2nd votes that follow a prior delete vote vs keep vote) as opposed to sets of vote types (i.e. all keep votes versus all delete votes)?
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    To me, the analysis makes sense on keep vs delete votes because it shows generally how these two differ and the tactics they may employ to persuade others. If this were to be done using 2nd votes, I'm not sure that it adds value to the argument when we know the strategy both camps generally take.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Q2: Is there a way to make the topic model results make more sense? For context, we used a topic model on both votes and article titles, but both gave relatively non-intuitive answers. (Please see the topic model results for delete votes and delete article titles below.) This could be understandable due to the wide range of Wikipedia articles nominated for deletion over the time the dataset was collected; however, it is possible that the implementation was incorrect .
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    In term of implementing topic modeling, although I didn't use convo kit to clean my data, I did use the LDA model from sklearn. I didn't have the max_iter, learning_method, or learning_offset parameters, so I'm not quite sure what they're doing. I agree with your interpretation- because the articles for deletion cover a wide assortment of topics, I don't think the results would be intuitive.
-   </paragraph>
-  </list-item>
- </list>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ The goal of our project is to investigate social voting behavior in Wikipedia Articles for Deletion debates. We’re primarily interested in peer-influence in votes. For instance, do people tend to vote with the crowd? (This phenomenon is known as “herding.”) What textual features of existing votes are correlated with keep or delete votes? How do social factors evolve over the length of a debate? We started with the ConvoKit Wikipedia AfD dataset, but have done some of our own preprocessing on the text (e.g., replacing URLs with the string "link" and removing HTML tags). We've also constructed a binary prediction task from the data (is the next vote keep or delete even the prior votes?) to examine the factors influencing voting behavior.
+</p>
+<p>
+ We’ve also done some more general data exploration (for instance, see the fightin’ words plot below comparing the content of keep vs delete votes).
+</p>
+<figure>
+ <image height="413.20372526193245" src="https://static.us.edusercontent.com/files/gMzsBmOUGq7Wsen9JXBClcby" width="626"/>
+</figure>
+<p>
+ Notice links are more common in keep votes (we replace all URLs with marker string “link”); keep votes are more likely to cite external sources as evidence for why an article should be kept (e.g., to counter a claim that the article subject is not notable). Unsurprisingly, “passes” is more common in keep votes, while “fails” is more common in delete votes. Delete votes also tend to refer more to Wikipedia policies (WP) and to concur with previous votes or with the nomination: “per nom,” “vote as,” “vote per.”
+</p>
+<p>
+ One of the main tools we’re using for the analysis is a logistic regression model using textual and numerical features of the preceding votes (e.g., current fraction of delete votes, avg length of keep &amp; delete votes, frequency of Wikipedia slang in keep &amp; delete votes). For each vote in the dataset, we compute features of its preceding votes in the debate and predict the current votes’ label. Here are the logistic regression results (predicting delete votes; i.e. positive coefficient = more likely for the vote to be “delete”):
+</p>
+<figure>
+ <image height="393.4576802507837" src="https://static.us.edusercontent.com/files/gWRqEjIDQ4tU9JYeMQbl1AtZ" width="626"/>
+</figure>
+<p>
+ Regression results interpretation:
+</p>
+<list style="unordered">
+ <li>
+  <p>
+   Unsurprisingly, the most important predictor is the fraction of prior delete votes
+  </p>
+ </li>
+ <li>
+  <p>
+   Length of keep and delete votes seems to have no effect on subsequent votes
+  </p>
+ </li>
+ <li>
+  <p>
+   High rates of “Per nom” usage are correlated with higher delete probability (perhaps “per nom” is used more in clear-cut deletion cases
+  </p>
+ </li>
+ <li>
+  <p>
+   Interestingly, higher sentiment score in both keep and delete votes (i.e., more positive conversations overall) results in lower deletion rates
+  </p>
+ </li>
+ <li>
+  <p>
+   Use of wikipedia slang in the prior keep votes (and to a much lesser degree, delete votes) has a strong effect on lowering delete vote probability; perhaps the us of wikipedia slang in keep votes indicates that knowledgeable/experienced Wikipedians are taking the keep side
+  </p>
+ </li>
+</list>
+<p>
+ Current Status of hypotheses:
+</p>
+<list style="unordered">
+ <li>
+  <p>
+   <i>
+    H1: Herding behavior exists in the dataset. Moreover, there should exist a threshold prefix length by which a herd forms in a discussion.
+   </i>
+  </p>
+ </li>
+ <li>
+  <list style="unordered">
+   <li>
+    <p>
+     Possible--feasibility check 1 found that new votes are more likely to be deletes (resp. keeps)  when there are more previous deletes (resp. keeps), but this could be because some articles inherently give rise to “60% delete” or “80% delete” rates and new votes are just obeying the base rate. On the other hand, it seems like there tend to be more dissenting votes from the majority as the conversation gets longer (although we need to adjust for the confounder that controversial articles spur longer debate).
+    </p>
+   </li>
+   <li>
+    <list style="unordered">
+     <li>
+      <p>
+       Check 1: For this check, we chose arbitrary prefix lengths (k) of 20, 40 and 60 votes (and therefore focused on the probabilities for the 21st, 41st, and 61st votes).
+       <b>
+        When the proportion (but not necessarily the majority) of "keep" votes in the prefix rises, the probability that the subsequent (i.e. (k+1)th) vote is "keep" also rises.
+       </b>
+       Likewise, when the proportion of "delete" votes in the prefix rises, the probability that the subsequent vote is "delete" also rises. However, as we increase the prefix length to 60 votes, the relationship becomes noisier, particularly when we focus on "delete" votes.
+      </p>
+     </li>
+     <li>
+      <p>
+       Check 2: This check showed that
+       <b>
+        the probability of agreement of the (k+1)st vote with the majority of the first k votes actually decreased with k
+       </b>
+       . Agreement rate gradually drops from 50% at position 2 to 40% at position 50.
+      </p>
+     </li>
+    </list>
+   </li>
+  </list>
+ </li>
+ <li>
+  <p>
+   <i>
+    H2: Herding behavior occurs more often when the majority of previous votes fall under any type other than “Delete”.
+   </i>
+  </p>
+  <list style="unordered">
+   <li>
+    <p>
+     <b>
+      No
+     </b>
+     , as shown by the classifier’s results, where the fraction of prior "delete' votes and the presence of prior “delete” votes were the strongest predictors of subsequent votes (though the majority of the other features were statistically significant as well.
+    </p>
+   </li>
+  </list>
+ </li>
+</list>
+<list style="unordered">
+ <li>
+  <p>
+   <i>
+    H3: Previous voters’ comments that are long, specific, and or refer to the article title predict subsequent individual votes more accurately than comments that are short, vague, and or do not refer to the article title.
+   </i>
+  </p>
+ </li>
+ <li>
+  <list style="unordered">
+   <li>
+    <p>
+     <b>
+      No
+     </b>
+     , though the results are slightly mixed.
+    </p>
+   </li>
+   <li>
+    <list style="unordered">
+     <li>
+      <p>
+       Feasibility Checks: The conversation length correction to feasibility check #2 indicated that herding behavior was more likely to occur in shorter conversations.
+      </p>
+     </li>
+     <li>
+      <p>
+       Fighting Words [on full dataset]: Overall, delete votes tended to refer to other users’ comments and or Wikipedia policies, whereas keep votes tended to refer to online resources (via URLs to Wikipedia and or other websites). Based on previous results showing that prior delete votes may have a stronger effect on the probability of herding behavior in the subsequent vote, this analysis indicates that language focusing on the content of the conversation may play a part in producing herding behavior.
+      </p>
+     </li>
+     <li>
+      <p>
+       Politeness [on full dataset]: Delete votes (below, left) and keep votes (below, right) exhibit similar distributions over occurrences of politeness (and impoliteness) strategies. However, keep votes seem to exhibit more politeness overall compared to delete votes. This is especially interesting because strategies like positive politeness strategies are meant to induce social connection; it is intuitive to think that such strategies would therefore induce herding behavior. However, such strategies are more evident in keep votes, which, according to our previous results, may be less likely to predict herding.
+      </p>
+     </li>
+    </list>
+   </li>
+  </list>
+ </li>
+</list>
+<figure>
+ <image height="240.93169793169793" src="https://static.us.edusercontent.com/files/bkQl5t1CfWwKNgKW8WV8vvLP" width="643"/>
+</figure>
+<list style="bullet">
+ <li>
+  <p>
+   <i>
+    H4: Previous voters’ comments that contain higher counts of Wikipedia specific language are more likely to predict votes than comments with lower counts of said language.
+   </i>
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     The regression results indicate that slang is a relevant predictor, but we haven’t addressed this exact question yet. We’d need to look at the likelihood under the model of votes that follow low-slang prefixes vs high-slang prefixes.
+    </p>
+   </li>
+  </list>
+ </li>
+</list>
+<p>
+ To-Do’s:
+</p>
+<list style="unordered">
+ <li>
+  <p>
+   Generate a meaningful politeness feature for our regression model that aggregates over some subset of strategies.
+  </p>
+ </li>
+ <li>
+  <p>
+   To distinguish between the social influence of recent votes vs older votes, we’re planning to split up the prefix into first and second halves and compute regression features separately on the two halves. It seems plausible that either early votes or recent votes would have a stronger predictive effect--and maybe different features are important at different phases of the conversation (e.g., maybe only recent votes matter in terms of sentiment).
+  </p>
+ </li>
+</list>
+<p>
+ Questions:
+</p>
+<list style="unordered">
+ <li>
+  <p>
+   Would it make sense to run fighting words on sets of subsequent votes (e.g. all the 2nd votes that follow a prior delete vote vs keep vote) as opposed to sets of vote types (i.e. all keep votes versus all delete votes)?
+  </p>
+ </li>
+ <li>
+  <p>
+   Is there a way to make the topic model results make more sense? For context, we used a topic model on both votes and article titles, but both gave relatively non-intuitive answers. (Please see the topic model results for delete votes and delete article titles below.) This could be understandable due to the wide range of Wikipedia articles nominated for deletion over the time the dataset was collected; however, it is possible that the implementation was incorrect .
+  </p>
+ </li>
+</list>
+<list style="unordered">
+ <li>
+  <list style="unordered">
+   <li>
+    <p>
+     To generate the plots, we cleaned and parsed the delete votes (or article titles) using ConvoKit. We then ran a modified version of ConvoKit’s BoW transformer (which includes lemmatization) before using the following LDA model from sklearn: lda = LatentDirichletAllocation(n_components=10, max_iter=5, learning_method = 'online', learning_offset = 50., random_state = 0)
+    </p>
+   </li>
+  </list>
+ </li>
+</list>
+<p>
+ <b>
+  Delete Vote topics:
+ </b>
+</p>
+<figure>
+ <image height="367.42857142857144" src="https://static.us.edusercontent.com/files/OBjXQceDgICOzyYot5CI9XRe" width="643"/>
+</figure>
+<p>
+ <b>
+  Article titles:
+ </b>
+ <break>
+ </break>
+</p>
+<figure>
+ <image height="362.86054054054057" src="https://static.us.edusercontent.com/files/8qbVRKfNEt11lO7Jam9Zq4vt" width="643"/>
+</figure>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   is it surprising that the "index" feature has such a big (absolute) z-score?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Kowe Kadoma (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Hi Kiran and Linda! I like your project and I was pleasantly surprised how similar it is to mine and Joyce's. I agree with the previous comments so far- integrating politeness into the model and developing a metric to measure the quality of the article would make your arguments stronger. Regarding, some of the questions you asked, my answers are below.
+  </p>
+  <p>
+   Questions:
+  </p>
+  <p>
+   Q1: Would it make sense to run fighting words on sets of subsequent votes (e.g. all the 2nd votes that follow a prior delete vote vs keep vote) as opposed to sets of vote types (i.e. all keep votes versus all delete votes)?
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     To me, the analysis makes sense on keep vs delete votes because it shows generally how these two differ and the tactics they may employ to persuade others. If this were to be done using 2nd votes, I'm not sure that it adds value to the argument when we know the strategy both camps generally take.
+    </p>
+   </li>
+  </list>
+  <p>
+   Q2: Is there a way to make the topic model results make more sense? For context, we used a topic model on both votes and article titles, but both gave relatively non-intuitive answers. (Please see the topic model results for delete votes and delete article titles below.) This could be understandable due to the wide range of Wikipedia articles nominated for deletion over the time the dataset was collected; however, it is possible that the implementation was incorrect .
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     In term of implementing topic modeling, although I didn't use convo kit to clean my data, I did use the LDA model from sklearn. I didn't have the max_iter, learning_method, or learning_offset parameters, so I'm not quite sure what they're doing. I agree with your interpretation- because the articles for deletion cover a wide assortment of topics, I don't think the results would be intuitive.
+    </p>
+   </li>
+  </list>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Fengyang Lin (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Hi Kiran and Linda, I really like your project and you have presented very detailed and convincing results so far. I think your hypotheses are well-defined and the methodologies are well-designed, especially for H1 and H3.
+   </p>
+   <p>
+    Still, for Check 2 of H1,
+   </p>
+   <p>
+    Check 2: This check showed that the probability of agreement of the (k+1)st vote with the majority of the first k votes actually decreased with k.
+   </p>
+   <p>
+    I have a concern that the result may have other confounders - a longer conversation somehow indicates a more controversial topic - so the probability of agreement will not increase as the conversation goes deeper, even people will have a stronger belief in their own statement as shown debate is more thorough. (So we might not conclude this into the effect of herding.)
+   </p>
+   <p>
+    I agree that it would be meaningful to include politeness features into the models. Additionally, I think you could also consider including the "URL" features as shown in Fightin's words result.
+   </p>
+   <p>
+    I also agree that taking a look at the recent vs older votes would help. I was wondering if it also has something to do with H1 Check 1 - or develop it into a new hypothesis. Instead of looking into prefix lengths of 20, 40, 60, looking into the recent 10,20,30 votes and see how they could predict the upcoming votes.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 2em;">
+    <h3>
+     Author: Benjamin Rosche (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Comment on another project by Ben:
+    </p>
+    <p>
+     I really like this project! It seems very important to me to figure out the degree to which the fate of a Wikipedia article depends on a social process rather than its quality.
+    </p>
+    <p>
+     My main concern with the analysis, however, is that, in order to provide evidence of social influence or herding, selection effects must be accounted for. If I understand the main argument correctly, the logistic regression model is supposed to show that the probability to vote "delete" increases with the number of other people voting the same thing (and vice versa). As you say yourself, of course, this probability likely depends on the quality of the article and how controversial it is.
+    </p>
+    <p>
+     For instance, if we assume for a second that there is no social influence whatsoever - controversial and low-quality articles just receive more "delete" votes, then this logistic regression model will still find that each "delete" vote depends on the number of prior "delete" votes. Analyzing a proportion (rather than absolute number) or a random subset of votes would, as far as I can see it, not change anything. The problem is that selection and influence look like the same thing with a cross-sectional analysis like this.
+    </p>
+    <p>
+     I have two ideas:
+    </p>
+    <p>
+     1. Quality and controversiality controls need to be added. The logistic regression model must compare apples with apples, i.e., articles of similar quality and controversiality, so that the evidence can be interpreted as social influence.
+    </p>
+    <p>
+     2. Add a time dimension more explicitly to do a doubly-lagged test. You could argue that the number of "delete" votes within the first-month captures differences among articles in their quality and controversiality. Then, the effect of the number of prior "delete" votes on the probability of voting "delete" would be without this "initial" selection effect.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 2em;">
+     <h3>
+      Author: Prof. Lee (she/they) (admin)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      The notification I received claimed that this post was anonymous.  I can see your name, OP, but if you set it to be anonymous, can you please de-anonymize it? (The commenting-assignment announcement requires that people know whose posts are whose.)
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 4em;">
+      <h3>
+       Author: Kiran Tomlinson (student)
+      </h3>
+      <h3>
+       Vote Count: 1
+      </h3>
+      <p>
+       Yes--it was anonymous by default but I changed to visible after I posted and noticed.
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

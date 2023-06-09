@@ -13,43 +13,41 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  "More Exercise (5)"
- </paragraph>
- <paragraph>
-  Why is the answer 10?
- </paragraph>
- <paragraph>
-  #module.py
- </paragraph>
- <paragraph>
-  def foo (x):
- </paragraph>
- <paragraph>
-  x=1+2
- </paragraph>
- <paragraph>
-  x=3*x
- </paragraph>
- <paragraph>
-  return x+1
- </paragraph>
- <paragraph>
-  x = foo(0).  # would this mean substitude the parameter of foo to 0, so that 0 assignes 1+2, and 3 assigns 3*3, then returns 9+1?
- </paragraph>
-</document>
+<p>
+ "More Exercise (5)"
+</p>
+<p>
+ Why is the answer 10?
+</p>
+<p>
+ #module.py
+</p>
+<p>
+ def foo (x):
+</p>
+<p>
+ x=1+2
+</p>
+<p>
+ x=3*x
+</p>
+<p>
+ return x+1
+</p>
+<p>
+ x = foo(0).  # would this mean substitude the parameter of foo to 0, so that 0 assignes 1+2, and 3 assigns 3*3, then returns 9+1?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Dylan Castillo (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Dylan Castillo (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   If we look just at the function being called line by line it might be easier to figure this out. Let’s say that the first line is the one that starts with def:
   <break>
   </break>
@@ -57,57 +55,55 @@
   <break>
   </break>
   2. x = 1+2 (which resolves to x = 3, so that zero basically disappeared)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   From the rest of what you said I think you can gather the last two lines of the function. Let me know if anything wasn’t clear. I think looking at the get_feet example of the last lecture might also be helpful.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  so there is an implied x=o below the line "def foo (x): "?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  No, the "0" comes from the function call at the very end of the file:
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  x = foo(
-  <bold>
-   0
-  </bold>
-  )
-  <break>
-  </break>
-  <break>
-  </break>
-  The code is actually written "confusingly" to make a pedagogical point; to simplify things, consider instead
-  <break>
-  </break>
- </paragraph>
- <snippet language="py" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   def one_more(x):
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   so there is an implied x=o below the line "def foo (x): "?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    No, the "0" comes from the function call at the very end of the file:
+    <break>
+    </break>
+   </p>
+   <p>
+    x = foo(
+    <b>
+     0
+    </b>
+    )
+    <break>
+    </break>
+    <break>
+    </break>
+    The code is actually written "confusingly" to make a pedagogical point; to simplify things, consider instead
+    <break>
+    </break>
+   </p>
+   <snippet language="py" line-numbers="true" runnable="true">
+    <snippet-file id="code">
+     def one_more(x):
     print("one_more thinks x is: " + str(x))
     return (x+1)
 
@@ -116,26 +112,28 @@ result5 = one_more(5)
 
 print(str(result2))
 print(str(result5))
-  </snippet-file>
- </snippet>
- <paragraph>
-  <break>
-  </break>
-  The first time one_more()  is called, it has input 2, which it stores in its parameter variable x, and then computes with x.
-  <break>
-  </break>
-  The second time it is called, the function has input 5, which it stores in its parameter variable y, and then computer with x.
-  <break>
-  </break>
-  <break>
-  </break>
-  Hit the blue "Run" button to see this code in action, or maybe better yet, paste it into the
-  <link href="http://cs1110.cs.cornell.edu/tutor/#mode=edit"/>
-  CS1110 Python Tutor!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+    </snippet-file>
+   </snippet>
+   <p>
+    <break>
+    </break>
+    The first time one_more()  is called, it has input 2, which it stores in its parameter variable x, and then computes with x.
+    <break>
+    </break>
+    The second time it is called, the function has input 5, which it stores in its parameter variable y, and then computer with x.
+    <break>
+    </break>
+    <break>
+    </break>
+    Hit the blue "Run" button to see this code in action, or maybe better yet, paste it into the
+    <a href="http://cs1110.cs.cornell.edu/tutor/#mode=edit">
+     CS1110 Python Tutor
+    </a>
+    !
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

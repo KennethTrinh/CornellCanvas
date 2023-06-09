@@ -13,64 +13,52 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I have implemented my code for the dictionary version of sd_utilities
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  However, every time I try to select a college from menu select by running the script of the college showdown file, it states:
- </paragraph>
- <paragraph>
-  "Sorry, I didn't understand your input. Please try again."
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  I have been inputting ints associated with colleges on the menu select, but it results in the error.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  How do I get around this?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Thanks in advance!
- </paragraph>
-</document>
+<p>
+ I have implemented my code for the dictionary version of sd_utilities
+</p>
+<p>
+ However, every time I try to select a college from menu select by running the script of the college showdown file, it states:
+</p>
+<p>
+ "Sorry, I didn't understand your input. Please try again."
+</p>
+<p>
+ I have been inputting ints associated with colleges on the menu select, but it results in the error.
+</p>
+<p>
+ How do I get around this?
+</p>
+<p>
+ Thanks in advance!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Hi, let's see how we can figure out why you are getting that message.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If you only get the error with the dictionary version and not the list version, the problem has to be with some dictionary-based implementation. Looking in showdown_time_a5.py, the only calls involving the dictionary stuff are:
   <break>
   </break>
   <break>
   </break>
   sdu.prompt_for_data()
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   and
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   sdu.college_named(...)
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Searching for the word "Sorry" in showdown_time_a5.py shows that it is produced when
   <code>
    get_better_info()
@@ -90,9 +78,9 @@
   <break>
   </break>
   And this is before the sdu.college_named() calls happen, so you know that the issue has to be with sdu.prompt_for_data(), which --- when we find out when we examine the code --- calls colleges_from_file which calls process_line &lt;--
-  <italic>
+  <i>
    which is a function you implemented.
-  </italic>
+  </i>
   We thus have a prime suspect.
   <break>
   </break>
@@ -106,7 +94,7 @@
   <break>
   </break>
   Here is that function (don't run it; I just wanted to get line numbers.)
- </paragraph>
+ </p>
  <snippet language="py" line-numbers="true" runnable="true">
   <snippet-file id="code">
    def is_good_input(inlist, max_num):
@@ -129,9 +117,9 @@
         return False
   </snippet-file>
  </snippet>
- <paragraph>
+ <p>
   So here's my suggestion: add print statements under line 13 that say something like this:
- </paragraph>
+ </p>
  <pre>
 print("DEBUG: i1 is " + repr(i1))
 
@@ -141,7 +129,7 @@ print("DEBUG: max_num is " + repr(max_num))
 
 print("DEBUG: this was a ValueError")
 </pre>
- <paragraph>
+ <p>
   and do the analogous thing for under line 16 (i.e., when an AssertionError happens; change the print statement about "ValueError" to be about "AssertionError"
   <break>
   </break>
@@ -153,22 +141,22 @@ print("DEBUG: this was a ValueError")
   <break>
   </break>
   If that doesn't help, can you copy-paste the output of your code so we can see exactly what is happening, using a small dataset?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you! I figured out what it was, I forgot to add two college selections, and I just kept selecting one lol, sorry about that! :(
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Thank you! I figured out what it was, I forgot to add two college selections, and I just kept selecting one lol, sorry about that! :(
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

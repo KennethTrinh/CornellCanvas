@@ -13,63 +13,61 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  For this example, how did we get the 2cos(ϕ/2) from 1+e^(iϕ)?
- </paragraph>
- <figure>
-  <image height="59" src="https://static.us.edusercontent.com/files/wcKh2x3GGGQe99K3eZrxLoCe" width="487"/>
- </figure>
- <paragraph>
-  I used Euler's formula to transform 1+e^(iϕ) to 1 + cos(ϕ) + isin(ϕ) and got rid of the imaginary part to get 1 + cos(ϕ), but this is very different from 2 cos(ϕ/2)
- </paragraph>
-</document>
+<p>
+ For this example, how did we get the 2cos(ϕ/2) from 1+e^(iϕ)?
+</p>
+<figure>
+ <image height="59" src="https://static.us.edusercontent.com/files/wcKh2x3GGGQe99K3eZrxLoCe" width="487"/>
+</figure>
+<p>
+ I used Euler's formula to transform 1+e^(iϕ) to 1 + cos(ϕ) + isin(ϕ) and got rid of the imaginary part to get 1 + cos(ϕ), but this is very different from 2 cos(ϕ/2)
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Ariel Shaked (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
-  I think instead of getting rid of the imaginary part, try multiplying by its complex conjugate. so
- </paragraph>
- <math>
-  \left(1\ +\ \cos\left(\theta\right)\ +\ i\sin\left(\theta\right)\right)\ \cdot\ \left(1\ +\ \cos\left(\theta\right)\ -\ i\sin\left(\theta\right)\right)
- </math>
- <paragraph>
-  And then take the square root to get:
- </paragraph>
- <math>
-  \sqrt{2+2\cos\left(\theta\right)}=\ \left|2\cos\left(\frac{\theta}{2}\right)\right|
- </math>
- <paragraph>
-  (I asked about this in office hours)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Dan Ralph (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Dan Ralph (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   In addition to Ariel's method, you can also think in terms of a phasor diagram, plus some trigonometry:
- </paragraph>
+ </p>
  <figure>
   <image height="159" src="https://static.us.edusercontent.com/files/GA51W5xBhOcXZZUWtLv8GdhO" width="379"/>
  </figure>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Ariel Shaked (student)
+  </h3>
+  <h3>
+   Vote Count: 2
+  </h3>
+  <h3>
+   ENDORSED
+  </h3>
+  <p>
+   I think instead of getting rid of the imaginary part, try multiplying by its complex conjugate. so
+  </p>
+  <math>
+   \left(1\ +\ \cos\left(\theta\right)\ +\ i\sin\left(\theta\right)\right)\ \cdot\ \left(1\ +\ \cos\left(\theta\right)\ -\ i\sin\left(\theta\right)\right)
+  </math>
+  <p>
+   And then take the square root to get:
+  </p>
+  <math>
+   \sqrt{2+2\cos\left(\theta\right)}=\ \left|2\cos\left(\frac{\theta}{2}\right)\right|
+  </math>
+  <p>
+   (I asked about this in office hours)
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

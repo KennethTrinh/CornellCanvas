@@ -13,36 +13,32 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Does it mean that we are sampling above the Nyquist rate?
- </paragraph>
-</document>
+<p>
+ Does it mean that we are sampling above the Nyquist rate?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   A $T _ s$-interpolator doesn't involve sampling anything --- just the opposite.  It's a system that creates a continuous-time signal by interpolating between the values of a discrete-time signal.  The ideal $T _ s$ interpolator is a specific system --- i.e. idealness isn't a property of certain $T _ s$-interpolators, like you would never say "these are ideal $T _ s$-interpolators and these aren't."  We've seen what the ideal $T _ s$-interpolator does to certain discrete-time signals $x [ n ]$ (namely sampled sinusoids), and we saw the formula for what it does to a general $x [ n ]$, namely
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $y ( t ) = \sum _ {n = - \infty} ^ \infty x [ n ] p ( t - n T _ s )$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   where
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $p ( t ) = \frac{\sin\frac{\pi}{T _ s} t}{\frac{\pi}{Y _ s} t}$.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

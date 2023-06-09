@@ -13,40 +13,38 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="105.50210970464134" src="https://static.us.edusercontent.com/files/VSLyp4nFuvwbfBpEDz1oOfM2" width="658"/>
- </figure>
- <paragraph>
-  I'm a little bit confused on how $PDP^T$ can be both the orthogonal diagonalization and SVD of $A$. If $PDP^T$ is indeed the orthogonal diagonalization of $A$, then the entries in $D$ are the eigenvalues of $A$, instead of the square roots of the eigenvalues of $A^TA$.
- </paragraph>
- <paragraph>
-  Does this imply that the eigenvalues of $A^TA$ are the squares of the eigenvalues of $A$?
- </paragraph>
- <paragraph>
-  The other matrices seem to match up- since $A$ is positive definite, it is full rank, so the column space is $\in \mathbb{R}^n$ and so is P, so this makes sense. The row space is also $\in \mathbb{R}^n$, and so is $P^T$.
- </paragraph>
- <paragraph>
-  However, is there a way to directly see that the above is both an orthogonal diagonalization and the SVD of A, rather than looking at the form of each matrix and saying that it resembles the properties of an SVD?
- </paragraph>
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
+<figure>
+ <image height="105.50210970464134" src="https://static.us.edusercontent.com/files/VSLyp4nFuvwbfBpEDz1oOfM2" width="658"/>
+</figure>
+<p>
+ I'm a little bit confused on how $PDP^T$ can be both the orthogonal diagonalization and SVD of $A$. If $PDP^T$ is indeed the orthogonal diagonalization of $A$, then the entries in $D$ are the eigenvalues of $A$, instead of the square roots of the eigenvalues of $A^TA$.
+</p>
+<p>
+ Does this imply that the eigenvalues of $A^TA$ are the squares of the eigenvalues of $A$?
+</p>
+<p>
+ The other matrices seem to match up- since $A$ is positive definite, it is full rank, so the column space is $\in \mathbb{R}^n$ and so is P, so this makes sense. The row space is also $\in \mathbb{R}^n$, and so is $P^T$.
+</p>
+<p>
+ However, is there a way to directly see that the above is both an orthogonal diagonalization and the SVD of A, rather than looking at the form of each matrix and saying that it resembles the properties of an SVD?
+</p>
+<p>
+ Thank you!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Adrian Lewis (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Adrian Lewis (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   A  is symmetric, so  A^T A  is  A^2  and hence (using the diagonalization) has eigenvalues the squares of the eigenvalues of  A,  exactly as you say.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

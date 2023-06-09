@@ -13,96 +13,92 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Why is the maximum number of edges in a graph |V|^2 and not |V|*2?
- </paragraph>
- <figure>
-  <image height="158.625" src="https://static.us.edusercontent.com/files/M742pfcbRlfmD9Fnv9a5nKyd" width="658"/>
- </figure>
- <paragraph>
-  The example below explains my logic:
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  For a graph with 3 nodes, the maximum number of edges is 3*2 since you can have 2 directed edges between each node. I don't see where the extra three edges could come from (with 3^2).
- </paragraph>
-</document>
+<p>
+ Why is the maximum number of edges in a graph |V|^2 and not |V|*2?
+</p>
+<figure>
+ <image height="158.625" src="https://static.us.edusercontent.com/files/M742pfcbRlfmD9Fnv9a5nKyd" width="658"/>
+</figure>
+<p>
+ The example below explains my logic:
+</p>
+<p>
+ For a graph with 3 nodes, the maximum number of edges is 3*2 since you can have 2 directed edges between each node. I don't see where the extra three edges could come from (with 3^2).
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  There are self directed loops that are possible
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Also depends on whether the edges are directed or undirected.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  So, if the edges are undirected, would the max number of edges only be |V|-1?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Suppose the graph has n nodes, numbered 0, 1, 2, ..., n-1.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Let it have:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Leaving node 0: n-1 edges to nodes with numbers in 1..n-1
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Leaving node 1 (and not counted in the above): n-2 edges to nodes with numbers in 2..n-1
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Leaving node 2 (and not counted in the above): n-3 edges to nodes with numbers in 2..n-1
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   ...
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Add up  (n-1) + (n-2) + (n-3) ... + 1 + 0/
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Bahaa Kotb (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   There are self directed loops that are possible
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: David Gries (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Also depends on whether the edges are directed or undirected.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     So, if the edges are undirected, would the max number of edges only be |V|-1?
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

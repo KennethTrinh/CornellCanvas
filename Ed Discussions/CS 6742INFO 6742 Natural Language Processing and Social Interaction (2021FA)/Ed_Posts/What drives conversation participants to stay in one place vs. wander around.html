@@ -13,509 +13,502 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  (AKA, continuing deeper from A1, which was inspired by [1, 2])
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  Partially inspired by Celine’s comment on our A1 report, our findings from A1 indicating that “buzzy” users tended to score fewer deltas,
-  <strike>
-   as well as by my continued “oops I spent an hour browsing Reddit without realizing” habits
-  </strike>
-  , I’m curious what actually encourages users in online conversation trees to hop around different areas of that tree. In the case of our A1 investigation into r/ChangeMyView, were those buzzy top-level-commenters actually dedicated to earning their delta, or were they more interested in understanding opinions across the overall conversation and interacting with other delta-seekers?
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  In this deeper dive, I’m interested in investigating r/AITA (which is technically an empty redirect that leads to the real sub, but if Lillian was censoring during lecture I’m doing the same here). Unlike r/ChangeMyView which is dedicated to OP presenting a single viewpoint and every top-level-commenter countering that viewpoint, r/AITA features OP posting a personal narrative where they’re unsure whether they did something justified (often biased in their defense) and provide a short potential reason why they acted or will act wrong, and commenters leave their main judgement (YTA = “you’re the a**hole”, NTA = “(you’re) not the a**hole”, ESH = “everyone sucks here”, NAH = “no a**holes here”, or INFO = “not enough context to decide”) together with some explanation for why they decided that.
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  From casual browsing, I’ve noticed there’s a range of comment patterns. Some commenters go back and forth debating whether or not an action is justified or not (similar to how OP and a top-level-commenter may interact in r/ChangeMyView). Other commenters include links to additional information that OP shared later in the comment tree which they think are relevant to change fellow commenters’ opinions. So there’s probably some buzziness distribution in r/AITA as well, which I’ll sanity check again before analyzing deeper.
- </paragraph>
- <paragraph>
-  I don’t have a solid idea of how to model exact motivations for buzzy-commenting [7???], and I’m pretty sure a lot of the time the commenters in question aren’t sure either. But in r/AITA, at least we have a clear set of tags that people apply, which could make it easier to distinguish between rough comment interaction types. Here’s some more solid hypotheses I want to test out:
- </paragraph>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    H1: If the main topic of the original post is more controversial, there will be a larger fraction of “buzzy” users in the conversation. If this is true, I’d think it’s because conversations with a wider range of potential perspectives would invite users who are more keen to listen and share a range of perspectives.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <list style="unordered">
-    <list-item>
-     <paragraph>
-      There’s multiple “controversialness” metrics… I could use the distribution of the first N top-level-judgements left on the post (e.g. “95% NTA” vs “40% NTA, 20% YTA, 10% ESH”) inspired by [4], or I could attempt to topic model the post text and identify variation in previous judgements on similar topics (e.g. “romantic relationships have a lot of debate/variation”, “interacting with young kids is often YTA”). Leaning towards the former because it’s simpler, but I definitely want to try the latter.
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      There’s also different “buzziness” metrics, as made obvious from our A1 presentation. In this investigation, I will lean towards using the “all unique tree paths” metric, since top-level-comments don’t seem as distinctly important here. There can be a lot of top comments leaving the same judgements and often with similar reasoning.
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      I might experiment with different “buzziness” metrics on the side if I’ve got extra time… maybe something based on segment length [3]
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    H2: “Buzzy” users will more frequently disagree with the people they are commenting on, than less-”buzzy” users. If this is true, I’d think it’s because “buzzy” users are motivated to crosspost frequently because they want to share additional information or opinions, which is motivated by having any differences. See [1]
-   </paragraph>
-  </list-item>
-  <list-item>
-   <list style="unordered">
-    <list-item>
-     <paragraph>
-      I could approximate agreement by assuming that the overall distribution of times a user mentions one of the judgement tags is their constant, un-changing belief, and then calculate how different beliefs are between a commenter and someone responding to them.
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      I could also attempt to do direct sentiment analysis of each comment and take the difference between individual comment pairs. This will probably take more time.
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    H3: “Buzzy” users’ judgements (when they have one) will more frequently agree with the final judgement tag, than less-”buzzy” users. If this is true, I’d imagine it’s because they tend to be active Reddit users, who hop into a conversation quickly, and leave more overall impact because of their cross-commenting.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <list style="unordered">
-    <list-item>
-     <paragraph>
-      The r/AITA final judgement is locked in about 12 hours after the original post, and is represented by a tag matching the top-upvoted judgement comment. Conversation can sometimes continue after this time, but since threads either explode pretty fast or don’t at all, it doesn’t leave a big influence.
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
- </list>
- <paragraph>
-  To check the feasibility, I’d…
- </paragraph>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    Check the distribution of user “buzziness” in r/AITA posts, the range of final judgement distributions (or more topic-based “controversialness” metric?), as well as the distribution of inter-comment agreement to make sure there’s actually enough variation here.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Very very gladly welcome people to come in and read some posts from the sub to sanity check these hypotheses.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Project participants: Joyce
- </paragraph>
- <paragraph>
-  ===
- </paragraph>
- <paragraph>
-  References, inspirations
- </paragraph>
- <paragraph>
-  [0] A1, Ben L’s major project theme from A1 proposals, and discussions with Lillian (thanks so much)
- </paragraph>
- <paragraph>
-  [1] anaesthetica. “Attacked from Within,” March 3, 2009. https://atdt.freeshell.org/k5/story_2009_3_12_33338_3000.html.
- </paragraph>
- <paragraph>
-  [2] Tan, Chenhao, Vlad Niculae, Cristian Danescu-Niculescu-Mizil, and Lillian Lee. “Winning Arguments: Interaction Dynamics and Persuasion Strategies in Good-Faith Online Discussions.” Proceedings of the 25th International Conference on World Wide Web, 2016. https://api.semanticscholar.org/CorpusID:8577096.
- </paragraph>
- <paragraph>
-  [3] Aragón, Pablo, V. Gómez, David García, and Andreas Kaltenbrunner. “Generative Models of Online Discussion Threads: State of the Art and Research Challenges.” Journal of Internet Services and Applications 8 (2017): 1–17.
- </paragraph>
- <paragraph>
-  [4] Backstrom, Lars, Jon M. Kleinberg, Lillian Lee, and Cristian Danescu-Niculescu-Mizil. “Characterizing and Curating Conversation Threads: Expansion, Focus, Volume, Re-Entry,” 2013. https://api.semanticscholar.org/CorpusID:12885437.
- </paragraph>
- <paragraph>
-  [5] Choi, Daejin, Jinyoung Han, Taejoong Chung, Yong-Yeol Ahn, Byung-Gon Chun, and Ted Taekyoung Kwon. “Characterizing Conversation Patterns in Reddit: From the Perspectives of Content Properties and User Participation Behaviors.” Proceedings of the 2015 ACM on Conference on Online Social Networks, 2015. https://api.semanticscholar.org/CorpusID:14443163.
- </paragraph>
- <paragraph>
-  [6] Tan, Chenhao, D. Card, and Noah A. Smith. “Friendships, Rivalries, and Trysts: Characterizing Relations between Ideas in Texts.” In ACL, 2017. https://api.semanticscholar.org/CorpusID:12038912.
- </paragraph>
- <paragraph>
-  [7] Fu, Liye, Jonathan P. Chang, and Cristian Danescu-Niculescu-Mizil. “Asking the Right Question: Inferring Advice-Seeking Intentions from Personal Narratives.” In NAACL, 2019. https://api.semanticscholar.org/CorpusID:102487036.
- </paragraph>
-</document>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  (apologies for brevity, on the run) see also models of conversation tree growth happening later than [3], such as
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Krohn, Rachel, and Tim Weninger. 2019. “Modelling Online Comment Threads from Their Start.”
-  <italic>
-   2019 IEEE International Conference on Big Data (Big Data)
-  </italic>
-  .
-  <link href="https://doi.org/10.1109/BigData47090.2019.9006594"/>
-  https://doi.org/10.1109/BigData47090.2019.9006594.
- </paragraph>
- <paragraph>
-  Bollenbacher, John, Diogo Pacheco, Pik-Mai Hui, Yong-Yeol Ahn, Alessandro Flammini, and Filippo Menczer. 2021. “On the Challenges of Predicting Microscopic Dynamics of Online Conversations.”
-  <italic>
-   Applied Network Science
-  </italic>
-  6 (1): 12.
-  <link href="https://doi.org/10.1007/s41109-021-00357-8"/>
-  https://doi.org/10.1007/s41109-021-00357-8.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Joyce Zhou (they/them) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  self-notes:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    word lists related to moral associations
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    paperswithcode.com ; looking for classifiers that can serve as feature providers
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    novelty classifiers?
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  things less immediately relevant that I'm still writing down:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    VADER-Sentiment-Analysis on github
-   </paragraph>
-  </list-item>
- </list>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kowe Kadoma (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Joyce and I are working together on this project. We met to discuss what our contributions would be, and I decided to focus on how to characterize a buzzy user (i.e. what "speaking" habits do buzzy users have that non-buzzy users don't have?).
- </paragraph>
- <paragraph>
-  Tentative research plan/feasibility check:
- </paragraph>
- <paragraph>
-  <bold>
-   Definitions:
-  </bold>
- </paragraph>
- <paragraph>
-  <underline>
-   Controversial post
-  </underline>
- </paragraph>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    Varied distribution of tags
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Sentiment analysis
-   </paragraph>
-  </list-item>
-  <list-item>
-   <list style="unordered">
-    <list-item>
-     <paragraph>
-      If a large percentage of the text contains words with strong arousal, dominance, and low valence then this could be considered a controversial post
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Topic modeling
-   </paragraph>
-   <list style="unordered">
-    <list-item>
-     <paragraph>
-      <italic>
-       How to determine if controversial?
-      </italic>
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
- </list>
- <paragraph>
-  <bold>
-   Features to explore/what it tells us:
-  </bold>
- </paragraph>
- <list style="ordered">
-  <list-item>
-   <paragraph>
-    Comment length
-   </paragraph>
-  </list-item>
-  <list-item>
-   <list style="ordered">
-    <list-item>
-     <paragraph>
-      If a buzzy user leaves longer comments, then they are more invested in the conversation. If a buzzy user isn't leaving long, substantial comments along the thread(s) then they may be engaging in trolling behavior or not adding value to the conversation
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      <italic>
-       How could we figure out if they're adding value?
-      </italic>
-     </paragraph>
-    </list-item>
-    <list-item>
-     <list style="ordered">
-      <list-item>
-       <paragraph>
-        Some people use a lot of words to say nothing?
-       </paragraph>
-      </list-item>
-     </list>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Lexical diversity
-   </paragraph>
-  </list-item>
-  <list-item>
-   <list style="ordered">
-    <list-item>
-     <paragraph>
-      Using niche words could reveal the redditors interests/perspectives
-     </paragraph>
-    </list-item>
-    <list-item>
-     <list style="ordered">
-      <list-item>
-       <paragraph>
-        <italic>
-         How to define niche words?
-        </italic>
-       </paragraph>
-      </list-item>
-     </list>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Sentiment Analysis
-   </paragraph>
-  </list-item>
-  <list-item>
-   <list style="ordered">
-    <list-item>
-     <paragraph>
-      For each comment, see how many words appear in a word list see references in "Winning Arguments" paper. Determine the percentage of words that fall into arousal, dominance, and valence
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Perspective
-   </paragraph>
-  </list-item>
-  <list-item>
-   <list style="ordered">
-    <list-item>
-     <paragraph>
-      Determine frequency of pronouns (e.g. "I", "she/her", "they", "you"); if they use "I" frequently they could be speaking from personal experience and which may affect if they agree/disagree with OP
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
- </list>
- <paragraph>
-  Feasibility test:
- </paragraph>
- <paragraph>
-  <bold>
-   Data set:
-  </bold>
- </paragraph>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    r/aita in 2018
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    17,598 posts with 448,946 comments
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  <bold>
-   Comment Feasibility Tests
-  </bold>
- </paragraph>
- <figure>
-  <image height="267" src="https://static.us.edusercontent.com/files/KF4394iygkA1BsUXbOt9vIJN" width="739"/>
- </figure>
- <paragraph>
-  Average number of words in a comment: 59.70581828144525
- </paragraph>
- <figure>
-  <image height="235" src="https://static.us.edusercontent.com/files/WsdE7b298PWFPFsxf0j7kbC9" width="838"/>
- </figure>
- <paragraph>
-  Average number of comments in a thread: 25.734344811910443
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  The comment feasibility tests suggest that most comments are redditors briefly stating their opinion. From glancing at reddit posts with a similar amount of comments and comment length, there doesn't seem to be a lot of back and fourth discussion. Because of the brevity of the comments, lexical diversity and sentiment analysis do not seem promising
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Joyce Zhou (they/them) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Adding on to the feasibility check update!
- </paragraph>
- <paragraph>
-  We've got a dataset consisting of purely posts from 2018 right now, and are still working on collecting data from 2019 (turns out it takes a very very long time to scrape data without the server complaining about a "too many requests"...). I'm suspecting that r/AITA became popular sometime between those two years, since looking at a random selection of the posts we scraped from that subreddit gives pretty different style of typical post and response content than nowadays.
- </paragraph>
- <paragraph>
-  Distribution of "branchiness" metric (using path-branchiness as we defined from A1 instead of the tlc-branchiness since top level comments aren't particularly special in this subreddit):
- </paragraph>
- <figure>
-  <image height="257" src="https://static.us.edusercontent.com/files/k26KffHctIqn2lZsHEfI6uHQ" width="378"/>
- </figure>
- <paragraph>
-  Similarly shaped trend as with r/changemyview, except with a longer tail. I'm guessing this is because the subreddit was less active during this time...
- </paragraph>
- <paragraph>
-  The distribution of average "branchiness" metric (total path-branches count divided by number of comments):
- </paragraph>
- <figure>
-  <image height="256" src="https://static.us.edusercontent.com/files/HMpGCmCtdgt1k7LH5MtKyKRk" width="381"/>
- </figure>
- <paragraph>
-  And maximum:
- </paragraph>
- <figure>
-  <image height="255" src="https://static.us.edusercontent.com/files/QgtXXOK24Vs7bAtbjp9zP2w4" width="376"/>
- </figure>
- <paragraph>
-  Histogram of the entire range of branchiness metric results:
- </paragraph>
- <figure>
-  <image height="255" src="https://static.us.edusercontent.com/files/3ARh5YCEaFRhPbSFWFSQEZez" width="402"/>
- </figure>
- <paragraph>
-  Capping at 5 so the distribution is hopefully??? maybe???? more visible:
- </paragraph>
- <figure>
-  <image height="251" src="https://static.us.edusercontent.com/files/ryUrAP9DgUycUns2gqpjjBhP" width="400"/>
- </figure>
- <paragraph>
-  And removing the instances of every instance of branchiness=1 so the remaining are readable:
- </paragraph>
- <figure>
-  <image height="253" src="https://static.us.edusercontent.com/files/7xcoYqvDAzAyXDYtUYN17ZTf" width="395"/>
- </figure>
- <paragraph>
-  Echoing Kowe's findings from basic comment lengths and comment counts... at least from the 2018 data, it doesn't seem like there's enough back-and-forth discussion to support analyzing branchiness in r/AITA deeper here.
- </paragraph>
- <paragraph>
-  I still speculate it may be possible in the 2019 data (since there are approx. 244k posts from that year compared to the 17k from 2018). However, collecting that data is forecasted to take at least another few days (it's still running in the background!) and doesn't seem like the best idea. It may be possible to continue this line of investigation based on previously existing Reddit datasets such as the CMV data originally, but I'm not sure if that's the best idea given that CMV data is intentionally more structured than a typical casual-opinion "discussion".
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Joyce Zhou (they/them) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ (AKA, continuing deeper from A1, which was inspired by [1, 2])
+ <break>
+ </break>
+</p>
+<p>
+ Partially inspired by Celine’s comment on our A1 report, our findings from A1 indicating that “buzzy” users tended to score fewer deltas,
+ <strike>
+  as well as by my continued “oops I spent an hour browsing Reddit without realizing” habits
+ </strike>
+ , I’m curious what actually encourages users in online conversation trees to hop around different areas of that tree. In the case of our A1 investigation into r/ChangeMyView, were those buzzy top-level-commenters actually dedicated to earning their delta, or were they more interested in understanding opinions across the overall conversation and interacting with other delta-seekers?
+ <break>
+ </break>
+</p>
+<p>
+ In this deeper dive, I’m interested in investigating r/AITA (which is technically an empty redirect that leads to the real sub, but if Lillian was censoring during lecture I’m doing the same here). Unlike r/ChangeMyView which is dedicated to OP presenting a single viewpoint and every top-level-commenter countering that viewpoint, r/AITA features OP posting a personal narrative where they’re unsure whether they did something justified (often biased in their defense) and provide a short potential reason why they acted or will act wrong, and commenters leave their main judgement (YTA = “you’re the a**hole”, NTA = “(you’re) not the a**hole”, ESH = “everyone sucks here”, NAH = “no a**holes here”, or INFO = “not enough context to decide”) together with some explanation for why they decided that.
+ <break>
+ </break>
+</p>
+<p>
+ From casual browsing, I’ve noticed there’s a range of comment patterns. Some commenters go back and forth debating whether or not an action is justified or not (similar to how OP and a top-level-commenter may interact in r/ChangeMyView). Other commenters include links to additional information that OP shared later in the comment tree which they think are relevant to change fellow commenters’ opinions. So there’s probably some buzziness distribution in r/AITA as well, which I’ll sanity check again before analyzing deeper.
+</p>
+<p>
+ I don’t have a solid idea of how to model exact motivations for buzzy-commenting [7???], and I’m pretty sure a lot of the time the commenters in question aren’t sure either. But in r/AITA, at least we have a clear set of tags that people apply, which could make it easier to distinguish between rough comment interaction types. Here’s some more solid hypotheses I want to test out:
+</p>
+<list style="unordered">
+ <li>
+  <p>
+   H1: If the main topic of the original post is more controversial, there will be a larger fraction of “buzzy” users in the conversation. If this is true, I’d think it’s because conversations with a wider range of potential perspectives would invite users who are more keen to listen and share a range of perspectives.
+  </p>
+ </li>
+ <li>
+  <list style="unordered">
+   <li>
+    <p>
+     There’s multiple “controversialness” metrics… I could use the distribution of the first N top-level-judgements left on the post (e.g. “95% NTA” vs “40% NTA, 20% YTA, 10% ESH”) inspired by [4], or I could attempt to topic model the post text and identify variation in previous judgements on similar topics (e.g. “romantic relationships have a lot of debate/variation”, “interacting with young kids is often YTA”). Leaning towards the former because it’s simpler, but I definitely want to try the latter.
+    </p>
+   </li>
+   <li>
+    <p>
+     There’s also different “buzziness” metrics, as made obvious from our A1 presentation. In this investigation, I will lean towards using the “all unique tree paths” metric, since top-level-comments don’t seem as distinctly important here. There can be a lot of top comments leaving the same judgements and often with similar reasoning.
+    </p>
+   </li>
+   <li>
+    <p>
+     I might experiment with different “buzziness” metrics on the side if I’ve got extra time… maybe something based on segment length [3]
+    </p>
+   </li>
+  </list>
+ </li>
+ <li>
+  <p>
+   H2: “Buzzy” users will more frequently disagree with the people they are commenting on, than less-”buzzy” users. If this is true, I’d think it’s because “buzzy” users are motivated to crosspost frequently because they want to share additional information or opinions, which is motivated by having any differences. See [1]
+  </p>
+ </li>
+ <li>
+  <list style="unordered">
+   <li>
+    <p>
+     I could approximate agreement by assuming that the overall distribution of times a user mentions one of the judgement tags is their constant, un-changing belief, and then calculate how different beliefs are between a commenter and someone responding to them.
+    </p>
+   </li>
+   <li>
+    <p>
+     I could also attempt to do direct sentiment analysis of each comment and take the difference between individual comment pairs. This will probably take more time.
+    </p>
+   </li>
+  </list>
+ </li>
+ <li>
+  <p>
+   H3: “Buzzy” users’ judgements (when they have one) will more frequently agree with the final judgement tag, than less-”buzzy” users. If this is true, I’d imagine it’s because they tend to be active Reddit users, who hop into a conversation quickly, and leave more overall impact because of their cross-commenting.
+  </p>
+ </li>
+ <li>
+  <list style="unordered">
+   <li>
+    <p>
+     The r/AITA final judgement is locked in about 12 hours after the original post, and is represented by a tag matching the top-upvoted judgement comment. Conversation can sometimes continue after this time, but since threads either explode pretty fast or don’t at all, it doesn’t leave a big influence.
+    </p>
+   </li>
+  </list>
+ </li>
+</list>
+<p>
+ To check the feasibility, I’d…
+</p>
+<list style="unordered">
+ <li>
+  <p>
+   Check the distribution of user “buzziness” in r/AITA posts, the range of final judgement distributions (or more topic-based “controversialness” metric?), as well as the distribution of inter-comment agreement to make sure there’s actually enough variation here.
+  </p>
+ </li>
+ <li>
+  <p>
+   Very very gladly welcome people to come in and read some posts from the sub to sanity check these hypotheses.
+  </p>
+ </li>
+</list>
+<p>
+ Project participants: Joyce
+</p>
+<p>
+ ===
+</p>
+<p>
+ References, inspirations
+</p>
+<p>
+ [0] A1, Ben L’s major project theme from A1 proposals, and discussions with Lillian (thanks so much)
+</p>
+<p>
+ [1] anaesthetica. “Attacked from Within,” March 3, 2009. https://atdt.freeshell.org/k5/story_2009_3_12_33338_3000.html.
+</p>
+<p>
+ [2] Tan, Chenhao, Vlad Niculae, Cristian Danescu-Niculescu-Mizil, and Lillian Lee. “Winning Arguments: Interaction Dynamics and Persuasion Strategies in Good-Faith Online Discussions.” Proceedings of the 25th International Conference on World Wide Web, 2016. https://api.semanticscholar.org/CorpusID:8577096.
+</p>
+<p>
+ [3] Aragón, Pablo, V. Gómez, David García, and Andreas Kaltenbrunner. “Generative Models of Online Discussion Threads: State of the Art and Research Challenges.” Journal of Internet Services and Applications 8 (2017): 1–17.
+</p>
+<p>
+ [4] Backstrom, Lars, Jon M. Kleinberg, Lillian Lee, and Cristian Danescu-Niculescu-Mizil. “Characterizing and Curating Conversation Threads: Expansion, Focus, Volume, Re-Entry,” 2013. https://api.semanticscholar.org/CorpusID:12885437.
+</p>
+<p>
+ [5] Choi, Daejin, Jinyoung Han, Taejoong Chung, Yong-Yeol Ahn, Byung-Gon Chun, and Ted Taekyoung Kwon. “Characterizing Conversation Patterns in Reddit: From the Perspectives of Content Properties and User Participation Behaviors.” Proceedings of the 2015 ACM on Conference on Online Social Networks, 2015. https://api.semanticscholar.org/CorpusID:14443163.
+</p>
+<p>
+ [6] Tan, Chenhao, D. Card, and Noah A. Smith. “Friendships, Rivalries, and Trysts: Characterizing Relations between Ideas in Texts.” In ACL, 2017. https://api.semanticscholar.org/CorpusID:12038912.
+</p>
+<p>
+ [7] Fu, Liye, Jonathan P. Chang, and Cristian Danescu-Niculescu-Mizil. “Asking the Right Question: Inferring Advice-Seeking Intentions from Personal Narratives.” In NAACL, 2019. https://api.semanticscholar.org/CorpusID:102487036.
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Joyce Zhou (they/them) (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Notes from check-in meeting with Kowe, Lillian, and I...
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   controversialness based on upvote percentage? "Something's Brewing! Early Prediction..." Jack Hessel, Lillian Lee
- </paragraph>
+ </p>
  <list style="unordered">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     used pushshift for original post IDs, then query reddit API for upvote percentage
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
+ <p>
   could sample larger posts for this - dataset doesn't have to include
-  <italic>
+  <i>
    all
-  </italic>
+  </i>
   of the small posts
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   relationship between controversialness and buzziness fraction: take most active users, sample from there?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Joyce Zhou (they/them) (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Adding on to the feasibility check update!
+  </p>
+  <p>
+   We've got a dataset consisting of purely posts from 2018 right now, and are still working on collecting data from 2019 (turns out it takes a very very long time to scrape data without the server complaining about a "too many requests"...). I'm suspecting that r/AITA became popular sometime between those two years, since looking at a random selection of the posts we scraped from that subreddit gives pretty different style of typical post and response content than nowadays.
+  </p>
+  <p>
+   Distribution of "branchiness" metric (using path-branchiness as we defined from A1 instead of the tlc-branchiness since top level comments aren't particularly special in this subreddit):
+  </p>
+  <figure>
+   <image height="257" src="https://static.us.edusercontent.com/files/k26KffHctIqn2lZsHEfI6uHQ" width="378"/>
+  </figure>
+  <p>
+   Similarly shaped trend as with r/changemyview, except with a longer tail. I'm guessing this is because the subreddit was less active during this time...
+  </p>
+  <p>
+   The distribution of average "branchiness" metric (total path-branches count divided by number of comments):
+  </p>
+  <figure>
+   <image height="256" src="https://static.us.edusercontent.com/files/HMpGCmCtdgt1k7LH5MtKyKRk" width="381"/>
+  </figure>
+  <p>
+   And maximum:
+  </p>
+  <figure>
+   <image height="255" src="https://static.us.edusercontent.com/files/QgtXXOK24Vs7bAtbjp9zP2w4" width="376"/>
+  </figure>
+  <p>
+   Histogram of the entire range of branchiness metric results:
+  </p>
+  <figure>
+   <image height="255" src="https://static.us.edusercontent.com/files/3ARh5YCEaFRhPbSFWFSQEZez" width="402"/>
+  </figure>
+  <p>
+   Capping at 5 so the distribution is hopefully??? maybe???? more visible:
+  </p>
+  <figure>
+   <image height="251" src="https://static.us.edusercontent.com/files/ryUrAP9DgUycUns2gqpjjBhP" width="400"/>
+  </figure>
+  <p>
+   And removing the instances of every instance of branchiness=1 so the remaining are readable:
+  </p>
+  <figure>
+   <image height="253" src="https://static.us.edusercontent.com/files/7xcoYqvDAzAyXDYtUYN17ZTf" width="395"/>
+  </figure>
+  <p>
+   Echoing Kowe's findings from basic comment lengths and comment counts... at least from the 2018 data, it doesn't seem like there's enough back-and-forth discussion to support analyzing branchiness in r/AITA deeper here.
+  </p>
+  <p>
+   I still speculate it may be possible in the 2019 data (since there are approx. 244k posts from that year compared to the 17k from 2018). However, collecting that data is forecasted to take at least another few days (it's still running in the background!) and doesn't seem like the best idea. It may be possible to continue this line of investigation based on previously existing Reddit datasets such as the CMV data originally, but I'm not sure if that's the best idea given that CMV data is intentionally more structured than a typical casual-opinion "discussion".
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Kowe Kadoma (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Joyce and I are working together on this project. We met to discuss what our contributions would be, and I decided to focus on how to characterize a buzzy user (i.e. what "speaking" habits do buzzy users have that non-buzzy users don't have?).
+   </p>
+   <p>
+    Tentative research plan/feasibility check:
+   </p>
+   <p>
+    <b>
+     Definitions:
+    </b>
+   </p>
+   <p>
+    <underline>
+     Controversial post
+    </underline>
+   </p>
+   <list style="unordered">
+    <li>
+     <p>
+      Varied distribution of tags
+     </p>
+    </li>
+    <li>
+     <p>
+      Sentiment analysis
+     </p>
+    </li>
+    <li>
+     <list style="unordered">
+      <li>
+       <p>
+        If a large percentage of the text contains words with strong arousal, dominance, and low valence then this could be considered a controversial post
+       </p>
+      </li>
+     </list>
+    </li>
+    <li>
+     <p>
+      Topic modeling
+     </p>
+     <list style="unordered">
+      <li>
+       <p>
+        <i>
+         How to determine if controversial?
+        </i>
+       </p>
+      </li>
+     </list>
+    </li>
+   </list>
+   <p>
+    <b>
+     Features to explore/what it tells us:
+    </b>
+   </p>
+   <list style="ordered">
+    <li>
+     <p>
+      Comment length
+     </p>
+    </li>
+    <li>
+     <list style="ordered">
+      <li>
+       <p>
+        If a buzzy user leaves longer comments, then they are more invested in the conversation. If a buzzy user isn't leaving long, substantial comments along the thread(s) then they may be engaging in trolling behavior or not adding value to the conversation
+       </p>
+      </li>
+      <li>
+       <p>
+        <i>
+         How could we figure out if they're adding value?
+        </i>
+       </p>
+      </li>
+      <li>
+       <list style="ordered">
+        <li>
+         <p>
+          Some people use a lot of words to say nothing?
+         </p>
+        </li>
+       </list>
+      </li>
+     </list>
+    </li>
+    <li>
+     <p>
+      Lexical diversity
+     </p>
+    </li>
+    <li>
+     <list style="ordered">
+      <li>
+       <p>
+        Using niche words could reveal the redditors interests/perspectives
+       </p>
+      </li>
+      <li>
+       <list style="ordered">
+        <li>
+         <p>
+          <i>
+           How to define niche words?
+          </i>
+         </p>
+        </li>
+       </list>
+      </li>
+     </list>
+    </li>
+    <li>
+     <p>
+      Sentiment Analysis
+     </p>
+    </li>
+    <li>
+     <list style="ordered">
+      <li>
+       <p>
+        For each comment, see how many words appear in a word list see references in "Winning Arguments" paper. Determine the percentage of words that fall into arousal, dominance, and valence
+       </p>
+      </li>
+     </list>
+    </li>
+    <li>
+     <p>
+      Perspective
+     </p>
+    </li>
+    <li>
+     <list style="ordered">
+      <li>
+       <p>
+        Determine frequency of pronouns (e.g. "I", "she/her", "they", "you"); if they use "I" frequently they could be speaking from personal experience and which may affect if they agree/disagree with OP
+       </p>
+      </li>
+     </list>
+    </li>
+   </list>
+   <p>
+    Feasibility test:
+   </p>
+   <p>
+    <b>
+     Data set:
+    </b>
+   </p>
+   <list style="unordered">
+    <li>
+     <p>
+      r/aita in 2018
+     </p>
+    </li>
+    <li>
+     <p>
+      17,598 posts with 448,946 comments
+     </p>
+    </li>
+   </list>
+   <p>
+    <b>
+     Comment Feasibility Tests
+    </b>
+   </p>
+   <figure>
+    <image height="267" src="https://static.us.edusercontent.com/files/KF4394iygkA1BsUXbOt9vIJN" width="739"/>
+   </figure>
+   <p>
+    Average number of words in a comment: 59.70581828144525
+   </p>
+   <figure>
+    <image height="235" src="https://static.us.edusercontent.com/files/WsdE7b298PWFPFsxf0j7kbC9" width="838"/>
+   </figure>
+   <p>
+    Average number of comments in a thread: 25.734344811910443
+   </p>
+   <p>
+    The comment feasibility tests suggest that most comments are redditors briefly stating their opinion. From glancing at reddit posts with a similar amount of comments and comment length, there doesn't seem to be a lot of back and fourth discussion. Because of the brevity of the comments, lexical diversity and sentiment analysis do not seem promising
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 2em;">
+    <h3>
+     Author: Joyce Zhou (they/them) (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     self-notes:
+    </p>
+    <list style="bullet">
+     <li>
+      <p>
+       word lists related to moral associations
+      </p>
+     </li>
+     <li>
+      <p>
+       paperswithcode.com ; looking for classifiers that can serve as feature providers
+      </p>
+     </li>
+     <li>
+      <p>
+       novelty classifiers?
+      </p>
+     </li>
+    </list>
+    <p>
+     things less immediately relevant that I'm still writing down:
+    </p>
+    <list style="bullet">
+     <li>
+      <p>
+       VADER-Sentiment-Analysis on github
+      </p>
+     </li>
+    </list>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 2em;">
+     <h3>
+      Author: Prof. Lee (she/they) (admin)
+     </h3>
+     <h3>
+      Vote Count: 1
+     </h3>
+     <p>
+      (apologies for brevity, on the run) see also models of conversation tree growth happening later than [3], such as
+     </p>
+     <p>
+      Krohn, Rachel, and Tim Weninger. 2019. “Modelling Online Comment Threads from Their Start.”
+      <i>
+       2019 IEEE International Conference on Big Data (Big Data)
+      </i>
+      .
+      <a href="https://doi.org/10.1109/BigData47090.2019.9006594">
+       https://doi.org/10.1109/BigData47090.2019.9006594
+       .
+      </a>
+     </p>
+     <p>
+      Bollenbacher, John, Diogo Pacheco, Pik-Mai Hui, Yong-Yeol Ahn, Alessandro Flammini, and Filippo Menczer. 2021. “On the Challenges of Predicting Microscopic Dynamics of Online Conversations.”
+      <i>
+       Applied Network Science
+      </i>
+      6 (1): 12.
+      <link href="https://doi.org/10.1007/s41109-021-00357-8"/>
+      https://doi.org/10.1007/s41109-021-00357-8
+      .
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

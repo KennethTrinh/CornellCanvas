@@ -13,35 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Assume foo(n) is a recursive method whose body includes a call to foo(n+1). Then the call foo(100) will induce infinite recursion and never terminate.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  The answer is (F: The method could start with if (n &gt;= 100) return;)
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Could another reasoning be that the call to foo(n+1) is unreachable code?
- </paragraph>
-</document>
+<p>
+ Assume foo(n) is a recursive method whose body includes a call to foo(n+1). Then the call foo(100) will induce infinite recursion and never terminate.
+</p>
+<p>
+ The answer is (F: The method could start with if (n &gt;= 100) return;)
+</p>
+<p>
+ Could another reasoning be that the call to foo(n+1) is unreachable code?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Ethan Gabizon (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Ethan Gabizon (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Yeah, I think the idea here is that you can't say the function call will induce infinite recursion because you know nothing about the body of the function. There are many reasons why the statement could be false.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

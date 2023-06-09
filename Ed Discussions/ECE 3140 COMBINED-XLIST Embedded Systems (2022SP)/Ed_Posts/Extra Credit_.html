@@ -13,128 +13,126 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  For the extra credit for Lab 1, should our code be able to handle the Morse code for only two-digit numbers, or should it also work for arbitrarily large numbers? Thanks!
- </paragraph>
-</document>
+<p>
+ For the extra credit for Lab 1, should our code be able to handle the Morse code for only two-digit numbers, or should it also work for arbitrarily large numbers? Thanks!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Raleigh Clemens (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Raleigh Clemens (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Your code should be able to work for arbitrarily large numbers (that fit into 32 bits).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Should we also assume that we display the numbers from most significant to least significant?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes. The digits should be flashed with the most significant digit first (e.g. the number 3140 should be flashed in the order 3, 1, 4, and then 0).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Since it's arbitrary, can we store returned values in the stack?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Nils Napp (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  No. You cannot return things via the stack. It has to follow the calling convention:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    The SP has to be in the same location before and after the function call.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    The  only possible return value should be in R0.
-    <break>
-    </break>
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  (A technical exception is if you were to pass the address of a local variable into the function and use it store the result there).  Then, the computed value is technically stored on the stack (because it is a local variable), but it is not accessed via push/pop, and the SP is still in the same location before and after the function call.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Ah, right! I think I worded it poorly - I meant once we returned, storing the value that was returned on the stack (so that we could store an arbitrary number of values) - so some function would return a value in a register, and we would "store" the returned value by pushing the register to the stack once it returned
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Nils Napp (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  No. The SP, has to be in the same location before and after the call. You can't leave anything on the stack.
- </paragraph>
- <video>
- </video>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Aidan McNay (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Since it's arbitrary, can we store returned values in the stack?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Nils Napp (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    No. You cannot return things via the stack. It has to follow the calling convention:
+   </p>
+   <list style="bullet">
+    <li>
+     <p>
+      The SP has to be in the same location before and after the function call.
+     </p>
+    </li>
+    <li>
+     <p>
+      The  only possible return value should be in R0.
+      <break>
+      </break>
+     </p>
+    </li>
+   </list>
+   <p>
+    (A technical exception is if you were to pass the address of a local variable into the function and use it store the result there).  Then, the computed value is technically stored on the stack (because it is a local variable), but it is not accessed via push/pop, and the SP is still in the same location before and after the function call.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Aidan McNay (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Ah, right! I think I worded it poorly - I meant once we returned, storing the value that was returned on the stack (so that we could store an arbitrary number of values) - so some function would return a value in a register, and we would "store" the returned value by pushing the register to the stack once it returned
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Nils Napp (admin)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      No. The SP, has to be in the same location before and after the call. You can't leave anything on the stack.
+     </p>
+     <video>
+     </video>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Aidan McNay (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Should we also assume that we display the numbers from most significant to least significant?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Harris Miller (None)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Yes. The digits should be flashed with the most significant digit first (e.g. the number 3140 should be flashed in the order 3, 1, 4, and then 0).
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

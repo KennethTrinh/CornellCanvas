@@ -13,133 +13,129 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  (
-  <underline>
-   Assumption
-  </underline>
-  : $X_{ijk}$ and $Y_{ijk}$ are additional variables introduced to help solve the problem, are not natural to the problem itself.)
- </paragraph>
- <paragraph>
-  In question 2 of (2), we want clauses to satisfy: each team plays at most once per week. For simplicity, let's fix, team ($i$) and week ($k$). So, the clauses would be as follows:
- </paragraph>
- <math>
-  \begin{align*}&amp;((\neg X_{i1k} \lor \neg X_{i2k}) \land (\neg X_{i1k} \lor \neg X_{i3k}) \land \dots \land (\neg X_{i1k} \lor \neg X_{iNk}))\\&amp;\land ((\neg X_{i2k} \lor \neg X_{i3k}) \land (\neg X_{i2k} \lor \neg X_{i4k}) \land \dots \land (\neg X_{i2k} \lor \neg X_{iNk})) \\&amp;\text{~}\vdots\\&amp;\land((\neg X_{i(N-1)k} \lor \neg X_{iNk}))\end{align*}
- </math>
- <paragraph>
-  Hence, the number of clauses are ${N \choose 2}$ (for a fixed $i$ and $k$), which is exactly what is given in the solution; in turn bounding the total clauses by $\mathcal{O}(N^4)$ from above.
- </paragraph>
- <paragraph>
-  However, from the problem, we know that $X_{i1k} \equiv X_{i2k}$ (team $i$ plays in slot (
-  <bold>
-   not
-  </bold>
-  subslot) $1$), which means $(\neg X_{i1k} \lor \neg X_{i2k})$ is always true; so, it'd be become ${N/2 \choose 2}$?
- </paragraph>
- <paragraph>
-  (P.S. I realize that both are $\mathcal{O}(N^4)$, but just wanted to confirm that I'm thinking right, thanks!)
- </paragraph>
-</document>
-<h3>
- Author: Tushaar Gangavarapu (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Also, I think there's a typo in the solution:
- </paragraph>
- <math>
-  \bigwedge_{\begin{subarray}{c}1 \leq i,j,l \leq N\\1\leq k &lt; N\\j \neq i\end{subarray}} \neg X_{ijk} \lor \neg X_{ilk}
- </math>
- <paragraph>
-  (reads, $j \neq i$), I think it should be $j \neq l$.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Niko Grupen (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes this is a typo -- thanks for pointing this out!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Niko Grupen (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ (
+ <underline>
+  Assumption
+ </underline>
+ : $X_{ijk}$ and $Y_{ijk}$ are additional variables introduced to help solve the problem, are not natural to the problem itself.)
+</p>
+<p>
+ In question 2 of (2), we want clauses to satisfy: each team plays at most once per week. For simplicity, let's fix, team ($i$) and week ($k$). So, the clauses would be as follows:
+</p>
+<math>
+ \begin{align*}&amp;((\neg X_{i1k} \lor \neg X_{i2k}) \land (\neg X_{i1k} \lor \neg X_{i3k}) \land \dots \land (\neg X_{i1k} \lor \neg X_{iNk}))\\&amp;\land ((\neg X_{i2k} \lor \neg X_{i3k}) \land (\neg X_{i2k} \lor \neg X_{i4k}) \land \dots \land (\neg X_{i2k} \lor \neg X_{iNk})) \\&amp;\text{~}\vdots\\&amp;\land((\neg X_{i(N-1)k} \lor \neg X_{iNk}))\end{align*}
+</math>
+<p>
+ Hence, the number of clauses are ${N \choose 2}$ (for a fixed $i$ and $k$), which is exactly what is given in the solution; in turn bounding the total clauses by $\mathcal{O}(N^4)$ from above.
+</p>
+<p>
+ However, from the problem, we know that $X_{i1k} \equiv X_{i2k}$ (team $i$ plays in slot (
+ <b>
+  not
+ </b>
+ subslot) $1$), which means $(\neg X_{i1k} \lor \neg X_{i2k})$ is always true; so, it'd be become ${N/2 \choose 2}$?
+</p>
+<p>
+ (P.S. I realize that both are $\mathcal{O}(N^4)$, but just wanted to confirm that I'm thinking right, thanks!)
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Niko Grupen (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Maybe I'm not understanding the question, but in what situation would $X_{i1k} \equiv  X_{i2k}$? $X_{ijk}$ represents team i playing in subslot j in week k, so $X_{i1k} \neq  X_{i2k}$ generally.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Tushaar Gangavarapu (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Subslots are created by us, for convenience, right? If so, then, in slot, say $1$, two teams can play (because they have to play against each other). Simply put, team $i$ being in subslot $1$ or subslot $2$ doesn't make a difference (supposing subslot $1$ and subslot $2$ belong to the same slot).
- </paragraph>
- <paragraph>
-  That's my understanding, correct me if I'm wrong!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Niko Grupen (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="1.0">
- <paragraph>
-  Ah I think I see what you mean — yes the ordering of teams within a slot (what you are calling sub-slots) might lead to some redundancy if we introduce clauses for both. So you can probably reduce the total number of clauses by accounting for that, but the most important point is that we are bounded by $O(n^4)$. In either case, I’d be a bit careful not to overload the notation.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Tushaar Gangavarapu (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes, I understand, but I also think that the clauses we wrote above, i.e, $\bigwedge_{\begin{subarray}{c}1 \leq i,j,l \leq N\\1\leq k &lt; N\\j \neq l\end{subarray}} (\neg X_{ijk} \lor \neg X_{ilk})$ would require additional clauses to weed out the $X_{i1k} \equiv X_{i2k}$ cases, otherwise the solution would be
-  <italic>
-   logically
-  </italic>
-  incorrect, right?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Tushaar Gangavarapu (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Subslots are created by us, for convenience, right? If so, then, in slot, say $1$, two teams can play (because they have to play against each other). Simply put, team $i$ being in subslot $1$ or subslot $2$ doesn't make a difference (supposing subslot $1$ and subslot $2$ belong to the same slot).
+  </p>
+  <p>
+   That's my understanding, correct me if I'm wrong!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Niko Grupen (staff)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Ah I think I see what you mean — yes the ordering of teams within a slot (what you are calling sub-slots) might lead to some redundancy if we introduce clauses for both. So you can probably reduce the total number of clauses by accounting for that, but the most important point is that we are bounded by $O(n^4)$. In either case, I’d be a bit careful not to overload the notation.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Tushaar Gangavarapu (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Yes, I understand, but I also think that the clauses we wrote above, i.e, $\bigwedge_{\begin{subarray}{c}1 \leq i,j,l \leq N\\1\leq k &lt; N\\j \neq l\end{subarray}} (\neg X_{ijk} \lor \neg X_{ilk})$ would require additional clauses to weed out the $X_{i1k} \equiv X_{i2k}$ cases, otherwise the solution would be
+     <i>
+      logically
+     </i>
+     incorrect, right?
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Tushaar Gangavarapu (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Also, I think there's a typo in the solution:
+  </p>
+  <math>
+   \bigwedge_{\begin{subarray}{c}1 \leq i,j,l \leq N\\1\leq k &lt; N\\j \neq i\end{subarray}} \neg X_{ijk} \lor \neg X_{ilk}
+  </math>
+  <p>
+   (reads, $j \neq i$), I think it should be $j \neq l$.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Niko Grupen (staff)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Yes this is a typo -- thanks for pointing this out!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

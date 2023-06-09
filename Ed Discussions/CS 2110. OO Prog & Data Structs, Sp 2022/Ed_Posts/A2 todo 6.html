@@ -13,11 +13,10 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  In this part of the assignment
- </paragraph>
- <pre>/** If x = 0, print 1; &lt;br&gt;
+<p>
+ In this part of the assignment
+</p>
+<pre>/** If x = 0, print 1; &lt;br&gt;
      * Otherwise, print 2x */
     public static void p(int x) {
         /* TODO 6: This exercise introduces you to the return statement in a
@@ -42,32 +41,29 @@
          *    (1) An if-statement that performs the first line of the spec
          *        and returns, using a return statement.
          *    (2) A print statement that performs the second line of the spec.</pre>
- <paragraph>
-  The first line says "Print 1" but then in number four, it is asking for a return statement. It had me confused at first but then I added
- </paragraph>
- <paragraph>
-  return;
- </paragraph>
- <paragraph>
-  to my code but when I save it, it gets deleted so I'm a bit confused on what to do.
- </paragraph>
-</document>
+<p>
+ The first line says "Print 1" but then in number four, it is asking for a return statement. It had me confused at first but then I added
+</p>
+<p>
+ return;
+</p>
+<p>
+ to my code but when I save it, it gets deleted so I'm a bit confused on what to do.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Atulya Lohani (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Atulya Lohani (student)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   That means you're not using the return correctly. You're using return in a manner that is redundant so the eclipse formatting preferences just gets rid of it when you save. Rather than having an else block, just use the return keyword in your if statement. And then you can put everything that used to be in your else block, after the if statement. If the if statement body is run, then the method will return after printing 1. Otherwise, it will print 2x because the if statement body will be skipped. This gets rid of the necessity of having an else statement because you are using short-circuiting your code through the return.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

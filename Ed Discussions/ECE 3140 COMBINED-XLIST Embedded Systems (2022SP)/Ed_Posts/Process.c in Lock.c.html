@@ -13,58 +13,56 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Can we #include "process.c" in lock.c (I am trying to use process.c's enqueue function)
- </paragraph>
-</document>
+<p>
+ Can we #include "process.c" in lock.c (I am trying to use process.c's enqueue function)
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  You
-  <italic>
-   can
-  </italic>
-  , but a couple things arise:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    At least when I tried it, I got linker errors of multiple definitions (it was defining the enqueue function twice somewhere), even with pre-compiler #ifndef statements (yea, it was weird)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    You actually want your enqueue functions to be slightly different for the process queue and locks! (Think about what the next_process pointer should point to)
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Because of this, it's probably easier to just define a new function (enqueue_lock) inside of lock.c, and use that for enqueuing to lists of blocked processes
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kate Meuse (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kate Meuse (None)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   I added extern declarations in shared_structs.h to use those functions in lock.c.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Aidan McNay (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   You
+   <i>
+    can
+   </i>
+   , but a couple things arise:
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     At least when I tried it, I got linker errors of multiple definitions (it was defining the enqueue function twice somewhere), even with pre-compiler #ifndef statements (yea, it was weird)
+    </p>
+   </li>
+   <li>
+    <p>
+     You actually want your enqueue functions to be slightly different for the process queue and locks! (Think about what the next_process pointer should point to)
+    </p>
+   </li>
+  </list>
+  <p>
+   Because of this, it's probably easier to just define a new function (enqueue_lock) inside of lock.c, and use that for enqueuing to lists of blocked processes
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

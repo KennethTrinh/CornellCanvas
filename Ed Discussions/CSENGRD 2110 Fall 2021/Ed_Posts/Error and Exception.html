@@ -13,52 +13,50 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I have been confused by the concept of error and exception, as what's the difference between them? I have read that exception may or may not terminate the program while error definitely does. So are errors like more severe problems while exceptions are smaller problems? And I have read that errors are handled by throwing exceptions. What does this mean?
- </paragraph>
- <paragraph>
-  And on the powerpoint, it says that errors cannot be caught. Why is that?
- </paragraph>
- <paragraph>
-  Thank you so much!
- </paragraph>
-</document>
+<p>
+ I have been confused by the concept of error and exception, as what's the difference between them? I have read that exception may or may not terminate the program while error definitely does. So are errors like more severe problems while exceptions are smaller problems? And I have read that errors are handled by throwing exceptions. What does this mean?
+</p>
+<p>
+ And on the powerpoint, it says that errors cannot be caught. Why is that?
+</p>
+<p>
+ Thank you so much!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Here are the facts. Read carefully.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   1. Any object of class Throwable or its subclasses can the thrown in a throw statement.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   2. Any object of class Throwable or its subclasses can be caught using a try-statement. Below, T can be Throwable or any of its subclasses:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   try { code a try block }
   <break>
   </break>
   catch (T e) {code in a catch block}
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   3. The TWO direct subclasses of Throwable are Exception and Error. By points 1 and 2, they and their subclasses can be thrown and caught.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   4. However, it makes no sense to try to catch Error and its subclasses because their nature is that the program cannot be continued properly. For example, one error is OutOfMemoryError (or something like that).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   5. Catch an Exception object (or one of its subclasses) if at the level that it is caught, something reasonable can be done about it. That's enough for now.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

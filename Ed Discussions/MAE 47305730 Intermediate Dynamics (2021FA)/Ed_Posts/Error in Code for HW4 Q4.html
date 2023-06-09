@@ -13,114 +13,108 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi! I'm getting this weird error in my code I'm not sure how to resolve:
- </paragraph>
- <figure>
-  <image height="309.64705882352945" src="https://static.us.edusercontent.com/files/t3PYaUSxKbcy8ck6GPjIjvkz" width="658"/>
- </figure>
- <paragraph>
-  I've printed out my r array and it looks fine (and my dynamic system animation is working completely normally), so I'm not sure why this isn't working. Here are some snippets of the code it's referencing:
- </paragraph>
- <figure>
-  <image height="73.57711442786069" src="https://static.us.edusercontent.com/files/LV1eoL9maBwjkz8REga74vhr" width="643"/>
- </figure>
- <figure>
-  <image height="42.76362179487179" src="https://static.us.edusercontent.com/files/lUpVNRpI08Fir8SKbPZf5bN7" width="642.9999999999999"/>
- </figure>
- <figure>
-  <image height="100.61613691931541" src="https://static.us.edusercontent.com/files/qE4soK3exYzAc5DHpxvIVTIc" width="643"/>
- </figure>
- <paragraph>
-  If anyone experienced this issue and fixed it or knows how to resolve it, I'd love some help--thanks!
- </paragraph>
-</document>
-<h3>
- Author: Josephine Monica (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ Hi! I'm getting this weird error in my code I'm not sure how to resolve:
+</p>
+<figure>
+ <image height="309.64705882352945" src="https://static.us.edusercontent.com/files/t3PYaUSxKbcy8ck6GPjIjvkz" width="658"/>
+</figure>
+<p>
+ I've printed out my r array and it looks fine (and my dynamic system animation is working completely normally), so I'm not sure why this isn't working. Here are some snippets of the code it's referencing:
+</p>
+<figure>
+ <image height="73.57711442786069" src="https://static.us.edusercontent.com/files/LV1eoL9maBwjkz8REga74vhr" width="643"/>
+</figure>
+<figure>
+ <image height="42.76362179487179" src="https://static.us.edusercontent.com/files/lUpVNRpI08Fir8SKbPZf5bN7" width="642.9999999999999"/>
+</figure>
+<figure>
+ <image height="100.61613691931541" src="https://static.us.edusercontent.com/files/qE4soK3exYzAc5DHpxvIVTIc" width="643"/>
+</figure>
+<p>
+ If anyone experienced this issue and fixed it or knows how to resolve it, I'd love some help--thanks!
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Josephine Monica (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Usually the error that matters is the first error. In your case, "index in position 1 exceeds array bound".  This means that you try to access array using index that is out of its size
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jared Farley (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Matlab functions get weird sometimes about when they pass in variables and when they don't - try doing fsolve(@(z) fstatic(z), Z0, options)?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew van Paridon (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew van Paridon (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   in your line specifying the fstatic, your function calling doublespringdamper2D does not include the right inputs, it should still include t
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   (unless you did some very clever coding with optional input arguments)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   It should read something like;
- </paragraph>
+ </p>
  <snippet language="txt" line-numbers="true" runnable="true">
   <snippet-file id="code">
    fstatic = @(Z) doublespringdamper2D(t,Z,p);
   </snippet-file>
  </snippet>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Mahika Goel (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you so much, fixing that worked!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew van Paridon (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  No worries.  The error you received is kind of cryptic in your case, but you can see that the function had a mismatch of inputs between t and Z, which leads to the "exceeding array bounds"
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Mahika Goel (None)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you so much, fixing that worked!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Andrew van Paridon (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    No worries.  The error you received is kind of cryptic in your case, but you can see that the function had a mismatch of inputs between t and Z, which leads to the "exceeding array bounds"
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Jared Farley (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Matlab functions get weird sometimes about when they pass in variables and when they don't - try doing fsolve(@(z) fstatic(z), Z0, options)?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

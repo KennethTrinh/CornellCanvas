@@ -13,32 +13,30 @@
 <h3>
  Vote Count: 4
 </h3>
-<document version="2.0">
- <figure>
-  <image height="247.78242677824267" src="https://static.us.edusercontent.com/files/I59YrKVnegF4bJRPx6LDmdYh" width="658"/>
- </figure>
- <paragraph>
-  I don't understand the bottom equation there. If ρ(x, x
-  <italic>
-   πi(x)) &lt;
-  </italic>
-  ρ(x, xπi+1(x)), wouldn't we give less weight to the points that are actually closer to the input x?
- </paragraph>
-</document>
+<figure>
+ <image height="247.78242677824267" src="https://static.us.edusercontent.com/files/I59YrKVnegF4bJRPx6LDmdYh" width="658"/>
+</figure>
+<p>
+ I don't understand the bottom equation there. If ρ(x, x
+ <i>
+  πi(x)) &lt;
+ </i>
+ ρ(x, xπi+1(x)), wouldn't we give less weight to the points that are actually closer to the input x?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Thorsten Joachims (admin)
-</h3>
-<h3>
- Vote Count: 5
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Thorsten Joachims (admin)
+ </h3>
+ <h3>
+  Vote Count: 5
+ </h3>
+ <p>
   I agree! That rule does not make much sense, since it gives more weight to the nearest neighbors that are further away. Note that I have the same formula in my lecture slides, but with a big difference. I use a similarity measure K to determine the k nearest neighbors, not a distance function $\rho$. A similarity measure becomes larger the more similar the two features vectors are, which makes the weighting formula on my slides more sensible.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

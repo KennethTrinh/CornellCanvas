@@ -13,33 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi there! I thought I would practice one of the examples from the lecture. I created a .py file containing the definition of the function get_feet (from the lecture) and a command calling that function. I would have thought that when I imported this as a module python would return 'feet'. [Reasoning: python would skip the definition and go to the command. The command references the definition which returns 'feet'.] What actually happens is...nothing.
-  <bold>
-   I'm just wondering why? If I want the outcome of importing this module to be 'return feet' where did I go wrong?
-  </bold>
- </paragraph>
- <figure>
-  <image height="86.18906249999999" src="https://static.us.edusercontent.com/files/COIOf9peizqkXQaHsnR7hQ5M" width="454"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Hi there! I thought I would practice one of the examples from the lecture. I created a .py file containing the definition of the function get_feet (from the lecture) and a command calling that function. I would have thought that when I imported this as a module python would return 'feet'. [Reasoning: python would skip the definition and go to the command. The command references the definition which returns 'feet'.] What actually happens is...nothing.
+ <b>
+  I'm just wondering why? If I want the outcome of importing this module to be 'return feet' where did I go wrong?
+ </b>
+</p>
+<figure>
+ <image height="86.18906249999999" src="https://static.us.edusercontent.com/files/COIOf9peizqkXQaHsnR7hQ5M" width="454"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Dylan Castillo (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Dylan Castillo (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   When you do get_feet at the bottom of your file, you’re basically just calling the function, getting the result (5), and the result just disappears because you’re not saving it into a variable nor printing it. If you want it to show up in the terminal, you have to wrap around the call to the method with print().
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,63 +13,57 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Are we supposed to test the time spent on calling a method to certify it to be a constant one or a linear one??
- </paragraph>
- <paragraph>
-  Thanks!
- </paragraph>
-</document>
+<p>
+ Are we supposed to test the time spent on calling a method to certify it to be a constant one or a linear one??
+</p>
+<p>
+ Thanks!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andrew Chen (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew Chen (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   No, you shouldn’t test that. You should be able to tell the time complexity (linear or constant) by inspection.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Satya Datla (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Could you elaborate a little bit more on what kind of inspection we should do? I'm looking at the a4 handout and I'm not understanding this part:
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  • n= 0; k= 0; // once • k &lt; s.length() // n+1 times • k= k+1; // n times • s.charAt(k) == ‘e’ // n times • n= n+1; // at most n times
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew Chen (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  At most n times means the worst-case scenario is n iterations, so the time complexity is linear. Constant time would be a constant number of operations independent of n. For more info, I would look back at the corresponding lectures and search up "time complexity" on JHT.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Satya Datla (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Could you elaborate a little bit more on what kind of inspection we should do? I'm looking at the a4 handout and I'm not understanding this part:
+  </p>
+  <p>
+   • n= 0; k= 0; // once • k &lt; s.length() // n+1 times • k= k+1; // n times • s.charAt(k) == ‘e’ // n times • n= n+1; // at most n times
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Andrew Chen (staff)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    At most n times means the worst-case scenario is n iterations, so the time complexity is linear. Constant time would be a constant number of operations independent of n. For more info, I would look back at the corresponding lectures and search up "time complexity" on JHT.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

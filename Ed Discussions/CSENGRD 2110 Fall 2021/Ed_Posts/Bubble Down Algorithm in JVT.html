@@ -13,37 +13,35 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="518.1848739495798" src="https://static.us.edusercontent.com/files/OwZIEotfJVqzxdOZqihpaaCG" width="658"/>
- </figure>
- <paragraph>
-  For this bubble down algorithm,
-  <break>
-  </break>
-  I'm assuming int h is describing the parents position in the array, but what about int c? How is it that that is the smallest child of b[h]?  I didn't think the max-heap shared the same properties of a BST (i.e left is the smallest child and right is the largest child).
- </paragraph>
- <paragraph>
-  I'm a bit confused about what's going on inside the while loop
- </paragraph>
-</document>
+<figure>
+ <image height="518.1848739495798" src="https://static.us.edusercontent.com/files/OwZIEotfJVqzxdOZqihpaaCG" width="658"/>
+</figure>
+<p>
+ For this bubble down algorithm,
+ <break>
+ </break>
+ I'm assuming int h is describing the parents position in the array, but what about int c? How is it that that is the smallest child of b[h]?  I didn't think the max-heap shared the same properties of a BST (i.e left is the smallest child and right is the largest child).
+</p>
+<p>
+ I'm a bit confused about what's going on inside the while loop
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The comment
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   // c= larger child of h (return if h has no children)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   is implemented by the following three if-statements.
   <break>
   </break>
@@ -60,13 +58,11 @@
   <break>
   </break>
   than the value of the left child, set c to the index of the right child.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You should be able to follow the rest.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

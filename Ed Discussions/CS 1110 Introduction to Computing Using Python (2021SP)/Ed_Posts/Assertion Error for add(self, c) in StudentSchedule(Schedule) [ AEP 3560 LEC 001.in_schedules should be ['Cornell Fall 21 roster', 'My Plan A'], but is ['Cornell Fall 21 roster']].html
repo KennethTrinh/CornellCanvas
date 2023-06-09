@@ -13,84 +13,80 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I keep getting the error AssertionError: AEP 3560 LEC 001.in_schedules should be ['Cornell Fall 21 roster', 'My Plan A'], but is ['Cornell Fall 21 roster']
- </paragraph>
- <paragraph>
-  <break>
-  </break>
-  I am not sure what the reason for this is
- </paragraph>
-</document>
+<p>
+ I keep getting the error AssertionError: AEP 3560 LEC 001.in_schedules should be ['Cornell Fall 21 roster', 'My Plan A'], but is ['Cornell Fall 21 roster']
+</p>
+<p>
+ <break>
+ </break>
+ I am not sure what the reason for this is
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Try checking for why your code failed to add AEP 3560 to the StudentSchedule "My Plan A".
   <break>
   </break>
   <break>
   </break>
   Can you copy/paste in the entire error message, so we can see which line in the test code is failing?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anna Alphenaar (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Traceback (most recent call last):
- </paragraph>
- <paragraph>
-  File "schedule_tests.py", line 297, in &lt;module&gt;
- </paragraph>
- <paragraph>
-  testfn() # Adding the parentheses calls whatever testfn is
- </paragraph>
- <paragraph>
-  File "schedule_tests.py", line 105, in test_studentschedule_add_noconflicts
- </paragraph>
- <paragraph>
-  c.getScheduleNames())
- </paragraph>
- <paragraph>
-  AssertionError: AEP 3560 LEC 001.in_schedules should be ['Cornell Fall 21 roster', 'My Plan A'], but is ['Cornell Fall 21 roster']
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  OK!  So take a look at the testing code:
-  <break>
-  </break>
-  <break>
-  </break>
- </paragraph>
- <snippet language="py" line-numbers="true" runnable="false">
-  <snippet-file id="code">
-   initial_courses_to_add = roster_creation.make_initial_course_list()
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anna Alphenaar (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Traceback (most recent call last):
+  </p>
+  <p>
+   File "schedule_tests.py", line 297, in &lt;module&gt;
+  </p>
+  <p>
+   testfn() # Adding the parentheses calls whatever testfn is
+  </p>
+  <p>
+   File "schedule_tests.py", line 105, in test_studentschedule_add_noconflicts
+  </p>
+  <p>
+   c.getScheduleNames())
+  </p>
+  <p>
+   AssertionError: AEP 3560 LEC 001.in_schedules should be ['Cornell Fall 21 roster', 'My Plan A'], but is ['Cornell Fall 21 roster']
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    OK!  So take a look at the testing code:
+    <break>
+    </break>
+    <break>
+    </break>
+   </p>
+   <snippet language="py" line-numbers="true" runnable="false">
+    <snippet-file id="code">
+     initial_courses_to_add = roster_creation.make_initial_course_list()
     roster = roster_creation.make_sample_roster(initial_courses_to_add)
 
     my_schedule = StudentSchedule("My Plan A")
@@ -107,72 +103,72 @@
             _assert_msg(c.name + ".in_schedules", \
                         ['Cornell Fall 21 roster', 'My Plan A'],
                         c.getScheduleNames())
-  </snippet-file>
- </snippet>
- <paragraph>
-  Line 14-17 is where the assertion error is coming from.
-  <break>
-  </break>
-  <break>
-  </break>
-  What's happening?  Line 9-10 is using
-  <bold>
-   your
-  </bold>
-  code to add each course in test_courses to the new StudentSchedule with name "My Plan A".  Each such course is already in the "Cornell Fall 21 roster" Schedule.
-  <break>
-  </break>
-  <break>
-  </break>
-  The testing in lines 12-17 check whether the
-  <code>
-   in_schedules
-  </code>
-  attribute of each course that was supposedly added was correct.
-  <break>
-  </break>
-  <break>
-  </break>
-  So, it looks like your code correct has CS1110's
-  <code>
-   in_schedules
-  </code>
-  attribute correct, but it is failing to make AEP 3560's
-  <code>
-   in_schedules
-  </code>
-  correct --- because it isn't adding the "My Plan A" schedule to that
-  <code>
-   in_schedules
-  </code>
-  list.
-  <break>
-  </break>
-  <break>
-  </break>
-  So, you need to debug your
-  <code>
-   add
-  </code>
-  method for StudentSchedules (since "My Plan A" is a StudentSchedule) to figure out why it isn't working on AEP 3560.  Maybe because your code thinks it's a time conflict with CS1110?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anna Alphenaar (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you, I will try this
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+    </snippet-file>
+   </snippet>
+   <p>
+    Line 14-17 is where the assertion error is coming from.
+    <break>
+    </break>
+    <break>
+    </break>
+    What's happening?  Line 9-10 is using
+    <b>
+     your
+    </b>
+    code to add each course in test_courses to the new StudentSchedule with name "My Plan A".  Each such course is already in the "Cornell Fall 21 roster" Schedule.
+    <break>
+    </break>
+    <break>
+    </break>
+    The testing in lines 12-17 check whether the
+    <code>
+     in_schedules
+    </code>
+    attribute of each course that was supposedly added was correct.
+    <break>
+    </break>
+    <break>
+    </break>
+    So, it looks like your code correct has CS1110's
+    <code>
+     in_schedules
+    </code>
+    attribute correct, but it is failing to make AEP 3560's
+    <code>
+     in_schedules
+    </code>
+    correct --- because it isn't adding the "My Plan A" schedule to that
+    <code>
+     in_schedules
+    </code>
+    list.
+    <break>
+    </break>
+    <break>
+    </break>
+    So, you need to debug your
+    <code>
+     add
+    </code>
+    method for StudentSchedules (since "My Plan A" is a StudentSchedule) to figure out why it isn't working on AEP 3560.  Maybe because your code thinks it's a time conflict with CS1110?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anna Alphenaar (student)
+    </h3>
+    <h3>
+     Vote Count: 2
+    </h3>
+    <p>
+     Thank you, I will try this
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

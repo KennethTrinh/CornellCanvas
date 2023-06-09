@@ -13,115 +13,107 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Are we still allowed to have c != null in with the base case in this function? Given that it says "If c is null, there is no route to it, so null should be returned. But do NOT
- </paragraph>
- <paragraph>
-  // put in a special test for this case; it is unnecessary case analysis."
- </paragraph>
-</document>
+<p>
+ Are we still allowed to have c != null in with the base case in this function? Given that it says "If c is null, there is no route to it, so null should be returned. But do NOT
+</p>
+<p>
+ // put in a special test for this case; it is unnecessary case analysis."
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   There is no need for it. leave it out and you'll see it still works.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Unnecessary case analysis
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  if we have to check c.equals(human) in the base case... wouldn't putting null in for c produce an error without this code?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Why?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  When I put this in for testing...
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  <bold>
-   var
-  </bold>
-  route6= dt.CovidRouteTo(
-  <bold>
-   null
-  </bold>
-  );
- </paragraph>
- <paragraph>
-  System.
-  <bold>
-   <italic>
-    out
-   </italic>
-  </bold>
-  .println(route6);
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  ...I get an error, but if the code accounts for the null case everything works. Doesn't using equals with one null argument generally make it crash? I am just not sure how to account for this.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  oh sorry! I had the wrong order in the equals statement
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   if we have to check c.equals(human) in the base case... wouldn't putting null in for c produce an error without this code?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: David Gries (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Why?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     When I put this in for testing...
+    </p>
+    <p>
+     <b>
+      var
+     </b>
+     route6= dt.CovidRouteTo(
+     <b>
+      null
+     </b>
+     );
+    </p>
+    <p>
+     System.
+     <b>
+      <i>
+       out
+      </i>
+     </b>
+     .println(route6);
+    </p>
+    <p>
+     ...I get an error, but if the code accounts for the null case everything works. Doesn't using equals with one null argument generally make it crash? I am just not sure how to account for this.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Anonymous
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      oh sorry! I had the wrong order in the equals statement
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

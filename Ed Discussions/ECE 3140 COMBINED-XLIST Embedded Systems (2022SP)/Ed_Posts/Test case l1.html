@@ -13,27 +13,23 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="1.0">
- <paragraph>
-  I went to office house/discussion to ask about the behavior of test case l1 and was shown that it should flash 1 red then 15 times green and red then green stay on. Is this not the expected behavior of test case 1? I been reading through Ed discussion and people are telling me that green should flash 5 times and not 15 times? It would be nice to get this clarified. Thank you.
- </paragraph>
-</document>
+<p>
+ I went to office house/discussion to ask about the behavior of test case l1 and was shown that it should flash 1 red then 15 times green and red then green stay on. Is this not the expected behavior of test case 1? I been reading through Ed discussion and people are telling me that green should flash 5 times and not 15 times? It would be nice to get this clarified. Thank you.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Chris Martin (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Chris Martin (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   The part of reader() where p1() is called does not require the lock r, so all the readers should be concurrent. This means that each reader should toggle the green LED at the same time, and since there are 3 readers, 3 simultaneous toggles appears like a single toggle, and the 5 flashes per process happen at the same time, appearing like 5 total flashes.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

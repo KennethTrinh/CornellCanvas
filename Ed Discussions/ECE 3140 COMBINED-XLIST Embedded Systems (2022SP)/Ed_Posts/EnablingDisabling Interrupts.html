@@ -13,117 +13,113 @@
 <h3>
  Vote Count: 4
 </h3>
-<document version="2.0">
- <paragraph>
-  Where should we be enabling/disabling interrupts? I saw that we couldn't call process_stack_init unless the interrupt was disabled, so I disabled the interrupt in process_create, but now I'm getting a hard fault error in process_create because I disabled the PIT here.
- </paragraph>
- <figure>
-  <image height="390.31181485992687" src="https://static.us.edusercontent.com/files/PYjgBtHBAS84LBMiX548KkH6" width="658"/>
- </figure>
-</document>
+<p>
+ Where should we be enabling/disabling interrupts? I saw that we couldn't call process_stack_init unless the interrupt was disabled, so I disabled the interrupt in process_create, but now I'm getting a hard fault error in process_create because I disabled the PIT here.
+</p>
+<figure>
+ <image height="390.31181485992687" src="https://static.us.edusercontent.com/files/PYjgBtHBAS84LBMiX548KkH6" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aidan McNay (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You shouldn't need to disable interrupts in process_create, since you haven't turned on the timer yet. In fact, you'll find that there isn't anywhere you need to manually disable interrupts. Enabling interrupts, however, is something you may need to handle in process_start
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Oh, so we don't have to manually disable anywhere? cause in the lab handout it said that. Thanks a lot!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  The lab handout provides those in case your implementation requires it. Think critically about each step - when would we need to disable interrupts? Might this change for future labs?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Benjamin Kogan (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The "process_stack_free" function says it requires interrupts to be disabled. Wouldn't we need to disable interrupts when freeing a process stack?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  You should only use process_stack_free inside of process_select. This happens in the interrupt handler, where interrupts are already disabled!
- </paragraph>
- <paragraph>
-  (There is the initial time we call process_select to find the first process that doesn't come in the interrupt handler. However, here we can note two things: 1) Your timer should be long enough that we don't get an interrupt here, and don't need to worry about an interrupt in process_stack_free 2) process_begin already enables global interrupts, so there isn't much you could change about it anyways :) This is more meant to prevent (at least I suspect) bugs in future cases where you are attempting to free processes while at risk of the timer running out, as if you get an interrupt while calling free(), weird/bad stuff happens)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Benjamin Kogan (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yep, forgot that process_select occurs while interrupts are already disabled. Not sure what you mean by "the initial time we call process_select to find the first process that doesn't come in the interrupt handler". Aren't all the calls through the interrupt? But I don't think we need to worry about this for the simple fact that we would never call process_stack_free on the first process_select since nothing terminated. Or maybe I'm missing something.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Exactly - my bad, I think I didn't explain it well. All the calls to process_stack_free are within the interrupt handler, just not all the calls to process_select
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Oh, so we don't have to manually disable anywhere? cause in the lab handout it said that. Thanks a lot!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Aidan McNay (student)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    The lab handout provides those in case your implementation requires it. Think critically about each step - when would we need to disable interrupts? Might this change for future labs?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Benjamin Kogan (None)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     The "process_stack_free" function says it requires interrupts to be disabled. Wouldn't we need to disable interrupts when freeing a process stack?
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Aidan McNay (student)
+     </h3>
+     <h3>
+      Vote Count: 1
+     </h3>
+     <p>
+      You should only use process_stack_free inside of process_select. This happens in the interrupt handler, where interrupts are already disabled!
+     </p>
+     <p>
+      (There is the initial time we call process_select to find the first process that doesn't come in the interrupt handler. However, here we can note two things: 1) Your timer should be long enough that we don't get an interrupt here, and don't need to worry about an interrupt in process_stack_free 2) process_begin already enables global interrupts, so there isn't much you could change about it anyways :) This is more meant to prevent (at least I suspect) bugs in future cases where you are attempting to free processes while at risk of the timer running out, as if you get an interrupt while calling free(), weird/bad stuff happens)
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 12em;">
+      <h3>
+       Author: Benjamin Kogan (None)
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       Yep, forgot that process_select occurs while interrupts are already disabled. Not sure what you mean by "the initial time we call process_select to find the first process that doesn't come in the interrupt handler". Aren't all the calls through the interrupt? But I don't think we need to worry about this for the simple fact that we would never call process_stack_free on the first process_select since nothing terminated. Or maybe I'm missing something.
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 14em;">
+       <h3>
+        Author: Aidan McNay (student)
+       </h3>
+       <h3>
+        Vote Count: 0
+       </h3>
+       <p>
+        Exactly - my bad, I think I didn't explain it well. All the calls to process_stack_free are within the interrupt handler, just not all the calls to process_select
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

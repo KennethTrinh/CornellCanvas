@@ -13,75 +13,69 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi, for
- </paragraph>
- <paragraph>
-  Account b = new InterestAccount();
- </paragraph>
- <paragraph>
-  I know that the static type of b is Account, but what is b's dynamic type when a method is called, such as b.printStatement()?
- </paragraph>
- <paragraph>
-  I think it should also be Account, because on the lecture slide for Compile-time vs. Runtime the pointer still points to the Account folder. So it's possible for b to access the Interest Account methods that also exist in Account, even if its dynamic type is Account? Further, is it possible to change the dynamic type? Can b ever have a dynamic type of InterestAccount?
- </paragraph>
-</document>
+<p>
+ Hi, for
+</p>
+<p>
+ Account b = new InterestAccount();
+</p>
+<p>
+ I know that the static type of b is Account, but what is b's dynamic type when a method is called, such as b.printStatement()?
+</p>
+<p>
+ I think it should also be Account, because on the lecture slide for Compile-time vs. Runtime the pointer still points to the Account folder. So it's possible for b to access the Interest Account methods that also exist in Account, even if its dynamic type is Account? Further, is it possible to change the dynamic type? Can b ever have a dynamic type of InterestAccount?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The dynamic type is the type of the object currently pointed to by b. It can change with each assignment to b. In this case, after execution of the assignment, the dynamic type of the object pointed to by b is InterestAccount.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   When we draw variables as boxes pointing to folders on the lecture slides, we may occasionally draw an arrow pointing to an intermediate partition, as a clue to reflect the static type of the variable.  However, because Java uses
-  <italic>
+  <i>
    dynamic dispatch
-  </italic>
+  </i>
   , there is really no such thing as a variable pointing to an intermediate partition.  In Java, a variable always points to
-  <italic>
+  <i>
    the entire folder
-  </italic>
+  </i>
   , and the bottom-up rule is always used to resolve method calls.  Therefore, the dynamic type is
   <code>
    InterestAccount
   </code>
   after the assignment in your example has taken place.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   (In languages with
-  <italic>
+  <i>
    static dispatch
-  </italic>
+  </i>
   , like C++, it
-  <italic>
+  <i>
    is
-  </italic>
+  </i>
   possible for a variable to point to an intermediate partition of a folder.  This makes code written in the language much harder to understand, since the bottom-up rule only sometimes applies, and it leads to bugs, because it breaks encapsulation.  Thankfully we never need to worry about such situations in CS 2110.)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   The dynamic type is the type of the object currently pointed to by b. It can change with each assignment to b. In this case, after execution of the assignment, the dynamic type of the object pointed to by b is InterestAccount.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

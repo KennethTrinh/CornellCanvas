@@ -13,34 +13,32 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="340.61176470588236" src="https://static.us.edusercontent.com/files/oBxDfLhIFlkkmuu32s87mbgM" width="658"/>
- </figure>
- <paragraph>
-  I tried running the test case given in specs and 3152463%1000 = 463, pass that into f and that would return "0463" I don't see how that would be the same thing as the example in the test case
- </paragraph>
-</document>
+<figure>
+ <image height="340.61176470588236" src="https://static.us.edusercontent.com/files/oBxDfLhIFlkkmuu32s87mbgM" width="658"/>
+</figure>
+<p>
+ I tried running the test case given in specs and 3152463%1000 = 463, pass that into f and that would return "0463" I don't see how that would be the same thing as the example in the test case
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Naman Madan (staff)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Naman Madan (staff)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   Seems like an error in the answer key. This would work if function f were:
- </paragraph>
+ </p>
  <pre>public static String f(int m){
     if (m &gt;= 100) return "" + m;
     if (m &gt;= 10) return "0" + m;
     return "00" + m;
 }
 </pre>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,65 +13,63 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I've been trying to modify my model
-  <code>
-   selectfeaturescomp
-  </code>
-  ,
-  <code>
-   extractfeaturescomp
-  </code>
-  , and
-  <code>
-   trainspamfiltercomp
-  </code>
-  for the past few days, and I haven't been able to beat the baseline. So far, I've tried changing the number of features, changing the maximum number of iterations, and changing the features I select.
- </paragraph>
-</document>
+<p>
+ I've been trying to modify my model
+ <code>
+  selectfeaturescomp
+ </code>
+ ,
+ <code>
+  extractfeaturescomp
+ </code>
+ , and
+ <code>
+  trainspamfiltercomp
+ </code>
+ for the past few days, and I haven't been able to beat the baseline. So far, I've tried changing the number of features, changing the maximum number of iterations, and changing the features I select.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Noor (staff)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   Try playing around with k and num_iters with a constant feature set and see if you're able to get better performance.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Akhil Dhavala (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  what's k in here ? @Michael
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  K is the number of groups in k-fold cross validation, which was suggested in the notebook prior the the validation_split cell. It's not necessary but is very helpful for ensuring good performance.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Akhil Dhavala (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   what's k in here ? @Michael
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Michael Noor (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    K is the number of groups in k-fold cross validation, which was suggested in the notebook prior the the validation_split cell. It's not necessary but is very helpful for ensuring good performance.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

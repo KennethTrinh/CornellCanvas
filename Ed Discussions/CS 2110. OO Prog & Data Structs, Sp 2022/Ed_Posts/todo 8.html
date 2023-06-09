@@ -13,98 +13,96 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I have a few problems and I am wondering if there could be an explanation for them.
- </paragraph>
- <paragraph>
-  1) I am struggling to understand what we are meant to do when you say notify observers in todo 8. Please help.
- </paragraph>
- <paragraph>
-  2) In todo 5, it says the screen is supposed to revert to the inactive state after 15 seconds but that did not happen for me so I'm wondering what I must have missed.
- </paragraph>
- <paragraph>
-  3). Sometimes when I click the target, it turns red and other times, it doesn't. When I click outside the target, sometimes it turns red and other times it doesn't. I do not know what I must have done wrong. Thank you.
- </paragraph>
-</document>
-<h3>
- Author: Michael Clarkson (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ I have a few problems and I am wondering if there could be an explanation for them.
+</p>
+<p>
+ 1) I am struggling to understand what we are meant to do when you say notify observers in todo 8. Please help.
+</p>
+<p>
+ 2) In todo 5, it says the screen is supposed to revert to the inactive state after 15 seconds but that did not happen for me so I'm wondering what I must have missed.
+</p>
+<p>
+ 3). Sometimes when I click the target, it turns red and other times, it doesn't. When I click outside the target, sometimes it turns red and other times it doesn't. I do not know what I must have done wrong. Thank you.
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Clarkson (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   These are not just questions about TODO 8.  Please help us keep Ed organized by making separate posts for separate questions. This should have been three separate posts.  (If you're curious why:  we have 1500+ posts in this Ed already. Searching and linking to previous answers is made much harder when one post contains many questions and answers. In later courses, like CS 3110 where I regularly have &gt;3000 posts in one semester, the problem gets much worse.  So please consider this a training opportunity on how to ask questions in the most productive way in an online forum. Thanks!)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="1.0">
- <paragraph>
-  1) read the specs of setScore
-  <break>
-  </break>
-  2) Did you make sure to increase target score?
-  <break>
-  </break>
-  3) I recommend looking through TODO 4-6 again, I had the same issue and took me a while to debug also read the specs for filloval again ;)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  for 1, do I have to do that if setScore is already notifying the observers?
- </paragraph>
- <paragraph>
-  for 2, I increased the target count but not the score (the specification said target count unless I'm misinterpreting).
- </paragraph>
- <paragraph>
-  for 3, I realized that even if I am updating my isHit to become true in the checkHit method,  it's not updating(I put print statements to check) now my dot is not even turning red anymore. i don't know what the problem is.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Clarkson (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Clarkson (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   1. Is a duplicate of #1479.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   2. You have to implement the functionality that draws the game in either the active or inactive state.  That handout is simply describing the fact that --if you've done it right-- the inactive state will return in 15 seconds by default.  There's no code that you need to write related to seconds or 15 or whatever here.  Just follow the specification of TODO 5 (
   <code>
    timeout
   </code>
   ) and it will work correctly.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   3. It sounds like you need to debug your TODO 7 and 8. For example, you could add some print statements to TODO 7 to indicate what the coordinates are, what the circle's center and radius are, and then check by hand whether it should have been a hit or not.  As the student answer points out, the root cause could be drawing the circle incorrectly in TODO 6.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Bahaa Kotb (student)
+  </h3>
+  <h3>
+   Vote Count: 2
+  </h3>
+  <p>
+   1) read the specs of setScore
+   <break>
+   </break>
+   2) Did you make sure to increase target score?
+   <break>
+   </break>
+   3) I recommend looking through TODO 4-6 again, I had the same issue and took me a while to debug also read the specs for filloval again ;)
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    for 1, do I have to do that if setScore is already notifying the observers?
+   </p>
+   <p>
+    for 2, I increased the target count but not the score (the specification said target count unless I'm misinterpreting).
+   </p>
+   <p>
+    for 3, I realized that even if I am updating my isHit to become true in the checkHit method,  it's not updating(I put print statements to check) now my dot is not even turning red anymore. i don't know what the problem is.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

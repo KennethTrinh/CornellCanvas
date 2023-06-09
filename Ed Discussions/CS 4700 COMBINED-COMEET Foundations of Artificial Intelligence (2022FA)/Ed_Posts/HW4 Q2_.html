@@ -13,154 +13,152 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  Assuming that all the clauses are meant to imply the next one in order, I was able to simplify the list of clauses into a single clause. However, that single clause does not seem to equivalently imply $p_n$, so I was confused. (My final clause has all $n$ variables from the start, and the truth table is one where $p_n$ determines the final clausal value iff the other clauses from $p_1$ to $p_{n-1}$ all evaluate to True.)
- </paragraph>
- <paragraph>
-  Can someone point me to where I might be going wrong?
- </paragraph>
-</document>
-<h3>
- Author: David Kim (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ Assuming that all the clauses are meant to imply the next one in order, I was able to simplify the list of clauses into a single clause. However, that single clause does not seem to equivalently imply $p_n$, so I was confused. (My final clause has all $n$ variables from the start, and the truth table is one where $p_n$ determines the final clausal value iff the other clauses from $p_1$ to $p_{n-1}$ all evaluate to True.)
+</p>
+<p>
+ Can someone point me to where I might be going wrong?
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Kim (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I guess kinda along the same lines of the original question but what exactly is the question even asking, when it says:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   "How many resolution steps are needed to
-  <bold>
+  <b>
    conclude that $p_n$ follows from these clauses?
-  </bold>
+  </b>
   "
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   What does follow mean in this context?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Niko Grupen (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Niko Grupen (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Prof. Selman gave walked through a resolution proof during lecture (Wumpus World example), which described both how to assert resolution in such a proof (e.g. by contradiction) and how many steps are needed to reach resolution. In this case, "conclude that p_n follows from these clauses" can be interpreted as proving the resolution. See that lecture for a full walkthrough of such a proof.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Niko Grupen (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  In the lecture it is discussed that, in a proof by resolution, resolution is established through contradiction. The goal is similar here -- to show a contradiction, which in turn results in the empty clause.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Chenrui Gu (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  why do we need to "show a contradiction"? I think the goal here is to reduces the clauses to Pn? why do we need to do contradiction
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Niko Grupen (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The last part of the question asks "what is the final resolution step?". Resolution (via contradiction) is a way of proving the conclusion p_n.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Chenrui Gu (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  but if I do not use contradiction it should also work? Because I think we can obtain P_n from existing clauses.
- </paragraph>
- <paragraph>
-  if we must use contradiction, we assume ~P_n, but our reduction reduce these clauses to P_n, so we reach a contradication?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Kim (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I saw the lecture for this proof, but I am still confused. What is the resolution? My final clause was the last clause in the list of clauses, but I am unsure how to go from there to $p_n$.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Laura Greenstreet (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  A single resolution step has the form:
- </paragraph>
- <paragraph>
-  $$(\alpha \lor \gamma) \land (\beta \lor \neg \gamma) \Rightarrow (\alpha \lor \beta)$$
- </paragraph>
- <paragraph>
-  For example, an initial resolution step in our question could be
- </paragraph>
- <paragraph>
-  $$ (p_1) \land (\neg p_1 \land p_2) \Rightarrow (p_2)$$
- </paragraph>
- <paragraph>
-  Resolution is a type of proof by contradiction. So, in our question we are trying to show $(\text{KB} \land \neg p_n)$ is inconsistent. If you reach an empty clause, you have shown there are no model consistent with $\text{KB} \land \neg p_n$ and thus $p_n$ must be true.
- </paragraph>
- <paragraph>
-  Let me know if that clears things up or if you have other questions.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: David Kim (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I saw the lecture for this proof, but I am still confused. What is the resolution? My final clause was the last clause in the list of clauses, but I am unsure how to go from there to $p_n$.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Laura Greenstreet (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    A single resolution step has the form:
+   </p>
+   <p>
+    $$(\alpha \lor \gamma) \land (\beta \lor \neg \gamma) \Rightarrow (\alpha \lor \beta)$$
+   </p>
+   <p>
+    For example, an initial resolution step in our question could be
+   </p>
+   <p>
+    $$ (p_1) \land (\neg p_1 \land p_2) \Rightarrow (p_2)$$
+   </p>
+   <p>
+    Resolution is a type of proof by contradiction. So, in our question we are trying to show $(\text{KB} \land \neg p_n)$ is inconsistent. If you reach an empty clause, you have shown there are no model consistent with $\text{KB} \land \neg p_n$ and thus $p_n$ must be true.
+   </p>
+   <p>
+    Let me know if that clears things up or if you have other questions.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Niko Grupen (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    In the lecture it is discussed that, in a proof by resolution, resolution is established through contradiction. The goal is similar here -- to show a contradiction, which in turn results in the empty clause.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Chenrui Gu (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     why do we need to "show a contradiction"? I think the goal here is to reduces the clauses to Pn? why do we need to do contradiction
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 8em;">
+     <h3>
+      Author: Niko Grupen (staff)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      The last part of the question asks "what is the final resolution step?". Resolution (via contradiction) is a way of proving the conclusion p_n.
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 10em;">
+      <h3>
+       Author: Chenrui Gu (student)
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       but if I do not use contradiction it should also work? Because I think we can obtain P_n from existing clauses.
+      </p>
+      <p>
+       if we must use contradiction, we assume ~P_n, but our reduction reduce these clauses to P_n, so we reach a contradication?
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

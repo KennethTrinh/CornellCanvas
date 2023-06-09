@@ -13,54 +13,27 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  On my Mac, if you fail to click the blue dot it disappears and a new blue dot appears. However, on my partner's PC, if you fail to click the dot, the blue dots stays as is and a new blue dot appears (you get multiple blue dots on the screen at once). Additionally, on my partner's PC the moment you click on the blue dot, it turns red and all other blue dots disappear. Think it might be a lag issue, don't see how it could be a code issue as it works on my computer.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ On my Mac, if you fail to click the blue dot it disappears and a new blue dot appears. However, on my partner's PC, if you fail to click the dot, the blue dots stays as is and a new blue dot appears (you get multiple blue dots on the screen at once). Additionally, on my partner's PC the moment you click on the blue dot, it turns red and all other blue dots disappear. Think it might be a lag issue, don't see how it could be a code issue as it works on my computer.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  There should be only ONE dot on the screen at a time.
- </paragraph>
- <paragraph>
-  If you click the dot is should get red.
- </paragraph>
- <paragraph>
-  Each dot stays on the screen for the same amount of time, whether it was clicked or not.
- </paragraph>
- <paragraph>
-  To get such different behaviors on different kinds of computers indicates that you have not done everything properly. I cannot figure anything out just from what you said.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Bugs in GUI programs can be difficult to catch because sometimes they appear to work under some operating systems but not on others.  However, if even just one OS shows unexpected behavior, then there is almost certainly a bug in the
-  <italic>
+  <i>
    program
-  </italic>
+  </i>
   (and not in Java or the OS).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Note that, when
   <code>
    paintComponent()
@@ -74,8 +47,31 @@
    GameComponent
   </code>
   inherits from) is required to draw something on every single pixel inside of itself.  If you don't, then the un-erased content that shows through could be random and certainly OS-dependent.  If you implement TODO 4 correctly, then you should automatically satisfy the "opacity" requirement, but if you forget a step, then behavior like what you describe is expected.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   There should be only ONE dot on the screen at a time.
+  </p>
+  <p>
+   If you click the dot is should get red.
+  </p>
+  <p>
+   Each dot stays on the screen for the same amount of time, whether it was clicked or not.
+  </p>
+  <p>
+   To get such different behaviors on different kinds of computers indicates that you have not done everything properly. I cannot figure anything out just from what you said.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

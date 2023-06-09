@@ -13,74 +13,68 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  For forward passing, the dimension of the first weight matrix is 2*20 and we use the row representation that means we have 2 weight vectors each with length of 20. But xTr has a dimension of 100*2. I am confused about how xTr fits into 20 nodes or am I interpreting the problem wrong?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ For forward passing, the dimension of the first weight matrix is 2*20 and we use the row representation that means we have 2 weight vectors each with length of 20. But xTr has a dimension of 100*2. I am confused about how xTr fits into 20 nodes or am I interpreting the problem wrong?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Yu (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Yu (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Think about the dimensions, xTr is 100*2, suppose you have W 2 * 20, the result is 100 * 20, which is what we want for the next layer.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If that does not make sense, try first without the "100", but think of an individual sample. x has 2 dimensions, we want to have 20 "results" by weight x1 and x2 differently and sum them. Naturally, we want 20 groups of such weights, each with 2 entries (w1, w2). Given the row representation of vectors, this means we want a 2*20 matrix for all these weights.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Josh Park (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  So do we use normal matrix multiplication for this instead of element-wise multiplication?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes, I used matrix multiplication
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Got it, thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Got it, thank you!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Josh Park (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    So do we use normal matrix multiplication for this instead of element-wise multiplication?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Yes, I used matrix multiplication
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

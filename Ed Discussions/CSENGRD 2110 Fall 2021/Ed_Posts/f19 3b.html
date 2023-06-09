@@ -13,72 +13,70 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="140" src="https://static.us.edusercontent.com/files/IIhlQTv4MUruBcRXBzibMvEX" width="658"/>
- </figure>
- <paragraph>
-  Im confused on how they got this graph. What are the steps taken when entering integers in order?
- </paragraph>
-</document>
+<figure>
+ <image height="140" src="https://static.us.edusercontent.com/files/IIhlQTv4MUruBcRXBzibMvEX" width="658"/>
+</figure>
+<p>
+ Im confused on how they got this graph. What are the steps taken when entering integers in order?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Troy Moslemi (he/him) (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   You insert each element individually and bubble up when appropriate to maintain the max-heap.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ibrahim Ismail (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
-  Every time a node is added at index k, bubbleUp(k) is called. If the node is greater (or less if it's a min-heap) than its parent, it swaps with them. I'll show the steps as an array, just remember that the parent of a node at index k is the node at index (int)(k-1)/2
- </paragraph>
- <paragraph>
-  1: [31]
- </paragraph>
- <paragraph>
-  2: [31, 11]
- </paragraph>
- <paragraph>
-  3: [31, 11, 5]
- </paragraph>
- <paragraph>
-  4: [31, 11, 5, 24]. 24 is the child of 11, which is smaller than 24. Swap with parent. [31, 24, 5, 11]
- </paragraph>
- <paragraph>
-  5: [31, 24, 5, 11, 42]. 42 is the child of  24, which is smaller than 42. Swap with parent. [31, 42, 5, 11, 24].
- </paragraph>
- <paragraph>
-  42 is the child of 31, which is smaller than 42.  Swap with parent. [42, 31, 5, 11, 24].
- </paragraph>
- <paragraph>
-  6: [42, 31, 5, 11, 24, 11]. 11 is the child of 5, which is smaller than 11. Swap with parent. [42, 31, 11, 11, 24, 5]
- </paragraph>
- <paragraph>
-  7: [42, 31, 11, 11, 24, 5, 19]. 19 is the child of 11, which is smaller than 19. Swap with parent. [42, 31, 19, 11, 24, 5, 11]
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Ibrahim Ismail (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <h3>
+   ENDORSED
+  </h3>
+  <p>
+   Every time a node is added at index k, bubbleUp(k) is called. If the node is greater (or less if it's a min-heap) than its parent, it swaps with them. I'll show the steps as an array, just remember that the parent of a node at index k is the node at index (int)(k-1)/2
+  </p>
+  <p>
+   1: [31]
+  </p>
+  <p>
+   2: [31, 11]
+  </p>
+  <p>
+   3: [31, 11, 5]
+  </p>
+  <p>
+   4: [31, 11, 5, 24]. 24 is the child of 11, which is smaller than 24. Swap with parent. [31, 24, 5, 11]
+  </p>
+  <p>
+   5: [31, 24, 5, 11, 42]. 42 is the child of  24, which is smaller than 42. Swap with parent. [31, 42, 5, 11, 24].
+  </p>
+  <p>
+   42 is the child of 31, which is smaller than 42.  Swap with parent. [42, 31, 5, 11, 24].
+  </p>
+  <p>
+   6: [42, 31, 5, 11, 24, 11]. 11 is the child of 5, which is smaller than 11. Swap with parent. [42, 31, 11, 11, 24, 5]
+  </p>
+  <p>
+   7: [42, 31, 11, 11, 24, 5, 19]. 19 is the child of 11, which is smaller than 19. Swap with parent. [42, 31, 19, 11, 24, 5, 11]
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

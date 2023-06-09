@@ -13,46 +13,44 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  We got the feedback from the autohelper says:
- </paragraph>
- <paragraph>
-  Failure in testBooleanFunctions(): java.lang.AssertionError: expected:&lt;false&gt; but was:&lt;true&gt;
-  <break>
-  </break>
-  Failure in testassert(): org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==&gt; expected: &lt;java.lang.AssertionError&gt; but was: &lt;java.lang.NullPointerException&gt;
- </paragraph>
- <paragraph>
-  For our test file. what does those feedback mean? Are we having some mistakes in the code or we don't have enough test cases? Thanks in advance!
- </paragraph>
-</document>
+<p>
+ We got the feedback from the autohelper says:
+</p>
+<p>
+ Failure in testBooleanFunctions(): java.lang.AssertionError: expected:&lt;false&gt; but was:&lt;true&gt;
+ <break>
+ </break>
+ Failure in testassert(): org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==&gt; expected: &lt;java.lang.AssertionError&gt; but was: &lt;java.lang.NullPointerException&gt;
+</p>
+<p>
+ For our test file. what does those feedback mean? Are we having some mistakes in the code or we don't have enough test cases? Thanks in advance!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The first: It looks like one of the following holds:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   1. You don't have an assert statement for a Precondition
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   2. You have an assert statement even though the method spec has no precondition.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   3. An assert statement is incorrect.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   that's all I can say ...
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

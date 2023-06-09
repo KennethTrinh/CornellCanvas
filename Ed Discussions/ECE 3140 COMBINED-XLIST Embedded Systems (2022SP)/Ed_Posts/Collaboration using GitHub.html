@@ -13,106 +13,98 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Would there be a way to more easily push/pull code to a cornell github from our lab? I made a github repo to sync up code between my partner and I, but so far the only way I can do so is to make the repo separate from the workspace in MCUExpress where the code is actually being written.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Any help would be appreciated.
- </paragraph>
-</document>
-<h3>
- Author: Prithwish Dan (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I haven't tried this, but would it work if you initialized a git repo directly inside the workspace directory for the lab?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kate Meuse (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  If I were you, I wouldn't commit project files and instead just stick to making the repo inside the
-  <code>
-   source
-  </code>
-  folder.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kevin Huang (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ Would there be a way to more easily push/pull code to a cornell github from our lab? I made a github repo to sync up code between my partner and I, but so far the only way I can do so is to make the repo separate from the workspace in MCUExpress where the code is actually being written.
+</p>
+<p>
+ Any help would be appreciated.
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kevin Huang (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Google docs
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Kate Meuse (None)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   If I were you, I wouldn't commit project files and instead just stick to making the repo inside the
+   <code>
+    source
+   </code>
+   folder.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Prithwish Dan (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I haven't tried this, but would it work if you initialized a git repo directly inside the workspace directory for the lab?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  One possibility is to create a new project and new repository, clean out the C files from
-  <code>
-   source
-  </code>
-  , and then clone the repo into the
-  <code>
-   source
-  </code>
-  folder. While this will not retain any project settings like excluded files, it should still be a whole lot better than pushing / pulling all the generated output and debug files and saves the hassle of
-  <code>
-   .gitignore
-  </code>
-  on everything besides your C code.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ariana Haghighi (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Ariana Haghighi (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   VS code may be easier than github
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Harris Miller (None)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   One possibility is to create a new project and new repository, clean out the C files from
+   <code>
+    source
+   </code>
+   , and then clone the repo into the
+   <code>
+    source
+   </code>
+   folder. While this will not retain any project settings like excluded files, it should still be a whole lot better than pushing / pulling all the generated output and debug files and saves the hassle of
+   <code>
+    .gitignore
+   </code>
+   on everything besides your C code.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

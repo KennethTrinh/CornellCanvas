@@ -13,43 +13,39 @@
 <h3>
  Vote Count: 4
 </h3>
-<document version="2.0">
- <paragraph>
-  For the test case option "
- </paragraph>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    What if a process exits immediately?
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  What does this mean exactly? Does it mean it gets picked by process_select at the start, then it's done the next iteration?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Also any advice on coming up with new tests? The ones I'm coming up with are just different forms of the suggested ones.
- </paragraph>
-</document>
+<p>
+ For the test case option "
+</p>
+<list style="unordered">
+ <li>
+  <p>
+   What if a process exits immediately?
+  </p>
+ </li>
+</list>
+<p>
+ What does this mean exactly? Does it mean it gets picked by process_select at the start, then it's done the next iteration?
+</p>
+<p>
+ Also any advice on coming up with new tests? The ones I'm coming up with are just different forms of the suggested ones.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aidan McNay (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Yup! Imagine if a program terminates one line after it starts. Would that affect your performance with our scheduling?
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   For new test cases, I think the best thing might be to view each process as a block (with length corresponding to the length it takes), and think of all the ways you might be able to change the picture of scheduling based on that. What happens if we add more blocks? Change the length of some blocks (perhaps differently relative to other blocks?) Another more abstract thing to think about might be block combination (what if we put multiple processes inside a block?) This visualization might be helpful for thinking about all the ways your scheduling setup might change
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

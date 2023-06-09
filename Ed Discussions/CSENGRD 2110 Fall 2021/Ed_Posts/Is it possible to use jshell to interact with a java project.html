@@ -13,27 +13,23 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I wish to manually test (or play around with) my java project through Jshell. For example, I wrote a package named "test", and under it are two classes, namely C.java and xC.java. And I want to access the test package and create objects of C and xC class. However, I can't find a proper way to do that when I googled it. Is there any misunderstanding of Jshell from me?
- </paragraph>
- <paragraph>
-  The corresponding process in Python is that typing in python3 -m xxx.py and I can call methods in this .py file in an interactive mode.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I wish to manually test (or play around with) my java project through Jshell. For example, I wrote a package named "test", and under it are two classes, namely C.java and xC.java. And I want to access the test package and create objects of C and xC class. However, I can't find a proper way to do that when I googled it. Is there any misunderstanding of Jshell from me?
+</p>
+<p>
+ The corresponding process in Python is that typing in python3 -m xxx.py and I can call methods in this .py file in an interactive mode.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Yes - JShell can make use of any Java classes or libraries that have been compiled and are in its "classpath" (they also can't be in the default package, which is why we require that all assignment code go in a named package).  For example, if your project is stored on your disk at
   <code>
    /home/netid/workspace/A3
@@ -47,8 +43,8 @@
    import a3.A3
   </code>
   for convenience.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   An alternative approach is to ask JShell to interpret the contents of your source files without first compiling them, as we do for the lecture demos.  This is done with the
   <code>
    /open
@@ -58,22 +54,22 @@
    /open /home/netid/workspace/A3/src/A3.java
   </code>
   .
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Hao Zhuo (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Wow!! That's incredibly detailed and helpful. Thank you so much.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Hao Zhuo (None)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Wow!! That's incredibly detailed and helpful. Thank you so much.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

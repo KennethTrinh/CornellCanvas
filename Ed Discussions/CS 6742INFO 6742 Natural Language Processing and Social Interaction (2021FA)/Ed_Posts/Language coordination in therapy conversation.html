@@ -13,416 +13,401 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  <bold>
-   Overview:
-  </bold>
- </paragraph>
- <paragraph>
-  In this project, I am in interested in exploring language coordination in online therapy conversations and whether coordination could be used as a signal for success of the conversation.
- </paragraph>
- <paragraph>
-  For the data I use transcripts from an online therapy platform Talkspace. In this setting, I focus on 1-to-1 conversations between a therapist and their client. I define “success” of conversations based on the feedback provided by the client at the first cancellation of the service: some client indicate “meeting their goal” to be a reason for the cancellation, while others indicate “therapist being unresponsive” or “therapist not being helpful”.
- </paragraph>
- <paragraph>
-  <bold>
-   Hypotheses:
-  </bold>
- </paragraph>
- <paragraph>
-  For my project proposal I listed three different hypotheses:
- </paragraph>
- <list style="ordered">
-  <list-item>
-   <paragraph>
-    In conversations, where clients meet their goal there would be higher levels of language alignment between the two interlocutors.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Alignment in language is asymmetrical, with greater adaptation happening on the part of a therapist.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Alignment on the part of a client (as opposed to therapist) is a greater predictor of the conversation success (i.e. client meeting their therapy goals).
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Later, I also added two more research question to this list:
- </paragraph>
- <list style="ordered">
-  <list-item>
-   <paragraph>
-    Is the effect of language coordination more prominent in live conversations or asynchronous ones?
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Does coordination in successful conversations improve over time?
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  <bold>
-   Progress:
-  </bold>
- </paragraph>
- <paragraph>
-  My first step was to pair up successful and unsuccessful conversations. To do so, I considered the following potentially confounding variables to success of conversations:
- </paragraph>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    Client gender as indicated by the client themselves
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Primary condition as determined by the client’s therapist
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Overall length of conversation
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  With these factors controlled I created 415 pairs of speakers. With these pairs, I tried to see how two classes of conversations are distinguished. In particular, I compared duration of conversations, demographics information of clients from these conversations, reply times between utterances, and language used during therapy (
-  <link href="https://drive.google.com/drive/folders/1mjg6TAtTXFE0M-oTBptxgGgI2rfwtBXj?usp=sharing"/>
-  FightingWords).
- </paragraph>
- <paragraph>
-  From here, I used ConvoKit’s
-  <link href="https://convokit.cornell.edu/documentation/coordination.html"/>
-  Coordination transformer to study coordination in various slices of data. First, I considered all successful vs unsuccessful conversations, comparing coordinations scores from clients and from therapists. Then I also sectioned data in synchronous vs asynchronous interactions within the same conversation. In order to check if coordination scores set successful and unsuccessful conversations apart, I ran t-tests on scores from different groups, with results presented in this
-  <link href="https://docs.google.com/document/d/1_z3WMwCFQnGhwcwAk2lfErAN17RzUPH0-DS4t-PJvRA/edit?usp=sharing"/>
-  table.
- </paragraph>
- <paragraph>
-  I tried several iterations of these analyses as earlier I considered separate utterances and later combined utterances in the same turn together. I observed that clients often send a large number of consecutive messages (usually, while the therapist is offline). This makes clients' turns very long compared to turns by therapists. I know that I need to account for the length since, if utterance A has more tokens, B (which is a reply to A) is more likely to repeat a token from A. Thus, this could influence coordination scores I get. A potential solution to this could be normalizing scores to account for length differences.
- </paragraph>
- <paragraph>
-  Currently I am working on the last research question, which is somewhat derived from my first three. To do that, I partitioned all conversations into sections with 10 turns each. I would like to plot changes in coordination scores as conversations proceed from section to section.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Joyce Zhou (they/them) (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Heads up: I'll be working remotely today but would be happy to have a conversation through Ed comments (or if you want to set up a mini Zoom call).
- </paragraph>
- <paragraph>
-  On this topic:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    This is neat!
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    I find myself wondering if there's different effects depending on the original intention of the conversation (e.g. if someone wants to talk to a therapist about emotional struggles, vs. they want help with a specific relationship)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    I'm also getting curious if this kind of analysis could be done with multi-client conversations - although that would probably be harder to analyze since I doubt there's much online support for those.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  On the overall post:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    It is worth describing how Talkspace is designed for clients and therapists. I'm not familiar with how it works - how are clients and therapists paired up, and would there be any confounding or otherwise odd effects if a client can see a therapist's self-description before opening a conversation with them, or if a therapist can read a client's initial messages before accepting?
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    In addition about Talkspace in general: what exactly is the difference between live and async? Is it primarily a difference in mediums, or response times, or what? If it's a medium difference of video vs chat (I'm seeing there's access to video call therapy on the website), what's responsible for providing the text logs used in analysis?
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    I'm a bit confused by your H2 and H3. Am I right in understanding H2 as "therapists adapt more to clients' language in general" and H3 as "but the clients' language adaptation is a better predictor of success"?
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  On your results table:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    If I'm reading the table correctly - it's funny how it seems like in the general successful vs unsuccessful and live vs async comparisons, therapists' changes seem to have stronger effects. Yet when you break it down into live successful vs live unsuccessful and the same for async, clients' changes seem to have stronger effects. Feels something like Simpson's paradox going on?
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Khonzoda Umarova (she/her) (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi Joyce!
- </paragraph>
- <paragraph>
-  Thank you so much for your feedback :)  To address some of your points:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    I find myself wondering if there's different effects depending on the original intention of the conversation (e.g. if someone wants to talk to a therapist about emotional struggles, vs. they want help with a specific relationship)
-   </paragraph>
-   <list style="bullet">
-    <list-item>
-     <paragraph>
-      I was thinking about that, too!! After pairing on gender and primary condition, FightingWords showed some words that suggest the influence of specific situations that clients are in ("wife", "school"). Separately from this project, I tried to do matching on things that clients share about themselves before getting matched with a therapist and officially starting therapy. I was able to obtain pairs based on that, but I also observed that there are way too many different individual circumstances.
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    I'm also getting curious if this kind of analysis could be done with multi-client conversations - although that would probably be harder to analyze since I doubt there's much online support for those.
-   </paragraph>
-   <list style="bullet">
-    <list-item>
-     <paragraph>
-      Yes, the multi-client setting is interesting! In conversations that I consider the client only interacts with 1 therapist at a time. In the dataset overall, I also saw couples therapy transcripts.
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    In addition about Talkspace in general: what exactly is the difference between live and async?
-   </paragraph>
-   <list style="bullet">
-    <list-item>
-     <paragraph>
-      About talkspace, the matching is done by Talkspace (and I think they have their own algorithm for that). Therapists see client's initial message. When switching therapists, the client may grand the new therapist access to previous messages.
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      For the analyses that I did I defined live vs asynchronous myself as: utterances that are within 5 mins between each other are part of "live" interaction, while all others are "asynchronous".
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    I'm a bit confused by your H2 and H3. Am I right in understanding H2 as "therapists adapt more to clients' language in general" and H3 as "but the clients' language adaptation is a better predictor of success"?
-   </paragraph>
-   <list style="bullet">
-    <list-item>
-     <paragraph>
-      Yes!
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
- </list>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Celine Lee (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  This is a really well thought-out project with important applications. I like how precise your hypotheses are, and just for my understanding based on your progress report, a summary (of my understanding) of your findings are as follows.
- </paragraph>
- <paragraph>
-  <italic>
-   (In retrospect adding this comment here,
-  </italic>
-  to explain to myself how to interpret the t-test table:
- </paragraph>
- <paragraph>
-  <italic>
-   What does it mean in the first column for a category to be one vs. the other?
-  </italic>
-  --&gt; the difference between coordination score between one vs. the other according to the client-&gt;therapist and therapist-&gt;client. So in the first row, the difference in coordination of therapist-&gt;client between successful and unsuccessful conversations has a t-score of 3.3707, and the difference in coordination of client-&gt;therapist between successful and unsuccessful conversations has a t-score of 1.985.
- </paragraph>
- <paragraph>
-  <italic>
-   Why does the client-to-therapist have a greater t test score in the last two rows (live success vs. live unsuccessful and asynchronous success vs asynchronous unsuccessful) but not in general successful vs. unsuccessful?
-  </italic>
-  --&gt; differences are more pronounced in client-&gt; therapist than in therapist-&gt;client, perhaps because therapists have a more practiced behavior while clients are likely to have more widely varying behavior.
- </paragraph>
- <paragraph>
-  )
- </paragraph>
- <paragraph>
-  <italic>
-   H1: more language alignment between therapist and client ~ likelihood of client indicating they met their therapy goals
-  </italic>
- </paragraph>
- <paragraph>
-  Results:
-  <bold>
-   What were the results?
-  </bold>
-  It seems from the t-test table of coordination that there's some significant indicators of (live and asynchronous) conversation coordination w.r.t. conversation success. I'm having a bit of trouble understanding how coordination ("Coordination is a measure of power differences between speakers in a conversation, based on the propensity of a speaker to echo the same function words used by another speaker in a conversation.") maps into language alignment. If both scores (client to therapist, therapist to client) are high, does this indicate high language alignment? If so, then it seems from the relatively high numbers in the table that the result of this hypothesis is:
-  <bold>
-   <italic>
-    yes,
-   </italic>
-  </bold>
-  <italic>
-   with
-  </italic>
-  more supporting evidence/ information in the other hypothesis.
- </paragraph>
- <paragraph>
-  <italic>
-   H2: the therapist tends to do more language adaptation and alignment than does the client
-  </italic>
- </paragraph>
- <paragraph>
-  Results: Not summarized here, but it would seem so given the description. t-test table doesn't actually indicate this bc t-test table only compares across successful vs. unsuccessful.
-  <bold>
-   Suggestion
-  </bold>
-  : do a t-test between client and therapist in a given conversation? Can that be done?
- </paragraph>
- <paragraph>
-  <italic>
-   H3: alignment on the part of the client is a greater predictor of conversation success
-  </italic>
- </paragraph>
- <paragraph>
-  Result:
-  <italic>
-   <bold>
-    yes
-   </bold>
-  </italic>
-  according to t-test table. The client t-scores vary more widely, and in both live and asynchronous conversations, the difference between client-&gt;therapist t-scores is more pronounced between successful vs. unsuccessful conversations.
-  <bold>
-   Suggestion:
-  </bold>
-  why not so in the aggregated (first row) case?
- </paragraph>
- <paragraph>
-  <italic>
-   new H: is language coordination is more prominent in live or asynchronous conversation?
-  </italic>
- </paragraph>
- <paragraph>
-  Result:
-  <italic>
-   <bold>
-    live conversations
-   </bold>
-  </italic>
-  according to the t-test table third row. However, this is nuanced because in asynchronous conversation, clients tend to send lots of longer messages while the therapist is offline and so the amount of text from client-&gt; therapist is more than in the reverse direction, biasing coordination measures more toward therapist-responding-to-client than otherwise.
- </paragraph>
- <paragraph>
-  <italic>
-   New H: coordination in successful conversations improves over time
-  </italic>
- </paragraph>
- <paragraph>
-  Result
-  <bold>
-   : in progress.
-  </bold>
- </paragraph>
- <paragraph>
-  Again, I think this is super interesting, and I'm happy to go in and edit my understanding once I get a better understanding of the t-table results, because what you've found is super interesting!
- </paragraph>
- <paragraph>
-  Some of my thoughts: overall, I really like the way you've structured your project so I don't have many recommendations, but I do have some questions.
- </paragraph>
- <list style="number">
-  <list-item>
-   <paragraph>
-    Why did you control for gender in the paired conversations? Is there some premise at play here?
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    How might the experience of the therapist play into conversation success? Does it correlate directly with these coordination measure you are also doing?
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    How do you measure if a conversation is asynchronous vs. live, if both are online? Is it measured directly by response rate? Do you have a threshold for this?
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Have you gathered any findings with how results vary by primary condition?
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Linda Wang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ <b>
+  Overview:
+ </b>
+</p>
+<p>
+ In this project, I am in interested in exploring language coordination in online therapy conversations and whether coordination could be used as a signal for success of the conversation.
+</p>
+<p>
+ For the data I use transcripts from an online therapy platform Talkspace. In this setting, I focus on 1-to-1 conversations between a therapist and their client. I define “success” of conversations based on the feedback provided by the client at the first cancellation of the service: some client indicate “meeting their goal” to be a reason for the cancellation, while others indicate “therapist being unresponsive” or “therapist not being helpful”.
+</p>
+<p>
+ <b>
+  Hypotheses:
+ </b>
+</p>
+<p>
+ For my project proposal I listed three different hypotheses:
+</p>
+<list style="ordered">
+ <li>
+  <p>
+   In conversations, where clients meet their goal there would be higher levels of language alignment between the two interlocutors.
+  </p>
+ </li>
+ <li>
+  <p>
+   Alignment in language is asymmetrical, with greater adaptation happening on the part of a therapist.
+  </p>
+ </li>
+ <li>
+  <p>
+   Alignment on the part of a client (as opposed to therapist) is a greater predictor of the conversation success (i.e. client meeting their therapy goals).
+  </p>
+ </li>
+</list>
+<p>
+ Later, I also added two more research question to this list:
+</p>
+<list style="ordered">
+ <li>
+  <p>
+   Is the effect of language coordination more prominent in live conversations or asynchronous ones?
+  </p>
+ </li>
+ <li>
+  <p>
+   Does coordination in successful conversations improve over time?
+  </p>
+ </li>
+</list>
+<p>
+ <b>
+  Progress:
+ </b>
+</p>
+<p>
+ My first step was to pair up successful and unsuccessful conversations. To do so, I considered the following potentially confounding variables to success of conversations:
+</p>
+<list style="unordered">
+ <li>
+  <p>
+   Client gender as indicated by the client themselves
+  </p>
+ </li>
+ <li>
+  <p>
+   Primary condition as determined by the client’s therapist
+  </p>
+ </li>
+ <li>
+  <p>
+   Overall length of conversation
+  </p>
+ </li>
+</list>
+<p>
+ With these factors controlled I created 415 pairs of speakers. With these pairs, I tried to see how two classes of conversations are distinguished. In particular, I compared duration of conversations, demographics information of clients from these conversations, reply times between utterances, and language used during therapy (
+ <a href="https://drive.google.com/drive/folders/1mjg6TAtTXFE0M-oTBptxgGgI2rfwtBXj?usp=sharing">
+  FightingWords
+  ).
+ </a>
+</p>
+<p>
+ From here, I used ConvoKit’s
+ <link href="https://convokit.cornell.edu/documentation/coordination.html"/>
+ Coordination transformer to study coordination in various slices of data. First, I considered all successful vs unsuccessful conversations, comparing coordinations scores from clients and from therapists. Then I also sectioned data in synchronous vs asynchronous interactions within the same conversation. In order to check if coordination scores set successful and unsuccessful conversations apart, I ran t-tests on scores from different groups, with results presented in this
+ <link href="https://docs.google.com/document/d/1_z3WMwCFQnGhwcwAk2lfErAN17RzUPH0-DS4t-PJvRA/edit?usp=sharing"/>
+ table
+ .
+</p>
+<p>
+ I tried several iterations of these analyses as earlier I considered separate utterances and later combined utterances in the same turn together. I observed that clients often send a large number of consecutive messages (usually, while the therapist is offline). This makes clients' turns very long compared to turns by therapists. I know that I need to account for the length since, if utterance A has more tokens, B (which is a reply to A) is more likely to repeat a token from A. Thus, this could influence coordination scores I get. A potential solution to this could be normalizing scores to account for length differences.
+</p>
+<p>
+ Currently I am working on the last research question, which is somewhat derived from my first three. To do that, I partitioned all conversations into sections with 10 turns each. I would like to plot changes in coordination scores as conversations proceed from section to section.
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Linda Wang (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Hi Khonzoda,
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I really appreciate the topic you've chosen, and I think the results are quite interesting! I have a quick question:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   By any chance, did you analyze data for repeat, synchronous clients? It seems that a client who consistently attends, for example, 20 synchronous sessions (with the same therapist) has a fundamentally different need/perspective than a client who attends 20 synchronous sessions in total (with the same therapist), but repeatedly cancels and starts in between those meetings. The difference seems very policy-relevant, and it could have interested effects on language coordination even if both clients say they have "met their goal" at the end of 20 meetings.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Thanks for sharing!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Celine Lee (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   This is a really well thought-out project with important applications. I like how precise your hypotheses are, and just for my understanding based on your progress report, a summary (of my understanding) of your findings are as follows.
+  </p>
+  <p>
+   <i>
+    (In retrospect adding this comment here,
+   </i>
+   to explain to myself how to interpret the t-test table:
+  </p>
+  <p>
+   <i>
+    What does it mean in the first column for a category to be one vs. the other?
+   </i>
+   --&gt; the difference between coordination score between one vs. the other according to the client-&gt;therapist and therapist-&gt;client. So in the first row, the difference in coordination of therapist-&gt;client between successful and unsuccessful conversations has a t-score of 3.3707, and the difference in coordination of client-&gt;therapist between successful and unsuccessful conversations has a t-score of 1.985.
+  </p>
+  <p>
+   <i>
+    Why does the client-to-therapist have a greater t test score in the last two rows (live success vs. live unsuccessful and asynchronous success vs asynchronous unsuccessful) but not in general successful vs. unsuccessful?
+   </i>
+   --&gt; differences are more pronounced in client-&gt; therapist than in therapist-&gt;client, perhaps because therapists have a more practiced behavior while clients are likely to have more widely varying behavior.
+  </p>
+  <p>
+   )
+  </p>
+  <p>
+   <i>
+    H1: more language alignment between therapist and client ~ likelihood of client indicating they met their therapy goals
+   </i>
+  </p>
+  <p>
+   Results:
+   <b>
+    What were the results?
+   </b>
+   It seems from the t-test table of coordination that there's some significant indicators of (live and asynchronous) conversation coordination w.r.t. conversation success. I'm having a bit of trouble understanding how coordination ("Coordination is a measure of power differences between speakers in a conversation, based on the propensity of a speaker to echo the same function words used by another speaker in a conversation.") maps into language alignment. If both scores (client to therapist, therapist to client) are high, does this indicate high language alignment? If so, then it seems from the relatively high numbers in the table that the result of this hypothesis is:
+   <b>
+    <i>
+     yes,
+    </i>
+   </b>
+   <i>
+    with
+   </i>
+   more supporting evidence/ information in the other hypothesis.
+  </p>
+  <p>
+   <i>
+    H2: the therapist tends to do more language adaptation and alignment than does the client
+   </i>
+  </p>
+  <p>
+   Results: Not summarized here, but it would seem so given the description. t-test table doesn't actually indicate this bc t-test table only compares across successful vs. unsuccessful.
+   <b>
+    Suggestion
+   </b>
+   : do a t-test between client and therapist in a given conversation? Can that be done?
+  </p>
+  <p>
+   <i>
+    H3: alignment on the part of the client is a greater predictor of conversation success
+   </i>
+  </p>
+  <p>
+   Result:
+   <i>
+    <b>
+     yes
+    </b>
+   </i>
+   according to t-test table. The client t-scores vary more widely, and in both live and asynchronous conversations, the difference between client-&gt;therapist t-scores is more pronounced between successful vs. unsuccessful conversations.
+   <b>
+    Suggestion:
+   </b>
+   why not so in the aggregated (first row) case?
+  </p>
+  <p>
+   <i>
+    new H: is language coordination is more prominent in live or asynchronous conversation?
+   </i>
+  </p>
+  <p>
+   Result:
+   <i>
+    <b>
+     live conversations
+    </b>
+   </i>
+   according to the t-test table third row. However, this is nuanced because in asynchronous conversation, clients tend to send lots of longer messages while the therapist is offline and so the amount of text from client-&gt; therapist is more than in the reverse direction, biasing coordination measures more toward therapist-responding-to-client than otherwise.
+  </p>
+  <p>
+   <i>
+    New H: coordination in successful conversations improves over time
+   </i>
+  </p>
+  <p>
+   Result
+   <b>
+    : in progress.
+   </b>
+  </p>
+  <p>
+   Again, I think this is super interesting, and I'm happy to go in and edit my understanding once I get a better understanding of the t-table results, because what you've found is super interesting!
+  </p>
+  <p>
+   Some of my thoughts: overall, I really like the way you've structured your project so I don't have many recommendations, but I do have some questions.
+  </p>
+  <list style="number">
+   <li>
+    <p>
+     Why did you control for gender in the paired conversations? Is there some premise at play here?
+    </p>
+   </li>
+   <li>
+    <p>
+     How might the experience of the therapist play into conversation success? Does it correlate directly with these coordination measure you are also doing?
+    </p>
+   </li>
+   <li>
+    <p>
+     How do you measure if a conversation is asynchronous vs. live, if both are online? Is it measured directly by response rate? Do you have a threshold for this?
+    </p>
+   </li>
+   <li>
+    <p>
+     Have you gathered any findings with how results vary by primary condition?
+    </p>
+   </li>
+  </list>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Joyce Zhou (they/them) (student)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Heads up: I'll be working remotely today but would be happy to have a conversation through Ed comments (or if you want to set up a mini Zoom call).
+   </p>
+   <p>
+    On this topic:
+   </p>
+   <list style="bullet">
+    <li>
+     <p>
+      This is neat!
+     </p>
+    </li>
+    <li>
+     <p>
+      I find myself wondering if there's different effects depending on the original intention of the conversation (e.g. if someone wants to talk to a therapist about emotional struggles, vs. they want help with a specific relationship)
+     </p>
+    </li>
+    <li>
+     <p>
+      I'm also getting curious if this kind of analysis could be done with multi-client conversations - although that would probably be harder to analyze since I doubt there's much online support for those.
+     </p>
+    </li>
+   </list>
+   <p>
+    On the overall post:
+   </p>
+   <list style="bullet">
+    <li>
+     <p>
+      It is worth describing how Talkspace is designed for clients and therapists. I'm not familiar with how it works - how are clients and therapists paired up, and would there be any confounding or otherwise odd effects if a client can see a therapist's self-description before opening a conversation with them, or if a therapist can read a client's initial messages before accepting?
+     </p>
+    </li>
+    <li>
+     <p>
+      In addition about Talkspace in general: what exactly is the difference between live and async? Is it primarily a difference in mediums, or response times, or what? If it's a medium difference of video vs chat (I'm seeing there's access to video call therapy on the website), what's responsible for providing the text logs used in analysis?
+     </p>
+    </li>
+    <li>
+     <p>
+      I'm a bit confused by your H2 and H3. Am I right in understanding H2 as "therapists adapt more to clients' language in general" and H3 as "but the clients' language adaptation is a better predictor of success"?
+     </p>
+    </li>
+   </list>
+   <p>
+    On your results table:
+   </p>
+   <list style="bullet">
+    <li>
+     <p>
+      If I'm reading the table correctly - it's funny how it seems like in the general successful vs unsuccessful and live vs async comparisons, therapists' changes seem to have stronger effects. Yet when you break it down into live successful vs live unsuccessful and the same for async, clients' changes seem to have stronger effects. Feels something like Simpson's paradox going on?
+     </p>
+    </li>
+   </list>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 4em;">
+    <h3>
+     Author: Khonzoda Umarova (she/her) (student)
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     Hi Joyce!
+    </p>
+    <p>
+     Thank you so much for your feedback :)  To address some of your points:
+    </p>
+    <list style="bullet">
+     <li>
+      <p>
+       I find myself wondering if there's different effects depending on the original intention of the conversation (e.g. if someone wants to talk to a therapist about emotional struggles, vs. they want help with a specific relationship)
+      </p>
+      <list style="bullet">
+       <li>
+        <p>
+         I was thinking about that, too!! After pairing on gender and primary condition, FightingWords showed some words that suggest the influence of specific situations that clients are in ("wife", "school"). Separately from this project, I tried to do matching on things that clients share about themselves before getting matched with a therapist and officially starting therapy. I was able to obtain pairs based on that, but I also observed that there are way too many different individual circumstances.
+        </p>
+       </li>
+      </list>
+     </li>
+     <li>
+      <p>
+       I'm also getting curious if this kind of analysis could be done with multi-client conversations - although that would probably be harder to analyze since I doubt there's much online support for those.
+      </p>
+      <list style="bullet">
+       <li>
+        <p>
+         Yes, the multi-client setting is interesting! In conversations that I consider the client only interacts with 1 therapist at a time. In the dataset overall, I also saw couples therapy transcripts.
+        </p>
+       </li>
+      </list>
+     </li>
+     <li>
+      <p>
+       In addition about Talkspace in general: what exactly is the difference between live and async?
+      </p>
+      <list style="bullet">
+       <li>
+        <p>
+         About talkspace, the matching is done by Talkspace (and I think they have their own algorithm for that). Therapists see client's initial message. When switching therapists, the client may grand the new therapist access to previous messages.
+        </p>
+       </li>
+       <li>
+        <p>
+         For the analyses that I did I defined live vs asynchronous myself as: utterances that are within 5 mins between each other are part of "live" interaction, while all others are "asynchronous".
+        </p>
+       </li>
+      </list>
+     </li>
+     <li>
+      <p>
+       I'm a bit confused by your H2 and H3. Am I right in understanding H2 as "therapists adapt more to clients' language in general" and H3 as "but the clients' language adaptation is a better predictor of success"?
+      </p>
+      <list style="bullet">
+       <li>
+        <p>
+         Yes!
+        </p>
+       </li>
+      </list>
+     </li>
+    </list>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

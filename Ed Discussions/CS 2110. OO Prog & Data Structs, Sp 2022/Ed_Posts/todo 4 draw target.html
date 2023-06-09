@@ -13,71 +13,69 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I may just be missing something but where exactly (in terms of coordinates) should we draw the target if the game is active? The center?
- </paragraph>
-</document>
+<p>
+ I may just be missing something but where exactly (in terms of coordinates) should we draw the target if the game is active? The center?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Atulya Lohani (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Atulya Lohani (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   TODO 4 doesn't require you to do anything with the target's coordinates. You only need to worry about the rectangle's placement. You can just look at fillRect() documentation to figure that out. For the targets, you should simply call paintDot(). We are using the
-  <link href="https://www.cs.cornell.edu/courses/JavaAndDS/files/manana.pdf"/>
-  Mañana principle. We call a helper method paintDot() that will be implemented later.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ramisha Hossain (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  We tried g.paintDot() and also paintDot(g) but we keep getting this error that says The method paintDot(Graphics) is undefined for the type GameComponent
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Akinfolami Akin-Alamu (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  paintDot is a method in class Target so to call it you need to create an object of the class target.  But the target has already been defined as a field in class GameComponent, so you can just call target.paintDot(g).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  thanks!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+  <a href="https://www.cs.cornell.edu/courses/JavaAndDS/files/manana.pdf">
+   Mañana principle
+  </a>
+  . We call a helper method paintDot() that will be implemented later.
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   thanks!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Ramisha Hossain (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    We tried g.paintDot() and also paintDot(g) but we keep getting this error that says The method paintDot(Graphics) is undefined for the type GameComponent
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Akinfolami Akin-Alamu (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     paintDot is a method in class Target so to call it you need to create an object of the class target.  But the target has already been defined as a field in class GameComponent, so you can just call target.paintDot(g).
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

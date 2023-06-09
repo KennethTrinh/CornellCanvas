@@ -13,31 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I am confused about why y[0] only needs one MAC operation. As y[n]=h[n]*x[n] and h[n] is a 1024-point signal, would y[n] be a summation from k=0 to k=1023 and then make y[1] needs 1024 MAC operation? Thanks in advance.
- </paragraph>
-</document>
+<p>
+ I am confused about why y[0] only needs one MAC operation. As y[n]=h[n]*x[n] and h[n] is a 1024-point signal, would y[n] be a summation from k=0 to k=1023 and then make y[1] needs 1024 MAC operation? Thanks in advance.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   It might help you see what's going on to look at the convolution of a 4-point signal with a 5-point signal.  Suffice it to say that when $x [ n ] = 0$ for $n &lt; 0$, the ostensibly infinite sum
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $\sum _ {k =  0} ^ \infty h [ k ] x [ n - k ]$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   has at most one nonzero term, namely $h [ 0 ] x [ 0 ]$.  And when $n = 1$ the sum has at most two nonzero terms ---- it equals $h [ 0 ] x [ 1 ] + h [ 1 ] x [ 0 ]$.  Etc.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,41 +13,37 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  My group is trying to use UART for serial communication from the FRDM board to Arduino. Are there any resources or examples we could refer to for enabling the correct modules in our code and connecting the TX RX pins? Also, we were trying to use PuTTY to test the serial communication, but we were having trouble setting it up. Are there any resources we could use for guidance? Thank you!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ My group is trying to use UART for serial communication from the FRDM board to Arduino. Are there any resources or examples we could refer to for enabling the correct modules in our code and connecting the TX RX pins? Also, we were trying to use PuTTY to test the serial communication, but we were having trouble setting it up. Are there any resources we could use for guidance? Thank you!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   EDIT: Serial example has been posted to Canvas.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   First, it may help if you get your UART code working when hooked up just between the KL46Z and the computer. Luckily, the OpenSDA USB port is connected to PTA1 and PTA2 which can be configured for UART0. (Shown in the FRDM-KL46Z user manual)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Next, you want to check out the handy table in the processor manual on page 171 that tells you the code for setting those pins to UART0 TX and UART0 RX (remember all that info from prior labs for setting up the LEDs, also the macro PORT_PCR_MUX(n) may come in handy)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   To get PuTTY to work, you need to have the correct COM port and baud rate select. In this example, I select "Serial", type in COM5, and a baud rate of 115200. (The most "common" baud rate is 9600 but most modern devices will support baud rates up to 115200)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If you do not know which COM port to use, you can open up the Device Manager (on Windows) and look under Ports. The OpenSDA / PEMicro device is the correct one.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Chapter 39 (UART0) is a beast to understand so I will see if we will be providing any UART support code this year.
- </paragraph>
+ </p>
  <figure>
   <image height="148.6481223922114" src="https://static.us.edusercontent.com/files/Eti4Jc9ikJRPJJt9NXPPr7xi" width="758.0000000000001"/>
  </figure>
@@ -63,7 +59,7 @@
  <figure>
   <image height="581.2255541069101" src="https://static.us.edusercontent.com/files/RTUyo5dmWABc8bZhUi9NYxEO" width="743"/>
  </figure>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,178 +13,176 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  I encourage everyone to add a comment with some sort of planning statement (dated to-do).  All your projects have potential, and planning will help bring that potential to fruition!!
-  <break>
-  </break>
-  <break>
-  </break>
-  I've set anonymous comments on, so you can post anonymously if you like.
- </paragraph>
-</document>
-<h3>
- Author: Celine Lee (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ I encourage everyone to add a comment with some sort of planning statement (dated to-do).  All your projects have potential, and planning will help bring that potential to fruition!!
+ <break>
+ </break>
+ <break>
+ </break>
+ I've set anonymous comments on, so you can post anonymously if you like.
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Celine Lee (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   I set out little mini-deadlines for myself leading up to the final project presentation, with ideas for potential experiments that I want to try out once I complete the baseline experiments. (I anticipate I may change my mind once I get there, based on results from the baseline experiments.)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   11/16 what I have:
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     data processing code, processed data (though these keep iterating as I conduct different / more experiments)
-   </paragraph>
+   </p>
    <list style="bullet">
-    <list-item>
-     <paragraph>
+    <li>
+     <p>
       working with the Java tag: have an effective Java lexer,
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
+     </p>
+    </li>
+    <li>
+     <p>
       have filters built into the code for post view count, post answer count and user reputation
-     </paragraph>
-    </list-item>
+     </p>
+    </li>
    </list>
-  </list-item>
-  <list-item>
-   <paragraph>
+  </li>
+  <li>
+   <p>
     CBOW analysis: comparing CBOW of answer code snippets and answer text
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
+ <p>
   Flaws I see, and the date by which I want to complete the experiments to perhaps address said flaws:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   by 11/18: raw score is not normalized across posts-- score varies widely and does not seem to show indication of being a reliable metric of quality. However, we are still interested in score as a metric of an answer's relative perceived quality compared to other answers in the same thread. Therefore, adjust the score to normalize it against other scores in the thread:
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
+  <li>
    <math>
     score_{norm}=\frac{score_{raw}}{\sum_{a\ \in thread}^{ }score_{raw,a}}
    </math>
-  </list-item>
+  </li>
  </list>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     One option is to normalize it across the sum of scores in the thread, but this may unfairly penalize answers in threads that have a lot of other answer. Instead, we may want a relative score like follows:
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
  <math>
   score_{relative}=score_{raw}-score_{avg}
  </math>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     I'm not particularly sold on either one... am looking into alternative options, and
-    <bold>
+    <b>
      will gladly take any suggestions if anyone has any!
-    </bold>
-   </paragraph>
-  </list-item>
+    </b>
+   </p>
+  </li>
  </list>
- <paragraph>
+ <p>
   by 11/18: CBOW counting actually feels like an incorrect measure for this project. For example, a variable that appears multiple times in the code may only be referenced once in the text, but with CBOW that mismatch in number of times mentioned will be penalized-- though it has no indication that the text is not referring to the token. Instead, let's do BBOW.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   by 11/23: I should probably actually be looking at code-text correlations between answer code and question text as well as answer code and answer text. Along that vein, I may as well examine all other combinations:
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     BBOW question text, answer code
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     BBOW question code, answer code
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     BBOW question text, answer text
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     BBOW question code, answer text
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
+ <p>
   by 11/26: plotting linearly over a graph of ratio (num shared tokens / num code tokens) to score is a poor measure that, in addition to the weaknesses pointed out above, does not show any statistical significance test or other more interesting statistical measures. Instead, consider the following (&amp; any more discussed in class / suggested by professor &amp; colleagues):
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     Pearson correlation
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     spearman's rank correlation test
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     TODO: find other options
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
+ <p>
   later: try out the Panthaplakel et al. model (
-  <link href="https://arxiv.org/pdf/1912.06728.pdf"/>
-  https://arxiv.org/pdf/1912.06728.pdf) associating NL comments and source code entities on these Q&amp;A text and code. Can it be done?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <blockquote>
-  One option is to normalize it across the sum of scores in the thread, but this may unfairly penalize answers in threads that have a lot of other answer. Instead, we may want a relative score like follows:
- </blockquote>
- <paragraph>
-  I agree that relative scoring makes sense.  An option could be to go with rank instead of a fine-grained score, but that doesn't capture the "distance" between scores. I guess we get back to the old "difference vs. ratio" question that also came up when we were developing Fightin Words:  your idea of
- </paragraph>
- <paragraph>
-  raw score minus avg score
- </paragraph>
- <paragraph>
-  makes sense, but you could also do
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  log(raw score/avg score)
-  <break>
-  </break>
-  <break>
-  </break>
-  or similar, with the same caveats as in the Fightin' Words discussion.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+  <a href="https://arxiv.org/pdf/1912.06728.pdf">
+   https://arxiv.org/pdf/1912.06728.pdf
+  </a>
+  ) associating NL comments and source code entities on these Q&amp;A text and code. Can it be done?
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <blockquote>
+   One option is to normalize it across the sum of scores in the thread, but this may unfairly penalize answers in threads that have a lot of other answer. Instead, we may want a relative score like follows:
+  </blockquote>
+  <p>
+   I agree that relative scoring makes sense.  An option could be to go with rank instead of a fine-grained score, but that doesn't capture the "distance" between scores. I guess we get back to the old "difference vs. ratio" question that also came up when we were developing Fightin Words:  your idea of
+  </p>
+  <p>
+   raw score minus avg score
+  </p>
+  <p>
+   makes sense, but you could also do
+   <break>
+   </break>
+  </p>
+  <p>
+   log(raw score/avg score)
+   <break>
+   </break>
+   <break>
+   </break>
+   or similar, with the same caveats as in the Fightin' Words discussion.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

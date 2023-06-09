@@ -13,66 +13,60 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  The grading rubric for Prelim 2 Question 4C took off points for changing the set s, but since the instructions and spec both did not mention that s should not be modified, shouldn't an implementation that does so be fine?
- </paragraph>
- <paragraph>
-  More generally, is it assumed / expected that a method on a set will not change the set unless necessary or if it is the purpose?
- </paragraph>
-</document>
+<p>
+ The grading rubric for Prelim 2 Question 4C took off points for changing the set s, but since the instructions and spec both did not mention that s should not be modified, shouldn't an implementation that does so be fine?
+</p>
+<p>
+ More generally, is it assumed / expected that a method on a set will not change the set unless necessary or if it is the purpose?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andrew Chen (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Changing s would be a side effect of the function that should NOT happen. From a user's perspective (someone who only views the specification and the uses the function without looking at implementation), if there were any side effects (such as modifying the set), that would be explicitly stated. Otherwise, the user should assume no side effects to the set.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Arno Motulsky (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I see, thanks for the explanation !
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   Absolutely not!
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Consider Java class ArrayList. The spec of method contains does not mention that it does not change the list. But if its implementation actually changed it YOU WOULD BE FURIOUS!
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   A method does what its specification says, no more no less.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Andrew Chen (staff)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Changing s would be a side effect of the function that should NOT happen. From a user's perspective (someone who only views the specification and the uses the function without looking at implementation), if there were any side effects (such as modifying the set), that would be explicitly stated. Otherwise, the user should assume no side effects to the set.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Arno Motulsky (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I see, thanks for the explanation !
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

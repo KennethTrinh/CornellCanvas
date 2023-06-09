@@ -13,82 +13,78 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Is there anything peculiar about the
-  <code>
-   dtype
-  </code>
-  of matrices
-  <italic>
-   indices
-  </italic>
-  and
-  <italic>
-   dist
-  </italic>
-  needed in order to pass the tests? My understanding is that indices should have dtype int and dist float. I have worked through a simple example with two matrices and am confident my solution works to the outlined specs. But of course, I am unable to pass the tests.
- </paragraph>
- <paragraph>
-  Just to reinforce my understanding of the question: the entries of
-  <italic>
-   indices
-  </italic>
-  are single numbers representing the row index of the i^th-nearest neighbor of the j^th column. So the (1,1) entry of matrix indices would be the index of the
-  <italic>
-   first
-  </italic>
-  nearest neighbor to the
-  <italic>
-   first
-  </italic>
-  instance in xTe in the xTr matrix.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Is there anything peculiar about the
+ <code>
+  dtype
+ </code>
+ of matrices
+ <i>
+  indices
+ </i>
+ and
+ <i>
+  dist
+ </i>
+ needed in order to pass the tests? My understanding is that indices should have dtype int and dist float. I have worked through a simple example with two matrices and am confident my solution works to the outlined specs. But of course, I am unable to pass the tests.
+</p>
+<p>
+ Just to reinforce my understanding of the question: the entries of
+ <i>
+  indices
+ </i>
+ are single numbers representing the row index of the i^th-nearest neighbor of the j^th column. So the (1,1) entry of matrix indices would be the index of the
+ <i>
+  first
+ </i>
+ nearest neighbor to the
+ <i>
+  first
+ </i>
+ instance in xTe in the xTr matrix.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Noor (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   indices[i,j] is the index of the ith nearest neighbor of the jth test point, and dist[i, j] is the corresponding distance. Make sure you're 0-indexing though, i.e. (0, 0) corresponds to the nearest neighbor of the 0th test point, not (1,1).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you. I am 0-indexing that was a slip in my own explanation. Can you clarify: indices[i,j] is the index where? In xTr?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  xTe is the matrix of the test points and xTr of the training points; indices[i, j] should then correspond to the index of the ith nearest point in xTr to the jth point in xTe. Does that make more sense?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you. I am 0-indexing that was a slip in my own explanation. Can you clarify: indices[i,j] is the index where? In xTr?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Michael Noor (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    xTe is the matrix of the test points and xTr of the training points; indices[i, j] should then correspond to the index of the ith nearest point in xTr to the jth point in xTe. Does that make more sense?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

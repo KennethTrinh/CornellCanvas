@@ -13,65 +13,57 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  According to the solution, it seems we are supposed to talk just about time complexity in 5(c) and 5(d)'s context? However, when I practiced on this, I wrote both time and space complexity. How to clarify such questions?
- </paragraph>
- <paragraph>
-  Additionally, I am also confused about 5(d). In what case will the complexity be O(n^2) since the get and put methods in hashmap are both O(1)?
- </paragraph>
- <figure>
-  <image height="331.05625" src="https://static.us.edusercontent.com/files/UskGRqnSOflCrooEhl1iYZNx" width="658"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ According to the solution, it seems we are supposed to talk just about time complexity in 5(c) and 5(d)'s context? However, when I practiced on this, I wrote both time and space complexity. How to clarify such questions?
+</p>
+<p>
+ Additionally, I am also confused about 5(d). In what case will the complexity be O(n^2) since the get and put methods in hashmap are both O(1)?
+</p>
+<figure>
+ <image height="331.05625" src="https://static.us.edusercontent.com/files/UskGRqnSOflCrooEhl1iYZNx" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Tomer Shamir (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Tomer Shamir (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   If the question asks for complexity and doesn't specify time or space, assume it's asking for time complexity
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Tomer Shamir (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  In the worst case, get() and put() are O(n). You'll learn why this is when we cover hashing, but the idea is that in the worst case, every value hashes to the same bucket in the hashtable, so get() and put() take O(n).
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Hao Zhuo (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Got it! Thanks a lot.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Tomer Shamir (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   In the worst case, get() and put() are O(n). You'll learn why this is when we cover hashing, but the idea is that in the worst case, every value hashes to the same bucket in the hashtable, so get() and put() take O(n).
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Hao Zhuo (None)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Got it! Thanks a lot.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

@@ -13,39 +13,37 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  Our code hardfaults after the first time we switch programs from the green LED function to the red. We are able to create both processes and put them in the linked list, and it looks like we are able to swap out the green program and append it to the linked list. But we are only able to see the green LED flash for one interrupt cycle and then we hard fault
- </paragraph>
-</document>
+<p>
+ Our code hardfaults after the first time we switch programs from the green LED function to the red. We are able to create both processes and put them in the linked list, and it looks like we are able to swap out the green program and append it to the linked list. But we are only able to see the green LED flash for one interrupt cycle and then we hard fault
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Luke Forsman (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  This could happen for many reasons, it could be something in your process_select or in your initialization of your memory in process_create. It is hard for us to tell the reason for hardfaults with just a description.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Alma Thaler (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Alma Thaler (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   you're probabily forgetting to update the stack pointer of the current process (the one you're switching from)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Luke Forsman (staff)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   This could happen for many reasons, it could be something in your process_select or in your initialization of your memory in process_create. It is hard for us to tell the reason for hardfaults with just a description.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

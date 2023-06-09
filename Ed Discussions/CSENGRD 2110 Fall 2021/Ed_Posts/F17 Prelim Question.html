@@ -13,60 +13,52 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="352.5790349417637" src="https://static.us.edusercontent.com/files/qe3uWoO57qbrsuDNnIpzWHxI" width="652"/>
- </figure>
- <paragraph>
-  For Question (4), may I ask why this results in a run-time error? I have read through previous threads (i.e. #543) regarding this concept, but can't really understand why (A3) would be considered the static type here instead of A1 at compile time.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  By the same reasoning, why do parts (3-5) in the question below not result in runtime issues, if C1 is an abstract class?
- </paragraph>
- <figure>
-  <image height="475.3126142595978" src="https://static.us.edusercontent.com/files/w1h2O85b9h3uItGNzfbuscJi" width="622"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<figure>
+ <image height="352.5790349417637" src="https://static.us.edusercontent.com/files/qe3uWoO57qbrsuDNnIpzWHxI" width="652"/>
+</figure>
+<p>
+ For Question (4), may I ask why this results in a run-time error? I have read through previous threads (i.e. #543) regarding this concept, but can't really understand why (A3) would be considered the static type here instead of A1 at compile time.
+</p>
+<p>
+ By the same reasoning, why do parts (3-5) in the question below not result in runtime issues, if C1 is an abstract class?
+</p>
+<figure>
+ <image height="475.3126142595978" src="https://static.us.edusercontent.com/files/w1h2O85b9h3uItGNzfbuscJi" width="622"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jonathan Akar (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  for (4), I think it's a runtime error because the compiler reads the call as a cast so it accepts it. However when it's actually run, it realizes it's an upward cast and thrown an error.
- </paragraph>
- <paragraph>
-  Here's a stackoverflow definition that should help:
- </paragraph>
- <figure>
-  <image height="165.44079885877318" src="https://static.us.edusercontent.com/files/DO2isZvIoPNSQd90LuqcOlF3" width="758"/>
- </figure>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Troy Moslemi (he/him) (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Question 4 throws a Class Cast Exception which is a run-time error.  This is because A1 is not an instance of A3.  This is why question 5 results in no run-time error, A3 is an instance of A1.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Jonathan Akar (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   for (4), I think it's a runtime error because the compiler reads the call as a cast so it accepts it. However when it's actually run, it realizes it's an upward cast and thrown an error.
+  </p>
+  <p>
+   Here's a stackoverflow definition that should help:
+  </p>
+  <figure>
+   <image height="165.44079885877318" src="https://static.us.edusercontent.com/files/DO2isZvIoPNSQd90LuqcOlF3" width="758"/>
+  </figure>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

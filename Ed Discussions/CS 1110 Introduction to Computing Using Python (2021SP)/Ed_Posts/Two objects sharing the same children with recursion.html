@@ -16,43 +16,41 @@
 <h3>
  ENDORSED
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi,
- </paragraph>
- <paragraph>
-  I've been playing around with a bunch of tree scenarios in preparation for Prelim 2. While imagining a family tree, I diagramed two parents (Person objects) who share the same children in their "children" attribute (list of Person objects). They are B and C in the figure below.
- </paragraph>
- <paragraph>
-  The tree looks like this:
- </paragraph>
- <figure>
-  <image height="213" src="https://static.us.edusercontent.com/files/p9L2QYY9zhaN251mHBQTwcZK" width="324"/>
- </figure>
- <paragraph>
-  I ran this tree through my recursion programs -- one, for example, is a function that returns a  list of [string] names of people in the tree who have kids. I noticed that my returns had duplicates.
- </paragraph>
- <paragraph>
-  I suspect this problem is caused by my for loop in the function running D and E twice (because B and C each run D and E, which results in them going through the function twice).
- </paragraph>
- <paragraph>
-  How could I do this? And will I see this on Prelim 2? I'm having trouble finding examples of this on past exams.
- </paragraph>
- <paragraph>
-  Thank you so much!
- </paragraph>
-</document>
+<p>
+ Hi,
+</p>
+<p>
+ I've been playing around with a bunch of tree scenarios in preparation for Prelim 2. While imagining a family tree, I diagramed two parents (Person objects) who share the same children in their "children" attribute (list of Person objects). They are B and C in the figure below.
+</p>
+<p>
+ The tree looks like this:
+</p>
+<figure>
+ <image height="213" src="https://static.us.edusercontent.com/files/p9L2QYY9zhaN251mHBQTwcZK" width="324"/>
+</figure>
+<p>
+ I ran this tree through my recursion programs -- one, for example, is a function that returns a  list of [string] names of people in the tree who have kids. I noticed that my returns had duplicates.
+</p>
+<p>
+ I suspect this problem is caused by my for loop in the function running D and E twice (because B and C each run D and E, which results in them going through the function twice).
+</p>
+<p>
+ How could I do this? And will I see this on Prelim 2? I'm having trouble finding examples of this on past exams.
+</p>
+<p>
+ Thank you so much!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Nice drawing --- it's charming! The negative space and the "font" of the characters just looks very visually appealing.
   <break>
   </break>
@@ -69,34 +67,34 @@
   <break>
   </break>
   In "real life" --- you haven't seen this and would definitely not be asked to think it up on your own on an exam! ---  there's a technique known as "memoization" that, intuitively, "marks" any nodes that the recursion has already visited (and saves the answers for such nodes) so your program doesn't do a lot of redundant computation on nodes it has already visited.  There were two Spring CS 1110s, back in 2013 and 2014, that had assignments employing that technique, in the context of
-  <link href="https://www.cs.cornell.edu/courses/cs1110/2014sp/assignments/assignment3/assignment3.pdf"/>
-  modeling social influence. I bring this up because of a student comment that I hope you will find inspirational:
+  <a href="https://www.cs.cornell.edu/courses/cs1110/2014sp/assignments/assignment3/assignment3.pdf">
+   modeling social influence
+  </a>
+  . I bring this up because of a student comment that I hope you will find inspirational:
   <break>
   </break>
- </paragraph>
+ </p>
  <blockquote>
   I’m amazed at how you were able to use python to model a psychological study,  and I now see the full extent of what you said in the beginning of the semester about  how the only limits of what we could do with python is our own imagination. I just  hope to be able to reach that level of creative thinking very soon.
  </blockquote>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you, this is really helpful! I used your idea to eliminate duplicates from the accumulator list at the end of my function (the "return" case).
- </paragraph>
- <paragraph>
-  Also, that quote is very inspirational. Thank you for including it.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Thank you, this is really helpful! I used your idea to eliminate duplicates from the accumulator list at the end of my function (the "return" case).
+  </p>
+  <p>
+   Also, that quote is very inspirational. Thank you for including it.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

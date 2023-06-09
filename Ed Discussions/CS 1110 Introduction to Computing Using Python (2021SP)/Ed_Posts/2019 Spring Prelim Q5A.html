@@ -13,44 +13,38 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <callout type="info">
-  dPut in your question title the year, semester, and question.  Ideal would also be to include the topic.   Example: 2018SP Q2(b) - call frames
- </callout>
- <callout type="info">
-  Include a screenshot of the question, so readers/answerers don't have to go find the relevant pdf.
- </callout>
- <paragraph>
-  Can someone please explain the latter bit of the solution for problem 5A on the 2019 Spring Prelim? More specifically, why is self in brackets here, but I'm just confused about the answer as a whole.
- </paragraph>
- <figure>
-  <image height="694.212389380531" src="https://static.us.edusercontent.com/files/SuX9SqAU8G2DqS7ZkBa0dGuJ" width="643"/>
- </figure>
- <figure>
-  <image height="274.7703488372093" src="https://static.us.edusercontent.com/files/kNGlV6CZqxuAYsqXRXBq60zQ" width="643"/>
- </figure>
- <figure>
-  <image height="526.0089153046063" src="https://static.us.edusercontent.com/files/RIq2g7PpjavWRcTqYUbmvv7B" width="658"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<callout type="info">
+ dPut in your question title the year, semester, and question.  Ideal would also be to include the topic.   Example: 2018SP Q2(b) - call frames
+</callout>
+<callout type="info">
+ Include a screenshot of the question, so readers/answerers don't have to go find the relevant pdf.
+</callout>
+<p>
+ Can someone please explain the latter bit of the solution for problem 5A on the 2019 Spring Prelim? More specifically, why is self in brackets here, but I'm just confused about the answer as a whole.
+</p>
+<figure>
+ <image height="694.212389380531" src="https://static.us.edusercontent.com/files/SuX9SqAU8G2DqS7ZkBa0dGuJ" width="643"/>
+</figure>
+<figure>
+ <image height="274.7703488372093" src="https://static.us.edusercontent.com/files/kNGlV6CZqxuAYsqXRXBq60zQ" width="643"/>
+</figure>
+<figure>
+ <image height="526.0089153046063" src="https://static.us.edusercontent.com/files/RIq2g7PpjavWRcTqYUbmvv7B" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Priya Malla (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Priya Malla (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   So if the parameter parents is a list, we are creating an empty list and setting self.parents to that. Then we call self.add_parents(parents) to add the parameter list to our list of parents. Then for every parent that is in the list of parents, we need to add our self (our instance of class Person) to their list of children. That is what p.add_children([self]) is doing. The brackets are signifying putting self in a list and if you look at the add_children implementation above you see will we iterate through this list to add it to that Person's list of children.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

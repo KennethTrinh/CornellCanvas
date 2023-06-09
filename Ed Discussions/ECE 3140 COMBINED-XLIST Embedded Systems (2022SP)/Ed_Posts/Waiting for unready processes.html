@@ -13,24 +13,20 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  For the case that there are no NRT processes and all RT processes are unready, what should process_select return? Should it enter a while loop and wait for one of the unready processes to become ready? If that is right, then will the channel 1 PIT interrupt the channel 0 PIT and increment the current time? If not, how do we configure the priorities so that this happens; we are not sure since they both use the same handler.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ For the case that there are no NRT processes and all RT processes are unready, what should process_select return? Should it enter a while loop and wait for one of the unready processes to become ready? If that is right, then will the channel 1 PIT interrupt the channel 0 PIT and increment the current time? If not, how do we configure the priorities so that this happens; we are not sure since they both use the same handler.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   #630, and just as you use
   <code>
    NVIC_EnableIRQ
@@ -48,115 +44,109 @@
    SVCall_IRQn
   </code>
   (see discussion slides).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   EDIT: It will just be easier for you to poll the PIT1 flag instead of dealing with the caveats brought up by this method.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
-  I see. I am having trouble finding in the reference manual what are the PIT_IRQns of channel 0 and 1. Would something like NVIC_SetPriority(0, 4) set channel 0's priority to 4?
- </paragraph>
- <paragraph>
-  Also, what do we have to do with the SVC? Would that need to interrupt while waiting?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Trenton Lyke (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  When it came to the busy waiting situation, changing the interrupt priority wasn't really doing anything for me. I just ended up doing polling for when the second PIT channel hit its mark (review lab 2 for reference) and then I incremented the current time accordingly. I put that polling in the while loop that busy waits until the current time reaches the start time of the next unready realtime process. I mean since we are busy waiting already polling won't really destroy performance. I could be wrong though so please feel free to correct me TAs.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  With polling, we have to set the TIE bit of PIT 1's TCTRL (i.e. set TCTRL = 3) while waiting inside process_select, right?  I'm pretty sure it is needed to check the TFLG.
- </paragraph>
- <paragraph>
-  Also, this won't cause the assembly PIT handler to rerun on each interrupt, right?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Trenton Lyke (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I don't think you do. I thought that was for enabling interrupts, but the timer will still run without interrupts enabled (see
-  <link href="https://edstem.org/us/courses/19442/discussion/1426192"/>
-  #638) so you'll still be able to check if TFLG is 1 in order to know when to increment the current_time. You just need to remember to clear TFLG everytime after you increment the current_time like you do in your
-  <code>
-   PIT1_Service()
-  </code>
-  function.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Oh ok. I didn't know we had to clear TFLG in the PIT1 handler, but now I see the assembly only does it for PIT0. Thanks for the help!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  This ^. I updated my response on the main answer.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 2
+  </h3>
+  <p>
+   I see. I am having trouble finding in the reference manual what are the PIT_IRQns of channel 0 and 1. Would something like NVIC_SetPriority(0, 4) set channel 0's priority to 4?
+  </p>
+  <p>
+   Also, what do we have to do with the SVC? Would that need to interrupt while waiting?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Trenton Lyke (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    When it came to the busy waiting situation, changing the interrupt priority wasn't really doing anything for me. I just ended up doing polling for when the second PIT channel hit its mark (review lab 2 for reference) and then I incremented the current time accordingly. I put that polling in the while loop that busy waits until the current time reaches the start time of the next unready realtime process. I mean since we are busy waiting already polling won't really destroy performance. I could be wrong though so please feel free to correct me TAs.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Harris Miller (None)
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     This ^. I updated my response on the main answer.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 8em;">
+     <h3>
+      Author: Anonymous
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      With polling, we have to set the TIE bit of PIT 1's TCTRL (i.e. set TCTRL = 3) while waiting inside process_select, right?  I'm pretty sure it is needed to check the TFLG.
+     </p>
+     <p>
+      Also, this won't cause the assembly PIT handler to rerun on each interrupt, right?
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 10em;">
+      <h3>
+       Author: Trenton Lyke (student)
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       I don't think you do. I thought that was for enabling interrupts, but the timer will still run without interrupts enabled (see
+       <a href="https://edstem.org/us/courses/19442/discussion/1426192">
+        #638
+       </a>
+       ) so you'll still be able to check if TFLG is 1 in order to know when to increment the current_time. You just need to remember to clear TFLG everytime after you increment the current_time like you do in your
+       <code>
+        PIT1_Service()
+       </code>
+       function.
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 12em;">
+       <h3>
+        Author: Anonymous
+       </h3>
+       <h3>
+        Vote Count: 0
+       </h3>
+       <p>
+        Oh ok. I didn't know we had to clear TFLG in the PIT1 handler, but now I see the assembly only does it for PIT0. Thanks for the help!
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

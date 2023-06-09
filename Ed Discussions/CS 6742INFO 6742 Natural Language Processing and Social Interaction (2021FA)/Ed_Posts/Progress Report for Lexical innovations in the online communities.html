@@ -13,225 +13,214 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  <bold>
-   Project Overview
-  </bold>
- </paragraph>
- <paragraph>
-  This project aims to explore lexical innovation in the online community.
- </paragraph>
- <paragraph>
-  For the word never used in the first year of the community, we define them to be lexical innovations if they appear &gt;=10 times by &gt;=2 users in the upcoming 6 months when the word is introduced. Lexical innovation is compared to the disappearing new words (words introduced to the community after the first year and appear less than 10 times in total)
- </paragraph>
- <paragraph>
-  I chose 2 pairs of highly related sub-community pairs in Reddit (electronics and AskElectronics, AskMen and AskWomen) for observation.
- </paragraph>
- <figure>
-  <image height="280.6313559322034" src="https://static.us.edusercontent.com/files/jQ9LghHCONAhnhKchRCuSUG6" width="643"/>
- </figure>
- <figure>
-  <image height="278.5848416289593" src="https://static.us.edusercontent.com/files/iX5fSKICeOmTwlcz45uXbxT4" width="643"/>
- </figure>
- <paragraph>
-  <bold>
-   Hypothesis 1
-  </bold>
-  : Lexical innovation of highly related communities evolves together
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    Although electronics and AskElectronics are highly related communities according to the fighting words and topic distribution. Their lexical innovation is separate. Somehow may cause by the rules of electronics:
-   </paragraph>
-   <list style="bullet">
-    <list-item>
-     <paragraph>
-      No questions (Do not post questions on designing, repairing or troubleshooting electronic circuits (including questions on tools, equipment and parts sourcing) - these go in /r/AskElectronics.)
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
- </list>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    AskWomen and AskMen have more lexical innovation overlapping.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    It's definitely more meaningful to compare AskElectronics with AskWomen as a comparison to current highly related pairs. However, the number of utterances and vocabulary size of the two corpora are very different. In that case, the Jaccard score might not be a very meaningful way to evaluate the similarity.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  <bold>
-   Hypothesis 2
-  </bold>
-  : Easily accessible words are more likely to become lexical innovations instead of disappearing.
- </paragraph>
- <paragraph>
-  As the results show that lexical innovation words have fewer phonemes and shorter word lengths compared to the disappeared words
- </paragraph>
- <figure>
-  <image height="249.27898550724638" src="https://static.us.edusercontent.com/files/Dhzv6yCTFRaw6RSUtr3vf11g" width="643"/>
- </figure>
- <paragraph>
-  <bold>
-   Hypothesis 3
-  </bold>
-  : Different types of words will have different life patterns: P words(product and publics figure) vs. S words(slang words)
- </paragraph>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    I downloaded slang words dictionary online to check if a word belongs to slang words. I didn't find any technical way to classify P words. Therefore, I checked if there's any capitalized character inside the word not caused by the start of the sentence and minus the number of capitalized slang words. By manually checking, most of them are P words.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    It’s interesting to see that most lexical innovations in the electronics and askelectronics community are P words.
-   </paragraph>
-  </list-item>
- </list>
- <figure>
-  <image height="263.95020188425303" src="https://static.us.edusercontent.com/files/kUpUNWXGY8M2aVSHVI4DAUPg" width="643"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
-  <bold>
-   Hypothesis 4
-  </bold>
-  : Different communities will have different preferences towards words:
- </paragraph>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    For all the communities, the word type proportion of disappeared new words is similar. However, Askelectronics and Electronics have more preference to the Noun words compared to Askmen and Askwomen
-   </paragraph>
-  </list-item>
- </list>
- <figure>
-  <image height="633.7648114901257" src="https://static.us.edusercontent.com/files/WI0OwBtujnsOuV5H5nyaeiDa" width="643"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Remy Stewart (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi there Heather! It’s been wonderful seeing your project come together and to be able to read through your preliminary results so far. I think the concept of lexical innovation is very interesting, and I really enjoyed how you introduce comparative factors such as different paired subcommunities on Reddit, word attributes, and categories of words as either slang or product/public figures in your project.
- </paragraph>
- <paragraph>
-  It seems to me that an intuitive next step for your work would be looking into comparison statistical tests to explore the underlying significance behind the differences you’re finding outside of random variation. I think some simple t-tests could be quite effective for this purpose. You could look at differences between your paired subreddits, but I could also see differences between the electronics vs. men/women topics with the average values of the two underlying communities being interesting to explore as well.
- </paragraph>
- <paragraph>
-  I was wondering about the point you made at the end of your first hypothesis as well regarding your lexical innovation Jaccard metrics vulnerability to differences in subreddit utterances and vocabulary size. I’m honestly not familiar enough with the metric to comment on its sensitivity to different denominator sizes with the similarity it’s trying to measure. I do wonder if there’s any precedent in the language modeling group comparison literature around centralization/normalization techniques you may be able to use to remove any concerns around unadjusted comparisons while interpreting the Jaccard similarity metric.
- </paragraph>
- <paragraph>
-  I think your finding regarding the prevalence of P words in the electronics subreddits makes a lot of intuitive sense and therefore is helpful to verify the validity of your capitalized-character approach. Discussion around electronics would seem to me as more based around individual objects over more abstract concepts that may come up in an AskMen/AskWomen thread. One idea I had around your slang words metric is that I wonder if it may be helpful to test out a bottom-up approach of creating subreddit-specific slang words over a generic slang word dictionary? I could see you using the Fightin’ Words analysis that it looks like you employed already in your initial descriptive overview of your data. Maybe by reading through the highest z-score terms for each subreddit, you may be able to identify context-specific slang that could be interesting to explore as well beyond the more general slang dictionary.
- </paragraph>
- <paragraph>
-  This may be more a suggestion for a full project beyond this class, but I also wonder how your results may differ depending on different operationalizations of a lexical innovation. I could see an alternative specification being fewer instances required but with a greater diversity of users, such as 5 users using an innovation word at least once. There’s also the factor of the 6-month window- does a shorter window indicate strongly “buzzy” words, while a longer window (and presumably higher instance count to accommodate for more time) allude to innovations that retain a presence within the community? Whether changing these conditions leads to a difference in your overall findings or not, I think it could be helpful for understanding the parameters regarding the strength of these trends and what factors if any may promote a different interpretation.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Celine Lee (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  This is a fun topic, I'm really glad you chose to explore this! I'm really intrigued by the concept of lexical innovations, and especially on Reddit I think that the communities by topic and the frequency of use make Reddit very prone to interesting lexical innovations.
- </paragraph>
- <paragraph>
-  First of all, your selection of communities is great. Both of these are rich Reddit communities with a lot of activity, making them great choices for sources of data. Your finding in the r/electronics rules distinguishing that community from r/AskElectronics is a really critical finding that I'm glad you found, because I think that it is pretty likely to make a difference in lexical innovations.
-  <italic>
-   One thought I have about r/AskMen vs. r/AskWomen is how the role of gender and the gender differences on Reddit and topics discussed in each play a role in lexical innovations. Sometimes, r/AskMen and r/AskWomen have actually the same question asked on both (e.g.
-  </italic>
-  <link href="https://www.reddit.com/r/AskWomen/comments/5dairc/what_is_something_women_know_what_you_wish_men/"/>
-  https://www.reddit.com/r/AskWomen/comments/5dairc/what_is_something_women_know_what_you_wish_men/,
-  <link href="https://www.reddit.com/r/AskMen/comments/zn3ft/men_of_reddit_what_is_something_you_wish_women/"/>
-  https://www.reddit.com/r/AskMen/comments/zn3ft/men_of_reddit_what_is_something_you_wish_women/)
-  <italic>
-   , and it might be interesting to do a paired analysis in addition to the aggregate analyses you've done thus far.
-  </italic>
- </paragraph>
- <paragraph>
-  For your findings in hypothesis 2 and 4, these are interesting results-- it would be additionally interesting to include some significance test such as a standard deviation.
- </paragraph>
- <paragraph>
-  For hypothesis 3, how did you decide that a lexical innovation is P or S? This is a good approach you've taken, and I'm struggling to come up with any alternative. I imagine it's quite difficult to determine whether something is a lexical innovation otherwise. For example, a downloaded list of slang words seems unlikely to include a lexical innovation, but then how do you identify a lexical innovation?
-  <italic>
-   Would you have to manually create a list? Could you do some check for repeated bigrams / trigrams then manually filter out bigrams / trigrams that are clearly not lexical innovations?
-  </italic>
-  In terms of identifying P, another alternative to your approach could be to use a trained Named Entity Recognition model.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Heather Zheng (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi Celine, thank you so much for your suggestion! I definitely will compare the role of gender and its corresponding topic in the lexical innovation of
-  <italic>
-   r/AskMen vs. r/AskWomen
-  </italic>
-  . For hypothesis 3, I am taking the slang dictionary now but the lexical innovation is from the community created since 2008, I guess in that case the slang word dictionary should include most of the slang. But I will also check manually!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Fengyang Lin (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ <b>
+  Project Overview
+ </b>
+</p>
+<p>
+ This project aims to explore lexical innovation in the online community.
+</p>
+<p>
+ For the word never used in the first year of the community, we define them to be lexical innovations if they appear &gt;=10 times by &gt;=2 users in the upcoming 6 months when the word is introduced. Lexical innovation is compared to the disappearing new words (words introduced to the community after the first year and appear less than 10 times in total)
+</p>
+<p>
+ I chose 2 pairs of highly related sub-community pairs in Reddit (electronics and AskElectronics, AskMen and AskWomen) for observation.
+</p>
+<figure>
+ <image height="280.6313559322034" src="https://static.us.edusercontent.com/files/jQ9LghHCONAhnhKchRCuSUG6" width="643"/>
+</figure>
+<figure>
+ <image height="278.5848416289593" src="https://static.us.edusercontent.com/files/iX5fSKICeOmTwlcz45uXbxT4" width="643"/>
+</figure>
+<p>
+ <b>
+  Hypothesis 1
+ </b>
+ : Lexical innovation of highly related communities evolves together
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   Although electronics and AskElectronics are highly related communities according to the fighting words and topic distribution. Their lexical innovation is separate. Somehow may cause by the rules of electronics:
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     No questions (Do not post questions on designing, repairing or troubleshooting electronic circuits (including questions on tools, equipment and parts sourcing) - these go in /r/AskElectronics.)
+    </p>
+   </li>
+  </list>
+ </li>
+</list>
+<list style="bullet">
+ <li>
+  <p>
+   AskWomen and AskMen have more lexical innovation overlapping.
+  </p>
+ </li>
+ <li>
+  <p>
+   It's definitely more meaningful to compare AskElectronics with AskWomen as a comparison to current highly related pairs. However, the number of utterances and vocabulary size of the two corpora are very different. In that case, the Jaccard score might not be a very meaningful way to evaluate the similarity.
+  </p>
+ </li>
+</list>
+<p>
+ <b>
+  Hypothesis 2
+ </b>
+ : Easily accessible words are more likely to become lexical innovations instead of disappearing.
+</p>
+<p>
+ As the results show that lexical innovation words have fewer phonemes and shorter word lengths compared to the disappeared words
+</p>
+<figure>
+ <image height="249.27898550724638" src="https://static.us.edusercontent.com/files/Dhzv6yCTFRaw6RSUtr3vf11g" width="643"/>
+</figure>
+<p>
+ <b>
+  Hypothesis 3
+ </b>
+ : Different types of words will have different life patterns: P words(product and publics figure) vs. S words(slang words)
+</p>
+<list style="unordered">
+ <li>
+  <p>
+   I downloaded slang words dictionary online to check if a word belongs to slang words. I didn't find any technical way to classify P words. Therefore, I checked if there's any capitalized character inside the word not caused by the start of the sentence and minus the number of capitalized slang words. By manually checking, most of them are P words.
+  </p>
+ </li>
+ <li>
+  <p>
+   It’s interesting to see that most lexical innovations in the electronics and askelectronics community are P words.
+  </p>
+ </li>
+</list>
+<figure>
+ <image height="263.95020188425303" src="https://static.us.edusercontent.com/files/kUpUNWXGY8M2aVSHVI4DAUPg" width="643"/>
+</figure>
+<p>
+ <b>
+  Hypothesis 4
+ </b>
+ : Different communities will have different preferences towards words:
+</p>
+<list style="unordered">
+ <li>
+  <p>
+   For all the communities, the word type proportion of disappeared new words is similar. However, Askelectronics and Electronics have more preference to the Noun words compared to Askmen and Askwomen
+  </p>
+ </li>
+</list>
+<figure>
+ <image height="633.7648114901257" src="https://static.us.edusercontent.com/files/WI0OwBtujnsOuV5H5nyaeiDa" width="643"/>
+</figure>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Fengyang Lin (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Hi Heather,
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   It's great to look at all these results! I like how you set up the research questions and the hypotheses and the way you chose to examine them.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   In respect of H1, the follow-up step I would take is to add a dimension of time into the analysis -  lookup the change of numbers lexical innovation and other features over time for both communities, and see if they would have a similar shape, even a similar peak at a certain month.  A similar idea may apply to H3, I was curious if adding a time feature would help to compare the "life pattern".
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   For H2, as we discussed in class, I was wondering if adding features about popular stems would help as you are mentioning "more accessible " words.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Celine Lee (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   This is a fun topic, I'm really glad you chose to explore this! I'm really intrigued by the concept of lexical innovations, and especially on Reddit I think that the communities by topic and the frequency of use make Reddit very prone to interesting lexical innovations.
+  </p>
+  <p>
+   First of all, your selection of communities is great. Both of these are rich Reddit communities with a lot of activity, making them great choices for sources of data. Your finding in the r/electronics rules distinguishing that community from r/AskElectronics is a really critical finding that I'm glad you found, because I think that it is pretty likely to make a difference in lexical innovations.
+   <i>
+    One thought I have about r/AskMen vs. r/AskWomen is how the role of gender and the gender differences on Reddit and topics discussed in each play a role in lexical innovations. Sometimes, r/AskMen and r/AskWomen have actually the same question asked on both (e.g.
+   </i>
+   <a href="https://www.reddit.com/r/AskWomen/comments/5dairc/what_is_something_women_know_what_you_wish_men/">
+    https://www.reddit.com/r/AskWomen/comments/5dairc/what_is_something_women_know_what_you_wish_men/
+    ,
+    <link href="https://www.reddit.com/r/AskMen/comments/zn3ft/men_of_reddit_what_is_something_you_wish_women/"/>
+    https://www.reddit.com/r/AskMen/comments/zn3ft/men_of_reddit_what_is_something_you_wish_women/
+   </a>
+   )
+   <i>
+    , and it might be interesting to do a paired analysis in addition to the aggregate analyses you've done thus far.
+   </i>
+  </p>
+  <p>
+   For your findings in hypothesis 2 and 4, these are interesting results-- it would be additionally interesting to include some significance test such as a standard deviation.
+  </p>
+  <p>
+   For hypothesis 3, how did you decide that a lexical innovation is P or S? This is a good approach you've taken, and I'm struggling to come up with any alternative. I imagine it's quite difficult to determine whether something is a lexical innovation otherwise. For example, a downloaded list of slang words seems unlikely to include a lexical innovation, but then how do you identify a lexical innovation?
+   <i>
+    Would you have to manually create a list? Could you do some check for repeated bigrams / trigrams then manually filter out bigrams / trigrams that are clearly not lexical innovations?
+   </i>
+   In terms of identifying P, another alternative to your approach could be to use a trained Named Entity Recognition model.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Heather Zheng (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Hi Celine, thank you so much for your suggestion! I definitely will compare the role of gender and its corresponding topic in the lexical innovation of
+    <i>
+     r/AskMen vs. r/AskWomen
+    </i>
+    . For hypothesis 3, I am taking the slang dictionary now but the lexical innovation is from the community created since 2008, I guess in that case the slang word dictionary should include most of the slang. But I will also check manually!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Remy Stewart (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Hi there Heather! It’s been wonderful seeing your project come together and to be able to read through your preliminary results so far. I think the concept of lexical innovation is very interesting, and I really enjoyed how you introduce comparative factors such as different paired subcommunities on Reddit, word attributes, and categories of words as either slang or product/public figures in your project.
+   </p>
+   <p>
+    It seems to me that an intuitive next step for your work would be looking into comparison statistical tests to explore the underlying significance behind the differences you’re finding outside of random variation. I think some simple t-tests could be quite effective for this purpose. You could look at differences between your paired subreddits, but I could also see differences between the electronics vs. men/women topics with the average values of the two underlying communities being interesting to explore as well.
+   </p>
+   <p>
+    I was wondering about the point you made at the end of your first hypothesis as well regarding your lexical innovation Jaccard metrics vulnerability to differences in subreddit utterances and vocabulary size. I’m honestly not familiar enough with the metric to comment on its sensitivity to different denominator sizes with the similarity it’s trying to measure. I do wonder if there’s any precedent in the language modeling group comparison literature around centralization/normalization techniques you may be able to use to remove any concerns around unadjusted comparisons while interpreting the Jaccard similarity metric.
+   </p>
+   <p>
+    I think your finding regarding the prevalence of P words in the electronics subreddits makes a lot of intuitive sense and therefore is helpful to verify the validity of your capitalized-character approach. Discussion around electronics would seem to me as more based around individual objects over more abstract concepts that may come up in an AskMen/AskWomen thread. One idea I had around your slang words metric is that I wonder if it may be helpful to test out a bottom-up approach of creating subreddit-specific slang words over a generic slang word dictionary? I could see you using the Fightin’ Words analysis that it looks like you employed already in your initial descriptive overview of your data. Maybe by reading through the highest z-score terms for each subreddit, you may be able to identify context-specific slang that could be interesting to explore as well beyond the more general slang dictionary.
+   </p>
+   <p>
+    This may be more a suggestion for a full project beyond this class, but I also wonder how your results may differ depending on different operationalizations of a lexical innovation. I could see an alternative specification being fewer instances required but with a greater diversity of users, such as 5 users using an innovation word at least once. There’s also the factor of the 6-month window- does a shorter window indicate strongly “buzzy” words, while a longer window (and presumably higher instance count to accommodate for more time) allude to innovations that retain a presence within the community? Whether changing these conditions leads to a difference in your overall findings or not, I think it could be helpful for understanding the parameters regarding the strength of these trends and what factors if any may promote a different interpretation.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

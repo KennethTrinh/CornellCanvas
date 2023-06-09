@@ -13,31 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="358.6887661141805" src="https://static.us.edusercontent.com/files/exE8e6vjupJcmdrCZZIOTAOc" width="658"/>
- </figure>
- <paragraph>
-  Could someone please explain why number (4) is a run-time error? To my understanding, the compiler accepts the cast at compile-time, but does not allow the downcast(?) during runtime because A1 does not implement I2? Much appreciated.
- </paragraph>
-</document>
+<figure>
+ <image height="358.6887661141805" src="https://static.us.edusercontent.com/files/exE8e6vjupJcmdrCZZIOTAOc" width="658"/>
+</figure>
+<p>
+ Could someone please explain why number (4) is a run-time error? To my understanding, the compiler accepts the cast at compile-time, but does not allow the downcast(?) during runtime because A1 does not implement I2? Much appreciated.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Varun Gande (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Varun Gande (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   A new A1 object is created. What partitions does it have? It has a partition for A1, and a partition for I1. The downcast compiles, since A3 is a valid subtype of A1. But the object that was created doesn’t have a partition for A3, so there is a runtime error.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

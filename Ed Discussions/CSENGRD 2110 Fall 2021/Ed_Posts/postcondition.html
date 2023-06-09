@@ -13,91 +13,87 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Sorry I have been confused with what 'postcondition' should be. Is there any examples for postconditions? Is it for checking the correctness of result after the execution of methods? And are we supposed to write after it after the statement?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Sorry I have been confused with what 'postcondition' should be. Is there any examples for postconditions? Is it for checking the correctness of result after the execution of methods? And are we supposed to write after it after the statement?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  You do not need to put in Postconditions.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thanks!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Preconditions and postconditions are part of a method's specifications.  They should always be documented in some form, though it is often rather informal.  You may choose to use
   <code>
    assert
   </code>
   statements to verify a pre- or post-condition if it is cheap to do so (this is recommended, but do not confuse the verification with the condition itself).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   We will learn about searching and sorting algorithms in a few weeks; they are good for illustrating preconditions and postconditions.  For example,
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     A precondition for a binary search might be that "the array to search is sorted in ascending order".  If the caller provides an array that isn't sorted, then the result of the function will be nonsense, and the whole program is broken.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     A postcondition for a sorting routine would be "the elements in the array are sorted in ascending order".  When the routine returns to the caller, then the user may assume that the array they provided is now sorted.  If it is not, then there is a bug in the routine, and the whole program is broken.
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
+ <p>
   In both of these examples, the condition is expensive to verify (you'd have to look at every element in the array to check that it is sorted at the start of the search method and at the end of the sort method), so there should be no asserts in the code corresponding to these conditions.  Instead, you would write JUnit tests to verify these procedures outside of a running program.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you so much! It is much more clearer now!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you so much! It is much more clearer now!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   You do not need to put in Postconditions.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Thanks!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

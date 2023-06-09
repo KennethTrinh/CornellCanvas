@@ -13,42 +13,36 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="101.34851936218679" src="https://static.us.edusercontent.com/files/D9fbd8z0h61z8LMXy2Xi3Zzy" width="454.00000000000006"/>
- </figure>
- <paragraph>
-  Why is "spoon" not replaced, even though there is [a-z]+
- </paragraph>
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
+<figure>
+ <image height="101.34851936218679" src="https://static.us.edusercontent.com/files/D9fbd8z0h61z8LMXy2Xi3Zzy" width="454.00000000000006"/>
+</figure>
+<p>
+ Why is "spoon" not replaced, even though there is [a-z]+
+</p>
+<p>
+ Thank you!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Ronald Dinapoli (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Ronald Dinapoli (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   It
-  <italic>
+  <i>
    is
-  </italic>
+  </i>
   replaced;  it's replaced with "super shiny silver \1!".   It just so happens that the capture group is part of an expression that matches any number of upper/lower case letters followed by a period.   Only the letters matched are part of the capture group and not the period.   So our replacement text will by the hard coded text "super shiny silver" plus the contents of the first capture group which will be "spoon" followed by an exclamation mark.   So we get:
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I have a super shiny silver spoon!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

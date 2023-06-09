@@ -13,62 +13,58 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm not sure what to do.
- </paragraph>
- <paragraph>
-  Running test_course_changetime
- </paragraph>
- <paragraph>
-  Traceback (most recent call last):
- </paragraph>
- <paragraph>
-  File "schedule_tests.py", line 297, in &lt;module&gt;
- </paragraph>
- <paragraph>
-  testfn() # Adding the parentheses calls whatever testfn is
- </paragraph>
- <paragraph>
-  File "schedule_tests.py", line 249, in test_course_changetime
- </paragraph>
- <paragraph>
-  assert my_schedule.warnings == temp_exp_warnings, \
- </paragraph>
- <paragraph>
-  AssertionError: my_schedule warnings list should be ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm', 'ARCH 1120 STU 520: time change causes conflict with AEP 3560 LEC 001', 'ARCH 1120 STU 520: time change causes conflict with FAKER 0000 LEC 002'], but is ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm', 'ARCH 1120 STU 520: time change causes conflict with ARCH 1120 STU 520: MWF 8:00am-8:00pm\nIn schedules: Cornell Fall 21 roster, My Plan C']
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I'm not sure what to do.
+</p>
+<p>
+ Running test_course_changetime
+</p>
+<p>
+ Traceback (most recent call last):
+</p>
+<p>
+ File "schedule_tests.py", line 297, in &lt;module&gt;
+</p>
+<p>
+ testfn() # Adding the parentheses calls whatever testfn is
+</p>
+<p>
+ File "schedule_tests.py", line 249, in test_course_changetime
+</p>
+<p>
+ assert my_schedule.warnings == temp_exp_warnings, \
+</p>
+<p>
+ AssertionError: my_schedule warnings list should be ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm', 'ARCH 1120 STU 520: time change causes conflict with AEP 3560 LEC 001', 'ARCH 1120 STU 520: time change causes conflict with FAKER 0000 LEC 002'], but is ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm', 'ARCH 1120 STU 520: time change causes conflict with ARCH 1120 STU 520: MWF 8:00am-8:00pm\nIn schedules: Cornell Fall 21 roster, My Plan C']
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Rachel Brotherton (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The warnings you're creating in your changeTime method are incorrect, take another look at how you're generating those.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Troy Moslemi (he/him) (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Are you still stuck on this?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Rachel Brotherton (None)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   The warnings you're creating in your changeTime method are incorrect, take another look at how you're generating those.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

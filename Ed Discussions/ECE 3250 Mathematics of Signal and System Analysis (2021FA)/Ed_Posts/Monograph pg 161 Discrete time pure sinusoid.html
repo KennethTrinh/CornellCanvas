@@ -13,111 +13,101 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi,
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  I didn't understand page 161 of the monograph that is motivating why the discrete time pure sinusoid having frequency content at $\omega_0$ is not trivial.
- </paragraph>
- <figure>
-  <image height="378.89806066633514" src="https://static.us.edusercontent.com/files/FBg01lh33QCgMSPy7xIWLqfT" width="658"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
-  I don't see how the sequence of numbers $e^{jn\omega_0}$ is not periodic and in continuous time it is.  I am envisioning it like a cosine with equally spaced n values on the x axis.
- </paragraph>
- <paragraph>
-  Also, I don't quite understand the last part of the paragraph.  Is it saying that it is "bad" that the frequency content looks the same at $2\pi$ multiples away from $\omega_0$?  Is this not true in general?  Doesn't that same thing hold in continuous time without issue?
- </paragraph>
-</document>
+<p>
+ Hi,
+</p>
+<p>
+ I didn't understand page 161 of the monograph that is motivating why the discrete time pure sinusoid having frequency content at $\omega_0$ is not trivial.
+</p>
+<figure>
+ <image height="378.89806066633514" src="https://static.us.edusercontent.com/files/FBg01lh33QCgMSPy7xIWLqfT" width="658"/>
+</figure>
+<p>
+ I don't see how the sequence of numbers $e^{jn\omega_0}$ is not periodic and in continuous time it is.  I am envisioning it like a cosine with equally spaced n values on the x axis.
+</p>
+<p>
+ Also, I don't quite understand the last part of the paragraph.  Is it saying that it is "bad" that the frequency content looks the same at $2\pi$ multiples away from $\omega_0$?  Is this not true in general?  Doesn't that same thing hold in continuous time without issue?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   As for non-periodicity of the sequence you ask about, it turns out to be periodic only for rare values of $\omega _ o$.  Like if you want $e ^ {j n \omega _ o} = e ^ {j ( n  + K ) \omega _ o}$ for some integer $K$, you need $e ^ {j K \omega _ o} = 1$, so $K \omega _ o$ has to be a multiple of $2 \pi$, which happens only for a countable set of $\omega _ o$-values.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Regarding the last paragraph, it's not true in continuous time that if $x$ has frequency content at $\Omega _ o$ it also has frequency content at $\Omega _ o + 2 \pi m$ for nonzero integers $m$.  Like, $x ( t ) = e ^ {j \Omega _ o t}$ has frequency content only at $\Omega _ o$ and at no other frequency.  Also, nothing "good" or "bad" about any of this stuff.  :-)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
- </paragraph>
- <paragraph>
-  Applying the same argument to continuous time, I know that
- </paragraph>
- <math>
-  e^{j\Omega_0t}=e^{j\Omega_0\left(t-T_0\right)}
- </math>
- <paragraph>
-  Because we have the $\Omega_0T_0 = 2\pi$ relation. I am failing to see how this is different in the discrete case?  If we choose any $\Omega_0$ and have period $T_0$ where this holds in continuous time, why can't we chose for any $\omega$ a $K$ that makes this hold in discrete time?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  For the second part, why does it also not work out in continuous time?  Does it not hold true that
- </paragraph>
- <math>
-  e^{j\left(\Omega_0+2\pi m\right)t}=e^{j\Omega_0t}
- </math>
- <paragraph>
-  Because of the time variable t attached to the 2pim?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  $x ( t ) = e ^ {j \Omega _ o t}$ is indeed a periodic function of $t$.  For any $\Omega _ o$-value you can find infinitely many $T$-values for which $x ( t - T ) = x ( t )$ for all $t$.  Any such $T$ is an integer multiple of $2 \pi / \Omega _ o$.
- </paragraph>
- <paragraph>
-  In discrete time, $K$ has to be an integer, and $\omega _ o K$ needs to be a multiple of $2 \pi$ --- only for certain $\omega _ o$-values can you find such a $K$. It's the integer constraint on $K$ that distinguishes the discrete-time case.
- </paragraph>
- <paragraph>
-  Your last equation is incorrect because it requires that $e ^ {j 2 \pi m t} = 1$ for all $t$, which holds only when $m = 0$.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Applying the same argument to continuous time, I know that
+  </p>
+  <math>
+   e^{j\Omega_0t}=e^{j\Omega_0\left(t-T_0\right)}
+  </math>
+  <p>
+   Because we have the $\Omega_0T_0 = 2\pi$ relation. I am failing to see how this is different in the discrete case?  If we choose any $\Omega_0$ and have period $T_0$ where this holds in continuous time, why can't we chose for any $\omega$ a $K$ that makes this hold in discrete time?
+  </p>
+  <p>
+   For the second part, why does it also not work out in continuous time?  Does it not hold true that
+  </p>
+  <math>
+   e^{j\left(\Omega_0+2\pi m\right)t}=e^{j\Omega_0t}
+  </math>
+  <p>
+   Because of the time variable t attached to the 2pim?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: David Delchamps (admin)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    $x ( t ) = e ^ {j \Omega _ o t}$ is indeed a periodic function of $t$.  For any $\Omega _ o$-value you can find infinitely many $T$-values for which $x ( t - T ) = x ( t )$ for all $t$.  Any such $T$ is an integer multiple of $2 \pi / \Omega _ o$.
+   </p>
+   <p>
+    In discrete time, $K$ has to be an integer, and $\omega _ o K$ needs to be a multiple of $2 \pi$ --- only for certain $\omega _ o$-values can you find such a $K$. It's the integer constraint on $K$ that distinguishes the discrete-time case.
+   </p>
+   <p>
+    Your last equation is incorrect because it requires that $e ^ {j 2 \pi m t} = 1$ for all $t$, which holds only when $m = 0$.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Thank you!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

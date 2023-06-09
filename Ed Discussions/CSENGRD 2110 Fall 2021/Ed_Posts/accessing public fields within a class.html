@@ -13,45 +13,43 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  when writing a method that relies on the value of a field that has a public getter, is it better to use the public getter or just access the field directly? I realize that in the case of a setter, there may be precondition assertions that would be beneficial to using the method rather than setting directly, but is there generally a convention for this situation?
- </paragraph>
-</document>
+<p>
+ when writing a method that relies on the value of a field that has a public getter, is it better to use the public getter or just access the field directly? I realize that in the case of a setter, there may be precondition assertions that would be beneficial to using the method rather than setting directly, but is there generally a convention for this situation?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   It depends on the situation.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If the class is something like our linked list class, this is a small class, which must be as efficient possible, because lots of users will rely on this and want it as fast as possible. Then, reference the fields! A sorting algorithm being honed to make it as efficient as possible should also reference fields.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   On the other hand, if your class is a big one, doing lots of input/output or looking at webpages, then small efficiencies that one gains from using fields instead of calls on observers is not worth it. More important is the ability to redesign the class if one wants to, e.g. perhaps replacing one implementation of something by another, then calling observer methods will provide more flexibility in this regard.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  thank you so much! that explanation was really helpful
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   thank you so much! that explanation was really helpful
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

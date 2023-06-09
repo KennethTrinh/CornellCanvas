@@ -156,3 +156,26 @@ def retry(retry_num, retry_sleep_sec=10):
             raise MaxRetriesExceeded(f'Exceed max retry num: {retry_num} failed')
         return wrapper
     return decorator
+
+def xmlToHtml(xml):
+    replacements = {
+        '<paragraph>': '<p>',
+        '</paragraph>': '</p>',
+        '<paragraph/>': '',
+        '<italic>': '<i>',
+        '</italic>': '</i>',
+        '<bold>': '<b>',
+        '</bold>': '</b>',
+        '<list-item>': '<li>',
+        '</list-item>': '</li>',
+        '<document version="2.0">': '',
+        '<document version="1.0">': '',
+        '</document>': '',
+    }
+    # find the <file url=(1) filename=(2)> and replace with <a href=(1)>(2)</a>
+    xml = re.sub(r'<file url="(.*)" filename="(.*)"/>', r'<a href="\1">\2</a>', xml)
+    # replace <link href="https://classes.cornell.edu/browse/roster/SP23/class/SYSEN/5420">here</link> with <a href="https://classes.cornell.edu/browse/roster/SP23/class/SYSEN/5420">here</a>
+    xml = re.sub(r'<link href="(.*)">(.*)</link>', r'<a href="\1">\2</a>', xml)
+    for k, v in replacements.items():
+        xml = xml.replace(k, v)
+    return xml

@@ -13,107 +13,99 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="133.08700564971753" src="https://static.us.edusercontent.com/files/PGeKrYqbXzfduQNVpN1HuMFw" width="658"/>
- </figure>
- <paragraph>
-  I know we should use the bound on m for realizable learning settings, but I'm a little confused on the best way to compute the |H| here.
- </paragraph>
- <paragraph>
-  We have d binary features, and we're looking at the class of OR-functions.
- </paragraph>
- <paragraph>
-  So, if we have d=1 feature, then |H| would be zero ? because there is no possible OR function?
- </paragraph>
- <paragraph>
-  If we d=2 features, then |H| would be one, because we only have (x1 or x2) ?
- </paragraph>
- <paragraph>
-  If we have d=3 features, then |H| would be 4, because we have: (x1 or x2), (x2 or x3), (x1 or x3), (x1 or x2 or x3) ?
- </paragraph>
- <paragraph>
-  I don't really see a pattern here though, and don't know what would be the best way to generalize this.
- </paragraph>
-</document>
+<figure>
+ <image height="133.08700564971753" src="https://static.us.edusercontent.com/files/PGeKrYqbXzfduQNVpN1HuMFw" width="658"/>
+</figure>
+<p>
+ I know we should use the bound on m for realizable learning settings, but I'm a little confused on the best way to compute the |H| here.
+</p>
+<p>
+ We have d binary features, and we're looking at the class of OR-functions.
+</p>
+<p>
+ So, if we have d=1 feature, then |H| would be zero ? because there is no possible OR function?
+</p>
+<p>
+ If we d=2 features, then |H| would be one, because we only have (x1 or x2) ?
+</p>
+<p>
+ If we have d=3 features, then |H| would be 4, because we have: (x1 or x2), (x2 or x3), (x1 or x3), (x1 or x2 or x3) ?
+</p>
+<p>
+ I don't really see a pattern here though, and don't know what would be the best way to generalize this.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jane Du (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jane Du (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You're on the right track, although d means the number of boolean variables, not the length of the OR expression.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   It's any OR expression of any length, so:
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     1 variable: x1 would be an option, or x2, or xd -- as well as their negations, like ~x1, ~x2, ~xd. These are all OR functions.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     2 variables: x1 or x2, ~x1 or x3, x2 or xd, all count. You can use at most 2 variables.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     3 variables: x1 or x3 or x4, etc.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     ...
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     d variables: x1 or x2 or x3 or ... or xd. But don't forget that all the variables could be negated too.
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ankush Rayabhari (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Would be |H| = 3^d - 1 then since for each variable we have the option of not including it, including it with no negation, or including it with negation. We then subtract 1 since we cannot exclude all variables?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jane Du (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  This is beyond late, sorry. But yes; and actually, the exclusion of all variables is allowed as an expression (although if you write down your assumptions you can typically get full credit)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Ankush Rayabhari (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Would be |H| = 3^d - 1 then since for each variable we have the option of not including it, including it with no negation, or including it with negation. We then subtract 1 since we cannot exclude all variables?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Jane Du (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    This is beyond late, sorry. But yes; and actually, the exclusion of all variables is allowed as an expression (although if you write down your assumptions you can typically get full credit)
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

@@ -13,56 +13,52 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Problem #2
- </paragraph>
- <paragraph>
-  HW #2
- </paragraph>
- <paragraph>
-  The instructions do not say to combine all orders with the same OrderID.
- </paragraph>
- <paragraph>
-  For instance, there are four OrderIDs with 11030.
- </paragraph>
- <paragraph>
-  However if you look at example picture and you add up the the four OrderIDs with 11030 the results are the same.
- </paragraph>
- <paragraph>
-  Should we consolidate the query to group by OrderID
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Problem #2
+</p>
+<p>
+ HW #2
+</p>
+<p>
+ The instructions do not say to combine all orders with the same OrderID.
+</p>
+<p>
+ For instance, there are four OrderIDs with 11030.
+</p>
+<p>
+ However if you look at example picture and you add up the the four OrderIDs with 11030 the results are the same.
+</p>
+<p>
+ Should we consolidate the query to group by OrderID
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Varun Gande (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Varun Gande (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Yes. It's important to note that each record doesn't correspond to an order, but rather the purchase of some amount of a certain product. This can be traced back to a certain order number, and we want the discount, undiscounted revenue, etc. across all products of a given order, which can be done using a GROUP BY.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Brandon Huynh (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  I attempted to do it without using the SUM functions in the SELECT statement because I knew that GROUPBY would sum the numbers of the same OrderID for me, but I couldn't get the result shown in the screenshot. However, when I added the SUM functions it gave me the correct screenshot. I still don't get why I need to add the SUM functions if GROUP BY does it? Why do they result in different things?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Brandon Huynh (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   I attempted to do it without using the SUM functions in the SELECT statement because I knew that GROUPBY would sum the numbers of the same OrderID for me, but I couldn't get the result shown in the screenshot. However, when I added the SUM functions it gave me the correct screenshot. I still don't get why I need to add the SUM functions if GROUP BY does it? Why do they result in different things?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

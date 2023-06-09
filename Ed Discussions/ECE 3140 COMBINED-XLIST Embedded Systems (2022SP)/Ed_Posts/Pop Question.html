@@ -13,105 +13,99 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hello,
- </paragraph>
- <paragraph>
-  If we push LR on to the stack, what are the possible ways we can pop it off the stack? I know that pop{LR} is illegal.
- </paragraph>
-</document>
+<p>
+ Hello,
+</p>
+<p>
+ If we push LR on to the stack, what are the possible ways we can pop it off the stack? I know that pop{LR} is illegal.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andrew Cheng (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  POP {PC}
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Aaron Wilhelm (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aaron Wilhelm (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   When a register value is pushed onto the stack it means that 4 bytes are added to the stack. These 4 bytes do not inherently belong to a register as they are just data somewhere in memory. However, in general when you push a register's value onto the stack you will later want to pop that value off the stack into the same register.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   So, to answer your question, you can technically pop into any of the registers that the POP instruction allows for (i.e. R0-R7 or the PC, see page A6-165 of the manual). That being said, in general you will want to POP the address into the PC register.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ariana Haghighi (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  So, instead of two instructions--POP {LR} and BX {LR}-- you only need POP {PC}?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Aaron Wilhelm (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  If you look at the documentation, POP {LR} is not possible. Instead you need to do POP {PC}. I suppose you could POP the memory address into a different register and then use BX with that register but you might as well just use the POP {PC} since it would be quicker.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ariana Haghighi (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Ok so push{LR} and POP{PC} go together, but say I don't need to push LR due to the program flow. Is BL &lt;lable&gt; and BX LR sufficient?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Aaron Wilhelm (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  As long as you don't have any function calls in the subroutine that you BL to then that should work. You only need to PUSH {LR} and POP {PC} if you make calls to subroutines
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Ariana Haghighi (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   So, instead of two instructions--POP {LR} and BX {LR}-- you only need POP {PC}?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Aaron Wilhelm (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    If you look at the documentation, POP {LR} is not possible. Instead you need to do POP {PC}. I suppose you could POP the memory address into a different register and then use BX with that register but you might as well just use the POP {PC} since it would be quicker.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Ariana Haghighi (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Ok so push{LR} and POP{PC} go together, but say I don't need to push LR due to the program flow. Is BL &lt;lable&gt; and BX LR sufficient?
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Aaron Wilhelm (admin)
+     </h3>
+     <h3>
+      Vote Count: 1
+     </h3>
+     <p>
+      As long as you don't have any function calls in the subroutine that you BL to then that should work. You only need to PUSH {LR} and POP {PC} if you make calls to subroutines
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Andrew Cheng (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   POP {PC}
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

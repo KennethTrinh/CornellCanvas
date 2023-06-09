@@ -13,37 +13,35 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Consider this situation:
- </paragraph>
- <paragraph>
-  1. C is an interface, E and F are class
- </paragraph>
- <paragraph>
-  2. F implements C
- </paragraph>
- <paragraph>
-  3. E extends F
- </paragraph>
- <paragraph>
-  Do we need to have all methods in C declared in E? Should I also write E implements C?
- </paragraph>
-</document>
+<p>
+ Consider this situation:
+</p>
+<p>
+ 1. C is an interface, E and F are class
+</p>
+<p>
+ 2. F implements C
+</p>
+<p>
+ 3. E extends F
+</p>
+<p>
+ Do we need to have all methods in C declared in E? Should I also write E implements C?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   The best way to answer your question is to try it in Eclipse.  Define interfaces and classes exactly as you describe here and see what happens.  You will remember the rules much better that way.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   For the formal answer, if
   <code>
    class F implements C
@@ -53,10 +51,10 @@
    class E extends F
   </code>
   , then:
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     Class
     <code>
      F
@@ -74,10 +72,10 @@
      abstract
     </code>
     )
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Because
     <code>
      E
@@ -115,10 +113,10 @@
      F
     </code>
     )
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     The compiler knows that
     <code>
      E
@@ -148,10 +146,10 @@
      E implements C
     </code>
     - that is redundant to the compiler.
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

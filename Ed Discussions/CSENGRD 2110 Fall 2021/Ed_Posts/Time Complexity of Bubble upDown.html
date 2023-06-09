@@ -13,51 +13,49 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I was a little unsure why bubble up and bubble down have time complexity O(log(n)). I assume it has something to do with the "binary-characteristic" of heaps, but I can't find a clear explanation of why exactly it is log(n)
- </paragraph>
-</document>
+<p>
+ I was a little unsure why bubble up and bubble down have time complexity O(log(n)). I assume it has something to do with the "binary-characteristic" of heaps, but I can't find a clear explanation of why exactly it is log(n)
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  O(logn) is the height of the heap.
- </paragraph>
- <figure>
-  <image height="535.4520547945206" src="https://static.us.edusercontent.com/files/JCY1E0d2pMUQyxPJ0b0aE4tc" width="698"/>
- </figure>
- <paragraph>
-  Here, log(9) = 3.
- </paragraph>
- <paragraph>
-  3 is the height of this tree.
- </paragraph>
- <paragraph>
-  If we want to bubble up an element beginning at the bottom of the tree, it will take 3 switches to get to the top.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   O(logn) is the height of the heap because the heap-tree is complete; it has all nodes on all levels except the bottom one and all nodes on the bottom level are al the way to the left.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Troy Moslemi (he/him) (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   O(logn) is the height of the heap.
+  </p>
+  <figure>
+   <image height="535.4520547945206" src="https://static.us.edusercontent.com/files/JCY1E0d2pMUQyxPJ0b0aE4tc" width="698"/>
+  </figure>
+  <p>
+   Here, log(9) = 3.
+  </p>
+  <p>
+   3 is the height of this tree.
+  </p>
+  <p>
+   If we want to bubble up an element beginning at the bottom of the tree, it will take 3 switches to get to the top.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

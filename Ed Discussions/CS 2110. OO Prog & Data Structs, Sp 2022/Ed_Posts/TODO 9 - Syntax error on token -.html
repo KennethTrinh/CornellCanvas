@@ -13,28 +13,26 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi,
- </paragraph>
- <paragraph>
-  I am a little lost on how to fix the error mentioned in the title for TODO 9. I am using an anonymous function where the ActionEvent is "GameScore" and then it will use setText to update the score label. However, I am getting a syntax error for the part of the anonymous function where it is "-&gt;" and it says that I have a syntax error because it is an invalid AssignmentOperator. I am pretty sure that this is because I have written some other part of the anonymous function incorrectly, but I can't figure out which part.
- </paragraph>
-</document>
+<p>
+ Hi,
+</p>
+<p>
+ I am a little lost on how to fix the error mentioned in the title for TODO 9. I am using an anonymous function where the ActionEvent is "GameScore" and then it will use setText to update the score label. However, I am getting a syntax error for the part of the anonymous function where it is "-&gt;" and it says that I have a syntax error because it is an invalid AssignmentOperator. I am pretty sure that this is because I have written some other part of the anonymous function incorrectly, but I can't figure out which part.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Melissa Ginaldi (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Melissa Ginaldi (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Without seeing the code/error I cannot be sure this is the specific issue you are referring to however, TODO 9 should not be using an ActionEvent. The listener in TODO 9 is a PropertyChangeListener. Therefore the event should be a PropertyChangeEvent. (Note that every listener type has a matching event type, this is by convention)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

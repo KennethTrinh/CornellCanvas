@@ -13,66 +13,62 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  After finding the N-point DFT's of x1 and x2, how can we find the ordinary convolution of the two signals? I am a little bit confused about the process for ordinary convolution vs. circular convolution using DFTs.
- </paragraph>
-</document>
+<p>
+ After finding the N-point DFT's of x1 and x2, how can we find the ordinary convolution of the two signals? I am a little bit confused about the process for ordinary convolution vs. circular convolution using DFTs.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Turns out that $y _ 1$, the ordinary convolution of $x _ 1$ and $x _ 2$ viewed as $N$-point signals, is the same as the circular convolution of those two $N$-point signals.  Thus you get $y _ 1$ by taking the inverse $N$-point DFT of
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $\left ( \widehat{Y} _ 1 \right ) _ k = \left ( \widehat{X} _ 1 \right ) _ k \left ( \widehat{X} _ 2 \right ) _ k$, $0 \leq k &lt; N$.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Rhia Malhotra (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Is there a simplified way to take the N-pt inverse DFT of $(
-  <italic>
-   Y
-  </italic>
-  1​)
-  <italic>
-   k
-  </italic>
-  ​$? Right now, it comes out to a very long and un-simplified summation?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jack Young (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  " Note that you can “read a signal off” from its N-point DFT if you’ve got the DFT expressed as a sum of powers ψ^−k for 0 ≤ k &lt; N — the coefficient of ψ^−nk in such an expression is the value of the signal at time n. "
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Rhia Malhotra (None)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Is there a simplified way to take the N-pt inverse DFT of $(
+   <i>
+    Y
+   </i>
+   1​)
+   <i>
+    k
+   </i>
+   ​$? Right now, it comes out to a very long and un-simplified summation?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Jack Young (student)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    " Note that you can “read a signal off” from its N-point DFT if you’ve got the DFT expressed as a sum of powers ψ^−k for 0 ≤ k &lt; N — the coefficient of ψ^−nk in such an expression is the value of the signal at time n. "
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

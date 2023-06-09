@@ -13,36 +13,32 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  I am really confused about why the linear filter in that qustion can be interpreted as matrix and how it solves the questions. What does z[k] evaluate to and how does it relate to the calculation in Example 3?
- </paragraph>
-</document>
+<p>
+ I am really confused about why the linear filter in that qustion can be interpreted as matrix and how it solves the questions. What does z[k] evaluate to and how does it relate to the calculation in Example 3?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Phillip Jang (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Phillip Jang (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   First note the periodic sequence $y_k$ repeats exactly every 8 time steps so $z_k$ also repeats every 8 time steps. Thus you can wrap-around your indices back to 0 once they get past 7, and if you know $z_0, \ldots, z_7$, you can determine all other $z_k$'s. This is where the $8 \times 8$ system comes from, as that is exactly enough equations to determine the $8$ unknown values.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $z_6 = .35y_6 + .5y_7 + .35y_8$ can be rewritten as $.35y_6 + .5y_7 + .35y_0$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $z_7 = .35y_7 + .5y_8 + .35y_9$ can be rewritten as $.35y_7 + .5y_0 + .35y_1$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If $v_k = cos(\frac{\pi k}{4})$ and $w_k = cos(\frac{3\pi k}{4})$, then Table 1 gives the values for $Av_k$ and the paragraph below tells you $Aw_k = 0$ for all $k$. Your input for that problem is $y_k = 2v_k+w_k$ so we can exploit linearity to get $Ay_k = 2Av_k+Aw_k$.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

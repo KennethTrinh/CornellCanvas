@@ -13,70 +13,64 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I cannot understand why the following code would not work for 6a on the prelim:
- </paragraph>
- <paragraph>
-  /** Visit every node reachable along a path of unvisited nodes from node u. Precondition: u is not visited. */
- </paragraph>
- <paragraph>
-  public static void dfs(Node u) {
- </paragraph>
- <paragraph>
-  if(u has been visited) return;
- </paragraph>
- <paragraph>
-  Visit u;
- </paragraph>
- <paragraph>
-  for each neighbor w of u:
- </paragraph>
- <paragraph>
-  dfs(w); }
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  The precondition guarantees that u has not been visited. So then the next line allows it to be visited, and after that, recursion allows the same process to take place for each neighbor until all nodes that are reachable have been visited.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  I know my logic in this must be wrong somewhere I just can't figure it out
- </paragraph>
-</document>
+<p>
+ I cannot understand why the following code would not work for 6a on the prelim:
+</p>
+<p>
+ /** Visit every node reachable along a path of unvisited nodes from node u. Precondition: u is not visited. */
+</p>
+<p>
+ public static void dfs(Node u) {
+</p>
+<p>
+ if(u has been visited) return;
+</p>
+<p>
+ Visit u;
+</p>
+<p>
+ for each neighbor w of u:
+</p>
+<p>
+ dfs(w); }
+</p>
+<p>
+ The precondition guarantees that u has not been visited. So then the next line allows it to be visited, and after that, recursion allows the same process to take place for each neighbor until all nodes that are reachable have been visited.
+</p>
+<p>
+ I know my logic in this must be wrong somewhere I just can't figure it out
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   One must go by the specification!!!
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The specification says that u is not visited. Therefore, if a neighbor w is already visited, dfs(w) should not be called.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I get it now. Agh. Thanks for clarifying.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I get it now. Agh. Thanks for clarifying.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

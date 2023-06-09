@@ -13,81 +13,75 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <figure>
-  <image height="507.24303797468355" src="https://static.us.edusercontent.com/files/95SgDIVrMl7wR84nGW0MXdr4" width="658"/>
- </figure>
- <paragraph>
-  for Q2 how did we get the length of the weight vector?
- </paragraph>
- <paragraph>
-  where did the (+9) come from?
- </paragraph>
-</document>
+<figure>
+ <image height="507.24303797468355" src="https://static.us.edusercontent.com/files/95SgDIVrMl7wR84nGW0MXdr4" width="658"/>
+</figure>
+<p>
+ for Q2 how did we get the length of the weight vector?
+</p>
+<p>
+ where did the (+9) come from?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Noor (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   This is the euclidian length, so we have sqrt(20*1^2+(3-)^2), the 20 from the 20 1s and the 9 from the -3 bias term.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Man Yin Kwok (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Why do we give a weight of -3 to the added feature?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Scott Bass (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Why is it that the geometric margin is
-  <italic>
-   at least
-  </italic>
-  $2/ \sqrt{20 \times 1 + 9}$ and not equal to it? I.e. why do we need the weight vector $\vec{w}$ to have a functional margin $\gamma = 1$ for us to conclude that the geometric margin is $1/ ||\vec{w}||$?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  This is because we may or may not actually end up with points sitting on that margin, so if we have a nice dataset it's larger. For the geometric margin, it's equal to whatever the functional margin is divided by the euclidean norm of the weight vector (since the larger the magnitude of the weight vector, the larger the corresponding functional margin).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Scott Bass (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Why is it that the geometric margin is
+   <i>
+    at least
+   </i>
+   $2/ \sqrt{20 \times 1 + 9}$ and not equal to it? I.e. why do we need the weight vector $\vec{w}$ to have a functional margin $\gamma = 1$ for us to conclude that the geometric margin is $1/ ||\vec{w}||$?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Michael Noor (staff)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    This is because we may or may not actually end up with points sitting on that margin, so if we have a nice dataset it's larger. For the geometric margin, it's equal to whatever the functional margin is divided by the euclidean norm of the weight vector (since the larger the magnitude of the weight vector, the larger the corresponding functional margin).
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Man Yin Kwok (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Why do we give a weight of -3 to the added feature?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

@@ -13,22 +13,20 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  How do we insert the tag_id into the entries_tags table? If we have the tag "value" from the insert form saved, how do we get the id associated with that tag? Do we need a SELECT query to get that tag value's id?
- </paragraph>
-</document>
+<p>
+ How do we insert the tag_id into the entries_tags table? If we have the tag "value" from the insert form saved, how do we get the id associated with that tag? Do we need a SELECT query to get that tag value's id?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Kyle J. Harms (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kyle J. Harms (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You should be able to use
   <code>
    $db-&gt;lastInsertId('id')
@@ -38,63 +36,61 @@
    INSERT
   </code>
   a tag_entry record using the entry's id as a second, third, etc. query.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Danvass Gekonge (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I came across this requirement:
-  <break>
-  </break>
-  <break>
-  </break>
-  <bold>
-   Deduction Warning:
-  </bold>
-  Algorithmically implemented “queries” in PHP is prohibited; you may not retrieve
-  <italic>
-   all
-  </italic>
-  records from the database and then use a loop in PHP to ‘query’ through the database. Instead,
-  <bold>
-   write a single SQL query
-  </bold>
-  to achieve the same result.
-  <break>
-  </break>
-  <break>
-  </break>
-  Can I assume that using a for loop to
-  <code>
-   INSERT
-  </code>
-  a tag_entry into the database wouldn't result in a deduction? (i.e, I have n tags to associate with an entry that was created with a form, now I'd like to use n queries to associate each tag with that new entry)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Got it, thank you! And to get the tag's id, do we need a SELECT query?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Got it, thank you! And to get the tag's id, do we need a SELECT query?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Danvass Gekonge (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I came across this requirement:
+    <break>
+    </break>
+    <break>
+    </break>
+    <b>
+     Deduction Warning:
+    </b>
+    Algorithmically implemented “queries” in PHP is prohibited; you may not retrieve
+    <i>
+     all
+    </i>
+    records from the database and then use a loop in PHP to ‘query’ through the database. Instead,
+    <b>
+     write a single SQL query
+    </b>
+    to achieve the same result.
+    <break>
+    </break>
+    <break>
+    </break>
+    Can I assume that using a for loop to
+    <code>
+     INSERT
+    </code>
+    a tag_entry into the database wouldn't result in a deduction? (i.e, I have n tags to associate with an entry that was created with a form, now I'd like to use n queries to associate each tag with that new entry)
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

@@ -13,55 +13,49 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I've been trying to figure out how to programmatically determine the difference between something like 'Å' and 'A' in Java. I haven't found anything particularly helpful in the docs as Character.isLetter()  evaluates to true for both of them.
- </paragraph>
- <paragraph>
-  I saw that one could normalize the string (ie. strip it of its accents and then make a comparison between the original and normalized strings) but thought that was beyond what was expected of us on the assignment.
- </paragraph>
- <paragraph>
-  Without hardcoding the range of "magic numbers" or creating an array of unaccented letters in the alphabet, I'm at a bit of a loss.
- </paragraph>
- <paragraph>
-  Is there something I'm missing?
- </paragraph>
-</document>
+<p>
+ I've been trying to figure out how to programmatically determine the difference between something like 'Å' and 'A' in Java. I haven't found anything particularly helpful in the docs as Character.isLetter()  evaluates to true for both of them.
+</p>
+<p>
+ I saw that one could normalize the string (ie. strip it of its accents and then make a comparison between the original and normalized strings) but thought that was beyond what was expected of us on the assignment.
+</p>
+<p>
+ Without hardcoding the range of "magic numbers" or creating an array of unaccented letters in the alphabet, I'm at a bit of a loss.
+</p>
+<p>
+ Is there something I'm missing?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Tomer Shamir (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Tomer Shamir (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Remember that chars are number types so you can compare them with operators such as &lt; and &gt;. While you can't use magic numbers, think about what you may do with magic numbers but then use the char values in place of the magic numbers and see what happens.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Ah I see so you can technically encapsulate the range numerically while still using alphabetic chars (to keep things transparent) and that's not considered using magic numbers
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Thanks!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Ah I see so you can technically encapsulate the range numerically while still using alphabetic chars (to keep things transparent) and that's not considered using magic numbers
+  </p>
+  <p>
+   Thanks!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

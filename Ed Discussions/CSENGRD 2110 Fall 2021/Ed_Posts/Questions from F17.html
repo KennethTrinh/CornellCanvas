@@ -13,110 +13,106 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Could you explain why it is O(min(np,nq)) in the first picture and why the second picture, for Q2 , the answer is O(n log n)?
- </paragraph>
- <figure>
-  <image height="645.2542372881355" src="https://static.us.edusercontent.com/files/Ae9ANPeWEw029se4ut35DUm4" width="658"/>
- </figure>
- <figure>
-  <image height="264.3457711442786" src="https://static.us.edusercontent.com/files/S3B6MDoseTDMIdlnuTFIJwT8" width="658"/>
- </figure>
-</document>
+<p>
+ Could you explain why it is O(min(np,nq)) in the first picture and why the second picture, for Q2 , the answer is O(n log n)?
+</p>
+<figure>
+ <image height="645.2542372881355" src="https://static.us.edusercontent.com/files/Ae9ANPeWEw029se4ut35DUm4" width="658"/>
+</figure>
+<figure>
+ <image height="264.3457711442786" src="https://static.us.edusercontent.com/files/S3B6MDoseTDMIdlnuTFIJwT8" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="1.0">
- <paragraph>
-  Just did this question last night.  isSameTree method will return false if both both of the trees don’t share the same structure.  Let’s say that we have tree A and tree B.
- </paragraph>
- <paragraph>
-  Tree A looks like this:
- </paragraph>
- <paragraph>
-  A
-  <break>
-  </break>
-  B       C
- </paragraph>
- <paragraph>
-  Tree C looks like this:
- </paragraph>
- <paragraph>
-  A
-  <break>
-  </break>
-  B
- </paragraph>
- <paragraph>
-  Once the method detects that one node is null in the second if statement, it will return false.  That means that the method looked at the minimum nodes of tree C.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  That makes sense. Thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Joshua Caplan (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Joshua Caplan (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   For your second question, it looks like the first for loop counter is being doubled after every iteration, so that will give you log(n) time. In the second embedded for loop, it looks like a regular loop that iterates over n elements, so it would be n time. Since it's a nested for loop you multiply the two times together and you get O(nlogn)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  lol silly me I forgot the other question
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you! I forgot that it becomes logn
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you! I forgot that it becomes logn
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Troy Moslemi (he/him) (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    lol silly me I forgot the other question
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Troy Moslemi (he/him) (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Just did this question last night.  isSameTree method will return false if both both of the trees don’t share the same structure.  Let’s say that we have tree A and tree B.
+  </p>
+  <p>
+   Tree A looks like this:
+  </p>
+  <p>
+   A
+   <break>
+   </break>
+   B       C
+  </p>
+  <p>
+   Tree C looks like this:
+  </p>
+  <p>
+   A
+   <break>
+   </break>
+   B
+  </p>
+  <p>
+   Once the method detects that one node is null in the second if statement, it will return false.  That means that the method looked at the minimum nodes of tree C.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    That makes sense. Thank you!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

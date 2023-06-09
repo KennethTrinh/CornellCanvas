@@ -13,37 +13,35 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  I am kind of confused on the definition of a polynomial kernel in implementing a kernelized svm. If x has dimensions 1xd and z has dimensions 1xd then x^TZ would have dimensions dxd which doesn't make sense because shouldn't it be a scalar?
- </paragraph>
- <figure>
-  <image height="19.6301531213192" src="https://static.us.edusercontent.com/files/EiqLDZmdLIoGGAi0eu2rrDbB" width="641"/>
- </figure>
- <paragraph>
-  If I interpret x as having dimensions dx1 and z having dimensions dx1, then x^TZ would produce a scalar but then that would mess up the dimensions in the definition of linear kernel and it would become dxd instead of a scalar.
- </paragraph>
- <figure>
-  <image height="34.52693208430913" src="https://static.us.edusercontent.com/files/ibmWKZ7AoLf0gdccjIb45UwZ" width="641"/>
- </figure>
- <paragraph>
-  Could I have some clarification on this? Thanks!
- </paragraph>
-</document>
+<p>
+ I am kind of confused on the definition of a polynomial kernel in implementing a kernelized svm. If x has dimensions 1xd and z has dimensions 1xd then x^TZ would have dimensions dxd which doesn't make sense because shouldn't it be a scalar?
+</p>
+<figure>
+ <image height="19.6301531213192" src="https://static.us.edusercontent.com/files/EiqLDZmdLIoGGAi0eu2rrDbB" width="641"/>
+</figure>
+<p>
+ If I interpret x as having dimensions dx1 and z having dimensions dx1, then x^TZ would produce a scalar but then that would mess up the dimensions in the definition of linear kernel and it would become dxd instead of a scalar.
+</p>
+<figure>
+ <image height="34.52693208430913" src="https://static.us.edusercontent.com/files/ibmWKZ7AoLf0gdccjIb45UwZ" width="641"/>
+</figure>
+<p>
+ Could I have some clarification on this? Thanks!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Noor (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   This kernel function is designed to work on matrices, where the ith row of X or Z are a specific training/test point
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

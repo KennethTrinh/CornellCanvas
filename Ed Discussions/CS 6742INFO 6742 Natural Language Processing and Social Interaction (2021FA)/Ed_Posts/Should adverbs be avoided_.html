@@ -13,153 +13,149 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Books on how to write persuasively (e.g., Sword 2012) often note that the use of adverbs should be avoided. Adverbs have a reputation for being weak and causing unnecessary clutter. This is because plenty of adverb-verb combinations are often best expressed with a single, more meaningful verb. For example, "driving fast” could become  “speeding”, "walking slowly" could become "meandering", etc.
- </paragraph>
- <paragraph>
-  I wonder whether such writing tips hold up against data.
- </paragraph>
- <paragraph>
-  To test the hypothesis, I propose to use the CMV dataset and test whether the frequency of adverb use is negatively correlated with persuasiveness.
- </paragraph>
- <paragraph>
-  I found a
-  <link href="http://www.esldesk.com/vocabulary/adverbs"/>
-  website with roughly 4000 adverbs, which I could use to identify adverbs.
- </paragraph>
- <paragraph>
-  This project could be merged into Kiran's or Remy's project as the testing procedure might be fairly similar.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Joyce Zhou (they/them) (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
-  I'm curious if this could be generalized to "having a wide range of synonyms v.s. using the same word(s) repeatedly"?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Benjamin Rosche (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  That's a great point. I will test that too!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Type-token ratios ("the the the" has three tokens but only one type) are one class of formalization on this idea, although there are several different formulations around; see e.g.
-  <link href="https://www.cambridge.org/core/journals/journal-of-child-language/article/abs/typetoken-ratios-what-do-they-really-tell-us/B15717A4D91390ED7E2F2DA143BA1DDB"/>
-  https://www.cambridge.org/core/journals/journal-of-child-language/article/abs/typetoken-ratios-what-do-they-really-tell-us/B15717A4D91390ED7E2F2DA143BA1DDB
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  We mentioned after lecture but I wanted to put in writing: do be slightly careful to distinguish "doesn't use many adverbs" with just plain old "shorter", if your hypothesis is specifically centered on adverbs.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Benjamin Rosche (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ Books on how to write persuasively (e.g., Sword 2012) often note that the use of adverbs should be avoided. Adverbs have a reputation for being weak and causing unnecessary clutter. This is because plenty of adverb-verb combinations are often best expressed with a single, more meaningful verb. For example, "driving fast” could become  “speeding”, "walking slowly" could become "meandering", etc.
+</p>
+<p>
+ I wonder whether such writing tips hold up against data.
+</p>
+<p>
+ To test the hypothesis, I propose to use the CMV dataset and test whether the frequency of adverb use is negatively correlated with persuasiveness.
+</p>
+<p>
+ I found a
+ <a href="http://www.esldesk.com/vocabulary/adverbs">
+  website
+ </a>
+ with roughly 4000 adverbs, which I could use to identify adverbs.
+</p>
+<p>
+ This project could be merged into Kiran's or Remy's project as the testing procedure might be fairly similar.
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Benjamin Rosche (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   PROJECT UPDATE:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I have managed to read in the CMV data. (I have followed the tutorial on Vlad's blog to do that). I have also web-scraped the list of adverbs.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   <underline>
    Regarding modeling, my idea is the following:
   </underline>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I want to use whether or not a delta has been awarded to the argument as the dependent variable and then use logistic regression with I) relative adverb frequency, II) a verbal diversity index, and III) text length as covariates.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  checkin meeting notes:
- </paragraph>
- <paragraph>
-  1. baseline % adverb use in challenger posts?
-  <break>
-  </break>
-  2. concatenate same-user posts in a given thread.
- </paragraph>
- <paragraph>
-  3. good to look at modeling the effect of the thread: both with and without, and analyze any discrepancies
-  <break>
-  </break>
-  <break>
-  </break>
-  4. what is the variance across users of adverb usage rates?
-  <break>
-  </break>
-  example with OP using it a lot, so watch out for quotes:
-  <link href="https://old.reddit.com/r/changemyview/comments/ppqrgn/cmv_nuclear_energy_is_a_viable_tool_to_revert/"/>
-  https://old.reddit.com/r/changemyview/comments/ppqrgn/cmv_nuclear_energy_is_a_viable_tool_to_revert/
- </paragraph>
- <paragraph>
-  <break>
-  </break>
-  <break>
-  </break>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   checkin meeting notes:
+  </p>
+  <p>
+   1. baseline % adverb use in challenger posts?
+   <break>
+   </break>
+   2. concatenate same-user posts in a given thread.
+  </p>
+  <p>
+   3. good to look at modeling the effect of the thread: both with and without, and analyze any discrepancies
+   <break>
+   </break>
+   <break>
+   </break>
+   4. what is the variance across users of adverb usage rates?
+   <break>
+   </break>
+   example with OP using it a lot, so watch out for quotes:
+   <a href="https://old.reddit.com/r/changemyview/comments/ppqrgn/cmv_nuclear_energy_is_a_viable_tool_to_revert/">
+    https://old.reddit.com/r/changemyview/comments/ppqrgn/cmv_nuclear_energy_is_a_viable_tool_to_revert/
+   </a>
+  </p>
+  <p>
+   <break>
+   </break>
+   <break>
+   </break>
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   We mentioned after lecture but I wanted to put in writing: do be slightly careful to distinguish "doesn't use many adverbs" with just plain old "shorter", if your hypothesis is specifically centered on adverbs.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Joyce Zhou (they/them) (student)
+   </h3>
+   <h3>
+    Vote Count: 2
+   </h3>
+   <p>
+    I'm curious if this could be generalized to "having a wide range of synonyms v.s. using the same word(s) repeatedly"?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 4em;">
+    <h3>
+     Author: Benjamin Rosche (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     That's a great point. I will test that too!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 6em;">
+     <h3>
+      Author: Prof. Lee (she/they) (admin)
+     </h3>
+     <h3>
+      Vote Count: 1
+     </h3>
+     <p>
+      Type-token ratios ("the the the" has three tokens but only one type) are one class of formalization on this idea, although there are several different formulations around; see e.g.
+      <a href="https://www.cambridge.org/core/journals/journal-of-child-language/article/abs/typetoken-ratios-what-do-they-really-tell-us/B15717A4D91390ED7E2F2DA143BA1DDB">
+       https://www.cambridge.org/core/journals/journal-of-child-language/article/abs/typetoken-ratios-what-do-they-really-tell-us/B15717A4D91390ED7E2F2DA143BA1DDB
+      </a>
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

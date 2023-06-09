@@ -13,67 +13,65 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi, I know someone has asked a similar question before, but I'm still confused about why (iii) is true. If y(t) is the principle continuous-time alias of x(t), wouldn't that mean that Ts does not have to be smaller than 1/74?
- </paragraph>
-</document>
+<p>
+ Hi, I know someone has asked a similar question before, but I'm still confused about why (iii) is true. If y(t) is the principle continuous-time alias of x(t), wouldn't that mean that Ts does not have to be smaller than 1/74?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Victor Butoi (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  y(t) emerges after you go through all of the nonsense of sampling and interpolating, which means that none of your signal was 'lost' and reduced to a lower frequency signal. The only way this is possible is if you initially sampled/interpolated by greater than the Nyquist rate.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  But in hw4 Q4, we calculated the principle c-time alias for the second term of x(t), even though its frequency is bigger than half of the sampling frequency. Could I assume that y(t) in f can also be derived from a term with frequency higher than fs/2 in x(t)?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Victor Butoi (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Bit confused what you mean, just because the fact that the second term was the same after sampling/interpolating precisely because its frequency was less than fs/2 (200 &lt; 350); the general rule is when you sample- you either are going to end up with the principal continual time alias or the same signal depending on whether or not f_o &lt; fs/2
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   See #203
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Victor Butoi (None)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   y(t) emerges after you go through all of the nonsense of sampling and interpolating, which means that none of your signal was 'lost' and reduced to a lower frequency signal. The only way this is possible is if you initially sampled/interpolated by greater than the Nyquist rate.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    But in hw4 Q4, we calculated the principle c-time alias for the second term of x(t), even though its frequency is bigger than half of the sampling frequency. Could I assume that y(t) in f can also be derived from a term with frequency higher than fs/2 in x(t)?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Victor Butoi (None)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Bit confused what you mean, just because the fact that the second term was the same after sampling/interpolating precisely because its frequency was less than fs/2 (200 &lt; 350); the general rule is when you sample- you either are going to end up with the principal continual time alias or the same signal depending on whether or not f_o &lt; fs/2
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

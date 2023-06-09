@@ -13,90 +13,88 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  For some reason, the assertequals that was already written in the test for testing routeto gets scrambled in the failure trace.
- </paragraph>
- <paragraph>
-  For example,
- </paragraph>
- <paragraph>
-  <italic>
-   assertEquals
-  </italic>
-  ("[A,B]", getNames(route1));
- </paragraph>
- <paragraph>
-  results in
- </paragraph>
- <paragraph>
-  org.junit.ComparisonFailure: expected:&lt;[A,[]B]&gt; but was:&lt;[A,[ ]B]&gt;
- </paragraph>
- <paragraph>
-  If I change it to
- </paragraph>
- <paragraph>
-  <italic>
-   assertEquals
-  </italic>
-  ("[A,B,C]", getNames(route1));
- </paragraph>
- <paragraph>
-  it becomes
- </paragraph>
- <paragraph>
-  org.junit.ComparisonFailure: expected:&lt;[A,[B,C]]&gt; but was:&lt;[A,[ B]]&gt;
- </paragraph>
- <paragraph>
-  What is going on?
- </paragraph>
-</document>
+<p>
+ For some reason, the assertequals that was already written in the test for testing routeto gets scrambled in the failure trace.
+</p>
+<p>
+ For example,
+</p>
+<p>
+ <i>
+  assertEquals
+ </i>
+ ("[A,B]", getNames(route1));
+</p>
+<p>
+ results in
+</p>
+<p>
+ org.junit.ComparisonFailure: expected:&lt;[A,[]B]&gt; but was:&lt;[A,[ ]B]&gt;
+</p>
+<p>
+ If I change it to
+</p>
+<p>
+ <i>
+  assertEquals
+ </i>
+ ("[A,B,C]", getNames(route1));
+</p>
+<p>
+ it becomes
+</p>
+<p>
+ org.junit.ComparisonFailure: expected:&lt;[A,[B,C]]&gt; but was:&lt;[A,[ B]]&gt;
+</p>
+<p>
+ What is going on?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Schultz (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Schultz (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   Get names returns with spaces included in between the elements. for an array with elements A then B then C for example it returns a string [A, B, C].
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Kind of annoying but you should have looked at the spec and/or the code because its kind of obvious. Also thinking of tostring representations they usually include the spaces actually, I think most array toString use the spaces.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Lowkey I did make the same mistake as you at first so I get the issue.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You can see from the expected vs. actual there are extra spaces in the actual and none in the expected when you run the assert equals.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Look at the specification of method getNames!
- </paragraph>
- <paragraph>
-  Please begin uses specifications to solve you problems.
- </paragraph>
- <paragraph>
-  That specification tells you exactly the format of its output.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Look at the specification of method getNames!
+  </p>
+  <p>
+   Please begin uses specifications to solve you problems.
+  </p>
+  <p>
+   That specification tells you exactly the format of its output.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

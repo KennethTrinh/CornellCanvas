@@ -13,101 +13,99 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  And without being assigned to point at Cat, it could not access Cat's methods before right?
- </paragraph>
-</document>
+<p>
+ And without being assigned to point at Cat, it could not access Cat's methods before right?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Varun Gande (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Varun Gande (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   If the static type of the variable is Animal, it cannot access methods ONLY declared in Cat. For example if you have Animal an = new Cat();, you can access methods in Cat that are declared in Animal or a superclass of Animal (by CTRR), but you cannot access methods only declared in Cat.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Are you saying I can only access Cat methods that override Animal methods?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  But if I assign the Animal object to now point to a Cat object, can't it then access Cat-specific methods?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Varun Gande (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  In that case, that’s something like Animal an = new Animal(); an = new Cat(); if i’m understanding correctly.
- </paragraph>
- <paragraph>
-  No, you still can’t access Cat specific methods since you haven’t changed the static type. To access Cat-specific methods, you would then have to downcast an to Cat and store that pointer in a new variable—so Cat an_cat = (Cat) an;—then you can access cat specific methods using an_cat.
- </paragraph>
- <paragraph>
-  Search up CTRR in javahypertext for specific examples.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Got it, okay thanks so much. But I can access Cat-specific methods that are overriden versions of Animal's methods right?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Varun Gande (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Well if they’re overriding versions of Animal’s methods, they aren’t Cat-specific (they’re not only declared in Cat), but yes you can access overriding versions in Cat.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   But if I assign the Animal object to now point to a Cat object, can't it then access Cat-specific methods?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Varun Gande (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    In that case, that’s something like Animal an = new Animal(); an = new Cat(); if i’m understanding correctly.
+   </p>
+   <p>
+    No, you still can’t access Cat specific methods since you haven’t changed the static type. To access Cat-specific methods, you would then have to downcast an to Cat and store that pointer in a new variable—so Cat an_cat = (Cat) an;—then you can access cat specific methods using an_cat.
+   </p>
+   <p>
+    Search up CTRR in javahypertext for specific examples.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Got it, okay thanks so much. But I can access Cat-specific methods that are overriden versions of Animal's methods right?
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Varun Gande (student)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      Well if they’re overriding versions of Animal’s methods, they aren’t Cat-specific (they’re not only declared in Cat), but yes you can access overriding versions in Cat.
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Are you saying I can only access Cat methods that override Animal methods?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

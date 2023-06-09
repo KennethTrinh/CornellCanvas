@@ -13,43 +13,35 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  In the slides, we are given this algorithm for back propagation:
- </paragraph>
- <figure>
-  <image height="301" src="https://static.us.edusercontent.com/files/c1H6aDCmpG1GliV3l4lqmxAJ" width="344"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
-  In this algorithm, Dd is defined as the product of two scalars because the neural network is assumed to have a single output node. When the network has multiple output nodes, then v_d,1 is a vector, and the expression for Dd becomes a product of two vectors.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  I am a bit confused about this product - is it an element-wise multiplication, a matrix multiplication, or something else?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Thanks.
- </paragraph>
-</document>
+<p>
+ In the slides, we are given this algorithm for back propagation:
+</p>
+<figure>
+ <image height="301" src="https://static.us.edusercontent.com/files/c1H6aDCmpG1GliV3l4lqmxAJ" width="344"/>
+</figure>
+<p>
+ In this algorithm, Dd is defined as the product of two scalars because the neural network is assumed to have a single output node. When the network has multiple output nodes, then v_d,1 is a vector, and the expression for Dd becomes a product of two vectors.
+</p>
+<p>
+ I am a bit confused about this product - is it an element-wise multiplication, a matrix multiplication, or something else?
+</p>
+<p>
+ Thanks.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Noor (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   To maintain correct dimensions, this should be a matrix outer product. Here, v is a (d_lx1) vector and D_l+1 is a (1xd_l+1) vector, which is why the dimensions work out.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

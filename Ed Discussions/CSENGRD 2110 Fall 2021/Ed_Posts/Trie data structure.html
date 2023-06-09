@@ -13,53 +13,49 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="318.14347202295556" src="https://static.us.edusercontent.com/files/Gpo5gpEW5Bd8Yy4szNjTlyo5" width="658"/>
- </figure>
- <paragraph>
-  I am having some trouble trying to reason through this solution. I think the biggest trouble I am running into is understanding that is meant by "n strings with a maximum length m." Does this mean there are a maximum of n nodes in this trie structure, with the maximum length of each node being m?
- </paragraph>
-</document>
+<figure>
+ <image height="318.14347202295556" src="https://static.us.edusercontent.com/files/Gpo5gpEW5Bd8Yy4szNjTlyo5" width="658"/>
+</figure>
+<p>
+ I am having some trouble trying to reason through this solution. I think the biggest trouble I am running into is understanding that is meant by "n strings with a maximum length m." Does this mean there are a maximum of n nodes in this trie structure, with the maximum length of each node being m?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   The maximum length m refers to the longest path from the root to a leaf. In this example, it is 3, for example the string "inn" fits this. As you can see, the number n of strings have nothing to do with the answer.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   When searching for a string of length k that is in the trie, well, it takes time O(k) to see that it is in.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   When searching for a string that is not in the trie, well, at most one would have to look at m branches.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Hence the time min(m, k).
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  And just to confirm, the "n strings" is referring to the total number of complete words, or simply just the number of nodes?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   And just to confirm, the "n strings" is referring to the total number of complete words, or simply just the number of nodes?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

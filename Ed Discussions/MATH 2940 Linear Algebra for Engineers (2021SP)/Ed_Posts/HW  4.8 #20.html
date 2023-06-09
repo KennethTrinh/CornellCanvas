@@ -13,78 +13,74 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <figure>
-  <image height="71.88235294117646" src="https://static.us.edusercontent.com/files/2kfD2rbg8E8f6YUY3a39jSut" width="658"/>
- </figure>
- <paragraph>
-  I've found the general solution of (15), but I'm not entirely sure how to find the particular solution that has a boundary condition. I  remember that when we had a particular solution we had a specific b that we needed to solve for but what is that b in this case?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<figure>
+ <image height="71.88235294117646" src="https://static.us.edusercontent.com/files/2kfD2rbg8E8f6YUY3a39jSut" width="658"/>
+</figure>
+<p>
+ I've found the general solution of (15), but I'm not entirely sure how to find the particular solution that has a boundary condition. I  remember that when we had a particular solution we had a specific b that we needed to solve for but what is that b in this case?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Phillip Jang (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Phillip Jang (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   The boundary conditions are not related to b, but to the coefficients of your basis (i.e. pinning down the free variables). You plug in k=1 to your general solution and set it equal to 5000, and do something similar for k=N, and those two equations will determine the coefficients.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Also, in question 22, we are given the difference equation. However, how can we find the difference equation when we have the function like the following?
- </paragraph>
- <math>
-  \cos\left(\frac{\pi t}{4}\right)
- </math>
- <paragraph>
-  Also, I'm just a little unsure about the whole difference equation concept. So is  y
-  <sub>
-   k
-  </sub>
-  essentially a function that has the form r
-  <sup>
-   k
-  </sup>
-  but we can also describe it in terms of its discrete values at certain k value like {0.7, 0, -.7 ...}?  Furthermore, it also act as a solution to the difference equation?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Phillip Jang (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  A difference equation imposes a regular pattern that a sequence must satisfy by relating any sequence value to its immediate successor values. When all the $y_{k+i}$ terms appear in a linear equation, the solutions will (usually) take the form $y_k = r^k$ where $r$ is possibly a complex number.
- </paragraph>
- <paragraph>
-  The sine and cosine appear when you have complex roots to the auxiliary equation (see p.250 and also check out Euler's formula). These appear because you need some sort of sign reversal every two (or more) time steps for the terms in the difference equation to cancel out, and sine and cosine periodically flip signs depending on their frequency. A negative real number $r$ flips signs every single step of $k$ while sine and cosine can take longer to flip signs.
- </paragraph>
- <paragraph>
-  The discrete sequence comes from setting t to the integers t=1,2,3,... and the exact repetition of the discretely sampled sequence of cos values is a byproduct of the sine and cosine with frequency $\pi/4$ having the right frequency to repeat on integer values of $t$ and flip signs every two time steps.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Also, in question 22, we are given the difference equation. However, how can we find the difference equation when we have the function like the following?
+  </p>
+  <math>
+   \cos\left(\frac{\pi t}{4}\right)
+  </math>
+  <p>
+   Also, I'm just a little unsure about the whole difference equation concept. So is  y
+   <sub>
+    k
+   </sub>
+   essentially a function that has the form r
+   <sup>
+    k
+   </sup>
+   but we can also describe it in terms of its discrete values at certain k value like {0.7, 0, -.7 ...}?  Furthermore, it also act as a solution to the difference equation?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Phillip Jang (staff)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    A difference equation imposes a regular pattern that a sequence must satisfy by relating any sequence value to its immediate successor values. When all the $y_{k+i}$ terms appear in a linear equation, the solutions will (usually) take the form $y_k = r^k$ where $r$ is possibly a complex number.
+   </p>
+   <p>
+    The sine and cosine appear when you have complex roots to the auxiliary equation (see p.250 and also check out Euler's formula). These appear because you need some sort of sign reversal every two (or more) time steps for the terms in the difference equation to cancel out, and sine and cosine periodically flip signs depending on their frequency. A negative real number $r$ flips signs every single step of $k$ while sine and cosine can take longer to flip signs.
+   </p>
+   <p>
+    The discrete sequence comes from setting t to the integers t=1,2,3,... and the exact repetition of the discretely sampled sequence of cos values is a byproduct of the sine and cosine with frequency $\pi/4$ having the right frequency to repeat on integer values of $t$ and flip signs every two time steps.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

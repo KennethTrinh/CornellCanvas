@@ -13,50 +13,46 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  <bold>
-   Why does the test script say 17 when 13-20 = -7?
-  </bold>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Trying input '13:00' and -20
- </paragraph>
- <paragraph>
-  timestr is '13:00', change is -20
- </paragraph>
- <paragraph>
-  hours_int is: 13
- </paragraph>
- <paragraph>
-  new_hours_int is: 17
- </paragraph>
- <paragraph>
-  outstr: '17:00'
- </paragraph>
- <paragraph>
-  Function returned: '17:00'
- </paragraph>
- <paragraph>
-  Correct answer  : '22:13'
- </paragraph>
-</document>
+<p>
+ <b>
+  Why does the test script say 17 when 13-20 = -7?
+ </b>
+</p>
+<p>
+ Trying input '13:00' and -20
+</p>
+<p>
+ timestr is '13:00', change is -20
+</p>
+<p>
+ hours_int is: 13
+</p>
+<p>
+ new_hours_int is: 17
+</p>
+<p>
+ outstr: '17:00'
+</p>
+<p>
+ Function returned: '17:00'
+</p>
+<p>
+ Correct answer  : '22:13'
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Dylan Castillo (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Dylan Castillo (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You want a valid hour, not just to subtract -20 from the hours. If timestr were 00:00 and you did -1, you should  get 23, not -1.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,69 +13,61 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Is it possible for a diode to have a voltage higher than Von? For example, assuming the diode in the circuit below is silicon, can the voltage across the diode be greater than 0.7-0.8V? Or does the resistor assume any voltage that the diode cannot handle (any voltage greater than 0.7-0.8V)?
- </paragraph>
- <figure>
-  <image height="194" src="https://static.us.edusercontent.com/files/vgFWr9ReVwbCnw2ADrW9rGnD" width="260"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Thanks!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Is it possible for a diode to have a voltage higher than Von? For example, assuming the diode in the circuit below is silicon, can the voltage across the diode be greater than 0.7-0.8V? Or does the resistor assume any voltage that the diode cannot handle (any voltage greater than 0.7-0.8V)?
+</p>
+<figure>
+ <image height="194" src="https://static.us.edusercontent.com/files/vgFWr9ReVwbCnw2ADrW9rGnD" width="260"/>
+</figure>
+<p>
+ Thanks!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Max McCarthy (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Max McCarthy (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   When using a piecewise model, you can approximate the diode's behavior as two distinct modes of operation:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Suppose $V_1 &lt; V_{ON}$, then the current, $I$, is zero because the diode is not conducting. This also means that the entire voltage drop occurs across the diode ($V_1 = V_D + V_R = V_D + I \cdot R; I = 0$).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If $V_1 \geq V_{ON}$, then the voltage drop seen across the diode is $V_{ON}$. As you suggest in your question, any remaining voltage is seen across the resistor. To find out what this voltage is, you can rearrange the previous equation as:
- </paragraph>
+ </p>
  <math>
   V_1=V_D+V_R\ \Longrightarrow\ V_R=V_1-V_D=V_1-V_{ON}
  </math>
- <paragraph>
+ <p>
   Furthermore, you could solve for the current by plugging in a known value for R:
- </paragraph>
+ </p>
  <math>
   V_R=I\cdot R\ \Longrightarrow\ I\ =\ \left(\frac{V_1-V_{ON}}{R}\right)
  </math>
- <paragraph>
+ <p>
   This can be very useful when choosing component values to prevent failures, such as blown LEDs.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Sergio Diaz (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Awesome, thank you so much. Makes a lot more sense!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Sergio Diaz (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Awesome, thank you so much. Makes a lot more sense!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

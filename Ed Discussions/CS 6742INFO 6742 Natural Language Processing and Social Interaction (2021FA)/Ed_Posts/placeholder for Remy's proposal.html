@@ -13,303 +13,289 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  (Public note that I have granted Remy an extension on posting due to extenuating circumstances.)
- </paragraph>
-</document>
-<h3>
- Author: Remy Stewart (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ (Public note that I have granted Remy an extension on posting due to extenuating circumstances.)
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Remy Stewart (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Great news that I'm able to get my proposal in on time given changes in said extenuating circumstances!
- </paragraph>
- <paragraph>
-  <bold>
+ </p>
+ <p>
+  <b>
    Policy Frames within Local Housing Discussions on Regional Subreddits
-  </bold>
- </paragraph>
- <paragraph>
+  </b>
+ </p>
+ <p>
   Individuals growingly learn about and discuss news and politics on social media sites. These platforms serve as digital equivalents of in-person political participation spaces such as public forums or broadcasted commentary via media sources such as newspapers and radio. The transition from traditional policy discourse outlets to online platforms reflects on Forestal’s concept of emergent digital publics, where citizens often now engage in democratic political discourse with each other online that can subsequently shape their policy preferences (2021).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Stakeholders often argue for their political opinions by referring to a variety of longstanding policy frames that are both nationally widespread and closely connect to deep-rooted American cultural narratives and priorities. Martin Rein and Donald Schön are two historically seminal scholars in policy analysis who defined policy frames as the intentional highlighting of select features of a policy issue and downplaying of other factors to delineate an argument, belief, and/or narrative (1977). Frames can touch on both topically specific subjects as well as widespread cultural norms and political values. They are often closely associated with particular policy debates over others, with examples including public safety and order frames when discussing the criminal justice system and fairness and equity frames as regarding affirmative action. However, frames often are applied to disparate policy topics due to their cultural ubiquity towards formulating and defending a variety of policy opinions. The work of Boydstun et al. (2014) introduced a generic policy frames schema that has since been used in multiple research projects regarding online political engagement (Field et al. 2018; Roy and Goldwasser 2020). Please refer to Appendix A with this proposal submission to review my working frames classification scheme adapted from Boydstun et al.’s codebook that I draw from to operationalize my research project.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Understanding online political discussions has become a robust research subfield within the computational social sciences (Gonzalez-Bailon et al. 2010; Rho et al. 2018; Tachaiya et al. 2021). However, said research has overall emphasized federal policy issues with nationally distributed participants over regional political arenas such as local city governments. The intersection between digital policy communication and local politics is a relevant topic given the significance local government has towards implementing policy that directly impact resident’s immediate communities, as well as the concurrent influence regional residents have to shape policy outcomes compared to national initiatives. I therefore consider the specific subject of online discussions regarding housing policy within San Francisco as the focus of my project. Housing is an ideal topic to explore because it is regionally based issue, it touches on a variety of relevant subtopics including affordability, homelessness, eviction, and gentrification, and it is often deeply politically contentious within a given region. San Francisco is a furthermore well-suited to use as my case study location because of its large number of housing policy proposals as well as higher level of online platform use among its residents given its close affiliation with the tech industry.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I will explore my research interests regarding relevant frames within local housing policy discussions on Reddit due to the site being heavily discussion-oriented with robust user interest towards politics and policy initiatives. Furthermore, the site’s structural composition of subreddits divided by discussion topics provides specific online spaces devoted entirely to conversations based on certain cities, such as “r/sanfrancisco” with 270 thousand members. Reddit is also semi-anonymous due to its use of chosen usernames rather than actual names and the overall lack of personally identifiable information. This mitigates concerns around social desirability bias when expressing opinions towards politically contentious topics such as local housing policies.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   My proposed project is guided by three primary research questions:
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  <bold>
+ </p>
+ <p>
+  <b>
    1.)
-  </bold>
+  </b>
   What are the most common frames presented in Reddit comments regarding housing policies both as a broad theme and towards the relevant subtopics of landlord-renter regulations, homelessness, gentrification, and Not-In-My-Backyardism (NIMBYism)?
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   H1A. I hypothesize that there will be a generally even distribution of the 7 primary policy frames across all the comments.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   H1B. I additionally predict that policy topics such as gentrification and homelessness will be more associated with morality and cultural frames, while landlord-renter regulations and NIMBYism will be more characterized by economics and legality frames.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  <bold>
+ </p>
+ <p>
+  <b>
    2.)
-  </bold>
+  </b>
   How does frame usage differ by the expressed sentiment of the commenter both across all policies and by subtopics?
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   H2. I hypothesize that differences will be highly dependent on whether a given commenter supports or opposes a particular policy.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  <bold>
+ </p>
+ <p>
+  <b>
    3.)
-  </bold>
+  </b>
   What policy frames are associated with top-scoring comments? Are there different trends by policy subtopics?
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   H3. I hypothesize that the top-scoring comments will be most associated with the same common frames I propose by policy subtopic in H1B.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I collected all comments from a random selection of 2021 r/sanfrancisco posts that mention the specific policy topic keywords “rent control/eviction”, “homelessness”, “NIMBY/YIMBY”, or “gentrification/displacement” from the Reddit Pushshift API. After dropping duplicate comments and keeping those only 5 words or longer for substantive relevancy, I have a final dataset of 1.35 million comments. I additionally generated an aggregate sentiment score for each comment through the VADER sentiment analysis dictionary (Hutto and Gilbert 2014). I have started to initially hand-code a gold label set to build a classifier on following my frame categories listed in my appendix. I also obtained the complete annotated set of the Media Frames corpus which is also constructed from Bodystun et al.’s policy frames schema which provides me with an additional 20 thousand labeled records for my classifier (Card et al. 2015).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Regarding my next steps to gauge my project’s feasibility, I am planning on testing my first cut at a classifier by combining my own hand-coded annotated set with the Media Frames corpus that is coded on different policy topics such as immigration and gun control but follows the same schema. I’ll test out a neural network first and move to SVM as needed per Lillian’s guidelines if I’m not receiving robust enough accuracy with NNs given my limited labeled data size. I’ll be additionally keeping this as a solo project given that it’s preliminary work towards one of my dissertation chapters.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  <bold>
+ </p>
+ <p>
+  <b>
    References
-  </bold>
- </paragraph>
- <paragraph>
+  </b>
+ </p>
+ <p>
   Boydstun, Amber E., Justin H. Gross, Phillip Resnik, and Noah A. Smith. 2013. “Identifying Media Frames and Frame Dynamics Within and Across Policy Issues.” Retrieved from faculty.washington.edu/jwilker/559/frames-2013.pdf.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Card, Dallas, Amber E. Boydstun, Justin H. Gross, Phillip Resnik, and Noah A. Smith. 2015. “The Media Frames Corpus: Annotations of Frames Across Issues.”
-  <italic>
+  <i>
    ACL IJCNLP
-  </italic>
+  </i>
   2: 438-444
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Field, Anjalie, Doron Kliger, Shuly Wintner, Jennifer Pan, Dan Jurafsky, and Yulia Tsvetkov. 2018. “Framing and Agenda-Setting in Russian News: A Computational Analysis of Intricate Political Strategies.”
-  <italic>
+  <i>
    Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing (EMNLP)
-  </italic>
+  </i>
   : 3570-3580.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Forestal, Jennifer. 2021. “Beyond Gatekeeping: Propaganda, Democracy, and the Organization of Digital Publics.”
-  <italic>
+  <i>
    The Journal of Politics
-  </italic>
+  </i>
   83(1): 306-320.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Gonzalez-Bailon, Sandra, Andreas Kaltenbrunner, and Rafael E. Banchs. 2010. “The Structure of Political Discussion Networks: A Model for the Analysis of Online Deliberation.”
-  <italic>
+  <i>
    Journal of Information Technology
-  </italic>
+  </i>
   25: 230-243.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Hutto, C.J. and Eric Gilbert. 2014. “VADER: A Parsimonious Rule-based Model for Sentiment Analysis of Social Media Text.”
-  <italic>
+  <i>
    Proceedings of the Eighth International AAAI Conference on Weblogs and Social Media
-  </italic>
+  </i>
   : 216-225.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Rein, Martin, and Donald Schön. 1977. “Problem Setting in Policy Research.” In C. H. Weiss (Ed.),
-  <italic>
+  <i>
    Using Social Research in Public Policy Making
-  </italic>
+  </i>
   (pp. 235-251). Lexington, MA: Lexington Books.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Roy, Shamik and Dan Goldwasser. 2020. “Weakly Supervised Learning of Nuanced Frames for Analyzing Polarization in News Media.”
-  <italic>
+  <i>
    Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)
-  </italic>
+  </i>
   : 7698-7716.
-  <italic>
+  <i>
    <break>
    </break>
-  </italic>
- </paragraph>
- <paragraph>
-  <bold>
+  </i>
+ </p>
+ <p>
+  <b>
    Appendix A
-  </bold>
+  </b>
   . Policy Frame Classification adapted from Boydstun et al. 2014
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
-    <bold>
+  <li>
+   <p>
+    <b>
      Economic &amp; Resources frames
-    </bold>
+    </b>
     : The costs, benefits, or monetary/financial implications of the issue to an individual, family, community or to the economy. The lack of or availability of physical, geographical, spatial, human, and financial resources, or the capacity of existing systems and resources to implement or carry out policy goals.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    <bold>
+   </p>
+  </li>
+  <li>
+   <p>
+    <b>
      Morality, fairness, and equality frames
-    </bold>
+    </b>
     : Any perspective, policy objective, or action that is compelled by duty, honor, righteousness or any other sense of ethics or social responsibility. Consideration of the equality or inequality with which laws, punishment, re-wards, and resources are applied or distributed among individuals or groups.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    <bold>
+   </p>
+  </li>
+  <li>
+   <p>
+    <b>
      Legality, Crime, and Punishment frames:
-    </bold>
+    </b>
     Specific policies in practice and their enforcement, incentives, and implications. Includes understandings of the enforcement and interpretation of laws by individuals and state actors, breaking laws and crime, and potential punishment.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    <bold>
+   </p>
+  </li>
+  <li>
+   <p>
+    <b>
      Health and safety frames
-    </bold>
+    </b>
     : Illness, disease, sanitation, personal wellness, mental health effects, prevention of or perpetuation of harm, infrastructure and building safety.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    <bold>
+   </p>
+  </li>
+  <li>
+   <p>
+    <b>
      Quality of life frames:
-    </bold>
+    </b>
     The effects of a policy on individuals’ wealth, mobility, access to resources, happiness, social structures, ease of day-to-day routines, quality of community life, etc.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    <bold>
+   </p>
+  </li>
+  <li>
+   <p>
+    <b>
      Cultural identity frames:
-    </bold>
+    </b>
     The social norms, trends, values, and customs constituting cultures and subgroups broadly defined, as they relate to a specific policy issue.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    <bold>
+   </p>
+  </li>
+  <li>
+   <p>
+    <b>
      Political &amp; public opinion frames
-    </bold>
+    </b>
     : Any political considerations surrounding an issue. Explicit statements that a policy issue is good or bad for a particular political party or figure. Additionally considers public political opinion and voter preferences.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    <bold>
+   </p>
+  </li>
+  <li>
+   <p>
+    <b>
      Nonrelevant/off-topic.
-    </bold>
-   </paragraph>
-  </list-item>
+    </b>
+   </p>
+  </li>
  </list>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Remy Stewart (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  To start my feasibility checks for my project this past week, I hand-coded 500 of my Pushshift scraped r/sanfrancisco records for their primary policy frames. The annotation process involved interpreting a lot of context-specific references such as significant local events in San Francisco or comments regarding city politicians. I think my domain knowledge as both a longtime city resident and ongoing researcher of the socio-cultural context of the city made me well-suited to identify often nuanced policy frames within the posts.
- </paragraph>
- <paragraph>
-  I merged the categories with my own dataset with the previously annotated Media Frames Corpus that used the same coding scheme (Card et al. 2015). This lead to a final dataset size of 27 thousand records. There ended up being significant class imbalance between Political frames as the largest category with 8,377 of the records and Quality of Life frames as the smallest with 1,318 records. I therefore computed class weights that adjusted record magnitudes in reference to the Politics category. I realized this caused me to have to compromise on also incorporating sample weights to emphasize my Reddit records over the Media Frames examples since I wasn’t able to incorporate both sample and class weights into my model. I therefore chose to prioritize the class weights given the large category size discrepancies.
- </paragraph>
- <paragraph>
-  I used Keras to build up my initial neural networks. A basic multilayer perceptron with 3 epochs reported a final accuracy on the test set of 0.68. I strongly suspected the model would overfit my small training set, so I then moved to a more complex model design. I incorporated a Bidirectional Long Short-Term Memory Recurrent Neural Network (LSTM for short) layer which has been shown to be particularly effective at interpreting text data for prediction due to encoding contextual relationships between tokens that are preserved in node memory throughout training (Tai, Socher, and Manning 2015). I additionally use two dropout layers before and after the LSTM layer to randomly omit nodes during training. This is demonstrated to produce more robust models for small datasets that may otherwise overfit by iterating through various network configurations and producing model averages (Srivastava 2014).
- </paragraph>
- <paragraph>
-  Testing this model with 7 epochs lead to a collective accuracy score of 0.63. I reviewed the confusion matrix of these model results and found that the points of misclassification made intuitive sense. For example, the Politics frame is most often misclassified as the Legality and Crime frame, which intuitively lines up since both categories often refer to laws and regulations. Given the inherent accuracy challenges of a 7-category classification problem that is attempting to measure a subjective concept such as policy frames on a small dataset, I would primarily like to discuss within my feasibility check meeting what I should consider as a “satisfactory” model and additional steps I may want to take to increase classification accuracy.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  References:
- </paragraph>
- <paragraph>
-  Card, Dallas, Amber E. Boydstun, Justin H. Gross, Phillip Resnik, and Noah A. Smith. 2015. “The Media Frames Corpus: Annotations of Frames Across Issues.”
-  <italic>
-   ACL IJCNLP
-  </italic>
-  2: 438-444
- </paragraph>
- <paragraph>
-  Srivastava, Nitish, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov. 2014. “Dropout: A Simple Way to Prevent Neural Networks from Overfitting.”
-  <italic>
-   Journal of Machine Learning Research
-  </italic>
-  15: 1929-1958.
- </paragraph>
- <paragraph>
-  Tai, Kai Sheng, Richard Socher, and Christopher D. Manning. 2015. “Improved Semantic Representations From Tree-Structured Long Short-Term Memory Networks.”
-  <italic>
-   Proceedings of the 53rd Annual Meeting of the ACL &amp; 7th International Joint Conference on Natural Language Processing
-  </italic>
-  : 1556-1566.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Remy Stewart (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Meeting Notes:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    Test out a "one-versus-all" design with seven separate classifiers rather than a multiclass model. This should help with the dual points of both applying sample weights to prioritize Reddit records over the Media Frames records, as well as handling the "irrelevant" class given that the Media Frames corpus didn't annotate for frame irrelevancy.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    On the subject of a "good enough" model, first see the results of the one-vs-all neural net classifiers and then compare to an equivalent design to SVM. This will serve as a validity check between which model specification achieves higher accuracy.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Check the distribution of word length between both Reddit and Media Frames records as well as if there's a correlation between post length and policy frame.
-   </paragraph>
-  </list-item>
- </list>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Remy Stewart (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   To start my feasibility checks for my project this past week, I hand-coded 500 of my Pushshift scraped r/sanfrancisco records for their primary policy frames. The annotation process involved interpreting a lot of context-specific references such as significant local events in San Francisco or comments regarding city politicians. I think my domain knowledge as both a longtime city resident and ongoing researcher of the socio-cultural context of the city made me well-suited to identify often nuanced policy frames within the posts.
+  </p>
+  <p>
+   I merged the categories with my own dataset with the previously annotated Media Frames Corpus that used the same coding scheme (Card et al. 2015). This lead to a final dataset size of 27 thousand records. There ended up being significant class imbalance between Political frames as the largest category with 8,377 of the records and Quality of Life frames as the smallest with 1,318 records. I therefore computed class weights that adjusted record magnitudes in reference to the Politics category. I realized this caused me to have to compromise on also incorporating sample weights to emphasize my Reddit records over the Media Frames examples since I wasn’t able to incorporate both sample and class weights into my model. I therefore chose to prioritize the class weights given the large category size discrepancies.
+  </p>
+  <p>
+   I used Keras to build up my initial neural networks. A basic multilayer perceptron with 3 epochs reported a final accuracy on the test set of 0.68. I strongly suspected the model would overfit my small training set, so I then moved to a more complex model design. I incorporated a Bidirectional Long Short-Term Memory Recurrent Neural Network (LSTM for short) layer which has been shown to be particularly effective at interpreting text data for prediction due to encoding contextual relationships between tokens that are preserved in node memory throughout training (Tai, Socher, and Manning 2015). I additionally use two dropout layers before and after the LSTM layer to randomly omit nodes during training. This is demonstrated to produce more robust models for small datasets that may otherwise overfit by iterating through various network configurations and producing model averages (Srivastava 2014).
+  </p>
+  <p>
+   Testing this model with 7 epochs lead to a collective accuracy score of 0.63. I reviewed the confusion matrix of these model results and found that the points of misclassification made intuitive sense. For example, the Politics frame is most often misclassified as the Legality and Crime frame, which intuitively lines up since both categories often refer to laws and regulations. Given the inherent accuracy challenges of a 7-category classification problem that is attempting to measure a subjective concept such as policy frames on a small dataset, I would primarily like to discuss within my feasibility check meeting what I should consider as a “satisfactory” model and additional steps I may want to take to increase classification accuracy.
+  </p>
+  <p>
+   References:
+  </p>
+  <p>
+   Card, Dallas, Amber E. Boydstun, Justin H. Gross, Phillip Resnik, and Noah A. Smith. 2015. “The Media Frames Corpus: Annotations of Frames Across Issues.”
+   <i>
+    ACL IJCNLP
+   </i>
+   2: 438-444
+  </p>
+  <p>
+   Srivastava, Nitish, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov. 2014. “Dropout: A Simple Way to Prevent Neural Networks from Overfitting.”
+   <i>
+    Journal of Machine Learning Research
+   </i>
+   15: 1929-1958.
+  </p>
+  <p>
+   Tai, Kai Sheng, Richard Socher, and Christopher D. Manning. 2015. “Improved Semantic Representations From Tree-Structured Long Short-Term Memory Networks.”
+   <i>
+    Proceedings of the 53rd Annual Meeting of the ACL &amp; 7th International Joint Conference on Natural Language Processing
+   </i>
+   : 1556-1566.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Remy Stewart (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Meeting Notes:
+   </p>
+   <list style="bullet">
+    <li>
+     <p>
+      Test out a "one-versus-all" design with seven separate classifiers rather than a multiclass model. This should help with the dual points of both applying sample weights to prioritize Reddit records over the Media Frames records, as well as handling the "irrelevant" class given that the Media Frames corpus didn't annotate for frame irrelevancy.
+     </p>
+    </li>
+    <li>
+     <p>
+      On the subject of a "good enough" model, first see the results of the one-vs-all neural net classifiers and then compare to an equivalent design to SVM. This will serve as a validity check between which model specification achieves higher accuracy.
+     </p>
+    </li>
+    <li>
+     <p>
+      Check the distribution of word length between both Reddit and Media Frames records as well as if there's a correlation between post length and policy frame.
+     </p>
+    </li>
+   </list>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

@@ -13,102 +13,100 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  The indices of the colleges when
-  <bold>
-   showdown_time.py
-  </bold>
-  is run on
-  <bold>
-   sd__utilities_dict
-  </bold>
-  differs from the indices of the colleges when it is run on
-  <bold>
-   sd_utilities_list
-  </bold>
-  ,  but the data for a pair of colleges is same: selecting Cornell_U vs Harvard_U gives the same 10.0% and 90.0%. This, I think is from the sort function we applied to the list.
- </paragraph>
- <paragraph>
-  However, the last index of the items in
-  <bold>
-   a2c_census2020_processed.txt
-  </bold>
-  when
-  <bold>
-   showdown_time.py
-  </bold>
-  is run on
-  <bold>
-   sd_utilities_dict
-  </bold>
-  is
-  <bold>
-   231
-  </bold>
-  whereas it is
-  <bold>
-   234
-  </bold>
-  when
-  <bold>
-   showdown_time_py
-  </bold>
-  is run on
-  <bold>
-   sd_utilities_list
-  </bold>
-  .
- </paragraph>
- <paragraph>
-  What could have led to this shortening?
- </paragraph>
-</document>
+<p>
+ The indices of the colleges when
+ <b>
+  showdown_time.py
+ </b>
+ is run on
+ <b>
+  sd__utilities_dict
+ </b>
+ differs from the indices of the colleges when it is run on
+ <b>
+  sd_utilities_list
+ </b>
+ ,  but the data for a pair of colleges is same: selecting Cornell_U vs Harvard_U gives the same 10.0% and 90.0%. This, I think is from the sort function we applied to the list.
+</p>
+<p>
+ However, the last index of the items in
+ <b>
+  a2c_census2020_processed.txt
+ </b>
+ when
+ <b>
+  showdown_time.py
+ </b>
+ is run on
+ <b>
+  sd_utilities_dict
+ </b>
+ is
+ <b>
+  231
+ </b>
+ whereas it is
+ <b>
+  234
+ </b>
+ when
+ <b>
+  showdown_time_py
+ </b>
+ is run on
+ <b>
+  sd_utilities_list
+ </b>
+ .
+</p>
+<p>
+ What could have led to this shortening?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Hansol (Hannah) Lee (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Hansol (Hannah) Lee (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   It shouldn't change the number of college items when changing from a list to a dictionary implementation. I suspect some colleges are not being added properly to the dictionary in your process_line function. I would check the 234-231=3 colleges that the dictionary implementation is not picking up and see how your current process_line function handles them.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Cornelius Boateng (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes!
- </paragraph>
- <paragraph>
-  I found the bug and fixed it. Thanks.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Hansol (Hannah) Lee (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Great!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Cornelius Boateng (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Yes!
+  </p>
+  <p>
+   I found the bug and fixed it. Thanks.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Hansol (Hannah) Lee (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Great!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

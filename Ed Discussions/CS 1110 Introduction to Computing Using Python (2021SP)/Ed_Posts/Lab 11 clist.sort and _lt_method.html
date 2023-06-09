@@ -13,51 +13,47 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I read the instructions for the lab that "
-  <code>
-   clist.sort()
-  </code>
-  will sort
-  <code>
-   clist
-  </code>
-  by your
-  <code>
-   less_than()
-  </code>
-  function" for the function
-  <code>
-   cardstuff.draw_poker_hand.
-  </code>
- </paragraph>
- <paragraph>
-  However, when I do output.sort() I end up getting a None value for my list. Before doing the sort I have five cards in a list.
- </paragraph>
- <paragraph>
-  TypeError: 'NoneType' object is not iterable
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I read the instructions for the lab that "
+ <code>
+  clist.sort()
+ </code>
+ will sort
+ <code>
+  clist
+ </code>
+ by your
+ <code>
+  less_than()
+ </code>
+ function" for the function
+ <code>
+  cardstuff.draw_poker_hand.
+ </code>
+</p>
+<p>
+ However, when I do output.sort() I end up getting a None value for my list. Before doing the sort I have five cards in a list.
+</p>
+<p>
+ TypeError: 'NoneType' object is not iterable
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Hint: Be careful about not using non-existent return values...
   <break>
   </break>
   <break>
   </break>
- </paragraph>
+ </p>
  <snippet language="py" line-numbers="true" runnable="true">
   <snippet-file id="code">
    mylist = ['alpha', 'gamma', 'beta']
@@ -65,64 +61,62 @@ mylist.sort()
 print(mylist)
   </snippet-file>
  </snippet>
- <paragraph>
+ <p>
   Notice, when you hit "Run", that
   <code>
    mylist
   </code>
   does not become None...
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You may wish to use Python Tutor to visualize what's going on with your code!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Sorry professor I still don't understand what you mean by "not using non-existent return values".
- </paragraph>
- <paragraph>
-  but I realized my problem was that you don't assign sort to a variable e.g. [redacted]
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes, mylist.sort() has the non-existent return value of None, so you don't want to store its "value" anywhere. You have now mastered another important concept! :)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Sorry professor I still don't understand what you mean by "not using non-existent return values".
+  </p>
+  <p>
+   but I realized my problem was that you don't assign sort to a variable e.g. [redacted]
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Yes, mylist.sort() has the non-existent return value of None, so you don't want to store its "value" anywhere. You have now mastered another important concept! :)
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     thank you!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

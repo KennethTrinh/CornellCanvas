@@ -13,61 +13,59 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Why do we multiply the margin by (t + 1) in the last step?
- </paragraph>
- <figure>
-  <image height="487.1381215469613" src="https://static.us.edusercontent.com/files/VwVfrwMw3bWjDc4hXKvSZgMY" width="658"/>
- </figure>
-</document>
+<p>
+ Why do we multiply the margin by (t + 1) in the last step?
+</p>
+<figure>
+ <image height="487.1381215469613" src="https://static.us.edusercontent.com/files/VwVfrwMw3bWjDc4hXKvSZgMY" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jane Du (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jane Du (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     $w^* \cdot w^{t+1} \ge w^* \cdot w^{t} + \gamma$
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     $w^* \cdot w^{t} \ge w^* \cdot w^{t-1} + \gamma$
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     $w^* \cdot w^{t-1} \ge w^* \cdot w^{t-2} + \gamma$
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     ...
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     $w^* \cdot w^{1} \ge w^* \cdot w^{0} + \gamma$
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
+ <p>
   So we get
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $$w^* \cdot w^{t+1} \ge (w^* \cdot w^{t}) + \gamma \ge (w^* \cdot w^{t-1} + \gamma) + \gamma \ge  ((w^* \cdot w^{t-2} + \gamma) + \gamma) + \gamma$$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   and so on which collapses to the final statement.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

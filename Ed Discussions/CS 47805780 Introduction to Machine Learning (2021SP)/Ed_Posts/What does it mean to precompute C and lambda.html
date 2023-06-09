@@ -13,42 +13,40 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  Several threads have recommended we precompute C and lambda to reduce runtime in the cross validation step. What does this mean and how is this different from what we did in the cross_validation function? In what context are we "sticking" with the C and lambda we have chosen?
- </paragraph>
- <paragraph>
-  It is my understanding that to test a C and lambda we have to compute linear classifiers using dualSVM and then check the validation error for each combination. I don't see any steps to cut out in this process? One answer says: "Loop to find the best C and λ when training, but don't loop while testing. Just use the best C and λ."  but I don't see the point of testing if we aren't comparing the performance of different C and lambdas to one another?
- </paragraph>
-</document>
+<p>
+ Several threads have recommended we precompute C and lambda to reduce runtime in the cross validation step. What does this mean and how is this different from what we did in the cross_validation function? In what context are we "sticking" with the C and lambda we have chosen?
+</p>
+<p>
+ It is my understanding that to test a C and lambda we have to compute linear classifiers using dualSVM and then check the validation error for each combination. I don't see any steps to cut out in this process? One answer says: "Loop to find the best C and λ when training, but don't loop while testing. Just use the best C and λ."  but I don't see the point of testing if we aren't comparing the performance of different C and lambdas to one another?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jonathan Pang (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jonathan Pang (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   I'm pretty sure that like you said, find validation error on all C, lambda combinations. Then find the best combo and hard code that into your submission. If youre referring to #748 I dont think that answered how to improve cross validation runtime, rather how to prevent your submission from timing out
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  I figured it out! You just test the different values of C and lambda yourself using the jypiter notebook through the empty spaces at the bottom. Then when you submit hard code in c and lambda
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   I figured it out! You just test the different values of C and lambda yourself using the jypiter notebook through the empty spaces at the bottom. Then when you submit hard code in c and lambda
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

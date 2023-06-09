@@ -13,75 +13,71 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Is it ok to choose a very large number c to prove that for every n&gt;=k, c*f(n)&gt;g(n)? for example if f(n)= 3000 + 2n, to show that f(n) is O(n) can I just say c= 10^1000 and for every n&gt;=1 f(n)&gt;n or is that unacceptable?
- </paragraph>
-</document>
+<p>
+ Is it ok to choose a very large number c to prove that for every n&gt;=k, c*f(n)&gt;g(n)? for example if f(n)= 3000 + 2n, to show that f(n) is O(n) can I just say c= 10^1000 and for every n&gt;=1 f(n)&gt;n or is that unacceptable?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   A valid proof could use such large numbers, but doing so is not beneficial and may distract from the logic of the proof.  Typically you want to choose the "smallest obvious values" for C and N.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Choosing extreme values for C doesn't make the proof any easier.  Even if C is 10^1000, your inequality still needs to hold when n is 100^100000, for example.  Choosing a small value of C or N, on the other hand, tends to point to the "crossover point" or otherwise exhibits symmetry between f and g to make it obvious that the smaller function will always stay smaller.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  For a formal proof wouldn't we also need to show that the derivative of the bigger function is bigger for all n&gt;k? Why is the crossover point important in that case?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The definition of big-O notation does not involve derivatives, so derivatives need not appear in the proof.  You only need to show that $f(x) \leq C g(x) \; \forall \; x\geq N$.  In some cases a derivative argument may be convenient (show that $f$ is smaller at a point and that $f^\prime$ is smaller from there on out), but often proving that the derivative is smaller is no easier than proving that the function itself is smaller.
- </paragraph>
- <paragraph>
-  Making crossover points obvious is helpful for humans verifying your proof.  If you tell me that $x^2 \geq x \; \forall \; x \geq 1$, I can quickly visualize that situation and confirm that it's consistent with my intuition regarding those functions.  If instead you only make the claim for $x &gt; 10^{100}$, that's outside of the bounds of my intuition, and I have to ask where that threshold came from.  The proof is not formally stronger, but it is more time-consuming to verify; therefore, it's weaker for practical purposes and is discouraged.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   For a formal proof wouldn't we also need to show that the derivative of the bigger function is bigger for all n&gt;k? Why is the crossover point important in that case?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Curran Muhlberger (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    The definition of big-O notation does not involve derivatives, so derivatives need not appear in the proof.  You only need to show that $f(x) \leq C g(x) \; \forall \; x\geq N$.  In some cases a derivative argument may be convenient (show that $f$ is smaller at a point and that $f^\prime$ is smaller from there on out), but often proving that the derivative is smaller is no easier than proving that the function itself is smaller.
+   </p>
+   <p>
+    Making crossover points obvious is helpful for humans verifying your proof.  If you tell me that $x^2 \geq x \; \forall \; x \geq 1$, I can quickly visualize that situation and confirm that it's consistent with my intuition regarding those functions.  If instead you only make the claim for $x &gt; 10^{100}$, that's outside of the bounds of my intuition, and I have to ask where that threshold came from.  The proof is not formally stronger, but it is more time-consuming to verify; therefore, it's weaker for practical purposes and is discouraged.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Thank you!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

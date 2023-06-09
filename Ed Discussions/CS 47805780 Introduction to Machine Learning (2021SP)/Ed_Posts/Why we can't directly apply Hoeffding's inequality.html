@@ -13,76 +13,75 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  I completely understand why there is a upper bound that is |H|2exp(-m*epsilon^2/2)
- </paragraph>
- <paragraph>
-  But this is just a larger upper bound.
- </paragraph>
- <paragraph>
-  My question is why can't we use Hoeffding's inequality directly for the |err_s(hs)-err_p(hs)&gt;epsilon/2|;
- </paragraph>
- <paragraph>
-  proceeding from the first to the second equation is simply stating the fact the "hs has large error" is the subset of the event "one of the h has a large error" . when we are doing sum in the third eqns, hs is also there
- </paragraph>
- <paragraph>
-  proceeding from 3th to 4th we also directly use hoeffding inequality on hs.
- </paragraph>
- <paragraph>
-  So I don't see why use hoeffding inequality on hs on the first eq is wrong. Why this smaller upper bound is wrong?
- </paragraph>
- <figure>
-  <image height="498.32731376975175" src="https://static.us.edusercontent.com/files/f0oPNPRZwYDDwok0KH7yjJa2" width="658"/>
- </figure>
-</document>
+<p>
+ I completely understand why there is a upper bound that is |H|2exp(-m*epsilon^2/2)
+</p>
+<p>
+ But this is just a larger upper bound.
+</p>
+<p>
+ My question is why can't we use Hoeffding's inequality directly for the |err_s(hs)-err_p(hs)&gt;epsilon/2|;
+</p>
+<p>
+ proceeding from the first to the second equation is simply stating the fact the "hs has large error" is the subset of the event "one of the h has a large error" . when we are doing sum in the third eqns, hs is also there
+</p>
+<p>
+ proceeding from 3th to 4th we also directly use hoeffding inequality on hs.
+</p>
+<p>
+ So I don't see why use hoeffding inequality on hs on the first eq is wrong. Why this smaller upper bound is wrong?
+</p>
+<figure>
+ <image height="498.32731376975175" src="https://static.us.edusercontent.com/files/f0oPNPRZwYDDwok0KH7yjJa2" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Scott Bass (student)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Scott Bass (student)
+ </h3>
+ <h3>
+  Vote Count: 3
+ </h3>
+ <p>
   From the wiki:
- </paragraph>
+ </p>
  <blockquote>
   In
-  <link href="https://en.wikipedia.org/wiki/Probability_theory"/>
-  probability theory,
-  <bold>
-   Hoeffding's inequality
-  </bold>
-  provides an
-  <link href="https://en.wikipedia.org/wiki/Upper_bound"/>
-  upper bound on the
-  <link href="https://en.wikipedia.org/wiki/Probability"/>
-  probability that the sum of bounded
-  <link href="https://en.wikipedia.org/wiki/Independent_random_variables"/>
-  independent random variables deviates from its
-  <link href="https://en.wikipedia.org/wiki/Expected_value"/>
-  expected value by more than a certain amount.
+  <a href="https://en.wikipedia.org/wiki/Probability_theory">
+   probability theory
+   ,
+   <b>
+    Hoeffding's inequality
+   </b>
+   provides an
+   <link href="https://en.wikipedia.org/wiki/Upper_bound"/>
+   upper bound on the
+   <link href="https://en.wikipedia.org/wiki/Probability"/>
+   probability that the sum of bounded
+   <link href="https://en.wikipedia.org/wiki/Independent_random_variables"/>
+   independent random variables deviates from its
+   <link href="https://en.wikipedia.org/wiki/Expected_value"/>
+   expected value
+  </a>
+  by more than a certain amount.
  </blockquote>
- <paragraph>
+ <p>
   And we also have that: $$err_{S}(\hat{h}) = \frac{1}{m}\Sigma_{i=0}^{m}\Delta(y_{i}, \hat{h}(x_{i}))$$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   So, $err_{S}(\hat{h})$ is a sum of bounded independent random variables so long as $\Delta(y_{i}, \hat{h}(x_{i}))$ is an
-  <bold>
+  <b>
    independent RV
-  </bold>
+  </b>
   . But, the $h_{S}$ that you get after doing ERM is
-  <italic>
+  <i>
    using
-  </italic>
+  </i>
   this loss function to choose the best hypothesis on the data. So, once you've picked the $h_{S}$ by minimizing the loss function, you've removed the randomness from the equation, breaking one of the assumptions needed for the Hoeffding inequality.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

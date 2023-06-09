@@ -13,35 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  As mentioned in the title. My understanding is that PCA need to be done to every single image separately. So does this mean we simply just add all the variances in all iterations?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ As mentioned in the title. My understanding is that PCA need to be done to every single image separately. So does this mean we simply just add all the variances in all iterations?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Sharang Sriramu (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Sharang Sriramu (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I'm not quite sure what you mean - In PCA, you find the principal components based on the data covariance matrix ( so the entire dataset is used there ).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If you then want to perform dimensionality reduction, say reducing the dataset to k dimensions, you project each data point onto the first k principal components.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   To understand the fraction of variance explained, let us consider a d dimensional dataset which we transform by projecting onto its d principal components. The covariance matrix of the transformed data is, by definition, a diagonal matrix. The sum of the first k diagonal elements of this matrix is therefore the variance explained by the first k components. This sum normalised by the total diagonal sum is what we mean by the fraction of variance explained.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

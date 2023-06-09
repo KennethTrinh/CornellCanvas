@@ -13,238 +13,98 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  My project explores connections between natural language and source code in technical forums, i.e. StackOverflow. Up to now, my focus has been on obtaining the data, processing the data, and graphing preliminary data from it such as answer score vs. user reputation, answer score vs. post views, answer score vs. user upvotes, etc. Now, I will shift my focus to cleaning the data and determining what subset of the data I would like to conduct my experiments on.
- </paragraph>
- <paragraph>
-  Next week, I commit to completing the following:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    Select a
-    <code>
-     tag
-    </code>
-    category on StackOverflow on which to conduct my experiments. Choosing a
-    <code>
-     tag
-    </code>
-    category will involve also finding a code lexer for the
-    <code>
-     tag
-    </code>
-    language and reading prior works analyzing differences in language of different language communities on StackOverflow.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Reformat my data processing code to:
-   </paragraph>
-   <list style="bullet">
-    <list-item>
-     <paragraph>
-      extract the answers of ~1000 questions that have many answers. (Motivation is that the shared question can serve as a control between good and bad answers.)
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      toss out questions that have relatively low view count or are relatively new. Also determine what is low view count and what is new.
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      only use answers from low-reputation users. Also determine what low-reputation is. (Motivation is that restricting the range of user reputation can serve as a control, and also less experienced users are more likely to give a range of answer "quality.")
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      draw a distinction between in-text code words
-      <code>
-       like this
-      </code>
-      and full snippets of code.
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
- </list>
- <paragraph>
-  I imagine that while this week is focused on data cleaning with an objective to run experiments once I have the resulting data, I will likely need to come back and re-process the data as I stumble across roadblocks or deeper questions in my experiments. Therefore, it would suit me well to document and code this part well in the upcoming week.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Celine Lee (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Commitment updates:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    a lexer for Java: https://github.com/c2nes/javalang
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    corresponding stackoverflow java tag: https://stackoverflow.com/questions/tagged/java
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    table 8 in
-    <link href="https://aclanthology.org/P13-1025.pdf"/>
-    https://aclanthology.org/P13-1025.pdf: Python with politeness factor 0.47, the lowest in the table; no politeness factor measured for Java. Not sure if this is helpful for me, but an interesting paper...
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    full snippets vs. in-text code tokens:
-    <code>
-     &lt;code&gt;
-    </code>
-    vs
-    <code>
-     &lt;pre&gt;&lt;code&gt;
-    </code>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    removed low view count (&lt;1000) posts
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    removed low answer count (&lt;5) posts
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    removed high-reputation users (&gt;1000) (note that code does not necessarily guarantee that all three of the above are true-- i.e. it could have originally had enough answers, but then a bunch of the answers came from high-reputation users so the number of actually processed answers is &lt;5)
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  GITHUB REPO:
-  <link href="https://github.com/celine-lee/nl_and_code_techforum"/>
-  https://github.com/celine-lee/nl_and_code_techforum
- </paragraph>
- <paragraph>
-  Results from baseline CBOW counting:
- </paragraph>
- <figure>
-  <image height="390.98976109215016" src="https://static.us.edusercontent.com/files/YL5UhraTn8ZTIRPlFN6v2h7X" width="640"/>
- </figure>
- <figure>
-  <image height="393.68067226890753" src="https://static.us.edusercontent.com/files/E2LABd9hVHOsaZWb8Qb84JiJ" width="640"/>
- </figure>
- <figure>
-  <image height="387.26609963548" src="https://static.us.edusercontent.com/files/SLBFd5vPauuEUTh89kcmEl0F" width="640"/>
- </figure>
- <figure>
-  <image height="381.160409556314" src="https://static.us.edusercontent.com/files/ckLPclHL7bNb8MYoEJlckfoU" width="640"/>
- </figure>
- <figure>
-  <image height="381.160409556314" src="https://static.us.edusercontent.com/files/hHsg1MekH2E6SdlReQRb9PkZ" width="640"/>
- </figure>
- <figure>
-  <image height="390.09385665529015" src="https://static.us.edusercontent.com/files/8bEJH4dDb8p1bJSjfPopEbQ9" width="655"/>
- </figure>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  5th graph: what is an "editor"?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Celine Lee (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  An editor is somebody who edits the StackOverflow answer-- and it does not have to be the same person as the person who wrote the post (see image below:)
- </paragraph>
- <figure>
-  <image height="476.81962025316454" src="https://static.us.edusercontent.com/files/p6HdEmr3yL857xCqkQYFGNnn" width="525"/>
- </figure>
- <paragraph>
-  There are some complications with there being an editor... such as should the answer score be attributed to the editor or to the original author of the answer? How does the time of editing affect the answer score or quality?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  thanks!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Celine Lee (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ My project explores connections between natural language and source code in technical forums, i.e. StackOverflow. Up to now, my focus has been on obtaining the data, processing the data, and graphing preliminary data from it such as answer score vs. user reputation, answer score vs. post views, answer score vs. user upvotes, etc. Now, I will shift my focus to cleaning the data and determining what subset of the data I would like to conduct my experiments on.
+</p>
+<p>
+ Next week, I commit to completing the following:
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   Select a
+   <code>
+    tag
+   </code>
+   category on StackOverflow on which to conduct my experiments. Choosing a
+   <code>
+    tag
+   </code>
+   category will involve also finding a code lexer for the
+   <code>
+    tag
+   </code>
+   language and reading prior works analyzing differences in language of different language communities on StackOverflow.
+  </p>
+ </li>
+ <li>
+  <p>
+   Reformat my data processing code to:
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     extract the answers of ~1000 questions that have many answers. (Motivation is that the shared question can serve as a control between good and bad answers.)
+    </p>
+   </li>
+   <li>
+    <p>
+     toss out questions that have relatively low view count or are relatively new. Also determine what is low view count and what is new.
+    </p>
+   </li>
+   <li>
+    <p>
+     only use answers from low-reputation users. Also determine what low-reputation is. (Motivation is that restricting the range of user reputation can serve as a control, and also less experienced users are more likely to give a range of answer "quality.")
+    </p>
+   </li>
+   <li>
+    <p>
+     draw a distinction between in-text code words
+     <code>
+      like this
+     </code>
+     and full snippets of code.
+    </p>
+   </li>
+  </list>
+ </li>
+</list>
+<p>
+ I imagine that while this week is focused on data cleaning with an objective to run experiments once I have the resulting data, I will likely need to come back and re-process the data as I stumble across roadblocks or deeper questions in my experiments. Therefore, it would suit me well to document and code this part well in the upcoming week.
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Celine Lee (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   new experiments to do:
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     BBOW
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     code and NL tokens shared across answer AND question, not just within answer.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Pearson correlation coefficient or other?
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     https://arxiv.org/pdf/1912.06728.pdf
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
+ <p>
   Another something I have been thinking about is using a different metric than the raw answer
   <code>
    score
@@ -254,84 +114,216 @@
    score
   </code>
   by post view count or in comparison to other answer scores in the same thread.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Celine Lee (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Update 11/23: BBOW data for code &amp; NL tokens across answer and question:
- </paragraph>
- <paragraph>
-  key:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    ac_at - answer code, answer text
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    qc_at - question code, answer text
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    qt_ac - question text, answer code
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    qc_ac - question code, answer code
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    qt_at - question text, answer text
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    a_code_toks - number of distinct tokens in answer code
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    ratio &lt;one of the above&gt;:a_code_toks -  number of distinct shared tokens across the two in one of the above divided by number of distinct tokens in answer code
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    relative score = score - average score in thread
-   </paragraph>
-  </list-item>
- </list>
- <figure>
-  <image height="258.84955752212386" src="https://static.us.edusercontent.com/files/wDFHsi4EyWAlyPtaqyaajTqV" width="624"/>
- </figure>
- <paragraph>
-  Findings: so far, hypothesis continues to fail despite the changes made, i.e. token sharing across NL and code in questions and answers does not seem to have a strong impact on answer score. One new finding is that it does seem that question code and answer code tend to more often share tokens than do other combinations.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Celine Lee (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Update 11/23: BBOW data for code &amp; NL tokens across answer and question:
+  </p>
+  <p>
+   key:
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     ac_at - answer code, answer text
+    </p>
+   </li>
+   <li>
+    <p>
+     qc_at - question code, answer text
+    </p>
+   </li>
+   <li>
+    <p>
+     qt_ac - question text, answer code
+    </p>
+   </li>
+   <li>
+    <p>
+     qc_ac - question code, answer code
+    </p>
+   </li>
+   <li>
+    <p>
+     qt_at - question text, answer text
+    </p>
+   </li>
+   <li>
+    <p>
+     a_code_toks - number of distinct tokens in answer code
+    </p>
+   </li>
+   <li>
+   </li>
+   <li>
+    <p>
+     ratio &lt;one of the above&gt;:a_code_toks -  number of distinct shared tokens across the two in one of the above divided by number of distinct tokens in answer code
+    </p>
+   </li>
+   <li>
+   </li>
+   <li>
+    <p>
+     relative score = score - average score in thread
+    </p>
+   </li>
+  </list>
+  <figure>
+   <image height="258.84955752212386" src="https://static.us.edusercontent.com/files/wDFHsi4EyWAlyPtaqyaajTqV" width="624"/>
+  </figure>
+  <p>
+   Findings: so far, hypothesis continues to fail despite the changes made, i.e. token sharing across NL and code in questions and answers does not seem to have a strong impact on answer score. One new finding is that it does seem that question code and answer code tend to more often share tokens than do other combinations.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Celine Lee (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Commitment updates:
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     a lexer for Java: https://github.com/c2nes/javalang
+    </p>
+   </li>
+   <li>
+    <p>
+     corresponding stackoverflow java tag: https://stackoverflow.com/questions/tagged/java
+    </p>
+   </li>
+   <li>
+    <p>
+     table 8 in
+     <a href="https://aclanthology.org/P13-1025.pdf">
+      https://aclanthology.org/P13-1025.pdf
+      : Python with politeness factor 0.47, the lowest in the table; no politeness factor measured for Java. Not sure if this is helpful for me, but an interesting paper...
+     </a>
+    </p>
+   </li>
+   <li>
+    <p>
+     full snippets vs. in-text code tokens:
+     <code>
+      &lt;code&gt;
+     </code>
+     vs
+     <code>
+      &lt;pre&gt;&lt;code&gt;
+     </code>
+    </p>
+   </li>
+   <li>
+    <p>
+     removed low view count (&lt;1000) posts
+    </p>
+   </li>
+   <li>
+    <p>
+     removed low answer count (&lt;5) posts
+    </p>
+   </li>
+   <li>
+    <p>
+     removed high-reputation users (&gt;1000) (note that code does not necessarily guarantee that all three of the above are true-- i.e. it could have originally had enough answers, but then a bunch of the answers came from high-reputation users so the number of actually processed answers is &lt;5)
+    </p>
+   </li>
+  </list>
+  <p>
+   GITHUB REPO:
+   <link href="https://github.com/celine-lee/nl_and_code_techforum"/>
+   https://github.com/celine-lee/nl_and_code_techforum
+  </p>
+  <p>
+   Results from baseline CBOW counting:
+  </p>
+  <figure>
+   <image height="390.98976109215016" src="https://static.us.edusercontent.com/files/YL5UhraTn8ZTIRPlFN6v2h7X" width="640"/>
+  </figure>
+  <figure>
+   <image height="393.68067226890753" src="https://static.us.edusercontent.com/files/E2LABd9hVHOsaZWb8Qb84JiJ" width="640"/>
+  </figure>
+  <figure>
+   <image height="387.26609963548" src="https://static.us.edusercontent.com/files/SLBFd5vPauuEUTh89kcmEl0F" width="640"/>
+  </figure>
+  <figure>
+   <image height="381.160409556314" src="https://static.us.edusercontent.com/files/ckLPclHL7bNb8MYoEJlckfoU" width="640"/>
+  </figure>
+  <figure>
+   <image height="381.160409556314" src="https://static.us.edusercontent.com/files/hHsg1MekH2E6SdlReQRb9PkZ" width="640"/>
+  </figure>
+  <figure>
+   <image height="390.09385665529015" src="https://static.us.edusercontent.com/files/8bEJH4dDb8p1bJSjfPopEbQ9" width="655"/>
+  </figure>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    5th graph: what is an "editor"?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Celine Lee (student)
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     An editor is somebody who edits the StackOverflow answer-- and it does not have to be the same person as the person who wrote the post (see image below:)
+    </p>
+    <figure>
+     <image height="476.81962025316454" src="https://static.us.edusercontent.com/files/p6HdEmr3yL857xCqkQYFGNnn" width="525"/>
+    </figure>
+    <p>
+     There are some complications with there being an editor... such as should the answer score be attributed to the editor or to the original author of the answer? How does the time of editing affect the answer score or quality?
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 8em;">
+     <h3>
+      Author: Prof. Lee (she/they) (admin)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      thanks!
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

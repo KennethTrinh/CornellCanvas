@@ -13,78 +13,74 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  if (!(ob instanceof Candidate)) return false;
- </paragraph>
- <paragraph>
-  This line of code is used rather than the get class typically used. Java hypertext mentioned that if a class is subclassed using getclass should be prefered over instanceof. Is there are reason why instanceof is used in this case, and would points be deducted if getclass is used instead.
- </paragraph>
- <figure>
-  <image height="155.94835680751174" src="https://static.us.edusercontent.com/files/UpiGxsQF6dZsjeYHBQmPBbHI" width="563"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ if (!(ob instanceof Candidate)) return false;
+</p>
+<p>
+ This line of code is used rather than the get class typically used. Java hypertext mentioned that if a class is subclassed using getclass should be prefered over instanceof. Is there are reason why instanceof is used in this case, and would points be deducted if getclass is used instead.
+</p>
+<figure>
+ <image height="155.94835680751174" src="https://static.us.edusercontent.com/files/UpiGxsQF6dZsjeYHBQmPBbHI" width="563"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Tomer Shamir (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Tomer Shamir (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Stick with the use of getClass. This exam was given when instanceof was taught in the class as the way to check the types in equals()
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Please read about method equals in JavaHperText.
- </paragraph>
- <paragraph>
-  Whether one uses instanceof or getClass depends on the method specification.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Abby Langer (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I just read it. On the exam would it be safer to always use getClass() since instanceOf() can run into problems?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew Chen (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Definitely. In fact for the equals method we would be expecting you to use getClass(), and you would lose points for using instanceOf.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Please read about method equals in JavaHperText.
+  </p>
+  <p>
+   Whether one uses instanceof or getClass depends on the method specification.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Abby Langer (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I just read it. On the exam would it be safer to always use getClass() since instanceOf() can run into problems?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Andrew Chen (staff)
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     Definitely. In fact for the equals method we would be expecting you to use getClass(), and you would lose points for using instanceOf.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

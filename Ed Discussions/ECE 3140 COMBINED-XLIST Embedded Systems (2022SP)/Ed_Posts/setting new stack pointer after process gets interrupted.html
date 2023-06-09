@@ -13,36 +13,34 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Im confused on what to set the stack pointer to in a process in process_select so that I can go back to the same position in that process once it's that process' turn on the queue again.
- </paragraph>
-</document>
+<p>
+ Im confused on what to set the stack pointer to in a process in process_select so that I can go back to the same position in that process once it's that process' turn on the queue again.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  <italic>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aidan McNay (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
+  <i>
    cursp
-  </italic>
+  </i>
   will contain a pointer on the stack that points to where the process left off.
-  <italic>
+  <i>
    process_select
-  </italic>
+  </i>
   should also return the stack pointer where a process should resume. Think about how you might store this data? (Hint: you may need to edit your
-  <italic>
+  <i>
    process_t
-  </italic>
+  </i>
   struct definition)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,64 +13,60 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi,
- </paragraph>
- <paragraph>
-  I am a bit confused on how the formatting of the testing the assert statements work. In the handout, this example is shown: assertThrows(AssertionError.class,
-  <bold>
-   ()
-  </bold>
-  -&gt; {new P(null);});
- </paragraph>
- <paragraph>
-  The
-  <bold>
-   ()
-  </bold>
-  is considered empty as there are no parameters for this example. However, when I was trying to write the assert statement test, I had filled those parentheses with parameters of the method in question and reached an error. When I erased the parameters and made it empty '()', the assert statement worked. Should I keep the paratheses empty then?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Hi,
+</p>
+<p>
+ I am a bit confused on how the formatting of the testing the assert statements work. In the handout, this example is shown: assertThrows(AssertionError.class,
+ <b>
+  ()
+ </b>
+ -&gt; {new P(null);});
+</p>
+<p>
+ The
+ <b>
+  ()
+ </b>
+ is considered empty as there are no parameters for this example. However, when I was trying to write the assert statement test, I had filled those parentheses with parameters of the method in question and reached an error. When I erased the parameters and made it empty '()', the assert statement worked. Should I keep the paratheses empty then?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   There should be no parameters!
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   This call on assertThrows has as its second argument the anonymous function
- </paragraph>
- <paragraph>
-  <bold>
+ </p>
+ <p>
+  <b>
    ()
-  </bold>
+  </b>
   -&gt; {new P(null);}
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   When the body of assertThrows is being executed, it executes a call on this function. That call causes the method body   new P(null). to be executed, which should throw the AssertionError.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   In your case you should replace the call new P(null) but, for example,
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   new PhD(...)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   giving the constructor call PhD(...) suitable arguments that cause the assert statement to fail.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <p>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

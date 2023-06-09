@@ -13,39 +13,35 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  In the java hyper text they gave this example :
- </paragraph>
- <paragraph>
-  b[0..h-1] ≤ 0 (meaning that every element of b[0..h-1] is at most zero)
- </paragraph>
- <paragraph>
-  does this mean h can only equal 0 or 1? because anything greater would make the statement untrue and anything lower would make it b[0...-2] which isn't allowed?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ In the java hyper text they gave this example :
+</p>
+<p>
+ b[0..h-1] ≤ 0 (meaning that every element of b[0..h-1] is at most zero)
+</p>
+<p>
+ does this mean h can only equal 0 or 1? because anything greater would make the statement untrue and anything lower would make it b[0...-2] which isn't allowed?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Suppose the array has length 5 and is (0, -1, 0, 8, 8).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Suppose h is 3. Then b[0..h-1], or b[0..2] is the array segment consisting of the first three elements and b[0..h-1] ≤ 0 is true, since the first three array elements are 0, -1, 0.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Suppose h is 4. Then b[0..h-1], or b[0..3] is the array segment consisting of the first four elements and b[0..h-1] ≤ 0 is false, since b[3], which is 8, is not &lt;= 0.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,65 +13,63 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  For Q5 part b, I don't understand how to approach this. If I just plug into the sum, I have a sum with a transient response where we add up all the bk's up to bn, until we reach n = 14 where it is just the sum of all the bk's. But when I look at it with the frequency response, I have H(w) = 0 for n &lt; 0 since it is just the zero signal, and then for n ≥ 0, I have my answer from part a. I seem to be missing the transient part with the sum when I do it this way. Am I doing something wrong here? Also, what does n = 23 have to do with this?
- </paragraph>
-</document>
+<p>
+ For Q5 part b, I don't understand how to approach this. If I just plug into the sum, I have a sum with a transient response where we add up all the bk's up to bn, until we reach n = 14 where it is just the sum of all the bk's. But when I look at it with the frequency response, I have H(w) = 0 for n &lt; 0 since it is just the zero signal, and then for n ≥ 0, I have my answer from part a. I seem to be missing the transient part with the sum when I do it this way. Am I doing something wrong here? Also, what does n = 23 have to do with this?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   $23 &gt; 14$ is what 23 has to do with it.  I'm scratching my head trying to interpret a couple of other things you wrote, e.g. "H(w) = 0 for n &lt; 0."
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I guess I am just confused about how this problem changes when we add the unit step. I think the frequency response now depends on what n is, and thus the answer will depend on n (y[n] is piecewise). And then when you plug into the summation, there is the 3 part piecewise we discussed in class with 0, a transient part, then steady-state. Am I on the right path here?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yeah, this problem is all about transient vs. steady-state.  The frequency response, which is a property of the
-  <italic>
-   system
-  </italic>
-  , doesn't change when you alter the
-  <italic>
-   input
-  </italic>
-  to the system.  What changes is the
-  <italic>
-   output
-  </italic>
-  of the system.  The piecewise thing you refer to tells you that when you use a sinusoid starting at 0, i.e. when you insert the unit step, the resulting output $y [ n ]$ is zero for $n &lt; 0$, then goes through a transient epoch, then for $n &gt; M$ is exactly what it would have been if you'd used a "forever sinusoid" as input.  Your expression for that last piece will involve the frequency response.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I guess I am just confused about how this problem changes when we add the unit step. I think the frequency response now depends on what n is, and thus the answer will depend on n (y[n] is piecewise). And then when you plug into the summation, there is the 3 part piecewise we discussed in class with 0, a transient part, then steady-state. Am I on the right path here?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: David Delchamps (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Yeah, this problem is all about transient vs. steady-state.  The frequency response, which is a property of the
+    <i>
+     system
+    </i>
+    , doesn't change when you alter the
+    <i>
+     input
+    </i>
+    to the system.  What changes is the
+    <i>
+     output
+    </i>
+    of the system.  The piecewise thing you refer to tells you that when you use a sinusoid starting at 0, i.e. when you insert the unit step, the resulting output $y [ n ]$ is zero for $n &lt; 0$, then goes through a transient epoch, then for $n &gt; M$ is exactly what it would have been if you'd used a "forever sinusoid" as input.  Your expression for that last piece will involve the frequency response.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

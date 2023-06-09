@@ -13,60 +13,59 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  In lecture today I informally described 2 ways to solve for the tensions of strings that were pulling on a mass with known acceleration.  Here is code that implements those two methods:
-  <break>
-  </break>
-  1) Write linear equations in matrix form and use the backslash command; and
- </paragraph>
- <paragraph>
-  2) Use a judicious dot product to kill off two of the tensions so as to get one equation in one unknown.
- </paragraph>
- <paragraph>
-  The "Run" button below works.  Or, you can cut and paste into Matlab.
-  <break>
-  </break>
-  (Octave is free software that is a slightly pruned version of Matlab.)
-  <break>
-  </break>
-  <break>
-  </break>
-  My recommendation for your use of this code is to use it as little as possible. Only go as far down the list as you need to based on your abilities, background, interest and available time.
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    a) Write your own code
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    b) Look at this code only if you need to for hints.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    c) Read this code and use it, and then write your own code
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    d) Use this code and modify it slightly (e.g., find a different tension), and then write your own code.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    e) Just use and understand this code as well as you can.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Ultimately you should be able to write it yourself, and debug it, without looking up anything beyond Matlab help files. However, the more you get there by doing it yourself, the more you will learn by the process.
- </paragraph>
- <snippet language="m" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   % Three tensions  -Andy Ruina March 8, 2021
+<p>
+ In lecture today I informally described 2 ways to solve for the tensions of strings that were pulling on a mass with known acceleration.  Here is code that implements those two methods:
+ <break>
+ </break>
+ 1) Write linear equations in matrix form and use the backslash command; and
+</p>
+<p>
+ 2) Use a judicious dot product to kill off two of the tensions so as to get one equation in one unknown.
+</p>
+<p>
+ The "Run" button below works.  Or, you can cut and paste into Matlab.
+ <break>
+ </break>
+ (Octave is free software that is a slightly pruned version of Matlab.)
+ <break>
+ </break>
+ <break>
+ </break>
+ My recommendation for your use of this code is to use it as little as possible. Only go as far down the list as you need to based on your abilities, background, interest and available time.
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   a) Write your own code
+  </p>
+ </li>
+ <li>
+  <p>
+   b) Look at this code only if you need to for hints.
+  </p>
+ </li>
+ <li>
+  <p>
+   c) Read this code and use it, and then write your own code
+  </p>
+ </li>
+ <li>
+  <p>
+   d) Use this code and modify it slightly (e.g., find a different tension), and then write your own code.
+  </p>
+ </li>
+ <li>
+  <p>
+   e) Just use and understand this code as well as you can.
+  </p>
+ </li>
+</list>
+<p>
+ Ultimately you should be able to write it yourself, and debug it, without looking up anything beyond Matlab help files. However, the more you get there by doing it yourself, the more you will learn by the process.
+</p>
+<snippet language="m" line-numbers="true" runnable="true">
+ <snippet-file id="code">
+  % Three tensions  -Andy Ruina March 8, 2021
 % 3D.
 % A mass m at A  is held by three strings/rods anchored at B, C and D.
 % The strings/rods are 'two-force members' only having tension or
@@ -114,11 +113,8 @@ goodvec =  cross(rAC, rAD);
 TAB = dot(goodvec, (ma - mg)) / dot(goodvec, lamAB)
 
 disp('Note that the two answers agree.')
-  </snippet-file>
- </snippet>
- <paragraph>
- </paragraph>
-</document>
+ </snippet-file>
+</snippet>
 <h3>
  ----------- REPLIES -----------
 </h3>

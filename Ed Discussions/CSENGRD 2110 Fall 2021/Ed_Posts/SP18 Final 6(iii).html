@@ -13,121 +13,113 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="509.84503190519604" src="https://static.us.edusercontent.com/files/JdaTRUC1ikVzHRtuFXUCisvp" width="658"/>
- </figure>
- <figure>
-  <image height="159.95162790697674" src="https://static.us.edusercontent.com/files/cRBl9QB8albRqdcEpRGbD0LY" width="644"/>
- </figure>
- <paragraph>
-  For this one, is it saying that the following tree
-  <break>
-  </break>
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  7
- </paragraph>
- <paragraph>
-  /
- </paragraph>
- <paragraph>
-  5
- </paragraph>
- <paragraph>
-  \
- </paragraph>
- <paragraph>
-  12
- </paragraph>
- <paragraph>
-  which isn't a BST passes the test case because the isBST method effectively only tests the left subtree of the current node, but stops at the first left subtree. It doesn't fully search the tree to catch the 12?
- </paragraph>
-</document>
+<figure>
+ <image height="509.84503190519604" src="https://static.us.edusercontent.com/files/JdaTRUC1ikVzHRtuFXUCisvp" width="658"/>
+</figure>
+<figure>
+ <image height="159.95162790697674" src="https://static.us.edusercontent.com/files/cRBl9QB8albRqdcEpRGbD0LY" width="644"/>
+</figure>
+<p>
+ For this one, is it saying that the following tree
+ <break>
+ </break>
+ <break>
+ </break>
+</p>
+<p>
+ 7
+</p>
+<p>
+ /
+</p>
+<p>
+ 5
+</p>
+<p>
+ \
+</p>
+<p>
+ 12
+</p>
+<p>
+ which isn't a BST passes the test case because the isBST method effectively only tests the left subtree of the current node, but stops at the first left subtree. It doesn't fully search the tree to catch the 12?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andrew Chen (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew Chen (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Yep! That’s right. The solution only checks the roots of the left and right subtree, nothing else. To fix it, you would want to add “&amp;&amp; left.isBst()” to the left expression and “&amp;&amp; right.isBst()” to the right. Of course there are other implementations for this method, one of them showed up on prelim 2.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Is the reason that we say h= 1 first instead of h= 0 is because we know that the number of children must be &gt;= 1 so I have at least one edge to count when I start looping through the subtrees of the children
- </paragraph>
- <paragraph>
-  public int height(Node t) { if (t.children.size() == 0) return 0;
- </paragraph>
- <paragraph>
-  int h= 1;
- </paragraph>
- <paragraph>
-  for (Node n: t.children) { h= 1 + height(n); } return h; }
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew Chen (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  One comment first:
- </paragraph>
- <paragraph>
-  h= 1 + height(n);
- </paragraph>
- <paragraph>
-  should be changed to
- </paragraph>
- <paragraph>
-  h= Math.max(h, 1 + height(n));
- </paragraph>
- <paragraph>
-  ....because height is the maximum depth.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  I think you have the right idea about why h = 1. Thinking about it in terms of base case/recursive case:
- </paragraph>
- <paragraph>
-  Base case: the node is a leaf(aka no children), then the height of the tree is 0.
- </paragraph>
- <paragraph>
-  Recursive case: If the node has
-  <bold>
-   one
-  </bold>
-  child, then our depth is 1 + the height of that child's subtree. With multiple, we just traverse through all children and find the child whose subtree has the maximum height.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Is the reason that we say h= 1 first instead of h= 0 is because we know that the number of children must be &gt;= 1 so I have at least one edge to count when I start looping through the subtrees of the children
+  </p>
+  <p>
+   public int height(Node t) { if (t.children.size() == 0) return 0;
+  </p>
+  <p>
+   int h= 1;
+  </p>
+  <p>
+   for (Node n: t.children) { h= 1 + height(n); } return h; }
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Andrew Chen (student)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    One comment first:
+   </p>
+   <p>
+    h= 1 + height(n);
+   </p>
+   <p>
+    should be changed to
+   </p>
+   <p>
+    h= Math.max(h, 1 + height(n));
+   </p>
+   <p>
+    ....because height is the maximum depth.
+   </p>
+   <p>
+    I think you have the right idea about why h = 1. Thinking about it in terms of base case/recursive case:
+   </p>
+   <p>
+    Base case: the node is a leaf(aka no children), then the height of the tree is 0.
+   </p>
+   <p>
+    Recursive case: If the node has
+    <b>
+     one
+    </b>
+    child, then our depth is 1 + the height of that child's subtree. With multiple, we just traverse through all children and find the child whose subtree has the maximum height.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

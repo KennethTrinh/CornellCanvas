@@ -13,28 +13,26 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  In the announcement, it says not to hard code or concatenate in SQL queries.
- </paragraph>
- <paragraph>
-  I saved the tag id as a variable (using $_GET) rather than in an array as shown in the example and then set the where clause to equal 'WHERE tags.id = ' . tag_id_variable. Would this be acceptable, or would I need to do it the same way as stated in the example? My P3M3 feedback file indicated that everything I did was correct, but it seems like I am using concatenation to create the where clause.
- </paragraph>
-</document>
+<p>
+ In the announcement, it says not to hard code or concatenate in SQL queries.
+</p>
+<p>
+ I saved the tag id as a variable (using $_GET) rather than in an array as shown in the example and then set the where clause to equal 'WHERE tags.id = ' . tag_id_variable. Would this be acceptable, or would I need to do it the same way as stated in the example? My P3M3 feedback file indicated that everything I did was correct, but it seems like I am using concatenation to create the where clause.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Kyle J. Harms (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kyle J. Harms (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   No, this is not acceptable because it is unsecure. Please review the class notes for "SQL Security in PHP"
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Never trust data from
   <code>
    $_GET
@@ -48,11 +46,11 @@
    $tag_id_variable
   </code>
   .
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The only place where concatenation is acceptable for SQL is concatenating SQL clauses. Most everything else is likely to be insecure.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

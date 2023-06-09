@@ -13,45 +13,43 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  We have code that enables us to send information from Python to the board using UART and code that enables us to display messages on the LCD display. However, we can only get either the UART or the LCD display working.
- </paragraph>
- <paragraph>
-  For one set of pin_mux.c, pin_mux.h, clock_config.c, and clock_config.h files, only the LCD works. And for the other set of pin_mux.c, pin_mux.h, clock_config.c, and clock_config.h files, only the UART works.
- </paragraph>
- <paragraph>
-  Do you have any tips on combining the files from these two instances safely, so that both the UART and the LCD display work? Or do you have the libraries that enable functionality of both of these? This would be much appreciated.
- </paragraph>
-</document>
+<p>
+ We have code that enables us to send information from Python to the board using UART and code that enables us to display messages on the LCD display. However, we can only get either the UART or the LCD display working.
+</p>
+<p>
+ For one set of pin_mux.c, pin_mux.h, clock_config.c, and clock_config.h files, only the LCD works. And for the other set of pin_mux.c, pin_mux.h, clock_config.c, and clock_config.h files, only the UART works.
+</p>
+<p>
+ Do you have any tips on combining the files from these two instances safely, so that both the UART and the LCD display work? Or do you have the libraries that enable functionality of both of these? This would be much appreciated.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I have not taken a look at these files but you will need to combine the relevant portions of these files to get them working together (pins to both UART and LCD need to get muxed appropriately, UART and LCD modules need to receive appropriate clock signals).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Rhia Malhotra (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I've determined that the issue is in the "Configuration BOARD_BootClockRUN" section of clock_config.c. The UART example and the working-LCD code have quite different versions of this configuration. I am not sure how to safely combine them. What can I do to safely combine them?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Rhia Malhotra (None)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I've determined that the issue is in the "Configuration BOARD_BootClockRUN" section of clock_config.c. The UART example and the working-LCD code have quite different versions of this configuration. I am not sure how to safely combine them. What can I do to safely combine them?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

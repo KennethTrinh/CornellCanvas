@@ -13,81 +13,77 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="250.1823802163833" src="https://static.us.edusercontent.com/files/pLNiL9w8XFxkdPgQYobe5yR3" width="658"/>
- </figure>
- <paragraph>
-  Instead of the first line could I write
- </paragraph>
- <paragraph>
-  if (super(ob)==false) return false;
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<figure>
+ <image height="250.1823802163833" src="https://static.us.edusercontent.com/files/pLNiL9w8XFxkdPgQYobe5yR3" width="658"/>
+</figure>
+<p>
+ Instead of the first line could I write
+</p>
+<p>
+ if (super(ob)==false) return false;
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  If you did super.equals(ob)== false that would work too but is excessive.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Why do they write super.equals(ob)?  Can't you just write super(ob)?
- </paragraph>
- <paragraph>
-  Would it be less excessive if I wrote
- </paragraph>
- <paragraph>
-  if(!super(ob)) return false;
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  No you must do super.equals(), Java needs to know which method you are referring to in the superclass, just doing super(ob) would call the constructor of the superclass
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   super(ob) would be calling a constructor in the super class. You do not want to do that.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Bahaa Kotb (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   If you did super.equals(ob)== false that would work too but is excessive.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Why do they write super.equals(ob)?  Can't you just write super(ob)?
+   </p>
+   <p>
+    Would it be less excessive if I wrote
+   </p>
+   <p>
+    if(!super(ob)) return false;
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Bahaa Kotb (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     No you must do super.equals(), Java needs to know which method you are referring to in the superclass, just doing super(ob) would call the constructor of the superclass
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

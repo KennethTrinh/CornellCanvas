@@ -13,33 +13,29 @@
 <h3>
  Vote Count: 3
 </h3>
-<document version="2.0">
- <paragraph>
-  Could I get a hint for how to find the VM dimension? Since our method is actually incomplete, (we don't need to find a dimension that all possible configurations don't work). After finding a configuration with 4 that does work, we can only go to 5 and find whether there exists a dimension that works, and then continue. I would never know whether I reached the correct VC dimension or I just simply didn't find the correct configuration.
- </paragraph>
- <paragraph>
-  And find a configuration with n points that doesn't work is meaningless. It doesn't prove n is the VC dimension, since it is possible we just didn't find the correct configuration yet. It also didn't prove n is less than VC dimension, since it is okay to have other invalid configurations as long as there exist one that is valid.
- </paragraph>
- <paragraph>
-  I also want to ask whether there is such question on the prelim. I think telling us what the VC is and let us find a correct configuration for VC-1 would be a fair question. Otherwise, I don't think our current knowledge can really help us to figure out.
- </paragraph>
-</document>
+<p>
+ Could I get a hint for how to find the VM dimension? Since our method is actually incomplete, (we don't need to find a dimension that all possible configurations don't work). After finding a configuration with 4 that does work, we can only go to 5 and find whether there exists a dimension that works, and then continue. I would never know whether I reached the correct VC dimension or I just simply didn't find the correct configuration.
+</p>
+<p>
+ And find a configuration with n points that doesn't work is meaningless. It doesn't prove n is the VC dimension, since it is possible we just didn't find the correct configuration yet. It also didn't prove n is less than VC dimension, since it is okay to have other invalid configurations as long as there exist one that is valid.
+</p>
+<p>
+ I also want to ask whether there is such question on the prelim. I think telling us what the VC is and let us find a correct configuration for VC-1 would be a fair question. Otherwise, I don't think our current knowledge can really help us to figure out.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andrew Dettmer (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andrew Dettmer (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   This can be a tricky thing to prove in general, and often requires some deeper intuition about the structure of your hypotheses.  I would recommend looking at the diagram we gave you (or any such pair of rectangles) and first locating the decision boundaries i.e. what is separating positive and negative points; then consider a point near one of these boundaries and whether you are able to adjust that boundary to give that point a different label.  Hopefully that points you in the right direction for forming your whole set -- if you can adjust the boundaries as such to independently affect the label of each of your points, then your set is shatterable.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

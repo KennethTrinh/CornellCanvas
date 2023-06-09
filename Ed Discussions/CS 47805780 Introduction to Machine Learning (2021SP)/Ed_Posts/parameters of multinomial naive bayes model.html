@@ -13,50 +13,44 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <figure>
-  <image height="456" src="https://static.us.edusercontent.com/files/E7lOiTlwWTx1xYs2hHE7Afhb" width="606"/>
- </figure>
- <paragraph>
-  What are the parameters of the multinomial naive bayes generative model? Is it (1) just the conditional probabilities, (2) both the marginal probability and conditional probabilities, or is it (3) the log ratio of the conditional probabilities (as shown in the weight vector w) ?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<figure>
+ <image height="456" src="https://static.us.edusercontent.com/files/E7lOiTlwWTx1xYs2hHE7Afhb" width="606"/>
+</figure>
+<p>
+ What are the parameters of the multinomial naive bayes generative model? Is it (1) just the conditional probabilities, (2) both the marginal probability and conditional probabilities, or is it (3) the log ratio of the conditional probabilities (as shown in the weight vector w) ?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Scott Bass (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Scott Bass (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You definitely need both the conditional and the marginal probabilities, otherwise, you wouldn't be able to compute the argmax. $\vec{w}$ can be created with just the conditional probabilities, and $b$ with the marginal probabilities, so neither add new parameters to the multinomial bayes.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   In summary, the parameters are:
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     $P(W = w_{i} | Y = y)$ for each $i$ and $y$
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     $P(Y = y)$ for each $y$
-   </paragraph>
-  </list-item>
+   </p>
+  </li>
  </list>
- <paragraph>
+ <p>
   (Note that some of these parameters can be obtained from others using the laws of probability).
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,97 +13,93 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hello,
- </paragraph>
- <paragraph>
-  First, I am a little confused with this cvxpy package. I have looked at a few examples and I see the intuition behind their model, but I am not sure how I can encode xi, since to my understanding it is dependent on the optimization function (different weight vectors/biases will produce different xi values). Could I get a hint for how to encode xi through cvxpy?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Hello,
+</p>
+<p>
+ First, I am a little confused with this cvxpy package. I have looked at a few examples and I see the intuition behind their model, but I am not sure how I can encode xi, since to my understanding it is dependent on the optimization function (different weight vectors/biases will produce different xi values). Could I get a hint for how to encode xi through cvxpy?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jane Du (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jane Du (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   It's a new variable; you can create a variable for it like was done for w and b. It's actually not dependent on w/b so much, as that they all vary. Consider
   <break>
   </break>
   <break>
   </break>
   &lt;name&gt; = Variable(&lt;number&gt;)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   depending on the dimension of xi.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Fynn Datoo (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I'm confused. I thought Xi is provided via xTr - why do we need a new variable?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jane Du (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  In terms of optimization, it makes for a feasible calculation. If you were to instead calculate it in terms of xTr and w,b, you'd get something that's much more complicated than a linear optimization problem.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Yagmur Dulger (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
-  I have the same question, and I'm still not sure I understand. From my understanding, when we create a new variable in cvxpy, it becomes one of the things that the problem is trying to optimize to get an optimal solution. However, if we already have train data in xTr, don't we want to use the xi's coming from that matrix so that we can learn a hyperplane that fits our data? How can we create a variable xi that uses data from xTr? Am I approaching this completely wrong?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jane Du (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  You don't need to create a variable that comes "from" xTr. How would you even do it, when you don't have a hyperplane?
- </paragraph>
- <paragraph>
-  If you had and optimal w and xTr, you could calculate xi, and if you had optimal xi and xTr, you could calculate w. But you don't have both w and xi, so you optimize for both, knowing that any w/xi that satisfy the constraints will logically represent what you want them to represent.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Fynn Datoo (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I'm confused. I thought Xi is provided via xTr - why do we need a new variable?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Jane Du (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    In terms of optimization, it makes for a feasible calculation. If you were to instead calculate it in terms of xTr and w,b, you'd get something that's much more complicated than a linear optimization problem.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Yagmur Dulger (student)
+    </h3>
+    <h3>
+     Vote Count: 2
+    </h3>
+    <p>
+     I have the same question, and I'm still not sure I understand. From my understanding, when we create a new variable in cvxpy, it becomes one of the things that the problem is trying to optimize to get an optimal solution. However, if we already have train data in xTr, don't we want to use the xi's coming from that matrix so that we can learn a hyperplane that fits our data? How can we create a variable xi that uses data from xTr? Am I approaching this completely wrong?
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Jane Du (staff)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      You don't need to create a variable that comes "from" xTr. How would you even do it, when you don't have a hyperplane?
+     </p>
+     <p>
+      If you had and optimal w and xTr, you could calculate xi, and if you had optimal xi and xTr, you could calculate w. But you don't have both w and xi, so you optimize for both, knowing that any w/xi that satisfy the constraints will logically represent what you want them to represent.
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

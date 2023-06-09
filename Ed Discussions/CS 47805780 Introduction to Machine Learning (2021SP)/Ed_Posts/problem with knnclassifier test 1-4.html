@@ -13,64 +13,58 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi,
- </paragraph>
- <paragraph>
-  I can execute the following with k=1,2,...5, but knnclassifier test 1-4 always fail. What is the problem? Is it anything wrong with my code?
- </paragraph>
- <pre>analyze("acc",yTe,knnclassifier(xTr,yTr,xTe,k))</pre>
- <figure>
-  <image height="469.81957773512477" src="https://static.us.edusercontent.com/files/3CWVJY1EijSxgFrP1AR7qh4K" width="658"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Hi,
+</p>
+<p>
+ I can execute the following with k=1,2,...5, but knnclassifier test 1-4 always fail. What is the problem? Is it anything wrong with my code?
+</p>
+<pre>analyze("acc",yTe,knnclassifier(xTr,yTr,xTe,k))</pre>
+<figure>
+ <image height="469.81957773512477" src="https://static.us.edusercontent.com/files/3CWVJY1EijSxgFrP1AR7qh4K" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Danny Son (staff)
-</h3>
-<h3>
- Vote Count: 5
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Danny Son (staff)
+ </h3>
+ <h3>
+  Vote Count: 5
+ </h3>
+ <p>
   In your knn classifier function, try changing your preds in to a np array and then flatten it.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Rizo Rakhmanov (student)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<document version="2.0">
- <paragraph>
-  I had the same problem and flattening preds fixed it, but, out of curiosity, why exactly is this problem happening? Seems really weird and I would've never thought of doing this on my own.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you! The problem is solved
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you! The problem is solved
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Rizo Rakhmanov (student)
+   </h3>
+   <h3>
+    Vote Count: 3
+   </h3>
+   <p>
+    I had the same problem and flattening preds fixed it, but, out of curiosity, why exactly is this problem happening? Seems really weird and I would've never thought of doing this on my own.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

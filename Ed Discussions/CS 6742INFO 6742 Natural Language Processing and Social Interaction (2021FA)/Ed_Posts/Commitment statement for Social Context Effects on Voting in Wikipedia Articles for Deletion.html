@@ -13,198 +13,194 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  The following are my goals for next week:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    Perform a Fightin' Words analysis on the text of "keep" versus "delete" votes. This will help us explore the AfD data further, as well as be a good sanity check as we start looking more into language features.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Compute additional language features for the binary classifier (that Kiran has set up):
-   </paragraph>
-   <list style="bullet">
-    <list-item>
-     <paragraph>
-      [Wikipedia] slang frequency
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      Politeness scores
-     </paragraph>
-     <list style="bullet">
-      <list-item>
-       <paragraph>
-        "Politeness" will be based on politenessStrategies (ConvoKit).
-       </paragraph>
-      </list-item>
-     </list>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Improve Feasibility Check 1 by adding a 45 degree line for comparison and by merging in additional labels (i.e. "speedy keep" and "speedy delete").
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Figure out if it is possible to identify articles that have been repeatedly nominated for deletion.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Linda Wang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
+<p>
+ The following are my goals for next week:
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   Perform a Fightin' Words analysis on the text of "keep" versus "delete" votes. This will help us explore the AfD data further, as well as be a good sanity check as we start looking more into language features.
+  </p>
+ </li>
+ <li>
+  <p>
+   Compute additional language features for the binary classifier (that Kiran has set up):
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     [Wikipedia] slang frequency
+    </p>
+   </li>
+   <li>
+    <p>
+     Politeness scores
+    </p>
+    <list style="bullet">
+     <li>
+      <p>
+       "Politeness" will be based on politenessStrategies (ConvoKit).
+      </p>
+     </li>
+    </list>
+   </li>
+  </list>
+ </li>
+ <li>
+  <p>
+   Improve Feasibility Check 1 by adding a 45 degree line for comparison and by merging in additional labels (i.e. "speedy keep" and "speedy delete").
+  </p>
+ </li>
+ <li>
+  <p>
+   Figure out if it is possible to identify articles that have been repeatedly nominated for deletion.
+  </p>
+ </li>
+</list>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Linda Wang (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
  <list style="bullet">
   <list-item>
   </list-item>
  </list>
- <paragraph>
-  <bold>
+ <p>
+  <b>
    Fighting Words:
-  </bold>
- </paragraph>
- <paragraph>
+  </b>
+ </p>
+ <p>
   This week, I was able to perform a Fighting Words analysis on the text of Keep and Delete votes. Though I ran the analysis on a small subset of the data (see Issues section below), I believe there are patterns worth noting and investigating further. For example, the text for Keep votes seem more likely to contain link(s) to other webpages than do the text for Delete votes. This can be seen in Figure 2. (The word "link" was used to replace URLs in the text.) Additionally, the text for Delete votes appear to use phrases like "wp" and "per" more often than the text for Keep votes, as portrayed in Figure 1. "Wp" may be a reference to the AfD slang "WP:POINT", which refers to the notion that participants should not somehow disrupt Wikipedia while making their arguments; "per" tends to be used in phrases like "per nom" or "per &lt;user&gt;".
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   One possible explanation for these differences is that Delete votes tend to use words relying on users, while Keep votes tend to use words or references to outside people/resources. The former tendency seems aligned with herding behavior, while the latter somewhat opposes it.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Figure 1: ngram_range=(1,1)
- </paragraph>
+ </p>
  <figure>
   <image height="449.36549900859217" src="https://static.us.edusercontent.com/files/qEGHVUCUeJq86NeXeU5keore" width="655"/>
  </figure>
- <paragraph>
+ <p>
   Figure 2: ngram_range=(1,3)
- </paragraph>
+ </p>
  <figure>
   <image height="439.07468605419695" src="https://static.us.edusercontent.com/files/cdyvSruiypaiRQH4HJW4bI2v" width="640"/>
  </figure>
- <paragraph>
-  <bold>
+ <p>
+  <b>
    Features:
-  </bold>
- </paragraph>
- <paragraph>
-  <italic>
+  </b>
+ </p>
+ <p>
+  <i>
    Wikipedia Slang Frequency:
-  </italic>
- </paragraph>
- <paragraph>
+  </i>
+ </p>
+ <p>
   I referred to
-  <link href="https://en.wikipedia.org/wiki/Wikipedia:Guide_to_deletion#General_advice"/>
-  https://en.wikipedia.org/wiki/Wikipedia:Guide_to_deletion#General_advice to extract a list of "slang terms" that are likely to be found in AfD. I then computed the frequency of slang usage among previous keep or delete votes. The next step is to incorporate this feature into Kiran's binary classifier.
- </paragraph>
- <paragraph>
-  <italic>
+  <a href="https://en.wikipedia.org/wiki/Wikipedia:Guide_to_deletion#General_advice">
+   https://en.wikipedia.org/wiki/Wikipedia:Guide_to_deletion#General_advice
+  </a>
+  to extract a list of "slang terms" that are likely to be found in AfD. I then computed the frequency of slang usage among previous keep or delete votes. The next step is to incorporate this feature into Kiran's binary classifier.
+ </p>
+ <p>
+  <i>
    Politeness
-  </italic>
+  </i>
   :
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I obtained politeness markers from Delete and Keep votes using ConvoKit's PolitenessStrategies. Again, this analysis was run on a small subset of the AfD corpus. However, it produced several interesting patterns that seem worth exploring. Comparing Figure 3 and 4, it would seem that Delete votes utilize first person pronouns somewhat less than Keep votes do. At the same time, Keep votes tend to exhibit more hedging and positive politeness strategies than do Delete votes.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   All the aforementioned strategies seem, at least intuitively, to relate to hedging. My next step will be to figure out which strategies could best predict herding behavior (by vote type), and how to combine them into a politeness feature for the binary classifier.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Figure 3: Delete Votes' Politeness
- </paragraph>
+ </p>
  <figure>
   <image height="483.2062055591467" src="https://static.us.edusercontent.com/files/yPv65mIGHqwcx7iXJ0i6tI6w" width="640"/>
  </figure>
- <paragraph>
+ <p>
   Figure 4: Keep Votes' Politeness
- </paragraph>
+ </p>
  <figure>
   <image height="483.2062055591467" src="https://static.us.edusercontent.com/files/x1SNkAyJJbcfwDXo03Tb9E0u" width="640"/>
  </figure>
- <paragraph>
- </paragraph>
- <paragraph>
-  <bold>
+ <p>
+  <b>
    Article Re-Nominations:
-  </bold>
- </paragraph>
- <paragraph>
+  </b>
+ </p>
+ <p>
   According to Wikipedia, the slang "deprodded" is used in AfD to indicate that a given article was previously proposed for deletion, but that deletion was contested. I will look into how frequently this particular word appears in the corpus, to see if its presence actually dampens herding behavior; I will continue looking into other ways to verify if an article has been up for re-nomination.
- </paragraph>
- <paragraph>
-  <bold>
+ </p>
+ <p>
+  <b>
    Notes:
-  </bold>
- </paragraph>
- <paragraph>
-  <italic>
+  </b>
+ </p>
+ <p>
+  <i>
    Clarifying Points:
-  </italic>
- </paragraph>
- <paragraph>
+  </i>
+ </p>
+ <p>
   For each of the above items, I defined a Keep vote as any vote with a label of "keep" or "speedy keep". Similarly, I defined a Delete vote as any vote with a label of "delete" or "speedy delete".
- </paragraph>
- <paragraph>
-  <italic>
+ </p>
+ <p>
+  <i>
    Issues:
-  </italic>
- </paragraph>
- <paragraph>
+  </i>
+ </p>
+ <p>
   I struggled with memory usage this week, so most of the above work used a small subset of the AfD corpus (~10% of the data, or 329,535 utterances).  Going forward, I will learn to optimize my code better and expand my analyses to the whole dataset.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Additionally, PolitenessStrategies could not be directly applied to the AfD dataset in Convokit, so I had to make a few adjustments to the scripts. I'm quite confused about this conflict, so any help would be appreciated! I will try my best to resolve it in the upcoming week(s), as well.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Re: the convokit/politeness question: the maintainers of convokit have a very deep interest in having this work for people, so contacting them directly (cc: me) would probably work well!
-  <break>
-  </break>
-  <break>
-  </break>
-  I think you were aware of this, but "WP" could perhaps be mentions of all sorts of Wikipedia policies, such as WP:NPOV (neutral point of view), so the fightin words analysis may be showing that deleted articles are  more frequently cited as violating any of the many written/official-ish wikipedia policies.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Linda Wang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you! I'll contact convokit soon as you suggested, and I will look into the WP results more!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Prof. Lee (she/they) (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Re: the convokit/politeness question: the maintainers of convokit have a very deep interest in having this work for people, so contacting them directly (cc: me) would probably work well!
+   <break>
+   </break>
+   <break>
+   </break>
+   I think you were aware of this, but "WP" could perhaps be mentions of all sorts of Wikipedia policies, such as WP:NPOV (neutral point of view), so the fightin words analysis may be showing that deleted articles are  more frequently cited as violating any of the many written/official-ish wikipedia policies.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Linda Wang (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Thank you! I'll contact convokit soon as you suggested, and I will look into the WP results more!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

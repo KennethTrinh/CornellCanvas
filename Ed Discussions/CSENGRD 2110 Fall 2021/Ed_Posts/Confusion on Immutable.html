@@ -13,55 +13,51 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  The definition of immutable says they are unchanging but that confuses me. Don't we reassign value to variables all the time? because we could do:
- </paragraph>
- <paragraph>
-  <bold>
-   String it = "hey"
-  </bold>
- </paragraph>
- <paragraph>
-  and then say
- </paragraph>
- <paragraph>
-  <bold>
-   it = "no"
-  </bold>
- </paragraph>
- <paragraph>
-  What is the definition of unchanging here.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ The definition of immutable says they are unchanging but that confuses me. Don't we reassign value to variables all the time? because we could do:
+</p>
+<p>
+ <b>
+  String it = "hey"
+ </b>
+</p>
+<p>
+ and then say
+</p>
+<p>
+ <b>
+  it = "no"
+ </b>
+</p>
+<p>
+ What is the definition of unchanging here.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The distinction is between a
-  <italic>
+  <i>
    variable
-  </italic>
+  </i>
   and an
-  <italic>
+  <i>
    Object
-  </italic>
+  </i>
   .  It is true that all non-
   <code>
    final
   </code>
   variables in Java are "mutable", in that they can be reassigned.  And for primitive types, this is the only kind of mutability you need to worry about.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   But objects contain state in their fields and may be referenced by multiple variables.  If those fields are non-
   <code>
    final
@@ -75,40 +71,40 @@
    const
   </code>
   keyword in C++.)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   A good example to illustrate with is
   <code>
    String
   </code>
   .  In Java, strings are immutable.  To extend your example,
- </paragraph>
+ </p>
  <pre>String it= "hey";
 String alias= it;
 it= "no";</pre>
- <paragraph>
+ <p>
   After this code runs,
   <code>
    alias
   </code>
   still points to an object representing "hey" - reassigning the
-  <italic>
+  <i>
    variable
-  </italic>
+  </i>
   <code>
    it
   </code>
   had no effect on the
-  <italic>
+  <i>
    Object
-  </italic>
+  </i>
   it previously referenced.  And
   <code>
    String
   </code>
   has no method for changing one of its letters; they best you can do is create a new string that reflects the change.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   In contrast,
   <code>
    StringBuilder
@@ -118,8 +114,8 @@ it= "no";</pre>
    StringBuilder
   </code>
   via public, mutating methods, which does not involve reassigning the variable referencing the builder.  If you have two variables pointing to the same builder, appending to it via one of the variables will affect what can be seen via the other variable (since there's only one object they are both referencing, and the object's fields are what changed).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   An immutable
   <code>
    String
@@ -149,8 +145,8 @@ it= "no";</pre>
    Set
   </code>
   .  In CS 3110, pretty much all types are immutable like this.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   In contrast, mutable classes like
   <code>
    StringBuilder
@@ -160,16 +156,16 @@ it= "no";</pre>
    StringBuilder
   </code>
   does
-  <italic>
+  <i>
    not
-  </italic>
+  </i>
   override
   <code>
    equals()
   </code>
   , and that was a good choice on the part of its implementers.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

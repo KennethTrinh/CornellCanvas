@@ -13,31 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="219" src="https://static.us.edusercontent.com/files/bwjKTEKqsWxvaVAP6pSJuTcr" width="305"/>
- </figure>
- <paragraph>
-  Hello! I am not sure I understand why is string(k) rejected by the compiler and (Integer) ob is not. I thought that if the object does not have a partition of that type then the casting cannot happen?
- </paragraph>
-</document>
+<figure>
+ <image height="219" src="https://static.us.edusercontent.com/files/bwjKTEKqsWxvaVAP6pSJuTcr" width="305"/>
+</figure>
+<p>
+ Hello! I am not sure I understand why is string(k) rejected by the compiler and (Integer) ob is not. I thought that if the object does not have a partition of that type then the casting cannot happen?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   I made this question public (and made you anonymous). Please don't make questions private; others may have the same questions.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   This is important: At compile-time, absolutely nothing is known about what pointer will be in a variable at runtime, and probably that runtime value will change from pointing from one object to another as execution proceeds. Therefore, at compiletime, only the TYPES of expressions are used.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Consider  (String) k.
   <break>
   </break>
@@ -45,8 +43,8 @@
   <break>
   </break>
   It is known at compiletime that an Integer object cannot have a String partition. Therefore, it is a compiletime error
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Consider  (Integer) ob.
   <break>
   </break>
@@ -60,29 +58,25 @@
   <break>
   </break>
   At runtime, if ob points at an Integer object, fine. But if it points at any other object, A ClassCastException is thrown.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Does this help?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  That makes sense! So if it was (integer) k where k is say a string object, java won't allow it but since in (integer) ob casting, ob is an object type which can be casted down to any other type, it allows it?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   That makes sense! So if it was (integer) k where k is say a string object, java won't allow it but since in (integer) ob casting, ob is an object type which can be casted down to any other type, it allows it?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

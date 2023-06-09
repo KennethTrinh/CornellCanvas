@@ -13,43 +13,41 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I am having a hard time understand the following transition
- </paragraph>
- <paragraph>
-  if w' = w/gamma', and t' = t/gamma', where gamma' = gamma * ||w||
- </paragraph>
- <paragraph>
-  why would we want to minimize 0.5*||w||^2?
- </paragraph>
- <paragraph>
-  also where are the 1/2 and square coming from?
- </paragraph>
- <figure>
-  <image height="274.6137640449438" src="https://static.us.edusercontent.com/files/kk1jbMirCdmcRCcj9Tdt1LdI" width="495"/>
- </figure>
-</document>
+<p>
+ I am having a hard time understand the following transition
+</p>
+<p>
+ if w' = w/gamma', and t' = t/gamma', where gamma' = gamma * ||w||
+</p>
+<p>
+ why would we want to minimize 0.5*||w||^2?
+</p>
+<p>
+ also where are the 1/2 and square coming from?
+</p>
+<figure>
+ <image height="274.6137640449438" src="https://static.us.edusercontent.com/files/kk1jbMirCdmcRCcj9Tdt1LdI" width="495"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jayadev Acharya (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jayadev Acharya (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   minimizing 1/|w| is the same as maximizing |w|, which is the same as maximizing |w|^2
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   note |w|^2 is a nice convex function which is now easy to differentiate compared to 1/|w|, which is not convex.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The half is usually put to cancel the square after derivative.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

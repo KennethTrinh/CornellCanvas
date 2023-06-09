@@ -13,43 +13,39 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  For this question, I am confused if we are constructing weights w
-  <sub>
-   0,1
-  </sub>
-  or w
-  <sub>
-   1,2
-  </sub>
-  or both w
-  <sub>
-   0,1
-  </sub>
-  and w
-  <sub>
-   1,2
-  </sub>
-  . Specifically, are we only concerned with the weights from the hidden layer to the output layer? Or are the input to hidden layer weights also important and something other than 1's.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ For this question, I am confused if we are constructing weights w
+ <sub>
+  0,1
+ </sub>
+ or w
+ <sub>
+  1,2
+ </sub>
+ or both w
+ <sub>
+  0,1
+ </sub>
+ and w
+ <sub>
+  1,2
+ </sub>
+ . Specifically, are we only concerned with the weights from the hidden layer to the output layer? Or are the input to hidden layer weights also important and something other than 1's.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Donal Lowsley-Williams (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Donal Lowsley-Williams (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   It is my understanding that we are constructing weights for all edges involved in the network. That is, edges from the input layer to the hidden layer as well as from the hidden layer to the output layer. All edge weight choices are important, and for this question, serve as a design choice (they are learned values). Those that go from the input layer to the hidden layer will influence the input vectors before they are passed through the activation function.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

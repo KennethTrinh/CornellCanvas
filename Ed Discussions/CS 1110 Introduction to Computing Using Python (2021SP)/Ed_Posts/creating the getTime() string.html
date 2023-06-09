@@ -13,48 +13,38 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi,
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  We're trying to create the string for t in getTime(). While we were able to implement the &lt;days&gt; portion of the
-  <code>
-   t
-  </code>
-  string, we are confused on how to use class attributes (and accessing these values in the dictionary) to get the &lt;starthrs&gt;, &lt;startmins&gt;, &lt;endhrs&gt;, &lt;endmins&gt;. This is our error message below:
- </paragraph>
- <paragraph>
- </paragraph>
- <figure>
-  <image height="94.82601054481547" src="https://static.us.edusercontent.com/files/sfAi4Sd3DMgxpmuMhDch0zPA" width="658"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
+<p>
+ Hi,
+</p>
+<p>
+ We're trying to create the string for t in getTime(). While we were able to implement the &lt;days&gt; portion of the
+ <code>
+  t
+ </code>
+ string, we are confused on how to use class attributes (and accessing these values in the dictionary) to get the &lt;starthrs&gt;, &lt;startmins&gt;, &lt;endhrs&gt;, &lt;endmins&gt;. This is our error message below:
+</p>
+<figure>
+ <image height="94.82601054481547" src="https://static.us.edusercontent.com/files/sfAi4Sd3DMgxpmuMhDch0zPA" width="658"/>
+</figure>
+<p>
+ Thank you!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Troy Moslemi (he/him) (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Hello,
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Lets take a quick look at the course Class.
- </paragraph>
+ </p>
  <snippet language="py" line-numbers="true" runnable="false">
   <snippet-file id="code">
    class Course:
@@ -99,171 +89,167 @@
         """
   </snippet-file>
  </snippet>
- <paragraph>
- </paragraph>
- <paragraph>
+ <p>
   In the initializer for the course class, the argument "t" is already in the form of  &lt;days&gt; &lt;starthrs&gt;:&lt;startms&gt;&lt;am or pm&gt;-&lt;endhrs&gt;-&lt;endms&gt;&lt;am or pm&gt;
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Perhaps you can make a new class attribute using that argument so you can get that exact format for each class.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Best,
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Troy
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you!
- </paragraph>
- <paragraph>
-  We created a dictionary meeting time attribute in this class (where values are times). It's more that we're having trouble being able to access the times (also using our Time class).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi,
- </paragraph>
- <paragraph>
-  Perhaps it would be better to have two attributes, one for the full form and the one for the time dictionary? That way you can use the full form for getTime() and the dictionary one for your other functions? I believe that it would make things less complicated for you.
- </paragraph>
- <paragraph>
-  Best,
- </paragraph>
- <paragraph>
-  Troy
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Okay, that makes a lot of sense. We created a new attribute for the full form time string but are still getting this error message when implementing getTime() using our new attribute.
- </paragraph>
- <figure>
-  <image height="223.5809199318569" src="https://static.us.edusercontent.com/files/SVGtpqBXoC9FyOOsOESDX3nV" width="622"/>
- </figure>
- <paragraph>
-  [ UPDATED W ERROR MESSAGE ]
- </paragraph>
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I am not sure why you are still getting that error message.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I updated the message with our new error message.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Hello,
- </paragraph>
- <paragraph>
-  Let us say that time_string is the attribute of the full form.
- </paragraph>
- <paragraph>
-  In getTime(), you want to return that full form.
- </paragraph>
- <paragraph>
-  If the argument of getTime() is a class, and that class has an attribute that has the full time format, all you need to do is return that format.
- </paragraph>
- <paragraph>
-  Best,
-  <break>
-  </break>
-  Troy
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Okay, that worked! Thank you so much, Troy. We were definitely overthinking this function.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  np
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you!
+  </p>
+  <p>
+   We created a dictionary meeting time attribute in this class (where values are times). It's more that we're having trouble being able to access the times (also using our Time class).
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Troy Moslemi (he/him) (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Hi,
+   </p>
+   <p>
+    Perhaps it would be better to have two attributes, one for the full form and the one for the time dictionary? That way you can use the full form for getTime() and the dictionary one for your other functions? I believe that it would make things less complicated for you.
+   </p>
+   <p>
+    Best,
+   </p>
+   <p>
+    Troy
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Okay, that makes a lot of sense. We created a new attribute for the full form time string but are still getting this error message when implementing getTime() using our new attribute.
+    </p>
+    <figure>
+     <image height="223.5809199318569" src="https://static.us.edusercontent.com/files/SVGtpqBXoC9FyOOsOESDX3nV" width="622"/>
+    </figure>
+    <p>
+     [ UPDATED W ERROR MESSAGE ]
+    </p>
+    <p>
+     Thank you!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Troy Moslemi (he/him) (student)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      I am not sure why you are still getting that error message.
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 12em;">
+      <h3>
+       Author: Anonymous
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       I updated the message with our new error message.
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 14em;">
+       <h3>
+        Author: Troy Moslemi (he/him) (student)
+       </h3>
+       <h3>
+        Vote Count: 0
+       </h3>
+       <p>
+        Hello,
+       </p>
+       <p>
+        Let us say that time_string is the attribute of the full form.
+       </p>
+       <p>
+        In getTime(), you want to return that full form.
+       </p>
+       <p>
+        If the argument of getTime() is a class, and that class has an attribute that has the full time format, all you need to do is return that format.
+       </p>
+       <p>
+        Best,
+        <break>
+        </break>
+        Troy
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+       <div style="text-indent: 16em;">
+        <h3>
+         Author: Anonymous
+        </h3>
+        <h3>
+         Vote Count: 0
+        </h3>
+        <p>
+         Okay, that worked! Thank you so much, Troy. We were definitely overthinking this function.
+        </p>
+        <h3>
+         ------------------------------------
+        </h3>
+        <div style="text-indent: 18em;">
+         <h3>
+          Author: Troy Moslemi (he/him) (student)
+         </h3>
+         <h3>
+          Vote Count: 1
+         </h3>
+         <p>
+          np
+         </p>
+         <h3>
+          ------------------------------------
+         </h3>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

@@ -13,44 +13,40 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Can I add extra methods that will help me execute test cases? I was thinking of a method that returns a mode after appending it to a list to test method nodes. I thought of maybe testing attributes prev, value, and next to check if the nodes method is working. But other than the specific case where the prev and head are null I'd still need the previous node and the next node.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Can I add extra methods that will help me execute test cases? I was thinking of a method that returns a mode after appending it to a list to test method nodes. I thought of maybe testing attributes prev, value, and next to check if the nodes method is working. But other than the specific case where the prev and head are null I'd still need the previous node and the next node.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Prev, value and next are indirectly tested when you do toString() and toStringrev(), you don’t need to retest them directly. So if that was the reason you wanted to add extra methods, then you don’t need to.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Method node() doesn't change the list. There is no need to test any fields.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The only thing to be tested is whether it returns the right node. If, in testing, you make sure that all nodes have different values, then you only have to test whether the returned node has the right value.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Bahaa Kotb (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Prev, value and next are indirectly tested when you do toString() and toStringrev(), you don’t need to retest them directly. So if that was the reason you wanted to add extra methods, then you don’t need to.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

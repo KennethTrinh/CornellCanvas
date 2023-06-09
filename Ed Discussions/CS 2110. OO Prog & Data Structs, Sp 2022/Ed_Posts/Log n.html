@@ -13,54 +13,52 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="1.0">
- <paragraph>
-  What exactly does a method having a time proportional to log n mean? Does it mean that when the method is called log n call frames are created?
- </paragraph>
- <paragraph>
-  The powFast method in the complexity lecture has time proportional to log n. Thus does that mean a call of powFast(b^19) would take time log(19) or only make a little bit more than 1 call frame? I am confused because there are clearly multiple recursive calls.
- </paragraph>
- <figure>
-  <image height="1445" src="https://static.us.edusercontent.com/files/juF2IB71YCKblQV36YgiJbLZ" width="2633"/>
- </figure>
-</document>
+<p>
+ What exactly does a method having a time proportional to log n mean? Does it mean that when the method is called log n call frames are created?
+</p>
+<p>
+ The powFast method in the complexity lecture has time proportional to log n. Thus does that mean a call of powFast(b^19) would take time log(19) or only make a little bit more than 1 call frame? I am confused because there are clearly multiple recursive calls.
+</p>
+<figure>
+ <image height="1445" src="https://static.us.edusercontent.com/files/juF2IB71YCKblQV36YgiJbLZ" width="2633"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   In this example, yes, about log n frames for calls will be placed on the call stack --actually it may be up to 2 * log n.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Execute this call yourself and figure out how many frames for calls will be placed on the stack:
   <break>
   </break>
   powFast( 2, 32)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Aren’t there call frames created for each call which would exceed the value of log(32) ?
- </paragraph>
- <paragraph>
-  I diagrammed out the call frames for the call powFast(2,32) and I had 7 call frames on the call stack.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Aren’t there call frames created for each call which would exceed the value of log(32) ?
+  </p>
+  <p>
+   I diagrammed out the call frames for the call powFast(2,32) and I had 7 call frames on the call stack.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

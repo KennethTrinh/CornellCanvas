@@ -13,46 +13,44 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I am consistently getting this error when trying to build my program. Normally this would be because some #include is being done more than once, but I checked that and it should be fine. More curiously, the place that MCUExpress points to where the function is "first defined" is the file itself. I can't place what is going wrong.
- </paragraph>
- <figure>
-  <image height="98.06259314456037" src="https://static.us.edusercontent.com/files/PbZl7gGMaG2xvYC3MDPtUfCN" width="658"/>
- </figure>
- <figure>
-  <image height="102.94748358862145" src="https://static.us.edusercontent.com/files/2PaHmwWANFoOx4tbFAbr8Glr" width="658"/>
- </figure>
- <paragraph>
-  I also excluded Framework2.c from the build; now Framework1.c has the only main() function in the project.
- </paragraph>
- <paragraph>
-  Please make this post private if it has too much revealing info, i was careful to not include any actual code in the screenshots.
- </paragraph>
-</document>
+<p>
+ I am consistently getting this error when trying to build my program. Normally this would be because some #include is being done more than once, but I checked that and it should be fine. More curiously, the place that MCUExpress points to where the function is "first defined" is the file itself. I can't place what is going wrong.
+</p>
+<figure>
+ <image height="98.06259314456037" src="https://static.us.edusercontent.com/files/PbZl7gGMaG2xvYC3MDPtUfCN" width="658"/>
+</figure>
+<figure>
+ <image height="102.94748358862145" src="https://static.us.edusercontent.com/files/2PaHmwWANFoOx4tbFAbr8Glr" width="658"/>
+</figure>
+<p>
+ I also excluded Framework2.c from the build; now Framework1.c has the only main() function in the project.
+</p>
+<p>
+ Please make this post private if it has too much revealing info, i was careful to not include any actual code in the screenshots.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jacob Kraizman (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
-  <bold>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jacob Kraizman (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
+  <b>
    FIXED
-  </bold>
+  </b>
   . in Framework1.c i included "LED.c" instead of "LED.h"
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   i think i get why the multiple definitions error came up. I think its bc when building it compiles everything; so "LED.c" compiles and defines the functions, but then file with main() also compiles and includes "LED.c" which tries to define everything again. Thats why the error mentioned a .o file of the same name; bc the first definition of the functions already compiled.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

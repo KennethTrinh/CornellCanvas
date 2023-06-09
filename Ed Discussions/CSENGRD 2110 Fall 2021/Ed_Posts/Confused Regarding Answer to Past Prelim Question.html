@@ -13,57 +13,49 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
- </paragraph>
- <figure>
-  <image height="272.4203821656051" src="https://static.us.edusercontent.com/files/CdKZkbQslEL6wV9JtQ6yDiXM" width="658"/>
- </figure>
- <figure>
-  <image height="221.52866242038215" src="https://static.us.edusercontent.com/files/oFArd3KiNf4uR6e3snBCjBCd" width="658"/>
- </figure>
- <paragraph>
-  I do not understand the second if statement in the remove method.    What is its purpose?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<figure>
+ <image height="272.4203821656051" src="https://static.us.edusercontent.com/files/CdKZkbQslEL6wV9JtQ6yDiXM" width="658"/>
+</figure>
+<figure>
+ <image height="221.52866242038215" src="https://static.us.edusercontent.com/files/oFArd3KiNf4uR6e3snBCjBCd" width="658"/>
+</figure>
+<p>
+ I do not understand the second if statement in the remove method.    What is its purpose?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The second if is
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   if (s == 1) elemNum.remove(ob).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   What is s? The number of times ob occurs in the bag. If there is only one element and it is being removed, then the pair(ob, ...) should be removed from the Map.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I do not see how that recursion could terminate.  If there is only one occurrence of E and the second if statement is terminated, wouldn't elemNum.remove(ob) get called an infinite amount of times?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I do not see how that recursion could terminate.  If there is only one occurrence of E and the second if statement is terminated, wouldn't elemNum.remove(ob) get called an infinite amount of times?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

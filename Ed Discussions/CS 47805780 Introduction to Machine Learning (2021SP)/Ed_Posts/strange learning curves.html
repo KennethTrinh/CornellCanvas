@@ -13,105 +13,102 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Im getting learning curves like these when using a 1 hidden layer neural net with 128 neurons and BCELoss for the baseline task. I have spent a lot of time fixing these curves but I have no idea how to proceed. My neural net predicts a large number of 0s and very few 1s which should not be the case. What would you advise? I've tried tuning all hyperparameters (learning rate, number of neurons in hidden layer, number of hidden layers etc) with no success
- </paragraph>
- <paragraph>
-  Learning rate 1e-5
- </paragraph>
- <figure>
-  <image height="200" src="https://static.us.edusercontent.com/files/ERVIQzCF9gHPXd1AEeUMnred" width="295"/>
- </figure>
- <paragraph>
-  Learning rate 1e-6
- </paragraph>
- <figure>
-  <image height="187" src="https://static.us.edusercontent.com/files/mogvxBGKJET84z0aT8M10xuU" width="274"/>
- </figure>
-</document>
+<p>
+ Im getting learning curves like these when using a 1 hidden layer neural net with 128 neurons and BCELoss for the baseline task. I have spent a lot of time fixing these curves but I have no idea how to proceed. My neural net predicts a large number of 0s and very few 1s which should not be the case. What would you advise? I've tried tuning all hyperparameters (learning rate, number of neurons in hidden layer, number of hidden layers etc) with no success
+</p>
+<p>
+ Learning rate 1e-5
+</p>
+<figure>
+ <image height="200" src="https://static.us.edusercontent.com/files/ERVIQzCF9gHPXd1AEeUMnred" width="295"/>
+</figure>
+<p>
+ Learning rate 1e-6
+</p>
+<figure>
+ <image height="187" src="https://static.us.edusercontent.com/files/mogvxBGKJET84z0aT8M10xuU" width="274"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Victor Butoi (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Sorry to hear that this has been so painful, can see that your training curves do look a bit out of sorts. Whenever I get graphs like those you are showing me, I'm thinking the following things.
- </paragraph>
- <paragraph>
-  -Did I normalize my training data?
- </paragraph>
- <paragraph>
-  -Is there a bug with the training data that is going inputted to my algo?
- </paragraph>
- <paragraph>
-  -Are my labels misalligned to the training data?
- </paragraph>
- <paragraph>
-  -Does my network have enough capacity to fit the function I'm trying to approximate?
- </paragraph>
- <paragraph>
-  Unfortunately, your graphs don't really feel symptomatic of a learning rate issue as you are getting heavy volatility with a very very low learning rate. My best guess is try to reduce your capacity significantly until your training curves don't jump so much with a slightly higher learning rate, and go from there. If your model is too high capacity this can cause difficulties in optimization (I wish I had a better paper link to post than this, but
-  <link href="https://arxiv.org/pdf/1906.10732.pdf"/>
-  https://arxiv.org/pdf/1906.10732.pdf will tell you that sparse solutions for NN generally perform worse, and when NNs are overparameterized you will always get sparse solutions
-  <link href="https://arxiv.org/pdf/1803.03635.pdf"/>
-  https://arxiv.org/pdf/1803.03635.pdf )
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  What do you mean by “enough capacity” here?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Victor Butoi (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  This is a question that researchers are asking today. Generally, when we describe the "capacity" of a neural network to learn, we are referring to having the ability to learn the problem well. Caution, capacity is heavily correlated by the number of parameters you have but also the structure of your network. That is to say, if your network doesn't have enough capacity, you will not be able to learn your problem well, and your train loss will not go down as much as it could because your model isn't representative enough. On the other hand, an over-parameterized (too much capacity) model will generally have a sparser solution that also overfits your data as it has the ability to be more expressive. One of our jobs as ML practitioners is figuring out the right balance of a complicated enough model that can fit our data, without making it too large and hard to optimize/overfit training data.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Joanna Saikali (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Joanna Saikali (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   For me this was happening because I didn't reshape before a dropout layer in my NN, i.e. something like
   <code>
    x = x.reshape(x.size(0), -1)
   </code>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Victor Butoi (staff)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Sorry to hear that this has been so painful, can see that your training curves do look a bit out of sorts. Whenever I get graphs like those you are showing me, I'm thinking the following things.
+  </p>
+  <p>
+   -Did I normalize my training data?
+  </p>
+  <p>
+   -Is there a bug with the training data that is going inputted to my algo?
+  </p>
+  <p>
+   -Are my labels misalligned to the training data?
+  </p>
+  <p>
+   -Does my network have enough capacity to fit the function I'm trying to approximate?
+  </p>
+  <p>
+   Unfortunately, your graphs don't really feel symptomatic of a learning rate issue as you are getting heavy volatility with a very very low learning rate. My best guess is try to reduce your capacity significantly until your training curves don't jump so much with a slightly higher learning rate, and go from there. If your model is too high capacity this can cause difficulties in optimization (I wish I had a better paper link to post than this, but
+   <a href="https://arxiv.org/pdf/1906.10732.pdf">
+    https://arxiv.org/pdf/1906.10732.pdf
+    will tell you that sparse solutions for NN generally perform worse, and when NNs are overparameterized you will always get sparse solutions
+    <link href="https://arxiv.org/pdf/1803.03635.pdf"/>
+    https://arxiv.org/pdf/1803.03635.pdf
+   </a>
+   )
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    What do you mean by “enough capacity” here?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Victor Butoi (staff)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     This is a question that researchers are asking today. Generally, when we describe the "capacity" of a neural network to learn, we are referring to having the ability to learn the problem well. Caution, capacity is heavily correlated by the number of parameters you have but also the structure of your network. That is to say, if your network doesn't have enough capacity, you will not be able to learn your problem well, and your train loss will not go down as much as it could because your model isn't representative enough. On the other hand, an over-parameterized (too much capacity) model will generally have a sparser solution that also overfits your data as it has the ability to be more expressive. One of our jobs as ML practitioners is figuring out the right balance of a complicated enough model that can fit our data, without making it too large and hard to optimize/overfit training data.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

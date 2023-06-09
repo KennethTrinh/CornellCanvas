@@ -13,44 +13,40 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="432" src="https://static.us.edusercontent.com/files/fw38hpXKymXobOuNvHWiSNCJ" width="623"/>
- </figure>
- <paragraph>
-  At the bottom of the slide, I don't quite understand what the lecture was getting at.
- </paragraph>
- <paragraph>
-  Is it saying that, when growth function = 2^m, this is essentially dealing with a hypothesis space of infinite size? And so, if we're dealing with an infinite number of hypotheses, then we essentially can't learn in those cases (which is shown by the fact that we get an inequality that is impossible to satisfy?) ?
- </paragraph>
-</document>
+<figure>
+ <image height="432" src="https://static.us.edusercontent.com/files/fw38hpXKymXobOuNvHWiSNCJ" width="623"/>
+</figure>
+<p>
+ At the bottom of the slide, I don't quite understand what the lecture was getting at.
+</p>
+<p>
+ Is it saying that, when growth function = 2^m, this is essentially dealing with a hypothesis space of infinite size? And so, if we're dealing with an infinite number of hypotheses, then we essentially can't learn in those cases (which is shown by the fact that we get an inequality that is impossible to satisfy?) ?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Scott Bass (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Scott Bass (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   It's not that the hypothesis space is infinite size, it's that the growth function is growing
-  <italic>
+  <i>
    too
-  </italic>
-  <italic>
+  </i>
+  <i>
    fast
-  </italic>
+  </i>
   (i.e. there are too many possible hypotheses to choose from and not enough samples to rule out enough hypotheses to have learned something)
-  <italic>
+  <i>
    .
-  </italic>
+  </i>
   When the growth function increases exponentially, you can never pick a sample size $m$ that's large enough to learn from the data (as shown in the inequality that's impossible to satisfy). Only when the growth function grows polynomially will the inequality be satisfiable and you'll be able to pick a large enough sample where you can learn from it.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

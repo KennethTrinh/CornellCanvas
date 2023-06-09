@@ -13,40 +13,36 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="458" src="https://static.us.edusercontent.com/files/1IWatPlE8SnO85mgHimxDJ1z" width="614"/>
- </figure>
- <paragraph>
-  When we converted the multinomial naive bayes classification rule into a linear classifier, I don't understand how we went from ln(P(Y=y)) and ln(P(W=w_i|Y=y)) into their corresponding log ratios? How is ln(P(Y=y)) = ln(P(Y=+1)/P(Y=-1)) and ln(P(W=w_i|Y=y)) = ln(P(W=w_i|Y=+1)/P(W=w_i|Y=-1)) ?
- </paragraph>
- <paragraph>
-  Does this have something to do with the fact that the linear rule is taking the
-  <italic>
-   sign
-  </italic>
-  of (w dot x + b) ?
- </paragraph>
-</document>
+<figure>
+ <image height="458" src="https://static.us.edusercontent.com/files/1IWatPlE8SnO85mgHimxDJ1z" width="614"/>
+</figure>
+<p>
+ When we converted the multinomial naive bayes classification rule into a linear classifier, I don't understand how we went from ln(P(Y=y)) and ln(P(W=w_i|Y=y)) into their corresponding log ratios? How is ln(P(Y=y)) = ln(P(Y=+1)/P(Y=-1)) and ln(P(W=w_i|Y=y)) = ln(P(W=w_i|Y=+1)/P(W=w_i|Y=-1)) ?
+</p>
+<p>
+ Does this have something to do with the fact that the linear rule is taking the
+ <i>
+  sign
+ </i>
+ of (w dot x + b) ?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Noor (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Basically, you're adding ln(P(Y=1)) and subtracting ln(P(Y=-1)), and by a property of logs:
- </paragraph>
+ </p>
  <math>
   \ln\left(P\left(y=+1\right)\right)-\ln\left(P\left(y=-1\right)\right)=\ln\left(\frac{P\left(y=+1\right)}{P\left(y=-1\right)}\right)
  </math>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

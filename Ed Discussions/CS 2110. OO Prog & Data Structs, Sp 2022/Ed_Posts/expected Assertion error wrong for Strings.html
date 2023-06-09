@@ -13,63 +13,61 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  My expected Assertion when getting an assertion error seems to be wrong.
- </paragraph>
- <paragraph>
-  For this assertion statement for example:
- </paragraph>
- <paragraph>
-  assertEquals("[A,B,F,G]", getNames(route2));
- </paragraph>
- <paragraph>
-  The Failure trace says this:
- </paragraph>
- <paragraph>
-  expected: &lt;[A,[]B, F, G]&gt; but was &lt;[A,[ ]B, F, G]&gt;
- </paragraph>
- <paragraph>
-  This is difficult to deal with especially for debugging, as for example in assignment 5 I had no idea what was wrong in my program, because Strings are not returned as they are inputted. I turns out that in my assertEquals() statement I needed spaces after each comma, but I had to guess this. My method was also correct, so the "but was" part also does not seem right.
- </paragraph>
- <paragraph>
-  Why does Eclipse do this?
- </paragraph>
- <paragraph>
-  Is there a fix to this?
- </paragraph>
-</document>
+<p>
+ My expected Assertion when getting an assertion error seems to be wrong.
+</p>
+<p>
+ For this assertion statement for example:
+</p>
+<p>
+ assertEquals("[A,B,F,G]", getNames(route2));
+</p>
+<p>
+ The Failure trace says this:
+</p>
+<p>
+ expected: &lt;[A,[]B, F, G]&gt; but was &lt;[A,[ ]B, F, G]&gt;
+</p>
+<p>
+ This is difficult to deal with especially for debugging, as for example in assignment 5 I had no idea what was wrong in my program, because Strings are not returned as they are inputted. I turns out that in my assertEquals() statement I needed spaces after each comma, but I had to guess this. My method was also correct, so the "but was" part also does not seem right.
+</p>
+<p>
+ Why does Eclipse do this?
+</p>
+<p>
+ Is there a fix to this?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You did NOT have to guess this. Take a look at the specification of method getNames.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ryan Noonan (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I understand that I can systematically figure it out by writing good code, but is there a way for the assertion expected statement to return the actual string?
- </paragraph>
- <paragraph>
-  It's true I didn't have to guess it, but I would have found the issue faster if I could change this.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Ryan Noonan (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I understand that I can systematically figure it out by writing good code, but is there a way for the assertion expected statement to return the actual string?
+  </p>
+  <p>
+   It's true I didn't have to guess it, but I would have found the issue faster if I could change this.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

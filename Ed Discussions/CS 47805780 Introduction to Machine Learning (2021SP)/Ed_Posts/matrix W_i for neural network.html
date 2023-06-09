@@ -13,101 +13,99 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="460" src="https://static.us.edusercontent.com/files/Sfb2gwL8MB2HYIgXjiVISBKT" width="635"/>
- </figure>
- <paragraph>
-  Since we learned that layers are fully connected when we express the weights on each of the edges in the matrix W_i, does this mean that the last column of a matrix W_i for any i is always just a column of 0's (to represent that the last node of any layer has no incoming edges/weights) ?
- </paragraph>
-</document>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<figure>
+ <image height="460" src="https://static.us.edusercontent.com/files/Sfb2gwL8MB2HYIgXjiVISBKT" width="635"/>
+</figure>
+<p>
+ Since we learned that layers are fully connected when we express the weights on each of the edges in the matrix W_i, does this mean that the last column of a matrix W_i for any i is always just a column of 0's (to represent that the last node of any layer has no incoming edges/weights) ?
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Anonymous
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Hi,  just wanted to follow up on my question since it hasn't been answered yet
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Noor (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   No entries in W_i are necessarily zero unless the input does not affect the output; are you thinking about the bias term here or something?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes, I was referring to the bias term. From what I understand, the last column of matrix W_i corresponds to the weights going to the bias term in layer (i+1), so since the bias term never has incoming weights, does this mean that matrix W_i always has as its last column a column of zeros?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Since the bias is not an output of the hidden layer (but rather just an input to the next one), there is no corresponding entry in the W. W just goes from the input to the layer to those however many outputs.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I see, that makes sense.
- </paragraph>
- <paragraph>
-  But then I don't understand what the lecture slide above is referring to when it says "layers are fully connected, ie. any missing edge has weight 0". Does a "missing edge" only occur when the layers are of unequal width? I don't quite understand in what cases we would see a missing edge in a neural network.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  A "missing edge" just means that a particular node in one layer has no influence on a particular node in the next, which corresponds to an edge weight of zero.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Yes, I was referring to the bias term. From what I understand, the last column of matrix W_i corresponds to the weights going to the bias term in layer (i+1), so since the bias term never has incoming weights, does this mean that matrix W_i always has as its last column a column of zeros?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Michael Noor (staff)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Since the bias is not an output of the hidden layer (but rather just an input to the next one), there is no corresponding entry in the W. W just goes from the input to the layer to those however many outputs.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     I see, that makes sense.
+    </p>
+    <p>
+     But then I don't understand what the lecture slide above is referring to when it says "layers are fully connected, ie. any missing edge has weight 0". Does a "missing edge" only occur when the layers are of unequal width? I don't quite understand in what cases we would see a missing edge in a neural network.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Michael Noor (staff)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      A "missing edge" just means that a particular node in one layer has no influence on a particular node in the next, which corresponds to an edge weight of zero.
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

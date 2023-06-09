@@ -13,73 +13,71 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I keep getting the error Wrongly found back-and-forth for users A and B at Post 0 for k=2
- </paragraph>
- <paragraph>
-  <break>
-  </break>
-  for bnf_starts_here(post, u1, u2, k), but when I put print statements into my function in order to understand what list of posts it is returning (by printing post.tag) I see that the list I am returning contains the correct posts. What could be causing this problem?
- </paragraph>
-</document>
+<p>
+ I keep getting the error Wrongly found back-and-forth for users A and B at Post 0 for k=2
+</p>
+<p>
+ <break>
+ </break>
+ for bnf_starts_here(post, u1, u2, k), but when I put print statements into my function in order to understand what list of posts it is returning (by printing post.tag) I see that the list I am returning contains the correct posts. What could be causing this problem?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Nguyen Vo (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Nguyen Vo (student)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   While I'm not Professor Lee, I think that the hint to solving that problem is in Section 7.1.1 of the assignment description document:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   "A back-and-forth of length k between user u1 and (different) user u2 starts at a post P if (and only if) P was written by u1 and ...
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   • Case: k = 1: ... there is no reply to P written by u2. (This includes the case where P has no replies at all). [14]
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   • Case: k ≥ 2: ... there is a back-and-forth of length k − 1 between u2 and u1 starting at some reply to P.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   [14]: Contrariwise, no back-and-forth of length k = 1 between u1 and u2 starts at P if P wasn’t written by u1 or if there’s a reply to P written by u2."
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anna Alphenaar (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  That makes sense and I think I've solved my original problem. However, now I'm having issues with the rule that back-and-forth's must start on u1. How can I handle a k=3 back-and-forth through recursive calls if my function is always checking if the current post's name is u1?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Nguyen Vo (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  On that particular question, I think you can make it so that the name being checked always flips between u2 and u1 with each instance of the recursive function.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anna Alphenaar (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   That makes sense and I think I've solved my original problem. However, now I'm having issues with the rule that back-and-forth's must start on u1. How can I handle a k=3 back-and-forth through recursive calls if my function is always checking if the current post's name is u1?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Nguyen Vo (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    On that particular question, I think you can make it so that the name being checked always flips between u2 and u1 with each instance of the recursive function.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

@@ -13,75 +13,69 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm getting this error message and am not sure where to look in my code/what method is causing the error. Any help is appreciated thanks!
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Traceback (most recent call last):
- </paragraph>
- <paragraph>
-  File "schedule_tests.py", line 297, in &lt;module&gt;
- </paragraph>
- <paragraph>
-  testfn() # Adding the parentheses calls whatever testfn is
- </paragraph>
- <paragraph>
-  File "schedule_tests.py", line 63, in test_schedule_add
- </paragraph>
- <paragraph>
-  assert c.in_schedules == ['roster'], \
- </paragraph>
- <paragraph>
-  AssertionError: course CS 1110 LEC 001 doesn't have the roster in its in_schedules
- </paragraph>
-</document>
+<p>
+ I'm getting this error message and am not sure where to look in my code/what method is causing the error. Any help is appreciated thanks!
+</p>
+<p>
+ Traceback (most recent call last):
+</p>
+<p>
+ File "schedule_tests.py", line 297, in &lt;module&gt;
+</p>
+<p>
+ testfn() # Adding the parentheses calls whatever testfn is
+</p>
+<p>
+ File "schedule_tests.py", line 63, in test_schedule_add
+</p>
+<p>
+ assert c.in_schedules == ['roster'], \
+</p>
+<p>
+ AssertionError: course CS 1110 LEC 001 doesn't have the roster in its in_schedules
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aliva Das (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aliva Das (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Did you edit the schedule_tests.py file? Line 63 is supposed to be
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   assert c.in_schedules == [roster], \
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   where there are no quotes around the word
-  <italic>
+  <i>
    roster
-  </italic>
+  </i>
   .
-  <italic>
+  <i>
    roster
-  </italic>
+  </i>
   is a variable, not a string!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  ohhh yes not sure how that happened, thanks!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   ohhh yes not sure how that happened, thanks!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

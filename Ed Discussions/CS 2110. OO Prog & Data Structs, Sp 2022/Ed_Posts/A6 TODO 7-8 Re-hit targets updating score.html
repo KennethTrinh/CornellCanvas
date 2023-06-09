@@ -13,95 +13,91 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  My score field is updating when a hit target is re-hit. I believe the issue is in either 7 or 8 but have no idea what the issue could be, since I set isHit to false whenever the click is not valid.
- </paragraph>
-</document>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ My score field is updating when a hit target is re-hit. I believe the issue is in either 7 or 8 but have no idea what the issue could be, since I set isHit to false whenever the click is not valid.
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Anonymous
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I found a temporary fix by introducing a repeat field in class Target, but in order for this implementation to work, I edit method respawn() as well. Is this fix acceptable?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Tony Chen (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Tony Chen (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I believe points will be taken off if there are changes made to existing methods/fields that are not marked as TODO.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   I am assuming that when you say "re-hit", you are referring to clicking the target multiple times.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Do not set isHit to false when the click is invalid. This makes your target "hittable" again even when it has already been hit.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   (i.e., clicked on target, clicked off target so target.isHit= false, click on target again) would give you a score of 2 points.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes, this makes sense, however I am still confused how to avoid increasing the score if isHit remains true. Should I introduce a variable in mousePressed so that if isHit is valid once, the score won't update again?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Tony Chen (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Did you have an if statement checking whether isHit is false?
- </paragraph>
- <paragraph>
-  Then, the target can only be hit once since it won't go through that conditional if isHit is true(already been hit once).
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  I did, but in the wrong place. Thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Yes, this makes sense, however I am still confused how to avoid increasing the score if isHit remains true. Should I introduce a variable in mousePressed so that if isHit is valid once, the score won't update again?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Tony Chen (student)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Did you have an if statement checking whether isHit is false?
+   </p>
+   <p>
+    Then, the target can only be hit once since it won't go through that conditional if isHit is true(already been hit once).
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     I did, but in the wrong place. Thank you!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

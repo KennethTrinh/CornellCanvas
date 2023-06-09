@@ -13,134 +13,130 @@
 <h3>
  Vote Count: 3
 </h3>
-<document version="2.0">
- <paragraph>
-  Tianyu uses a two-sided test in the problem statement (finding the absolute difference between the sample mean and true expectation, P{ |T-0.5Y| &gt; epsilon }.
- </paragraph>
- <paragraph>
-  For our argument in 3c, to show if all hedge funds were actually random but at least one got lucky and outperformed the market all 20 years, should we be using just the one-sided test (e.g. not using the absolute value of the difference), or should we use the two-sided test with the absolute value like Tianyu?
- </paragraph>
-</document>
+<p>
+ Tianyu uses a two-sided test in the problem statement (finding the absolute difference between the sample mean and true expectation, P{ |T-0.5Y| &gt; epsilon }.
+</p>
+<p>
+ For our argument in 3c, to show if all hedge funds were actually random but at least one got lucky and outperformed the market all 20 years, should we be using just the one-sided test (e.g. not using the absolute value of the difference), or should we use the two-sided test with the absolute value like Tianyu?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Noor (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   You can use the double sided test.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Weilin Xu (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Is it also OK to use a one-sided test in our answer? I thought one-sided test seemed to align better with our goal of finding a fund that beats the market more times (specifically, more than 10 years) than our expectation.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  What exactly is the one sided test you used? The one-sided version of Hoeffding, at least, doesn't produce a tighter bound.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Weilin Xu (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes, I used $Pr(T - 0.5Y \geq \epsilon Y)$ which was also used in Question 1 of Discussion 7 by Prof. Joachims:
- </paragraph>
- <figure>
-  <image height="171" src="https://static.us.edusercontent.com/files/gG8Hhh1gegn6tEf2FEeMtFPB" width="305"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
-  It outputs a smaller upper bound on the probability because it gets rid of the multiplicative constant 2 before the exponential.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Ah, looks like you're right. In that case, you should be fine to make use of the one-sided Hoeffding bound. That said, you may want to stick with the dual-sided, if for no other reason that that's what Tianyu used in the argument you're trying to validate..
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Yujie Feng (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  But I really don't think we should use the double sided test, as it not only evaluates the possibility a hedge fund gets all correct, it also evaluates the possibility that it gets all wrong, so the bound is less precise. Am I missing something here?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Both are fine, as the probability of getting all correct or all incorrect is a superset of the probability of getting all correct.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Weilin Xu (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  OK, thanks!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Weilin Xu (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Is it also OK to use a one-sided test in our answer? I thought one-sided test seemed to align better with our goal of finding a fund that beats the market more times (specifically, more than 10 years) than our expectation.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Michael Noor (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    What exactly is the one sided test you used? The one-sided version of Hoeffding, at least, doesn't produce a tighter bound.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Weilin Xu (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Yes, I used $Pr(T - 0.5Y \geq \epsilon Y)$ which was also used in Question 1 of Discussion 7 by Prof. Joachims:
+    </p>
+    <figure>
+     <image height="171" src="https://static.us.edusercontent.com/files/gG8Hhh1gegn6tEf2FEeMtFPB" width="305"/>
+    </figure>
+    <p>
+     It outputs a smaller upper bound on the probability because it gets rid of the multiplicative constant 2 before the exponential.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Michael Noor (staff)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      Ah, looks like you're right. In that case, you should be fine to make use of the one-sided Hoeffding bound. That said, you may want to stick with the dual-sided, if for no other reason that that's what Tianyu used in the argument you're trying to validate..
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 12em;">
+      <h3>
+       Author: Weilin Xu (student)
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       OK, thanks!
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 12em;">
+       <h3>
+        Author: Yujie Feng (student)
+       </h3>
+       <h3>
+        Vote Count: 0
+       </h3>
+       <p>
+        But I really don't think we should use the double sided test, as it not only evaluates the possibility a hedge fund gets all correct, it also evaluates the possibility that it gets all wrong, so the bound is less precise. Am I missing something here?
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+       <div style="text-indent: 14em;">
+        <h3>
+         Author: Michael Noor (staff)
+        </h3>
+        <h3>
+         Vote Count: 0
+        </h3>
+        <p>
+         Both are fine, as the probability of getting all correct or all incorrect is a superset of the probability of getting all correct.
+        </p>
+        <h3>
+         ------------------------------------
+        </h3>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

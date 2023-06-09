@@ -13,48 +13,46 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  In lecture, we were told to "never pick parameters on the test set that you will eventually evaluate on. You always do that on the validation set, and leave the test set behind."
- </paragraph>
- <paragraph>
-  I don't quite understand what this means.
- </paragraph>
- <paragraph>
-  Is this referring to the secondary learning problem (i.e. the validation step) ? Does "picking parameters" refer to the process of choosing which value of our parameter yields the best hypothesis (as was presented in the secondary learning problem in lecture) ?
- </paragraph>
- <paragraph>
-  Is this just saying that, in the validation step of the train+validate process, we should always validate our hypotheses on S_val and NOT on S_test (i.e. try to find the hypothesis h_hat that minimizes the sample error on S_val and NOT on S_test) ?
- </paragraph>
-</document>
+<p>
+ In lecture, we were told to "never pick parameters on the test set that you will eventually evaluate on. You always do that on the validation set, and leave the test set behind."
+</p>
+<p>
+ I don't quite understand what this means.
+</p>
+<p>
+ Is this referring to the secondary learning problem (i.e. the validation step) ? Does "picking parameters" refer to the process of choosing which value of our parameter yields the best hypothesis (as was presented in the secondary learning problem in lecture) ?
+</p>
+<p>
+ Is this just saying that, in the validation step of the train+validate process, we should always validate our hypotheses on S_val and NOT on S_test (i.e. try to find the hypothesis h_hat that minimizes the sample error on S_val and NOT on S_test) ?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bonnie Akhavan (staff)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
-  That statement refers to both (you should neither pick your hypothesis nor any hyperparameters on your test set). In the process of model training/validation, you should always use $S_{train}$ and $S_{val}$, never $S_{test}$. The test set should ultimately just be used as a statistical measure of how well your model performs. The value of your statistical tests will become compromised if you choose anything on your test set, since it should purely be a measure of how well your model performs on entirely unseen data.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Victor Butoi (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Victor Butoi (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Bonnie is 100% right, to add just some vocab from class, by tuning your models (choosing tree depth for example) and seeing how well you do for your test set, you will overfit your model to that specific test distribution. Where really, the test distribution is meant to emulate the real distribution that we predict but don't see.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Bonnie Akhavan (staff)
+  </h3>
+  <h3>
+   Vote Count: 2
+  </h3>
+  <p>
+   That statement refers to both (you should neither pick your hypothesis nor any hyperparameters on your test set). In the process of model training/validation, you should always use $S_{train}$ and $S_{val}$, never $S_{test}$. The test set should ultimately just be used as a statistical measure of how well your model performs. The value of your statistical tests will become compromised if you choose anything on your test set, since it should purely be a measure of how well your model performs on entirely unseen data.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

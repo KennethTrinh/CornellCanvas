@@ -13,53 +13,35 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  For Testing this method, do we need to test the case where the result would be null.
- </paragraph>
- <paragraph>
-  for example,
- </paragraph>
- <pre>H1N1Tree dt= makeTree1();
+<p>
+ For Testing this method, do we need to test the case where the result would be null.
+</p>
+<p>
+ for example,
+</p>
+<pre>H1N1Tree dt= makeTree1();
 List&lt;Person&gt; route4= dt.H1N1RouteTo(personK);
 assertEquals(null, getNames(route4));</pre>
- <paragraph>
-  this should give null because personK is not in maketree1.
- </paragraph>
- <paragraph>
-  but this will lead to a nullpointerexception .
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  so should I test for this case and if I should how can I avoid this nullpointerexception.
- </paragraph>
-</document>
+<p>
+ this should give null because personK is not in maketree1.
+</p>
+<p>
+ but this will lead to a nullpointerexception .
+</p>
+<p>
+ so should I test for this case and if I should how can I avoid this nullpointerexception.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Abhijeet Saha (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  getnames() will be failing, because null is not a person, but if you wrote your H1N1RouteTo correctly it should give null. To test it you can just do assertEquals(null, route4);
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Rebecca Liu (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Rebecca Liu (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   <code>
    getNames(sp)
   </code>
@@ -72,11 +54,11 @@ assertEquals(null, getNames(route4));</pre>
    route4
   </code>
   is null, this throws a NullPointerException when you try to iterate through it (at the line:
-  <bold>
+  <b>
    <code>
     for
    </code>
-  </bold>
+  </b>
   <code>
    (Person p : sp) {
   </code>
@@ -90,10 +72,22 @@ assertEquals(null, getNames(route4));</pre>
    getNames
   </code>
   , as described below.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Abhijeet Saha (None)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   getnames() will be failing, because null is not a person, but if you wrote your H1N1RouteTo correctly it should give null. To test it you can just do assertEquals(null, route4);
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

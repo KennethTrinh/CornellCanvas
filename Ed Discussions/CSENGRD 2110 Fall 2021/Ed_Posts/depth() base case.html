@@ -13,59 +13,57 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Should we have 2 base cases for depth() where one returns 0 and the other returns -1? Right now, I only have a base case that returns 0; how do I write the one that returns -1 if we can't use node() or contains()?
- </paragraph>
-</document>
+<p>
+ Should we have 2 base cases for depth() where one returns 0 and the other returns -1? Right now, I only have a base case that returns 0; how do I write the one that returns -1 if we can't use node() or contains()?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Don't consider the case of returning -1.
- </paragraph>
- <paragraph>
-  Just write the base case that returns 0.
- </paragraph>
- <paragraph>
-  If recursively calling all the children doesn't terminate the loop in its repetend, then, after the loop it is time to return -1.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Does that mean we should terminate the recursion when our value is not equal to -1? If we do sum = 1 + depth of p in c and return the sum, then the sum would never equal -1 right?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I don't have to answer this. Figure it out.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Don't consider the case of returning -1.
+  </p>
+  <p>
+   Just write the base case that returns 0.
+  </p>
+  <p>
+   If recursively calling all the children doesn't terminate the loop in its repetend, then, after the loop it is time to return -1.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Does that mean we should terminate the recursion when our value is not equal to -1? If we do sum = 1 + depth of p in c and return the sum, then the sum would never equal -1 right?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

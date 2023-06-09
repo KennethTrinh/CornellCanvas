@@ -13,31 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  We talked in lecture about the user choices involved in creating a short-time DFT for a spectrogram. For the parameter N, we said it was a positive integer for which a larger N would be better but also more computationally demanding. I know we then take the N-point DFT, but I'm still a little confused as to what N represents. Is this a different N than the length of the signal x[n]?
- </paragraph>
- <paragraph>
-  My current understanding is that we have a signal of length N x[n], then we find times n_s and at each one take a segment of x[n] of length L. We zero-pad each segment of length L to be length N (same as the original signal) and then take the N-point DFT. Is that correct?
- </paragraph>
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
+<p>
+ We talked in lecture about the user choices involved in creating a short-time DFT for a spectrogram. For the parameter N, we said it was a positive integer for which a larger N would be better but also more computationally demanding. I know we then take the N-point DFT, but I'm still a little confused as to what N represents. Is this a different N than the length of the signal x[n]?
+</p>
+<p>
+ My current understanding is that we have a signal of length N x[n], then we find times n_s and at each one take a segment of x[n] of length L. We zero-pad each segment of length L to be length N (same as the original signal) and then take the N-point DFT. Is that correct?
+</p>
+<p>
+ Thank you!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   $N$ has nothing to do with the length of $x [ n ]$.  Larger $N$ just means that the DFT you take of the $L$-point signal in the window starting at time $n _ s$ is a denser sampling of the DTFT of that $L$-point signal, giving you a finer array of points in the $k$-direction of the spectrogram.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

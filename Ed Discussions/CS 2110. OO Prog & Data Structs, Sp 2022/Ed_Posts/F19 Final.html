@@ -13,39 +13,35 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi,
- </paragraph>
- <paragraph>
-  In method setOccupied, occupied is set to false if location is occupied, so when you check if a location is occupied, and do loc.isOccupied(), and it returns false, then it is occupied.
- </paragraph>
- <paragraph>
-  So in the constructor for class Character, why do you not do !loc.isOccupied() since if it is false, it is occupied, and you want to throw an exception? But also in Location's constructor, if a location is unoccupied, it sets occupied to false, which according to how s is defined, it would mean it's already occupied.
- </paragraph>
- <figure>
-  <image height="553.7956577266922" src="https://static.us.edusercontent.com/files/Ox2dksKQw2uwTZCIxpfMlwDt" width="658"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Hi,
+</p>
+<p>
+ In method setOccupied, occupied is set to false if location is occupied, so when you check if a location is occupied, and do loc.isOccupied(), and it returns false, then it is occupied.
+</p>
+<p>
+ So in the constructor for class Character, why do you not do !loc.isOccupied() since if it is false, it is occupied, and you want to throw an exception? But also in Location's constructor, if a location is unoccupied, it sets occupied to false, which according to how s is defined, it would mean it's already occupied.
+</p>
+<figure>
+ <image height="553.7956577266922" src="https://static.us.edusercontent.com/files/Ox2dksKQw2uwTZCIxpfMlwDt" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bahaa Kotb (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bahaa Kotb (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   read the occupied field, true IF AND ONLY IF this location is occupied
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   the precondition just means if isoccupied is true, you HAVE to set it to false, you can’t pass in true when isoccupied is true
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

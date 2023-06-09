@@ -13,225 +13,215 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Towards further understanding which specific authors are able to convince reviewers of novel work, and thus characterize who introduces new topics into the field, I worked on looking at papers with lower reviews and regressing on their scores. Using straightforward bert embeddings on abstracts submitted to ICLR 2017, I built a regression model to predict the scores of accepted papers. My goal in this was to use the lasso to identify any obvious or key features. Although I wasn't able to integrate some of the structural and rhetorical information yet, the regression model performs fairly well. The average accepted paper has a score standard deviation between reviewers of 0.7050631946249917. The regression model is able to predict the scores using just the BERT embeddings and no particular hyperparameter optimization to a Median AE of 1.5 points. Obviously this is likely capturing topic and writing style information, which is likely not providing a ton of actionable or relevant information to the general problem of reviewer discourse. That being said, using a lasso on a bag of words to predict what particular mentions indicate that the BERT model would predict well brought up some interesting findings:
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Richard Lp (he/they) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Mentioning the following words in your abstract significantly increased how well the model predicted the average score reviewers would give you:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    hessian
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    resulting
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    gan
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    computer
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    showing
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    forces
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    encoded
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    architectural
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    consider
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    handwriting
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    views
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    comprehension
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    avoid
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    newsqa
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    leverage
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Some of these seem intuitive. Heavily numerical papers or specific fields (eg GANs), probably have much more obviously good or bad papers. Especially given that we're conditioning on accepted papers, there are probably good indicators that separate high quality GAN papers from lower quality papers. If I also examined rejected papers (would need to use one of the other potential corpuses), I could validate this hypothesis. It might also be that larger fields tend to have better reviewers. Overall, I struggled with combining and disambiguating data sources, and so I would really very much appreciate any interesting stabs before I commit to try to wrangle better structure into the learning problem. Are there interesting features that I might be missing by just doing a BERT embedding? Almost surely, but what would a good priority list be?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Benjamin Rosche (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  As I understand it, the goal of this project is to identify features of papers (such as author, subfield, word choice) that are predictive of the score they will receive from reviewers.
- </paragraph>
- <paragraph>
-  This is a very cool topic. I am sure that there is already existing work on this topic. I am aware of one
-  <link href="https://www.pnas.org/content/115/19/4887"/>
-  paper, which is not doing the same thing but is related and might be helpful in terms of modeling strategy.
- </paragraph>
- <paragraph>
-  I agree with you that thinking about the sample is key in this analysis. By restricting yourself to accepted papers I worry that you don't identify the most important features that separate accepted from rejected papers.
- </paragraph>
- <paragraph>
-  Further, I am not exactly sure what the BERT analysis adds to the project. It seems like the model is able to predict reviewer scores well overall. And then you analyze for which papers the predictive performance goes up/down using LASSO regression with word counts as features. I would perform this analysis to understand in which contexts the BERT model seems well and which contexts it does not.
- </paragraph>
- <paragraph>
-  If you took the reviewer scores themselves as an outcome in a linear regression (or accepted/rejected as an outcome in a logistic regression), you would, in my opinion, identify features that are predictive of "quality" more directly.
- </paragraph>
- <paragraph>
-  If you don't actually want to understand what is predictive of reviewers' judgment but more what predicts consensus/disagreement among reviewers, I wonder whether taking the standard deviation of reviewers as the dependent variable in a Poisson or beta regression would be more straightforward.
- </paragraph>
- <paragraph>
-  I basically just worry that by taking the residuals of a BERT model, you also pick up the strengths and weaknesses of BERT in this prediction exercise.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Richard Lp (he/they) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thanks Ben! I had known some refs in this area, but I don't think I was aware of the Mathew effect as a specific concept.
- </paragraph>
- <paragraph>
-  I think for me using BERT lets you eliminate the idea that your model is just somehow underparameterized. That is, somehow the BERT-based model could fit everything about as well as possible whereas we might expect a straightforward linear model to have to make tradeoffs between which areas of the density it will actually do well on.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  to finish
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Richard Lp (he/they) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Are there somehow subfields or topics where viewers are harsher? Are they just more discerning?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Compare the graphs. Maybe f-divergences?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Richard Lp (he/they) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Working on determining subfield thresholds, proxies for reviewer quality, in-grouped tightness based on citation graph and Ben's suggestions.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  One thing I found was that clustering over  review scores (treated as a distribution) recovers some information on high and low variance papers. This includes one such cluster that is clearly bi-modal, which would lend evidence to the idea that some topics will be much more polarizing than others.  Attached is a clustering done using the Wasserstein metric.
- </paragraph>
- <figure>
-  <image height="575" src="https://static.us.edusercontent.com/files/JWxGLI5bwkRfLyIcKl6zRxVV" width="330"/>
- </figure>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ Towards further understanding which specific authors are able to convince reviewers of novel work, and thus characterize who introduces new topics into the field, I worked on looking at papers with lower reviews and regressing on their scores. Using straightforward bert embeddings on abstracts submitted to ICLR 2017, I built a regression model to predict the scores of accepted papers. My goal in this was to use the lasso to identify any obvious or key features. Although I wasn't able to integrate some of the structural and rhetorical information yet, the regression model performs fairly well. The average accepted paper has a score standard deviation between reviewers of 0.7050631946249917. The regression model is able to predict the scores using just the BERT embeddings and no particular hyperparameter optimization to a Median AE of 1.5 points. Obviously this is likely capturing topic and writing style information, which is likely not providing a ton of actionable or relevant information to the general problem of reviewer discourse. That being said, using a lasso on a bag of words to predict what particular mentions indicate that the BERT model would predict well brought up some interesting findings:
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   (dashed off) b/c of issues with author disambiguation, hypothesis has moved  to: whether some topics are naturally divisive (with reviewer score).
   <break>
   </break>
   <break>
   </break>
   Topic defn: long-term goal: topic labels are available; for the reviewer-score analysis, working with clusters of terms.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Richard Lp (he/they) (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Working on determining subfield thresholds, proxies for reviewer quality, in-grouped tightness based on citation graph and Ben's suggestions.
+  </p>
+  <p>
+   One thing I found was that clustering over  review scores (treated as a distribution) recovers some information on high and low variance papers. This includes one such cluster that is clearly bi-modal, which would lend evidence to the idea that some topics will be much more polarizing than others.  Attached is a clustering done using the Wasserstein metric.
+  </p>
+  <figure>
+   <image height="575" src="https://static.us.edusercontent.com/files/JWxGLI5bwkRfLyIcKl6zRxVV" width="330"/>
+  </figure>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Richard Lp (he/they) (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Are there somehow subfields or topics where viewers are harsher? Are they just more discerning?
+   </p>
+   <p>
+    Compare the graphs. Maybe f-divergences?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 2em;">
+    <h3>
+     Author: Richard Lp (he/they) (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Thanks Ben! I had known some refs in this area, but I don't think I was aware of the Mathew effect as a specific concept.
+    </p>
+    <p>
+     I think for me using BERT lets you eliminate the idea that your model is just somehow underparameterized. That is, somehow the BERT-based model could fit everything about as well as possible whereas we might expect a straightforward linear model to have to make tradeoffs between which areas of the density it will actually do well on.
+    </p>
+    <p>
+     to finish
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 2em;">
+     <h3>
+      Author: Benjamin Rosche (student)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      As I understand it, the goal of this project is to identify features of papers (such as author, subfield, word choice) that are predictive of the score they will receive from reviewers.
+     </p>
+     <p>
+      This is a very cool topic. I am sure that there is already existing work on this topic. I am aware of one
+      <a href="https://www.pnas.org/content/115/19/4887">
+       paper
+      </a>
+      , which is not doing the same thing but is related and might be helpful in terms of modeling strategy.
+     </p>
+     <p>
+      I agree with you that thinking about the sample is key in this analysis. By restricting yourself to accepted papers I worry that you don't identify the most important features that separate accepted from rejected papers.
+     </p>
+     <p>
+      Further, I am not exactly sure what the BERT analysis adds to the project. It seems like the model is able to predict reviewer scores well overall. And then you analyze for which papers the predictive performance goes up/down using LASSO regression with word counts as features. I would perform this analysis to understand in which contexts the BERT model seems well and which contexts it does not.
+     </p>
+     <p>
+      If you took the reviewer scores themselves as an outcome in a linear regression (or accepted/rejected as an outcome in a logistic regression), you would, in my opinion, identify features that are predictive of "quality" more directly.
+     </p>
+     <p>
+      If you don't actually want to understand what is predictive of reviewers' judgment but more what predicts consensus/disagreement among reviewers, I wonder whether taking the standard deviation of reviewers as the dependent variable in a Poisson or beta regression would be more straightforward.
+     </p>
+     <p>
+      I basically just worry that by taking the residuals of a BERT model, you also pick up the strengths and weaknesses of BERT in this prediction exercise.
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 2em;">
+      <h3>
+       Author: Richard Lp (he/they) (student)
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       Mentioning the following words in your abstract significantly increased how well the model predicted the average score reviewers would give you:
+      </p>
+      <list style="bullet">
+       <li>
+        <p>
+         hessian
+        </p>
+       </li>
+       <li>
+        <p>
+         resulting
+        </p>
+       </li>
+       <li>
+        <p>
+         gan
+        </p>
+       </li>
+       <li>
+        <p>
+         computer
+        </p>
+       </li>
+       <li>
+        <p>
+         showing
+        </p>
+       </li>
+       <li>
+        <p>
+         forces
+        </p>
+       </li>
+       <li>
+        <p>
+         encoded
+        </p>
+       </li>
+       <li>
+        <p>
+         architectural
+        </p>
+       </li>
+       <li>
+        <p>
+         consider
+        </p>
+       </li>
+       <li>
+        <p>
+         handwriting
+        </p>
+       </li>
+       <li>
+        <p>
+         views
+        </p>
+       </li>
+       <li>
+        <p>
+         comprehension
+        </p>
+       </li>
+       <li>
+        <p>
+         avoid
+        </p>
+       </li>
+       <li>
+        <p>
+         newsqa
+        </p>
+       </li>
+       <li>
+        <p>
+         leverage
+        </p>
+       </li>
+      </list>
+      <p>
+       Some of these seem intuitive. Heavily numerical papers or specific fields (eg GANs), probably have much more obviously good or bad papers. Especially given that we're conditioning on accepted papers, there are probably good indicators that separate high quality GAN papers from lower quality papers. If I also examined rejected papers (would need to use one of the other potential corpuses), I could validate this hypothesis. It might also be that larger fields tend to have better reviewers. Overall, I struggled with combining and disambiguating data sources, and so I would really very much appreciate any interesting stabs before I commit to try to wrangle better structure into the learning problem. Are there interesting features that I might be missing by just doing a BERT embedding? Almost surely, but what would a good priority list be?
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

@@ -13,94 +13,90 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="272.4804804804805" src="https://static.us.edusercontent.com/files/Jfhhp3rjGDnQYL9JZJY6X8MY" width="427.99999999999994"/>
- </figure>
- <paragraph>
-  It was mentioned in lecture that if the dimensionality d of our feature vectors x are large, then it can be more efficient to work in the dual representation, since keeping track of a very large (or infinite) weight vector w would be computationally inefficient.
- </paragraph>
- <paragraph>
-  However, as far as I understand, we still have to keep track of the alpha variables in the dual representation, and there are as many alpha variables as there are training examples.
- </paragraph>
- <paragraph>
-  So would it be fair to say that
- </paragraph>
- <paragraph>
-  if {dimensionality d of x} &lt; {# of training examples}, then the primal representation would be more efficient,
- </paragraph>
- <paragraph>
-  BUT
- </paragraph>
- <paragraph>
-  if {# of training examples} &lt; {dimensionality d of x}, then the dual representation would be more efficient?
- </paragraph>
-</document>
+<figure>
+ <image height="272.4804804804805" src="https://static.us.edusercontent.com/files/Jfhhp3rjGDnQYL9JZJY6X8MY" width="427.99999999999994"/>
+</figure>
+<p>
+ It was mentioned in lecture that if the dimensionality d of our feature vectors x are large, then it can be more efficient to work in the dual representation, since keeping track of a very large (or infinite) weight vector w would be computationally inefficient.
+</p>
+<p>
+ However, as far as I understand, we still have to keep track of the alpha variables in the dual representation, and there are as many alpha variables as there are training examples.
+</p>
+<p>
+ So would it be fair to say that
+</p>
+<p>
+ if {dimensionality d of x} &lt; {# of training examples}, then the primal representation would be more efficient,
+</p>
+<p>
+ BUT
+</p>
+<p>
+ if {# of training examples} &lt; {dimensionality d of x}, then the dual representation would be more efficient?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Noor (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   That is a fair way of looking at it; however, if we have fewer training examples than the dimensionality of x then this is a poor linear classifier problem, since it might be far too easy to overfit, so this isn't usually something we'd like to do in practice unless we're considering a very well conditioned kernel for the dimension d.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Thorsten Joachims (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  I actually want to qualify Michael's answer a bit. SVMs and other regularized linear models can work very well, even if the number of features d is much larger than the number of training examples m. In particular, we have already proved that linear SVMs have provably low expected generalization error, if either the expected number of SVs or the expected $R^2/\gamma^2$ is small.
-  <bold>
-   DIMENSIONALITY d DOES NOT MATTER FOR THESE BOUNDS!
-  </bold>
-  And this is not just theory, SVM-type models are routinely used in industry with huge numbers of features.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I actually have a question regarding the fact that dimensionality d doesn't matter for the upper bound on the expected generalization error that is bounded by (R^2/gamma^2).
- </paragraph>
- <paragraph>
-  From what I understand, R is the max length of the feature vectors, so wouldn't R necessarily increase as the # of features (aka dimensionality d) increases? If this is true, then doesn't the dimensionality d somewhat affect this bound? Or, are we just saying that, if gamma (ie. the geometric margin) is sufficiently large, then we can essentially ignore the value of R, because (R^2/gamma^2) would be sufficiently small for the purposes of our bound?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Thorsten Joachims (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes, R can increase as you add more features, but it can increase much slower than linear. In particular, if your features are sparse (have many zeros), then R can be much smaller than the number of features.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Thorsten Joachims (admin)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   I actually want to qualify Michael's answer a bit. SVMs and other regularized linear models can work very well, even if the number of features d is much larger than the number of training examples m. In particular, we have already proved that linear SVMs have provably low expected generalization error, if either the expected number of SVs or the expected $R^2/\gamma^2$ is small.
+   <b>
+    DIMENSIONALITY d DOES NOT MATTER FOR THESE BOUNDS!
+   </b>
+   And this is not just theory, SVM-type models are routinely used in industry with huge numbers of features.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I actually have a question regarding the fact that dimensionality d doesn't matter for the upper bound on the expected generalization error that is bounded by (R^2/gamma^2).
+   </p>
+   <p>
+    From what I understand, R is the max length of the feature vectors, so wouldn't R necessarily increase as the # of features (aka dimensionality d) increases? If this is true, then doesn't the dimensionality d somewhat affect this bound? Or, are we just saying that, if gamma (ie. the geometric margin) is sufficiently large, then we can essentially ignore the value of R, because (R^2/gamma^2) would be sufficiently small for the purposes of our bound?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Thorsten Joachims (admin)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Yes, R can increase as you add more features, but it can increase much slower than linear. In particular, if your features are sparse (have many zeros), then R can be much smaller than the number of features.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

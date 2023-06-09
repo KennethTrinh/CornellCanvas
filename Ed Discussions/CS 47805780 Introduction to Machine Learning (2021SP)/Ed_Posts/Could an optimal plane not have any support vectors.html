@@ -13,103 +13,97 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  From lecture 08b, we see that support vectors are defined as the ones that yi*
-  <italic>
-   (w
-  </italic>
-  x+b)=1, could there be a case where this equality doesn't hold for all vectors? (i.e. all the vectors are of the form yi*
-  <italic>
-   (w
-  </italic>
-  x+b) &gt;1), or there's a proof that shows there's at least one vector that will have the = sign instead of the &gt; sign?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ From lecture 08b, we see that support vectors are defined as the ones that yi*
+ <i>
+  (w
+ </i>
+ x+b)=1, could there be a case where this equality doesn't hold for all vectors? (i.e. all the vectors are of the form yi*
+ <i>
+  (w
+ </i>
+ x+b) &gt;1), or there's a proof that shows there's at least one vector that will have the = sign instead of the &gt; sign?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Kursti DeLello (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kursti DeLello (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   From page 204 in the reading for lecture 8:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   "In other words, we enforce the margin to be 1,but now the units in which we measure the margin scale with the norm of w."
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Hopefully that's helpful, or a TA will chime in.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bonnie Akhavan (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Support vectors are the training points for the SVM that lie on the margin. By definition of the SVM, you
-  <italic>
-   have
-  </italic>
-  to have at least one point that lies on the margin because the margin is defined as the distance between the separating hyperplane and its closest point. The SVM maximizes this margin, but we can always adjust the norm of $w$ and change the units of our classifier so that the margin is 1. Thus, it's always the case that for at least one point we have $y_{i}
-  <italic>
-   (
-  </italic>
-  w\cdot x+b)=1$. Hope this helps!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Thorsten Joachims (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes, that is a good explanation. Let me add the following, which clarifies that you can never have a solution of the Hard-Margin SVM optimization problem where $y_i*
-  <italic>
-   (w \cdot
-  </italic>
-  x+b) &gt;1$ for all training examples. For some scalar $s$, let $y_i*
-  <italic>
-   ((s*w) \cdot
-  </italic>
-  x+s*b) &gt;1$, which means the objective of the Hard-Margin SVM optimization problem is $s^2 * w \cdot w$. Whatever the current value of $s$, there is a smaller value $s'$ that will improve the objective and still fulfill $y_i*
-  <italic>
-   ((s'*w)
-  </italic>
-  \cdot x+s'*b) &gt;=1$. So, $
-  <italic>
-   (s*w)$ cannot be the solution of the Hard-margin SVM optimization problem. In other words, if you have
-  </italic>
-  $y_i*
-  <italic>
-   (w \cdot
-  </italic>
-  x+b) &gt;1$ then you can always find a shorter $w'$ (i.e. smaller $w' \cdot w'$) that fulfills $y_i*
-  <italic>
-   ((w'
-  </italic>
-  \cdot x+b') &gt;=1$.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Bonnie Akhavan (staff)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Support vectors are the training points for the SVM that lie on the margin. By definition of the SVM, you
+   <i>
+    have
+   </i>
+   to have at least one point that lies on the margin because the margin is defined as the distance between the separating hyperplane and its closest point. The SVM maximizes this margin, but we can always adjust the norm of $w$ and change the units of our classifier so that the margin is 1. Thus, it's always the case that for at least one point we have $y_{i}
+   <i>
+    (
+   </i>
+   w\cdot x+b)=1$. Hope this helps!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Thorsten Joachims (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Yes, that is a good explanation. Let me add the following, which clarifies that you can never have a solution of the Hard-Margin SVM optimization problem where $y_i*
+    <i>
+     (w \cdot
+    </i>
+    x+b) &gt;1$ for all training examples. For some scalar $s$, let $y_i*
+    <i>
+     ((s*w) \cdot
+    </i>
+    x+s*b) &gt;1$, which means the objective of the Hard-Margin SVM optimization problem is $s^2 * w \cdot w$. Whatever the current value of $s$, there is a smaller value $s'$ that will improve the objective and still fulfill $y_i*
+    <i>
+     ((s'*w)
+    </i>
+    \cdot x+s'*b) &gt;=1$. So, $
+    <i>
+     (s*w)$ cannot be the solution of the Hard-margin SVM optimization problem. In other words, if you have
+    </i>
+    $y_i*
+    <i>
+     (w \cdot
+    </i>
+    x+b) &gt;1$ then you can always find a shorter $w'$ (i.e. smaller $w' \cdot w'$) that fulfills $y_i*
+    <i>
+     ((w'
+    </i>
+    \cdot x+b') &gt;=1$.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

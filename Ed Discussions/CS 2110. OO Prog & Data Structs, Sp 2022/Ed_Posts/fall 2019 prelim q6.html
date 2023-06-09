@@ -13,144 +13,138 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm looking at the solution and don't understand some parts.
- </paragraph>
- <paragraph>
-  I don't understand step 1, "with default values for fields that are not assigned in their declaration". What is declaration referring to?
- </paragraph>
- <paragraph>
-  I don't understand step 3. "Use as value of the expression a pointer to the new object (i.e. the name that was written in the tab of the new object)"
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    Is there a typo here? What does "use as value" mean? Also what does the i.e. part mean? I don't understand the wording
-   </paragraph>
-  </list-item>
- </list>
-</document>
+<p>
+ I'm looking at the solution and don't understand some parts.
+</p>
+<p>
+ I don't understand step 1, "with default values for fields that are not assigned in their declaration". What is declaration referring to?
+</p>
+<p>
+ I don't understand step 3. "Use as value of the expression a pointer to the new object (i.e. the name that was written in the tab of the new object)"
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   Is there a typo here? What does "use as value" mean? Also what does the i.e. part mean? I don't understand the wording
+  </p>
+ </li>
+</list>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Vladia Trinh (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Vladia Trinh (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   For step 1, it just means that you create a new object of type ABC with default fields. In step 2, you actually execute the constructor call, so you don't have to worry about the actual field values yet.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   For step 3, another way to phrase it is that the new expression evaluates to the pointer / address of the new object.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  For step 1, what does “that are not assigned in their declaration” mean though? Still confused about that. Thanks!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew Chen (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Consider the following class declaration:
- </paragraph>
- <paragraph>
-  class A {
- </paragraph>
- <paragraph>
-  String name;
- </paragraph>
- <paragraph>
-  int age = 1000;
- </paragraph>
- <paragraph>
-  }
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  The field name has not been assigned yet. The field age has. age has been set to 1000 in the declaration. We will not assign a default value to age, but we WILL assign the default value null to name.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  Do all fields in a class ALWAYS have to be assigned a value by the constructor? For example, in the constructor for class A, public A(), you MUST assigned a value for String name;? You cannot leave it as it is? (without an assigned value AKA just leaving it as String name;)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew Chen (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  If you don’t assign the field then it will keep its default value.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  What would the default value of String name; be? Null?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Andrew Chen (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Correct. Object types are default value null and primitive types vary....int is 0, float is 0.0f. etc.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   For step 1, what does “that are not assigned in their declaration” mean though? Still confused about that. Thanks!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Andrew Chen (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Consider the following class declaration:
+   </p>
+   <p>
+    class A {
+   </p>
+   <p>
+    String name;
+   </p>
+   <p>
+    int age = 1000;
+   </p>
+   <p>
+    }
+   </p>
+   <p>
+    The field name has not been assigned yet. The field age has. age has been set to 1000 in the declaration. We will not assign a default value to age, but we WILL assign the default value null to name.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Do all fields in a class ALWAYS have to be assigned a value by the constructor? For example, in the constructor for class A, public A(), you MUST assigned a value for String name;? You cannot leave it as it is? (without an assigned value AKA just leaving it as String name;)
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Andrew Chen (staff)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      If you don’t assign the field then it will keep its default value.
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 12em;">
+      <h3>
+       Author: Anonymous
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       What would the default value of String name; be? Null?
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 14em;">
+       <h3>
+        Author: Andrew Chen (staff)
+       </h3>
+       <h3>
+        Vote Count: 0
+       </h3>
+       <p>
+        Correct. Object types are default value null and primitive types vary....int is 0, float is 0.0f. etc.
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

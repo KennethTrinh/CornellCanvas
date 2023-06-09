@@ -13,41 +13,35 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <callout type="info">
-  Put in your question title the year, semester, and question.  Ideal would also be to include the topic.   Example: 2018SP Q2(b) - call frames
- </callout>
- <figure>
-  <image height="561.370036101083" src="https://static.us.edusercontent.com/files/7ckz1DQe47pl2NWB02MxiqYY" width="611"/>
- </figure>
- <callout type="info">
-  Include a screenshot of the question, so readers/answerers don't have to go find the relevant pdf.
- </callout>
- <paragraph>
-  This is the answer to 7b on the 2019 spring final:
- </paragraph>
- <paragraph>
-  I was wondering, why does this last line work? Doesn't setting the values of p.name as p add the "name" part of p as a value?
- </paragraph>
- <paragraph>
-  The way I thought to solve it would be to just create a list of the other things we need, (excluding the name), and to set the value of key "p.name" to that.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<callout type="info">
+ Put in your question title the year, semester, and question.  Ideal would also be to include the topic.   Example: 2018SP Q2(b) - call frames
+</callout>
+<figure>
+ <image height="561.370036101083" src="https://static.us.edusercontent.com/files/7ckz1DQe47pl2NWB02MxiqYY" width="611"/>
+</figure>
+<callout type="info">
+ Include a screenshot of the question, so readers/answerers don't have to go find the relevant pdf.
+</callout>
+<p>
+ This is the answer to 7b on the 2019 spring final:
+</p>
+<p>
+ I was wondering, why does this last line work? Doesn't setting the values of p.name as p add the "name" part of p as a value?
+</p>
+<p>
+ The way I thought to solve it would be to just create a list of the other things we need, (excluding the name), and to set the value of key "p.name" to that.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Hi!  Let me know if I'm misunderstanding your question, but:
   <break>
   </break>
@@ -63,9 +57,9 @@
    self.goods
   </code>
   had been a
-  <bold>
+  <b>
    list
-  </bold>
+  </b>
   , then setting
   <code>
    self.goods[i]
@@ -87,8 +81,8 @@
    p.name
   </code>
   .
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Analogously, because
   <code>
    self.goods
@@ -110,9 +104,7 @@
    self.goods
   </code>
   .
- </paragraph>
- <paragraph>
- </paragraph>
+ </p>
  <snippet language="py" line-numbers="true" runnable="true">
   <snippet-file id="code">
    class Example:
@@ -128,67 +120,61 @@ goods["iPad"] = Example("iPadInfinity")
 print(goods)
   </snippet-file>
  </snippet>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  That makes sense, I suppose more specifically my question is, if p is some sort of product, like maybe
-  <code>
-   p=Product("eggs", 1.5, 12, True)
-  </code>
-  , wouldn't setting the key to
-  <code>
-   p.name
-  </code>
-  and the value to
-  <code>
-   p
-  </code>
-  give you something like
-  <code>
-   {'eggs': "eggs", 1.5, 12, True
-  </code>
-  since you are setting the value to all of
-  <code>
-   p
-  </code>
-  ?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Ah, I see.  Then my example is misleading.  Let me remove the
-  <code>
-   __repr__
-  </code>
-  part:
-  <break>
-  </break>
- </paragraph>
- <snippet language="py" line-numbers="true" runnable="true">
-  <snippet-file id="code">
-   class Example:
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   That makes sense, I suppose more specifically my question is, if p is some sort of product, like maybe
+   <code>
+    p=Product("eggs", 1.5, 12, True)
+   </code>
+   , wouldn't setting the key to
+   <code>
+    p.name
+   </code>
+   and the value to
+   <code>
+    p
+   </code>
+   give you something like
+   <code>
+    {'eggs': "eggs", 1.5, 12, True
+   </code>
+   since you are setting the value to all of
+   <code>
+    p
+   </code>
+   ?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Ah, I see.  Then my example is misleading.  Let me remove the
+    <code>
+     __repr__
+    </code>
+    part:
+    <break>
+    </break>
+   </p>
+   <snippet language="py" line-numbers="true" runnable="true">
+    <snippet-file id="code">
+     class Example:
     def __init__(self,n):
         self.name = n
 
@@ -197,16 +183,18 @@ goods = {"iPad": Example("iPad"),
 print(goods)
 goods["iPad"] = Example("iPadInfinity")
 print(goods)
-  </snippet-file>
- </snippet>
- <paragraph>
-  So what is actually in the directory is indeed the object
-  <code>
-   p
-  </code>
-  .
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+    </snippet-file>
+   </snippet>
+   <p>
+    So what is actually in the directory is indeed the object
+    <code>
+     p
+    </code>
+    .
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

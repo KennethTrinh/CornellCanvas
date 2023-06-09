@@ -13,76 +13,74 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  Can someone please explain what "this()" and "this." is / does.
- </paragraph>
- <paragraph>
-  And then follow it up with an example. I'm a little confused
- </paragraph>
- <paragraph>
-  Best,
- </paragraph>
- <paragraph>
-  User1383866
- </paragraph>
-</document>
+<p>
+ Can someone please explain what "this()" and "this." is / does.
+</p>
+<p>
+ And then follow it up with an example. I'm a little confused
+</p>
+<p>
+ Best,
+</p>
+<p>
+ User1383866
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Atulya Lohani (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="1.0">
- <paragraph>
-  this is a reference to the current object. It’s like self in python. this() is used when you have overloaded constructors and you use it to call one of them with the needed amount of arguments.
-  <break>
-  </break>
-  Suppose you have existing fields in a class:
-  <break>
-  </break>
-  private int a=3;
-  <break>
-  </break>
-  private int b=4;
-  <break>
-  </break>
-  And now you make a method with parameters that have the same name.
-  <break>
-  </break>
-  void Example(int a, int b){
-  <break>
-  </break>
-  this.a=a;
-  <break>
-  </break>
-  this.b=b;}
-  <break>
-  </break>
-  To refer to your fields that the object has, you must use this.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Tomer Shamir (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Tomer Shamir (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Have you tried searching
   <code>
    this
   </code>
   in the JavaHyperText?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Atulya Lohani (student)
+  </h3>
+  <h3>
+   Vote Count: 2
+  </h3>
+  <p>
+   this is a reference to the current object. It’s like self in python. this() is used when you have overloaded constructors and you use it to call one of them with the needed amount of arguments.
+   <break>
+   </break>
+   Suppose you have existing fields in a class:
+   <break>
+   </break>
+   private int a=3;
+   <break>
+   </break>
+   private int b=4;
+   <break>
+   </break>
+   And now you make a method with parameters that have the same name.
+   <break>
+   </break>
+   void Example(int a, int b){
+   <break>
+   </break>
+   this.a=a;
+   <break>
+   </break>
+   this.b=b;}
+   <break>
+   </break>
+   To refer to your fields that the object has, you must use this.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

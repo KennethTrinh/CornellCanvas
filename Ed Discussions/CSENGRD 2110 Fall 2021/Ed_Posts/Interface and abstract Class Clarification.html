@@ -13,64 +13,62 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I've read through the material on hypertext and the review slides from recitation. I drew pictures for the practice questions, but just wanted to make sure I wasn't misunderstanding some points based on the answers from the test questions:
- </paragraph>
- <list style="number">
-  <list-item>
-   <paragraph>
-    You can't instantiate an interface, but you can cast the object of a class that implements the interface to the class of the interface, and you won't get any compiler errors. You can also have variables with interface types, as long something that implements the interface is being instantiated and set equal to the said variable.
-   </paragraph>
-   <list style="number">
-    <list-item>
-     <paragraph>
-      You may not get a compiler error if you cast an object to another object that implements the interface, but run time will definitely catch it.
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      Casting only checks to make sure the items you can cast is either a parent or subclass. It will not check if the type being casted to also has the interfaces required.
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    When extending an abstract class, you do not need to override all the methods in the abstract class.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    You can use the methods in the abstract class as methods in an abstract class do not need to be abstract methods given that you call them using an object that extends the abstract cast, and does not exist in the non-abstract class, triggering the bottom-up rule.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Thank you so much!!
- </paragraph>
-</document>
+<p>
+ I've read through the material on hypertext and the review slides from recitation. I drew pictures for the practice questions, but just wanted to make sure I wasn't misunderstanding some points based on the answers from the test questions:
+</p>
+<list style="number">
+ <li>
+  <p>
+   You can't instantiate an interface, but you can cast the object of a class that implements the interface to the class of the interface, and you won't get any compiler errors. You can also have variables with interface types, as long something that implements the interface is being instantiated and set equal to the said variable.
+  </p>
+  <list style="number">
+   <li>
+    <p>
+     You may not get a compiler error if you cast an object to another object that implements the interface, but run time will definitely catch it.
+    </p>
+   </li>
+   <li>
+    <p>
+     Casting only checks to make sure the items you can cast is either a parent or subclass. It will not check if the type being casted to also has the interfaces required.
+    </p>
+   </li>
+  </list>
+ </li>
+ <li>
+  <p>
+   When extending an abstract class, you do not need to override all the methods in the abstract class.
+  </p>
+ </li>
+ <li>
+  <p>
+   You can use the methods in the abstract class as methods in an abstract class do not need to be abstract methods given that you call them using an object that extends the abstract cast, and does not exist in the non-abstract class, triggering the bottom-up rule.
+  </p>
+ </li>
+</list>
+<p>
+ Thank you so much!!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Most of what you've written here seems accurate, but I want to re-word a few things just to be sure:
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     When casting, you will get a compiler error if it is inconceivable for the cast to possibly succeed at runtime:
-   </paragraph>
+   </p>
    <list style="bullet">
-    <list-item>
-     <paragraph>
+    <li>
+     <p>
       Example: Casting an
       <code>
        Integer
@@ -80,53 +78,53 @@
        String
       </code>
       .  The ancestry of the former is Integer&lt;Number&lt;Object, while the ancestry of the latter is String&lt;Object.  Since Integer is not in String's ancestry, this can't be a downcast, and since String isn't in Integer's ancestry, this can't be an upcast.  It would be impossible to declare a cast that is both an Integer and a String (since Java requires single inheritance), so there is no type that could possibly satisfy this cast.  Therefore, this yields a compiler error.
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
+     </p>
+    </li>
+    <li>
+     <p>
       Interfaces are not constrained by Java's single inheritance rule, so it is almost always possible to imagine declaring a class that is a subtype of any other class (or Interface)
-      <italic>
+      <i>
        and
-      </italic>
+      </i>
       that implements some (other) Interface.  Therefore, casting a value to an Interface type is almost always allowed by the compiler, whether or not such a class actually exists in your program (if you are writing a reusable library, it's possible for someone else to declare such a class in the future, so the compiler must allow for that possibility).
-     </paragraph>
-    </list-item>
+     </p>
+    </li>
    </list>
-  </list-item>
-  <list-item>
-   <paragraph>
+  </li>
+  <li>
+   <p>
     A class
-    <italic>
+    <i>
      must
-    </italic>
+    </i>
     be declared
     <code>
      abstract
     </code>
     if it contains any methods that are not implemented (these may be abstract methods that it declares itself, methods declared by an interface that it claims to implement, or abstract methods inherited by an abstract superclass).
-   </paragraph>
+   </p>
    <list style="bullet">
-    <list-item>
-     <paragraph>
+    <li>
+     <p>
       It is possible to extend an abstract class and not override all of that class's abstract methods, but in that case, your class would need to be declared abstract too.  A non-abstract class
-      <italic>
+      <i>
        must
-      </italic>
+      </i>
       provide an implementation for every method it contains (either itself or inherited from a superclass).
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
+     </p>
+    </li>
+    <li>
+     <p>
       These rules guarantee that the dynamic type of any value at runtime will provide an implementation for all of its methods (found via the bottom-up rule).  Therefore, in your source code, you can call any method provided by a type, even if it is abstract.  The compiler doesn't care where the implementation of the method ultimately comes from; it just needs a guarantee that it will exist, and the rules prohibiting instantiation of abstract types provides this.
-     </paragraph>
-    </list-item>
+     </p>
+    </li>
    </list>
-  </list-item>
+  </li>
  </list>
- <paragraph>
+ <p>
   Hopefully this alternative wording clarifies a few things.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,25 +13,23 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Like after I call a function using BL, I push LR onto the stack and pop its value into PC. Doesn't this mean that once the program moves to PC outside of the function, the LR register was not what it was before the function was called?
- </paragraph>
-</document>
+<p>
+ Like after I call a function using BL, I push LR onto the stack and pop its value into PC. Doesn't this mean that once the program moves to PC outside of the function, the LR register was not what it was before the function was called?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Olive Faber (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Olive Faber (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   LR is caller saved, after all there's no way a callee could ever know what was in LR for the caller since the call (the BL instruction) changed the LR.  However, it is often convenient and safe to push and pop LR/PC in the same place where callee saved registers get pushed and popped.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

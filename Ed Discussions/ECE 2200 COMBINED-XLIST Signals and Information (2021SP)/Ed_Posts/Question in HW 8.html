@@ -13,30 +13,26 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="385.27631578947364" src="https://static.us.edusercontent.com/files/1FoJnDgxMFqGiHQknWdGTrRL" width="657.9999999999999"/>
- </figure>
- <paragraph>
-  For part d, the DFT of X can be considered like a cyclic time shift rule with two time delays with n0 = -2 and n0 = 2 on the delta function, but since it would be a cyclic timeshift it would have to be x[&lt;n - n0&gt;_N] for the one where n0 = -2 it would be x[n+2] but why is it written as n-8 instead of n+2. Firstly, how does n+2 become n-8 and is one way the right way while the other one wrong.
- </paragraph>
-</document>
+<figure>
+ <image height="385.27631578947364" src="https://static.us.edusercontent.com/files/1FoJnDgxMFqGiHQknWdGTrRL" width="657.9999999999999"/>
+</figure>
+<p>
+ For part d, the DFT of X can be considered like a cyclic time shift rule with two time delays with n0 = -2 and n0 = 2 on the delta function, but since it would be a cyclic timeshift it would have to be x[&lt;n - n0&gt;_N] for the one where n0 = -2 it would be x[n+2] but why is it written as n-8 instead of n+2. Firstly, how does n+2 become n-8 and is one way the right way while the other one wrong.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The way I do the $N$-point Cyclic Shift Rule requires $n _ o$ to satisfy $0 \leq n _ o &lt; N$.  The specifications "when $n = 8$" and "when $n \neq 8$" pre-suppose $0 \leq n &lt; 10$.  Note that the thing equals 1 not only when  $n = 8$ but also when $\langle n \rangle _ {10} = 8$, but the only one of those $n$-values that "counts" in the world of 10-point signals is $n = 8$.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

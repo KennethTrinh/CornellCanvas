@@ -13,263 +13,259 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  <bold>
-   Overview/Hypotheses
-  </bold>
- </paragraph>
- <paragraph>
-  Joyce and I are looking at r/AmItheAsshole to characterize a buzzy user (a user that comments in several conversation threads). We hypothesized that: controversial topics will have more buzzy users, buzzy users tend to disagree within the thread, and buzzy users will agree with the final judgement.
- </paragraph>
- <paragraph>
-  <bold>
-   Dataset
-  </bold>
- </paragraph>
- <paragraph>
-  r/aita 2018:  17,598 posts with 448,946 comments
- </paragraph>
- <paragraph>
-  r/aita 2019: 244,595 posts with 9,902,311 comments
- </paragraph>
- <paragraph>
-  <bold>
-   Metrics
-  </bold>
- </paragraph>
- <paragraph>
-  Determining Controversy
- </paragraph>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    Judgement tag
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Disagreement between comments
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Characterizing Buzzy User
- </paragraph>
- <list style="unordered">
-  <list-item>
-   <paragraph>
-    Branchiness metric
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Comment length
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Lexical diversity
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Sentiment
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  <bold>
-   Discussion
-  </bold>
- </paragraph>
- <paragraph>
-  The initial feasibility test looked at the number of words in a comment and number of comments in a thread in the 2018 dataset. Glancing at some of the posts in the 2018 dataset, it seemed as if most redditors were briefly stating their opinion and that there wasn't the back and forth discussion we were looking for. However, given the growth of the subreddit in 2019, we're hopeful that there are more buzzy users.
- </paragraph>
- <paragraph>
-  In some of my discussions with Joyce, we talked about the relationship between controversy, topics, tone, and number of comments. What's the relationship between the tone of a post and the number of comments it receives, if there is a relationship. Are certain topics discussed more? Are these controversial?
- </paragraph>
- <paragraph>
-  For each post in the 2018 and the 2019 dataset, I created a tone analysis figure that describes the overall concreteness, valence, arousal, and dominance for each post. I combined the wordlists referenced by Tao et. al in the "Winning Arguments" to create a dictionary of 13,384 words with concreteness, valence, arousal, and dominance. (This excluded words that were in the concreteness wordlist but not in the valence, arousal, and dominance wordlist and vice versa). For each post I counted the number of word occurrences and normalized for length.
- </paragraph>
- <paragraph>
- </paragraph>
- <figure>
-  <image height="281" src="https://static.us.edusercontent.com/files/EvzoaiaE5zCUQl35uNEqcoQz" width="658"/>
- </figure>
- <paragraph>
-  I was surprised that there were posts within the dataset that didn't have any words in the tone dictionary. One item on my to do list is to go back and see which posts have a [0,0,0,0] vector.
- </paragraph>
- <paragraph>
-  I used LDA topic modeling to create Figure 3. While some of the topics make sense (e.g. topic 0 could be describing familial relationships or topic 1 housing/living with roommates), others do not (e.g., topic 7 or topic 9). One issue I'm having with topic modeling is cleaning the data. Another issue I'm having the volume of data with the 2019 dataset. I tried running the model on my computer and ran into a memory error.
- </paragraph>
- <figure>
-  <image height="163" src="https://static.us.edusercontent.com/files/97vBfMaGlphuhPWqEHBkaTN9" width="803"/>
- </figure>
- <figure>
-  <image src="https://static.us.edusercontent.com/files/hqtWeCL0sQmoXf77DqJDhZDA"/>
- </figure>
-</document>
-<h3>
- Author: Joyce Zhou (they/them) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ <b>
+  Overview/Hypotheses
+ </b>
+</p>
+<p>
+ Joyce and I are looking at r/AmItheAsshole to characterize a buzzy user (a user that comments in several conversation threads). We hypothesized that: controversial topics will have more buzzy users, buzzy users tend to disagree within the thread, and buzzy users will agree with the final judgement.
+</p>
+<p>
+ <b>
+  Dataset
+ </b>
+</p>
+<p>
+ r/aita 2018:  17,598 posts with 448,946 comments
+</p>
+<p>
+ r/aita 2019: 244,595 posts with 9,902,311 comments
+</p>
+<p>
+ <b>
+  Metrics
+ </b>
+</p>
+<p>
+ Determining Controversy
+</p>
+<list style="unordered">
+ <li>
+  <p>
+   Judgement tag
+  </p>
+ </li>
+ <li>
+  <p>
+   Disagreement between comments
+  </p>
+ </li>
+</list>
+<p>
+ Characterizing Buzzy User
+</p>
+<list style="unordered">
+ <li>
+  <p>
+   Branchiness metric
+  </p>
+ </li>
+ <li>
+  <p>
+   Comment length
+  </p>
+ </li>
+ <li>
+  <p>
+   Lexical diversity
+  </p>
+ </li>
+ <li>
+  <p>
+   Sentiment
+  </p>
+ </li>
+</list>
+<p>
+ <b>
+  Discussion
+ </b>
+</p>
+<p>
+ The initial feasibility test looked at the number of words in a comment and number of comments in a thread in the 2018 dataset. Glancing at some of the posts in the 2018 dataset, it seemed as if most redditors were briefly stating their opinion and that there wasn't the back and forth discussion we were looking for. However, given the growth of the subreddit in 2019, we're hopeful that there are more buzzy users.
+</p>
+<p>
+ In some of my discussions with Joyce, we talked about the relationship between controversy, topics, tone, and number of comments. What's the relationship between the tone of a post and the number of comments it receives, if there is a relationship. Are certain topics discussed more? Are these controversial?
+</p>
+<p>
+ For each post in the 2018 and the 2019 dataset, I created a tone analysis figure that describes the overall concreteness, valence, arousal, and dominance for each post. I combined the wordlists referenced by Tao et. al in the "Winning Arguments" to create a dictionary of 13,384 words with concreteness, valence, arousal, and dominance. (This excluded words that were in the concreteness wordlist but not in the valence, arousal, and dominance wordlist and vice versa). For each post I counted the number of word occurrences and normalized for length.
+</p>
+<p>
+</p>
+<figure>
+ <image height="281" src="https://static.us.edusercontent.com/files/EvzoaiaE5zCUQl35uNEqcoQz" width="658"/>
+</figure>
+<p>
+ I was surprised that there were posts within the dataset that didn't have any words in the tone dictionary. One item on my to do list is to go back and see which posts have a [0,0,0,0] vector.
+</p>
+<p>
+ I used LDA topic modeling to create Figure 3. While some of the topics make sense (e.g. topic 0 could be describing familial relationships or topic 1 housing/living with roommates), others do not (e.g., topic 7 or topic 9). One issue I'm having with topic modeling is cleaning the data. Another issue I'm having the volume of data with the 2019 dataset. I tried running the model on my computer and ran into a memory error.
+</p>
+<figure>
+ <image height="163" src="https://static.us.edusercontent.com/files/97vBfMaGlphuhPWqEHBkaTN9" width="803"/>
+</figure>
+<figure>
+ <image src="https://static.us.edusercontent.com/files/hqtWeCL0sQmoXf77DqJDhZDA"/>
+</figure>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Joyce Zhou (they/them) (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   To add to this:
- </paragraph>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     From the last update (
-    <link href="https://edstem.org/us/courses/8208/discussion/815943"/>
-    https://edstem.org/us/courses/8208/discussion/815943): These metrics have been evaluated and saved for all of the post/user combinations, but
-    <italic>
+    <a href="https://edstem.org/us/courses/8208/discussion/815943">
+     https://edstem.org/us/courses/8208/discussion/815943
+    </a>
+    ): These metrics have been evaluated and saved for all of the post/user combinations, but
+    <i>
      not compared against each other outside of basic breakdowns
-    </italic>
+    </i>
     yet. As it turns out (again), big datasets take a long time to deal with...
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
+   </p>
+  </li>
+  <li>
+   <p>
     Confirming something we wanted to check up on before but never clearly updated: There's definitely more buzzy user activity to work with when we include 2019 activity.
-   </paragraph>
+   </p>
    <figure>
     <image height="254" src="https://static.us.edusercontent.com/files/NeydCHAztrKgM9Vq8GxZgQDY" width="377"/>
    </figure>
-  </list-item>
+  </li>
  </list>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     And it does seem like users who are more active within the sub as a whole are also more often consistently buzzy (this has one low-alpha dot per unique user in the subreddit):
-   </paragraph>
+   </p>
    <figure>
     <image height="254" src="https://static.us.edusercontent.com/files/2jyBmQam9cmBlOaUvgeVVI1G" width="369"/>
    </figure>
-  </list-item>
+  </li>
  </list>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Linda Wang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi Kowe and Joyce,
- </paragraph>
- <paragraph>
-  Your project sounds intriguing! I appreciate how you considered "controversial-ness" in addition to your original hypotheses. The tone analysis is a novel method to me, and it provided a nice visual for the change in tone between 2018 and 2019. I am really curious to hear how these changes interact with the activity of buzzy users, especially as buzzy users get more experienced with time.
- </paragraph>
- <paragraph>
-  I have a few clarification questions:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    In your hypotheses, you state that you expect both for buzzy users to disagree within the thread, but also for buzzy users to agree with the final judgement. At first glance, this seems contradictory. My understanding based on this is that we should be viewing buzzy users as disruptors, but I feel this is probably naive on my part. Could you explain the mechanism and or intuition underlying this pair of hypotheses? Also, have your expectations been met by the data thus far?
-   </paragraph>
-  </list-item>
- </list>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    You mentioned the huge data increase between 2018 and 2019. Could you break down the specific components of that increase? E.g. did growth happen primarily for a given type/topic of conversation thread in r/aita, or was the growth evenly distributed across types/topics? Since buzzy users are users that engage with multiple conversation threads, it may be interesting to note if there are any significant changes in what they physically see over time.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    Would separating out some of the components of the tone analysis possibly help determine how controversial a controversial a post is? It seems to me that concreteness is quite distinct from valence, arousal, and dominance - I wonder if there may be contrasting effects?
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Thanks for sharing!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Joyce Zhou (they/them) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thanks! :)
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  On disagreement vs agreement:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    The intuition behind "buzzy users disagree within the thread" was that buzzy users may be buzzy because they are engaging in multiple conversation branches, and that the motivation for doing this is to disagree with someone else's opinions / add their own thoughts. Adding comments that present different or at least varying viewpoints seems like it'd be more interesting than adding comments that are just "yes, I agree 100%".
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    However, for "buzzy users agree more with final judgement", on the whole their passing of ideas across the entire thread means that they may have a larger impact on the overall discussion... or have observed enough of it to see the big points others are raising, which can contribute to their own judgements.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    These came from casual reading of the sub in its modern state: especially in really controversial posts, there's frequently users who will share ideas that have been discussed in a separate comment thread like "look here, you've missed out on something!!" In general, these two hypotheses fit together with the "buzzy users are more active in controversial overall posts": if a post is controversial, there are more users in favor of each point. Buzzy users thus have more space to disagree with particular comments while spreading ideas throughout the entire conversation tree.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    ... Unfortunately, thanks to poor time management and really long runtimes, I haven't visualized how these metrics compare against each other yet (note to self: add simple comparison of buzziness vs final correctness tonight).
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  On differences between 2018 and 2019:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    Not entirely certain about topic shifts, but there definitely were some changes in the ways that commenters responded to posts. At the same time that there was an explosion in the numbers of posts made per [some time unit] and there were more comments per post overall, there were also small changes in the overall post "judgement controversialness":
-   </paragraph>
-   <figure>
-    <image height="156.40740740740742" src="https://static.us.edusercontent.com/files/oIwcSKEwb1dpRd1oJ3iKWY1W" width="533"/>
-   </figure>
-   <paragraph>
-    (left graph 2018, right graph 2019. X-axis is the "controversialness" on judging whether the original poster was an a**hole or not where 0 = "everyone agrees" and 1 = "it was a 50-50 split", and Y-axis is how many posts had that overall controversialness level.) As is often complained about in modern subreddit meta-discussion, the relative frequency of un-controversial posts increased.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Tone analysis -&gt; controversialness:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    This is interesting and worth trying out :o thank you!!
-   </paragraph>
-  </list-item>
- </list>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Linda Wang (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Hi Kowe and Joyce,
+  </p>
+  <p>
+   Your project sounds intriguing! I appreciate how you considered "controversial-ness" in addition to your original hypotheses. The tone analysis is a novel method to me, and it provided a nice visual for the change in tone between 2018 and 2019. I am really curious to hear how these changes interact with the activity of buzzy users, especially as buzzy users get more experienced with time.
+  </p>
+  <p>
+   I have a few clarification questions:
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     In your hypotheses, you state that you expect both for buzzy users to disagree within the thread, but also for buzzy users to agree with the final judgement. At first glance, this seems contradictory. My understanding based on this is that we should be viewing buzzy users as disruptors, but I feel this is probably naive on my part. Could you explain the mechanism and or intuition underlying this pair of hypotheses? Also, have your expectations been met by the data thus far?
+    </p>
+   </li>
+  </list>
+  <list style="bullet">
+   <li>
+    <p>
+     You mentioned the huge data increase between 2018 and 2019. Could you break down the specific components of that increase? E.g. did growth happen primarily for a given type/topic of conversation thread in r/aita, or was the growth evenly distributed across types/topics? Since buzzy users are users that engage with multiple conversation threads, it may be interesting to note if there are any significant changes in what they physically see over time.
+    </p>
+   </li>
+  </list>
+  <list style="bullet">
+   <li>
+    <p>
+     Would separating out some of the components of the tone analysis possibly help determine how controversial a controversial a post is? It seems to me that concreteness is quite distinct from valence, arousal, and dominance - I wonder if there may be contrasting effects?
+    </p>
+   </li>
+  </list>
+  <p>
+   Thanks for sharing!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Joyce Zhou (they/them) (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Thanks! :)
+    <break>
+    </break>
+   </p>
+   <p>
+    On disagreement vs agreement:
+   </p>
+   <list style="bullet">
+    <li>
+     <p>
+      The intuition behind "buzzy users disagree within the thread" was that buzzy users may be buzzy because they are engaging in multiple conversation branches, and that the motivation for doing this is to disagree with someone else's opinions / add their own thoughts. Adding comments that present different or at least varying viewpoints seems like it'd be more interesting than adding comments that are just "yes, I agree 100%".
+     </p>
+    </li>
+    <li>
+     <p>
+      However, for "buzzy users agree more with final judgement", on the whole their passing of ideas across the entire thread means that they may have a larger impact on the overall discussion... or have observed enough of it to see the big points others are raising, which can contribute to their own judgements.
+     </p>
+    </li>
+    <li>
+     <p>
+      These came from casual reading of the sub in its modern state: especially in really controversial posts, there's frequently users who will share ideas that have been discussed in a separate comment thread like "look here, you've missed out on something!!" In general, these two hypotheses fit together with the "buzzy users are more active in controversial overall posts": if a post is controversial, there are more users in favor of each point. Buzzy users thus have more space to disagree with particular comments while spreading ideas throughout the entire conversation tree.
+     </p>
+    </li>
+    <li>
+     <p>
+      ... Unfortunately, thanks to poor time management and really long runtimes, I haven't visualized how these metrics compare against each other yet (note to self: add simple comparison of buzziness vs final correctness tonight).
+     </p>
+    </li>
+   </list>
+   <p>
+    On differences between 2018 and 2019:
+   </p>
+   <list style="bullet">
+    <li>
+     <p>
+      Not entirely certain about topic shifts, but there definitely were some changes in the ways that commenters responded to posts. At the same time that there was an explosion in the numbers of posts made per [some time unit] and there were more comments per post overall, there were also small changes in the overall post "judgement controversialness":
+     </p>
+     <figure>
+      <image height="156.40740740740742" src="https://static.us.edusercontent.com/files/oIwcSKEwb1dpRd1oJ3iKWY1W" width="533"/>
+     </figure>
+     <p>
+      (left graph 2018, right graph 2019. X-axis is the "controversialness" on judging whether the original poster was an a**hole or not where 0 = "everyone agrees" and 1 = "it was a 50-50 split", and Y-axis is how many posts had that overall controversialness level.) As is often complained about in modern subreddit meta-discussion, the relative frequency of un-controversial posts increased.
+     </p>
+    </li>
+   </list>
+   <p>
+    Tone analysis -&gt; controversialness:
+   </p>
+   <list style="bullet">
+    <li>
+     <p>
+      This is interesting and worth trying out :o thank you!!
+     </p>
+    </li>
+   </list>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

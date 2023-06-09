@@ -13,43 +13,39 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Lecture 2.3 mentions that the ARM memory organization typically has a 4 GB addressing space corresponding to 32-bit addresses.
- </paragraph>
- <paragraph>
-  However, the Thumb ISA is generally composed of 16-bit instructions - thus, how are we able to load from a 32-bit memory address using the ISA?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Lecture 2.3 mentions that the ARM memory organization typically has a 4 GB addressing space corresponding to 32-bit addresses.
+</p>
+<p>
+ However, the Thumb ISA is generally composed of 16-bit instructions - thus, how are we able to load from a 32-bit memory address using the ISA?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   You would be write that we are unable to just go ahead and write something like the following due to the lack of available bits when encoding the instruction
   <code>
    LDR R5, #0x40048038
   </code>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Let's take a look at 16-bit Thumb encoding of
-  <italic>
+  <i>
    LDR (literal)
-  </italic>
+  </i>
   from the ARMv6-M Architecture Reference Manual:
- </paragraph>
+ </p>
  <figure>
   <image height="448.66295264623955" src="https://static.us.edusercontent.com/files/UFdUIMekinslvMix7WZfAYY0" width="546"/>
  </figure>
- <paragraph>
+ <p>
   In our programs, we will usually set up constants for the addresses we want to access. This is done using the
   <code>
    .equ
@@ -59,12 +55,12 @@
    .equ SCGC5, 0x40048038
   </code>
   While this does give us a
-  <italic>
+  <i>
    'label'
-  </italic>
+  </i>
   and help us organize our code, our assembler actually sets up a location in program memory where this value is stored.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If we were to put this line in our program, built it, and then disassembly the output, you would notice a line like
   <code>
    8c: 40048038
@@ -77,8 +73,8 @@
   <code>
    0x40048038
   </code>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Now let us include the instruction
   <code>
    LDR R5, =SCGC5
@@ -99,8 +95,8 @@
   <code>
    .text
   </code>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If we are running our program, and reach the instruction at
   <code>
    0x2a
@@ -110,12 +106,12 @@
    0x2c
   </code>
   since it holds the value of the next instruction to be fetched. Now let us evaluate that instruction:
- </paragraph>
+ </p>
  <pre>ldr r5, [pc, #96]
 ldr r5, [#0x2c + #96]
 ldr r5, [#0x8c]
 </pre>
- <paragraph>
+ <p>
   Notice that the value at address
   <code>
    0x8c
@@ -125,11 +121,11 @@ ldr r5, [#0x8c]
    R5
   </code>
   , allowing us to access a 32-bit value by storing it in our program data
-  <italic>
+  <i>
    at an offset relative to the program counter.
-  </italic>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+  </i>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

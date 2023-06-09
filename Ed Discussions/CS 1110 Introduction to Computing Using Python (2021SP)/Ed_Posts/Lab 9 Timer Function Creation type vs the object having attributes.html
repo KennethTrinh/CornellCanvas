@@ -16,24 +16,20 @@
 <h3>
  ENDORSED
 </h3>
-<document version="2.0">
- <paragraph>
-  I am confused when trying to create a function for timer in lab 9. How do you set hours and minutes to a variable? When I do, I get the error, "type object 'Timer' has no attribute 'hours'", but I thought Timer does have the attribute hours..
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I am confused when trying to create a function for timer in lab 9. How do you set hours and minutes to a variable? When I do, I get the error, "type object 'Timer' has no attribute 'hours'", but I thought Timer does have the attribute hours..
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Hi, this is a good question!
   <break>
   </break>
@@ -45,18 +41,18 @@
   <break>
   </break>
   Think of a "type" or "class" as an abstract concept or definition, like
-  <italic>
+  <i>
    homo sapiens.
-  </italic>
+  </i>
   (We're getting all fancy with the Latin here precisely to make the class seem abstract and divorced from normal life.)
   <break>
   </break>
   <break>
   </break>
   You and I are specific objects, or instantiations, of the type
-  <italic>
+  <i>
    homo sapiens.
-  </italic>
+  </i>
   <break>
   </break>
   You and I have attributes with values, like the color of our hair (mine is black/greying).
@@ -65,26 +61,26 @@
   <break>
   </break>
   But
-  <italic>
+  <i>
    homo sapiens
-  </italic>
+  </i>
   isn't a physical thing in our universe, and doesn't have a specific hair color.  Rather,
-  <italic>
+  <i>
    homo sapiens
-  </italic>
+  </i>
   is a definition that implies that everything that is an object of type
-  <italic>
+  <i>
    homo sapiens
-  </italic>
+  </i>
   has hair.
   <break>
   </break>
   <break>
   </break>
   Analogously, the class Timer is a type (
-  <italic>
+  <i>
    tempus fugit,
-  </italic>
+  </i>
   say). Every object that is a timer has an attribute hours, with some value.  But the class Timer itself is just a definition that makes "hours" a required characteristic of objects of its type.
   <break>
   </break>
@@ -103,14 +99,14 @@
   Example:
   <break>
   </break>
- </paragraph>
+ </p>
  <pre>t = Timer(3,14)
 
 print(t.hours)   # this works
 
 print(Timer.hours) # this gives error: type object 'Timer' has no attribute 'hours'
 </pre>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

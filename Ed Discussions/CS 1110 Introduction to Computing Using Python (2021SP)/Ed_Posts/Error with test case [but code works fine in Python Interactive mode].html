@@ -13,79 +13,77 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="1.0">
- <paragraph>
-  We are having an issue with changeTime when the initial time was TBA. When we test our code in regular python is appears to successfully change the time. However, running the test code does not result in the same conclusion- nothing changes. Why is this happening?
- </paragraph>
-</document>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ We are having an issue with changeTime when the initial time was TBA. When we test our code in regular python is appears to successfully change the time. However, running the test code does not result in the same conclusion- nothing changes. Why is this happening?
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Let's see.  How do you know whether in regular python the time is successfully changed?  Are you looking at what getTime returns, or printing the values of various attributes/method calls?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
-  We were changing the variables using our code and then printing the variables, and they were printing out the correctly changed terms
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Just to see if I understand what's happening:
-  <break>
-  </break>
-  <break>
-  </break>
-  In regular Python (= python interactive mode?), are you simulating what the test case does?
-  <break>
-  </break>
- </paragraph>
- <snippet language="py" line-numbers="true" runnable="false">
-  <snippet-file id="code">
-   # do the right imports first!
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   We were changing the variables using our code and then printing the variables, and they were printing out the correctly changed terms
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Just to see if I understand what's happening:
+    <break>
+    </break>
+    <break>
+    </break>
+    In regular Python (= python interactive mode?), are you simulating what the test case does?
+    <break>
+    </break>
+   </p>
+   <snippet language="py" line-numbers="true" runnable="false">
+    <snippet-file id="code">
+     # do the right imports first!
 
 arch1120 = Course("ARCH1120", "TBA") # too lazy to enter the whole name
 arch1120.changeTime("MWF 8:00am-8:00pm")
 print(arch1120.getTime())
-  </snippet-file>
- </snippet>
- <paragraph>
-  and you get "MWF 8:00am-8:00pm" printed out?
-  <break>
-  </break>
-  And when you print your variables (I don't know what they are and don't post 'em here), they do indicate that the time has really changed?
-  <break>
-  </break>
-  <break>
-  </break>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+    </snippet-file>
+   </snippet>
+   <p>
+    and you get "MWF 8:00am-8:00pm" printed out?
+    <break>
+    </break>
+    And when you print your variables (I don't know what they are and don't post 'em here), they do indicate that the time has really changed?
+    <break>
+    </break>
+    <break>
+    </break>
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

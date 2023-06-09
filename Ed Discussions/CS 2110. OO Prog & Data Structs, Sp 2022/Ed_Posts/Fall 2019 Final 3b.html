@@ -13,45 +13,41 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="289.54428044280445" src="https://static.us.edusercontent.com/files/f1aHqfQEfRVXdnr0ISqUab2y" width="658"/>
- </figure>
- <paragraph>
-  Hi I have 2 questions about this insertion sort method body:
- </paragraph>
- <paragraph>
-  1. Why is variable j necessary? Why can't b[i-1] and b[i] be compared for this?
- </paragraph>
- <paragraph>
-  2. Why is it swap(j, j-1) instead of swap(b[j], b[j-1])?
- </paragraph>
- <paragraph>
-  Thanks!
- </paragraph>
-</document>
+<figure>
+ <image height="289.54428044280445" src="https://static.us.edusercontent.com/files/f1aHqfQEfRVXdnr0ISqUab2y" width="658"/>
+</figure>
+<p>
+ Hi I have 2 questions about this insertion sort method body:
+</p>
+<p>
+ 1. Why is variable j necessary? Why can't b[i-1] and b[i] be compared for this?
+</p>
+<p>
+ 2. Why is it swap(j, j-1) instead of swap(b[j], b[j-1])?
+</p>
+<p>
+ Thanks!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   1. Note that j changes. If you used i, that would change the for-loop variable.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   2. It depends on how method swap is defined.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   But what you suggest wouldn't work. The values of the array elements would be passed as arguments. How could the method change the array?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

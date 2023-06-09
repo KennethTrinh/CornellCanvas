@@ -13,63 +13,61 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  What purpose does $V$ serve in the definition? Also, the definition says that $U$ must be open, yet in exercise $6.2.3$ some $U$s given are not open.
- </paragraph>
-</document>
+<p>
+ What purpose does $V$ serve in the definition? Also, the definition says that $U$ must be open, yet in exercise $6.2.3$ some $U$s given are not open.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bryan Lu (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  $k$-form fields are defined over open sets as in Definition 6.1.16, so $V$ is the open set that the $k$-form field $\varphi$ is defined over. Recall the common theme that smooth functions are often defined with open domains.
- </paragraph>
- <paragraph>
-  As for the $U$s defined in Exercise 6.2.3, for now I would suggest that you integrate over the interior of $U$ instead of $U$ itself, as this shouldn't change the $k$-dimensional measure of the region you're integrating over, but I would wait to see what Prof. Sjamaar says.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Reyer Sjamaar (admin)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Reyer Sjamaar (admin)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   Definition 6.2.1 is flawed.  $V$ is the domain of the $k$-form $\phi$ and $U$ is the domain of the map $\gamma\colon U\to V$.  As you rightly point out, $U$ is not open in many of the examples and exercises.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   So we must extend Def 6.2.1 to the case where $U$ is not necessarily open.  Two difficulties arise:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   1. What do we mean by a $C^1$-map $\gamma\colon U\to V$ if $U$ is not open?
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   2. What do we mean by
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $(**)\quad\int_\gamma\phi=\int_U\phi_{\gamma(\mathbf{u})}\bigl(D_1\gamma(\mathbf{u}),\dots,D_k\gamma(\mathbf{u})\bigr)\,|d\mathbf{u}|$?
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Answer:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   1. A map $\gamma\colon U\to V$ whose domain is an arbitrary subset $U\subseteq\mathbf{R}^k$ is called $C^1$ if there exist an open subset $O\subseteq\mathbf{R}^k$ and a $C^1$-map $\tilde{\gamma}\colon O\to V$ such that $U\subseteq O$ and $\gamma=\tilde\gamma$ on $U$.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   2. The identity (**) is the defininition of $\int_\gamma\phi$, where the right-hand side is to be interpreted as a Riemann integral.  In particular we require the function $\mathbf{u}\mapsto\boldsymbol{1}_U(\mathbf{u})\phi_{\gamma(\mathbf{u})}\bigl(D_1\gamma(\mathbf{u}),\dots,D_k\gamma(\mathbf{u})\bigr)$ to be Riemann integrable over $\mathbf{R}^k$.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Bryan Lu (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   $k$-form fields are defined over open sets as in Definition 6.1.16, so $V$ is the open set that the $k$-form field $\varphi$ is defined over. Recall the common theme that smooth functions are often defined with open domains.
+  </p>
+  <p>
+   As for the $U$s defined in Exercise 6.2.3, for now I would suggest that you integrate over the interior of $U$ instead of $U$ itself, as this shouldn't change the $k$-dimensional measure of the region you're integrating over, but I would wait to see what Prof. Sjamaar says.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

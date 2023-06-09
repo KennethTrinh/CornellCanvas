@@ -13,49 +13,47 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  This note has to do with calling one constructor from another, for example, in A1, calling the first constructor from the second constructor.
-  <break>
-  </break>
-  You don't have to read further if you are not calling one constructor from another.
-  <break>
-  </break>
-  <break>
-  </break>
-  <bold>
-   Rule
-  </bold>
-  : Within a constructor, a call on another constructor
-  <break>
-  </break>
-  cannot appear in any place except as the first statement.
-  <break>
-  </break>
-  <break>
-  </break>
-  This means that if you decide to have constructor 2 call constructor 1, the assert
-  <break>
-  </break>
-  statements for Preconditions cannot be at the beginning of constructor 2;
-  <break>
-  </break>
-  they must come after that call of constructor 1.
-  <break>
-  </break>
-  <break>
-  </break>
-  That is OK.
-  <break>
-  </break>
-  <break>
-  </break>
-  HOWEVER! Note that that if a call on constructor 1 does some assert-checking of Preconditions,
-  <break>
-  </break>
-  you don't have to repeat them in the rest of constructor 2.
- </paragraph>
-</document>
+<p>
+ This note has to do with calling one constructor from another, for example, in A1, calling the first constructor from the second constructor.
+ <break>
+ </break>
+ You don't have to read further if you are not calling one constructor from another.
+ <break>
+ </break>
+ <break>
+ </break>
+ <b>
+  Rule
+ </b>
+ : Within a constructor, a call on another constructor
+ <break>
+ </break>
+ cannot appear in any place except as the first statement.
+ <break>
+ </break>
+ <break>
+ </break>
+ This means that if you decide to have constructor 2 call constructor 1, the assert
+ <break>
+ </break>
+ statements for Preconditions cannot be at the beginning of constructor 2;
+ <break>
+ </break>
+ they must come after that call of constructor 1.
+ <break>
+ </break>
+ <break>
+ </break>
+ That is OK.
+ <break>
+ </break>
+ <break>
+ </break>
+ HOWEVER! Note that that if a call on constructor 1 does some assert-checking of Preconditions,
+ <break>
+ </break>
+ you don't have to repeat them in the rest of constructor 2.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>

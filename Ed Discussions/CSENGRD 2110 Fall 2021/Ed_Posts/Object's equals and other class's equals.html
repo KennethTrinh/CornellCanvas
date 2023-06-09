@@ -13,46 +13,38 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Quoting Java Hypertext:
- </paragraph>
- <paragraph>
-  "Superest class Object has a function equals. Let b and c be (pointers to) objects of class Object. Then, b.equals(c) is true if and only if b == c is true —b and c point to the same object."
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  In the case of other classes if equals is overridden we don't care whether or not the objects point to the same memory location, only that they contain the same values?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  In this example below, aren't we using the equals of Object since new Integer(3) was casted to an Object? This one returns true, but is it true because we're referring to the same objects in memory or is it true because the values are the same?
- </paragraph>
- <paragraph>
-  ((Object)(new Integer(3))).equals(new Integer(1) + 2)
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Quoting Java Hypertext:
+</p>
+<p>
+ "Superest class Object has a function equals. Let b and c be (pointers to) objects of class Object. Then, b.equals(c) is true if and only if b == c is true —b and c point to the same object."
+</p>
+<p>
+ In the case of other classes if equals is overridden we don't care whether or not the objects point to the same memory location, only that they contain the same values?
+</p>
+<p>
+ In this example below, aren't we using the equals of Object since new Integer(3) was casted to an Object? This one returns true, but is it true because we're referring to the same objects in memory or is it true because the values are the same?
+</p>
+<p>
+ ((Object)(new Integer(3))).equals(new Integer(1) + 2)
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   It all depends on HOW equals is defined in a class --what its specification is.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Go look at the specification of equals in class Integer. You can find it in the API documentation.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

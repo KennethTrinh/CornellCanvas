@@ -13,46 +13,44 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="319.34381551362685" src="https://static.us.edusercontent.com/files/3D2EeTw1PknS19uMIQd5Cifg" width="658"/>
- </figure>
- <paragraph>
-  Why is it that for C, we need this for the variable we want to assign? When having the same names, will this. ensure that it's the variables in the class being reassigned? Thank you!!
- </paragraph>
-</document>
+<figure>
+ <image height="319.34381551362685" src="https://static.us.edusercontent.com/files/3D2EeTw1PknS19uMIQd5Cifg" width="658"/>
+</figure>
+<p>
+ Why is it that for C, we need this for the variable we want to assign? When having the same names, will this. ensure that it's the variables in the class being reassigned? Thank you!!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Suppose one wrote the first assignment like this:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   name= name;
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   By the inside-out rule, both references to name refer to parameter name; all this does is get the value in parameter name and store it back in name.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You must remember that   this    evaluated to a pointer to the object in which it appears.
   <break>
   </break>
   Therefore, this.name refers to field name of the object. So
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   this.name= name;
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   evaluates the parameter and stores its value in the field.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

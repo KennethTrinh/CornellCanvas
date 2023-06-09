@@ -13,40 +13,36 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Shall we add an IllegalArgumentException if it is not indicated?
- </paragraph>
- <paragraph>
-  For example, for todo3, what to do if p is null? Return false or raise an IllegalArgumentException?
- </paragraph>
- <paragraph>
-  For todo4, what to do if p is null? Return -1 or raise an IllegalArgumentException?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Shall we add an IllegalArgumentException if it is not indicated?
+</p>
+<p>
+ For example, for todo3, what to do if p is null? Return false or raise an IllegalArgumentException?
+</p>
+<p>
+ For todo4, what to do if p is null? Return -1 or raise an IllegalArgumentException?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Your methods should probably not throw an
   <code>
    IllegalArgumentException
   </code>
   unless one of their inputs violates a precondition or it's explicitly part of the method specification.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The comment for TODO 4 suggests that null persons are considered to not be in the tree.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,40 +13,38 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="351" src="https://static.us.edusercontent.com/files/keQ4QtxOTTy9WgAfoi0K2N8f" width="568"/>
- </figure>
- <paragraph>
-  I'm a little confused on the process for forward selection.
- </paragraph>
- <paragraph>
-  When we have a set of available features and set of chosen features, do we then iterate through the whole set of available features and come up with new hypotheses (where each new hypothesis has one new feature from the set of available features), and then choose the best hypothesis (and remove the feature we added to the best hypothesis from the set of available features), and then repeat this whole process?
- </paragraph>
- <paragraph>
-  I'm confused, though, because if we just keep repeating this process until the set of available features is empty, wouldn't we eventually end up with a hypothesis that uses all the features? And wouldn't that defeat the purpose of using forward selection for feature selection?
- </paragraph>
- <paragraph>
-  --------------
- </paragraph>
- <paragraph>
-  Update: Oh wait, is it that, we iterate through the set of available features, and then we keep adding the feature that gives the best hypothesis one-by-one, so then, at the end, we have many different models (each with a different number of features, but where each model is adding on to the previous one)? And then we compare the performance of each of these models on the validation set and pick the optimal one?
- </paragraph>
-</document>
+<figure>
+ <image height="351" src="https://static.us.edusercontent.com/files/keQ4QtxOTTy9WgAfoi0K2N8f" width="568"/>
+</figure>
+<p>
+ I'm a little confused on the process for forward selection.
+</p>
+<p>
+ When we have a set of available features and set of chosen features, do we then iterate through the whole set of available features and come up with new hypotheses (where each new hypothesis has one new feature from the set of available features), and then choose the best hypothesis (and remove the feature we added to the best hypothesis from the set of available features), and then repeat this whole process?
+</p>
+<p>
+ I'm confused, though, because if we just keep repeating this process until the set of available features is empty, wouldn't we eventually end up with a hypothesis that uses all the features? And wouldn't that defeat the purpose of using forward selection for feature selection?
+</p>
+<p>
+ --------------
+</p>
+<p>
+ Update: Oh wait, is it that, we iterate through the set of available features, and then we keep adding the feature that gives the best hypothesis one-by-one, so then, at the end, we have many different models (each with a different number of features, but where each model is adding on to the previous one)? And then we compare the performance of each of these models on the validation set and pick the optimal one?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Noor (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Yes, your update insight is correct–we add one feature at a time and train on the training set, but the actual decision is made based on validation performance.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,151 +13,143 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  This note will contain information on assignment A7, in which McDiver finds the ring, picks it up,
+<p>
+ This note will contain information on assignment A7, in which McDiver finds the ring, picks it up,
+ <break>
+ </break>
+ and flees as quickly as possible, picking up as many coins as possible.
+</p>
+<p>
+ <b>
+  0. The AUTOHELPER WILL NOT BE USED FOR THIS ASSIGNMENT
+ </b>
+ .
+</p>
+<p>
+ <b>
+  1. Advice on the seek phase
+ </b>
+ . See Ed Discussion note #1122.
+</p>
+<p>
+ <b>
+  2. Advice on the scram phas
+ </b>
+ e. See Ed Discussion note #1123.
+</p>
+<p>
+ <b>
+  3. Scores. Everyone can post their scores on separate seeds and on average run in headless mode:
+ </b>
+ https://docs.google.com/spreadsheets/d/10nPHhTJRDitNWLI4xxaPl5RiTkOIl7H53M6HHeOcLwc/edit#gid=0
+</p>
+<p>
+ <b>
+  4. What you can and should do in writing your program
+ </b>
+ . See Below.
+</p>
+<p>
+ <b>
+  5. Special sewer systems --check them out.
+ </b>
+ See Below.
+</p>
+<p>
+ <b>
+  6. Calculating the time scram takes
+ </b>
+ . See Below.
+</p>
+<p>
+ <b>
+  ANSWERS
+ </b>
+</p>
+<p>
+ <b>
+  4. What you cannot and cannot do in writing your program
+ </b>
+ .
+</p>
+<p>
+ Most but all of thess points are discussed in the handout. But please read carefully anyway to help you remember the points.
+</p>
+<p>
+ <b>
+  4A. Do NOT use static fields
+ </b>
+ (unless they are constants, which never change). Our grading program could run several sewer systems simultaneously, using different threads, and having a static field that can change will be disastrous.
+</p>
+<p>
+ <b>
+  4B. Declare as many instance fields as you want. Write as many methods, static or non-static as you wish.
   <break>
   </break>
-  and flees as quickly as possible, picking up as many coins as possible.
- </paragraph>
- <paragraph>
-  <bold>
-   0. The AUTOHELPER WILL NOT BE USED FOR THIS ASSIGNMENT
-  </bold>
-  .
- </paragraph>
- <paragraph>
-  <bold>
-   1. Advice on the seek phase
-  </bold>
-  . See Ed Discussion note #1122.
- </paragraph>
- <paragraph>
-  <bold>
-   2. Advice on the scram phas
-  </bold>
-  e. See Ed Discussion note #1123.
- </paragraph>
- <paragraph>
-  <bold>
-   3. Scores. Everyone can post their scores on separate seeds and on average run in headless mode:
-  </bold>
-  https://docs.google.com/spreadsheets/d/10nPHhTJRDitNWLI4xxaPl5RiTkOIl7H53M6HHeOcLwc/edit#gid=0
- </paragraph>
- <paragraph>
-  <bold>
-   4. What you can and should do in writing your program
-  </bold>
-  . See Below.
- </paragraph>
- <paragraph>
-  <bold>
-   5. Special sewer systems --check them out.
-  </bold>
-  See Below.
- </paragraph>
- <paragraph>
-  <bold>
-   6. Calculating the time scram takes
-  </bold>
-  . See Below.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  <bold>
-   ANSWERS
-  </bold>
- </paragraph>
- <paragraph>
-  <bold>
-   4. What you cannot and cannot do in writing your program
-  </bold>
-  .
- </paragraph>
- <paragraph>
-  Most but all of thess points are discussed in the handout. But please read carefully anyway to help you remember the points.
- </paragraph>
- <paragraph>
-  <bold>
-   4A. Do NOT use static fields
-  </bold>
-  (unless they are constants, which never change). Our grading program could run several sewer systems simultaneously, using different threads, and having a static field that can change will be disastrous.
- </paragraph>
- <paragraph>
-  <bold>
-   4B. Declare as many instance fields as you want. Write as many methods, static or non-static as you wish.
-   <break>
-   </break>
-  </bold>
-  Comment fields appropriately and specifying method carefully. The staff is instructed not to help with fields or methods that are not appropriately defined (specified).
- </paragraph>
- <paragraph>
-  <bold>
-   4C. Import any classes and interfaces that you need from the Java API.
-  </bold>
-  Don't import other things that you  may find on the net because our grading program may not know about them.
- </paragraph>
- <paragraph>
-  <bold>
-   4D. We told you not to put all your code in the two main methods, seek and scram, for the following reason
-  </bold>
-  .
-  <break>
-  </break>
-  For maximum flexibility, write a dfs walk (or code to scram) in a separate method. Then, call that method from seek (or scram).
- </paragraph>
- <paragraph>
-  Why?
- </paragraph>
- <paragraph>
-  First, you may need some initialization of fields or other things to record the actual dfs walk takes place.  This is rarely done properly when trying to put everything in find, making it recursive.
- </paragraph>
- <paragraph>
-  Second, you may be writing two dfs walks. The first is the basic, the second is an optimized one.
- </paragraph>
- <paragraph>
-  If you don't get the optimized one working properly, just before submitting, fix seek to call the first one, which works. YOU SUBMISSION SHOULD ALWAYS SUCCEED.
- </paragraph>
- <paragraph>
-  Always program in a way that provides yourself with maximum flexibility, especially in a program like this, where you may be trying several different strategies.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  <bold>
-   5. Special sewer systems --check them out.
-  </bold>
- </paragraph>
- <paragraph>
-  A. No backtracking to find the ring (no optimization): -280019746129361794
- </paragraph>
- <paragraph>
-  B. Backtracking to find the ring (no optimization): 1908492650781828577
- </paragraph>
- <paragraph>
-  C. The sewer system built with this seed has no reachable coins: -3026730162232494481
- </paragraph>
- <paragraph>
-  D. The only coin is on the tile with the ring, and it is picked up automatically as soon as fleeing starts: -4004310660161599891
- </paragraph>
- <paragraph>
-  E. A special one: 8035820871068432943
- </paragraph>
- <paragraph>
-  F. A student came across this seed, where scramming is interesting: 2805343804353418701
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  <bold>
-   6. Calculating the time scram takes.
-  </bold>
- </paragraph>
- <paragraph>
-  You may want to know how long the scram phase takes. Simple instructions for this can be found by typing     elapsed      into the JavaHyperText Filter Field.
- </paragraph>
-</document>
+ </b>
+ Comment fields appropriately and specifying method carefully. The staff is instructed not to help with fields or methods that are not appropriately defined (specified).
+</p>
+<p>
+ <b>
+  4C. Import any classes and interfaces that you need from the Java API.
+ </b>
+ Don't import other things that you  may find on the net because our grading program may not know about them.
+</p>
+<p>
+ <b>
+  4D. We told you not to put all your code in the two main methods, seek and scram, for the following reason
+ </b>
+ .
+ <break>
+ </break>
+ For maximum flexibility, write a dfs walk (or code to scram) in a separate method. Then, call that method from seek (or scram).
+</p>
+<p>
+ Why?
+</p>
+<p>
+ First, you may need some initialization of fields or other things to record the actual dfs walk takes place.  This is rarely done properly when trying to put everything in find, making it recursive.
+</p>
+<p>
+ Second, you may be writing two dfs walks. The first is the basic, the second is an optimized one.
+</p>
+<p>
+ If you don't get the optimized one working properly, just before submitting, fix seek to call the first one, which works. YOU SUBMISSION SHOULD ALWAYS SUCCEED.
+</p>
+<p>
+ Always program in a way that provides yourself with maximum flexibility, especially in a program like this, where you may be trying several different strategies.
+</p>
+<p>
+ <b>
+  5. Special sewer systems --check them out.
+ </b>
+</p>
+<p>
+ A. No backtracking to find the ring (no optimization): -280019746129361794
+</p>
+<p>
+ B. Backtracking to find the ring (no optimization): 1908492650781828577
+</p>
+<p>
+ C. The sewer system built with this seed has no reachable coins: -3026730162232494481
+</p>
+<p>
+ D. The only coin is on the tile with the ring, and it is picked up automatically as soon as fleeing starts: -4004310660161599891
+</p>
+<p>
+ E. A special one: 8035820871068432943
+</p>
+<p>
+ F. A student came across this seed, where scramming is interesting: 2805343804353418701
+</p>
+<p>
+ <b>
+  6. Calculating the time scram takes.
+ </b>
+</p>
+<p>
+ You may want to know how long the scram phase takes. Simple instructions for this can be found by typing     elapsed      into the JavaHyperText Filter Field.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>

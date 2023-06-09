@@ -13,44 +13,44 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <figure>
-  <image height="487" src="https://static.us.edusercontent.com/files/59v1Hu7kLUZEHKz90VSToA2M" width="618"/>
- </figure>
- <paragraph>
-  Is there somewhere I can find the derivation for the constraint that the sum of (y_i*alpha_i) has to equal 0? I understand that this comes from accounting for nonhomogeneous linear classifiers, but I'm not sure how exactly we got this constraint.
- </paragraph>
-</document>
+<figure>
+ <image height="487" src="https://static.us.edusercontent.com/files/59v1Hu7kLUZEHKz90VSToA2M" width="618"/>
+</figure>
+<p>
+ Is there somewhere I can find the derivation for the constraint that the sum of (y_i*alpha_i) has to equal 0? I understand that this comes from accounting for nonhomogeneous linear classifiers, but I'm not sure how exactly we got this constraint.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Noor (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I don't think there's a derivation on the slides; I think a good way to think about it though is that alpha_i corresponds to an influence, or "force" as it's described later of point x_i on the decision boundary; basically what this is encoding is that the positive and negative points have the same total amount of influence on the decision boundary.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Thorsten Joachims (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Take a look at section 12.3 of
-  <link href="https://mml-book.github.io/book/mml-book.pdf"/>
-  https://mml-book.github.io/book/mml-book.pdf. It goes through the derivation of the dual for the non-homogeneous case.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Thorsten Joachims (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Take a look at section 12.3 of
+   <a href="https://mml-book.github.io/book/mml-book.pdf">
+    https://mml-book.github.io/book/mml-book.pdf
+   </a>
+   . It goes through the derivation of the dual for the non-homogeneous case.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

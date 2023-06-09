@@ -13,95 +13,87 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="402.458432304038" src="https://static.us.edusercontent.com/files/VOwJKNUjlUhCIhO9iuIIrNYt" width="658"/>
- </figure>
- <paragraph>
-  Why do we want to check that the left node is not null and the not isBST on the left node?
- </paragraph>
- <paragraph>
-  Why are the checks for the right node slightly different?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Thanks
- </paragraph>
-</document>
+<figure>
+ <image height="402.458432304038" src="https://static.us.edusercontent.com/files/VOwJKNUjlUhCIhO9iuIIrNYt" width="658"/>
+</figure>
+<p>
+ Why do we want to check that the left node is not null and the not isBST on the left node?
+</p>
+<p>
+ Why are the checks for the right node slightly different?
+</p>
+<p>
+ Thanks
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The second if-statement  returns false if is it known that the left subtree is not a BST.
-  <break>
-  </break>
-  That's the case if t.left is not null and the calls isBST(...) returns false.
- </paragraph>
- <paragraph>
-  Therefore, when it comes time to test the right subtree. We know the tree is a BST if the right subtree is (or if it is null).
- </paragraph>
- <paragraph>
-  Therefore return true (in the last if-statement) if the right subtree is null or it is a BST ...
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Ok. So if the left subtree isn't null and is a BST, then it's okay for the right subtree is null or a subtree with some nodes?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Look it through and convince yourself that it is correct. If you see a mistake, let us know.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Is it because we need a way to account for when we have subtree that's a single node, meaning the left subtree is null so the second if-statement doesn't run and the right subtree is null?
-  <break>
-  </break>
-  <break>
-  </break>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Is it because we need a way to account for when we have subtree that's a single node, meaning the left subtree is null so the second if-statement doesn't run and the right subtree is null?
+   <break>
+   </break>
+   <break>
+   </break>
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   The second if-statement  returns false if is it known that the left subtree is not a BST.
+   <break>
+   </break>
+   That's the case if t.left is not null and the calls isBST(...) returns false.
+  </p>
+  <p>
+   Therefore, when it comes time to test the right subtree. We know the tree is a BST if the right subtree is (or if it is null).
+  </p>
+  <p>
+   Therefore return true (in the last if-statement) if the right subtree is null or it is a BST ...
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Ok. So if the left subtree isn't null and is a BST, then it's okay for the right subtree is null or a subtree with some nodes?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

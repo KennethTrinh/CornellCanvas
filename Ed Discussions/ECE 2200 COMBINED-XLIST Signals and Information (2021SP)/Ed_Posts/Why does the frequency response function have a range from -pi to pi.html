@@ -13,95 +13,87 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  The reasoning in my head is a little fuzzy- is it because the values reflected around -pi/pi are all equal? The math behind it makes sense, but why is the frequency response 2pi periodic in the first place?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ The reasoning in my head is a little fuzzy- is it because the values reflected around -pi/pi are all equal? The math behind it makes sense, but why is the frequency response 2pi periodic in the first place?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   $\widehat{H} ( \widehat{\omega} )$ is defined for all $\widehat{\omega}$, but because it turns out to be a $2 \pi$-periodic function of $\widehat{\omega}$, people customarily graph it only on an interval of length $2 \pi$, which determines what it looks like for all $\widehat{\omega}$ by periodicity. $[ - \pi , \pi ]$ is the usual interval people use, although in a sense the DFT uses $[ 0 , 2 \pi ]$.
   <break>
   </break>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Why is the frequency response periodic though? Is it because signals outside the [-pi,pi] range are aliases?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Just look at the formula for it in terms of impulse response, namely
- </paragraph>
- <paragraph>
-  $\widehat{H} ( \widehat{\omega} ) = \sum _ {n = - \infty} ^ \infty h [ n ] e ^ {- j n \widehat{\omega}}$,
- </paragraph>
- <paragraph>
-  and you see that every term in the sum is $2 \pi$-periodic.  BTW for a causal FIR system the sum is finite --- goes fron $n = 0$ to $n = M$ --- and the same reasoning applies.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Raleigh Clemens (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Sorry if this is obvious but is it because any $e^{jkw}$ is $2\pi$-periodic for $k$ as an integer? Does this same logic also apply if $k$ is not an integer?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes to the first question, no to the second.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Why is the frequency response periodic though? Is it because signals outside the [-pi,pi] range are aliases?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: David Delchamps (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Just look at the formula for it in terms of impulse response, namely
+   </p>
+   <p>
+    $\widehat{H} ( \widehat{\omega} ) = \sum _ {n = - \infty} ^ \infty h [ n ] e ^ {- j n \widehat{\omega}}$,
+   </p>
+   <p>
+    and you see that every term in the sum is $2 \pi$-periodic.  BTW for a causal FIR system the sum is finite --- goes fron $n = 0$ to $n = M$ --- and the same reasoning applies.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Raleigh Clemens (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Sorry if this is obvious but is it because any $e^{jkw}$ is $2\pi$-periodic for $k$ as an integer? Does this same logic also apply if $k$ is not an integer?
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: David Delchamps (admin)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      Yes to the first question, no to the second.
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

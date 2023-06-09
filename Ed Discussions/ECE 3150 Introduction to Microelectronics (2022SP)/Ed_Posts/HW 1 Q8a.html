@@ -13,110 +13,108 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  Are Is1 and Is2 equal? They are both set equal to I0. Also, if those are equal, I assume Vd1 and Vd2 are also equal then making them identical diodes. Is that correct?
- </paragraph>
-</document>
+<p>
+ Are Is1 and Is2 equal? They are both set equal to I0. Also, if those are equal, I assume Vd1 and Vd2 are also equal then making them identical diodes. Is that correct?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   They are not equal. They mean that the models are:
- </paragraph>
+ </p>
  <math>
   I_{D1}=I_{s1}\left[\exp\left(\frac{V_{D1}}{V_T}\right)-1\right]
  </math>
  <math>
   I_{D2}=I_{s2}\left[\exp\left(\frac{V_{D2}}{V_T}\right)-1\right]
  </math>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Sergio Diaz (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Are the voltages equal though? I created the circuit in LT spice and it seems like the voltage of each diode is V/2.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kirsten Scheller (staff)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="1.0">
- <paragraph>
-  For the purpose of this question, where the goal is to write the full equation for each diode voltage, they are not equal. You can write an equation for Vg in terms of Vd1 and Vd2. Then you can solve for either one first, and when you plug in to calculate the other, you will see they are not the same final equation.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Sergio Diaz (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  I'm assuming you're talking about using KVL. That makes sense, and I'm assuming we're also supposed to use the current to help us find Vd1 and Vd2.
- </paragraph>
- <paragraph>
-  I'm confused on how we're supposed to find i for this problem, since above it says the diode currents aren't equal. How can there be a singular i for the entire circuit but then the diode currents are different? Maybe my mistake is still thinking of this as a linear circuit.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kirsten Scheller (staff)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="1.0">
- <paragraph>
-  Yes, KVL can help find the diode voltages.
- </paragraph>
- <paragraph>
-  The currents going through the diode (little i) are the same because they are in the same current branch. What is different is the saturation current (big I) used in the diode model equation. Since you know the same current i is going through both diodes, you can solve for i by writing the diode current equation for one diode. Then, you would have to plug in your equations for Vd1 and Vd2 into the i equation. You can simplify this combined equation to get i in terms of Vg, Vt, Is1 and Is2
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Sergio Diaz (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Makes a lot more sense, thank you so much!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Sergio Diaz (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Are the voltages equal though? I created the circuit in LT spice and it seems like the voltage of each diode is V/2.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Kirsten Scheller (staff)
+   </h3>
+   <h3>
+    Vote Count: 2
+   </h3>
+   <p>
+    For the purpose of this question, where the goal is to write the full equation for each diode voltage, they are not equal. You can write an equation for Vg in terms of Vd1 and Vd2. Then you can solve for either one first, and when you plug in to calculate the other, you will see they are not the same final equation.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Sergio Diaz (student)
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     I'm assuming you're talking about using KVL. That makes sense, and I'm assuming we're also supposed to use the current to help us find Vd1 and Vd2.
+    </p>
+    <p>
+     I'm confused on how we're supposed to find i for this problem, since above it says the diode currents aren't equal. How can there be a singular i for the entire circuit but then the diode currents are different? Maybe my mistake is still thinking of this as a linear circuit.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Kirsten Scheller (staff)
+     </h3>
+     <h3>
+      Vote Count: 2
+     </h3>
+     <p>
+      Yes, KVL can help find the diode voltages.
+     </p>
+     <p>
+      The currents going through the diode (little i) are the same because they are in the same current branch. What is different is the saturation current (big I) used in the diode model equation. Since you know the same current i is going through both diodes, you can solve for i by writing the diode current equation for one diode. Then, you would have to plug in your equations for Vd1 and Vd2 into the i equation. You can simplify this combined equation to get i in terms of Vg, Vt, Is1 and Is2
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 12em;">
+      <h3>
+       Author: Sergio Diaz (student)
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       Makes a lot more sense, thank you so much!
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

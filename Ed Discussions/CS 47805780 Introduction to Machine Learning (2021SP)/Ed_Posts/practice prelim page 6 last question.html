@@ -13,85 +13,84 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  We are given f(x,paramater) as a distribution of picking xi from the population, does this f() correspond to p(y|x,w)? So is it saying that this f() is essentially replacing the sigmoid function in MLE computation?
- </paragraph>
- <paragraph>
-  Also, I'm still confused as to what exp(w dot x) means in the function. Is this some computation that we must make or does it carry more of an intuitive sense?
- </paragraph>
-</document>
-<h3>
- Author: Alexandra Roberts (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ We are given f(x,paramater) as a distribution of picking xi from the population, does this f() correspond to p(y|x,w)? So is it saying that this f() is essentially replacing the sigmoid function in MLE computation?
+</p>
+<p>
+ Also, I'm still confused as to what exp(w dot x) means in the function. Is this some computation that we must make or does it carry more of an intuitive sense?
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Alexandra Roberts (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Here,
-  <italic>
+  <i>
    f
-  </italic>
+  </i>
   is the probability distribution function for an
-  <link href="https://en.wikipedia.org/wiki/Exponential_distribution"/>
-  exponential distribution.
- </paragraph>
- <paragraph>
+  <a href="https://en.wikipedia.org/wiki/Exponential_distribution">
+   exponential distribution.
+  </a>
+ </p>
+ <p>
   The conditional distribution for the observed
-  <italic>
+  <i>
    n
-  </italic>
+  </i>
   draws is given by
- </paragraph>
+ </p>
  <math>
   f\left(x_1,x_2,...,x_n\ |\ \lambda\right)
  </math>
- <paragraph>
+ <p>
   If the distribution is assumed to be
-  <italic>
+  <i>
    iid
-  </italic>
+  </i>
   , the likelihood would be
- </paragraph>
+ </p>
  <math>
   f\left(x_1,x_2,...,x_n\ |\ \lambda\right)=\Pi_{i=1}^nf\left(x_i\ |\ \lambda\right)
  </math>
- <paragraph>
+ <p>
   And the given probability distribution function can be substituted and manipulated to give the maximum likelihood estimate, similar to the problem on page 12.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  so just to clarify, how is sigmoid function applied to the distribution of f in this case? or there's no need to apply sigm because the likelihood function is alrady provided?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   so just to clarify, how is sigmoid function applied to the distribution of f in this case? or there's no need to apply sigm because the likelihood function is alrady provided?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Noor (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Noor (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   f is a probability mass function, i.e. given lambda and x, what is the probability that the random variable X comes out to x. The exp(-lambda dot x) term is such that, as x increases the probability of that x being chosen gets exponentially smaller, and the lambda controls how quickly it decays. Since the fs are already probabilities, a sigmoid would not be beneficial.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

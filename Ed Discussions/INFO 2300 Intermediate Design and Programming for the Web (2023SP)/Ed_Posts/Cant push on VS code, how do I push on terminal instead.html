@@ -13,130 +13,126 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hey, when I try to push my code to git I get this message. "
- </paragraph>
- <blockquote>
-  git pull --tags origin main git@github.coecis.cornell.edu: Permission denied (publickey). fatal: Could not read from remote repository.
- </blockquote>
- <paragraph>
-  Please make sure you have the correct access rights and the repository exists."
- </paragraph>
- <paragraph>
-  I had this issue in my lab as well and my TA helped me push to git on terminal. I'm not sure how to fix this issue on with my ssh key, and the deadline is coming up. How can I commit and push my work on terminal instead?
- </paragraph>
-</document>
+<p>
+ Hey, when I try to push my code to git I get this message. "
+</p>
+<blockquote>
+ git pull --tags origin main git@github.coecis.cornell.edu: Permission denied (publickey). fatal: Could not read from remote repository.
+</blockquote>
+<p>
+ Please make sure you have the correct access rights and the repository exists."
+</p>
+<p>
+ I had this issue in my lab as well and my TA helped me push to git on terminal. I'm not sure how to fix this issue on with my ssh key, and the deadline is coming up. How can I commit and push my work on terminal instead?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Ming DeMers (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
-  To use the terminal, you do similar steps:
- </paragraph>
- <blockquote>
-  <code>
-   git add .
-  </code>
-  to stage all the files
- </blockquote>
- <blockquote>
-  <code>
-   git commit -m "your msg"
-  </code>
-  to make a commit, and where the
-  <code>
-   your msg
-  </code>
-  is how you want to name the commit
- </blockquote>
- <blockquote>
-  <code>
-   git push
-  </code>
-  to push to the remote repo
- </blockquote>
- <paragraph>
-  However, you might just get the same issue with access rights. Try to redo the ssh key steps in the initial lab setup.
- </paragraph>
- <paragraph>
-  Also, keep in mind the stuff we do in class
-  <bold>
-   can't
-  </bold>
-  be pushed - only your labs and projects.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Kim (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Good answer from Ming, but just to add:
- </paragraph>
- <paragraph>
-  If you find that this issue occurs only on VSCode but not on the command line (Terminal), then you may want to try following the steps from the beginning of the semester to ensure that you have the correct ssh key configured in your VSCode settings.
- </paragraph>
- <paragraph>
-  Usually I've found that people with this issue have more than one ssh key on their systems, with one that they previously used for regular ssh access (e.g. to github.com), and another one they created for
-  <bold>
-   this class
-  </bold>
-  (for github.coecis.cornell.edu). Because of this, you may have only registered the
-  <bold>
-   first
-  </bold>
-  key on VSCode, when you actually needed to register the
-  <bold>
-   second
-  </bold>
-  one.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kyle J. Harms (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kyle J. Harms (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   We want to help you, but we're having a hard time figuring out what's going on with your code.
-  <bold>
+  <b>
    Please visit office hours or seek help from a peer.
-  </bold>
- </paragraph>
- <paragraph>
+  </b>
+ </p>
+ <p>
   We know it's frustrating that we weren't able to help you here.
-  <bold>
+  <b>
    Please know that we are better able to help you in office hours because
-   <italic>
+   <i>
     together
-   </italic>
+   </i>
    we can troubleshoot your code.
-  </bold>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+  </b>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Kim (staff)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Good answer from Ming, but just to add:
+  </p>
+  <p>
+   If you find that this issue occurs only on VSCode but not on the command line (Terminal), then you may want to try following the steps from the beginning of the semester to ensure that you have the correct ssh key configured in your VSCode settings.
+  </p>
+  <p>
+   Usually I've found that people with this issue have more than one ssh key on their systems, with one that they previously used for regular ssh access (e.g. to github.com), and another one they created for
+   <b>
+    this class
+   </b>
+   (for github.coecis.cornell.edu). Because of this, you may have only registered the
+   <b>
+    first
+   </b>
+   key on VSCode, when you actually needed to register the
+   <b>
+    second
+   </b>
+   one.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Ming DeMers (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <h3>
+    ENDORSED
+   </h3>
+   <p>
+    To use the terminal, you do similar steps:
+   </p>
+   <blockquote>
+    <code>
+     git add .
+    </code>
+    to stage all the files
+   </blockquote>
+   <blockquote>
+    <code>
+     git commit -m "your msg"
+    </code>
+    to make a commit, and where the
+    <code>
+     your msg
+    </code>
+    is how you want to name the commit
+   </blockquote>
+   <blockquote>
+    <code>
+     git push
+    </code>
+    to push to the remote repo
+   </blockquote>
+   <p>
+    However, you might just get the same issue with access rights. Try to redo the ssh key steps in the initial lab setup.
+   </p>
+   <p>
+    Also, keep in mind the stuff we do in class
+    <b>
+     can't
+    </b>
+    be pushed - only your labs and projects.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

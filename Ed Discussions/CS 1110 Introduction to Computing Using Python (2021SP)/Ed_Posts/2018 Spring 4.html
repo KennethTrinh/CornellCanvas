@@ -13,31 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <callout type="info">
-  Put in your question title the year, semester, and question.  Ideal would also be to include the topic.   Example: 2018SP Q2(b) - call frames
- </callout>
- <callout type="info">
-  Include a screenshot of the question, so readers/answerers don't have to go find the relevant pdf.
- </callout>
- <paragraph>
-  When I tried to run this, it prints None as well, is that okay? I was testing my code and it wasn't returning the same output but then I realized my code was the same as the solution. So I wanted to check. Thank you
- </paragraph>
- <figure>
-  <image height="379" src="https://static.us.edusercontent.com/files/8J8QMFUYS4TUTZxsxuerW8P8" width="391"/>
- </figure>
-</document>
+<callout type="info">
+ Put in your question title the year, semester, and question.  Ideal would also be to include the topic.   Example: 2018SP Q2(b) - call frames
+</callout>
+<callout type="info">
+ Include a screenshot of the question, so readers/answerers don't have to go find the relevant pdf.
+</callout>
+<p>
+ When I tried to run this, it prints None as well, is that okay? I was testing my code and it wasn't returning the same output but then I realized my code was the same as the solution. So I wanted to check. Thank you
+</p>
+<figure>
+ <image height="379" src="https://static.us.edusercontent.com/files/8J8QMFUYS4TUTZxsxuerW8P8" width="391"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Hm. There shouldn't be a print of None before count_from shouldn't ever be None.
   <break>
   </break>
@@ -53,7 +51,7 @@
   </break>
   <break>
   </break>
- </paragraph>
+ </p>
  <snippet language="py" line-numbers="true" runnable="true">
   <snippet-file id="code">
    def f(x,y):
@@ -65,52 +63,52 @@ print("...")
 f(21, 7)
   </snippet-file>
  </snippet>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I think I realized my mistake after seeing your code. I wrote print(f(16, 5) instead of f(16,5). When I changed that it fixed it. But I am still unsure why it prints None.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Ah!  Because f(16,5) returns None! (since it doesn't have a return statement)
-  <break>
-  </break>
-  So, print(f(16,5)) is equivalent to print(None), and Python does what you tell it (which isn't always what you meant!)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  I see, thank you so much!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I think I realized my mistake after seeing your code. I wrote print(f(16, 5) instead of f(16,5). When I changed that it fixed it. But I am still unsure why it prints None.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Ah!  Because f(16,5) returns None! (since it doesn't have a return statement)
+    <break>
+    </break>
+    So, print(f(16,5)) is equivalent to print(None), and Python does what you tell it (which isn't always what you meant!)
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     I see, thank you so much!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

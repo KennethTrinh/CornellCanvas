@@ -13,79 +13,71 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="18.63189269746647" src="https://static.us.edusercontent.com/files/oh5vtEWsaWY184rgUrTrG9UG" width="658"/>
- </figure>
- <paragraph>
-  I'm getting the above error when I run the momentum function after implementing backwards pass. This triggers on my implementation of act_func_der in ReLu. I believe this is occurring because it is trying to compare the entire array to a single value instead of the array element wise. I noticed that this would be an issue so I set it up with np.greater_than because it should enforce element wise comparison, but I still get the above error. My get_activation_func passes the test cases.
- </paragraph>
- <paragraph>
-  Any idea why this is happening or what I can do to get it to run the function element wise as opposed to over the entire list?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<figure>
+ <image height="18.63189269746647" src="https://static.us.edusercontent.com/files/oh5vtEWsaWY184rgUrTrG9UG" width="658"/>
+</figure>
+<p>
+ I'm getting the above error when I run the momentum function after implementing backwards pass. This triggers on my implementation of act_func_der in ReLu. I believe this is occurring because it is trying to compare the entire array to a single value instead of the array element wise. I noticed that this would be an issue so I set it up with np.greater_than because it should enforce element wise comparison, but I still get the above error. My get_activation_func passes the test cases.
+</p>
+<p>
+ Any idea why this is happening or what I can do to get it to run the function element wise as opposed to over the entire list?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Mahika Phutane (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
-  I used np.maximum() and it seemed to work!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jack Defay (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Turns out the problem was using ternaries on a list, python doesn't interpret that element wise. However it does interpret normal conditionals in that way so there was no need for a ternary and it works now.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Nina Xie (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I also have the same problem when using ternary in lambda function. Could you elaborate on how you fixed it? How did you change from ternary to conditionals there? Thanks
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Bingjie Huang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bingjie Huang (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I used np.where() for the derivative of activation_f
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Mahika Phutane (student)
+  </h3>
+  <h3>
+   Vote Count: 2
+  </h3>
+  <p>
+   I used np.maximum() and it seemed to work!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Jack Defay (student)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Turns out the problem was using ternaries on a list, python doesn't interpret that element wise. However it does interpret normal conditionals in that way so there was no need for a ternary and it works now.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Nina Xie (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     I also have the same problem when using ternary in lambda function. Could you elaborate on how you fixed it? How did you change from ternary to conditionals there? Thanks
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

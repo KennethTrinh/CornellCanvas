@@ -13,119 +13,113 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  Q1: To find w and b so that hyperplane has a functional margin equal to 1,  Could I pick any point to scale w?
- </paragraph>
- <paragraph>
-  Q2: I think I do not need to scale b, since if I scale b, the hyperplane will shift up or down resulting in misclassification. Am I correct?
- </paragraph>
-</document>
-<h3>
- Author: Ignacio Arevalo (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ Q1: To find w and b so that hyperplane has a functional margin equal to 1,  Could I pick any point to scale w?
+</p>
+<p>
+ Q2: I think I do not need to scale b, since if I scale b, the hyperplane will shift up or down resulting in misclassification. Am I correct?
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Ignacio Arevalo (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I am thinking that you can scale any point to scale w, although I am trying to understand what is the benefit of doing this.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   But for scaled b your w_2 factor should affect your b even if your w_1 is multiplied with an x_1 of 0, so, depending on scaling I think your b would also have to be scaled to keep the margin although I am not sure.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jane Du (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jane Du (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Q1: Not 100% sure what you mean. You want to make sure the functional margin is 1. The margin is usually calculated as the distance between a line (defined by $\mathbf w, b$) and a few specific points. Not all points on the plane will have the same distance to the hyperplane!
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Q2: If I have an equation $\mathbf w \mathbf x = b$, then any point $\mathbf x$ on the line it represents will satisfy this equation. This is the definition of a line. If I scale $\mathbf 2$, say by some constant $c$, will the same set of points satisfy the equation?
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   i.e.  $\mathbf w = (1,1), b = 1, c = 2$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Line 1: $(1,1) \cdot \mathbf x = 1$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Line 2: $2 (1,1)\cdot  \mathbf x = 1$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Will every $\mathbf x$ that satisfies the first equation also satisfy the second, and vice versa? If so, then they represent the same line, and you do not need need to scale $b$.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: James Buzaid (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  So, you mean find a functional margin that is 1 for all points or just the support vectors. If it's all points does that mean
-  <bold>
-   w
-  </bold>
-  and b should be functions of
-  <bold>
-   x
-  </bold>
-  ?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jane Du (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  The functional margin is defined as the smallest distance from a training point to the hyperplane. In other words, the distance from the plane to support vectors. There is no such thing as a "functional margin for all points".
-  <break>
-  </break>
-  <break>
-  </break>
-  No, w and b should not be functions of x. (please follow up if it's not clear!)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: James Buzaid (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  That clarified it. Thank you.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: James Buzaid (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   So, you mean find a functional margin that is 1 for all points or just the support vectors. If it's all points does that mean
+   <b>
+    w
+   </b>
+   and b should be functions of
+   <b>
+    x
+   </b>
+   ?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Jane Du (staff)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    The functional margin is defined as the smallest distance from a training point to the hyperplane. In other words, the distance from the plane to support vectors. There is no such thing as a "functional margin for all points".
+    <break>
+    </break>
+    <break>
+    </break>
+    No, w and b should not be functions of x. (please follow up if it's not clear!)
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: James Buzaid (student)
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     That clarified it. Thank you.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

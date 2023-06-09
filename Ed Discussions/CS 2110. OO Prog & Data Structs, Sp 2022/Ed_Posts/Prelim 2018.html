@@ -13,31 +13,29 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="402.1111111111111" src="https://static.us.edusercontent.com/files/izfXSDGjGXARHEJfFIf9pRfA" width="658"/>
- </figure>
- <paragraph>
-  I said that Dress3 wouldn't compile also because it doesn't implement getColor() as a subclass of Dress1, is that wrong? I know a reason Dress3 wouldn't work at all is because it instantiates Dress1 when it's an abstract class but is that another reason?
- </paragraph>
-</document>
+<figure>
+ <image height="402.1111111111111" src="https://static.us.edusercontent.com/files/izfXSDGjGXARHEJfFIf9pRfA" width="658"/>
+</figure>
+<p>
+ I said that Dress3 wouldn't compile also because it doesn't implement getColor() as a subclass of Dress1, is that wrong? I know a reason Dress3 wouldn't work at all is because it instantiates Dress1 when it's an abstract class but is that another reason?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Naman Madan (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Naman Madan (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   You're correct that Dress3 wouldn't compile because it doesn't implement getColor().
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   BUT, the problem then asks which classes will fail to compile even if they are abstract. In this case, if Dress3 were abstract, then it doesn't need to implement getColor(). However, because it contains "new Dress1()", and you cannot instantiate abstract classes, this fails to compile still even if it were abstract.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

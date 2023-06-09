@@ -13,48 +13,46 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  For this problem part (b), why are we swapping b[i] with the minimum of b[i..]? I know that this is usually how selection sort is implemented but the problem says to order by decreasing order.
- </paragraph>
- <figure>
-  <image height="648.5096153846154" src="https://static.us.edusercontent.com/files/Aei9PaZwYWO46GBk2XXz6S1D" width="658"/>
- </figure>
-</document>
+<p>
+ For this problem part (b), why are we swapping b[i] with the minimum of b[i..]? I know that this is usually how selection sort is implemented but the problem says to order by decreasing order.
+</p>
+<figure>
+ <image height="648.5096153846154" src="https://static.us.edusercontent.com/files/Aei9PaZwYWO46GBk2XXz6S1D" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Melissa Ginaldi (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Melissa Ginaldi (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   For part a you wrote compareTo using decreasing order. For part b, notice the invariant given for selectionSort says "inv: b[0..i-1] is sorted and b[0..i-1] &lt;= b[i ..] (using compareTo)".
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   According to the invariant selectionSort should be sorting least to greatest with respect to what compareTo returns (which may be decreasing number of copies but selection sort is only concerned with what compareTo returns). In which case, keeping the invariant true, b[i] would switch with the min of b[i ..]
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you. Also, can you explain why b[k].compareTo(b[j]) should be b[j].compareTo(b[k])?
- </paragraph>
- <paragraph>
-  I feel like the former is correct because in the method compareTo, b[j] would be the ob (argument) and we would be doing b[j].booksWritten - b[k].booksWritten. If this quantity is less than 0 we know that b[j] &lt; b[k] and thus it makes sense to do k=j.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you. Also, can you explain why b[k].compareTo(b[j]) should be b[j].compareTo(b[k])?
+  </p>
+  <p>
+   I feel like the former is correct because in the method compareTo, b[j] would be the ob (argument) and we would be doing b[j].booksWritten - b[k].booksWritten. If this quantity is less than 0 we know that b[j] &lt; b[k] and thus it makes sense to do k=j.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

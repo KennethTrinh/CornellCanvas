@@ -13,69 +13,61 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I have a question regarding the attached photo.
- </paragraph>
- <paragraph>
-  I'm not too sure why Java allows the following to compile. Reading through JavaHyperText, it seems like an object of class Animal can only be cast to classes for which it has a partition, which is Object and Animal.
- </paragraph>
- <figure>
-  <image height="39.850594227504246" src="https://static.us.edusercontent.com/files/e8mN4GMu7N7DY7FRkJus5BeI" width="652"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I have a question regarding the attached photo.
+</p>
+<p>
+ I'm not too sure why Java allows the following to compile. Reading through JavaHyperText, it seems like an object of class Animal can only be cast to classes for which it has a partition, which is Object and Animal.
+</p>
+<figure>
+ <image height="39.850594227504246" src="https://static.us.edusercontent.com/files/e8mN4GMu7N7DY7FRkJus5BeI" width="652"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Consider  Dog d= (Dog) a;
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   At compile-time, only the (static) TYPE of  a , and NOT it's value,  is used to determine whether the assignment is legal.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The type of expression  a  is Animal.  At runtime, it is POSSIBLE for an object of type Animal to have a Dog partition. Therefore, casting to Dog is allowed.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Note that if the statement is
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Dog d= (Dog) "st";
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Then the cast won't compile because it is impossible for a String object to have a Dog partition.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi Prof. Gries,
- </paragraph>
- <paragraph>
-  When you say it is possible for an object of type Animal to have a Dog partition, are you saying that it is possible for object   a   to have another point of object Dog pointing to it?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Hi Prof. Gries,
+  </p>
+  <p>
+   When you say it is possible for an object of type Animal to have a Dog partition, are you saying that it is possible for object   a   to have another point of object Dog pointing to it?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

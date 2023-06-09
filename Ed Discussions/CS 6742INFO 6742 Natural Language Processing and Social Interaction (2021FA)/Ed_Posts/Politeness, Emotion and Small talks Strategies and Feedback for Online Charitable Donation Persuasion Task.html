@@ -13,474 +13,473 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <heading level="1">
-  Overview
- </heading>
- <paragraph>
-  The proposal is inspired by our in-class discussion on persuasion tasks and the meeting with Lillian. Among these, there have been several studies on finding and predicting more effective strategies for online persuasion tasks, including making altruistic requests or asking people to donate. Researchers have recognized and categorized the common tactics into eight strategies:
-  <italic>
-   Commitment, Emotion, Politeness, Reciprocity, Scarcity, Credibility, Evidence, Impact
-  </italic>
-  . Particularly, emotion and politeness also serve as signals of the likelihood of a successful persuasion from persuadees. Based on the strategies and feedback, some intelligent persuasive conversational agents are developed to aid the persuasion task for social good. For the purpose of building such agents and providing tips on persuading strategies for staff working in charity institutions or other NGOs, it is important to understand how these strategies will influence the task, and what are the signals for successful or unsuccessful persuasion.
- </paragraph>
- <paragraph>
-  For the final project, I aim to focus on politeness, emotion and small talks during the persuasion task for donation, investigating their impacts and correlations on the success of the persuasion and the amount of the donation. Furthermore, if having bandwidth, I will compare the impacts between the intended/stated donation and actual donation.
- </paragraph>
- <heading level="1">
-  Hypothesis
- </heading>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    H1: There is a significant difference in the extent of politeness of persuaders among successful conversations and the unsuccessful ones. However, as long as the conversation is successful - the persuadee agreed to make a donation, the politeness level of persuaders does not vary much with respect to the donation amount.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    H2: A more polite persuadee is not necessarily more likely to donate (and donate more) to the charity program. Instead, for those who apologized during the conversations, they refused to donate or donate less.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    H3: A conversation with stronger emotions is more likely to succeed and people are willing to give more during and after the conversations.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    H4: Having small talks at the beginning of the conversation, even off-topic, could increase the likelihood of persuadees’ donation intention and behavior.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    (H5*: A self-reported extrovert or agreeable person will be more polite during the conversation.) (Not necessarily related to the proposed research question - listing this assumption because there are survey data for participants’ demographic and psychological backgrounds.)
-   </paragraph>
-  </list-item>
- </list>
- <heading level="1">
-  Data
- </heading>
- <paragraph>
-  I plan to conduct analysis on the Persuasion-ForGood dataset, which is available on Convokit (
-  <link href="https://convokit.cornell.edu/documentation/persuasionforgood.html"/>
-  https://convokit.cornell.edu/documentation/persuasionforgood.html). The data is first published with the paper
-  <italic>
+<heading level="1">
+ Overview
+</heading>
+<p>
+ The proposal is inspired by our in-class discussion on persuasion tasks and the meeting with Lillian. Among these, there have been several studies on finding and predicting more effective strategies for online persuasion tasks, including making altruistic requests or asking people to donate. Researchers have recognized and categorized the common tactics into eight strategies:
+ <i>
+  Commitment, Emotion, Politeness, Reciprocity, Scarcity, Credibility, Evidence, Impact
+ </i>
+ . Particularly, emotion and politeness also serve as signals of the likelihood of a successful persuasion from persuadees. Based on the strategies and feedback, some intelligent persuasive conversational agents are developed to aid the persuasion task for social good. For the purpose of building such agents and providing tips on persuading strategies for staff working in charity institutions or other NGOs, it is important to understand how these strategies will influence the task, and what are the signals for successful or unsuccessful persuasion.
+</p>
+<p>
+ For the final project, I aim to focus on politeness, emotion and small talks during the persuasion task for donation, investigating their impacts and correlations on the success of the persuasion and the amount of the donation. Furthermore, if having bandwidth, I will compare the impacts between the intended/stated donation and actual donation.
+</p>
+<heading level="1">
+ Hypothesis
+</heading>
+<list style="bullet">
+ <li>
+  <p>
+   H1: There is a significant difference in the extent of politeness of persuaders among successful conversations and the unsuccessful ones. However, as long as the conversation is successful - the persuadee agreed to make a donation, the politeness level of persuaders does not vary much with respect to the donation amount.
+  </p>
+ </li>
+ <li>
+  <p>
+   H2: A more polite persuadee is not necessarily more likely to donate (and donate more) to the charity program. Instead, for those who apologized during the conversations, they refused to donate or donate less.
+  </p>
+ </li>
+ <li>
+  <p>
+   H3: A conversation with stronger emotions is more likely to succeed and people are willing to give more during and after the conversations.
+  </p>
+ </li>
+ <li>
+  <p>
+   H4: Having small talks at the beginning of the conversation, even off-topic, could increase the likelihood of persuadees’ donation intention and behavior.
+  </p>
+ </li>
+ <li>
+  <p>
+   (H5*: A self-reported extrovert or agreeable person will be more polite during the conversation.) (Not necessarily related to the proposed research question - listing this assumption because there are survey data for participants’ demographic and psychological backgrounds.)
+  </p>
+ </li>
+</list>
+<heading level="1">
+ Data
+</heading>
+<p>
+ I plan to conduct analysis on the Persuasion-ForGood dataset, which is available on Convokit (
+ <a href="https://convokit.cornell.edu/documentation/persuasionforgood.html">
+  https://convokit.cornell.edu/documentation/persuasionforgood.html
+  ). The data is first published with the paper
+  <i>
    <link href="https://aclanthology.org/P19-1566/"/>
    Persuasion for Good: Towards a Personalized Persuasive Dialogue System for Social Good
-  </italic>
+  </i>
   . [1] I will use the Convokit-formatted version of the dataset. It is a collection of online conversations generated by Amazon Mechanical Turk workers, where one participant (the persuader) tries to convince the other (the persuadee) to donate to a charity. This dataset contains 1017 conversations, along with demographic data and responses to psychological surveys from users. 300 conversations also have per-sentence human annotations of dialogue acts that pertain to the persuasion setting, and sentiment.
- </paragraph>
- <heading level="1">
-  Language feature
- </heading>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    Length of the utterance and conversation
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Politeness, especially markers for gratitude and apology
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Emotion: sentiment, polarity
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Small talks: indicators of small talks, topics of small talks, especially past experiences in donation
-   </paragraph>
-  </list-item>
- </list>
- <heading level="1">
-  Feasibility test
- </heading>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    Check if the politeness prediction tool in Convokit works on the Persuasion-ForGood dataset.
-   </paragraph>
-   <list style="bullet">
-    <list-item>
-     <paragraph>
-      If the predicted level of politeness is consistent with the utterance.
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      If the toolkit could extract different politeness features
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      The distribution of the predicted politeness labels, levels and features
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Check if the emotions differ among conversations
-   </paragraph>
-   <list style="bullet">
-    <list-item>
-     <paragraph>
-      Use VADER sentiment analysis to extract the sentiment and polarity scores
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Check if small talks happen
-   </paragraph>
-   <list style="bullet">
-    <list-item>
-     <paragraph>
-      For the annotated set, check the number of utterances with small-talk related labels (eg. “personal-related inquiry”, “personal story”, “greeting”, “off-tasks”)
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
-      For the whole dataset, perform topic modeling to see the distribution of topics
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
- </list>
- <heading level="1">
-  Member
- </heading>
- <paragraph>
-  Fengyang Lin
- </paragraph>
- <heading level="1">
-  Inspiration and Sources
- </heading>
- <paragraph>
-  [1] Wang, X., Shi, W., Kim, R., Oh, Y., Yang, S., Zhang, J., &amp; Yu, Z. (2019). Persuasion for good: Towards a personalized persuasive dialogue system for social good. arXiv preprint arXiv:1906.06725. DOI:
-  <link href="https://doi.org/10.18653/v1/P19-1566"/>
-  https://doi.org/10.18653/v1/P19-1566
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  [2] Althoff, T., Danescu-Niculescu-Mizil, C., &amp; Jurafsky, D. (2014). How to Ask for a Favor: A Case Study on the Success of Altruistic Requests. Proceedings of the International AAAI Conference on Web and Social Media, 8(1), 12-21. Retrieved from
-  <link href="https://ojs.aaai.org/index.php/ICWSM/article/view/14547"/>
-  https://ojs.aaai.org/index.php/ICWSM/article/view/14547
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  [3] Danescu-Niculescu-Mizil, C., Sudhof, M., Jurafsky, D., Leskovec, J., &amp; Potts, C. (2013). A computational approach to politeness with application to social factors. arXiv preprint arXiv:1306.6078.
-  <link href="https://arxiv.org/abs/1306.6078"/>
-  https://arxiv.org/abs/1306.6078
-  <break>
-  </break>
- </paragraph>
- <paragraph>
-  [4] Shaikh, O., Chen, J., Saad-Falcon, J., Chau, D. H., &amp; Yang, D. (2020). Examining the Ordering of Rhetorical Strategies in Persuasive Requests. arXiv preprint arXiv:2010.04625. DOI:
-  <link href="https://doi.org/10.18653/v1/2020.findings-emnlp.116"/>
-  https://doi.org/10.18653/v1/2020.findings-emnlp.116
- </paragraph>
- <paragraph>
-  [5] Yang, D., Chen, J., Yang, Z., Jurafsky, D., &amp; Hovy, E. (2019, June). Let’s make your request more persuasive: Modeling persuasive strategies via semi-supervised neural nets on crowdfunding platforms. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers) (pp. 3620-3630). DOI:
-  <link href="https://doi.org/10.18653/v1/N19-1364"/>
-  https://doi.org/10.18653/v1/N19-1364
- </paragraph>
-</document>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  I have an unacted-upon research interest in banter (not the same as small talk, I admit). Here's some refs:
-  <break>
-  </break>
-  <break>
-  </break>
-  Slugoski, Ben R, and William Turnbull. 1988. “Cruel to Be Kind and Kind to Be Cruel: Sarcasm, Banter and Social Relations.”
-  <italic>
-   Journal of Language and Social Psychology
-  </italic>
-  7 (2): 101–21.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Boxer, Diana, and Florencia Cortés-Conde. 1997. “From Bonding to Biting: Conversational Joking and Identity Display.”
-  <italic>
-   Journal of Pragmatics
-  </italic>
-  27 (3): 275–94.
-  <link href="https://doi.org/10.1016/S0378-2166(96)00031-8"/>
-  https://doi.org/10.1016/S0378-2166(96)00031-8.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Fengyang Lin (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  <bold>
-   Feasibility Check Update 1:
-  </bold>
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    Check if the politeness prediction tool in Convokit works on the Persuasion-ForGood dataset.
-   </paragraph>
-  </list-item>
-  <list-item>
-   <list style="unordered">
-    <list-item>
-     <paragraph>
-      If the toolkit could extract different politeness features
-     </paragraph>
-     <list style="unordered">
-      <list-item>
-       <paragraph>
-        The politeness strategy toolkit work (to some extent) on the dataset. The politeness marker(1st proun, please, hedges, etc.) could be extracted, though occasionally some markers would be missed. Below shows a plot for the distribution of the politeness markers in the whole dataset.
-       </paragraph>
-      </list-item>
-     </list>
-    </list-item>
-   </list>
-  </list-item>
- </list>
- <figure>
-  <image height="424.7065287653523" src="https://static.us.edusercontent.com/files/KJ3pr5mMxzmsG6i67bsiKgb7" width="563"/>
- </figure>
- <list style="bullet">
-  <list-item>
-   <list style="unordered">
-    <list-item>
-     <paragraph>
-      If the predicted level of politeness is consistent with the utterance.
-     </paragraph>
-     <list style="unordered">
-      <list-item>
-       <paragraph>
-        For now, I only trained the model with the wiki corpus available on Convokit. The predicted label for politeness based on the model is not so ideal. Will consider training on a richer dataset (
-        <link href="https://github.com/GT-SALT/Persuasion_Strategy_WVAE"/>
-        https://github.com/GT-SALT/Persuasion_Strategy_WVAE , consisting of 3 types of persuasion tasks), tuning the model or only using the politeness markers(features) for the analysis.
-       </paragraph>
-      </list-item>
-      <list-item>
-       <paragraph>
-        Among the 20932 utterances, 8075 are predicted as polite and 12857 are predicted as impolite.
-       </paragraph>
-       <figure>
-        <image height="77" src="https://static.us.edusercontent.com/files/oyT7ZrE8aIfTxtHFPHzBb9uU" width="316"/>
-       </figure>
-      </list-item>
-     </list>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Check if the emotions differ among conversations
-   </paragraph>
-   <list style="unordered">
-    <list-item>
-     <paragraph>
-      Use VADER sentiment analysis to extract the sentiment and polarity scores
-     </paragraph>
-     <figure>
-      <image height="74" src="https://static.us.edusercontent.com/files/cr5D3ehfMo1nKUxSXLHQ3410" width="310"/>
-     </figure>
-     <figure>
-      <image height="262" src="https://static.us.edusercontent.com/files/utgfV0eaeMPpTbSJV9O8mYnK" width="386"/>
-     </figure>
-     <list style="unordered">
-      <list-item>
-       <paragraph>
-        Generally, the results by using Vader are not promising. There are some evident misclassified. Examples are attached below.
-       </paragraph>
-       <figure>
-        <image height="327.6017369727047" src="https://static.us.edusercontent.com/files/BdinWdZgTpi41RWv9cRhFGkh" width="563"/>
-       </figure>
-      </list-item>
-     </list>
-    </list-item>
-   </list>
-  </list-item>
- </list>
- <list style="bullet">
-  <list-item>
-   <list style="bullet">
-    <list-item>
-     <paragraph>
-      Alternatively, consider using the annotated sentiment label. See the
-      <italic>
-       meta.sentiment
-      </italic>
-      column above.  (Limitation: only have 300 conversations, 4434 utterances annotated.)
-     </paragraph>
-    </list-item>
-   </list>
-  </list-item>
-  <list-item>
-   <paragraph>
-    Check if small talks happen
-   </paragraph>
-   <list style="unordered">
-    <list-item>
-     <paragraph>
-      For the annotated set, check the number of utterances with small-talk related labels (eg. “personal-related inquiry”, “personal story”, “greeting”, “off-tasks”)
-     </paragraph>
-     <list style="unordered">
-      <list-item>
-       <paragraph>
-        Among the 300 conversations, there are 148 included small-talk-related labels(442 utterances). Examples are shown below.
-       </paragraph>
-       <figure>
-        <image height="285" src="https://static.us.edusercontent.com/files/RkaQWGWPwwwDitG0ZS6DGvEi" width="513"/>
-       </figure>
-      </list-item>
-     </list>
-    </list-item>
-   </list>
-  </list-item>
- </list>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Fengyang Lin (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  <bold>
+ </a>
+</p>
+<heading level="1">
+ Language feature
+</heading>
+<list style="bullet">
+ <li>
+  <p>
+   Length of the utterance and conversation
+  </p>
+ </li>
+ <li>
+  <p>
+   Politeness, especially markers for gratitude and apology
+  </p>
+ </li>
+ <li>
+  <p>
+   Emotion: sentiment, polarity
+  </p>
+ </li>
+ <li>
+  <p>
+   Small talks: indicators of small talks, topics of small talks, especially past experiences in donation
+  </p>
+ </li>
+</list>
+<heading level="1">
+ Feasibility test
+</heading>
+<list style="bullet">
+ <li>
+  <p>
+   Check if the politeness prediction tool in Convokit works on the Persuasion-ForGood dataset.
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     If the predicted level of politeness is consistent with the utterance.
+    </p>
+   </li>
+   <li>
+    <p>
+     If the toolkit could extract different politeness features
+    </p>
+   </li>
+   <li>
+    <p>
+     The distribution of the predicted politeness labels, levels and features
+    </p>
+   </li>
+  </list>
+ </li>
+ <li>
+  <p>
+   Check if the emotions differ among conversations
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     Use VADER sentiment analysis to extract the sentiment and polarity scores
+    </p>
+   </li>
+  </list>
+ </li>
+ <li>
+  <p>
+   Check if small talks happen
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     For the annotated set, check the number of utterances with small-talk related labels (eg. “personal-related inquiry”, “personal story”, “greeting”, “off-tasks”)
+    </p>
+   </li>
+   <li>
+    <p>
+     For the whole dataset, perform topic modeling to see the distribution of topics
+    </p>
+   </li>
+  </list>
+ </li>
+</list>
+<heading level="1">
+ Member
+</heading>
+<p>
+ Fengyang Lin
+</p>
+<heading level="1">
+ Inspiration and Sources
+</heading>
+<p>
+ [1] Wang, X., Shi, W., Kim, R., Oh, Y., Yang, S., Zhang, J., &amp; Yu, Z. (2019). Persuasion for good: Towards a personalized persuasive dialogue system for social good. arXiv preprint arXiv:1906.06725. DOI:
+ <link href="https://doi.org/10.18653/v1/P19-1566"/>
+ https://doi.org/10.18653/v1/P19-1566
+ <break>
+ </break>
+</p>
+<p>
+ [2] Althoff, T., Danescu-Niculescu-Mizil, C., &amp; Jurafsky, D. (2014). How to Ask for a Favor: A Case Study on the Success of Altruistic Requests. Proceedings of the International AAAI Conference on Web and Social Media, 8(1), 12-21. Retrieved from
+ <link href="https://ojs.aaai.org/index.php/ICWSM/article/view/14547"/>
+ https://ojs.aaai.org/index.php/ICWSM/article/view/14547
+ <break>
+ </break>
+</p>
+<p>
+ [3] Danescu-Niculescu-Mizil, C., Sudhof, M., Jurafsky, D., Leskovec, J., &amp; Potts, C. (2013). A computational approach to politeness with application to social factors. arXiv preprint arXiv:1306.6078.
+ <link href="https://arxiv.org/abs/1306.6078"/>
+ https://arxiv.org/abs/1306.6078
+ <break>
+ </break>
+</p>
+<p>
+ [4] Shaikh, O., Chen, J., Saad-Falcon, J., Chau, D. H., &amp; Yang, D. (2020). Examining the Ordering of Rhetorical Strategies in Persuasive Requests. arXiv preprint arXiv:2010.04625. DOI:
+ <link href="https://doi.org/10.18653/v1/2020.findings-emnlp.116"/>
+ https://doi.org/10.18653/v1/2020.findings-emnlp.116
+</p>
+<p>
+ [5] Yang, D., Chen, J., Yang, Z., Jurafsky, D., &amp; Hovy, E. (2019, June). Let’s make your request more persuasive: Modeling persuasive strategies via semi-supervised neural nets on crowdfunding platforms. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers) (pp. 3620-3630). DOI:
+ <link href="https://doi.org/10.18653/v1/N19-1364"/>
+ https://doi.org/10.18653/v1/N19-1364
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Fengyang Lin (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
+  <b>
    Notes from meeting with Lillian:
-  </bold>
- </paragraph>
+  </b>
+ </p>
  <list style="bullet">
-  <list-item>
-   <paragraph>
+  <li>
+   <p>
     Politeness
-   </paragraph>
+   </p>
    <list style="bullet">
-    <list-item>
-     <paragraph>
+    <li>
+     <p>
       Check the utterances with the lowest/highest score to make sure that the classifier work
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
+     </p>
+    </li>
+    <li>
+     <p>
       Try different thresholds for the politeness classifier
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
+     </p>
+    </li>
+    <li>
+     <p>
       Check the predicted result on a self-annotated set (try to reach 70% -80% acc)
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
+     </p>
+    </li>
+    <li>
+     <p>
       Train the model with the politeness labels at
-      <link href="https://github.com/GT-SALT/Persuasion_Strategy_WVAE"/>
-      https://github.com/GT-SALT/Persuasion_Strategy_WVAE
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
+      <a href="https://github.com/GT-SALT/Persuasion_Strategy_WVAE">
+       https://github.com/GT-SALT/Persuasion_Strategy_WVAE
+      </a>
+     </p>
+    </li>
+    <li>
+     <p>
       Consider different politeness model
-     </paragraph>
+     </p>
      <list style="bullet">
-      <list-item>
-       <paragraph>
+      <li>
+       <p>
         Aubakirova, M., &amp; Bansal, M. (2016). Interpreting neural networks to improve politeness comprehension.
-        <italic>
+        <i>
          arXiv preprint arXiv:1610.02683
-        </italic>
+        </i>
         .
         <link href="https://arxiv.org/abs/1610.02683"/>
         https://arxiv.org/abs/1610.02683
-       </paragraph>
-      </list-item>
+       </p>
+      </li>
      </list>
-    </list-item>
+    </li>
    </list>
-  </list-item>
-  <list-item>
-   <paragraph>
+  </li>
+  <li>
+   <p>
     Sentiment
-   </paragraph>
+   </p>
    <list style="bullet">
-    <list-item>
-     <paragraph>
+    <li>
+     <p>
       Check the utterances with the lowest/highest score to make sure that the classifier work
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
+     </p>
+    </li>
+    <li>
+     <p>
       Try different thresholds
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
+     </p>
+    </li>
+    <li>
+     <p>
       Check the predicted result on a self-annotated set
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
+     </p>
+    </li>
+    <li>
+     <p>
       "neutral" class
-     </paragraph>
-    </list-item>
-    <list-item>
-     <paragraph>
+     </p>
+    </li>
+    <li>
+     <p>
       Only test on the annotated 300 conversations (with sentiment labels)
-     </paragraph>
-    </list-item>
+     </p>
+    </li>
    </list>
-  </list-item>
-  <list-item>
-   <paragraph>
+  </li>
+  <li>
+   <p>
     Small talks
-   </paragraph>
+   </p>
    <list style="bullet">
-    <list-item>
-     <paragraph>
+    <li>
+     <p>
       instead of topic modeling, comparing word differences along with the conversations (eg. utterances triplets) to detect a change in topics -&gt; small talks
-     </paragraph>
+     </p>
      <list style="bullet">
-      <list-item>
-       <paragraph>
+      <li>
+       <p>
         consider a more advanced language model to predict P(next sentence|current sentence) -&gt; detect small talks
-       </paragraph>
-      </list-item>
+       </p>
+      </li>
      </list>
-    </list-item>
+    </li>
    </list>
-  </list-item>
+  </li>
  </list>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Fengyang Lin (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   <b>
+    Feasibility Check Update 1:
+   </b>
+  </p>
+  <list style="bullet">
+   <li>
+    <p>
+     Check if the politeness prediction tool in Convokit works on the Persuasion-ForGood dataset.
+    </p>
+   </li>
+   <li>
+    <list style="unordered">
+     <li>
+      <p>
+       If the toolkit could extract different politeness features
+      </p>
+      <list style="unordered">
+       <li>
+        <p>
+         The politeness strategy toolkit work (to some extent) on the dataset. The politeness marker(1st proun, please, hedges, etc.) could be extracted, though occasionally some markers would be missed. Below shows a plot for the distribution of the politeness markers in the whole dataset.
+        </p>
+       </li>
+      </list>
+     </li>
+    </list>
+   </li>
+  </list>
+  <figure>
+   <image height="424.7065287653523" src="https://static.us.edusercontent.com/files/KJ3pr5mMxzmsG6i67bsiKgb7" width="563"/>
+  </figure>
+  <list style="bullet">
+   <li>
+    <list style="unordered">
+     <li>
+      <p>
+       If the predicted level of politeness is consistent with the utterance.
+      </p>
+      <list style="unordered">
+       <li>
+        <p>
+         For now, I only trained the model with the wiki corpus available on Convokit. The predicted label for politeness based on the model is not so ideal. Will consider training on a richer dataset (
+         <a href="https://github.com/GT-SALT/Persuasion_Strategy_WVAE">
+          https://github.com/GT-SALT/Persuasion_Strategy_WVAE
+         </a>
+         , consisting of 3 types of persuasion tasks), tuning the model or only using the politeness markers(features) for the analysis.
+        </p>
+       </li>
+       <li>
+        <p>
+         Among the 20932 utterances, 8075 are predicted as polite and 12857 are predicted as impolite.
+        </p>
+        <figure>
+         <image height="77" src="https://static.us.edusercontent.com/files/oyT7ZrE8aIfTxtHFPHzBb9uU" width="316"/>
+        </figure>
+       </li>
+      </list>
+     </li>
+    </list>
+   </li>
+   <li>
+    <p>
+     Check if the emotions differ among conversations
+    </p>
+    <list style="unordered">
+     <li>
+      <p>
+       Use VADER sentiment analysis to extract the sentiment and polarity scores
+      </p>
+      <figure>
+       <image height="74" src="https://static.us.edusercontent.com/files/cr5D3ehfMo1nKUxSXLHQ3410" width="310"/>
+      </figure>
+      <figure>
+       <image height="262" src="https://static.us.edusercontent.com/files/utgfV0eaeMPpTbSJV9O8mYnK" width="386"/>
+      </figure>
+      <list style="unordered">
+       <li>
+        <p>
+         Generally, the results by using Vader are not promising. There are some evident misclassified. Examples are attached below.
+        </p>
+        <figure>
+         <image height="327.6017369727047" src="https://static.us.edusercontent.com/files/BdinWdZgTpi41RWv9cRhFGkh" width="563"/>
+        </figure>
+       </li>
+      </list>
+     </li>
+    </list>
+   </li>
+  </list>
+  <list style="bullet">
+   <li>
+    <list style="bullet">
+     <li>
+      <p>
+       Alternatively, consider using the annotated sentiment label. See the
+       <i>
+        meta.sentiment
+       </i>
+       column above.  (Limitation: only have 300 conversations, 4434 utterances annotated.)
+      </p>
+     </li>
+    </list>
+   </li>
+   <li>
+    <p>
+     Check if small talks happen
+    </p>
+    <list style="unordered">
+     <li>
+      <p>
+       For the annotated set, check the number of utterances with small-talk related labels (eg. “personal-related inquiry”, “personal story”, “greeting”, “off-tasks”)
+      </p>
+      <list style="unordered">
+       <li>
+        <p>
+         Among the 300 conversations, there are 148 included small-talk-related labels(442 utterances). Examples are shown below.
+        </p>
+        <figure>
+         <image height="285" src="https://static.us.edusercontent.com/files/RkaQWGWPwwwDitG0ZS6DGvEi" width="513"/>
+        </figure>
+       </li>
+      </list>
+     </li>
+    </list>
+   </li>
+  </list>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 2em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    I have an unacted-upon research interest in banter (not the same as small talk, I admit). Here's some refs:
+    <break>
+    </break>
+    <break>
+    </break>
+    Slugoski, Ben R, and William Turnbull. 1988. “Cruel to Be Kind and Kind to Be Cruel: Sarcasm, Banter and Social Relations.”
+    <i>
+     Journal of Language and Social Psychology
+    </i>
+    7 (2): 101–21.
+   </p>
+   <p>
+    Boxer, Diana, and Florencia Cortés-Conde. 1997. “From Bonding to Biting: Conversational Joking and Identity Display.”
+    <i>
+     Journal of Pragmatics
+    </i>
+    27 (3): 275–94.
+    <a href="https://doi.org/10.1016/S0378-2166(96)00031-8">
+     https://doi.org/10.1016/S0378-2166(96)00031-8
+    </a>
+    .
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>

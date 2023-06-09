@@ -13,37 +13,35 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="163.4177631578947" src="https://static.us.edusercontent.com/files/p9paeynBnYJJjdlmFqtWfLW8" width="657.9999999999999"/>
- </figure>
- <paragraph>
-  I don't quite understand why p needs to be created and cast to Plane. If ob wasn't already a Plane, wouldn't the method have returned false due to the previous line? Thanks!
- </paragraph>
-</document>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<figure>
+ <image height="163.4177631578947" src="https://static.us.edusercontent.com/files/p9paeynBnYJJjdlmFqtWfLW8" width="657.9999999999999"/>
+</figure>
+<p>
+ I don't quite understand why p needs to be created and cast to Plane. If ob wasn't already a Plane, wouldn't the method have returned false due to the previous line? Thanks!
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   A remark about precise language here:
   <code>
    p
   </code>
   is not cast to anything, and the word "created" could be interpreted as either construction or declaration.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   On the line in question, a variable
   <code>
    p
   </code>
   is
-  <italic>
+  <i>
    declared
-  </italic>
+  </i>
   , with static type
   <code>
    Plane
@@ -69,31 +67,31 @@
    Plane
   </code>
   .
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Do you remember the Compile-time Reference Rule? Memorize it!
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Please! It is is important to know the rules and principles and use them in answering questions.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The expression ob.serialNum won't compile because of the Compile-time Reference Rule: field serialNum is not declared in class Object. that is why the case down to Plane is necessary.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

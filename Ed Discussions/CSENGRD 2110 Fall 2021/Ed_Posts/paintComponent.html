@@ -13,81 +13,77 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  My todo4 isn't working. I think it's not even being called which is wierd. I put a println("here") at the beginning of paintcomponent() and "here" isn't showing up in the console
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ My todo4 isn't working. I think it's not even being called which is wierd. I put a println("here") at the beginning of paintcomponent() and "here" isn't showing up in the console
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   It's hard to give advice when we don't see your code, what you are trying to do.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Did you start by calling the superclass method?
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Di you do something different for the two cases  isActive and not isActive? What did you do in the case of isActive?
   <break>
   </break>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  yes i started with the superclass method. Afterwards I have an if statement for notActive, where i set the color to black and fillRect(). Under my IsActive case, I call paintDot(). What method is supposed to call paintComponent?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  <code>
-   paintComponent()
-  </code>
-  is called by the Swing framework whenever it determines that the component needs to be redrawn.  Usually this is either when the window is resized or when an event handler calls
-  <code>
-   repaint()
-  </code>
-  .
- </paragraph>
- <paragraph>
-  If you have an unconditional
-  <code>
-   println()
-  </code>
-  in your
-  <code>
-   paintComponent()
-  </code>
-  method and you resize the window, you should see its message printed to the console.  If not, it is possible you are not running the code that you think you're editing (a common mistake).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   yes i started with the superclass method. Afterwards I have an if statement for notActive, where i set the color to black and fillRect(). Under my IsActive case, I call paintDot(). What method is supposed to call paintComponent?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Curran Muhlberger (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    <code>
+     paintComponent()
+    </code>
+    is called by the Swing framework whenever it determines that the component needs to be redrawn.  Usually this is either when the window is resized or when an event handler calls
+    <code>
+     repaint()
+    </code>
+    .
+   </p>
+   <p>
+    If you have an unconditional
+    <code>
+     println()
+    </code>
+    in your
+    <code>
+     paintComponent()
+    </code>
+    method and you resize the window, you should see its message printed to the console.  If not, it is possible you are not running the code that you think you're editing (a common mistake).
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

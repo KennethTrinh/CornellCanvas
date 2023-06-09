@@ -13,61 +13,57 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  it seems to me that paintDot() could be called to handle the whole process of finding current location, determining height/width of target relative to window, etc (based on the spec). but it seems like the instruction handout is guiding us to have to do some of these things for TODO 4, so i am a bit confused how to know which tasks i can push off to TODO 6 vs having to do now.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  also, would we just use (this.)target to make/reference the target we are trying to draw in this method or do we make a new Target that is local to the method?
- </paragraph>
-</document>
+<p>
+ it seems to me that paintDot() could be called to handle the whole process of finding current location, determining height/width of target relative to window, etc (based on the spec). but it seems like the instruction handout is guiding us to have to do some of these things for TODO 4, so i am a bit confused how to know which tasks i can push off to TODO 6 vs having to do now.
+</p>
+<p>
+ also, would we just use (this.)target to make/reference the target we are trying to draw in this method or do we make a new Target that is local to the method?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Do not create another Target object. Use the one that already exists. Why should you create another one?
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Push off onto TODO 6 only Look at the specification of method paint(g) in TODO 6. That method must do what its specification says and nothing more, nothing less. Based on that, you can tell what must be done in TODO 4.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  ohhh wait is there only ever one target at a time? its the same one showing and hiding in different places?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
-  That is correct.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   ohhh wait is there only ever one target at a time? its the same one showing and hiding in different places?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Curran Muhlberger (admin)
+   </h3>
+   <h3>
+    Vote Count: 2
+   </h3>
+   <p>
+    That is correct.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

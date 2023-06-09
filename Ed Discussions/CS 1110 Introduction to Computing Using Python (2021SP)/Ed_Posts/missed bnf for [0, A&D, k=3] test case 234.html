@@ -13,26 +13,24 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Got through the first 233 test cases, but our code crashed at the 234th (A and D at post 0 for k=3) with a missed bnf. Is there something special about this case? a lot of other k=3 cases passed before this one
- </paragraph>
-</document>
+<p>
+ Got through the first 233 test cases, but our code crashed at the 234th (A and D at post 0 for k=3) with a missed bnf. Is there something special about this case? a lot of other k=3 cases passed before this one
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Something that jumps out at me is that, at node 0.1 (written by D), there are
-  <italic>
+  <i>
    two
-  </italic>
+  </i>
   replies authored by A.
   <break>
   </break>
@@ -49,8 +47,8 @@
   <break>
   </break>
   So one hypothesis is that your code get over-confident about the answer when it sees 0.1.1, and perhaps is never checking whether 0.1.2 could be part of the at-0 A&amp;D k=3 bnf.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

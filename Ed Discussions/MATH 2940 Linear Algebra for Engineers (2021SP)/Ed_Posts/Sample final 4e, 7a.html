@@ -13,43 +13,39 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  How do we arrive at the conclusion that P^100 must have columns equal to the steady state vector?
- </paragraph>
- <paragraph>
-  Edit: Also any chance I could get a solution on the typical trajectories in 7a? The solution didn't provide a sketch. Would be much appreciated!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ How do we arrive at the conclusion that P^100 must have columns equal to the steady state vector?
+</p>
+<p>
+ Edit: Also any chance I could get a solution on the typical trajectories in 7a? The solution didn't provide a sketch. Would be much appreciated!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Phillip Jang (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Phillip Jang (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   4e) It follows from $P^k \vec{x}_0 \approx \vec{q}$ for
   <underline>
    all possible
   </underline>
   probability vectors $\vec{x}_0$ when $k$ is large. Since every weighted linear combination of the columns of $P^k$ with weights summing to 1 gives you something close to $q$ when $k$ is large, it follows that all columns of $P^k$ are approximately $q$ when $k$ is large. See Perron-Frobenius on Slide 8/9 for Lecture 30.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   7a) The real part of the eigenvalue is positive, so you know the origin will be a spiral source. To get the spiral's orientation (clockwise vs counterclockwise), compute $\vec{x}'(0) = A\vec{x}(0)$ for an initial vector $\vec{x}(0)$ to see what is the direction of change with respect to time.  For example, if $\vec{x}(0) = \begin{bmatrix}1 \\ 0\end{bmatrix}$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $$\vec{x}'(0) = A\vec{x}(0) = \begin{bmatrix}\phantom{-}1 &amp; 1 \\ -1 &amp; 1\end{bmatrix}\begin{bmatrix}1 \\ 0\end{bmatrix} = \begin{bmatrix}1 \\ -1\end{bmatrix}$$
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Hence the initial direction of change $\vec{x}'(0)$ points southeast so the spiral is clockwise. It will look kind of like Figure 5 on p.319 but with the trajectories going outwards rather than inwards.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

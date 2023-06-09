@@ -13,64 +13,60 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  Traceback (most recent call last):
- </paragraph>
- <paragraph>
-  File "schedule_tests.py", line 299, in &lt;module&gt;
- </paragraph>
- <paragraph>
-  testfn() # Adding the parentheses calls whatever testfn is
- </paragraph>
- <paragraph>
-  File "schedule_tests.py", line 249, in test_course_changetime
- </paragraph>
- <paragraph>
-  assert my_schedule.warnings == temp_exp_warnings, \
- </paragraph>
- <paragraph>
-  AssertionError: my_schedule warnings list should be ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm', 'ARCH 1120 STU 520: time change causes conflict with AEP 3560 LEC 001', 'ARCH 1120 STU 520: time change causes conflict with FAKER 0000 LEC 002'], but is ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm', 'ARCH 1120 STU 520: time change causes conflict with ARCH 1120 STU 520']
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  I'm not sure why i'm getting this error because everything else in my code seems alright?
- </paragraph>
-</document>
+<p>
+ Traceback (most recent call last):
+</p>
+<p>
+ File "schedule_tests.py", line 299, in &lt;module&gt;
+</p>
+<p>
+ testfn() # Adding the parentheses calls whatever testfn is
+</p>
+<p>
+ File "schedule_tests.py", line 249, in test_course_changetime
+</p>
+<p>
+ assert my_schedule.warnings == temp_exp_warnings, \
+</p>
+<p>
+ AssertionError: my_schedule warnings list should be ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm', 'ARCH 1120 STU 520: time change causes conflict with AEP 3560 LEC 001', 'ARCH 1120 STU 520: time change causes conflict with FAKER 0000 LEC 002'], but is ['ARCH 1120 STU 520: time changed from TBA to MWF 8:00am-8:00pm', 'ARCH 1120 STU 520: time change causes conflict with ARCH 1120 STU 520']
+</p>
+<p>
+ I'm not sure why i'm getting this error because everything else in my code seems alright?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   The error message says:
   <break>
   </break>
   <break>
   </break>
   my_schedule's warnings list
-  <bold>
+  <b>
    should
-  </bold>
+  </b>
   have
-  <bold>
+  <b>
    three
-  </bold>
+  </b>
   items in it, one about ARCH1120's time change, one about it conflicting with AEP 3160, and one about it conflicting with FAKER 0000 ...
   <break>
   </break>
   <break>
   </break>
   ... but it only has
-  <bold>
+  <b>
    two
-  </bold>
+  </b>
   items in it: the first and second of the three messages I just listed.
   <break>
   </break>
@@ -81,105 +77,105 @@
    warnings
   </code>
   list.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Could this an issue in my conflictsWith function? I can't seem to locate any error in my changeWith function..
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Right, one of the hypotheses mentioned above was, "your code doesn't think that ARCH 1120 conflicts with FAKER 0000 "
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I've tried debugging and printing everything but I still cannot find the issue with my code.. I keep receiving the same error :(
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  So right now, I think error is probably with changeTime.
-  <break>
-  </break>
-  <break>
-  </break>
-  Either it's generating the wrong warnings (indeed, it is saying that 1120 conflicts with
-  <italic>
-   itself
-  </italic>
-  , which shouldn't be a warning), or
-  <italic>
-   you think it's changing the time of its
-   <code>
-    self
-   </code>
-   but it actually isn't (correctly).
-  </italic>
-  <break>
-  </break>
-  <break>
-  </break>
-  So I would suggest checking/printing what all the time-related attributes are for arch1120 before and after line 236
-  <code>
-   arch1120.changeTime(new_time)
-  </code>
-  .
-  <break>
-  </break>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Catie Pratt (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I'm getting the exact same error message as well!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Could this an issue in my conflictsWith function? I can't seem to locate any error in my changeWith function..
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Prof. Lee (she/they) (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Right, one of the hypotheses mentioned above was, "your code doesn't think that ARCH 1120 conflicts with FAKER 0000 "
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     I've tried debugging and printing everything but I still cannot find the issue with my code.. I keep receiving the same error :(
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 10em;">
+     <h3>
+      Author: Catie Pratt (student)
+     </h3>
+     <h3>
+      Vote Count: 0
+     </h3>
+     <p>
+      I'm getting the exact same error message as well!
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 10em;">
+      <h3>
+       Author: Prof. Lee (she/they) (admin)
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       So right now, I think error is probably with changeTime.
+       <break>
+       </break>
+       <break>
+       </break>
+       Either it's generating the wrong warnings (indeed, it is saying that 1120 conflicts with
+       <i>
+        itself
+       </i>
+       , which shouldn't be a warning), or
+       <i>
+        you think it's changing the time of its
+        <code>
+         self
+        </code>
+        but it actually isn't (correctly).
+       </i>
+       <break>
+       </break>
+       <break>
+       </break>
+       So I would suggest checking/printing what all the time-related attributes are for arch1120 before and after line 236
+       <code>
+        arch1120.changeTime(new_time)
+       </code>
+       .
+       <break>
+       </break>
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

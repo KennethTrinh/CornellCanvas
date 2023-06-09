@@ -13,62 +13,58 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Currently trying to derive the resistance looking into the common base, and I don't understand why Vy = ixRc here:
- </paragraph>
- <figure>
-  <image height="160.0721420643729" src="https://static.us.edusercontent.com/files/c7bHwIyfFdzX4qXMbaktoEgS" width="641"/>
- </figure>
- <paragraph>
-  When I tried to do it myself using KCL, this is what I got (where Vout is the same thing as Vy):
- </paragraph>
- <figure>
-  <image height="360.5938232994527" src="https://static.us.edusercontent.com/files/2P5Y6tUXjvSbJ1ylAkxPCWbw" width="641"/>
- </figure>
- <paragraph>
-  I'm not quite sure what I'm doing wrong. Could someone help explain?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Currently trying to derive the resistance looking into the common base, and I don't understand why Vy = ixRc here:
+</p>
+<figure>
+ <image height="160.0721420643729" src="https://static.us.edusercontent.com/files/c7bHwIyfFdzX4qXMbaktoEgS" width="641"/>
+</figure>
+<p>
+ When I tried to do it myself using KCL, this is what I got (where Vout is the same thing as Vy):
+</p>
+<figure>
+ <image height="360.5938232994527" src="https://static.us.edusercontent.com/files/2P5Y6tUXjvSbJ1ylAkxPCWbw" width="641"/>
+</figure>
+<p>
+ I'm not quite sure what I'm doing wrong. Could someone help explain?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Clifford Pollock (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Your approach is good, but you put the wrong sign for the current source. The current from the current source  should be +g_m  v_x.  Then solve for v_x/i_x and you should get the right answer
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Amal El-Ghazaly (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Amal El-Ghazaly (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   You're right that Vy should not just be equal to ixRc. That was my mistake.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The correct KCL would give
- </paragraph>
+ </p>
  <math>
   V_y=\left(i_x+\frac{v_{\pi}}{r_{\pi}}\right)R_C
  </math>
- <paragraph>
+ <p>
   I'll upload a revised derivation soon. The result should still be the same. My apologies for that mistake.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Clifford Pollock (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Your approach is good, but you put the wrong sign for the current source. The current from the current source  should be +g_m  v_x.  Then solve for v_x/i_x and you should get the right answer
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

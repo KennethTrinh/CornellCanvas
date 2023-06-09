@@ -13,130 +13,118 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="73.73447015834348" src="https://static.us.edusercontent.com/files/SAGbK34pcb5Ls7oxPn567w5I" width="658"/>
- </figure>
- <paragraph>
-  Is the VC dimension of this hypothesis space H infinite ? If not, what would be a counterexample of a set of points that could not be shattered by H?
- </paragraph>
-</document>
+<figure>
+ <image height="73.73447015834348" src="https://static.us.edusercontent.com/files/SAGbK34pcb5Ls7oxPn567w5I" width="658"/>
+</figure>
+<p>
+ Is the VC dimension of this hypothesis space H infinite ? If not, what would be a counterexample of a set of points that could not be shattered by H?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jane Du (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jane Du (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   It is not infinite. H is the set of circles, but each individual hypothesis is just one circle. So, you want to shatter a set of d points using only 1 circle (but you can put the circle wherever you want and make it as big as you want).
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jeremy Freedman (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I've been struggling with the exact definition of the VC dimension... in the instance of the XOR function with 4 points, a circle would not be able to shatter S. Does that mean the VC dimension of this hypothesis class is &lt;4? There are other examples of 4 points that
-  <italic>
-   can
-  </italic>
-  be shattered, so I'm not sure if that means the VC dim is at least 4 or not.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jane Du (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Are there examples of 4 points that can be shattered? To shatter a set S means to be able to represent all possible labellings of set S with a hypothesis from H. All of H are circles, so to shatter a set of 1 point looks like this:
- </paragraph>
- <figure>
-  <image height="159" src="https://static.us.edusercontent.com/files/fqfsd69KT7zjUrPI37cGgIwB" width="291"/>
- </figure>
- <paragraph>
- </paragraph>
- <paragraph>
-  To shatter 2 points with H, I need to look at 2^2 labellings, and it looks like this:
- </paragraph>
- <figure>
-  <image height="162" src="https://static.us.edusercontent.com/files/QzCdgZOLCDzafL9ad8w1h0z5" width="680"/>
- </figure>
- <paragraph>
-  And shattering 3 points is also doable. I haven't drawn out all 8 cases, but you can see some of them:
- </paragraph>
- <figure>
-  <image height="189.25377229080934" src="https://static.us.edusercontent.com/files/qXzXRsvNUj7OXuqcyxgdaXLa" width="683"/>
- </figure>
- <paragraph>
-  Recall that for a VC dimension to be d:
- </paragraph>
- <paragraph>
-  1.
-  <bold>
-   There exists
-  </bold>
-  at least 1 set of size d that is shatterable -- i.e.
-  <bold>
-   for all
-  </bold>
-  2^d labellings of this set, I can represent them using hypotheses from H.
- </paragraph>
- <paragraph>
-  2.
-  <bold>
-   For all
-  </bold>
-  sets of size d+1 and above, there is no way to shatter them. i.e.
-  <bold>
-   there exists
-  </bold>
-  at least one labelling of these d+1 or more points that can't be captured from H.
- </paragraph>
- <paragraph>
-  Typically point 2. above is harder to prove.
- </paragraph>
- <paragraph>
-  Note: if there exists a set of size d or below that is not shatterable, such as 3 colinear lines with the circle, it does not preclude point 1. In other words, the VC dimension is at least 3 even if there is only 1 very specific very ideal set of 3 points shatterable by H.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  So would it not be possible for this hypothesis class to shatter a set of 4 points? I was thinking about it, and I think it can't, but just wanted to make sure
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Jeremy Freedman (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I've been struggling with the exact definition of the VC dimension... in the instance of the XOR function with 4 points, a circle would not be able to shatter S. Does that mean the VC dimension of this hypothesis class is &lt;4? There are other examples of 4 points that
+   <i>
+    can
+   </i>
+   be shattered, so I'm not sure if that means the VC dim is at least 4 or not.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Jane Du (staff)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Are there examples of 4 points that can be shattered? To shatter a set S means to be able to represent all possible labellings of set S with a hypothesis from H. All of H are circles, so to shatter a set of 1 point looks like this:
+   </p>
+   <figure>
+    <image height="159" src="https://static.us.edusercontent.com/files/fqfsd69KT7zjUrPI37cGgIwB" width="291"/>
+   </figure>
+   <p>
+    To shatter 2 points with H, I need to look at 2^2 labellings, and it looks like this:
+   </p>
+   <figure>
+    <image height="162" src="https://static.us.edusercontent.com/files/QzCdgZOLCDzafL9ad8w1h0z5" width="680"/>
+   </figure>
+   <p>
+    And shattering 3 points is also doable. I haven't drawn out all 8 cases, but you can see some of them:
+   </p>
+   <figure>
+    <image height="189.25377229080934" src="https://static.us.edusercontent.com/files/qXzXRsvNUj7OXuqcyxgdaXLa" width="683"/>
+   </figure>
+   <p>
+    Recall that for a VC dimension to be d:
+   </p>
+   <p>
+    1.
+    <b>
+     There exists
+    </b>
+    at least 1 set of size d that is shatterable -- i.e.
+    <b>
+     for all
+    </b>
+    2^d labellings of this set, I can represent them using hypotheses from H.
+   </p>
+   <p>
+    2.
+    <b>
+     For all
+    </b>
+    sets of size d+1 and above, there is no way to shatter them. i.e.
+    <b>
+     there exists
+    </b>
+    at least one labelling of these d+1 or more points that can't be captured from H.
+   </p>
+   <p>
+    Typically point 2. above is harder to prove.
+   </p>
+   <p>
+    Note: if there exists a set of size d or below that is not shatterable, such as 3 colinear lines with the circle, it does not preclude point 1. In other words, the VC dimension is at least 3 even if there is only 1 very specific very ideal set of 3 points shatterable by H.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     So would it not be possible for this hypothesis class to shatter a set of 4 points? I was thinking about it, and I think it can't, but just wanted to make sure
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

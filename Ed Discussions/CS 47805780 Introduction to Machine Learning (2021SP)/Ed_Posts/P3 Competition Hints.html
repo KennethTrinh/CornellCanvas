@@ -13,29 +13,23 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Can we get any hints/tips on how to approach the competition part? I'm just doing a 70/30 train validation split then looping through to find the best C and lambda from the list given above. However, I'm timing out on submission. Anyone have pointers on how to make the cross_validation faster? Or otherwise optimize efficiency and performance? Thanks!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Can we get any hints/tips on how to approach the competition part? I'm just doing a 70/30 train validation split then looping through to find the best C and lambda from the list given above. However, I'm timing out on submission. Anyone have pointers on how to make the cross_validation faster? Or otherwise optimize efficiency and performance? Thanks!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Lin (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Lin (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Loop to find the best $C$ and $\lambda$ when training, but don't loop while testing. Just use the best $C$ and $\lambda$. That way you don't time out.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

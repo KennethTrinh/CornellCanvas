@@ -16,79 +16,73 @@
 <h3>
  ENDORSED
 </h3>
-<document version="2.0">
- <paragraph>
-  The short quiz on shortest paths has finally been graded!
-  <break>
-  </break>
-  Sorry it took so long, but the prelim and lots of other things got in the way.
- </paragraph>
- <paragraph>
-  In grading both questions, we were picky about how the answer was written. People received a grade of only 2.75 / 3.00 or 2.5 / 3.00 on a question because of how their answer was written. Even though we could tell the student knew what was going on, we deducted points because that was the only way to get the student to read the feedback. This deduction on a quiz that has a low weight will not effect anyone's final grade. But it WILL inspire the student to read our feedback.
- </paragraph>
- <paragraph>
-  How one answers a question --with lots of verbiage that hides the answer or something that is succinct and clear-- makes a big difference.  Since the beginning of the course, we have stressed the need to read carefully. It is now time to stress the need to write properly as well. We give examples below.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Question 1 asked you to state the theorem proved about the Dijkstra invariant. All you had to do was copy and paste. Of course, it is better to type the answer yourself; it helps you imbibe the theorem. But here is one submission:
- </paragraph>
- <list style="ordered">
-  <list-item>
-   <paragraph>
-    Say we have a settled set S with at least one shortest path from v to s containing only settled nodes where d[s] represents distance. Additionally, say we have a frontier set F with at least one path from v to f containing only settled nodes except for f where d[f] represents the minimum distance of all such paths. The theorem proved is as follows: for the node f in F (the frontier) with the minimum d-value (among the nodes in the frontier), d[f] represents the shortest distance from v to f.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Wow! What a lot to read! Why? Why not just submit the last sentence (rephrased):
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    For a node f in F with minimum d-value (among the nodes in F),
-    <break>
-    </break>
-    d[f] is the shortest distance from v to f.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  That is all that is needed. What a difference!
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  1. Question 2 asked what the theorem told us about a certain 4-node frontier set. The simple answer is:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    The shortest path from Ithaca to Danby, over all such paths, has length 5.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  That is all one had to write. But there were a lot more verbose ones, like this one:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    The theorem tells us that for a node f (in this case being represented by a town) with minimum d value (over the other nodes/towns in the Frontier), d[f] is the shortest distance from v (Ithaca) to f. In this case, f is represented by Danby, since Danby has the minimum d value of 5 (compared to Cortland 11, Dryden 10, and Enfield 9), and v is represented by Ithaca. This tells us that 5 is the shortest distance from Ithaca to Dryden, but by the algorithm, we also know that this path (from Danby to Ithaca) is the minimum distance of all paths containing only settled nodes in frontier F.
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  The correct answer IS hidden in the above, but wow, how difficult it is to see it.
- </paragraph>
- <paragraph>
-  Any answer to question 2 that mentioned moving Danby to the settled set received a deduction of at least .25. The theorem says nothing about the settled set. And, at the time we discuss the theorem, there was no mention of the algorithm. So why bring up moving Danby to the settled set? Please learn to separate your concerns. One concern is what the theorem says; another concern, handled later, is how to use it in developing the algorithm. Keep these concerns separate.
- </paragraph>
- <paragraph>
-  We hope this little discussion of the shortest-path quiz helps you learn about answering questions succinctly and correctly.
- </paragraph>
-</document>
+<p>
+ The short quiz on shortest paths has finally been graded!
+ <break>
+ </break>
+ Sorry it took so long, but the prelim and lots of other things got in the way.
+</p>
+<p>
+ In grading both questions, we were picky about how the answer was written. People received a grade of only 2.75 / 3.00 or 2.5 / 3.00 on a question because of how their answer was written. Even though we could tell the student knew what was going on, we deducted points because that was the only way to get the student to read the feedback. This deduction on a quiz that has a low weight will not effect anyone's final grade. But it WILL inspire the student to read our feedback.
+</p>
+<p>
+ How one answers a question --with lots of verbiage that hides the answer or something that is succinct and clear-- makes a big difference.  Since the beginning of the course, we have stressed the need to read carefully. It is now time to stress the need to write properly as well. We give examples below.
+</p>
+<p>
+ Question 1 asked you to state the theorem proved about the Dijkstra invariant. All you had to do was copy and paste. Of course, it is better to type the answer yourself; it helps you imbibe the theorem. But here is one submission:
+</p>
+<list style="ordered">
+ <li>
+  <p>
+   Say we have a settled set S with at least one shortest path from v to s containing only settled nodes where d[s] represents distance. Additionally, say we have a frontier set F with at least one path from v to f containing only settled nodes except for f where d[f] represents the minimum distance of all such paths. The theorem proved is as follows: for the node f in F (the frontier) with the minimum d-value (among the nodes in the frontier), d[f] represents the shortest distance from v to f.
+  </p>
+ </li>
+</list>
+<p>
+ Wow! What a lot to read! Why? Why not just submit the last sentence (rephrased):
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   For a node f in F with minimum d-value (among the nodes in F),
+   <break>
+   </break>
+   d[f] is the shortest distance from v to f.
+  </p>
+ </li>
+</list>
+<p>
+ That is all that is needed. What a difference!
+</p>
+<p>
+ 1. Question 2 asked what the theorem told us about a certain 4-node frontier set. The simple answer is:
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   The shortest path from Ithaca to Danby, over all such paths, has length 5.
+  </p>
+ </li>
+</list>
+<p>
+ That is all one had to write. But there were a lot more verbose ones, like this one:
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   The theorem tells us that for a node f (in this case being represented by a town) with minimum d value (over the other nodes/towns in the Frontier), d[f] is the shortest distance from v (Ithaca) to f. In this case, f is represented by Danby, since Danby has the minimum d value of 5 (compared to Cortland 11, Dryden 10, and Enfield 9), and v is represented by Ithaca. This tells us that 5 is the shortest distance from Ithaca to Dryden, but by the algorithm, we also know that this path (from Danby to Ithaca) is the minimum distance of all paths containing only settled nodes in frontier F.
+  </p>
+ </li>
+</list>
+<p>
+ The correct answer IS hidden in the above, but wow, how difficult it is to see it.
+</p>
+<p>
+ Any answer to question 2 that mentioned moving Danby to the settled set received a deduction of at least .25. The theorem says nothing about the settled set. And, at the time we discuss the theorem, there was no mention of the algorithm. So why bring up moving Danby to the settled set? Please learn to separate your concerns. One concern is what the theorem says; another concern, handled later, is how to use it in developing the algorithm. Keep these concerns separate.
+</p>
+<p>
+ We hope this little discussion of the shortest-path quiz helps you learn about answering questions succinctly and correctly.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>

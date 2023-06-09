@@ -13,34 +13,32 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  Is it correct to say that delta[n-a] * delta[n-b] = delta[n-a-b]?
- </paragraph>
-</document>
+<p>
+ Is it correct to say that delta[n-a] * delta[n-b] = delta[n-a-b]?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   That's correct.  Let $x [ n ] =$ that convolution.  Then
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $x [ n ] = \sum _ {k = - \infty} ^ \infty \delta [ k - a ] \delta [ n - k - b ]$.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The ostensibly infinite sum on the right-hand side has exactly one nonzero term, the one where $k = a$, so we get
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $x [ n ] = \delta [ n - a - b ]$.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

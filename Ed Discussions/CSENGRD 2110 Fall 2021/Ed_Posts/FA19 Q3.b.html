@@ -13,29 +13,23 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Is it necessary to use equals on primitive type int in this example?
- </paragraph>
- <paragraph>
- </paragraph>
- <figure>
-  <image height="553.9367396593674" src="https://static.us.edusercontent.com/files/SUKNre5lf4Re26fGwRdPyYg8" width="658"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Is it necessary to use equals on primitive type int in this example?
+</p>
+<figure>
+ <image height="553.9367396593674" src="https://static.us.edusercontent.com/files/SUKNre5lf4Re26fGwRdPyYg8" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Apologies, the use of
   <code>
    .equals()
@@ -53,15 +47,15 @@
    Object
   </code>
   ), and autoboxing will not help us here (this is easy to verify using JShell).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Equivalence tests of primitive fields must always be done using
   <code>
    ==
   </code>
   .
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

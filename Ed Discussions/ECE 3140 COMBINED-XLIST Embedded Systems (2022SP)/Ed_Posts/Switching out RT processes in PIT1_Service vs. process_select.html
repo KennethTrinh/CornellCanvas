@@ -13,42 +13,40 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Should we be aiming to switch out RT processes in the millisecond interrupt?
- </paragraph>
- <paragraph>
-  To my understanding, this would give allow the RT processes to start on time more accurately. Since process_select is only called when PIT Channel 0 generates interrupts, if we do RT switching in process_select, it may only occur after the time has incremented past the start time.
- </paragraph>
-</document>
+<p>
+ Should we be aiming to switch out RT processes in the millisecond interrupt?
+</p>
+<p>
+ To my understanding, this would give allow the RT processes to start on time more accurately. Since process_select is only called when PIT Channel 0 generates interrupts, if we do RT switching in process_select, it may only occur after the time has incremented past the start time.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Nope - this would cause the context switches to take up a significant amount of time
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   While you are correct, we would then be adding a lengthy process to our global timer which would offset our timing. Also if we did that, there would be no point to using two district timers.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Aidan McNay (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Nope - this would cause the context switches to take up a significant amount of time
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

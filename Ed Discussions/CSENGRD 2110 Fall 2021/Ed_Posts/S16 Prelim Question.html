@@ -13,34 +13,32 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="47.266524520255864" src="https://static.us.edusercontent.com/files/IcMoMqBPxXC0J227NcJL8POj" width="652"/>
- </figure>
- <paragraph>
-  The answer key says this is false. Am I understanding this correctly if I reason that it is false because pet is static type Animal are compile-time, while spike is of static type Dog, which therefore is why this statement is illegal?
- </paragraph>
-</document>
+<figure>
+ <image height="47.266524520255864" src="https://static.us.edusercontent.com/files/IcMoMqBPxXC0J227NcJL8POj" width="652"/>
+</figure>
+<p>
+ The answer key says this is false. Am I understanding this correctly if I reason that it is false because pet is static type Animal are compile-time, while spike is of static type Dog, which therefore is why this statement is illegal?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   It doesn't compile because it requires casting an Animal object down to a Cat, and only upward casts are inserted automatically. Write:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Dog spike= (Dog) pet;
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   That will compiler=.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

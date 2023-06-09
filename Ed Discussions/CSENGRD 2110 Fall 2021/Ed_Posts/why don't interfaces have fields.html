@@ -13,50 +13,44 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi! I am not sure that why can't interfaces have fields? I remember I once read that interfaces could have fields with modifiers public static final? Thanks!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Hi! I am not sure that why can't interfaces have fields? I remember I once read that interfaces could have fields with modifiers public static final? Thanks!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   A "static final field" is just a constant value.  It is not a "member" of any objects, so we don't need to worry about tricky multiple-inheritance issues like the "diamond problem" (see JHT).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Other kinds of fields are mutable and should generally be encapsulated (private).  But interfaces are all about the public, well,
-  <italic>
+  <i>
    interface
-  </italic>
+  </i>
   that other code uses to interact with an implementing class, and encapsulated mutable state is not a part of that.  So that's another reason on top of the multiple-inheritance concerns for interfaces to not have mutable fields.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thanks!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thanks!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

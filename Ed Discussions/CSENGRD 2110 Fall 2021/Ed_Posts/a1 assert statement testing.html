@@ -13,42 +13,38 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  hi, are we expected to test for different types of assertion errors for a1? or when we're testing our assert statements is it fine to have this same expected value for all of them:
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  assertThrows(AssertionError, () -&gt; this.mom
- </paragraph>
-</document>
+<p>
+ hi, are we expected to test for different types of assertion errors for a1? or when we're testing our assert statements is it fine to have this same expected value for all of them:
+</p>
+<p>
+ assertThrows(AssertionError, () -&gt; this.mom
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You should test as many of your assert statements as you wish. Do enough so that you know you are on the right track.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   But I don't know what Precondition you are testing in your example.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Let's suppose that, in addMom, you have the assert statement:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   assert mom == null;
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   To test it, you have to create an Elephant object in which mom is NOT null:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   1. Create an elephant e1.
   <break>
   </break>
@@ -59,47 +55,45 @@
   <break>
   </break>
   4. Finally, have an assertThrows in which the anonymous function calls e1.addMom(m) .
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you! So then would I create a new testing unit called something like testAssertStatements where I test all of my assert statements? Or should I just test the assert statements under the units that represent the methods where they are defined?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  The handout says, if you read it carefully, to do one of the following:
- </paragraph>
- <paragraph>
-  1. Write a fifth testing procedure to test all assert statements.
- </paragraph>
- <paragraph>
-  OR
- </paragraph>
- <paragraph>
-  2. For each method that has assert statements, add tests for them to the appropriate one of the four testing procedures you already have (for groups A, B, C, D).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you! So then would I create a new testing unit called something like testAssertStatements where I test all of my assert statements? Or should I just test the assert statements under the units that represent the methods where they are defined?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: David Gries (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    The handout says, if you read it carefully, to do one of the following:
+   </p>
+   <p>
+    1. Write a fifth testing procedure to test all assert statements.
+   </p>
+   <p>
+    OR
+   </p>
+   <p>
+    2. For each method that has assert statements, add tests for them to the appropriate one of the four testing procedures you already have (for groups A, B, C, D).
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

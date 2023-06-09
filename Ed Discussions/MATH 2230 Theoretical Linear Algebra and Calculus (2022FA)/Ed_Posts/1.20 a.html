@@ -13,72 +13,66 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="133.4027397260274" src="https://static.us.edusercontent.com/files/xZrZc2x4tKyoMc1Dfujl5KLZ" width="658"/>
- </figure>
- <paragraph>
-  I'm trying to show that $f(x, y)$ is unique for a given $(x, y)$, i.e. if $(r\cos(\theta), r\sin(\theta)) = (s\cos(\phi), s\sin(\phi))$, then $rh(\theta) = sh(\phi)$.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  If $(r\cos(\theta), r\sin(\theta)) = (s\cos(\phi), s\sin(\phi))$ (and the $x$ coordinate is nonzero), I can see that $r = \pm s$ and $\theta = \phi +\frac{\pi}{2}n$ for some integer $n$. But it seems like I have to show that $r = s$ and $\theta = \phi + 2\pi n$. How can I do this?
- </paragraph>
-</document>
+<figure>
+ <image height="133.4027397260274" src="https://static.us.edusercontent.com/files/xZrZc2x4tKyoMc1Dfujl5KLZ" width="658"/>
+</figure>
+<p>
+ I'm trying to show that $f(x, y)$ is unique for a given $(x, y)$, i.e. if $(r\cos(\theta), r\sin(\theta)) = (s\cos(\phi), s\sin(\phi))$, then $rh(\theta) = sh(\phi)$.
+</p>
+<p>
+ If $(r\cos(\theta), r\sin(\theta)) = (s\cos(\phi), s\sin(\phi))$ (and the $x$ coordinate is nonzero), I can see that $r = \pm s$ and $\theta = \phi +\frac{\pi}{2}n$ for some integer $n$. But it seems like I have to show that $r = s$ and $\theta = \phi + 2\pi n$. How can I do this?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Reyer Sjamaar (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  You may assume $r\ge0$.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Yehoshua Milman (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  To show that $f$ is continuous at $(x, y) \neq (0, 0)$, I'm trying to use the fact that $f = p\circ g$, where $p:\mathbb{R}^{&gt;0}\times [0, 2\pi) \to \R^2$ defined by
- </paragraph>
- <paragraph>
-  $$p(r, \theta) = rh(\theta)$$
- </paragraph>
- <paragraph>
-  and $g:\mathbb R^2\backslash \{(0, 0)\}\to\mathbb{R}^{&gt;0}\times [0, 2\pi)$ that maps $(x, y)$ to the unique $(r, \theta)\in \mathbb{R}^{&gt;0}\times [0, 2\pi)$ such that $x = r\cos\theta$ and $y = r\sin \theta$.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  But I can't figure out how to prove that $g$ is continuous. How can I show this? Or is there a better way to do the problem?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Luke Serafin (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Luke Serafin (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   I don't think $g$ is continuous; look at points whose second coordinate is zero. What about using two functions with smaller domains which together cover $\mathbb{R}^2 \setminus \{(0,0)\}$ and such that they differ by a $C^1$ diffeomorphism on the intersection of their domains?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Reyer Sjamaar (admin)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   You may assume $r\ge0$.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Yehoshua Milman (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    To show that $f$ is continuous at $(x, y) \neq (0, 0)$, I'm trying to use the fact that $f = p\circ g$, where $p:\mathbb{R}^{&gt;0}\times [0, 2\pi) \to \R^2$ defined by
+   </p>
+   <p>
+    $$p(r, \theta) = rh(\theta)$$
+   </p>
+   <p>
+    and $g:\mathbb R^2\backslash \{(0, 0)\}\to\mathbb{R}^{&gt;0}\times [0, 2\pi)$ that maps $(x, y)$ to the unique $(r, \theta)\in \mathbb{R}^{&gt;0}\times [0, 2\pi)$ such that $x = r\cos\theta$ and $y = r\sin \theta$.
+   </p>
+   <p>
+    But I can't figure out how to prove that $g$ is continuous. How can I show this? Or is there a better way to do the problem?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

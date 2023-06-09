@@ -13,38 +13,34 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I completed up to TODO 6, and when I run the code only one dot appears in the upper right corner. The game reverts back to the inactive state per the specification of TODO 5, but I don't see the dot hopping around, just the one original dot stays in place. What could be the problem?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ I completed up to TODO 6, and when I run the code only one dot appears in the upper right corner. The game reverts back to the inactive state per the specification of TODO 5, but I don't see the dot hopping around, just the one original dot stays in place. What could be the problem?
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Anonymous
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   As a follow up, how are we supposed to respawn the target if the respawn() method is defined within the private inner class Target?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   If you have a variable referencing a
   <code>
    Target
@@ -58,8 +54,8 @@
    Target
   </code>
   object for the game board is not respawned each time the timer expires, then I would not expect the dot to move, as that method is the only way to change its position.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

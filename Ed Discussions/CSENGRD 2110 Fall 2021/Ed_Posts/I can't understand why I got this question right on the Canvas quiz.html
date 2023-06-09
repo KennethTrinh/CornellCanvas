@@ -13,34 +13,28 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  If class F extends E, why does E need to implement methods with the same name as F? Isn't the whole point of having one class extend another to create new methods that the superclass doesn't have?
- </paragraph>
- <figure>
-  <image height="727.8648648648648" src="https://static.us.edusercontent.com/files/BgdJLwtaa4PnqYB8wjcG9Ljl" width="658"/>
- </figure>
-</document>
+<p>
+ If class F extends E, why does E need to implement methods with the same name as F? Isn't the whole point of having one class extend another to create new methods that the superclass doesn't have?
+</p>
+<figure>
+ <image height="727.8648648648648" src="https://static.us.edusercontent.com/files/BgdJLwtaa4PnqYB8wjcG9Ljl" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Troy Moslemi (he/him) (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Hi,
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Class E cannot access Class F, but Class F can access Class E.  So if E implements K2, it must include every method of K2 as it cannot access p() in Class F.  Because Class F can Access its super class, Class E, it can use E's n() method in order to fully implement K1, K2 as it as not itself implement n().  I recommend playing around in Eclipse and copying the code in order to get a better understanding of how this works.
- </paragraph>
- <paragraph>
- </paragraph>
+ </p>
  <snippet language="java" line-numbers="true" runnable="true">
   <snippet-file id="code">
    interface K2 { 
@@ -61,14 +55,10 @@ class F extends E implements K1, K2 {
  }
   </snippet-file>
  </snippet>
- <paragraph>
- </paragraph>
- <paragraph>
+ <p>
   Notice how I implemented all of K2's method in Class E's interface and removed all the code of Class F's body and the code should work fine and not give out an error about implemented classes. (Ignore the error about how n should return an int, it just means n has yet to be coded with a return statement returning a type int.)  If you were to call p() on a Class F object, it would look to the super class, in this case which is Class E, and use it's p().  However, Class E cannot access the methods of Class F.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

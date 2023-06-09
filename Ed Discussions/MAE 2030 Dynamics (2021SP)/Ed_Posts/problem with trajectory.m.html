@@ -13,32 +13,30 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  In this code from lecture, we use isnumeric(soln.xe) to test whether or not soln.xe is an empty array bc if it is, that means the event wasn't reached within the tspan. I was trying this out, however, and it seems like isnumeric() returns true for the empty vector [] actually, so I kept getting errors. Should we be using ~isempty()?
- </paragraph>
-</document>
+<p>
+ In this code from lecture, we use isnumeric(soln.xe) to test whether or not soln.xe is an empty array bc if it is, that means the event wasn't reached within the tspan. I was trying this out, however, and it seems like isnumeric() returns true for the empty vector [] actually, so I kept getting errors. Should we be using ~isempty()?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Andy Ruina (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Andy Ruina (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Thanks.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You are exactly correct.  My code is wrong, yours is right.
   <break>
   </break>
   I did not adequately check my bad code.
   <break>
   </break>
- </paragraph>
+ </p>
  <pre>Summariing, line  38 of my file trajectory.m  from lecture on March 12 now  incorrectly reads:
 
 if isnumeric(soln.xe); % If event is not reached, soln.xe = [] which is not numeric
@@ -48,7 +46,7 @@ That line should be changed to
 i<code>f ~isempty(soln.xe); % If event is not reached, soln.xe = [] which is empty</code>
 
 </pre>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,60 +13,52 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hello,  I am trying to understand how we got the impulse response for the averager in continuous time.
- </paragraph>
- <figure>
-  <image height="186.13693693693696" src="https://static.us.edusercontent.com/files/GXnAIEiSm4aqXupTZxZlbzEb" width="658.0000000000001"/>
- </figure>
- <paragraph>
-  I am thinking that as a-&gt;0 the pulse of width a is essentially just a value of 1 at t=0.  So, if t-T&lt;0&lt;t, thinking of the integral as a reimann sum, the range that we are summing has 0 in the middle of it, then this 1 shows up in the sum and thus we get the (1/T)*(1).  if t&gt;T then won't have t=0 in our integral so we get zero, and if t&lt;0 we won't have that t=0 point in it either.
-  <break>
-  </break>
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  I am not sure how to get the value at the jump with the 1/2 * (1/T). By my logic, if t=0, the 1 would then be in the interval we are summing, so we would get (1/T).
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  How would you do this integral more rigorously without just reasoning about it?  I know that I have to change the integral bounds to involve the (-a/2 to a/2) range but I am confused how to deal with adding them in with all the ts and Ts going on.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Thanks in advance
- </paragraph>
-</document>
+<p>
+ Hello,  I am trying to understand how we got the impulse response for the averager in continuous time.
+</p>
+<figure>
+ <image height="186.13693693693696" src="https://static.us.edusercontent.com/files/GXnAIEiSm4aqXupTZxZlbzEb" width="658.0000000000001"/>
+</figure>
+<p>
+ I am thinking that as a-&gt;0 the pulse of width a is essentially just a value of 1 at t=0.  So, if t-T&lt;0&lt;t, thinking of the integral as a reimann sum, the range that we are summing has 0 in the middle of it, then this 1 shows up in the sum and thus we get the (1/T)*(1).  if t&gt;T then won't have t=0 in our integral so we get zero, and if t&lt;0 we won't have that t=0 point in it either.
+ <break>
+ </break>
+</p>
+<p>
+ I am not sure how to get the value at the jump with the 1/2 * (1/T). By my logic, if t=0, the 1 would then be in the interval we are summing, so we would get (1/T).
+</p>
+<p>
+ How would you do this integral more rigorously without just reasoning about it?  I know that I have to change the integral bounds to involve the (-a/2 to a/2) range but I am confused how to deal with adding them in with all the ts and Ts going on.
+</p>
+<p>
+ Thanks in advance
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   One idea: plug in $t = 0$ and the formula for $p _ a$ and you end up with
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $\frac{1}{a T} \int _ {- T} ^ 0 p _ a ( \tau ) d \tau$,
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   which, for $a$ small enough (specifically, $a &lt; T / 2$) equals
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $\frac{1}{a T} \int _ {- a / 2} ^ 0 1 d \tau = \frac{1}{a T} ( a / 2 ) = \frac{1}{2 T}$.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You can calculate the $t = T$ case similarly.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

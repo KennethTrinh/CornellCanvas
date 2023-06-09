@@ -13,11 +13,10 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  I set up my timers as follows
- </paragraph>
- <pre>NVIC_EnableIRQ(PIT_IRQn); // Enable PIT Interupts
+<p>
+ I set up my timers as follows
+</p>
+<pre>NVIC_EnableIRQ(PIT_IRQn); // Enable PIT Interupts
 
 SIM-&gt;SCGC6 = SIM_SCGC6_PIT_MASK; // Enable clock to PIT
 
@@ -32,61 +31,54 @@ PIT-&gt;CHANNEL[1].TCTRL |= (1 &lt;&lt; 1); // Enable interrupts for channel 1
 PIT-&gt;CHANNEL[0].TCTRL |= 0x1; //Enable channel 0
 PIT-&gt;CHANNEL[1].TCTRL |= 0x1; //Enable channel 1
 </pre>
- <paragraph>
-  When I have the enable channel 1 line commented out, PIT0 generates interrupts correctly and processes select is called when expected. However, if I uncomment that line process select is never called and only the PIT1 interrupt is received.
- </paragraph>
- <paragraph>
-  What could be causing this?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- Author: Trenton Lyke (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ When I have the enable channel 1 line commented out, PIT0 generates interrupts correctly and processes select is called when expected. However, if I uncomment that line process select is never called and only the PIT1 interrupt is received.
+</p>
+<p>
+ What could be causing this?
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Trenton Lyke (student)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   I would double check that your LDVAL for channel 1 is not too small and that you are remembering to clear the TFLG for channel 1.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Shiyi Bai (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Thanks so much saved my day!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Shiyi Bai (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   Thanks so much saved my day!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Crum (student)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Crum (student)
+ </h3>
+ <h3>
+  Vote Count: 3
+ </h3>
+ <p>
   Always remember to clear your interrupts kids
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,47 +13,39 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  How come in question 4 of the additional problems posted for the exam, column trip_distance of dataframe taxi is referenced by taxi.trip_distance instead of taxi['trip_distance']? Are they interchangeable or is there a difference between these two kinds of references?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Also, in general in Pandas when would we use words AND and OR instead of &amp; and |?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  For Pandas joins, if A.join(B, ON=...) does the ON= require the column of A or B that will be used for the join?
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Thanks!
- </paragraph>
-</document>
+<p>
+ How come in question 4 of the additional problems posted for the exam, column trip_distance of dataframe taxi is referenced by taxi.trip_distance instead of taxi['trip_distance']? Are they interchangeable or is there a difference between these two kinds of references?
+</p>
+<p>
+ Also, in general in Pandas when would we use words AND and OR instead of &amp; and |?
+</p>
+<p>
+ For Pandas joins, if A.join(B, ON=...) does the ON= require the column of A or B that will be used for the join?
+</p>
+<p>
+ Thanks!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Julia Vanputte (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Julia Vanputte (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   1. They seem interchangeable but we typically use taxi['trip_distance']
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   for setting, values, you need to use
   <code>
    df['column'] = series
   </code>
   .
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   once this is done however, you can refer to that column in the future with
   <code>
    df.column
@@ -71,24 +63,25 @@
    df['6column']
   </code>
   )
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   see this link for more info
-  <link href="https://stackoverflow.com/questions/23546555/in-pandas-whats-the-difference-between-dfcolumn-and-df-column"/>
-  https://stackoverflow.com/questions/23546555/in-pandas-whats-the-difference-between-dfcolumn-and-df-column
- </paragraph>
- <paragraph>
+  <a href="https://stackoverflow.com/questions/23546555/in-pandas-whats-the-difference-between-dfcolumn-and-df-column">
+   https://stackoverflow.com/questions/23546555/in-pandas-whats-the-difference-between-dfcolumn-and-df-column
+  </a>
+ </p>
+ <p>
   2. &amp; and | are used in pandas. AND and OR are used in python (will not work in pandas). If comparing things in pandas dataframes, use &amp; and |.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   see this link
   <link href="https://towardsdatascience.com/bitwise-operators-and-chaining-comparisons-in-pandas-d3a559487525"/>
   https://towardsdatascience.com/bitwise-operators-and-chaining-comparisons-in-pandas-d3a559487525
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   3. the ON= needs to be the column that is the same name in both dataframes A and B.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

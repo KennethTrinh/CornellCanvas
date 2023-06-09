@@ -13,40 +13,38 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi,
- </paragraph>
- <paragraph>
-  I am a bit confused about the Lagrange multipliers in the following equation:
- </paragraph>
- <math>
-  \vec{w}=\sum_{ }^{ }\alpha_iy_ix_i
- </math>
- <paragraph>
-  How can we prove that only points that lie closest to the hyperplane have alphas that are not zero?
- </paragraph>
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
+<p>
+ Hi,
+</p>
+<p>
+ I am a bit confused about the Lagrange multipliers in the following equation:
+</p>
+<math>
+ \vec{w}=\sum_{ }^{ }\alpha_iy_ix_i
+</math>
+<p>
+ How can we prove that only points that lie closest to the hyperplane have alphas that are not zero?
+</p>
+<p>
+ Thank you!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Sharang Sriramu (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Sharang Sriramu (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   This is a consequence of the complementary slackness condition.
   <break>
   </break>
   In the primal SVM problem, you have the constraint $y_i(w^Tx_i + b) \geq 1$. The complementary slackness condition for this tells us that $\alpha_i(1 - y_i(w^Tx_i + b) ) = 0$. This forces $\alpha_i=0$ for all points that are not on the margin line.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

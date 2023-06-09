@@ -13,58 +13,56 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I am having a great deal of trouble writing a query that grabs multiple tags for a single entry.
- </paragraph>
- <paragraph>
-  For example, if we have entry1, and entry2 where entry1 has tag1 but entry2 has tag2 and tag3.
- </paragraph>
- <paragraph>
-  How can we make it such that a single record has one entry, and two tags
- </paragraph>
- <paragraph>
-  ex:
- </paragraph>
- <paragraph>
-  {1 =&gt; entry1, tag1
- </paragraph>
- <paragraph>
-  2 =&gt; entry2, tag2, tag3 }
- </paragraph>
- <paragraph>
-  My results duplicate entry2 such that but I am not sure how else to grab both tags.
- </paragraph>
- <paragraph>
-  {1 =&gt; entry1, tag1
- </paragraph>
- <paragraph>
-  2 =&gt; entry2, tag2,
- </paragraph>
- <paragraph>
-  3 =&gt; entry2, tag3 }
- </paragraph>
-</document>
+<p>
+ I am having a great deal of trouble writing a query that grabs multiple tags for a single entry.
+</p>
+<p>
+ For example, if we have entry1, and entry2 where entry1 has tag1 but entry2 has tag2 and tag3.
+</p>
+<p>
+ How can we make it such that a single record has one entry, and two tags
+</p>
+<p>
+ ex:
+</p>
+<p>
+ {1 =&gt; entry1, tag1
+</p>
+<p>
+ 2 =&gt; entry2, tag2, tag3 }
+</p>
+<p>
+ My results duplicate entry2 such that but I am not sure how else to grab both tags.
+</p>
+<p>
+ {1 =&gt; entry1, tag1
+</p>
+<p>
+ 2 =&gt; entry2, tag2,
+</p>
+<p>
+ 3 =&gt; entry2, tag3 }
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Kyle J. Harms (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kyle J. Harms (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Your result is correct and expected behavior. It's not possible to return:
- </paragraph>
+ </p>
  <pre>{1 =&gt; entry1, tag1
 
 2 =&gt; entry2, tag2, tag3 }</pre>
- <paragraph>
+ <p>
   I will note it sounds like (although I'm not sure from the information provided here) like you simply might need a separate SQL query to get whatever functionality you're working on to work. It seems like you might be trying to do too much with 1 query and that 2 would solve this. But I don't know for sure without looking at your code. I hope this helps.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

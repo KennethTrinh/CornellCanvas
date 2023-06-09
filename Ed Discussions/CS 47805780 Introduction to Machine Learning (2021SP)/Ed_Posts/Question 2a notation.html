@@ -13,66 +13,60 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  For the instance space, how should the superscript "2" be interpreted?
- </paragraph>
- <math>
-  X=\left\{+1,-1\right\}^2
- </math>
- <paragraph>
-  And how can the logical NOT function be represented with more than 1 input? Would it be a 1D linear classifier rather than 2D like AND?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ For the instance space, how should the superscript "2" be interpreted?
+</p>
+<math>
+ X=\left\{+1,-1\right\}^2
+</math>
+<p>
+ And how can the logical NOT function be represented with more than 1 input? Would it be a 1D linear classifier rather than 2D like AND?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Atul Ganju (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Atul Ganju (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The way you would want to interpret the superscript would be that the instance space is the cartesian product of the set $\{+1,-1\}$ with itself. Or to be explicit,  $\{(+1,+1),(+1,-1),(-1,+1),(-1,-1)\}$.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   For the latter question, you are correct in that the NOT function is typically represented with 1 input. But can we extend a definition to the NOT function for multiple inputs? What if we classified the case where every input is $-1$ as $-1$ and then classified all other points as $+1$. This is similar to how Python handles boolean evaluation $False \leq 0$ and $True &gt; 0$. There are other ways to extend the definition of the NOT function onto multiple inputs, but the point is that it can be done!
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Ok, I think I understand. The parameters w and b that represent the NOT function linear classifier are not necessarily unique, right?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jane Du (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes, a NOT function is (arbitrarily!) definable on 2 inputs. However, for the homework, we ask only for the AND function!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Ok, I think I understand. The parameters w and b that represent the NOT function linear classifier are not necessarily unique, right?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Jane Du (staff)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Yes, a NOT function is (arbitrarily!) definable on 2 inputs. However, for the homework, we ask only for the AND function!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

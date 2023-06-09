@@ -13,71 +13,69 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  "The LEDs do not have to stay synchronized."
- </paragraph>
- <paragraph>
-  Is it even possible to make the main function and the handler to be Asynchronized?
- </paragraph>
- <paragraph>
-  Do I have to apply some sort of multi-threading techniques?
- </paragraph>
- <paragraph>
-  My guesses for this part are:
- </paragraph>
- <paragraph>
-  1. Multi-threading(async)
- </paragraph>
- <paragraph>
-  2. The handler can't have any loops(sync)
- </paragraph>
- <paragraph>
-  3. The handler can have a small loop for the green led(but what's the point of saying the two leads shouldn't be synchronized?)
- </paragraph>
-</document>
+<p>
+ "The LEDs do not have to stay synchronized."
+</p>
+<p>
+ Is it even possible to make the main function and the handler to be Asynchronized?
+</p>
+<p>
+ Do I have to apply some sort of multi-threading techniques?
+</p>
+<p>
+ My guesses for this part are:
+</p>
+<p>
+ 1. Multi-threading(async)
+</p>
+<p>
+ 2. The handler can't have any loops(sync)
+</p>
+<p>
+ 3. The handler can have a small loop for the green led(but what's the point of saying the two leads shouldn't be synchronized?)
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Wei (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  The use of a global variable in the interrupt method could lead to an asynchronous implementation.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Deemo Chen :) (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  oh ya, that's right. Thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aidan McNay (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Going off of this, I think it would even be difficult to synchronize them perfectly without looking at the compiled assembly. Given that they use different mechanisms (global loops vs. timer interrupts), both LED's should function independent of one another
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Michael Wei (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   The use of a global variable in the interrupt method could lead to an asynchronous implementation.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Deemo Chen :) (None)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    oh ya, that's right. Thank you!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

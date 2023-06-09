@@ -13,84 +13,80 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  For part (a), $CX$ is the union of all lines through the origin and a point $(x, y, 1)$ such that $(x, y) \in X$, so it seems like it follows that $CX = \{(x, y, z) \mid z\neq 0 \text{ and } (x/z, y/z)\in X\}\cup\{(0,0,0)\}$ (I put my reasoning at the end). But intuitively it seems like this set should be closed, so what is added by taking its closure? Is the question just asking me to include $(0, 0, 0)$?
- </paragraph>
- <paragraph>
-  <bold>
-   Reasoning:
-  </bold>
- </paragraph>
- <paragraph>
-  if $(x, y, z)\in CX$, then $(x, y, z) $ is on some line through the origin and a point $(x_0, y_0, 1)$ such that $(x_0, y_0) \in X$, so it is a scalar multiple $t(x_0, y_0, 1)$ of that point. If $(x, y, z)= (0, 0, 0)$, then there's nothing to show. Otherwise, $x = tx_0$, $y = ty_0$, and $z = tz_0$, so since at least one of $x,y,z\neq 0$ and each of them is a multiple of $t$, it follows that $t\neq 0$. Thus, we can divide $x = tx_0$ and $y = ty_0$ by $ z=t$ to get $(x/z,  y/z) = (x_0, y_0)\in X$
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Conversely, the point $(0, 0, 0)$ is clearly in $CX$ and if $z \neq 0$ and $(x/z,y/z)\in X$, then $(x, y, z) = z(x/z, y/z, 1)$ is on the line through the origin and $(x/z, y/z, 1)$, so it's in $CX$.
- </paragraph>
-</document>
+<p>
+ For part (a), $CX$ is the union of all lines through the origin and a point $(x, y, 1)$ such that $(x, y) \in X$, so it seems like it follows that $CX = \{(x, y, z) \mid z\neq 0 \text{ and } (x/z, y/z)\in X\}\cup\{(0,0,0)\}$ (I put my reasoning at the end). But intuitively it seems like this set should be closed, so what is added by taking its closure? Is the question just asking me to include $(0, 0, 0)$?
+</p>
+<p>
+ <b>
+  Reasoning:
+ </b>
+</p>
+<p>
+ if $(x, y, z)\in CX$, then $(x, y, z) $ is on some line through the origin and a point $(x_0, y_0, 1)$ such that $(x_0, y_0) \in X$, so it is a scalar multiple $t(x_0, y_0, 1)$ of that point. If $(x, y, z)= (0, 0, 0)$, then there's nothing to show. Otherwise, $x = tx_0$, $y = ty_0$, and $z = tz_0$, so since at least one of $x,y,z\neq 0$ and each of them is a multiple of $t$, it follows that $t\neq 0$. Thus, we can divide $x = tx_0$ and $y = ty_0$ by $ z=t$ to get $(x/z,  y/z) = (x_0, y_0)\in X$
+</p>
+<p>
+ Conversely, the point $(0, 0, 0)$ is clearly in $CX$ and if $z \neq 0$ and $(x/z,y/z)\in X$, then $(x, y, z) = z(x/z, y/z, 1)$ is on the line through the origin and $(x/z, y/z, 1)$, so it's in $CX$.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Reyer Sjamaar (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Reyer Sjamaar (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   No, the cone $CX$ is in general not a closed set.  See part (b) for an example where $CX\ne\overline{CX}$.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Your description of $CX$ is not wrong, but in part (a) you are asked to give an equation.  Your description is not an equation.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Yehoshua Milman (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  If I let $f:\mathbb R^2\to \mathbb R$ be a function such that $X = f^{-1}(0)$, then I could use $f(x/z, y/z) = 0$ as an equation for the cone excluding the origin. Do I just need to find an equation that includes the origin, or is there more in the closure of $CX$ that wouldn't be included in this?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Reyer Sjamaar (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  You are giving away too many details.  This discussion forum is not intended for posting nearly complete solutions.
- </paragraph>
- <paragraph>
-  That said, let me answer your question by saying
- </paragraph>
- <list style="number">
-  <list-item>
-   <paragraph>
-    The origin is contained in $CX$.  But there may be points in the $xy$-plane other than the origin which are contained in the closure of $CX$.  See part (b).
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    The equation you wrote is valid away from the $xy$-plane.  For a general function $f$ you cannot do better than the equation you wrote.  But if $f$ is a polynomial in $x$ and $y$ you can clear denominators and obtain an equation for $\overline{CX}$ that holds everywhere in $\mathbf{R}^3$.
-   </paragraph>
-  </list-item>
- </list>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Yehoshua Milman (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   If I let $f:\mathbb R^2\to \mathbb R$ be a function such that $X = f^{-1}(0)$, then I could use $f(x/z, y/z) = 0$ as an equation for the cone excluding the origin. Do I just need to find an equation that includes the origin, or is there more in the closure of $CX$ that wouldn't be included in this?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Reyer Sjamaar (admin)
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    You are giving away too many details.  This discussion forum is not intended for posting nearly complete solutions.
+   </p>
+   <p>
+    That said, let me answer your question by saying
+   </p>
+   <list style="number">
+    <li>
+     <p>
+      The origin is contained in $CX$.  But there may be points in the $xy$-plane other than the origin which are contained in the closure of $CX$.  See part (b).
+     </p>
+    </li>
+    <li>
+     <p>
+      The equation you wrote is valid away from the $xy$-plane.  For a general function $f$ you cannot do better than the equation you wrote.  But if $f$ is a polynomial in $x$ and $y$ you can clear denominators and obtain an equation for $\overline{CX}$ that holds everywhere in $\mathbf{R}^3$.
+     </p>
+    </li>
+   </list>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

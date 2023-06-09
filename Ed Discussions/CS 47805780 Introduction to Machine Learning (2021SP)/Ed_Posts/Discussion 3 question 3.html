@@ -13,84 +13,78 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm a little confused by the wording of question 3 in Discussion 3. It says to construct the training sample set so that the Perceptron makes
-  <bold>
-   at least
-  </bold>
- </paragraph>
- <math>
-  \frac{R^2}{\gamma^2}
- </math>
- <paragraph>
-  mistakes? I thought the Perceptron could make
-  <bold>
-   at most
-  </bold>
-  this number of mistakes?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I'm a little confused by the wording of question 3 in Discussion 3. It says to construct the training sample set so that the Perceptron makes
+ <b>
+  at least
+ </b>
+</p>
+<math>
+ \frac{R^2}{\gamma^2}
+</math>
+<p>
+ mistakes? I thought the Perceptron could make
+ <b>
+  at most
+ </b>
+ this number of mistakes?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jerry Sun (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  The wording is correct, this is the idea that we're trying to get across in fact. This will end up being the strict upper bound, where there is no smaller value that can be the upper bound.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Great, thanks for clarifying!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Artem Streltsov (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Artem Streltsov (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Essentially, you need to come up with an example that messes with the perceptron algo making it spend max amount of updates to converge. Hint: think of how the updates work in perceptron and what kind of dataset would make it keep updating
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Hmm, I think I understand now, thank you!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Hmm, I think I understand now, thank you!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Jerry Sun (staff)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   The wording is correct, this is the idea that we're trying to get across in fact. This will end up being the strict upper bound, where there is no smaller value that can be the upper bound.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Great, thanks for clarifying!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

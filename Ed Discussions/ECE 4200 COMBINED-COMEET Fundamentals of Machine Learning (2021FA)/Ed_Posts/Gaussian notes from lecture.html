@@ -13,62 +13,58 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi, I have been trying to understand this section of notes from lecture for a while now and can't seem to understand what is going on. I am particularly confused about the step near the page break (both why it is being done, and what it means). Any clarification on this would be great, thanks.
- </paragraph>
- <figure>
-  <image height="576" src="https://static.us.edusercontent.com/files/hpS2EpclajUyBVSWxwFOalKS" width="603"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Hi, I have been trying to understand this section of notes from lecture for a while now and can't seem to understand what is going on. I am particularly confused about the step near the page break (both why it is being done, and what it means). Any clarification on this would be great, thanks.
+</p>
+<figure>
+ <image height="576" src="https://static.us.edusercontent.com/files/hpS2EpclajUyBVSWxwFOalKS" width="603"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jayadev Acharya (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jayadev Acharya (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   GNB assumes that that "each attribute" is independent (naive) + Gaussian distributed conditioned on the label. At the end of the page we are saying this:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Suppose N(mu, sigma^2) is a gaussian distribution and we get independent samples X1, ..., Xn from this distribution, then the probability density of X1,..., Xn is:
- </paragraph>
+ </p>
  <math>
   \Pr\left(X_1,...,X_n\right)=\Pr\left(X_1\right)\cdot\ldots\cdot\Pr\left(X_n\right)
  </math>
- <paragraph>
+ <p>
   Now, for each term we write their pdf according to the Gaussian distribution N(mu, sigma^2) :
- </paragraph>
+ </p>
  <math>
   \Pr\left(X_i\right)=\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{\left(X_i-\mu\right)^2}{2\sigma^2}\right)
  </math>
- <paragraph>
+ <p>
   Substituting this we get the expression at the page break.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Now the point is how do we use this in a training set. Suppose we consider the dataset we wrote at the end of the class. Heights are independent Gaussians given the gender. So if we look at the four heights for label 'F' they are distributed as i.i.d. Gaussian. But we do not know their mean or variance. We need to take these four heights and use them to obtain the mean and variance of the distributions. In Problem 3, you see the ML solution to this problem.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  This helped a lot! Thank you
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   This helped a lot! Thank you
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

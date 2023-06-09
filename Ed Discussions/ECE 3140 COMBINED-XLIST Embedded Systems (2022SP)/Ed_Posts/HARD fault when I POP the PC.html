@@ -13,37 +13,35 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I tried to pop the PC like previous posts suggested, now I am getting a hard fault.
- </paragraph>
- <paragraph>
-  I determined it when i popped the PC because I stepped over lines 1 by 1, and it takes me here when I try to step over the POP PC line:
- </paragraph>
- <figure>
-  <image height="136.16331096196868" src="https://static.us.edusercontent.com/files/0iRmejcQ7xhpNUhT2nWfxD20" width="658"/>
- </figure>
- <paragraph>
-  I dont ever push the PC, infact I actually push LR earlier; should be using BX LR?
- </paragraph>
-</document>
+<p>
+ I tried to pop the PC like previous posts suggested, now I am getting a hard fault.
+</p>
+<p>
+ I determined it when i popped the PC because I stepped over lines 1 by 1, and it takes me here when I try to step over the POP PC line:
+</p>
+<figure>
+ <image height="136.16331096196868" src="https://static.us.edusercontent.com/files/0iRmejcQ7xhpNUhT2nWfxD20" width="658"/>
+</figure>
+<p>
+ I dont ever push the PC, infact I actually push LR earlier; should be using BX LR?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aaron Wilhelm (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aaron Wilhelm (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Most likely you are pushing a different number of times than you are popping. Look at the stack as I did in the factorial demo to make sure that what you push onto the stack when you do PUSH {LR} is the same as when you do POP {PC}. My bet is that you accidentally push more or less times than you pop, and/or you push/pop out of order so the wrong value is loaded into the PC
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If you are pushing LR then you'll need to pop that value into the PC (don't use BX LR)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

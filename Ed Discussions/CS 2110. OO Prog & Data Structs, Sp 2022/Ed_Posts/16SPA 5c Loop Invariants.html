@@ -13,48 +13,46 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Looking for a clarification on how the initialization not make the invariant true if 1=product of m..m and m&lt;=m&lt;=n is true when int z=1 and int k=m? The video example explaining this with the example of sum seems similar, but is there a key difference I am missing between the two examples?
- </paragraph>
- <figure>
-  <image height="260.55986509274874" src="https://static.us.edusercontent.com/files/44HMYVFRfdHyJbae8oyDgJKw" width="464"/>
- </figure>
- <figure>
-  <image height="217.77224199288258" src="https://static.us.edusercontent.com/files/8J4EzWekhLbgVHOh7wdnUzuV" width="658"/>
- </figure>
-</document>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ Looking for a clarification on how the initialization not make the invariant true if 1=product of m..m and m&lt;=m&lt;=n is true when int z=1 and int k=m? The video example explaining this with the example of sum seems similar, but is there a key difference I am missing between the two examples?
+</p>
+<figure>
+ <image height="260.55986509274874" src="https://static.us.edusercontent.com/files/44HMYVFRfdHyJbae8oyDgJKw" width="464"/>
+</figure>
+<figure>
+ <image height="217.77224199288258" src="https://static.us.edusercontent.com/files/8J4EzWekhLbgVHOh7wdnUzuV" width="658"/>
+</figure>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Anonymous
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I notice now the exam question is missing a +1 in the precondition and a -1 in the invariant, but would still appreciate an explanation on how this affects the loop, thank you.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Caleb Chin (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Caleb Chin (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   In the first part, we have: z=1, k=m. By the invariant: z = product of m..k and m &lt;= k &lt;= n. Because we initialize k=m, the invariant begins as z = product of m..m, which is one element (not empty). However, the product of one element is whatever the element is (not necessarily 1). For example, if element m was 5, the product of m..m is 5.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   In the other case, we say z is the sum of m..k-1. We initialize k=m, so z is originally the sum of m..m-1. The sum of an empty set is 0 so our initialization of k and z satisfies the invariant.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,41 +13,39 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  Can someone please explain the difference between subset and subspace? Can something be a subset but not a subspace?
- </paragraph>
-</document>
+<p>
+ Can someone please explain the difference between subset and subspace? Can something be a subset but not a subspace?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Alekos Robotis (staff)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Alekos Robotis (staff)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   The notion of "subset" is much more general (and in some sense simple) than that of a subspace. Given a pair of sets $X$ and $Y$ we say that $X$ is a subset of $Y$ if every member of $X$ is also a member of $Y$. This is written as $X\subseteq Y$. For instance, the even integers $\{\ldots,-4,-2,0,2,4,\ldots\}$ are a subset of the integers $\{\ldots,-3,-2,-1,0,1,2,3,\ldots\}$. Or, the set of Math 2940 students is a subset of the set of Cornell students.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The notion of "subspace" belongs to linear algebra. That is to say that a subspace is a special kind of subset of a vector space. Indeed, as you probably know, a subspace of a vector space $V$ is a subset $W\subseteq V$ satisfying the
-  <bold>
+  <b>
    additional
-  </bold>
+  </b>
   properties that for all $w_1,w_2\in W$ we have $w_1+w_2\in W$ and for all $\lambda \in \mathbb{R}$ and $w\in W$ we have $\lambda w\in W$.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   You should note that it is easy to construct subsets of vector spaces that are not subspaces. Indeed, if we look at $\mathbb{R}^2$, then $\{(1,0)\}$ is not a subspace because $(1,0)+(1,0)=(2,0)\not\in \{(1,0)\}$. Another good example is taking the union of the two axes in $\mathbb{R}^2$, that is, $X=\{(x,y)\in \mathbb{R}^2: x=0\:\text{or}\: y=0\}$. This is a subset of $\mathbb{R}^2$, but not a subspace.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   In short, a subspace is a special type of subset of a vector space, while subsets are a much more general phenomenon (indeed, it is not self-evident how to add Cornell students, so how could the set of math 2940 students be a "subspace" of the set of Cornell students?).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   We are interested in subspaces of vector spaces in this class because most of the interesting sets we encounter will have a natural vector space/subspace structure. For instance, the kernel of a linear transformation $T:V\to W$ is a subspace of the vector space $V$. The image of such a $T$ is a subspace of $W$.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

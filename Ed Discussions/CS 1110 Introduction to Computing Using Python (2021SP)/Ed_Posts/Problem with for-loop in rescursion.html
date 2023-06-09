@@ -13,45 +13,43 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  My code for task 2 seems to work for the first three test cases, but then something weird happens on the last test case -- it only works for these two branches:
- </paragraph>
- <figure>
-  <image height="370.02332361516034" src="https://static.us.edusercontent.com/files/Pq6exqvsTWbbvVP8cMvNk66Z" width="641"/>
- </figure>
- <paragraph>
-  It looks like after moving down from A, the recursion only works in the leftward direction.  I suspect my for-loop is causing this problem. Any suggestions on how to fix this? Thanks in advance.
- </paragraph>
-</document>
+<p>
+ My code for task 2 seems to work for the first three test cases, but then something weird happens on the last test case -- it only works for these two branches:
+</p>
+<figure>
+ <image height="370.02332361516034" src="https://static.us.edusercontent.com/files/Pq6exqvsTWbbvVP8cMvNk66Z" width="641"/>
+</figure>
+<p>
+ It looks like after moving down from A, the recursion only works in the leftward direction.  I suspect my for-loop is causing this problem. Any suggestions on how to fix this? Thanks in advance.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jonathan Chai (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jonathan Chai (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You may be incorrectly stopping or prematurely returning when looping through the user paths of the replies, thereby giving you only one path to a leaf for each reply to the original post (in this case, you are only getting the first leftmost path for each reply). You want to make sure you are getting and working with all of the paths of all of the replies.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  thanks!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   thanks!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

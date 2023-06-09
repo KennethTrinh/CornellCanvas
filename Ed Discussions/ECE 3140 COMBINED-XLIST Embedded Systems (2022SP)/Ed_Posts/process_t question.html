@@ -13,45 +13,43 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi, I have a few questions about
-  <code>
-   process_t
-  </code>
- </paragraph>
- <paragraph>
-  1. Where is
-  <code>
-   process_t
-  </code>
-  defined?
- </paragraph>
- <paragraph>
-  2. What are the fields of
-  <code>
-   process_t
-  </code>
-  ?
- </paragraph>
-</document>
+<p>
+ Hi, I have a few questions about
+ <code>
+  process_t
+ </code>
+</p>
+<p>
+ 1. Where is
+ <code>
+  process_t
+ </code>
+ defined?
+</p>
+<p>
+ 2. What are the fields of
+ <code>
+  process_t
+ </code>
+ ?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   The following is found in
-  <italic>
+  <i>
    3140_concur.h
-  </italic>
+  </i>
   :
- </paragraph>
+ </p>
  <pre>struct process_state;
 typedef struct process_state process_t;
    /* opaque definition of process type; you must provide this
@@ -65,25 +63,25 @@ typedef struct process_state process_t;
             };
    */
 </pre>
- <paragraph>
+ <p>
   As stated, you will be implementing the struct
-  <italic>
+  <i>
    process_state
-  </italic>
+  </i>
   in
-  <italic>
+  <i>
    process.c
-  </italic>
+  </i>
   .
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The fields of
-  <italic>
+  <i>
    process_state
-  </italic>
+  </i>
   are up to do you decide based on several factors: the implementation of your linked list, the process stack, and anything else that you may find helpful to store alongside each process.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

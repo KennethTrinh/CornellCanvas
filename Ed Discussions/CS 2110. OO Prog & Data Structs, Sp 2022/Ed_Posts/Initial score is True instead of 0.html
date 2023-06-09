@@ -13,28 +13,26 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi,
- </paragraph>
- <paragraph>
-  I'm having a problem with my code and everything I have tried to do to fix it hasn't worked. When I open my game and run it, the score starts as True instead of 0. When we click the circle and get points it works, it's just when the score is zero. My instinct was to check methods start game, set score,  get score, and JLabel scoreLabel, but there appear to be no problems with those methods (which makes sense given you guys provided those methods for us). I don't know what other areas to look into.
- </paragraph>
- <paragraph>
-  Thank you!
- </paragraph>
-</document>
+<p>
+ Hi,
+</p>
+<p>
+ I'm having a problem with my code and everything I have tried to do to fix it hasn't worked. When I open my game and run it, the score starts as True instead of 0. When we click the circle and get points it works, it's just when the score is zero. My instinct was to check methods start game, set score,  get score, and JLabel scoreLabel, but there appear to be no problems with those methods (which makes sense given you guys provided those methods for us). I don't know what other areas to look into.
+</p>
+<p>
+ Thank you!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Michael Clarkson (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Michael Clarkson (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Is it possible you modified the provided code in
   <code>
    createAndShowGUI
@@ -44,76 +42,74 @@
    scoreLabel
   </code>
   ?  That's where the label is initially set to zero.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I don't think so, but instead of true, this appeared in the score, which I think might help us figure out what's going on:
- </paragraph>
- <figure>
-  <image height="187.36490993995997" src="https://static.us.edusercontent.com/files/fOMaWZlZM5QF4CDz8GJdM97Z" width="604"/>
- </figure>
- <paragraph>
-  Also, the window filled the entire length of my screen when created. Is that okay/normal?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Michael Clarkson (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Not normal, not okay.
- </paragraph>
- <paragraph>
-  You seem to now have code that is setting the text of
-  <code>
-   scoreLabel
-  </code>
-  to an object -- probably the GameComponent object.  Maybe you wrote
-  <code>
-   ... + this
-  </code>
-  somewhere.
- </paragraph>
- <paragraph>
-  Look for all the places
-  <code>
-   scoreLabel
-  </code>
-  appears.  There aren't many.  One of them you are doing something like I just said.  That is what needs to be fixed.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you for your help, Professor Clarkson. It was a problem with the abstract function in the PropertyChangeListener to change the score on scoreLabel. Fixing it also fixed the window size problem because I believe the window was too wide to make room for all the text. Thanks again!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I don't think so, but instead of true, this appeared in the score, which I think might help us figure out what's going on:
+  </p>
+  <figure>
+   <image height="187.36490993995997" src="https://static.us.edusercontent.com/files/fOMaWZlZM5QF4CDz8GJdM97Z" width="604"/>
+  </figure>
+  <p>
+   Also, the window filled the entire length of my screen when created. Is that okay/normal?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Michael Clarkson (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Not normal, not okay.
+   </p>
+   <p>
+    You seem to now have code that is setting the text of
+    <code>
+     scoreLabel
+    </code>
+    to an object -- probably the GameComponent object.  Maybe you wrote
+    <code>
+     ... + this
+    </code>
+    somewhere.
+   </p>
+   <p>
+    Look for all the places
+    <code>
+     scoreLabel
+    </code>
+    appears.  There aren't many.  One of them you are doing something like I just said.  That is what needs to be fixed.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 8em;">
+    <h3>
+     Author: Anonymous
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Thank you for your help, Professor Clarkson. It was a problem with the abstract function in the PropertyChangeListener to change the score on scoreLabel. Fixing it also fixed the window size problem because I believe the window was too wide to make room for all the text. Thanks again!
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

@@ -13,63 +13,57 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Maybe I misunderstand, but according to the inputs for
-  <code>
-   l2distance
-  </code>
-  , the matrices could differ in the number of vectors. Dimensionality is enforced (
-  <code>
-   assert d1==d2
-  </code>
-  ) but quantity of vectors is not. What is the euclidean distance between some point
-  <code>
-   X_i
-  </code>
-  and
-  <code>
-   Y_i
-  </code>
-  if
-  <code>
-   i&gt;len(Y)
-  </code>
-  ?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Maybe I misunderstand, but according to the inputs for
+ <code>
+  l2distance
+ </code>
+ , the matrices could differ in the number of vectors. Dimensionality is enforced (
+ <code>
+  assert d1==d2
+ </code>
+ ) but quantity of vectors is not. What is the euclidean distance between some point
+ <code>
+  X_i
+ </code>
+ and
+ <code>
+  Y_i
+ </code>
+ if
+ <code>
+  i&gt;len(Y)
+ </code>
+ ?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aryan Pandhi (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aryan Pandhi (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   If there are m points in X, and n points in Y. You will be creating a distance matrix D of size m x n such that D_ij would be the distance between X_i and Y_j.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Jeremy Freedman (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I see now, thanks!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Jeremy Freedman (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I see now, thanks!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

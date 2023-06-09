@@ -13,54 +13,50 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I am generally confused about the Tile class. do we have any reason to need to know or use the TileType in the seek state?
- </paragraph>
- <paragraph>
-  the isOpen() method seems useful when finding neighbors to move to but I am just confused how to construct a Tile as a parameter for a Node if I do not know the row, column, TileType, etc.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I am generally confused about the Tile class. do we have any reason to need to know or use the TileType in the seek state?
+</p>
+<p>
+ the isOpen() method seems useful when finding neighbors to move to but I am just confused how to construct a Tile as a parameter for a Node if I do not know the row, column, TileType, etc.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Please read the long specification on McDiver.seek.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   One para. says ou know only your current tile's ID and the IDs
   <break>
   </break>
   of neighbor tiles to which McDiver can move, and distances to the ring.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The next para. tells you what functions you should be using:
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   currentLocation(), neighbors(), and distanceToRing()
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   and in the next para.  moveTo(long id)
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Concentrate on what that all means.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Also, read carefully the guidelines on writing seek that appear linked to from the
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Ed Discussion pinned note for A8.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

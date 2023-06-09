@@ -13,36 +13,32 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I am kind of lost for problem 5. As the frequency response is provided, I think I should be able to calculate the bk but I am not sure how to do this. Is it like I can use the H(w) to know the bk and then use this bk and x[n] to know the y[n]? If I do this, is it what the problem means for "using actual numbers"?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I am kind of lost for problem 5. As the frequency response is provided, I think I should be able to calculate the bk but I am not sure how to do this. Is it like I can use the H(w) to know the bk and then use this bk and x[n] to know the y[n]? If I do this, is it what the problem means for "using actual numbers"?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Delchamps (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Delchamps (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   If someone on Ho Plaza says a system's frequency response is
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $\widehat{H} ( \widehat{\omega} ) = 3 - 7 e ^ {- j \widehat{\omega}}+ 13 e ^ {- j 7 \widehat{\omega}}$,
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   then I know right away that its impulse response is $h [ 0 ] = 3$, $h [ 1 ] = - 7$, $h [ 7 ] = 13$, and $h [ n ] = 0$ for all other $n$.  Ii can figure that out either by reversing the process to get "from the $b _ k$ to the frequency response," or I can use the formula
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   $ h [ n ] = \frac{1}{2 \pi} \int _ {- \pi} ^ \pi \widehat{H} ( \widehat{\omega} ) e ^ {j n \widehat{\omega}} d \widehat{\omega}$.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,97 +13,95 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="199.70854271356782" src="https://static.us.edusercontent.com/files/oyEu9ElgzkqkabLnx4KzYxXW" width="641"/>
- </figure>
- <paragraph>
-  Hi!
- </paragraph>
- <paragraph>
-  I saw on the slides that if the denominator is 0, java would throw an Arithmetic Exception. I was wondering would exceptions always be found at
-  <bold>
-   run time
-  </bold>
-  and are not checked statically like type errors?
- </paragraph>
- <paragraph>
-  Thank you very much!
- </paragraph>
-</document>
+<figure>
+ <image height="199.70854271356782" src="https://static.us.edusercontent.com/files/oyEu9ElgzkqkabLnx4KzYxXW" width="641"/>
+</figure>
+<p>
+ Hi!
+</p>
+<p>
+ I saw on the slides that if the denominator is 0, java would throw an Arithmetic Exception. I was wondering would exceptions always be found at
+ <b>
+  run time
+ </b>
+ and are not checked statically like type errors?
+</p>
+<p>
+ Thank you very much!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Tomer Shamir (admin)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes exceptions are found at run time
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Chuhan Ouyang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Got it! Thank you very much!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   There is a way in which exceptions interact with the type system at compile-time, though.  Certain exceptions in Java (though
-  <italic>
+  <i>
    not
-  </italic>
+  </i>
   <code>
    ArithmeticException
   </code>
   ) are classified as "checked exceptions".  If a function could possibly throw a checked exception, then it must declare that fact, and any code that calls it must either catch that exception type or else declare that it can throw it too.  These "catch-or-throws" rules are enforced by the compiler, so at runtime, you should never be surprised by an unhandled checked exception.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The flip side of this compile-time safety regarding checked exceptions is that you are forced to handle all possible errors, which (while important for production systems) can get tedious for quick scripts and lead to bad habits.  Reading input and performing file I/O is notoriously annoying in Java because
   <code>
    IOException
   </code>
   is a checked exception.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   We'll learn more about exceptions in a future lecture (with associated reading in JHT), so you don't need to worry about these details at this point.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Chuhan Ouyang (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you for the thorough explanation! I feel better about exceptions now!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Chuhan Ouyang (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thank you for the thorough explanation! I feel better about exceptions now!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Tomer Shamir (admin)
+  </h3>
+  <h3>
+   Vote Count: 2
+  </h3>
+  <p>
+   Yes exceptions are found at run time
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Chuhan Ouyang (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Got it! Thank you very much!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

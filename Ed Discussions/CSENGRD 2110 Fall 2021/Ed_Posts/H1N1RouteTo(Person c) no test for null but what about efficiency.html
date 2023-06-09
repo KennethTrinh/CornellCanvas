@@ -13,59 +13,55 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  The actual implementation really does not need a null test for correctness, but then the program has to traverse all nodes to return null, because it does not know the input is null and has to compare till the last leaf. This is O(1) vs O(n) when the input is null. Is there a more elegant way to handle null?
- </paragraph>
-</document>
+<p>
+ The actual implementation really does not need a null test for correctness, but then the program has to traverse all nodes to return null, because it does not know the input is null and has to compare till the last leaf. This is O(1) vs O(n) when the input is null. Is there a more elegant way to handle null?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   I don't now what you mean by "The actual implementation really does not need a null test for correctness".
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   There being no route to c certainly has to be tested.
   <break>
   </break>
   Also, A.H1N1RouteTo(null) should also be tested.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Perhaps your question is about putting in a special base case
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   if (c == null) return null;
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   One COULD put this in to remove the task of traversing the whole tree if c is null.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   But I would NOT do this because the case would happen so rarely.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Great! I won't bother with "if (c == null) return null;"!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Great! I won't bother with "if (c == null) return null;"!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

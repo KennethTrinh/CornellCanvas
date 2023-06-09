@@ -13,67 +13,63 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi! I am quite confused by this ppt slide, as what does it mean by maintain an index? And why searching in heap is not O(log N), since heap already is heap ordered? Thanks!
- </paragraph>
- <figure>
-  <image height="285.09890109890114" src="https://static.us.edusercontent.com/files/4abKj9CW1jwXvtcGW9uUI4kT" width="658.0000000000001"/>
- </figure>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Hi! I am quite confused by this ppt slide, as what does it mean by maintain an index? And why searching in heap is not O(log N), since heap already is heap ordered? Thanks!
+</p>
+<figure>
+ <image height="285.09890109890114" src="https://static.us.edusercontent.com/files/4abKj9CW1jwXvtcGW9uUI4kT" width="658.0000000000001"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  You want a "dictionary" or "map".
- </paragraph>
- <paragraph>
-  An entry (v, i) tells you that value v is in array element b[I], where b is the array containing the heap.
- </paragraph>
- <paragraph>
-  Therefore, you can find out where a value is in array b in expected constant time --you'll learn about hash tables and hasp maps later.
- </paragraph>
- <paragraph>
-  By "maintaining the map" we mean the following. Suppose value 20 is in array element 0, so the dictionary has contains the pair (20, 0). 20 is in the root of the heap. If 20 is bubbled down to array element 16, then the dictionary has to be changed to contain the value (20, 16).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you so much!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The heap property does not mean that searching the heap takes time proportional to its height.  Remember that a heap is not a BST; a value less than a node could be in either the right or the left subtree, so you might have to search them both.  This is more analogous to the trees in A5, where searching algorithms are linear in the number of nodes.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   You want a "dictionary" or "map".
+  </p>
+  <p>
+   An entry (v, i) tells you that value v is in array element b[I], where b is the array containing the heap.
+  </p>
+  <p>
+   Therefore, you can find out where a value is in array b in expected constant time --you'll learn about hash tables and hasp maps later.
+  </p>
+  <p>
+   By "maintaining the map" we mean the following. Suppose value 20 is in array element 0, so the dictionary has contains the pair (20, 0). 20 is in the root of the heap. If 20 is bubbled down to array element 16, then the dictionary has to be changed to contain the value (20, 16).
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Thank you so much!
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

@@ -13,77 +13,73 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I was a bit confused about what the method insert was supposed to do. It says "Given p a new child, a node with Human c. Return the newly created node." So are we supposed first to add p to c (link them up like A4).  If so, I'm a bit confused on how to connect the nodes together, because they don't have a head/tail as they did in A4.
- </paragraph>
- <paragraph>
-  public CovidTree insert(Human p, Human c)
-  <bold>
-   throws IllegalArgumentException
-  </bold>
-  {}
- </paragraph>
- <paragraph>
-  Also, I was a bit confused about the part I bolded. What does it do? (does that cover the " p or c is null, or p is not in this CovidTree, or c is already in this CovidTree. return error")
- </paragraph>
-</document>
+<p>
+ I was a bit confused about what the method insert was supposed to do. It says "Given p a new child, a node with Human c. Return the newly created node." So are we supposed first to add p to c (link them up like A4).  If so, I'm a bit confused on how to connect the nodes together, because they don't have a head/tail as they did in A4.
+</p>
+<p>
+ public CovidTree insert(Human p, Human c)
+ <b>
+  throws IllegalArgumentException
+ </b>
+ {}
+</p>
+<p>
+ Also, I was a bit confused about the part I bolded. What does it do? (does that cover the " p or c is null, or p is not in this CovidTree, or c is already in this CovidTree. return error")
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   1. The specification lists the conditions under which an IllegalArgumentException should be thrown.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   That  bolded throws clause is how one can indicate that the method throws an exception. Please look up "throws" in JavaHyperText for a full explanation.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   2. It says: "Given p a new child, a node with Human c. Return the newly created node."
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Well, create a new node and make it a child of p. Look at the fields of the class. Where are the children?
   <break>
   </break>
   As you create the new node, save a pointer to it; that is what is to be returned.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I'm still a bit confused. Is var the node? The children are in the set children. Is the question just asking us to add the child p into the set children that contain the node c?  And then return the newly added node?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Yes. That's what it says to do.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I'm still a bit confused. Is var the node? The children are in the set children. Is the question just asking us to add the child p into the set children that contain the node c?  And then return the newly added node?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: David Gries (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    Yes. That's what it says to do.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

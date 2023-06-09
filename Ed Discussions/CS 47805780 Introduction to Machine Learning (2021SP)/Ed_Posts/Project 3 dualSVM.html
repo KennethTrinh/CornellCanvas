@@ -13,65 +13,59 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  For the dualSVM function, the question says to use "
-  <code>
-   <bold>
-    computeK
-   </bold>
-  </code>
-  and
-  <code>
-   <bold>
-    generateQP
-   </bold>
-  </code>
-  <bold>
-   "
-  </bold>
-  Does it mean dualQP instead of generateQP? Also, computeK relies on input Z, which isn't a parameter for dualSVM(xTr,yTr,C,ktype,lmbda). So what is the computing kernel calculating the distance between? xTr and what?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ For the dualSVM function, the question says to use "
+ <code>
+  <b>
+   computeK
+  </b>
+ </code>
+ and
+ <code>
+  <b>
+   generateQP
+  </b>
+ </code>
+ <b>
+  "
+ </b>
+ Does it mean dualQP instead of generateQP? Also, computeK relies on input Z, which isn't a parameter for dualSVM(xTr,yTr,C,ktype,lmbda). So what is the computing kernel calculating the distance between? xTr and what?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Raahi Menon (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Raahi Menon (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Yep, it means
   <code>
    dualQP
   </code>
   .
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   What might you want in your kernel to get the bias and alpha values?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I think I got that part figured out, but now I'm a little bit confused with how to set this up to get the support vectors and bias. Are we supposed to use ComputeK and DualQP in the dummy function? And then the function we create should output the support vectors and bias?  Can we use the recoverBias to get the bias? Any help with how to think about this is much appreciated.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I think I got that part figured out, but now I'm a little bit confused with how to set this up to get the support vectors and bias. Are we supposed to use ComputeK and DualQP in the dummy function? And then the function we create should output the support vectors and bias?  Can we use the recoverBias to get the bias? Any help with how to think about this is much appreciated.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

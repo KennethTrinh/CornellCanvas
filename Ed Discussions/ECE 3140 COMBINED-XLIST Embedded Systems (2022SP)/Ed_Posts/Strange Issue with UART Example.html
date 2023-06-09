@@ -13,43 +13,41 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  We got the UART example to work on our computer. However, as soon as we remove the line
-  <code>
-   cnt++
-  </code>
-  , which shouldn't affect the running of the code except stopping the incrementation of the counter, our code just stopped working. It hangs after sending the message "Hello There Again!" and never sends out anything after that. Any help on this issue would be highly appreciated!
- </paragraph>
-</document>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<p>
+ We got the UART example to work on our computer. However, as soon as we remove the line
+ <code>
+  cnt++
+ </code>
+ , which shouldn't affect the running of the code except stopping the incrementation of the counter, our code just stopped working. It hangs after sending the message "Hello There Again!" and never sends out anything after that. Any help on this issue would be highly appreciated!
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Anonymous
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   We are suspecting that this is due to UART0-&gt;S1 constantly returning that the buffer is full. However, we couldn't explain or debug this.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Are you using default board files as stated in the canvas instructions? If so, are you able to use the debugger to step through and confirm it that its getting stuck in the while loop and not somewhere else?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

@@ -13,36 +13,34 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I am a bit confused by this slide. Why can't the process stacks just go in the gray stack region? If the process stacks are not in the gray stack region, what does get put in there? As I understand it, the local variables of the individual processes just get put in the process stacks.
- </paragraph>
- <figure>
-  <image height="381" src="https://static.us.edusercontent.com/files/4hHSgu67ovG2LUNWWamlfiX8" width="516"/>
- </figure>
-</document>
+<p>
+ I am a bit confused by this slide. Why can't the process stacks just go in the gray stack region? If the process stacks are not in the gray stack region, what does get put in there? As I understand it, the local variables of the individual processes just get put in the process stacks.
+</p>
+<figure>
+ <image height="381" src="https://static.us.edusercontent.com/files/4hHSgu67ovG2LUNWWamlfiX8" width="516"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Aidan McNay (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Aidan McNay (student)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   When we allocate memory, we allocate it in the heap space. The stack space is used for stack frames (such as regular function calls). There is a subtle difference between them. If you were to declare a variable in a program regularly, it would be stored on the stack. Often, however, we wish to dynamically allocate space in memory, which comes from the heap space. To help, look at the code below:
- </paragraph>
+ </p>
  <pre>void main()
 {
     int a = 1;
     int* b = (int*)malloc(sizeof(int));
 }</pre>
- <paragraph>
+ <p>
   The variable a would be stored on the stack (as it is declared during a function, main). Malloc would allocate space in the heap (specifically, the amount required to store an int on whatever machine you're using), and would return a pointer to that memory to b. The variable b would live on the stack, but it would contain a pointer to memory on the heap
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

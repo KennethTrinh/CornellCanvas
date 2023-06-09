@@ -13,42 +13,40 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  To filter entries on the home page, I am using a filter form consisting of a dropdown control. But how do we change the query string to have a parameter for the dropdown's value in the submit button? Or should it be an &lt;a&gt; tag instead of a submit button (to pass this filter-value to the home page)?
- </paragraph>
-</document>
+<p>
+ To filter entries on the home page, I am using a filter form consisting of a dropdown control. But how do we change the query string to have a parameter for the dropdown's value in the submit button? Or should it be an &lt;a&gt; tag instead of a submit button (to pass this filter-value to the home page)?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Kyle J. Harms (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Kyle J. Harms (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   <code>
    &lt;a&gt;
   </code>
   elements are easier for this. It's just like what we did for sorting the reviews page in class.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   However, if you want to  use a drop-down, see the update grade form we used in class today. Observe, there is a
   <code>
    &lt;select&gt;
   </code>
   element with a list of grades. Remember here that a form with a GET requests puts all the parameters as query strings (POST requests do not). Go ahead and try changing the change grade form to a get request and take a look at the URL. Notice after submitting the form, the grade is in the URL!
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Note that the change grade form uses an associate array for the grades. You won't want to do that because all your tags are in the database. Instead, you want to query the tags table and put each tag record as the
   <code>
    &lt;option&gt;
   </code>
   s in your select box.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

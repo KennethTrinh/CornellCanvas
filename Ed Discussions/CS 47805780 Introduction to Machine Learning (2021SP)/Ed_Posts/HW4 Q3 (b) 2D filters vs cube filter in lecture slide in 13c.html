@@ -13,90 +13,88 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  In the 'cube filter' we saw in the lecture slide below, it seemed that there are
-  <bold>
-   f x f x n_c_in
-  </bold>
-  weight values to be decided/trained for the filter.
- </paragraph>
- <figure>
-  <image height="339.87130434782614" src="https://static.us.edusercontent.com/files/lz54cW0sy7UadWgQ0AN1upMR" width="658.0000000000001"/>
- </figure>
- <paragraph>
-  However, in Q3, the question specifies that it uses a '2D filter'. When applying this 2D filter to
-  <bold>
-   n_c-in
-  </bold>
-  channels, does it use
-  <bold>
-   n_c-in
-  </bold>
-  number of identical
-  <bold>
-   f x f
-  </bold>
-  filters with
-  <bold>
-   f x f
-  </bold>
-  different weight values or does it use a
-  <bold>
-   f x f x n_cin
-  </bold>
-  filter with
-  <bold>
-   f x f x n_cin
-  </bold>
-  different weight values?
- </paragraph>
-</document>
+<p>
+ In the 'cube filter' we saw in the lecture slide below, it seemed that there are
+ <b>
+  f x f x n_c_in
+ </b>
+ weight values to be decided/trained for the filter.
+</p>
+<figure>
+ <image height="339.87130434782614" src="https://static.us.edusercontent.com/files/lz54cW0sy7UadWgQ0AN1upMR" width="658.0000000000001"/>
+</figure>
+<p>
+ However, in Q3, the question specifies that it uses a '2D filter'. When applying this 2D filter to
+ <b>
+  n_c-in
+ </b>
+ channels, does it use
+ <b>
+  n_c-in
+ </b>
+ number of identical
+ <b>
+  f x f
+ </b>
+ filters with
+ <b>
+  f x f
+ </b>
+ different weight values or does it use a
+ <b>
+  f x f x n_cin
+ </b>
+ filter with
+ <b>
+  f x f x n_cin
+ </b>
+ different weight values?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Ji Won Kim (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Ji Won Kim (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Think about it this way. For each output map , there is an fxf filter applied to each of the input maps (which then get added together to produce the output). So for instance, let us say we are looking at a 512x512x3 image, with a convolution layer with 64 output filters (3x3). This means, that each output map has a 3x3 filter for each input channel (of which there are 3); each filter has different 3x3 (they're not identical). This implies there are 3x3x3 weights per output map. But because, the convolution layer has 64 output maps, this is done 64 times with different weights/filters.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I'm not sure I'm following. Could you explain how 64 was derived for the number of output filters?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Ji Won Kim (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  64 is a number decided by the person designing the architecture. When I define a convolutional layer, I have to define (1) the number of filters (in this example it's 64), (2) filter size, (3) various hyperparameters like padding/stride/etc.
- </paragraph>
- <paragraph>
-  In the example that you posted (image), the number of channels in is 3, the number of output filters is 2, and the filter size is 3x3
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I'm not sure I'm following. Could you explain how 64 was derived for the number of output filters?
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Ji Won Kim (student)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    64 is a number decided by the person designing the architecture. When I define a convolutional layer, I have to define (1) the number of filters (in this example it's 64), (2) filter size, (3) various hyperparameters like padding/stride/etc.
+   </p>
+   <p>
+    In the example that you posted (image), the number of channels in is 3, the number of output filters is 2, and the filter size is 3x3
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

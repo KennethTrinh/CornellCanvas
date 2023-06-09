@@ -13,34 +13,32 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="298.0520984081042" src="https://static.us.edusercontent.com/files/9sBUBtRHqsK5XeDBKY2mKCJz" width="658"/>
- </figure>
- <paragraph>
-  I don't pretty understand how to get the last step. and this is the binary case
- </paragraph>
- <paragraph>
-  what would happen if Y takes more than 2 classes?
- </paragraph>
-</document>
+<figure>
+ <image height="298.0520984081042" src="https://static.us.edusercontent.com/files/9sBUBtRHqsK5XeDBKY2mKCJz" width="658"/>
+</figure>
+<p>
+ I don't pretty understand how to get the last step. and this is the binary case
+</p>
+<p>
+ what would happen if Y takes more than 2 classes?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Jerry Sun (staff)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Jerry Sun (staff)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Taking the argmax of an expression where you're trying to determine whether it's y=+1 or -1 is the same as taking the sign as some expression since the sign is either +1 or -1. Similarly inside the expression you can divide the two possible expressions (substituting y=+1 or -1) to get a ratio and by taking the natural log, if one of the expressions (say the y=+1) is larger than the other, then the resulting natural log of a value &gt; 1 should be positive and likewise the natural log of a value &lt; 1 is negative. It's essentially just computing both expressions and getting a ratio such that the result is either +1 or -1.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   As for when Y is more than 2 classes, essentially you can just think of the argmax having y being however many classes you want, computing all of the probabilities of the X's being a given y and then taking the max value and predicting that class label associated with it.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

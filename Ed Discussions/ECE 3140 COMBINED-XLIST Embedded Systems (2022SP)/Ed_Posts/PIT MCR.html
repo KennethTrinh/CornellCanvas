@@ -13,35 +13,31 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi, I am having some trouble understanding the documentation and figuring out the syntax for how to access the different registers.
- </paragraph>
- <paragraph>
-  When I try to do the following,
- </paragraph>
- <paragraph>
-  PIT-&gt;CHANNEL[0].MCR = (1 &lt;&lt; 1);
- </paragraph>
- <paragraph>
-  I am getting the error: 'struct &lt;anonymous&gt;' has no member named 'MCR'
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ Hi, I am having some trouble understanding the documentation and figuring out the syntax for how to access the different registers.
+</p>
+<p>
+ When I try to do the following,
+</p>
+<p>
+ PIT-&gt;CHANNEL[0].MCR = (1 &lt;&lt; 1);
+</p>
+<p>
+ I am getting the error: 'struct &lt;anonymous&gt;' has no member named 'MCR'
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   In KL46Z4.h, the PIT_Type struct is defined as follows:
- </paragraph>
+ </p>
  <pre>typedef struct {
   __IO uint32_t MCR;                               /**&lt; PIT Module Control Register, offset: 0x0 */
        uint8_t RESERVED_0[220];
@@ -56,27 +52,27 @@
   } CHANNEL[2];
 } PIT_Type;
 </pre>
- <paragraph>
+ <p>
   Notice that the PIT module contains a single 32-bit register called MCR. There does not exist separate MCR registers for each channel.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Using the information about C structs from last week's discussion, you can determine the correct syntax for accessing the MCR.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Aaron Wilhelm (admin)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<document version="2.0">
- <paragraph>
-  Additionally, remember that you can CTRL/CMD click on a variable in the IDE to go straight to the definition which can make it easier to find out what member items the structs in the header files have
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Aaron Wilhelm (admin)
+  </h3>
+  <h3>
+   Vote Count: 3
+  </h3>
+  <p>
+   Additionally, remember that you can CTRL/CMD click on a variable in the IDE to go straight to the definition which can make it easier to find out what member items the structs in the header files have
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

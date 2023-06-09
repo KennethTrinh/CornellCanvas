@@ -13,178 +13,174 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi,
- </paragraph>
- <paragraph>
-  Currently, I'm testing my changeTime() method in schedule.py.
- </paragraph>
- <paragraph>
-  The test code seems to create two distinct schedules - "Roster" and "MySchedule."
- </paragraph>
- <paragraph>
-  While testing changeTime() for Schedule class
-  <bold>
-   roster
-  </bold>
-  , the assert line says that no conflicts should exist. More specifically, when changing the course time ARCH 1120 STU 520 from TBA to MWF 8:00 am - 8:00 pm, the asserts say there should be no conflicts. Here's a screenshot:
- </paragraph>
- <figure>
-  <image height="38.84870848708487" src="https://static.us.edusercontent.com/files/X93VzBeTeCKMf1lHn8aAxZKy" width="658"/>
- </figure>
- <paragraph>
-  But why is this the case? Shouldn't a class that meets from 8am - 8pm on Monday, Wednesday, and Friday conflict with:
- </paragraph>
- <list style="bullet">
-  <list-item>
-   <paragraph>
-    A class that meets from 9:05 am - 9:55 am on Monday, Wednesday, Friday (AEP 3560 LEC 001)
-   </paragraph>
-  </list-item>
-  <list-item>
-   <paragraph>
-    A class that meets from 1:30 pm - 2:30 pm on Friday (FAKER 0000 LEC 002)
-   </paragraph>
-  </list-item>
- </list>
- <paragraph>
-  Thanks for your help!
- </paragraph>
-</document>
+<p>
+ Hi,
+</p>
+<p>
+ Currently, I'm testing my changeTime() method in schedule.py.
+</p>
+<p>
+ The test code seems to create two distinct schedules - "Roster" and "MySchedule."
+</p>
+<p>
+ While testing changeTime() for Schedule class
+ <b>
+  roster
+ </b>
+ , the assert line says that no conflicts should exist. More specifically, when changing the course time ARCH 1120 STU 520 from TBA to MWF 8:00 am - 8:00 pm, the asserts say there should be no conflicts. Here's a screenshot:
+</p>
+<figure>
+ <image height="38.84870848708487" src="https://static.us.edusercontent.com/files/X93VzBeTeCKMf1lHn8aAxZKy" width="658"/>
+</figure>
+<p>
+ But why is this the case? Shouldn't a class that meets from 8am - 8pm on Monday, Wednesday, and Friday conflict with:
+</p>
+<list style="bullet">
+ <li>
+  <p>
+   A class that meets from 9:05 am - 9:55 am on Monday, Wednesday, Friday (AEP 3560 LEC 001)
+  </p>
+ </li>
+ <li>
+  <p>
+   A class that meets from 1:30 pm - 2:30 pm on Friday (FAKER 0000 LEC 002)
+  </p>
+ </li>
+</list>
+<p>
+ Thanks for your help!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<document version="2.0">
- <paragraph>
-  Hi,
- </paragraph>
- <paragraph>
-  The roster should only have one warning, which warns that the time changed for ARCH 1120 STU 520.  You need to find a way to append
-  <bold>
-   <underline>
-    ONLY
-   </underline>
-  </bold>
-  the time change warning to the roster,
-  <bold>
-   <underline>
-    WHILE
-   </underline>
-  </bold>
-  also appending the time change warning
-  <bold>
-   <underline>
-    AND
-   </underline>
-  </bold>
-  conflict warnings to each and every student schedule.  Because the roster is not the student schedule, it should not have time conflict warnings.
- </paragraph>
- <paragraph>
-  -Hope this helps!
- </paragraph>
- <paragraph>
-  -p.s. I completed A6
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  Thank you very much. This solved my problem.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Glad to help! :DDDD
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Elisha Wang (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
-  THANK YOU VERY MUCH! You are "super"!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Shouldn't that be super()?  :)
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  ;)))
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Prof. Lee (she/they) (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Prof. Lee (she/they) (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Follow-up: from the A6 handout:   "
   <break>
   </break>
   5.1 The Python class Schedule
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   We’ve written almost all of this class, which is used to represent both individual schedules and course rosters, for you in file schedule.py. Because of the latter application, one is allowed to add conflicting courses to an arbitrary Schedule via the add() method."
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Troy Moslemi (he/him) (student)
+  </h3>
+  <h3>
+   Vote Count: 3
+  </h3>
+  <p>
+   Hi,
+  </p>
+  <p>
+   The roster should only have one warning, which warns that the time changed for ARCH 1120 STU 520.  You need to find a way to append
+   <b>
+    <underline>
+     ONLY
+    </underline>
+   </b>
+   the time change warning to the roster,
+   <b>
+    <underline>
+     WHILE
+    </underline>
+   </b>
+   also appending the time change warning
+   <b>
+    <underline>
+     AND
+    </underline>
+   </b>
+   conflict warnings to each and every student schedule.  Because the roster is not the student schedule, it should not have time conflict warnings.
+  </p>
+  <p>
+   -Hope this helps!
+  </p>
+  <p>
+   -p.s. I completed A6
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 1
+   </h3>
+   <p>
+    Thank you very much. This solved my problem.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Troy Moslemi (he/him) (student)
+    </h3>
+    <h3>
+     Vote Count: 0
+    </h3>
+    <p>
+     Glad to help! :DDDD
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+    <div style="text-indent: 8em;">
+     <h3>
+      Author: Elisha Wang (student)
+     </h3>
+     <h3>
+      Vote Count: 2
+     </h3>
+     <p>
+      THANK YOU VERY MUCH! You are "super"!
+     </p>
+     <h3>
+      ------------------------------------
+     </h3>
+     <div style="text-indent: 10em;">
+      <h3>
+       Author: Troy Moslemi (he/him) (student)
+      </h3>
+      <h3>
+       Vote Count: 0
+      </h3>
+      <p>
+       ;)))
+      </p>
+      <h3>
+       ------------------------------------
+      </h3>
+      <div style="text-indent: 10em;">
+       <h3>
+        Author: Prof. Lee (she/they) (admin)
+       </h3>
+       <h3>
+        Vote Count: 0
+       </h3>
+       <p>
+        Shouldn't that be super()?  :)
+       </p>
+       <h3>
+        ------------------------------------
+       </h3>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

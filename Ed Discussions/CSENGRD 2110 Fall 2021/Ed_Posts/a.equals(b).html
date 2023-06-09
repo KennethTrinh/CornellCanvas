@@ -13,72 +13,34 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi! I am little bit confused about two properties of equality, as when will the equality be not reflective and transitive? What does it mean by a.equals(a) == false? Is there any examples that we could look at?
- </paragraph>
- <paragraph>
-  Thanks!
- </paragraph>
-</document>
+<p>
+ Hi! I am little bit confused about two properties of equality, as when will the equality be not reflective and transitive? What does it mean by a.equals(a) == false? Is there any examples that we could look at?
+</p>
+<p>
+ Thanks!
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
-  Hello,
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Here is a PDF file from java hyper text on the function equals:
-  <link href="https://www.cs.cornell.edu/courses/JavaAndDS/files/equals.pdf"/>
-  https://www.cs.cornell.edu/courses/JavaAndDS/files/equals.pdf
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  Some examples can be found here:
-  <link href="https://www.cs.cornell.edu/courses/JavaAndDS/files/equals.zip"/>
-  https://www.cs.cornell.edu/courses/JavaAndDS/files/equals.zip
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  a.equals(a) == false means that object a is not equal to itself.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Curran Muhlberger (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   An equivalence relation
-  <italic>
+  <i>
    must
-  </italic>
+  </i>
   always be symmetric, reflexive, and transitive.  Any implementation of
   <code>
    equals()
   </code>
   that does not have these properties is buggy.  Examples of such bugs were included on the recent Canvas quiz (you should be able to review your responses).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If you follow our template for implementing
   <code>
    equals()
@@ -92,10 +54,39 @@
    ==
   </code>
   as appropriate, then your implementation will most likely satisfy all three of these properties automatically.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Troy Moslemi (he/him) (student)
+  </h3>
+  <h3>
+   Vote Count: 2
+  </h3>
+  <h3>
+   ENDORSED
+  </h3>
+  <p>
+   Hello,
+  </p>
+  <p>
+   Here is a PDF file from java hyper text on the function equals:
+   <a href="https://www.cs.cornell.edu/courses/JavaAndDS/files/equals.pdf">
+    https://www.cs.cornell.edu/courses/JavaAndDS/files/equals.pdf
+   </a>
+  </p>
+  <p>
+   Some examples can be found here:
+   <link href="https://www.cs.cornell.edu/courses/JavaAndDS/files/equals.zip"/>
+   https://www.cs.cornell.edu/courses/JavaAndDS/files/equals.zip
+  </p>
+  <p>
+   a.equals(a) == false means that object a is not equal to itself.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

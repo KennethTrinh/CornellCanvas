@@ -13,50 +13,46 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  How do we get this goofy function to trigger? I thought the
- </paragraph>
- <paragraph>
-  NVIC_EnableIRQ(PIT_IRQn);
- </paragraph>
- <paragraph>
-  line makes it trigger automatically but my code is just never going into the IRQ. I know it is never going in there because currently I'm only turning the LEDs on. The LEDs are not turning on. Never. They are always off. Therefore I never enter the interrupt handler. Is there anything else I need to do? I'm using the same setup code as I did for part2 which works, so I know my timer is working correctly.
- </paragraph>
- <paragraph>
- </paragraph>
- <paragraph>
-  So why is it never entering the interrupt code????
- </paragraph>
-</document>
+<p>
+ How do we get this goofy function to trigger? I thought the
+</p>
+<p>
+ NVIC_EnableIRQ(PIT_IRQn);
+</p>
+<p>
+ line makes it trigger automatically but my code is just never going into the IRQ. I know it is never going in there because currently I'm only turning the LEDs on. The LEDs are not turning on. Never. They are always off. Therefore I never enter the interrupt handler. Is there anything else I need to do? I'm using the same setup code as I did for part2 which works, so I know my timer is working correctly.
+</p>
+<p>
+ So why is it never entering the interrupt code????
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Christy Guan (student)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Christy Guan (student)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   Are you setting the Timer Interrupt Enable correctly (see page 593)? This is an additional thing you have to do in your setup code in addition to what you have for part2.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Kevin Huang (student)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  thank you, you scared the monster back under bed
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Kevin Huang (student)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   thank you, you scared the monster back under bed
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

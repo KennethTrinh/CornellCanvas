@@ -13,47 +13,43 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <figure>
-  <image height="465.0253583241455" src="https://static.us.edusercontent.com/files/EnoRhHrlMaUAO7VJbgrRrDsh" width="658"/>
- </figure>
- <paragraph>
-  In the algorithm above, I don't understand why they have the "if all examples in S have the same label" line: wasn't this condition already tested by the first two lines of the code?
- </paragraph>
-</document>
-<h3>
- Author: Ignacio Arevalo (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<figure>
+ <image height="465.0253583241455" src="https://static.us.edusercontent.com/files/EnoRhHrlMaUAO7VJbgrRrDsh" width="658"/>
+</figure>
+<p>
+ In the algorithm above, I don't understand why they have the "if all examples in S have the same label" line: wasn't this condition already tested by the first two lines of the code?
+</p>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Ignacio Arevalo (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   I think the first 2 lines refer to if all the elements are True then say True for that leaf or if they're all False then say False. While the that statement says if all the elements left only have this 1 thing in common and no more vairables left to create more nodes then choose the majority of True or False that are left and say that for that leaf
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Thorsten Joachims (admin)
-</h3>
-<h3>
- Vote Count: 2
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Thorsten Joachims (admin)
+ </h3>
+ <h3>
+  Vote Count: 2
+ </h3>
+ <p>
   Whow! I think you found a typo in the algorithm!
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Here is what I think this line should read. Instead of checking "if all examples in S have the same label", we should be checking "if all examples in S have the same value for feature $x_j$" (i.e. the feature with the largest Gain). Here is the reason: if this feature does not further partition the training data, then there is no point in growing the tree any further. In particular, if we kept going we would have to hallucinate a label for the empty branch of the tree in the next level of the recursion, and for the other branch of the tree the other attributes we could be further splitting on would have even lower Gain for exactly the same S as in the current iteration.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

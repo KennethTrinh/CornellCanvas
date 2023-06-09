@@ -13,28 +13,26 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm a little confused about the optimization on the worst case space of quicksort. I recognize that in a regular implementation, if the pivot is always the smallest value, then there will be O(n) recursive calls, of which each calls a partition algorithm that takes linear time. So the  worst case is O(n^2) time. However by only recursively calling the quicksort on the smallest segment, the space can be reduced to O(log n) in the worst case, or calls proportional to log n. This is still a little confusing to me. In the worst case, can't the smallest segment be sometimes size 0 when there are no elements equal to the pivot? How would it even work in such cases?
- </paragraph>
-</document>
+<p>
+ I'm a little confused about the optimization on the worst case space of quicksort. I recognize that in a regular implementation, if the pivot is always the smallest value, then there will be O(n) recursive calls, of which each calls a partition algorithm that takes linear time. So the  worst case is O(n^2) time. However by only recursively calling the quicksort on the smallest segment, the space can be reduced to O(log n) in the worst case, or calls proportional to log n. This is still a little confusing to me. In the worst case, can't the smallest segment be sometimes size 0 when there are no elements equal to the pivot? How would it even work in such cases?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: David Gries (admin)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   The only extra space required by quicksort if for frames for recursive calls on the call stack. If the worst-case depth of recursion is O(n), then it requires space O(n).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   After partitioning, two segments have to be sorted. If the larger one is done iteratively and the smaller one is done recursively, Then the worst-case depth of recursion is only O(log n).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

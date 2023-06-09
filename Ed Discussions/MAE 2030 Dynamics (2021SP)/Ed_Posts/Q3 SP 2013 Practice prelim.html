@@ -13,64 +13,62 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  Im a bit confused as to why one of the sin waves goes below x =0. Both Xa and Xb are defined from the far left 'wall' so should they both always be positive? Furthermore, they are in the natural mode [ 1 1 0 0 ] so they should both become more positive at the same time and more negative at the same time... right?
- </paragraph>
- <paragraph>
- </paragraph>
- <figure>
-  <image height="192" src="https://static.us.edusercontent.com/files/gxBMly07kYBTIkgRkai15q1s" width="451"/>
- </figure>
- <figure>
-  <image height="288.8225806451613" src="https://static.us.edusercontent.com/files/cfWksgAlzeYn8cSFW6F4D1rf" width="658"/>
- </figure>
-</document>
+<p>
+ Im a bit confused as to why one of the sin waves goes below x =0. Both Xa and Xb are defined from the far left 'wall' so should they both always be positive? Furthermore, they are in the natural mode [ 1 1 0 0 ] so they should both become more positive at the same time and more negative at the same time... right?
+</p>
+<figure>
+ <image height="192" src="https://static.us.edusercontent.com/files/gxBMly07kYBTIkgRkai15q1s" width="451"/>
+</figure>
+<figure>
+ <image height="288.8225806451613" src="https://static.us.edusercontent.com/files/cfWksgAlzeYn8cSFW6F4D1rf" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Arnaldo Rodriguez-Gonzalez (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Arnaldo Rodriguez-Gonzalez (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   1) Why does the leftwards mass have negative position values?
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   The thing here is that the physical model constructed in the MATLAB code, and in the equations, isn't considering collisions between the masses and the wall (or between the masses themselves for that matter), so the displacement of the masses takes place as if the wall wasn't there. As a result, the leftwards mass gets pushed past the wall into the negative position range. It is possible to develop code that accounts for such a collision (MATLAB has a convenient way to do it using "
-  <link href="https://www.mathworks.com/help/matlab/math/ode-event-location.html"/>
-  events"), but it's outside the scope of this exam's coverage.
- </paragraph>
- <paragraph>
+  <a href="https://www.mathworks.com/help/matlab/math/ode-event-location.html">
+   events
+  </a>
+  "), but it's outside the scope of this exam's coverage.
+ </p>
+ <p>
   2) Why don't the masses "become more positive and negative at the same time"?
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Those initial conditions correspond to both masses being located in exactly the same position x = 1 (again, the model doesn't consider collisions) with no speed. Therefore, the natural behavior is that they will immediately push away from each other in an equal and opposite manner, and perform damped oscillations around their respective equilibrium points until their motion dissipates.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   Hope this is helpful!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: James Ringsby (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  Thanks!
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: James Ringsby (student)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   Thanks!
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

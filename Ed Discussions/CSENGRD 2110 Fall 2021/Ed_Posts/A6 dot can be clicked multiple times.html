@@ -13,60 +13,58 @@
 <h3>
  Vote Count: 2
 </h3>
-<document version="2.0">
- <paragraph>
-  When I run a6 and start the game, I am able to click a dot multiple times (after the initial click and the turn to red), and the score continues to increment instead of being 1 point for every dot. I'm not sure how I can fix this.
- </paragraph>
-</document>
+<p>
+ When I run a6 and start the game, I am able to click a dot multiple times (after the initial click and the turn to red), and the score continues to increment instead of being 1 point for every dot. I'm not sure how I can fix this.
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<h3>
- ENDORSED
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Troy Moslemi (he/him) (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <h3>
+  ENDORSED
+ </h3>
+ <p>
   I had this problem initially.  make sure you set isHit to true every time you click on a dot.  Before you click the dot, make sure isHit is false.  Also make sure the game is active when you attempt to hit a target.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I believe I have this all implemented, but I'm still seeing the multiple clicks and score increases happening.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Curran Muhlberger (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  I recommend adding debugging prints to your
-  <code>
-   checkHit()
-  </code>
-  function.  Print whether the target was previously hit, whether the current click qualifies as a hit, and what your return value is.  Compare this triplet of values against the specification, and you should be able to identify your bug.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Anonymous
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   I believe I have this all implemented, but I'm still seeing the multiple clicks and score increases happening.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 6em;">
+   <h3>
+    Author: Curran Muhlberger (admin)
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    I recommend adding debugging prints to your
+    <code>
+     checkHit()
+    </code>
+    function.  Print whether the target was previously hit, whether the current click qualifies as a hit, and what your return value is.  Compare this triplet of values against the specification, and you should be able to identify your bug.
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+  </div>
+ </div>
+</div>

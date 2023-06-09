@@ -13,52 +13,46 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I have read the other posts about this but I am still confused on how we can complete H1N1RouteTo() if the linked list is created in the base case. If I assign a list variable to the recursive call then I need to cast to a linked list anyways to make sure everything is being added in the correct order, which doesn't seem correct.
- </paragraph>
- <paragraph>
-  I think I am misunderstanding something fundamental
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I have read the other posts about this but I am still confused on how we can complete H1N1RouteTo() if the linked list is created in the base case. If I assign a list variable to the recursive call then I need to cast to a linked list anyways to make sure everything is being added in the correct order, which doesn't seem correct.
+</p>
+<p>
+ I think I am misunderstanding something fundamental
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Troy Moslemi (he/him) (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Troy Moslemi (he/him) (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   You do not need to cast a list into a linked list for your recursive case.  Anyways, you can not convert from List to LinkedList.  I just tried in eclipse and got an error.
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: David Gries (admin)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  In the recursive case, assign what the recursive call gives you to a variable of type List&lt;Person&gt;.
- </paragraph>
- <paragraph>
-  That is fine.
- </paragraph>
- <paragraph>
-  If that variable is not null, you indeed have a List&lt;Person&gt;, and you may want to prepend something to it. Look throw the methods of interface List to see how you could do this.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: David Gries (admin)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   In the recursive case, assign what the recursive call gives you to a variable of type List&lt;Person&gt;.
+  </p>
+  <p>
+   That is fine.
+  </p>
+  <p>
+   If that variable is not null, you indeed have a List&lt;Person&gt;, and you may want to prepend something to it. Look throw the methods of interface List to see how you could do this.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+</div>

@@ -13,27 +13,23 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  I'm not sure if I'm missing something, but how do we get the current Node from currentLoc()? There's no method to get a Node given only the ID. Do we create a Node with the given ID? If so, how do we know the tile?
- </paragraph>
- <paragraph>
- </paragraph>
-</document>
+<p>
+ I'm not sure if I'm missing something, but how do we get the current Node from currentLoc()? There's no method to get a Node given only the ID. Do we create a Node with the given ID? If so, how do we know the tile?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Atulya Lohani (student)
-</h3>
-<h3>
- Vote Count: 3
-</h3>
-<document version="1.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Atulya Lohani (student)
+ </h3>
+ <h3>
+  Vote Count: 3
+ </h3>
+ <p>
   You don’t need to work with nodes directly in the find phase. Working with NodeStatus should be good enough. currentLoc() returns the node id of the current location. If you’re trying to add to a data structure that keeps track of visited nodes, adding the id should be good enough because the ids are unique.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

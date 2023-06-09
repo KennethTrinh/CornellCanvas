@@ -13,52 +13,50 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  Hi, I was wondering if when cursp is NULL in function process_select, does that mean that we should return NULL always, or is that when we need to take other action to select a process to run?
- </paragraph>
-</document>
+<p>
+ Hi, I was wondering if when cursp is NULL in function process_select, does that mean that we should return NULL always, or is that when we need to take other action to select a process to run?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Harris Miller (None)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   If
-  <italic>
+  <i>
    cursp
-  </italic>
+  </i>
   is
-  <italic>
+  <i>
    NULL
-  </italic>
+  </i>
   , you need to take appropriate action on the
-  <italic>
+  <i>
    current_process
-  </italic>
+  </i>
   (if such one exists).
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   If there is no process ready,
-  <italic>
+  <i>
    process_select
-  </italic>
+  </i>
   should return
-  <italic>
+  <i>
    NULL
-  </italic>
+  </i>
   . If there is a ready process,
-  <italic>
+  <i>
    process_select
-  </italic>
+  </i>
   must return the value of the stack pointer for the next ready process.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

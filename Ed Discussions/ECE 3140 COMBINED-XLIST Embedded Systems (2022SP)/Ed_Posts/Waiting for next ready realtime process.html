@@ -13,81 +13,79 @@
 <h3>
  Vote Count: 1
 </h3>
-<document version="2.0">
- <paragraph>
-  Is there a way that we can make the scheduler execute NOPs while it waits for the next ready when there are no more non-realtime processes and no ready realtime processes? Or is there a better way of waiting?
- </paragraph>
-</document>
+<p>
+ Is there a way that we can make the scheduler execute NOPs while it waits for the next ready when there are no more non-realtime processes and no ready realtime processes? Or is there a better way of waiting?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  You shouldn't just schedule an arbitrary number of NOPs, you should be checking for the condition for when the process's arrival time is greater than the current time.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
-  If we busy wait checking that condition, won't that prevent the second PIT timer interrupt from being triggered?
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  That is why you must make sure your priorities are configured correctly and that interrupts are enabled before you go into your busy loop.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Anonymous
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Anonymous
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   When it came to the busy waiting situation, changing the interrupt priority wasn't really doing anything for me. I just ended up doing polling for when the second PIT channel hit its mark (review lab 2 for reference) and then I incremented the current time accordingly. I put that polling in the while loop that busy waits until the current time reaches the start time of the next unready realtime process. I mean since we are busy waiting already polling won't really destroy performance. I could be wrong though so please feel free to correct me TAs.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
-<h3>
- Author: Harris Miller (None)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
-  This is also a valid method.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+ <div style="text-indent: 4em;">
+  <h3>
+   Author: Harris Miller (None)
+  </h3>
+  <h3>
+   Vote Count: 1
+  </h3>
+  <p>
+   This is also a valid method.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+ </div>
+ <div style="text-indent: 2em;">
+  <h3>
+   Author: Harris Miller (None)
+  </h3>
+  <h3>
+   Vote Count: 0
+  </h3>
+  <p>
+   You shouldn't just schedule an arbitrary number of NOPs, you should be checking for the condition for when the process's arrival time is greater than the current time.
+  </p>
+  <h3>
+   ------------------------------------
+  </h3>
+  <div style="text-indent: 4em;">
+   <h3>
+    Author: Anonymous
+   </h3>
+   <h3>
+    Vote Count: 0
+   </h3>
+   <p>
+    If we busy wait checking that condition, won't that prevent the second PIT timer interrupt from being triggered?
+   </p>
+   <h3>
+    ------------------------------------
+   </h3>
+   <div style="text-indent: 6em;">
+    <h3>
+     Author: Harris Miller (None)
+    </h3>
+    <h3>
+     Vote Count: 1
+    </h3>
+    <p>
+     That is why you must make sure your priorities are configured correctly and that interrupts are enabled before you go into your busy loop.
+    </p>
+    <h3>
+     ------------------------------------
+    </h3>
+   </div>
+  </div>
+ </div>
+</div>

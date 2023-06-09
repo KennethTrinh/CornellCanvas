@@ -13,30 +13,26 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <paragraph>
-  This was the perceptron algorithm posted on the slides. I realized that if any of the x inputs are a 0 vector, then y_i ( w(t) * x(i)) is always 0 no matter the value of w(t). Hence, updating w(t) will not cause the algorithm to end even though there may be a solution. Am I missing something? Is it that the homogenous case will never allow x(i) to be the 0 vector as the last entry in the vector must be 1?
- </paragraph>
- <paragraph>
- </paragraph>
- <figure>
-  <image height="420.17879948914435" src="https://static.us.edusercontent.com/files/8jqlmdluVS6ALfJ7fMhHNBIu" width="658"/>
- </figure>
-</document>
+<p>
+ This was the perceptron algorithm posted on the slides. I realized that if any of the x inputs are a 0 vector, then y_i ( w(t) * x(i)) is always 0 no matter the value of w(t). Hence, updating w(t) will not cause the algorithm to end even though there may be a solution. Am I missing something? Is it that the homogenous case will never allow x(i) to be the 0 vector as the last entry in the vector must be 1?
+</p>
+<figure>
+ <image height="420.17879948914435" src="https://static.us.edusercontent.com/files/8jqlmdluVS6ALfJ7fMhHNBIu" width="658"/>
+</figure>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Bonnie Akhavan (staff)
-</h3>
-<h3>
- Vote Count: 1
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Bonnie Akhavan (staff)
+ </h3>
+ <h3>
+  Vote Count: 1
+ </h3>
+ <p>
   Yes, we assume there's some kind of bias term $b$ that's always going to be added in $w \cdot x$, so there won't be any issues with the 0 vector. As you said, that bias term often takes the form of the last element in $w$, so the 0 $x$ vector is actually $[0, 0, 0, ... 0, 1]$.
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>

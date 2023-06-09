@@ -13,48 +13,46 @@
 <h3>
  Vote Count: 0
 </h3>
-<document version="2.0">
- <figure>
-  <image height="483.73515981735164" src="https://static.us.edusercontent.com/files/Ohu4ioqJeJnt79NXt5Zvi2cd" width="658"/>
- </figure>
- <paragraph>
-  I'm a bit confused about the difference in subscript notation for the D terms.
- </paragraph>
- <paragraph>
-  In the middle of the slide above, it says that, to compute all D_l's, we need to compute D_d, D_{d-1}, ..,D_1.
- </paragraph>
- <paragraph>
-  But, at the bottom right, it only computes D_d and D_l, which is expressed in terms of D_{l+1}.
- </paragraph>
- <paragraph>
-  What is the difference in the D terms that have a 'd' in its subscript vs. the D terms that have an 'l' in its subscript? What are each of these denoting, and how are the subscript 'd' and subscript 'l' related? And how do both of these relate to the computation of G_l (which is only expressed in terms of D terms with the subscript 'l' but NOT with the subscript 'd') ?
- </paragraph>
-</document>
+<figure>
+ <image height="483.73515981735164" src="https://static.us.edusercontent.com/files/Ohu4ioqJeJnt79NXt5Zvi2cd" width="658"/>
+</figure>
+<p>
+ I'm a bit confused about the difference in subscript notation for the D terms.
+</p>
+<p>
+ In the middle of the slide above, it says that, to compute all D_l's, we need to compute D_d, D_{d-1}, ..,D_1.
+</p>
+<p>
+ But, at the bottom right, it only computes D_d and D_l, which is expressed in terms of D_{l+1}.
+</p>
+<p>
+ What is the difference in the D terms that have a 'd' in its subscript vs. the D terms that have an 'l' in its subscript? What are each of these denoting, and how are the subscript 'd' and subscript 'l' related? And how do both of these relate to the computation of G_l (which is only expressed in terms of D terms with the subscript 'l' but NOT with the subscript 'd') ?
+</p>
 <h3>
  ----------- REPLIES -----------
 </h3>
-<h3>
- Author: Scott Bass (student)
-</h3>
-<h3>
- Vote Count: 0
-</h3>
-<document version="2.0">
- <paragraph>
+<div style="text-indent: 2em;">
+ <h3>
+  Author: Scott Bass (student)
+ </h3>
+ <h3>
+  Vote Count: 0
+ </h3>
+ <p>
   Here, "d" is the depth of the network. So, D_d is just D_l where l = d.
- </paragraph>
- <paragraph>
+ </p>
+ <p>
   In the above formulas, the first one shows you how to compute D_d (i.e. the D value at the last layer), and the second one shows you how to compute D_l given that you've already computed D_l+1. So in order to compute
-  <italic>
+  <i>
    all
-  </italic>
+  </i>
   the D values, you start by computing D_d, and then loop
-  <italic>
+  <i>
    backwards
-  </italic>
+  </i>
   through your layers and compute D_l using the recursive formula. Because you're looping backwards, D_l+1 will always be computed by the time you get to computing D_l (and you stop once you've computed D_l where l = 0).
- </paragraph>
-</document>
-<h3>
- ------------------------------------
-</h3>
+ </p>
+ <h3>
+  ------------------------------------
+ </h3>
+</div>
