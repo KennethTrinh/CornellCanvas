@@ -64,6 +64,25 @@ def writeCoursesToCSV(canvas):
     df.to_csv('courses/courses.csv', index=False)
 
 
+def getAllCourses(canvas):
+    """
+    list(canvas.get_courses()) returns a list of course objects
+    canvas.search_all_courses() returns a list of dicts 
+    Remove duplicates and returns list of ids
+    """
+    courses = list(canvas.get_courses()) # personal courses
+    courses = [c.id for c in courses]
+    s = set(courses)
+    for page in range(1, 5):
+        allCourses = canvas.search_all_courses(per_page=100, page=page)
+        for c in allCourses:
+            if c["course"]["id"] not in s:
+                courses.append(c["course"]["id"]) # publicly available courses
+                s.add(c["course"]["id"])
+    return courses
+
+
+
 def ThrowsLambdaError(*errors):
     """
     1. The outermost level is the ThrowsLambdaError function itself. 

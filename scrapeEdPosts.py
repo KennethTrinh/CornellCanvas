@@ -1,12 +1,11 @@
 import requests
 import re
 import os
-import pandas as pd
 
 from bs4 import BeautifulSoup
 from utils import (sanitize, xmlToHtml, 
                    write, writeJson, retry,
-                   getCourse)
+                   getAllCourses, getCourse)
 from canvasapi import Canvas
 from canvasDuoEdLogin import EdLogin, canvasDuoLogin
 from consts import API_KEY, API_URL, ED_URL, MAX_PAGES
@@ -212,19 +211,15 @@ def scrapeEdPostsForCourse(canvasSession, canvas, course_id):
             print(f'*** Thread ({thread["id"]}): {i} / {len(threads)} ***')
         scrapeEdPostForCourse(folder, xtoken, thread['id'])
 
-def scrapeEdPosts(personal_courses=False):
+def scrapeEdPosts():
     canvas = Canvas(API_URL, API_KEY)
-    # courses = list(canvas.get_courses()) # --> lists all courses you've taken
-    courses = list(canvas.get_courses()) if personal_courses else \
-                                        pd.read_csv('misc/courses.csv') 
-    courses = courses if personal_courses else \
-                    courses.id.tolist()
+    courses = getAllCourses(canvas)
     s = canvasDuoLogin()
-    for course in courses:
-        scrapeEdPostsForCourse(s, canvas, course.id if personal_courses else course)
+    for course_id in courses:
+        scrapeEdPostsForCourse(s, canvas, course_id)
 
 if __name__ == '__main__':
-    scrapeEdPosts(False)
+    scrapeEdPosts()
 
 # canvas  = Canvas(API_URL, API_KEY)
 # courses = list(canvas.get_courses()) # --> lists all courses you've taken

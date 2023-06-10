@@ -1,11 +1,10 @@
 import os
 import requests
-import pandas as pd
 
 from canvasapi import Canvas
 from canvasapi.exceptions import ResourceDoesNotExist, Forbidden
 from utils import (sanitize, cprint, extract_files, 
-                   write, ThrowsLambdaError, 
+                   write, getAllCourses, ThrowsLambdaError, 
                    getModules, getAssignments, getCourse,
                    getFiles, getPages, getDiscussionTopics, getReplies)
 
@@ -123,7 +122,7 @@ def scrapeRemainingFiles(course, folder, files_downloaded):
     if not files:
         print(f'Files not enabled for course: {course.id}')
         return
-    folder = os.path.join(folder, 'Remaining_files')
+    folder = os.path.join(folder, 'Remaining Files')
     file_ids = list(map(lambda f: f.id, files))
     scrapeFiles(course, folder, files_downloaded, file_ids)
     
@@ -207,25 +206,20 @@ def scrapeCourse(canvas, course_id):
     scrapePages(course, folder, files_downloaded)
     scrapeHomepage(course, folder, files_downloaded)
 
-def scrapeCanvas(personal_courses=False):
+def scrapeCanvas():
     canvas = Canvas(API_URL, API_KEY)
-    # courses = list(canvas.get_courses()) # --> lists all courses you've taken
-    courses = list(canvas.get_courses()) if personal_courses else \
-                                        pd.read_csv('misc/courses.csv') 
-    courses = courses if personal_courses else \
-                    courses.id.tolist()
+    courses = getAllCourses(canvas)
     START, END = 0, len(courses) # for continuing off where you left off --> this will take a while!
-    for i, course in enumerate(courses):
+    for i, course_id in enumerate(courses):
         if i < START:
             continue
         print(f'********* {i+1}/{END} *********')
-        scrapeCourse(canvas, course.id if personal_courses else course)
+        scrapeCourse(canvas, course_id)
 
 if __name__ == '__main__':
-    scrapeCanvas(personal_courses=True)
+    scrapeCanvas()
     
 # canvas = Canvas(API_URL, API_KEY)
-# courses = pd.read_csv('misc/courses.csv')
 # courses = list(canvas.get_courses()) # --> lists all courses you've taken
 # scrapeCourse(canvas, 51429)
 # scrapeCourse(canvas, 24870)

@@ -47,5 +47,13 @@ Go to your phone and accept the push notification. Successful authentication wil
 Login Successful https://canvas.cornell.edu/?login_success=1
 ```
 
+## Running as nohup process
+
+I'm running `scrapeCanvas.py` on Cornell's linux since it takes a LONG time.  Also, I'm poor, and my device doesn't have a lot of space.  Here's the command
+```
+nohup python3 -u scrapeCanvas.py > output.log &
+```
+
+
 ## TODO:
-Describe `scrapeCanvas.py` , `scrapeEdPosts.py`, and `scrapeExistingQuizzes.py`
+Describe `scrapeCanvas.py` , `scrapeEdPosts.py`, and `scrapeExistingQuizzes.py` in more detail

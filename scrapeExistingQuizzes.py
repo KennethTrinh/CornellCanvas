@@ -1,5 +1,4 @@
 import os
-import pandas as pd
 from bs4 import BeautifulSoup
 
 from utils import (sanitize, NoQuizFound, 
@@ -96,19 +95,16 @@ def scrapeQuizzesForCourse(session, canvas, course_id):
     scrapeModuleQuizzes(course, folder, quizzes_downloaded, session)
     scrapeAssignmentQuizzes(course, folder, quizzes_downloaded, session)
 
-def scrapeExistingQuizzes(personal_courses=False):
+def scrapeExistingQuizzes():
     canvas = Canvas(API_URL, API_KEY)
-    # courses = list(canvas.get_courses()) # --> lists all courses you've taken
-    courses = list(canvas.get_courses()) if personal_courses else \
-                                        pd.read_csv('misc/courses.csv') 
-    courses = courses if personal_courses else \
-                    courses.id.tolist()
+    # only want personal courses, since we cant see quizzes for other courses
+    courses = list(canvas.get_courses())
     s = canvasDuoLogin()
     for course in courses:
-        scrapeQuizzesForCourse(s, canvas, course.id if personal_courses else course)
+        scrapeQuizzesForCourse(s, canvas, course.id)
 
 if __name__ == '__main__':
-    scrapeExistingQuizzes(True)
+    scrapeExistingQuizzes()
 
 # canvas  = Canvas(API_URL, API_KEY)
 # courses = list(canvas.get_courses()) # --> lists all courses you've taken
