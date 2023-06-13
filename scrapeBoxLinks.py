@@ -3,9 +3,10 @@ import re
 import json
 import os
 from bs4 import BeautifulSoup
-from utils import sanitize, write, writeJson
-from consts import USERNAME, PASSWORD
-API_URL = 'https://cornell.app.box.com'
+from utils import sanitize, write, writeJson, getModules, getCourse, getAllCourses
+from canvasapi import Canvas
+from consts import USERNAME, PASSWORD, API_KEY, API_URL
+
 
 def getFileName(itemID, postStreamData):
     if '/app-api/enduserapp/shared-folder' in postStreamData:
@@ -13,7 +14,8 @@ def getFileName(itemID, postStreamData):
     else:
         items = postStreamData[f"/app-api/enduserapp/item/f_{itemID}"]['items']
     item = [item for item in items if item['id'] == itemID][0]
-    return f"{sanitize(item['name'])}.{item['extension']}"
+    # return f"{sanitize(item['name'])}.{item['extension']}" # extension embedded in name
+    return f"{sanitize(item['name'])}"
 
 def boxLogin():
     s = requests.Session()
@@ -77,14 +79,13 @@ def requestItemUrl(s, itemID, readToken, shared_link):
                     'Authorization': f'Bearer {readToken}',
                     'Boxapi': f'shared_link={shared_link}',
                     'X-Box-Client-Name': 'box-content-preview',
-                    'X-Rep-Hints': '[3d][pdf]'
+                    'X-Rep-Hints': '[3d][pdf][text][mp3][json][jpg?dimensions=1024x1024&paged=false][jpg?dimensions=2048x2048,png?dimensions=2048x2048][dash,mp4][filmstrip]'
                     },
                 params={
                     'fields': 'id,permissions,shared_link,sha1,file_version,name,size,extension,representations,watermark_info,authenticated_download_url,is_download_available'
                 }                    
     )
-    pdfURL = r.json()['representations']['entries'][0]['content']["url_template"]
-    return pdfURL.split('{+asset_path}?watermark_content=')
+    return r.json()
 
 def requestPreviewContent(s, previewURL, watermark_content, readToken, shared_link):
     r = s.get(previewURL,
@@ -98,21 +99,60 @@ def requestPreviewContent(s, previewURL, watermark_content, readToken, shared_li
     )
     return r.content
 
+def requestContent(s, itemID, requestToken, sharedName):
+    """
+    May eventually need readToken, but the only course 
+    I had with public content was to everyone (not just to cornell students)
+    """
+    r = s.post('https://cornell.app.box.com/index.php',
+                params = {
+                   'rm': 'box_download_shared_file',
+                   'shared_name': sharedName,
+                   'file_id': f'f_{itemID}',
+                },
+                data = {
+                    'request_token': requestToken,
+                }
+    )
+    return r.content
+
+def getUrlForExtension(entries, extension):
+    """
+    We can only have extensions specified in 'X-Rep-Hints' header
+    """
+    if extension == 'mp4':
+        extension = 'dash'
+    if extension == 'csv':
+        extension = 'pdf'
+    entry = [e for e in entries if e['representation'] == extension][0]
+    return entry['content']['url_template']
+
 def scrapeBoxFile(s, folder, postStreamData, itemID, sharedName, requestToken, shared_link):
     file = f"file_{itemID}"
     readToken, writeToken = requestTokens(s, file, requestToken, sharedName)
 
-    previewURL, watermark_content = requestItemUrl(s, itemID, readToken, shared_link)
-
-    content = requestPreviewContent(s, previewURL, watermark_content, readToken, shared_link)
-
+    itemDict = requestItemUrl(s, itemID, readToken, shared_link)
+    if itemDict['permissions']['can_download']:
+        content = requestContent(s, itemID, requestToken, sharedName)
+    elif itemDict['permissions']['can_preview']:
+        extensionUrl = getUrlForExtension(itemDict['representations']['entries'], itemDict['extension'])
+        previewURL, watermark_content = extensionUrl.split('{+asset_path}?watermark_content=')
+        content = requestPreviewContent(s, previewURL, watermark_content, readToken, shared_link)
+    
     os.makedirs(folder, exist_ok=True)
     with open(os.path.join(folder, getFileName(itemID, postStreamData)), 'wb') as f:
         f.write(content)
 
-    print(f'Wrote: {getFileName(itemID, postStreamData)}')
+    print(f'Success! scraped File: {getFileName(itemID, postStreamData)}')
 
 def scrapeBoxFolder(s, folder, postStreamData, items, sharedName, requestToken, shared_link):
+    """
+    I'm not exactly sure how to handle nested folders, but I suspect just call
+    this function recursively.  Nonetheless, I don't have any links that have 
+    given me nested folders, so I wouldn't be able to test this.
+    I'm passing the torch to whoever needs this code next.
+    """
+    print(f'Scraping Folder: {folder}')
     for item in items:
         if item['type'] == 'file':
             scrapeBoxFile(
@@ -125,15 +165,13 @@ def scrapeBoxFolder(s, folder, postStreamData, items, sharedName, requestToken, 
                 shared_link = shared_link
             )
         else:
+            # TODO: Handle nested folders
             print('Type: ', item['type'])
             print(item)
 
 
-
-
-def scrapeBoxLink(s, url):
+def scrapeBoxLink(s, folder, url):
     r1 = s.get(url)
-    # https://cornell.app.box.com/s/hr6o4f9c6j2cl2exj31o7u8jz6wy8lr5
     r2 = s.get(r1.url)
     soup = BeautifulSoup(r2.text, 'html.parser')
     script = soup.find('script', text=re.compile('Box.prefetchedData'))
@@ -152,7 +190,7 @@ def scrapeBoxLink(s, url):
         # dict_keys(['/app-api/enduserapp/shared-item', '/app-api/enduserapp/item/f_807151451016'])
         scrapeBoxFile(
             s,
-            folder = '.' ,
+            folder = folder,
             postStreamData = postStreamData,
             itemID = postStreamData['/app-api/enduserapp/shared-item']['itemID'],
             sharedName = sharedName, 
@@ -164,7 +202,7 @@ def scrapeBoxLink(s, url):
         # dict_keys(['/app-api/enduserapp/shared-item', '/app-api/enduserapp/shared-folder'])
         scrapeBoxFolder(
             s,
-            folder = os.path.join('.', postStreamData['/app-api/enduserapp/shared-folder']['currentFolderName']),
+            folder = os.path.join(folder, postStreamData['/app-api/enduserapp/shared-folder']['currentFolderName']),
             postStreamData = postStreamData,
             items = postStreamData['/app-api/enduserapp/shared-folder']['items'],
             sharedName = sharedName,
@@ -174,15 +212,106 @@ def scrapeBoxLink(s, url):
     else:
         print(f'itemType {itemType} not recognized')
 
+def scrapeLink(s, folder, downloaded_IDs, external_url):
+    if not external_url.startswith('https://cornell.box.com/s'):
+        return
+    shared_id = re.search(r'https://cornell.box.com/s/(.*)', external_url).group(1)
+    if shared_id in downloaded_IDs:
+        print(f'Already downloaded: {external_url}')
+        return
+    print(f'FOUND BOX LINK: {external_url}')
+    scrapeBoxLink(s, folder, external_url)
+    downloaded_IDs.add(shared_id)
+
+def scrapeModule(s, folder, module, downloaded_IDs):
+    module_name = sanitize(module.name) if hasattr(module, 'name') else f'MISC_{module.id}'
+    folder = os.path.join(folder, module_name)
+    for item in module.get_module_items():
+        if item.type == 'ExternalUrl':
+            scrapeLink(s, folder, downloaded_IDs, item.external_url)
+
+def scrapeModules(s, course, folder, downloaded_IDs):
+    print(f'*** Modules for course: {course.id} ***')
+    modules = getModules(course)
+    folder = os.path.join(folder, 'Modules')
+    for module in modules:
+        # print(f'Module: {module.name} , ID: {module.id}')
+        scrapeModule(s, folder, module, downloaded_IDs)
+
+def scrapeCourse(s, canvas, course_id):
+    downloaded_IDs = set()
+    course = getCourse(canvas, course_id)
+    if not course:
+        print(f'Course not accessible for course: {course_id}')
+        return
+    course_name = sanitize(course.name) if hasattr(course, 'name') else f'MISC_{course.id}'
+    print(f'********* Course: {course_name} ({course.id}) *********')
+    folder = os.path.join('data', course_name)
+    scrapeModules(s, course, folder, downloaded_IDs)
+
+# def scrapeBoxLinks():
+#     s = boxLogin()
+#     canvas = Canvas(API_URL, API_KEY)
+#     courses = getAllCourses(canvas)
+#     for i, course_id in enumerate(courses):
+#         print(f'********* {i+1}/{len(courses)} *********')
+#         scrapeCourse(s, canvas, course_id)
+
+if __name__ == '__main__':
+    s = boxLogin()
+    canvas = Canvas(API_URL, API_KEY)
+    scrapeCourse(s, canvas, 27847) # ML
+    scrapeCourse(s, canvas, 44979) # MP4s
+
+# scrapeCourse(s, Canvas(API_URL, API_KEY), 18565) # 1 PPT
+# ********* Course: SYSENMAE 52806280 Adaptive and Learning Systems - Prof Timothy Sands (44979) *********
+# *** Modules for course: 44979 ***
+# FOUND BOX LINK: https://cornell.box.com/s/gywlk1cz26jgg0sdgpie8ftxn9msm3lo
+# FOUND BOX LINK: https://cornell.box.com/s/amks8w832sxm2unwfqzpgoyxvxwxttk1
+# scrapeBoxLink(s, 'test', external_url)
+# url =  'https://cornell.box.com/s/gywlk1cz26jgg0sdgpie8ftxn9msm3lo' # videos
+# r1 = s.get(url)
+# r2 = s.get(r1.url)
+# soup = BeautifulSoup(r2.text, 'html.parser')
+# script = soup.find('script', text=re.compile('Box.prefetchedData'))
+# config = re.search(r'Box.config = (\{.*?\});', script.string, flags=re.DOTALL | re.MULTILINE).group(1)
+# config = json.loads(config)
+
+# script = soup.find('script', text=re.compile('Box.postStreamData'))
+# postStreamData = re.search(r'Box.postStreamData = (\{.*?\});', script.string, flags=re.DOTALL | re.MULTILINE).group(1)
+# postStreamData = json.loads(postStreamData)
+# # writeJson(postStreamData)
+
+# itemType = postStreamData['/app-api/enduserapp/shared-item']['itemType']
+# sharedName = postStreamData['/app-api/enduserapp/shared-item']['sharedName']
+# requestToken = config['requestToken']
+
+# items = postStreamData['/app-api/enduserapp/shared-folder']['items']
+# item = items[1]
+# itemID = item['id']
+# file = f"file_{itemID}"
+# shared_link = r1.url
+
+# readToken, writeToken = requestTokens(s, file, requestToken, sharedName)
+# itemDict = requestItemUrl(s, itemID, readToken, shared_link)
+# extensionUrl = getUrlForExtension(itemDict['representations']['entries'], itemDict['extension'])
+# r = s.post('https://cornell.app.box.com/index.php',
+#                 params = {
+#                    'rm': 'box_download_shared_file',
+#                    'shared_name': sharedName,
+#                    'file_id': f'f_{itemID}',
+#                 },
+#                 data = {
+#                     'request_token': requestToken,
+#                 }
+#     )
 
 
-s = boxLogin()
-url = 'https://cornell.box.com/s/hr6o4f9c6j2cl2exj31o7u8jz6wy8lr5' # prelim 2
+
+# s = boxLogin()
+# url = 'https://cornell.box.com/s/hr6o4f9c6j2cl2exj31o7u8jz6wy8lr5' # prelim 2
 # url = 'https://cornell.box.com/s/z4bts0jiufhcnx21rdmu7wopmyx003x7' # assignment 1 folder
-
-scrapeBoxLink(s, url)
-
-
+# scrapeBoxLink(s, url)
     
 # readToken, writeToken = requestTokens(s, file, config['requestToken'], postStreamData['/app-api/enduserapp/shared-item']['sharedName'])
 
