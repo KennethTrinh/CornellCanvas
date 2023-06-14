@@ -2,14 +2,15 @@ import os
 import requests
 
 from canvasapi import Canvas
-from canvasapi.exceptions import ResourceDoesNotExist, Forbidden
+from canvasapi.exceptions import ResourceDoesNotExist, CanvasException
 from utils import (sanitize, cprint, extract_files, 
-                   write, getAllCourses, ThrowsLambdaError, 
+                   write, getAllCourses, ThrowsLambdaError, retry,
                    getModules, getAssignments, getCourse,
                    getFiles, getPages, getDiscussionTopics, getReplies)
 
 from consts import API_KEY, API_URL, HEADERS
 
+@retry(retry_num=3, retry_sleep_sec=10, exception=CanvasException)
 @ThrowsLambdaError(ResourceDoesNotExist)
 def scrapeFile(course, folder, files_downloaded, file_id):
     if file_id in files_downloaded:
