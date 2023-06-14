@@ -262,6 +262,18 @@ if __name__ == '__main__':
     canvas = Canvas(API_URL, API_KEY)
     scrapeCourse(s, canvas, 27847) # ML
     scrapeCourse(s, canvas, 44979) # MP4s
+    scrapeBoxLink(
+        s, 
+        folder = "data/SYSENMAE 52806280 Adaptive and Learning Systems - Prof Timothy Sands/Modules/Previous Years' Live Lectures/2021 Live Recordings (Helpful !!)",
+        url = 'https://cornell.app.box.com/s/gywlk1cz26jgg0sdgpie8ftxn9msm3lo?page=2'
+    )
+    scrapeBoxLink(
+        s, 
+        folder = "data/SYSENMAE 52806280 Adaptive and Learning Systems - Prof Timothy Sands/Modules/Previous Years' Live Lectures/2020 Live Recordings (Superfluous?)",
+        url = 'https://cornell.app.box.com/s/amks8w832sxm2unwfqzpgoyxvxwxttk1?page=2'
+    )
+
+
 
 # scrapeCourse(s, Canvas(API_URL, API_KEY), 18565) # 1 PPT
 # ********* Course: SYSENMAE 52806280 Adaptive and Learning Systems - Prof Timothy Sands (44979) *********
