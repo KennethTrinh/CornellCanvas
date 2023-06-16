@@ -58,6 +58,7 @@ def boxLogin():
     )
     return s
 
+@retry(retry_num=3)
 def requestTokens(s, file, requestToken, sharedName):
     r = s.post('https://cornell.app.box.com/app-api/enduserapp/elements/tokens',
                 json={
@@ -88,6 +89,7 @@ def requestItemUrl(s, itemID, readToken, shared_link):
     )
     return r.json()
 
+@retry(retry_num=3)
 def requestPreviewContent(s, previewURL, watermark_content, readToken, shared_link):
     r = s.get(previewURL,
                 params = {
@@ -100,6 +102,7 @@ def requestPreviewContent(s, previewURL, watermark_content, readToken, shared_li
     )
     return r.content
 
+@retry(retry_num=3)
 def requestContent(s, itemID, requestToken, sharedName):
     """
     May eventually need readToken, but the only course 
