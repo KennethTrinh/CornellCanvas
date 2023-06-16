@@ -3,7 +3,7 @@ import re
 import json
 import os
 from bs4 import BeautifulSoup
-from utils import sanitize, write, writeJson, getModules, getCourse, getAllCourses
+from utils import sanitize, write, writeJson, getModules, getCourse, getAllCourses, retry
 from canvasapi import Canvas
 from consts import USERNAME, PASSWORD, API_KEY, API_URL
 
@@ -73,6 +73,7 @@ def requestTokens(s, file, requestToken, sharedName):
     )
     return r.json()[file]['read'], r.json()[file]['write']
 
+@retry(retry_num=3)
 def requestItemUrl(s, itemID, readToken, shared_link):
     r = s.get(f'https://api.box.com/2.0/files/{itemID}',
                 headers = {
